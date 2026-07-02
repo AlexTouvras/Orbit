@@ -1,0 +1,36 @@
+# Caddy reverse proxy for Orbit (Next.js on 127.0.0.1:3000) with automatic HTTPS.
+#
+# Install location: /etc/caddy/Caddyfile
+# Reload after edits: sudo systemctl reload caddy
+#
+# ---------------------------------------------------------------------------
+# OPTION A (recommended): your own domain with automatic HTTPS.
+# Point an A record for the domain at the VM's public IP first, then Caddy
+# provisions and renews a Let's Encrypt certificate automatically.
+# Replace example.com with your real domain.
+# ---------------------------------------------------------------------------
+example.com {
+	encode zstd gzip
+	reverse_proxy 127.0.0.1:3000
+}
+
+# ---------------------------------------------------------------------------
+# OPTION B (free subdomain): DuckDNS-style hostname with automatic HTTPS.
+# Create a free subdomain at https://www.duckdns.org, set its IP to the VM's
+# public IP, then uncomment and replace the hostname below.
+# ---------------------------------------------------------------------------
+# your-name.duckdns.org {
+# 	encode zstd gzip
+# 	reverse_proxy 127.0.0.1:3000
+# }
+
+# ---------------------------------------------------------------------------
+# OPTION C (no domain yet): serve plain HTTP on port 80 by IP, so you can get
+# online before DNS is configured. NOTE: no HTTPS here, so the Studio session
+# cookie (Secure in production) will NOT be sent over plain HTTP — log in to
+# the Studio only once you are on HTTPS (Option A or B). Good for a quick check.
+# ---------------------------------------------------------------------------
+# :80 {
+# 	encode zstd gzip
+# 	reverse_proxy 127.0.0.1:3000
+# }

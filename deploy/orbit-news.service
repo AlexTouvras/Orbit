@@ -1,0 +1,22 @@
+[Unit]
+Description=Orbit news radar refresh (calls the local cron endpoint)
+After=orbit-web.service
+Wants=orbit-web.service
+
+[Service]
+Type=oneshot
+User=orbit
+Group=orbit
+WorkingDirectory=/opt/orbit/website
+
+# Load CRON_SECRET (and the rest) from the same env file as the web service.
+EnvironmentFile=/opt/orbit/website/.env.production
+
+# Refresh the news cache by hitting the already-running production server.
+# We use the HTTP endpoint (not `npm run news:fetch`) because tsx is a dev
+# dependency and is NOT installed in production (npm ci --omit=dev).
+# The route checks CRON_SECRET via the Authorization: Bearer header.
+ExecStart=/usr/bin/curl -fsS -H "Authorization: Bearer ${CRON_SECRET}" http://127.0.0.1:3000/api/cron/news
+
+[Install]
+WantedBy=multi-user.target

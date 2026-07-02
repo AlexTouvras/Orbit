@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 5 6 15;
+  --foreground: 226 232 240;
+  --muted: 148 163 184;
+  --accent-cyan: 34 211 238;
+  --accent-violet: 168 85 247;
+  --border: 255 255 255;
+}
+
+@layer base {
+  * {
+    border-color: rgb(var(--border) / 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    min-height: 100dvh;
+  }
+
+  /* Custom selection */
+  ::selection {
+    background-color: rgb(var(--accent-cyan) / 0.3);
+    color: white;
+  }
+
+  /* Slim cyber scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(8 10 24);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgb(var(--accent-cyan) / 0.4), rgb(var(--accent-violet) / 0.4));
+    border-radius: 9999px;
+    border: 2px solid rgb(8 10 24);
+  }
+}
+
+@layer components {
+  .glass {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-hover {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .glass-hover:hover {
+    border-color: rgb(var(--accent-cyan) / 0.4);
+    box-shadow: 0 0 30px -10px rgb(var(--accent-cyan) / 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Gradient text used for headings / accents */
+  .text-gradient {
+    background: linear-gradient(
+      120deg,
+      rgb(var(--accent-cyan)),
+      rgb(var(--accent-violet))
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Respect users who prefer reduced motion: kill non-essential animation */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

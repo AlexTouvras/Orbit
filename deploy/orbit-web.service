@@ -1,0 +1,36 @@
+[Unit]
+Description=Orbit website (Next.js production server)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=orbit
+Group=orbit
+WorkingDirectory=/opt/orbit/website
+
+# Load production secrets (STUDIO_PASSWORD, STUDIO_SESSION_SECRET, CRON_SECRET,
+# NEXT_PUBLIC_SITE_URL, GITHUB_TOKEN). Created from .env.example during setup.
+EnvironmentFile=/opt/orbit/website/.env.production
+Environment=NODE_ENV=production
+Environment=PORT=3000
+
+# Run `next start` via the npm "start" script.
+# IMPORTANT: ExecStart must use an absolute path to node + npm.
+#   - NodeSource install:   /usr/bin/npm   (node at /usr/bin/node)
+#   - nvm install:          /home/orbit/.nvm/versions/node/v22.x.x/bin/npm
+# Find yours with:  which npm   (run as the orbit user)
+# If you use nvm, also set the matching bin dir on PATH below.
+Environment=PATH=/usr/bin:/bin:/usr/local/bin
+ExecStart=/usr/bin/npm start
+
+Restart=always
+RestartSec=5
+
+# Basic hardening (the app only needs to write inside its own data/ dir).
+NoNewPrivileges=true
+ProtectSystem=full
+ReadWritePaths=/opt/orbit/website
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,93 @@
+import { NextResponse, type NextRequest } from "next/server";
+import { revalidatePath } from "next/cache";
+import { isAuthenticated } from "@/lib/auth";
+import {
+  getEditableProfile,
+  writeProfileOverrides,
+  type EditableProfile,
+  type EditableSocial,
+} from "@/lib/profile-store";
+
+export const runtime = "nodejs";
+
+const STRING_FIELDS = [
+  "name",
+  "handle",
+  "githubUsername",
+  "role",
+  "location",
+  "tagline",
+  "summary",
+  "email",
+  "resumeUrl",
+] as const;
+
+function sanitize(input: unknown): EditableProfile | null {
+  if (typeof input !== "object" || input === null) return null;
+  const obj = input as Record<string, unknown>;
+
+  const result = {} as EditableProfile;
+  for (const field of STRING_FIELDS) {
+    const value = obj[field];
+    if (typeof value !== "string") return null;
+    result[field] = value.trim();
+  }
+
+  if (!result.name) return null; // name is the one hard requirement
+
+  if (!Array.isArray(obj.socials)) return null;
+  const socials: EditableSocial[] = [];
+  for (const raw of obj.socials) {
+    if (typeof raw !== "object" || raw === null) continue;
+    const s = raw as Record<string, unknown>;
+    const label = typeof s.label === "string" ? s.label.trim() : "";
+    const href = typeof s.href === "string" ? s.href.trim() : "";
+    if (!label || !href) continue;
+    socials.push({ label, href });
+  }
+  result.socials = socials;
+
+  return result;
+}
+
+/** GET current editable profile (for the Studio form). Auth-gated. */
+export async function GET() {
+  if (!(await isAuthenticated())) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  return NextResponse.json(getEditableProfile());
+}
+
+/** Save profile edits. Auth-gated; revalidates affected pages. */
+export async function POST(req: NextRequest) {
+  if (!(await isAuthenticated())) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  let body: unknown;
+  try {
+    body = await req.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON." }, { status: 400 });
+  }
+
+  const clean = sanitize(body);
+  if (!clean) {
+    return NextResponse.json(
+      { error: "Invalid profile data (name is required)." },
+      { status: 422 },
+    );
+  }
+
+  try {
+    writeProfileOverrides(clean);
+  } catch (err) {
+    console.error("[studio] failed to write profile:", err);
+    return NextResponse.json({ error: "Could not save." }, { status: 500 });
+  }
+
+  // Refresh every route that renders profile data.
+  revalidatePath("/", "layout");
+
+  return NextResponse.json({ ok: true });
+}

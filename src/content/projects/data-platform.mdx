@@ -1,0 +1,45 @@
+---
+title: "Realtime Analytics Platform"
+summary: "An end-to-end ELT platform streaming product events into a warehouse with dbt models, freshness SLAs, and self-serve dashboards."
+year: 2024
+role: "Data Platform Engineer"
+featured: true
+accent: "blue"
+tags: ["Data", "Analytics", "ELT", "Delivery"]
+stack: ["Python", "dbt", "Snowflake", "Kafka", "Airflow", "Next.js"]
+cover: "/projects/data-platform-1.svg"
+gallery:
+  - "/projects/data-platform-1.svg"
+  - "/projects/data-platform-2.svg"
+repo: "https://github.com/yourhandle/analytics-platform"
+demo: "https://example.com/analytics"
+---
+
+## Overview
+
+A production analytics platform that ingests millions of product events per day, transforms
+them with **dbt**, and exposes trustworthy metrics through self-serve dashboards — with
+freshness monitoring baked in.
+
+## The problem
+
+Stakeholders didn't trust the numbers: pipelines failed silently, metrics drifted between
+teams, and "is this data fresh?" had no clear answer.
+
+## What I built
+
+- A streaming **ingest** layer (Kafka) feeding the warehouse in near real time.
+- A modeled **semantic layer** in dbt with tests and documented metrics.
+- **Freshness SLAs** with alerting when a model goes stale.
+- Self-serve dashboards so teams answer their own questions.
+
+## Architecture
+
+Sources flow through ingest into the warehouse, where dbt builds staging, fact, and mart
+models that power the dashboards.
+
+## Impact
+
+- **Under 5 min** end-to-end data freshness for core models.
+- **100+** documented, tested metrics in the semantic layer.
+- Reduced ad-hoc data requests to the team by **70%**.
