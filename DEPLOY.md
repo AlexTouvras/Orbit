@@ -106,7 +106,7 @@ sudo mkdir -p /opt/orbit
 sudo chown orbit:orbit /opt/orbit
 
 # Clone as the orbit user (replace with your GitHub repo URL)
-sudo -u orbit git clone https://github.com/<you>/<repo>.git /opt/orbit/website
+sudo -u orbit git clone https://github.com/AlexTouvras/Orbit.git /opt/orbit/website
 cd /opt/orbit/website
 ```
 
