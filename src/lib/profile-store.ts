@@ -20,6 +20,8 @@ export interface EditableProfile {
   role: string;
   location: string;
   tagline: string;
+  pillars: string;
+  yearsExperience: string;
   summary: string;
   email: string;
   resumeUrl: string;
@@ -42,6 +44,8 @@ export function getDefaultProfile(): EditableProfile {
     role: defaults.role,
     location: defaults.location,
     tagline: defaults.tagline,
+    pillars: defaults.pillars,
+    yearsExperience: defaults.yearsExperience,
     summary: defaults.summary,
     email: defaults.email,
     resumeUrl: defaults.resumeUrl,

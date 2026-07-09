@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Syne, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ParticleBackground } from "@/components/layout/ParticleBackground";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { getEditableProfile } from "@/lib/profile-store";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+const ibmPlex = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-sans",
+});
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
@@ -37,7 +45,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      className={`${syne.variable} ${ibmPlex.variable} ${jetbrainsMono.variable}`}
+    >
       <body className="font-sans antialiased">
         <ParticleBackground />
         <Header />

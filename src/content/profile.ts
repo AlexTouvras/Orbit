@@ -1,5 +1,6 @@
 import type { ComponentType, SVGProps } from "react";
-import { Mail, Globe } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import { Bot, LineChart, Mail, Globe, Route } from "lucide-react";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/components/ui/BrandIcons";
 
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
@@ -36,6 +37,7 @@ export interface Competency {
   title: string;
   description: string;
   accent: "cyan" | "violet" | "blue";
+  icon: LucideIcon;
 }
 
 export const profile = {
@@ -46,7 +48,9 @@ export const profile = {
   role: "Technology Delivery Lead · Data & AI Automation",
   location: "Vantaa, Finland",
   tagline:
-    "Technology delivery lead with quantitative roots in credit risk and data — building agentic AI and automation systems that turn noisy signals into reliable, shipping products.",
+    "Delivery lead with quantitative roots in credit risk — building agentic AI and automation that teams trust in production.",
+  pillars: "Agent systems · Data · Delivery",
+  yearsExperience: "7+",
   summary:
     "I work across technology delivery, data, and credit risk — leading IT application operations on Azure while building multi-agent AI workflows, automation pipelines, and analytics that teams actually trust. Around seven years in Nordic banking, now bridging quantitative risk into hands-on engineering. This site is my live portfolio bank and a self-updating radar across AI, Data, and Delivery.",
   resumeUrl: "/resume.pdf",
@@ -59,18 +63,21 @@ export const competencies: Competency[] = [
     description:
       "Multi-agent systems, tool-use & RAG pipelines, and event-driven automation that removes toil and stays reliable in production.",
     accent: "cyan",
+    icon: Bot,
   },
   {
     title: "Data & Analytics",
     description:
       "Python, SQL, and Power BI / Fabric — models, dashboards, and ETL that turn data into decisions. Quantitative roots in credit risk (PD, scorecards, ECL).",
     accent: "blue",
+    icon: LineChart,
   },
   {
     title: "Technology Delivery",
     description:
       "Leading IT application operations across Azure and middleware — coordinating cross-team delivery with flow, clarity, and measurable outcomes.",
     accent: "violet",
+    icon: Route,
   },
 ];
 

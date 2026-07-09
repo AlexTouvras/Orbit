@@ -18,7 +18,7 @@ export function GlassCard({
     <Tag
       className={cn(
         "glass rounded-2xl p-6",
-        hover && "glass-hover cursor-pointer",
+        hover && "glass-hover",
         className,
       )}
     >

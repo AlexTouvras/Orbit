@@ -14,9 +14,9 @@ export async function GithubRepos() {
   const profileUrl = `https://github.com/${profile.githubUsername}`;
 
   return (
-    <section className="mt-24">
+    <section>
       <Reveal>
-        <div className="flex items-end justify-between gap-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="Open source"
             title="From GitHub"
@@ -26,15 +26,15 @@ export async function GithubRepos() {
             href={profileUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group hidden items-center gap-1 whitespace-nowrap text-sm font-medium text-neon-cyan sm:inline-flex"
+            className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan"
           >
             View profile
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
           </Link>
         </div>
       </Reveal>
 
-      <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <Stagger className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {repos.map((repo) => (
           <StaggerItem key={repo.id}>
             <RepoCard repo={repo} />

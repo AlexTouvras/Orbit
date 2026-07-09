@@ -4,9 +4,14 @@ import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Project } from "@/lib/types";
 import { ProjectCard } from "./ProjectCard";
-import { cn } from "@/lib/utils";
+import { FilterChip } from "@/components/ui/FilterChip";
+import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export function ProjectExplorer({ projects }: { projects: Project[] }) {
+  const reduced = usePrefersReducedMotion();
+
   const allTags = useMemo(() => {
     const set = new Set<string>();
     projects.forEach((p) => p.tags.forEach((t) => set.add(t)));
@@ -25,21 +30,19 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-2">
+      <div
+        className="flex flex-wrap gap-2"
+        role="group"
+        aria-label="Filter projects by focus area"
+      >
         {allTags.map((tag) => (
-          <button
+          <FilterChip
             key={tag}
-            type="button"
+            active={active === tag}
             onClick={() => setActive(tag)}
-            className={cn(
-              "rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors",
-              active === tag
-                ? "border-neon-cyan/50 bg-neon-cyan/10 text-neon-cyan"
-                : "border-white/10 text-slate-400 hover:border-white/20 hover:text-white",
-            )}
           >
             {tag}
-          </button>
+          </FilterChip>
         ))}
       </div>
 
@@ -48,11 +51,11 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
           {filtered.map((project) => (
             <motion.div
               key={project.slug}
-              layout
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
-              transition={{ duration: 0.25 }}
+              layout={!reduced}
+              initial={reduced ? false : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduced ? undefined : { opacity: 0, y: -8 }}
+              transition={{ duration: 0.25, ease }}
             >
               <ProjectCard project={project} />
             </motion.div>
@@ -61,7 +64,7 @@ export function ProjectExplorer({ projects }: { projects: Project[] }) {
       </motion.div>
 
       {filtered.length === 0 && (
-        <p className="mt-12 text-center text-sm text-slate-500">
+        <p className="mt-12 text-center text-sm text-slate-400" role="status">
           No projects match this filter yet.
         </p>
       )}

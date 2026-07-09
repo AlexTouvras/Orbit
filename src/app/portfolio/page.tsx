@@ -4,7 +4,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { ProjectExplorer } from "@/components/portfolio/ProjectExplorer";
 import { GithubRepos } from "@/components/portfolio/GithubRepos";
 import { LocalProjects } from "@/components/portfolio/LocalProjects";
+import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
 import { getAllProjects } from "@/lib/projects";
+import { getPublicProjects } from "@/lib/projects-local";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -13,22 +15,33 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   const projects = getAllProjects();
+  const workshop = getPublicProjects();
+  const tagCount = new Set(projects.flatMap((p) => p.tags)).size;
 
   return (
-    <div>
-      <Reveal>
-        <SectionHeading
-          eyebrow="Portfolio bank"
-          title="Missions & case studies"
-          description="Agentic AI systems, automation pipelines, and data platforms I've designed and shipped. Filter by focus area."
-        />
-      </Reveal>
+    <div className="space-y-24 sm:space-y-32">
+      <PortfolioHero
+        caseStudyCount={projects.length}
+        workshopCount={workshop.length}
+        tagCount={tagCount}
+      />
 
-      <div className="mt-10">
-        <ProjectExplorer projects={projects} />
+      <section id="case-studies" className="scroll-mt-28">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Case studies"
+            title="Deep dives"
+            description="MDX-authored missions with architecture, stack, and outcomes."
+          />
+        </Reveal>
+        <div className="mt-8">
+          <ProjectExplorer projects={projects} />
+        </div>
+      </section>
+
+      <div id="workshop" className="scroll-mt-28">
+        <LocalProjects />
       </div>
-
-      <LocalProjects />
 
       <GithubRepos />
     </div>

@@ -39,7 +39,7 @@ export function Header() {
             : "border border-transparent bg-transparent",
         )}
       >
-        <Link href="/" className="group flex items-center gap-2">
+        <Link href="/" className="focus-ring group flex items-center gap-2 rounded-lg">
           <Hexagon className="h-6 w-6 text-neon-cyan transition-transform group-hover:rotate-90" />
           <span className="font-mono text-sm font-semibold tracking-widest text-slate-200">
             ORBIT<span className="text-neon-cyan">.</span>
@@ -52,7 +52,7 @@ export function Header() {
               key={item.href}
               href={item.href}
               className={cn(
-                "relative rounded-lg px-4 py-2 text-sm font-medium transition-colors",
+                "focus-ring relative inline-flex min-h-11 items-center rounded-lg px-4 text-sm font-medium transition-colors",
                 isActive(item.href)
                   ? "text-white"
                   : "text-slate-400 hover:text-white",
@@ -73,7 +73,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="rounded-lg p-2 text-slate-300 hover:bg-white/10 sm:hidden"
+          className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-300 transition-colors hover:bg-white/10 sm:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
@@ -95,7 +95,7 @@ export function Header() {
                 href={item.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  "rounded-lg px-4 py-3 text-sm font-medium transition-colors",
+                  "focus-ring rounded-lg px-4 py-3 text-sm font-medium transition-colors",
                   isActive(item.href)
                     ? "bg-white/10 text-white"
                     : "text-slate-300 hover:bg-white/5",

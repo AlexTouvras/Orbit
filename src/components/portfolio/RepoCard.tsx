@@ -20,7 +20,12 @@ const languageColor: Record<string, string> = {
 
 export function RepoCard({ repo }: { repo: GithubRepo }) {
   return (
-    <a href={repo.url} target="_blank" rel="noopener noreferrer" className="block h-full">
+    <a
+      href={repo.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="focus-ring block h-full rounded-2xl"
+    >
       <GlassCard hover className="group flex h-full flex-col">
         <div className="flex items-center gap-2">
           <GithubIcon className="h-4 w-4 text-slate-400 transition-colors group-hover:text-neon-cyan" />
@@ -30,12 +35,12 @@ export function RepoCard({ repo }: { repo: GithubRepo }) {
         </div>
 
         {repo.description && (
-          <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-400 line-clamp-3">
+          <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-300 line-clamp-3">
             {repo.description}
           </p>
         )}
 
-        <div className="mt-4 flex items-center gap-4 text-xs text-slate-500">
+        <div className="mt-4 flex items-center gap-4 text-xs text-slate-400">
           {repo.language && (
             <span className="inline-flex items-center gap-1.5">
               <span

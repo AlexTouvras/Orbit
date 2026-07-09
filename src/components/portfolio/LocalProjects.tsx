@@ -11,7 +11,7 @@ export function LocalProjects() {
   if (projects.length === 0) return null;
 
   return (
-    <section className="mt-20">
+    <section className="mt-0">
       <Reveal>
         <SectionHeading
           eyebrow="From the workshop"
@@ -20,7 +20,7 @@ export function LocalProjects() {
         />
       </Reveal>
 
-      <Stagger className="mt-8 grid gap-5 sm:grid-cols-2">
+      <Stagger className="mt-8 grid gap-6 sm:grid-cols-2">
         {projects.map((p) => (
           <StaggerItem key={p.id}>
             <GlassCard className="flex h-full flex-col p-5">
@@ -32,7 +32,7 @@ export function LocalProjects() {
               </div>
 
               {p.description && (
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                <p className="mt-2 text-sm leading-relaxed text-slate-300">
                   {p.description}
                 </p>
               )}
@@ -54,7 +54,7 @@ export function LocalProjects() {
                       href={p.repoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-slate-400 transition-colors hover:text-neon-cyan"
+                      className="focus-ring inline-flex min-h-11 items-center gap-1.5 text-slate-300 transition-colors hover:text-neon-cyan"
                     >
                       <FolderGit2 className="h-4 w-4" />
                       Code
@@ -65,7 +65,7 @@ export function LocalProjects() {
                       href={p.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-slate-400 transition-colors hover:text-neon-cyan"
+                      className="focus-ring inline-flex min-h-11 items-center gap-1.5 text-slate-300 transition-colors hover:text-neon-cyan"
                     >
                       <ExternalLink className="h-4 w-4" />
                       Live
