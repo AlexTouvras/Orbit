@@ -1,0 +1,102 @@
+{
+  "orbitRoot": ".",
+  "projectsRoot": "..",
+  "projects": [
+    {
+      "id": "game-engine",
+      "dir": "gameEngine",
+      "title": "Game Engine — architecture diagrams",
+      "summary": "Shell/sandbox cartridge framework, autonomous dev loop, and per-frame simulation pipeline.",
+      "category": "Delivery",
+      "tags": ["Game Engine", "Architecture", "Mermaid"]
+    },
+    {
+      "id": "faceless-reels",
+      "dir": "faceless_reels",
+      "title": "Faceless Reels — architecture diagrams",
+      "summary": "Staged pipeline for myth TikTok reels: beats → assets → assemble → human review.",
+      "category": "AI",
+      "tags": ["Pipeline", "Video", "Architecture"]
+    },
+    {
+      "id": "empty-window",
+      "dir": "empty-window/app",
+      "title": "Cat Dash (empty-window) — architecture diagrams",
+      "summary": "Expo monorepo: iteration loop, viral-readiness loop, and reference sprite pipeline.",
+      "category": "Delivery",
+      "tags": ["Mobile", "Game", "Architecture"]
+    },
+    {
+      "id": "careerops",
+      "dir": "careerops",
+      "title": "Career Ops — architecture diagrams",
+      "summary": "AI job-search command center: single-offer evaluation, portal scan, and batch workers.",
+      "category": "AI",
+      "tags": ["Career", "Automation", "Architecture"]
+    },
+    {
+      "id": "reelsmaker",
+      "dir": "Reelsmaker",
+      "title": "Reelsmaker — architecture diagrams",
+      "summary": "Self-hosted topic → vertical MP4: Docker services and render pipeline.",
+      "category": "AI",
+      "tags": ["Video", "Remotion", "Architecture"]
+    },
+    {
+      "id": "review-app",
+      "dir": "review_app",
+      "title": "ReviewSnap — architecture diagrams",
+      "summary": "Mobile micro-SaaS: Google reviews → branded share cards with auth and billing.",
+      "category": "Delivery",
+      "tags": ["Mobile", "SaaS", "Architecture"]
+    },
+    {
+      "id": "career-dev",
+      "dir": "careerDev",
+      "title": "Career Dev — architecture diagrams",
+      "summary": "Personal CV dashboard: public portfolio build vs private career-plan data.",
+      "category": "Career",
+      "tags": ["Portfolio", "Architecture"]
+    },
+    {
+      "id": "jarvis",
+      "dir": "JARVIS",
+      "title": "JARVIS (ProjectHelm) — architecture diagrams",
+      "summary": "Local meta-orchestrator: Plan → Agent → Debug via Cursor SDK and event ledger.",
+      "category": "AI",
+      "tags": ["Agents", "Orchestration", "Architecture"]
+    },
+    {
+      "id": "memory-projectbrain",
+      "dir": "Memory",
+      "title": "ProjectBrain (Memory) — architecture diagrams",
+      "summary": "Cross-project intelligence: ingest, score, reflect, and MCP context for agents.",
+      "category": "AI",
+      "tags": ["MCP", "Knowledge", "Architecture"]
+    },
+    {
+      "id": "garden-app",
+      "dir": "garden_app",
+      "title": "Sunplot Garden — architecture diagrams",
+      "summary": "Unity 2D garden game with agent-driven backlog and QA hat handoffs.",
+      "category": "Delivery",
+      "tags": ["Unity", "Game", "Architecture"]
+    },
+    {
+      "id": "puzzle-loop",
+      "dir": "puzzle-loop",
+      "title": "Gem Swap Puzzle — architecture diagrams",
+      "summary": "Godot match-3 with Ralph agent validation loop.",
+      "category": "Delivery",
+      "tags": ["Godot", "Game", "Architecture"]
+    },
+    {
+      "id": "orbit-platform",
+      "dir": "website",
+      "title": "Orbit platform — architecture diagrams",
+      "summary": "Personal HQ: Hub, Writes, Portfolio, Workshop, Signals radar, and Studio.",
+      "category": "Delivery",
+      "tags": ["Next.js", "Portfolio", "Architecture"]
+    }
+  ]
+}

@@ -87,6 +87,9 @@ systemctl daemon-reload
 systemctl enable --now orbit-web.service
 systemctl enable --now orbit-news.timer
 
+echo "==> Priming news cache (first fetch)"
+systemctl start orbit-news.service || true
+
 echo "==> Installing Caddyfile template"
 cp "${APP_DIR}/deploy/Caddyfile" /etc/caddy/Caddyfile
 

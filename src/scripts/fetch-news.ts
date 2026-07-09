@@ -2,14 +2,14 @@
  * Standalone news fetcher for host-agnostic scheduling.
  *
  *   npm run news:fetch    # one-shot fetch, writes the cache, exits
- *   npm run news:watch    # runs now, then every 6 hours via node-cron
+ *   npm run news:watch    # runs now, then daily via node-cron
  *
  * On Vercel, prefer the Cron-triggered route handler at /api/cron/news instead.
  */
 import cron from "node-cron";
 import { refreshNewsCache } from "@/lib/news/fetcher";
 
-const SCHEDULE = "0 */6 * * *"; // every 6 hours, on the hour
+const SCHEDULE = "0 6 * * *"; // daily at 06:00 UTC
 
 async function runOnce() {
   const startedAt = Date.now();

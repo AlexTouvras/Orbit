@@ -14,7 +14,7 @@ export async function GithubRepos() {
   const profileUrl = `https://github.com/${profile.githubUsername}`;
 
   return (
-    <section>
+    <section id="github" className="scroll-mt-28">
       <Reveal>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading

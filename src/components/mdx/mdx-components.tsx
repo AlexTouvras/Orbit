@@ -1,5 +1,35 @@
 import type { MDXComponents } from "mdx/types";
+import type { ReactNode } from "react";
 import Link from "next/link";
+import { isValidElement } from "react";
+import { MermaidDiagram } from "@/components/mdx/MermaidDiagram";
+
+function extractMermaidSource(children: ReactNode): string | null {
+  if (!isValidElement(children)) return null;
+  const props = children.props as { className?: string; children?: ReactNode };
+  const className = props.className ?? "";
+  if (!className.includes("language-mermaid")) return null;
+  const inner = props.children;
+  if (typeof inner === "string") return inner;
+  if (Array.isArray(inner)) return inner.join("");
+  return inner != null ? String(inner) : null;
+}
+
+function Pre({
+  children,
+  ...props
+}: React.ComponentPropsWithoutRef<"pre"> & { children?: ReactNode }) {
+  const chart = extractMermaidSource(children);
+  if (chart) return <MermaidDiagram chart={chart} />;
+  return (
+    <pre
+      className="my-6 overflow-x-auto rounded-xl border border-white/10 bg-black/40 p-4 font-mono text-sm text-slate-200"
+      {...props}
+    >
+      {children}
+    </pre>
+  );
+}
 
 export const mdxComponents: MDXComponents = {
   h2: (props) => (
@@ -46,11 +76,9 @@ export const mdxComponents: MDXComponents = {
       {...props}
     />
   ),
-  pre: (props) => (
-    <pre
-      className="my-6 overflow-x-auto rounded-xl border border-white/10 bg-black/40 p-4 font-mono text-sm text-slate-200"
-      {...props}
-    />
+  pre: Pre,
+  Mermaid: ({ chart, children }: { chart?: string; children?: ReactNode }) => (
+    <MermaidDiagram chart={chart ?? String(children ?? "")} />
   ),
   hr: () => <hr className="my-8 border-white/10" />,
 };

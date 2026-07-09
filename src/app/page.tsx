@@ -5,10 +5,9 @@ import { getEditableProfile } from "@/lib/profile-store";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { getFeaturedProjects } from "@/lib/projects";
-import { ProjectCard } from "@/components/portfolio/ProjectCard";
+import { getLatestWrites, getAllWrites } from "@/lib/writes";
+import { WriteCard } from "@/components/writes/WriteCard";
 import { HubHero } from "@/components/hub/HubHero";
-import { readNewsCache } from "@/lib/news/cache";
 import { cn } from "@/lib/utils";
 
 const accentBar: Record<"cyan" | "violet" | "blue", string> = {
@@ -25,13 +24,14 @@ const accentIcon: Record<"cyan" | "violet" | "blue", string> = {
 
 export default function HomePage() {
   const profile = getEditableProfile();
-  const featured = getFeaturedProjects(2);
-  const radarCount = readNewsCache().count;
+  const latestWrites = getLatestWrites(2);
+  const writeCount = getAllWrites().length;
+  const resumeUrl = profile.resumeUrl || "/resume.pdf";
 
   const stats = [
+    { label: "Articles", value: writeCount > 0 ? String(writeCount) : "—" },
     { label: "Disciplines", value: "3" },
-    { label: "Radar signals", value: radarCount > 0 ? String(radarCount) : "—" },
-    { label: "Nordic banking", value: `${profile.yearsExperience} yrs` },
+    { label: "Experience", value: profile.yearsExperience },
   ];
 
   return (
@@ -40,8 +40,11 @@ export default function HomePage() {
         name={profile.name}
         pillars={profile.pillars}
         tagline={profile.tagline}
+        availability={profile.availability}
+        email={profile.email}
         stats={stats}
         socials={profile.socials}
+        resumeUrl={resumeUrl}
       />
 
       <section>
@@ -73,6 +76,32 @@ export default function HomePage() {
         </Stagger>
       </section>
 
+      {latestWrites.length > 0 && (
+        <section>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading
+              eyebrow="Latest"
+              title="From the log"
+              description="What I'm learning and documenting in public — one question per article."
+            />
+            <Link
+              href="/writes"
+              className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan"
+            >
+              All articles
+              <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2">
+            {latestWrites.map((write) => (
+              <StaggerItem key={write.slug}>
+                <WriteCard write={write} />
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </section>
+      )}
+
       <section>
         <Reveal>
           <GlassCard className="p-8 sm:p-10">
@@ -90,31 +119,6 @@ export default function HomePage() {
           </GlassCard>
         </Reveal>
       </section>
-
-      {featured.length > 0 && (
-        <section>
-          <div className="flex items-end justify-between gap-4">
-            <SectionHeading
-              eyebrow="Selected work"
-              title="Case studies"
-            />
-            <Link
-              href="/portfolio"
-              className="focus-ring group hidden min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan sm:inline-flex"
-            >
-              All projects
-              <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
-            </Link>
-          </div>
-          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2">
-            {featured.map((project) => (
-              <StaggerItem key={project.slug}>
-                <ProjectCard project={project} />
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </section>
-      )}
     </div>
   );
 }

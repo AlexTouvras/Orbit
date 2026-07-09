@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { buildOrbitWrite } from "./lib.mjs";
+
+const websiteRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const writesDir = path.join(websiteRoot, "src", "content", "writes");
+const registry = JSON.parse(
+  fs.readFileSync(path.join(websiteRoot, "architecture-projects.json"), "utf8"),
+);
+
+const filterId = process.argv.find((a) => a.startsWith("--project="))?.split("=")[1];
+const projects = registry.projects.filter((p) => !filterId || p.id === filterId);
+
+let synced = 0;
+let skipped = 0;
+
+for (const project of projects) {
+  const archDir = path.join(websiteRoot, registry.projectsRoot, project.dir, "docs", "architecture");
+  if (!fs.existsSync(archDir)) {
+    console.warn(`⊘ skip ${project.id} — missing ${project.dir}/docs/architecture/`);
+    skipped += 1;
+    continue;
+  }
+
+  const mdFiles = fs
+    .readdirSync(archDir)
+    .filter((f) => f.endsWith(".md") && f !== "README.md");
+  if (mdFiles.length === 0) {
+    console.warn(`⊘ skip ${project.id} — no diagram markdown files`);
+    skipped += 1;
+    continue;
+  }
+
+  const outPath = path.join(writesDir, `${project.id}-architecture.mdx`);
+  fs.mkdirSync(writesDir, { recursive: true });
+  fs.writeFileSync(outPath, buildOrbitWrite({ project, archDir }), "utf8");
+  console.log(`✓ ${project.id} → writes/${project.id}-architecture.mdx`);
+  synced += 1;
+}
+
+console.log(`\nSynced ${synced} write(s), skipped ${skipped}.`);
+process.exit(0);

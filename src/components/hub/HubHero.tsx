@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Radar } from "lucide-react";
+import { ArrowRight, Download, Mail, PenLine } from "lucide-react";
 import type { ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
-import { Badge } from "@/components/ui/Badge";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
@@ -36,11 +35,23 @@ interface HubHeroProps {
   name: string;
   pillars: string;
   tagline: string;
+  availability: string;
+  email: string;
   stats: { label: string; value: string }[];
   socials: { label: string; href: string }[];
+  resumeUrl?: string;
 }
 
-export function HubHero({ name, pillars, tagline, stats, socials }: HubHeroProps) {
+export function HubHero({
+  name,
+  pillars,
+  tagline,
+  availability,
+  email,
+  stats,
+  socials,
+  resumeUrl,
+}: HubHeroProps) {
   const reduced = usePrefersReducedMotion();
 
   return (
@@ -53,10 +64,15 @@ export function HubHero({ name, pillars, tagline, stats, socials }: HubHeroProps
       </div>
 
       <HeroItem delay={0} reduced={reduced}>
-        <Badge tone="cyan" className="mb-8">
-          <span className="mr-1.5 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-neon-cyan" />
-          Open to delivery &amp; AI work
-        </Badge>
+        <a
+          href={`mailto:${email}?subject=${encodeURIComponent("Hello — from Orbit")}`}
+          className="focus-ring group mb-8 inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border border-neon-cyan/35 bg-neon-cyan/10 px-4 py-2 text-xs font-medium tracking-wide text-neon-cyan transition-[transform,background-color,border-color,box-shadow] active:scale-[0.98] hover:border-neon-cyan/55 hover:bg-neon-cyan/15 motion-safe:hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.45)]"
+          aria-label={`${availability} — email ${email}`}
+        >
+          <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-neon-cyan" />
+          <span>{availability}</span>
+          <Mail className="h-3.5 w-3.5 shrink-0 opacity-60 transition-opacity group-hover:opacity-100" aria-hidden />
+        </a>
       </HeroItem>
 
       <HeroItem delay={0.06} reduced={reduced}>
@@ -95,19 +111,34 @@ export function HubHero({ name, pillars, tagline, stats, socials }: HubHeroProps
       <HeroItem delay={0.3} reduced={reduced}>
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
-            href="/portfolio"
+            href="/writes"
             className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl bg-neon-cyan px-5 py-3 text-sm font-semibold text-void shadow-glow transition-[transform,box-shadow] active:scale-[0.98] motion-safe:hover:shadow-[0_0_32px_-4px_rgba(34,211,238,0.55)]"
           >
-            See case studies
+            Read latest
             <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
           </Link>
           <Link
-            href="/radar"
+            href="/about"
             className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition-colors hover:text-white"
           >
-            <Radar className="h-4 w-4 text-neon-violet/80" />
-            Radar feed
+            About
             <ArrowRight className="h-3.5 w-3.5 opacity-60 transition-transform motion-safe:group-hover:translate-x-0.5" />
+          </Link>
+          {resumeUrl && (
+            <a
+              href={resumeUrl}
+              className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-[transform,border-color,color] active:scale-[0.98] hover:border-neon-cyan/50 hover:text-neon-cyan"
+            >
+              <Download className="h-4 w-4" aria-hidden />
+              CV
+            </a>
+          )}
+          <Link
+            href="/portfolio"
+            className="focus-ring group hidden min-h-11 items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-400 transition-colors hover:text-white sm:inline-flex"
+          >
+            <PenLine className="h-4 w-4 text-neon-violet/80" />
+            Portfolio
           </Link>
         </div>
       </HeroItem>

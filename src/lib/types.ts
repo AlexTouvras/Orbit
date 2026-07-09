@@ -35,3 +35,25 @@ export interface Project extends ProjectFrontmatter {
   slug: string;
   content: string;
 }
+
+export type WriteCategory =
+  | "Career"
+  | "Data"
+  | "AI"
+  | "Delivery"
+  | "Learning";
+
+export interface WriteFrontmatter {
+  title: string;
+  summary: string;
+  date: string;
+  tags: string[];
+  category: WriteCategory;
+  featured?: boolean;
+}
+
+export interface Write extends WriteFrontmatter {
+  slug: string;
+  content: string;
+  readingTime: number;
+}

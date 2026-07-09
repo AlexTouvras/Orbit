@@ -9,6 +9,8 @@ writable `data/` directory — which is what the private Studio needs to save
 > Install path used throughout: **`/opt/orbit/website`**. App runs as a
 > non-root **`orbit`** user on port **3000**, with Caddy in front on 80/443.
 
+**Quick checklist:** [deploy/ORACLE-CHECKLIST.md](deploy/ORACLE-CHECKLIST.md)
+
 ---
 
 ## How content reaches the server
@@ -163,7 +165,7 @@ curl -s http://127.0.0.1:3000 | head -c 200   # should return HTML
 systemctl list-timers orbit-news.timer
 ```
 
-The news timer runs every 6 hours (`Persistent=true` catches missed runs). To
+The news timer runs daily at 06:00 UTC (`Persistent=true` catches missed runs). To
 refresh news immediately: `sudo systemctl start orbit-news.service`.
 
 ---

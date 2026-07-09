@@ -9,9 +9,10 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Hub", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "Writes", href: "/writes" },
   { label: "Portfolio", href: "/portfolio" },
-  { label: "Radar", href: "/radar" },
+  { label: "About", href: "/about" },
+  { label: "Signals", href: "/radar" },
 ];
 
 export function Header() {

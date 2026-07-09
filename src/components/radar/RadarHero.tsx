@@ -28,12 +28,12 @@ export function RadarHero({
       badge={
         <Badge tone="cyan" className="mb-8">
           <span className="mr-1.5 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-neon-cyan" />
-          Insights · sweep every 6h
+          Insights · daily sweep
         </Badge>
       }
-      title="The Radar"
+      title="Signals"
       subtitle="AI, Data, and Delivery — aggregated and cached"
-      description="A self-updating sweep from curated RSS sources. Filter by discipline or search the feed — served from cache for instant loads."
+      description="External intake from curated RSS sources. Refreshed daily and served from cache — complementary to my own Writes."
       stats={stats}
       meta={
         generatedAt ? (

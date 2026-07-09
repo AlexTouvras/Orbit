@@ -1,0 +1,27 @@
+name: Architecture validate
+
+on:
+  push:
+    paths:
+      - "docs/architecture/**"
+      - "scripts/architecture/**"
+      - "architecture-projects.json"
+      - "src/content/writes/*-architecture.mdx"
+  pull_request:
+    paths:
+      - "docs/architecture/**"
+      - "scripts/architecture/**"
+      - "architecture-projects.json"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate architecture diagrams (projects present in checkout)
+        run: npm run arch:validate-all

@@ -1,0 +1,42 @@
+---
+title: "The Power BI dashboard I actually open every Monday"
+summary: "How a small set of portfolio KPIs replaced ad-hoc Excel chains — and why 'one more chart' usually makes things worse."
+date: "2026-01-22"
+category: "Data"
+featured: true
+tags: ["Power BI", "Fabric", "Credit Risk", "Dashboards"]
+---
+
+## The question
+
+Can a Monday morning portfolio review fit on **one screen** without losing the signals that matter for credit risk?
+
+## What we were doing before
+
+Spreadsheets, emailed extracts, and a rotating cast of "temporary" tabs. Everyone had a slightly different cut of the same data. By the time leadership met, half the meeting was reconciling numbers instead of deciding what to do.
+
+## What the dashboard optimizes for
+
+I designed around **three decisions**, not thirty metrics:
+
+1. **Is emerging risk accelerating?** — vintage trends and segment drift, not just headline rates.
+2. **Where is the engine behaving differently than the model assumed?** — approval funnel and score distribution shifts.
+3. **What changed since last week that we didn't expect?** — annotated exceptions, not raw tables.
+
+Everything else links out. If a metric doesn't change a decision, it doesn't earn space above the fold.
+
+## Technical choices that mattered
+
+- **SQL views as the contract** — Power BI reads stable, documented shapes; logic doesn't live in DAX spaghetti.
+- **Fabric / refresh discipline** — predictable morning refresh beats heroic manual runs.
+- **One owner per metric** — every tile has a name attached. Ambiguity kills trust faster than bad charts.
+
+## Mistakes I made
+
+- Too many slicers early on. Executives don't want to build their own report at 8 a.m.
+- Letting "just one more breakdown" creep in. Scope creep applies to dashboards too.
+- Skipping the **definition doc**. If two teams define "delinquency" differently, your dashboard becomes a debate club.
+
+## Takeaway
+
+The best operational dashboard isn't the prettiest — it's the one people **trust on Monday**. Start with the decision, work backward to the query, and delete anything that doesn't earn its pixel.

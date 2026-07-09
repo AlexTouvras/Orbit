@@ -1,0 +1,48 @@
+---
+title: "Building Orbit — a portfolio that writes itself (mostly)"
+summary: "Why I built a personal HQ with MDX case studies, a news radar, and a private Studio instead of picking another template."
+date: "2026-03-28"
+category: "AI"
+featured: true
+tags: ["Next.js", "Build in public", "Portfolio", "Automation"]
+---
+
+## The question
+
+If I'm going to maintain a personal site for the next decade, what has to be **mine** — not rented from Medium, LinkedIn, or a generic theme?
+
+## The vision
+
+Not "Alex's blog." A **living headquarters**: what I ship, what I learn, and what I curate from the field — all version-controlled and fast.
+
+Orbit has four public lanes:
+
+- **Writes** — evergreen articles (like this one).
+- **Portfolio** — workshop projects and live GitHub repos.
+- **Workshop** — projects I'm actively building, published from a local scanner.
+- **Signals** — a cached RSS radar across AI, Data, and Delivery (daily refresh, no client-side fetch tax).
+
+## What I optimized for
+
+| Principle | How Orbit implements it |
+| --- | --- |
+| Own the content | MDX + JSON in git, not a CMS silo |
+| Build in public | Studio edits profile/projects; site redeploys |
+| Evergreen > hot takes | Writes are the hero; Signals are secondary |
+| Document, don't perform | Posts start from "what did I learn?" |
+| Fast & boring ops | Static-first Next.js, on-disk news cache |
+
+## The Studio bet
+
+There's a password-gated `/studio` for profile and project publishing. Controversial for a personal site? Maybe. But it lets me **iterate in production** without opening a database — JSON files on disk, HMAC session cookies, revalidate on save.
+
+The project scanner only runs on my machine (it reads Cursor projects). That's fine: I curate locally, seed to the server. The public site stays honest about what's actually shipping.
+
+## What I'd do differently
+
+- Ship **Writes** earlier — the portfolio shell looked good before I had words to put in it.
+- Deploy later — hosting a beautiful empty site teaches nobody anything.
+
+## Takeaway
+
+Templates get you online in an afternoon. A headquarters takes longer because you're designing **a system for your future self**. Start with one question per page, one discipline per section, and permission to be unfinished in public.

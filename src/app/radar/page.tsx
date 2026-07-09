@@ -10,14 +10,14 @@ import { relativeTime } from "@/lib/utils";
 import type { NewsCategory } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Radar",
+  title: "Signals",
   description:
-    "An auto-updating radar of the latest in AI, Data, and Delivery — aggregated from curated RSS feeds.",
+    "A curated feed of the latest across AI, Data, and Delivery — aggregated from RSS and served from cache.",
 };
 
 export const revalidate = 1800;
 
-const STALE_AFTER_MS = 12 * 60 * 60 * 1000;
+const STALE_AFTER_MS = 36 * 60 * 60 * 1000;
 
 export default function RadarPage() {
   const cache = readNewsCache();

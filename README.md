@@ -3,10 +3,13 @@
 A production-ready personal website with a cyber/space aesthetic, built as a single
 full-stack Next.js app:
 
-- **Hub** — striking hero, core competencies, expertise summary, and quick links.
-- **Portfolio** — a visual, filterable bank of case studies authored in MDX.
-- **Radar** — an auto-updating feed of the latest in AI, Data & Delivery, aggregated
-  from curated RSS sources on a schedule and served from a local cache for instant loads.
+- **Hub** — hero, latest writes, competencies, and case study teasers.
+- **Writes** — evergreen articles you own (MDX, build in public).
+- **Portfolio** — case studies, workshop projects, and live GitHub repos.
+- **About** — CV, experience, education, and skills.
+- **Signals** — curated external RSS feed (AI, Data, Delivery), cached for speed.
+
+> **Updating content?** See **[CONTENT.md](./CONTENT.md)** — full guide for articles, portfolio, CV, Studio, and publishing.
 
 ## Tech stack
 
@@ -95,13 +98,13 @@ this cache — no external network calls on page load.
 
 ```bash
 npm run news:fetch   # one-shot
-npm run news:watch   # runs now, then every 6 hours (node-cron)
+npm run news:watch   # runs now, then daily (node-cron)
 ```
 
 ### Scheduling in production
 
 - **Vercel:** `vercel.json` already registers a Cron that hits `/api/cron/news` every
-  6 hours. Set `CRON_SECRET` in your project env; the endpoint authorizes the
+  daily at 06:00 UTC. Set `CRON_SECRET` in your project env; the endpoint authorizes the
   `Authorization: Bearer <CRON_SECRET>` header Vercel sends.
 - **Self-hosted:** run `npm run news:watch` as a long-lived process (pm2/systemd), or
   use the OS scheduler to call `npm run news:fetch`.
@@ -121,7 +124,7 @@ curl -X POST "http://localhost:3000/api/cron/news?secret=YOUR_SECRET"
 | `npm run start`      | Serve the production build                     |
 | `npm run lint`       | Lint with ESLint                              |
 | `npm run news:fetch` | Fetch feeds once and write the cache          |
-| `npm run news:watch` | Fetch now, then every 6 hours                 |
+| `npm run news:watch` | Fetch now, then daily                         |
 
 ## Customizing
 

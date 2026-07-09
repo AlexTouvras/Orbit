@@ -1,12 +1,11 @@
 [Unit]
-Description=Refresh Orbit news radar every 6 hours
+Description=Refresh Orbit news radar daily
 
 [Timer]
-# Run every 6 hours. Persistent=true means a missed run (e.g. VM was off or
-# rebooting) fires as soon as the timer is active again.
-OnCalendar=*-*-* 00/6:00:00
+# Run once per day at 06:00 UTC. Persistent=true means a missed run (e.g. VM was
+# off or rebooting) fires as soon as the timer is active again.
+OnCalendar=*-*-* 06:00:00
 Persistent=true
-# Stagger slightly so it never collides with boot-time activity.
 RandomizedDelaySec=120
 Unit=orbit-news.service
 
