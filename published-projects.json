@@ -1,22 +1,6 @@
 [
   {
     "id": "cyber-portfolio-platform",
-    "name": "cyber-portfolio-platform",
-    "description": "Personal website, portfolio bank, and automated news radar with a cyber/space aesthetic.",
-    "status": "wip",
-    "tags": [
-      "Next.js",
-      "React",
-      "TypeScript"
-    ],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": true,
-    "sourcePath": "/var/task",
-    "order": 0
-  },
-  {
-    "id": "cyber-portfolio-platform",
     "name": "Orbit — Portfolio & Radar",
     "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
     "status": "wip",
@@ -29,7 +13,7 @@
     "liveUrl": "",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\website",
-    "order": 1
+    "order": 0
   },
   {
     "id": "sunplot-garden",
@@ -44,6 +28,6 @@
     "liveUrl": "",
     "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\garden_app",
-    "order": 2
+    "order": 1
   }
 ]
