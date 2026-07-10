@@ -1,0 +1,36 @@
+name: Refresh news cache
+
+on:
+  schedule:
+    # 06:00 UTC daily — matches the original Oracle timer.
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+      - run: npm run news:fetch
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/news-cache.json
+          if git diff --staged --quiet; then
+            echo "News cache unchanged."
+            exit 0
+          fi
+          git commit -m "chore: refresh news cache [skip ci]"
+          git push
