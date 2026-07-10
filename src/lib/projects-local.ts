@@ -298,7 +298,7 @@ export async function writePublishedProjects(
   list: PublishedProject[],
 ): Promise<{ viaGithub: boolean }> {
   return persistDataJson(
-    "published-projects.json",
+    "data/published-projects.json",
     list,
     "chore(studio): update published projects",
   );

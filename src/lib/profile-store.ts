@@ -93,7 +93,7 @@ export async function writeProfileOverrides(
   profile: EditableProfile,
 ): Promise<{ viaGithub: boolean }> {
   return persistDataJson(
-    "profile.json",
+    "data/profile.json",
     profile,
     "chore(studio): update profile",
   );

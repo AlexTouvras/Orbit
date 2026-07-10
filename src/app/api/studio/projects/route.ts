@@ -74,10 +74,7 @@ export async function POST(req: NextRequest) {
     result = await writePublishedProjects(projects);
   } catch (err) {
     console.error("[studio] failed to write projects:", err);
-    const message =
-      err instanceof Error && err.message.includes("GITHUB_TOKEN")
-        ? "Studio save needs GITHUB_TOKEN on the server (see DEPLOY-VERCEL.md)."
-        : "Could not save.";
+    const message = err instanceof Error ? err.message : "Could not save.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 

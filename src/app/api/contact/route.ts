@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         {
           error:
-            "Contact form is not configured yet (set RESEND_API_KEY on the server).",
+            "Contact form is not configured yet (set WEB3FORMS_ACCESS_KEY or RESEND_API_KEY on Vercel).",
         },
         { status: 503 },
       );
