@@ -41,7 +41,6 @@ export default function HomePage() {
         pillars={profile.pillars}
         tagline={profile.tagline}
         availability={profile.availability}
-        email={profile.email}
         stats={stats}
         socials={profile.socials}
         resumeUrl={resumeUrl}

@@ -36,7 +36,6 @@ interface HubHeroProps {
   pillars: string;
   tagline: string;
   availability: string;
-  email: string;
   stats: { label: string; value: string }[];
   socials: { label: string; href: string }[];
   resumeUrl?: string;
@@ -47,7 +46,6 @@ export function HubHero({
   pillars,
   tagline,
   availability,
-  email,
   stats,
   socials,
   resumeUrl,
@@ -64,15 +62,15 @@ export function HubHero({
       </div>
 
       <HeroItem delay={0} reduced={reduced}>
-        <a
-          href={`mailto:${email}?subject=${encodeURIComponent("Hello — from Orbit")}`}
+        <Link
+          href="/contact"
           className="focus-ring group mb-8 inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border border-neon-cyan/35 bg-neon-cyan/10 px-4 py-2 text-xs font-medium tracking-wide text-neon-cyan transition-[transform,background-color,border-color,box-shadow] active:scale-[0.98] hover:border-neon-cyan/55 hover:bg-neon-cyan/15 motion-safe:hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.45)]"
-          aria-label={`${availability} — email ${email}`}
+          aria-label={`${availability} — go to contact`}
         >
           <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-neon-cyan" />
           <span>{availability}</span>
           <Mail className="h-3.5 w-3.5 shrink-0 opacity-60 transition-opacity group-hover:opacity-100" aria-hidden />
-        </a>
+        </Link>
       </HeroItem>
 
       <HeroItem delay={0.06} reduced={reduced}>

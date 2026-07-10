@@ -57,6 +57,8 @@ export const profile = {
     "I work across technology delivery, data, and credit risk — leading IT application operations on Azure while building multi-agent AI workflows, automation pipelines, and analytics teams trust. This site is my public headquarters: articles on what I learn, real projects from the workshop, and a curated signal feed across AI, Data, and Delivery.",
   resumeUrl: "/resume.pdf",
   email: "a.touvras@gmail.com",
+  contactBlurb:
+    "Always down to talk delivery, data systems, AI automation, and what's broken in your stack.",
 } as const;
 
 export const competencies: Competency[] = [
