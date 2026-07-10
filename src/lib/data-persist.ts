@@ -27,6 +27,12 @@ export async function persistDataJson(
     return { viaGithub: true };
   }
 
+  if (process.env.VERCEL) {
+    throw new Error(
+      "GITHUB_TOKEN is not configured on Vercel. Studio cannot save without it.",
+    );
+  }
+
   writeLocalFile(relativePath, content);
   return { viaGithub: false };
 }

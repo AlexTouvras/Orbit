@@ -9,20 +9,35 @@ export interface ContactPayload {
   message: string;
 }
 
+function normalizeSecret(value: string | undefined): string {
+  if (!value) return "";
+  return value
+    .trim()
+    .replace(/^["']|["']$/g, "")
+    .replace(/\s+/g, "");
+}
+
 export async function sendContactEmail(
   payload: ContactPayload,
 ): Promise<
   | { ok: true }
-  | { ok: false; reason: "not_configured" | "send_failed"; detail?: string }
+  | { ok: false; reason: "not_configured" | "invalid_key" | "send_failed"; detail?: string }
 > {
-  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const apiKey = normalizeSecret(process.env.RESEND_API_KEY);
   if (!apiKey) {
     return { ok: false, reason: "not_configured" };
   }
+  if (!apiKey.startsWith("re_")) {
+    return {
+      ok: false,
+      reason: "invalid_key",
+      detail:
+        "RESEND_API_KEY on Vercel should start with re_ — create a new key at resend.com/api-keys.",
+    };
+  }
 
-  const to = process.env.CONTACT_TO_EMAIL?.trim() || getEditableProfile().email;
-  const from =
-    process.env.CONTACT_FROM_EMAIL?.trim() || "onboarding@resend.dev";
+  const to = normalizeSecret(process.env.CONTACT_TO_EMAIL) || getEditableProfile().email;
+  const from = normalizeSecret(process.env.CONTACT_FROM_EMAIL) || "onboarding@resend.dev";
 
   const companyLine = payload.company ? `\nCompany: ${payload.company}` : "";
 

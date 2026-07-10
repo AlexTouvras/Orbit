@@ -90,6 +90,12 @@ export async function POST(req: NextRequest) {
         { status: 503 },
       );
     }
+    if (result.reason === "invalid_key") {
+      return NextResponse.json(
+        { error: result.detail ?? "RESEND_API_KEY is invalid on Vercel." },
+        { status: 503 },
+      );
+    }
     return NextResponse.json(
       {
         error:

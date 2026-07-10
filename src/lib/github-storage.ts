@@ -8,8 +8,13 @@ interface RepoConfig {
   repo: string;
 }
 
+function normalizeToken(value: string | undefined): string {
+  if (!value) return "";
+  return value.trim().replace(/^["']|["']$/g, "");
+}
+
 function getRepoConfig(): RepoConfig | null {
-  const token = process.env.GITHUB_TOKEN?.trim();
+  const token = normalizeToken(process.env.GITHUB_TOKEN);
   if (!token) return null;
 
   const slug = process.env.GITHUB_REPO?.trim() || DEFAULT_REPO;
@@ -88,7 +93,15 @@ export async function writeRepoFile(
   });
 
   if (!res.ok) {
-    console.error(`[github] write ${filePath}:`, await res.text());
-    throw new Error("GitHub could not save the file.");
+    const errText = await res.text();
+    console.error(`[github] write ${filePath}:`, errText);
+    let detail = "GitHub could not save the file.";
+    try {
+      const parsed = JSON.parse(errText) as { message?: string };
+      if (parsed.message) detail = parsed.message;
+    } catch {
+      /* keep default */
+    }
+    throw new Error(detail);
   }
 }
