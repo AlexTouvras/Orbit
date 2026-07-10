@@ -1,6 +1,7 @@
 import "server-only";
 import fs from "node:fs";
 import path from "node:path";
+import { persistDataJson } from "@/lib/data-persist";
 import {
   profile as defaults,
   socials as defaultSocials,
@@ -87,8 +88,13 @@ export function getResolvedSocials(): ResolvedSocial[] {
   }));
 }
 
-/** Persist Studio edits to data/profile.json. */
-export function writeProfileOverrides(profile: EditableProfile): void {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-  fs.writeFileSync(PROFILE_PATH, JSON.stringify(profile, null, 2), "utf8");
+/** Persist Studio edits to data/profile.json (or GitHub on Vercel). */
+export async function writeProfileOverrides(
+  profile: EditableProfile,
+): Promise<{ viaGithub: boolean }> {
+  return persistDataJson(
+    "profile.json",
+    profile,
+    "chore(studio): update profile",
+  );
 }

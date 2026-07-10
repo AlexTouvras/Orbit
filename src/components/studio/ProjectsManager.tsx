@@ -140,6 +140,8 @@ export function ProjectsManager({
         body: JSON.stringify({ projects }),
       });
       if (res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.message ?? null);
         setSaveState("saved");
         router.refresh();
         return;

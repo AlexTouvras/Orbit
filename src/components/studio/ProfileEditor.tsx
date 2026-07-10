@@ -70,6 +70,8 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
         body: JSON.stringify(form),
       });
       if (res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.message ?? null);
         setStatus("saved");
         router.refresh();
         return;

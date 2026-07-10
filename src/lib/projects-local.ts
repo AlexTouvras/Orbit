@@ -1,6 +1,7 @@
 import "server-only";
 import fs from "node:fs";
 import path from "node:path";
+import { persistDataJson } from "@/lib/data-persist";
 import type {
   ProjectActivity,
   ProjectStatus,
@@ -293,7 +294,12 @@ export function getFeaturedPublicProjects(): PublicProject[] {
 }
 
 /** Persist the published project set. */
-export function writePublishedProjects(list: PublishedProject[]): void {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-  fs.writeFileSync(PUBLISHED_PATH, JSON.stringify(list, null, 2), "utf8");
+export async function writePublishedProjects(
+  list: PublishedProject[],
+): Promise<{ viaGithub: boolean }> {
+  return persistDataJson(
+    "published-projects.json",
+    list,
+    "chore(studio): update published projects",
+  );
 }

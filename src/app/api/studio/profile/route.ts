@@ -79,15 +79,26 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  let result: { viaGithub: boolean };
   try {
-    writeProfileOverrides(clean);
+    result = await writeProfileOverrides(clean);
   } catch (err) {
     console.error("[studio] failed to write profile:", err);
-    return NextResponse.json({ error: "Could not save." }, { status: 500 });
+    const message =
+      err instanceof Error && err.message.includes("GITHUB_TOKEN")
+        ? "Studio save needs GITHUB_TOKEN on the server (see DEPLOY-VERCEL.md)."
+        : "Could not save.";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 
   // Refresh every route that renders profile data.
   revalidatePath("/", "layout");
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({
+    ok: true,
+    deploying: result.viaGithub,
+    message: result.viaGithub
+      ? "Saved to GitHub — the live site updates in ~2 minutes."
+      : "Saved.",
+  });
 }

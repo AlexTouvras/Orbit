@@ -27,11 +27,11 @@ yarn-error.log*
 # generated news cache (refreshed by .github/workflows/news-refresh.yml)
 # /data/news-cache.json is tracked so Vercel builds include fresh signals.
 
-# Studio-saved profile overrides
-/data/profile.json
+# Studio-saved profile (tracked for Vercel; updated via Studio → GitHub)
+# /data/profile.json
 
 # Studio-saved published projects
-/data/published-projects.json
+# /data/published-projects.json
 
 # typescript
 *.tsbuildinfo

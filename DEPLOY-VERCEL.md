@@ -15,11 +15,13 @@ Push to `main` → Vercel builds and deploys automatically.
 | `STUDIO_PASSWORD` | strong password |
 | `STUDIO_SESSION_SECRET` | `openssl rand -hex 32` |
 | `CRON_SECRET` | `openssl rand -hex 32` |
-| `RESEND_API_KEY` | optional — contact form |
-| `CONTACT_TO_EMAIL` | your email |
-| `GITHUB_TOKEN` | optional — portfolio rate limits |
+| `RESEND_API_KEY` | contact form — from [resend.com](https://resend.com) |
+| `CONTACT_TO_EMAIL` | must match your **Resend account email** until you verify a domain |
+| `CONTACT_FROM_EMAIL` | `onboarding@resend.dev` (Resend test sender) |
+| `GITHUB_TOKEN` | **required for Studio save** — fine-grained PAT, repo **Contents: Read and write** |
+| `GITHUB_REPO` | `AlexTouvras/Orbit` (optional; default) |
 
-5. Click **Deploy**. First build runs `npm run news:fetch` then `npm run build`.
+5. Click **Deploy**. Build runs `npm run build` (news cache is committed in `data/news-cache.json`).
 
 6. After deploy: set `NEXT_PUBLIC_SITE_URL` to your real Vercel URL → **Redeploy**.
 
@@ -54,16 +56,40 @@ Vercel without extra storage — GitHub Action is the primary path).
 npx vercel env add RESEND_API_KEY production --value "re_YOUR_KEY" --yes
 ```
 
-4. **Redeploy** (Deployments → … → Redeploy).
+4. Set on Vercel:
 
-For testing, `CONTACT_FROM_EMAIL` can stay `Orbit Contact <onboarding@resend.dev>`
-— Resend only delivers to your verified email until you add a custom domain.
+```bash
+npx vercel env add RESEND_API_KEY production --value "re_YOUR_KEY" --yes
+npx vercel env add CONTACT_TO_EMAIL production --value "YOUR_RESEND_SIGNUP_EMAIL" --yes
+npx vercel env add CONTACT_FROM_EMAIL production --value "onboarding@resend.dev" --yes
+```
+
+5. **Redeploy**.
+
+**Important:** On Resend's free/test mode, email is only delivered to the address
+you used to sign up for Resend. `CONTACT_TO_EMAIL` must be that address (not
+necessarily the address shown on your site).
 
 ## Studio on Vercel
 
-Studio **edits files on disk** — that does not persist on Vercel serverless.
+Vercel has **no writable disk**. Studio saves by **committing to GitHub**:
 
-**Workflow:** edit locally (`npm run dev` → `/studio`) → commit `data/*.seed.json` or MDX → push.
+1. GitHub → **Settings → Developer settings → Fine-grained tokens** → **Generate**.
+2. Repository access: **Only `Orbit`**.
+3. Permissions → **Contents: Read and write**.
+4. Copy the token → add to Vercel:
+
+```bash
+npx vercel env add GITHUB_TOKEN production --value "github_pat_..." --yes
+```
+
+5. **Redeploy**.
+
+When you click **Save** in Studio, changes commit to `data/profile.json` (or
+`published-projects.json`) on `main`. Vercel redeploys in ~2 minutes and the
+live site updates.
+
+**Local dev** still writes to `data/` on disk (no `GITHUB_TOKEN` needed locally).
 
 ## CLI deploy (optional)
 

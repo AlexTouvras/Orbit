@@ -91,7 +91,11 @@ export async function POST(req: NextRequest) {
       );
     }
     return NextResponse.json(
-      { error: "Could not send your message. Try emailing directly." },
+      {
+        error:
+          result.detail ??
+          "Could not send your message. On Resend's free test mode, mail only goes to your Resend account email — set CONTACT_TO_EMAIL to that address.",
+      },
       { status: 502 },
     );
   }
