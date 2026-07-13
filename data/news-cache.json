@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-07-12T08:09:55.242Z",
+  "generatedAt": "2026-07-13T09:17:41.962Z",
   "count": 50,
   "items": [
+    {
+      "id": "fad58c67303d",
+      "title": "Data Engineering Weekly #278",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-278",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-07-13T02:44:42.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
     {
       "id": "ec95d625f397",
       "title": "Beyond Redaction: Anatomy of a Privacy-Safe Data Platform",
@@ -354,15 +363,6 @@
       "contentSnippet": "How data leaders should design the boundary between platforms and dependent teams."
     },
     {
-      "id": "362ced30b67d",
-      "title": "Data Engineering Weekly #263",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-263",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-03-30T02:18:13.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
       "id": "7a4a3e9effb1",
       "title": "DIY AI: How to Build a Linear Regression Model from Scratch",
       "link": "https://medium.com/data-science/diy-ai-how-to-build-a-linear-regression-model-from-scratch-7b4cc0efd235?source=rss----7f60cf5620c9---4",
@@ -414,7 +414,7 @@
       "source": "Towards Data Science",
       "category": "Data",
       "pubDate": "2025-02-03T14:02:06.000Z",
-      "contentSnippet": "Advice from a Lead Data Scientist with 2 promotions in under 2 years Continue reading on TDS Archive »"
+      "contentSnippet": "Advice from a Lead Data Scientist with 2 promotions in under 2 years. Continue reading on TDS Archive »"
     },
     {
       "id": "e7437790a1f7",
