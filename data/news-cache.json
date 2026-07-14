@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T09:17:41.962Z",
+  "generatedAt": "2026-07-14T07:55:27.082Z",
   "count": 50,
   "items": [
     {
@@ -30,6 +30,15 @@
       "contentSnippet": "How Deutsche Telekom is becoming an AI-native telco with OpenAI-transforming customer service, employee workflows, network operations, and the future of voice."
     },
     {
+      "id": "2c539797fe26",
+      "title": "Getting started with ChatGPT",
+      "link": "https://openai.com/academy/getting-started",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-10T00:00:00.000Z",
+      "contentSnippet": "Learn how to use ChatGPT, start your first conversation, and discover simple ways to write, brainstorm, and solve problems with AI."
+    },
+    {
       "id": "e799563c0958",
       "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
       "link": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
@@ -37,6 +46,15 @@
       "category": "AI",
       "pubDate": "2026-07-09T13:00:00.000Z",
       "contentSnippet": "Learn how GPT-5.6 powers Microsoft 365 Copilot with stronger AI capabilities across Word, Excel, PowerPoint, Chat, and Cowork for faster, higher-quality work."
+    },
+    {
+      "id": "8fd74bd3f519",
+      "title": "GPT-5.5 Bio Bug Bounty",
+      "link": "https://openai.com/index/bio-bug-bounty",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-09T10:00:00.000Z",
+      "contentSnippet": "Details about the OpenAI Bio Bounty program"
     },
     {
       "id": "54ee76ae9206",
@@ -55,15 +73,6 @@
       "category": "AI",
       "pubDate": "2026-07-09T10:00:00.000Z",
       "contentSnippet": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work."
-    },
-    {
-      "id": "8fd74bd3f519",
-      "title": "GPT-5.5 Bio Bug Bounty",
-      "link": "https://openai.com/index/bio-bug-bounty",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T10:00:00.000Z",
-      "contentSnippet": "Details about the OpenAI Bio Bounty program"
     },
     {
       "id": "41b85c9cdb7a",
@@ -217,15 +226,6 @@
       "category": "AI",
       "pubDate": "2026-06-25T02:00:00.000Z",
       "contentSnippet": "A new OpenAI research paper shows how AI agents are transforming work, enabling longer, more complex tasks and expanding productivity across roles."
-    },
-    {
-      "id": "1a015f5dfa42",
-      "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
-      "link": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-06-24T06:00:00.000Z",
-      "contentSnippet": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems."
     },
     {
       "id": "a261589c9ec9",
