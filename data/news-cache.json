@@ -1,7 +1,34 @@
 {
-  "generatedAt": "2026-07-14T07:55:27.082Z",
+  "generatedAt": "2026-07-15T08:00:26.596Z",
   "count": 50,
   "items": [
+    {
+      "id": "92ab1f77dd8c",
+      "title": "How to manage AI investments in the agentic era",
+      "link": "https://openai.com/index/managing-ai-investments-in-agentic-era",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-14T10:00:00.000Z",
+      "contentSnippet": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows."
+    },
+    {
+      "id": "cca00ce68781",
+      "title": "How data science teams use ChatGPT Work",
+      "link": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-14T00:00:00.000Z",
+      "contentSnippet": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs."
+    },
+    {
+      "id": "248b5ff06999",
+      "title": "How sales teams use ChatGPT Work",
+      "link": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-14T00:00:00.000Z",
+      "contentSnippet": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs."
+    },
     {
       "id": "fad58c67303d",
       "title": "Data Engineering Weekly #278",
@@ -48,15 +75,6 @@
       "contentSnippet": "Learn how GPT-5.6 powers Microsoft 365 Copilot with stronger AI capabilities across Word, Excel, PowerPoint, Chat, and Cowork for faster, higher-quality work."
     },
     {
-      "id": "8fd74bd3f519",
-      "title": "GPT-5.5 Bio Bug Bounty",
-      "link": "https://openai.com/index/bio-bug-bounty",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T10:00:00.000Z",
-      "contentSnippet": "Details about the OpenAI Bio Bounty program"
-    },
-    {
       "id": "54ee76ae9206",
       "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
       "link": "https://openai.com/index/gpt-5-6",
@@ -64,6 +82,15 @@
       "category": "AI",
       "pubDate": "2026-07-09T10:00:00.000Z",
       "contentSnippet": "More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work."
+    },
+    {
+      "id": "8fd74bd3f519",
+      "title": "GPT-5.5 Bio Bug Bounty",
+      "link": "https://openai.com/index/bio-bug-bounty",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-09T10:00:00.000Z",
+      "contentSnippet": "Details about the OpenAI Bio Bounty program"
     },
     {
       "id": "5941cef110c0",
@@ -156,13 +183,13 @@
       "contentSnippet": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages."
     },
     {
-      "id": "4c4d91d3ce63",
-      "title": "Core dump epidemiology: fixing an 18-year-old bug",
-      "link": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
+      "id": "200e6c5f82a0",
+      "title": "Inside Genebench-Pro",
+      "link": "https://openai.com/index/genebench-pro/case-studies",
       "source": "OpenAI Blog",
       "category": "AI",
       "pubDate": "2026-06-30T00:00:00.000Z",
-      "contentSnippet": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug."
+      "contentSnippet": ""
     },
     {
       "id": "3c923494434c",
@@ -174,13 +201,13 @@
       "contentSnippet": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets."
     },
     {
-      "id": "200e6c5f82a0",
-      "title": "Inside Genebench-Pro",
-      "link": "https://openai.com/index/genebench-pro/case-studies",
+      "id": "4c4d91d3ce63",
+      "title": "Core dump epidemiology: fixing an 18-year-old bug",
+      "link": "https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug",
       "source": "OpenAI Blog",
       "category": "AI",
       "pubDate": "2026-06-30T00:00:00.000Z",
-      "contentSnippet": ""
+      "contentSnippet": "OpenAI engineers used large-scale core dump analysis to debug rare infrastructure crashes, uncovering both a hardware fault and a long-standing software bug."
     },
     {
       "id": "5b79476b1142",
@@ -199,33 +226,6 @@
       "category": "Data",
       "pubDate": "2026-06-29T03:52:17.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "1ae317c00ced",
-      "title": "HP Inc. launches Frontier strategic partnership with OpenAI",
-      "link": "https://openai.com/index/hp-frontier-partnership",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-06-28T17:00:00.000Z",
-      "contentSnippet": "HP Inc. scales its OpenAI Frontier partnership to deploy AI across customer experiences, software development, and enterprise operations."
-    },
-    {
-      "id": "adbd50c1b1db",
-      "title": "Previewing GPT-5.6 Sol: a next-generation model",
-      "link": "https://openai.com/index/previewing-gpt-5-6-sol",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-06-26T10:00:00.000Z",
-      "contentSnippet": "OpenAI previews GPT-5.6 Sol, a next-generation model with stronger capabilities in coding, science, and cybersecurity, paired with its most advanced safety stack."
-    },
-    {
-      "id": "2b6976f96bb5",
-      "title": "How agents are transforming work",
-      "link": "https://openai.com/index/how-agents-are-transforming-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-06-25T02:00:00.000Z",
-      "contentSnippet": "A new OpenAI research paper shows how AI agents are transforming work, enabling longer, more complex tasks and expanding productivity across roles."
     },
     {
       "id": "a261589c9ec9",
