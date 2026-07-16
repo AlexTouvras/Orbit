@@ -6,6 +6,7 @@ import { ArrowRight, Download, Mail, PenLine } from "lucide-react";
 import type { ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
+import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -13,13 +14,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 function HeroItem({
   children,
   delay,
-  reduced,
+  animate,
 }: {
   children: ReactNode;
   delay: number;
-  reduced: boolean;
+  animate: boolean;
 }) {
-  if (reduced) return <>{children}</>;
+  if (!animate) return <>{children}</>;
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -36,7 +37,6 @@ interface HubHeroProps {
   pillars: string;
   tagline: string;
   availability: string;
-  stats: { label: string; value: string }[];
   socials: { label: string; href: string }[];
   resumeUrl?: string;
 }
@@ -46,11 +46,12 @@ export function HubHero({
   pillars,
   tagline,
   availability,
-  stats,
   socials,
   resumeUrl,
 }: HubHeroProps) {
+  const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
+  const animate = hydrated && !reduced;
 
   return (
     <section className="relative overflow-hidden pb-4">
@@ -61,7 +62,7 @@ export function HubHero({
         <OrbitSignature variant="cyan" />
       </div>
 
-      <HeroItem delay={0} reduced={reduced}>
+      <HeroItem delay={0} animate={animate}>
         <Link
           href="/contact"
           className="focus-ring group mb-8 inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border border-neon-cyan/35 bg-neon-cyan/10 px-4 py-2 text-xs font-medium tracking-wide text-neon-cyan transition-[transform,background-color,border-color,box-shadow] active:scale-[0.98] hover:border-neon-cyan/55 hover:bg-neon-cyan/15 motion-safe:hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.45)]"
@@ -73,47 +74,39 @@ export function HubHero({
         </Link>
       </HeroItem>
 
-      <HeroItem delay={0.06} reduced={reduced}>
+      <HeroItem delay={0.06} animate={animate}>
         <h1 className="font-display max-w-3xl text-display font-bold tracking-tight text-white">
           {name}
         </h1>
       </HeroItem>
 
-      <HeroItem delay={0.12} reduced={reduced}>
+      <HeroItem delay={0.12} animate={animate}>
         <p className="mt-4 max-w-2xl font-display text-xl font-medium tracking-tight text-slate-200 sm:text-2xl">
           {pillars}
         </p>
       </HeroItem>
 
-      <HeroItem delay={0.18} reduced={reduced}>
+      <HeroItem delay={0.18} animate={animate}>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
           {tagline}
         </p>
       </HeroItem>
 
-      <HeroItem delay={0.24} reduced={reduced}>
-        <dl className="mt-8 grid max-w-xl grid-cols-3 gap-4 border-y border-white/8 py-5 sm:gap-6">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500">
-                {stat.label}
-              </dt>
-              <dd className="mt-1 font-mono text-lg font-semibold tabular-nums text-neon-cyan sm:text-xl">
-                {stat.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </HeroItem>
-
-      <HeroItem delay={0.3} reduced={reduced}>
+      <HeroItem delay={0.24} animate={animate}>
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
-            href="/writes"
+            href="/contact"
             className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl bg-neon-cyan px-5 py-3 text-sm font-semibold text-void shadow-glow transition-[transform,box-shadow] active:scale-[0.98] motion-safe:hover:shadow-[0_0_32px_-4px_rgba(34,211,238,0.55)]"
           >
-            Read latest
+            Get in touch
             <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
+          </Link>
+          <Link
+            href="/writes"
+            className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition-colors hover:text-white"
+          >
+            Read latest
+            <ArrowRight className="h-3.5 w-3.5 opacity-60 transition-transform motion-safe:group-hover:translate-x-0.5" />
           </Link>
           <Link
             href="/about"
@@ -135,27 +128,27 @@ export function HubHero({
             href="/portfolio"
             className="focus-ring group hidden min-h-11 items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-400 transition-colors hover:text-white sm:inline-flex"
           >
-            <PenLine className="h-4 w-4 text-neon-violet/80" />
+            <PenLine className="h-4 w-4 text-neon-violet/80" aria-hidden />
             Portfolio
           </Link>
         </div>
       </HeroItem>
 
-      <HeroItem delay={0.36} reduced={reduced}>
+      <HeroItem delay={0.3} animate={animate}>
         <div className="mt-8 flex items-center gap-1 sm:hidden">
           {socials.map((social) => {
             const Icon = socialIconFor(social.label);
             return (
-            <Link
-              key={social.label}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={social.label}
-              className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-500 transition-colors hover:text-neon-cyan"
-            >
-              <Icon className="h-5 w-5" />
-            </Link>
+              <Link
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-500 transition-colors hover:text-neon-cyan"
+              >
+                <Icon className="h-5 w-5" />
+              </Link>
             );
           })}
         </div>

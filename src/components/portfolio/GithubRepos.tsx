@@ -8,7 +8,11 @@ import { RepoCard } from "./RepoCard";
 
 export async function GithubRepos() {
   const profile = getEditableProfile();
-  const repos = await getGithubRepos(profile.githubUsername);
+  const repos = await getGithubRepos(
+    profile.githubUsername,
+    6,
+    profile.githubRepoAllowlist,
+  );
   if (repos.length === 0) return null;
 
   const profileUrl = `https://github.com/${profile.githubUsername}`;

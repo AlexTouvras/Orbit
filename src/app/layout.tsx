@@ -37,7 +37,11 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       url: siteUrl,
     },
-    twitter: { card: "summary_large_image" },
+    twitter: {
+      card: "summary_large_image",
+      title: `${profile.name} — ${profile.role}`,
+      description: profile.tagline,
+    },
   };
 }
 
@@ -50,9 +54,18 @@ export default function RootLayout({
       className={`${syne.variable} ${ibmPlex.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-sans antialiased">
+        <a
+          href="#main-content"
+          className="focus-ring sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-neon-cyan focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-void"
+        >
+          Skip to content
+        </a>
         <ParticleBackground />
         <Header />
-        <main className="relative z-10 mx-auto min-h-[70vh] w-full max-w-5xl px-4 pt-28 pb-12 sm:pt-32">
+        <main
+          id="main-content"
+          className="relative z-10 mx-auto min-h-[70vh] w-full max-w-5xl px-4 pt-28 pb-12 sm:pt-32"
+        >
           {children}
         </main>
         <Footer />

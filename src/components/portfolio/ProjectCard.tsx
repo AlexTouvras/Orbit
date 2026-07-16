@@ -27,7 +27,7 @@ export function ProjectCard({ project }: { project: Project }) {
             <span className="font-mono text-xs text-slate-400">
               {project.year}
             </span>
-            <ArrowUpRight className="h-5 w-5 text-slate-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-neon-cyan" />
+            <ArrowUpRight className="h-5 w-5 text-slate-500 transition-[transform,color] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-neon-cyan" />
           </div>
 
           <h3 className="mt-3 text-xl font-semibold text-white">

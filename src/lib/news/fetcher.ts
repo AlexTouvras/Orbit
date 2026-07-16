@@ -2,7 +2,7 @@ import crypto from "node:crypto";
 import Parser from "rss-parser";
 import type { NewsCache, NewsItem } from "@/lib/types";
 import { FEED_SOURCES, type FeedSource } from "./sources";
-import { writeNewsCache } from "./cache";
+import { readNewsCache, writeNewsCache } from "./cache";
 
 const parser = new Parser({
   timeout: 15000,
@@ -85,9 +85,29 @@ export async function fetchAllNews(): Promise<NewsCache> {
   };
 }
 
-/** Fetch and persist to the on-disk cache. Returns the fresh cache. */
-export async function refreshNewsCache(): Promise<NewsCache> {
+export function sameNewsItems(a: NewsCache, b: NewsCache): boolean {
+  if (a.count !== b.count || a.items.length !== b.items.length) return false;
+  for (let i = 0; i < a.items.length; i++) {
+    if (a.items[i].id !== b.items[i].id) return false;
+    if (a.items[i].title !== b.items[i].title) return false;
+  }
+  return true;
+}
+
+export type RefreshNewsResult = NewsCache & {
+  viaGithub: boolean;
+  unchanged: boolean;
+};
+
+/** Fetch and write the on-disk cache (local / GitHub Actions). */
+export async function refreshNewsCache(): Promise<RefreshNewsResult> {
   const cache = await fetchAllNews();
+  const previous = readNewsCache();
+
+  if (previous.generatedAt && sameNewsItems(previous, cache)) {
+    return { ...previous, viaGithub: false, unchanged: true };
+  }
+
   writeNewsCache(cache);
-  return cache;
+  return { ...cache, viaGithub: false, unchanged: false };
 }

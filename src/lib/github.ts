@@ -40,6 +40,7 @@ const REVALIDATE_SECONDS = 3600; // cache repo data for an hour
 export async function getGithubRepos(
   username: string,
   limit = 6,
+  allowlist?: string[],
 ): Promise<GithubRepo[]> {
   if (!username || username === "yourhandle") return [];
 
@@ -67,10 +68,16 @@ export async function getGithubRepos(
     const raw = (await res.json()) as RawRepo[];
     if (!Array.isArray(raw)) return [];
 
+    const allowed =
+      allowlist && allowlist.length > 0
+        ? new Set(allowlist.map((n) => n.trim().toLowerCase()).filter(Boolean))
+        : null;
+
     return raw
       .filter((r) => !r.fork && !r.archived)
+      .filter((r) => (allowed ? allowed.has(r.name.toLowerCase()) : true))
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
-      .slice(0, limit)
+      .slice(0, allowed ? Math.max(limit, allowed.size) : limit)
       .map((r) => ({
         id: r.id,
         name: r.name,

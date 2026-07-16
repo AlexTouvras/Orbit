@@ -74,15 +74,8 @@ export default function RadarPage() {
                 The radar is empty
               </h3>
               <p className="mt-2 max-w-md text-sm text-slate-300">
-                No news has been fetched yet. Run{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-neon-cyan">
-                  npm run news:fetch
-                </code>{" "}
-                to populate the cache, or trigger{" "}
-                <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-neon-cyan">
-                  /api/cron/news
-                </code>
-                .
+                Signals will appear here when the feed refreshes. Check back
+                soon for curated updates across AI, Data, and Delivery.
               </p>
             </GlassCard>
           )}

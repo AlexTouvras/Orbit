@@ -25,7 +25,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="text-slate-400 transition-colors hover:text-neon-cyan"
+              className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-400 transition-colors hover:text-neon-cyan"
             >
               <social.icon className="h-5 w-5" />
             </Link>

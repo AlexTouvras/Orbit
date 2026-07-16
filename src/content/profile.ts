@@ -50,8 +50,7 @@ export const profile = {
   tagline:
     "A living record of what I build, learn, and ship — from credit risk and delivery leadership to agentic AI and automation.",
   pillars: "Delivery · Data · AI automation",
-  availability:
-    "Open to delivery in Data analytics & AI work",
+  availability: "Open to Data & AI delivery roles",
   yearsExperience: "7+",
   summary:
     "I work across technology delivery, data, and credit risk — leading IT application operations on Azure while building multi-agent AI workflows, automation pipelines, and analytics teams trust. This site is my public headquarters: articles on what I learn, real projects from the workshop, and a curated signal feed across AI, Data, and Delivery.",
@@ -59,6 +58,8 @@ export const profile = {
   email: "a.touvras@gmail.com",
   contactBlurb:
     "Always down to talk delivery, data systems, AI automation, and what's broken in your stack.",
+  /** Public repos shown on Portfolio. Empty = show newest non-fork repos (legacy). */
+  githubRepoAllowlist: ["powerbi-portfolio"],
 } as const;
 
 export const competencies: Competency[] = [

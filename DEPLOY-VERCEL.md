@@ -31,20 +31,26 @@ Vercel project → **Settings → Domains** → add `yourname.duckdns.org` (CNAM
 
 ## Daily news refresh
 
-Vercel serverless has **no persistent disk**, so a scheduled **GitHub Action**
-(`.github/workflows/news-refresh.yml`) runs daily at **06:00 UTC**:
+Signals read from committed `data/news-cache.json`. They refresh **daily at
+06:00 UTC** via **Vercel Cron** → `GET /api/cron/news`:
 
-1. Fetches RSS feeds (`npm run news:fetch`)
-2. Commits `data/news-cache.json`
-3. Pushes to `main` → Vercel auto-redeploys with fresh Signals
+1. Fetches RSS feeds
+2. Commits `data/news-cache.json` to GitHub (`GITHUB_TOKEN` required)
+3. Vercel redeploys with fresh Signals
 
-**Enable it:** GitHub repo → **Actions** → allow workflows if prompted.
+Requires env: `CRON_SECRET`, `GITHUB_TOKEN`, `GITHUB_REPO` (same as Studio).
 
-**Test now:** Actions → **Refresh news cache** → **Run workflow**.
+**Backup:** GitHub Action `.github/workflows/news-refresh.yml` also runs daily
+(and can be triggered manually: Actions → **Refresh news cache** → **Run
+workflow**).
 
-Optional backup: [cron-job.org](https://cron-job.org) → daily `GET`:
-`https://YOUR_SITE/api/cron/news?secret=YOUR_CRON_SECRET` (does not persist on
-Vercel without extra storage — GitHub Action is the primary path).
+**Test now:**
+
+```bash
+curl -H "Authorization: Bearer $CRON_SECRET" "https://YOUR_SITE/api/cron/news"
+```
+
+Optional external ping: [cron-job.org](https://cron-job.org) with the same URL.
 
 ## Contact form (Resend)
 

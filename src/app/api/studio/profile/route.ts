@@ -17,6 +17,9 @@ const STRING_FIELDS = [
   "role",
   "location",
   "tagline",
+  "pillars",
+  "availability",
+  "yearsExperience",
   "summary",
   "email",
   "resumeUrl",
@@ -33,7 +36,7 @@ function sanitize(input: unknown): EditableProfile | null {
     result[field] = value.trim();
   }
 
-  if (!result.name) return null; // name is the one hard requirement
+  if (!result.name) return null;
 
   if (!Array.isArray(obj.socials)) return null;
   const socials: EditableSocial[] = [];
@@ -46,6 +49,12 @@ function sanitize(input: unknown): EditableProfile | null {
     socials.push({ label, href });
   }
   result.socials = socials;
+
+  if (!Array.isArray(obj.githubRepoAllowlist)) return null;
+  result.githubRepoAllowlist = obj.githubRepoAllowlist
+    .filter((n): n is string => typeof n === "string")
+    .map((n) => n.trim())
+    .filter(Boolean);
 
   return result;
 }
@@ -89,7 +98,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: message }, { status: 500 });
   }
 
-  // Refresh every route that renders profile data.
   revalidatePath("/", "layout");
 
   return NextResponse.json({

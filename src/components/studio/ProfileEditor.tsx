@@ -127,6 +127,23 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
               onChange={(e) => set("githubUsername", e.target.value)}
             />
           </Field>
+          <Field label="GitHub repo allowlist">
+            <textarea
+              className={`${inputClass} min-h-16 resize-y font-mono text-xs`}
+              value={form.githubRepoAllowlist.join("\n")}
+              onChange={(e) =>
+                set(
+                  "githubRepoAllowlist",
+                  e.target.value
+                    .split(/[\n,]+/)
+                    .map((n) => n.trim())
+                    .filter(Boolean),
+                )
+              }
+              placeholder={"one-repo-per-line\npowerbi-portfolio"}
+              spellCheck={false}
+            />
+          </Field>
           <Field label="Email">
             <input
               className={inputClass}
@@ -142,6 +159,10 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
             />
           </Field>
         </div>
+        <p className="mt-3 text-xs text-slate-500">
+          Repo allowlist: only these public repos appear on Portfolio. Leave
+          empty to show the newest non-fork repos.
+        </p>
 
         <div className="mt-4 space-y-4">
           <Field label="Tagline">

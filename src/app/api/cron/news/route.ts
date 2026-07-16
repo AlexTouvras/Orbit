@@ -1,5 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { refreshNewsCache } from "@/lib/news/fetcher";
+import { persistDataJson } from "@/lib/data-persist";
+import { readNewsCache, writeNewsCache } from "@/lib/news/cache";
+import {
+  fetchAllNews,
+  sameNewsItems,
+} from "@/lib/news/fetcher";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -24,16 +29,44 @@ async function handle(req: NextRequest) {
   }
 
   try {
-    const cache = await refreshNewsCache();
+    const cache = await fetchAllNews();
+    const previous = readNewsCache();
+
+    if (previous.generatedAt && sameNewsItems(previous, cache)) {
+      return NextResponse.json({
+        ok: true,
+        generatedAt: previous.generatedAt,
+        count: previous.count,
+        viaGithub: false,
+        unchanged: true,
+      });
+    }
+
+    let viaGithub = false;
+    if (process.env.VERCEL) {
+      // Ephemeral FS — commit so the next deploy ships the new cache.
+      const result = await persistDataJson(
+        "data/news-cache.json",
+        cache,
+        "chore: refresh news cache [skip ci]",
+      );
+      viaGithub = result.viaGithub;
+    } else {
+      writeNewsCache(cache);
+    }
+
     return NextResponse.json({
       ok: true,
       generatedAt: cache.generatedAt,
       count: cache.count,
+      viaGithub,
+      unchanged: false,
     });
   } catch (err) {
     console.error("[cron/news] refresh failed:", err);
+    const message = err instanceof Error ? err.message : "refresh_failed";
     return NextResponse.json(
-      { ok: false, error: "refresh_failed" },
+      { ok: false, error: message },
       { status: 500 },
     );
   }

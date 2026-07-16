@@ -5,7 +5,7 @@ import { getEditableProfile } from "@/lib/profile-store";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { getLatestWrites, getAllWrites } from "@/lib/writes";
+import { getFeaturedWrites } from "@/lib/writes";
 import { WriteCard } from "@/components/writes/WriteCard";
 import { HubHero } from "@/components/hub/HubHero";
 import { cn } from "@/lib/utils";
@@ -24,15 +24,8 @@ const accentIcon: Record<"cyan" | "violet" | "blue", string> = {
 
 export default function HomePage() {
   const profile = getEditableProfile();
-  const latestWrites = getLatestWrites(2);
-  const writeCount = getAllWrites().length;
+  const featuredWrites = getFeaturedWrites(2);
   const resumeUrl = profile.resumeUrl || "/resume.pdf";
-
-  const stats = [
-    { label: "Articles", value: writeCount > 0 ? String(writeCount) : "—" },
-    { label: "Disciplines", value: "3" },
-    { label: "Experience", value: profile.yearsExperience },
-  ];
 
   return (
     <div className="space-y-24 sm:space-y-32">
@@ -41,7 +34,6 @@ export default function HomePage() {
         pillars={profile.pillars}
         tagline={profile.tagline}
         availability={profile.availability}
-        stats={stats}
         socials={profile.socials}
         resumeUrl={resumeUrl}
       />
@@ -75,11 +67,11 @@ export default function HomePage() {
         </Stagger>
       </section>
 
-      {latestWrites.length > 0 && (
+      {featuredWrites.length > 0 && (
         <section>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
-              eyebrow="Latest"
+              eyebrow="Featured"
               title="From the log"
               description="What I'm learning and documenting in public — one question per article."
             />
@@ -92,7 +84,7 @@ export default function HomePage() {
             </Link>
           </div>
           <Stagger className="mt-10 grid gap-6 sm:grid-cols-2">
-            {latestWrites.map((write) => (
+            {featuredWrites.map((write) => (
               <StaggerItem key={write.slug}>
                 <WriteCard write={write} />
               </StaggerItem>

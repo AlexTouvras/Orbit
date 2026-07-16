@@ -13,11 +13,11 @@ export function LocalProjects() {
   return (
     <section className="mt-0">
       <Reveal>
-        <SectionHeading
-          eyebrow="From the workshop"
-          title="Things I'm building"
-          description="A live snapshot of projects from my machine — each with its current status."
-        />
+          <SectionHeading
+            eyebrow="From the workshop"
+            title="Workshop"
+            description="A live snapshot of projects from my machine — each with its current status."
+          />
       </Reveal>
 
       <Stagger className="mt-8 grid gap-6 sm:grid-cols-2">

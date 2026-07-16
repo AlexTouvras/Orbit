@@ -27,6 +27,8 @@ export interface EditableProfile {
   summary: string;
   email: string;
   resumeUrl: string;
+  /** Repo names to show on Portfolio. Empty = unfiltered fetch. */
+  githubRepoAllowlist: string[];
   socials: EditableSocial[];
 }
 
@@ -52,6 +54,7 @@ export function getDefaultProfile(): EditableProfile {
     summary: defaults.summary,
     email: defaults.email,
     resumeUrl: defaults.resumeUrl,
+    githubRepoAllowlist: [...defaults.githubRepoAllowlist],
     socials: defaultSocials.map((s) => ({ label: s.label, href: s.href })),
   };
 }
@@ -77,6 +80,9 @@ export function getEditableProfile(): EditableProfile {
       Array.isArray(overrides.socials) && overrides.socials.length > 0
         ? overrides.socials
         : base.socials,
+    githubRepoAllowlist: Array.isArray(overrides.githubRepoAllowlist)
+      ? overrides.githubRepoAllowlist
+      : base.githubRepoAllowlist,
   };
 }
 

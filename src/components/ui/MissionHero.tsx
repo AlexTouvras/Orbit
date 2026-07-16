@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -9,13 +10,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 function HeroItem({
   children,
   delay,
-  reduced,
+  animate,
 }: {
   children: ReactNode;
   delay: number;
-  reduced: boolean;
+  animate: boolean;
 }) {
-  if (reduced) return <>{children}</>;
+  if (!animate) return <>{children}</>;
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -43,7 +44,7 @@ interface MissionHeroProps {
   meta?: ReactNode;
 }
 
-/** Orchestrated above-the-fold hero — matches Hub motion cadence. */
+/** Orchestrated above-the-fold hero — matches Hub motion cadence. Visible on SSR. */
 export function MissionHero({
   signature,
   badge,
@@ -54,7 +55,9 @@ export function MissionHero({
   actions,
   meta,
 }: MissionHeroProps) {
+  const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
+  const animate = hydrated && !reduced;
 
   return (
     <section className="relative overflow-hidden pb-4">
@@ -65,18 +68,18 @@ export function MissionHero({
         {signature}
       </div>
 
-      <HeroItem delay={0} reduced={reduced}>
+      <HeroItem delay={0} animate={animate}>
         {badge}
       </HeroItem>
 
-      <HeroItem delay={0.06} reduced={reduced}>
+      <HeroItem delay={0.06} animate={animate}>
         <h1 className="font-display max-w-3xl text-display font-bold tracking-tight text-white">
           {title}
         </h1>
       </HeroItem>
 
       {subtitle && (
-        <HeroItem delay={0.12} reduced={reduced}>
+        <HeroItem delay={0.12} animate={animate}>
           <p className="mt-4 max-w-2xl font-display text-xl font-medium tracking-tight text-slate-200 sm:text-2xl">
             {subtitle}
           </p>
@@ -84,7 +87,7 @@ export function MissionHero({
       )}
 
       {description && (
-        <HeroItem delay={0.18} reduced={reduced}>
+        <HeroItem delay={0.18} animate={animate}>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
             {description}
           </p>
@@ -92,7 +95,7 @@ export function MissionHero({
       )}
 
       {stats && stats.length > 0 && (
-        <HeroItem delay={0.24} reduced={reduced}>
+        <HeroItem delay={0.24} animate={animate}>
           <dl className="mt-8 grid max-w-xl grid-cols-3 gap-4 border-y border-white/8 py-5 sm:gap-6">
             {stats.map((stat) => (
               <div key={stat.label}>
@@ -109,7 +112,7 @@ export function MissionHero({
       )}
 
       {(actions || meta) && (
-        <HeroItem delay={0.3} reduced={reduced}>
+        <HeroItem delay={0.3} animate={animate}>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
             {actions && (
               <div className="flex flex-wrap items-center gap-4">{actions}</div>
