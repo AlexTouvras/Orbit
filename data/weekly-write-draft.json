@@ -1,0 +1,168 @@
+{
+  "id": "ww-2026-07-13-33086c86",
+  "status": "pending",
+  "createdAt": "2026-07-16T12:56:55.129Z",
+  "weekOf": "2026-07-13",
+  "slug": "week-of-2026-07-13-fca641",
+  "title": "What I Learned This Week",
+  "summary": "A summary of the projects and signals from this week.",
+  "category": "Learning",
+  "tags": [
+    "signal",
+    "inspiration"
+  ],
+  "mdx": "---\ntitle: \"What I Learned This Week\"\nsummary: \"A summary of the projects and signals from this week.\"\ndate: \"2026-07-13\"\ncategory: \"Learning\"\nfeatured: false\ntags: [\"signal\",\"inspiration\"]\n---\n\n# What I Learned This Week\n\nThis week, I learned about the importance of AI safety through state and federal action. OpenAI outlines a â€œreverse federalismâ€ approach to AI governance, where state laws help build a national framework for safe, democratic AI.\n\nI also came across an article on dynamic formatting by hierarchy level using ISINSCOPE and ISATLEVEL from SQLBI. This is a useful technique for applying different formatting rules at each level of a hierarchy.\n\nFinally, I saw how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs. This is a great example of how AI can be used to streamline business processes.\n\nOverall, this week was all about learning new things and staying up-to-date with the latest developments in AI safety, data analytics, and business productivity.\n",
+  "preview": "What I Learned This Week\n\nA summary of the projects and signals from this week.",
+  "intake": {
+    "weekOf": "2026-07-13",
+    "generatedAt": "2026-07-16T12:55:43.491Z",
+    "signals": [
+      {
+        "id": "1e97faa490fa",
+        "title": "The US is advancing AI safety through state and federal action",
+        "link": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "OpenAI outlines a â€œreverse federalismâ€ approach to AI governance, where state laws help build a national framework for safe, democratic AI."
+      },
+      {
+        "id": "ee230258f27f",
+        "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+        "link": "https://openai.com/index/unlocking-self-improvement-gpt-red",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Explore GPT-Red, OpenAIâ€™s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness."
+      },
+      {
+        "id": "92ab1f77dd8c",
+        "title": "How to manage AI investments in the agentic era",
+        "link": "https://openai.com/index/managing-ai-investments-in-agentic-era",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows."
+      },
+      {
+        "id": "03946207f0a8",
+        "title": "Dynamic formatting by hierarchy level with ISINSCOPE and ISATLEVEL",
+        "link": "https://www.sqlbi.com/tv/dynamic-formatting-by-hierarchy-level-with-isinscope-and-isatlevel/",
+        "source": "SQLBI",
+        "category": "Analytics",
+        "snippet": "How to apply a different formatting rule at each level of a hierarchy using ISINSCOPE in a measure or ISATLEVEL in a visual calculation."
+      },
+      {
+        "id": "248b5ff06999",
+        "title": "How sales teams use ChatGPT Work",
+        "link": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs."
+      },
+      {
+        "id": "cca00ce68781",
+        "title": "How data science teams use ChatGPT Work",
+        "link": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs."
+      },
+      {
+        "id": "dd3037e1acbb",
+        "title": "Dynamic formatting by hierarchy level with ISINSCOPE and ISATLEVEL",
+        "link": "https://www.sqlbi.com/articles/dynamic-formatting-by-hierarchy-level-with-isinscope-and-isatlevel/",
+        "source": "SQLBI",
+        "category": "Analytics",
+        "snippet": "This article describes how to apply different formatting rules at each level of a hierarchy (one rule at the year level, another at the quarter level, another at the month level) using ISINSCOPE in a measure or ISATLEVEL in aâ€¦"
+      },
+      {
+        "id": "fad58c67303d",
+        "title": "Data Engineering Weekly #278",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-278",
+        "source": "Data Engineering Weekly",
+        "category": "Data",
+        "snippet": "The Weekly Data Engineering Newsletter"
+      }
+    ],
+    "projects": [
+      {
+        "id": "cyber-portfolio-platform",
+        "name": "Orbit â€” Portfolio & Radar",
+        "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
+        "status": "wip",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript"
+        ],
+        "repoUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "id": "ultimate-reel-maker",
+        "name": "Ultimate Reel Maker",
+        "description": "A self-hosted topic-to-video pipeline: local TTS (Kokoro), word-level captions (Whisper.cpp), Pexels B-roll, and Remotion composition â€” with Ollama-powered script generation.",
+        "status": "wip",
+        "tags": [
+          "Docker",
+          "Remotion",
+          "AI",
+          "TTS"
+        ],
+        "repoUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "id": "projecthelm-jarvis",
+        "name": "ProjectHelm (JARVIS)",
+        "description": "A local control plane for a personal AI assistant â€” a meta-orchestrator that tracks project state, coordinates child agents, and runs Plan â†’ Agent â†’ Debug loops via the Cursor SDK.",
+        "status": "prototype",
+        "tags": [
+          "Python",
+          "Agents",
+          "Orchestration"
+        ],
+        "repoUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "id": "projectbrain",
+        "name": "ProjectBrain",
+        "description": "A personal project-intelligence system that learns across projects over time, extracts patterns from success and failure, and serves low-latency context to AI coding agents via MCP.",
+        "status": "wip",
+        "tags": [
+          "Python",
+          "MCP",
+          "AI"
+        ],
+        "repoUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "id": "faceless-reels",
+        "name": "Faceless Reels",
+        "description": "An automated short-form video pipeline for Greek-mythology reels: beat-split narration, AI image generation with a quality loop, neural TTS, and karaoke-style captions.",
+        "status": "wip",
+        "tags": [
+          "Node",
+          "AI",
+          "TTS"
+        ],
+        "repoUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "id": "career-dashboard",
+        "name": "Career Dashboard",
+        "description": "A personal CV and career-path dashboard with a public/private split â€” build a CV-only public site while keeping career plans and learning tracks private.",
+        "status": "wip",
+        "tags": [
+          "React",
+          "Vite",
+          "TypeScript"
+        ],
+        "repoUrl": "",
+        "liveUrl": ""
+      }
+    ]
+  },
+  "source": "ollama"
+}
