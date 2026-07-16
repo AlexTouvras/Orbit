@@ -1,11 +1,20 @@
 {
   "id": "ww-2026-07-13-ide",
+<<<<<<< Updated upstream
   "status": "published",
   "createdAt": "2026-07-16T16:28:00.879Z",
   "weekOf": "2026-07-13",
   "slug": "useful-work-per-dollar-what-delivery-and-analytics-should-change-first-mrntoc2s",
   "title": "Useful work per dollar â€” what delivery and analytics should change first",
   "summary": "If agents become a unit of work, stop counting runs and start defining useful outcomes â€” the same discipline that makes a Monday dashboard trustworthy.",
+=======
+  "status": "pending",
+  "createdAt": "2026-07-16T16:28:00.879Z",
+  "weekOf": "2026-07-13",
+  "slug": "useful-work-per-dollar-what-delivery-and-analytics-should-change-first",
+  "title": "Useful work per dollar — what delivery and analytics should change first",
+  "summary": "If agents become a unit of work, stop counting runs and start defining useful outcomes — the same discipline that makes a Monday dashboard trustworthy.",
+>>>>>>> Stashed changes
   "category": "AI",
   "tags": [
     "Agents",
@@ -13,8 +22,8 @@
     "Delivery",
     "Analytics"
   ],
-  "mdx": "---\ntitle: \"Useful work per dollar â€” what delivery and analytics should change first\"\nsummary: \"If agents become a unit of work, stop counting runs and start defining useful outcomes â€” the same discipline that makes a Monday dashboard trustworthy.\"\ndate: \"2026-07-13\"\ncategory: \"AI\"\nfeatured: false\ntags: [\"Agents\",\"AI\",\"Delivery\",\"Analytics\"]\n---\n\n## The question\n\nIf agentic systems are becoming the unit of work, what should a delivery or analytics lead actually change first?\n\n## What the signal is really saying\n\n[How to manage AI investments in the agentic era](https://openai.com/index/managing-ai-investments-in-agentic-era) (OpenAI Blog) is easy to skim as another enterprise AI post. The useful idea underneath is sharper: measure **useful work per dollar** (or per hour of scarce human attention), not activity.\n\nThat lands for me because I have already lived the activity trap in analytics. More extracts. More tabs. More tiles. Meetings that reconcile numbers instead of deciding what to do. Agents will recreate that failure mode faster, because they can generate plausible work without improving the call.\n\n## What people get wrong\n\n\"Add agents\" is being sold the way \"add a dashboard\" used to be sold â€” as if the tool *is* the operating model. Teams then track tokens, runs, tickets closed, and demo velocity. None of those answers the only question that matters in delivery or portfolio work: **did a decision get better?**\n\nCapability is not the scarce resource anymore. Judgment, ownership, and rollback are.\n\n## Change the definition of done first\n\nBefore you change the model, change what \"done\" means for an agentic loop:\n\n1. **What decision or artifact improved?** A scoped analysis, a release risk call, a refreshed metric with an owner â€” not \"the agent ran.\"\n2. **Who owns the failure when it is wrong?** If the answer is \"the platform,\" you do not have an operating model.\n3. **What would falsify the hype next week?** An eval slice, a golden set, a Monday exception list â€” something that can fail a release.\n\nWithout those, you have expensive autocomplete with a project plan.\n\nThis is the same instinct as a credit portfolio review. I do not want thirty charts. I want three decisions: is emerging risk accelerating, where is the engine drifting from the model, what changed that we did not expect. Everything else links out.\n\n## The analytics parallel (and why it is not a metaphor)\n\nWhen two teams disagree on \"delinquency,\" a dashboard becomes a debate club. When two teams disagree on what an agent was allowed to decide, an automated workflow becomes the same debate with a worse audit trail.\n\nSo the first artifacts I want before the exciting demo are boring on purpose:\n\n- A one-page **scope**: what the agent may draft vs what a human must sign\n- An **eval slice**: ten real cases where wrong is costly\n- A **kill switch**: how we disable the loop without a war room\n\nDelivery leads should refuse agent workflows that cannot name a rollback. Analytics leads should refuse agent outputs that cannot name a definition.\n\n## How this shows up in what I am building\n\nOn **Orbit â€” Portfolio & Radar**, the same pressure appears in miniature. Signals refresh daily. Drafts can be generated. None of that is useful unless it ends in a **publish decision with an owner** â€” Approve in Slack, commit the Write, redeploy. Automation without a gate is just faster noise.\n\nI am treating adjacent pieces like [The US is advancing AI safety through state and federal action](https://openai.com/index/advancing-ai-safety-through-state-and-federal-action) as context, not a second thesis. Governance matters; the operating lesson for builders is still ownership, scope, and the ability to stop.\n\n## Mistakes I refuse to repeat\n\n- Optimizing for demo wow before the metric has a definition doc\n- Letting \"useful work per dollar\" become another vanity KPI with no owner\n- Automating the meeting before the exception list is stable\n- Shipping a loop I cannot disable cleanly\n\n## What I am not doing yet\n\nChasing every agent framework. Replacing human review on anything that touches risk language or production change. Treating a vendor narrative as a roadmap.\n\n## Takeaway\n\nIf agents are becoming a unit of work, do not start with the agent. Start with the **unit of useful work**: the decision, the owner, the eval, and the rollback. That is how you keep Monday honest â€” whether the artifact is a Power BI tile or an automated draft waiting for Approve.\n\n",
-  "preview": "Useful work per dollar â€” what delivery and analytics should change first\n\nIf agents become a unit of work, stop counting runs and start defining useful outcomes â€” the same discipline that makes a Monday dashboard trustworthy.\n\nInspired by: How to manage AI investments in the agentic era",
+  "mdx": "---\ntitle: \"Useful work per dollar — what delivery and analytics should change first\"\nsummary: \"If agents become a unit of work, stop counting runs and start defining useful outcomes — the same discipline that makes a Monday dashboard trustworthy.\"\ndate: \"2026-07-13\"\ncategory: \"AI\"\nfeatured: false\ntags: [\"Agents\",\"AI\",\"Delivery\",\"Analytics\"]\n---\n\n## The question\n\nIf agentic systems are becoming the unit of work, what should a delivery or analytics lead actually change first?\n\n## What the signal is really saying\n\n[How to manage AI investments in the agentic era](https://openai.com/index/managing-ai-investments-in-agentic-era) (OpenAI Blog) is easy to skim as another enterprise AI post. The useful idea underneath is sharper: measure **useful work per dollar** (or per hour of scarce human attention), not activity.\n\nThat lands for me because I have already lived the activity trap in analytics. More extracts. More tabs. More tiles. Meetings that reconcile numbers instead of deciding what to do. Agents will recreate that failure mode faster, because they can generate plausible work without improving the call.\n\n## What people get wrong\n\n\"Add agents\" is being sold the way \"add a dashboard\" used to be sold — as if the tool *is* the operating model. Teams then track tokens, runs, tickets closed, and demo velocity. None of those answers the only question that matters in delivery or portfolio work: **did a decision get better?**\n\nCapability is not the scarce resource anymore. Judgment, ownership, and rollback are.\n\n## Change the definition of done first\n\nBefore you change the model, change what \"done\" means for an agentic loop:\n\n1. **What decision or artifact improved?** A scoped analysis, a release risk call, a refreshed metric with an owner — not \"the agent ran.\"\n2. **Who owns the failure when it is wrong?** If the answer is \"the platform,\" you do not have an operating model.\n3. **What would falsify the hype next week?** An eval slice, a golden set, a Monday exception list — something that can fail a release.\n\nWithout those, you have expensive autocomplete with a project plan.\n\nThis is the same instinct as a credit portfolio review. I do not want thirty charts. I want three decisions: is emerging risk accelerating, where is the engine drifting from the model, what changed that we did not expect. Everything else links out.\n\n## The analytics parallel (and why it is not a metaphor)\n\nWhen two teams disagree on \"delinquency,\" a dashboard becomes a debate club. When two teams disagree on what an agent was allowed to decide, an automated workflow becomes the same debate with a worse audit trail.\n\nSo the first artifacts I want before the exciting demo are boring on purpose:\n\n- A one-page **scope**: what the agent may draft vs what a human must sign\n- An **eval slice**: ten real cases where wrong is costly\n- A **kill switch**: how we disable the loop without a war room\n\nDelivery leads should refuse agent workflows that cannot name a rollback. Analytics leads should refuse agent outputs that cannot name a definition.\n\n## How this shows up in what I am building\n\nOn **Orbit — Portfolio & Radar**, the same pressure appears in miniature. Signals refresh daily. Drafts can be generated. None of that is useful unless it ends in a **publish decision with an owner** — Approve in Slack, commit the Write, redeploy. Automation without a gate is just faster noise.\n\nI am treating adjacent pieces like [The US is advancing AI safety through state and federal action](https://openai.com/index/advancing-ai-safety-through-state-and-federal-action) as context, not a second thesis. Governance matters; the operating lesson for builders is still ownership, scope, and the ability to stop.\n\n## Mistakes I refuse to repeat\n\n- Optimizing for demo wow before the metric has a definition doc\n- Letting \"useful work per dollar\" become another vanity KPI with no owner\n- Automating the meeting before the exception list is stable\n- Shipping a loop I cannot disable cleanly\n\n## What I am not doing yet\n\nChasing every agent framework. Replacing human review on anything that touches risk language or production change. Treating a vendor narrative as a roadmap.\n\n## Takeaway\n\nIf agents are becoming a unit of work, do not start with the agent. Start with the **unit of useful work**: the decision, the owner, the eval, and the rollback. That is how you keep Monday honest — whether the artifact is a Power BI tile or an automated draft waiting for Approve.\n\n",
+  "preview": "Useful work per dollar — what delivery and analytics should change first\n\nIf agents become a unit of work, stop counting runs and start defining useful outcomes — the same discipline that makes a Monday dashboard trustworthy.\n\nInspired by: How to manage AI investments in the agentic era",
   "intake": {
     "weekOf": "2026-07-13",
     "generatedAt": "2026-07-16T16:21:16.813Z",
@@ -25,7 +34,7 @@
         "link": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
         "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": "OpenAI outlines a â€œreverse federalismâ€ approach to AI governance, where state laws help build a national framework for safe, democratic AI."
+        "snippet": "OpenAI outlines a “reverse federalism” approach to AI governance, where state laws help build a national framework for safe, democratic AI."
       },
       {
         "id": "ee230258f27f",
@@ -33,7 +42,7 @@
         "link": "https://openai.com/index/unlocking-self-improvement-gpt-red",
         "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": "Explore GPT-Red, OpenAIâ€™s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness."
+        "snippet": "Explore GPT-Red, OpenAI’s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness."
       },
       {
         "id": "92ab1f77dd8c",
@@ -73,7 +82,7 @@
         "link": "https://www.sqlbi.com/articles/dynamic-formatting-by-hierarchy-level-with-isinscope-and-isatlevel/",
         "source": "SQLBI",
         "category": "Analytics",
-        "snippet": "This article describes how to apply different formatting rules at each level of a hierarchy (one rule at the year level, another at the quarter level, another at the month level) using ISINSCOPE in a measure or ISATLEVEL in aâ€¦"
+        "snippet": "This article describes how to apply different formatting rules at each level of a hierarchy (one rule at the year level, another at the quarter level, another at the month level) using ISINSCOPE in a measure or ISATLEVEL in a⬦"
       },
       {
         "id": "fad58c67303d",
@@ -87,7 +96,7 @@
     "projects": [
       {
         "id": "cyber-portfolio-platform",
-        "name": "Orbit â€” Portfolio & Radar",
+        "name": "Orbit — Portfolio & Radar",
         "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
         "status": "wip",
         "tags": [
@@ -101,7 +110,7 @@
       {
         "id": "ultimate-reel-maker",
         "name": "Ultimate Reel Maker",
-        "description": "A self-hosted topic-to-video pipeline: local TTS (Kokoro), word-level captions (Whisper.cpp), Pexels B-roll, and Remotion composition â€” with Ollama-powered script generation.",
+        "description": "A self-hosted topic-to-video pipeline: local TTS (Kokoro), word-level captions (Whisper.cpp), Pexels B-roll, and Remotion composition — with Ollama-powered script generation.",
         "status": "wip",
         "tags": [
           "Docker",
@@ -115,7 +124,7 @@
       {
         "id": "projecthelm-jarvis",
         "name": "ProjectHelm (JARVIS)",
-        "description": "A local control plane for a personal AI assistant â€” a meta-orchestrator that tracks project state, coordinates child agents, and runs Plan â†’ Agent â†’ Debug loops via the Cursor SDK.",
+        "description": "A local control plane for a personal AI assistant — a meta-orchestrator that tracks project state, coordinates child agents, and runs Plan → Agent → Debug loops via the Cursor SDK.",
         "status": "prototype",
         "tags": [
           "Python",
@@ -154,7 +163,7 @@
       {
         "id": "career-dashboard",
         "name": "Career Dashboard",
-        "description": "A personal CV and career-path dashboard with a public/private split â€” build a CV-only public site while keeping career plans and learning tracks private.",
+        "description": "A personal CV and career-path dashboard with a public/private split — build a CV-only public site while keeping career plans and learning tracks private.",
         "status": "wip",
         "tags": [
           "React",
@@ -166,7 +175,11 @@
       }
     ]
   },
+<<<<<<< Updated upstream
   "source": "ide",
   "publishedAt": "2026-07-16T18:08:20.490Z",
   "publishedSlug": "useful-work-per-dollar-what-delivery-and-analytics-should-change-first-mrntoc2s"
+=======
+  "source": "ide"
+>>>>>>> Stashed changes
 }
