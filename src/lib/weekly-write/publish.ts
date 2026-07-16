@@ -6,6 +6,7 @@ import {
   readRepoFile,
   writeRepoFile,
 } from "@/lib/github-storage";
+import { repairUtf8Mojibake } from "@/lib/weekly-write/text-encoding";
 import type { WeeklyDraft } from "@/lib/weekly-write/types";
 import { writeWeeklyDraft } from "@/lib/weekly-write/store-remote";
 
@@ -33,7 +34,7 @@ export async function publishWeeklyDraft(
     throw new Error(`Draft is ${draft.status}, not pending`);
   }
 
-  const mdx = draft.mdx;
+  const mdx = repairUtf8Mojibake(draft.mdx);
   if (!mdx.trimStart().startsWith("---")) {
     throw new Error("Draft MDX missing frontmatter");
   }

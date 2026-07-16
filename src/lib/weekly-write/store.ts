@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { repairDraftTextFields } from "@/lib/weekly-write/text-encoding";
 import type { WeeklyDraft } from "@/lib/weekly-write/types";
 
 export const WEEKLY_DRAFT_RELATIVE_PATH = "data/weekly-write-draft.json";
@@ -9,7 +10,7 @@ function parseDraft(raw: string): WeeklyDraft | null {
   try {
     const parsed = JSON.parse(raw) as WeeklyDraft;
     if (!parsed?.id || !parsed?.mdx || !parsed?.status) return null;
-    return parsed;
+    return repairDraftTextFields(parsed);
   } catch {
     return null;
   }
@@ -28,7 +29,8 @@ export function readWeeklyDraftFs(): WeeklyDraft | null {
 /** Write draft JSON to the local working tree. */
 export function writeWeeklyDraftFs(draft: WeeklyDraft): void {
   fs.mkdirSync(path.dirname(LOCAL_PATH), { recursive: true });
-  fs.writeFileSync(LOCAL_PATH, `${JSON.stringify(draft, null, 2)}\n`, "utf8");
+  const cleaned = repairDraftTextFields(draft);
+  fs.writeFileSync(LOCAL_PATH, `${JSON.stringify(cleaned, null, 2)}\n`, "utf8");
 }
 
 export function parseWeeklyDraftJson(raw: string): WeeklyDraft | null {

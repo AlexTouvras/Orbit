@@ -1,5 +1,6 @@
 import { createHash, randomBytes } from "node:crypto";
 import type { WriteCategory } from "@/lib/types";
+import { repairUtf8Mojibake } from "@/lib/weekly-write/text-encoding";
 import type { WeeklyDraft, WeeklyIntake } from "@/lib/weekly-write/types";
 import {
   pickEssayThesis,
@@ -768,12 +769,12 @@ function toWeeklyDraft(
     createdAt: new Date().toISOString(),
     weekOf: intake.weekOf,
     slug: built.slug,
-    title: built.title,
-    summary: built.summary,
+    title: repairUtf8Mojibake(built.title),
+    summary: repairUtf8Mojibake(built.summary),
     category: built.category,
     tags: built.tags,
-    mdx: built.mdx,
-    preview: built.preview,
+    mdx: repairUtf8Mojibake(built.mdx),
+    preview: repairUtf8Mojibake(built.preview),
     intake,
     source,
   };
