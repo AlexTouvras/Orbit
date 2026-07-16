@@ -1,17 +1,27 @@
 import "server-only";
 import fs from "node:fs";
 import path from "node:path";
-import { hasGithubStorage, writeRepoFile } from "@/lib/github-storage";
+import {
+  hasGithubStorage,
+  readRepoFile,
+  writeRepoFile,
+} from "@/lib/github-storage";
 import type { WeeklyDraft } from "@/lib/weekly-write/types";
 import { writeWeeklyDraft } from "@/lib/weekly-write/store-remote";
 
 const WRITES_REL = (slug: string) => `src/content/writes/${slug}.mdx`;
 
-function uniqueSlug(preferred: string): string {
+function uniqueSlugLocal(preferred: string): string {
   const writesDir = path.join(process.cwd(), "src", "content", "writes");
   if (!fs.existsSync(path.join(writesDir, `${preferred}.mdx`))) {
     return preferred;
   }
+  return `${preferred}-${Date.now().toString(36)}`;
+}
+
+async function uniqueSlugRemote(preferred: string): Promise<string> {
+  const existing = await readRepoFile(WRITES_REL(preferred));
+  if (!existing) return preferred;
   return `${preferred}-${Date.now().toString(36)}`;
 }
 
@@ -23,15 +33,15 @@ export async function publishWeeklyDraft(
     throw new Error(`Draft is ${draft.status}, not pending`);
   }
 
-  const slug =
-    process.env.VERCEL || hasGithubStorage()
-      ? draft.slug
-      : uniqueSlug(draft.slug);
-
   const mdx = draft.mdx;
   if (!mdx.trimStart().startsWith("---")) {
     throw new Error("Draft MDX missing frontmatter");
   }
+
+  const slug =
+    process.env.VERCEL || hasGithubStorage()
+      ? await uniqueSlugRemote(draft.slug)
+      : uniqueSlugLocal(draft.slug);
 
   const filePath = WRITES_REL(slug);
   const content = mdx.endsWith("\n") ? mdx : `${mdx}\n`;
@@ -75,6 +85,7 @@ export async function publishWeeklyDraft(
   await writeWeeklyDraft(updated);
   return { slug, viaGithub: false };
 }
+
 
 export async function skipWeeklyDraft(draft: WeeklyDraft): Promise<void> {
   if (draft.status !== "pending") {

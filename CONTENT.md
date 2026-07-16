@@ -225,10 +225,11 @@ Every Monday a draft Write is built from **Signals** + **Studio workshop project
 ### What you do
 
 1. Open the Slack message in `#career-ops`
-2. Click **Approve & publish** (or **Skip**)
-3. After Vercel redeploys, the article is live at `/writes/week-of-YYYY-MM-DD…`
+2. Prefer **Open browser preview** to read the full essay on your phone
+3. Tap **Approve & publish** → confirm page → **Approve & publish** again (or **Skip**)
+4. After Vercel redeploys, the article is live at `/writes/…`
 
-Links are signed and expire in 7 days. No paid Slack plan; no interactive bot — just Approve/Skip URLs.
+Links are signed and expire in 7 days. Approve/Skip are confirm-then-POST so Slack link previews cannot publish by accident.
 
 ### Secrets
 

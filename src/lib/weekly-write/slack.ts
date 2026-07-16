@@ -114,8 +114,8 @@ export async function sendWeeklyDraftSlack(
       {
         type: "mrkdwn",
         text: attachedMd
-          ? `Browser preview = full essay on your phone. After publish: \`${site}/writes/${draft.slug}\``
-          : `Tap *Open browser preview* for the full essay (Slack truncates long messages). After publish: \`${site}/writes/${draft.slug}\``,
+          ? `Browser preview = full essay. *Approve* opens a confirm page (won't publish on tap alone). After publish: \`${site}/writes/${draft.slug}\``
+          : `Tap *Open browser preview* for the full essay. *Approve* opens a confirm page first. After publish: \`${site}/writes/${draft.slug}\``,
       },
     ],
   });
@@ -135,4 +135,74 @@ export async function sendWeeklyDraftSlack(
   }
 
   return { ok: true };
+}
+
+async function postSlackText(
+  text: string,
+  blocks: Record<string, unknown>[],
+): Promise<{ ok: true } | { ok: false; reason: string }> {
+  const url = process.env.SLACK_WEBHOOK_URL?.trim();
+  if (!url) {
+    return { ok: false, reason: "SLACK_WEBHOOK_URL not configured" };
+  }
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text, blocks }),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => "");
+    return {
+      ok: false,
+      reason: `Slack webhook failed (${res.status}): ${errText || res.statusText}`,
+    };
+  }
+
+  return { ok: true };
+}
+
+/** Notify #career-ops after a successful Approve publish. */
+export async function notifyPublished(
+  draft: WeeklyDraft,
+  slug: string,
+): Promise<{ ok: true } | { ok: false; reason: string }> {
+  const site = process.env.NEXT_PUBLIC_SITE_URL?.trim() || siteBaseUrlFallback();
+  const href = `${site}/writes/${slug}`;
+  return postSlackText(`Published weekly Write: ${draft.title}`, [
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `*Published:* <${href}|${draft.title}>\nLive after the next Vercel deploy · \`/writes/${slug}\``,
+      },
+    },
+  ]);
+}
+
+/** Notify #career-ops after Skip. */
+export async function notifySkipped(
+  draft: WeeklyDraft,
+): Promise<{ ok: true } | { ok: false; reason: string }> {
+  return postSlackText(`Skipped weekly Write: ${draft.title}`, [
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `*Skipped:* ${draft.title}\nNext Monday's cron can draft a new one.`,
+      },
+    },
+  ]);
+}
+
+function siteBaseUrlFallback(): string {
+  const raw =
+    process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+    process.env.VERCEL_URL?.trim() ||
+    "https://orbit-rho-rouge.vercel.app";
+  if (raw.startsWith("http://") || raw.startsWith("https://")) {
+    return raw.replace(/\/$/, "");
+  }
+  return `https://${raw.replace(/\/$/, "")}`;
 }
