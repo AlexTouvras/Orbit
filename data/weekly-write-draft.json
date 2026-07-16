@@ -1,9 +1,9 @@
 {
   "id": "ww-2026-07-13-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-07-16T16:28:00.879Z",
   "weekOf": "2026-07-13",
-  "slug": "useful-work-per-dollar-what-delivery-and-analytics-should-change-first",
+  "slug": "useful-work-per-dollar-what-delivery-and-analytics-should-change-first-mrntoc2s",
   "title": "Useful work per dollar â€” what delivery and analytics should change first",
   "summary": "If agents become a unit of work, stop counting runs and start defining useful outcomes â€” the same discipline that makes a Monday dashboard trustworthy.",
   "category": "AI",
@@ -166,5 +166,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-07-16T18:08:20.490Z",
+  "publishedSlug": "useful-work-per-dollar-what-delivery-and-analytics-should-change-first-mrntoc2s"
 }
