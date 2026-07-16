@@ -25,20 +25,19 @@ export function repairUtf8Mojibake(input: string): string {
     .replace(/Â/g, "");
 }
 
-export function repairDraftTextFields<T extends Record<string, unknown>>(
-  draft: T,
-): T {
-  const walk = (value: unknown): unknown => {
-    if (typeof value === "string") return repairUtf8Mojibake(value);
-    if (Array.isArray(value)) return value.map(walk);
-    if (value && typeof value === "object") {
-      const out: Record<string, unknown> = {};
-      for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
-        out[k] = walk(v);
-      }
-      return out;
+function walkRepair(value: unknown): unknown {
+  if (typeof value === "string") return repairUtf8Mojibake(value);
+  if (Array.isArray(value)) return value.map(walkRepair);
+  if (value && typeof value === "object") {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(value as Record<string, unknown>)) {
+      out[k] = walkRepair(v);
     }
-    return value;
-  };
-  return walk(draft) as T;
+    return out;
+  }
+  return value;
+}
+
+export function repairDraftTextFields<T>(draft: T): T {
+  return walkRepair(draft) as T;
 }
