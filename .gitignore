@@ -27,6 +27,12 @@ yarn-error.log*
 # generated news cache (refreshed by .github/workflows/news-refresh.yml)
 # /data/news-cache.json is tracked so Vercel builds include fresh signals.
 
+# Local weekly Write draft / IDE brief (CI force-adds draft when notifying Slack)
+/data/weekly-write-draft.json
+/data/weekly-write-ide-brief.json
+/data/weekly-write-ide-brief.md
+/data/weekly-write.log
+
 # Studio-saved profile (tracked for Vercel; updated via Studio → GitHub)
 # /data/profile.json
 

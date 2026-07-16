@@ -94,7 +94,7 @@
       "id": "orbit-platform",
       "dir": "website",
       "title": "Orbit platform — architecture diagrams",
-      "summary": "Personal HQ: Hub, Writes, Portfolio, Workshop, Signals radar, and Studio.",
+      "summary": "Personal HQ: Hub, Writes, Portfolio, Workshop, Signals radar, Studio, and weekly Write Slack approve.",
       "category": "Delivery",
       "tags": ["Next.js", "Portfolio", "Architecture"]
     }

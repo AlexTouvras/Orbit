@@ -104,6 +104,7 @@ Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, sa
 - **One question per post** — put it in the title or an early `## The question` section.
 - **Document, don't perform** — write what you learned this week, not what you think sounds impressive.
 - **Evergreen > hot takes** — tutorials and lessons age better than trend commentary.
+- **Weekly automation drafts essays, not digests** — one thesis inspired by a Signal (AI, analytics/PBI, delivery), in the same voice as your featured Writes.
 
 ---
 
@@ -213,6 +214,54 @@ News refreshes daily via systemd timer (see `DEPLOY.md`), or trigger manually:
 
 ```bash
 curl -H "Authorization: Bearer YOUR_CRON_SECRET" http://127.0.0.1:3000/api/cron/news
+```
+
+---
+
+## 6b. Weekly Write (Slack approve → publish)
+
+Every Monday a draft Write is built from **Signals** + **Studio workshop projects**, then posted to Slack **`#career-ops`** (same free Incoming Webhook as CareerOps).
+
+### What you do
+
+1. Open the Slack message in `#career-ops`
+2. Click **Approve & publish** (or **Skip**)
+3. After Vercel redeploys, the article is live at `/writes/week-of-YYYY-MM-DD…`
+
+Links are signed and expire in 7 days. No paid Slack plan; no interactive bot — just Approve/Skip URLs.
+
+### Secrets
+
+| Env / secret | Where |
+| --- | --- |
+| `SLACK_WEBHOOK_URL` | Same webhook URL CareerOps uses for `#career-ops` (Vercel + GitHub Actions) |
+| `SLACK_BOT_TOKEN` + `SLACK_CHANNEL_ID` (optional) | Attach full essay as `.md` in Slack (`files:write` bot scope — still free) |
+| `CRON_SECRET` / optional `WEEKLY_WRITE_SECRET` | Signs Approve/Skip/Preview links |
+| `GITHUB_TOKEN` | Already required for Studio; used to commit the MDX on Approve |
+| `OPENAI_API_KEY` (optional) | Paid — not needed; prefer Ollama locally or Gemini free |
+| `GEMINI_API_KEY` (optional) | Free at https://aistudio.google.com/apikey — useful on Vercel (no Ollama) |
+| `NEXT_PUBLIC_SITE_URL` | Must be your live HTTPS origin so Slack links work |
+
+Draft order: **Gemini** (when key works) → else **IDE brief** in this repo for Cursor to write the essay → then Slack Approve. Optional local fallback: `--allow-local-fallback` (Ollama/template).
+
+When Gemini fails, open `data/weekly-write-ide-brief.md`, generate the essay in Cursor, save `data/weekly-write-draft.json`, then:
+
+```powershell
+npm run weekly:notify-draft
+```
+
+### Local dry-run
+
+```powershell
+npm run weekly:draft
+# or force + Slack:
+npm run weekly:notify
+```
+
+Manual cron (production):
+
+```bash
+curl -H "Authorization: Bearer YOUR_CRON_SECRET" "https://YOUR_SITE/api/cron/weekly-write?force=1"
 ```
 
 ---
@@ -350,7 +399,7 @@ npm run news:fetch
 
 ## Minimal habit to grow the site
 
-1. **Weekly:** one Write — "What did I learn?" (even 300 words counts).
+1. **Weekly:** one Write — automated draft → Slack `#career-ops` Approve (or write MDX by hand).
 2. **When you ship something:** add or update a portfolio MDX or publish via Studio.
 3. **Monthly:** skim About/CV for accuracy; refresh `resume.pdf`.
 4. **Deploy when you have content worth sharing** — not before.

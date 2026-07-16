@@ -1,0 +1,76 @@
+name: Weekly Write draft
+
+on:
+  schedule:
+    # Mondays 07:00 UTC — after Sunday Signals refresh habit / start of week.
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Replace an existing pending draft"
+        type: boolean
+        default: false
+      notify:
+        description: "Post to Slack (#career-ops webhook)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate weekly draft
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_WEEKLY_MODEL: gemini-2.0-flash
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          WEEKLY_WRITE_SECRET: ${{ secrets.WEEKLY_WRITE_SECRET }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || github.token }}
+          GITHUB_REPO: ${{ github.repository }}
+        run: |
+          if [ -z "$NEXT_PUBLIC_SITE_URL" ]; then
+            echo "Set repo variable NEXT_PUBLIC_SITE_URL (e.g. https://your-domain.com) so Approve links work."
+            exit 1
+          fi
+          FORCE_FLAG=""
+          NOTIFY_FLAG="--notify"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ inputs.force }}" = "true" ]; then FORCE_FLAG="--force"; fi
+            if [ "${{ inputs.notify }}" != "true" ]; then NOTIFY_FLAG=""; fi
+          fi
+          set +e
+          npx tsx src/scripts/weekly-write.ts --once $FORCE_FLAG $NOTIFY_FLAG | tee /tmp/weekly-write-out.json
+          CODE=${PIPESTATUS[0]}
+          set -e
+          if grep -q '"awaitingIde": true' /tmp/weekly-write-out.json; then
+            echo "Gemini unavailable — IDE brief written for Cursor."
+            exit 0
+          fi
+          exit $CODE
+
+      - name: Commit draft or IDE brief if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f data/weekly-write-draft.json data/weekly-write-ide-brief.json data/weekly-write-ide-brief.md 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No weekly-write file change."
+            exit 0
+          fi
+          git commit -m "chore: weekly write draft or IDE brief [skip ci]"
+          git push

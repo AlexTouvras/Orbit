@@ -10,6 +10,9 @@
     "lint": "eslint .",
     "news:fetch": "tsx src/scripts/fetch-news.ts --once",
     "news:watch": "tsx src/scripts/fetch-news.ts",
+    "weekly:draft": "tsx src/scripts/weekly-write.ts --once",
+    "weekly:notify": "tsx src/scripts/weekly-write.ts --once --notify --force",
+    "weekly:notify-draft": "tsx src/scripts/weekly-write.ts --notify-only",
     "arch:validate-all": "node scripts/architecture/validate-all.mjs",
     "arch:sync-all": "node scripts/architecture/sync-all.mjs"
   },
