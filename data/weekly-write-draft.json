@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-07-13-ide",
-  "status": "pending",
+  "status": "skipped",
   "createdAt": "2026-07-16T16:28:00.879Z",
   "weekOf": "2026-07-13",
   "slug": "useful-work-per-dollar-what-delivery-and-analytics-should-change-first",
@@ -166,5 +166,6 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "skippedAt": "2026-07-16T16:54:53.345Z"
 }
