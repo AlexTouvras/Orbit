@@ -8,7 +8,14 @@ import { NewsCard } from "./NewsCard";
 import { FilterChip } from "@/components/ui/FilterChip";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
-const FILTERS: ("All" | NewsCategory)[] = ["All", "AI", "Data", "Delivery"];
+const FILTERS: ("All" | NewsCategory)[] = [
+  "All",
+  "AI",
+  "Data",
+  "Analytics",
+  "Delivery",
+];
+
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export function RadarExplorer({ items }: { items: NewsItem[] }) {

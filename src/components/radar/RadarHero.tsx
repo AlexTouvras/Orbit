@@ -19,7 +19,10 @@ export function RadarHero({
   const stats = [
     { label: "Signals", value: totalSignals > 0 ? String(totalSignals) : "—" },
     { label: "AI", value: String(categoryCounts.AI ?? 0) },
-    { label: "Data", value: String(categoryCounts.Data ?? 0) },
+    {
+      label: "Analytics",
+      value: String(categoryCounts.Analytics ?? 0),
+    },
   ];
 
   return (
@@ -32,8 +35,8 @@ export function RadarHero({
         </Badge>
       }
       title="Signals"
-      subtitle="AI, Data, and Delivery — aggregated and cached"
-      description="External intake from curated RSS sources. Refreshed daily and served from cache — complementary to my own Writes."
+      subtitle="AI, Data, Analytics, and Delivery — aggregated and cached"
+      description="External intake from curated RSS sources, including Power BI and Fabric. Refreshed daily and served from cache — complementary to my own Writes."
       stats={stats}
       meta={
         generatedAt ? (

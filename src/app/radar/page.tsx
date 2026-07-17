@@ -12,7 +12,7 @@ import type { NewsCategory } from "@/lib/types";
 export const metadata: Metadata = {
   title: "Signals",
   description:
-    "A curated feed of the latest across AI, Data, and Delivery — aggregated from RSS and served from cache.",
+    "A curated feed across AI, Data, Analytics (Power BI / Fabric), and Delivery — aggregated from RSS and served from cache.",
 };
 
 export const revalidate = 1800;

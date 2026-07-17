@@ -44,6 +44,28 @@ export const FEED_SOURCES: FeedSource[] = [
     url: "https://www.infoq.com/feed/continuous_delivery/",
     category: "Delivery",
   },
+
+  // --- Analytics (Power BI / Fabric) ---
+  {
+    name: "Microsoft Fabric Blog",
+    url: "https://www.microsoft.com/en-us/microsoft-fabric/blog/feed/",
+    category: "Analytics",
+  },
+  {
+    name: "SQLBI",
+    url: "https://www.sqlbi.com/feed/",
+    category: "Analytics",
+  },
+  {
+    name: "Chris Webb's BI Blog",
+    url: "https://blog.crossjoin.co.uk/feed/",
+    category: "Analytics",
+  },
 ];
 
-export const NEWS_CATEGORIES: NewsCategory[] = ["AI", "Data", "Delivery"];
+export const NEWS_CATEGORIES: NewsCategory[] = [
+  "AI",
+  "Data",
+  "Delivery",
+  "Analytics",
+];

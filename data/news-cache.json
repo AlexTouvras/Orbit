@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-17T06:42:44.735Z",
-  "count": 50,
+  "generatedAt": "2026-07-17T07:09:10.593Z",
+  "count": 90,
   "items": [
     {
       "id": "8fe39edff791",
@@ -48,6 +48,15 @@
       "contentSnippet": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows."
     },
     {
+      "id": "03946207f0a8",
+      "title": "Dynamic formatting by hierarchy level with ISINSCOPE and ISATLEVEL",
+      "link": "https://www.sqlbi.com/tv/dynamic-formatting-by-hierarchy-level-with-isinscope-and-isatlevel/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-07-14T10:00:00.000Z",
+      "contentSnippet": "How to apply a different formatting rule at each level of a hierarchy using ISINSCOPE in a measure or ISATLEVEL in a visual calculation."
+    },
+    {
       "id": "248b5ff06999",
       "title": "How sales teams use ChatGPT Work",
       "link": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
@@ -66,6 +75,15 @@
       "contentSnippet": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs."
     },
     {
+      "id": "dd3037e1acbb",
+      "title": "Dynamic formatting by hierarchy level with ISINSCOPE and ISATLEVEL",
+      "link": "https://www.sqlbi.com/articles/dynamic-formatting-by-hierarchy-level-with-isinscope-and-isatlevel/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-07-13T20:00:42.000Z",
+      "contentSnippet": "This article describes how to apply different formatting rules at each level of a hierarchy (one rule at the year level, another at the quarter level, another at the month level) using ISINSCOPE in a measure or ISATLEVEL in a…"
+    },
+    {
       "id": "fad58c67303d",
       "title": "Data Engineering Weekly #278",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-278",
@@ -73,6 +91,15 @@
       "category": "Data",
       "pubDate": "2026-07-13T02:44:42.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "15ef990ae923",
+      "title": "The Benefits Of Using Direct Lake Mode In Power BI",
+      "link": "https://blog.crossjoin.co.uk/2026/07/12/the-benefits-of-using-direct-lake-mode-in-power-bi/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-07-12T20:57:00.000Z",
+      "contentSnippet": "This is a blog post I’ve been meaning to write for a long time. Since Fabric launched there has been a lot of focus on Direct Lake mode in Power BI and a lot of people used it because it was the cool new thing. Arguably, we at Microsoft have been guilty of telling people … Contin…"
     },
     {
       "id": "ec95d625f397",
@@ -165,6 +192,15 @@
       "contentSnippet": "OpenAI Academy and the Walton Family Foundation are bringing hands-on AI Skills Jams to help K–12 educators build practical AI skills for the classroom."
     },
     {
+      "id": "94fe64bbfa0c",
+      "title": "Generative AI guidelines at SQLBI (2026 update)",
+      "link": "https://www.sqlbi.com/blog/marco/2026/07/08/generative-ai-guidelines-at-sqlbi-2026-update/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-07-08T09:30:41.000Z",
+      "contentSnippet": "3 years ago, we wrote our “Generative AI guidelines at SQLBI”. We think it’s time to update them. Over the past 3 years, the world has changed: it is simply no longer possible to avoid using generative AI services for…"
+    },
+    {
       "id": "d7499a6963c6",
       "title": "Introducing GPT-Live",
       "link": "https://openai.com/index/introducing-gpt-live",
@@ -201,6 +237,15 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "36e720ea185a",
+      "title": "Understanding The “Database Was Evicted To Balance The CPU Load” Error In Power BI",
+      "link": "https://blog.crossjoin.co.uk/2026/07/05/understanding-the-database-was-evicted-to-balance-the-cpu-load-error-in-power-bi/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-07-05T17:47:48.000Z",
+      "contentSnippet": "A few months ago I wrote about a rare error – the “Maximum allowable memory allocation” error – that may occur when the physical machine, or node, that a semantic model is running on in the Power BI Service comes under memory pressure. Recently, someone I was working with who was…"
+    },
+    {
       "id": "38e39f8dbc40",
       "title": "Announcing leetdata.ai — A Practice Ground for Data Engineers",
       "link": "https://www.dataengineeringweekly.com/p/announcing-leetdataai-a-practice",
@@ -208,6 +253,15 @@
       "category": "Data",
       "pubDate": "2026-07-02T08:27:41.000Z",
       "contentSnippet": "Software engineers got a gym. Data engineers got production. It's time to fix that."
+    },
+    {
+      "id": "18ea580d4b89",
+      "title": "Using REMOVEFILTERS in DAX user defined functions",
+      "link": "https://www.sqlbi.com/tv/using-removefilters-in-dax-user-defined-functions/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-06-30T10:00:00.000Z",
+      "contentSnippet": "How to implement a DAX function that removes filter-keep column filters from a calendar, using REMOVEFILTERS as the return value of the function."
     },
     {
       "id": "fb435a036a32",
@@ -219,6 +273,24 @@
       "contentSnippet": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages."
     },
     {
+      "id": "c5ab1d19b713",
+      "title": "Using REMOVEFILTERS in DAX user-defined functions",
+      "link": "https://www.sqlbi.com/articles/using-removefilters-in-dax-user-defined-functions/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-06-29T20:00:16.000Z",
+      "contentSnippet": "In this article, we implement a function that removes filter-keep column filters from a calendar, using REMOVEFILTERS as the return value of the function. A DAX user-defined function, also known as a UDF, is expected to return a scalar or…"
+    },
+    {
+      "id": "db61c1537465",
+      "title": "Why data teams are emerging as leaders in AI agent adoption",
+      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/29/why-data-teams-are-emerging-as-leaders-in-ai-agent-adoption/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-06-29T15:00:00.000Z",
+      "contentSnippet": "New research from Microsoft and MIT Technology Review Insights reveals how organizations are building trust in AI agents—starting with structured data workflows and scaling through shared context and real-time intelligence. The post Why data teams are emerging as leaders in AI ag…"
+    },
+    {
       "id": "f8c684b806ac",
       "title": "Data Engineering Weekly #276",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-276",
@@ -226,6 +298,24 @@
       "category": "Data",
       "pubDate": "2026-06-29T03:52:17.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "d5f77903e27b",
+      "title": "Power BI DirectQuery Mode: A Better Choice Than You Might Think",
+      "link": "https://blog.crossjoin.co.uk/2026/06/28/power-bi-directquery-mode-a-better-choice-than-you-might-think/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-06-28T21:49:11.000Z",
+      "contentSnippet": "For as long as I’ve been using Power BI – which has been from the beginning – the advice about which storage mode to choose has been the same: use Import mode unless you have a really, really good reason to use DirectQuery mode and even then you’re probably wrong and should use I…"
+    },
+    {
+      "id": "7869bed7e57f",
+      "title": "FabCon Europe 2026: The sessions we’re most excited to bring to Barcelona",
+      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/25/fabcon-europe-2026-the-sessions-were-most-excited-to-bring-to-barcelona/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-06-25T15:00:00.000Z",
+      "contentSnippet": "Get a first look at FabCon Europe 2026 in Barcelona, with curated session picks across Microsoft Fabric, SQL, AI, real-time intelligence, and data engineering—plus insights into the innovations shaping the future of data. The post FabCon Europe 2026: The sessions we’re most excit…"
     },
     {
       "id": "a261589c9ec9",
@@ -246,6 +336,42 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "a3ff42be52cd",
+      "title": "New Book: “Extreme DAX” 2nd Edition",
+      "link": "https://blog.crossjoin.co.uk/2026/06/21/new-book-extreme-dax-2nd-edition/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-06-21T18:35:32.000Z",
+      "contentSnippet": "“Extreme DAX” by Michiel Rozema, Madzy Stikkelorum and Henk Vlootman Continuing my series of not-reviews of the latest Power BI-related books (and there are fewer and fewer of them being published) that I receive free copies of, here’s the second edition of a book that for some r…"
+    },
+    {
+      "id": "6c2a48806697",
+      "title": "Optional parameters in DAX user defined functions",
+      "link": "https://www.sqlbi.com/tv/optional-parameters-in-dax-user-defined-functions/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-06-16T10:00:00.000Z",
+      "contentSnippet": "How to define optional parameters in DAX user-defined functions and set default values for parameters not specified by the caller."
+    },
+    {
+      "id": "7eef5da11c77",
+      "title": "Optional parameters in DAX user-defined functions",
+      "link": "https://www.sqlbi.com/articles/optional-parameters-in-dax-user-defined-functions/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-06-15T20:00:50.000Z",
+      "contentSnippet": "This article describes how to define optional parameters in DAX user-defined functions and set default values for parameters not specified by the caller. When Microsoft announced that DAX User-defined functions (UDFs) are generally available (GA), another new feature was also…"
+    },
+    {
+      "id": "7ccb02b39f86",
+      "title": "Data, AI, and the case for continuous learning",
+      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/15/data-ai-and-the-case-for-continuous-learning/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-06-15T15:00:00.000Z",
+      "contentSnippet": "Microsoft Data Days brings together training, certification pathways, and more—helping you build practical skills and stay ahead in a rapidly evolving field. The post Data, AI, and the case for continuous learning appeared first on Microsoft Fabric Blog."
+    },
+    {
       "id": "838143ab53b5",
       "title": "Data Engineering Weekly #274",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-274",
@@ -253,6 +379,15 @@
       "category": "Data",
       "pubDate": "2026-06-15T05:29:03.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "31781ddb18fe",
+      "title": "Improve Performance Of Staging In Fabric Dataflows Gen2 By Disabling V-Order",
+      "link": "https://blog.crossjoin.co.uk/2026/06/14/improve-performance-of-staging-in-fabric-dataflows-gen2-by-disabling-v-order/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-06-14T16:33:43.000Z",
+      "contentSnippet": "Quite a few new Dataflows Gen2 features were released recently without much fanfare, but that doesn’t mean they aren’t important. I will take a look at them all in my next few posts; in this first post I’ll look at the ability to disable V-Order on staged data. As the (very detai…"
     },
     {
       "id": "00385e7d5570",
@@ -264,6 +399,42 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "dbe2b8126cf9",
+      "title": "Fabric Dataflows Gen2 And Concurrent Evaluation, Part 3: Is More Parallelism Always Good?",
+      "link": "https://blog.crossjoin.co.uk/2026/06/07/fabric-dataflows-gen2-and-concurrent-evaluation-part-3-is-more-parallelism-always-good/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-06-07T17:12:31.000Z",
+      "contentSnippet": "To finish off my series of posts on concurrent evaluation in Fabric Dataflows Gen2 (see part 1 and part 2) I decided to do some more realistic tests to see how much parallelism I could get. To do this I uploaded 244 identical Excel files containing almost 542000 rows of data each…"
+    },
+    {
+      "id": "d9cb1dfc37c6",
+      "title": "Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft Databases",
+      "link": "https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-06-02T17:00:00.000Z",
+      "contentSnippet": "Microsoft Build 2026 highlights advancements in app development with Microsoft Fabric and Microsoft Databases, emphasizing a unified data and AI platform for scalable, agentic applications. The post Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft D…"
+    },
+    {
+      "id": "187915d15f2a",
+      "title": "ALL vs ALLSELECTED vs ALLEXCEPT vs REMOVEFILTERS",
+      "link": "https://www.sqlbi.com/tv/all-vs-allselected-vs-allexcept-vs-removefilters/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-06-02T10:00:00.000Z",
+      "contentSnippet": "Learn the differences between similar but different DAX functions that remove filters from the filter context."
+    },
+    {
+      "id": "f5a11cdd990e",
+      "title": "ALL vs ALLSELECTED vs ALLEXCEPT vs REMOVEFILTERS",
+      "link": "https://www.sqlbi.com/articles/all-vs-allselected-vs-allexcept-vs-removefilters/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-06-01T20:00:59.000Z",
+      "contentSnippet": "DAX offers many functions to remove filters from the filter context. In this article, we analyze the differences among the most commonly-used functions. Computing values in DAX is all about understanding how to manipulate the filter context to obtain the…"
+    },
+    {
       "id": "a1d19d2f0e19",
       "title": "Data Engineering Weekly #272",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-272",
@@ -271,6 +442,15 @@
       "category": "Data",
       "pubDate": "2026-06-01T03:18:34.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "91f0cfa07530",
+      "title": "Fabric Dataflows Gen2 And Concurrent Evaluation, Part 2: Partitioned Compute",
+      "link": "https://blog.crossjoin.co.uk/2026/05/31/fabric-dataflows-gen2-and-concurrent-evaluation-part-2-partitioned-compute/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-05-31T16:38:38.000Z",
+      "contentSnippet": "In the first part of this series I showed how the Concurrency setting in a Fabric Dataflows Gen2 can affect refresh performance when there are multiple queries inside the dataflow. In this post I will show how, with Partitioned Compute, this setting can also affect the performanc…"
     },
     {
       "id": "88ddee677bc0",
@@ -282,6 +462,33 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "2283c3fa66d3",
+      "title": "Fabric Dataflows Gen2 And Concurrent Evaluation, Part 1",
+      "link": "https://blog.crossjoin.co.uk/2026/05/24/fabric-dataflows-gen2-and-concurrent-evaluation-part-1/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-05-24T19:31:38.000Z",
+      "contentSnippet": "Did you know that if your Fabric Dataflows Gen2 contains several queries then you can control how many of them are evaluated in parallel when your dataflow refreshes? In this series I’ll look at how how you can do this and how it may result in better performance – at least in som…"
+    },
+    {
+      "id": "9f64a5c7797f",
+      "title": "Introducing user-aware calculated columns in Power BI",
+      "link": "https://www.sqlbi.com/tv/introducing-user-aware-calculated-columns-in-power-bi/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-05-19T10:00:00.000Z",
+      "contentSnippet": "User-aware calculated columns are not materialized: we can use them as virtual calculated columns for localization and for custom security scenarios. This feature is available through the new Expression Context property of calculated columns in Power BI."
+    },
+    {
+      "id": "d5032f26ae69",
+      "title": "Introducing user-aware calculated columns in Power BI",
+      "link": "https://www.sqlbi.com/articles/introducing-user-aware-calculated-columns-in-power-bi/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-05-18T20:00:24.000Z",
+      "contentSnippet": "This article describes the new Expression Context property of calculated columns in Power BI, explaining how user-aware calculated columns work, why they are not materialized, and how to use them as virtual calculated columns for localization and custom security scenarios.…"
+    },
+    {
       "id": "8f3383dddf6b",
       "title": "Data Engineering Weekly #270",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-270",
@@ -291,6 +498,15 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "610b7cad6f4a",
+      "title": "Understanding The “You’ve Exceeded The Capacity Limit For Dataset Refreshes” Error in Power BI",
+      "link": "https://blog.crossjoin.co.uk/2026/05/17/understanding-the-youve-exceeded-the-capacity-limit-for-dataset-refreshes-error-in-power-bi/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-05-17T10:47:49.000Z",
+      "contentSnippet": "If you have a lot of Power BI semantic models that are scheduled to refresh at the same time in the Service then you may find that some of them fail with the following error: You’ve exceeded the capacity limit for dataset refreshes. Try again when fewer datasets are being process…"
+    },
+    {
       "id": "d7467a984a4b",
       "title": "Data Engineering Weekly #269",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-269",
@@ -298,6 +514,33 @@
       "category": "Data",
       "pubDate": "2026-05-11T02:50:23.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "90688a8ab402",
+      "title": "Power BI Semantic Model Memory Errors, Part 5: The “Maximum Allowable Memory Allocation” Error",
+      "link": "https://blog.crossjoin.co.uk/2026/05/10/power-bi-semantic-model-memory-errors-part-5-the-maximum-allowable-memory-allocation-error/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-05-10T17:55:46.000Z",
+      "contentSnippet": "This is a very late addition to the series of posts I wrote back in 2024 and which started here on Power BI memory errors. It’s about a very rare error that is hard to deal with and often temporary but since people do run into it from time to time I decided to write … Continue re…"
+    },
+    {
+      "id": "5630cb4150db",
+      "title": "Filtering measures through slicers",
+      "link": "https://www.sqlbi.com/tv/filtering-measures-through-slicers/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-05-05T10:00:00.000Z",
+      "contentSnippet": "A slicer cannot filter a measure: let’s analyze this common request by explaining how to use a slicer to filter a measure, after discussing the real meaning of using a measure with a slicer."
+    },
+    {
+      "id": "e11542038620",
+      "title": "Filtering measures through slicers",
+      "link": "https://www.sqlbi.com/articles/filtering-measures-through-slicers/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-05-04T20:00:33.000Z",
+      "contentSnippet": "A slicer cannot filter a measure. In this article, we analyze this common request by explaining how to use a slicer to filter a measure, after discussing the real meaning of using a measure with a slicer. A very common…"
     },
     {
       "id": "144cddd0cbf7",
@@ -316,6 +559,24 @@
       "category": "Data",
       "pubDate": "2026-04-27T00:52:38.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "020e8c5a623e",
+      "title": "Parameter types in DAX user defined functions UDF",
+      "link": "https://www.sqlbi.com/tv/parameter-types-in-dax-user-defined-functions-udf/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-21T10:00:00.000Z",
+      "contentSnippet": "Learn how to specify the parameter types in DAX user-defined functions using MEASUREREF, COLUMNREF, TABLEREF, and CALENDARREF."
+    },
+    {
+      "id": "487be88ec807",
+      "title": "Understanding parameter types in DAX user-defined functions (UDF)",
+      "link": "https://www.sqlbi.com/articles/understanding-parameter-types-in-dax-user-defined-functions-udf/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-20T20:00:43.000Z",
+      "contentSnippet": "This article describes the parameter types available in DAX user-defined functions, focusing on the specialized reference types MEASUREREF, COLUMNREF, TABLEREF, and CALENDARREF. In a previous article, Introducing user-defined functions in DAX, we described the syntax for creating…"
     },
     {
       "id": "6c5aefb2f922",
@@ -345,6 +606,42 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "29b5602d09b2",
+      "title": "Using visual calculation to highlight an entire row",
+      "link": "https://www.sqlbi.com/tv/using-visual-calculation-to-highlight-an-entire-row/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-07T10:00:00.000Z",
+      "contentSnippet": "How to highlight a row based solely on the maximum value in the last column using visual calculations, a tool that can be used efficiently to format visuals."
+    },
+    {
+      "id": "4c089de9d78c",
+      "title": "How to navigate the lattice of visual calculations",
+      "link": "https://www.sqlbi.com/tv/how-to-navigate-the-lattice-of-visual-calculations/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-06T20:00:24.000Z",
+      "contentSnippet": "This video explains how to navigate the lattice of visual calculations in DAX. The visual context goes beyond the row context and filter context by adding the concept of levels within the lattice. The video shows how to use COLLAPSEALL…"
+    },
+    {
+      "id": "268887b85951",
+      "title": "Using visual calculations to highlight an entire row",
+      "link": "https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-06T20:00:04.000Z",
+      "contentSnippet": "Visual calculations can be used efficiently to format visuals. This article presents an interesting technique to highlight a row based solely on the maximum value in the last column. When it comes to visuals, users may want to specific cells…"
+    },
+    {
+      "id": "f0542670f1ae",
+      "title": "SQLBI+ updates in April 2026",
+      "link": "https://www.sqlbi.com/blog/marco/2026/04/06/sqlbi-updates-in-april-2026/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-06T19:58:35.000Z",
+      "contentSnippet": "We released a new session in SQLBI+: How to navigate the lattice of visual calculations: This video explains how to navigate the lattice of visual calculations in DAX, using COLLAPSEALL and EXPAND to move between levels. A key topic is…"
+    },
+    {
       "id": "cff8da6810ee",
       "title": "Data Engineering Weekly #264",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-264",
@@ -361,6 +658,69 @@
       "category": "Data",
       "pubDate": "2026-04-02T03:36:07.000Z",
       "contentSnippet": "How data leaders should design the boundary between platforms and dependent teams."
+    },
+    {
+      "id": "86ce9ce60ae3",
+      "title": "The Third Edition of the Mastering DAX Video Course – unplugged",
+      "link": "https://www.sqlbi.com/blog/marco/2026/04/01/the-third-edition-of-the-mastering-dax-video-course-unplugged/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-01T06:30:09.000Z",
+      "contentSnippet": "Alberto and I recorded an unplugged session to talk about the new edition of the Mastering DAX Video Course. You can watch it above, but if you prefer a quick read, here are some thoughts. The question we heard the…"
+    },
+    {
+      "id": "9f49ee93f8a0",
+      "title": "Highlights from FabCon and SQLCon 2026: Where databases and Fabric come together",
+      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/03/30/highlights-from-fabcon-and-sqlcon-2026-where-databases-and-fabric-come-together/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-03-30T19:00:00.000Z",
+      "contentSnippet": "From technical sessions to hallway conversations, FabCon and SQLCon 2026 showcased the momentum behind the Fabric and SQL ecosystems. The post Highlights from FabCon and SQLCon 2026: Where databases and Fabric come together appeared first on Microsoft Fabric Blog."
+    },
+    {
+      "id": "303ad939aba5",
+      "title": "FabCon and SQLCon 2026: Unifying databases and Fabric on a single data platform",
+      "link": "https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-unifying-databases-and-fabric-on-a-single-data-platform/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-03-18T12:50:00.000Z",
+      "contentSnippet": "We're bring attendees together to share real experiences and solve challenges side-by-side. Only together can we move into meaningful results. The post FabCon and SQLCon 2026: Unifying databases and Fabric on a single data platform appeared first on Microsoft Fabric Blog."
+    },
+    {
+      "id": "7c12a7fc08f1",
+      "title": "Advancing agentic AI with Microsoft databases across a unified data estate",
+      "link": "https://www.microsoft.com/en-us/sql-server/blog/2026/03/18/advancing-agentic-ai-with-microsoft-databases-across-a-unified-data-estate/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-03-18T12:50:00.000Z",
+      "contentSnippet": "Built on a consistent Microsoft SQL foundation from on premises to the cloud, Azure SQL brings AI capabilities directly into your database experience. The post Advancing agentic AI with Microsoft databases across a unified data estate appeared first on Microsoft Fabric Blog."
+    },
+    {
+      "id": "ea0336fdaaec",
+      "title": "Unpacking your top questions on agentic AI: The Shift podcast",
+      "link": "https://azure.microsoft.com/en-us/blog/unpacking-your-top-questions-on-agentic-ai-the-shift-podcast/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-03-09T20:12:35.000Z",
+      "contentSnippet": "We're launching a new podcast called \"The Shift,\" which does exactly that. Grounded in questions we heard from you after Ignite news, we're releasing eight episodes that bring engineering, product, and strategy perspectives together. The post Unpacking your top questions on agent…"
+    },
+    {
+      "id": "fa6a6191b9f6",
+      "title": "Top sessions you won’t want to miss at the Microsoft Fabric Community Conference 2026",
+      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/02/03/top-sessions-you-wont-want-to-miss-at-the-microsoft-fabric-community-conference-2026/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-02-03T16:00:00.000Z",
+      "contentSnippet": "The Microsoft Fabric Community Conference (FabCon) is returning stateside in just a few weeks, taking place at the Georgia World Congress Center in Atlanta, March 16 - 20, and it’s shaping up to be our biggest event yet. The post Top sessions you won’t want to miss at the Microso…"
+    },
+    {
+      "id": "04ac092e60a6",
+      "title": "FabCon and SQLCon: From workshops and keynotes to demos and deep dives",
+      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2025/12/17/fabcon-and-sqlcon-from-workshops-and-keynotes-to-demos-and-deep-dives/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2025-12-17T21:25:00.000Z",
+      "contentSnippet": "FabCon and SQLCon will be one of the year’s largest gatherings of data professionals from around the world, bringing together tech enthusiasts, innovators, and industry leaders to explore the future of data, SQL, analytics, business intelligence, and AI integration. The post FabC…"
     },
     {
       "id": "7a4a3e9effb1",
