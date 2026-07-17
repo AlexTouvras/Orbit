@@ -6,7 +6,7 @@ on:
       - "docs/architecture/**"
       - "scripts/architecture/**"
       - "architecture-projects.json"
-      - "src/content/writes/*-architecture.mdx"
+      - "src/content/architecture/**"
   pull_request:
     paths:
       - "docs/architecture/**"

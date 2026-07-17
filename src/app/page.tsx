@@ -24,7 +24,7 @@ const accentIcon: Record<"cyan" | "violet" | "blue", string> = {
 
 export default function HomePage() {
   const profile = getEditableProfile();
-  const featuredWrites = getFeaturedWrites(2);
+  const featuredWrites = getFeaturedWrites(3);
   const resumeUrl = profile.resumeUrl || "/resume.pdf";
 
   return (
@@ -72,7 +72,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
               eyebrow="Featured"
-              title="From the log"
+              title="Articles"
               description="What I'm learning and documenting in public — one question per article."
             />
             <Link

@@ -30,11 +30,15 @@ function readWriteFile(fileName: string): Write {
   };
 }
 
+function isEssayFile(fileName: string): boolean {
+  return /\.mdx?$/.test(fileName) && !fileName.endsWith("-architecture.mdx");
+}
+
 export function getWriteSlugs(): string[] {
   if (!fs.existsSync(WRITES_DIR)) return [];
   return fs
     .readdirSync(WRITES_DIR)
-    .filter((f) => /\.mdx?$/.test(f))
+    .filter(isEssayFile)
     .map((f) => f.replace(/\.mdx?$/, ""));
 }
 
@@ -42,7 +46,7 @@ export function getAllWrites(): Write[] {
   if (!fs.existsSync(WRITES_DIR)) return [];
   return fs
     .readdirSync(WRITES_DIR)
-    .filter((f) => /\.mdx?$/.test(f))
+    .filter(isEssayFile)
     .map(readWriteFile)
     .sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 }

@@ -2,10 +2,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildOrbitWrite } from "./lib.mjs";
+import { buildArchitecturePage } from "./lib.mjs";
 
 const websiteRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const writesDir = path.join(websiteRoot, "src", "content", "writes");
+const archOutDir = path.join(websiteRoot, "src", "content", "architecture");
 const registry = JSON.parse(
   fs.readFileSync(path.join(websiteRoot, "architecture-projects.json"), "utf8"),
 );
@@ -33,12 +33,12 @@ for (const project of projects) {
     continue;
   }
 
-  const outPath = path.join(writesDir, `${project.id}-architecture.mdx`);
-  fs.mkdirSync(writesDir, { recursive: true });
-  fs.writeFileSync(outPath, buildOrbitWrite({ project, archDir }), "utf8");
-  console.log(`✓ ${project.id} → writes/${project.id}-architecture.mdx`);
+  const outPath = path.join(archOutDir, `${project.id}.mdx`);
+  fs.mkdirSync(archOutDir, { recursive: true });
+  fs.writeFileSync(outPath, buildArchitecturePage({ project, archDir }), "utf8");
+  console.log(`✓ ${project.id} → architecture/${project.id}.mdx`);
   synced += 1;
 }
 
-console.log(`\nSynced ${synced} write(s), skipped ${skipped}.`);
+console.log(`\nSynced ${synced} architecture page(s), skipped ${skipped}.`);
 process.exit(0);

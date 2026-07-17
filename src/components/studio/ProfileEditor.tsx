@@ -9,6 +9,18 @@ import { GlassCard } from "@/components/ui/GlassCard";
 const inputClass =
   "w-full rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-neon-cyan/50 focus:outline-none focus:ring-1 focus:ring-neon-cyan/30";
 
+function formatRepoAllowlist(repos: string[]): string {
+  return repos.join("\n");
+}
+
+/** Split on newlines or commas — parsed on save, not while typing. */
+function parseRepoAllowlist(raw: string): string[] {
+  return raw
+    .split(/[\n,]+/)
+    .map((n) => n.trim())
+    .filter(Boolean);
+}
+
 function Field({
   label,
   children,
@@ -29,6 +41,9 @@ function Field({
 export function ProfileEditor({ initial }: { initial: EditableProfile }) {
   const router = useRouter();
   const [form, setForm] = useState<EditableProfile>(initial);
+  const [repoAllowlistText, setRepoAllowlistText] = useState(() =>
+    formatRepoAllowlist(initial.githubRepoAllowlist),
+  );
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">(
     "idle",
   );
@@ -67,10 +82,16 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
       const res = await fetch("/api/studio/profile", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          githubRepoAllowlist: parseRepoAllowlist(repoAllowlistText),
+        }),
       });
       if (res.ok) {
         const data = await res.json().catch(() => ({}));
+        const parsed = parseRepoAllowlist(repoAllowlistText);
+        setForm((f) => ({ ...f, githubRepoAllowlist: parsed }));
+        setRepoAllowlistText(formatRepoAllowlist(parsed));
         setError(data.message ?? null);
         setStatus("saved");
         router.refresh();
@@ -130,17 +151,12 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
           <Field label="GitHub repo allowlist">
             <textarea
               className={`${inputClass} min-h-16 resize-y font-mono text-xs`}
-              value={form.githubRepoAllowlist.join("\n")}
-              onChange={(e) =>
-                set(
-                  "githubRepoAllowlist",
-                  e.target.value
-                    .split(/[\n,]+/)
-                    .map((n) => n.trim())
-                    .filter(Boolean),
-                )
-              }
-              placeholder={"one-repo-per-line\npowerbi-portfolio"}
+              value={repoAllowlistText}
+              onChange={(e) => {
+                setRepoAllowlistText(e.target.value);
+                setStatus("idle");
+              }}
+              placeholder={"powerbi-portfolio, orbit, jarvis\nor one repo per line"}
               spellCheck={false}
             />
           </Field>
@@ -160,8 +176,9 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
           </Field>
         </div>
         <p className="mt-3 text-xs text-slate-500">
-          Repo allowlist: only these public repos appear on Portfolio. Leave
-          empty to show the newest non-fork repos.
+          Repo allowlist: only these public repos appear on Portfolio. Separate
+          names with commas or new lines. Leave empty to show the newest
+          non-fork repos.
         </p>
 
         <div className="mt-4 space-y-4">
