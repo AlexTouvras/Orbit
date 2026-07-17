@@ -57,7 +57,12 @@ export async function getGithubRepos(
       `https://api.github.com/users/${encodeURIComponent(
         username,
       )}/repos?per_page=100&sort=updated`,
-      { headers, next: { revalidate: REVALIDATE_SECONDS } },
+      {
+        headers,
+        next: { revalidate: REVALIDATE_SECONDS },
+        // Prevent /portfolio from hanging when GitHub is slow/unreachable.
+        signal: AbortSignal.timeout(8_000),
+      },
     );
 
     if (!res.ok) {

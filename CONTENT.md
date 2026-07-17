@@ -11,6 +11,7 @@ Read the section that matches what you want to change.
 | --- | --- | --- |
 | **Articles (Writes)** | Add/edit MDX | `src/content/writes/*.mdx` |
 | **Portfolio (workshop + GitHub)** | Studio scanner + auto | `/studio/projects`, GitHub username in profile |
+| **Power BI reports on Portfolio** | Copy PNGs + catalog | `public/portfolio/power-bi/`, `src/content/power-bi-reports.ts` |
 | **CV / job history** | Edit structured data | `src/content/cv.ts` (shown on **Hub** home page) |
 | **Hero name, tagline, socials** | Studio *or* code | `/studio` or `src/content/profile.ts` |
 | **Workshop projects on Portfolio** | Studio scanner | `/studio/projects` |
@@ -108,7 +109,7 @@ Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, sa
 
 ---
 
-## 2. Portfolio (workshop & GitHub)
+## 2. Portfolio (workshop, GitHub & Power BI)
 
 **URL:** `/portfolio`
 
@@ -116,10 +117,20 @@ The portfolio shows **real work only**:
 
 - **Workshop** — projects you publish from Studio (scanned from your machine).
 - **GitHub** — live public repos, pulled from your `githubUsername`.
+- **Power BI** — report page screenshots (`#power-bi`), browsable with page arrows and click-to-enlarge.
 
-There are no placeholder case studies. To add workshop projects, see **§5** below.
+There are no placeholder case studies. To add workshop projects, see **§5** below. To add a Power BI report, see **§2.1**.
 
 GitHub repos update automatically from the API when `githubUsername` is set in profile or Studio.
+
+### 2.1 Adding a Power BI report
+
+1. Export page PNGs into your Power BI project’s `screenshots/` folder (e.g. `PowerBI/0N-…/screenshots/`).
+2. Copy them into Orbit: `public/portfolio/power-bi/{slug}/…` (kebab-case filenames).
+3. Append one object to `powerBiReports` in **`src/content/power-bi-reports.ts`** — `title`, `summary`, optional `repoUrl`, and `pages` with `label` / `caption` / `src`.
+4. Refresh `/portfolio` — the new name appears in the side list automatically.
+
+No component changes needed unless you add a new field (e.g. a Fabric publish URL).
 
 ---
 
@@ -297,6 +308,7 @@ git push origin main
 | New workshop project | Studio → `/studio/projects`, or `data/published-projects.json` |
 | CV update | `src/content/cv.ts`, optionally `public/resume.pdf` |
 | Profile defaults | `src/content/profile.ts` |
+| Power BI showcase | `src/content/power-bi-reports.ts`, `public/portfolio/power-bi/**` |
 | Ship curated Studio data to server | `data/profile.seed.json`, `data/published-projects.seed.json` |
 
 **Do not commit:** `.env.local`, `data/profile.json`, `data/published-projects.json`, `data/news-cache.json` (gitignored).
@@ -389,7 +401,7 @@ npm run news:fetch
 /                 Hub — hero, latest writes, competencies, about teaser
 /writes           Your articles (owned content)
 /writes/[slug]    Single article
-/portfolio        Workshop projects + GitHub
+/portfolio        Workshop + GitHub + Power BI (#power-bi)
 /about            CV & full background
 /radar            Signals — external RSS (nav label: Signals)
 /studio           Private admin (profile)
