@@ -42,7 +42,7 @@ export function writeIdeBrief(options: {
     instructions: [
       "Open this repo in Cursor.",
       "Read data/weekly-write-ide-brief.md (and the JSON twin).",
-      "Write one Orbit essay in the voice of src/content/writes/*.mdx (especially power-bi-monday-dashboard.mdx and from-risk-to-delivery.mdx).",
+      "Write one Orbit essay in the voice of src/content/writes/*.mdx (especially from-risk-to-delivery.mdx and building-orbit.mdx). Use the weekly-write-essay Cursor skill.",
       "Save the pending draft to data/weekly-write-draft.json (status pending, source ide).",
       "Run: npm run weekly:notify-draft",
       "Approve/Skip in Slack #career-ops as usual.",

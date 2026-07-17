@@ -1,17 +1,13 @@
 ---
-description: When Gemini weekly Write fails, generate the essay from the local IDE brief and continue Slack approve.
+description: When Gemini weekly Write fails, use the weekly-write-essay skill to generate the essay and Slack-notify.
 globs: data/weekly-write-ide-brief.md,data/weekly-write-ide-brief.json,data/weekly-write-draft.json
 alwaysApply: false
 ---
 
 # Weekly Write — IDE fallback
 
-If `data/weekly-write-ide-brief.md` exists with status awaiting IDE:
+If `data/weekly-write-ide-brief.md` exists (awaiting IDE), or the user asks to draft/notify a weekly Write:
 
-1. Read the brief + thesis (and `src/content/writes/power-bi-monday-dashboard.mdx`, `from-risk-to-delivery.mdx` for voice).
-2. Write **one** focused Orbit essay (not a digest), 700–1000 words, starting with `## The question`.
-3. Save `data/weekly-write-draft.json` with `status: "pending"`, `source: "ide"`, full `mdx`, and `intake` copied from the brief JSON.
-4. Run `npm run weekly:notify-draft` so Slack `#career-ops` gets Approve/Skip links.
-5. Do not publish MDX yourself — Approve in Slack commits via the normal pipeline.
+Follow the project skill **`weekly-write-essay`** (`.cursor/skills/weekly-write-essay/SKILL.md`).
 
-If the brief is absent, do not invent a weekly Write unless the user asks.
+Do not publish MDX yourself — Slack Approve in `#career-ops` commits via the normal pipeline.

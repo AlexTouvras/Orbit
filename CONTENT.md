@@ -245,7 +245,7 @@ Links are signed and expire in 7 days. Approve/Skip are confirm-then-POST so Sla
 
 Draft order: **Gemini** (when key works) → else **IDE brief** in this repo for Cursor to write the essay → then Slack Approve. Optional local fallback: `--allow-local-fallback` (Ollama/template).
 
-When Gemini fails, open `data/weekly-write-ide-brief.md`, generate the essay in Cursor, save `data/weekly-write-draft.json`, then:
+When Gemini fails, open `data/weekly-write-ide-brief.md` and follow the project skill **`weekly-write-essay`** (`.cursor/skills/weekly-write-essay/`), or ask Cursor to generate the weekly Write. Save `data/weekly-write-draft.json`, then:
 
 ```powershell
 npm run weekly:notify-draft
