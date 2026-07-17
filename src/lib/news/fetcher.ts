@@ -7,8 +7,10 @@ import { readNewsCache, writeNewsCache } from "./cache";
 const parser = new Parser({
   timeout: 15000,
   headers: {
+    // Some publishers (InfoQ, Agile Alliance) reject non-browser UAs with 403/406.
     "User-Agent":
-      "OrbitNewsRadar/1.0 (+https://example.com) personal-site-aggregator",
+      "Mozilla/5.0 (compatible; OrbitNewsRadar/1.0; +https://github.com/AlexTouvras/Orbit)",
+    Accept: "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
   },
 });
 
@@ -26,12 +28,30 @@ function cleanSnippet(raw?: string): string {
   return `${text.slice(0, MAX_SNIPPET).trimEnd()}…`;
 }
 
+/**
+ * Keep the radar English-only. Mixed blogs (e.g. Crisp) publish SE/EN posts;
+ * drop titles with Nordic letters or common non-English function words.
+ */
+function isEnglishTitle(title: string): boolean {
+  if (/[åäöÅÄÖæøÆØüßẞ]/.test(title)) return false;
+  // Whole-word cues common in Swedish / German titles that slip past Latin-1.
+  if (
+    /\b(och|att|det|som|för|med|är|från|vad|inte|på|av|om|den|ett|till|und|der|die|das|für|mit)\b/i.test(
+      title,
+    )
+  ) {
+    return false;
+  }
+  return true;
+}
+
 async function fetchFeed(source: FeedSource): Promise<NewsItem[]> {
   const feed = await parser.parseURL(source.url);
   const items = (feed.items ?? []).slice(0, MAX_ITEMS_PER_FEED);
 
   return items
     .filter((item) => item.link && item.title)
+    .filter((item) => isEnglishTitle((item.title as string).trim()))
     .map((item) => {
       const link = item.link as string;
       const pubDate = item.isoDate ?? item.pubDate ?? null;

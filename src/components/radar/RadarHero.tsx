@@ -19,10 +19,9 @@ export function RadarHero({
   const stats = [
     { label: "Signals", value: totalSignals > 0 ? String(totalSignals) : "—" },
     { label: "AI", value: String(categoryCounts.AI ?? 0) },
-    {
-      label: "Analytics",
-      value: String(categoryCounts.Analytics ?? 0),
-    },
+    { label: "Data", value: String(categoryCounts.Data ?? 0) },
+    { label: "Analytics", value: String(categoryCounts.Analytics ?? 0) },
+    { label: "Delivery", value: String(categoryCounts.Delivery ?? 0) },
   ];
 
   return (

@@ -1,0 +1,52 @@
+name: Sync Power BI portfolio
+
+# Pulls AlexTouvras/powerbi-portfolio screenshots into Orbit showcase.
+# Triggers: manual, every 6h, or repository_dispatch from powerbi-portfolio.
+
+on:
+  schedule:
+    - cron: "30 */6 * * *"
+  workflow_dispatch:
+  repository_dispatch:
+    types: [powerbi-sync]
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Orbit
+        uses: actions/checkout@v4
+
+      - name: Checkout powerbi-portfolio
+        uses: actions/checkout@v4
+        with:
+          repository: AlexTouvras/powerbi-portfolio
+          path: .powerbi-portfolio
+          # Public repo — no token required for read.
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync screenshots + catalog
+        env:
+          POWERBI_ROOT: ${{ github.workspace }}/.powerbi-portfolio
+        run: npm run powerbi:sync
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/portfolio/power-bi src/content/power-bi-reports.ts
+          if git diff --staged --quiet; then
+            echo "Power BI showcase unchanged."
+            exit 0
+          fi
+          git commit -m "chore: sync Power BI portfolio showcase [skip ci]"
+          git push

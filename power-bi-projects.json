@@ -1,0 +1,9 @@
+{
+  "powerBiRoot": "../PowerBI",
+  "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio",
+  "slugAliases": {
+    "ecommerce-churn": "churn",
+    "sales-executive": "sales",
+    "bank-segmentation": "bank"
+  }
+}

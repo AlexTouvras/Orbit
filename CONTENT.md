@@ -11,7 +11,7 @@ Read the section that matches what you want to change.
 | --- | --- | --- |
 | **Articles (Writes)** | Add/edit MDX | `src/content/writes/*.mdx` |
 | **Portfolio (workshop + GitHub)** | Studio scanner + auto | `/studio/projects`, GitHub username in profile |
-| **Power BI reports on Portfolio** | Copy PNGs + catalog | `public/portfolio/power-bi/`, `src/content/power-bi-reports.ts` |
+| **Power BI reports on Portfolio** | Auto-sync from powerbi-portfolio | GitHub Action (6h + push notify) or `npm run powerbi:sync` |
 | **CV / job history** | Edit structured data | `src/content/cv.ts` (shown on **Hub** home page) |
 | **Hero name, tagline, socials** | Studio *or* code | `/studio` or `src/content/profile.ts` |
 | **Workshop projects on Portfolio** | Studio scanner | `/studio/projects` |
@@ -125,12 +125,20 @@ GitHub repos update automatically from the API when `githubUsername` is set in p
 
 ### 2.1 Adding a Power BI report
 
-1. Export page PNGs into your Power BI project’s `screenshots/` folder (e.g. `PowerBI/0N-…/screenshots/`).
-2. Copy them into Orbit: `public/portfolio/power-bi/{slug}/…` (kebab-case filenames).
-3. Append one object to `powerBiReports` in **`src/content/power-bi-reports.ts`** — `title`, `summary`, optional `repoUrl`, and `pages` with `label` / `caption` / `src`.
-4. Refresh `/portfolio` — the new name appears in the side list automatically.
+Reports are **auto-discovered** from [`powerbi-portfolio`](https://github.com/AlexTouvras/powerbi-portfolio).
 
-No component changes needed unless you add a new field (e.g. a Fabric publish URL).
+1. In that repo, add `NN-slug/screenshots/*.png` (kebab-case filenames matching page names).
+2. Keep a `## Pages` table in that folder’s `README.md` (label + role) — Orbit uses it for captions. Skip hidden/drillthrough pages (role containing “Hidden”).
+3. Orbit picks them up automatically:
+   - **Push** screenshots/README on `powerbi-portfolio` `main` → notifies Orbit (needs `ORBIT_DISPATCH_TOKEN` secret there — see below), **or**
+   - Orbit **re-syncs every 6 hours** even without that secret, **or**
+   - Run locally from Orbit: `npm run powerbi:sync`
+
+Sync copies PNGs into `public/portfolio/power-bi/{slug}/` and regenerates `src/content/power-bi-reports.ts`. After Orbit deploys, `/portfolio` shows the new report in the side list.
+
+**One-time setup (instant sync on Power BI push):** in `powerbi-portfolio` → Settings → Secrets → Actions, add `ORBIT_DISPATCH_TOKEN`: a classic PAT or fine-grained token with **Contents: Read and write** on `AlexTouvras/Orbit`. Without it, the 6-hour Orbit cron still keeps the showcase current.
+
+Optional: set `POWERBI_ROOT` for local sync if the repo isn’t at `../PowerBI`. Slug shorteners live in `power-bi-projects.json` (`slugAliases`).
 
 ---
 
@@ -308,7 +316,7 @@ git push origin main
 | New workshop project | Studio → `/studio/projects`, or `data/published-projects.json` |
 | CV update | `src/content/cv.ts`, optionally `public/resume.pdf` |
 | Profile defaults | `src/content/profile.ts` |
-| Power BI showcase | `src/content/power-bi-reports.ts`, `public/portfolio/power-bi/**` |
+| Power BI showcase | `npm run powerbi:sync` → `src/content/power-bi-reports.ts`, `public/portfolio/power-bi/**` |
 | Ship curated Studio data to server | `data/profile.seed.json`, `data/published-projects.seed.json` |
 
 **Do not commit:** `.env.local`, `data/profile.json`, `data/published-projects.json`, `data/news-cache.json` (gitignored).

@@ -38,10 +38,30 @@ export const FEED_SOURCES: FeedSource[] = [
     category: "Data",
   },
 
-  // --- Delivery ---
+  // --- Delivery (Agile / Scrum / Kanban / CD) ---
   {
     name: "InfoQ — Continuous Delivery",
     url: "https://www.infoq.com/feed/continuous_delivery/",
+    category: "Delivery",
+  },
+  {
+    name: "InfoQ — Agile",
+    url: "https://www.infoq.com/feed/agile/",
+    category: "Delivery",
+  },
+  {
+    name: "Mountain Goat Software",
+    url: "https://www.mountaingoatsoftware.com/blog/rss",
+    category: "Delivery",
+  },
+  {
+    name: "Personal Kanban",
+    url: "https://www.personalkanban.com/feed/",
+    category: "Delivery",
+  },
+  {
+    name: "Crisp Blog",
+    url: "https://blog.crisp.se/feed",
     category: "Delivery",
   },
 

@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
+import { cn } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -96,7 +97,14 @@ export function MissionHero({
 
       {stats && stats.length > 0 && (
         <HeroItem delay={0.24} animate={animate}>
-          <dl className="mt-8 grid max-w-xl grid-cols-3 gap-4 border-y border-white/8 py-5 sm:gap-6">
+          <dl
+            className={cn(
+              "mt-8 grid gap-4 border-y border-white/8 py-5 sm:gap-6",
+              stats.length <= 3
+                ? "max-w-xl grid-cols-3"
+                : "max-w-3xl grid-cols-2 sm:grid-cols-3 md:grid-cols-5",
+            )}
+          >
             {stats.map((stat) => (
               <div key={stat.label}>
                 <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">

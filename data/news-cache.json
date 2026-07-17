@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-17T07:09:10.593Z",
-  "count": 90,
+  "generatedAt": "2026-07-17T13:02:53.676Z",
+  "count": 130,
   "items": [
     {
       "id": "8fe39edff791",
@@ -82,6 +82,15 @@
       "category": "Analytics",
       "pubDate": "2026-07-13T20:00:42.000Z",
       "contentSnippet": "This article describes how to apply different formatting rules at each level of a hierarchy (one rule at the year level, another at the quarter level, another at the month level) using ISINSCOPE in a measure or ISATLEVEL in a…"
+    },
+    {
+      "id": "711992eb368b",
+      "title": "Presentation: Road to Compliance: Will Your Internal Users Hate Your Platform Team?",
+      "link": "https://www.infoq.com/presentations/platform-engineering-team-compliance/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
+      "source": "InfoQ — Agile",
+      "category": "Delivery",
+      "pubDate": "2026-07-13T12:20:00.000Z",
+      "contentSnippet": "Davide de Paolis discusses the realities of rolling out cloud infrastructure compliance without fracturing developer relations. Drawing from a real-world platform team reboot at Sevdesk, he explains how to implement \"minimum viable governance\" on AWS, utilize event-driven Slack a…"
     },
     {
       "id": "fad58c67303d",
@@ -210,6 +219,15 @@
       "contentSnippet": "A new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice."
     },
     {
+      "id": "672138134936",
+      "title": "Focusing Where We Can Have the Most Impact",
+      "link": "https://www.mountaingoatsoftware.com/blog/focusing-where-we-can-have-the-most-impact",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-07-07T13:00:00.000Z",
+      "contentSnippet": "Mountain Goat Software is shifting its training and coaching focus to private client work, where teams and leaders can apply agile to their real challenges."
+    },
+    {
       "id": "60d1b56766e3",
       "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
       "link": "https://openai.com/index/australian-payments-plus",
@@ -253,6 +271,15 @@
       "category": "Data",
       "pubDate": "2026-07-02T08:27:41.000Z",
       "contentSnippet": "Software engineers got a gym. Data engineers got production. It's time to fix that."
+    },
+    {
+      "id": "27794a118f0d",
+      "title": "We Tried Agile and It Didn’t Work",
+      "link": "https://www.mountaingoatsoftware.com/blog/we-tried-agile-and-it-didnt-work",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-06-30T13:00:00.000Z",
+      "contentSnippet": "“We tried agile and it didn’t work” is one of the most revealing things a leader can hear."
     },
     {
       "id": "18ea580d4b89",
@@ -318,6 +345,15 @@
       "contentSnippet": "Get a first look at FabCon Europe 2026 in Barcelona, with curated session picks across Microsoft Fabric, SQL, AI, real-time intelligence, and data engineering—plus insights into the innovations shaping the future of data. The post FabCon Europe 2026: The sessions we’re most excit…"
     },
     {
+      "id": "e989675781a3",
+      "title": "Why Scrum Isn’t Working Even Though You’re Doing Scrum",
+      "link": "https://www.mountaingoatsoftware.com/blog/why-scrum-isnt-working",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-06-23T13:00:00.000Z",
+      "contentSnippet": "When Scrum feels heavy, the problem is rarely the framework alone. This article shows how interruptions, weak focus, hidden tradeoffs, and too many rules keep teams from getting Scrum’s benefits."
+    },
+    {
       "id": "a261589c9ec9",
       "title": "You Don't Graduate From Data Engineering: Why We Built aide for Continuous Learning",
       "link": "https://www.dataengineeringweekly.com/p/you-dont-graduate-from-data-engineering",
@@ -343,6 +379,15 @@
       "category": "Analytics",
       "pubDate": "2026-06-21T18:35:32.000Z",
       "contentSnippet": "“Extreme DAX” by Michiel Rozema, Madzy Stikkelorum and Henk Vlootman Continuing my series of not-reviews of the latest Power BI-related books (and there are fewer and fewer of them being published) that I receive free copies of, here’s the second edition of a book that for some r…"
+    },
+    {
+      "id": "9c167a26354f",
+      "title": "MobAI: From Copilot to Team Pilot",
+      "link": "https://blog.crisp.se/2026/06/18/michaelgothe/mobai-from-copilot-to-team-pilot",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2026-06-18T14:34:44.000Z",
+      "contentSnippet": "AI can make individuals faster. For leaders, the bigger question is whether it helps teams build shared context, judgment, and better decisions. AI can make individuals faster. It can also make teams more fragmented. That is one of the risks I see in how many organizations approa…"
     },
     {
       "id": "6c2a48806697",
@@ -453,6 +498,24 @@
       "contentSnippet": "In the first part of this series I showed how the Concurrency setting in a Fabric Dataflows Gen2 can affect refresh performance when there are multiple queries inside the dataflow. In this post I will show how, with Partitioned Compute, this setting can also affect the performanc…"
     },
     {
+      "id": "12596e9488ac",
+      "title": "Beyond “Taking Responsibility”: Why Leading for Agency is the Future of Modern Management",
+      "link": "https://blog.crisp.se/2026/05/31/tomasbjorkholm/beyond-taking-responsibility-why-leading-for-agency-is-the-future-of-modern-management",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2026-05-31T09:12:14.000Z",
+      "contentSnippet": "In recent years, a new word has steadily climbed the ranks of leadership literature and corporate strategy sessions: Agency. While many managers intuitively grasp that it has something to do with employees taking ownership, the concept goes far deeper than simply “taking responsi…"
+    },
+    {
+      "id": "8a228edcb8f5",
+      "title": "Catalyst Leadership: You Cannot Optimize the Whole System if Your Inner System Optimizes for Safety",
+      "link": "https://blog.crisp.se/2026/05/26/michaelgothe/catalyst-leadership",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2026-05-26T19:40:35.000Z",
+      "contentSnippet": "Most leaders are not held back by a lack of competence. They are held back by an inner system that was built for a different kind of world. According to Bob Anderson and Bill Adams at Leadership Circle, their research suggests that 70-80% of leaders lead reactively. That does not…"
+    },
+    {
       "id": "88ddee677bc0",
       "title": "Data Engineering Weekly #271",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-271",
@@ -469,6 +532,24 @@
       "category": "Analytics",
       "pubDate": "2026-05-24T19:31:38.000Z",
       "contentSnippet": "Did you know that if your Fabric Dataflows Gen2 contains several queries then you can control how many of them are evaluated in parallel when your dataflow refreshes? In this series I’ll look at how how you can do this and how it may result in better performance – at least in som…"
+    },
+    {
+      "id": "fe20d20dc16c",
+      "title": "Public Training Schedule Changes: Your Last Chance to Take a Public Class",
+      "link": "https://www.mountaingoatsoftware.com/blog/public-training-schedule-changes-your-last-chance-to-take-a-public-class",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-05-22T16:00:00.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "5d75679b1176",
+      "title": "Story Splitting: How To Split User Stories So Teams Can Finish",
+      "link": "https://www.mountaingoatsoftware.com/blog/story-splitting-how-to-split-user-stories-so-teams-can-finish",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-05-19T14:00:00.000Z",
+      "contentSnippet": "Story splitting helps teams turn large user stories into smaller, valuable pieces they can finish within a sprint without turning them into tasks."
     },
     {
       "id": "9f64a5c7797f",
@@ -525,6 +606,15 @@
       "contentSnippet": "This is a very late addition to the series of posts I wrote back in 2024 and which started here on Power BI memory errors. It’s about a very rare error that is hard to deal with and often temporary but since people do run into it from time to time I decided to write … Continue re…"
     },
     {
+      "id": "91e2135e9837",
+      "title": "When Planning Should Become A Shared Problem",
+      "link": "https://www.mountaingoatsoftware.com/blog/when-planning-should-become-a-shared-problem",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-05-05T13:00:00.000Z",
+      "contentSnippet": "When a leader asks for a set of features by a given date, that should be the start of a conversation, not the end of one."
+    },
+    {
       "id": "5630cb4150db",
       "title": "Filtering measures through slicers",
       "link": "https://www.sqlbi.com/tv/filtering-measures-through-slicers/",
@@ -543,6 +633,15 @@
       "contentSnippet": "A slicer cannot filter a measure. In this article, we analyze this common request by explaining how to use a slicer to filter a measure, after discussing the real meaning of using a measure with a slicer. A very common…"
     },
     {
+      "id": "eec9f031b397",
+      "title": "Course Gear from Our In-Person Classes — Now Available",
+      "link": "https://www.mountaingoatsoftware.com/blog/course-gear-from-our-in-person-classes-now-available",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-05-04T17:42:00.000Z",
+      "contentSnippet": ""
+    },
+    {
       "id": "144cddd0cbf7",
       "title": "Data Engineering Weekly #268",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-268",
@@ -550,6 +649,15 @@
       "category": "Data",
       "pubDate": "2026-05-04T01:09:52.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "5dd2dc9f7bd5",
+      "title": "How the Story Critic AI Skill Helps Teams Write Better Backlog Items",
+      "link": "https://www.mountaingoatsoftware.com/blog/story-critic-skill-better-backlog-items",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-04-28T13:00:00.000Z",
+      "contentSnippet": "See how the Story Critic skill coaches teams toward clearer, more testable backlog items and better refinement conversations, using examples of a simple story, a story with acceptance criteria, and a batch review of one Zoom backlog."
     },
     {
       "id": "d31bbf422a3b",
@@ -595,6 +703,15 @@
       "category": "Data",
       "pubDate": "2026-04-15T16:26:18.000Z",
       "contentSnippet": "Your feedback prompted us to review 233 articles across 25 issues, clarify our editorial scope, and raise the bar for what belongs in Data Engineering Weekly."
+    },
+    {
+      "id": "abc900131abb",
+      "title": "Why Smart Teams Overcommit And How Leaders Make It Worse",
+      "link": "https://www.mountaingoatsoftware.com/blog/why-smart-teams-overcommit",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-04-14T14:00:00.000Z",
+      "contentSnippet": "This article is for leaders who want honest plans from teams without pressuring them into false certainty."
     },
     {
       "id": "cf05c5ebdcca",
@@ -660,6 +777,33 @@
       "contentSnippet": "How data leaders should design the boundary between platforms and dependent teams."
     },
     {
+      "id": "4523eb12158a",
+      "title": "When There’s Too Much Work…and Not Enough You",
+      "link": "https://personalkanban.com/pk/when-theres-too-much-workand-not-enough-you/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2026-04-01T22:16:26.000Z",
+      "contentSnippet": "During our initial kick-off call, a coaching client shared how he made the “heinous mistake” of taking a sick day, only to return to his desk where he was greeted by: 34 unread messages in Slack; 9 in Teams; 3 “quick questions” in an inbox that was already overflowing with (other…"
+    },
+    {
+      "id": "fb44a3b27ac8",
+      "title": "Your Brain is Fine. Your System is Overloaded.",
+      "link": "https://personalkanban.com/pk/your-brain-is-fine-your-system-is-overloaded/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2026-04-01T19:25:09.000Z",
+      "contentSnippet": "If there’s been one constant among the individuals and teams we consult with or coach, it’s that people are certain that us humans are the problem. He should be better at this by now. I just need more discipline. If the team could only get its act together, things wouldn’t be suc…"
+    },
+    {
+      "id": "1bad9c325103",
+      "title": "Which Agile Leadership Archetype Are You?",
+      "link": "https://www.mountaingoatsoftware.com/blog/which-agile-leadership-archetype-are-you",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-04-01T14:00:00.000Z",
+      "contentSnippet": "This playful quiz helps readers identify the leadership instinct they default to under pressure, then connects those patterns to the real conditions agile teams need to succeed."
+    },
+    {
       "id": "86ce9ce60ae3",
       "title": "The Third Edition of the Mastering DAX Video Course – unplugged",
       "link": "https://www.sqlbi.com/blog/marco/2026/04/01/the-third-edition-of-the-mastering-dax-video-course-unplugged/",
@@ -696,6 +840,33 @@
       "contentSnippet": "Built on a consistent Microsoft SQL foundation from on premises to the cloud, Azure SQL brings AI capabilities directly into your database experience. The post Advancing agentic AI with Microsoft databases across a unified data estate appeared first on Microsoft Fabric Blog."
     },
     {
+      "id": "8dde897e4406",
+      "title": "You Have Everything You Need to Start. So Why Can’t You?",
+      "link": "https://personalkanban.com/pk/decision-paralysis-personal-kanban/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2026-03-10T20:06:52.000Z",
+      "contentSnippet": "This is part of the Five Moments series — five experiences that tell you your brain needs a board. Start with The Science of Finishing Things on Humane Work. You sit down to work. The list is right there. Fifteen items, maybe twenty. All of them legitimate. Most of them overdue.…"
+    },
+    {
+      "id": "8946d9bbb47f",
+      "title": "Ambiguous WIP: When Your Task Has No Definition of Done",
+      "link": "https://personalkanban.com/pk/expert-ambiguous-wip/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2026-03-10T18:43:52.000Z",
+      "contentSnippet": "There's a specific kind of task that never moves. It's not that you're avoiding it, exactly. It's not blocked by an external dependency. It doesn't have the guilt-weight of a Stuck Loop task, the one you know you should have done two weeks ago. It's something else — a card that s…"
+    },
+    {
+      "id": "62daccbcdc0d",
+      "title": "Guerilla WIP…The Work You’re Doing That Nobody Knows About",
+      "link": "https://personalkanban.com/pk/expert-guerrilla-wip/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2026-03-10T18:37:07.000Z",
+      "contentSnippet": "Not Even You There's a recurring conversation we have in workshops. We ask people to list everything they're currently working on — not their official tasks, not their job description, just the actual things consuming their time this week. The room goes quiet. Then people start l…"
+    },
+    {
       "id": "ea0336fdaaec",
       "title": "Unpacking your top questions on agentic AI: The Shift podcast",
       "link": "https://azure.microsoft.com/en-us/blog/unpacking-your-top-questions-on-agentic-ai-the-shift-podcast/",
@@ -703,6 +874,33 @@
       "category": "Analytics",
       "pubDate": "2026-03-09T20:12:35.000Z",
       "contentSnippet": "We're launching a new podcast called \"The Shift,\" which does exactly that. Grounded in questions we heard from you after Ignite news, we're releasing eight episodes that bring engineering, product, and strategy perspectives together. The post Unpacking your top questions on agent…"
+    },
+    {
+      "id": "12f3ef1dac2e",
+      "title": "Your Kanban Is Already Nudging You, Is It In The Right Direction?",
+      "link": "https://personalkanban.com/pk/thaler-choice-architecture-kanban/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2026-03-03T15:56:06.000Z",
+      "contentSnippet": "This is part of the Behavioral Economists series. Start with The Science of Finishing Things on Humane Work. Everyday, I go to work and I use our Modus Pomodoro to organize the things I feel are necessary for today to be successful. This includes looking at my calendar, seeing wh…"
+    },
+    {
+      "id": "1406c6357d64",
+      "title": "Your Done Column Is Not a Graveyard. Dan Ariely and Personal Kanban.",
+      "link": "https://personalkanban.com/pk/ariely-done-column-motivation-progress/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2026-03-02T19:22:11.000Z",
+      "contentSnippet": "PopTech, CC BY-SA 2.0, via Wikimedia Commons This is part of the Behavioral Economists series. Start with The Science of Finishing Things on Humane Work. People want to know they are having an impact. But when I ask people what motivates them at work and they'll say something abo…"
+    },
+    {
+      "id": "600d0e5fb9ee",
+      "title": "The Optimistic Brain Is a Terrible Project Manager",
+      "link": "https://personalkanban.com/pk/the-optimistic-brain-is-a-terrible-project-manager/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2026-02-27T19:26:57.000Z",
+      "contentSnippet": "Image of Daniel Kahnemann work by nrkbeta.no is licensed under a Creative Commons Attribution-Share Alike 3.0 Norway License. This is part of the Behavioral Economists series. Start with The Science of Finishing Things on Humane Work. Monday mornings are their own special magic.…"
     },
     {
       "id": "fa6a6191b9f6",
@@ -721,6 +919,114 @@
       "category": "Analytics",
       "pubDate": "2025-12-17T21:25:00.000Z",
       "contentSnippet": "FabCon and SQLCon will be one of the year’s largest gatherings of data professionals from around the world, bringing together tech enthusiasts, innovators, and industry leaders to explore the future of data, SQL, analytics, business intelligence, and AI integration. The post FabC…"
+    },
+    {
+      "id": "ccf4a59a71fa",
+      "title": "You’re Cookie. We’re All Cookie.",
+      "link": "https://personalkanban.com/pk/2025-11-25-youre-cookie-were-all-cookie/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2025-11-25T20:32:55.000Z",
+      "contentSnippet": "What my dog, when I as 12, taught me about managing my work."
+    },
+    {
+      "id": "d20dee213ef3",
+      "title": "When Life Won’t Let You Work: Understanding Your Overload",
+      "link": "https://personalkanban.com/pk/2025-11-19-when-life-wont-let-you-work-understanding-your-overload/",
+      "source": "Personal Kanban",
+      "category": "Delivery",
+      "pubDate": "2025-11-19T19:14:41.000Z",
+      "contentSnippet": "A really quick Personal Kanban in Kanban Zone You're trying to focus on the quarterly report, your brain keeps circling back to your parent's diagnosis. Or the argument with your partner last night. Or the news that won't stop being terrifying.You tell yourself to focus. You work…"
+    },
+    {
+      "id": "dd673b26a4ff",
+      "title": "Leading Complexity 2025 — Just Two Weeks Away!",
+      "link": "https://blog.crisp.se/2025/09/16/michaelgothe/leading-complexity-2025-just-two-weeks-away",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-09-16T14:50:37.000Z",
+      "contentSnippet": "We’re just two weeks away from the launch of Leading Complexity 2025, and we couldn’t be more excited to welcome the amazing group of participants who’ve signed up from around the world. This year marks the fourth season of the program — and the theme feels more urgent and releva…"
+    },
+    {
+      "id": "1314d787c356",
+      "title": "How to Lead—and Not Be Led—by AI in Complexity",
+      "link": "https://blog.crisp.se/2025/09/10/michaelgothe/how-to-lead-and-not-be-led-by-ai-in-complexity",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-09-10T13:46:38.000Z",
+      "contentSnippet": "A conversation with long-time Crisp collaborator Jonathan ReamsSummary (Abstract) AI is accelerating our tools—and our context. In this Leading Complexity Podcast episode, Jonathan Reams argues that leaders must grow their inner capacity at least as fast as AI evolves, or risk be…"
+    },
+    {
+      "id": "503ec711d00f",
+      "title": "Trying Out Lovable – A New Way to Build Websites with AI",
+      "link": "https://blog.crisp.se/2025/08/06/tomasbjorkholm/trying-out-lovable-a-new-way-to-build-websites-with-ai",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-08-06T06:36:47.000Z",
+      "contentSnippet": "Recently, I explored a new tool called Lovable. It’s an AI-powered platform that helps you build websites and web apps just by describing what you want. You write a short description (called a “prompt”), and Lovable builds the code and design for you. As someone who works with Ag…"
+    },
+    {
+      "id": "ca78c1e404e3",
+      "title": "Leveling Up Leadership: A 5-Year Journey Boosting Engagement at a Game Studio",
+      "link": "https://blog.crisp.se/2025/06/16/michaelgothe/leveling-up-leadership",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-06-16T09:14:21.000Z",
+      "contentSnippet": "How a long-term leadership program helped build stronger leaders, increase engagement, and boost collaboration across teams. The Challenge: When Engagement Slipped, Leadership Stepped Up When the executive team at a large game studio noticed a dip in employee engagement in their…"
+    },
+    {
+      "id": "40c43ce4c447",
+      "title": "Leading Complexity – Year 4: Navigating the Age of AI (and Everything Else)",
+      "link": "https://blog.crisp.se/2025/06/12/michaelgothe/leading-complexity-year-4",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-06-12T21:24:25.000Z",
+      "contentSnippet": "Three years ago, we launched the Leading Complexity Program with a simple but urgent question: How do we lead when the world is changing at an exponential pace? Organizations everywhere were feeling the pressure of complexity—messy systems, rapid change, and no playbook for how t…"
+    },
+    {
+      "id": "90a0df0b0826",
+      "title": "Mob Programming with AI: Inside a High-Performing Team’s Journey",
+      "link": "https://blog.crisp.se/2025/06/02/michaelgothe/mob-programming-with-ai-inside-a-high-performing-teams-journey",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-06-02T21:22:54.000Z",
+      "contentSnippet": "Introduction What happens when you combine a passionate development team, a dash of Tesla-inspired thinking, and the principles of Mob Programming, with AI as an active participant? At Traton-Scania, the AI-Enablement team is doing just that, transforming how they build software…"
+    },
+    {
+      "id": "e093b27ce99c",
+      "title": "Three Strategies for Leading in Complexity",
+      "link": "https://blog.crisp.se/2025/05/27/michaelgothe/three-strategies-for-leading-in-complexity",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-05-27T11:24:52.000Z",
+      "contentSnippet": "Summary of my talk from Agile Sverige 2025 A few years ago, I heard the quote: That felt true then—and it’s even more true now. After co-hosting the LeadingComplexity.com program for several years with over 30 world-class thought leaders on the topic of leading in complex environ…"
+    },
+    {
+      "id": "c8aa75ab12ca",
+      "title": "How we deploy confidently with Canary Deployment",
+      "link": "https://blog.crisp.se/2025/04/28/maxwenzin/how-we-deploy-confidently-with-canary-deployment",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-04-28T19:27:41.000Z",
+      "contentSnippet": "When you push to production multiple times a day, the stakes are high — and manual rollbacks slow. Here’s my experiences from deploying services using Canary Deployments for an important backend service for a large global streaming service. Why Canary Deployments? We adopted Cana…"
+    },
+    {
+      "id": "8be0a8e1aa2e",
+      "title": "1-2-4-All and Meetings People Actually Want to Attend",
+      "link": "https://blog.crisp.se/2025/04/28/michaelgothe/meetings-people-actually-want-to-attend",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-04-28T14:34:29.000Z",
+      "contentSnippet": "Have you ever found yourself stuck in a meeting where one person does all the talking… and everyone else just tunes out? Or where it’s so open-ended that nothing really gets done? Even with smart people in the room, the best ideas often never get heard. That’s precisely the probl…"
+    },
+    {
+      "id": "c524ad7cb522",
+      "title": "Unlock Your Team’s Full Potential: Dive into a Liberating Structures Immersion Workshop",
+      "link": "https://blog.crisp.se/2025/03/04/ruben-klerkx/unlock-your-teams-full-potential-dive-into-a-liberating-structures-immersion-workshop",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2025-03-04T07:06:23.000Z",
+      "contentSnippet": "Are you ready to revolutionize the way your team collaborates, innovates, and solves problems? Welcome to the world of Liberating Structures, where conventional meeting formats are transformed into dynamic, inclusive, and highly productive sessions. ## What Are Liberating Structu…"
     },
     {
       "id": "7a4a3e9effb1",
@@ -811,6 +1117,60 @@
       "category": "Data",
       "pubDate": "2025-02-03T11:02:00.000Z",
       "contentSnippet": ""
+    },
+    {
+      "id": "42b751bfdbc6",
+      "title": "Align Your Strategies",
+      "link": "https://blog.crisp.se/2024/12/03/tomasbjorkholm/align-your-strategies",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2024-12-03T14:49:14.000Z",
+      "contentSnippet": "In the past few weeks, I’ve received similar questions from two different companies, which I’d like to reflect on here. Both organizations were in the process of crafting strategies for critical areas: one for AI and the other for cybersecurity. Their question to me was whether i…"
+    },
+    {
+      "id": "e8b51c878af5",
+      "title": "Why your teams aren’t really empowered (and how to fix It)",
+      "link": "https://blog.crisp.se/2024/11/07/christopheachouiantz/why-your-teams-arent-really-empowered-and-how-to-fix-it",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2024-11-07T12:15:29.000Z",
+      "contentSnippet": "What actually empowers a team? Despite all the talk about empowered teams in tech, there's often confusion about what real empowerment looks like. At its core, an empowered product team is given significant customer or business problems to solve, rather than being handed features…"
+    },
+    {
+      "id": "70ef1598e3d6",
+      "title": "If You Lived in Germany in 1939, What Would You Do?",
+      "link": "https://blog.crisp.se/2024/11/07/davidbarnholdt/if-you-lived-in-germany-in-1939-what-would-you-do",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2024-11-07T07:30:04.000Z",
+      "contentSnippet": "Imagine the following: You live in Germany in 1939. Or perhaps it’s 1938, or even as early as 1935. The Nazis are in power. If you’re an average German, your material conditions are probably quite good. Unemployment is low, and the Nazis have introduced extensive “welfare program…"
+    },
+    {
+      "id": "458f23fba51c",
+      "title": "Interview with Petra Wille",
+      "link": "https://blog.crisp.se/2024/11/03/leadingcomplexity/interview-with-petra-wille",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2024-11-03T05:15:39.000Z",
+      "contentSnippet": "Jennie Mårtensson interviews Petra Wille, a renowned product leadership coach and author of Strong Product People and Strong Product Communities. Petra shares her insights on why being a product manager is one of the most exciting jobs, drawing from her extensive experience acros…"
+    },
+    {
+      "id": "89bf09b4510f",
+      "title": "Interview with Henrik Kniberg on Generative AI",
+      "link": "https://blog.crisp.se/2024/10/28/leadingcomplexity/interview-with-henrik-kniberg-on-generative-ai",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2024-10-28T13:37:44.000Z",
+      "contentSnippet": "We chatted with our colleague Henry Kniberg at Crisp about his latest work on generative AI and his upcoming master class in the Leading Complexity program. He shared some very insightful comments: “Generative AI makes things less predictable but more intelligent.” “If I had to e…"
+    },
+    {
+      "id": "ca46ee04e616",
+      "title": "How Removing Staging Environments Can Improve Your Deployments",
+      "link": "https://www.infoq.com/news/2022/05/removing-staging-environments/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Continuous+Delivery",
+      "source": "InfoQ — Continuous Delivery",
+      "category": "Delivery",
+      "pubDate": "2022-05-04T18:00:00.000Z",
+      "contentSnippet": "Squeaky - a company which helps businesses to understand how visitors are using their website or web app without invading their privacy - have outlined why they don’t use a staging environment. They believe that this helps them to ship faster, and lower the number of issues found…"
     }
   ]
 }
