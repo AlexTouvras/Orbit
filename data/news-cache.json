@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-07-16T08:05:55.237Z",
+  "generatedAt": "2026-07-17T06:42:44.735Z",
   "count": 50,
   "items": [
+    {
+      "id": "8fe39edff791",
+      "title": "Why teens deserve access to safe AI",
+      "link": "https://openai.com/index/why-teens-deserve-access-safe-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-16T16:00:00.000Z",
+      "contentSnippet": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships."
+    },
+    {
+      "id": "6f16a999c8dd",
+      "title": "How Cars24 scales conversations and builds faster with OpenAI",
+      "link": "https://openai.com/index/cars24",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-16T00:00:00.000Z",
+      "contentSnippet": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company."
+    },
     {
       "id": "1e97faa490fa",
       "title": "The US is advancing AI safety through state and federal action",
@@ -93,6 +111,15 @@
       "contentSnippet": "Learn how GPT-5.6 powers Microsoft 365 Copilot with stronger AI capabilities across Word, Excel, PowerPoint, Chat, and Cowork for faster, higher-quality work."
     },
     {
+      "id": "8fd74bd3f519",
+      "title": "GPT-5.5 Bio Bug Bounty",
+      "link": "https://openai.com/index/bio-bug-bounty",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-09T10:00:00.000Z",
+      "contentSnippet": "Details about the OpenAI Bio Bounty program"
+    },
+    {
       "id": "5941cef110c0",
       "title": "ChatGPT is now a partner for your most ambitious work",
       "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
@@ -109,15 +136,6 @@
       "category": "AI",
       "pubDate": "2026-07-09T10:00:00.000Z",
       "contentSnippet": "More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work."
-    },
-    {
-      "id": "8fd74bd3f519",
-      "title": "GPT-5.5 Bio Bug Bounty",
-      "link": "https://openai.com/index/bio-bug-bounty",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T10:00:00.000Z",
-      "contentSnippet": "Details about the OpenAI Bio Bounty program"
     },
     {
       "id": "41b85c9cdb7a",
@@ -156,15 +174,6 @@
       "contentSnippet": "A new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice."
     },
     {
-      "id": "cb031b5cf3e3",
-      "title": "MUFG aims to become AI-native with OpenAI",
-      "link": "https://openai.com/index/mufg",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-07T00:00:00.000Z",
-      "contentSnippet": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale."
-    },
-    {
       "id": "60d1b56766e3",
       "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
       "link": "https://openai.com/index/australian-payments-plus",
@@ -172,6 +181,15 @@
       "category": "AI",
       "pubDate": "2026-07-07T00:00:00.000Z",
       "contentSnippet": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central."
+    },
+    {
+      "id": "cb031b5cf3e3",
+      "title": "MUFG aims to become AI-native with OpenAI",
+      "link": "https://openai.com/index/mufg",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-07T00:00:00.000Z",
+      "contentSnippet": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale."
     },
     {
       "id": "408f24c63668",
@@ -199,24 +217,6 @@
       "category": "AI",
       "pubDate": "2026-06-30T09:00:00.000Z",
       "contentSnippet": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages."
-    },
-    {
-      "id": "3c923494434c",
-      "title": "Introducing GeneBench-Pro",
-      "link": "https://openai.com/index/introducing-genebench-pro",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-06-30T00:00:00.000Z",
-      "contentSnippet": "Introducing GeneBench-Pro, a new benchmark testing AI performance in genomics, biology, and scientific research using complex, real-world datasets."
-    },
-    {
-      "id": "200e6c5f82a0",
-      "title": "Inside Genebench-Pro",
-      "link": "https://openai.com/index/genebench-pro/case-studies",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-06-30T00:00:00.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "f8c684b806ac",
