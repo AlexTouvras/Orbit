@@ -4,7 +4,11 @@
     "name": "Orbit — Portfolio & Radar",
     "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
     "status": "wip",
-    "tags": ["Next.js", "React", "TypeScript"],
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript"
+    ],
     "repoUrl": "",
     "liveUrl": "",
     "featured": true,
@@ -12,87 +16,34 @@
     "order": 0
   },
   {
-    "id": "ultimate-reel-maker",
-    "name": "Ultimate Reel Maker",
-    "description": "A self-hosted topic-to-video pipeline: local TTS (Kokoro), word-level captions (Whisper.cpp), Pexels B-roll, and Remotion composition — with Ollama-powered script generation.",
-    "status": "wip",
-    "tags": ["Docker", "Remotion", "AI", "TTS"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": true,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\Reelsmaker",
-    "order": 1
-  },
-  {
-    "id": "projecthelm-jarvis",
-    "name": "ProjectHelm (JARVIS)",
-    "description": "A local control plane for a personal AI assistant — a meta-orchestrator that tracks project state, coordinates child agents, and runs Plan → Agent → Debug loops via the Cursor SDK.",
-    "status": "prototype",
-    "tags": ["Python", "Agents", "Orchestration"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": true,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\JARVIS",
-    "order": 2
-  },
-  {
-    "id": "projectbrain",
-    "name": "ProjectBrain",
-    "description": "A personal project-intelligence system that learns across projects over time, extracts patterns from success and failure, and serves low-latency context to AI coding agents via MCP.",
-    "status": "wip",
-    "tags": ["Python", "MCP", "AI"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\Memory",
-    "order": 3
-  },
-  {
     "id": "faceless-reels",
     "name": "Faceless Reels",
     "description": "An automated short-form video pipeline for Greek-mythology reels: beat-split narration, AI image generation with a quality loop, neural TTS, and karaoke-style captions.",
     "status": "wip",
-    "tags": ["Node", "AI", "TTS"],
+    "tags": [
+      "Node",
+      "AI",
+      "TTS"
+    ],
     "repoUrl": "",
     "liveUrl": "",
     "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\faceless_reels",
-    "order": 4
-  },
-  {
-    "id": "career-dashboard",
-    "name": "Career Dashboard",
-    "description": "A personal CV and career-path dashboard with a public/private split — build a CV-only public site while keeping career plans and learning tracks private.",
-    "status": "wip",
-    "tags": ["React", "Vite", "TypeScript"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\careerDev",
-    "order": 5
-  },
-  {
-    "id": "viral-arcade-dash",
-    "name": "Viral Arcade Dash",
-    "description": "A deterministic 2D endless runner with an \"engine-less cartridge\" architecture — game rules isolated from the Expo + Skia shell, gated by a determinism + ship verification loop.",
-    "status": "prototype",
-    "tags": ["Expo", "Skia", "TypeScript"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\gameEngine",
-    "order": 6
+    "order": 1
   },
   {
     "id": "sunplot-garden",
     "name": "Sunplot Garden",
     "description": "A cozy mobile gardening game (Unity) built as a studio repo with an agent-driven content pipeline and a vertical-grid layout system.",
     "status": "prototype",
-    "tags": ["Unity", "Game Design"],
+    "tags": [
+      "Unity",
+      "Game Design"
+    ],
     "repoUrl": "",
     "liveUrl": "",
     "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\garden_app",
-    "order": 7
+    "order": 2
   }
 ]
