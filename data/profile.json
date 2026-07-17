@@ -5,6 +5,9 @@
   "role": "Technology Delivery Lead · Data & AI Automation",
   "location": "Vantaa, Finland",
   "tagline": "Technology delivery lead with quantitative roots in credit risk and data — building agentic AI and automation systems that turn noisy signals into reliable, shipping products.",
+  "pillars": "Delivery · Data · AI automation",
+  "availability": "Open to Data & AI delivery roles",
+  "yearsExperience": "7+",
   "summary": "I work across technology delivery, data, and credit risk — leading IT application operations on Azure while building multi-agent AI workflows, automation pipelines, and analytics that teams actually trust. Around seven years in Nordic banking, now bridging quantitative risk into hands-on engineering. This site is my live portfolio bank and a self-updating radar across AI, Data, and Delivery.",
   "email": "a.touvras@gmail.com",
   "resumeUrl": "/resume.pdf",
@@ -21,5 +24,9 @@
       "label": "Email",
       "href": "mailto:a.touvras@gmail.com"
     }
+  ],
+  "githubRepoAllowlist": [
+    "powerbi-portfolio",
+    "magic-mirror"
   ]
 }
