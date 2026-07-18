@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-07-17T13:02:53.676Z",
-  "count": 130,
+  "generatedAt": "2026-07-18T06:28:37.188Z",
+  "count": 132,
   "items": [
+    {
+      "id": "3ebda52fc80e",
+      "title": "A scorecard for the AI age",
+      "link": "https://openai.com/index/a-scorecard-for-the-ai-age",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-17T10:00:00.000Z",
+      "contentSnippet": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute."
+    },
     {
       "id": "8fe39edff791",
       "title": "Why teens deserve access to safe AI",
@@ -10,6 +19,15 @@
       "category": "AI",
       "pubDate": "2026-07-16T16:00:00.000Z",
       "contentSnippet": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships."
+    },
+    {
+      "id": "04160bf4a77e",
+      "title": "Presentation: The Rust High Performance Talk You Did Not Expect",
+      "link": "https://www.infoq.com/presentations/rust-tps-service/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
+      "source": "InfoQ — Agile",
+      "category": "Delivery",
+      "pubDate": "2026-07-16T10:20:00.000Z",
+      "contentSnippet": "Ruth Linehan explains how migrating high-performance caching services from Kotlin to Rust shattered internal preconceptions around delivery velocity and engineering overhead. She discusses the ergonomics of the Rust borrow checker, shares how compile-time safety shortens the deve…"
     },
     {
       "id": "6f16a999c8dd",
@@ -120,6 +138,15 @@
       "contentSnippet": "Why privacy engineering is about governing data in use—not simply hiding it."
     },
     {
+      "id": "661fa7417a57",
+      "title": "Podcast: Formal Methods for Every Engineer in an AI-Powered Future",
+      "link": "https://www.infoq.com/podcasts/formal-methods-ai-powered-future/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
+      "source": "InfoQ — Agile",
+      "category": "Delivery",
+      "pubDate": "2026-07-10T09:00:00.000Z",
+      "contentSnippet": "In this podcast Shane Hastie, Lead Editor for Culture & Methods spoke to Gabriela Moreira about making formal methods accessible through the Quint specification language, how AI is dramatically lowering the barrier to entry for formal specification and model-based testing, and wh…"
+    },
+    {
       "id": "027b05f9d0fa",
       "title": "How Deutsche Telekom is rewiring telecommunications with AI",
       "link": "https://openai.com/index/deutsche-telekom",
@@ -156,15 +183,6 @@
       "contentSnippet": "Details about the OpenAI Bio Bounty program"
     },
     {
-      "id": "5941cef110c0",
-      "title": "ChatGPT is now a partner for your most ambitious work",
-      "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T10:00:00.000Z",
-      "contentSnippet": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work."
-    },
-    {
       "id": "54ee76ae9206",
       "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
       "link": "https://openai.com/index/gpt-5-6",
@@ -172,6 +190,15 @@
       "category": "AI",
       "pubDate": "2026-07-09T10:00:00.000Z",
       "contentSnippet": "More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work."
+    },
+    {
+      "id": "5941cef110c0",
+      "title": "ChatGPT is now a partner for your most ambitious work",
+      "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-09T10:00:00.000Z",
+      "contentSnippet": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work."
     },
     {
       "id": "41b85c9cdb7a",
@@ -228,15 +255,6 @@
       "contentSnippet": "Mountain Goat Software is shifting its training and coaching focus to private client work, where teams and leaders can apply agile to their real challenges."
     },
     {
-      "id": "60d1b56766e3",
-      "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
-      "link": "https://openai.com/index/australian-payments-plus",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-07T00:00:00.000Z",
-      "contentSnippet": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central."
-    },
-    {
       "id": "cb031b5cf3e3",
       "title": "MUFG aims to become AI-native with OpenAI",
       "link": "https://openai.com/index/mufg",
@@ -244,6 +262,15 @@
       "category": "AI",
       "pubDate": "2026-07-07T00:00:00.000Z",
       "contentSnippet": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale."
+    },
+    {
+      "id": "60d1b56766e3",
+      "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
+      "link": "https://openai.com/index/australian-payments-plus",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-07T00:00:00.000Z",
+      "contentSnippet": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central."
     },
     {
       "id": "408f24c63668",
@@ -289,15 +316,6 @@
       "category": "Analytics",
       "pubDate": "2026-06-30T10:00:00.000Z",
       "contentSnippet": "How to implement a DAX function that removes filter-keep column filters from a calendar, using REMOVEFILTERS as the return value of the function."
-    },
-    {
-      "id": "fb435a036a32",
-      "title": "How ChatGPT adoption has expanded",
-      "link": "https://openai.com/index/how-chatgpt-adoption-has-expanded",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-06-30T09:00:00.000Z",
-      "contentSnippet": "New OpenAI Signals data shows how ChatGPT adoption is growing globally, with users increasing usage, exploring more capabilities, and driving growth across regions and languages."
     },
     {
       "id": "c5ab1d19b713",
