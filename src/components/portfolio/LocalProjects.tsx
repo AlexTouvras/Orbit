@@ -14,8 +14,8 @@ export function LocalProjects() {
     <section className="mt-0">
       <Reveal>
           <SectionHeading
-            eyebrow="From the workshop"
-            title="Workshop"
+            eyebrow="Local work"
+            title="Projects"
             description="A live snapshot of projects from my machine — each with its current status."
           />
       </Reveal>

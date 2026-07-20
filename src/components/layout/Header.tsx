@@ -8,12 +8,12 @@ import { Menu, X, Hexagon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Hub", href: "/" },
-  { label: "Writes", href: "/writes" },
+  { label: "Home", href: "/" },
+  { label: "Blog", href: "/writes" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
-  { label: "Signals", href: "/radar" },
+  { label: "Related articles", href: "/radar" },
 ];
 
 export function Header() {

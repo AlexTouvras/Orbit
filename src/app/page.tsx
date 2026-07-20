@@ -72,14 +72,14 @@ export default function HomePage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
               eyebrow="Featured"
-              title="Articles"
+              title="From the blog"
               description="What I'm learning and documenting in public — one question per article."
             />
             <Link
               href="/writes"
               className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan"
             >
-              All articles
+              All posts
               <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
             </Link>
           </div>

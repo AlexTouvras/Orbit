@@ -66,7 +66,7 @@ export function RadarExplorer({ items }: { items: NewsItem[] }) {
 
         <div className="relative sm:w-72">
           <label htmlFor="radar-search" className="sr-only">
-            Search the radar
+            Search related articles
           </label>
           <Search
             className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
@@ -77,7 +77,7 @@ export function RadarExplorer({ items }: { items: NewsItem[] }) {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search the radar…"
+            placeholder="Search related articles…"
             className="input-mission"
           />
         </div>

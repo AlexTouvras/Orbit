@@ -61,7 +61,7 @@ export function AboutHero({
           href="/"
           className="focus-ring text-sm font-medium text-slate-400 transition-colors hover:text-neon-cyan"
         >
-          ← Back to hub
+          ← Back to home
         </Link>
       }
     />

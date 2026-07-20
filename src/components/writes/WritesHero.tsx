@@ -34,7 +34,7 @@ export function WritesHero({
           Build in public
         </Badge>
       }
-      title="Writes"
+      title="Blog"
       subtitle="What I learn, ship, and figure out along the way"
       description="Evergreen notes from delivery, data, and AI — one clear question per article. Documented for future me and anyone on a similar path."
       stats={stats}
@@ -52,7 +52,7 @@ export function WritesHero({
           href="/"
           className="focus-ring text-sm font-medium text-slate-400 transition-colors hover:text-neon-cyan"
         >
-          ← Back to hub
+          ← Back to home
         </Link>
       }
     />

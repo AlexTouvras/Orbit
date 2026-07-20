@@ -6,7 +6,7 @@ import { WritesHero } from "@/components/writes/WritesHero";
 import { getAllWrites } from "@/lib/writes";
 
 export const metadata: Metadata = {
-  title: "Writes",
+  title: "Blog",
   description:
     "Evergreen articles on delivery, data, AI, and career — what I learn and ship in public.",
 };

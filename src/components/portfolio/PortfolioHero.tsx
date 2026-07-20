@@ -22,7 +22,7 @@ export function PortfolioHero({
   powerBiCount = 0,
 }: PortfolioHeroProps) {
   const stats = [
-    { label: "Workshop", value: workshopCount > 0 ? String(workshopCount) : "—" },
+    { label: "Projects", value: workshopCount > 0 ? String(workshopCount) : "—" },
     {
       label: "Power BI",
       value: powerBiCount > 0 ? String(powerBiCount) : "—",
@@ -40,14 +40,14 @@ export function PortfolioHero({
         </Badge>
       }
       title="What I'm building"
-      subtitle="Workshop, open source, and Power BI"
+      subtitle="Projects, open source, and Power BI"
       description="Real projects from my machine, public repos on GitHub, and report pages from my Power BI portfolio."
       stats={stats}
       actions={
         <>
           {workshopCount > 0 && (
             <a href="#workshop" className={primaryCta}>
-              Workshop projects
+              Projects
               <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
             </a>
           )}
@@ -55,7 +55,7 @@ export function PortfolioHero({
             href="#github"
             className={workshopCount > 0 ? secondaryCta : primaryCta}
           >
-            From GitHub
+            Open source
             <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
           </a>
           {powerBiCount > 0 && (
@@ -71,7 +71,7 @@ export function PortfolioHero({
           href="/"
           className="focus-ring text-sm font-medium text-slate-400 transition-colors hover:text-neon-cyan"
         >
-          ← Back to hub
+          ← Back to home
         </Link>
       }
     />

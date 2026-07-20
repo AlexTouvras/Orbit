@@ -17,7 +17,7 @@ export function RadarHero({
   generatedAt,
 }: RadarHeroProps) {
   const stats = [
-    { label: "Signals", value: totalSignals > 0 ? String(totalSignals) : "—" },
+    { label: "Articles", value: totalSignals > 0 ? String(totalSignals) : "—" },
     { label: "AI", value: String(categoryCounts.AI ?? 0) },
     { label: "Data", value: String(categoryCounts.Data ?? 0) },
     { label: "Analytics", value: String(categoryCounts.Analytics ?? 0) },
@@ -30,12 +30,12 @@ export function RadarHero({
       badge={
         <Badge tone="cyan" className="mb-8">
           <span className="mr-1.5 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-neon-cyan" />
-          Insights · daily sweep
+          Curated · daily refresh
         </Badge>
       }
-      title="Signals"
-      subtitle="AI, Data, Analytics, and Delivery — aggregated and cached"
-      description="External intake from curated RSS sources, including Power BI and Fabric. Refreshed daily and served from cache — complementary to my own Writes."
+      title="Related articles"
+      subtitle="AI, Data, Analytics, and Delivery — from sources I follow"
+      description="External reading from curated RSS feeds, including Power BI and Fabric. Refreshed daily and cached — complementary to my own blog."
       stats={stats}
       meta={
         generatedAt ? (

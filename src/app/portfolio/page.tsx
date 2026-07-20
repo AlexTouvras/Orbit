@@ -9,7 +9,7 @@ import { getPublicProjects } from "@/lib/projects-local";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Workshop projects, open-source work from GitHub, and Power BI report pages.",
+    "Projects, open-source work from GitHub, and Power BI report pages.",
 };
 
 export default function PortfolioPage() {

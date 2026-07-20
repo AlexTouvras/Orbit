@@ -105,7 +105,7 @@ export function HubHero({
             href="/writes"
             className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition-colors hover:text-white"
           >
-            Read latest
+            Blog
             <ArrowRight className="h-3.5 w-3.5 opacity-60 transition-transform motion-safe:group-hover:translate-x-0.5" />
           </Link>
           <Link

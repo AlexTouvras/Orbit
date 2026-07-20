@@ -181,6 +181,8 @@ export const cv: Cv = {
       items: [
         "Python",
         "SQL",
+        "SAS",
+        "Statistics",
         "Power BI / Microsoft Fabric",
         "Dashboards",
         "Automation",

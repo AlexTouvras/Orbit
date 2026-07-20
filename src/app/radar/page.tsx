@@ -10,9 +10,9 @@ import { relativeTime } from "@/lib/utils";
 import type { NewsCategory } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Signals",
+  title: "Related articles",
   description:
-    "A curated feed across AI, Data, Analytics (Power BI / Fabric), and Delivery — aggregated from RSS and served from cache.",
+    "Curated reading across AI, Data, Analytics (Power BI / Fabric), and Delivery — aggregated from RSS and served from cache.",
 };
 
 export const revalidate = 1800;
@@ -58,9 +58,9 @@ export default function RadarPage() {
       <section id="signals" className="scroll-mt-28">
         <Reveal>
           <SectionHeading
-            eyebrow="Live feed"
-            title="Incoming signals"
-            description="Filter by discipline or search titles, summaries, and sources."
+            eyebrow="Feed"
+            title="From the web"
+            description="Filter by topic or search titles, summaries, and sources."
           />
         </Reveal>
 
@@ -71,10 +71,10 @@ export default function RadarPage() {
             <GlassCard className="flex flex-col items-center py-16 text-center">
               <Radio className="h-10 w-10 text-slate-500" aria-hidden />
               <h3 className="mt-4 text-lg font-semibold text-white">
-                The radar is empty
+                No related articles yet
               </h3>
               <p className="mt-2 max-w-md text-sm text-slate-300">
-                Signals will appear here when the feed refreshes. Check back
+                Articles will appear here when the feed refreshes. Check back
                 soon for curated updates across AI, Data, and Delivery.
               </p>
             </GlassCard>

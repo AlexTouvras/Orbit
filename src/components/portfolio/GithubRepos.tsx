@@ -23,7 +23,7 @@ export async function GithubRepos() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading
             eyebrow="Open source"
-            title="From GitHub"
+            title="GitHub"
             description="Live from my public repositories, refreshed automatically."
           />
           <Link
