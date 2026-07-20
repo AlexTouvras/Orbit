@@ -17,7 +17,7 @@ async function runOnce() {
   try {
     const cache = await refreshNewsCache();
     console.log(
-      `[news] wrote ${cache.count} items in ${Date.now() - startedAt}ms`,
+      `[news] ${cache.unchanged ? "swept (no new items)" : "updated"} ${cache.count} items @ ${cache.generatedAt} in ${Date.now() - startedAt}ms`,
     );
   } catch (err) {
     console.error("[news] fetch failed:", err);

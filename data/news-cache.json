@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-07-18T06:28:37.188Z",
-  "count": 132,
+  "generatedAt": "2026-07-20T04:54:43.951Z",
+  "count": 122,
   "items": [
+    {
+      "id": "513a069a215f",
+      "title": "Data Engineering Weekly #279",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-279",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-07-20T04:07:20.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "a92c018c9c22",
+      "title": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
+      "link": "https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-07-19T17:46:53.000Z",
+      "contentSnippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
+    },
     {
       "id": "3ebda52fc80e",
       "title": "A scorecard for the AI age",
@@ -615,15 +633,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "90688a8ab402",
-      "title": "Power BI Semantic Model Memory Errors, Part 5: The “Maximum Allowable Memory Allocation” Error",
-      "link": "https://blog.crossjoin.co.uk/2026/05/10/power-bi-semantic-model-memory-errors-part-5-the-maximum-allowable-memory-allocation-error/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-05-10T17:55:46.000Z",
-      "contentSnippet": "This is a very late addition to the series of posts I wrote back in 2024 and which started here on Power BI memory errors. It’s about a very rare error that is hard to deal with and often temporary but since people do run into it from time to time I decided to write … Continue re…"
-    },
-    {
       "id": "91e2135e9837",
       "title": "When Planning Should Become A Shared Problem",
       "link": "https://www.mountaingoatsoftware.com/blog/when-planning-should-become-a-shared-problem",
@@ -784,15 +793,6 @@
       "category": "Data",
       "pubDate": "2026-04-06T01:55:25.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "fc83c2ea952d",
-      "title": "The Missing Interface in Data Platform Engineering",
-      "link": "https://www.dataengineeringweekly.com/p/the-missing-interface-in-data-platform",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-04-02T03:36:07.000Z",
-      "contentSnippet": "How data leaders should design the boundary between platforms and dependent teams."
     },
     {
       "id": "4523eb12158a",
@@ -1045,96 +1045,6 @@
       "category": "Delivery",
       "pubDate": "2025-03-04T07:06:23.000Z",
       "contentSnippet": "Are you ready to revolutionize the way your team collaborates, innovates, and solves problems? Welcome to the world of Liberating Structures, where conventional meeting formats are transformed into dynamic, inclusive, and highly productive sessions. ## What Are Liberating Structu…"
-    },
-    {
-      "id": "7a4a3e9effb1",
-      "title": "DIY AI: How to Build a Linear Regression Model from Scratch",
-      "link": "https://medium.com/data-science/diy-ai-how-to-build-a-linear-regression-model-from-scratch-7b4cc0efd235?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T18:54:44.000Z",
-      "contentSnippet": "How to implement a linear regression model in Python without using machine learning libraries Continue reading on TDS Archive »"
-    },
-    {
-      "id": "409387884775",
-      "title": "Support Vector Machines: A Progression of Algorithms",
-      "link": "https://medium.com/data-science/support-vector-machines-a-progression-of-algorithms-841d63574825?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T18:49:54.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "a65627625c85",
-      "title": "Are Public Agencies Letting Open-Source Software Down?",
-      "link": "https://medium.com/data-science/are-public-agencies-letting-open-source-software-down-7688c89e7c02?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T18:46:56.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "2452b55e1edf",
-      "title": "How to Get A Job in Data Science/Machine Learning With No Previous Experience",
-      "link": "https://medium.com/data-science/how-to-get-a-job-in-data-science-machine-learning-with-no-previous-experience-996cfc41e53e?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T17:32:01.000Z",
-      "contentSnippet": "Take charge of your job search Continue reading on TDS Archive »"
-    },
-    {
-      "id": "45af2a516a93",
-      "title": "Image Captioning Paper Walkthrough: Show and Tell",
-      "link": "https://medium.com/data-science/show-and-tell-e1a1142456e2?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T16:30:24.000Z",
-      "contentSnippet": "Implementing one of the earliest neural image caption generator models with PyTorch. Continue reading on TDS Archive »"
-    },
-    {
-      "id": "8f7ac6a6125a",
-      "title": "How to Get Promoted as a Data Scientist",
-      "link": "https://medium.com/data-science/how-to-get-promoted-as-a-data-scientist-25fa81daace4?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T14:02:06.000Z",
-      "contentSnippet": "Advice from a Lead Data Scientist with 2 promotions in under 2 years. Continue reading on TDS Archive »"
-    },
-    {
-      "id": "e7437790a1f7",
-      "title": "How to Find Seasonality Patterns in Time Series",
-      "link": "https://medium.com/data-science/how-to-find-seasonality-patterns-in-time-series-c3b9f11e89c6?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T13:02:04.000Z",
-      "contentSnippet": "Using Fourier Transform to detect seasonal components Continue reading on TDS Archive »"
-    },
-    {
-      "id": "6bcd593206ee",
-      "title": "Quantifying Surprise — A Data Scientist’s Intro To Information Theory — Part 1/5: Foundations",
-      "link": "https://medium.com/data-science/quantifying-surprise-1eb9585b6f4e?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T12:02:06.000Z",
-      "contentSnippet": "Gain intuition into Information Theory and master its applications in Machine Learning and Data Analysis. Python code provided. 🐍 Continue reading on TDS Archive »"
-    },
-    {
-      "id": "3a8d52ae09cc",
-      "title": "Quantifying Uncertainty — A Data Scientist’s Intro To Information Theory — Part 2/5: Entropy",
-      "link": "https://medium.com/data-science/quantifying-uncertainty-4814b759da5f?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T12:02:03.000Z",
-      "contentSnippet": "Gain intuition into Entropy and master its applications in Machine Learning and Data Analysis. Python code provided. 🐍 Continue reading on TDS Archive »"
-    },
-    {
-      "id": "cc1f4ba8cc65",
-      "title": "Deep Dive into WebSockets and Their Role in Client-Server Communication",
-      "link": "https://medium.com/data-science/deep-dive-into-websockets-and-their-role-in-client-server-communication-aac387e10cb6?source=rss----7f60cf5620c9---4",
-      "source": "Towards Data Science",
-      "category": "Data",
-      "pubDate": "2025-02-03T11:02:00.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "42b751bfdbc6",

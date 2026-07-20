@@ -31,36 +31,34 @@ async function handle(req: NextRequest) {
   try {
     const cache = await fetchAllNews();
     const previous = readNewsCache();
-
-    if (previous.generatedAt && sameNewsItems(previous, cache)) {
-      return NextResponse.json({
-        ok: true,
-        generatedAt: previous.generatedAt,
-        count: previous.count,
-        viaGithub: false,
-        unchanged: true,
-      });
-    }
+    const unchanged = Boolean(
+      previous.generatedAt && sameNewsItems(previous, cache),
+    );
+    const next = unchanged
+      ? { ...previous, generatedAt: cache.generatedAt }
+      : cache;
 
     let viaGithub = false;
     if (process.env.VERCEL) {
       // Ephemeral FS — commit so the next deploy ships the new cache.
       const result = await persistDataJson(
         "data/news-cache.json",
-        cache,
-        "chore: refresh news cache [skip ci]",
+        next,
+        unchanged
+          ? "chore: touch news cache sweep time [skip ci]"
+          : "chore: refresh news cache [skip ci]",
       );
       viaGithub = result.viaGithub;
     } else {
-      writeNewsCache(cache);
+      writeNewsCache(next);
     }
 
     return NextResponse.json({
       ok: true,
-      generatedAt: cache.generatedAt,
-      count: cache.count,
+      generatedAt: next.generatedAt,
+      count: next.count,
       viaGithub,
-      unchanged: false,
+      unchanged,
     });
   } catch (err) {
     console.error("[cron/news] refresh failed:", err);

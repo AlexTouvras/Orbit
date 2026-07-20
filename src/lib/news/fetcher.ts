@@ -123,11 +123,17 @@ export type RefreshNewsResult = NewsCache & {
 export async function refreshNewsCache(): Promise<RefreshNewsResult> {
   const cache = await fetchAllNews();
   const previous = readNewsCache();
+  const unchanged = Boolean(
+    previous.generatedAt && sameNewsItems(previous, cache),
+  );
 
-  if (previous.generatedAt && sameNewsItems(previous, cache)) {
-    return { ...previous, viaGithub: false, unchanged: true };
-  }
+  // Always bump generatedAt on a successful sweep so the Related articles
+  // page does not show "stale cache" after the 36h banner threshold when
+  // feeds simply had no new items.
+  const next: NewsCache = unchanged
+    ? { ...previous, generatedAt: cache.generatedAt }
+    : cache;
 
-  writeNewsCache(cache);
-  return { ...cache, viaGithub: false, unchanged: false };
+  writeNewsCache(next);
+  return { ...next, viaGithub: false, unchanged };
 }

@@ -319,7 +319,8 @@ git push origin main
 | Power BI showcase | `npm run powerbi:sync` → `src/content/power-bi-reports.ts`, `public/portfolio/power-bi/**` |
 | Ship curated Studio data to server | `data/profile.seed.json`, `data/published-projects.seed.json` |
 
-**Do not commit:** `.env.local`, `data/profile.json`, `data/published-projects.json`, `data/news-cache.json` (gitignored).
+**Do not commit:** `.env.local`, `data/profile.json`, `data/published-projects.json` (gitignored).
+`data/news-cache.json` **is** committed — Related articles read it on Vercel; GitHub Action / Vercel Cron refresh it daily.
 
 ### After push — update the server
 
