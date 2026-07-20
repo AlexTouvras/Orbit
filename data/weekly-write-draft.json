@@ -1,13 +1,18 @@
 {
   "id": "ww-2026-07-20-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-07-20T05:35:00.000Z",
   "weekOf": "2026-07-20",
   "slug": "direct-lake-isnt-free-when-fabric-mode-earns-its-keep",
   "title": "Direct Lake isn't free: when Fabric's cool mode earns its keep",
   "summary": "Chris Webb's Direct Lake case is really about where cost and cycle time live. For portfolio reports that still ship as Import models, measure the gold layer before you chase framing.",
   "category": "Data",
-  "tags": ["Power BI", "Fabric", "Direct Lake", "Analytics"],
+  "tags": [
+    "Power BI",
+    "Fabric",
+    "Direct Lake",
+    "Analytics"
+  ],
   "mdx": "---\ntitle: \"Direct Lake isn't free: when Fabric's cool mode earns its keep\"\nsummary: \"Chris Webb's Direct Lake case is really about where cost and cycle time live. For portfolio reports that still ship as Import models, measure the gold layer before you chase framing.\"\ndate: \"2026-07-20\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Fabric\", \"Direct Lake\", \"Analytics\"]\n---\n\n## The question\n\nWhen does Direct Lake cut real cost and cycle time on a Fabric stack, and when is Import still the honest choice for a report that has to stay trustworthy on Monday morning?\n\n## What Webb is actually saying\n\n[The Benefits Of Using Direct Lake Mode In Power BI](https://blog.crossjoin.co.uk/2026/07/12/the-benefits-of-using-direct-lake-mode-in-power-bi/) (Chris Webb's BI Blog) is worth an essay because it refuses the default pitch. Direct Lake did not win because it is fashionable. It wins when you stop treating \"refresh\" as the only bill and start accounting for how data becomes queryable.\n\nWebb's useful correction: framing a Direct Lake model is nearly free in CU terms, but that is not the full price. You still pay to land a gold layer in OneLake (Spark, pipelines, or whatever engine you trust), and that cost is what you should compare to Import refresh. Some internal Microsoft BI teams prefer Direct Lake because a broken model can be back online in seconds after a fix, and because they can spin a test model, query it, and tear it down without waiting on a long Import cycle.\n\nThe reuse angle matters more than people admit. Import tenants quietly duplicate Date, Product, and Customer across dozens of models. Each copy refreshes on its own schedule and can disagree with its neighbors. OneLake tables, with shortcuts and OneLake security planned up front, can feed many Direct Lake models from one load. That is an architecture decision, not a checkbox in Desktop.\n\n## What people get wrong\n\nTeams treat storage mode as identity. \"We are a Direct Lake shop\" sounds decisive and skips the boring work: who owns the gold tables, how often they land, whether table layout is good enough for the queries you actually run, and what fails when the Spark job stalls.\n\nImport still earns its keep on smaller, self-contained models where Desktop iteration is the bottleneck and you do not yet have a shared lakehouse worth defending. Webb says as much: do not rip and replace Import models that already work. New enterprise Fabric builds should at least test Direct Lake; they should not pretend Import is obsolete.\n\nI keep his earlier DirectQuery note in the adjacent pile, not as a second thesis. Composite patterns still exist for a reason. Mode choice is a set of trade-offs, and query CU profiles differ from refresh CU profiles. If you only measure one of those, your \"win\" is a spreadsheet fiction.\n\n## How this lands on work I am shipping\n\nThe Power BI reports on Orbit (churn risk, sales executive, bank segmentation) are Import-shaped portfolio pieces: screenshots, page sequences, decision captions. That is fine for a public case study. It would be dishonest to claim Direct Lake benefits for them when there is no Fabric capacity, no shared OneLake gold layer, and no second semantic model reusing the same facts.\n\nWhat I take from Webb for that work is sharper than \"migrate someday.\" Before I ever chase framing, I want a written answer to these checks:\n\n1. Where does the gold table get built, and who owns the job when it fails?\n2. How many semantic models would share those tables if we stopped copying dimensions?\n3. What is the CU and wall-clock cost of the lake load versus the Import refresh we run today?\n4. Can I recover from a model bug in minutes, or am I waiting on a full refresh window?\n\nIf I cannot answer those, Direct Lake is cosplay.\n\nAdjacent reading this week includes [Using Fabric Operations Agents And Workspace Monitoring With Power BI](https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/). Useful later. Monitoring an agent that watches pipelines does not help if you never decided whether the expensive work lives in Import refresh or in the gold-layer job.\n\n## Mistakes I refuse to make\n\nCalling a storage mode a strategy. Measuring only Desktop refresh while ignoring the pipeline that feeds OneLake. Duplicating the same fact across models and then arguing about whose number is right. Shipping a Fabric demo that cannot name a rollback for the gold-layer job.\n\n## Takeaway\n\nDirect Lake earns its keep when the expensive part of \"fresh data\" moves left into a shared OneLake load that many models and engines can reuse, and when recovery time after a model fix matters as much as query milliseconds. Import remains honest when the model is small, isolated, and already trustworthy. Pick the mode that matches where your cost and failure modes actually live, then prove it with a side-by-side refresh versus gold-layer test instead of a slide about the cool path.\n",
   "preview": "Direct Lake isn't free: when Fabric's cool mode earns its keep\n\nChris Webb's Direct Lake case is really about where cost and cycle time live. For portfolio reports that still ship as Import models, measure the gold layer before you chase framing.\n\nInspired by: The Benefits Of Using Direct Lake Mode In Power BI",
   "intake": {
@@ -61,11 +66,17 @@
         "name": "Orbit — Portfolio & Radar",
         "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
         "status": "wip",
-        "tags": ["Next.js", "React", "TypeScript"],
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript"
+        ],
         "repoUrl": "",
         "liveUrl": ""
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-07-20T05:54:35.674Z",
+  "publishedSlug": "direct-lake-isnt-free-when-fabric-mode-earns-its-keep"
 }
