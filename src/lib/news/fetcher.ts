@@ -68,26 +68,46 @@ async function fetchFeed(source: FeedSource): Promise<NewsItem[]> {
 }
 
 /**
- * Fetch every configured feed in parallel, tolerating individual failures,
- * then dedupe by link and sort newest-first.
+ * Fetch every configured feed in parallel, tolerating individual failures.
+ * When a source fails, keep that source's items from `previous` so a 403/429
+ * does not wipe a whole lane (e.g. Towards Data Science).
  */
-export async function fetchAllNews(): Promise<NewsCache> {
+export async function fetchAllNews(
+  previous: NewsCache | null = null,
+): Promise<NewsCache> {
   const results = await Promise.allSettled(FEED_SOURCES.map(fetchFeed));
 
   const seen = new Set<string>();
   const items: NewsItem[] = [];
+  const failedSources: string[] = [];
 
   results.forEach((result, i) => {
+    const source = FEED_SOURCES[i];
     if (result.status === "fulfilled") {
       for (const item of result.value) {
         if (seen.has(item.link)) continue;
         seen.add(item.link);
         items.push(item);
       }
-    } else {
+      return;
+    }
+
+    failedSources.push(source.name);
+    console.warn(
+      `[news] failed to fetch "${source.name}":`,
+      result.reason instanceof Error ? result.reason.message : result.reason,
+    );
+
+    const retained =
+      previous?.items.filter((item) => item.source === source.name) ?? [];
+    for (const item of retained) {
+      if (seen.has(item.link)) continue;
+      seen.add(item.link);
+      items.push(item);
+    }
+    if (retained.length > 0) {
       console.warn(
-        `[news] failed to fetch "${FEED_SOURCES[i].name}":`,
-        result.reason instanceof Error ? result.reason.message : result.reason,
+        `[news] retained ${retained.length} cached item(s) from "${source.name}"`,
       );
     }
   });
@@ -97,6 +117,12 @@ export async function fetchAllNews(): Promise<NewsCache> {
     const tb = b.pubDate ? Date.parse(b.pubDate) : 0;
     return tb - ta;
   });
+
+  if (failedSources.length > 0) {
+    console.warn(
+      `[news] ${failedSources.length} feed(s) failed this sweep: ${failedSources.join(", ")}`,
+    );
+  }
 
   return {
     generatedAt: new Date().toISOString(),
@@ -121,8 +147,8 @@ export type RefreshNewsResult = NewsCache & {
 
 /** Fetch and write the on-disk cache (local / GitHub Actions). */
 export async function refreshNewsCache(): Promise<RefreshNewsResult> {
-  const cache = await fetchAllNews();
   const previous = readNewsCache();
+  const cache = await fetchAllNews(previous);
   const unchanged = Boolean(
     previous.generatedAt && sameNewsItems(previous, cache),
   );

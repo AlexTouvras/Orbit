@@ -29,8 +29,8 @@ async function handle(req: NextRequest) {
   }
 
   try {
-    const cache = await fetchAllNews();
     const previous = readNewsCache();
+    const cache = await fetchAllNews(previous);
     const unchanged = Boolean(
       previous.generatedAt && sameNewsItems(previous, cache),
     );
