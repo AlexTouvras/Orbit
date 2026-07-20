@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-20T06:23:02.861Z",
-  "count": 132,
+  "generatedAt": "2026-07-20T08:50:52.021Z",
+  "count": 131,
   "items": [
     {
       "id": "513a069a215f",
@@ -37,15 +37,6 @@
       "category": "AI",
       "pubDate": "2026-07-16T16:00:00.000Z",
       "contentSnippet": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships."
-    },
-    {
-      "id": "04160bf4a77e",
-      "title": "Presentation: The Rust High Performance Talk You Did Not Expect",
-      "link": "https://www.infoq.com/presentations/rust-tps-service/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
-      "source": "InfoQ — Agile",
-      "category": "Delivery",
-      "pubDate": "2026-07-16T10:20:00.000Z",
-      "contentSnippet": "Ruth Linehan explains how migrating high-performance caching services from Kotlin to Rust shattered internal preconceptions around delivery velocity and engineering overhead. She discusses the ergonomics of the Rust borrow checker, shares how compile-time safety shortens the deve…"
     },
     {
       "id": "6f16a999c8dd",
