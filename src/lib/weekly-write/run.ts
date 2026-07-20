@@ -10,6 +10,7 @@ import {
   readWeeklyDraftFs,
   writeWeeklyDraftFs,
 } from "@/lib/weekly-write/store";
+import { writeWeeklyDraft } from "@/lib/weekly-write/store-remote";
 import type { WeeklyDraft } from "@/lib/weekly-write/types";
 
 export interface RunWeeklyWriteResult {
@@ -52,6 +53,13 @@ export async function notifyExistingWeeklyDraft(): Promise<RunWeeklyWriteResult>
       draft,
     };
   }
+
+  // Preview/Approve on Vercel read the draft from GitHub — persist before Slack.
+  await writeWeeklyDraft(
+    draft,
+    `chore: weekly write pending draft ${draft.id}`,
+  );
+  writeWeeklyDraftFs(draft);
 
   const slack = await notifyDraft(draft);
   if (!slack.ok) {
