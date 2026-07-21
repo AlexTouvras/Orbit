@@ -6,11 +6,8 @@ import {
   writeIdeBrief,
 } from "@/lib/weekly-write/ide-brief";
 import { sendWeeklyDraftSlack } from "@/lib/weekly-write/slack";
-import {
-  readWeeklyDraftFs,
-  writeWeeklyDraftFs,
-} from "@/lib/weekly-write/store";
-import { writeWeeklyDraft } from "@/lib/weekly-write/store-remote";
+import { persistWeeklyDraftCli } from "@/lib/weekly-write/persist-cli";
+import { readWeeklyDraftFs } from "@/lib/weekly-write/store";
 import type { WeeklyDraft } from "@/lib/weekly-write/types";
 
 export interface RunWeeklyWriteResult {
@@ -55,11 +52,11 @@ export async function notifyExistingWeeklyDraft(): Promise<RunWeeklyWriteResult>
   }
 
   // Preview/Approve on Vercel read the draft from GitHub — persist before Slack.
-  await writeWeeklyDraft(
+  // Use CLI-safe persist (no `server-only`) so GitHub Actions / tsx can run.
+  await persistWeeklyDraftCli(
     draft,
     `chore: weekly write pending draft ${draft.id}`,
   );
-  writeWeeklyDraftFs(draft);
 
   const slack = await notifyDraft(draft);
   if (!slack.ok) {
@@ -141,7 +138,11 @@ export async function runWeeklyWritePipeline(options?: {
   }
 
   const draft = created.draft;
-  writeWeeklyDraftFs(draft);
+  // Persist before Slack so preview links work (CLI-safe; no server-only).
+  await persistWeeklyDraftCli(
+    draft,
+    `chore: weekly write draft ${draft.id} [${draft.status}]`,
+  );
   appendWeeklyWriteLog(
     `Draft ready (${draft.source}): ${draft.title} [${draft.id}]`,
   );
