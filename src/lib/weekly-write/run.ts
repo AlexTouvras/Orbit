@@ -121,11 +121,13 @@ export async function runWeeklyWritePipeline(options?: {
       intake: created.intake,
       thesis: created.thesis,
     });
-    appendWeeklyWriteLog(
-      "Gemini failed — waiting for IDE essay generation before Slack.",
-    );
+    const logLine =
+      created.reason === "cloud_automation"
+        ? "Cloud Automation / IDE path — brief ready for essay generation."
+        : "Gemini unavailable — waiting for IDE essay generation before Slack.";
+    appendWeeklyWriteLog(logLine);
     console.warn(
-      "[weekly-write] Gemini unavailable. IDE brief written:",
+      "[weekly-write] IDE brief written (cloud automation / IDE path):",
       "data/weekly-write-ide-brief.md",
     );
     return {

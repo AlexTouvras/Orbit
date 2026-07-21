@@ -780,16 +780,34 @@ function toWeeklyDraft(
   };
 }
 
+/** Cursor Cloud Automation / IDE is the primary writer (skip Gemini + template). */
+function useCloudAutomationWriter(): boolean {
+  return (
+    process.env.WEEKLY_WRITE_USE_CLOUD_AUTOMATION === "1" ||
+    process.env.WEEKLY_WRITE_SKIP_GEMINI === "1"
+  );
+}
+
 /**
- * Prefer Gemini when configured.
- * If Gemini is configured but fails → await IDE generation (no weak auto-Slack).
- * If Gemini is not configured → Ollama → OpenAI → topic scaffold.
+ * Default: Cursor Cloud Automation / IDE writes the essay (Gemini skipped).
+ * Legacy: Gemini when configured and cloud mode off.
+ * Local fallback: Ollama → OpenAI → template (only when explicitly allowed).
  */
 export async function createWeeklyDraft(
   intake: WeeklyIntake,
   options?: { allowLocalFallback?: boolean },
 ): Promise<CreateWeeklyDraftResult> {
   const thesis = pickEssayThesis(intake);
+
+  if (useCloudAutomationWriter()) {
+    return {
+      status: "awaiting_ide",
+      reason: thesis ? "cloud_automation" : "no_thesis",
+      intake,
+      thesis,
+    };
+  }
+
   const fallback = buildTemplateMdx(intake);
   const geminiConfigured = Boolean(process.env.GEMINI_API_KEY?.trim());
   const allowLocal =
