@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { persistDataJson } from "@/lib/data-persist";
-import { readNewsCache, writeNewsCache } from "@/lib/news/cache";
+import { readNewsCacheRemote } from "@/lib/news/cache-remote";
+import { writeNewsCache } from "@/lib/news/cache";
 import {
   fetchAllNews,
   sameNewsItems,
@@ -29,7 +30,7 @@ async function handle(req: NextRequest) {
   }
 
   try {
-    const previous = readNewsCache();
+    const previous = await readNewsCacheRemote();
     const cache = await fetchAllNews(previous);
     const unchanged = Boolean(
       previous.generatedAt && sameNewsItems(previous, cache),

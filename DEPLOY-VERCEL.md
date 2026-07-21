@@ -31,12 +31,13 @@ Vercel project → **Settings → Domains** → add `yourname.duckdns.org` (CNAM
 
 ## Daily news refresh
 
-Signals read from committed `data/news-cache.json`. They refresh **daily at
-06:00 UTC** via **Vercel Cron** → `GET /api/cron/news`:
+Signals read from `data/news-cache.json` on GitHub at **request time** (no redeploy
+needed). They refresh **daily at 06:00 UTC** via **Vercel Cron** →
+`GET /api/cron/news`:
 
 1. Fetches RSS feeds
 2. Commits `data/news-cache.json` to GitHub (`GITHUB_TOKEN` required)
-3. Vercel redeploys with fresh Signals
+3. Related articles pick up the new cache on the next page load
 
 Requires env: `CRON_SECRET`, `GITHUB_TOKEN`, `GITHUB_REPO` (same as Studio).
 

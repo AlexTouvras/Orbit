@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { RadarExplorer } from "@/components/radar/RadarExplorer";
 import { RadarHero } from "@/components/radar/RadarHero";
-import { readNewsCache } from "@/lib/news/cache";
+import { readNewsCacheRemote } from "@/lib/news/cache-remote";
 import { relativeTime } from "@/lib/utils";
 import type { NewsCategory } from "@/lib/types";
 
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "Curated reading across AI, Data, Analytics (Power BI / Fabric), and Delivery — aggregated from RSS and served from cache.",
 };
 
-export const revalidate = 1800;
+export const dynamic = "force-dynamic";
 
 const STALE_AFTER_MS = 36 * 60 * 60 * 1000;
 
-export default function RadarPage() {
-  const cache = readNewsCache();
+export default async function RadarPage() {
+  const cache = await readNewsCacheRemote();
   const hasItems = cache.items.length > 0;
   const generatedMs = cache.generatedAt ? Date.parse(cache.generatedAt) : 0;
   // eslint-disable-next-line react-hooks/purity
@@ -49,8 +49,8 @@ export default function RadarPage() {
         >
           <TriangleAlert className="h-4 w-4 shrink-0" aria-hidden />
           <p>
-            Showing cached results from {relativeTime(cache.generatedAt)}. Run the
-            fetcher to refresh.
+            Showing cached results from {relativeTime(cache.generatedAt)}. The
+            daily fetch may be delayed — check back later or refresh manually.
           </p>
         </div>
       )}
