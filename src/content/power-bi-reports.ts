@@ -44,6 +44,12 @@ export const powerBiReports: PowerBiReport[] = [
         caption: "Customers ranked by `ChurnProbability` · risk / city / satisfaction slicers",
         src: "/portfolio/power-bi/churn/at-risk-queue.png",
       },
+      {
+        id: "context",
+        label: "Context",
+        caption: "Audience, how to read drivers, data/model caveats (last visible page)",
+        src: "/portfolio/power-bi/churn/context.png",
+      },
     ],
   },
   {
@@ -95,6 +101,38 @@ export const powerBiReports: PowerBiReport[] = [
         label: "Relationship Book",
         caption: "Dormant + single-product queue · engagement funnel · drillthrough",
         src: "/portfolio/power-bi/bank/relationship-book.png",
+      },
+    ],
+  },
+  {
+    id: "healthcare-analytics",
+    title: "Care Pulse",
+    summary: "```text",
+    repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
+    pages: [
+      {
+        id: "care-pulse",
+        label: "Care Pulse",
+        caption: "",
+        src: "/portfolio/power-bi/healthcare-analytics/care-pulse.png",
+      },
+      {
+        id: "context",
+        label: "Context",
+        caption: "",
+        src: "/portfolio/power-bi/healthcare-analytics/context.png",
+      },
+      {
+        id: "discharge-risk-queue",
+        label: "Discharge Risk Queue",
+        caption: "",
+        src: "/portfolio/power-bi/healthcare-analytics/discharge-risk-queue.png",
+      },
+      {
+        id: "pathways-drivers",
+        label: "Pathways Drivers",
+        caption: "",
+        src: "/portfolio/power-bi/healthcare-analytics/pathways-drivers.png",
       },
     ],
   },
