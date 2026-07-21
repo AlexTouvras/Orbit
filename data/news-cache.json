@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-07-20T08:50:52.021Z",
+  "generatedAt": "2026-07-21T07:55:58.642Z",
   "count": 131,
   "items": [
+    {
+      "id": "d4ff9ec891b7",
+      "title": "Safety and alignment in an era of long-horizon models",
+      "link": "https://openai.com/index/safety-alignment-long-horizon-models",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-20T10:00:00.000Z",
+      "contentSnippet": "OpenAI shares lessons from deploying long-running AI models, highlighting new safety risks, observed failures, and improved safeguards through iterative deployment."
+    },
     {
       "id": "513a069a215f",
       "title": "Data Engineering Weekly #279",
@@ -183,15 +192,6 @@
       "contentSnippet": "Learn how GPT-5.6 powers Microsoft 365 Copilot with stronger AI capabilities across Word, Excel, PowerPoint, Chat, and Cowork for faster, higher-quality work."
     },
     {
-      "id": "8fd74bd3f519",
-      "title": "GPT-5.5 Bio Bug Bounty",
-      "link": "https://openai.com/index/bio-bug-bounty",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T10:00:00.000Z",
-      "contentSnippet": "Details about the OpenAI Bio Bounty program"
-    },
-    {
       "id": "54ee76ae9206",
       "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
       "link": "https://openai.com/index/gpt-5-6",
@@ -208,6 +208,15 @@
       "category": "AI",
       "pubDate": "2026-07-09T10:00:00.000Z",
       "contentSnippet": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work."
+    },
+    {
+      "id": "8fd74bd3f519",
+      "title": "GPT-5.5 Bio Bug Bounty",
+      "link": "https://openai.com/index/bio-bug-bounty",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-09T10:00:00.000Z",
+      "contentSnippet": "Details about the OpenAI Bio Bounty program"
     },
     {
       "id": "41b85c9cdb7a",
@@ -262,15 +271,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-07T13:00:00.000Z",
       "contentSnippet": "Mountain Goat Software is shifting its training and coaching focus to private client work, where teams and leaders can apply agile to their real challenges."
-    },
-    {
-      "id": "cb031b5cf3e3",
-      "title": "MUFG aims to become AI-native with OpenAI",
-      "link": "https://openai.com/index/mufg",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-07T00:00:00.000Z",
-      "contentSnippet": "MUFG uses ChatGPT Enterprise to build an AI-native organization, improve workflows, and deliver new AI-powered financial services at scale."
     },
     {
       "id": "60d1b56766e3",
