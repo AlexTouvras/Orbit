@@ -27,6 +27,12 @@ export const powerBiReports: PowerBiReport[] = [
     repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
     pages: [
       {
+        id: "landing",
+        label: "Landing",
+        caption: "Artistic cover · thesis · audience · page map (opens first)",
+        src: "/portfolio/power-bi/churn/landing.png",
+      },
+      {
         id: "retention-pulse",
         label: "Retention Pulse",
         caption: "KPI strip · churn rate by tenure band",
@@ -47,7 +53,7 @@ export const powerBiReports: PowerBiReport[] = [
       {
         id: "context",
         label: "Context",
-        caption: "Audience, how to read drivers, data/model caveats (last visible page)",
+        caption: "Facts-only reference · drivers how-to · data/model caveats (last visible)",
         src: "/portfolio/power-bi/churn/context.png",
       },
     ],
@@ -58,6 +64,12 @@ export const powerBiReports: PowerBiReport[] = [
     summary: "Nordic Boardroom executive report for sales health: status in seconds, then self-serve into product drivers and customer/market concentration.",
     repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
     pages: [
+      {
+        id: "landing",
+        label: "Landing",
+        caption: "Artistic cover · thesis · audience · page map (opens first)",
+        src: "/portfolio/power-bi/sales/landing.png",
+      },
       {
         id: "portfolio-pulse",
         label: "Portfolio Pulse",
@@ -85,6 +97,12 @@ export const powerBiReports: PowerBiReport[] = [
     repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
     pages: [
       {
+        id: "landing",
+        label: "Landing",
+        caption: "Artistic cover · thesis · audience · page map (opens first)",
+        src: "/portfolio/power-bi/bank/landing.png",
+      },
+      {
         id: "franchise-pulse",
         label: "Franchise Pulse",
         caption: "Credit / debit / net flow · waterfall bridge · monthly volume",
@@ -111,6 +129,12 @@ export const powerBiReports: PowerBiReport[] = [
     repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
     pages: [
       {
+        id: "landing",
+        label: "Landing",
+        caption: "Artistic cover · thesis · audience · page map (opens first)",
+        src: "/portfolio/power-bi/healthcare-analytics/landing.png",
+      },
+      {
         id: "care-pulse",
         label: "Care Pulse",
         caption: "KPI strip · monthly volume · readmit by diagnosis",
@@ -131,7 +155,7 @@ export const powerBiReports: PowerBiReport[] = [
       {
         id: "context",
         label: "Context",
-        caption: "Audience, how to read Sankey, data/model caveats (last visible page)",
+        caption: "Facts-only reference · Sankey how-to · data/model caveats (last visible)",
         src: "/portfolio/power-bi/healthcare-analytics/context.png",
       },
     ],
