@@ -1,0 +1,177 @@
+{
+  "status": "awaiting_ide",
+  "reason": "gemini_unavailable",
+  "createdAt": "2026-07-21T06:36:56.643Z",
+  "weekOf": "2026-07-20",
+  "thesis": {
+    "angle": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
+    "question": "What actually changes in how we build analytics when the reporting stack keeps moving?",
+    "primary": {
+      "id": "a92c018c9c22",
+      "title": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
+      "link": "https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "snippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
+    },
+    "supporting": [
+      {
+        "id": "6f16a999c8dd",
+        "title": "How Cars24 scales conversations and builds faster with OpenAI",
+        "link": "https://openai.com/index/cars24",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company."
+      },
+      {
+        "id": "92ab1f77dd8c",
+        "title": "How to manage AI investments in the agentic era",
+        "link": "https://openai.com/index/managing-ai-investments-in-agentic-era",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows."
+      }
+    ],
+    "bridgeProject": {
+      "id": "cyber-portfolio-platform",
+      "name": "Orbit — Portfolio & Radar",
+      "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
+      "status": "wip",
+      "tags": [
+        "Next.js",
+        "React",
+        "TypeScript"
+      ],
+      "repoUrl": "",
+      "liveUrl": ""
+    },
+    "category": "Data",
+    "tags": [
+      "Power BI",
+      "Agents",
+      "Data",
+      "Analytics",
+      "Next.js",
+      "React"
+    ],
+    "whyInteresting": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
+  },
+  "intake": {
+    "weekOf": "2026-07-20",
+    "generatedAt": "2026-07-21T06:33:35.942Z",
+    "signals": [
+      {
+        "id": "513a069a215f",
+        "title": "Data Engineering Weekly #279",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-279",
+        "source": "Data Engineering Weekly",
+        "category": "Data",
+        "snippet": "The Weekly Data Engineering Newsletter"
+      },
+      {
+        "id": "a92c018c9c22",
+        "title": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
+        "link": "https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/",
+        "source": "Chris Webb's BI Blog",
+        "category": "Analytics",
+        "snippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
+      },
+      {
+        "id": "3ebda52fc80e",
+        "title": "A scorecard for the AI age",
+        "link": "https://openai.com/index/a-scorecard-for-the-ai-age",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute."
+      },
+      {
+        "id": "8fe39edff791",
+        "title": "Why teens deserve access to safe AI",
+        "link": "https://openai.com/index/why-teens-deserve-access-safe-ai",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships."
+      },
+      {
+        "id": "6f16a999c8dd",
+        "title": "How Cars24 scales conversations and builds faster with OpenAI",
+        "link": "https://openai.com/index/cars24",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company."
+      },
+      {
+        "id": "1e97faa490fa",
+        "title": "The US is advancing AI safety through state and federal action",
+        "link": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "OpenAI outlines a “reverse federalism” approach to AI governance, where state laws help build a national framework for safe, democratic AI."
+      },
+      {
+        "id": "ee230258f27f",
+        "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
+        "link": "https://openai.com/index/unlocking-self-improvement-gpt-red",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Explore GPT-Red, OpenAI’s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness."
+      },
+      {
+        "id": "92ab1f77dd8c",
+        "title": "How to manage AI investments in the agentic era",
+        "link": "https://openai.com/index/managing-ai-investments-in-agentic-era",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows."
+      }
+    ],
+    "projects": [
+      {
+        "id": "cyber-portfolio-platform",
+        "name": "Orbit — Portfolio & Radar",
+        "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
+        "status": "wip",
+        "tags": [
+          "Next.js",
+          "React",
+          "TypeScript"
+        ],
+        "repoUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "id": "faceless-reels",
+        "name": "Faceless Reels",
+        "description": "An automated short-form video pipeline for Greek-mythology reels: beat-split narration, AI image generation with a quality loop, neural TTS, and karaoke-style captions.",
+        "status": "wip",
+        "tags": [
+          "Node",
+          "AI",
+          "TTS"
+        ],
+        "repoUrl": "",
+        "liveUrl": ""
+      },
+      {
+        "id": "sunplot-garden",
+        "name": "Sunplot Garden",
+        "description": "A cozy mobile gardening game (Unity) built as a studio repo with an agent-driven content pipeline and a vertical-grid layout system.",
+        "status": "prototype",
+        "tags": [
+          "Unity",
+          "Game Design"
+        ],
+        "repoUrl": "",
+        "liveUrl": ""
+      }
+    ]
+  },
+  "instructions": [
+    "Open this repo in Cursor.",
+    "Read data/weekly-write-ide-brief.md (and the JSON twin).",
+    "Write one Orbit essay in the voice of src/content/writes/*.mdx (especially from-risk-to-delivery.mdx and building-orbit.mdx). Use the weekly-write-essay Cursor skill.",
+    "Save the pending draft to data/weekly-write-draft.json (status pending, source ide).",
+    "Run: npm run weekly:notify-draft",
+    "Approve/Skip in Slack #career-ops as usual."
+  ]
+}
