@@ -184,54 +184,27 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
         </div>
       </Reveal>
 
-      {/* Mobile report chips */}
-      <div
-        className="mt-8 flex gap-2 overflow-x-auto pb-1 lg:hidden"
-        role="tablist"
-        aria-label="Power BI reports"
-      >
-        {reports.map((r, i) => (
-          <button
-            key={r.id}
-            type="button"
-            role="tab"
-            aria-selected={i === reportIndex}
-            onClick={() => selectReport(i)}
-            className={cn(
-              "focus-ring inline-flex min-h-11 shrink-0 items-center rounded-full border px-4 text-xs font-medium transition-[color,background-color,border-color]",
-              i === reportIndex
-                ? "border-neon-cyan/50 bg-neon-cyan/10 text-neon-cyan"
-                : "border-white/10 text-slate-300 hover:border-white/20 hover:text-white",
-            )}
-          >
-            {r.title}
-          </button>
-        ))}
-      </div>
-
-      <div className="mt-8 grid gap-6 lg:grid-cols-[minmax(12rem,16rem)_1fr] lg:gap-8">
-        {/* Desktop side list */}
+      <div className="mt-8 grid grid-cols-[minmax(9.5rem,10.5rem)_1fr] gap-4 sm:grid-cols-[minmax(11rem,14rem)_1fr] sm:gap-6 md:grid-cols-[minmax(12rem,16rem)_1fr] md:gap-8">
         <nav
-          className="hidden lg:block"
+          className="sticky top-24 self-start sm:top-28"
           aria-label="Power BI reports"
         >
-          <ul className="space-y-1">
+          <ul className="max-h-[min(70vh,28rem)] space-y-1 overflow-y-auto overscroll-contain pr-0.5 sm:max-h-[min(75vh,32rem)]">
             {reports.map((r, i) => (
               <li key={r.id}>
                 <button
                   type="button"
                   onClick={() => selectReport(i)}
                   className={cn(
-                    "focus-ring w-full rounded-xl border px-4 py-3 text-left transition-[color,background-color,border-color]",
+                    "focus-ring w-full rounded-xl border px-2.5 py-2.5 text-left transition-[color,background-color,border-color] sm:px-4 sm:py-3",
                     i === reportIndex
                       ? "border-neon-cyan/40 bg-neon-cyan/10 text-white"
                       : "border-transparent text-slate-300 hover:border-white/10 hover:bg-white/5 hover:text-white",
                   )}
                   aria-current={i === reportIndex ? "true" : undefined}
                 >
-                  <span className="block text-sm font-semibold">{r.title}</span>
-                  <span className="mt-1 block text-xs leading-snug text-slate-400">
-                    {r.summary}
+                  <span className="block text-xs font-semibold leading-snug sm:text-sm">
+                    {r.title}
                   </span>
                 </button>
               </li>
@@ -240,9 +213,9 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
         </nav>
 
         <div>
-          <p className="lg:hidden text-sm text-slate-300">{report.summary}</p>
+          <p className="text-sm text-slate-300">{report.summary}</p>
 
-          <div className="mt-4 flex flex-wrap items-end justify-between gap-3 lg:mt-0">
+          <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
                 {page.label}
