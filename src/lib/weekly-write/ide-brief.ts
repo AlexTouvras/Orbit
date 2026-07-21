@@ -84,7 +84,7 @@ function renderIdeBriefMarkdown(brief: IdeBrief): string {
 
   return `# Weekly Write — IDE generation needed
 
-Gemini cloud generation failed or was unavailable. **Generate the essay in Cursor**, then continue the normal Slack approve pipeline.
+${brief.reason === "cloud_automation" ? "Cursor Cloud Automation writes this week's essay (Gemini skipped)." : "Gemini cloud generation failed or was unavailable."} **Generate the essay in Cursor**, then continue the normal Slack approve pipeline.
 
 ## Why
 

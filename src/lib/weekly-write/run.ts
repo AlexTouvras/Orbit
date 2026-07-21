@@ -53,10 +53,16 @@ export async function notifyExistingWeeklyDraft(): Promise<RunWeeklyWriteResult>
 
   // Preview/Approve on Vercel read the draft from GitHub — persist before Slack.
   // Use CLI-safe persist (no `server-only`) so GitHub Actions / tsx can run.
-  await persistWeeklyDraftCli(
+  const persisted = await persistWeeklyDraftCli(
     draft,
     `chore: weekly write pending draft ${draft.id}`,
   );
+  if (!persisted.viaGithub) {
+    const msg =
+      "Draft saved locally only (GITHUB_TOKEN unset). Push data/weekly-write-draft.json before Slack preview links work.";
+    appendWeeklyWriteLog(`WARN: ${msg}`);
+    console.warn(`[weekly-write] ${msg}`);
+  }
 
   const slack = await notifyDraft(draft);
   if (!slack.ok) {
@@ -141,10 +147,16 @@ export async function runWeeklyWritePipeline(options?: {
 
   const draft = created.draft;
   // Persist before Slack so preview links work (CLI-safe; no server-only).
-  await persistWeeklyDraftCli(
+  const persisted = await persistWeeklyDraftCli(
     draft,
     `chore: weekly write draft ${draft.id} [${draft.status}]`,
   );
+  if (!persisted.viaGithub) {
+    const msg =
+      "Draft saved locally only (GITHUB_TOKEN unset). Push data/weekly-write-draft.json before Slack preview links work.";
+    appendWeeklyWriteLog(`WARN: ${msg}`);
+    console.warn(`[weekly-write] ${msg}`);
+  }
   appendWeeklyWriteLog(
     `Draft ready (${draft.source}): ${draft.title} [${draft.id}]`,
   );
