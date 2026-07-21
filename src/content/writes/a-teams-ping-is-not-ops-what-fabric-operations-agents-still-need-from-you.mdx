@@ -1,0 +1,51 @@
+---
+title: "A Teams ping is not ops: what Fabric Operations Agents still need from you"
+summary: "Chris Webb proved Fabric can alert on a broken DAX visual. The harder work is writing semantic instructions, validating KQL, and deciding what the owner does when Teams rings."
+date: "2026-07-20"
+category: "Data"
+featured: false
+tags: ["Power BI", "Fabric", "Agents", "Analytics"]
+---
+
+## The question
+
+When Fabric ships Operations Agents on top of Workspace Monitoring, what does the analytics owner still have to own before anyone trusts the alert?
+
+## What Webb actually tested
+
+[Using Fabric Operations Agents And Workspace Monitoring With Power BI](https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/) (Chris Webb's BI Blog) is a lab note, not a product brochure. Webb built a semantic model with a measure that errors, published a report with one broken visual, enabled Workspace Monitoring, and wired an Operations Agent to the KQL database behind it.
+
+The agent instructions read like a runbook: watch `SemanticModelLogs` for `OperationName == "Error"`, ignore user-cancelled queries, pull `ExecutingUser`, `EventText`, and parse `ApplicationContext` for dataset, report, and visual IDs. The generated playbook and KQL are real. Webb says it took several iterations to get there, and he would not have succeeded without running the KQL himself when the first versions were wrong.
+
+Then he opened the report, triggered the error, and got a Teams message a few minutes later. Proof that monitoring can reach the person staring at a broken tile. Also proof that the ping is only the start: the Teams text omitted the error message and the IDs he asked for, even though the query returned them. Tuning the instructions is still human work.
+
+## What people get wrong
+
+Teams notifications get mistaken for an operating model. "We have an agent watching Power BI" sounds like coverage. It is not coverage until someone names who fixes the broken measure, how false positives get filtered, and what happens at 8 a.m. when three workspaces alert at once.
+
+The Fabric UI makes the agent look self-assembling. In practice you are teaching it your log schema: which table holds semantic model events, which column carries the error text, which JSON fragment hides the visual ID. That is the same job as writing a good data contract, just with KQL at the end instead of a Confluence page nobody reads.
+
+I am not dismissing the feature. Failed refreshes and slow DAX queries are exactly the kind of pain that should not wait for a user to complain. I am saying the value shows up after a person who understands the model writes the semantic instructions and checks the playbook against a known failure.
+
+## What I would require before calling it production
+
+Webb's test is one broken measure in one workspace. Production needs a shorter list than a strategy deck:
+
+1. **A golden failure.** One report you deliberately break, plus one failure you expect in the wild (cancelled query vs real DAX error).
+2. **Alert payload contract.** If Teams is the channel, the message must carry error text, model ID, and owner, or people will ignore it.
+3. **Runbook link.** Who gets paged, what they check first, when to mute vs fix.
+4. **Kill switch.** How to stop the agent without deleting the workspace.
+
+Without those four, you have a demo that pings you when you already know the visual is broken.
+
+## How this relates to what I ship on Orbit
+
+Orbit's weekly Write loop is a smaller version of the same problem. Related articles refresh. A draft can be generated. None of that matters until there is a signed Approve step with an owner. Automation without a gate is just faster noise.
+
+I am not claiming Orbit monitors Fabric workspaces. I am saying the discipline matches: ingest, draft, notify, human commit. Skip the human step and you publish slop. Skip the instruction tuning on a Fabric agent and you get a Teams ping that says "something broke" with no path to fix it.
+
+Last week's Direct Lake essay was about where cost and cycle time live in the stack. This post is the sibling: where **ownership** lives once the stack can watch itself.
+
+## Takeaway
+
+Fabric Operations Agents can close the gap between "a user saw a red error tile" and "the right person knows while it is still happening." They do not remove the analytics owner's job. You still define what counts as an error, validate the KQL, and make the alert actionable. A Teams ping is not ops. It is a reminder that ops still needs a name attached.
