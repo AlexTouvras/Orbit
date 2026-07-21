@@ -1,63 +1,31 @@
 {
-  "id": "ww-2026-07-20-ide",
-  "status": "published",
-  "createdAt": "2026-07-20T05:35:00.000Z",
+  "id": "ww-2026-07-20-ide-test",
+  "status": "pending",
+  "createdAt": "2026-07-21T06:55:00.000Z",
   "weekOf": "2026-07-20",
-  "slug": "direct-lake-isnt-free-when-fabric-mode-earns-its-keep",
-  "title": "Direct Lake isn't free: when Fabric's cool mode earns its keep",
-  "summary": "Chris Webb's Direct Lake case is really about where cost and cycle time live. For portfolio reports that still ship as Import models, measure the gold layer before you chase framing.",
+  "slug": "a-teams-ping-is-not-ops-what-fabric-operations-agents-still-need-from-you",
+  "title": "A Teams ping is not ops: what Fabric Operations Agents still need from you",
+  "summary": "Chris Webb proved Fabric can alert on a broken DAX visual. The harder work is writing semantic instructions, validating KQL, and deciding what the owner does when Teams rings.",
   "category": "Data",
   "tags": [
     "Power BI",
     "Fabric",
-    "Direct Lake",
+    "Agents",
     "Analytics"
   ],
-  "mdx": "---\ntitle: \"Direct Lake isn't free: when Fabric's cool mode earns its keep\"\nsummary: \"Chris Webb's Direct Lake case is really about where cost and cycle time live. For portfolio reports that still ship as Import models, measure the gold layer before you chase framing.\"\ndate: \"2026-07-20\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Fabric\", \"Direct Lake\", \"Analytics\"]\n---\n\n## The question\n\nWhen does Direct Lake cut real cost and cycle time on a Fabric stack, and when is Import still the honest choice for a report that has to stay trustworthy on Monday morning?\n\n## What Webb is actually saying\n\n[The Benefits Of Using Direct Lake Mode In Power BI](https://blog.crossjoin.co.uk/2026/07/12/the-benefits-of-using-direct-lake-mode-in-power-bi/) (Chris Webb's BI Blog) is worth an essay because it refuses the default pitch. Direct Lake did not win because it is fashionable. It wins when you stop treating \"refresh\" as the only bill and start accounting for how data becomes queryable.\n\nWebb's useful correction: framing a Direct Lake model is nearly free in CU terms, but that is not the full price. You still pay to land a gold layer in OneLake (Spark, pipelines, or whatever engine you trust), and that cost is what you should compare to Import refresh. Some internal Microsoft BI teams prefer Direct Lake because a broken model can be back online in seconds after a fix, and because they can spin a test model, query it, and tear it down without waiting on a long Import cycle.\n\nThe reuse angle matters more than people admit. Import tenants quietly duplicate Date, Product, and Customer across dozens of models. Each copy refreshes on its own schedule and can disagree with its neighbors. OneLake tables, with shortcuts and OneLake security planned up front, can feed many Direct Lake models from one load. That is an architecture decision, not a checkbox in Desktop.\n\n## What people get wrong\n\nTeams treat storage mode as identity. \"We are a Direct Lake shop\" sounds decisive and skips the boring work: who owns the gold tables, how often they land, whether table layout is good enough for the queries you actually run, and what fails when the Spark job stalls.\n\nImport still earns its keep on smaller, self-contained models where Desktop iteration is the bottleneck and you do not yet have a shared lakehouse worth defending. Webb says as much: do not rip and replace Import models that already work. New enterprise Fabric builds should at least test Direct Lake; they should not pretend Import is obsolete.\n\nI keep his earlier DirectQuery note in the adjacent pile, not as a second thesis. Composite patterns still exist for a reason. Mode choice is a set of trade-offs, and query CU profiles differ from refresh CU profiles. If you only measure one of those, your \"win\" is a spreadsheet fiction.\n\n## How this lands on work I am shipping\n\nThe Power BI reports on Orbit (churn risk, sales executive, bank segmentation) are Import-shaped portfolio pieces: screenshots, page sequences, decision captions. That is fine for a public case study. It would be dishonest to claim Direct Lake benefits for them when there is no Fabric capacity, no shared OneLake gold layer, and no second semantic model reusing the same facts.\n\nWhat I take from Webb for that work is sharper than \"migrate someday.\" Before I ever chase framing, I want a written answer to these checks:\n\n1. Where does the gold table get built, and who owns the job when it fails?\n2. How many semantic models would share those tables if we stopped copying dimensions?\n3. What is the CU and wall-clock cost of the lake load versus the Import refresh we run today?\n4. Can I recover from a model bug in minutes, or am I waiting on a full refresh window?\n\nIf I cannot answer those, Direct Lake is cosplay.\n\nAdjacent reading this week includes [Using Fabric Operations Agents And Workspace Monitoring With Power BI](https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/). Useful later. Monitoring an agent that watches pipelines does not help if you never decided whether the expensive work lives in Import refresh or in the gold-layer job.\n\n## Mistakes I refuse to make\n\nCalling a storage mode a strategy. Measuring only Desktop refresh while ignoring the pipeline that feeds OneLake. Duplicating the same fact across models and then arguing about whose number is right. Shipping a Fabric demo that cannot name a rollback for the gold-layer job.\n\n## Takeaway\n\nDirect Lake earns its keep when the expensive part of \"fresh data\" moves left into a shared OneLake load that many models and engines can reuse, and when recovery time after a model fix matters as much as query milliseconds. Import remains honest when the model is small, isolated, and already trustworthy. Pick the mode that matches where your cost and failure modes actually live, then prove it with a side-by-side refresh versus gold-layer test instead of a slide about the cool path.\n",
-  "preview": "Direct Lake isn't free: when Fabric's cool mode earns its keep\n\nChris Webb's Direct Lake case is really about where cost and cycle time live. For portfolio reports that still ship as Import models, measure the gold layer before you chase framing.\n\nInspired by: The Benefits Of Using Direct Lake Mode In Power BI",
+  "mdx": "---\ntitle: \"A Teams ping is not ops: what Fabric Operations Agents still need from you\"\nsummary: \"Chris Webb proved Fabric can alert on a broken DAX visual. The harder work is writing semantic instructions, validating KQL, and deciding what the owner does when Teams rings.\"\ndate: \"2026-07-20\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Fabric\", \"Agents\", \"Analytics\"]\n---\n\n## The question\n\nWhen Fabric ships Operations Agents on top of Workspace Monitoring, what does the analytics owner still have to own before anyone trusts the alert?\n\n## What Webb actually tested\n\n[Using Fabric Operations Agents And Workspace Monitoring With Power BI](https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/) (Chris Webb's BI Blog) is a lab note, not a product brochure. Webb built a semantic model with a measure that errors, published a report with one broken visual, enabled Workspace Monitoring, and wired an Operations Agent to the KQL database behind it.\n\nThe agent instructions read like a runbook: watch `SemanticModelLogs` for `OperationName == \"Error\"`, ignore user-cancelled queries, pull `ExecutingUser`, `EventText`, and parse `ApplicationContext` for dataset, report, and visual IDs. The generated playbook and KQL are real. Webb says it took several iterations to get there, and he would not have succeeded without running the KQL himself when the first versions were wrong.\n\nThen he opened the report, triggered the error, and got a Teams message a few minutes later. Proof that monitoring can reach the person staring at a broken tile. Also proof that the ping is only the start: the Teams text omitted the error message and the IDs he asked for, even though the query returned them. Tuning the instructions is still human work.\n\n## What people get wrong\n\nTeams notifications get mistaken for an operating model. \"We have an agent watching Power BI\" sounds like coverage. It is not coverage until someone names who fixes the broken measure, how false positives get filtered, and what happens at 8 a.m. when three workspaces alert at once.\n\nThe Fabric UI makes the agent look self-assembling. In practice you are teaching it your log schema: which table holds semantic model events, which column carries the error text, which JSON fragment hides the visual ID. That is the same job as writing a good data contract, just with KQL at the end instead of a Confluence page nobody reads.\n\nI am not dismissing the feature. Failed refreshes and slow DAX queries are exactly the kind of pain that should not wait for a user to complain. I am saying the value shows up after a person who understands the model writes the semantic instructions and checks the playbook against a known failure.\n\n## What I would require before calling it production\n\nWebb's test is one broken measure in one workspace. Production needs a shorter list than a strategy deck:\n\n1. **A golden failure.** One report you deliberately break, plus one failure you expect in the wild (cancelled query vs real DAX error).\n2. **Alert payload contract.** If Teams is the channel, the message must carry error text, model ID, and owner, or people will ignore it.\n3. **Runbook link.** Who gets paged, what they check first, when to mute vs fix.\n4. **Kill switch.** How to stop the agent without deleting the workspace.\n\nWithout those four, you have a demo that pings you when you already know the visual is broken.\n\n## How this relates to what I ship on Orbit\n\nOrbit's weekly Write loop is a smaller version of the same problem. Related articles refresh. A draft can be generated. None of that matters until there is a signed Approve step with an owner. Automation without a gate is just faster noise.\n\nI am not claiming Orbit monitors Fabric workspaces. I am saying the discipline matches: ingest, draft, notify, human commit. Skip the human step and you publish slop. Skip the instruction tuning on a Fabric agent and you get a Teams ping that says \"something broke\" with no path to fix it.\n\nLast week's Direct Lake essay was about where cost and cycle time live in the stack. This post is the sibling: where **ownership** lives once the stack can watch itself.\n\n## Takeaway\n\nFabric Operations Agents can close the gap between \"a user saw a red error tile\" and \"the right person knows while it is still happening.\" They do not remove the analytics owner's job. You still define what counts as an error, validate the KQL, and make the alert actionable. A Teams ping is not ops. It is a reminder that ops still needs a name attached.\n",
+  "preview": "A Teams ping is not ops: what Fabric Operations Agents still need from you\n\nChris Webb proved Fabric can alert on a broken DAX visual. The harder work is writing semantic instructions, validating KQL, and deciding what the owner does when Teams rings.\n\nInspired by: Using Fabric Operations Agents And Workspace Monitoring With Power BI",
   "intake": {
     "weekOf": "2026-07-20",
-    "generatedAt": "2026-07-20T05:31:12.240Z",
+    "generatedAt": "2026-07-21T06:20:24.589Z",
     "signals": [
-      {
-        "id": "15ef990ae923",
-        "title": "The Benefits Of Using Direct Lake Mode In Power BI",
-        "link": "https://blog.crossjoin.co.uk/2026/07/12/the-benefits-of-using-direct-lake-mode-in-power-bi/",
-        "source": "Chris Webb's BI Blog",
-        "category": "Analytics",
-        "snippet": "This is a blog post I've been meaning to write for a long time. Since Fabric launched there has been a lot of focus on Direct Lake mode in Power BI and a lot of people used it because it was the cool new thing."
-      },
       {
         "id": "a92c018c9c22",
         "title": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
         "link": "https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity."
-      },
-      {
-        "id": "d5f77903e27b",
-        "title": "Power BI DirectQuery Mode: A Better Choice Than You Might Think",
-        "link": "https://blog.crossjoin.co.uk/2026/06/28/power-bi-directquery-mode-a-better-choice-than-you-might-think/",
-        "source": "Chris Webb's BI Blog",
-        "category": "Analytics",
-        "snippet": "When composite Import/DirectQuery models are still the better choice than Direct Lake for some scenarios."
-      },
-      {
-        "id": "513a069a215f",
-        "title": "Data Engineering Weekly #279",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-279",
-        "source": "Data Engineering Weekly",
-        "category": "Data",
-        "snippet": "The Weekly Data Engineering Newsletter"
-      },
-      {
-        "id": "3ebda52fc80e",
-        "title": "A scorecard for the AI age",
-        "link": "https://openai.com/index/a-scorecard-for-the-ai-age",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute."
+        "snippet": "Operations Agent monitors Pipeline activity; Webb tested the same pattern for Power BI via Workspace Monitoring and SemanticModelLogs."
       }
     ],
     "projects": [
@@ -76,7 +44,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-07-20T05:54:35.674Z",
-  "publishedSlug": "direct-lake-isnt-free-when-fabric-mode-earns-its-keep"
+  "source": "ide"
 }
