@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-07-20-ide-test",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-07-21T06:55:00.000Z",
   "weekOf": "2026-07-20",
   "slug": "a-teams-ping-is-not-ops-what-fabric-operations-agents-still-need-from-you",
@@ -44,5 +44,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-07-21T07:40:59.047Z",
+  "publishedSlug": "a-teams-ping-is-not-ops-what-fabric-operations-agents-still-need-from-you"
 }
