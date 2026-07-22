@@ -21,6 +21,44 @@ export interface PowerBiReport {
 
 export const powerBiReports: PowerBiReport[] = [
   {
+    id: "finance",
+    title: "Nordic Equity",
+    summary: "Near-live Nordic large-cap board — TradingView-style sector heatmap, ticker explorer, and an RSI mean-reversion signal desk with classic day-trading indicators.",
+    repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
+    pages: [
+      {
+        id: "landing",
+        label: "Landing",
+        caption: "Artistic cover · thesis · audience · page map · EW cumulative hero",
+        src: "/portfolio/power-bi/finance/landing.png",
+      },
+      {
+        id: "nordic-heatmap",
+        label: "Nordic Heatmap",
+        caption: "Sector/company treemap · KPIs · open live board",
+        src: "/portfolio/power-bi/finance/nordic-heatmap.png",
+      },
+      {
+        id: "ticker-explorer",
+        label: "Ticker Explorer",
+        caption: "Single-ticker price, SMA, MACD, RSI, volume",
+        src: "/portfolio/power-bi/finance/ticker-explorer.png",
+      },
+      {
+        id: "signal-desk",
+        label: "Signal Desk",
+        caption: "RSI long/short queue · hit rates · equal-weight backtest",
+        src: "/portfolio/power-bi/finance/signal-desk.png",
+      },
+      {
+        id: "context",
+        label: "Context",
+        caption: "Delay, indicators, caveats (last visible)",
+        src: "/portfolio/power-bi/finance/context.png",
+      },
+    ],
+  },
+  {
     id: "churn",
     title: "E-commerce Churn Retention",
     summary: "Nordic Boardroom retention report: churn rate and propensity at a glance, driver analysis (Key Influencers + decomposition), and an at-risk intervention queue.",
