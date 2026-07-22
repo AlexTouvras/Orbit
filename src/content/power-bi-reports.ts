@@ -16,6 +16,8 @@ export interface PowerBiReport {
   title: string;
   summary: string;
   repoUrl?: string;
+  /** Optional interactive demo (e.g. Vercel board for Nordic Equity). */
+  liveUrl?: string;
   pages: PowerBiReportPage[];
 }
 
@@ -25,6 +27,7 @@ export const powerBiReports: PowerBiReport[] = [
     title: "Nordic Equity",
     summary: "Near-live Nordic large-cap board — TradingView-style sector heatmap, ticker explorer, and an RSI mean-reversion signal desk with classic day-trading indicators.",
     repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
+    liveUrl: "https://heatmap-web-five.vercel.app",
     pages: [
       {
         id: "landing",

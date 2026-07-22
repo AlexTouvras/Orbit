@@ -27,6 +27,7 @@ const powerBiRoot = path.resolve(
 );
 const repoUrl = config.repoUrl;
 const slugAliases = config.slugAliases ?? {};
+const liveUrls = config.liveUrls ?? {};
 
 const publicRoot = path.join(websiteRoot, "public", "portfolio", "power-bi");
 const outTs = path.join(websiteRoot, "src", "content", "power-bi-reports.ts");
@@ -203,6 +204,7 @@ function discoverProjects() {
       shotsDir,
       title: meta.title,
       summary: meta.summary,
+      liveUrl: liveUrls[id] || liveUrls[folderSlug] || undefined,
       pages,
     });
   }
@@ -264,11 +266,15 @@ function generateTs(projects) {
       )
       .join(",\n");
 
+    const liveLine = p.liveUrl
+      ? `\n    liveUrl: "${escapeTs(p.liveUrl)}",`
+      : "";
+
     return `  {
     id: "${p.id}",
     title: "${escapeTs(p.title)}",
     summary: "${escapeTs(p.summary)}",
-    repoUrl: "${repoUrl}",
+    repoUrl: "${repoUrl}",${liveLine}
     pages: [
 ${pages},
     ],
@@ -293,6 +299,8 @@ export interface PowerBiReport {
   title: string;
   summary: string;
   repoUrl?: string;
+  /** Optional interactive demo (e.g. Vercel board for Nordic Equity). */
+  liveUrl?: string;
   pages: PowerBiReportPage[];
 }
 

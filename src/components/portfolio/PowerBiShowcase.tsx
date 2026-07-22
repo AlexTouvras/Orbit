@@ -170,17 +170,30 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
             title="Power BI"
             description="Report pages from my Power BI portfolio — pick a report, browse pages, enlarge for detail."
           />
-          {report.repoUrl && (
-            <Link
-              href={report.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan"
-            >
-              View repo
-              <ExternalLink className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
-            </Link>
-          )}
+          <div className="flex shrink-0 flex-wrap items-center gap-x-4 gap-y-2">
+            {report.liveUrl && (
+              <Link
+                href={report.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="focus-ring group inline-flex min-h-11 items-center gap-1 text-sm font-medium text-neon-cyan"
+              >
+                Open live board
+                <ExternalLink className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
+              </Link>
+            )}
+            {report.repoUrl && (
+              <Link
+                href={report.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="focus-ring group inline-flex min-h-11 items-center gap-1 text-sm font-medium text-slate-300 hover:text-neon-cyan"
+              >
+                View repo
+                <ExternalLink className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
+              </Link>
+            )}
+          </div>
         </div>
       </Reveal>
 
