@@ -14,13 +14,13 @@
   {
     "id": "nordic-equity-heatmap",
     "name": "Nordic Equity Heatmap",
-    "description": "Live sector treemap for Nordic equities: size = market cap, color = day change %, drill into sectors from a PRIP gold snapshot with delayed Yahoo Finance quotes.",
+    "description": "Live TradingView-style sector board for Nordic large-caps (size = market cap, color = day change %). Part of the Nordic Equity report in powerbi-portfolio/01-finance — PBIP pages plus the Vite board on Vercel.",
     "status": "live",
-    "tags": ["React", "Data Viz", "Markets"],
-    "repoUrl": "",
+    "tags": ["Power BI", "React", "Data Viz", "Markets"],
+    "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio/tree/main/01-finance",
     "liveUrl": "https://heatmap-web-five.vercel.app/",
     "featured": true,
-    "sourcePath": "",
+    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\PowerBI\\01-finance\\heatmap-web",
     "order": 1
   },
   {
