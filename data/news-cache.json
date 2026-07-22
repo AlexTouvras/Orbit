@@ -1,7 +1,43 @@
 {
-  "generatedAt": "2026-07-21T08:20:11.094Z",
-  "count": 131,
+  "generatedAt": "2026-07-22T06:47:59.807Z",
+  "count": 132,
   "items": [
+    {
+      "id": "d42362617c64",
+      "title": "Introducing the ChatGPT for small business program",
+      "link": "https://openai.com/index/introducing-chatgpt-small-business-program",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-21T17:00:00.000Z",
+      "contentSnippet": "OpenAI launches the ChatGPT for Small Businesses program, helping entrepreneurs build AI skills, automate work, and grow with ChatGPT Work."
+    },
+    {
+      "id": "20b0eb2d5c14",
+      "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
+      "link": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-21T07:00:00.000Z",
+      "contentSnippet": "OpenAI and Hugging Face share early findings from a security incident during AI model evaluation, highlighting advanced cyber capabilities and lessons for defenders."
+    },
+    {
+      "id": "40359dbf5a24",
+      "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
+      "link": "https://openai.com/index/david-velez-robin-vince-join-openai-boards",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-21T00:00:00.000Z",
+      "contentSnippet": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC, bringing global leadership in finance, technology, and governance."
+    },
+    {
+      "id": "9e42b0d22b21",
+      "title": "Presentation: Platform Engineering for Everyone - Success Can’t Be Coded",
+      "link": "https://www.infoq.com/presentations/platform-engineering-product-mindset/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
+      "source": "InfoQ — Agile",
+      "category": "Delivery",
+      "pubDate": "2026-07-20T11:50:00.000Z",
+      "contentSnippet": "Max Korbacher explains why successful internal development platforms cannot be built on tech alone. He discusses the pitfalls of infrastructure-first thinking, the importance of a clear product mindset, and how to measure real value using DevEx and SPACE metrics. Learn how to ali…"
+    },
     {
       "id": "d4ff9ec891b7",
       "title": "Safety and alignment in an era of long-horizon models",
@@ -46,6 +82,15 @@
       "category": "AI",
       "pubDate": "2026-07-16T16:00:00.000Z",
       "contentSnippet": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships."
+    },
+    {
+      "id": "04160bf4a77e",
+      "title": "Presentation: The Rust High Performance Talk You Did Not Expect",
+      "link": "https://www.infoq.com/presentations/rust-tps-service/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
+      "source": "InfoQ — Agile",
+      "category": "Delivery",
+      "pubDate": "2026-07-16T10:20:00.000Z",
+      "contentSnippet": "Ruth Linehan explains how migrating high-performance caching services from Kotlin to Rust shattered internal preconceptions around delivery velocity and engineering overhead. She discusses the ergonomics of the Rust borrow checker, shares how compile-time safety shortens the deve…"
     },
     {
       "id": "6f16a999c8dd",
@@ -156,15 +201,6 @@
       "contentSnippet": "Why privacy engineering is about governing data in use—not simply hiding it."
     },
     {
-      "id": "661fa7417a57",
-      "title": "Podcast: Formal Methods for Every Engineer in an AI-Powered Future",
-      "link": "https://www.infoq.com/podcasts/formal-methods-ai-powered-future/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
-      "source": "InfoQ — Agile",
-      "category": "Delivery",
-      "pubDate": "2026-07-10T09:00:00.000Z",
-      "contentSnippet": "In this podcast Shane Hastie, Lead Editor for Culture & Methods spoke to Gabriela Moreira about making formal methods accessible through the Quint specification language, how AI is dramatically lowering the barrier to entry for formal specification and model-based testing, and wh…"
-    },
-    {
       "id": "027b05f9d0fa",
       "title": "How Deutsche Telekom is rewiring telecommunications with AI",
       "link": "https://openai.com/index/deutsche-telekom",
@@ -201,15 +237,6 @@
       "contentSnippet": "More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work."
     },
     {
-      "id": "5941cef110c0",
-      "title": "ChatGPT is now a partner for your most ambitious work",
-      "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T10:00:00.000Z",
-      "contentSnippet": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work."
-    },
-    {
       "id": "8fd74bd3f519",
       "title": "GPT-5.5 Bio Bug Bounty",
       "link": "https://openai.com/index/bio-bug-bounty",
@@ -217,6 +244,15 @@
       "category": "AI",
       "pubDate": "2026-07-09T10:00:00.000Z",
       "contentSnippet": "Details about the OpenAI Bio Bounty program"
+    },
+    {
+      "id": "5941cef110c0",
+      "title": "ChatGPT is now a partner for your most ambitious work",
+      "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-09T10:00:00.000Z",
+      "contentSnippet": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work."
     },
     {
       "id": "41b85c9cdb7a",
@@ -237,15 +273,6 @@
       "contentSnippet": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models."
     },
     {
-      "id": "de9286311527",
-      "title": "Helping K–12 educators build practical AI skills",
-      "link": "https://openai.com/index/k-12-educators-practical-skills",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-08T10:00:00.000Z",
-      "contentSnippet": "OpenAI Academy and the Walton Family Foundation are bringing hands-on AI Skills Jams to help K–12 educators build practical AI skills for the classroom."
-    },
-    {
       "id": "94fe64bbfa0c",
       "title": "Generative AI guidelines at SQLBI (2026 update)",
       "link": "https://www.sqlbi.com/blog/marco/2026/07/08/generative-ai-guidelines-at-sqlbi-2026-update/",
@@ -255,15 +282,6 @@
       "contentSnippet": "3 years ago, we wrote our “Generative AI guidelines at SQLBI”. We think it’s time to update them. Over the past 3 years, the world has changed: it is simply no longer possible to avoid using generative AI services for…"
     },
     {
-      "id": "d7499a6963c6",
-      "title": "Introducing GPT-Live",
-      "link": "https://openai.com/index/introducing-gpt-live",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-08T00:00:00.000Z",
-      "contentSnippet": "A new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice."
-    },
-    {
       "id": "672138134936",
       "title": "Focusing Where We Can Have the Most Impact",
       "link": "https://www.mountaingoatsoftware.com/blog/focusing-where-we-can-have-the-most-impact",
@@ -271,15 +289,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-07T13:00:00.000Z",
       "contentSnippet": "Mountain Goat Software is shifting its training and coaching focus to private client work, where teams and leaders can apply agile to their real challenges."
-    },
-    {
-      "id": "60d1b56766e3",
-      "title": "Australian Payments Plus moves faster with ChatGPT and Codex",
-      "link": "https://openai.com/index/australian-payments-plus",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-07T00:00:00.000Z",
-      "contentSnippet": "See how Australian Payments Plus uses ChatGPT Enterprise and Codex to move faster through payments complexity. AP+ saves time, improves quality, and keeps human judgment central."
     },
     {
       "id": "408f24c63668",
