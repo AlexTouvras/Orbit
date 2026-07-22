@@ -12,6 +12,18 @@
     "order": 0
   },
   {
+    "id": "nordic-equity-heatmap",
+    "name": "Nordic Equity Heatmap",
+    "description": "Live sector treemap for Nordic equities: size = market cap, color = day change %, drill into sectors from a PRIP gold snapshot with delayed Yahoo Finance quotes.",
+    "status": "live",
+    "tags": ["React", "Data Viz", "Markets"],
+    "repoUrl": "",
+    "liveUrl": "https://heatmap-web-five.vercel.app/",
+    "featured": true,
+    "sourcePath": "",
+    "order": 1
+  },
+  {
     "id": "projecthelm-jarvis",
     "name": "ProjectHelm (JARVIS)",
     "description": "A local control plane for coding agents — tracks project state, coordinates child agents, and runs Plan → Agent → Debug loops via the Cursor SDK.",
@@ -21,7 +33,7 @@
     "liveUrl": "/writes/projecthelm-local-agent-control-plane",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\JARVIS",
-    "order": 1
+    "order": 2
   },
   {
     "id": "powerbi-portfolio",
@@ -33,7 +45,7 @@
     "liveUrl": "/writes/power-bi-portfolio-nordic-boardroom",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\PowerBI",
-    "order": 2
+    "order": 3
   },
   {
     "id": "sunplot-garden",
@@ -45,6 +57,6 @@
     "liveUrl": "",
     "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\garden_app",
-    "order": 3
+    "order": 4
   }
 ]
