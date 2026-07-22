@@ -17,7 +17,7 @@
     "description": "Live TradingView-style sector board for Nordic large-caps (size = market cap, color = day change %). Part of the Nordic Equity report in powerbi-portfolio/01-finance — PBIP pages plus the Vite board on Vercel.",
     "status": "live",
     "tags": ["Power BI", "React", "Data Viz", "Markets"],
-    "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio/tree/main/01-finance",
+    "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio/tree/main/01-finance/heatmap-web",
     "liveUrl": "https://heatmap-web-five.vercel.app/",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\PowerBI\\01-finance\\heatmap-web",
