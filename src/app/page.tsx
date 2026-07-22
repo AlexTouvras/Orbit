@@ -5,9 +5,10 @@ import { getEditableProfile } from "@/lib/profile-store";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { getFeaturedWrites } from "@/lib/writes";
+import { getFeaturedWrites, getShowcaseWrites } from "@/lib/writes";
 import { WriteCard } from "@/components/writes/WriteCard";
 import { HubHero } from "@/components/hub/HubHero";
+import { SelectedWorkCard } from "@/components/hub/SelectedWorkCard";
 import { cn } from "@/lib/utils";
 
 const accentBar: Record<"cyan" | "violet" | "blue", string> = {
@@ -24,8 +25,8 @@ const accentIcon: Record<"cyan" | "violet" | "blue", string> = {
 
 export default function HomePage() {
   const profile = getEditableProfile();
+  const showcaseWrites = getShowcaseWrites(3);
   const featuredWrites = getFeaturedWrites(3);
-  const resumeUrl = profile.resumeUrl || "/resume.pdf";
 
   return (
     <div className="space-y-24 sm:space-y-32">
@@ -35,7 +36,6 @@ export default function HomePage() {
         tagline={profile.tagline}
         availability={profile.availability}
         socials={profile.socials}
-        resumeUrl={resumeUrl}
       />
 
       <section>
@@ -67,12 +67,38 @@ export default function HomePage() {
         </Stagger>
       </section>
 
+      {showcaseWrites.length > 0 && (
+        <section id="selected-work" className="scroll-mt-28">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <SectionHeading
+              eyebrow="Selected work"
+              title="Systems I've built"
+              description="Project write-ups with architecture — the proof behind the competencies."
+            />
+            <Link
+              href="/portfolio"
+              className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan"
+            >
+              Full portfolio
+              <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
+            </Link>
+          </div>
+          <Stagger className="mt-10 grid gap-6 sm:grid-cols-3">
+            {showcaseWrites.map((write) => (
+              <StaggerItem key={write.slug}>
+                <SelectedWorkCard write={write} />
+              </StaggerItem>
+            ))}
+          </Stagger>
+        </section>
+      )}
+
       {featuredWrites.length > 0 && (
         <section>
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
-              eyebrow="Featured"
-              title="From the blog"
+              eyebrow="From the blog"
+              title="Latest articles"
               description="What I'm learning and documenting in public — one question per article."
             />
             <Link
@@ -83,7 +109,7 @@ export default function HomePage() {
               <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
             </Link>
           </div>
-          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2">
+          <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featuredWrites.map((write) => (
               <StaggerItem key={write.slug}>
                 <WriteCard write={write} />

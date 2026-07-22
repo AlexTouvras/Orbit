@@ -26,6 +26,7 @@ function readWriteFile(fileName: string): Write {
     tags: fm.tags ?? [],
     category: fm.category,
     featured: fm.featured ?? false,
+    showcase: fm.showcase ?? false,
     readingTime: readingTimeMinutes(content),
   };
 }
@@ -59,10 +60,19 @@ export function getWriteBySlug(slug: string): Write | null {
   return readWriteFile(file);
 }
 
+/** Home “From the blog” — article teasers; excludes showcase posts. */
 export function getFeaturedWrites(limit?: number): Write[] {
-  const featured = getAllWrites().filter((w) => w.featured);
-  const list = featured.length > 0 ? featured : getAllWrites();
+  const all = getAllWrites();
+  const featured = all.filter((w) => w.featured && !w.showcase);
+  const list =
+    featured.length > 0 ? featured : all.filter((w) => !w.showcase);
   return typeof limit === "number" ? list.slice(0, limit) : list;
+}
+
+/** Home “Selected work” — system / project showcases from the same MDX bank. */
+export function getShowcaseWrites(limit?: number): Write[] {
+  const showcase = getAllWrites().filter((w) => w.showcase);
+  return typeof limit === "number" ? showcase.slice(0, limit) : showcase;
 }
 
 export function getLatestWrites(limit = 3): Write[] {

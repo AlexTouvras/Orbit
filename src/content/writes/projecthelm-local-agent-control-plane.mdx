@@ -1,52 +1,61 @@
 ---
-title: "ProjectHelm — a local control plane for coding agents"
-summary: "JARVIS tracks project state, runs Plan → Agent → Debug loops, and keeps an event ledger so agent work is observable — not a black box."
+title: "ProjectHelm — making multi-agent coding observable"
+summary: "JARVIS is a local control plane around the Cursor SDK: Plan → Agent → Debug with an event ledger, so I can audit what ran instead of reconstructing chat."
 date: "2026-07-17"
 category: "AI"
-featured: true
-tags: ["Agents", "Orchestration", "Cursor SDK", "Build in public"]
+featured: false
+showcase: true
+tags: ["Agents", "Cursor SDK", "Orchestration", "Architecture"]
 ---
 
 ## The question
 
-When three different agents touch the same repo in one evening, how do you know **what was decided, what ran, and what still needs a human**?
+When two or three agents touch the same repo in one evening, how do I answer on Monday: what was decided, what actually ran, and what still needs me?
 
-## The problem with "just use the IDE"
+Cursor is strong at local edits. It is weak as a system of record. Plans live in chat. Child agents disappear when the tab closes. Failed checks become another prompt instead of a named Debug phase. I kept losing the thread between "we agreed to fix the tests" and "which agent touched `writes.ts`?"
 
-Cursor (and similar tools) are excellent at **local, single-threaded** work. They are weaker as a **system**:
+ProjectHelm (the JARVIS workspace) is my answer: a thin control plane on my machine. Not another chat UI. State, phases, and a ledger around the Cursor SDK.
 
-- No durable ledger of plans vs outcomes across sessions.
-- No first-class "this child agent owns tests, that one owns docs."
-- No explicit **Debug** phase when verification fails — you improvise in chat.
+## The control plane
 
-ProjectHelm (JARVIS) is my attempt at a **thin control plane** on my machine: not another chat UI, but state + orchestration around the Cursor SDK.
+```mermaid
+flowchart TB
+  UI[Dashboard web_ui] --> API[FastAPI control plane]
+  API --> DB[(SQLAlchemy DB)]
+  API --> Agents[apps/agents Cursor SDK]
+  Agents --> Plan[Plan phase]
+  Plan --> Run[Agent execute]
+  Run --> Debug[Debug / verify]
+  Debug --> Ledger[Event ledger]
+  Ledger --> API
+```
 
-## What ProjectHelm actually does
+The FastAPI app owns projects and runs. The web UI is for me to start work, watch status, and kill a loop that went sideways. Agents call into the Cursor SDK with bounded context. Outcomes append to an event ledger. If it isn't in the ledger, I treat it as rumor.
 
-At a high level:
+## Phases I refuse to leave implicit
 
-1. **Plan** — break a goal into scoped steps with owners and done criteria.
-2. **Agent** — dispatch work to child agents with bounded context.
-3. **Debug** — when checks fail, loop with evidence instead of guessing.
-4. **Ledger** — append events so I can answer "what happened after the refactor prompt?"
+**Plan** forces a scoped breakdown: owners, done criteria, what "good" looks like before anyone edits. Vague goals stay stuck here on purpose.
 
-The dashboard is FastAPI + a small web UI. The interesting part is not the framework — it is the **contract**: every loop produces artifacts a human can audit.
+**Agent** dispatches work. Child agents get a job, not the whole chat history. That boundary is the whole point; context rot is how you get confident wrong patches.
 
-## Design choices I’m keeping
+**Debug** starts when verification fails. Evidence in, guesswork out. I still improvise sometimes, but the phase name makes the failure visible instead of burying it in a longer prompt.
 
-- **Local-first** — no cloud orchestrator billing per agent hour.
-- **Explicit phases** — Plan / Agent / Debug are named, not implied by prompt tone.
-- **Event ledger** — if it is not in the ledger, it did not happen for the project.
-- **Human kill switch** — I can stop a run without guessing which subprocess to kill.
+**Ledger** is the audit trail. Monday-me can reconstruct Tuesday-night-me without scrolling Discord.
 
-## What I’m not solving yet
+## Design choices I'm keeping
 
-- Multi-user teams or permissions — this is a personal workshop tool.
-- Fully autonomous shipping — merge buttons stay with me.
-- Replacing Cursor — ProjectHelm coordinates; the IDE still edits.
+Local-first. No per-agent cloud bill for a personal workshop. Explicit phase names beat prompt tone. Kill switch in the UI so I don't hunt PIDs. The IDE still edits files; ProjectHelm coordinates.
+
+I'm not building multi-user permissions or auto-merge. Merge stays human. Fully autonomous shipping is a different product and I'm not pretending this is that.
+
+## Where it still breaks
+
+Ledger richness depends on how honest the agent wrappers are about what they did. If a child agent skips writing an event, the dashboard looks calm and lies. Plan quality is still on me; a sloppy plan just becomes a faster mess. Desktop + API + IDE is more moving parts than "open Cursor and vibe," and some weeks I skip the control plane when the task is tiny. That's fine. Tools you only use for multi-agent nights still earn their keep.
+
+## Why I published this
+
+Delivery leadership and agent systems share a habit: name the loop, keep evidence, don't confuse activity with outcomes. ProjectHelm is the workshop version of that habit. Full diagrams: [JARVIS (ProjectHelm) — architecture](/architecture/jarvis).
 
 ## Takeaway
 
-Agents become useful at scale when you treat them like **workers with a foreman**, not like a single omniscient chat. Build the foreman layer first: state, phases, and a log you can read on Monday morning.
-
-**Architecture diagrams:** [JARVIS (ProjectHelm) — control plane](/architecture/jarvis)
+Treat agents like workers with a foreman. Build the foreman layer first: phases, state, and a log you can read when you're tired. The model is replaceable. The contract isn't.

@@ -1,12 +1,12 @@
 ---
 title: "Orbit platform — architecture diagrams"
-summary: "Personal HQ: Hub, Writes, Portfolio, Workshop, Signals radar, Studio, and weekly Write Slack approve."
+summary: "Personal HQ: Hub, Blog, Portfolio, Workshop, Related articles, Studio, and weekly blog-draft Slack approve."
 projectDir: "website"
 ---
 
 {/* AUTO-GENERATED from website/docs/architecture/ — edit source there, then npm run arch:sync-all */}
 
-Canonical architecture for **website**. Linked from the project essay; not listed in Writes.
+Canonical architecture for **website**. Linked from the project essay; not listed in Blog.
 
 ## Architecture sync pipeline
 
@@ -16,27 +16,27 @@ flowchart LR
   Validate --> Sync[arch:sync-all]
   Sync --> Arch[src/content/architecture/*.mdx]
   Arch --> Orbit[Orbit /architecture/slug]
-  Essays[Writes essays] -->|link| Orbit
+  Essays[Blog essays] -->|link| Orbit
 ```
 
 ## Orbit content zones
 
 ```mermaid
 flowchart TB
-  Hub[Hub] --> Writes[Writes MDX]
+  Hub[Hub] --> Blog[Blog MDX]
   Hub --> Portfolio[Portfolio and Workshop]
-  Hub --> Radar[Signals RSS cache]
+  Hub --> Feed[Related articles cache]
   Studio[Studio JSON edits] --> Hub
-  Cron[news fetch cron] --> Radar
-  Weekly[weekly-write cron] --> Slack[Slack career-ops approve]
-  Slack -->|Approve| Writes
-  MDX[MDX and Mermaid] --> Writes
+  Cron[news fetch cron] --> Feed
+  Weekly[weekly blog draft cron] --> Slack[Slack career-ops approve]
+  Slack -->|Approve| Blog
+  MDX[MDX and Mermaid] --> Blog
   MDX --> Portfolio
 ```
 
-## Weekly Write pipeline
+## Weekly blog draft pipeline
 
-Automated draft from Signals + workshop projects → Slack approval in career-ops → publish to Writes.
+Automated draft from Related articles + workshop projects → Slack approval in career-ops → publish to Blog.
 
 ```mermaid
 flowchart LR
@@ -47,9 +47,9 @@ flowchart LR
   cursor --> draft
   draft --> slack[Incoming webhook career-ops]
   slack --> you{Approve or Skip link}
-  you -->|Approve| publish[Commit writes MDX]
+  you -->|Approve| publish[Commit Blog MDX]
   you -->|Skip| discard[Mark draft skipped]
-  publish --> site[writes slug live after redeploy]
+  publish --> site[Blog slug live after redeploy]
 ```
 
 When Gemini is configured but unavailable (rate limit etc.), the pipeline writes `data/weekly-write-ide-brief.md` and waits. Generate the essay in Cursor, then `npm run weekly:notify-draft` to continue Slack approve.

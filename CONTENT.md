@@ -16,7 +16,7 @@ Read the section that matches what you want to change.
 | **Hero name, tagline, socials** | Studio *or* code | `/studio` or `src/content/profile.ts` |
 | **Workshop projects on Portfolio** | Studio scanner | `/studio/projects` |
 | **Downloadable CV PDF** | Replace file | `public/resume.pdf` |
-| **External news feed (Signals)** | Auto + optional config | `npm run news:fetch` + `src/lib/news/sources.ts` |
+| **External news feed (Related articles)** | Auto + optional config | `npm run news:fetch` + `src/lib/news/sources.ts` |
 | **Competency cards on Hub** | Code only | `src/content/profile.ts` → `competencies` |
 | **RSS sources** | Code only | `src/lib/news/sources.ts` |
 
@@ -64,6 +64,7 @@ summary: "One sentence: what the reader will learn."
 date: "2026-04-15"
 category: "Data"
 featured: false
+showcase: false
 tags: ["Power BI", "Azure", "Tutorial"]
 ---
 
@@ -94,7 +95,8 @@ One clear conclusion.
 | `date` | Yes | ISO date `"YYYY-MM-DD"` — controls sort order (newest first) |
 | `category` | Yes | `Career` · `Data` · `AI` · `Delivery` · `Learning` |
 | `tags` | Yes | Array of strings; used for search on `/writes` |
-| `featured` | No | `true` to prefer in featured lists (defaults `false`) |
+| `featured` | No | `true` → Home **From the blog** (article teasers; defaults `false`) |
+| `showcase` | No | `true` → Home **Selected work** (system / project showcases; defaults `false`). Same blog MDX — only Home placement changes. Prefer one of `featured` or `showcase`, not both. |
 
 ### Edit an existing article
 
@@ -211,9 +213,9 @@ Saves to `data/published-projects.json`.
 
 ---
 
-## 6. Signals (external news feed)
+## 6. Related articles (external news feed)
 
-**URL:** `/radar` (labeled **Signals** in the nav)
+**URL:** `/radar` (labeled **Related articles** in the nav)
 
 ### Refresh the feed locally
 
@@ -225,7 +227,7 @@ Writes `data/news-cache.json`. The page reads only from this cache.
 
 ### Add/remove RSS sources
 
-Edit **`src/lib/news/sources.ts`** — each entry needs `name`, `url`, `category` (`AI`, `Data`, or `Delivery`).
+Edit **`src/lib/news/sources.ts`** — each entry needs `name`, `url`, `category` (`AI`, `Data`, `Delivery`, or `Analytics`).
 
 ### On a live server
 
@@ -239,7 +241,7 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" http://127.0.0.1:3000/api/cron/
 
 ## 6b. Weekly Write (Slack approve → publish)
 
-Every Monday a draft Write is built from **Signals** + **Studio workshop projects**, then posted to Slack **`#career-ops`** (same free Incoming Webhook as CareerOps).
+Every Monday a draft Write is built from **Related articles** + **Studio workshop projects**, then posted to Slack **`#career-ops`** (same free Incoming Webhook as CareerOps).
 
 ### What you do
 
@@ -320,7 +322,7 @@ git push origin main
 | Ship curated Studio data to server | `data/profile.seed.json`, `data/published-projects.seed.json` |
 
 **Do not commit:** `.env.local`, `data/profile.json`, `data/published-projects.json` (gitignored).
-`data/news-cache.json` **is** committed — Related articles read it on Vercel; GitHub Action / Vercel Cron refresh it daily.
+`data/news-cache.json` **is** committed — Related articles reads it on Vercel; GitHub Action / Vercel Cron refresh it daily.
 
 ### After push — update the server
 
@@ -383,7 +385,7 @@ Generate secrets: `openssl rand -hex 32` (on the VM) or any long random string l
 1. `/studio` → edit → Save (fastest)
 2. Or edit `src/content/profile.ts` for permanent defaults in git
 
-### "Signals feed is empty"
+### "Related articles feed is empty"
 
 ```powershell
 npm run news:fetch
@@ -412,7 +414,7 @@ npm run news:fetch
 /writes/[slug]    Single article
 /portfolio        Workshop + GitHub + Power BI (#power-bi)
 /about            CV & full background
-/radar            Signals — external RSS (nav label: Signals)
+/radar            Related articles — external RSS (nav label: Related articles)
 /studio           Private admin (profile)
 /studio/projects  Private admin (workshop projects)
 ```

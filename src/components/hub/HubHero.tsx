@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Mail, PenLine } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import type { ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
@@ -38,7 +38,6 @@ interface HubHeroProps {
   tagline: string;
   availability: string;
   socials: { label: string; href: string }[];
-  resumeUrl?: string;
 }
 
 export function HubHero({
@@ -47,7 +46,6 @@ export function HubHero({
   tagline,
   availability,
   socials,
-  resumeUrl,
 }: HubHeroProps) {
   const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
@@ -102,34 +100,11 @@ export function HubHero({
             <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
           </Link>
           <Link
-            href="/writes"
-            className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition-colors hover:text-white"
+            href="/#selected-work"
+            className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white transition-[transform,border-color,color] active:scale-[0.98] hover:border-neon-cyan/50 hover:text-neon-cyan"
           >
-            Blog
+            Selected work
             <ArrowRight className="h-3.5 w-3.5 opacity-60 transition-transform motion-safe:group-hover:translate-x-0.5" />
-          </Link>
-          <Link
-            href="/about"
-            className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-300 transition-colors hover:text-white"
-          >
-            About
-            <ArrowRight className="h-3.5 w-3.5 opacity-60 transition-transform motion-safe:group-hover:translate-x-0.5" />
-          </Link>
-          {resumeUrl && (
-            <a
-              href={resumeUrl}
-              className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition-[transform,border-color,color] active:scale-[0.98] hover:border-neon-cyan/50 hover:text-neon-cyan"
-            >
-              <Download className="h-4 w-4" aria-hidden />
-              CV
-            </a>
-          )}
-          <Link
-            href="/portfolio"
-            className="focus-ring group hidden min-h-11 items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-400 transition-colors hover:text-white sm:inline-flex"
-          >
-            <PenLine className="h-4 w-4 text-neon-violet/80" aria-hidden />
-            Portfolio
           </Link>
         </div>
       </HeroItem>

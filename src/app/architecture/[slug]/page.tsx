@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { ArrowLeft } from "lucide-react";
 import {
   ARCHITECTURE_ESSAY_LINKS,
   getArchitectureBySlug,
   getArchitectureSlugs,
 } from "@/lib/architecture";
 import { mdxComponents } from "@/components/mdx/mdx-components";
+import { BackLink } from "@/components/ui/BackLink";
 
 export function generateStaticParams() {
   return getArchitectureSlugs().map((slug) => ({ slug }));
@@ -42,13 +41,7 @@ export default async function ArchitecturePage({
 
   return (
     <article className="mx-auto max-w-3xl">
-      <Link
-        href={essay?.href ?? "/writes"}
-        className="focus-ring group inline-flex min-h-11 items-center gap-2 text-sm text-slate-300 transition-colors hover:text-white"
-      >
-        <ArrowLeft className="h-4 w-4 transition-transform motion-safe:group-hover:-translate-x-0.5" />
-        {essay ? `Back to ${essay.title}` : "Back to writes"}
-      </Link>
+      <BackLink fallbackHref={essay?.href ?? "/#selected-work"} />
 
       <header className="mt-8">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">

@@ -5,7 +5,7 @@ export interface FeedSource {
   name: string;
   /** RSS/Atom feed URL. */
   url: string;
-  /** Which radar lane this feed belongs to. */
+  /** Which Related articles lane this feed belongs to. */
   category: NewsCategory;
 }
 
@@ -21,8 +21,9 @@ export const FEED_SOURCES: FeedSource[] = [
     category: "AI",
   },
   {
-    name: "AI News",
-    url: "https://artificialintelligence-news.com/feed/",
+    // Replaces AI News (artificialintelligence-news.com) — that host returns 403 to feed clients.
+    name: "Simon Willison",
+    url: "https://simonwillison.net/atom/everything/",
     category: "AI",
   },
 
@@ -39,14 +40,16 @@ export const FEED_SOURCES: FeedSource[] = [
   },
 
   // --- Delivery (Agile / Scrum / Kanban / CD) ---
+  // InfoQ topic feeds for Continuous Delivery / Agile barely update (often years stale).
+  // Prefer Martin Fowler + InfoQ DevOps for fresher Delivery coverage.
   {
-    name: "InfoQ — Continuous Delivery",
-    url: "https://www.infoq.com/feed/continuous_delivery/",
+    name: "Martin Fowler",
+    url: "https://martinfowler.com/feed.atom",
     category: "Delivery",
   },
   {
-    name: "InfoQ — Agile",
-    url: "https://www.infoq.com/feed/agile/",
+    name: "InfoQ — DevOps",
+    url: "https://www.infoq.com/feed/DevOps/",
     category: "Delivery",
   },
   {

@@ -111,7 +111,7 @@ projectDir: "${project.dir}"
 
 `;
 
-  const intro = `Canonical architecture for **${project.dir}**. Linked from the project essay; not listed in Writes.
+  const intro = `Canonical architecture for **${project.dir}**. Linked from the project essay; not listed in Blog.
 
 `;
 

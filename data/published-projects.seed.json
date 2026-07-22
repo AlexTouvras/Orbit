@@ -1,87 +1,39 @@
 [
   {
     "id": "cyber-portfolio-platform",
-    "name": "Orbit — Portfolio & Radar",
-    "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
-    "status": "wip",
+    "name": "Orbit — Portfolio & related articles",
+    "description": "This site: a personal portfolio bank and a curated RSS feed across AI, Data, Analytics, and Delivery, with a built-in Studio for editing content and publishing projects.",
+    "status": "live",
     "tags": ["Next.js", "React", "TypeScript"],
-    "repoUrl": "",
-    "liveUrl": "",
+    "repoUrl": "https://github.com/AlexTouvras/Orbit",
+    "liveUrl": "https://orbit-rho-rouge.vercel.app/",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\website",
     "order": 0
   },
   {
-    "id": "ultimate-reel-maker",
-    "name": "Ultimate Reel Maker",
-    "description": "A self-hosted topic-to-video pipeline: local TTS (Kokoro), word-level captions (Whisper.cpp), Pexels B-roll, and Remotion composition — with Ollama-powered script generation.",
-    "status": "wip",
-    "tags": ["Docker", "Remotion", "AI", "TTS"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": true,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\Reelsmaker",
-    "order": 1
-  },
-  {
     "id": "projecthelm-jarvis",
     "name": "ProjectHelm (JARVIS)",
-    "description": "A local control plane for a personal AI assistant — a meta-orchestrator that tracks project state, coordinates child agents, and runs Plan → Agent → Debug loops via the Cursor SDK.",
+    "description": "A local control plane for coding agents — tracks project state, coordinates child agents, and runs Plan → Agent → Debug loops via the Cursor SDK.",
     "status": "prototype",
     "tags": ["Python", "Agents", "Orchestration"],
     "repoUrl": "",
-    "liveUrl": "",
+    "liveUrl": "/writes/projecthelm-local-agent-control-plane",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\JARVIS",
+    "order": 1
+  },
+  {
+    "id": "powerbi-portfolio",
+    "name": "Power BI — Nordic Boardroom",
+    "description": "Portfolio reports with a shared design system: churn, sales, bank, healthcare — gold through pages, synced into Orbit.",
+    "status": "shipped",
+    "tags": ["Power BI", "Fabric", "DAX"],
+    "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio",
+    "liveUrl": "/writes/power-bi-portfolio-nordic-boardroom",
+    "featured": true,
+    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\PowerBI",
     "order": 2
-  },
-  {
-    "id": "projectbrain",
-    "name": "ProjectBrain",
-    "description": "A personal project-intelligence system that learns across projects over time, extracts patterns from success and failure, and serves low-latency context to AI coding agents via MCP.",
-    "status": "wip",
-    "tags": ["Python", "MCP", "AI"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\Memory",
-    "order": 3
-  },
-  {
-    "id": "faceless-reels",
-    "name": "Faceless Reels",
-    "description": "An automated short-form video pipeline for Greek-mythology reels: beat-split narration, AI image generation with a quality loop, neural TTS, and karaoke-style captions.",
-    "status": "wip",
-    "tags": ["Node", "AI", "TTS"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\faceless_reels",
-    "order": 4
-  },
-  {
-    "id": "career-dashboard",
-    "name": "Career Dashboard",
-    "description": "A personal CV and career-path dashboard with a public/private split — build a CV-only public site while keeping career plans and learning tracks private.",
-    "status": "wip",
-    "tags": ["React", "Vite", "TypeScript"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\careerDev",
-    "order": 5
-  },
-  {
-    "id": "viral-arcade-dash",
-    "name": "Viral Arcade Dash",
-    "description": "A deterministic 2D endless runner with an \"engine-less cartridge\" architecture — game rules isolated from the Expo + Skia shell, gated by a determinism + ship verification loop.",
-    "status": "prototype",
-    "tags": ["Expo", "Skia", "TypeScript"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\gameEngine",
-    "order": 6
   },
   {
     "id": "sunplot-garden",
@@ -93,6 +45,6 @@
     "liveUrl": "",
     "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\garden_app",
-    "order": 7
+    "order": 3
   }
 ]

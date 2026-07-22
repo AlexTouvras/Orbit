@@ -48,7 +48,7 @@ export function RadarExplorer({ items }: { items: NewsItem[] }) {
         <div
           className="flex flex-wrap gap-2"
           role="group"
-          aria-label="Filter signals by discipline"
+          aria-label="Filter related articles by topic"
         >
           {FILTERS.map((f) => (
             <FilterChip

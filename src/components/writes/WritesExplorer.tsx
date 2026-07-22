@@ -32,11 +32,19 @@ export function WritesExplorer({ writes }: { writes: Write[] }) {
     return map;
   }, [writes]);
 
+  const visibleFilters = useMemo(
+    () => FILTERS.filter((f) => f === "All" || (counts[f] ?? 0) > 0),
+    [counts],
+  );
+
+  const activeCategory =
+    category === "All" || (counts[category] ?? 0) > 0 ? category : "All";
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return writes.filter((write) => {
       const matchesCategory =
-        category === "All" || write.category === category;
+        activeCategory === "All" || write.category === activeCategory;
       const matchesQuery =
         !q ||
         write.title.toLowerCase().includes(q) ||
@@ -44,7 +52,7 @@ export function WritesExplorer({ writes }: { writes: Write[] }) {
         write.tags.some((t) => t.toLowerCase().includes(q));
       return matchesCategory && matchesQuery;
     });
-  }, [writes, category, query]);
+  }, [writes, activeCategory, query]);
 
   return (
     <div>
@@ -54,10 +62,10 @@ export function WritesExplorer({ writes }: { writes: Write[] }) {
           role="group"
           aria-label="Filter articles by category"
         >
-          {FILTERS.map((f) => (
+          {visibleFilters.map((f) => (
             <FilterChip
               key={f}
-              active={category === f}
+              active={activeCategory === f}
               onClick={() => setCategory(f)}
             >
               {f}

@@ -21,15 +21,28 @@ export const ARCHITECTURE_ESSAY_LINKS: Record<
     title: "Building Orbit",
     href: "/writes/building-orbit",
   },
-  reelsmaker: {
-    title: "Ultimate Reel Maker",
-    href: "/writes/ultimate-reel-maker-self-hosted-video",
-  },
   jarvis: {
     title: "ProjectHelm",
     href: "/writes/projecthelm-local-agent-control-plane",
   },
+  "powerbi-portfolio": {
+    title: "Power BI portfolio",
+    href: "/writes/power-bi-portfolio-nordic-boardroom",
+  },
+  reelsmaker: {
+    title: "Ultimate Reel Maker",
+    href: "/writes/ultimate-reel-maker-self-hosted-video",
+  },
 };
+
+/** Reverse map: write slug → architecture page slug (if any). */
+export function architectureSlugForWrite(writeSlug: string): string | null {
+  const href = `/writes/${writeSlug}`;
+  for (const [archSlug, essay] of Object.entries(ARCHITECTURE_ESSAY_LINKS)) {
+    if (essay.href === href) return archSlug;
+  }
+  return null;
+}
 
 function readArchFile(fileName: string): ArchitectureDoc {
   const slug = fileName.replace(/\.mdx?$/, "");

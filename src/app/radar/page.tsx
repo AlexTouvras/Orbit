@@ -74,8 +74,8 @@ export default async function RadarPage() {
                 No related articles yet
               </h3>
               <p className="mt-2 max-w-md text-sm text-slate-300">
-                Articles will appear here when the feed refreshes. Check back
-                soon for curated updates across AI, Data, and Delivery.
+                Items will appear here when the feed refreshes. Check back soon
+                for curated updates across AI, Data, Analytics, and Delivery.
               </p>
             </GlassCard>
           )}

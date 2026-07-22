@@ -1,0 +1,53 @@
+---
+title: "Power BI portfolio — architecture diagrams"
+summary: "Nordic Boardroom reports: gold → model → pages → Orbit sync."
+projectDir: "PowerBI"
+---
+
+{/* AUTO-GENERATED from PowerBI/docs/architecture/ — edit source there, then npm run arch:sync-all */}
+
+Canonical architecture for **PowerBI**. Linked from the project essay; not listed in Writes.
+
+## Nordic Boardroom stack
+
+Shared design system and build path across churn, sales, bank, and healthcare reports.
+
+```mermaid
+flowchart TB
+  Shared[_shared theme and patterns] --> Churn[02 ecommerce churn]
+  Shared --> Sales[03 sales executive]
+  Shared --> Bank[05 bank segmentation]
+  Shared --> Care[06 healthcare]
+  Churn --> Export[Page screenshots]
+  Sales --> Export
+  Bank --> Export
+  Care --> Export
+  Export --> GH[GitHub powerbi-portfolio]
+  GH --> OrbitSync[Orbit sync Action]
+```
+
+## Power BI portfolio pipeline
+
+How reports move from local PBIP work to the Orbit Portfolio showcase.
+
+```mermaid
+flowchart LR
+  Gold[Gold / star schemas] --> Model[Semantic model PBIP]
+  Model --> Pages[Report pages PBIR]
+  Pages --> Shots[Exported page PNGs]
+  Shots --> Sync[npm run powerbi:sync]
+  Sync --> Orbit[Orbit Portfolio Power BI]
+  Sync --> Meta[power-bi-reports.ts]
+```
+
+## Report page contract
+
+Each portfolio report follows the same reader path so a hiring manager can scan without guessing where to look.
+
+```mermaid
+flowchart TB
+  Landing[Landing cover] --> Pulse[Pulse / KPI page]
+  Pulse --> Drivers[Drivers / explain page]
+  Drivers --> Queue[Action queue]
+  Queue --> Context[Context and caveats]
+```

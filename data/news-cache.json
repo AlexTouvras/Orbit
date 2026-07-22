@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-22T08:21:07.043Z",
-  "count": 132,
+  "generatedAt": "2026-07-22T08:56:18.242Z",
+  "count": 181,
   "items": [
     {
       "id": "d42362617c64",
@@ -10,6 +10,33 @@
       "category": "AI",
       "pubDate": "2026-07-21T17:00:00.000Z",
       "contentSnippet": "OpenAI launches the ChatGPT for Small Businesses program, helping entrepreneurs build AI skills, automate work, and grow with ChatGPT Work."
+    },
+    {
+      "id": "99e42382ba86",
+      "title": "Nativ: Run AI models locally on your Mac",
+      "link": "https://simonwillison.net/2026/Jul/21/nativ/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-21T14:22:27.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "341caddc014b",
+      "title": "Fragments: July 21",
+      "link": "https://martinfowler.com/fragments/2026-07-21.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-07-21T13:13:00.000Z",
+      "contentSnippet": "With this post, I’ll wrap up my notes from the second Future of Software Development Retreat. But before I do, I should note that the full Thoughtworks report on the retreat is now available. They have five headline findings: Code generation is no longer the bottleneck — verifica…"
+    },
+    {
+      "id": "009d8ac6eee7",
+      "title": "A Fireside Chat with Cat and Thariq from the Claude Code team",
+      "link": "https://simonwillison.net/2026/Jul/21/cat-and-thariq/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-21T12:54:02.000Z",
+      "contentSnippet": ""
     },
     {
       "id": "20b0eb2d5c14",
@@ -30,13 +57,22 @@
       "contentSnippet": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC, bringing global leadership in finance, technology, and governance."
     },
     {
-      "id": "9e42b0d22b21",
-      "title": "Presentation: Platform Engineering for Everyone - Success Can’t Be Coded",
-      "link": "https://www.infoq.com/presentations/platform-engineering-product-mindset/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
-      "source": "InfoQ — Agile",
-      "category": "Delivery",
-      "pubDate": "2026-07-20T11:50:00.000Z",
-      "contentSnippet": "Max Korbacher explains why successful internal development platforms cannot be built on tech alone. He discusses the pitfalls of infrastructure-first thinking, the importance of a clear product mindset, and how to measure real value using DevEx and SPACE metrics. Learn how to ali…"
+      "id": "578e1115394f",
+      "title": "Reverse-engineering is cheap now",
+      "link": "https://simonwillison.net/2026/Jul/20/cheap-reverse-engineering/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-20T19:24:05.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "1ee0543e2b9b",
+      "title": "Who’s Afraid of Chinese Models?",
+      "link": "https://simonwillison.net/2026/Jul/20/afraid-of-chinese-models/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-20T17:09:19.000Z",
+      "contentSnippet": ""
     },
     {
       "id": "d4ff9ec891b7",
@@ -57,6 +93,15 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "b5d7973c852a",
+      "title": "Quoting Sam Altman",
+      "link": "https://simonwillison.net/2026/Jul/20/sam-altman/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-20T03:47:59.000Z",
+      "contentSnippet": ""
+    },
+    {
       "id": "a92c018c9c22",
       "title": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
       "link": "https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/",
@@ -64,6 +109,69 @@
       "category": "Analytics",
       "pubDate": "2026-07-19T17:46:53.000Z",
       "contentSnippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
+    },
+    {
+      "id": "c54ae55d46e9",
+      "title": "AI Mania Is Eviscerating Global Decision-Making",
+      "link": "https://simonwillison.net/2026/Jul/19/ai-mania/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-19T05:06:21.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "165d33e669f4",
+      "title": "Claude Code uses Bun written in Rust now",
+      "link": "https://simonwillison.net/2026/Jul/19/claude-code-in-bun-in-rust/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-19T03:54:09.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "ccfb0a129469",
+      "title": "SQLite Query Explainer",
+      "link": "https://simonwillison.net/2026/Jul/18/sqlite-query-explainer/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-18T17:19:10.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "3c690c812db8",
+      "title": "Claude make Fable 5 permanent",
+      "link": "https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-18T06:00:13.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "0bc93da60f4a",
+      "title": "nascheme/quixote",
+      "link": "https://simonwillison.net/2026/Jul/18/quixote/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-18T05:27:49.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "103bc7df9c87",
+      "title": "Quoting Kimi K3",
+      "link": "https://simonwillison.net/2026/Jul/17/kimi-k3/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-17T13:43:53.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "64131661223d",
+      "title": "LLM cliché highlighter",
+      "link": "https://simonwillison.net/2026/Jul/17/llm-cliche-highlighter/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-17T12:11:11.000Z",
+      "contentSnippet": ""
     },
     {
       "id": "3ebda52fc80e",
@@ -75,6 +183,42 @@
       "contentSnippet": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute."
     },
     {
+      "id": "8840673948d8",
+      "title": "Spot birds not golf",
+      "link": "https://simonwillison.net/2026/Jul/17/spot-birds-not-golf/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-17T02:58:07.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "d54546b30bf8",
+      "title": "Firefox in WebAssembly",
+      "link": "https://simonwillison.net/2026/Jul/16/firefox-in-webassembly/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-16T23:34:16.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "546beebc5838",
+      "title": "Kimi K3, and what we can still learn from the pelican benchmark",
+      "link": "https://simonwillison.net/2026/Jul/16/kimi-k3/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-16T20:19:30.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "b62b68c93c9c",
+      "title": "Quoting Thibault Sottiaux",
+      "link": "https://simonwillison.net/2026/Jul/16/bad-codex-bug/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-16T17:45:59.000Z",
+      "contentSnippet": ""
+    },
+    {
       "id": "8fe39edff791",
       "title": "Why teens deserve access to safe AI",
       "link": "https://openai.com/index/why-teens-deserve-access-safe-ai",
@@ -84,13 +228,49 @@
       "contentSnippet": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships."
     },
     {
-      "id": "04160bf4a77e",
-      "title": "Presentation: The Rust High Performance Talk You Did Not Expect",
-      "link": "https://www.infoq.com/presentations/rust-tps-service/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
-      "source": "InfoQ — Agile",
+      "id": "586447921181",
+      "title": "Inkling: Our open-weights model",
+      "link": "https://simonwillison.net/2026/Jul/16/inkling/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-16T15:35:25.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "71ea2ad9c790",
+      "title": "Mermaid to ASCII art (mermaid-ascii)",
+      "link": "https://simonwillison.net/2026/Jul/16/mermaid-ascii/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-16T14:57:39.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "cf5f6e5324b6",
+      "title": "Quoting Linus Torvalds",
+      "link": "https://simonwillison.net/2026/Jul/16/linus-torvalds/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-16T13:26:10.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "ae8121be2cae",
+      "title": "The Archaeologist’s Copilot",
+      "link": "https://martinfowler.com/articles/archaeologist-copilot.html",
+      "source": "Martin Fowler",
       "category": "Delivery",
-      "pubDate": "2026-07-16T10:20:00.000Z",
-      "contentSnippet": "Ruth Linehan explains how migrating high-performance caching services from Kotlin to Rust shattered internal preconceptions around delivery velocity and engineering overhead. She discusses the ergonomics of the Rust borrow checker, shares how compile-time safety shortens the deve…"
+      "pubDate": "2026-07-16T13:25:00.000Z",
+      "contentSnippet": "When people think of legacy modernization, most folks aren't imagining the target environment will be Java 8. But this was the challenge facing Nik Malykhin when he needed to run a Java 1.5 codebase on today's hardware. His early use of LLMs gave plausible answers that did not ho…"
+    },
+    {
+      "id": "9904e67143d8",
+      "title": "Mermaid to Unicode box art (grok-mermaid)",
+      "link": "https://simonwillison.net/2026/Jul/16/grok-mermaid/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-16T00:33:18.000Z",
+      "contentSnippet": ""
     },
     {
       "id": "6f16a999c8dd",
@@ -118,6 +298,15 @@
       "category": "AI",
       "pubDate": "2026-07-15T10:00:00.000Z",
       "contentSnippet": "Explore GPT-Red, OpenAI’s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness."
+    },
+    {
+      "id": "51562230a5e4",
+      "title": "DSLs Enable Reliable Use of LLMs",
+      "link": "https://martinfowler.com/articles/llm-and-dsls.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-07-14T12:51:00.000Z",
+      "contentSnippet": "LLMs generate code incredibly fast, but to ensure they generate exactly what is intended, they need clear boundaries. Abstractions and Domain-Specific Languages (DSLs) provide a strong harness that guides LLMs right from the start. Unmesh Joshi describes how the example of Ticklo…"
     },
     {
       "id": "92ab1f77dd8c",
@@ -165,13 +354,13 @@
       "contentSnippet": "This article describes how to apply different formatting rules at each level of a hierarchy (one rule at the year level, another at the quarter level, another at the month level) using ISINSCOPE in a measure or ISATLEVEL in a…"
     },
     {
-      "id": "711992eb368b",
-      "title": "Presentation: Road to Compliance: Will Your Internal Users Hate Your Platform Team?",
-      "link": "https://www.infoq.com/presentations/platform-engineering-team-compliance/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Agile",
-      "source": "InfoQ — Agile",
+      "id": "767cbb246396",
+      "title": "Fragments: July 13",
+      "link": "https://martinfowler.com/fragments/2026-07-13.html",
+      "source": "Martin Fowler",
       "category": "Delivery",
-      "pubDate": "2026-07-13T12:20:00.000Z",
-      "contentSnippet": "Davide de Paolis discusses the realities of rolling out cloud infrastructure compliance without fracturing developer relations. Drawing from a real-world platform team reboot at Sevdesk, he explains how to implement \"minimum viable governance\" on AWS, utilize event-driven Slack a…"
+      "pubDate": "2026-07-13T12:51:00.000Z",
+      "contentSnippet": "Some more of my notes from Thoughtworks Future of Software Development Retreat. When we had our first retreat in Utah early this year, nobody had heard of Harness Engineering. This time we had a whole session on it. When comes to the guide side of harnesses, most of the discussio…"
     },
     {
       "id": "fad58c67303d",
@@ -273,6 +462,15 @@
       "contentSnippet": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models."
     },
     {
+      "id": "43b30eb7245c",
+      "title": "Experiences with local models for coding",
+      "link": "https://martinfowler.com/articles/exploring-gen-ai/local-models-for-coding-experiences.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-07-08T11:57:00.000Z",
+      "contentSnippet": "Birgitta Böckeler now reports on her recent experiences trying local LLMs for coding. She compares them using two standard tasks, and tries out the most promising model for day-to-day use. more…"
+    },
+    {
       "id": "94fe64bbfa0c",
       "title": "Generative AI guidelines at SQLBI (2026 update)",
       "link": "https://www.sqlbi.com/blog/marco/2026/07/08/generative-ai-guidelines-at-sqlbi-2026-update/",
@@ -289,6 +487,24 @@
       "category": "Delivery",
       "pubDate": "2026-07-07T13:00:00.000Z",
       "contentSnippet": "Mountain Goat Software is shifting its training and coaching focus to private client work, where teams and leaders can apply agile to their real challenges."
+    },
+    {
+      "id": "bbc024cfc465",
+      "title": "Viability of local models for coding",
+      "link": "https://martinfowler.com/articles/exploring-gen-ai/local-models-for-coding-factors.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-07-07T12:34:00.000Z",
+      "contentSnippet": "Birgitta Böckeler recently spent some time trying out running local LLMs for some programming tasks. In this memo she outlines the factors that influence how viable they are for the job. more…"
+    },
+    {
+      "id": "222d3c291025",
+      "title": "Fragments: July  6",
+      "link": "https://martinfowler.com/fragments/2026-07-06.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-07-06T12:53:00.000Z",
+      "contentSnippet": "Last week, Thoughtworks ran a second Future of Software Development Retreat, this time in Europe. As with the previous event, I’ll be sharing some fragmentary thoughts on this. There were five parallel streams, so I could, at best, only attend ⅕ of sessions. This isn’t an event t…"
     },
     {
       "id": "408f24c63668",
@@ -426,6 +642,24 @@
       "contentSnippet": "AI can make individuals faster. For leaders, the bigger question is whether it helps teams build shared context, judgment, and better decisions. AI can make individuals faster. It can also make teams more fragmented. That is one of the risks I see in how many organizations approa…"
     },
     {
+      "id": "455a8f46ffd0",
+      "title": "Fragments: June 16",
+      "link": "https://martinfowler.com/fragments/2026-06-16.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-06-16T15:44:00.000Z",
+      "contentSnippet": "“Prag Dave” Thomas (co-author of the outstanding “Pragmatic Programmer”) has loved programming since he was young. Programming was how I could express myself. I wasn’t an artist. When I sing, dogs howl. When I draw, friends say, “Very nice. What is it?” I didn’t connect particula…"
+    },
+    {
+      "id": "adb703e42fd4",
+      "title": "Building Reliable Agentic AI Systems",
+      "link": "https://martinfowler.com/articles/reliable-llm-bayer.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-06-16T12:11:00.000Z",
+      "contentSnippet": "One of the most interesting projects my colleagues have done with LLMs has been building a system with Bayer to allow pharmaceutical researchers to query decades of information about studies buried in PDF reports. Sarang Sanjay Kulkarni describes its evolution from keyword-based…"
+    },
+    {
       "id": "6c2a48806697",
       "title": "Optional parameters in DAX user defined functions",
       "link": "https://www.sqlbi.com/tv/optional-parameters-in-dax-user-defined-functions/",
@@ -489,6 +723,15 @@
       "contentSnippet": "To finish off my series of posts on concurrent evaluation in Fabric Dataflows Gen2 (see part 1 and part 2) I decided to do some more realistic tests to see how much parallelism I could get. To do this I uploaded 244 identical Excel files containing almost 542000 rows of data each…"
     },
     {
+      "id": "6535772c48e0",
+      "title": "Fragments: June  2",
+      "link": "https://martinfowler.com/fragments/2026-06-02.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-06-02T18:21:00.000Z",
+      "contentSnippet": "Greg Wilson has noticed that lots of folks are using dodgy metrics to figure out if AI tools are worth their costs. Would you measure lines of code generated, or tickets closed? Or would you send out a survey asking whether developers feel more productive? Each of those approache…"
+    },
+    {
       "id": "d9cb1dfc37c6",
       "title": "Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft Databases",
       "link": "https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/",
@@ -543,6 +786,33 @@
       "contentSnippet": "In recent years, a new word has steadily climbed the ranks of leadership literature and corporate strategy sessions: Agency. While many managers intuitively grasp that it has something to do with employees taking ownership, the concept goes far deeper than simply “taking responsi…"
     },
     {
+      "id": "7dad134cf838",
+      "title": "Fragments: May 27",
+      "link": "https://martinfowler.com/fragments/2026-05-27.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-27T19:40:00.000Z",
+      "contentSnippet": "At the GOTO Conference in Copenhagen in 2025, Kent Beck and I spent some time on stage talking and answering questions from the audience - a format I refer to as “two old geezers on a park bench”. We talk about our experiences with LLM-augmented programming (at that point - Octob…"
+    },
+    {
+      "id": "b014be8af80a",
+      "title": "The test suite as a regression sensor",
+      "link": "https://martinfowler.com/articles/sensors-for-coding-agents.html#TheTestSuiteAsARegressionSensor",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-27T15:01:00.000Z",
+      "contentSnippet": "Birgitta Böckeler finishes her post on sensors for coding agents by examining the role of a test suite as a regression sensor, focusing on the role mutation testing can play. more…"
+    },
+    {
+      "id": "78efd7c2c3fa",
+      "title": "The VibeSec Reckoning",
+      "link": "https://martinfowler.com/articles/vibesec-reckoning.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-27T14:03:00.000Z",
+      "contentSnippet": "Vibe coding has significantly accelerated software prototyping but AI agents frequently recommend insecure configurations, creating security problems. Gautam Koul, Lucian Moss, Neil Drew-Lopez, and Daberechi Ruth Edeokoh share their experience while building applications for Thou…"
+    },
+    {
       "id": "8a228edcb8f5",
       "title": "Catalyst Leadership: You Cannot Optimize the Whole System if Your Inner System Optimizes for Safety",
       "link": "https://blog.crisp.se/2026/05/26/michaelgothe/catalyst-leadership",
@@ -577,6 +847,33 @@
       "category": "Delivery",
       "pubDate": "2026-05-22T16:00:00.000Z",
       "contentSnippet": ""
+    },
+    {
+      "id": "c47993f9a3be",
+      "title": "Bliki: Vibe Coding",
+      "link": "https://martinfowler.com/bliki/VibeCoding.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-21T11:49:00.000Z",
+      "contentSnippet": "Vibe coding is building a software application by prompting an LLM, telling it what to build, trying it out, prompting for changes - but without looking at any of the code that the LLM generates. This technique can be used by people without any knowledge of programming. However t…"
+    },
+    {
+      "id": "0966da8f2909",
+      "title": "Three more static code analysis sensors",
+      "link": "https://martinfowler.com/articles/sensors-for-coding-agents.html#StaticCodeAnalysisDependencyRules",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-20T14:27:00.000Z",
+      "contentSnippet": "Birgitta Böckeler adds discussion of three more sensors for static code analysis, focusing on checking and enforcing better modularity. Computational sensors for dependency checks were good at enforcing rules, but the rules were limited. Building a computational sensor for coupli…"
+    },
+    {
+      "id": "356f0193fc2e",
+      "title": "Maintainability sensors for coding agents",
+      "link": "https://martinfowler.com/articles/sensors-for-coding-agents.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-19T16:38:00.000Z",
+      "contentSnippet": "In her recent article about harness engineering for coding agent users, Birgitta Böckeler laid out a mental model for expanding a coding agent harness: a system of guides and sensors that increase the probability of good agent outputs and enable self-correction before issues reac…"
     },
     {
       "id": "5d75679b1176",
@@ -624,6 +921,33 @@
       "contentSnippet": "If you have a lot of Power BI semantic models that are scheduled to refresh at the same time in the Service then you may find that some of them fail with the following error: You’ve exceeded the capacity limit for dataset refreshes. Try again when fewer datasets are being process…"
     },
     {
+      "id": "b75a48efebd6",
+      "title": "Fragments: May 14",
+      "link": "https://martinfowler.com/fragments/2026-05-14.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-14T21:52:00.000Z",
+      "contentSnippet": "Last week I spent a day at The Orchard Retreat, hosted by Mechanical Orchard. that brought together several people working in software development to talk about the profession’s future with the rise of agentic programming. The event was help under the Chatham House Rule, so I can…"
+    },
+    {
+      "id": "90ea004a079e",
+      "title": "Bliki: Interrogatory LLM",
+      "link": "https://martinfowler.com/bliki/InterrogatoryLLM.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-14T15:04:00.000Z",
+      "contentSnippet": "When we need an LLM to perform a complex task, we often need to feed it a lot of context. Coming up with a design for a new feature requires descriptions of how we want the feature to appear to the user, guidelines on how it should be implemented, information on external systems…"
+    },
+    {
+      "id": "631b77cde614",
+      "title": "What is Code",
+      "link": "https://martinfowler.com/articles/what-is-code.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-12T13:30:00.000Z",
+      "contentSnippet": "Increasingly humans delegate writing code to agents. Will there even be source code in the future? To wrestle with this question, we have to understand what code is. Unmesh Joshi sees code as having two distinct but intertwined purposes: instructions to a machine and a conceptual…"
+    },
+    {
       "id": "d7467a984a4b",
       "title": "Data Engineering Weekly #269",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-269",
@@ -631,6 +955,15 @@
       "category": "Data",
       "pubDate": "2026-05-11T02:50:23.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "c884bf1be7e7",
+      "title": "Fragments: May  5",
+      "link": "https://martinfowler.com/fragments/2026-05-05.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-05-05T16:23:00.000Z",
+      "contentSnippet": "Over the last couple of months Rahul Garg published a series of posts here on how to reduce the friction in AI-assisted programming. To make it easier to put these ideas into practice he’s now built an open-source framework to operationalize these patterns. AI coding assistants j…"
     },
     {
       "id": "91e2135e9837",
@@ -1182,13 +1515,121 @@
       "contentSnippet": "We chatted with our colleague Henry Kniberg at Crisp about his latest work on generative AI and his upcoming master class in the Leading Complexity program. He shared some very insightful comments: “Generative AI makes things less predictable but more intelligent.” “If I had to e…"
     },
     {
-      "id": "ca46ee04e616",
-      "title": "How Removing Staging Environments Can Improve Your Deployments",
-      "link": "https://www.infoq.com/news/2022/05/removing-staging-environments/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=Continuous+Delivery",
-      "source": "InfoQ — Continuous Delivery",
+      "id": "fcbae7f74f0a",
+      "title": "AWS Lambda Powertools for TypeScript Now Generally Available",
+      "link": "https://www.infoq.com/news/2022/07/lambda-powertools-typescript-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
       "category": "Delivery",
-      "pubDate": "2022-05-04T18:00:00.000Z",
-      "contentSnippet": "Squeaky - a company which helps businesses to understand how visitors are using their website or web app without invading their privacy - have outlined why they don’t use a staging environment. They believe that this helps them to ship faster, and lower the number of issues found…"
+      "pubDate": "2022-07-21T10:00:00.000Z",
+      "contentSnippet": "Amazon recently announced the general availability (GA) of AWS Lambda Powertools TypeScript. The set of utilities for Node.js Lambda functions helps developers follow best practices for tracing, structured logging, and custom metrics. By Steef-Jan Wiggers"
+    },
+    {
+      "id": "7673e924b177",
+      "title": "BLST Security Extends Support for OpenAPI Specification Table",
+      "link": "https://www.infoq.com/news/2022/07/blst-security-openapi-spec/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-20T18:00:00.000Z",
+      "contentSnippet": "BLST Security recently released the latest version of its platform, enabling DevOps and Application Security teams to avoid API specification flaws. The BLST platform aims to help teams understand their APIs by creating an OpenAPI Specification table. By Aditya Kulkarni"
+    },
+    {
+      "id": "5c64871201bf",
+      "title": "Obituary: Alex Blewitt",
+      "link": "https://www.infoq.com/news/2022/07/alex-blewitt/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-20T08:00:00.000Z",
+      "contentSnippet": "It is with great sadness that we announce that InfoQ editor Dr. Alex Blewitt has unexpectedly passed away. By Daniel Bryant"
+    },
+    {
+      "id": "d8ad231de832",
+      "title": "JetBrains Launches Containerized Development Environment Space On-Premises",
+      "link": "https://www.infoq.com/news/2022/07/jetbrains-space-on-premises/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-19T22:00:00.000Z",
+      "contentSnippet": "Space, JetBrains's take on containerized, remote development environments, is now available on-premises as a beta for all organizations that prefer to have full control over their tools instead of relying on third-party Cloud services. By Sergio De Simone"
+    },
+    {
+      "id": "b0fa95ab8308",
+      "title": "Microsoft Announces the General Availability of Its Gateway Load Balancer in All Regions",
+      "link": "https://www.infoq.com/news/2022/07/azure-gateway-load-balancer-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-19T10:00:00.000Z",
+      "contentSnippet": "Gateway Load Balancer is a fully-managed service enabling enterprises to deploy, scale, and enhance the availability of third-party network virtual appliances (NVAs) in Azure. Microsoft recently announced the general availability of Gateway Load Balancer in all public regions, Az…"
+    },
+    {
+      "id": "02126289d57e",
+      "title": "Article: Gatling vs JMeter - What to Use for Performance Testing",
+      "link": "https://www.infoq.com/articles/performance-testing/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-18T11:00:00.000Z",
+      "contentSnippet": "A performance tool with a graphical interface will probably be easier to use at the beginning, but the idea of a performance test as code is the future. Tests are readable and much easier to maintain. Many people are skeptical about Gatling because it requires learning a new prog…"
+    },
+    {
+      "id": "54f5bde83dab",
+      "title": "AWS Announces General Availability of its Cloud WAN for Centralized Workload Management",
+      "link": "https://www.infoq.com/news/2022/07/aws-cloud-wan-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-18T10:00:00.000Z",
+      "contentSnippet": "Recently AWS announced the general availability (GA) of its Cloud WAN solution allowing enterprises to set up and manage a complete WAN environment from a single cloud-based console. By Steef-Jan Wiggers"
+    },
+    {
+      "id": "dcb9ff92394a",
+      "title": "Java News Roundup: Microsoft Joins MicroProfile and Jakarta EE, GlassFish, Payara, Micronaut",
+      "link": "https://www.infoq.com/news/2022/07/java-news-roundup-jul11-2022/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-18T00:30:00.000Z",
+      "contentSnippet": "This week's Java roundup for July 11th, 2022, features news from JDK 19, JDK 20, Microsoft joins MicroProfile and Jakarta EE working groups, Jakarta EE 10 update, Spring updates, Payara Enterprise 5.41.0, GlassFish 7.0-M7, Micronaut 3.5.3, Hibernate Search 6.2.Alpha1, Native Buil…"
+    },
+    {
+      "id": "29db74201837",
+      "title": "Presentation: Optimizing Efficiency & Capacity Management at Web Scale on the Cloud",
+      "link": "https://www.infoq.com/presentations/pinterest-cloud-optimization/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-15T22:44:00.000Z",
+      "contentSnippet": "Molly Junck shares insight on how Pinterest optimizes their use of the cloud, concurrently maintaining demands for security, availability, rate of innovation, and infrastructure efficiency. By Molly Junck"
+    },
+    {
+      "id": "9dee726d903e",
+      "title": "AWS Enhances its Step Functions Experience with Workflow Collections",
+      "link": "https://www.infoq.com/news/2022/07/aws-step-functions-workflows/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-15T07:00:00.000Z",
+      "contentSnippet": "AWS Step Functions is a serverless function orchestrator that makes it easy to sequence AWS Lambda functions and multiple AWS services into business-critical applications. AWS recently introduced a new experience to its Step Functions with Function Workflow Collections allowing u…"
+    },
+    {
+      "id": "204eacf9e992",
+      "title": "OpenSSL Releases Fix for High-Severity Vulnerability",
+      "link": "https://www.infoq.com/news/2022/07/openssl-3-0-5-vulnerability-fix/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-13T22:00:00.000Z",
+      "contentSnippet": "OpenSSL 3.0.4, released less than a month ago, introduced a bug that enabled a remote code execution vulnerability on machines computing 2048 bit RSA keys on X86_64 CPUs. A fix is now available in OpenSSL 3.0.5. By Sergio De Simone"
+    },
+    {
+      "id": "5d411e9a483c",
+      "title": "Article: Using DevOps Automation to Combat DevOps Workforce Shortages",
+      "link": "https://www.infoq.com/articles/devops-automation-workforce-shortages/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-13T11:00:00.000Z",
+      "contentSnippet": "A focus on automation can help to combat the current staffing struggles many organizations have with DevOps roles. Effective automation can reduce the toil experienced by developers. Automation efforts should focus on security operations, deployments, continuous delivery, QA test…"
+    },
+    {
+      "id": "b0870b26277c",
+      "title": "Google Cloud  Announces Advanced API Security through Apigee",
+      "link": "https://www.infoq.com/news/2022/07/apigee-advanced-api-security/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=DevOps",
+      "source": "InfoQ — DevOps",
+      "category": "Delivery",
+      "pubDate": "2022-07-12T07:00:00.000Z",
+      "contentSnippet": "Recently Google announced the public preview of Advanced API Security, a comprehensive set of API security capabilities built on Apigee, their API management platform. With the new capability, customers can detect security threats more efficiently. By Steef-Jan Wiggers"
     }
   ]
 }

@@ -34,9 +34,13 @@ export function RepoCard({ repo }: { repo: GithubRepo }) {
           </span>
         </div>
 
-        {repo.description && (
+        {repo.description ? (
           <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-300 line-clamp-3">
             {repo.description}
+          </p>
+        ) : (
+          <p className="mt-3 flex-1 text-sm italic leading-relaxed text-slate-500">
+            No description on GitHub.
           </p>
         )}
 

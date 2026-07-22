@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { ArrowLeft, Clock } from "lucide-react";
-import { getAllWrites, getWriteBySlug, getWriteSlugs } from "@/lib/writes";
+import { Clock } from "lucide-react";
+import { getWriteBySlug, getWriteSlugs } from "@/lib/writes";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import { Badge } from "@/components/ui/Badge";
+import { BackLink } from "@/components/ui/BackLink";
 import { formatDate } from "@/lib/utils";
 
 const categoryTone = {
@@ -43,15 +43,11 @@ export default async function WriteDetailPage({
   const write = getWriteBySlug(slug);
   if (!write) notFound();
 
+  const fallbackHref = write.showcase ? "/#selected-work" : "/writes";
+
   return (
     <article className="mx-auto max-w-3xl">
-      <Link
-        href="/writes"
-        className="focus-ring group inline-flex min-h-11 items-center gap-2 text-sm text-slate-300 transition-colors hover:text-white"
-      >
-        <ArrowLeft className="h-4 w-4 transition-transform motion-safe:group-hover:-translate-x-0.5" />
-        Back to writes
-      </Link>
+      <BackLink fallbackHref={fallbackHref} />
 
       <header className="mt-8">
         <div className="flex flex-wrap items-center gap-3">

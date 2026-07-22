@@ -1,49 +1,50 @@
 [
   {
     "id": "cyber-portfolio-platform",
-    "name": "Orbit — Portfolio & Radar",
-    "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
-    "status": "wip",
-    "tags": [
-      "Next.js",
-      "React",
-      "TypeScript"
-    ],
-    "repoUrl": "",
-    "liveUrl": "",
+    "name": "Orbit — Portfolio & related articles",
+    "description": "This site: a personal portfolio bank and a curated RSS feed across AI, Data, Analytics, and Delivery, with a built-in Studio for editing content and publishing projects.",
+    "status": "live",
+    "tags": ["Next.js", "React", "TypeScript"],
+    "repoUrl": "https://github.com/AlexTouvras/Orbit",
+    "liveUrl": "https://orbit-rho-rouge.vercel.app/",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\website",
     "order": 0
   },
   {
-    "id": "faceless-reels",
-    "name": "Faceless Reels",
-    "description": "An automated short-form video pipeline for Greek-mythology reels: beat-split narration, AI image generation with a quality loop, neural TTS, and karaoke-style captions.",
-    "status": "wip",
-    "tags": [
-      "Node",
-      "AI",
-      "TTS"
-    ],
+    "id": "projecthelm-jarvis",
+    "name": "ProjectHelm (JARVIS)",
+    "description": "A local control plane for coding agents — tracks project state, coordinates child agents, and runs Plan → Agent → Debug loops via the Cursor SDK.",
+    "status": "prototype",
+    "tags": ["Python", "Agents", "Orchestration"],
     "repoUrl": "",
-    "liveUrl": "",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\faceless_reels",
+    "liveUrl": "/writes/projecthelm-local-agent-control-plane",
+    "featured": true,
+    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\JARVIS",
     "order": 1
+  },
+  {
+    "id": "powerbi-portfolio",
+    "name": "Power BI — Nordic Boardroom",
+    "description": "Portfolio reports with a shared design system: churn, sales, bank, healthcare — gold through pages, synced into Orbit.",
+    "status": "shipped",
+    "tags": ["Power BI", "Fabric", "DAX"],
+    "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio",
+    "liveUrl": "/writes/power-bi-portfolio-nordic-boardroom",
+    "featured": true,
+    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\PowerBI",
+    "order": 2
   },
   {
     "id": "sunplot-garden",
     "name": "Sunplot Garden",
     "description": "A cozy mobile gardening game (Unity) built as a studio repo with an agent-driven content pipeline and a vertical-grid layout system.",
     "status": "prototype",
-    "tags": [
-      "Unity",
-      "Game Design"
-    ],
+    "tags": ["Unity", "Game Design"],
     "repoUrl": "",
     "liveUrl": "",
     "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\garden_app",
-    "order": 2
+    "order": 3
   }
 ]

@@ -49,7 +49,10 @@ export interface WriteFrontmatter {
   date: string;
   tags: string[];
   category: WriteCategory;
+  /** Prefer in the Home “From the blog” strip (article teasers). */
   featured?: boolean;
+  /** Prefer in the Home “Selected work” strip (system / project showcases). */
+  showcase?: boolean;
 }
 
 export interface Write extends WriteFrontmatter {

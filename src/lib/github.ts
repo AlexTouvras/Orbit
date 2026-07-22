@@ -81,6 +81,8 @@ export async function getGithubRepos(
     return raw
       .filter((r) => !r.fork && !r.archived)
       .filter((r) => (allowed ? allowed.has(r.name.toLowerCase()) : true))
+      // Prefer repos with a description so Portfolio cards aren't empty stubs.
+      .filter((r) => Boolean(r.description?.trim()) || Boolean(allowed))
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
       .slice(0, allowed ? Math.max(limit, allowed.size) : limit)
       .map((r) => ({

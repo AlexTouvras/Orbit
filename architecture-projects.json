@@ -3,14 +3,6 @@
   "projectsRoot": "..",
   "projects": [
     {
-      "id": "reelsmaker",
-      "dir": "Reelsmaker",
-      "title": "Reelsmaker — architecture diagrams",
-      "summary": "Self-hosted topic → vertical MP4: Docker services and render pipeline.",
-      "category": "AI",
-      "tags": ["Video", "Remotion", "Architecture"]
-    },
-    {
       "id": "jarvis",
       "dir": "JARVIS",
       "title": "JARVIS (ProjectHelm) — architecture diagrams",
@@ -22,9 +14,25 @@
       "id": "orbit-platform",
       "dir": "website",
       "title": "Orbit platform — architecture diagrams",
-      "summary": "Personal HQ: Hub, Writes, Portfolio, Workshop, Signals radar, Studio, and weekly Write Slack approve.",
+      "summary": "Personal HQ: Hub, Blog, Portfolio, Workshop, Related articles, Studio, and weekly blog-draft Slack approve.",
       "category": "Delivery",
       "tags": ["Next.js", "Portfolio", "Architecture"]
+    },
+    {
+      "id": "powerbi-portfolio",
+      "dir": "PowerBI",
+      "title": "Power BI portfolio — architecture diagrams",
+      "summary": "Nordic Boardroom reports: gold → model → pages → Orbit sync.",
+      "category": "Data",
+      "tags": ["Power BI", "Fabric", "Architecture"]
+    },
+    {
+      "id": "reelsmaker",
+      "dir": "Reelsmaker",
+      "title": "Reelsmaker — architecture diagrams",
+      "summary": "Self-hosted topic → vertical MP4: Docker services and render pipeline.",
+      "category": "AI",
+      "tags": ["Video", "Remotion", "Architecture"]
     }
   ]
 }
