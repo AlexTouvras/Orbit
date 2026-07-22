@@ -200,7 +200,7 @@ function siteBaseUrlFallback(): string {
   const raw =
     process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
     process.env.VERCEL_URL?.trim() ||
-    "https://orbit-rho-rouge.vercel.app";
+    "https://alextouvras.com";
   if (raw.startsWith("http://") || raw.startsWith("https://")) {
     return raw.replace(/\/$/, "");
   }

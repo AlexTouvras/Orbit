@@ -11,7 +11,7 @@ Push to `main` → Vercel builds and deploys automatically.
 
 | Variable | Example |
 |----------|---------|
-| `NEXT_PUBLIC_SITE_URL` | `https://your-project.vercel.app` (update after first deploy) |
+| `NEXT_PUBLIC_SITE_URL` | `https://alextouvras.com` |
 | `STUDIO_PASSWORD` | strong password |
 | `STUDIO_SESSION_SECRET` | `openssl rand -hex 32` |
 | `CRON_SECRET` | `openssl rand -hex 32` |
@@ -23,11 +23,12 @@ Push to `main` → Vercel builds and deploys automatically.
 
 5. Click **Deploy**. Build runs `npm run build` (news cache is committed in `data/news-cache.json`).
 
-6. After deploy: set `NEXT_PUBLIC_SITE_URL` to your real Vercel URL → **Redeploy**.
+6. After deploy: set `NEXT_PUBLIC_SITE_URL` to `https://alextouvras.com` → **Redeploy**.
 
-## Custom domain (optional)
+## Custom domain
 
-Vercel project → **Settings → Domains** → add `yourname.duckdns.org` (CNAME to `cname.vercel-dns.com`).
+Vercel project → **Settings → Domains** → add `alextouvras.com` (and optionally `www.alextouvras.com`).
+Point DNS at Vercel (nameservers or the A/CNAME records Vercel shows). Keep the old `*.vercel.app` URL as a redirect if you want.
 
 ## Daily news refresh
 
