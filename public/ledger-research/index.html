@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ledger — strategy research cycle</title>
+  <meta name="description" content="Public research demo: compare equity strategy families, select a run policy, and review explained holdings proposals. Not financial advice." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- LEDGER_RESEARCH_PUBLIC -->
+  <style>
+    :root {
+      --ink: #10241c;
+      --muted: #5a6d66;
+      --paper: #eef3f1;
+      --panel: #ffffff;
+      --line: #cfdad4;
+      --ok: #0d7a5f;
+      --warn: #8a3b2b;
+      --accent: #245b8a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 520px at 0% -5%, #d9ebe4 0%, transparent 55%),
+        radial-gradient(900px 480px at 100% 0%, #d7e3ef 0%, transparent 50%),
+        var(--paper);
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    .eyebrow {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(1.85rem, 4vw, 2.6rem);
+      margin: 0.2rem 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500;
+      font-size: 1.25rem;
+      margin: 1.75rem 0 0.5rem;
+    }
+    .lede { color: var(--muted); max-width: 40rem; margin: 0 0 1rem; }
+    .disclaimer {
+      font-size: 0.85rem;
+      color: var(--warn);
+      border-left: 3px solid var(--warn);
+      padding: 0.5rem 0.75rem;
+      background: #f4e8e4;
+      margin: 1rem 0;
+    }
+    .bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      margin: 1rem 0 1.25rem;
+    }
+    select {
+      font: inherit;
+      padding: 0.45rem 0.6rem;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      min-width: 16rem;
+    }
+    .nav a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+    .nav a:hover { text-decoration: underline; }
+    .verdict {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 1rem 1.1rem;
+      margin: 1rem 0;
+    }
+    .verdict strong { color: var(--ok); }
+    .meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .chart-box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      padding: 1rem;
+      height: 360px;
+      margin: 0.75rem 0 1rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      font-size: 0.88rem;
+      margin: 0.5rem 0 1rem;
+    }
+    th, td {
+      padding: 0.5rem 0.45rem;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    td.num {
+      font-family: "IBM Plex Mono", monospace;
+      text-align: right;
+      white-space: nowrap;
+    }
+    tr.run td { background: #e7f3ee; }
+    ul { padding-left: 1.2rem; }
+    .status { color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="bar">
+      <div class="nav"><a href="/portfolio">← Portfolio</a></div>
+      <label class="meta">
+        History
+        <select id="history" aria-label="Past research runs"></select>
+      </label>
+    </div>
+
+    <div class="eyebrow">Ledger · public research</div>
+    <h1 id="title">Strategy selection research cycle</h1>
+    <p class="lede" id="question"></p>
+    <div class="disclaimer" id="disclaimer"></div>
+    <p class="meta" id="meta"></p>
+
+    <div class="verdict" id="verdict"></div>
+
+    <h2>Constraints</h2>
+    <ul id="constraints"></ul>
+
+    <h2>1. Strategy comparison</h2>
+    <div class="chart-box"><canvas id="eq"></canvas></div>
+    <p class="meta">Indexed equity (start = 100). Same fee model across families.</p>
+
+    <h2>2. KPI table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Strategy</th><th>Family</th><th>Eligible</th>
+          <th>CAGR</th><th>Sharpe</th><th>Max DD</th><th>Ann turn</th>
+        </tr>
+      </thead>
+      <tbody id="kpi"></tbody>
+    </table>
+
+    <h2>3. Model ranking (run policy)</h2>
+    <table>
+      <thead><tr><th>Rank</th><th>Ticker</th><th>12m mom</th></tr></thead>
+      <tbody id="top"></tbody>
+    </table>
+
+    <h2>4. Proposed changes</h2>
+    <p class="meta" id="prop-reason"></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Action</th><th>Name</th><th>Ticker</th><th>12m</th><th>Rank</th>
+          <th>Δ weight</th><th>Why</th>
+        </tr>
+      </thead>
+      <tbody id="props"></tbody>
+    </table>
+
+    <p class="status" id="status"></p>
+  </div>
+
+  <script>
+    let chart;
+    const colors = ['#0d7a5f','#245b8a','#8a3b2b','#6b5b2e','#3d5a4c','#5a4a7a','#2a6f6f'];
+
+    function pct(x) { return (100 * x).toFixed(1) + '%'; }
+    function esc(s) {
+      return String(s ?? '').replace(/[&<>"']/g, c => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      })[c]);
+    }
+
+    async function loadIndex() {
+      const res = await fetch('data/index.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('Missing history index');
+      return res.json();
+    }
+
+    async function loadRun(path) {
+      const res = await fetch('data/' + path, { cache: 'no-store' });
+      if (!res.ok) throw new Error('Missing run ' + path);
+      return res.json();
+    }
+
+    function render(data) {
+      document.getElementById('title').textContent = data.title;
+      document.getElementById('question').textContent = data.question;
+      document.getElementById('disclaimer').textContent = data.disclaimer;
+      const m = data.meta || {};
+      document.getElementById('meta').textContent =
+        `Sample ${m.sample_start || '?'} → ${m.sample_end || '?'} · universe ${m.universe_n || '?'} · fee ${m.fee_bps ?? '?'} bps · run ${data.id}`;
+
+      const d = data.decision || {};
+      document.getElementById('verdict').innerHTML =
+        `<strong>This cycle:</strong> ${esc(d.run_label)}<br/>${esc(d.run_reason)}<br/>` +
+        `<span class="meta">In-sample lead Sharpe ${Number(d.winner_sharpe).toFixed(2)} · ` +
+        `policy change recommended: ${esc(d.recommend_policy_change)}</span>`;
+
+      document.getElementById('constraints').innerHTML =
+        (data.constraints || []).map(c => `<li>${esc(c)}</li>`).join('');
+
+      const rows = [...(data.rows || [])].sort((a,b) => b.sharpe - a.sharpe);
+      document.getElementById('kpi').innerHTML = rows.map(r => `
+        <tr class="${r.is_run ? 'run' : ''}">
+          <td>${esc(r.label)}${r.is_run ? ' <strong>(run)</strong>' : ''}${r.is_working_policy ? ' · working' : ''}</td>
+          <td>${esc(r.family)}</td>
+          <td>${r.eligible_mid ? 'yes' : 'opp. cost'}</td>
+          <td class="num">${pct(r.cagr)}</td>
+          <td class="num">${Number(r.sharpe).toFixed(2)}</td>
+          <td class="num">${pct(r.max_drawdown)}</td>
+          <td class="num">${Number(r.ann_oneway_turnover).toFixed(2)}</td>
+        </tr>`).join('');
+
+      document.getElementById('top').innerHTML = (data.model_top || []).map(t => `
+        <tr><td class="num">#${t.rank}</td><td>${esc(t.yahoo)}</td>
+        <td class="num">${pct(t.mom_12m)}</td></tr>`).join('') ||
+        '<tr><td colspan="3">No ranking for this run path.</td></tr>';
+
+      document.getElementById('prop-reason').textContent = d.run_reason || '';
+      document.getElementById('props').innerHTML = (data.proposals || []).map(p => {
+        const mom = p.mom_12m == null ? '—' : pct(p.mom_12m);
+        const rank = p.rank == null ? '—' : '#' + p.rank;
+        const dw = p.delta_weight_pct == null ? '—' :
+          (p.delta_weight_pct > 0 ? '+' : '') + p.delta_weight_pct.toFixed(1) + ' pp';
+        return `<tr>
+          <td><strong>${esc(p.action)}</strong></td>
+          <td>${esc(p.name)}</td><td>${esc(p.yahoo)}</td>
+          <td class="num">${mom}</td><td class="num">${rank}</td>
+          <td class="num">${dw}</td><td>${esc(p.explanation)}</td>
+        </tr>`;
+      }).join('') || '<tr><td colspan="7">No proposals.</td></tr>';
+
+      const series = data.series || {};
+      const order = rows.map(r => r.label).filter(n => series[n]);
+      const first = series[order[0]];
+      if (!first) return;
+      const datasets = order.map((name, i) => ({
+        label: name,
+        data: series[name].equity_indexed,
+        borderColor: colors[i % colors.length],
+        backgroundColor: 'transparent',
+        borderWidth: 1.75,
+        pointRadius: 0,
+        tension: 0.05
+      }));
+      if (chart) chart.destroy();
+      chart = new Chart(document.getElementById('eq'), {
+        type: 'line',
+        data: { labels: first.dates, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } },
+            title: { display: true, text: 'Indexed equity (start = 100)' }
+          },
+          scales: {
+            x: { ticks: { maxTicksLimit: 8 } },
+            y: { title: { display: true, text: 'Indexed' } }
+          }
+        }
+      });
+    }
+
+    async function main() {
+      const status = document.getElementById('status');
+      const sel = document.getElementById('history');
+      try {
+        const index = await loadIndex();
+        if (!index.length) {
+          status.textContent = 'No archived runs yet. Run: invest research';
+          const latest = await fetch('data/latest.json').then(r => r.json());
+          render(latest);
+          return;
+        }
+        sel.innerHTML = index.map(e =>
+          `<option value="${esc(e.path)}">${esc(e.id)} — ${esc(e.run_label)}</option>`
+        ).join('');
+        const first = await loadRun(index[0].path);
+        render(first);
+        sel.onchange = async () => {
+          status.textContent = 'Loading…';
+          const data = await loadRun(sel.value);
+          render(data);
+          status.textContent = '';
+        };
+      } catch (err) {
+        status.textContent = String(err);
+      }
+    }
+    main();
+  </script>
+</body>
+</html>

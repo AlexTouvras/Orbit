@@ -58,5 +58,17 @@
     "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\garden_app",
     "order": 4
+  },
+  {
+    "id": "ledger-research-cycle",
+    "name": "Ledger — strategy research cycle",
+    "description": "Public research demo: compare equity strategy families on the same sample, select a run policy under explicit rules, then review explained holdings proposals. Not financial advice.",
+    "status": "prototype",
+    "tags": ["Python", "Research", "Equity", "Automation"],
+    "repoUrl": "",
+    "liveUrl": "/ledger-research/",
+    "featured": true,
+    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\investing",
+    "order": 5
   }
 ]

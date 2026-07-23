@@ -1,0 +1,11 @@
+[
+  {
+    "id": "2026-07-23_125245",
+    "generated_at": "2026-07-23T12:52:45.662359+00:00",
+    "run_label": "Momentum \u00b7 semiannual \u00b7 max 3 name changes",
+    "run_sharpe": 1.3037789913192697,
+    "recommend_policy_change": false,
+    "sample_end": "2026-07-22",
+    "path": "history/2026-07-23_125245.json"
+  }
+]
