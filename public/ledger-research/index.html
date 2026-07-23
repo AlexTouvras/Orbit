@@ -131,7 +131,7 @@
 <body>
   <div class="wrap">
     <div class="bar">
-      <div class="nav"><a href="/portfolio">← Portfolio</a></div>
+      <div class="nav"><a href="../">← Sims dashboard</a></div>
       <label class="meta">
         History
         <select id="history" aria-label="Past research runs"></select>
@@ -189,6 +189,15 @@
     let chart;
     const colors = ['#0d7a5f','#245b8a','#8a3b2b','#6b5b2e','#3d5a4c','#5a4a7a','#2a6f6f'];
 
+    // Resolve data/ under this page even when URL has no trailing slash
+    // (/ledger-research → /ledger-research/data/…, not /data/…)
+    const DATA_BASE = (() => {
+      let p = window.location.pathname;
+      if (p.endsWith('index.html')) p = p.slice(0, -10);
+      if (!p.endsWith('/')) p += '/';
+      return p + 'data/';
+    })();
+
     function pct(x) { return (100 * x).toFixed(1) + '%'; }
     function esc(s) {
       return String(s ?? '').replace(/[&<>"']/g, c => ({
@@ -197,13 +206,13 @@
     }
 
     async function loadIndex() {
-      const res = await fetch('data/index.json', { cache: 'no-store' });
+      const res = await fetch(DATA_BASE + 'index.json', { cache: 'no-store' });
       if (!res.ok) throw new Error('Missing history index');
       return res.json();
     }
 
     async function loadRun(path) {
-      const res = await fetch('data/' + path, { cache: 'no-store' });
+      const res = await fetch(DATA_BASE + path, { cache: 'no-store' });
       if (!res.ok) throw new Error('Missing run ' + path);
       return res.json();
     }
@@ -296,7 +305,7 @@
         const index = await loadIndex();
         if (!index.length) {
           status.textContent = 'No archived runs yet. Run: invest research';
-          const latest = await fetch('data/latest.json').then(r => r.json());
+          const latest = await fetch(DATA_BASE + 'latest.json').then(r => r.json());
           render(latest);
           return;
         }
