@@ -62,10 +62,10 @@
   {
     "id": "ledger-research-cycle",
     "name": "Ledger — strategy research cycle",
-    "description": "Public research demo: compare equity strategy families on the same sample, select a run policy under explicit rules, then review explained holdings proposals. Not financial advice.",
+    "description": "Compare equity strategy families on one sample, apply a Sharpe change bar, then propose explained holdings moves. Live demo + case study write-up.",
     "status": "prototype",
     "tags": ["Python", "Research", "Equity", "Automation"],
-    "repoUrl": "",
+    "repoUrl": "https://github.com/AlexTouvras/ledger",
     "liveUrl": "/ledger-research",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\investing",
