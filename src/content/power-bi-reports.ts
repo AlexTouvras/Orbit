@@ -201,4 +201,42 @@ export const powerBiReports: PowerBiReport[] = [
       },
     ],
   },
+  {
+    id: "credit-risk",
+    title: "Credit Risk Pulse",
+    summary: "Nordic Boardroom **PD scorecard + cut-off strategy + monitoring + steering** report for consumer credit — domain flagship.",
+    repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
+    pages: [
+      {
+        id: "landing",
+        label: "Landing",
+        caption: "Poster cover · thesis · OOT Gini hero · page map",
+        src: "/portfolio/power-bi/credit-risk/landing.png",
+      },
+      {
+        id: "portfolio-risk-pulse",
+        label: "Portfolio Risk Pulse",
+        caption: "Applications · default rate · Avg PD · EL rate · grade / risk band",
+        src: "/portfolio/power-bi/credit-risk/portfolio-risk-pulse.png",
+      },
+      {
+        id: "scorecard-validation",
+        label: "Scorecard & Validation",
+        caption: "Train/Test/OOT Gini · ROC · PD density · OOT calibration",
+        src: "/portfolio/power-bi/credit-risk/scorecard-validation.png",
+      },
+      {
+        id: "monitoring-steering",
+        label: "Monitoring & Steering",
+        caption: "New-business PD vs realized · PSI on IVs · steering queue",
+        src: "/portfolio/power-bi/credit-risk/monitoring-steering.png",
+      },
+      {
+        id: "context",
+        label: "Context",
+        caption: "Home Credit attribution · sample-model caveats · champion metrics",
+        src: "/portfolio/power-bi/credit-risk/context.png",
+      },
+    ],
+  },
 ];
