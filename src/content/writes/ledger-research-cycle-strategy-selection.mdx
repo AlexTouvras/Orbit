@@ -1,6 +1,6 @@
 ---
-title: "Ledger research cycle — pick a strategy before you pick the trades"
-summary: "A Python research loop that compares equity strategy families on one sample, applies a change bar, then proposes holdings moves with reasons — plus a scrubbed public page on Orbit."
+title: "Ledger — a research loop so I stop adjusting stocks on gut feel"
+summary: "I built a small Python system that compares a few stock strategies on the same data, picks one only when the edge is clear, then suggests concrete buys and sells with reasons."
 date: "2026-07-23"
 category: "Data"
 featured: false
@@ -8,51 +8,57 @@ showcase: true
 tags: ["Python", "Research", "Equity", "Automation", "Portfolio"]
 ---
 
-## The question
+## Why I built this
 
-If a review tool starts from "is my current policy research-backed?", it will almost always say yes. How do you force the machine to pick among strategy families first, and only then explain the trades?
+I wanted a **repeatable way to review a stock book** — not “I read something on Monday and feel like swapping names.” When I change holdings, I want that change to sit on two things I can point at: published research on what tends to work over multi-month horizons, and numbers from *this* universe on a shared backtest, not a story I invented after the fact.
 
-I built Ledger as a research sleeve for liquid equities: same sample, explicit selection rules, human approval before anything live. The public demo lives on this site; the private run still knows book sizes and broker labels that never leave my machine.
+Left alone, I drift toward hunches. A name I like. A headline. A fear of missing out. Ledger is me putting a gate in front of that.
 
-**Live demo:** [/ledger-research](/ledger-research)  
+**Live page:** [/ledger-research](/ledger-research)  
 **Code:** [github.com/AlexTouvras/ledger](https://github.com/AlexTouvras/ledger)
 
-## What "selection first" means
+## What the tool is (in plain terms)
 
-The early write-up was a confirmation memo. Useful as a checklist; useless as a decision engine. The rewrite flips the order.
+Twice a year (I aim for spring and autumn), I run one command. It does two jobs in order:
 
-1. Lock constraints (long-only liquid names, prefer lower turnover when Sharpes are close, human gate on trades).
-2. Run candidate families on one fee model: broad ETF buy-and-hold as opportunity cost, universe equal-weight, momentum at monthly / semiannual / quarterly with full or capped name changes.
-3. Rank eligible stock strategies by Sharpe. If the leader churns hard and a near-Sharpe rival turns over much less, take the rival.
-4. Switch the working policy only if the edge clears a Sharpe change bar (0.08 in the current config). Thin wins stay notes, not rewrites.
-5. Only then run the holdings pass under the **run** policy and attach a why to each EXIT / ADD / TRIM / DEFER.
+1. **Which kind of strategy should I even be running?** Buy-and-hold the liquid list? Refresh a momentum book every month? Every six months? Change only a few names each time?
+2. **Given that answer, what should I do with the stocks I hold today?** Sell these, buy those, trim this one, leave that one alone until next time — and *why*.
 
-That last step is what people want to see: not a vague "rebalance," but "exit this name because 12m momentum is negative and it uses one of three change slots."
+I still click the trades myself. Nothing places orders.
 
-## What ships where
+## The mistake the first draft made
 
-```mermaid
-flowchart LR
-  CLI["invest research"] --> Private["reports/ private HTML + JSON"]
-  CLI --> Public["dashboard/research scrubbed JSON"]
-  Public --> Orbit["Orbit /ledger-research"]
-  Private --> Approve["Human approve"]
-```
+The first write-up asked: “Is my current rule research-backed?” That question is soft. Almost any rule can collect a citation.
 
-`invest research` writes both surfaces. Private reports keep book euros and broker context for me. The Orbit page gets indexed equity, KPIs, decision text, and proposals with weight deltas in percentage points — no broker names, no absolute euro amounts. Each run also appends to a history index so I can open an older recommendation later.
+The useful question is harder: among a few honest alternatives, which one wins on **the same data**, and is the win big enough that I should change how I work?
 
-On the sample we used for the first public publish (roughly 2021 through mid-2026, ~90 liquid names, 5 bps fee model), semiannual momentum with a max-3 name-change cap led the eligible set on Sharpe (~1.30). Monthly full refresh was close on return and much higher turnover. Universe equal-weight sat almost on top of that Sharpe with zero turnover, which is why the change bar exists: you do not rewrite policy for noise.
+So the loop became:
 
-## Calendar is a knob, not the thesis
+- Compare a handful of strategy families side by side (same stocks, same fee assumption, same dates).
+- Prefer the better risk-adjusted result, but if two are close and one trades far less, keep the quieter one.
+- Only replace my working rule if the better option beats it by a clear margin (I use a Sharpe gap of about 0.08). Small differences stay notes.
+- *Then* look at my real holdings under the rule I will actually run, and list exits / adds / trims with a short reason each.
 
-A separate sweep asked which six-month month-pair looked best in-sample. April + October won that window; May + November did not, despite the "quiet months" folklore. That result is scheduled as preferred review months under whatever momentum family wins. It is not a substitute for family selection, and a five-year sample with ~10 rebalances is too thin to treat as gospel.
+That last list is the part I use. “Exit X because twelve-month return is negative and I only allow three name swaps this review” beats “consider rebalancing.”
 
-## What I refuse to automate yet
+## What you see on the public page
 
-Broker APIs stay stubs. A Nordnet key is full account access, not read-only, so a cloud agent every six months is the wrong place to park it. Holdings for a live review still come from a local snapshot (and later a Slack post or a careful local fetch). Saxo core ETFs and ring-fenced bank ETFs stay out of this loop on purpose.
+The Orbit page is a cleaned copy of that run: charts, a KPI table, the decision, and the proposed changes. It does **not** show broker names or how many euros sit in each line. History is saved so I can open an older recommendation later and see what I was told then.
 
-The public page is a portfolio artifact. The private CLI is the ops console.
+Private reports on my machine still have the full book detail for me.
+
+## A few numbers from the first public run
+
+On roughly 2021–mid-2026, about ninety liquid names, a simple fee model: a six-month momentum book that changes at most three names per review came out ahead on Sharpe among the stock strategies I allow for this sleeve. A monthly full refresh made similar money but turned over much more. Holding the whole universe equal-weight was almost as good on Sharpe with no trading — which is exactly why the “change bar” exists. I refuse to rewrite the playbook for a rounding error.
+
+I also checked *which months* to review. April and October looked best in that window; the folklore “quiet” pair (May/November) did not. I’ll use Apr/Oct as a schedule preference. I’m not treating five years and ~ten reviews as settled science.
+
+## What stays manual on purpose
+
+Broker APIs are stubs. A trading API key that can place orders does not belong in a cloud agent on a six-month timer until I’ve got a safer path. Some money (slow ETFs) never enters this loop at all.
+
+Public page = portfolio proof. Local CLI = how I actually prepare a review.
 
 ## Takeaway
 
-Strategy selection and trade explanation are different jobs. Ledger runs them in that order, publishes a scrubbed demo on Orbit, and keeps the euro-level book off the internet. If the next cycle clears the change bar, the article and the live page should disagree with today's working policy — that would mean the loop is doing its job.
+I built Ledger so portfolio changes start from **compare → decide → explain**, not from a mood. If a future run clears the change bar, the live page should disagree with today’s working rule. That’s the point of the system, not a bug.
