@@ -41,6 +41,7 @@ function rowFromScan(s: ScannedProject): Row {
     tags: s.current?.tags ?? s.detectedTags,
     repoUrl: s.current?.repoUrl ?? s.repoUrl,
     liveUrl: s.current?.liveUrl ?? "",
+    caseStudyUrl: s.current?.caseStudyUrl ?? "",
     featured: s.current?.featured ?? false,
     sourcePath: s.sourcePath,
     order: s.current?.order ?? 0,
@@ -129,6 +130,7 @@ export function ProjectsManager({
         tags: r.tags,
         repoUrl: r.repoUrl,
         liveUrl: r.liveUrl,
+        caseStudyUrl: r.caseStudyUrl,
         featured: r.featured,
         sourcePath: r.sourcePath,
         order: i,
@@ -314,7 +316,18 @@ export function ProjectsManager({
                   className={inputClass}
                   value={row.liveUrl}
                   onChange={(e) => update(row.id, "liveUrl", e.target.value)}
-                  placeholder="Live URL"
+                  placeholder="Research / live URL"
+                />
+              </div>
+              <div className="flex items-center gap-2 sm:col-span-2">
+                <ExternalLink className="h-4 w-4 shrink-0 text-slate-500" />
+                <input
+                  className={inputClass}
+                  value={row.caseStudyUrl}
+                  onChange={(e) =>
+                    update(row.id, "caseStudyUrl", e.target.value)
+                  }
+                  placeholder="Case study URL (e.g. /writes/...)"
                 />
               </div>
             </div>

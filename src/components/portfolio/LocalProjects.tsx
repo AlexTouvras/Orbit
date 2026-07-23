@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FolderGit2, ExternalLink, PenLine } from "lucide-react";
+import { FolderGit2, ExternalLink, PenLine, LineChart } from "lucide-react";
 import { getPublicProjects } from "@/lib/projects-local";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -9,6 +9,10 @@ import { StatusBadge } from "./StatusBadge";
 
 function isInternalHref(href: string): boolean {
   return href.startsWith("/");
+}
+
+function isWriteHref(href: string): boolean {
+  return href.startsWith("/writes/") || href === "/writes";
 }
 
 export function LocalProjects() {
@@ -27,7 +31,13 @@ export function LocalProjects() {
 
       <Stagger className="mt-8 grid gap-6 sm:grid-cols-2">
         {projects.map((p) => {
-          const hasLinks = Boolean(p.repoUrl || p.liveUrl);
+          const caseStudy =
+            p.caseStudyUrl ||
+            (p.liveUrl && isWriteHref(p.liveUrl) ? p.liveUrl : "");
+          const researchOrLive =
+            p.liveUrl && !isWriteHref(p.liveUrl) ? p.liveUrl : "";
+          const hasLinks = Boolean(p.repoUrl || researchOrLive || caseStudy);
+
           return (
             <StaggerItem key={p.id}>
               <GlassCard className="flex h-full flex-col p-5">
@@ -67,18 +77,18 @@ export function LocalProjects() {
                         Code
                       </a>
                     )}
-                    {p.liveUrl &&
-                      (isInternalHref(p.liveUrl) ? (
+                    {researchOrLive &&
+                      (isInternalHref(researchOrLive) ? (
                         <Link
-                          href={p.liveUrl}
+                          href={researchOrLive}
                           className="focus-ring inline-flex min-h-11 items-center gap-1.5 text-slate-300 transition-colors hover:text-neon-cyan"
                         >
-                          <PenLine className="h-4 w-4" aria-hidden />
-                          Case study
+                          <LineChart className="h-4 w-4" aria-hidden />
+                          Research
                         </Link>
                       ) : (
                         <a
-                          href={p.liveUrl}
+                          href={researchOrLive}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="focus-ring inline-flex min-h-11 items-center gap-1.5 text-slate-300 transition-colors hover:text-neon-cyan"
@@ -87,6 +97,15 @@ export function LocalProjects() {
                           Live
                         </a>
                       ))}
+                    {caseStudy && (
+                      <Link
+                        href={caseStudy}
+                        className="focus-ring inline-flex min-h-11 items-center gap-1.5 text-slate-300 transition-colors hover:text-neon-cyan"
+                      >
+                        <PenLine className="h-4 w-4" aria-hidden />
+                        Case study
+                      </Link>
+                    )}
                   </div>
                 )}
               </GlassCard>

@@ -27,7 +27,10 @@ export interface PublishedProject {
   status: ProjectStatus;
   tags: string[];
   repoUrl: string;
+  /** Live demo / research UI (external or same-origin path). */
   liveUrl: string;
+  /** Optional write-up / case study path (e.g. /writes/...). */
+  caseStudyUrl: string;
   featured: boolean;
   /** Local filesystem path — used to re-match on rescan. Never rendered publicly. */
   sourcePath: string;

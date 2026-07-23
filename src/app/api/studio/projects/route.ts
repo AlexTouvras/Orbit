@@ -33,6 +33,8 @@ function sanitize(input: unknown): PublishedProject[] | null {
         : [],
       repoUrl: typeof p.repoUrl === "string" ? p.repoUrl.trim() : "",
       liveUrl: typeof p.liveUrl === "string" ? p.liveUrl.trim() : "",
+      caseStudyUrl:
+        typeof p.caseStudyUrl === "string" ? p.caseStudyUrl.trim() : "",
       featured: Boolean(p.featured),
       sourcePath,
       order: typeof p.order === "number" ? p.order : i,

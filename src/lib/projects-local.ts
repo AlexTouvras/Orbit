@@ -274,6 +274,7 @@ export function getPublishedProjects(): PublishedProject[] {
       tags: Array.isArray(p.tags) ? p.tags.map(String) : [],
       repoUrl: String(p.repoUrl ?? ""),
       liveUrl: String(p.liveUrl ?? ""),
+      caseStudyUrl: String(p.caseStudyUrl ?? ""),
       featured: Boolean(p.featured),
       sourcePath: String(p.sourcePath ?? ""),
       order: typeof p.order === "number" ? p.order : i,
