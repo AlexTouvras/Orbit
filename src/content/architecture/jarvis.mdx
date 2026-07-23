@@ -1,23 +1,84 @@
 ---
-title: "JARVIS (ProjectHelm) — architecture diagrams"
-summary: "Local meta-orchestrator: Plan → Agent → Debug via Cursor SDK and event ledger."
+title: "JARVIS (ProjectHelm) — RETIRED"
+summary: "Retired 2026-07-22. Former Plan → Agent → Debug control plane; archaeology diagrams only. OS is now Cursor rules + skills per product repo."
 projectDir: "JARVIS"
 ---
 
-{/* AUTO-GENERATED from JARVIS/docs/architecture/ — edit source there, then npm run arch:sync-all */}
+{/* Source of truth: JARVIS/docs/architecture/ — retired; re-sync with npm run arch:sync-all if diagrams change */}
 
-Canonical architecture for **JARVIS**. Linked from the project essay; not listed in Writes.
+> **Retired 2026-07-22.** ProjectHelm is no longer the portfolio foreman. Do not start the CEO loop or OODA autopilot. Work in product repos with Cursor rules + skills. See `JARVIS/RETIRED.md`.
 
-## ProjectHelm control plane
+Canonical architecture for **JARVIS** (historical). Linked from the project essay; not listed in Blog.
+
+## Plan → Agent → Debug (CEO loop)
+
+> **RETIRED.** Do not start. Former default path (cockpit / `py -3 -m apps.agents`).
+
+```mermaid
+flowchart LR
+  Plan[Plan: CURRENT_TASK.md] --> Agent[Agent: Cursor SDK edit]
+  Agent --> Debug[Debug: test_command / staged verify]
+  Debug -->|fail| Agent
+  Debug -->|pass| Done[Charter checks / done]
+  Plan --> Brief[executive_briefings.jsonl]
+  Agent --> Brief
+  Debug --> Brief
+  Brief --> Ledger[(events in jarvis.db)]
+```
+
+| Phase | Intent |
+|-------|--------|
+| Plan | Scoped breakdown + done criteria before edits |
+| Agent | Bounded job for a child agent (not the whole chat) |
+| Debug | Named verification; retry Agent on failure |
+
+State: `io/logs/agent_loop/{project_id}.json`. Briefings: `io/logs/executive_briefings.jsonl`.
+
+## Legacy OODA autopilot
+
+> **Also retired.** Entry points refuse to start. Diagrams below are historical only.
 
 ```mermaid
 flowchart TB
-  UI[Dashboard web_ui] --> API[FastAPI control plane]
-  API --> DB[(SQLAlchemy DB)]
-  API --> Agents[apps/agents Cursor SDK]
-  Agents --> Plan[Plan phase]
-  Plan --> Run[Agent execute]
-  Run --> Debug[Debug / verify]
-  Debug --> Ledger[Event ledger]
-  Ledger --> API
+  Worker[perpetual_worker tick] --> Observe[Observe: tests / health]
+  Observe --> Focus[Focus project selection]
+  Focus --> Orient[Orient: milestones / LLM]
+  Orient --> Decide[Decide: strategy director]
+  Decide --> Act[Act: cursorrules / executor_command]
+  Act --> Ledger[(SQLite events)]
 ```
+
+Cockpit label: **Legacy OODA Autopilot**.
+
+## Away-from-IDE notifications
+
+```mermaid
+flowchart LR
+  Loop[CEO loop / briefings] --> Filter{Important?}
+  Filter -->|yes| Slack[Incoming Webhook]
+  Filter -->|no| Ledger[executive_briefings.jsonl]
+  Slack --> You[Your Slack channel]
+  Cockpit[Cockpit Slack panel] --> Slack
+```
+
+Webhook from `SLACK_WEBHOOK_URL` in `.env` or cockpit-saved `io/logs/runtime_secrets.json`. Toggle: `slack_enabled` in `runtime_user_settings.json`.
+
+## ProjectHelm control plane
+
+Local foreman for multi-agent coding: you set the charter / north star; JARVIS runs **Plan → Agent → Debug** via the Cursor SDK, appends outcomes to an event ledger, and exposes status + kill switches in the web cockpit.
+
+```mermaid
+flowchart TB
+  CEO[CEO charter / brand / ultimate_goal] --> Cockpit[Dashboard web_ui]
+  Cockpit --> API[FastAPI cockpit APIs]
+  API --> Loop[apps/agents Plan → Agent → Debug]
+  Loop --> SDK[Cursor SDK workers]
+  SDK --> Product[Product repo]
+  Loop --> Ledger[(SQLite event ledger)]
+  Ledger --> API
+  API --> Cockpit
+  MCP[apps/mcp jarvis://] --> Services[jarvis_services]
+  Services --> Ledger
+```
+
+Merge stays human. Fully autonomous shipping is out of scope.

@@ -26,12 +26,12 @@
   {
     "id": "projecthelm-jarvis",
     "name": "ProjectHelm (JARVIS)",
-    "description": "A local control plane for coding agents — tracks project state, coordinates child agents, and runs Plan → Agent → Debug loops via the Cursor SDK.",
-    "status": "prototype",
-    "tags": ["Python", "Agents", "Orchestration"],
+    "description": "Retired 2026-07-22. Was a local control plane (Plan → Agent → Debug + ledger). Replaced by Cursor rules + skills and per-project kits. Repo kept for archaeology only.",
+    "status": "archived",
+    "tags": ["Python", "Agents", "Orchestration", "Retired"],
     "repoUrl": "",
     "liveUrl": "/writes/projecthelm-local-agent-control-plane",
-    "featured": true,
+    "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\JARVIS",
     "order": 2
   },

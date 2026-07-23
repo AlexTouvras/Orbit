@@ -1,12 +1,15 @@
 ---
 title: "ProjectHelm — making multi-agent coding observable"
-summary: "JARVIS is a local control plane around the Cursor SDK: Plan → Agent → Debug with an event ledger, so I can audit what ran instead of reconstructing chat."
+summary: "Retired 2026-07-22. Was a local control plane around the Cursor SDK (Plan → Agent → Debug + ledger). Replaced by Cursor rules + skills and per-project kits."
 date: "2026-07-17"
+updated: "2026-07-22"
 category: "AI"
 featured: false
-showcase: true
-tags: ["Agents", "Cursor SDK", "Orchestration", "Architecture"]
+showcase: false
+tags: ["Agents", "Cursor SDK", "Orchestration", "Architecture", "Retired"]
 ---
+
+> **Status (2026-07-22): retired.** ProjectHelm (JARVIS) is no longer how I run the portfolio. The operating system is Cursor **rules + skills**, with each product (Orbit, Power BI, AlphaForge, …) owning its own kit and UI. The essay below is historical.
 
 ## The question
 
@@ -20,17 +23,17 @@ ProjectHelm (the JARVIS workspace) is my answer: a thin control plane on my mach
 
 ```mermaid
 flowchart TB
-  UI[Dashboard web_ui] --> API[FastAPI control plane]
-  API --> DB[(SQLAlchemy DB)]
-  API --> Agents[apps/agents Cursor SDK]
-  Agents --> Plan[Plan phase]
-  Plan --> Run[Agent execute]
-  Run --> Debug[Debug / verify]
-  Debug --> Ledger[Event ledger]
+  CEO[CEO charter / brand / ultimate_goal] --> Cockpit[Dashboard web_ui]
+  Cockpit --> API[FastAPI cockpit APIs]
+  API --> Loop[apps/agents Plan → Agent → Debug]
+  Loop --> SDK[Cursor SDK workers]
+  SDK --> Product[Product repo]
+  Loop --> Ledger[(SQLite event ledger)]
   Ledger --> API
+  API --> Cockpit
 ```
 
-The FastAPI app owns projects and runs. The web UI is for me to start work, watch status, and kill a loop that went sideways. Agents call into the Cursor SDK with bounded context. Outcomes append to an event ledger. If it isn't in the ledger, I treat it as rumor.
+The FastAPI cockpit owns start/status/kill for the CEO loop. Agents call into the Cursor SDK with bounded context. Outcomes append to an event ledger (SQLite). If it isn't in the ledger, I treat it as rumor.
 
 ## Phases I refuse to leave implicit
 

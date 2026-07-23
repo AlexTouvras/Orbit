@@ -1,0 +1,13 @@
+---
+description: Orbit is a standalone product kit; JARVIS ProjectHelm is retired
+alwaysApply: true
+---
+
+# Orbit product kit
+
+Work this repo with **Cursor skills + rules** (fable-method, frontend/architecture skills as needed).
+
+- This Next.js site **is** the product UI.
+- **JARVIS / ProjectHelm is retired** (2026-07-22). Do not route Orbit work through its CEO loop or cockpit.
+- Portfolio card for JARVIS should stay `archived` / non-featured unless the owner un-retires it in chat.
+- Architecture sync may still include JARVIS diagrams as **historical** only.

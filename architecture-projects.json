@@ -5,10 +5,10 @@
     {
       "id": "jarvis",
       "dir": "JARVIS",
-      "title": "JARVIS (ProjectHelm) — architecture diagrams",
-      "summary": "Local meta-orchestrator: Plan → Agent → Debug via Cursor SDK and event ledger.",
+      "title": "JARVIS (ProjectHelm) — RETIRED",
+      "summary": "Retired 2026-07-22. Former Plan → Agent → Debug control plane; archaeology diagrams only. Operating system is now Cursor rules + skills per product repo.",
       "category": "AI",
-      "tags": ["Agents", "Orchestration", "Architecture"]
+      "tags": ["Agents", "Orchestration", "Architecture", "Retired"]
     },
     {
       "id": "orbit-platform",
