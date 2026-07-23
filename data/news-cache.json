@@ -1,7 +1,106 @@
 {
-  "generatedAt": "2026-07-22T08:56:18.242Z",
+  "generatedAt": "2026-07-23T06:42:26.334Z",
   "count": 181,
   "items": [
+    {
+      "id": "d64f4f789af1",
+      "title": "Quoting Seth Larson",
+      "link": "https://simonwillison.net/2026/Jul/23/seth-larson/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-23T04:50:36.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "1c709fbdce5f",
+      "title": "Quoting Thomas Ptacek",
+      "link": "https://simonwillison.net/2026/Jul/22/thomas-ptacek/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-22T23:59:01.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "4fecb70b0c1b",
+      "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
+      "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-22T23:51:33.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "3c1466c70132",
+      "title": "Are AI labs pelicanmaxxing?",
+      "link": "https://simonwillison.net/2026/Jul/22/are-ai-labs-pelicanmaxxing/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-22T23:01:00.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "d07362b8568a",
+      "title": "Orchestrions",
+      "link": "https://simonwillison.net/2026/Jul/22/all-the-orchestrions/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-22T14:48:52.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "bd6ce42035f5",
+      "title": "Building AI infrastructure with the Effingham County community",
+      "link": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-22T13:00:00.000Z",
+      "contentSnippet": "OpenAI announces Project Camellia in Effingham County, Georgia, with commitments to responsible energy, community investment, jobs, and access to Codex."
+    },
+    {
+      "id": "130e23c4bd2f",
+      "title": "How news organizations are using AI to advance their vital missions",
+      "link": "https://openai.com/index/how-news-organizations-are-using-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-22T13:00:00.000Z",
+      "contentSnippet": "News organizations are using AI to strengthen reporting, grow audiences, and improve business operations, with OpenAI tools supporting journalists and publishers worldwide."
+    },
+    {
+      "id": "fc3528d001b5",
+      "title": "Advancing the next era of national science",
+      "link": "https://openai.com/index/advancing-the-next-era-of-national-science",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-22T12:00:00.000Z",
+      "contentSnippet": "OpenAI outlines its commitment to advancing American science working with the U.S. Department of Energy and national labs to use frontier AI to accelerate discovery."
+    },
+    {
+      "id": "c54f46e53d48",
+      "title": "Introducing OpenAI Presence",
+      "link": "https://openai.com/index/introducing-openai-presence",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-22T05:30:00.000Z",
+      "contentSnippet": "Introducing OpenAI Presence, a proven enterprise AI agent platform that helps organizations deploy trusted voice and chat agents for customer and internal workflows."
+    },
+    {
+      "id": "ce627deb9928",
+      "title": "NTT DATA Group cuts incident analysis to 30 minutes with Codex",
+      "link": "https://openai.com/index/ntt-data",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-22T00:00:00.000Z",
+      "contentSnippet": "NTT DATA Group uses ChatGPT Enterprise and Codex to help 9,000 employees automate work, cut incident analysis to 30 minutes, and scale secure AI adoption."
+    },
+    {
+      "id": "afd8a8808b0e",
+      "title": "California Sea Lion",
+      "link": "https://simonwillison.net/2026/Jul/21/sighting-383713864/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-21T19:51:03.000Z",
+      "contentSnippet": ""
+    },
     {
       "id": "d42362617c64",
       "title": "Introducing the ChatGPT for small business program",
@@ -201,24 +300,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "546beebc5838",
-      "title": "Kimi K3, and what we can still learn from the pelican benchmark",
-      "link": "https://simonwillison.net/2026/Jul/16/kimi-k3/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-16T20:19:30.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "b62b68c93c9c",
-      "title": "Quoting Thibault Sottiaux",
-      "link": "https://simonwillison.net/2026/Jul/16/bad-codex-bug/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-16T17:45:59.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "8fe39edff791",
       "title": "Why teens deserve access to safe AI",
       "link": "https://openai.com/index/why-teens-deserve-access-safe-ai",
@@ -228,33 +309,6 @@
       "contentSnippet": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships."
     },
     {
-      "id": "586447921181",
-      "title": "Inkling: Our open-weights model",
-      "link": "https://simonwillison.net/2026/Jul/16/inkling/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-16T15:35:25.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "71ea2ad9c790",
-      "title": "Mermaid to ASCII art (mermaid-ascii)",
-      "link": "https://simonwillison.net/2026/Jul/16/mermaid-ascii/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-16T14:57:39.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "cf5f6e5324b6",
-      "title": "Quoting Linus Torvalds",
-      "link": "https://simonwillison.net/2026/Jul/16/linus-torvalds/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-16T13:26:10.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "ae8121be2cae",
       "title": "The Archaeologist’s Copilot",
       "link": "https://martinfowler.com/articles/archaeologist-copilot.html",
@@ -262,15 +316,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-16T13:25:00.000Z",
       "contentSnippet": "When people think of legacy modernization, most folks aren't imagining the target environment will be Java 8. But this was the challenge facing Nik Malykhin when he needed to run a Java 1.5 codebase on today's hardware. His early use of LLMs gave plausible answers that did not ho…"
-    },
-    {
-      "id": "9904e67143d8",
-      "title": "Mermaid to Unicode box art (grok-mermaid)",
-      "link": "https://simonwillison.net/2026/Jul/16/grok-mermaid/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-16T00:33:18.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "6f16a999c8dd",
@@ -327,15 +372,6 @@
       "contentSnippet": "How to apply a different formatting rule at each level of a hierarchy using ISINSCOPE in a measure or ISATLEVEL in a visual calculation."
     },
     {
-      "id": "248b5ff06999",
-      "title": "How sales teams use ChatGPT Work",
-      "link": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-14T00:00:00.000Z",
-      "contentSnippet": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs."
-    },
-    {
       "id": "cca00ce68781",
       "title": "How data science teams use ChatGPT Work",
       "link": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
@@ -343,6 +379,15 @@
       "category": "AI",
       "pubDate": "2026-07-14T00:00:00.000Z",
       "contentSnippet": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs."
+    },
+    {
+      "id": "248b5ff06999",
+      "title": "How sales teams use ChatGPT Work",
+      "link": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-14T00:00:00.000Z",
+      "contentSnippet": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs."
     },
     {
       "id": "dd3037e1acbb",
@@ -415,51 +460,6 @@
       "category": "AI",
       "pubDate": "2026-07-09T13:00:00.000Z",
       "contentSnippet": "Learn how GPT-5.6 powers Microsoft 365 Copilot with stronger AI capabilities across Word, Excel, PowerPoint, Chat, and Cowork for faster, higher-quality work."
-    },
-    {
-      "id": "54ee76ae9206",
-      "title": "GPT-5.6: Frontier intelligence that scales with your ambition",
-      "link": "https://openai.com/index/gpt-5-6",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T10:00:00.000Z",
-      "contentSnippet": "More intelligence from every token, stronger performance per dollar, and more capability on demand for your hardest work."
-    },
-    {
-      "id": "8fd74bd3f519",
-      "title": "GPT-5.5 Bio Bug Bounty",
-      "link": "https://openai.com/index/bio-bug-bounty",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T10:00:00.000Z",
-      "contentSnippet": "Details about the OpenAI Bio Bounty program"
-    },
-    {
-      "id": "5941cef110c0",
-      "title": "ChatGPT is now a partner for your most ambitious work",
-      "link": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T10:00:00.000Z",
-      "contentSnippet": "ChatGPT Work is an agent that can take action across your apps and files, stay with a project for hours if needed, and turn a goal into finished work."
-    },
-    {
-      "id": "41b85c9cdb7a",
-      "title": "Our approach to government and national security partnerships",
-      "link": "https://openai.com/index/government-national-security-partnerships",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-08T13:30:00.000Z",
-      "contentSnippet": "Learn how OpenAI approaches government and national security partnerships, with principles for responsible AI use, democratic accountability, and public safety."
-    },
-    {
-      "id": "eaad4cbcfa7f",
-      "title": "Separating signal from noise in coding evaluations",
-      "link": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-08T13:00:00.000Z",
-      "contentSnippet": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models."
     },
     {
       "id": "43b30eb7245c",
