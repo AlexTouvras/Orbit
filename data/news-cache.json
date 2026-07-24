@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-07-23T08:23:24.573Z",
+  "generatedAt": "2026-07-24T06:03:17.720Z",
   "count": 181,
   "items": [
+    {
+      "id": "dc52ca5a9a93",
+      "title": "The first known runaway AI agent - or a very bad marketing stunt?",
+      "link": "https://simonwillison.net/2026/Jul/23/the-first-known-runaway-ai-agent/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-23T22:53:08.000Z",
+      "contentSnippet": ""
+    },
     {
       "id": "d64f4f789af1",
       "title": "Quoting Seth Larson",
@@ -10,6 +19,15 @@
       "category": "AI",
       "pubDate": "2026-07-23T04:50:36.000Z",
       "contentSnippet": ""
+    },
+    {
+      "id": "7569338ee0d3",
+      "title": "Launching Health in ChatGPT",
+      "link": "https://openai.com/index/health-in-chatgpt",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-23T00:00:00.000Z",
+      "contentSnippet": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health."
     },
     {
       "id": "1c709fbdce5f",
@@ -291,15 +309,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "d54546b30bf8",
-      "title": "Firefox in WebAssembly",
-      "link": "https://simonwillison.net/2026/Jul/16/firefox-in-webassembly/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-16T23:34:16.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "8fe39edff791",
       "title": "Why teens deserve access to safe AI",
       "link": "https://openai.com/index/why-teens-deserve-access-safe-ai",
@@ -316,6 +325,15 @@
       "category": "Delivery",
       "pubDate": "2026-07-16T13:25:00.000Z",
       "contentSnippet": "When people think of legacy modernization, most folks aren't imagining the target environment will be Java 8. But this was the challenge facing Nik Malykhin when he needed to run a Java 1.5 codebase on today's hardware. His early use of LLMs gave plausible answers that did not ho…"
+    },
+    {
+      "id": "eeac6a04af4f",
+      "title": "How Codex became a collaborator for OpenAI’s creative team",
+      "link": "https://openai.com/index/codex-collaborator-creative-team",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-16T07:00:00.000Z",
+      "contentSnippet": "How OpenAI’s creative team uses Codex to build custom creative tools, accelerate ideation, and prototype faster with context-aware AI."
     },
     {
       "id": "6f16a999c8dd",
@@ -442,24 +460,6 @@
       "category": "AI",
       "pubDate": "2026-07-10T07:00:00.000Z",
       "contentSnippet": "How Deutsche Telekom is becoming an AI-native telco with OpenAI-transforming customer service, employee workflows, network operations, and the future of voice."
-    },
-    {
-      "id": "2c539797fe26",
-      "title": "Getting started with ChatGPT",
-      "link": "https://openai.com/academy/getting-started",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-10T00:00:00.000Z",
-      "contentSnippet": "Learn how to use ChatGPT, start your first conversation, and discover simple ways to write, brainstorm, and solve problems with AI."
-    },
-    {
-      "id": "e799563c0958",
-      "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot",
-      "link": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-09T13:00:00.000Z",
-      "contentSnippet": "Learn how GPT-5.6 powers Microsoft 365 Copilot with stronger AI capabilities across Word, Excel, PowerPoint, Chat, and Cowork for faster, higher-quality work."
     },
     {
       "id": "43b30eb7245c",
