@@ -29,10 +29,6 @@ export const ARCHITECTURE_ESSAY_LINKS: Record<
     title: "Power BI portfolio",
     href: "/writes/power-bi-portfolio-nordic-boardroom",
   },
-  reelsmaker: {
-    title: "Ultimate Reel Maker",
-    href: "/writes/ultimate-reel-maker-self-hosted-video",
-  },
 };
 
 /** Reverse map: write slug → architecture page slug (if any). */
