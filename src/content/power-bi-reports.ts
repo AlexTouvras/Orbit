@@ -132,6 +132,44 @@ export const powerBiReports: PowerBiReport[] = [
     ],
   },
   {
+    id: "supply-chain",
+    title: "Logistics Pulse",
+    summary: "COO-style **on-time delivery + demand forecast** report: delivery pulse, seller risk, and a weekly demand outlook with prediction-interval bounds.",
+    repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
+    pages: [
+      {
+        id: "landing",
+        label: "Landing",
+        caption: "Poster · On-time % hero · page map · `harbor-mist`",
+        src: "/portfolio/power-bi/supply-chain/landing.png",
+      },
+      {
+        id: "delivery-pulse",
+        label: "Delivery Pulse",
+        caption: "On-time · lead time · late volume · monthly trend · category mix",
+        src: "/portfolio/power-bi/supply-chain/delivery-pulse.png",
+      },
+      {
+        id: "sellers-routes",
+        label: "Sellers & Routes",
+        caption: "Seller late-rate queue · corridor table · freight vs late scatter",
+        src: "/portfolio/power-bi/supply-chain/sellers-routes.png",
+      },
+      {
+        id: "demand-outlook",
+        label: "Demand Outlook",
+        caption: "Signature — actual / dashed forecast / dotted 80% PI bounds",
+        src: "/portfolio/power-bi/supply-chain/demand-outlook.png",
+      },
+      {
+        id: "context",
+        label: "Context",
+        caption: "On-time definition · forecast caveats · sample disclaimer",
+        src: "/portfolio/power-bi/supply-chain/context.png",
+      },
+    ],
+  },
+  {
     id: "bank",
     title: "Bank Value & Engagement",
     summary: "Nordic Boardroom retail-bank report: dual-flow KPIs, RFM/k-means segments, geocoded city footprint, and a dormancy / cross-sell relationship book with drillthrough.",
