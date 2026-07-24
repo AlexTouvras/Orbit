@@ -239,4 +239,54 @@ export const powerBiReports: PowerBiReport[] = [
       },
     ],
   },
+  {
+    id: "investing-desk",
+    title: "Investment Portfolio",
+    summary: "CIO-style **multi-sleeve investment portfolio** report: strategic allocation, excess return vs VWCE, holdings & rebalance, mandate compliance, Nordic regional tape.",
+    repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
+    pages: [
+      {
+        id: "landing",
+        label: "Landing",
+        caption: "CIO poster · Excess CAGR vs Core hero · page map",
+        src: "/portfolio/power-bi/investing-desk/landing.png",
+      },
+      {
+        id: "asset-allocation",
+        label: "Asset Allocation",
+        caption: "Sleeve weights · ring-fence context (weights only)",
+        src: "/portfolio/power-bi/investing-desk/asset-allocation.png",
+      },
+      {
+        id: "performance",
+        label: "Performance",
+        caption: "Indexed equity · drawdown · Sharpe peers + gap vs VWCE",
+        src: "/portfolio/power-bi/investing-desk/performance.png",
+      },
+      {
+        id: "holdings-rebalance",
+        label: "Holdings & Rebalance",
+        caption: "Book weights · EXIT/ENTER/TRIM/DEFER",
+        src: "/portfolio/power-bi/investing-desk/holdings-rebalance.png",
+      },
+      {
+        id: "risk-mandate",
+        label: "Risk & Mandate",
+        caption: "Vol / MDD · IPS rules · review calendar",
+        src: "/portfolio/power-bi/investing-desk/risk-mandate.png",
+      },
+      {
+        id: "regional-markets",
+        label: "Regional Markets",
+        caption: "Nordic overlap · [live board](https://heatmap-web-five.vercel.app) CTA",
+        src: "/portfolio/power-bi/investing-desk/regional-markets.png",
+      },
+      {
+        id: "notes",
+        label: "Notes",
+        caption: "Methodology · not advice · refresh path",
+        src: "/portfolio/power-bi/investing-desk/notes.png",
+      },
+    ],
+  },
 ];
