@@ -1,5 +1,23 @@
 [
   {
+    "id": "2026-07-24_075011",
+    "generated_at": "2026-07-24T07:50:11.711547+00:00",
+    "run_label": "Momentum \u00b7 semiannual \u00b7 max 3 name changes",
+    "run_sharpe": 1.299018241188839,
+    "recommend_policy_change": false,
+    "sample_end": "2026-07-23",
+    "path": "history/2026-07-24_075011.json"
+  },
+  {
+    "id": "2026-07-23_135732",
+    "generated_at": "2026-07-23T13:57:32.642664+00:00",
+    "run_label": "Momentum \u00b7 semiannual \u00b7 max 3 name changes",
+    "run_sharpe": 1.3037789913192697,
+    "recommend_policy_change": false,
+    "sample_end": "2026-07-22",
+    "path": "history/2026-07-23_135732.json"
+  },
+  {
     "id": "2026-07-23_134627",
     "generated_at": "2026-07-23T13:46:27.820104+00:00",
     "run_label": "Momentum \u00b7 semiannual \u00b7 max 3 name changes",

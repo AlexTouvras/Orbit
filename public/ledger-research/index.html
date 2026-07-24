@@ -227,9 +227,9 @@
 
       const d = data.decision || {};
       document.getElementById('verdict').innerHTML =
-        `<strong>This cycle:</strong> ${esc(d.run_label)}<br/>${esc(d.run_reason)}<br/>` +
+        `<strong>Proposals this cycle:</strong> ${esc(d.run_label)}<br/>${esc(d.run_reason)}<br/>` +
         `<span class="meta">In-sample lead Sharpe ${Number(d.winner_sharpe).toFixed(2)} · ` +
-        `policy change recommended: ${esc(d.recommend_policy_change)}</span>`;
+        `adopt for a future period? ${esc(d.recommend_policy_change)}</span>`;
 
       document.getElementById('constraints').innerHTML =
         (data.constraints || []).map(c => `<li>${esc(c)}</li>`).join('');
@@ -237,7 +237,7 @@
       const rows = [...(data.rows || [])].sort((a,b) => b.sharpe - a.sharpe);
       document.getElementById('kpi').innerHTML = rows.map(r => `
         <tr class="${r.is_run ? 'run' : ''}">
-          <td>${esc(r.label)}${r.is_run ? ' <strong>(run)</strong>' : ''}${r.is_working_policy ? ' · working' : ''}</td>
+          <td>${esc(r.label)}${r.is_run ? ' <strong>(proposals)</strong>' : ''}${r.is_working_policy ? ' · working' : ''}</td>
           <td>${esc(r.family)}</td>
           <td>${r.eligible_mid ? 'yes' : 'opp. cost'}</td>
           <td class="num">${pct(r.cagr)}</td>
