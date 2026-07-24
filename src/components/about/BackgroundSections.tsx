@@ -132,19 +132,11 @@ export function BackgroundSections() {
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-x-3">
                     <h3 className="font-semibold text-white">{ed.degree}</h3>
-                    <div className="flex items-center gap-2">
-                      {ed.period && (
-                        <span className="font-mono text-xs text-slate-400">
-                          {ed.period}
-                        </span>
-                      )}
-                      {ed.thesisUrl && (
-                        <ArrowUpRight
-                          className="h-4 w-4 text-slate-500 transition-[transform,color] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-neon-cyan"
-                          aria-hidden
-                        />
-                      )}
-                    </div>
+                    {ed.period && (
+                      <span className="font-mono text-xs text-slate-400">
+                        {ed.period}
+                      </span>
+                    )}
                   </div>
                   <p className="mt-1 text-sm text-slate-300">{ed.school}</p>
                   {ed.thesisTitle && (
@@ -155,6 +147,15 @@ export function BackgroundSections() {
                   {ed.detail && (
                     <p className="mt-2 text-sm leading-relaxed text-slate-400">
                       {ed.detail}
+                    </p>
+                  )}
+                  {ed.thesisUrl && (
+                    <p className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-neon-cyan transition-colors group-hover:text-white">
+                      Press for master&apos;s thesis
+                      <ArrowUpRight
+                        className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        aria-hidden
+                      />
                     </p>
                   )}
                 </GlassCard>
@@ -168,7 +169,7 @@ export function BackgroundSections() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="focus-ring block rounded-2xl"
-                      aria-label={`${ed.degree} — open thesis`}
+                      aria-label={`${ed.degree} — press for master's thesis`}
                     >
                       {card}
                     </a>
