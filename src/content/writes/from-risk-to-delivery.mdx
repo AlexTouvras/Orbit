@@ -1,7 +1,7 @@
 ---
 title: "From risk analyst to delivery lead — what actually changed"
-summary: "What shifts when you move from building PD models to leading Azure application operations — and what stays the same."
-date: "2026-02-10"
+summary: "What shifts when you move from PD models and ECL to leading Azure application operations, and which quantitative habits still decide the call."
+date: "2026-07-24"
 category: "Career"
 featured: true
 showcase: false
@@ -10,26 +10,36 @@ tags: ["Career", "Delivery", "Azure", "Banking"]
 
 ## The question
 
-After years in credit risk and analytics, I stepped into a technology delivery lead role. People asked whether I was "leaving data behind." I wasn't — the job changed how I use it.
+In January 2026 I stopped being a Senior Risk Analyst at Santander Consumer Bank Nordics and started as Delivery Lead on the technology side. Colleagues asked, almost immediately, whether I was "leaving data behind." I wasn't. The job changed who I write for, and what counts as a finished piece of work.
 
-## What stayed the same
+## Same bank, different unit of work
 
-Quantitative habits don't disappear. I still want **evidence before decisions**: operational metrics, dependency maps, incident patterns, and clear definitions of done. The models I built taught me to ask *what could break in production* — that lens applies to middleware and Azure services too.
+For a few years the unit of work was a model, a scorecard, a forecast, or a dashboard someone could argue with in a steering meeting. As Senior Risk Analyst (Sep 2023–Jan 2026) that meant PD models, scorecards, ECL-style forecasts, portfolio steering, and a lot of Python, SQL, and Power BI / Fabric. Before that I had already spent time as a Risk Analyst in the same bank, and earlier as a Credit Analyst at Resurs Bank on scorecards, cut-offs, and credit-engine changes in Provenir.
 
-## What changed
+Delivery Lead flips the artifact. The unit of work is now a sequenced change across Azure application operations and middleware: who owns which dependency, and what "done" means when platform, security, and business calendars disagree. After it ships you still need a way to tell whether it held. I still open metrics, only now they sit next to incident patterns and dependency maps instead of a model monitoring pack.
 
-The unit of work is no longer a notebook or a dashboard. It's **coordination**:
+## Evidence stayed; the room changed
 
-- Turning vague initiatives into sequenced delivery with visible flow.
-- Making trade-offs explicit when platform, security, and business timelines collide.
-- Translating between engineers, operators, and stakeholders who use different vocabularies.
+I still refuse decisions that rest on vibes. Operational metrics plus a written view of what could break in production are the same instinct that made me distrust a pretty chart with a soft grain. Risk work trained that distrust on portfolios and engines. Application operations spends it on services that other teams touch while you sleep.
 
-I'm less often the person writing the SQL. More often the person making sure the right SQL gets written, reviewed, and shipped on time.
+What changed is the vocabulary of the room. Engineers and operators do not share a glossary with every stakeholder, and pretending otherwise just slows the handoff. My job is less "run the SQL" and more "make sure the right change is specified and reviewed before it ships," including the boring parts: status that names blockers, plus a rollback story before anyone calls the change green.
 
-## The bridge I didn't expect
+Some days I still itch to disappear into a notebook. That itch is useful as a warning. If I'm the only person who understands the numbers behind a delivery call, I haven't finished the work; I've just moved the opacity from a model into a meeting.
 
-Risk work trained me for **uncertainty under constraints**. Delivery work rewards the same muscle: you rarely have perfect information, but you still need a call, a rollback plan, and a way to measure whether it worked.
+## What risk actually prepared me for
 
-## What I'm documenting next
+People treat "analyst to delivery" as a soft-skills story. Mine wasn't. Credit risk is decisions under incomplete information on a clock, with regulators and Nordic stakeholders in the loop, plus a need to measure whether the call aged well. You rarely get a clean dataset and a quiet week. You get a cut you can defend and an honest list of what the model is not.
 
-This site is part of that shift — a public record of what I build and learn on the engineering side (agents, automation, this platform) while leading delivery day to day. If you're making a similar move from analytics to operations leadership, the through-line is simpler than it looks: **make the system legible**.
+Azure application operations rewards the same muscle. You rarely have a perfect picture of every dependency, yet you still need a call with a rollback path and a way to check whether the change worked. Mentoring junior analysts taught me something adjacent: capability compounds when the system is legible enough that someone else can run the next cycle without you narrating it.
+
+I'm not claiming the domains are identical. A PD monitoring pack and a middleware incident pattern are different objects. The transferable part is narrower and more useful: treat uncertainty as a design input, not as a reason to stall.
+
+## What I'm still figuring out in public
+
+Orbit is part of the shift. It is a public record of what I build and learn on the engineering and automation side while delivery is the day job. I keep the CV and Hub honest about both lanes: quantitative roots in credit risk, and current work leading IT application operations on Azure.
+
+I don't have a tidy conversion story where every old habit mapped cleanly onto the new role. Some habits translated on day one. Some still fight me: wanting to build the analysis myself when the team needs a sequenced plan more than another chart; wanting perfect information when the safer move is a reversible call with owners named.
+
+## Takeaway
+
+If you're weighing a similar move from analytics into operations leadership, don't start by asking whether you'll "still do data." Ask whether you can make the system legible enough that someone else can run the next cycle: evidence before the call, and a definition of done that survives without you narrating it. That through-line survived the title change. The notebook didn't have to.
