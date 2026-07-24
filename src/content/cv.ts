@@ -89,7 +89,7 @@ export const cv: Cv = {
     },
     {
       company: "Resurs Bank",
-      location: "Sweden / Nordics",
+      location: "Finland / Nordics",
       roles: [
         {
           title: "Credit Analyst",
