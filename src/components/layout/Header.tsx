@@ -37,7 +37,7 @@ export function Header() {
         className={cn(
           "flex w-full max-w-5xl items-center justify-between rounded-2xl px-4 py-3 transition-[background-color,border-color,box-shadow] duration-300",
           scrolled
-            ? "glass shadow-glow"
+            ? "border border-white/10 bg-void shadow-glow"
             : "border border-transparent bg-transparent",
         )}
       >
@@ -89,7 +89,7 @@ export function Header() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="glass absolute top-20 left-4 right-4 z-50 flex flex-col gap-1 rounded-2xl p-3 sm:hidden"
+            className="absolute top-20 left-4 right-4 z-50 flex flex-col gap-1 rounded-2xl border border-white/10 bg-void p-3 sm:hidden"
           >
             {navItems.map((item) => (
               <Link
