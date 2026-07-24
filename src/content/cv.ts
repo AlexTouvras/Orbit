@@ -20,6 +20,9 @@ export interface CvEducation {
   school: string;
   period?: string;
   detail?: string;
+  /** Public thesis landing page or PDF — makes the education card pressable. */
+  thesisUrl?: string;
+  thesisTitle?: string;
 }
 
 export interface CvSkillGroup {
@@ -150,6 +153,9 @@ export const cv: Cv = {
       period: "2021–2024",
       detail:
         "Machine learning methods in business environments; analytical service design.",
+      thesisTitle:
+        "An Analytics Process for Forecasting Expected Credit Losses for the Lifetime of Loans: auto loan portfolios",
+      thesisUrl: "https://www.theseus.fi/handle/10024/860989",
     },
     {
       degree: "MSc, Banking and International Finance",
@@ -157,6 +163,9 @@ export const cv: Cv = {
       period: "2017–2019",
       detail:
         "Quantitative finance, economics, financial accounting, and banking.",
+      thesisTitle:
+        "Government bonds and credit risk: an assessment of diversification and a safe asset in the euro area",
+      thesisUrl: "https://jyx.jyu.fi/jyx/Record/jyx_123456789_62906",
     },
     {
       degree: "Bachelor's in Economics",
