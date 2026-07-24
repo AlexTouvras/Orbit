@@ -4,7 +4,11 @@
     "name": "Orbit — Portfolio & related articles",
     "description": "This site: a personal portfolio bank and a curated RSS feed across AI, Data, Analytics, and Delivery, with a built-in Studio for editing content and publishing projects.",
     "status": "live",
-    "tags": ["Next.js", "React", "TypeScript"],
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript"
+    ],
     "repoUrl": "https://github.com/AlexTouvras/Orbit",
     "liveUrl": "https://alextouvras.com/",
     "featured": true,
@@ -16,7 +20,12 @@
     "name": "Nordic Equity Heatmap",
     "description": "Live TradingView-style sector board for Nordic large-caps (size = market cap, color = day change %). Part of the Nordic Equity report in powerbi-portfolio/01-finance — PBIP pages plus the Vite board on Vercel.",
     "status": "live",
-    "tags": ["Power BI", "React", "Data Viz", "Markets"],
+    "tags": [
+      "Power BI",
+      "React",
+      "Data Viz",
+      "Markets"
+    ],
     "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio/tree/main/01-finance/heatmap-web",
     "liveUrl": "https://heatmap-web-five.vercel.app/",
     "featured": true,
@@ -24,52 +33,19 @@
     "order": 1
   },
   {
-    "id": "projecthelm-jarvis",
-    "name": "ProjectHelm (JARVIS)",
-    "description": "Retired 2026-07-22. Was a local control plane (Plan → Agent → Debug + ledger). Replaced by Cursor rules + skills and per-project kits. Repo kept for archaeology only.",
-    "status": "archived",
-    "tags": ["Python", "Agents", "Orchestration", "Retired"],
-    "repoUrl": "",
-    "liveUrl": "/writes/projecthelm-local-agent-control-plane",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\JARVIS",
-    "order": 2
-  },
-  {
     "id": "powerbi-portfolio",
     "name": "Power BI — Nordic Boardroom",
     "description": "Portfolio reports with a shared design system: churn, sales, bank, healthcare — gold through pages, synced into Orbit.",
     "status": "shipped",
-    "tags": ["Power BI", "Fabric", "DAX"],
+    "tags": [
+      "Power BI",
+      "Fabric",
+      "DAX"
+    ],
     "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio",
     "liveUrl": "/writes/power-bi-portfolio-nordic-boardroom",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\PowerBI",
-    "order": 3
-  },
-  {
-    "id": "sunplot-garden",
-    "name": "Sunplot Garden",
-    "description": "A cozy mobile gardening game (Unity) built as a studio repo with an agent-driven content pipeline and a vertical-grid layout system.",
-    "status": "prototype",
-    "tags": ["Unity", "Game Design"],
-    "repoUrl": "",
-    "liveUrl": "",
-    "featured": false,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\garden_app",
-    "order": 4
-  },
-  {
-    "id": "ledger-research-cycle",
-    "name": "Ledger — strategy research cycle",
-    "description": "Compare equity strategy families on one sample, apply a Sharpe change bar, then propose explained holdings moves. Live demo + case study write-up.",
-    "status": "prototype",
-    "tags": ["Python", "Research", "Equity", "Automation"],
-    "repoUrl": "https://github.com/AlexTouvras/ledger",
-    "liveUrl": "/ledger-research",
-    "caseStudyUrl": "/writes/ledger-research-cycle-strategy-selection",
-    "featured": true,
-    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\investing",
-    "order": 5
+    "order": 2
   }
 ]
