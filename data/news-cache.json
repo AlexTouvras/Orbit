@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-07-24T08:19:24.154Z",
+  "generatedAt": "2026-07-25T06:39:19.823Z",
   "count": 181,
   "items": [
+    {
+      "id": "9e10b8bb9cb2",
+      "title": "Quoting Boris Cherny",
+      "link": "https://simonwillison.net/2026/Jul/25/boris-cherny/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-25T00:42:59.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "3a60f07223b3",
+      "title": "Introducing Claude Opus 5",
+      "link": "https://simonwillison.net/2026/Jul/24/introducing-claude-opus-5/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-24T23:48:50.000Z",
+      "contentSnippet": ""
+    },
     {
       "id": "dc52ca5a9a93",
       "title": "The first known runaway AI agent - or a very bad marketing stunt?",
@@ -282,15 +300,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "64131661223d",
-      "title": "LLM cliché highlighter",
-      "link": "https://simonwillison.net/2026/Jul/17/llm-cliche-highlighter/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-17T12:11:11.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "3ebda52fc80e",
       "title": "A scorecard for the AI age",
       "link": "https://openai.com/index/a-scorecard-for-the-ai-age",
@@ -298,15 +307,6 @@
       "category": "AI",
       "pubDate": "2026-07-17T10:00:00.000Z",
       "contentSnippet": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute."
-    },
-    {
-      "id": "8840673948d8",
-      "title": "Spot birds not golf",
-      "link": "https://simonwillison.net/2026/Jul/17/spot-birds-not-golf/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-17T02:58:07.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "8fe39edff791",
