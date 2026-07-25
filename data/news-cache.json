@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T06:39:19.823Z",
+  "generatedAt": "2026-07-25T08:00:38.280Z",
   "count": 181,
   "items": [
     {
@@ -390,15 +390,6 @@
       "contentSnippet": "How to apply a different formatting rule at each level of a hierarchy using ISINSCOPE in a measure or ISATLEVEL in a visual calculation."
     },
     {
-      "id": "cca00ce68781",
-      "title": "How data science teams use ChatGPT Work",
-      "link": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-14T00:00:00.000Z",
-      "contentSnippet": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs."
-    },
-    {
       "id": "248b5ff06999",
       "title": "How sales teams use ChatGPT Work",
       "link": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
@@ -406,6 +397,15 @@
       "category": "AI",
       "pubDate": "2026-07-14T00:00:00.000Z",
       "contentSnippet": "See how sales teams can use ChatGPT Work to create pipeline briefs, meeting prep packets, forecast reviews, account plans, and stalled-deal diagnoses from real work inputs."
+    },
+    {
+      "id": "cca00ce68781",
+      "title": "How data science teams use ChatGPT Work",
+      "link": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-14T00:00:00.000Z",
+      "contentSnippet": "See how data science teams can use ChatGPT Work to build root-cause briefs, impact readouts, KPI memos, scoped analyses, and dashboard specs from real work inputs."
     },
     {
       "id": "dd3037e1acbb",
