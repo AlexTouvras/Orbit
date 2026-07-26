@@ -48,3 +48,7 @@ next-env.d.ts
 !.vscode/extensions.json
 .idea
 .env*
+
+# Agent local working memory (ARCHITECTURE/BACKLOG stay tracked)
+.state/CURRENT_TASK.md
+

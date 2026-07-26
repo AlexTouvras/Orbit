@@ -6,8 +6,8 @@
 
 - [x] Rewrite `from-risk-to-delivery.mdx` with orbit-essay + anti-ai-slop
 - [x] Rebalance Related articles RSS (Data / Analytics / Delivery vs AI flood)
-- [ ] Human review of new feed mix
-- [ ] Human review of SEO + Vercel Analytics (then deploy)
+- [x] Human review of new feed mix (shipped)
+- [x] Human review of SEO + Vercel Analytics (deployed)
 
 ## Next
 
@@ -20,7 +20,7 @@
 
 ## Later
 
-- [ ] Optional: Google Search Console sitemap submit
+- [x] Optional: Google Search Console sitemap submit
 - [ ] Optional: Vercel Speed Insights
 
 ## Out of scope (strict)
@@ -32,7 +32,7 @@
 - [x] Sources favor Data / Analytics / Delivery; AI capped
 - [x] All view + weekly intake interleaved by category
 - [x] `npm run news:fetch` succeeds with new feeds
-- [ ] Owner OK with the mix (add/drop any source)
+- [x] Owner OK with the mix (add/drop any source)
 - [x] `/sitemap.xml` + `/robots.txt` + `/feed.xml` in production build
 - [x] `@vercel/analytics` in root layout; JSON-LD + article OG/canonicals
-- [ ] Owner review / deploy
+- [x] Owner review / deploy

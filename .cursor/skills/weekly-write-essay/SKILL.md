@@ -28,10 +28,11 @@ Before notify, self-check the draft against Quality gates below (same rules as `
 ## Minimum evidence (open before writing)
 
 1. `data/weekly-write-ide-brief.md` **and** `data/weekly-write-ide-brief.json` (thesis + intake)
-2. Voice references (read at least one fully):
+2. `docs/essay-voice.md` — compelling checklist **and** “Voice from the theses” (reasoning fingerprint; no academic cosplay)
+3. Voice peer (read at least one fully):
    - `src/content/writes/from-risk-to-delivery.mdx`
    - `src/content/writes/building-orbit.mdx` or another current essay under `src/content/writes/`
-3. Optional: `CONTENT.md` §6b for Slack approve flow
+4. Optional: `CONTENT.md` §6b for Slack approve flow
 
 Do not cite deleted placeholders (e.g. former `power-bi-monday-dashboard.mdx`).
 

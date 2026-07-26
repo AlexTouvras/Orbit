@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, SatelliteDish } from "lucide-react";
 import type { NewsCategory, NewsItem } from "@/lib/types";
+import { interleaveByCategory } from "@/lib/news/balance";
 import { NewsCard } from "./NewsCard";
 import { FilterChip } from "@/components/ui/FilterChip";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
@@ -31,7 +32,7 @@ export function RadarExplorer({ items }: { items: NewsItem[] }) {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return items.filter((item) => {
+    const matched = items.filter((item) => {
       const matchesCategory = category === "All" || item.category === category;
       const matchesQuery =
         !q ||
@@ -40,6 +41,8 @@ export function RadarExplorer({ items }: { items: NewsItem[] }) {
         item.source.toLowerCase().includes(q);
       return matchesCategory && matchesQuery;
     });
+    // Single-lane filters stay newest-first; All mixes lanes so AI dailies don't dominate.
+    return category === "All" ? interleaveByCategory(matched) : matched;
   }, [items, category, query]);
 
   return (

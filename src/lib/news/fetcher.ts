@@ -47,7 +47,8 @@ function isEnglishTitle(title: string): boolean {
 
 async function fetchFeed(source: FeedSource): Promise<NewsItem[]> {
   const feed = await parser.parseURL(source.url);
-  const items = (feed.items ?? []).slice(0, MAX_ITEMS_PER_FEED);
+  const limit = source.maxItems ?? MAX_ITEMS_PER_FEED;
+  const items = (feed.items ?? []).slice(0, limit);
 
   return items
     .filter((item) => item.link && item.title)

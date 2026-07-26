@@ -1,5 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
+import {
+  INTAKE_CATEGORY_ORDER,
+  interleaveByCategory,
+} from "@/lib/news/balance";
 import { readNewsCache } from "@/lib/news/cache";
 import type { PublishedProject } from "@/lib/project-status";
 import {
@@ -51,15 +55,16 @@ export function buildWeeklyIntake(options?: {
   const maxAgeDays = options?.maxAgeDays ?? 10;
 
   const cache = readNewsCache();
-  const signals = cache.items
-    .filter((item) => daysAgo(item.pubDate, maxAgeDays))
+  // Round-robin Analytics → Data → Delivery → AI so weekly essays aren't AI-only.
+  const recent = interleaveByCategory(
+    cache.items.filter((item) => daysAgo(item.pubDate, maxAgeDays)),
+    INTAKE_CATEGORY_ORDER,
+  );
+  const fallback = interleaveByCategory(cache.items, INTAKE_CATEGORY_ORDER);
+  const pool = recent.length > 0 ? recent : fallback;
+  const resolvedSignals = pool
     .slice(0, signalLimit)
     .map(newsToIntakeSignal);
-
-  const resolvedSignals =
-    signals.length > 0
-      ? signals
-      : cache.items.slice(0, signalLimit).map(newsToIntakeSignal);
 
   const projects: WeeklyIntakeProject[] = readPublishedProjectsFs()
     .filter((p) => ACTIVE_STATUSES.has(p.status))
