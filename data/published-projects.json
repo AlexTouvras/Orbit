@@ -47,5 +47,22 @@
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\PowerBI",
     "order": 2
+  },
+  {
+    "id": "mealplan",
+    "name": "mealplan",
+    "description": "Slack-triggered meal planning: YAML defaults, per-message overrides, nutrition guidance, multi-store grocery split. Architecture: /architecture/mealplan",
+    "status": "shipped",
+    "tags": [
+      "Cursor Automations",
+      "Slack",
+      "YAML",
+      "Personal ops"
+    ],
+    "repoUrl": "",
+    "liveUrl": "/architecture/mealplan",
+    "featured": false,
+    "sourcePath": "C:\\\\Users\\\\kater\\\\.cursor\\\\projects\\\\mealplan",
+    "order": 8
   }
 ]

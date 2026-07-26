@@ -33,6 +33,14 @@
       "summary": "Self-hosted topic → vertical MP4: Docker services and render pipeline.",
       "category": "AI",
       "tags": ["Video", "Remotion", "Architecture"]
+    },
+    {
+      "id": "mealplan",
+      "dir": "mealplan",
+      "title": "mealplan — Slack automation architecture",
+      "summary": "Channel-triggered meal planning: YAML defaults, Slack overrides, nutrition plate guide, multi-store grocery split.",
+      "category": "AI",
+      "tags": ["Cursor Automations", "Slack", "YAML", "Personal ops"]
     }
   ]
 }
