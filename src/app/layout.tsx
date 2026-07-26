@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Syne, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ParticleBackground } from "@/components/layout/ParticleBackground";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getEditableProfile } from "@/lib/profile-store";
+import { getSiteUrl } from "@/lib/site";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -20,10 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-
 export async function generateMetadata(): Promise<Metadata> {
   const profile = getEditableProfile();
+  const siteUrl = getSiteUrl();
   return {
     metadataBase: new URL(siteUrl),
     title: {
@@ -31,11 +33,21 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s — ${profile.name}`,
     },
     description: profile.tagline,
+    alternates: {
+      canonical: "/",
+      types: {
+        "application/rss+xml": [
+          { url: "/feed.xml", title: `${profile.name} — Blog` },
+        ],
+      },
+    },
     openGraph: {
       title: `${profile.name} — ${profile.role}`,
       description: profile.tagline,
       type: "website",
       url: siteUrl,
+      siteName: "Orbit",
+      locale: "en_US",
     },
     twitter: {
       card: "summary_large_image",
@@ -54,6 +66,7 @@ export default function RootLayout({
       className={`${syne.variable} ${ibmPlex.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-sans antialiased">
+        <JsonLd />
         <a
           href="#main-content"
           className="focus-ring sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-neon-cyan focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-void"
@@ -69,6 +82,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

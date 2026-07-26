@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "Projects, open-source work from GitHub, and Power BI report pages.",
+  alternates: { canonical: "/portfolio" },
 };
 
 export default function PortfolioPage() {

@@ -22,7 +22,23 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return { title: "Project not found" };
-  return { title: project.title, description: project.summary };
+  const path = `/portfolio/${slug}`;
+  return {
+    title: project.title,
+    description: project.summary,
+    alternates: { canonical: path },
+    openGraph: {
+      title: project.title,
+      description: project.summary,
+      type: "article",
+      url: path,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.summary,
+    },
+  };
 }
 
 export default async function ProjectDetailPage({

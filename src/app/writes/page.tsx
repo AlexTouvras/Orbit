@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Evergreen articles on delivery, data, AI, and career — what I learn and ship in public.",
+  alternates: { canonical: "/writes" },
 };
 
 export default function WritesPage() {

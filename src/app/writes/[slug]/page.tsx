@@ -6,6 +6,7 @@ import { getWriteBySlug, getWriteSlugs } from "@/lib/writes";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import { Badge } from "@/components/ui/Badge";
 import { BackLink } from "@/components/ui/BackLink";
+import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
 import { formatDate } from "@/lib/utils";
 
 const categoryTone = {
@@ -28,7 +29,25 @@ export async function generateMetadata({
   const { slug } = await params;
   const write = getWriteBySlug(slug);
   if (!write) return { title: "Article not found" };
-  return { title: write.title, description: write.summary };
+  const path = `/writes/${slug}`;
+  return {
+    title: write.title,
+    description: write.summary,
+    alternates: { canonical: path },
+    openGraph: {
+      title: write.title,
+      description: write.summary,
+      type: "article",
+      url: path,
+      publishedTime: write.date,
+      tags: write.tags,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: write.title,
+      description: write.summary,
+    },
+  };
 }
 
 export default async function WriteDetailPage({
@@ -47,6 +66,7 @@ export default async function WriteDetailPage({
 
   return (
     <article className="mx-auto max-w-3xl">
+      <ArticleJsonLd write={write} />
       <BackLink fallbackHref={fallbackHref} />
 
       <header className="mt-8">

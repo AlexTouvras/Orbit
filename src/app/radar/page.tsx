@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Related articles",
   description:
     "Curated reading across AI, Data, Analytics (Power BI / Fabric), and Delivery — aggregated from RSS and served from cache.",
+  alternates: { canonical: "/radar" },
 };
 
 export const dynamic = "force-dynamic";

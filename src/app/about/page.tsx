@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Background, experience, education, and skills — from Nordic banking and credit risk to technology delivery and AI automation.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
