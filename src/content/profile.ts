@@ -48,16 +48,16 @@ export const profile = {
   role: "Technology Delivery Lead · Data & AI Automation",
   location: "Vantaa, Finland",
   tagline:
-    "A living record of what I build, learn, and ship — from credit risk and delivery leadership to agentic AI and automation.",
+    "Delivery lead with credit-risk roots: Azure ops by day, public systems that force a named decision before they ship.",
   pillars: "Delivery · Data · AI automation",
   availability: "Open to Data & AI delivery roles",
   yearsExperience: "7+",
   summary:
-    "I work across technology delivery, data, and credit risk — leading IT application operations on Azure while building multi-agent AI workflows, automation pipelines, and analytics teams trust. This site is my public headquarters: articles on what I learn, real projects from the workshop, and a curated signal feed across AI, Data, and Delivery.",
+    "I lead IT application operations on Azure at Santander Consumer Bank Nordics, after years on PD models, scorecards, and ECL-style work. Orbit is the public HQ: one-question Blog essays, portfolio proof (Power BI, Ledger, workshop tools), and a curated Related articles feed. Automation gets a human Approve gate — including the weekly Write draft.",
   resumeUrl: "/resume.pdf",
   email: "a.touvras@gmail.com",
   contactBlurb:
-    "Always down to talk delivery, data systems, AI automation, and what's broken in your stack.",
+    "Happy to talk delivery, data systems, AI automation, and what's broken in your stack.",
   /** Public repos shown on Portfolio. Empty = show newest non-fork repos (legacy). */
   githubRepoAllowlist: ["powerbi-portfolio"],
 } as const;
@@ -66,21 +66,21 @@ export const competencies: Competency[] = [
   {
     title: "AI Orchestration & Automation",
     description:
-      "Multi-agent systems, tool-use & RAG pipelines, and event-driven automation that removes toil and stays reliable in production.",
+      "Bounded agent loops with an owner and a kill switch: drafts and runbooks yes; priority calls and production publish stay human.",
     accent: "cyan",
     icon: Bot,
   },
   {
     title: "Data & Analytics",
     description:
-      "Python, SQL, and Power BI / Fabric — models, dashboards, and ETL that turn data into decisions. Quantitative roots in credit risk (PD, scorecards, ECL).",
+      "Python, SQL, and Power BI / Fabric — gold tables, semantic models, and page paths that survive a cold Monday open. Roots in credit risk (PD, scorecards, ECL).",
     accent: "blue",
     icon: LineChart,
   },
   {
     title: "Technology Delivery",
     description:
-      "Leading IT application operations across Azure and middleware — coordinating cross-team delivery with flow, clarity, and measurable outcomes.",
+      "Sequencing Azure and middleware changes across platform, security, and business calendars — evidence before the call, rollback before green.",
     accent: "violet",
     icon: Route,
   },

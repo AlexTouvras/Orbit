@@ -10,19 +10,21 @@ tags: ["Agents","AI","Delivery","Analytics"]
 
 ## The question
 
-If agentic systems are becoming the unit of work, what should a delivery or analytics lead actually change first?
+If agentic systems are becoming the unit of work, what should a delivery or analytics lead change first — the model, or the definition of useful?
+
+The default pitch says buy agents and measure how often they run. I have already watched that movie in analytics: more extracts, more tiles, more meetings that reconcile numbers instead of deciding what to do. Agents will replay it faster, because they can generate plausible work without improving the call.
 
 ## What the signal is really saying
 
 [How to manage AI investments in the agentic era](https://openai.com/index/managing-ai-investments-in-agentic-era) (OpenAI Blog) is easy to skim as another enterprise AI post. The useful idea underneath is sharper: measure **useful work per dollar** (or per hour of scarce human attention), not activity.
 
-That lands for me because I have already lived the activity trap in analytics. More extracts. More tabs. More tiles. Meetings that reconcile numbers instead of deciding what to do. Agents will recreate that failure mode faster, because they can generate plausible work without improving the call.
+That lands because the scarce resource is not capability anymore. Judgment, ownership, and rollback are.
 
 ## What people get wrong
 
 "Add agents" is being sold the way "add a dashboard" used to be sold — as if the tool *is* the operating model. Teams then track tokens, runs, tickets closed, and demo velocity. None of those answers the only question that matters in delivery or portfolio work: **did a decision get better?**
 
-Capability is not the scarce resource anymore. Judgment, ownership, and rollback are.
+Counter-case: raw activity metrics are not useless. They catch cost blow-ups and stuck loops. Treat them as health checks, not proof that the investment worked.
 
 ## Change the definition of done first
 
@@ -31,10 +33,11 @@ Before you change the model, change what "done" means for an agentic loop:
 1. **What decision or artifact improved?** A scoped analysis, a release risk call, a refreshed metric with an owner — not "the agent ran."
 2. **Who owns the failure when it is wrong?** If the answer is "the platform," you do not have an operating model.
 3. **What would falsify the hype next week?** An eval slice, a golden set, a Monday exception list — something that can fail a release.
+4. **How do you disable the loop** without a war room?
 
 Without those, you have expensive autocomplete with a project plan.
 
-This is the same instinct as a credit portfolio review. I do not want thirty charts. I want three decisions: is emerging risk accelerating, where is the engine drifting from the model, what changed that we did not expect. Everything else links out.
+This is the same instinct as a credit portfolio review. I do not want thirty charts. I want a short decision set: is emerging risk accelerating, where is the engine drifting from the model, what changed that we did not expect. Everything else links out.
 
 ## The analytics parallel (and why it is not a metaphor)
 
@@ -44,15 +47,15 @@ So the first artifacts I want before the exciting demo are boring on purpose:
 
 - A one-page **scope**: what the agent may draft vs what a human must sign
 - An **eval slice**: ten real cases where wrong is costly
-- A **kill switch**: how we disable the loop without a war room
+- A **kill switch**: how we stop the loop cleanly
 
 Delivery leads should refuse agent workflows that cannot name a rollback. Analytics leads should refuse agent outputs that cannot name a definition.
 
 ## How this shows up in what I am building
 
-On **Orbit — Portfolio & Radar**, the same pressure appears in miniature. Signals refresh daily. Drafts can be generated. None of that is useful unless it ends in a **publish decision with an owner** — Approve in Slack, commit the Write, redeploy. Automation without a gate is just faster noise.
+On Orbit the same pressure shows up in miniature. Related articles refresh daily. A draft can be generated from that cache. The useful unit is not "a draft existed." It is a publish decision with an owner: Approve in Slack, commit the Write, redeploy — or Skip, and leave the Blog alone.
 
-I am treating adjacent pieces like [The US is advancing AI safety through state and federal action](https://openai.com/index/advancing-ai-safety-through-state-and-federal-action) as context, not a second thesis. Governance matters; the operating lesson for builders is still ownership, scope, and the ability to stop.
+I am also writing the same rule into portfolio analytics: Landing → Pulse → Drivers → Queue only earns its slot when the queue names who to contact next. An agent that fills tiles without that path is just a faster empty report.
 
 ## Mistakes I refuse to repeat
 
@@ -67,5 +70,4 @@ Chasing every agent framework. Replacing human review on anything that touches r
 
 ## Takeaway
 
-If agents are becoming a unit of work, do not start with the agent. Start with the **unit of useful work**: the decision, the owner, the eval, and the rollback. That is how you keep Monday honest — whether the artifact is a Power BI tile or an automated draft waiting for Approve.
-
+If agents are becoming a unit of work, do not start with the agent. Start with the **unit of useful work**: the decision, the owner, the eval, and the rollback. That is how you keep Monday honest — whether the artifact is a Power BI queue or an automated draft waiting for Approve.

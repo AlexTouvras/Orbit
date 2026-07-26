@@ -21,10 +21,6 @@ export const ARCHITECTURE_ESSAY_LINKS: Record<
     title: "Building Orbit",
     href: "/writes/building-orbit",
   },
-  jarvis: {
-    title: "ProjectHelm",
-    href: "/writes/projecthelm-local-agent-control-plane",
-  },
   "powerbi-portfolio": {
     title: "Power BI portfolio",
     href: "/writes/power-bi-portfolio-nordic-boardroom",

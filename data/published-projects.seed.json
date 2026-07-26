@@ -2,7 +2,7 @@
   {
     "id": "cyber-portfolio-platform",
     "name": "Orbit — Portfolio & related articles",
-    "description": "This site: a personal portfolio bank and a curated RSS feed across AI, Data, Analytics, and Delivery, with a built-in Studio for editing content and publishing projects.",
+    "description": "Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.",
     "status": "live",
     "tags": [
       "Next.js",
@@ -18,7 +18,7 @@
   {
     "id": "nordic-equity-heatmap",
     "name": "Nordic Equity Heatmap",
-    "description": "Live TradingView-style sector board for Nordic large-caps (size = market cap, color = day change %). Part of the Nordic Equity report in powerbi-portfolio/01-finance — PBIP pages plus the Vite board on Vercel.",
+    "description": "TradingView-style sector board for Nordic large-caps (size = market cap, color = day change %). Lives with the Nordic Equity report in powerbi-portfolio/01-finance — PBIP pages plus this Vite board on Vercel.",
     "status": "live",
     "tags": [
       "Power BI",
@@ -44,7 +44,7 @@
       "Retired"
     ],
     "repoUrl": "",
-    "liveUrl": "/writes/projecthelm-local-agent-control-plane",
+    "liveUrl": "/architecture/jarvis",
     "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\JARVIS",
     "order": 2
@@ -52,7 +52,7 @@
   {
     "id": "powerbi-portfolio",
     "name": "Power BI — Nordic Boardroom",
-    "description": "Portfolio reports with a shared design system: churn, sales, bank, healthcare — gold through pages, synced into Orbit.",
+    "description": "Shared report grammar: gold tables → semantic model → Landing / Pulse / Drivers / Queue / Context, then PNG sync into Orbit. Import-shaped demos on purpose; screenshots match the repo.",
     "status": "shipped",
     "tags": [
       "Power BI",
@@ -83,7 +83,7 @@
   {
     "id": "ledger-research-cycle",
     "name": "Ledger — strategy research cycle",
-    "description": "Compare equity strategy families on one sample, apply a Sharpe change bar, then propose explained holdings moves. Live demo + case study write-up.",
+    "description": "Compare equity strategy families on one sample, switch the working rule only when Sharpe clears ~0.08, then list exits/adds/trims with reasons. I still click the trades; no broker automation.",
     "status": "prototype",
     "tags": [
       "Python",
@@ -101,7 +101,7 @@
   {
     "id": "mealplan",
     "name": "mealplan",
-    "description": "Slack-triggered meal planning: YAML defaults, per-message overrides, nutrition guidance, multi-store grocery split. Architecture: /architecture/mealplan",
+    "description": "Slack-triggered week plan from YAML defaults (overrides in the kickoff message): plate guidance, multi-store grocery split, phone-readable channel post. No checkout; one shared menu.",
     "status": "shipped",
     "tags": [
       "Cursor Automations",

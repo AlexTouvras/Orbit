@@ -42,7 +42,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Core competencies"
           title="Delivery, data, and agent systems"
-          description="Three disciplines I combine to ship reliable, intelligent products."
+          description="How I ship: delivery leadership, analytics I can defend, and automation with a human gate."
         />
         <Stagger className="mt-10 grid gap-6 sm:grid-cols-3">
           {competencies.map((c) => (

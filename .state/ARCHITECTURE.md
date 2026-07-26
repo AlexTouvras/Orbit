@@ -45,6 +45,7 @@ src/components/seo/
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-07-26 | Dropped ProjectHelm Write; JARVIS `/architecture/jarvis` remains historical-only backlink | Essay was present-tense under a retired banner; Hub voice pass preferred removing it over rewriting |
 | 2026-07-26 | Vercel Analytics over Plausible/GA; link-out Garmin skipped | Hosted on Vercel; zero-config traffic; no hobby surface this phase |
 | 2026-07-24 | Thesis voice → `docs/essay-voice.md` fingerprint + explicit “do not import” academic habits; essay skills/router must open it | Improve Orbit essays with owner’s reasoning (counter-case, named metrics) without thesis cosplay |
 | 2026-07-24 | Optional `thesisUrl` / `thesisTitle` on `CvEducation`; About education cards link out when set (ProjectCard-style) | Surface theses without Portfolio clutter; Bachelor stays static |

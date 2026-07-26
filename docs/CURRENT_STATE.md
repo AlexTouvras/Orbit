@@ -6,7 +6,7 @@
 
 ## Done
 
-- Informed of **JARVIS retirement**: portfolio `projecthelm-jarvis` → `archived` / unfeatured; `architecture-projects.json` + `jarvis.mdx` + ProjectHelm write marked retired; `product-kit.mdc` + charter operating model.
+- Informed of **JARVIS retirement**: portfolio `projecthelm-jarvis` → `archived` / unfeatured; `architecture-projects.json` + `jarvis.mdx` marked retired; ProjectHelm Write **removed** (2026-07-26); `product-kit.mdc` + charter operating model.
 
 ## Next
 

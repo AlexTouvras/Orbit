@@ -2,6 +2,7 @@
 title: "Building Orbit — the personal HQ I actually maintain"
 summary: "A Next.js headquarters for Blog, portfolio proof, a curated RSS feed, and Studio — designed so future-me can ship without renting another platform."
 date: "2026-03-28"
+updated: "2026-07-26"
 category: "AI"
 featured: false
 showcase: true
@@ -16,15 +17,17 @@ I tried the usual exits first. Medium owns distribution until it doesn't. Linked
 
 ## What Orbit is for
 
-Orbit is my public headquarters. Not a blog with a fancy shell. The Hub has to answer three hiring-manager questions fast: what I do, what I've built, and how to reach me. Everything else hangs off that.
+Orbit is my public headquarters. Not a blog with a fancy shell. The Hub has to answer hiring-manager questions fast: what I do, what I've built, and how to reach me. Everything else hangs off that.
 
 Public lanes today:
 
 - **Blog** — one question per article, MDX in git.
 - **Portfolio** — workshop projects, GitHub, and the Power BI page viewer.
-- **Related articles** — cached RSS across AI, Data, Analytics, and Delivery.
+- **Related articles** — cached RSS across AI, Data, Analytics, and Delivery (category-balanced so AI feeds do not drown the quieter lanes).
 
 Private lanes matter as much as the public ones. `/studio` edits profile and published projects without a CMS. A weekly blog-draft cron can pull from that RSS cache + workshop state, then ask me to Approve in Slack before anything hits git.
+
+I used to route multi-agent coding through a separate local control plane (ProjectHelm / JARVIS). That path is retired. The operating system is now Cursor rules + skills inside each product repo, with Orbit as the public surface.
 
 ## Content zones (how the pieces connect)
 
@@ -80,7 +83,7 @@ flowchart LR
   Essays[Blog essays] -->|link| Orbit
 ```
 
-Canonical Mermaid lives in each project's `docs/architecture/`. Orbit renders copies. I don't hand-edit the synced MDX; I edit the source, validate, sync. Full diagram set: [Orbit platform — architecture](/architecture/orbit-platform).
+Canonical Mermaid lives in each project's `docs/architecture/`. Orbit renders copies. I don't hand-edit the synced MDX; I edit the source, validate, sync. Full diagram set: [Orbit platform — architecture](/architecture/orbit-platform). Retired ProjectHelm diagrams stay under [JARVIS — architecture](/architecture/jarvis) as historical only.
 
 ## What still hurts
 

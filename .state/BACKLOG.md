@@ -8,6 +8,7 @@
 - [x] Rebalance Related articles RSS (Data / Analytics / Delivery vs AI flood)
 - [x] Human review of new feed mix (shipped)
 - [x] Human review of SEO + Vercel Analytics (deployed)
+- [ ] Human review of Hub/essay/project voice pass (2026-07-26)
 
 ## Next
 
@@ -17,6 +18,8 @@
 - [x] Publish `when-ai-accelerates-work-prioritization-becomes-the-job` to prod (main)
 - [x] Remove Ultimate Reel Maker Write (out of domain)
 - [x] SEO foundations + site analytics
+- [x] Drop ProjectHelm Write; archived card → `/architecture/jarvis`
+- [x] Voice pass: Hub copy, useful-work-per-dollar, Webb pair, building-orbit, project blurbs + Ledger
 
 ## Later
 

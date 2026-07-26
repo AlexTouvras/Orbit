@@ -41,7 +41,7 @@ export function PortfolioHero({
       }
       title="What I'm building"
       subtitle="Projects, open source, and Power BI"
-      description="Real projects from my machine, public repos on GitHub, and report pages from my Power BI portfolio."
+      description="Workshop projects, GitHub repos, and Power BI pages that match the committed report definitions."
       stats={stats}
       actions={
         <>
