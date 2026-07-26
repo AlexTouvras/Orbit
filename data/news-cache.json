@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-07-25T08:00:38.280Z",
+  "generatedAt": "2026-07-26T06:10:49.819Z",
   "count": 181,
   "items": [
+    {
+      "id": "56eddc9d00c8",
+      "title": "Ruff v0.16.0",
+      "link": "https://simonwillison.net/2026/Jul/25/ruff/#atom-everything",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-25T22:44:05.000Z",
+      "contentSnippet": ""
+    },
     {
       "id": "9e10b8bb9cb2",
       "title": "Quoting Boris Cherny",
@@ -288,15 +297,6 @@
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-07-18T05:27:49.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "103bc7df9c87",
-      "title": "Quoting Kimi K3",
-      "link": "https://simonwillison.net/2026/Jul/17/kimi-k3/#atom-everything",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-17T13:43:53.000Z",
       "contentSnippet": ""
     },
     {
