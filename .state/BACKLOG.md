@@ -8,7 +8,7 @@
 - [x] Rebalance Related articles RSS (Data / Analytics / Delivery vs AI flood)
 - [x] Human review of new feed mix (shipped)
 - [x] Human review of SEO + Vercel Analytics (deployed)
-- [ ] Human review of Hub/essay/project voice pass (2026-07-26)
+- [x] Human review of Hub/essay/project voice pass (2026-07-26)
 
 ## Next
 
