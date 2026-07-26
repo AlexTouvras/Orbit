@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Case study links for Orbit + Nordic Equity Heatmap
 - [x] Rewrite `from-risk-to-delivery.mdx` with orbit-essay + anti-ai-slop
 - [x] Rebalance Related articles RSS (Data / Analytics / Delivery vs AI flood)
 - [x] Human review of new feed mix (shipped)
@@ -12,6 +13,7 @@
 
 ## Next
 
+- [ ] Optional browser check: `/portfolio` Case study links + `/writes/nordic-equity-heatmap`
 - [x] Pressable education cards → master’s theses (JYX + Theseus)
 - [x] Capture thesis writing fingerprint in `docs/essay-voice.md` (improve essays, not academicize them)
 - [x] Draft Delivery essay: AI acceleration + prioritization (Cohn + MobAI)
@@ -32,6 +34,8 @@
 
 ## Definition of done (current item)
 
+- [x] Heatmap Write exists under `src/content/writes/nordic-equity-heatmap.mdx`
+- [x] Orbit + Heatmap have `caseStudyUrl` in published projects JSON (+ seed)
 - [x] Sources favor Data / Analytics / Delivery; AI capped
 - [x] All view + weekly intake interleaved by category
 - [x] `npm run news:fetch` succeeds with new feeds

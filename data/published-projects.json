@@ -11,6 +11,7 @@
     ],
     "repoUrl": "https://github.com/AlexTouvras/Orbit",
     "liveUrl": "https://alextouvras.com/",
+    "caseStudyUrl": "/writes/building-orbit",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\website",
     "order": 0
@@ -28,6 +29,7 @@
     ],
     "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio/tree/main/01-finance/heatmap-web",
     "liveUrl": "https://heatmap-web-five.vercel.app/",
+    "caseStudyUrl": "/writes/nordic-equity-heatmap",
     "featured": true,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\PowerBI\\01-finance\\heatmap-web",
     "order": 1

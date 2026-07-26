@@ -108,6 +108,7 @@ Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, sa
 - **Document, don't perform** — write what you learned this week, not what you think sounds impressive.
 - **Evergreen > hot takes** — tutorials and lessons age better than trend commentary.
 - **Weekly automation drafts essays, not digests** — one thesis inspired by a Signal (AI, analytics/PBI, delivery), in the same voice as your featured Writes.
+- **Agent path** — Cursor uses `.cursor/rules/orbit-essays.mdc` + `docs/essay-voice.md`: weekly → skill `weekly-write-essay`; showcase/rewrite → personal skill `orbit-essay`.
 
 ---
 

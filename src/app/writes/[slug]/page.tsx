@@ -7,6 +7,7 @@ import { mdxComponents } from "@/components/mdx/mdx-components";
 import { Badge } from "@/components/ui/Badge";
 import { BackLink } from "@/components/ui/BackLink";
 import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
+import { EssayFeedback } from "@/components/writes/EssayFeedback";
 import { formatDate } from "@/lib/utils";
 
 const categoryTone = {
@@ -101,6 +102,8 @@ export default async function WriteDetailPage({
       <section className="mt-10 border-t border-white/8 pt-10">
         <MDXRemote source={write.content} components={mdxComponents} />
       </section>
+
+      <EssayFeedback slug={write.slug} />
     </article>
   );
 }

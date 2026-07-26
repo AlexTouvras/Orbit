@@ -1,7 +1,7 @@
 ---
 title: "Power BI portfolio — Nordic Boardroom reports that survive a cold open"
-summary: "A shared report system for analytics work: curated gold tables, a semantic model, a fixed page path, then sync into Orbit so the screenshots match the repo."
-date: "2026-07-21"
+summary: "A shared report grammar for analytics work: gold tables, a semantic model, Landing → Pulse → Drivers → Queue, then screenshots synced into Orbit so the site matches the repo."
+date: "2026-07-23"
 category: "Data"
 featured: false
 showcase: true
@@ -10,19 +10,18 @@ tags: ["Power BI", "Fabric", "Analytics", "Architecture"]
 
 ## The question
 
-When someone opens a report cold on a Monday, what should work without a walkthrough: the theme, or the path from "are we okay?" to "who do we act on?"
+When someone opens a report cold on a Monday, with two minutes and no walkthrough, what has to work: the theme, or the path from "are we okay?" to "who do we act on?"
 
-I build these reports after years in Nordic banking on PD models, scorecards, and expected-credit-loss style work. The portfolio is practice for the same habit: take a messy commercial question (churn, sales health, engagement, clinical risk) and land it in a shape that repeats, with caveats written down instead of waved away.
+I spent years in Nordic banking on PD models, scorecards, and expected-credit-loss style work. The habit that survived was not a color palette. It was: take a messy commercial question, land it in a shape that repeats, and write the caveats down instead of waving them away. This portfolio is that habit practiced in public — churn, sales health, bank engagement, clinical risk — under one Nordic Boardroom grammar.
 
-The public repo is [powerbi-portfolio](https://github.com/AlexTouvras/powerbi-portfolio). Orbit shows the same pages under Portfolio → Power BI. This write-up is the system behind those screenshots: what I build, why the order is fixed, and how it reaches the site.
+**See it:** [Portfolio → Power BI](/portfolio#power-bi)  
+**Repo:** [github.com/AlexTouvras/powerbi-portfolio](https://github.com/AlexTouvras/powerbi-portfolio)
 
-## What "gold" means here
+## Gold before chrome
 
-In data-platform talk, teams often split work into bronze / silver / gold. **Bronze** is close to the source extract. **Silver** is cleaned and joined. **Gold** is the curated, analysis-ready layer: tables and grains you would trust for a KPI, usually shaped for a star schema (facts + dimensions) so measures stay honest.
+In data-platform talk, bronze sits close to the extract, silver is cleaned and joined, and **gold** is the curated layer you would trust for a KPI — usually fact and dimension tables shaped so measures stay honest.
 
-When I say gold in this portfolio, I mean that curated layer, not a brand name. If the gold grain is wrong, no amount of page polish saves the report.
-
-## The pipeline (how)
+When I say gold here, I mean that layer, not a brand. If the grain is wrong, page polish only makes the lie prettier. So every report starts with gold tables and measures, then a **semantic model** (relationships, DAX, what a slicer is allowed to filter), then pages. Screenshots come last.
 
 ```mermaid
 flowchart LR
@@ -31,14 +30,11 @@ flowchart LR
   Pages --> Shots[Page PNGs]
   Shots --> Sync[powerbi sync]
   Sync --> Orbit[Orbit Portfolio]
-  Sync --> Meta[Report metadata]
 ```
 
-Gold tables and measures come first. The **semantic model** is the Power BI model file (relationships, DAX measures, what a slicer is allowed to filter). Pages sit on a shared Nordic Boardroom look: quiet chrome, a clear KPI strip, explanation before action lists.
+I export each page to PNG so Orbit can show the work without embedding a live Fabric workspace for every visitor. `npm run powerbi:sync` (and the GitHub Action) refreshes those images plus metadata into this site. If the PNG drifts from what is committed, the site becomes a prettier lie than the repo.
 
-I export each page to PNG so Orbit can show the work without embedding a live Fabric workspace for every visitor. `npm run powerbi:sync` (and the GitHub Action) refreshes those images plus metadata into this site. The screenshot should match what is committed; otherwise the site becomes a prettier lie than the repo.
-
-## The page path (why this order)
+## The page path I refuse to invent twice
 
 ```mermaid
 flowchart TB
@@ -48,35 +44,25 @@ flowchart TB
   Queue --> Context[Context]
 ```
 
-**Landing** states the question and who the report is for. **Pulse** answers "are we okay?" with a few durable KPIs. **Drivers** answers "why?" (influencers, decomposition, mix views). **Queue** answers "who do we call next?" **Context** holds model limits: storage mode, score meaning, what the numbers are not.
+**Landing** states the question and who the report is for — a poster cover, not a matrix. **Pulse** answers "are we okay?" with a few durable KPIs. **Drivers** answers "why?" (influencers, decomposition, mix). **Queue** answers "who do we call next?" **Context** holds model limits: storage mode, what a score means, what the numbers are not.
 
-That order is deliberate. A matrix on page one loses people who only have two minutes. A pretty Pulse with no queue loses people who need a next action. Same path every time means a new domain report can reuse the grammar instead of inventing navigation.
+That order is deliberate. A dense matrix on page one loses people who only have two minutes. A pretty Pulse with no queue loses people who need a next action. Same path every domain means a new report reuses the grammar instead of inventing navigation.
 
-I don't pretend Import mode is Direct Lake, or that a propensity score (a model probability someone will churn / readmit / etc.) is ground truth. Context is where that honesty lives.
+I don't pretend Import mode is Direct Lake, or that a propensity score (churn, readmit, and the rest) is ground truth. Context is where that honesty lives.
 
-## Shared stack (what scales)
+## What scales is the kit, not one hero report
 
-```mermaid
-flowchart TB
-  Shared[_shared theme and patterns] --> Reports[Domain report projects]
-  Reports --> Export[Page screenshots]
-  Export --> GH[GitHub repo]
-  GH --> OrbitSync[Orbit sync]
-```
+Theme, page grammar, and export rules live under `_shared`. Each domain report plugs into that kit. New work should start from shared patterns, not a blank canvas and a one-off layout.
 
-Theme, page grammar, and export rules live under `_shared`. Each domain report (churn, sales, banking, healthcare, and whatever comes next) plugs into that kit. New work should start from shared patterns, not a blank file and a one-off layout.
+Churn is the path under load: risk on Pulse, Key Influencers and decomposition on Drivers, an at-risk queue sorted by score, then Context. Sales leans status-first, then product and concentration. Bank and care reports reuse the same reader path with their own gold. Nordic Equity also has a clickable TradingView-style board at [heatmap-web-five.vercel.app](https://heatmap-web-five.vercel.app) — logos, day-change %, sector zoom — because native Power BI treemaps don't carry that chrome well.
 
-Churn is a good example of the path under load: risk on Pulse, Key Influencers and decomposition on Drivers, an at-risk queue sorted by score. Sales leans status-first, then product and concentration. Other domains reuse the same reader path with their own gold.
-
-## What I care about more than polish
-
-Measures that match the grain of the decision. Slicers that don't blow up the model. A Context page that says what the model can't do. Screenshots that track the committed report definition.
+## What still fights me
 
 I still argue with myself about Direct Lake vs Import for demos. Import keeps the cold-open story simple here: the PNG is what shipped, and the model is sized for a laptop walkthrough, not a capacity theater.
 
-## How to see it
+I also care more about boring correctness than polish: measures that match the grain of the decision, slicers that don't blow up the model, a Context page that says what the model can't do, screenshots that track the committed definition.
 
-On Orbit: [Portfolio → Power BI](/portfolio#power-bi). Nordic Equity also has a clickable TradingView-style board at [heatmap-web-five.vercel.app](https://heatmap-web-five.vercel.app) — logos, day-change %, sector zoom — because native Power BI treemaps don't carry that chrome well. Full diagram set: [Power BI portfolio — architecture](/architecture/powerbi-portfolio). Repo: [AlexTouvras/powerbi-portfolio](https://github.com/AlexTouvras/powerbi-portfolio).
+Full diagram set: [Power BI portfolio — architecture](/architecture/powerbi-portfolio).
 
 ## Takeaway
 

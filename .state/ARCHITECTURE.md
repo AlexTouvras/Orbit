@@ -4,7 +4,7 @@
 
 ## Overview
 
-Orbit portfolio site with Related articles RSS cache (`data/news-cache.json`) and weekly Write intake from those signals. Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
+Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub + Power BI), Related articles RSS cache, Studio, architecture sync. Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
 
 ## Data shapes
 
@@ -12,11 +12,15 @@ Orbit portfolio site with Related articles RSS cache (`data/news-cache.json`) an
 |------|------------------|-------|
 | FeedSource | `src/lib/news/sources.ts` | `name`, `url`, `category`, optional `maxItems` |
 | NewsCache | `data/news-cache.json` | Fetched via `npm run news:fetch` |
+| Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
+| Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 
 ## Design patterns
 
 - Category round-robin (`src/lib/news/balance.ts`) for Related articles **All** and weekly intake so high-frequency AI feeds do not dominate quieter Data/Analytics/Delivery lanes.
 - SEO: App Router `sitemap.ts` / `robots.ts`; site URL from `getSiteUrl()` (`NEXT_PUBLIC_SITE_URL`); JSON-LD Person/WebSite in layout + Article on Writes; blog RSS at `/feed.xml`.
+- Portfolio cards: Case study link from `caseStudyUrl`, or from `liveUrl` when it is already a `/writes/` path
+- Showcase essays for featured workshop projects (Ledger, Power BI, Orbit, Heatmap)
 
 ## Dependencies
 
@@ -39,12 +43,17 @@ src/app/feed.xml/route.ts
 src/components/seo/
 ├── JsonLd.tsx
 └── ArticleJsonLd.tsx
+data/published-projects.json
+src/content/writes/
+.state/
 ```
 
 ## Key decisions
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-07-26 | Orbit `caseStudyUrl` → `/writes/building-orbit` | Essay existed; card lacked Case study link |
+| 2026-07-26 | Heatmap case study Write + `caseStudyUrl` | Featured live board had no write-up |
 | 2026-07-26 | Dropped ProjectHelm Write; JARVIS `/architecture/jarvis` remains historical-only backlink | Essay was present-tense under a retired banner; Hub voice pass preferred removing it over rewriting |
 | 2026-07-26 | Vercel Analytics over Plausible/GA; link-out Garmin skipped | Hosted on Vercel; zero-config traffic; no hobby surface this phase |
 | 2026-07-24 | Thesis voice → `docs/essay-voice.md` fingerprint + explicit “do not import” academic habits; essay skills/router must open it | Improve Orbit essays with owner’s reasoning (counter-case, named metrics) without thesis cosplay |
