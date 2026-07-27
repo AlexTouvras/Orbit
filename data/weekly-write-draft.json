@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-07-27-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-07-27T09:05:00.000Z",
   "weekOf": "2026-07-27",
   "slug": "when-analytics-becomes-an-app-the-semantic-model-is-no-longer-the-finish-line",
@@ -155,5 +155,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-07-27T10:08:17.279Z",
+  "publishedSlug": "when-analytics-becomes-an-app-the-semantic-model-is-no-longer-the-finish-line"
 }
