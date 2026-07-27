@@ -1,13 +1,13 @@
 # Weekly Write — IDE generation needed
 
-Gemini cloud generation failed or was unavailable. **Generate the essay in Cursor**, then continue the normal Slack approve pipeline.
+Cursor Cloud Automation writes this week's essay (Gemini skipped). **Generate the essay in Cursor**, then continue the normal Slack approve pipeline.
 
 ## Why
 
-`gemini_unavailable`
+`cloud_automation`
 
-Created: 2026-07-21T06:36:56.643Z  
-Week of: 2026-07-20
+Created: 2026-07-27T09:02:08.530Z  
+Week of: 2026-07-27
 
 ## Your job (in this IDE)
 
@@ -25,28 +25,30 @@ npm run weekly:notify-draft
 ## Thesis
 
 - **Question:** What actually changes in how we build analytics when the reporting stack keeps moving?
-- **Primary inspiration:** [Using Fabric Operations Agents And Workspace Monitoring With Power BI](https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/) (Chris Webb's BI Blog)
-- **Snippet:** This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…
-- **Optional project bridge:** Orbit — Portfolio & Radar — This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.
+- **Primary inspiration:** [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care) (RADACAD)
+- **Snippet:** Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…
+- **Optional project bridge:** Orbit — Portfolio & related articles — Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.
 - **Suggested category:** Data
-- **Suggested tags:** Power BI, Agents, Data, Analytics, Next.js, React
+- **Suggested tags:** Power BI, AI, Analytics, Next.js, React
 
 ## Intake (reference only)
 
 ### Signals
-- [Data Engineering Weekly #279](https://www.dataengineeringweekly.com/p/data-engineering-weekly-279) — Data Engineering Weekly (Data)
-- [Using Fabric Operations Agents And Workspace Monitoring With Power BI](https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/) — Chris Webb's BI Blog (Analytics)
-- [A scorecard for the AI age](https://openai.com/index/a-scorecard-for-the-ai-age) — OpenAI Blog (AI)
-- [Why teens deserve access to safe AI](https://openai.com/index/why-teens-deserve-access-safe-ai) — OpenAI Blog (AI)
-- [How Cars24 scales conversations and builds faster with OpenAI](https://openai.com/index/cars24) — OpenAI Blog (AI)
-- [The US is advancing AI safety through state and federal action](https://openai.com/index/advancing-ai-safety-through-state-and-federal-action) — OpenAI Blog (AI)
-- [GPT-Red: Unlocking Self-Improvement for Robustness](https://openai.com/index/unlocking-self-improvement-gpt-red) — OpenAI Blog (AI)
-- [How to manage AI investments in the agentic era](https://openai.com/index/managing-ai-investments-in-agentic-era) — OpenAI Blog (AI)
+- [Power BI, M365 Copilot And The Importance Of DAX UDFs](https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/) — Chris Webb's BI Blog (Analytics)
+- [Data Engineering Weekly #280](https://www.dataengineeringweekly.com/p/data-engineering-weekly-280) — Data Engineering Weekly (Data)
+- [The Project Manager Isn't Dead. It Was Disassembled on Purpose!](https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose) — Scrum.org (Delivery)
+- [Launching Health in ChatGPT](https://openai.com/index/health-in-chatgpt) — OpenAI Blog (AI)
+- [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care) — RADACAD (Analytics)
+- [How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily](https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily) — Databricks Blog (Data)
+- [The Pyramid of Impediments](https://www.scrum.org/resources/blog/pyramid-impediments) — Scrum.org (Delivery)
+- [OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened](https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries) — Simon Willison (AI)
 
 ### Active projects
-- **Orbit — Portfolio & Radar** (wip) — This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.
-- **Faceless Reels** (wip) — An automated short-form video pipeline for Greek-mythology reels: beat-split narration, AI image generation with a quality loop, neural TTS, and karaoke-style captions.
-- **Sunplot Garden** (prototype) — A cozy mobile gardening game (Unity) built as a studio repo with an agent-driven content pipeline and a vertical-grid layout system.
+- **Orbit — Portfolio & related articles** (live) — Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.
+- **Nordic Equity Heatmap** (live) — TradingView-style sector board for Nordic large-caps (size = market cap, color = day change %). Lives with the Nordic Equity report in powerbi-portfolio/01-finance — PBIP pages plus this Vite board on Vercel.
+- **Power BI — Nordic Boardroom** (shipped) — Shared report grammar: gold tables → semantic model → Landing / Pulse / Drivers / Queue / Context, then PNG sync into Orbit. Import-shaped demos on purpose; screenshots match the repo.
+- **Ledger — strategy research cycle** (prototype) — Compare equity strategy families on one sample, switch the working rule only when Sharpe clears ~0.08, then list exits/adds/trims with reasons. I still click the trades; no broker automation.
+- **mealplan** (shipped) — Slack-triggered week plan from YAML defaults (overrides in the kickoff message): plate guidance, multi-store grocery split, phone-readable channel post. No checkout; one shared menu.
 
 ## Draft JSON shape
 
@@ -54,10 +56,10 @@ Write `data/weekly-write-draft.json` like:
 
 ```json
 {
-  "id": "ww-2026-07-20-ide",
+  "id": "ww-2026-07-27-ide",
   "status": "pending",
   "createdAt": "<ISO now>",
-  "weekOf": "2026-07-20",
+  "weekOf": "2026-07-27",
   "slug": "<from-title>",
   "title": "<essay title>",
   "summary": "<one sentence>",
