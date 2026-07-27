@@ -1,0 +1,50 @@
+---
+title: "When analytics becomes an app, the semantic model is no longer the finish line"
+summary: "Fabric Apps move analytics beyond the report canvas, but a custom frontend only pays off when the experience needs more than a report and the team accepts software ownership."
+date: "2026-07-27"
+category: "Data"
+featured: false
+tags: ["Power BI", "Fabric", "Analytics", "TypeScript"]
+---
+
+## The question
+
+I used to treat the semantic model and report as the last mile of analytics: shape trusted data, define the measures, build the pages, publish, monitor. If the reporting stack now lets me put a TypeScript application on top of that same model, what actually changes in how I build the product — and what should stay boring?
+
+The tempting answer is that the whole stack needs to be reinvented. I think the narrower answer is more useful: the model can remain the stable contract, while the unit of delivery changes from a report people inspect to an application where people can act.
+
+## The report was never the whole product
+
+In [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care), Reza Rad describes Rayfin, or Fabric Apps, as an open-source SDK and CLI for building a TypeScript frontend inside a Fabric workspace. Depending on the use case, the backend can be a Fabric SQL database or a Power BI semantic model. Hosting and Entra ID authentication stay in the Fabric environment.
+
+The interesting part is not that Fabric can host another frontend. It is that a governed semantic model can now sit behind an experience that is not constrained to the report canvas. A queue can have an explicit resolve action. A portfolio screen can combine analysis with a workflow. A customer view can expose only the decisions that matter instead of reproducing every page in the analyst's report.
+
+That corrects a false belief I have carried into more than one build: if the measures are right and the visuals are polished, the product is nearly done. Sometimes it is. Sometimes the report is only the evidence layer, while the user's actual job still happens in email, a spreadsheet, or a second system.
+
+## Build the decision path before the custom frontend
+
+A custom application widens the design space, which also makes it easier to build the wrong thing attractively. I would not start with React components. I would start with the decision path: what does the user see, what can they change, what must be written back, and which result needs an audit trail?
+
+That sequence separates two very different needs. If people need filters, drill-through, shared measures, and familiar charts, a Power BI report may already be the better product. If they need to move a case from review to approved, capture context, or combine governed metrics with an operational action, the application boundary begins to earn its keep.
+
+The semantic model should still carry definitions such as revenue, exposure, variance, and eligibility. Moving the interface does not justify copying business logic into TypeScript. My decision rule is simple: calculations that must agree across experiences belong in the governed data layer; interaction logic that exists for one workflow belongs in the app. The stack can move without letting every layer invent its own truth.
+
+## One workspace removes handoffs, not responsibility
+
+Rad's example brings the frontend, model or database, authentication, and hosting under one Fabric roof. That can remove real friction: fewer services to connect, fewer deployment surfaces, and less custom authentication work. But consolidation is not the same as simplification.
+
+A report team shipping an app now owns software questions too. What happens when a write fails after the screen says success? Which browser path gets tested? How is a destructive action reversed? Who reviews dependencies in the generated TypeScript? Entra ID can handle identity, but it cannot decide whether a user should be allowed to approve a particular business event. The workspace boundary does not write the authorization rule for me.
+
+There is also a hard counter-case: Fabric Apps were still in Preview in the source article and required Fabric capacity plus a tenant setting. A team with a stable report, a small audience, or limited frontend ownership may gain more risk than value by moving early. I would rather keep a plain report that has an owner than launch a custom app whose operational burden belongs to nobody.
+
+## The boundary I use in Orbit
+
+Orbit gives me a smaller version of the same choice. The public site is a Next.js application, but I do not turn every content operation into a custom workflow. Essays stay as MDX in git. Related articles come from curated RSS. Studio edits structured JSON. For the weekly Write, generation can prepare a draft, but a Slack approval remains the publish gate.
+
+Those boundaries are deliberate. Git is better than a bespoke editor for reviewing durable content. Slack is better than an invisible autonomous publish step for the final human decision. The application earns its place where it joins those parts into one legible path; it does not need to absorb every responsibility just because it can.
+
+That is the lesson I would carry into Fabric Apps. Start from the handoff that currently breaks the work, not from the novelty of a TypeScript frontend beside a semantic model. Then keep one step manual until the team has evidence that automating it is safer.
+
+## Takeaway
+
+When analytics becomes an app, the semantic model is no longer the finish line — but it should remain the source of shared meaning. I would reach for a Fabric App when users need to act inside the analytical experience, not merely view it. Keep measures in the governed layer, put workflow-specific interaction in the frontend, and name the software owner before shipping. A moving stack is not a reason to rebuild everything; it is a reason to redraw the product boundary around the decision the user is actually trying to make.
