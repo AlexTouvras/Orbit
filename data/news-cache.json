@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-07-27T06:01:55.363Z",
+  "generatedAt": "2026-07-27T09:42:16.679Z",
   "count": 220,
   "items": [
+    {
+      "id": "093994b2415f",
+      "title": "How to Avoid AI Debt by Borrowing from Agile Artifacts",
+      "link": "https://www.scrum.org/resources/blog/how-avoid-ai-debt-borrowing-agile-artifacts",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-27T09:16:33.000Z",
+      "contentSnippet": "TL; DR: Reusing Agile Artifacts to Avoid Accumulating AI Debt In this video from the 76th Hands-on Agile Meetup, I walk you through the A3 Delegation System and show how it helps avoid AI debt by borrowing artifacts and practices from Agile, such as the Definition of Done and Ret…"
+    },
     {
       "id": "144c71381790",
       "title": "Data Engineering Weekly #280",
@@ -255,15 +264,6 @@
       "contentSnippet": "Last month, a data team and a marketing team sat in the same room and talked past..."
     },
     {
-      "id": "fdbc02dad887",
-      "title": "How Dow Built a Carbon Footprint Ledger on Databricks to Accelerate Sustainability at Scale",
-      "link": "https://www.databricks.com/blog/how-dow-built-carbon-footprint-ledger-databricks-accelerate-sustainability-scale",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-21T19:45:00.000Z",
-      "contentSnippet": "Why we built the Carbon Footprint LedgerAt Dow, our ambition is to be the most innovative,..."
-    },
-    {
       "id": "dd891f235102",
       "title": "Why R&D Data Belongs in the Lakehouse - and Why Agents Need It There",
       "link": "https://www.databricks.com/blog/why-rd-data-belongs-lakehouse-and-why-agents-need-it-there",
@@ -271,6 +271,15 @@
       "category": "Data",
       "pubDate": "2026-07-21T19:45:00.000Z",
       "contentSnippet": "The setupAt cellcentric, a joint venture of Daimler Truck and Volvo Group, we develop..."
+    },
+    {
+      "id": "fdbc02dad887",
+      "title": "How Dow Built a Carbon Footprint Ledger on Databricks to Accelerate Sustainability at Scale",
+      "link": "https://www.databricks.com/blog/how-dow-built-carbon-footprint-ledger-databricks-accelerate-sustainability-scale",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-21T19:45:00.000Z",
+      "contentSnippet": "Why we built the Carbon Footprint LedgerAt Dow, our ambition is to be the most innovative,..."
     },
     {
       "id": "d42362617c64",
@@ -442,15 +451,6 @@
       "category": "Data",
       "pubDate": "2026-07-16T00:00:00.000Z",
       "contentSnippet": "Waiting in line is no fun! While standing in line at Disney World, a developer dad built a custom data app to pick the perfect next ride. It combines live APIs, historical wait times, and weather data into personal software with MotherDuck's MCP, Dives, and Flights."
-    },
-    {
-      "id": "da46efda169f",
-      "title": "Business Agility is About Something Beyond Sprints and “Stand-Ups”",
-      "link": "https://www.scrum.org/resources/blog/business-agility-about-something-beyond-sprints-and-stand-ups",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-15T17:29:01.000Z",
-      "contentSnippet": "Image As a Change professional specialising in Business Agility, Product Agility, and Coaching styles of leadership, I feel very passionate that we reflect on what Business and Product Agility really are. My concern is Agility has become so synonymous with Jira, Sprints, and Stan…"
     },
     {
       "id": "266c1e8506f7",
