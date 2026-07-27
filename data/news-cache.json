@@ -1,7 +1,43 @@
 {
-  "generatedAt": "2026-07-26T10:33:52.980Z",
-  "count": 221,
+  "generatedAt": "2026-07-27T06:01:55.363Z",
+  "count": 220,
   "items": [
+    {
+      "id": "144c71381790",
+      "title": "Data Engineering Weekly #280",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-280",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-07-27T03:37:19.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "c82d88ed2c22",
+      "title": "The Project Manager Isn't Dead. It Was Disassembled on Purpose!",
+      "link": "https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-27T02:16:33.000Z",
+      "contentSnippet": "Image I see it everywhere. In LinkedIn posts, in heated comment threads, and maybe most tellingly, in job descriptions that quietly list \"Scrum Master / Project Manager\" as if the slash were doing no work at all. The framing is always the same: Scrum Master versus Project Manager…"
+    },
+    {
+      "id": "9f106d335bd4",
+      "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
+      "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-07-26T21:13:48.000Z",
+      "contentSnippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
+    },
+    {
+      "id": "90546cd0bf78",
+      "title": "The Pyramid of Impediments",
+      "link": "https://www.scrum.org/resources/blog/pyramid-impediments",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-26T16:50:18.000Z",
+      "contentSnippet": "Introduction The Pyramid of Impediments is a decision framework for Scrum Masters, Agile Coaches and other agile leaders. Every agile leader eventually encounters the same situations: A Scrum Team struggles with Sprint Planning, technical debt continues to grow, conflicts remain…"
+    },
     {
       "id": "b16d2df3ce85",
       "title": "Culture Follows Structure. Most Transformations Bet the Other Way.",
@@ -136,6 +172,15 @@
       "category": "Delivery",
       "pubDate": "2026-07-22T15:42:43.000Z",
       "contentSnippet": "Recap In the last post we considered how to align an optimized lean workflow with high-level strategy. If a team understands the relevance of their tasks to business objectives, enterprise agility can then be demonstrated. Adopting a strict definition of \"Done\" proved to be the r…"
+    },
+    {
+      "id": "205790a3a329",
+      "title": "Beyond Blame: Transforming Team Dynamics Through Feedback",
+      "link": "https://www.scrum.org/resources/blog/beyond-blame-transforming-team-dynamics-through-feedback",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-22T13:52:58.000Z",
+      "contentSnippet": "Throughout my 20 years in product development, I have watched brilliant software products fail not because of technology stack limitations, but because of human communication breakdowns. Teams that are unable to communicate honestly cannot improve. A team that doesn't improve bec…"
     },
     {
       "id": "bd6ce42035f5",
@@ -408,15 +453,6 @@
       "contentSnippet": "Image As a Change professional specialising in Business Agility, Product Agility, and Coaching styles of leadership, I feel very passionate that we reflect on what Business and Product Agility really are. My concern is Agility has become so synonymous with Jira, Sprints, and Stan…"
     },
     {
-      "id": "0274101449bc",
-      "title": "How Should I Get the PSM-AI Essentials Certificate? WITH or WITHOUT a Training Class?",
-      "link": "https://www.scrum.org/resources/blog/how-should-i-get-psm-ai-essentials-certificate-or-without-training-class",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-15T07:17:55.000Z",
-      "contentSnippet": "Since 1st June 2026, it has been possible to obtain the PSM-AIE certificate directly without attending its training class. What is the difference? What are the pros and cons? Image Scrum.org has two AI courses: Professional Scrum Master- AI Essentials (PSM-AI Essentials) Professi…"
-    },
-    {
       "id": "266c1e8506f7",
       "title": "DuckDB Ecosystem Newsletter : July 2026",
       "link": "https://motherduck.com/blog/duckdb-ecosystem-newsletter-july-2026",
@@ -424,24 +460,6 @@
       "category": "Data",
       "pubDate": "2026-07-15T00:00:00.000Z",
       "contentSnippet": "July's DuckDB Ecosystem Newsletter: a portable R2 + DuckLake analytics stack, why PostHog rebuilt on DuckDB over ClickHouse, DuckCon #7 and the 1.5.4 / 1.4.5 releases, a SedonaDB WASM build for spatial SQL in the browser, and more."
-    },
-    {
-      "id": "6ac46a90b3dc",
-      "title": "Your Team Isn't Bad at Estimating. Planning Is Just Harder Than We Admit",
-      "link": "https://www.scrum.org/resources/blog/your-team-isnt-bad-estimating-planning-just-harder-we-admit",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-14T16:35:18.000Z",
-      "contentSnippet": "Image Every organization has a version of the same conversation: a delivery date slips, and someone asks why the estimate was wrong. The unspoken assumption is that better estimators, more detailed plans, or stricter processes would have gotten it right. That assumption is comfor…"
-    },
-    {
-      "id": "ed2209a0bb81",
-      "title": "Incremental Delivery and the Need for Speed",
-      "link": "https://www.scrum.org/resources/blog/incremental-delivery-and-need-speed",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-14T13:00:00.000Z",
-      "contentSnippet": "Image Digital AI’s annual State of Agile report is a survey which has global participation from small, medium-sized and large companies. It asks questions such as what Agile frameworks are being used, and what are the biggest problems Agile teams face. But one of the most interes…"
     },
     {
       "id": "51562230a5e4",
@@ -460,15 +478,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-14T10:00:00.000Z",
       "contentSnippet": "How to apply a different formatting rule at each level of a hierarchy using ISINSCOPE in a measure or ISATLEVEL in a visual calculation."
-    },
-    {
-      "id": "45664ae3bdd2",
-      "title": "O que aprendeste hoje?",
-      "link": "https://www.scrum.org/resources/blog/o-que-aprendeste-hoje",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-14T09:09:09.000Z",
-      "contentSnippet": "Image \"O dia em que crias um plano é o dia em que sabes menos.\" À primeira vista, esta frase parece contraditória. Afinal, fazemos planos precisamente porque procuramos reduzir a incerteza. Criamos roadmaps, planos de release, Sprint Backlogs, previsões e objetivos na esperança d…"
     },
     {
       "id": "a0f7ccd976b0",
@@ -1371,15 +1380,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "610b7cad6f4a",
-      "title": "Understanding The “You’ve Exceeded The Capacity Limit For Dataset Refreshes” Error in Power BI",
-      "link": "https://blog.crossjoin.co.uk/2026/05/17/understanding-the-youve-exceeded-the-capacity-limit-for-dataset-refreshes-error-in-power-bi/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-05-17T10:47:49.000Z",
-      "contentSnippet": "If you have a lot of Power BI semantic models that are scheduled to refresh at the same time in the Service then you may find that some of them fail with the following error: You’ve exceeded the capacity limit for dataset refreshes. Try again when fewer datasets are being process…"
-    },
-    {
       "id": "b75a48efebd6",
       "title": "Fragments: May 14",
       "link": "https://martinfowler.com/fragments/2026-05-14.html",
@@ -1711,15 +1711,6 @@
       "category": "Analytics",
       "pubDate": "2026-04-06T19:58:35.000Z",
       "contentSnippet": "We released a new session in SQLBI+: How to navigate the lattice of visual calculations: This video explains how to navigate the lattice of visual calculations in DAX, using COLLAPSEALL and EXPAND to move between levels. A key topic is…"
-    },
-    {
-      "id": "cff8da6810ee",
-      "title": "Data Engineering Weekly #264",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-264",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-04-06T01:55:25.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "df2be5bd8dc6",
