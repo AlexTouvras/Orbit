@@ -14,6 +14,8 @@
 ## Next
 
 - [ ] Optional browser check: `/portfolio` Case study links + `/writes/nordic-equity-heatmap`
+- [x] Persist essay feedback by slug and notify `#orbit` on new notes
+- [x] Route weekly Write Slack draft/approve/skip to `#orbit`
 - [x] Pressable education cards → master’s theses (JYX + Theseus)
 - [x] Capture thesis writing fingerprint in `docs/essay-voice.md` (improve essays, not academicize them)
 - [x] Draft Delivery essay: AI acceleration + prioritization (Cohn + MobAI)

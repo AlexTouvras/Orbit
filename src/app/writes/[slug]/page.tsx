@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Clock } from "lucide-react";
 import { getWriteBySlug, getWriteSlugs } from "@/lib/writes";
+import { getEssayFeedbackEntries } from "@/lib/essay-feedback";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import { Badge } from "@/components/ui/Badge";
 import { BackLink } from "@/components/ui/BackLink";
@@ -64,6 +65,7 @@ export default async function WriteDetailPage({
   if (!write) notFound();
 
   const fallbackHref = write.showcase ? "/#selected-work" : "/writes";
+  const feedbackEntries = await getEssayFeedbackEntries(write.slug);
 
   return (
     <article className="mx-auto max-w-3xl">
@@ -103,7 +105,7 @@ export default async function WriteDetailPage({
         <MDXRemote source={write.content} components={mdxComponents} />
       </section>
 
-      <EssayFeedback slug={write.slug} />
+      <EssayFeedback slug={write.slug} initialEntries={feedbackEntries} />
     </article>
   );
 }

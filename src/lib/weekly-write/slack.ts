@@ -36,12 +36,24 @@ export function splitForSlackSections(
   return parts;
 }
 
+/** Prefer `#orbit` webhook; fall back to legacy CareerOps webhook. */
+function weeklyWriteWebhookUrl(): string | undefined {
+  return (
+    process.env.SLACK_ORBIT_WEBHOOK_URL?.trim() ||
+    process.env.SLACK_WEBHOOK_URL?.trim()
+  );
+}
+
 export async function sendWeeklyDraftSlack(
   draft: WeeklyDraft,
 ): Promise<{ ok: true } | { ok: false; reason: string }> {
-  const url = process.env.SLACK_WEBHOOK_URL?.trim();
+  const url = weeklyWriteWebhookUrl();
   if (!url) {
-    return { ok: false, reason: "SLACK_WEBHOOK_URL not configured" };
+    return {
+      ok: false,
+      reason:
+        "SLACK_ORBIT_WEBHOOK_URL (or SLACK_WEBHOOK_URL) not configured",
+    };
   }
 
   const approve = weeklyActionUrl(draft.id, "approve");
@@ -141,9 +153,13 @@ async function postSlackText(
   text: string,
   blocks: Record<string, unknown>[],
 ): Promise<{ ok: true } | { ok: false; reason: string }> {
-  const url = process.env.SLACK_WEBHOOK_URL?.trim();
+  const url = weeklyWriteWebhookUrl();
   if (!url) {
-    return { ok: false, reason: "SLACK_WEBHOOK_URL not configured" };
+    return {
+      ok: false,
+      reason:
+        "SLACK_ORBIT_WEBHOOK_URL (or SLACK_WEBHOOK_URL) not configured",
+    };
   }
 
   const res = await fetch(url, {
@@ -163,7 +179,77 @@ async function postSlackText(
   return { ok: true };
 }
 
-/** Notify #career-ops after a successful Approve publish. */
+const FEEDBACK_RATING_LABEL: Record<string, string> = {
+  yes: "Useful",
+  somewhat: "Somewhat",
+  no: "Not useful",
+};
+
+export async function notifyEssayFeedback(input: {
+  slug: string;
+  title: string;
+  rating: "yes" | "somewhat" | "no";
+  note?: string;
+}): Promise<{ ok: true } | { ok: false; reason: string }> {
+  const url = process.env.SLACK_ORBIT_WEBHOOK_URL?.trim();
+  if (!url) {
+    return { ok: false, reason: "SLACK_ORBIT_WEBHOOK_URL not configured" };
+  }
+
+  const site = siteBaseUrlFallback();
+  const href = `${site}/writes/${input.slug}`;
+  const note = input.note?.trim();
+  const ratingLabel = FEEDBACK_RATING_LABEL[input.rating] ?? input.rating;
+
+  const text = `Orbit feedback: ${input.title}`;
+  const blocks: Record<string, unknown>[] = [
+    {
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: `*New essay feedback* on <${href}|${input.title}>\n*Rating:* ${ratingLabel}`,
+      },
+    },
+    ...(note
+      ? [
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: `*Message*\n>${note.replace(/\n+/g, "\n> ")}`,
+            },
+          },
+        ]
+      : []),
+    {
+      type: "context",
+      elements: [
+        {
+          type: "mrkdwn",
+          text: `Essay: \`${input.slug}\``,
+        },
+      ],
+    },
+  ];
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text, blocks }),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => "");
+    return {
+      ok: false,
+      reason: `Slack webhook failed (${res.status}): ${errText || res.statusText}`,
+    };
+  }
+
+  return { ok: true };
+}
+
+/** Notify #orbit after a successful Approve publish. */
 export async function notifyPublished(
   draft: WeeklyDraft,
   slug: string,
@@ -181,7 +267,7 @@ export async function notifyPublished(
   ]);
 }
 
-/** Notify #career-ops after Skip. */
+/** Notify #orbit after Skip. */
 export async function notifySkipped(
   draft: WeeklyDraft,
 ): Promise<{ ok: true } | { ok: false; reason: string }> {

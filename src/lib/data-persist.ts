@@ -6,7 +6,8 @@ import { hasGithubStorage, writeRepoFile } from "@/lib/github-storage";
 const DATA_DIR = path.join(process.cwd(), "data");
 
 function writeLocalFile(relativePath: string, content: string): void {
-  const fullPath = path.join(DATA_DIR, relativePath);
+  const normalized = relativePath.replace(/^data[\\/]/, "");
+  const fullPath = path.join(DATA_DIR, normalized);
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
   fs.writeFileSync(fullPath, content, "utf8");
 }
