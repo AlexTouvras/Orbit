@@ -1,168 +1,197 @@
 {
   "status": "awaiting_ide",
-  "reason": "gemini_unavailable",
-  "createdAt": "2026-07-21T06:36:56.643Z",
-  "weekOf": "2026-07-20",
+  "reason": "cloud_automation",
+  "createdAt": "2026-07-27T09:02:08.530Z",
+  "weekOf": "2026-07-27",
   "thesis": {
-    "angle": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
+    "angle": "What Is Fabric App or Rayfin and Why You Should Care",
     "question": "What actually changes in how we build analytics when the reporting stack keeps moving?",
     "primary": {
-      "id": "a92c018c9c22",
-      "title": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
-      "link": "https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/",
-      "source": "Chris Webb's BI Blog",
+      "id": "7147531ddbe3",
+      "title": "What Is Fabric App or Rayfin and Why You Should Care",
+      "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
+      "source": "RADACAD",
       "category": "Analytics",
-      "snippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
+      "snippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
     },
     "supporting": [
       {
-        "id": "6f16a999c8dd",
-        "title": "How Cars24 scales conversations and builds faster with OpenAI",
-        "link": "https://openai.com/index/cars24",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company."
+        "id": "9f106d335bd4",
+        "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
+        "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
+        "source": "Chris Webb's BI Blog",
+        "category": "Analytics",
+        "snippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
       },
       {
-        "id": "92ab1f77dd8c",
-        "title": "How to manage AI investments in the agentic era",
-        "link": "https://openai.com/index/managing-ai-investments-in-agentic-era",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows."
+        "id": "7d124074cf80",
+        "title": "How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily",
+        "link": "https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily",
+        "source": "Databricks Blog",
+        "category": "Data",
+        "snippet": "“We showed the value of having a foundational data platform, and that success story..."
       }
     ],
     "bridgeProject": {
       "id": "cyber-portfolio-platform",
-      "name": "Orbit — Portfolio & Radar",
-      "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
-      "status": "wip",
+      "name": "Orbit — Portfolio & related articles",
+      "description": "Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.",
+      "status": "live",
       "tags": [
         "Next.js",
         "React",
         "TypeScript"
       ],
-      "repoUrl": "",
-      "liveUrl": ""
+      "repoUrl": "https://github.com/AlexTouvras/Orbit",
+      "liveUrl": "https://alextouvras.com/"
     },
     "category": "Data",
     "tags": [
       "Power BI",
-      "Agents",
-      "Data",
+      "AI",
       "Analytics",
       "Next.js",
       "React"
     ],
-    "whyInteresting": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
+    "whyInteresting": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
   },
   "intake": {
-    "weekOf": "2026-07-20",
-    "generatedAt": "2026-07-21T06:33:35.942Z",
+    "weekOf": "2026-07-27",
+    "generatedAt": "2026-07-27T09:02:08.528Z",
     "signals": [
       {
-        "id": "513a069a215f",
-        "title": "Data Engineering Weekly #279",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-279",
+        "id": "9f106d335bd4",
+        "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
+        "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
+        "source": "Chris Webb's BI Blog",
+        "category": "Analytics",
+        "snippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
+      },
+      {
+        "id": "144c71381790",
+        "title": "Data Engineering Weekly #280",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-280",
         "source": "Data Engineering Weekly",
         "category": "Data",
         "snippet": "The Weekly Data Engineering Newsletter"
       },
       {
-        "id": "a92c018c9c22",
-        "title": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
-        "link": "https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/",
-        "source": "Chris Webb's BI Blog",
+        "id": "c82d88ed2c22",
+        "title": "The Project Manager Isn't Dead. It Was Disassembled on Purpose!",
+        "link": "https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose",
+        "source": "Scrum.org",
+        "category": "Delivery",
+        "snippet": "Image I see it everywhere. In LinkedIn posts, in heated comment threads, and maybe most tellingly, in job descriptions that quietly list \"Scrum Master / Project Manager\" as if the slash were doing no work at all. The framing is always the same: Scrum Master versus Project Manager…"
+      },
+      {
+        "id": "7569338ee0d3",
+        "title": "Launching Health in ChatGPT",
+        "link": "https://openai.com/index/health-in-chatgpt",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health."
+      },
+      {
+        "id": "7147531ddbe3",
+        "title": "What Is Fabric App or Rayfin and Why You Should Care",
+        "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
+        "source": "RADACAD",
         "category": "Analytics",
-        "snippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
+        "snippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
       },
       {
-        "id": "3ebda52fc80e",
-        "title": "A scorecard for the AI age",
-        "link": "https://openai.com/index/a-scorecard-for-the-ai-age",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute."
+        "id": "7d124074cf80",
+        "title": "How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily",
+        "link": "https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily",
+        "source": "Databricks Blog",
+        "category": "Data",
+        "snippet": "“We showed the value of having a foundational data platform, and that success story..."
       },
       {
-        "id": "8fe39edff791",
-        "title": "Why teens deserve access to safe AI",
-        "link": "https://openai.com/index/why-teens-deserve-access-safe-ai",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Learn how OpenAI is making ChatGPT safer for teens with age-appropriate protections, learning tools, parental controls, and expert partnerships."
+        "id": "90546cd0bf78",
+        "title": "The Pyramid of Impediments",
+        "link": "https://www.scrum.org/resources/blog/pyramid-impediments",
+        "source": "Scrum.org",
+        "category": "Delivery",
+        "snippet": "Introduction The Pyramid of Impediments is a decision framework for Scrum Masters, Agile Coaches and other agile leaders. Every agile leader eventually encounters the same situations: A Scrum Team struggles with Sprint Planning, technical debt continues to grow, conflicts remain…"
       },
       {
-        "id": "6f16a999c8dd",
-        "title": "How Cars24 scales conversations and builds faster with OpenAI",
-        "link": "https://openai.com/index/cars24",
-        "source": "OpenAI Blog",
+        "id": "8ab3a4be8a66",
+        "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
+        "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries",
+        "source": "Simon Willison",
         "category": "AI",
-        "snippet": "Cars24 uses OpenAI-powered voice and chat agents to handle 1M+ monthly conversation minutes, recover 12% of lost leads, and bring agentic workflows to teams across the company."
-      },
-      {
-        "id": "1e97faa490fa",
-        "title": "The US is advancing AI safety through state and federal action",
-        "link": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "OpenAI outlines a “reverse federalism” approach to AI governance, where state laws help build a national framework for safe, democratic AI."
-      },
-      {
-        "id": "ee230258f27f",
-        "title": "GPT-Red: Unlocking Self-Improvement for Robustness",
-        "link": "https://openai.com/index/unlocking-self-improvement-gpt-red",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Explore GPT-Red, OpenAI’s automated red teaming system that uses self-play to improve AI safety, alignment, and prompt injection robustness."
-      },
-      {
-        "id": "92ab1f77dd8c",
-        "title": "How to manage AI investments in the agentic era",
-        "link": "https://openai.com/index/managing-ai-investments-in-agentic-era",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows."
+        "snippet": ""
       }
     ],
     "projects": [
       {
         "id": "cyber-portfolio-platform",
-        "name": "Orbit — Portfolio & Radar",
-        "description": "This site: a personal portfolio bank and a self-updating news radar across AI, Data, and Delivery, with a built-in Studio for editing content and publishing projects.",
-        "status": "wip",
+        "name": "Orbit — Portfolio & related articles",
+        "description": "Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.",
+        "status": "live",
         "tags": [
           "Next.js",
           "React",
           "TypeScript"
         ],
-        "repoUrl": "",
-        "liveUrl": ""
+        "repoUrl": "https://github.com/AlexTouvras/Orbit",
+        "liveUrl": "https://alextouvras.com/"
       },
       {
-        "id": "faceless-reels",
-        "name": "Faceless Reels",
-        "description": "An automated short-form video pipeline for Greek-mythology reels: beat-split narration, AI image generation with a quality loop, neural TTS, and karaoke-style captions.",
-        "status": "wip",
+        "id": "nordic-equity-heatmap",
+        "name": "Nordic Equity Heatmap",
+        "description": "TradingView-style sector board for Nordic large-caps (size = market cap, color = day change %). Lives with the Nordic Equity report in powerbi-portfolio/01-finance — PBIP pages plus this Vite board on Vercel.",
+        "status": "live",
         "tags": [
-          "Node",
-          "AI",
-          "TTS"
+          "Power BI",
+          "React",
+          "Data Viz",
+          "Markets"
         ],
-        "repoUrl": "",
-        "liveUrl": ""
+        "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio/tree/main/01-finance/heatmap-web",
+        "liveUrl": "https://heatmap-web-five.vercel.app/"
       },
       {
-        "id": "sunplot-garden",
-        "name": "Sunplot Garden",
-        "description": "A cozy mobile gardening game (Unity) built as a studio repo with an agent-driven content pipeline and a vertical-grid layout system.",
+        "id": "powerbi-portfolio",
+        "name": "Power BI — Nordic Boardroom",
+        "description": "Shared report grammar: gold tables → semantic model → Landing / Pulse / Drivers / Queue / Context, then PNG sync into Orbit. Import-shaped demos on purpose; screenshots match the repo.",
+        "status": "shipped",
+        "tags": [
+          "Power BI",
+          "Fabric",
+          "DAX"
+        ],
+        "repoUrl": "https://github.com/AlexTouvras/powerbi-portfolio",
+        "liveUrl": "/writes/power-bi-portfolio-nordic-boardroom"
+      },
+      {
+        "id": "ledger-research-cycle",
+        "name": "Ledger — strategy research cycle",
+        "description": "Compare equity strategy families on one sample, switch the working rule only when Sharpe clears ~0.08, then list exits/adds/trims with reasons. I still click the trades; no broker automation.",
         "status": "prototype",
         "tags": [
-          "Unity",
-          "Game Design"
+          "Python",
+          "Research",
+          "Equity",
+          "Automation"
+        ],
+        "repoUrl": "https://github.com/AlexTouvras/ledger",
+        "liveUrl": "/ledger-research"
+      },
+      {
+        "id": "mealplan",
+        "name": "mealplan",
+        "description": "Slack-triggered week plan from YAML defaults (overrides in the kickoff message): plate guidance, multi-store grocery split, phone-readable channel post. No checkout; one shared menu.",
+        "status": "shipped",
+        "tags": [
+          "Cursor Automations",
+          "Slack",
+          "YAML",
+          "Personal ops"
         ],
         "repoUrl": "",
-        "liveUrl": ""
+        "liveUrl": "/architecture/mealplan"
       }
     ]
   },
