@@ -1,7 +1,43 @@
 {
-  "generatedAt": "2026-07-27T09:42:16.679Z",
-  "count": 220,
+  "generatedAt": "2026-07-28T06:37:18.496Z",
+  "count": 218,
   "items": [
+    {
+      "id": "b3b74f61be75",
+      "title": "Get Started with Genie One: Top AI Cowork Use Cases for Business Users",
+      "link": "https://www.databricks.com/blog/get-started-genie-one-top-ai-cowork-use-cases-business-users",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-28T01:00:00.000Z",
+      "contentSnippet": "When most people think of AI helping their everyday work, a simple chatbot that answers..."
+    },
+    {
+      "id": "9dedb8a7bd12",
+      "title": "The EU Digital Product Passport: a traceability deadline",
+      "link": "https://www.databricks.com/blog/eu-digital-product-passport-traceability-deadline",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-27T23:00:00.000Z",
+      "contentSnippet": "Informational only, not legal advice. Confirm all regulatory details against the..."
+    },
+    {
+      "id": "797b9c482989",
+      "title": "Understand Yourself Deeply: Why Scrum Masters Decide to Learn AI",
+      "link": "https://www.scrum.org/resources/blog/understand-yourself-deeply-why-scrum-masters-decide-learn-ai",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-27T14:15:39.000Z",
+      "contentSnippet": "This blog post is like a customer discovery to deeply understand a Scrum Master’s fears, anxieties, hopes, dreams, … in the age of AI. Image In February 2026, Scrum.org released its AI course for Scrum Masters named PSM-AI Essentials. Since then, many Scrum Masters have participa…"
+    },
+    {
+      "id": "731eb6a240e9",
+      "title": "Managing AI Risks in your Definition of Done",
+      "link": "https://www.scrum.org/resources/blog/managing-ai-risks-your-definition-done",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-27T13:50:13.000Z",
+      "contentSnippet": "It passed every check. The automated tests were green. The code review was done. The acceptance criteria were met. The feature was deployed to staging and behaved exactly as described in the ticket. By every measure the team had, this work was done. Then it hit production. Within…"
+    },
     {
       "id": "093994b2415f",
       "title": "How to Avoid AI Debt by Borrowing from Agile Artifacts",
@@ -12,6 +48,15 @@
       "contentSnippet": "TL; DR: Reusing Agile Artifacts to Avoid Accumulating AI Debt In this video from the 76th Hands-on Agile Meetup, I walk you through the A3 Delegation System and show how it helps avoid AI debt by borrowing artifacts and practices from Agile, such as the Definition of Done and Ret…"
     },
     {
+      "id": "142686617666",
+      "title": "Building AI Literacy: Frameworks, Tools, and Practices",
+      "link": "https://www.databricks.com/blog/ai-literacy",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-27T08:05:38.000Z",
+      "contentSnippet": "AI literacy is an individual's ability to comprehend and effectively utilize AI tools..."
+    },
+    {
       "id": "144c71381790",
       "title": "Data Engineering Weekly #280",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-280",
@@ -19,6 +64,15 @@
       "category": "Data",
       "pubDate": "2026-07-27T03:37:19.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "f143efbfe201",
+      "title": "How AI is expanding what people do at work",
+      "link": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-27T03:30:00.000Z",
+      "contentSnippet": "New OpenAI research shows how AI is expanding what workers do, with ChatGPT users taking on tasks across roles and reshaping job boundaries."
     },
     {
       "id": "c82d88ed2c22",
@@ -64,6 +118,15 @@
       "category": "Delivery",
       "pubDate": "2026-07-24T18:35:02.000Z",
       "contentSnippet": "Simplificando a Jornada do Product Owner: Do Caos do Início à Liderança Estratégica Por Matheus Reis Professional Scrum Trainer (PST) Image Introdução: Dois Caminhos, o Mesmo Ponto de Partida Se você atua no mercado de tecnologia ou está tentando construir sua carreira nele, é mu…"
+    },
+    {
+      "id": "a6f00a578373",
+      "title": "AI Applications in Finance: A Practical Use Case Guide",
+      "link": "https://www.databricks.com/blog/ai-applications-in-finance",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-24T18:24:38.000Z",
+      "contentSnippet": "Artificial intelligence in finance refers to the use of machine learning, natural..."
     },
     {
       "id": "1dc0e8a7b9a4",
@@ -165,15 +228,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "215f39f24e0b",
-      "title": "Simplify AI agent orchestration with Lakebase Postgres",
-      "link": "https://www.databricks.com/blog/simplify-ai-agent-orchestration-lakebase-postgres",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-22T23:00:00.000Z",
-      "contentSnippet": "IntroductionTraditionally, auditing is a tedious process that often requires detailed..."
-    },
-    {
       "id": "3b3ac29dc258",
       "title": "From Chaos to Control, Part 6 - Adapt and Control",
       "link": "https://www.scrum.org/resources/blog/chaos-control-part-6-adapt-and-control",
@@ -255,33 +309,6 @@
       "contentSnippet": "In this blog post, we highlight a few important fixes in DuckDB v1.5.5, the sixth patch release in DuckDB's 1.5 (Variegata) line. The release ships bugfixes, performance improvements and security patches. You can find the full release notes on GitHub. To install the new version,…"
     },
     {
-      "id": "78516bbd1b77",
-      "title": "The last mile: why great first-party data still doesn't make great marketing",
-      "link": "https://www.databricks.com/blog/last-mile-first-party-data-great-marketing",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-21T22:19:28.000Z",
-      "contentSnippet": "Last month, a data team and a marketing team sat in the same room and talked past..."
-    },
-    {
-      "id": "dd891f235102",
-      "title": "Why R&D Data Belongs in the Lakehouse - and Why Agents Need It There",
-      "link": "https://www.databricks.com/blog/why-rd-data-belongs-lakehouse-and-why-agents-need-it-there",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-21T19:45:00.000Z",
-      "contentSnippet": "The setupAt cellcentric, a joint venture of Daimler Truck and Volvo Group, we develop..."
-    },
-    {
-      "id": "fdbc02dad887",
-      "title": "How Dow Built a Carbon Footprint Ledger on Databricks to Accelerate Sustainability at Scale",
-      "link": "https://www.databricks.com/blog/how-dow-built-carbon-footprint-ledger-databricks-accelerate-sustainability-scale",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-21T19:45:00.000Z",
-      "contentSnippet": "Why we built the Carbon Footprint LedgerAt Dow, our ambition is to be the most innovative,..."
-    },
-    {
       "id": "d42362617c64",
       "title": "Introducing the ChatGPT for small business program",
       "link": "https://openai.com/index/introducing-chatgpt-small-business-program",
@@ -327,15 +354,6 @@
       "contentSnippet": "Sometimes, when you are using an AI tool like ChatGPT, you get a message that you have reached the context window limit and cannot continue unless you upgrade your plan to a paid version. Another option is to start a new chat window, but you lose all your current conversations. I…"
     },
     {
-      "id": "20b0eb2d5c14",
-      "title": "OpenAI and Hugging Face partner to address security incident during model evaluation",
-      "link": "https://openai.com/index/hugging-face-model-evaluation-security-incident",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-21T07:00:00.000Z",
-      "contentSnippet": "OpenAI and Hugging Face share early findings from a security incident during AI model evaluation, highlighting advanced cyber capabilities and lessons for defenders."
-    },
-    {
       "id": "051f2bfbfb54",
       "title": "Warum ich inzwischen Solo-Entwicklung hasse",
       "link": "https://www.scrum.org/resources/blog/warum-ich-inzwischen-solo-entwicklung-hasse",
@@ -352,15 +370,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-20T13:00:00.000Z",
       "contentSnippet": "Image When leaders first hear that Scrum Teams are self-managing, I don’t blame them for immediately fearing for their jobs. It can sound a little scary. But when we say that Scrum Teams are self-managing, we don’t mean that they don’t have a reporting structure or that leadershi…"
-    },
-    {
-      "id": "c0cd313fd6b6",
-      "title": "Cognitive Trap: Velocity Misinterpretation",
-      "link": "https://www.scrum.org/resources/blog/cognitive-trap-velocity-misinterpretation",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-20T12:34:49.000Z",
-      "contentSnippet": "The Velocity Misinterpretation Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspect…"
     },
     {
       "id": "513a069a215f",
@@ -390,15 +399,6 @@
       "contentSnippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
     },
     {
-      "id": "15ed77061738",
-      "title": "Great Products Make Great Targets",
-      "link": "https://www.scrum.org/resources/blog/great-products-make-great-targets",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-19T06:00:00.000Z",
-      "contentSnippet": "Image There is a company you used to love. Maybe it made your favorite tool, or the service you recommended to everyone. Then something shifted. The product got worse in small ways, the pricing got aggressive, the people whose names you knew left one by one, and within a couple o…"
-    },
-    {
       "id": "2942b8ae18a6",
       "title": "Everything About the Microsoft MVP Program — A Conversation with Rie Merritt | Fabric Insider Ep. 7",
       "link": "https://radacad.com/everything-about-the-microsoft-mvp-program-a-conversation-with-rie-merritt-fabric-insider-ep-7/?utm_source=rss&utm_medium=rss&utm_campaign=everything-about-the-microsoft-mvp-program-a-conversation-with-rie-merritt-fabric-insider-ep-7",
@@ -406,15 +406,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-17T21:49:31.000Z",
       "contentSnippet": "This episode of Fabric Insider is a little different from the others. We are not talking about a product feature or a technical update. We are talking about a program that has shaped the Microsoft data community for over two decades — and one that a lot of people misunderstand. T…"
-    },
-    {
-      "id": "141e2ce4988f",
-      "title": "Your People Stopped Telling You the Truth. You Trained Them To.",
-      "link": "https://www.scrum.org/resources/blog/your-people-stopped-telling-you-truth-you-trained-them",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-16T22:00:00.000Z",
-      "contentSnippet": "The outage lasted four hours. The review that followed lasted one, and within the first ten minutes it had quietly stopped being about the outage. It had become about who. Whose change went out on Friday. Who approved it. Who was on call and missed it. By the time the meeting wra…"
     },
     {
       "id": "32c8d28cc1c5",
@@ -433,15 +424,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-16T13:25:00.000Z",
       "contentSnippet": "When people think of legacy modernization, most folks aren't imagining the target environment will be Java 8. But this was the challenge facing Nik Malykhin when he needed to run a Java 1.5 codebase on today's hardware. His early use of LLMs gave plausible answers that did not ho…"
-    },
-    {
-      "id": "0c867cece9b0",
-      "title": "Sie haben bereits eine KI-Arbeitsvereinbarung. Schreiben Sie sie auf. 🇩🇪",
-      "link": "https://www.scrum.org/resources/blog/sie-haben-bereits-eine-ki-arbeitsvereinbarung-schreiben-sie-sie-auf",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-16T03:23:36.000Z",
-      "contentSnippet": "In Kürze: Die KI-Arbeitsvereinbarung Ihr Team hat bereits Regeln für den Einsatz von KI. Manche stecken in Vorlagen, manche in Gewohnheiten, in Ausnahmen und im Gedächtnis einer einzelnen Person. Die KI-Arbeitsvereinbarung führt die Entscheidungen, auf die es ankommt, an einem Or…"
     },
     {
       "id": "5f276307a9b3",
