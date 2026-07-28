@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-28T06:37:18.496Z",
-  "count": 218,
+  "generatedAt": "2026-07-28T08:26:55.189Z",
+  "count": 217,
   "items": [
     {
       "id": "b3b74f61be75",
@@ -361,15 +361,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-21T06:43:48.000Z",
       "contentSnippet": "Ich hasse es, über einen längeren Zeitraum alleine zu arbeiten. Was ich stattdessen bevorzuge? Mob-Programming, Pair-Programming oder wenigstens intensives Swarming. Und das sage ich nicht, weil es gerade hip ist oder weil ich es irgendwo in einem Agile-Buch gelesen habe. Ich sag…"
-    },
-    {
-      "id": "7b9d04b0a39c",
-      "title": "No Manager in Scrum?",
-      "link": "https://www.scrum.org/resources/blog/no-manager-scrum",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-20T13:00:00.000Z",
-      "contentSnippet": "Image When leaders first hear that Scrum Teams are self-managing, I don’t blame them for immediately fearing for their jobs. It can sound a little scary. But when we say that Scrum Teams are self-managing, we don’t mean that they don’t have a reporting structure or that leadershi…"
     },
     {
       "id": "513a069a215f",
