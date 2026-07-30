@@ -11,6 +11,42 @@ import { HubHero } from "@/components/hub/HubHero";
 import { SelectedWorkCard } from "@/components/hub/SelectedWorkCard";
 import { cn } from "@/lib/utils";
 
+function CompetencyCard({
+  title,
+  description,
+  accent,
+  icon: Icon,
+  href,
+  hrefLabel,
+}: (typeof competencies)[number]) {
+  const card = (
+    <GlassCard
+      hover
+      className={cn("h-full border-l-[3px] pl-5", accentBar[accent], href && "group")}
+    >
+      <Icon className={cn("h-6 w-6", accentIcon[accent])} />
+      <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-slate-300">{description}</p>
+      {href && (
+        <span className="mt-5 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-neon-cyan sm:min-h-0">
+          {hrefLabel ?? "Open"}
+          <ArrowRight className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
+        </span>
+      )}
+    </GlassCard>
+  );
+
+  if (!href) return card;
+
+  // Plain <a>: /field-card/ is static HTML in public/, not an App Router page.
+  // next/link soft-nav would no-op / 404 inside the SPA shell.
+  return (
+    <a href={href} className="focus-ring block h-full rounded-2xl">
+      {card}
+    </a>
+  );
+}
+
 const accentBar: Record<"cyan" | "violet" | "blue", string> = {
   cyan: "border-l-neon-cyan",
   violet: "border-l-neon-violet",
@@ -47,21 +83,7 @@ export default function HomePage() {
         <Stagger className="mt-10 grid gap-6 sm:grid-cols-3">
           {competencies.map((c) => (
             <StaggerItem key={c.title}>
-              <GlassCard
-                hover
-                className={cn(
-                  "h-full border-l-[3px] pl-5",
-                  accentBar[c.accent],
-                )}
-              >
-                <c.icon className={cn("h-6 w-6", accentIcon[c.accent])} />
-                <h3 className="mt-4 text-lg font-semibold text-white">
-                  {c.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                  {c.description}
-                </p>
-              </GlassCard>
+              <CompetencyCard {...c} />
             </StaggerItem>
           ))}
         </Stagger>

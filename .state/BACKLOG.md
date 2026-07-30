@@ -4,8 +4,9 @@
 
 ## Now
 
-- [x] Refresh weekly Write intake and prepare the 2026-07-27 pending IDE draft
+- [x] Ship home AI competency → `/field-card/index.html` + static field card page
 - [ ] Notify the 2026-07-27 weekly Write in Slack (`SLACK_ORBIT_WEBHOOK_URL` unavailable in automation environment)
+- [x] Refresh weekly Write intake and prepare the 2026-07-27 pending IDE draft
 - [x] Case study links for Orbit + Nordic Equity Heatmap
 - [x] Rewrite `from-risk-to-delivery.mdx` with orbit-essay + anti-ai-slop
 - [x] Rebalance Related articles RSS (Data / Analytics / Delivery vs AI flood)

@@ -12,6 +12,14 @@ const nextConfig = {
   },
   // Keep these out of the server component bundle; only used in scripts / route handlers.
   serverExternalPackages: ["rss-parser", "node-cron"],
+  // public/field-card/index.html is not auto-served at /field-card (App Router 404).
+  // Soft URLs rewrite to the static file; competency card links to index.html directly.
+  async rewrites() {
+    return [
+      { source: "/field-card", destination: "/field-card/index.html" },
+      { source: "/field-card/", destination: "/field-card/index.html" },
+    ];
+  },
 };
 
 export default nextConfig;
