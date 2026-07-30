@@ -1,7 +1,106 @@
 {
-  "generatedAt": "2026-07-29T08:32:50.037Z",
+  "generatedAt": "2026-07-30T06:42:05.033Z",
   "count": 218,
   "items": [
+    {
+      "id": "c1ce6f8c6fdb",
+      "title": "Convert proprietary code to open ANSI SQL with Genie Code",
+      "link": "https://www.databricks.com/blog/convert-proprietary-code-open-ansi-sql-genie-code",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-30T01:00:00.000Z",
+      "contentSnippet": "Migrating from a legacy data warehouse is a complex undertaking, requiring teams..."
+    },
+    {
+      "id": "743f087f11a5",
+      "title": "Quality care is the mission. Finance protects the margin.",
+      "link": "https://www.databricks.com/blog/quality-care-mission-finance-protects-margin",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-29T18:59:31.000Z",
+      "contentSnippet": "Ask a health system CFO where this year's margin is landing and you will always get a hard-won answer..."
+    },
+    {
+      "id": "fc2806865e72",
+      "title": "Energy runs on volatile markets. Finance protects the margin.",
+      "link": "https://www.databricks.com/blog/energy-runs-volatile-markets-finance-protects-margin",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-29T18:30:00.000Z",
+      "contentSnippet": "Ask an energy CFO where this year's margin is landing and you will always get a hard-won answer..."
+    },
+    {
+      "id": "4aefe89265ae",
+      "title": "Manufacturing runs on capital. Finance protects the margin.",
+      "link": "https://www.databricks.com/blog/manufacturing-runs-capital-finance-protects-margin",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-29T18:30:00.000Z",
+      "contentSnippet": "Ask a manufacturing CFO where this year's margin is landing and you will always get a hard-won answer..."
+    },
+    {
+      "id": "67df04d87492",
+      "title": "Bringing real-time fraud prevention to government benefits",
+      "link": "https://www.databricks.com/blog/bringing-real-time-fraud-prevention-government-benefits",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-29T17:45:00.000Z",
+      "contentSnippet": "Asked to do the impossibleFraud and improper payments cost federal benefits programs..."
+    },
+    {
+      "id": "a1c3f089efaf",
+      "title": "Agents for production lines: Trusted decisions in real time",
+      "link": "https://www.databricks.com/blog/agents-production-lines-trusted-decisions-real-time",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-29T17:30:00.000Z",
+      "contentSnippet": "Executive summary09:14, mid-shift. The filler trips. The line manager has minutes,..."
+    },
+    {
+      "id": "14405ea67663",
+      "title": "How agentic AI can help telecom finance teams protect the margin when every moment matters",
+      "link": "https://www.databricks.com/blog/how-agentic-ai-can-help-telecom-finance-teams-protect-margin-when-every-moment-matters",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-29T17:26:32.000Z",
+      "contentSnippet": "How preventing revenue leakage became finance's front lineIn telecom, revenue is..."
+    },
+    {
+      "id": "cc8e132c6199",
+      "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
+      "link": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-29T15:00:00.000Z",
+      "contentSnippet": "How two API settings improved GPT-5.6 performance on ARC-AGI-3, boosting scores and efficiency by retaining reasoning and enabling compaction."
+    },
+    {
+      "id": "14fd05ad34f9",
+      "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
+      "link": "https://openai.com/index/chatgpt-for-academic-researchers",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-29T10:00:00.000Z",
+      "contentSnippet": "OpenAI is giving 100,000 academic researchers free access to ChatGPT's most advanced AI models to accelerate scientific research, collaboration, and discovery."
+    },
+    {
+      "id": "6d964f10c333",
+      "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
+      "link": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-29T00:00:00.000Z",
+      "contentSnippet": "GPT-5.6 improves AI efficiency across models, inference, and agentic workflows, helping deliver more useful intelligence per dollar."
+    },
+    {
+      "id": "0a11c907adfc",
+      "title": "Context belongs in the warehouse",
+      "link": "https://motherduck.com/blog/context-belongs-in-the-warehouse",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-07-29T00:00:00.000Z",
+      "contentSnippet": "Introducing Guides, MotherDuck's context layer for AI agents. More accurate queries, lower token spend, and distributed context for your entire organization."
+    },
     {
       "id": "6c82f8f587ae",
       "title": "How NorthStar Anesthesia built a scheduling app for a workforce of 3,000 clinicians in weeks",
@@ -21,6 +120,15 @@
       "contentSnippet": "Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…"
     },
     {
+      "id": "1ec9d43f022a",
+      "title": "The audience is the asset. Media finance teams need to understand them to protect the margin.",
+      "link": "https://www.databricks.com/blog/audience-asset-media-finance-teams-need-understand-them-protect-margin",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-28T19:03:18.000Z",
+      "contentSnippet": "Ask a CFO at a media company where this year's margin is landing and you will always get a hard-won answer..."
+    },
+    {
       "id": "df22037e3e0f",
       "title": "Scientific computing in the age of agentic AI",
       "link": "https://openai.com/index/scientific-computing-agentic-ai",
@@ -37,15 +145,6 @@
       "category": "Data",
       "pubDate": "2026-07-28T16:50:57.000Z",
       "contentSnippet": "Search is everywhere: product discovery on retail sites, voice queries on smart..."
-    },
-    {
-      "id": "590e7ef88931",
-      "title": "How Databricks manages its own coding agent spend with Unity AI Gateway Budgets",
-      "link": "https://www.databricks.com/blog/how-databricks-manages-its-own-coding-agent-spend-unity-ai-gateway-budgets",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-28T15:40:33.000Z",
-      "contentSnippet": "At Databricks, the way we build software is changing quickly as we aggressively adopt..."
     },
     {
       "id": "62b7a2b2ead0",
@@ -93,24 +192,6 @@
       "contentSnippet": "Visual calculations can either improve or degrade the performance of a report. Let’s see how we ensure visual calculations have a positive impact on performance."
     },
     {
-      "id": "b3b74f61be75",
-      "title": "Get Started with Genie One: Top AI Cowork Use Cases for Business Users",
-      "link": "https://www.databricks.com/blog/get-started-genie-one-top-ai-cowork-use-cases-business-users",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-28T01:00:00.000Z",
-      "contentSnippet": "When most people think of AI helping their everyday work, a simple chatbot that answers..."
-    },
-    {
-      "id": "9dedb8a7bd12",
-      "title": "The EU Digital Product Passport: a traceability deadline",
-      "link": "https://www.databricks.com/blog/eu-digital-product-passport-traceability-deadline",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-27T23:00:00.000Z",
-      "contentSnippet": "Informational only, not legal advice. Confirm all regulatory details against the..."
-    },
-    {
       "id": "65b8da05b262",
       "title": "Analyzing the performance impact of visual calculations",
       "link": "https://www.sqlbi.com/articles/analyzing-the-performance-impact-of-visual-calculations/",
@@ -145,24 +226,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-27T09:16:33.000Z",
       "contentSnippet": "TL; DR: Reusing Agile Artifacts to Avoid Accumulating AI Debt In this video from the 76th Hands-on Agile Meetup, I walk you through the A3 Delegation System and show how it helps avoid AI debt by borrowing artifacts and practices from Agile, such as the Definition of Done and Ret…"
-    },
-    {
-      "id": "86c10e4d2d3b",
-      "title": "AI customer service: strategy, agents, and solutions guide",
-      "link": "https://www.databricks.com/blog/ai-customer-service",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-27T08:42:00.000Z",
-      "contentSnippet": "AI customer service refers to the use of artificial intelligence — including natural language processing, ..."
-    },
-    {
-      "id": "142686617666",
-      "title": "Building AI Literacy: Frameworks, Tools, and Practices",
-      "link": "https://www.databricks.com/blog/ai-literacy",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-27T08:05:38.000Z",
-      "contentSnippet": "AI literacy is an individual's ability to comprehend and effectively utilize AI tools..."
     },
     {
       "id": "144c71381790",
@@ -219,15 +282,6 @@
       "contentSnippet": "Image Two companies start an agile transformation in the same quarter. Same training provider, same skilled coaches, same framework, comparable budgets, equally sincere executives. Three years later one of them ships weekly, kills bad bets early, and holds onto its best people. T…"
     },
     {
-      "id": "77d61d80484a",
-      "title": "AI in supply chain: from demand forecasting to AI agents",
-      "link": "https://www.databricks.com/blog/ai-in-supply-chain",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-24T20:22:44.000Z",
-      "contentSnippet": "AI in supply chain management is the application of machine learning, generative..."
-    },
-    {
       "id": "add82b419e20",
       "title": "Do Inicio ao Empreendedor - A Evolução da Carreira de Product Owner",
       "link": "https://www.scrum.org/resources/blog/do-inicio-ao-empreendedor-evolucao-da-carreira-de-product-owner",
@@ -235,24 +289,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-24T18:35:02.000Z",
       "contentSnippet": "Simplificando a Jornada do Product Owner: Do Caos do Início à Liderança Estratégica Por Matheus Reis Professional Scrum Trainer (PST) Image Introdução: Dois Caminhos, o Mesmo Ponto de Partida Se você atua no mercado de tecnologia ou está tentando construir sua carreira nele, é mu…"
-    },
-    {
-      "id": "7b7cebef79ca",
-      "title": "AI in healthcare: applications and best practices",
-      "link": "https://www.databricks.com/blog/ai-in-healthcare",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-24T18:26:57.000Z",
-      "contentSnippet": "AI in healthcare refers to the application of artificial intelligence, including..."
-    },
-    {
-      "id": "a6f00a578373",
-      "title": "AI Applications in Finance: A Practical Use Case Guide",
-      "link": "https://www.databricks.com/blog/ai-applications-in-finance",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-24T18:24:38.000Z",
-      "contentSnippet": "Artificial intelligence in finance refers to the use of machine learning, natural..."
     },
     {
       "id": "1dc0e8a7b9a4",
@@ -336,24 +372,6 @@
       "contentSnippet": "News organizations are using AI to strengthen reporting, grow audiences, and improve business operations, with OpenAI tools supporting journalists and publishers worldwide."
     },
     {
-      "id": "fc3528d001b5",
-      "title": "Advancing the next era of national science",
-      "link": "https://openai.com/index/advancing-the-next-era-of-national-science",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-22T12:00:00.000Z",
-      "contentSnippet": "OpenAI outlines its commitment to advancing American science working with the U.S. Department of Energy and national labs to use frontier AI to accelerate discovery."
-    },
-    {
-      "id": "c54f46e53d48",
-      "title": "Introducing OpenAI Presence",
-      "link": "https://openai.com/index/introducing-openai-presence",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-22T05:30:00.000Z",
-      "contentSnippet": "Introducing OpenAI Presence, a proven enterprise AI agent platform that helps organizations deploy trusted voice and chat agents for customer and internal workflows."
-    },
-    {
       "id": "7147531ddbe3",
       "title": "What Is Fabric App or Rayfin and Why You Should Care",
       "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
@@ -361,15 +379,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-22T01:52:49.000Z",
       "contentSnippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
-    },
-    {
-      "id": "ce627deb9928",
-      "title": "NTT DATA Group cuts incident analysis to 30 minutes with Codex",
-      "link": "https://openai.com/index/ntt-data",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-22T00:00:00.000Z",
-      "contentSnippet": "NTT DATA Group uses ChatGPT Enterprise and Codex to help 9,000 employees automate work, cut incident analysis to 30 minutes, and scale secure AI adoption."
     },
     {
       "id": "b040dc108473",
@@ -1540,15 +1549,6 @@
       "category": "Data",
       "pubDate": "2026-05-04T00:00:00.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "30c72758ae32",
-      "title": "AI Agent Analytics with Vercel & MotherDuck",
-      "link": "https://motherduck.com/blog/ai-agent-analytics-with-vercel-motherduck",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-04-30T00:00:00.000Z",
-      "contentSnippet": "Track AI agent traffic that bypasses your web analytics. Stream Vercel Log Drains into MotherDuck to see how ChatGPT, Claude, and other agents browse your site."
     },
     {
       "id": "0b5754265080",
