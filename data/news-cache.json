@@ -1,7 +1,79 @@
 {
-  "generatedAt": "2026-07-30T08:17:32.626Z",
-  "count": 218,
+  "generatedAt": "2026-07-31T06:33:00.601Z",
+  "count": 217,
   "items": [
+    {
+      "id": "b4ac64d60227",
+      "title": "Your framework has been doing your thinking. That's the problem.",
+      "link": "https://www.scrum.org/resources/blog/your-framework-has-been-doing-your-thinking-thats-problem",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-30T22:00:00.000Z",
+      "contentSnippet": "The new engineer asked her question in the second week, in the most innocent voice imaginable. \"Why do we do the estimation poker?\" The room paused. Someone said it helps with planning. She asked how. Someone else said it surfaces different perspectives. She asked whether it had…"
+    },
+    {
+      "id": "206bdc62f4d7",
+      "title": "“Scrum didn’t work for us.”",
+      "link": "https://www.scrum.org/resources/blog/scrum-didnt-work-us",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-30T19:31:05.000Z",
+      "contentSnippet": "Image This is what a colleague said to me once. Hey, I’m not religious about Scrum, and if it really didn’t work, that’s really fine with me — but in my experience Scrum is so lightweight that if it isn’t working for us, it probably isn’t the framework itself, but gaps or distort…"
+    },
+    {
+      "id": "239d3a4cde9f",
+      "title": "Foundations for an AI-forward healthcare organization",
+      "link": "https://www.databricks.com/blog/foundations-ai-forward-healthcare-organization",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-30T19:30:00.000Z",
+      "contentSnippet": "The challenge for healthcare executives adopting AI is the noise when trying to advance an initiative..."
+    },
+    {
+      "id": "f609ca412d70",
+      "title": "Agentic media buying cannot scale without the right foundation. See how buyers and sellers get there on Databricks.",
+      "link": "https://www.databricks.com/blog/agentic-media-buying-cannot-scale-without-right-foundation-see-how-buyers-and-sellers-get",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-30T19:10:00.000Z",
+      "contentSnippet": "The bottleneck in media buying today isn't talent, it's coordinationEvery day, billions..."
+    },
+    {
+      "id": "dafe9a2bbb83",
+      "title": "The Economic Benefit of Refactoring",
+      "link": "https://martinfowler.com/articles/exploring-gen-ai/refactoring-economic-benefit.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-07-30T13:04:00.000Z",
+      "contentSnippet": "Giles Edwards-Alexander does an experiment to see if decomposing a large function helps reduce token costs, suggesting that is may now be possible to measure the economic benefit of refactoring more…"
+    },
+    {
+      "id": "61ad811164ff",
+      "title": "Creative Dagster Projects from the Community",
+      "link": "https://dagster.io/blog/community-showcase-part-3",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-07-30T12:37:41.000Z",
+      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
+    },
+    {
+      "id": "93b56433d545",
+      "title": "Creative Dagster Projects from the Community",
+      "link": "https://dagster.io/blog/community-showcase-part-2",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-07-30T12:28:26.000Z",
+      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
+    },
+    {
+      "id": "fc362ba711f5",
+      "title": "Advancing the price-performance frontier with GPT-5.6",
+      "link": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-30T10:00:00.000Z",
+      "contentSnippet": "Explore lower GPT‑5.6 pricing for Luna and Terra—and how OpenAI’s more efficient models help enterprises deploy AI workflows at scale."
+    },
     {
       "id": "c1ce6f8c6fdb",
       "title": "Convert proprietary code to open ANSI SQL with Genie Code",
@@ -10,6 +82,24 @@
       "category": "Data",
       "pubDate": "2026-07-30T01:00:00.000Z",
       "contentSnippet": "Migrating from a legacy data warehouse is a complex undertaking, requiring teams..."
+    },
+    {
+      "id": "9146ff1756af",
+      "title": "How avatarin built a 24/7 retail agent with GPT-Realtime",
+      "link": "https://openai.com/index/avatarin",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-30T00:00:00.000Z",
+      "contentSnippet": "avatarin uses OpenAI’s GPT-Realtime to give Yamada Denki shoppers 24/7 multilingual support. In two weeks, 30,000 people used the agent and 92% of survey responses were positive."
+    },
+    {
+      "id": "27cf2ddf08b3",
+      "title": "NBCUniversal’s Seamless Migration: Unlocking Scalable Analytics with Databricks",
+      "link": "https://www.databricks.com/blog/nbcuniversals-seamless-migration-unlocking-scalable-analytics-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-29T20:35:57.000Z",
+      "contentSnippet": "As one of the world's leading media and entertainment companies, NBCUniversal relies..."
     },
     {
       "id": "743f087f11a5",
@@ -102,15 +192,6 @@
       "contentSnippet": "Introducing Guides, MotherDuck's context layer for AI agents. More accurate queries, lower token spend, and distributed context for your entire organization."
     },
     {
-      "id": "6c82f8f587ae",
-      "title": "How NorthStar Anesthesia built a scheduling app for a workforce of 3,000 clinicians in weeks",
-      "link": "https://www.databricks.com/blog/how-northstar-anesthesia-built-scheduling-app-workforce-3000-clinicians-weeks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-28T22:09:00.000Z",
-      "contentSnippet": "IntroductionNorthStar Anesthesia manages anesthesia staffing services across 25+ U.S..."
-    },
-    {
       "id": "477cf0314b9a",
       "title": "Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8",
       "link": "https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8",
@@ -120,15 +201,6 @@
       "contentSnippet": "Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…"
     },
     {
-      "id": "1ec9d43f022a",
-      "title": "The audience is the asset. Media finance teams need to understand them to protect the margin.",
-      "link": "https://www.databricks.com/blog/audience-asset-media-finance-teams-need-understand-them-protect-margin",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-28T19:03:18.000Z",
-      "contentSnippet": "Ask a CFO at a media company where this year's margin is landing and you will always get a hard-won answer..."
-    },
-    {
       "id": "df22037e3e0f",
       "title": "Scientific computing in the age of agentic AI",
       "link": "https://openai.com/index/scientific-computing-agentic-ai",
@@ -136,15 +208,6 @@
       "category": "AI",
       "pubDate": "2026-07-28T17:00:00.000Z",
       "contentSnippet": "A new field report shows how scientists use AI coding agents to modernize scientific computing, accelerating software development and discovery in genomics and beyond."
-    },
-    {
-      "id": "8943f465fcd5",
-      "title": "From prototype to production: High QPS for Databricks AI Search",
-      "link": "https://www.databricks.com/blog/prototype-production-high-qps-databricks-ai-search",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-28T16:50:57.000Z",
-      "contentSnippet": "Search is everywhere: product discovery on retail sites, voice queries on smart..."
     },
     {
       "id": "62b7a2b2ead0",
@@ -354,24 +417,6 @@
       "contentSnippet": "Throughout my 20 years in product development, I have watched brilliant software products fail not because of technology stack limitations, but because of human communication breakdowns. Teams that are unable to communicate honestly cannot improve. A team that doesn't improve bec…"
     },
     {
-      "id": "bd6ce42035f5",
-      "title": "Building AI infrastructure with the Effingham County community",
-      "link": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-22T13:00:00.000Z",
-      "contentSnippet": "OpenAI announces Project Camellia in Effingham County, Georgia, with commitments to responsible energy, community investment, jobs, and access to Codex."
-    },
-    {
-      "id": "130e23c4bd2f",
-      "title": "How news organizations are using AI to advance their vital missions",
-      "link": "https://openai.com/index/how-news-organizations-are-using-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-22T13:00:00.000Z",
-      "contentSnippet": "News organizations are using AI to strengthen reporting, grow audiences, and improve business operations, with OpenAI tools supporting journalists and publishers worldwide."
-    },
-    {
       "id": "7147531ddbe3",
       "title": "What Is Fabric App or Rayfin and Why You Should Care",
       "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
@@ -406,33 +451,6 @@
       "category": "AI",
       "pubDate": "2026-07-21T12:54:02.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "7abcdf95e4ae",
-      "title": "AI Interview Agent for Scrum Master and Product Owner Readiness",
-      "link": "https://www.scrum.org/resources/blog/ai-interview-agent-scrum-master-and-product-owner-readiness",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-21T09:45:26.000Z",
-      "contentSnippet": "Image Static interview preparation - a list of questions, a mirror, a memorised Scrum Guide - has a hard ceiling: nothing pushes back. Real panels do. To study that gap, we have developed an autonomous AI agent that conducts adaptive mock interviews for Scrum Master and Product O…"
-    },
-    {
-      "id": "9f88e7291ed1",
-      "title": "What is the AI Context Window?",
-      "link": "https://www.scrum.org/resources/blog/what-ai-context-window",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-21T07:03:16.000Z",
-      "contentSnippet": "Sometimes, when you are using an AI tool like ChatGPT, you get a message that you have reached the context window limit and cannot continue unless you upgrade your plan to a paid version. Another option is to start a new chat window, but you lose all your current conversations. I…"
-    },
-    {
-      "id": "051f2bfbfb54",
-      "title": "Warum ich inzwischen Solo-Entwicklung hasse",
-      "link": "https://www.scrum.org/resources/blog/warum-ich-inzwischen-solo-entwicklung-hasse",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-21T06:43:48.000Z",
-      "contentSnippet": "Ich hasse es, über einen längeren Zeitraum alleine zu arbeiten. Was ich stattdessen bevorzuge? Mob-Programming, Pair-Programming oder wenigstens intensives Swarming. Und das sage ich nicht, weil es gerade hip ist oder weil ich es irgendwo in einem Agile-Buch gelesen habe. Ich sag…"
     },
     {
       "id": "513a069a215f",
@@ -676,15 +694,6 @@
       "category": "Data",
       "pubDate": "2026-07-07T00:00:00.000Z",
       "contentSnippet": "AI pipelines run green and still return wrong numbers. Four habits to turn a one-shot prompt into a data pipeline you can actually trust."
-    },
-    {
-      "id": "93b56433d545",
-      "title": "Creative Dagster Projects from the Community",
-      "link": "https://dagster.io/blog/community-showcase-part-2",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-07-06T17:33:47.000Z",
-      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
     },
     {
       "id": "222d3c291025",
@@ -971,7 +980,7 @@
       "link": "https://martinfowler.com/fragments/2026-06-16.html",
       "source": "Martin Fowler",
       "category": "Delivery",
-      "pubDate": "2026-06-16T15:44:00.000Z",
+      "pubDate": "2026-06-16T12:44:00.000Z",
       "contentSnippet": "“Prag Dave” Thomas (co-author of the outstanding “Pragmatic Programmer”) has loved programming since he was young. Programming was how I could express myself. I wasn’t an artist. When I sing, dogs howl. When I draw, friends say, “Very nice. What is it?” I didn’t connect particula…"
     },
     {
@@ -1137,15 +1146,6 @@
       "contentSnippet": "Run DuckDB SQL inside your Obsidian notes and freeze the results as plain markdown tables, local files or MotherDuck cloud data alike. Your vault becomes a local knowledge base your AI agent can read without ever querying the warehouse"
     },
     {
-      "id": "6535772c48e0",
-      "title": "Fragments: June  2",
-      "link": "https://martinfowler.com/fragments/2026-06-02.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-06-02T18:21:00.000Z",
-      "contentSnippet": "Greg Wilson has noticed that lots of folks are using dodgy metrics to figure out if AI tools are worth their costs. Would you measure lines of code generated, or tickets closed? Or would you send out a survey asking whether developers feel more productive? Each of those approache…"
-    },
-    {
       "id": "d9cb1dfc37c6",
       "title": "Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft Databases",
       "link": "https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/",
@@ -1153,6 +1153,15 @@
       "category": "Analytics",
       "pubDate": "2026-06-02T17:00:00.000Z",
       "contentSnippet": "Microsoft Build 2026 highlights advancements in app development with Microsoft Fabric and Microsoft Databases, emphasizing a unified data and AI platform for scalable, agentic applications. The post Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft D…"
+    },
+    {
+      "id": "6535772c48e0",
+      "title": "Fragments: June  2",
+      "link": "https://martinfowler.com/fragments/2026-06-02.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-06-02T15:21:00.000Z",
+      "contentSnippet": "Greg Wilson has noticed that lots of folks are using dodgy metrics to figure out if AI tools are worth their costs. Would you measure lines of code generated, or tickets closed? Or would you send out a survey asking whether developers feel more productive? Each of those approache…"
     },
     {
       "id": "187915d15f2a",
@@ -1423,15 +1432,6 @@
       "category": "Delivery",
       "pubDate": "2026-05-14T21:52:00.000Z",
       "contentSnippet": "Last week I spent a day at The Orchard Retreat, hosted by Mechanical Orchard. that brought together several people working in software development to talk about the profession’s future with the rise of agentic programming. The event was help under the Chatham House Rule, so I can…"
-    },
-    {
-      "id": "90ea004a079e",
-      "title": "Bliki: Interrogatory LLM",
-      "link": "https://martinfowler.com/bliki/InterrogatoryLLM.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-14T15:04:00.000Z",
-      "contentSnippet": "When we need an LLM to perform a complex task, we often need to feed it a lot of context. Coming up with a design for a new feature requires descriptions of how we want the feature to appear to the user, guidelines on how it should be implemented, information on external systems…"
     },
     {
       "id": "f83719153ead",
@@ -1747,15 +1747,6 @@
       "category": "Data",
       "pubDate": "2026-04-02T20:43:11.000Z",
       "contentSnippet": "Connect Salesforce, Google Ads, and Gong to Compass and ask questions in Slack. No dashboards, no SQL, no tickets. Get real answers from your GTM data in seconds."
-    },
-    {
-      "id": "01b277db42df",
-      "title": "Why Rebundling the Data Platform Matters",
-      "link": "https://dagster.io/blog/rebundling-the-data-platform",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-04-02T20:43:01.000Z",
-      "contentSnippet": "As orchestration becomes native to modern tools, Dagster makes the case for reuniting data ingestion, transformation, and delivery."
     },
     {
       "id": "b0dc3a79c9be",
