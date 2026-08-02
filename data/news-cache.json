@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-01T08:13:38.008Z",
+  "generatedAt": "2026-08-02T06:39:10.581Z",
   "count": 217,
   "items": [
+    {
+      "id": "1eb3fd449c86",
+      "title": "AI Made Output Cheap. It Also Made Bad Strategy Impossible to Hide.",
+      "link": "https://www.scrum.org/resources/blog/ai-made-output-cheap-it-also-made-bad-strategy-impossible-hide",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-02T06:00:00.000Z",
+      "contentSnippet": "Image Somewhere in a quarterly business review this month, a technology leader is presenting a genuinely impressive number. Pull requests up. Features shipped, way up. The AI tooling landed last year and the output curve bent hard. Then someone from finance asks what all of it di…"
+    },
     {
       "id": "6d58997b466c",
       "title": "Ten advances in mathematics and theoretical computer science",
@@ -451,15 +460,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-22T15:42:43.000Z",
       "contentSnippet": "Recap In the last post we considered how to align an optimized lean workflow with high-level strategy. If a team understands the relevance of their tasks to business objectives, enterprise agility can then be demonstrated. Adopting a strict definition of \"Done\" proved to be the r…"
-    },
-    {
-      "id": "205790a3a329",
-      "title": "Beyond Blame: Transforming Team Dynamics Through Feedback",
-      "link": "https://www.scrum.org/resources/blog/beyond-blame-transforming-team-dynamics-through-feedback",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-22T13:52:58.000Z",
-      "contentSnippet": "Throughout my 20 years in product development, I have watched brilliant software products fail not because of technology stack limitations, but because of human communication breakdowns. Teams that are unable to communicate honestly cannot improve. A team that doesn't improve bec…"
     },
     {
       "id": "7147531ddbe3",
