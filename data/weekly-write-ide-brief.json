@@ -1,35 +1,27 @@
 {
   "status": "awaiting_ide",
   "reason": "cloud_automation",
-  "createdAt": "2026-07-27T09:02:08.530Z",
-  "weekOf": "2026-07-27",
+  "createdAt": "2026-08-03T09:03:47.769Z",
+  "weekOf": "2026-08-03",
   "thesis": {
-    "angle": "What Is Fabric App or Rayfin and Why You Should Care",
+    "angle": "Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8",
     "question": "What actually changes in how we build analytics when the reporting stack keeps moving?",
     "primary": {
-      "id": "7147531ddbe3",
-      "title": "What Is Fabric App or Rayfin and Why You Should Care",
-      "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
+      "id": "477cf0314b9a",
+      "title": "Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8",
+      "link": "https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8",
       "source": "RADACAD",
       "category": "Analytics",
-      "snippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
+      "snippet": "Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…"
     },
     "supporting": [
       {
-        "id": "9f106d335bd4",
-        "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
-        "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
-        "source": "Chris Webb's BI Blog",
-        "category": "Analytics",
-        "snippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
-      },
-      {
-        "id": "7d124074cf80",
-        "title": "How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily",
-        "link": "https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily",
-        "source": "Databricks Blog",
-        "category": "Data",
-        "snippet": "“We showed the value of having a foundational data platform, and that success story..."
+        "id": "1130e94af268",
+        "title": "The Conductor Developer",
+        "link": "https://martinfowler.com/rachels-ramblings/conductor-developer.html",
+        "source": "Martin Fowler",
+        "category": "Delivery",
+        "snippet": "TL;DR Why I think software development is starting to feel a little more like conducting an orchestra. There’s a shift happening in software development that I don’t think we’re talking about clearly enough. For the last couple of years we’ve framed AI as a productivity tool. How…"
       }
     ],
     "bridgeProject": {
@@ -48,77 +40,78 @@
     "category": "Data",
     "tags": [
       "Power BI",
+      "Agents",
       "AI",
       "Analytics",
       "Next.js",
       "React"
     ],
-    "whyInteresting": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
+    "whyInteresting": "Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…"
   },
   "intake": {
-    "weekOf": "2026-07-27",
-    "generatedAt": "2026-07-27T09:02:08.528Z",
+    "weekOf": "2026-08-03",
+    "generatedAt": "2026-08-03T09:03:47.767Z",
     "signals": [
       {
-        "id": "9f106d335bd4",
-        "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
-        "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
-        "source": "Chris Webb's BI Blog",
+        "id": "f776967f28fc",
+        "title": "(Don’t) Stop materializing your silver layer!",
+        "link": "https://data-mozart.com/dont-stop-materializing-your-silver-layer/?utm_source=rss&utm_medium=rss&utm_campaign=dont-stop-materializing-your-silver-layer",
+        "source": "Data Mozart",
         "category": "Analytics",
-        "snippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
+        "snippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
       },
       {
-        "id": "144c71381790",
-        "title": "Data Engineering Weekly #280",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-280",
-        "source": "Data Engineering Weekly",
-        "category": "Data",
-        "snippet": "The Weekly Data Engineering Newsletter"
-      },
-      {
-        "id": "c82d88ed2c22",
-        "title": "The Project Manager Isn't Dead. It Was Disassembled on Purpose!",
-        "link": "https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose",
-        "source": "Scrum.org",
-        "category": "Delivery",
-        "snippet": "Image I see it everywhere. In LinkedIn posts, in heated comment threads, and maybe most tellingly, in job descriptions that quietly list \"Scrum Master / Project Manager\" as if the slash were doing no work at all. The framing is always the same: Scrum Master versus Project Manager…"
-      },
-      {
-        "id": "7569338ee0d3",
-        "title": "Launching Health in ChatGPT",
-        "link": "https://openai.com/index/health-in-chatgpt",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health."
-      },
-      {
-        "id": "7147531ddbe3",
-        "title": "What Is Fabric App or Rayfin and Why You Should Care",
-        "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
-        "source": "RADACAD",
-        "category": "Analytics",
-        "snippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
-      },
-      {
-        "id": "7d124074cf80",
-        "title": "How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily",
-        "link": "https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily",
+        "id": "3ab87184f2b7",
+        "title": "Backstage with Lakebase, part 3",
+        "link": "https://www.databricks.com/blog/backstage-lakebase-part-3",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "“We showed the value of having a foundational data platform, and that success story..."
+        "snippet": "In the first part of this series, running Backstage on Databricks Lakebase gave us..."
       },
       {
-        "id": "90546cd0bf78",
-        "title": "The Pyramid of Impediments",
-        "link": "https://www.scrum.org/resources/blog/pyramid-impediments",
+        "id": "1eb3fd449c86",
+        "title": "AI Made Output Cheap. It Also Made Bad Strategy Impossible to Hide.",
+        "link": "https://www.scrum.org/resources/blog/ai-made-output-cheap-it-also-made-bad-strategy-impossible-hide",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Introduction The Pyramid of Impediments is a decision framework for Scrum Masters, Agile Coaches and other agile leaders. Every agile leader eventually encounters the same situations: A Scrum Team struggles with Sprint Planning, technical debt continues to grow, conflicts remain…"
+        "snippet": "Image Somewhere in a quarterly business review this month, a technology leader is presenting a genuinely impressive number. Pull requests up. Features shipped, way up. The AI tooling landed last year and the output curve bent hard. Then someone from finance asks what all of it di…"
       },
       {
-        "id": "8ab3a4be8a66",
-        "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
-        "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries",
+        "id": "6d58997b466c",
+        "title": "Ten advances in mathematics and theoretical computer science",
+        "link": "https://openai.com/index/ten-advances-in-mathematics",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity."
+      },
+      {
+        "id": "477cf0314b9a",
+        "title": "Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8",
+        "link": "https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8",
+        "source": "RADACAD",
+        "category": "Analytics",
+        "snippet": "Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…"
+      },
+      {
+        "id": "e30c19ad366e",
+        "title": "Asynchronous I/O in DuckDB: Work, Thread, Work",
+        "link": "https://duckdb.org/2026/07/31/asynchronous-io.html",
+        "source": "DuckDB",
+        "category": "Data",
+        "snippet": "It doesn't matter how fast query operators are in a database system if we can't pull in the data quickly. For most of DuckDB's history, however, this problem was largely avoided by pruning data early. By pushing down filters and projections, we could ensure that we only read what…"
+      },
+      {
+        "id": "1130e94af268",
+        "title": "The Conductor Developer",
+        "link": "https://martinfowler.com/rachels-ramblings/conductor-developer.html",
+        "source": "Martin Fowler",
+        "category": "Delivery",
+        "snippet": "TL;DR Why I think software development is starting to feel a little more like conducting an orchestra. There’s a shift happening in software development that I don’t think we’re talking about clearly enough. For the last couple of years we’ve framed AI as a productivity tool. How…"
+      },
+      {
+        "id": "83cc35aa7317",
+        "title": "Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)",
+        "link": "https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-entries",
         "source": "Simon Willison",
         "category": "AI",
         "snippet": ""

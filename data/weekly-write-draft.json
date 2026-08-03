@@ -1,84 +1,85 @@
 {
-  "id": "ww-2026-07-27-ide",
-  "status": "published",
-  "createdAt": "2026-07-27T09:05:00.000Z",
-  "weekOf": "2026-07-27",
-  "slug": "when-analytics-becomes-an-app-the-semantic-model-is-no-longer-the-finish-line",
-  "title": "When analytics becomes an app, the semantic model is no longer the finish line",
-  "summary": "Fabric Apps move analytics beyond the report canvas, but a custom frontend only pays off when the experience needs more than a report and the team accepts software ownership.",
+  "id": "ww-2026-08-03-ide",
+  "status": "pending",
+  "createdAt": "2026-08-03T09:05:31.000Z",
+  "weekOf": "2026-08-03",
+  "slug": "when-an-agent-can-change-fabric-the-review-boundary-becomes-the-product",
+  "title": "When an agent can change Fabric, the review boundary becomes the product",
+  "summary": "MCP and CLI can move Fabric work from clicks to agent actions, but the durable gain comes from scoped permissions, inspectable plans, and deliberate approval.",
   "category": "Data",
   "tags": [
-    "Power BI",
     "Fabric",
+    "MCP",
+    "AI Agents",
     "Analytics",
-    "TypeScript"
+    "Delivery"
   ],
-  "mdx": "---\ntitle: \"When analytics becomes an app, the semantic model is no longer the finish line\"\nsummary: \"Fabric Apps move analytics beyond the report canvas, but a custom frontend only pays off when the experience needs more than a report and the team accepts software ownership.\"\ndate: \"2026-07-27\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Fabric\", \"Analytics\", \"TypeScript\"]\n---\n\n## The question\n\nI used to treat the semantic model and report as the last mile of analytics: shape trusted data, define the measures, build the pages, publish, monitor. If the reporting stack now lets me put a TypeScript application on top of that same model, what actually changes in how I build the product — and what should stay boring?\n\nThe tempting answer is that the whole stack needs to be reinvented. I think the narrower answer is more useful: the model can remain the stable contract, while the unit of delivery changes from a report people inspect to an application where people can act.\n\n## The report was never the whole product\n\nIn [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care), Reza Rad describes Rayfin, or Fabric Apps, as an open-source SDK and CLI for building a TypeScript frontend inside a Fabric workspace. Depending on the use case, the backend can be a Fabric SQL database or a Power BI semantic model. Hosting and Entra ID authentication stay in the Fabric environment.\n\nThe interesting part is not that Fabric can host another frontend. It is that a governed semantic model can now sit behind an experience that is not constrained to the report canvas. A queue can have an explicit resolve action. A portfolio screen can combine analysis with a workflow. A customer view can expose only the decisions that matter instead of reproducing every page in the analyst's report.\n\nThat corrects a false belief I have carried into more than one build: if the measures are right and the visuals are polished, the product is nearly done. Sometimes it is. Sometimes the report is only the evidence layer, while the user's actual job still happens in email, a spreadsheet, or a second system.\n\n## Build the decision path before the custom frontend\n\nA custom application widens the design space, which also makes it easier to build the wrong thing attractively. I would not start with React components. I would start with the decision path: what does the user see, what can they change, what must be written back, and which result needs an audit trail?\n\nThat sequence separates two very different needs. If people need filters, drill-through, shared measures, and familiar charts, a Power BI report may already be the better product. If they need to move a case from review to approved, capture context, or combine governed metrics with an operational action, the application boundary begins to earn its keep.\n\nThe semantic model should still carry definitions such as revenue, exposure, variance, and eligibility. Moving the interface does not justify copying business logic into TypeScript. My decision rule is simple: calculations that must agree across experiences belong in the governed data layer; interaction logic that exists for one workflow belongs in the app. The stack can move without letting every layer invent its own truth.\n\n## One workspace removes handoffs, not responsibility\n\nRad's example brings the frontend, model or database, authentication, and hosting under one Fabric roof. That can remove real friction: fewer services to connect, fewer deployment surfaces, and less custom authentication work. But consolidation is not the same as simplification.\n\nA report team shipping an app now owns software questions too. What happens when a write fails after the screen says success? Which browser path gets tested? How is a destructive action reversed? Who reviews dependencies in the generated TypeScript? Entra ID can handle identity, but it cannot decide whether a user should be allowed to approve a particular business event. The workspace boundary does not write the authorization rule for me.\n\nThere is also a hard counter-case: Fabric Apps were still in Preview in the source article and required Fabric capacity plus a tenant setting. A team with a stable report, a small audience, or limited frontend ownership may gain more risk than value by moving early. I would rather keep a plain report that has an owner than launch a custom app whose operational burden belongs to nobody.\n\n## The boundary I use in Orbit\n\nOrbit gives me a smaller version of the same choice. The public site is a Next.js application, but I do not turn every content operation into a custom workflow. Essays stay as MDX in git. Related articles come from curated RSS. Studio edits structured JSON. For the weekly Write, generation can prepare a draft, but a Slack approval remains the publish gate.\n\nThose boundaries are deliberate. Git is better than a bespoke editor for reviewing durable content. Slack is better than an invisible autonomous publish step for the final human decision. The application earns its place where it joins those parts into one legible path; it does not need to absorb every responsibility just because it can.\n\nThat is the lesson I would carry into Fabric Apps. Start from the handoff that currently breaks the work, not from the novelty of a TypeScript frontend beside a semantic model. Then keep one step manual until the team has evidence that automating it is safer.\n\n## Takeaway\n\nWhen analytics becomes an app, the semantic model is no longer the finish line — but it should remain the source of shared meaning. I would reach for a Fabric App when users need to act inside the analytical experience, not merely view it. Keep measures in the governed layer, put workflow-specific interaction in the frontend, and name the software owner before shipping. A moving stack is not a reason to rebuild everything; it is a reason to redraw the product boundary around the decision the user is actually trying to make.\n",
-  "preview": "When analytics becomes an app, the semantic model is no longer the finish line\n\nFabric Apps move analytics beyond the report canvas, but a custom frontend only pays off when the experience needs more than a report and the team accepts software ownership.\n\nInspired by: What Is Fabric App or Rayfin and Why You Should Care",
+  "mdx": "---\ntitle: \"When an agent can change Fabric, the review boundary becomes the product\"\nsummary: \"MCP and CLI can move Fabric work from clicks to agent actions, but the durable gain comes from scoped permissions, inspectable plans, and deliberate approval.\"\ndate: \"2026-08-03\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Fabric\", \"MCP\", \"AI Agents\", \"Analytics\", \"Delivery\"]\n---\n\n## The question\n\nI used to think governance meant that someone checked a report or deployment and then clicked the final button. That assumption breaks when the reporting stack can act from a conversation. If an agent can list workspaces, create Fabric items, run notebooks, and deploy a report, what has to be true before I treat that speed as delivery rather than a more convenient production incident?\n\nThe answer is not another approval button. It is a review boundary that produces evidence before authority moves.\n\n## The click was never the control\n\nIn [Fabric MCP Servers, CLI & AI Agents](https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8), Reza Rad's conversation with Hasan Abo-Shally makes the shift concrete. Without an MCP connection, the agent returns instructions. With the connection, it can invoke Fabric tools. A local MCP server can provide platform context, while the Fabric CLI gives the agent an execution path that can later become a CI/CD script.\n\nThat changes less about analytics logic than it first appears. Measures still need definitions. Identities still need scopes. A failed refresh still needs an owner. What changes is the evidence I need before execution. A manual click feels controlled because I can see the screen, but the click was never the control. Permission, an inspectable change, a named owner, and a rollback path were the controls.\n\nThe wrong default is to replace every click with a prompt and keep the old approval process. A prompt records intent, not a deployable specification. I want a durable artifact between the request and the action: a Terraform plan, a CLI script, a pull request, or a bounded list of proposed tool calls. If nothing records what the agent expects to change, the reviewer can only approve prose.\n\n## Make the plan the unit of review\n\nThe strongest moment in the source is not the end-to-end automation. It is the pause. In one demo, a Terraform plan shows the resources to be created and waits for manual approval before the CLI continues the deployment. The plan turns a broad request into objects, identities, connections, and mappings that a person can challenge.\n\nMy rule is that an agent may propose widely, but its production authority should grow only with the quality of evidence it leaves. For a low-risk workspace listing, direct invocation may be enough. For a new workspace, I want the name, capacity, and roles shown first. For a semantic-model change, I want a diff of definitions. For deletion or access changes, I want execution stopped until a named owner confirms the impact and the recovery path.\n\nThis is a challenger-versus-baseline test. The baseline is an administrator following a runbook. The agent does not win merely by finishing faster; it must leave better evidence than the runbook. If it runs twenty commands invisibly and succeeds, it has won the stopwatch and lost the control test.\n\n## Move autonomy one boundary at a time\n\nMCP standardises how an agent discovers and invokes tools, which makes the boundary easier to move. It also expands the blast radius of a vague request. The source notes that Fabric's remote MCP was still in public preview at the time of recording, describes read-only mode, and distinguishes tools by risk. I read those details as a rollout sequence, not footnotes.\n\nI would start one real job in read-only mode: inventory stale workspaces or inspect refresh states. Next I would let the agent generate a CLI script without running it. Then I would execute the script against a sandbox. Only after the output and logs match the plan would I add an approval step for production. Each stage should expose a different failure clearly enough that I know whether the problem was the request, the generated plan, the permission, or the platform.\n\nThere is a counter-case. I would not wrap every query in ceremonial approval. Listing workspaces within an existing permission is not the same risk as deleting one. Too many gates teach people to approve on reflex. Read-only work can flow; additive work should present a visible plan; destructive or high-impact work should remain explicit. Controls need to be proportional or they become theatre.\n\n## The small version I already use\n\nOrbit's weekly Write flow gives me a smaller version of this boundary. Signals become an intake, automation prepares a draft, and Slack approval remains the publish gate. The human does not reproduce every preparation step, but there is a titled, inspectable artifact before public state changes.\n\nThat split is deliberate. Automation reduces preparation without hiding the transition. If the draft is weak, nothing is published. If approval waits, the pending file remains reviewable outside the agent conversation. That is the behavior I want from analytics automation too: a visible intermediate state that survives the chat window.\n\n## What I am not handing over\n\nI have not proven this pattern on a production Fabric tenant, so I am not treating an agent-authored deployment as safe by default. I would keep destructive namespaces disabled, identity scopes narrow, and generated scripts or plans in a versioned system. I would also name who owns a bad change before granting the tool that can make it.\n\nManual approval is not magic either. If the plan is unreadable, or generated faster than a reviewer can understand it, the gate becomes theatre. The objective is not a human click. It is evidence good enough for an accountable decision.\n\n## Takeaway\n\nWhen the reporting stack moves from buttons to agents, I do not want to preserve the click path. I want to preserve the decision boundary. Let the agent translate intent into an inspectable plan, match its permissions to the risk, and keep production execution separate and reversible. Move that boundary only when the logs, diffs, and plans outperform the manual baseline. The useful agent is not the one that touches production first; it is the one that makes the next change easier to trust.\n",
+  "preview": "When an agent can change Fabric, the review boundary becomes the product\n\nMCP and CLI can move Fabric work from clicks to agent actions, but the durable gain comes from scoped permissions, inspectable plans, and deliberate approval.\n\nInspired by: Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8",
   "intake": {
-    "weekOf": "2026-07-27",
-    "generatedAt": "2026-07-27T09:02:08.528Z",
+    "weekOf": "2026-08-03",
+    "generatedAt": "2026-08-03T09:03:47.767Z",
     "signals": [
       {
-        "id": "9f106d335bd4",
-        "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
-        "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
-        "source": "Chris Webb's BI Blog",
+        "id": "f776967f28fc",
+        "title": "(Don’t) Stop materializing your silver layer!",
+        "link": "https://data-mozart.com/dont-stop-materializing-your-silver-layer/?utm_source=rss&utm_medium=rss&utm_campaign=dont-stop-materializing-your-silver-layer",
+        "source": "Data Mozart",
         "category": "Analytics",
-        "snippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
+        "snippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
       },
       {
-        "id": "144c71381790",
-        "title": "Data Engineering Weekly #280",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-280",
-        "source": "Data Engineering Weekly",
-        "category": "Data",
-        "snippet": "The Weekly Data Engineering Newsletter"
-      },
-      {
-        "id": "c82d88ed2c22",
-        "title": "The Project Manager Isn't Dead. It Was Disassembled on Purpose!",
-        "link": "https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose",
-        "source": "Scrum.org",
-        "category": "Delivery",
-        "snippet": "Image I see it everywhere. In LinkedIn posts, in heated comment threads, and maybe most tellingly, in job descriptions that quietly list \"Scrum Master / Project Manager\" as if the slash were doing no work at all. The framing is always the same: Scrum Master versus Project Manager…"
-      },
-      {
-        "id": "7569338ee0d3",
-        "title": "Launching Health in ChatGPT",
-        "link": "https://openai.com/index/health-in-chatgpt",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health."
-      },
-      {
-        "id": "7147531ddbe3",
-        "title": "What Is Fabric App or Rayfin and Why You Should Care",
-        "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
-        "source": "RADACAD",
-        "category": "Analytics",
-        "snippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
-      },
-      {
-        "id": "7d124074cf80",
-        "title": "How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily",
-        "link": "https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily",
+        "id": "3ab87184f2b7",
+        "title": "Backstage with Lakebase, part 3",
+        "link": "https://www.databricks.com/blog/backstage-lakebase-part-3",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "“We showed the value of having a foundational data platform, and that success story..."
+        "snippet": "In the first part of this series, running Backstage on Databricks Lakebase gave us..."
       },
       {
-        "id": "90546cd0bf78",
-        "title": "The Pyramid of Impediments",
-        "link": "https://www.scrum.org/resources/blog/pyramid-impediments",
+        "id": "1eb3fd449c86",
+        "title": "AI Made Output Cheap. It Also Made Bad Strategy Impossible to Hide.",
+        "link": "https://www.scrum.org/resources/blog/ai-made-output-cheap-it-also-made-bad-strategy-impossible-hide",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Introduction The Pyramid of Impediments is a decision framework for Scrum Masters, Agile Coaches and other agile leaders. Every agile leader eventually encounters the same situations: A Scrum Team struggles with Sprint Planning, technical debt continues to grow, conflicts remain…"
+        "snippet": "Image Somewhere in a quarterly business review this month, a technology leader is presenting a genuinely impressive number. Pull requests up. Features shipped, way up. The AI tooling landed last year and the output curve bent hard. Then someone from finance asks what all of it di…"
       },
       {
-        "id": "8ab3a4be8a66",
-        "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
-        "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries",
+        "id": "6d58997b466c",
+        "title": "Ten advances in mathematics and theoretical computer science",
+        "link": "https://openai.com/index/ten-advances-in-mathematics",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity."
+      },
+      {
+        "id": "477cf0314b9a",
+        "title": "Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8",
+        "link": "https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8",
+        "source": "RADACAD",
+        "category": "Analytics",
+        "snippet": "Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…"
+      },
+      {
+        "id": "e30c19ad366e",
+        "title": "Asynchronous I/O in DuckDB: Work, Thread, Work",
+        "link": "https://duckdb.org/2026/07/31/asynchronous-io.html",
+        "source": "DuckDB",
+        "category": "Data",
+        "snippet": "It doesn't matter how fast query operators are in a database system if we can't pull in the data quickly. For most of DuckDB's history, however, this problem was largely avoided by pruning data early. By pushing down filters and projections, we could ensure that we only read what…"
+      },
+      {
+        "id": "1130e94af268",
+        "title": "The Conductor Developer",
+        "link": "https://martinfowler.com/rachels-ramblings/conductor-developer.html",
+        "source": "Martin Fowler",
+        "category": "Delivery",
+        "snippet": "TL;DR Why I think software development is starting to feel a little more like conducting an orchestra. There’s a shift happening in software development that I don’t think we’re talking about clearly enough. For the last couple of years we’ve framed AI as a productivity tool. How…"
+      },
+      {
+        "id": "83cc35aa7317",
+        "title": "Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)",
+        "link": "https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-entries",
         "source": "Simon Willison",
         "category": "AI",
         "snippet": ""
@@ -155,7 +156,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-07-27T10:08:17.279Z",
-  "publishedSlug": "when-analytics-becomes-an-app-the-semantic-model-is-no-longer-the-finish-line"
+  "source": "ide"
 }

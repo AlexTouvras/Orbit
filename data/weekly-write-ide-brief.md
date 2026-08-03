@@ -6,8 +6,8 @@ Cursor Cloud Automation writes this week's essay (Gemini skipped). **Generate th
 
 `cloud_automation`
 
-Created: 2026-07-27T09:02:08.530Z  
-Week of: 2026-07-27
+Created: 2026-08-03T09:03:47.769Z  
+Week of: 2026-08-03
 
 ## Your job (in this IDE)
 
@@ -25,23 +25,23 @@ npm run weekly:notify-draft
 ## Thesis
 
 - **Question:** What actually changes in how we build analytics when the reporting stack keeps moving?
-- **Primary inspiration:** [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care) (RADACAD)
-- **Snippet:** Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…
+- **Primary inspiration:** [Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8](https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8) (RADACAD)
+- **Snippet:** Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…
 - **Optional project bridge:** Orbit — Portfolio & related articles — Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.
 - **Suggested category:** Data
-- **Suggested tags:** Power BI, AI, Analytics, Next.js, React
+- **Suggested tags:** Power BI, Agents, AI, Analytics, Next.js, React
 
 ## Intake (reference only)
 
 ### Signals
-- [Power BI, M365 Copilot And The Importance Of DAX UDFs](https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/) — Chris Webb's BI Blog (Analytics)
-- [Data Engineering Weekly #280](https://www.dataengineeringweekly.com/p/data-engineering-weekly-280) — Data Engineering Weekly (Data)
-- [The Project Manager Isn't Dead. It Was Disassembled on Purpose!](https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose) — Scrum.org (Delivery)
-- [Launching Health in ChatGPT](https://openai.com/index/health-in-chatgpt) — OpenAI Blog (AI)
-- [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care) — RADACAD (Analytics)
-- [How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily](https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily) — Databricks Blog (Data)
-- [The Pyramid of Impediments](https://www.scrum.org/resources/blog/pyramid-impediments) — Scrum.org (Delivery)
-- [OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened](https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries) — Simon Willison (AI)
+- [(Don’t) Stop materializing your silver layer!](https://data-mozart.com/dont-stop-materializing-your-silver-layer/?utm_source=rss&utm_medium=rss&utm_campaign=dont-stop-materializing-your-silver-layer) — Data Mozart (Analytics)
+- [Backstage with Lakebase, part 3](https://www.databricks.com/blog/backstage-lakebase-part-3) — Databricks Blog (Data)
+- [AI Made Output Cheap. It Also Made Bad Strategy Impossible to Hide.](https://www.scrum.org/resources/blog/ai-made-output-cheap-it-also-made-bad-strategy-impossible-hide) — Scrum.org (Delivery)
+- [Ten advances in mathematics and theoretical computer science](https://openai.com/index/ten-advances-in-mathematics) — OpenAI Blog (AI)
+- [Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8](https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8) — RADACAD (Analytics)
+- [Asynchronous I/O in DuckDB: Work, Thread, Work](https://duckdb.org/2026/07/31/asynchronous-io.html) — DuckDB (Data)
+- [The Conductor Developer](https://martinfowler.com/rachels-ramblings/conductor-developer.html) — Martin Fowler (Delivery)
+- [Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)](https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-entries) — Simon Willison (AI)
 
 ### Active projects
 - **Orbit — Portfolio & related articles** (live) — Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.
@@ -56,10 +56,10 @@ Write `data/weekly-write-draft.json` like:
 
 ```json
 {
-  "id": "ww-2026-07-27-ide",
+  "id": "ww-2026-08-03-ide",
   "status": "pending",
   "createdAt": "<ISO now>",
-  "weekOf": "2026-07-27",
+  "weekOf": "2026-08-03",
   "slug": "<from-title>",
   "title": "<essay title>",
   "summary": "<one sentence>",
