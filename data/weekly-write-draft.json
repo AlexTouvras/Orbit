@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-08-03-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-08-03T09:05:31.000Z",
   "weekOf": "2026-08-03",
   "slug": "when-an-agent-can-change-fabric-the-review-boundary-becomes-the-product",
@@ -156,5 +156,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-08-03T10:12:22.809Z",
+  "publishedSlug": "when-an-agent-can-change-fabric-the-review-boundary-becomes-the-product"
 }
