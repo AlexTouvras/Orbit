@@ -85,15 +85,25 @@ export function verifyFieldCardActionToken(
   }
 }
 
-export function fieldCardActionUrl(pr: number, action: FieldCardAction): string {
-  const token = signFieldCardActionToken(pr, action);
+function siteBaseUrl(): string {
   const raw =
     process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
     process.env.VERCEL_URL?.trim() ||
     "https://alextouvras.com";
-  const base =
-    raw.startsWith("http://") || raw.startsWith("https://")
-      ? raw.replace(/\/$/, "")
-      : `https://${raw.replace(/\/$/, "")}`;
+  return raw.startsWith("http://") || raw.startsWith("https://")
+    ? raw.replace(/\/$/, "")
+    : `https://${raw.replace(/\/$/, "")}`;
+}
+
+export function fieldCardActionUrl(pr: number, action: FieldCardAction): string {
+  const token = signFieldCardActionToken(pr, action);
+  const base = siteBaseUrl();
+  if (action === "preview") {
+    return `${base}/api/field-card/preview?token=${encodeURIComponent(token)}`;
+  }
   return `${base}/api/field-card/action?token=${encodeURIComponent(token)}`;
+}
+
+export function fieldCardPreviewUrl(pr: number): string {
+  return fieldCardActionUrl(pr, "preview");
 }
