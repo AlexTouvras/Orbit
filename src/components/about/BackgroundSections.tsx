@@ -1,4 +1,4 @@
-import { MapPin, Mail, Download, ArrowUpRight } from "lucide-react";
+import { MapPin, Mail, ArrowUpRight } from "lucide-react";
 import { cv } from "@/content/cv";
 import { getEditableProfile } from "@/lib/profile-store";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -8,11 +8,10 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 const skillTones = ["cyan", "blue", "violet"] as const;
 
-/** CV & background sections — rendered on the home page. */
+/** CV & background sections — rendered on the about page. */
 export function BackgroundSections() {
   const profile = getEditableProfile();
   const email = profile.email || cv.email;
-  const resumeUrl = profile.resumeUrl || "/resume.pdf";
 
   return (
     <>
@@ -42,15 +41,6 @@ export function BackgroundSections() {
                 <Mail className="h-4 w-4 text-neon-cyan" aria-hidden />
                 {email}
               </a>
-              {resumeUrl && (
-                <a
-                  href={resumeUrl}
-                  className="focus-ring ml-auto inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition-[transform,border-color,color] active:scale-[0.98] hover:border-neon-cyan/50 hover:text-neon-cyan"
-                >
-                  <Download className="h-4 w-4" aria-hidden />
-                  Download CV
-                </a>
-              )}
             </div>
           </GlassCard>
         </Reveal>

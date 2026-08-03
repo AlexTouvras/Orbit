@@ -1,7 +1,205 @@
 {
-  "generatedAt": "2026-07-30T08:17:32.626Z",
-  "count": 218,
+  "generatedAt": "2026-08-03T09:35:40.945Z",
+  "count": 217,
   "items": [
+    {
+      "id": "28414e2d67cb",
+      "title": "What AI Training Courses Are Available in the Market for Scrum Masters?",
+      "link": "https://www.scrum.org/resources/blog/what-ai-training-courses-are-available-market-scrum-masters",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-03T05:58:13.000Z",
+      "contentSnippet": "If you search the internet, you will find a flood of AI courses. Most of them are pointless for Scrum Masters. But which one of them is worth thinking about? Let me explain … Image This is important to know because you want to spend your time, money, and effort on a training cour…"
+    },
+    {
+      "id": "e70bbfbc4b98",
+      "title": "Analysing Power BI Data Using Copilot In Excel",
+      "link": "https://blog.crossjoin.co.uk/2026/08/02/analysing-power-bi-data-using-copilot-in-excel/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-08-02T17:52:45.000Z",
+      "contentSnippet": "This week there was another big Copilot-related announcement for Power BI – but on the Excel blog. You can now analyse data from Power BI semantic models using Copilot in Excel. Full details on how to enable this are in the docs here, but what does it look like? Using the same se…"
+    },
+    {
+      "id": "1eb3fd449c86",
+      "title": "AI Made Output Cheap. It Also Made Bad Strategy Impossible to Hide.",
+      "link": "https://www.scrum.org/resources/blog/ai-made-output-cheap-it-also-made-bad-strategy-impossible-hide",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-02T06:00:00.000Z",
+      "contentSnippet": "Image Somewhere in a quarterly business review this month, a technology leader is presenting a genuinely impressive number. Pull requests up. Features shipped, way up. The AI tooling landed last year and the output curve bent hard. Then someone from finance asks what all of it di…"
+    },
+    {
+      "id": "6d58997b466c",
+      "title": "Ten advances in mathematics and theoretical computer science",
+      "link": "https://openai.com/index/ten-advances-in-mathematics",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-01T00:00:00.000Z",
+      "contentSnippet": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity."
+    },
+    {
+      "id": "83cc35aa7317",
+      "title": "Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)",
+      "link": "https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-entries",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-07-31T23:13:22.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "3ab87184f2b7",
+      "title": "Backstage with Lakebase, part 3",
+      "link": "https://www.databricks.com/blog/backstage-lakebase-part-3",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-31T22:21:47.000Z",
+      "contentSnippet": "In the first part of this series, running Backstage on Databricks Lakebase gave us..."
+    },
+    {
+      "id": "b86dc435d64a",
+      "title": "Advancing responsible AI across Europe",
+      "link": "https://openai.com/index/advancing-responsible-ai-across-europe",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-31T15:00:00.000Z",
+      "contentSnippet": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances."
+    },
+    {
+      "id": "6e145b017b5a",
+      "title": "Building abundant intelligence",
+      "link": "https://openai.com/index/building-abundant-intelligence",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-31T15:00:00.000Z",
+      "contentSnippet": "A full-stack approach to making advanced AI more capable, more affordable, and more widely useful."
+    },
+    {
+      "id": "1130e94af268",
+      "title": "The Conductor Developer",
+      "link": "https://martinfowler.com/rachels-ramblings/conductor-developer.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-07-31T13:48:00.000Z",
+      "contentSnippet": "TL;DR Why I think software development is starting to feel a little more like conducting an orchestra. There’s a shift happening in software development that I don’t think we’re talking about clearly enough. For the last couple of years we’ve framed AI as a productivity tool. How…"
+    },
+    {
+      "id": "f776967f28fc",
+      "title": "(Don’t) Stop materializing your silver layer!",
+      "link": "https://data-mozart.com/dont-stop-materializing-your-silver-layer/?utm_source=rss&utm_medium=rss&utm_campaign=dont-stop-materializing-your-silver-layer",
+      "source": "Data Mozart",
+      "category": "Analytics",
+      "pubDate": "2026-07-31T10:03:06.000Z",
+      "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
+    },
+    {
+      "id": "487981959078",
+      "title": "Univé builds an AI-ready workforce",
+      "link": "https://openai.com/index/unive",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-31T07:00:00.000Z",
+      "contentSnippet": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale."
+    },
+    {
+      "id": "c5ad624a6ffb",
+      "title": "Disrupting a Criminal Scam Operation",
+      "link": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "OpenAI disrupted a Cambodia-based scam operation using ChatGPT to support investment, romance, gambling, and impersonation schemes."
+    },
+    {
+      "id": "e30c19ad366e",
+      "title": "Asynchronous I/O in DuckDB: Work, Thread, Work",
+      "link": "https://duckdb.org/2026/07/31/asynchronous-io.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "It doesn't matter how fast query operators are in a database system if we can't pull in the data quickly. For most of DuckDB's history, however, this problem was largely avoided by pruning data early. By pushing down filters and projections, we could ensure that we only read what…"
+    },
+    {
+      "id": "aceeb0bce6b4",
+      "title": "Figma for Agents: How Airflow's Creator Coordinates AI ft. Maxime Beauchemin",
+      "link": "https://motherduck.com/blog/figma-for-agents-airflow-creator-maxime-beauchemin",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Maxime Beauchemin, creator of Airflow and Superset, shares how he uses AI agents for data engineering: orchestrating agents on a shared canvas with Agor, context layers and semantics, Okta for Agents security, and automating CEO work with AI assistants."
+    },
+    {
+      "id": "b4ac64d60227",
+      "title": "Your Framework Has Been Doing Your Thinking. That's the Problem.",
+      "link": "https://www.scrum.org/resources/blog/your-framework-has-been-doing-your-thinking-thats-problem",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-30T22:00:00.000Z",
+      "contentSnippet": "Image The new engineer asked her question in the second week, in the most innocent voice imaginable. \"Why do we do the estimation poker?\" The room paused. Someone said it helps with planning. She asked how. Someone else said it surfaces different perspectives. She asked whether i…"
+    },
+    {
+      "id": "206bdc62f4d7",
+      "title": "“Scrum Didn’t Work For Us.”",
+      "link": "https://www.scrum.org/resources/blog/scrum-didnt-work-us",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-07-30T19:31:05.000Z",
+      "contentSnippet": "Image This is what a colleague said to me once. Hey, I’m not religious about Scrum, and if it really didn’t work, that’s really fine with me — but in my experience Scrum is so deliberately lightweight that if it isn’t working, it probably isn’t the framework itself, but gaps or d…"
+    },
+    {
+      "id": "239d3a4cde9f",
+      "title": "Foundations for an AI-forward healthcare organization",
+      "link": "https://www.databricks.com/blog/foundations-ai-forward-healthcare-organization",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-30T19:30:00.000Z",
+      "contentSnippet": "The challenge for healthcare executives adopting AI is the noise when trying to advance an initiative..."
+    },
+    {
+      "id": "f609ca412d70",
+      "title": "Agentic media buying cannot scale without the right foundation. See how buyers and sellers get there on Databricks.",
+      "link": "https://www.databricks.com/blog/agentic-media-buying-cannot-scale-without-right-foundation-see-how-buyers-and-sellers-get",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-30T19:10:00.000Z",
+      "contentSnippet": "The bottleneck in media buying today isn't talent, it's coordinationEvery day, billions..."
+    },
+    {
+      "id": "dafe9a2bbb83",
+      "title": "The Economic Benefit of Refactoring",
+      "link": "https://martinfowler.com/articles/exploring-gen-ai/refactoring-economic-benefit.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-07-30T13:04:00.000Z",
+      "contentSnippet": "Giles Edwards-Alexander does an experiment to see if decomposing a large function helps reduce token costs, suggesting that is may now be possible to measure the economic benefit of refactoring more…"
+    },
+    {
+      "id": "61ad811164ff",
+      "title": "Creative Dagster Projects from the Community",
+      "link": "https://dagster.io/blog/community-showcase-part-3",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-07-30T12:37:41.000Z",
+      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
+    },
+    {
+      "id": "93b56433d545",
+      "title": "Creative Dagster Projects from the Community",
+      "link": "https://dagster.io/blog/community-showcase-part-2",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-07-30T12:28:26.000Z",
+      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
+    },
+    {
+      "id": "fc362ba711f5",
+      "title": "Advancing the price-performance frontier with GPT-5.6",
+      "link": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-30T10:00:00.000Z",
+      "contentSnippet": "Explore lower GPT‑5.6 pricing for Luna and Terra—and how OpenAI’s more efficient models help enterprises deploy AI workflows at scale."
+    },
     {
       "id": "c1ce6f8c6fdb",
       "title": "Convert proprietary code to open ANSI SQL with Genie Code",
@@ -10,6 +208,24 @@
       "category": "Data",
       "pubDate": "2026-07-30T01:00:00.000Z",
       "contentSnippet": "Migrating from a legacy data warehouse is a complex undertaking, requiring teams..."
+    },
+    {
+      "id": "9146ff1756af",
+      "title": "How avatarin built a 24/7 retail agent with GPT-Realtime",
+      "link": "https://openai.com/index/avatarin",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-07-30T00:00:00.000Z",
+      "contentSnippet": "avatarin uses OpenAI’s GPT-Realtime to give Yamada Denki shoppers 24/7 multilingual support. In two weeks, 30,000 people used the agent and 92% of survey responses were positive."
+    },
+    {
+      "id": "27cf2ddf08b3",
+      "title": "NBCUniversal’s Seamless Migration: Unlocking Scalable Analytics with Databricks",
+      "link": "https://www.databricks.com/blog/nbcuniversals-seamless-migration-unlocking-scalable-analytics-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-07-29T20:35:57.000Z",
+      "contentSnippet": "As one of the world's leading media and entertainment companies, NBCUniversal relies..."
     },
     {
       "id": "743f087f11a5",
@@ -57,15 +273,6 @@
       "contentSnippet": "Executive summary09:14, mid-shift. The filler trips. The line manager has minutes,..."
     },
     {
-      "id": "14405ea67663",
-      "title": "How agentic AI can help telecom finance teams protect the margin when every moment matters",
-      "link": "https://www.databricks.com/blog/how-agentic-ai-can-help-telecom-finance-teams-protect-margin-when-every-moment-matters",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T17:26:32.000Z",
-      "contentSnippet": "How preventing revenue leakage became finance's front lineIn telecom, revenue is..."
-    },
-    {
       "id": "cc8e132c6199",
       "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
       "link": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
@@ -73,24 +280,6 @@
       "category": "AI",
       "pubDate": "2026-07-29T15:00:00.000Z",
       "contentSnippet": "How two API settings improved GPT-5.6 performance on ARC-AGI-3, boosting scores and efficiency by retaining reasoning and enabling compaction."
-    },
-    {
-      "id": "14fd05ad34f9",
-      "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers",
-      "link": "https://openai.com/index/chatgpt-for-academic-researchers",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-29T10:00:00.000Z",
-      "contentSnippet": "OpenAI is giving 100,000 academic researchers free access to ChatGPT's most advanced AI models to accelerate scientific research, collaboration, and discovery."
-    },
-    {
-      "id": "6d964f10c333",
-      "title": "How GPT-5.6 fuses frontier intelligence with frontier efficiency",
-      "link": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-29T00:00:00.000Z",
-      "contentSnippet": "GPT-5.6 improves AI efficiency across models, inference, and agentic workflows, helping deliver more useful intelligence per dollar."
     },
     {
       "id": "0a11c907adfc",
@@ -102,15 +291,6 @@
       "contentSnippet": "Introducing Guides, MotherDuck's context layer for AI agents. More accurate queries, lower token spend, and distributed context for your entire organization."
     },
     {
-      "id": "6c82f8f587ae",
-      "title": "How NorthStar Anesthesia built a scheduling app for a workforce of 3,000 clinicians in weeks",
-      "link": "https://www.databricks.com/blog/how-northstar-anesthesia-built-scheduling-app-workforce-3000-clinicians-weeks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-28T22:09:00.000Z",
-      "contentSnippet": "IntroductionNorthStar Anesthesia manages anesthesia staffing services across 25+ U.S..."
-    },
-    {
       "id": "477cf0314b9a",
       "title": "Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8",
       "link": "https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8",
@@ -118,33 +298,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-28T20:28:14.000Z",
       "contentSnippet": "Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…"
-    },
-    {
-      "id": "1ec9d43f022a",
-      "title": "The audience is the asset. Media finance teams need to understand them to protect the margin.",
-      "link": "https://www.databricks.com/blog/audience-asset-media-finance-teams-need-understand-them-protect-margin",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-28T19:03:18.000Z",
-      "contentSnippet": "Ask a CFO at a media company where this year's margin is landing and you will always get a hard-won answer..."
-    },
-    {
-      "id": "df22037e3e0f",
-      "title": "Scientific computing in the age of agentic AI",
-      "link": "https://openai.com/index/scientific-computing-agentic-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-28T17:00:00.000Z",
-      "contentSnippet": "A new field report shows how scientists use AI coding agents to modernize scientific computing, accelerating software development and discovery in genomics and beyond."
-    },
-    {
-      "id": "8943f465fcd5",
-      "title": "From prototype to production: High QPS for Databricks AI Search",
-      "link": "https://www.databricks.com/blog/prototype-production-high-qps-databricks-ai-search",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-28T16:50:57.000Z",
-      "contentSnippet": "Search is everywhere: product discovery on retail sites, voice queries on smart..."
     },
     {
       "id": "62b7a2b2ead0",
@@ -237,15 +390,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "f143efbfe201",
-      "title": "How AI is expanding what people do at work",
-      "link": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-27T03:30:00.000Z",
-      "contentSnippet": "New OpenAI research shows how AI is expanding what workers do, with ChatGPT users taking on tasks across roles and reshaping job boundaries."
-    },
-    {
       "id": "c82d88ed2c22",
       "title": "The Project Manager Isn't Dead. It Was Disassembled on Purpose!",
       "link": "https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose",
@@ -318,15 +462,6 @@
       "contentSnippet": "Image Scrum rests on empiricism: transparency enables inspection, and inspection enables adaptation. Most Scrum Teams I work with are reasonably good at inspection and adaptation. Where they struggle is the first one. Transparency is not the same as having a tool. A board shows w…"
     },
     {
-      "id": "7569338ee0d3",
-      "title": "Launching Health in ChatGPT",
-      "link": "https://openai.com/index/health-in-chatgpt",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-23T00:00:00.000Z",
-      "contentSnippet": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health."
-    },
-    {
       "id": "8ab3a4be8a66",
       "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
       "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries",
@@ -334,42 +469,6 @@
       "category": "AI",
       "pubDate": "2026-07-22T23:51:33.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "3b3ac29dc258",
-      "title": "From Chaos to Control, Part 6 - Adapt and Control",
-      "link": "https://www.scrum.org/resources/blog/chaos-control-part-6-adapt-and-control",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-22T15:42:43.000Z",
-      "contentSnippet": "Recap In the last post we considered how to align an optimized lean workflow with high-level strategy. If a team understands the relevance of their tasks to business objectives, enterprise agility can then be demonstrated. Adopting a strict definition of \"Done\" proved to be the r…"
-    },
-    {
-      "id": "205790a3a329",
-      "title": "Beyond Blame: Transforming Team Dynamics Through Feedback",
-      "link": "https://www.scrum.org/resources/blog/beyond-blame-transforming-team-dynamics-through-feedback",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-22T13:52:58.000Z",
-      "contentSnippet": "Throughout my 20 years in product development, I have watched brilliant software products fail not because of technology stack limitations, but because of human communication breakdowns. Teams that are unable to communicate honestly cannot improve. A team that doesn't improve bec…"
-    },
-    {
-      "id": "bd6ce42035f5",
-      "title": "Building AI infrastructure with the Effingham County community",
-      "link": "https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-22T13:00:00.000Z",
-      "contentSnippet": "OpenAI announces Project Camellia in Effingham County, Georgia, with commitments to responsible energy, community investment, jobs, and access to Codex."
-    },
-    {
-      "id": "130e23c4bd2f",
-      "title": "How news organizations are using AI to advance their vital missions",
-      "link": "https://openai.com/index/how-news-organizations-are-using-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-22T13:00:00.000Z",
-      "contentSnippet": "News organizations are using AI to strengthen reporting, grow audiences, and improve business operations, with OpenAI tools supporting journalists and publishers worldwide."
     },
     {
       "id": "7147531ddbe3",
@@ -406,33 +505,6 @@
       "category": "AI",
       "pubDate": "2026-07-21T12:54:02.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "7abcdf95e4ae",
-      "title": "AI Interview Agent for Scrum Master and Product Owner Readiness",
-      "link": "https://www.scrum.org/resources/blog/ai-interview-agent-scrum-master-and-product-owner-readiness",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-21T09:45:26.000Z",
-      "contentSnippet": "Image Static interview preparation - a list of questions, a mirror, a memorised Scrum Guide - has a hard ceiling: nothing pushes back. Real panels do. To study that gap, we have developed an autonomous AI agent that conducts adaptive mock interviews for Scrum Master and Product O…"
-    },
-    {
-      "id": "9f88e7291ed1",
-      "title": "What is the AI Context Window?",
-      "link": "https://www.scrum.org/resources/blog/what-ai-context-window",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-21T07:03:16.000Z",
-      "contentSnippet": "Sometimes, when you are using an AI tool like ChatGPT, you get a message that you have reached the context window limit and cannot continue unless you upgrade your plan to a paid version. Another option is to start a new chat window, but you lose all your current conversations. I…"
-    },
-    {
-      "id": "051f2bfbfb54",
-      "title": "Warum ich inzwischen Solo-Entwicklung hasse",
-      "link": "https://www.scrum.org/resources/blog/warum-ich-inzwischen-solo-entwicklung-hasse",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-21T06:43:48.000Z",
-      "contentSnippet": "Ich hasse es, über einen längeren Zeitraum alleine zu arbeiten. Was ich stattdessen bevorzuge? Mob-Programming, Pair-Programming oder wenigstens intensives Swarming. Und das sage ich nicht, weil es gerade hip ist oder weil ich es irgendwo in einem Agile-Buch gelesen habe. Ich sag…"
     },
     {
       "id": "513a069a215f",
@@ -678,15 +750,6 @@
       "contentSnippet": "AI pipelines run green and still return wrong numbers. Four habits to turn a one-shot prompt into a data pipeline you can actually trust."
     },
     {
-      "id": "93b56433d545",
-      "title": "Creative Dagster Projects from the Community",
-      "link": "https://dagster.io/blog/community-showcase-part-2",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-07-06T17:33:47.000Z",
-      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
-    },
-    {
       "id": "222d3c291025",
       "title": "Fragments: July  6",
       "link": "https://martinfowler.com/fragments/2026-07-06.html",
@@ -894,15 +957,6 @@
       "contentSnippet": "Introducing aidataengineer.io — an AI-powered learning platform built on 275+ editions of Data Engineering Weekly."
     },
     {
-      "id": "2b25d2f86b40",
-      "title": "Porting the Moebius 0.2B image inpainting model to run in the browser with Claude Code",
-      "link": "https://simonwillison.net/2026/Jun/22/porting-moebius/#atom-entries",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-06-22T23:43:51.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "dbddbf7d9d33",
       "title": "Data Engineering Weekly #275",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-275",
@@ -971,7 +1025,7 @@
       "link": "https://martinfowler.com/fragments/2026-06-16.html",
       "source": "Martin Fowler",
       "category": "Delivery",
-      "pubDate": "2026-06-16T15:44:00.000Z",
+      "pubDate": "2026-06-16T12:44:00.000Z",
       "contentSnippet": "“Prag Dave” Thomas (co-author of the outstanding “Pragmatic Programmer”) has loved programming since he was young. Programming was how I could express myself. I wasn’t an artist. When I sing, dogs howl. When I draw, friends say, “Very nice. What is it?” I didn’t connect particula…"
     },
     {
@@ -1137,15 +1191,6 @@
       "contentSnippet": "Run DuckDB SQL inside your Obsidian notes and freeze the results as plain markdown tables, local files or MotherDuck cloud data alike. Your vault becomes a local knowledge base your AI agent can read without ever querying the warehouse"
     },
     {
-      "id": "6535772c48e0",
-      "title": "Fragments: June  2",
-      "link": "https://martinfowler.com/fragments/2026-06-02.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-06-02T18:21:00.000Z",
-      "contentSnippet": "Greg Wilson has noticed that lots of folks are using dodgy metrics to figure out if AI tools are worth their costs. Would you measure lines of code generated, or tickets closed? Or would you send out a survey asking whether developers feel more productive? Each of those approache…"
-    },
-    {
       "id": "d9cb1dfc37c6",
       "title": "Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft Databases",
       "link": "https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/",
@@ -1153,6 +1198,15 @@
       "category": "Analytics",
       "pubDate": "2026-06-02T17:00:00.000Z",
       "contentSnippet": "Microsoft Build 2026 highlights advancements in app development with Microsoft Fabric and Microsoft Databases, emphasizing a unified data and AI platform for scalable, agentic applications. The post Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft D…"
+    },
+    {
+      "id": "6535772c48e0",
+      "title": "Fragments: June  2",
+      "link": "https://martinfowler.com/fragments/2026-06-02.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-06-02T15:21:00.000Z",
+      "contentSnippet": "Greg Wilson has noticed that lots of folks are using dodgy metrics to figure out if AI tools are worth their costs. Would you measure lines of code generated, or tickets closed? Or would you send out a survey asking whether developers feel more productive? Each of those approache…"
     },
     {
       "id": "187915d15f2a",
@@ -1290,15 +1344,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "2283c3fa66d3",
-      "title": "Fabric Dataflows Gen2 And Concurrent Evaluation, Part 1",
-      "link": "https://blog.crossjoin.co.uk/2026/05/24/fabric-dataflows-gen2-and-concurrent-evaluation-part-1/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-05-24T19:31:38.000Z",
-      "contentSnippet": "Did you know that if your Fabric Dataflows Gen2 contains several queries then you can control how many of them are evaluated in parallel when your dataflow refreshes? In this series I’ll look at how how you can do this and how it may result in better performance – at least in som…"
-    },
-    {
       "id": "fe20d20dc16c",
       "title": "Public Training Schedule Changes: Your Last Chance to Take a Public Class",
       "link": "https://www.mountaingoatsoftware.com/blog/public-training-schedule-changes-your-last-chance-to-take-a-public-class",
@@ -1416,24 +1461,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "b75a48efebd6",
-      "title": "Fragments: May 14",
-      "link": "https://martinfowler.com/fragments/2026-05-14.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-14T21:52:00.000Z",
-      "contentSnippet": "Last week I spent a day at The Orchard Retreat, hosted by Mechanical Orchard. that brought together several people working in software development to talk about the profession’s future with the rise of agentic programming. The event was help under the Chatham House Rule, so I can…"
-    },
-    {
-      "id": "90ea004a079e",
-      "title": "Bliki: Interrogatory LLM",
-      "link": "https://martinfowler.com/bliki/InterrogatoryLLM.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-14T15:04:00.000Z",
-      "contentSnippet": "When we need an LLM to perform a complex task, we often need to feed it a lot of context. Coming up with a design for a new feature requires descriptions of how we want the feature to appear to the user, guidelines on how it should be implemented, information on external systems…"
-    },
-    {
       "id": "f83719153ead",
       "title": "Quack: The DuckDB Client-Server Protocol",
       "link": "https://duckdb.org/2026/05/12/quack-remote-protocol.html",
@@ -1459,15 +1486,6 @@
       "category": "Data",
       "pubDate": "2026-05-11T02:50:23.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "a649540e57d4",
-      "title": "DuckDB Monthly #41: DuckDB internals course, FTS walkthrough, and a satellite pipeline with H3 + Parquet",
-      "link": "https://motherduck.com/blog/duckdb-ecosystem-newsletter-may-2026",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-05-11T00:00:00.000Z",
-      "contentSnippet": "DuckDB Monthly #41: Torsten's 15-week DuckDB internals course, Pete's full-text search walkthrough on a multi-GB email corpus, Mark's GCAT satellite pipeline with H3, plus column-level lineage with duck_lineage and DuckLake v1.0."
     },
     {
       "id": "1482c83da309",
@@ -1540,15 +1558,6 @@
       "category": "Data",
       "pubDate": "2026-05-04T01:09:52.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "e2beb9b3f133",
-      "title": "The DuckLake Spec Is so Simple, Even a Clanker Can Build One for Dataframes",
-      "link": "https://duckdb.org/2026/05/04/ducklake-dataframe.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-05-04T00:00:00.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "0b5754265080",
@@ -1749,15 +1758,6 @@
       "contentSnippet": "Connect Salesforce, Google Ads, and Gong to Compass and ask questions in Slack. No dashboards, no SQL, no tickets. Get real answers from your GTM data in seconds."
     },
     {
-      "id": "01b277db42df",
-      "title": "Why Rebundling the Data Platform Matters",
-      "link": "https://dagster.io/blog/rebundling-the-data-platform",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-04-02T20:43:01.000Z",
-      "contentSnippet": "As orchestration becomes native to modern tools, Dagster makes the case for reuniting data ingestion, transformation, and delivery."
-    },
-    {
       "id": "b0dc3a79c9be",
       "title": "What now for Power BI? The question I can’t escape",
       "link": "https://data-mozart.com/what-now-for-power-bi-the-question-i-cant-escape/?utm_source=rss&utm_medium=rss&utm_campaign=what-now-for-power-bi-the-question-i-cant-escape",
@@ -1774,15 +1774,6 @@
       "category": "Analytics",
       "pubDate": "2026-03-30T19:00:00.000Z",
       "contentSnippet": "From technical sessions to hallway conversations, FabCon and SQLCon 2026 showcased the momentum behind the Fabric and SQL ecosystems. The post Highlights from FabCon and SQLCon 2026: Where databases and Fabric come together appeared first on Microsoft Fabric Blog."
-    },
-    {
-      "id": "0658443b2d89",
-      "title": "Batch or Stream? The Ethernal Data Processing Dilemma",
-      "link": "https://data-mozart.com/batch-or-stream-the-ethernal-data-processing-dilemma/?utm_source=rss&utm_medium=rss&utm_campaign=batch-or-stream-the-ethernal-data-processing-dilemma",
-      "source": "Data Mozart",
-      "category": "Analytics",
-      "pubDate": "2026-03-26T14:41:52.000Z",
-      "contentSnippet": "\"Should we process our data in batches or in real-time?\" It's not batch vs. stream: it's \"when does the answer matter?\" The post Batch or Stream? The Ethernal Data Processing Dilemma appeared first on Data Mozart."
     },
     {
       "id": "303ad939aba5",

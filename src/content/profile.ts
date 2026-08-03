@@ -38,6 +38,9 @@ export interface Competency {
   description: string;
   accent: "cyan" | "violet" | "blue";
   icon: LucideIcon;
+  /** Optional deep link (e.g. field card) — makes the home card pressable. */
+  href?: string;
+  hrefLabel?: string;
 }
 
 export const profile = {
@@ -69,6 +72,8 @@ export const competencies: Competency[] = [
       "Bounded agent loops with an owner and a kill switch: drafts and runbooks yes; priority calls and production publish stay human.",
     accent: "cyan",
     icon: Bot,
+    href: "/field-card/index.html",
+    hrefLabel: "Field card",
   },
   {
     title: "Data & Analytics",

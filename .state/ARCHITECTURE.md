@@ -50,6 +50,7 @@ src/components/seo/
 └── ArticleJsonLd.tsx
 data/published-projects.json
 src/content/writes/
+public/field-card/index.html   # Agentic AI Field Card (static; linked from home AI competency)
 .state/
 ```
 
@@ -65,3 +66,4 @@ src/content/writes/
 | 2026-07-27 | Weekly Write Slack target → `#orbit` via `SLACK_ORBIT_WEBHOOK_URL` | Keep essay drafts with Orbit feedback in one channel instead of `#career-ops` |
 | 2026-07-24 | Optional `thesisUrl` / `thesisTitle` on `CvEducation`; About education cards link out when set (ProjectCard-style) | Surface theses without Portfolio clutter; Bachelor stays static |
 | 2026-07-24 | Trim AI to OpenAI + Simon `entries` (max 8 each); drop InfoQ DevOps + TDS + Personal Kanban; add Databricks/DuckDB/MotherDuck/Dagster + RADACAD/Data Mozart + Scrum.org | Chronological feed and weekly essays read as AI-only despite balanced cache counts |
+| 2026-07-30 | Agentic field card hosted as static `public/field-card/`; home AI competency links there | Keep standalone HTML (print/LinkedIn) outside Orbit chrome; competency is the discovery path |

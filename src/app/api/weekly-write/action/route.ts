@@ -261,10 +261,13 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("[weekly-write/action]", err);
     const message = err instanceof Error ? err.message : "action_failed";
+    const hint = /bad credentials|expired|revoked/i.test(message)
+      ? `<p>Rotate <code>GITHUB_TOKEN</code> in the Vercel project (Production): new fine-grained PAT with <strong>Contents: Read and write</strong> on <code>AlexTouvras/Orbit</code>, then <strong>Redeploy</strong> and retry Approve. See <code>DEPLOY-VERCEL.md</code>.</p>`
+      : `<p>Check that <code>GITHUB_TOKEN</code> is set on Vercel (repo write access), then try again.</p>`;
     return htmlPage(
       "Publish failed",
       `<p>${escapeHtml(message)}</p>
-       <p>Check that <code>GITHUB_TOKEN</code> is set on Vercel (repo write access), then try again.</p>`,
+       ${hint}`,
       false,
     );
   }
