@@ -7,7 +7,8 @@ Same gate pattern as weekly Writes:
 3. `Notify Slack approve` posts Block Kit to **#orbit**: summary · **Open card preview** · Approve / Skip
 4. Preview: `/api/field-card/preview` serves PR-head `index.html` (signed `preview` token)
 5. Approve/Skip: `/api/field-card/action` — **GET = confirm**, **POST = merge or close**
-6. Slack gets a short Approved / Skipped follow-up
+6. On Approve: merge field-card PR, then commit field-card `main`’s `index.html` → Orbit `public/field-card/index.html` (Vercel redeploy). Pages updates from the field-card repo; the site path is this sync.
+7. Slack gets a short Approved / Skipped follow-up (links both github.io and alextouvras.com)
 
 Signing secret must match on both repos (`WEEKLY_WRITE_SECRET` / `CRON_SECRET` / `FIELD_CARD_ACTION_SECRET`).
-GitHub token on Orbit must be allowed to read + merge that PR (`FIELD_CARD_GITHUB_TOKEN` if the default token is Orbit-only).
+GitHub token on Orbit must be allowed to read + merge that PR (`FIELD_CARD_GITHUB_TOKEN` if the default token is Orbit-only), and `GITHUB_TOKEN` must be able to write Orbit contents (same as weekly Writes / Studio).

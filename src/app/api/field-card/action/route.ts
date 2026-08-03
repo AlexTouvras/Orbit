@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import {
   closeFieldCardPullRequest,
   getPullRequest,
+  getRepoFileText,
   mergeFieldCardPullRequest,
   notifyFieldCardSlack,
 } from "@/lib/field-card/github";
@@ -9,6 +10,7 @@ import {
   verifyFieldCardActionToken,
   type FieldCardTokenPayload,
 } from "@/lib/field-card/tokens";
+import { hasGithubStorage, writeRepoFile } from "@/lib/github-storage";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -85,7 +87,7 @@ function confirmPage(
     <p>Repo <code>${escapeHtml(payload.repo)}</code> · PR <a href="${escapeHtml(prUrl)}">#${payload.pr}</a></p>
     <p>${
       approve
-        ? "This will squash-merge the weekly field card PR into <code>main</code> (GitHub Pages redeploys after)."
+        ? "This will squash-merge the weekly field card PR into <code>main</code>, then sync <code>public/field-card/index.html</code> on Orbit (Pages + alextouvras.com)."
         : "This will close the PR without merging. Next Friday can open a fresh refresh."
     }</p>
     <div class="actions">
@@ -125,17 +127,53 @@ async function runAction(payload: FieldCardTokenPayload) {
   }
 
   const result = await mergeFieldCardPullRequest(payload.repo, payload.pr);
-  const live = "https://alextouvras.github.io/agentic-ai-field-card/";
+  const pages = "https://alextouvras.github.io/agentic-ai-field-card/";
+  const site = "https://alextouvras.com/field-card/index.html";
+
+  // Site hosts a static copy under public/ — keep it in lockstep with field-card main.
+  let siteSync = "skipped";
+  try {
+    const html = await getRepoFileText(payload.repo, "index.html", "main");
+    if (hasGithubStorage()) {
+      await writeRepoFile(
+        "public/field-card/index.html",
+        html,
+        `chore: sync field card after approve (#${payload.pr})`,
+      );
+      siteSync = "committed";
+    } else {
+      siteSync = "no_github_storage";
+    }
+  } catch (err) {
+    console.error("[field-card/action] site sync failed", err);
+    siteSync = "failed";
+  }
+
   void notifyFieldCardSlack(
     `Approved field card refresh: ${result.title}`,
-    `*Approved & merged:* <${result.url}|${result.title}>\nLive after Pages deploy: <${live}|field card>`,
+    [
+      `*Approved & merged:* <${result.url}|${result.title}>`,
+      `Pages: <${pages}|github.io> · Site: <${site}|alextouvras.com/field-card>${
+        siteSync === "committed"
+          ? " (Orbit redeploy queued)"
+          : siteSync === "failed"
+            ? " (site sync failed — copy index.html manually)"
+            : ""
+      }`,
+    ].join("\n"),
   ).catch(() => undefined);
 
   return htmlPage(
     result.alreadyMerged ? "Already merged" : "Field card approved",
-    `<p><strong>${escapeHtml(result.title)}</strong> is merging to <code>main</code>.</p>
-     <p>Live card: <a href="${escapeHtml(live)}">${escapeHtml(live)}</a></p>
-     <p>GitHub Pages usually updates within a minute or two.</p>`,
+    `<p><strong>${escapeHtml(result.title)}</strong> is on <code>main</code>.</p>
+     <p>GitHub Pages: <a href="${escapeHtml(pages)}">${escapeHtml(pages)}</a></p>
+     <p>Site copy: <a href="${escapeHtml(site)}">${escapeHtml(site)}</a>${
+       siteSync === "committed"
+         ? " — Orbit commit queued; Vercel redeploys shortly."
+         : siteSync === "failed"
+           ? " — <strong>sync failed</strong>; update <code>public/field-card/index.html</code> manually."
+           : "."
+     }</p>`,
     true,
   );
 }

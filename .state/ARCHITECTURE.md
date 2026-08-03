@@ -67,3 +67,4 @@ public/field-card/index.html   # Agentic AI Field Card (static; linked from home
 | 2026-07-24 | Optional `thesisUrl` / `thesisTitle` on `CvEducation`; About education cards link out when set (ProjectCard-style) | Surface theses without Portfolio clutter; Bachelor stays static |
 | 2026-07-24 | Trim AI to OpenAI + Simon `entries` (max 8 each); drop InfoQ DevOps + TDS + Personal Kanban; add Databricks/DuckDB/MotherDuck/Dagster + RADACAD/Data Mozart + Scrum.org | Chronological feed and weekly essays read as AI-only despite balanced cache counts |
 | 2026-07-30 | Agentic field card hosted as static `public/field-card/`; home AI competency links there | Keep standalone HTML (print/LinkedIn) outside Orbit chrome; competency is the discovery path |
+| 2026-08-03 | Slack Approve syncs field-card `index.html` → Orbit `public/field-card/` | Pages updated on merge; site copy was stale until this lockstep commit + Vercel redeploy |
