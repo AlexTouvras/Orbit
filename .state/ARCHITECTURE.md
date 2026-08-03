@@ -58,6 +58,7 @@ public/field-card/index.html   # Agentic AI Field Card (static; linked from home
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-08-03 | Weekly Write Slack posts full essay in-channel (chunked sections); `githubSynced` required for preview/Approve | Teaser + browser preview 404'd when Cloud Automation left the pending draft on a feature branch only |
 | 2026-07-26 | Orbit `caseStudyUrl` → `/writes/building-orbit` | Essay existed; card lacked Case study link |
 | 2026-07-26 | Heatmap case study Write + `caseStudyUrl` | Featured live board had no write-up |
 | 2026-07-26 | Dropped ProjectHelm Write; JARVIS `/architecture/jarvis` remains historical-only backlink | Essay was present-tense under a retired banner; Hub voice pass preferred removing it over rewriting |

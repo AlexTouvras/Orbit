@@ -46,6 +46,10 @@ function weeklyWriteWebhookUrl(): string | undefined {
 
 export async function sendWeeklyDraftSlack(
   draft: WeeklyDraft,
+  options?: {
+    /** When false, warn that preview/Approve links may 404 until draft is on default branch. */
+    githubSynced?: boolean;
+  },
 ): Promise<{ ok: true } | { ok: false; reason: string }> {
   const url = weeklyWriteWebhookUrl();
   if (!url) {
@@ -96,28 +100,42 @@ export async function sendWeeklyDraftSlack(
       type: "section",
       text: {
         type: "mrkdwn",
-        text: `*<${preview}|Open browser preview (full essay)>*`,
-      },
-    },
-    {
-      type: "section",
-      text: {
-        type: "mrkdwn",
-        text: attachedMd
-          ? `Also attached as *\`${draft.slug}.md\`*.  ·  *<${approve}|Approve & publish>*  ·  *<${skip}|Skip>*`
-          : `*<${approve}|Approve & publish>*  ·  *<${skip}|Skip>*`,
+        text: `*<${preview}|Open browser preview>*  ·  *<${approve}|Approve & publish>*  ·  *<${skip}|Skip>*${
+          attachedMd ? `  ·  also attached as *\`${draft.slug}.md\`*` : ""
+        }`,
       },
     },
   ];
 
-  // Short teaser only — full read is via browser preview (best on mobile).
-  const teaser = body.slice(0, 500).trimEnd();
-  blocks.push({
-    type: "section",
-    text: {
-      type: "mrkdwn",
-      text: `*Teaser*\n\`\`\`${teaser}${body.length > 500 ? "…" : ""}\`\`\``,
-    },
+  if (options?.githubSynced === false) {
+    blocks.push({
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        text: ":warning: *Preview/Approve links may fail* — pending draft was not synced to the GitHub default branch. Full essay is still below in this message.",
+      },
+    });
+  }
+
+  // Full essay in-channel (Slack section limit ≈ 3000). Do not rely on
+  // browser preview alone — preview 404s when the pending draft is only on a
+  // feature branch and not yet on the default branch GitHub storage reads.
+  const parts = splitForSlackSections(body, 2800);
+  parts.forEach((part, i) => {
+    const label =
+      parts.length === 1
+        ? "*Full draft*"
+        : `*Full draft (${i + 1}/${parts.length})*`;
+    // Avoid breaking the fence if the essay contains triple backticks.
+    const safe = part.replace(/```/g, "'''");
+    blocks.push({
+      type: "section",
+      text: {
+        type: "mrkdwn",
+        // Code fence keeps markdown readable and avoids mrkdwn eating links.
+        text: `${label}\n\`\`\`${safe}\`\`\``,
+      },
+    });
   });
 
   blocks.push({
@@ -125,9 +143,7 @@ export async function sendWeeklyDraftSlack(
     elements: [
       {
         type: "mrkdwn",
-        text: attachedMd
-          ? `Browser preview = full essay. *Approve* opens a confirm page (won't publish on tap alone). After publish: \`${site}/writes/${draft.slug}\``
-          : `Tap *Open browser preview* for the full essay. *Approve* opens a confirm page first. After publish: \`${site}/writes/${draft.slug}\``,
+        text: `Full draft is in this message${attachedMd ? " and the attached .md" : ""}. *Approve* opens a confirm page (won't publish on tap alone). After publish: \`${site}/writes/${draft.slug}\``,
       },
     ],
   });

@@ -4,8 +4,11 @@
 
 ## Now
 
+- [x] Re-notify 2026-08-03 weekly Write with full essay in Slack + draft synced to default branch
+- [ ] Merge weekly Write Slack full-access fix (`fix/weekly-write-slack-full-access`)
+- [x] Refresh weekly Write intake for 2026-08-03 / prepare pending IDE draft
 - [x] Ship home AI competency → `/field-card/index.html` + static field card page
-- [ ] Notify the 2026-07-27 weekly Write in Slack (`SLACK_ORBIT_WEBHOOK_URL` unavailable in automation environment)
+- [x] Notify the 2026-07-27 weekly Write in Slack (published; superseded by 2026-08-03 pending)
 - [x] Refresh weekly Write intake and prepare the 2026-07-27 pending IDE draft
 - [x] Case study links for Orbit + Nordic Equity Heatmap
 - [x] Rewrite `from-risk-to-delivery.mdx` with orbit-essay + anti-ai-slop
