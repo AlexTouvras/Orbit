@@ -42,8 +42,34 @@ export async function getPullRequest(repoSlug: string, pr: number) {
     html_url: string;
     state: string;
     merged: boolean;
-    head: { ref: string };
+    head: { ref: string; sha: string };
   };
+}
+
+/** Fetch a text file from a commit/ref (e.g. PR head SHA). */
+export async function getRepoFileText(
+  repoSlug: string,
+  path: string,
+  ref: string,
+): Promise<string> {
+  const token = githubToken();
+  if (!token) throw new Error("GITHUB_TOKEN (or FIELD_CARD_GITHUB_TOKEN) is required");
+  const { owner, repo } = parseRepo(repoSlug || DEFAULT_REPO);
+  const res = await fetch(
+    `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(ref)}`,
+    {
+      headers: headers(token),
+      cache: "no-store",
+    },
+  );
+  if (!res.ok) {
+    throw new Error(`GitHub contents fetch failed (${res.status}) for ${path}@${ref}`);
+  }
+  const data = (await res.json()) as { encoding?: string; content?: string };
+  if (data.encoding !== "base64" || typeof data.content !== "string") {
+    throw new Error(`Unexpected contents payload for ${path}`);
+  }
+  return Buffer.from(data.content.replace(/\n/g, ""), "base64").toString("utf8");
 }
 
 /** Merge the weekly field-card PR (squash). */
