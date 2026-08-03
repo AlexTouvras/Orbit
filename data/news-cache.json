@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-08-02T08:14:59.810Z",
+  "generatedAt": "2026-08-03T09:35:40.945Z",
   "count": 217,
   "items": [
+    {
+      "id": "28414e2d67cb",
+      "title": "What AI Training Courses Are Available in the Market for Scrum Masters?",
+      "link": "https://www.scrum.org/resources/blog/what-ai-training-courses-are-available-market-scrum-masters",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-03T05:58:13.000Z",
+      "contentSnippet": "If you search the internet, you will find a flood of AI courses. Most of them are pointless for Scrum Masters. But which one of them is worth thinking about? Let me explain … Image This is important to know because you want to spend your time, money, and effort on a training cour…"
+    },
+    {
+      "id": "e70bbfbc4b98",
+      "title": "Analysing Power BI Data Using Copilot In Excel",
+      "link": "https://blog.crossjoin.co.uk/2026/08/02/analysing-power-bi-data-using-copilot-in-excel/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-08-02T17:52:45.000Z",
+      "contentSnippet": "This week there was another big Copilot-related announcement for Power BI – but on the Excel blog. You can now analyse data from Power BI semantic models using Copilot in Excel. Full details on how to enable this are in the docs here, but what does it look like? Using the same se…"
+    },
     {
       "id": "1eb3fd449c86",
       "title": "AI Made Output Cheap. It Also Made Bad Strategy Impossible to Hide.",
@@ -451,15 +469,6 @@
       "category": "AI",
       "pubDate": "2026-07-22T23:51:33.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "3b3ac29dc258",
-      "title": "From Chaos to Control, Part 6 - Adapt and Control",
-      "link": "https://www.scrum.org/resources/blog/chaos-control-part-6-adapt-and-control",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-22T15:42:43.000Z",
-      "contentSnippet": "Recap In the last post we considered how to align an optimized lean workflow with high-level strategy. If a team understands the relevance of their tasks to business objectives, enterprise agility can then be demonstrated. Adopting a strict definition of \"Done\" proved to be the r…"
     },
     {
       "id": "7147531ddbe3",
@@ -1333,15 +1342,6 @@
       "category": "Data",
       "pubDate": "2026-05-25T16:05:00.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "2283c3fa66d3",
-      "title": "Fabric Dataflows Gen2 And Concurrent Evaluation, Part 1",
-      "link": "https://blog.crossjoin.co.uk/2026/05/24/fabric-dataflows-gen2-and-concurrent-evaluation-part-1/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-05-24T19:31:38.000Z",
-      "contentSnippet": "Did you know that if your Fabric Dataflows Gen2 contains several queries then you can control how many of them are evaluated in parallel when your dataflow refreshes? In this series I’ll look at how how you can do this and how it may result in better performance – at least in som…"
     },
     {
       "id": "fe20d20dc16c",
