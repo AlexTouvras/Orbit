@@ -1,15 +1,105 @@
 {
-  "generatedAt": "2026-08-03T09:35:40.945Z",
+  "generatedAt": "2026-08-04T06:22:46.768Z",
   "count": 217,
   "items": [
     {
-      "id": "28414e2d67cb",
-      "title": "What AI Training Courses Are Available in the Market for Scrum Masters?",
-      "link": "https://www.scrum.org/resources/blog/what-ai-training-courses-are-available-market-scrum-masters",
+      "id": "30d8b85bea02",
+      "title": "What You Will Learn & Do in a PSM-AI Essentials Class",
+      "link": "https://www.scrum.org/resources/blog/what-you-will-learn-do-psm-ai-essentials-class",
       "source": "Scrum.org",
       "category": "Delivery",
-      "pubDate": "2026-08-03T05:58:13.000Z",
-      "contentSnippet": "If you search the internet, you will find a flood of AI courses. Most of them are pointless for Scrum Masters. But which one of them is worth thinking about? Let me explain … Image This is important to know because you want to spend your time, money, and effort on a training cour…"
+      "pubDate": "2026-08-04T06:11:07.000Z",
+      "contentSnippet": "In this blog post, I extensively explain what exercises and activities you do in each session of a PSM-AI Essentials class, why you do them, what you learn, and ultimately what benefits you get from them. Image Session 1: Effective Communication with AI In this training, you will…"
+    },
+    {
+      "id": "2163b413300d",
+      "title": "Apple is getting this wrong",
+      "link": "https://openai.com/index/apple-is-getting-this-wrong",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-03T22:00:00.000Z",
+      "contentSnippet": "OpenAI addresses Apple’s baseless lawsuit, corrects claims about its employees, and shares messages documenting what happened."
+    },
+    {
+      "id": "356d1091b333",
+      "title": "The New Monday Morning Report: How Generative AI can deliver the insights your executives need.",
+      "link": "https://www.databricks.com/blog/new-monday-morning-report-how-generative-ai-can-deliver-insights-your-executives-need",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-03T14:00:00.000Z",
+      "contentSnippet": "A VP of Sales at a major CPG has three decks open before her first coffee. One from..."
+    },
+    {
+      "id": "54ec4d1782a2",
+      "title": "Ingest semi-structured data faster and more efficiently with Variant - Now Generally Available",
+      "link": "https://www.databricks.com/blog/ingest-semi-structured-data-faster-and-more-efficiently-variant-now-generally-available",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-03T13:44:24.000Z",
+      "contentSnippet": "For years, ingesting semi-structured data like JSON, XML, or CSV meant a difficult..."
+    },
+    {
+      "id": "dad8a9d585f9",
+      "title": "Databricks Completes Acquisition of Panther: Accelerating the Security Lakehouse Era",
+      "link": "https://www.databricks.com/blog/databricks-completes-acquisition-panther-accelerating-security-lakehouse-era",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-03T13:00:00.000Z",
+      "contentSnippet": "Today, we are thrilled to announce that Databricks has officially completed the acquisition..."
+    },
+    {
+      "id": "be0402b3fc9f",
+      "title": "Data Engineering Weekly #281",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-281",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-03T12:34:40.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "1b2a409a75ad",
+      "title": "How to check table sizes in a Microsoft Fabric warehouse",
+      "link": "https://data-mozart.com/how-to-check-table-sizes-in-a-microsoft-fabric-warehouse/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-check-table-sizes-in-a-microsoft-fabric-warehouse",
+      "source": "Data Mozart",
+      "category": "Analytics",
+      "pubDate": "2026-08-03T10:23:38.000Z",
+      "contentSnippet": "If you've tried to check how much storage your Fabric warehouse tables consume, you've probably discovered that the usual SQL Server approaches don't work. This post explains why, what else doesn't work, and the one approach that does The post How to check table sizes in a Micros…"
+    },
+    {
+      "id": "fa7741334b51",
+      "title": "Survey: From Agile to a Product Operating Model: What Is Actually Changing?",
+      "link": "https://www.scrum.org/resources/blog/survey-agile-product-operating-model-what-actually-changing",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-03T09:52:51.000Z",
+      "contentSnippet": "Product Operating Model or Product Washing? The debate over the Product Operating Model (POM) has a data problem. Most of us, including me, argue from the organizations we know. When I interviewed Marty Cagan, see the article below, he called a Scrum Team “quite amateur compared…"
+    },
+    {
+      "id": "d04cc35bd3cc",
+      "title": "How we built a realtime system for responsive voice AI in six months",
+      "link": "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-03T07:00:00.000Z",
+      "contentSnippet": "GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations."
+    },
+    {
+      "id": "54e616a32e5e",
+      "title": "Circles powers telco personalization with OpenAI technology",
+      "link": "https://openai.com/index/circles",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-03T00:00:00.000Z",
+      "contentSnippet": "Circles uses the OpenAI API and Codex to power AI-native telco experiences, increasing ARPU by 22%, reducing churn by 9%, and improving development efficiency."
+    },
+    {
+      "id": "ccf4833e2826",
+      "title": "Data Integration, Migration & the Future of ETL in Microsoft Fabric — A Conversation with Wee Hyong Tok | Fabric Insider Ep. 9",
+      "link": "https://radacad.com/data-integration-migration-the-future-of-etl-in-microsoft-fabric-a-conversation-with-wee-hyong-tok-fabric-insider-ep-9/?utm_source=rss&utm_medium=rss&utm_campaign=data-integration-migration-the-future-of-etl-in-microsoft-fabric-a-conversation-with-wee-hyong-tok-fabric-insider-ep-9",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-08-02T23:58:47.000Z",
+      "contentSnippet": "Is ETL as we know it coming to an end? What is the real migration path from ADF, Synapse, or SSIS to Microsoft Fabric? And what does AI mean for the future of the ETL developer’s career? I sat down with Wee Hyong Tok — Partner Director of Product Management for Data Integration a…"
     },
     {
       "id": "e70bbfbc4b98",
@@ -37,6 +127,15 @@
       "category": "AI",
       "pubDate": "2026-08-01T00:00:00.000Z",
       "contentSnippet": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity."
+    },
+    {
+      "id": "e0449a003f89",
+      "title": "OpenAI Just Made Analytics 10x Cheaper",
+      "link": "https://motherduck.com/blog/openai-just-made-analytics-10x-cheaper",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-08-01T00:00:00.000Z",
+      "contentSnippet": "Since OpenAI slashed the price of GPT 5.6 Luna by 80% this week, low latency AI-powered answers are finally feasible for less than half a penny per answer, AI and DB costs included. For data questions, GPT 5.6 Luna is intelligence too cheap to meter. Well documented context, rigo…"
     },
     {
       "id": "83cc35aa7317",
@@ -192,15 +291,6 @@
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
     },
     {
-      "id": "fc362ba711f5",
-      "title": "Advancing the price-performance frontier with GPT-5.6",
-      "link": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-30T10:00:00.000Z",
-      "contentSnippet": "Explore lower GPT‑5.6 pricing for Luna and Terra—and how OpenAI’s more efficient models help enterprises deploy AI workflows at scale."
-    },
-    {
       "id": "c1ce6f8c6fdb",
       "title": "Convert proprietary code to open ANSI SQL with Genie Code",
       "link": "https://www.databricks.com/blog/convert-proprietary-code-open-ansi-sql-genie-code",
@@ -208,15 +298,6 @@
       "category": "Data",
       "pubDate": "2026-07-30T01:00:00.000Z",
       "contentSnippet": "Migrating from a legacy data warehouse is a complex undertaking, requiring teams..."
-    },
-    {
-      "id": "9146ff1756af",
-      "title": "How avatarin built a 24/7 retail agent with GPT-Realtime",
-      "link": "https://openai.com/index/avatarin",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-30T00:00:00.000Z",
-      "contentSnippet": "avatarin uses OpenAI’s GPT-Realtime to give Yamada Denki shoppers 24/7 multilingual support. In two weeks, 30,000 people used the agent and 92% of survey responses were positive."
     },
     {
       "id": "27cf2ddf08b3",
@@ -244,42 +325,6 @@
       "category": "Data",
       "pubDate": "2026-07-29T18:30:00.000Z",
       "contentSnippet": "Ask an energy CFO where this year's margin is landing and you will always get a hard-won answer..."
-    },
-    {
-      "id": "4aefe89265ae",
-      "title": "Manufacturing runs on capital. Finance protects the margin.",
-      "link": "https://www.databricks.com/blog/manufacturing-runs-capital-finance-protects-margin",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T18:30:00.000Z",
-      "contentSnippet": "Ask a manufacturing CFO where this year's margin is landing and you will always get a hard-won answer..."
-    },
-    {
-      "id": "67df04d87492",
-      "title": "Bringing real-time fraud prevention to government benefits",
-      "link": "https://www.databricks.com/blog/bringing-real-time-fraud-prevention-government-benefits",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T17:45:00.000Z",
-      "contentSnippet": "Asked to do the impossibleFraud and improper payments cost federal benefits programs..."
-    },
-    {
-      "id": "a1c3f089efaf",
-      "title": "Agents for production lines: Trusted decisions in real time",
-      "link": "https://www.databricks.com/blog/agents-production-lines-trusted-decisions-real-time",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T17:30:00.000Z",
-      "contentSnippet": "Executive summary09:14, mid-shift. The filler trips. The line manager has minutes,..."
-    },
-    {
-      "id": "cc8e132c6199",
-      "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
-      "link": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-29T15:00:00.000Z",
-      "contentSnippet": "How two API settings improved GPT-5.6 performance on ARC-AGI-3, boosting scores and efficiency by retaining reasoning and enabling compaction."
     },
     {
       "id": "0a11c907adfc",
@@ -451,15 +496,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-23T13:09:13.000Z",
       "contentSnippet": "Image When working on a product, it is very easy to fall into the trap of thinking that good risk management is mainly about predicting everything in advance. In practice, that rarely works. In my work with product teams, leaders, and management, I often see the same problem: org…"
-    },
-    {
-      "id": "f6b1df9a5234",
-      "title": "Flow Metrics in Python: 3 Scripts for Ensuring Transparency",
-      "link": "https://www.scrum.org/resources/blog/flow-metrics-python-3-scripts-ensuring-transparency",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-23T11:46:59.000Z",
-      "contentSnippet": "Image Scrum rests on empiricism: transparency enables inspection, and inspection enables adaptation. Most Scrum Teams I work with are reasonably good at inspection and adaptation. Where they struggle is the first one. Transparency is not the same as having a tool. A board shows w…"
     },
     {
       "id": "8ab3a4be8a66",
@@ -1263,15 +1299,6 @@
       "contentSnippet": "In recent years, a new word has steadily climbed the ranks of leadership literature and corporate strategy sessions: Agency. While many managers intuitively grasp that it has something to do with employees taking ownership, the concept goes far deeper than simply “taking responsi…"
     },
     {
-      "id": "516cc8d8833e",
-      "title": "No Code Power BI: How to Use Claude and the Power BI Modeling MCP Server",
-      "link": "https://radacad.com/no-code-power-bi-how-to-use-claude-and-the-power-bi-modeling-mcp-server/?utm_source=rss&utm_medium=rss&utm_campaign=no-code-power-bi-how-to-use-claude-and-the-power-bi-modeling-mcp-server",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-05-30T12:09:23.000Z",
-      "contentSnippet": "What if you could build a complete Power BI semantic model — date table, time intelligence measures, relationships and all — without touching Power BI Desktop at all? Not a future roadmap item. Not a preview feature. Something you can set up today. In this article, I am going to…"
-    },
-    {
       "id": "8bfee7812037",
       "title": "Snowflake Runs Your Data. Dagster Runs Everything Else",
       "link": "https://dagster.io/blog/snowflake-runs-your-data-dagster-runs-everything-else",
@@ -1468,15 +1495,6 @@
       "category": "Data",
       "pubDate": "2026-05-12T00:00:00.000Z",
       "contentSnippet": "Background: Database Architectures When databases first emerged, there was no distinction between a ‘client’ and a ‘server’, the whole database just ran on a single computer. Somewhere in the 80s, Sybase was the first to introduce the concept of a database ‘server’ and a ‘client’…"
-    },
-    {
-      "id": "635cc8a72c0a",
-      "title": "If It Quacks Like a Duck: the DuckDB Client-Server Protocol",
-      "link": "https://motherduck.com/blog/duckdb-client-server",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-05-12T00:00:00.000Z",
-      "contentSnippet": "DuckDB Labs announced Quack, a client-server protocol for DuckDB. Here's why we're excited, what it means for MotherDuck, and why it's so great for the DuckDB community."
     },
     {
       "id": "d7467a984a4b",
@@ -1677,15 +1695,6 @@
       "contentSnippet": "This article is for leaders who want honest plans from teams without pressuring them into false certainty."
     },
     {
-      "id": "cf05c5ebdcca",
-      "title": "Data Engineering Weekly #265",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-265",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-04-13T03:24:30.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
       "id": "1a3d55c13001",
       "title": "Dagster 1.13: AI Skills, Partitioned Asset Checks, Virtual Assets & 20+ New Components",
       "link": "https://dagster.io/blog/dagster-1-13-octopuss-garden",
@@ -1756,15 +1765,6 @@
       "category": "Data",
       "pubDate": "2026-04-02T20:43:11.000Z",
       "contentSnippet": "Connect Salesforce, Google Ads, and Gong to Compass and ask questions in Slack. No dashboards, no SQL, no tickets. Get real answers from your GTM data in seconds."
-    },
-    {
-      "id": "b0dc3a79c9be",
-      "title": "What now for Power BI? The question I can’t escape",
-      "link": "https://data-mozart.com/what-now-for-power-bi-the-question-i-cant-escape/?utm_source=rss&utm_medium=rss&utm_campaign=what-now-for-power-bi-the-question-i-cant-escape",
-      "source": "Data Mozart",
-      "category": "Analytics",
-      "pubDate": "2026-04-01T14:05:08.000Z",
-      "contentSnippet": "Everyone keeps asking me the same question: what now for Power BI? With Microsoft Fabric reshaping its identity and AI-generated dashboards challenging its visual layer, the answer isn't as comfortable as it used to be. Here's my honest take on where Power BI stands today, what's…"
     },
     {
       "id": "9f49ee93f8a0",
