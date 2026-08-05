@@ -1,7 +1,88 @@
 {
-  "generatedAt": "2026-08-04T08:29:57.912Z",
+  "generatedAt": "2026-08-05T06:46:49.825Z",
   "count": 217,
   "items": [
+    {
+      "id": "4e3a76965186",
+      "title": "Wenn Chatbots halluzinieren – wer haftet? So machen Scrum Teams ihre „Definition of Done“ KI-sicher",
+      "link": "https://www.scrum.org/resources/blog/wenn-chatbots-halluzinieren-wer-haftet-so-machen-scrum-teams-ihre-definition-done-ki-sicher",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-05T06:00:00.000Z",
+      "contentSnippet": "Braucht es noch Scrum Teams – jetzt, wo wir KI haben? Ich stelle mir diese Frage selbst und wahrscheinlich bin ich nicht der Einzige. Auf meiner Suche nach Antworten schaue ich auf die Menschen, die die agile Softwareentwicklung geprägt haben. Einer von ihnen ist Henrik. Henrik h…"
+    },
+    {
+      "id": "7c7dca1e7334",
+      "title": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging",
+      "link": "https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-entries",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-08-04T23:58:24.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "977f60f7e5e3",
+      "title": "Third-party cyber evaluations involving OpenAI models",
+      "link": "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-04T19:00:00.000Z",
+      "contentSnippet": "OpenAI explains recent third-party cybersecurity evaluation incidents and outlines new safeguards to strengthen AI model testing and evaluation."
+    },
+    {
+      "id": "0f1af7da8d93",
+      "title": "Unity AI Gateway is Generally Available",
+      "link": "https://www.databricks.com/blog/unity-ai-gateway-generally-available",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-04T16:10:09.000Z",
+      "contentSnippet": "The last six months have seen a rapid rise in AI-powered productivity and a proliferation..."
+    },
+    {
+      "id": "643029743c76",
+      "title": "The AWS AI-DLC: Why AI Coding Still Needs Human Accountability",
+      "link": "https://www.scrum.org/resources/blog/aws-ai-dlc-why-ai-coding-still-needs-human-accountability",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-04T15:03:07.000Z",
+      "contentSnippet": "Image Amazon Web Services recently published a paper defining the AI-Driven Development Lifecycle, or AI-DLC — a reimagined SDLC (Software Development Lifecycle) for a world where AI, not humans, initiates the workflow. I read it the way I read most new methodology proposals by h…"
+    },
+    {
+      "id": "c84c93e6b3f1",
+      "title": "Databricks joins the Open Secure AI Alliance to advance AI safety and security",
+      "link": "https://www.databricks.com/blog/databricks-joins-open-secure-ai-alliance-advance-ai-safety-and-security",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-04T14:00:00.000Z",
+      "contentSnippet": "Databricks is a sponsor at Black Hat USA 2026 this week. Find us at Booths #5106..."
+    },
+    {
+      "id": "17ffabfc7061",
+      "title": "Scrum and AI: AI Doesn’t Replace Scrum, It Sharpens its Focus",
+      "link": "https://www.scrum.org/resources/blog/scrum-and-ai-ai-doesnt-replace-scrum-it-sharpens-its-focus",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-04T13:33:06.000Z",
+      "contentSnippet": "Image Somewhere along the way, Scrum picked up a reputation it never earned. In today’s discussions about Scrum and AI, ask a room full of managers what Scrum is for, and most will say the same thing: it helps teams ship faster. That answer is so common it feels like fact. It is…"
+    },
+    {
+      "id": "a53d7074ed8a",
+      "title": "5 Questions Scrum Teams Ask All the Time",
+      "link": "https://www.scrum.org/resources/blog/5-questions-scrum-teams-ask-all-time",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-04T13:00:00.000Z",
+      "contentSnippet": "I've been teaching Scrum for a while now, and the same questions come up again and again. So if you're new to Scrum or just thinking about making the switch, here are five of the most common questions I hear about Scrum and how I answer them. 1. Do we still have managers in Scrum…"
+    },
+    {
+      "id": "b557000206d1",
+      "title": "Fragments: August  4",
+      "link": "https://martinfowler.com/fragments/2026-08-04.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-08-04T12:08:00.000Z",
+      "contentSnippet": "There’s been a fair bit of publicity of the Open AI “rogue agent” that hacked into Hugging Face. This prompted Anthropic to check what their models were up to and, to my complete lack of surprise, discovered three incidents where models had gained unauthorized access to data in o…"
+    },
     {
       "id": "30d8b85bea02",
       "title": "What You Will Learn & Do in a PSM-AI Essentials Class",
@@ -10,6 +91,24 @@
       "category": "Delivery",
       "pubDate": "2026-08-04T06:11:07.000Z",
       "contentSnippet": "In this blog post, I extensively explain what exercises and activities you do in each session of a PSM-AI Essentials class, why you do them, what you learn, and ultimately what benefits you get from them. Image Session 1: Effective Communication with AI In this training, you will…"
+    },
+    {
+      "id": "b274d6785ee9",
+      "title": "New ways to learn and teach with ChatGPT Work and Codex",
+      "link": "https://openai.com/index/learn-teach-chatgpt-work-codex",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-04T00:00:00.000Z",
+      "contentSnippet": "Explore new education plugins for ChatGPT Work and Codex that help K–12 teachers, college educators, and students learn, teach, research, and build."
+    },
+    {
+      "id": "2ce84f30b442",
+      "title": "I let an agent sign itself up to a cloud data warehouse, then replayed every step",
+      "link": "https://motherduck.com/blog/agent-signup-cloud-data-warehouse",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-08-04T00:00:00.000Z",
+      "contentSnippet": "AI agents can now provision a Postgres database, an email inbox or a data warehouse with no signup and no credit card. Here is how MotherDuck's agent signup endpoint works, and how motherduck.com/try lets you inspect, share and replay everything the agent did."
     },
     {
       "id": "2163b413300d",
@@ -192,24 +291,6 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
-      "id": "487981959078",
-      "title": "Univé builds an AI-ready workforce",
-      "link": "https://openai.com/index/unive",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-31T07:00:00.000Z",
-      "contentSnippet": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale."
-    },
-    {
-      "id": "c5ad624a6ffb",
-      "title": "Disrupting a Criminal Scam Operation",
-      "link": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "OpenAI disrupted a Cambodia-based scam operation using ChatGPT to support investment, romance, gambling, and impersonation schemes."
-    },
-    {
       "id": "e30c19ad366e",
       "title": "Asynchronous I/O in DuckDB: Work, Thread, Work",
       "link": "https://duckdb.org/2026/07/31/asynchronous-io.html",
@@ -307,24 +388,6 @@
       "category": "Data",
       "pubDate": "2026-07-29T20:35:57.000Z",
       "contentSnippet": "As one of the world's leading media and entertainment companies, NBCUniversal relies..."
-    },
-    {
-      "id": "743f087f11a5",
-      "title": "Quality care is the mission. Finance protects the margin.",
-      "link": "https://www.databricks.com/blog/quality-care-mission-finance-protects-margin",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T18:59:31.000Z",
-      "contentSnippet": "Ask a health system CFO where this year's margin is landing and you will always get a hard-won answer..."
-    },
-    {
-      "id": "fc2806865e72",
-      "title": "Energy runs on volatile markets. Finance protects the margin.",
-      "link": "https://www.databricks.com/blog/energy-runs-volatile-markets-finance-protects-margin",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T18:30:00.000Z",
-      "contentSnippet": "Ask an energy CFO where this year's margin is landing and you will always get a hard-won answer..."
     },
     {
       "id": "0a11c907adfc",
@@ -460,42 +523,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-26T16:50:18.000Z",
       "contentSnippet": "Introduction The Pyramid of Impediments is a decision framework for Scrum Masters, Agile Coaches and other agile leaders. Every agile leader eventually encounters the same situations: A Scrum Team struggles with Sprint Planning, technical debt continues to grow, conflicts remain…"
-    },
-    {
-      "id": "b16d2df3ce85",
-      "title": "Culture Follows Structure. Most Transformations Bet the Other Way.",
-      "link": "https://www.scrum.org/resources/blog/culture-follows-structure-most-transformations-bet-other-way",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-26T06:00:00.000Z",
-      "contentSnippet": "Image Two companies start an agile transformation in the same quarter. Same training provider, same skilled coaches, same framework, comparable budgets, equally sincere executives. Three years later one of them ships weekly, kills bad bets early, and holds onto its best people. T…"
-    },
-    {
-      "id": "add82b419e20",
-      "title": "Do Inicio ao Empreendedor - A Evolução da Carreira de Product Owner",
-      "link": "https://www.scrum.org/resources/blog/do-inicio-ao-empreendedor-evolucao-da-carreira-de-product-owner",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-24T18:35:02.000Z",
-      "contentSnippet": "Simplificando a Jornada do Product Owner: Do Caos do Início à Liderança Estratégica Por Matheus Reis Professional Scrum Trainer (PST) Image Introdução: Dois Caminhos, o Mesmo Ponto de Partida Se você atua no mercado de tecnologia ou está tentando construir sua carreira nele, é mu…"
-    },
-    {
-      "id": "1dc0e8a7b9a4",
-      "title": "Nobody Believes your Values Page. They're Watching the Deeds.",
-      "link": "https://www.scrum.org/resources/blog/nobody-believes-your-values-page-theyre-watching-deeds",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-23T22:00:00.000Z",
-      "contentSnippet": "Every organization will tell you what it values. There's usually a poster. The poster has a competitor, though, and the competitor wins every time. Leadership says \"we trust our teams to decide,\" and the org chart sends every decision over five thousand euros to a committee that…"
-    },
-    {
-      "id": "6027c837dbc7",
-      "title": "How to Manage Product Risk When You Can’t Predict Everything",
-      "link": "https://www.scrum.org/resources/blog/how-manage-product-risk-when-you-cant-predict-everything",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-23T13:09:13.000Z",
-      "contentSnippet": "Image When working on a product, it is very easy to fall into the trap of thinking that good risk management is mainly about predicting everything in advance. In practice, that rarely works. In my work with product teams, leaders, and management, I often see the same problem: org…"
     },
     {
       "id": "8ab3a4be8a66",
@@ -847,15 +874,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-01T09:31:51.000Z",
       "contentSnippet": "Microsoft is moving Fabric Warehouse CU metering from per-query CPU time to per-workspace virtual-node time. That brings Fabric closer to Snowflake and Databricks, but it also changes the cost equation: dense workloads may benefit, while sparse, chatty workloads could get a surpr…"
-    },
-    {
-      "id": "baea40580e60",
-      "title": "Have your agent record video demos of its work with shot-scraper video",
-      "link": "https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-entries",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-06-30T16:54:26.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "67d4c736c8d1",
@@ -1407,15 +1425,6 @@
       "contentSnippet": "With the lance extension, DuckDB users can query Lance datasets with the same familiar SQL interface (via the CLI or SDKs), while adding capabilities for AI and retrieval workloads. This blog post highlights how Lance is a good option for workloads that need to support storage an…"
     },
     {
-      "id": "f3d4c46bb167",
-      "title": "Plan Mode All the Time, Substrait over SQL, and the End of the DE Role ft. Chris Riccomini",
-      "link": "https://motherduck.com/blog/cost-as-tokens-substrait-llm-chris-riccomini",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-05-21T00:00:00.000Z",
-      "contentSnippet": "Chris Riccomini on using AI for data engineering: correctness in financial data, why LLMs should speak Substrait over SQL, the Ralph Loop for context management, security with 'Okta for Agents', and the future of the data engineer role."
-    },
-    {
       "id": "0966da8f2909",
       "title": "Three more static code analysis sensors",
       "link": "https://martinfowler.com/articles/sensors-for-coding-agents.html#StaticCodeAnalysisDependencyRules",
@@ -1441,15 +1450,6 @@
       "category": "Data",
       "pubDate": "2026-05-20T00:00:00.000Z",
       "contentSnippet": "In this blog post, we highlight a few important features shipped in DuckDB v1.5.3, the third patch release in DuckDB's v1.5 line. You can find the complete release notes on GitHub. To install the new version, please visit the installation page. What's New While DuckDB v1.5.3 is a…"
-    },
-    {
-      "id": "356f0193fc2e",
-      "title": "Maintainability sensors for coding agents",
-      "link": "https://martinfowler.com/articles/sensors-for-coding-agents.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-19T16:38:00.000Z",
-      "contentSnippet": "In her recent article about harness engineering for coding agent users, Birgitta Böckeler laid out a mental model for expanding a coding agent harness: a system of guides and sensors that increase the probability of good agent outputs and enable self-correction before issues reac…"
     },
     {
       "id": "5d75679b1176",
