@@ -1,7 +1,43 @@
 {
-  "generatedAt": "2026-08-05T08:28:57.741Z",
+  "generatedAt": "2026-08-06T06:23:45.839Z",
   "count": 217,
   "items": [
+    {
+      "id": "2aff593adf2a",
+      "title": "On Benchmarking",
+      "link": "https://www.dataengineeringweekly.com/p/on-benchmarking",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-06T05:07:53.000Z",
+      "contentSnippet": "Why a throughput number is not an architecture decision."
+    },
+    {
+      "id": "9f372ab5d0ce",
+      "title": "One-shotting a Raccoon Heist game using Claude Fable 5",
+      "link": "https://simonwillison.net/2026/Aug/5/raccoon-heist/#atom-entries",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-08-05T19:42:38.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "15ab3de19849",
+      "title": "Lack of Agency – When the system swallows the human",
+      "link": "https://blog.crisp.se/2026/08/05/tomasbjorkholm/lack-of-agency-when-the-system-swallows-the-human",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2026-08-05T15:56:45.000Z",
+      "contentSnippet": "In my previous article, I explored the concept of agency — the capacity and freedom of individuals to act independently, make choices, and meaningfully influence their circumstances. But what does it look like when agency is entirely absent? I learned the hard way when I tried to…"
+    },
+    {
+      "id": "41d268902126",
+      "title": "If the Project Manager Was Disassembled, Who Answers to the Customer?",
+      "link": "https://www.scrum.org/resources/blog/if-project-manager-was-disassembled-who-answers-customer",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-05T13:52:11.000Z",
+      "contentSnippet": "Image A while ago I wrote that the Project Manager didn't die under Scrum. The role was taken apart on purpose, its responsibilities distributed across the Scrum Team, and some of them absorbed into the framework itself. Then Daniel Pokrývka read it on LinkedIn and asked the one…"
+    },
     {
       "id": "4e3a76965186",
       "title": "Wenn Chatbots halluzinieren – wer haftet? So machen Scrum Teams ihre „Definition of Done“ KI-sicher",
@@ -10,6 +46,15 @@
       "category": "Delivery",
       "pubDate": "2026-08-05T06:00:00.000Z",
       "contentSnippet": "Braucht es noch Scrum Teams – jetzt, wo wir KI haben? Ich stelle mir diese Frage selbst und wahrscheinlich bin ich nicht der Einzige. Auf meiner Suche nach Antworten schaue ich auf die Menschen, die die agile Softwareentwicklung geprägt haben. Einer von ihnen ist Henrik. Henrik h…"
+    },
+    {
+      "id": "76c0869c87dd",
+      "title": "Thank You for 40 000 Stars on GitHub",
+      "link": "https://duckdb.org/2026/08/05/github-40k-stars.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-08-05T00:00:00.000Z",
+      "contentSnippet": "The duckdb/duckdb GitHub repository has just passed 40 000 stars! We’d like to use this milestone to stop for a moment and revisit recent developments in the DuckStack ecosystem since last summer (2025), when we surpassed 30 000 stars. Releases Since the last milestone, the DuckL…"
     },
     {
       "id": "7c7dca1e7334",
@@ -516,15 +561,6 @@
       "contentSnippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
     },
     {
-      "id": "90546cd0bf78",
-      "title": "The Pyramid of Impediments",
-      "link": "https://www.scrum.org/resources/blog/pyramid-impediments",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-26T16:50:18.000Z",
-      "contentSnippet": "Introduction The Pyramid of Impediments is a decision framework for Scrum Masters, Agile Coaches and other agile leaders. Every agile leader eventually encounters the same situations: A Scrum Team struggles with Sprint Planning, technical debt continues to grow, conflicts remain…"
-    },
-    {
       "id": "8ab3a4be8a66",
       "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
       "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries",
@@ -847,15 +883,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-05T17:47:48.000Z",
       "contentSnippet": "A few months ago I wrote about a rare error – the “Maximum allowable memory allocation” error – that may occur when the physical machine, or node, that a semantic model is running on in the Power BI Service comes under memory pressure. Recently, someone I was working with who was…"
-    },
-    {
-      "id": "3eb20621a421",
-      "title": "sqlite-utils 4.0rc2, mostly written by Claude Fable (for about $149.25)",
-      "link": "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-entries",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-05T01:00:48.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "38e39f8dbc40",
@@ -1524,15 +1551,6 @@
       "contentSnippet": "We are excited to announce the program of DuckCon #7 Amsterdam, DuckDB's user conference. The event will be held on Wednesday, June 24, 2026, at the Royal Tropical Institute. The program runs from 15:00 to 20:00 CEST. See the registration link and the full program on the DuckCon…"
     },
     {
-      "id": "37fcb095cf9b",
-      "title": "Delta Grows Up: Writes, Unity Catalog and Time Travel",
-      "link": "https://duckdb.org/2026/05/07/delta-uc-updates.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-05-07T00:00:00.000Z",
-      "contentSnippet": "Welcome back! While we here at DuckLabs are typically of the quacking persuasion, we’ve been busy as beavers, shoring up our Delta to prepare for what’s next… Unity Catalog! Let’s look at how DuckDB’s Delta and Unity Catalog extensions have grown up enough to shed the experimenta…"
-    },
-    {
       "id": "91e2135e9837",
       "title": "When Planning Should Become A Shared Problem",
       "link": "https://www.mountaingoatsoftware.com/blog/when-planning-should-become-a-shared-problem",
@@ -1675,15 +1693,6 @@
       "category": "Data",
       "pubDate": "2026-04-20T03:09:39.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "b371c77b137b",
-      "title": "A Response to Our Reader Survey",
-      "link": "https://www.dataengineeringweekly.com/p/a-response-to-our-reader-survey",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-04-15T16:26:18.000Z",
-      "contentSnippet": "Your feedback prompted us to review 233 articles across 25 issues, clarify our editorial scope, and raise the bar for what belongs in Data Engineering Weekly."
     },
     {
       "id": "abc900131abb",
@@ -1945,15 +1954,6 @@
       "category": "Delivery",
       "pubDate": "2024-11-03T05:15:39.000Z",
       "contentSnippet": "Jennie Mårtensson interviews Petra Wille, a renowned product leadership coach and author of Strong Product People and Strong Product Communities. Petra shares her insights on why being a product manager is one of the most exciting jobs, drawing from her extensive experience acros…"
-    },
-    {
-      "id": "89bf09b4510f",
-      "title": "Interview with Henrik Kniberg on Generative AI",
-      "link": "https://blog.crisp.se/2024/10/28/leadingcomplexity/interview-with-henrik-kniberg-on-generative-ai",
-      "source": "Crisp Blog",
-      "category": "Delivery",
-      "pubDate": "2024-10-28T13:37:44.000Z",
-      "contentSnippet": "We chatted with our colleague Henry Kniberg at Crisp about his latest work on generative AI and his upcoming master class in the Leading Complexity program. He shared some very insightful comments: “Generative AI makes things less predictable but more intelligent.” “If I had to e…"
     }
   ]
 }
