@@ -1,7 +1,88 @@
 {
-  "generatedAt": "2026-08-06T08:27:49.045Z",
+  "generatedAt": "2026-08-07T06:30:32.386Z",
   "count": 217,
   "items": [
+    {
+      "id": "9d27c3063c90",
+      "title": "Your last failed transformation is not a strategy",
+      "link": "https://www.scrum.org/resources/blog/your-last-failed-transformation-not-strategy",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-06T22:00:00.000Z",
+      "contentSnippet": "\"We tried that before.\" Four words, and the idea was dead. Nobody asked when \"before\" was, or what was different then, or whether the thing that killed it last time even still exists. The four words did all the work a careful argument would have done, minus the argument. The meet…"
+    },
+    {
+      "id": "d855e124a36f",
+      "title": "What are Agentic Workflows?",
+      "link": "https://www.databricks.com/blog/agentic-workflows",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-06T21:36:15.000Z",
+      "contentSnippet": "As organizations move beyond single-prompt AI interactions, agentic workflows are..."
+    },
+    {
+      "id": "a99e3d25a72d",
+      "title": "What is Tool Calling?",
+      "link": "https://www.databricks.com/blog/what-is-tool-calling",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-06T21:31:30.000Z",
+      "contentSnippet": "Tool calling is the ability of an AI model to interact with external tools, APIs,..."
+    },
+    {
+      "id": "bac4517942c6",
+      "title": "Introducing OfficeQA Pro V2: A New Benchmark for Enterprise Grounded-Reasoning",
+      "link": "https://www.databricks.com/blog/introducing-officeqa-pro-v2-new-benchmark-enterprise-grounded-reasoning",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-06T16:00:00.000Z",
+      "contentSnippet": "Today, we are releasing OfficeQA Pro V2, a new benchmark designed to evaluate whether..."
+    },
+    {
+      "id": "5d7328432b4c",
+      "title": "Kimi K3 from Moonshot AI is now available on Databricks through Unity AI Gateway",
+      "link": "https://www.databricks.com/blog/kimi-k3-moonshot-ai-now-available-databricks-through-unity-ai-gateway",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-06T15:50:57.000Z",
+      "contentSnippet": "A year ago, the best open-weight models trailed their proprietary counterparts by..."
+    },
+    {
+      "id": "e64d5d0646ff",
+      "title": "Declarative Automation in Dagster: Smarter Data Orchestration Without Complex Schedules",
+      "link": "https://dagster.io/blog/orchestration-is-more-than-scheduling-declarative-automation-in-dagster",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-08-06T13:27:33.000Z",
+      "contentSnippet": "Learn how Dagster's Declarative Automation simplifies data orchestration by defining desired asset state instead of managing schedules, sensors, and custom triggers."
+    },
+    {
+      "id": "38ea556d8f3f",
+      "title": "BigQuery to Databricks: A Strategic Framework for Modern Migration",
+      "link": "https://www.databricks.com/blog/bigquery-databricks-strategic-framework-modern-migration",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-06T13:00:00.000Z",
+      "contentSnippet": "Migration as a strategic evolutionBigQuery is often the standard for starting fast, but for many enterprises..."
+    },
+    {
+      "id": "0f0c1961f93e",
+      "title": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+      "link": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-06T10:00:00.000Z",
+      "contentSnippet": "ChatGPT introduces improved GPT-5.6 Sol with better accuracy and consistency, plus expanded access for free users and unlimited everyday chats with GPT-5.6 Luna."
+    },
+    {
+      "id": "6da5f2d271da",
+      "title": "Working with the American Psychological Association on youth mental health and AI",
+      "link": "https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-06T06:00:00.000Z",
+      "contentSnippet": "OpenAI and the American Psychological Association advance evidence-based guidance, resources, and safeguards for responsible AI use and youth mental health."
+    },
     {
       "id": "2aff593adf2a",
       "title": "On Benchmarking",
@@ -10,6 +91,15 @@
       "category": "Data",
       "pubDate": "2026-08-06T05:07:53.000Z",
       "contentSnippet": "Why a throughput number is not an architecture decision."
+    },
+    {
+      "id": "fea9ae47ebf2",
+      "title": "From asking to doing: How the world is putting ChatGPT to work",
+      "link": "https://openai.com/index/how-the-world-is-putting-chatgpt-to-work",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-06T00:00:00.000Z",
+      "contentSnippet": "New OpenAI Signals data shows how people use ChatGPT worldwide, with country-level insights on adoption, usage trends, and evolving behavior."
     },
     {
       "id": "9f372ab5d0ce",
@@ -264,15 +354,6 @@
       "contentSnippet": "Image Somewhere in a quarterly business review this month, a technology leader is presenting a genuinely impressive number. Pull requests up. Features shipped, way up. The AI tooling landed last year and the output curve bent hard. Then someone from finance asks what all of it di…"
     },
     {
-      "id": "6d58997b466c",
-      "title": "Ten advances in mathematics and theoretical computer science",
-      "link": "https://openai.com/index/ten-advances-in-mathematics",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-01T00:00:00.000Z",
-      "contentSnippet": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity."
-    },
-    {
       "id": "e0449a003f89",
       "title": "OpenAI Just Made Analytics 10x Cheaper",
       "link": "https://motherduck.com/blog/openai-just-made-analytics-10x-cheaper",
@@ -289,33 +370,6 @@
       "category": "AI",
       "pubDate": "2026-07-31T23:13:22.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "3ab87184f2b7",
-      "title": "Backstage with Lakebase, part 3",
-      "link": "https://www.databricks.com/blog/backstage-lakebase-part-3",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-31T22:21:47.000Z",
-      "contentSnippet": "In the first part of this series, running Backstage on Databricks Lakebase gave us..."
-    },
-    {
-      "id": "b86dc435d64a",
-      "title": "Advancing responsible AI across Europe",
-      "link": "https://openai.com/index/advancing-responsible-ai-across-europe",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-31T15:00:00.000Z",
-      "contentSnippet": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances."
-    },
-    {
-      "id": "6e145b017b5a",
-      "title": "Building abundant intelligence",
-      "link": "https://openai.com/index/building-abundant-intelligence",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-31T15:00:00.000Z",
-      "contentSnippet": "A full-stack approach to making advanced AI more capable, more affordable, and more widely useful."
     },
     {
       "id": "1130e94af268",
@@ -372,24 +426,6 @@
       "contentSnippet": "Image This is what a colleague said to me once. Hey, I’m not religious about Scrum, and if it really didn’t work, that’s really fine with me — but in my experience Scrum is so deliberately lightweight that if it isn’t working, it probably isn’t the framework itself, but gaps or d…"
     },
     {
-      "id": "239d3a4cde9f",
-      "title": "Foundations for an AI-forward healthcare organization",
-      "link": "https://www.databricks.com/blog/foundations-ai-forward-healthcare-organization",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-30T19:30:00.000Z",
-      "contentSnippet": "The challenge for healthcare executives adopting AI is the noise when trying to advance an initiative..."
-    },
-    {
-      "id": "f609ca412d70",
-      "title": "Agentic media buying cannot scale without the right foundation. See how buyers and sellers get there on Databricks.",
-      "link": "https://www.databricks.com/blog/agentic-media-buying-cannot-scale-without-right-foundation-see-how-buyers-and-sellers-get",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-30T19:10:00.000Z",
-      "contentSnippet": "The bottleneck in media buying today isn't talent, it's coordinationEvery day, billions..."
-    },
-    {
       "id": "dafe9a2bbb83",
       "title": "The Economic Benefit of Refactoring",
       "link": "https://martinfowler.com/articles/exploring-gen-ai/refactoring-economic-benefit.html",
@@ -415,24 +451,6 @@
       "category": "Data",
       "pubDate": "2026-07-30T12:28:26.000Z",
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
-    },
-    {
-      "id": "c1ce6f8c6fdb",
-      "title": "Convert proprietary code to open ANSI SQL with Genie Code",
-      "link": "https://www.databricks.com/blog/convert-proprietary-code-open-ansi-sql-genie-code",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-30T01:00:00.000Z",
-      "contentSnippet": "Migrating from a legacy data warehouse is a complex undertaking, requiring teams..."
-    },
-    {
-      "id": "27cf2ddf08b3",
-      "title": "NBCUniversal’s Seamless Migration: Unlocking Scalable Analytics with Databricks",
-      "link": "https://www.databricks.com/blog/nbcuniversals-seamless-migration-unlocking-scalable-analytics-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T20:35:57.000Z",
-      "contentSnippet": "As one of the world's leading media and entertainment companies, NBCUniversal relies..."
     },
     {
       "id": "0a11c907adfc",
@@ -541,15 +559,6 @@
       "category": "Data",
       "pubDate": "2026-07-27T03:37:19.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "c82d88ed2c22",
-      "title": "The Project Manager Isn't Dead. It Was Disassembled on Purpose!",
-      "link": "https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-27T02:16:33.000Z",
-      "contentSnippet": "Image I see it everywhere. In LinkedIn posts, in heated comment threads, and maybe most tellingly, in job descriptions that quietly list \"Scrum Master / Project Manager\" as if the slash were doing no work at all. The framing is always the same: Scrum Master versus Project Manager…"
     },
     {
       "id": "9f106d335bd4",
@@ -1765,15 +1774,6 @@
       "category": "Data",
       "pubDate": "2026-04-02T20:43:14.000Z",
       "contentSnippet": "How we added support for the dbt Fusion engine in the Dagster dbt integration"
-    },
-    {
-      "id": "5576019ef257",
-      "title": "Your GTM Data, Finally Untangled | Dagster Compass",
-      "link": "https://dagster.io/blog/your-gtm-data-finally-untangled",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-04-02T20:43:11.000Z",
-      "contentSnippet": "Connect Salesforce, Google Ads, and Gong to Compass and ask questions in Slack. No dashboards, no SQL, no tickets. Get real answers from your GTM data in seconds."
     },
     {
       "id": "9f49ee93f8a0",
