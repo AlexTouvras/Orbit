@@ -1,10 +1,64 @@
 {
-  "generatedAt": "2026-08-07T07:08:05.062Z",
+  "generatedAt": "2026-08-08T06:13:21.776Z",
   "count": 217,
   "items": [
     {
+      "id": "f58ff2a8bb1e",
+      "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
+      "link": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-entries",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-08-07T23:55:58.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "4cd8dbc4ee36",
+      "title": "Rayfin Data App — The Future of Power BI Reporting",
+      "link": "https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-08-07T21:01:29.000Z",
+      "contentSnippet": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
+    },
+    {
+      "id": "833934ee3b25",
+      "title": "Responding to the next frontier of critical cyber capabilities",
+      "link": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-07T15:20:00.000Z",
+      "contentSnippet": "OpenAI is sharing preliminary cybersecurity evaluations for Astra and the steps we’re taking to strengthen safeguards and security controls."
+    },
+    {
+      "id": "4fffe919132d",
+      "title": "Managing AI Coding Costs at Scale",
+      "link": "https://www.databricks.com/blog/managing-ai-coding-costs-scale",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-07T11:50:39.000Z",
+      "contentSnippet": "AI coding tools deliver immense value: at Databricks, agentic coding has measurably..."
+    },
+    {
+      "id": "39a8a938632c",
+      "title": "What is an AI Assistant?",
+      "link": "https://www.databricks.com/blog/what-is-an-ai-assistant",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-07T11:44:24.000Z",
+      "contentSnippet": "AI assistants use language models, data retrieval, and reasoning to understand requests..."
+    },
+    {
+      "id": "2ee94000fec4",
+      "title": "How HSP GRUPPE builds AI capabilities for tax advisory",
+      "link": "https://openai.com/index/hsp-gruppe",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-07T09:00:00.000Z",
+      "contentSnippet": "Discover how HSP GRUPPE uses ChatGPT Enterprise to boost productivity, improve work quality, and create more capacity for tax advisory and client service."
+    },
+    {
       "id": "9d27c3063c90",
-      "title": "Your last failed transformation is not a strategy",
+      "title": "Your Last Failed Transformation is not a Strategy",
       "link": "https://www.scrum.org/resources/blog/your-last-failed-transformation-not-strategy",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -55,15 +109,6 @@
       "category": "Data",
       "pubDate": "2026-08-06T13:27:33.000Z",
       "contentSnippet": "Learn how Dagster's Declarative Automation simplifies data orchestration by defining desired asset state instead of managing schedules, sensors, and custom triggers."
-    },
-    {
-      "id": "38ea556d8f3f",
-      "title": "BigQuery to Databricks: A Strategic Framework for Modern Migration",
-      "link": "https://www.databricks.com/blog/bigquery-databricks-strategic-framework-modern-migration",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-06T13:00:00.000Z",
-      "contentSnippet": "Migration as a strategic evolutionBigQuery is often the standard for starting fast, but for many enterprises..."
     },
     {
       "id": "0f0c1961f93e",
@@ -273,15 +318,6 @@
       "contentSnippet": "For years, ingesting semi-structured data like JSON, XML, or CSV meant a difficult..."
     },
     {
-      "id": "dad8a9d585f9",
-      "title": "Databricks Completes Acquisition of Panther: Accelerating the Security Lakehouse Era",
-      "link": "https://www.databricks.com/blog/databricks-completes-acquisition-panther-accelerating-security-lakehouse-era",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-03T13:00:00.000Z",
-      "contentSnippet": "Today, we are thrilled to announce that Databricks has officially completed the acquisition..."
-    },
-    {
       "id": "be0402b3fc9f",
       "title": "Data Engineering Weekly #281",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-281",
@@ -307,24 +343,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-03T09:52:51.000Z",
       "contentSnippet": "Product Operating Model or Product Washing? The debate over the Product Operating Model (POM) has a data problem. Most of us, including me, argue from the organizations we know. When I interviewed Marty Cagan, see the article below, he called a Scrum Team “quite amateur compared…"
-    },
-    {
-      "id": "d04cc35bd3cc",
-      "title": "How we built a realtime system for responsive voice AI in six months",
-      "link": "https://openai.com/index/continuous-voice-interaction-with-gpt-live",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-03T07:00:00.000Z",
-      "contentSnippet": "GPT-Live enables continuous voice interaction with AI, using a turnless speech model and low-latency architecture for faster, more natural conversations."
-    },
-    {
-      "id": "54e616a32e5e",
-      "title": "Circles powers telco personalization with OpenAI technology",
-      "link": "https://openai.com/index/circles",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-03T00:00:00.000Z",
-      "contentSnippet": "Circles uses the OpenAI API and Codex to power AI-native telco experiences, increasing ARPU by 22%, reducing churn by 9%, and improving development efficiency."
     },
     {
       "id": "ccf4833e2826",
@@ -813,15 +831,6 @@
       "contentSnippet": "We had Fabric. Then Real-Time Intelligence. Now Fabric IQ. What comes next? That is the question I most wanted answered when I sat down with Yitzhak Kesselman — Corporate Vice President for Real-Time Intelligence at Microsoft Fabric. Yitzhak leads not only Fabric RTI and Fabric I…"
     },
     {
-      "id": "897da200c5dc",
-      "title": "sqlite-utils 4.0, now with database schema migrations",
-      "link": "https://simonwillison.net/2026/Jul/7/sqlite-utils-4/#atom-entries",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-07T19:32:57.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "672138134936",
       "title": "Focusing Where We Can Have the Most Impact",
       "link": "https://www.mountaingoatsoftware.com/blog/focusing-where-we-can-have-the-most-impact",
@@ -1216,15 +1225,6 @@
       "category": "Data",
       "pubDate": "2026-06-10T00:00:00.000Z",
       "contentSnippet": "Build, deploy, and schedule Python data pipelines from a prompt, a SQL function, or the MotherDuck UI."
-    },
-    {
-      "id": "7060f9fa361e",
-      "title": "Fabric Spark: Custom Live Pools, Resource Profiles & Performance Fixes — A Conversation with Santhosh Kumar Ravindran | Fabric Insider Ep. 4",
-      "link": "https://radacad.com/fabric-spark-custom-live-pools-resource-profiles-performance-fixes-a-conversation-with-santhosh-kumar-ravindran-fabric-insider-ep-4/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-spark-custom-live-pools-resource-profiles-performance-fixes-a-conversation-with-santhosh-kumar-ravindran-fabric-insider-ep-4",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-06-09T13:53:10.000Z",
-      "contentSnippet": "Fabric Insider Series | Episode 4 | Interview with Santhosh Kumar Ravindran, Principal Product Manager, Microsoft Fabric Data Engineering at Microsoft 📺 Watch the full episode on YouTube: Fabric Insider Ep. 4 — Fabric Spark with Santhosh Kumar Ravindran 🎧 Listen on Spotify: Fab…"
     },
     {
       "id": "d8f48e2feb16",
