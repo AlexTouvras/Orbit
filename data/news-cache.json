@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-08T06:43:27.766Z",
-  "count": 217,
+  "generatedAt": "2026-08-09T06:48:46.005Z",
+  "count": 218,
   "items": [
+    {
+      "id": "fa8a01f4f6ef",
+      "title": "Focus Is Not Genius. It Is a Kata.",
+      "link": "https://www.scrum.org/resources/blog/focus-not-genius-it-kata",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-09T06:00:00.000Z",
+      "contentSnippet": "Image In May 1997, at Apple's developer conference, an audience member stood up and insulted Steve Jobs to his face. Jobs paused, took a sip of water, and gave an answer that had nothing to do with the insult and everything to do with how he ran companies. \"Focusing is about sayi…"
+    },
     {
       "id": "f58ff2a8bb1e",
       "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
