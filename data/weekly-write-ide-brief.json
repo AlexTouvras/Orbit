@@ -1,35 +1,35 @@
 {
   "status": "awaiting_ide",
   "reason": "cloud_automation",
-  "createdAt": "2026-07-27T09:02:08.530Z",
-  "weekOf": "2026-07-27",
+  "createdAt": "2026-08-10T09:01:32.574Z",
+  "weekOf": "2026-08-10",
   "thesis": {
-    "angle": "What Is Fabric App or Rayfin and Why You Should Care",
+    "angle": "Rayfin Data App — The Future of Power BI Reporting",
     "question": "What actually changes in how we build analytics when the reporting stack keeps moving?",
     "primary": {
-      "id": "7147531ddbe3",
-      "title": "What Is Fabric App or Rayfin and Why You Should Care",
-      "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
+      "id": "4cd8dbc4ee36",
+      "title": "Rayfin Data App — The Future of Power BI Reporting",
+      "link": "https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting",
       "source": "RADACAD",
       "category": "Analytics",
-      "snippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
+      "snippet": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
     },
     "supporting": [
       {
-        "id": "9f106d335bd4",
-        "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
-        "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
+        "id": "eb19341e893a",
+        "title": "Using Detail Rows Expressions To Drill To A Different Fact Table In Power BI",
+        "link": "https://blog.crossjoin.co.uk/2026/08/09/using-detail-rows-expressions-to-drill-to-a-different-fact-table-in-power-bi/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
+        "snippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
       },
       {
-        "id": "7d124074cf80",
-        "title": "How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily",
-        "link": "https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily",
+        "id": "4fffe919132d",
+        "title": "Managing AI Coding Costs at Scale",
+        "link": "https://www.databricks.com/blog/managing-ai-coding-costs-scale",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "“We showed the value of having a foundational data platform, and that success story..."
+        "snippet": "AI coding tools deliver immense value: at Databricks, agentic coding has measurably..."
       }
     ],
     "bridgeProject": {
@@ -48,80 +48,80 @@
     "category": "Data",
     "tags": [
       "Power BI",
-      "AI",
       "Analytics",
+      "AI",
       "Next.js",
       "React"
     ],
-    "whyInteresting": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
+    "whyInteresting": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
   },
   "intake": {
-    "weekOf": "2026-07-27",
-    "generatedAt": "2026-07-27T09:02:08.528Z",
+    "weekOf": "2026-08-10",
+    "generatedAt": "2026-08-10T09:01:32.572Z",
     "signals": [
       {
-        "id": "9f106d335bd4",
-        "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
-        "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
+        "id": "eb19341e893a",
+        "title": "Using Detail Rows Expressions To Drill To A Different Fact Table In Power BI",
+        "link": "https://blog.crossjoin.co.uk/2026/08/09/using-detail-rows-expressions-to-drill-to-a-different-fact-table-in-power-bi/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
+        "snippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
       },
       {
-        "id": "144c71381790",
-        "title": "Data Engineering Weekly #280",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-280",
+        "id": "fc91bece9947",
+        "title": "Data Engineering Weekly #282",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-282",
         "source": "Data Engineering Weekly",
         "category": "Data",
         "snippet": "The Weekly Data Engineering Newsletter"
       },
       {
-        "id": "c82d88ed2c22",
-        "title": "The Project Manager Isn't Dead. It Was Disassembled on Purpose!",
-        "link": "https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose",
+        "id": "af2f9387f309",
+        "title": "AI Tools Evaluation & Approval Framework for Scrum Teams",
+        "link": "https://www.scrum.org/resources/blog/ai-tools-evaluation-approval-framework-scrum-teams",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Image I see it everywhere. In LinkedIn posts, in heated comment threads, and maybe most tellingly, in job descriptions that quietly list \"Scrum Master / Project Manager\" as if the slash were doing no work at all. The framing is always the same: Scrum Master versus Project Manager…"
+        "snippet": "When you see an impressive AI tool, you want to bring it to your team immediately. But it can bring risks. Don’t blame your organization if they don’t easily allow any AI tool to be used. Why? Image I regularly hear from my students in my AI classes that their organizations don’t…"
       },
       {
-        "id": "7569338ee0d3",
-        "title": "Launching Health in ChatGPT",
-        "link": "https://openai.com/index/health-in-chatgpt",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health."
-      },
-      {
-        "id": "7147531ddbe3",
-        "title": "What Is Fabric App or Rayfin and Why You Should Care",
-        "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
-        "source": "RADACAD",
-        "category": "Analytics",
-        "snippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
-      },
-      {
-        "id": "7d124074cf80",
-        "title": "How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily",
-        "link": "https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily",
-        "source": "Databricks Blog",
-        "category": "Data",
-        "snippet": "“We showed the value of having a foundational data platform, and that success story..."
-      },
-      {
-        "id": "90546cd0bf78",
-        "title": "The Pyramid of Impediments",
-        "link": "https://www.scrum.org/resources/blog/pyramid-impediments",
-        "source": "Scrum.org",
-        "category": "Delivery",
-        "snippet": "Introduction The Pyramid of Impediments is a decision framework for Scrum Masters, Agile Coaches and other agile leaders. Every agile leader eventually encounters the same situations: A Scrum Team struggles with Sprint Planning, technical debt continues to grow, conflicts remain…"
-      },
-      {
-        "id": "8ab3a4be8a66",
-        "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
-        "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries",
+        "id": "f58ff2a8bb1e",
+        "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
+        "link": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-entries",
         "source": "Simon Willison",
         "category": "AI",
         "snippet": ""
+      },
+      {
+        "id": "4cd8dbc4ee36",
+        "title": "Rayfin Data App — The Future of Power BI Reporting",
+        "link": "https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting",
+        "source": "RADACAD",
+        "category": "Analytics",
+        "snippet": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
+      },
+      {
+        "id": "4fffe919132d",
+        "title": "Managing AI Coding Costs at Scale",
+        "link": "https://www.databricks.com/blog/managing-ai-coding-costs-scale",
+        "source": "Databricks Blog",
+        "category": "Data",
+        "snippet": "AI coding tools deliver immense value: at Databricks, agentic coding has measurably..."
+      },
+      {
+        "id": "05f5b5e146e6",
+        "title": "Cognitive Trap: Scrum Master as a Manager",
+        "link": "https://www.scrum.org/resources/blog/cognitive-trap-scrum-master-manager",
+        "source": "Scrum.org",
+        "category": "Delivery",
+        "snippet": "Scrum Master as Manager Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, an…"
+      },
+      {
+        "id": "833934ee3b25",
+        "title": "Responding to the next frontier of critical cyber capabilities",
+        "link": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "OpenAI is sharing preliminary cybersecurity evaluations for Astra and the steps we’re taking to strengthen safeguards and security controls."
       }
     ],
     "projects": [

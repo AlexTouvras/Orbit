@@ -6,8 +6,8 @@ Cursor Cloud Automation writes this week's essay (Gemini skipped). **Generate th
 
 `cloud_automation`
 
-Created: 2026-07-27T09:02:08.530Z  
-Week of: 2026-07-27
+Created: 2026-08-10T09:01:32.574Z  
+Week of: 2026-08-10
 
 ## Your job (in this IDE)
 
@@ -25,23 +25,23 @@ npm run weekly:notify-draft
 ## Thesis
 
 - **Question:** What actually changes in how we build analytics when the reporting stack keeps moving?
-- **Primary inspiration:** [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care) (RADACAD)
-- **Snippet:** Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…
+- **Primary inspiration:** [Rayfin Data App — The Future of Power BI Reporting](https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting) (RADACAD)
+- **Snippet:** You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…
 - **Optional project bridge:** Orbit — Portfolio & related articles — Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.
 - **Suggested category:** Data
-- **Suggested tags:** Power BI, AI, Analytics, Next.js, React
+- **Suggested tags:** Power BI, Analytics, AI, Next.js, React
 
 ## Intake (reference only)
 
 ### Signals
-- [Power BI, M365 Copilot And The Importance Of DAX UDFs](https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/) — Chris Webb's BI Blog (Analytics)
-- [Data Engineering Weekly #280](https://www.dataengineeringweekly.com/p/data-engineering-weekly-280) — Data Engineering Weekly (Data)
-- [The Project Manager Isn't Dead. It Was Disassembled on Purpose!](https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose) — Scrum.org (Delivery)
-- [Launching Health in ChatGPT](https://openai.com/index/health-in-chatgpt) — OpenAI Blog (AI)
-- [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care) — RADACAD (Analytics)
-- [How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily](https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily) — Databricks Blog (Data)
-- [The Pyramid of Impediments](https://www.scrum.org/resources/blog/pyramid-impediments) — Scrum.org (Delivery)
-- [OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened](https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries) — Simon Willison (AI)
+- [Using Detail Rows Expressions To Drill To A Different Fact Table In Power BI](https://blog.crossjoin.co.uk/2026/08/09/using-detail-rows-expressions-to-drill-to-a-different-fact-table-in-power-bi/) — Chris Webb's BI Blog (Analytics)
+- [Data Engineering Weekly #282](https://www.dataengineeringweekly.com/p/data-engineering-weekly-282) — Data Engineering Weekly (Data)
+- [AI Tools Evaluation & Approval Framework for Scrum Teams](https://www.scrum.org/resources/blog/ai-tools-evaluation-approval-framework-scrum-teams) — Scrum.org (Delivery)
+- [Now we have a timeline of the OpenAI accidental attack against Hugging Face](https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-entries) — Simon Willison (AI)
+- [Rayfin Data App — The Future of Power BI Reporting](https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting) — RADACAD (Analytics)
+- [Managing AI Coding Costs at Scale](https://www.databricks.com/blog/managing-ai-coding-costs-scale) — Databricks Blog (Data)
+- [Cognitive Trap: Scrum Master as a Manager](https://www.scrum.org/resources/blog/cognitive-trap-scrum-master-manager) — Scrum.org (Delivery)
+- [Responding to the next frontier of critical cyber capabilities](https://openai.com/index/responding-next-frontier-critical-cyber-capabilities) — OpenAI Blog (AI)
 
 ### Active projects
 - **Orbit — Portfolio & related articles** (live) — Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.
@@ -56,10 +56,10 @@ Write `data/weekly-write-draft.json` like:
 
 ```json
 {
-  "id": "ww-2026-07-27-ide",
+  "id": "ww-2026-08-10-ide",
   "status": "pending",
   "createdAt": "<ISO now>",
-  "weekOf": "2026-07-27",
+  "weekOf": "2026-08-10",
   "slug": "<from-title>",
   "title": "<essay title>",
   "summary": "<one sentence>",
