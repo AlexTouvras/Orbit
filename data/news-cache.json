@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-10T06:45:50.524Z",
+  "generatedAt": "2026-08-10T07:23:09.459Z",
   "count": 218,
   "items": [
+    {
+      "id": "af2f9387f309",
+      "title": "AI Tools Evaluation & Approval Framework for Scrum Teams",
+      "link": "https://www.scrum.org/resources/blog/ai-tools-evaluation-approval-framework-scrum-teams",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-10T07:05:54.000Z",
+      "contentSnippet": "When you see an impressive AI tool, you want to bring it to your team immediately. But it can bring risks. Don’t blame your organization if they don’t easily allow any AI tool to be used. Why? Image I regularly hear from my students in my AI classes that their organizations don’t…"
+    },
     {
       "id": "05f5b5e146e6",
       "title": "Cognitive Trap: Scrum Master as a Manager",
@@ -586,15 +595,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-27T14:15:39.000Z",
       "contentSnippet": "This blog post is like a customer discovery to deeply understand a Scrum Master’s fears, anxieties, hopes, dreams, … in the age of AI. Image In February 2026, Scrum.org released its AI course for Scrum Masters named PSM-AI Essentials. Since then, many Scrum Masters have participa…"
-    },
-    {
-      "id": "731eb6a240e9",
-      "title": "Managing AI Risks in your Definition of Done",
-      "link": "https://www.scrum.org/resources/blog/managing-ai-risks-your-definition-done",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-27T13:50:13.000Z",
-      "contentSnippet": "It passed every check. The automated tests were green. The code review was done. The acceptance criteria were met. The feature was deployed to staging and behaved exactly as described in the ticket. By every measure the team had, this work was done. Then it hit production. Within…"
     },
     {
       "id": "144c71381790",
