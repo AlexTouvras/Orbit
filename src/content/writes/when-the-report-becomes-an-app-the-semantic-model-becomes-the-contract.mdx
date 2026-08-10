@@ -1,0 +1,56 @@
+---
+title: "When the report becomes an app, the semantic model becomes the contract"
+summary: "A React frontend can change the reporting experience quickly, but durable analytics still depends on a stable semantic contract and two deliberate release lanes."
+date: "2026-08-10"
+category: "Data"
+featured: false
+tags: ["Power BI", "Analytics", "React", "Fabric", "Delivery"]
+---
+
+## The question
+
+I used to treat a moving reporting stack as a migration problem. A new interface arrived, so the work was to reproduce the old pages, check the totals, and teach people where the filters moved. That assumption breaks when the new interface is not another report canvas at all. If a Power BI semantic model can sit behind a TypeScript application, what should an analytics team preserve, and what should it be willing to rebuild?
+
+My answer is narrower than a platform choice: preserve the meaning and access contract; let the experience compete for its place.
+
+## The demo changes the delivery boundary
+
+In [Rayfin Data App — The Future of Power BI Reporting](https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting), Reza Rad shows a React and TypeScript frontend reading from a Power BI semantic model. The result looks and behaves like an analytical product, but it is not a Power BI report. In the demo, the app is scaffolded in VS Code, refined with an AI assistant, previewed locally, and published into a Fabric workspace.
+
+The tempting conclusion is that report building has become frontend building. That is only half true. The visible artifact changes from report pages to application code, but the numbers still inherit their meaning from the semantic model. A polished React component cannot repair an ambiguous measure, the wrong grain, or access that was granted too broadly.
+
+When the interface becomes cheap to regenerate, the semantic model becomes more expensive to get wrong.
+
+## Decide the contract before the layout
+
+I would start this kind of work by writing down what the frontend is allowed to assume. Which measures are authoritative? At what grain can they be sliced? Which relationships and date definitions are stable? What does a user see when data is late, access is missing, or a query returns nothing?
+
+Those are not backend details. They are the analytics contract. A Power BI report can hide weak answers behind familiar interactions because authors and users share the same tool conventions. A custom app removes that shelter. Every tooltip, drill path, loading state, and empty result has to express the contract deliberately.
+
+That changes my baseline test. I would not compare the app with a blank screen or with how quickly a prompt produced three pages. I would compare it with the current report on a small set of decisions: can a user reach the same trusted total, understand the same filter context, and tell when the result is incomplete? The new frontend wins only if it makes those decisions clearer without creating a second definition of the numbers.
+
+## Run two release lanes
+
+Once the frontend becomes code, analytics inherits more of software delivery. The team now owns dependency updates, builds, tests, deployment history, accessibility, browser behavior, logs, and rollback. None of that is covered by validating a DAX measure.
+
+I would therefore separate two release lanes. Semantic changes should be reviewed as changes to business meaning: definitions, relationships, security, and refresh behavior. Frontend changes should be reviewed as changes to interaction: routes, components, states, and visual hierarchy. An end-to-end check joins the lanes before release, but one approval should not blur them together.
+
+This split also makes failures legible. If a total changes, I inspect the model contract. If the right total appears under the wrong label, I inspect the client. If a user sees nothing, I can distinguish data freshness, semantic-model permission, and application behavior instead of calling all three a report issue.
+
+## Where an app is the wrong answer
+
+The primary Signal is careful about the counter-case: Power BI reports still make sense for self-service users who need to explore and modify analysis. I would keep that boundary. A purpose-built app is strongest when the audience has a recurring job and the team can name the decisions the interface must support. It is a poor bargain when every user needs a different slice and the supposed product is really an open-ended analysis workspace.
+
+The cost story needs the same caution. The source shows how capacity-based distribution can beat per-user licensing in a specific setup, while also noting that load can require a larger capacity. I would model actual users, query load, support work, and frontend ownership before calling the app cheaper. Moving spend from licenses to engineering does not make it disappear.
+
+There is a security limit too. The demo explicitly keeps AI-assisted commands in a development workspace rather than production. I would keep that separation even when the generated result looks finished. Fast scaffolding is evidence that an idea can run, not that its permissions and failure modes are ready for real users.
+
+## The small version I already trust
+
+Orbit's weekly Write flow uses a simpler version of the same boundary. Signals and project state become a fixed intake. The essay can be rewritten, but publication waits on an inspectable draft and a Slack approval. The presentation is flexible; the source and the state transition stay explicit.
+
+That is the pattern I want in analytics products. A React client can evolve quickly, but it should consume named definitions rather than quietly inventing them. Speed belongs at the replaceable edge. Trust belongs in the contract and in the release evidence.
+
+## Takeaway
+
+When a report becomes an app, I would not begin by recreating every page. I would first freeze a testable semantic contract: trusted measures, grain, access, freshness, and failure states. Then I would let the report and the app compete as clients of that contract, using real user decisions as the baseline. Keep model meaning and frontend behavior in separate release lanes, and keep self-service reporting where exploration is the job. The stack can keep moving; the agreement behind the numbers should move only on purpose.
