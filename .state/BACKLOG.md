@@ -4,6 +4,9 @@
 
 ## Now
 
+- [x] Refresh weekly Write intake for 2026-08-10
+- [x] Prepare the 2026-08-10 pending IDE draft
+- [x] Notify the 2026-08-10 pending IDE draft in Slack
 - [x] Ship home AI competency → `/field-card/index.html` + static field card page
 - [ ] Notify the 2026-07-27 weekly Write in Slack (`SLACK_ORBIT_WEBHOOK_URL` unavailable in automation environment)
 - [x] Refresh weekly Write intake and prepare the 2026-07-27 pending IDE draft
