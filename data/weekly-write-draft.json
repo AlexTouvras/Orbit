@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-08-10-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-08-10T09:02:51.334Z",
   "weekOf": "2026-08-10",
   "slug": "when-the-report-becomes-an-app-the-semantic-model-becomes-the-contract",
@@ -156,5 +156,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-08-10T11:45:29.012Z",
+  "publishedSlug": "when-the-report-becomes-an-app-the-semantic-model-becomes-the-contract"
 }
