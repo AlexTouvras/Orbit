@@ -1,7 +1,34 @@
 {
-  "generatedAt": "2026-08-09T06:50:37.319Z",
+  "generatedAt": "2026-08-10T06:45:50.524Z",
   "count": 218,
   "items": [
+    {
+      "id": "05f5b5e146e6",
+      "title": "Cognitive Trap: Scrum Master as a Manager",
+      "link": "https://www.scrum.org/resources/blog/cognitive-trap-scrum-master-manager",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-10T04:00:00.000Z",
+      "contentSnippet": "Scrum Master as Manager Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, an…"
+    },
+    {
+      "id": "fc91bece9947",
+      "title": "Data Engineering Weekly #282",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-282",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-10T01:21:26.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "eb19341e893a",
+      "title": "Using Detail Rows Expressions To Drill To A Different Fact Table In Power BI",
+      "link": "https://blog.crossjoin.co.uk/2026/08/09/using-detail-rows-expressions-to-drill-to-a-different-fact-table-in-power-bi/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-08-09T21:26:19.000Z",
+      "contentSnippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
+    },
     {
       "id": "fa8a01f4f6ef",
       "title": "Focus Is Not Genius. It Is a Kata.",
@@ -568,15 +595,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-27T13:50:13.000Z",
       "contentSnippet": "It passed every check. The automated tests were green. The code review was done. The acceptance criteria were met. The feature was deployed to staging and behaved exactly as described in the ticket. By every measure the team had, this work was done. Then it hit production. Within…"
-    },
-    {
-      "id": "093994b2415f",
-      "title": "How to Avoid AI Debt by Borrowing from Agile Artifacts",
-      "link": "https://www.scrum.org/resources/blog/how-avoid-ai-debt-borrowing-agile-artifacts",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-27T09:16:33.000Z",
-      "contentSnippet": "TL; DR: Reusing Agile Artifacts to Avoid Accumulating AI Debt In this video from the 76th Hands-on Agile Meetup, I walk you through the A3 Delegation System and show how it helps avoid AI debt by borrowing artifacts and practices from Agile, such as the Definition of Done and Ret…"
     },
     {
       "id": "144c71381790",
@@ -1344,15 +1362,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "91f0cfa07530",
-      "title": "Fabric Dataflows Gen2 And Concurrent Evaluation, Part 2: Partitioned Compute",
-      "link": "https://blog.crossjoin.co.uk/2026/05/31/fabric-dataflows-gen2-and-concurrent-evaluation-part-2-partitioned-compute/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-05-31T16:38:38.000Z",
-      "contentSnippet": "In the first part of this series I showed how the Concurrency setting in a Fabric Dataflows Gen2 can affect refresh performance when there are multiple queries inside the dataflow. In this post I will show how, with Partitioned Compute, this setting can also affect the performanc…"
-    },
-    {
       "id": "12596e9488ac",
       "title": "Beyond “Taking Responsibility”: Why Leading for Agency is the Future of Modern Management",
       "link": "https://blog.crisp.se/2026/05/31/tomasbjorkholm/beyond-taking-responsibility-why-leading-for-agency-is-the-future-of-modern-management",
@@ -1702,15 +1711,6 @@
       "category": "Analytics",
       "pubDate": "2026-04-20T08:25:24.000Z",
       "contentSnippet": "A reference framework for naming everything in Microsoft Fabric - from capacities down to gold-layer fact tables. Patterns, examples, and strong opinions. The post The Name Game – Naming Microsoft Fabric from tenant to table appeared first on Data Mozart."
-    },
-    {
-      "id": "6c5aefb2f922",
-      "title": "Data Engineering Weekly #266",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-266",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-04-20T03:09:39.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "abc900131abb",
