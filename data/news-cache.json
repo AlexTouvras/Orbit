@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T06:05:49.388Z",
+  "generatedAt": "2026-08-11T06:58:59.958Z",
   "count": 218,
   "items": [
     {
@@ -10,15 +10,6 @@
       "category": "Data",
       "pubDate": "2026-08-10T23:08:50.000Z",
       "contentSnippet": "Building an agent to automate simple business tasks can be easy. But creating one..."
-    },
-    {
-      "id": "ff64cfc34025",
-      "title": "Creating DAX functions with AI to remove duplicated code",
-      "link": "https://www.sqlbi.com/articles/creating-dax-functions-with-ai-to-remove-duplicated-code/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-08-10T20:00:00.000Z",
-      "contentSnippet": "Code written by AI can contain many duplicate parts. User-defined functions are a great tool to simplify complex measures; this article shows how to leverage AI to build better DAX code. AI is getting better and better at generating DAX…"
     },
     {
       "id": "202ffbef3360",
@@ -91,15 +82,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-10T09:07:32.000Z",
       "contentSnippet": "TL; DR: The “Agile to the Product Operating Model” Survey Results Between August 2 and August 10, 2026, 48 practitioners participated in my Agile to Product Operating Model (POM) survey, which tries to shed light on what is actually changing. Let me summarize the answers for you:…"
-    },
-    {
-      "id": "b1c5cfb2f6cc",
-      "title": "Restoring alternating rows in Power BI matrices with Fluent 2",
-      "link": "https://www.sqlbi.com/blog/marco/2026/08/10/restoring-alternating-rows-in-power-bi-matrices-with-fluent-2/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-08-10T07:22:49.000Z",
-      "contentSnippet": "Microsoft recently introduced a new default visual design style for Power BI named Fluent 2. I personally disagree with a few choices in the new defaults, including the removal of alternating row colors from Table and Matrix visuals. However, the…"
     },
     {
       "id": "af2f9387f309",
@@ -1729,6 +1711,24 @@
       "category": "Analytics",
       "pubDate": "2026-04-07T10:00:00.000Z",
       "contentSnippet": "How to highlight a row based solely on the maximum value in the last column using visual calculations, a tool that can be used efficiently to format visuals."
+    },
+    {
+      "id": "4c089de9d78c",
+      "title": "How to navigate the lattice of visual calculations",
+      "link": "https://www.sqlbi.com/tv/how-to-navigate-the-lattice-of-visual-calculations/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-06T20:00:24.000Z",
+      "contentSnippet": "This video explains how to navigate the lattice of visual calculations in DAX. The visual context goes beyond the row context and filter context by adding the concept of levels within the lattice. The video shows how to use COLLAPSEALL…"
+    },
+    {
+      "id": "268887b85951",
+      "title": "Using visual calculations to highlight an entire row",
+      "link": "https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-06T20:00:04.000Z",
+      "contentSnippet": "Visual calculations can be used efficiently to format visuals. This article presents an interesting technique to highlight a row based solely on the maximum value in the last column. When it comes to visuals, users may want to specific cells…"
     },
     {
       "id": "df2be5bd8dc6",
