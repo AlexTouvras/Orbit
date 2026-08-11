@@ -50,7 +50,10 @@ src/components/seo/
 └── ArticleJsonLd.tsx
 data/published-projects.json
 src/content/writes/
-public/field-card/index.html   # Agentic AI Field Card (static; linked from home AI competency)
+public/field-card/index.html            # Agentic AI Field Card (home AI competency)
+public/analytics-field-card/index.html  # Data Analytics Field Card (home Data competency)
+src/lib/field-card/registry.ts          # Multi-card Approve sync map (repo → Orbit path)
+src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for all registered cards
 .state/
 ```
 
@@ -58,6 +61,7 @@ public/field-card/index.html   # Agentic AI Field Card (static; linked from home
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-08-11 | Data Analytics Field Card + shared Orbit field-card registry | Same weekly discovery → Cursor judgment → #orbit Approve process as AI card; stack is ASK/GRAIN/TRUTH/USE (not a Fabric brochure) |
 | 2026-07-26 | Orbit `caseStudyUrl` → `/writes/building-orbit` | Essay existed; card lacked Case study link |
 | 2026-07-26 | Heatmap case study Write + `caseStudyUrl` | Featured live board had no write-up |
 | 2026-07-26 | Dropped ProjectHelm Write; JARVIS `/architecture/jarvis` remains historical-only backlink | Essay was present-tense under a retired banner; Hub voice pass preferred removing it over rewriting |
@@ -68,3 +72,6 @@ public/field-card/index.html   # Agentic AI Field Card (static; linked from home
 | 2026-07-24 | Trim AI to OpenAI + Simon `entries` (max 8 each); drop InfoQ DevOps + TDS + Personal Kanban; add Databricks/DuckDB/MotherDuck/Dagster + RADACAD/Data Mozart + Scrum.org | Chronological feed and weekly essays read as AI-only despite balanced cache counts |
 | 2026-07-30 | Agentic field card hosted as static `public/field-card/`; home AI competency links there | Keep standalone HTML (print/LinkedIn) outside Orbit chrome; competency is the discovery path |
 | 2026-08-03 | Slack Approve syncs field-card `index.html` → Orbit `public/field-card/` | Pages updated on merge; site copy was stale until this lockstep commit + Vercel redeploy |
+| 2026-08-10 | Vercel `WEEKLY_WRITE_SECRET` must match Cloud Automation / local signing secret (preferred over bare `CRON_SECRET`) | Preview/Approve tokens failed with `invalid signature` when Vercel `CRON_SECRET` drifted from the automation signer; draft must also live on GitHub default branch |
+| 2026-08-11 | Field-card pipeline fail-closed: discovery Slack ping + Sat/Mon judgment watchdog + Approve notify requires `## Summary` | W32 stalled silently when Friday Cursor Automation missed; silence meant “nothing happened” |
+| 2026-08-11 | Field-card repo must carry the same `WEEKLY_WRITE_SECRET` as Orbit/Vercel (not only stale `CRON_SECRET`) | Preview/Approve tokens signed in field-card CI failed with `invalid signature` on production |

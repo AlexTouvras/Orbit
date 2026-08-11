@@ -18,6 +18,14 @@ const nextConfig = {
     return [
       { source: "/field-card", destination: "/field-card/index.html" },
       { source: "/field-card/", destination: "/field-card/index.html" },
+      {
+        source: "/analytics-field-card",
+        destination: "/analytics-field-card/index.html",
+      },
+      {
+        source: "/analytics-field-card/",
+        destination: "/analytics-field-card/index.html",
+      },
     ];
   },
 };

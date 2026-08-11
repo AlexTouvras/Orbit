@@ -38,8 +38,8 @@ function CompetencyCard({
 
   if (!href) return card;
 
-  // Plain <a>: /field-card/ is static HTML in public/, not an App Router page.
-  // next/link soft-nav would no-op / 404 inside the SPA shell.
+  // Plain <a>: /field-card/ and /analytics-field-card/ are static HTML in public/,
+  // not App Router pages. next/link soft-nav would no-op / 404 inside the SPA shell.
   return (
     <a href={href} className="focus-ring block h-full rounded-2xl">
       {card}

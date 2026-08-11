@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agentic AI Field Card â€” When to use what Â· Alex Touvras</title>
+  <meta name="description" content="A one-page decision card for analytics stacks: question, grain, truth layer, and consume path. Tools are lanes — not the map." />
+  <meta name="author" content="Alex Touvras" />
+  <meta property="og:title" content="Agentic AI Field Card â€” When to use what" />
+  <meta property="og:description" content="Question ? grain ? truth ? consume. Most teams need fewer tools than the pitch deck suggests." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #18212b;
+      --ink-soft: #3a4654;
+      --muted: #6b7785;
+      --line: #c9d2dc;
+      --paper: #eef2f6;
+      --card: #f8fafc;
+      --steel: #245a7a;
+      --steel-deep: #1a4158;
+      --signal: #0f766e;
+      --signal-soft: #d7ebe8;
+      --warn: #9a3412;
+      --warn-soft: #f3e0d6;
+      --layer-rag: #1e4d6b;
+      --layer-agent: #245a7a;
+      --layer-mcp: #0f766e;
+      --layer-a2a: #334155;
+      --shadow: 0 1px 0 rgba(24, 33, 43, 0.06), 0 12px 32px rgba(24, 33, 43, 0.06);
+      --radius: 10px;
+      --font-display: "Source Serif 4", Georgia, serif;
+      --font-body: "Outfit", system-ui, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, rgba(36, 90, 122, 0.09), transparent 60%),
+        radial-gradient(900px 400px at 100% 0%, rgba(15, 118, 110, 0.07), transparent 55%),
+        var(--paper);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .sheet {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 1.5rem auto 2.5rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+      padding: 1rem 1.35rem;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fbfcfd, #f3f6f9);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--steel);
+      font-weight: 600;
+    }
+
+    .channels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .channels button,
+    .channels a.btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.02em;
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 160ms ease, transform 120ms ease, background 160ms ease;
+    }
+
+    .channels button:hover,
+    .channels a.btn:hover {
+      border-color: var(--steel);
+      background: #f0f6fa;
+    }
+
+    .channels button:active,
+    .channels a.btn:active {
+      transform: scale(0.97);
+    }
+
+    header.hero {
+      padding: 1.5rem 1.35rem 1.25rem;
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: end;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      margin: 0.35rem 0 0.55rem;
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 3.4vw, 2.55rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      max-width: 16ch;
+    }
+
+    .lede {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+      max-width: 42ch;
+    }
+
+    .lede strong { color: var(--ink); font-weight: 600; }
+
+    .stack {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .layer {
+      display: grid;
+      grid-template-columns: 4.6rem 1fr;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.55rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      color: #fff;
+      animation: rise 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .layer:nth-child(1) { background: var(--layer-rag); animation-delay: 40ms; }
+    .layer:nth-child(2) { background: var(--layer-agent); animation-delay: 110ms; }
+    .layer:nth-child(3) { background: var(--layer-mcp); animation-delay: 180ms; }
+    .layer:nth-child(4) { background: var(--layer-a2a); animation-delay: 250ms; }
+
+    .layer code {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      opacity: 0.92;
+    }
+
+    .layer span {
+      font-size: 0.84rem;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .layer { animation: none; }
+    }
+
+    section {
+      padding: 1.1rem 1.35rem 1.2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--steel);
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.55rem 0.45rem;
+      border-bottom: 1px solid #e2e8ef;
+    }
+
+    th {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+      padding-top: 0;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    table.decisions td.problem { color: var(--ink); font-weight: 500; width: 32%; }
+    table.decisions td.reach { color: var(--ink-soft); width: 26%; }
+    table.decisions td.example {
+      color: var(--ink-soft);
+      font-size: 0.84rem;
+      width: 42%;
+    }
+    td.reach b {
+      color: var(--signal);
+      font-weight: 650;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+    }
+
+    a.use-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(15, 118, 110, 0.35);
+      transition: border-color 140ms ease, color 140ms ease;
+    }
+
+    a.use-link:hover,
+    a.use-link:focus-visible {
+      color: var(--steel-deep);
+      border-bottom-color: var(--steel);
+      outline: none;
+    }
+
+    a.use-link:focus-visible {
+      box-shadow: 0 0 0 3px rgba(36, 90, 122, 0.25);
+      border-radius: 2px;
+    }
+
+    .pick a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(36, 90, 122, 0.3);
+    }
+
+    .pick a:hover,
+    .pick a:focus-visible {
+      border-bottom-color: var(--steel);
+      outline: none;
+    }
+
+    .tri {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tri > section {
+      border-bottom: none;
+      border-right: 1px solid var(--line);
+    }
+
+    .tri > section:last-child { border-right: none; }
+
+    .gates {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .gate {
+      padding: 0.55rem 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .gate strong {
+      display: block;
+      font-size: 0.86rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .gate span {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    .behavior {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 0.85rem 0.9rem;
+    }
+
+    .panel h3 {
+      margin: 0 0 0.35rem;
+      font-size: 0.98rem;
+      font-weight: 650;
+    }
+
+    .panel p {
+      margin: 0 0 0.55rem;
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+    }
+
+    .panel ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .panel li {
+      position: relative;
+      padding-left: 0.85rem;
+      font-size: 0.84rem;
+      color: var(--ink);
+    }
+
+    .panel li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 50%;
+      background: var(--steel);
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.4rem;
+      border-radius: 4px;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .tag.rules { background: #e8eef4; color: var(--steel-deep); }
+    .tag.skills { background: var(--signal-soft); color: #115e59; }
+
+    .aside-stack {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .picker {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .pick {
+      display: grid;
+      grid-template-columns: 7.5rem 1fr;
+      gap: 0.65rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid #e2e8ef;
+    }
+
+    .pick:last-child { border-bottom: none; }
+
+    .pick strong {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.02em;
+      color: var(--steel-deep);
+      font-weight: 600;
+    }
+
+    .pick span {
+      font-size: 0.84rem;
+      color: var(--ink-soft);
+    }
+
+    .ladder {
+      display: grid;
+      gap: 0.35rem;
+      counter-reset: step;
+    }
+
+    .ladder li {
+      list-style: none;
+      counter-increment: step;
+      display: grid;
+      grid-template-columns: 1.6rem 1fr;
+      gap: 0.55rem;
+      align-items: start;
+      font-size: 0.86rem;
+      padding: 0.2rem 0;
+    }
+
+    .ladder li::before {
+      content: counter(step);
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--steel);
+      background: #e8eef4;
+      border-radius: 4px;
+      width: 1.45rem;
+      height: 1.45rem;
+      display: grid;
+      place-items: center;
+      margin-top: 0.05rem;
+    }
+
+    .antis {
+      background: linear-gradient(180deg, #fcfaf8, #f8f1eb);
+    }
+
+    .anti-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.45rem 1rem;
+    }
+
+    .anti-list li {
+      font-size: 0.86rem;
+      color: var(--ink);
+      padding-left: 0.9rem;
+      position: relative;
+    }
+
+    .anti-list li::before {
+      content: "Ã—";
+      position: absolute;
+      left: 0;
+      color: var(--warn);
+      font-weight: 700;
+    }
+
+    .note {
+      margin: 0.85rem 0 0;
+      font-size: 0.84rem;
+      color: var(--ink-soft);
+      max-width: 70ch;
+    }
+
+    footer.meta {
+      padding: 0.95rem 1.35rem 1.15rem;
+      background: #f3f6f9;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .version-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem 1.25rem;
+    }
+
+    .version {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--steel-deep);
+      font-weight: 500;
+    }
+
+    .changed {
+      margin: 0;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+    }
+
+    .changed b {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 600;
+      margin-right: 0.4rem;
+    }
+
+    .credit {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1rem;
+      align-items: baseline;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .credit a {
+      color: var(--steel);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .credit a:hover { text-decoration: underline; }
+
+    .share-banner {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      header.hero,
+      .tri,
+      .behavior,
+      .anti-list {
+        grid-template-columns: 1fr;
+      }
+      .tri > section { border-right: none; border-bottom: 1px solid var(--line); }
+      .tri > section:last-child { border-bottom: none; }
+      .pick { grid-template-columns: 1fr; gap: 0.2rem; }
+      h1 { max-width: none; }
+      table.decisions td.problem,
+      table.decisions td.reach,
+      table.decisions td.example { width: auto; }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 8mm;
+      }
+
+      body {
+        background: #fff;
+        font-size: 10.5pt;
+      }
+
+      .sheet {
+        width: 100%;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .channels,
+      .share-banner { display: none !important; }
+
+      .topbar { padding: 0.4rem 0 0.55rem; background: none; }
+      header.hero { padding: 0.55rem 0 0.7rem; gap: 0.85rem; }
+      section { padding: 0.55rem 0 0.65rem; }
+      footer.meta { padding: 0.45rem 0 0; background: none; }
+      .layer { animation: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .panel, .antis { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; border-bottom: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <article class="sheet" id="field-card">
+    <div class="topbar">
+      <div class="eyebrow">Field card · Data &amp; analytics</div>
+      <div class="channels no-print">
+        <button type="button" onclick="window.print()">Print / PDF</button>
+        <button type="button" id="copy-link">Copy link</button>
+        <a class="btn" href="https://alextouvras.com" rel="noopener">alextouvras.com</a>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="eyebrow">When the number is real enough</div>
+        <h1>Analytics is a stack, not a dashboard</h1>
+        <p class="lede">
+          Question, grain, truth layer, and consume path are <strong>layers</strong>.
+          Tools are lanes. Most teams need fewer products than the roadmap implies — add complexity only when the decision actually requires it.
+        </p>
+      </div>
+      <div class="stack" aria-label="Four-layer stack">
+        <div class="layer"><code>ASK</code><span>Question — what decision does this number serve?</span></div>
+        <div class="layer"><code>GRAIN</code><span>Unit — customer, account, day, claim… named once</span></div>
+        <div class="layer"><code>TRUTH</code><span>Definitions — where the number becomes official</span></div>
+        <div class="layer"><code>USE</code><span>Consume — notebook, model, scorecard, or API</span></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Problem → use → example</h2>
+      <table class="decisions">
+        <thead>
+          <tr>
+            <th>If the real problem is…</th>
+            <th>Use</th>
+            <th>Example case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="problem">Nobody agrees what “active customer” means</td>
+            <td class="reach"><a class="use-link" href="https://www.getdbt.com/blog/guide-to-the-semantic-layer" target="_blank" rel="noopener noreferrer" title="dbt: guide to the semantic layer"><b>Metrics / semantic layer</b></a></td>
+            <td class="example">One definition of active_30d owned upstream; every BI tool and notebook reads it — no local COUNT DISTINCT remixes</td>
+          </tr>
+          <tr>
+            <td class="problem">Raw dumps keep breaking Monday reports</td>
+            <td class="reach"><a class="use-link" href="https://docs.getdbt.com/docs/build/building-models" target="_blank" rel="noopener noreferrer" title="dbt: building models"><b>Curated / gold tables</b></a></td>
+            <td class="example">SQL or Python builds a typed fact table with tests; dashboards read gold, not the landing zone</td>
+          </tr>
+          <tr>
+            <td class="problem">Shape of the question is still fuzzy</td>
+            <td class="reach"><a class="use-link" href="https://jupyter.org/" target="_blank" rel="noopener noreferrer" title="Project Jupyter"><b>Notebook + SQL</b></a></td>
+            <td class="example">Spike in churn last week — slice in a notebook first; graduate joins and metrics only after the grain holds</td>
+          </tr>
+          <tr>
+            <td class="problem">Leadership needs a cold-open decision pack</td>
+            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-dashboards" target="_blank" rel="noopener noreferrer" title="Power BI dashboards overview"><b>Scorecard / KPI pack</b></a></td>
+            <td class="example">Five measures, one page, named owner; exploration dashboards stay off this path</td>
+          </tr>
+          <tr>
+            <td class="problem">Self-serve without rewriting business rules in every report</td>
+            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-relationships-understand" target="_blank" rel="noopener noreferrer" title="Power BI: relationships and models"><b>Governed semantic model</b></a></td>
+            <td class="example">Star schema + measures in the model; pages compose, they don’t redefine PD or ECL</td>
+          </tr>
+          <tr>
+            <td class="problem">Heavy joins or volume that local SQL can’t finish</td>
+            <td class="reach"><a class="use-link" href="https://docs.databricks.com/en/lakehouse/index.html" target="_blank" rel="noopener noreferrer" title="Databricks lakehouse"><b>Warehouse / lakehouse</b></a></td>
+            <td class="example">Multi-year transaction history for RFM; compute close to storage, publish a narrow gold table out</td>
+          </tr>
+          <tr>
+            <td class="problem">Fast local analysis that still needs to share</td>
+            <td class="reach"><a class="use-link" href="https://duckdb.org/docs/" target="_blank" rel="noopener noreferrer" title="DuckDB docs"><b>DuckDB / MotherDuck</b></a></td>
+            <td class="example">Parquet on disk for a credit cohort study; push the reproducible query, not a mystery workbook</td>
+          </tr>
+          <tr>
+            <td class="problem">Regulated / risk number must be auditable</td>
+            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/architecture/data-guide/scenarios/data-versioning" target="_blank" rel="noopener noreferrer" title="Data versioning guidance"><b>Versioned inputs + assumptions</b></a></td>
+            <td class="example">PD scorecard run: freeze feature store cut, document exclusions, store the model ID next to the ECL output</td>
+          </tr>
+          <tr>
+            <td class="problem">One-off exec ask by Friday</td>
+            <td class="reach"><a class="use-link" href="https://support.microsoft.com/en-us/excel" target="_blank" rel="noopener noreferrer" title="Excel support"><b>Spreadsheet (then graduate)</b></a></td>
+            <td class="example">Board slide number from a controlled extract; if it recurs twice, promote grain + definition to gold</td>
+          </tr>
+          <tr>
+            <td class="problem">Don’t know if the number moved for the right reason</td>
+            <td class="reach"><a class="use-link" href="https://openlineage.io/" target="_blank" rel="noopener noreferrer" title="OpenLineage"><b>Reconciliation / lineage</b></a></td>
+            <td class="example">Compare source counts vs gold vs semantic measure; block publish when the gap has no named cause</td>
+          </tr>
+          <tr>
+            <td class="problem">Ops needs near-now status, not last night’s batch</td>
+            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/architecture/data-guide/big-data/real-time-analytics" target="_blank" rel="noopener noreferrer" title="Real-time analytics architectures"><b>Near-real-time path</b></a></td>
+            <td class="example">Queue depth and fail rate on a 5-minute lag; keep strategic KPIs on the batch truth layer</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note">Default build order: name the question and grain → curated tables with tests → shared definitions → consume surface → lineage/reconcile before you scale tools.</p>
+    </section>
+
+    <div class="tri">
+      <section>
+        <h2>Tool picker</h2>
+        <div class="picker">
+          <div class="pick"><strong><a href="https://docs.getdbt.com/" target="_blank" rel="noopener noreferrer">dbt</a></strong><span>Versioned transforms + tests as code</span></div>
+          <div class="pick"><strong><a href="https://duckdb.org/" target="_blank" rel="noopener noreferrer">DuckDB</a> / <a href="https://motherduck.com/docs/" target="_blank" rel="noopener noreferrer">MotherDuck</a></strong><span>Local-to-cloud speed for analytics SQL</span></div>
+          <div class="pick"><strong><a href="https://docs.databricks.com/" target="_blank" rel="noopener noreferrer">Databricks</a></strong><span>Volume, lakehouse, shared compute</span></div>
+          <div class="pick"><strong><a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer">Python</a> / <a href="https://jupyter.org/" target="_blank" rel="noopener noreferrer">Jupyter</a></strong><span>Exploration, features, one-off science</span></div>
+          <div class="pick"><strong><a href="https://learn.microsoft.com/en-us/power-bi/" target="_blank" rel="noopener noreferrer">Power BI</a> / <a href="https://cloud.google.com/looker/docs" target="_blank" rel="noopener noreferrer">Looker</a></strong><span>Governed consume + scorecards</span></div>
+          <div class="pick"><strong><a href="https://www.getdbt.com/product/semantic-layer" target="_blank" rel="noopener noreferrer">Semantic layer</a></strong><span>Shared metrics across tools</span></div>
+          <div class="pick"><strong><a href="https://openlineage.io/" target="_blank" rel="noopener noreferrer">OpenLineage</a></strong><span>Where did this number come from?</span></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Definition vs report</h2>
+        <div class="gates">
+          <div class="gate">
+            <strong>Definitions · travel</strong>
+            <span>Grain, keys, and measures that other systems can reuse. Own them upstream of any single dashboard.</span>
+          </div>
+          <div class="gate">
+            <strong>Reports · compose</strong>
+            <span>Layout and audience. A page should not invent PD, ECL, or “active” — it should bind to named definitions.</span>
+          </div>
+          <div class="gate">
+            <strong>Memory check</strong>
+            <span>ASK = decision. GRAIN = unit. TRUTH = official number. USE = how humans see it.</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ladder + gates</h2>
+        <ol class="ladder">
+          <li>Named question + grain</li>
+          <li>Trusted extract / spreadsheet (time-boxed)</li>
+          <li>Curated tables + tests</li>
+          <li>Shared definitions / semantic model</li>
+          <li>Scorecard or governed self-serve</li>
+          <li>Lineage + reconcile before scale</li>
+        </ol>
+        <div class="gate" style="margin-top:0.75rem">
+          <strong>Kill switch</strong>
+          <span>If you can’t name the grain, the owner, and how to stop a bad publish, you don’t ship the number.</span>
+        </div>
+      </section>
+    </div>
+
+    <section class="antis">
+      <h2>Anti-patterns</h2>
+      <ul class="anti-list">
+        <li>Dashboard first, question never</li>
+        <li>Redefining metrics inside every report</li>
+        <li>Landing-zone tables as the semantic layer</li>
+        <li>Tool shopping before grain is named</li>
+        <li>Treating Excel as forever when it recurs</li>
+        <li>Real-time paths for strategic KPIs</li>
+        <li>Unowned “source of truth” with no tests</li>
+        <li>Publishing when reconcile gaps are unexplained</li>
+      </ul>
+    </section>
+
+    <footer class="meta">
+      <div class="version-row">
+        <div class="version" id="version-stamp">v2026.33 · Reviewed 11 Aug 2026 · Next: week of 18 Aug</div>
+        <div class="credit">
+          <span>Alex Touvras</span>
+          <a href="https://alextouvras.com">alextouvras.com</a>
+          <span>Delivery · Data · AI automation</span>
+        </div>
+      </div>
+      <p class="changed"><b>Changed</b> Initial public card — stack, decision table, tool picker, ladder</p>
+    </footer>
+  </article>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("copy-link");
+      if (!btn) return;
+      btn.addEventListener("click", async function () {
+        var url = window.location.href;
+        try {
+          await navigator.clipboard.writeText(url);
+          btn.textContent = "Copied";
+          setTimeout(function () { btn.textContent = "Copy link"; }, 1400);
+        } catch (e) {
+          window.prompt("Copy this URL:", url);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

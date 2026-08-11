@@ -10,7 +10,9 @@ import {
   verifyFieldCardActionToken,
   type FieldCardTokenPayload,
 } from "@/lib/field-card/tokens";
+import { requireFieldCardConfig } from "@/lib/field-card/registry";
 import { hasGithubStorage, writeRepoFile } from "@/lib/github-storage";
+import { getSiteUrl } from "@/lib/site";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -78,16 +80,19 @@ function confirmPage(
   prUrl: string,
   token: string,
 ): NextResponse {
+  const card = requireFieldCardConfig(payload.repo);
   const approve = payload.action === "approve";
   const verb = approve ? "Approve & merge" : "Skip (close PR)";
   const btnClass = approve ? "primary" : "danger";
-  const title = approve ? "Confirm field card merge" : "Confirm field card skip";
+  const title = approve
+    ? `Confirm ${card.label} merge`
+    : `Confirm ${card.label} skip`;
   const body = `
     <p class="title">${escapeHtml(prTitle)}</p>
-    <p>Repo <code>${escapeHtml(payload.repo)}</code> · PR <a href="${escapeHtml(prUrl)}">#${payload.pr}</a></p>
+    <p>Repo <code>${escapeHtml(payload.repo)}</code> � PR <a href="${escapeHtml(prUrl)}">#${payload.pr}</a></p>
     <p>${
       approve
-        ? "This will squash-merge the weekly field card PR into <code>main</code>, then sync <code>public/field-card/index.html</code> on Orbit (Pages + alextouvras.com)."
+        ? `This will squash-merge the weekly field card PR into <code>main</code>, then sync <code>${escapeHtml(card.orbitPath)}</code> on Orbit (Pages + alextouvras.com).`
         : "This will close the PR without merging. Next Friday can open a fresh refresh."
     }</p>
     <div class="actions">
@@ -112,14 +117,16 @@ async function runAction(payload: FieldCardTokenPayload) {
     );
   }
 
+  const card = requireFieldCardConfig(payload.repo);
+
   if (payload.action === "skip") {
     const result = await closeFieldCardPullRequest(payload.repo, payload.pr);
     void notifyFieldCardSlack(
-      `Skipped field card refresh: ${result.title}`,
-      `*Skipped:* <${result.url}|${result.title}>\nNext Friday’s discovery can open a new PR.`,
+      `Skipped ${card.label} refresh: ${result.title}`,
+      `*Skipped:* <${result.url}|${result.title}>\nNext Friday's discovery can open a new PR.`,
     ).catch(() => undefined);
     return htmlPage(
-      result.alreadyClosed ? "Already closed" : "Field card skipped",
+      result.alreadyClosed ? "Already closed" : `${card.label} skipped`,
       `<p><strong>${escapeHtml(result.title)}</strong> will not merge.</p>
        <p><a href="${escapeHtml(result.url)}">Pull request</a></p>`,
       true,
@@ -127,18 +134,17 @@ async function runAction(payload: FieldCardTokenPayload) {
   }
 
   const result = await mergeFieldCardPullRequest(payload.repo, payload.pr);
-  const pages = "https://alextouvras.github.io/agentic-ai-field-card/";
-  const site = "https://alextouvras.com/field-card/index.html";
+  const pages = card.pagesUrl;
+  const site = `${getSiteUrl()}${card.sitePath}`;
 
-  // Site hosts a static copy under public/ — keep it in lockstep with field-card main.
   let siteSync = "skipped";
   try {
     const html = await getRepoFileText(payload.repo, "index.html", "main");
     if (hasGithubStorage()) {
       await writeRepoFile(
-        "public/field-card/index.html",
+        card.orbitPath,
         html,
-        `chore: sync field card after approve (#${payload.pr})`,
+        `chore: sync ${card.id} field card after approve (#${payload.pr})`,
       );
       siteSync = "committed";
     } else {
@@ -150,10 +156,10 @@ async function runAction(payload: FieldCardTokenPayload) {
   }
 
   void notifyFieldCardSlack(
-    `Approved field card refresh: ${result.title}`,
+    `Approved ${card.label} refresh: ${result.title}`,
     [
       `*Approved & merged:* <${result.url}|${result.title}>`,
-      `Pages: <${pages}|github.io> · Site: <${site}|alextouvras.com/field-card>${
+      `Pages: <${pages}|github.io> · Site: <${site}|${card.sitePath}>${
         siteSync === "committed"
           ? " (Orbit redeploy queued)"
           : siteSync === "failed"
@@ -164,21 +170,21 @@ async function runAction(payload: FieldCardTokenPayload) {
   ).catch(() => undefined);
 
   return htmlPage(
-    result.alreadyMerged ? "Already merged" : "Field card approved",
+    result.alreadyMerged ? "Already merged" : `${card.label} approved`,
     `<p><strong>${escapeHtml(result.title)}</strong> is on <code>main</code>.</p>
      <p>GitHub Pages: <a href="${escapeHtml(pages)}">${escapeHtml(pages)}</a></p>
      <p>Site copy: <a href="${escapeHtml(site)}">${escapeHtml(site)}</a>${
        siteSync === "committed"
          ? " — Orbit commit queued; Vercel redeploys shortly."
          : siteSync === "failed"
-           ? " — <strong>sync failed</strong>; update <code>public/field-card/index.html</code> manually."
+           ? ` — <strong>sync failed</strong>; update <code>${escapeHtml(card.orbitPath)}</code> manually.`
            : "."
      }</p>`,
     true,
   );
 }
 
-/** GET: confirmation only — never merges (avoids Slack unfurl). */
+/** GET: confirmation only ? never merges (avoids Slack unfurl). */
 export async function GET(req: NextRequest) {
   const token = req.nextUrl.searchParams.get("token") ?? "";
   const verified = verifyFieldCardActionToken(token);
@@ -251,7 +257,7 @@ export async function POST(req: NextRequest) {
     return htmlPage(
       "Action failed",
       `<p>${escapeHtml(message)}</p>
-       <p>Check that Orbit’s <code>GITHUB_TOKEN</code> (or <code>FIELD_CARD_GITHUB_TOKEN</code>) can write to <code>AlexTouvras/agentic-ai-field-card</code>.</p>`,
+       <p>Check that Orbit?s <code>GITHUB_TOKEN</code> (or <code>FIELD_CARD_GITHUB_TOKEN</code>) can write to <code>AlexTouvras/agentic-ai-field-card</code>.</p>`,
       false,
     );
   }
