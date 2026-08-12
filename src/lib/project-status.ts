@@ -13,6 +13,7 @@ export type ProjectActivity = "active" | "recent" | "stale" | "unknown";
 
 export type BadgeTone =
   | "cyan"
+  | "ai"
   | "violet"
   | "blue"
   | "neutral"

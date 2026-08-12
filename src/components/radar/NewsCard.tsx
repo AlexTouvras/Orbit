@@ -1,15 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import type { NewsItem } from "@/lib/types";
+import { NEWS_CATEGORY_TONE } from "@/lib/news/category-tone";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { relativeTime } from "@/lib/utils";
-
-const categoryTone = {
-  AI: "cyan",
-  Data: "blue",
-  Delivery: "violet",
-  Analytics: "neutral",
-} as const;
 
 export function NewsCard({ item }: { item: NewsItem }) {
   return (
@@ -21,7 +15,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
     >
       <GlassCard hover className="group flex h-full flex-col">
         <div className="flex items-center justify-between gap-3">
-          <Badge tone={categoryTone[item.category]}>{item.category}</Badge>
+          <Badge tone={NEWS_CATEGORY_TONE[item.category]}>{item.category}</Badge>
           <span className="font-mono text-xs text-slate-400">
             {relativeTime(item.pubDate)}
           </span>

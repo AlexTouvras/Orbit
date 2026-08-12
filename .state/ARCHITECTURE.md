@@ -27,7 +27,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Essay pages read their own feedback entries server-side and render a newest-first note list below the feedback CTA.
 - Essay feedback Slack notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (for `#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
 - Weekly Write Slack draft / publish / skip notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (`#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
-- Brand accent orbit: `--orbit-l/c/h` on `html` cycle cyan → sky → azure → purple (~16s). `--accent-cyan`, `--accent-violet`, and `--accent-blue` all resolve to those channels, so every `neon-*` utility (text, borders, card accents, glows, badges) stays in sync. Explicit `.orbit-accent*` helpers use the same `--orbit-accent` color.
+- Brand accent orbit: `--orbit-l/c/h` on `html` cycles cyan → sky → azure → purple (~16s) and drives `--accent-cyan` / `--orbit-accent` / `neon-cyan` only. Topic AI uses fixed `--accent-ai` / `neon-ai` (tone `ai`). `--accent-violet` and `--accent-blue` stay fixed. Status tones (green/amber/neutral) stay fixed. `.orbit-accent*` helpers use `--orbit-accent`.
+- Related articles topic tones live in `src/lib/news/category-tone.ts` and drive both `NewsCard` badges and `FilterChip` active states (`All` = brand cyan orbit; `AI` = fixed ai).
 
 ## Dependencies
 

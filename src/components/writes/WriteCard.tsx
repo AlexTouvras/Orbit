@@ -8,7 +8,7 @@ import { formatDate } from "@/lib/utils";
 const categoryTone = {
   Career: "violet",
   Data: "blue",
-  AI: "cyan",
+  AI: "ai",
   Delivery: "violet",
   Learning: "neutral",
 } as const;

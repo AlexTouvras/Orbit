@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Animatable OKLCH channels — all neon-* tokens ride this orbit */
+/* Animatable OKLCH channels — brand cyan (neon-cyan) rides this orbit */
 @property --orbit-l {
   syntax: "<number>";
   inherits: true;
@@ -28,10 +28,11 @@
   --orbit-l: 0.78;
   --orbit-c: 0.14;
   --orbit-h: 195;
-  /* Brand accents (cyan / violet / blue) share the orbit channels */
+  /* Brand cyan orbits; category hues stay fixed for scanability */
   --accent-cyan: var(--orbit-l) var(--orbit-c) var(--orbit-h);
-  --accent-violet: var(--orbit-l) var(--orbit-c) var(--orbit-h);
-  --accent-blue: var(--orbit-l) var(--orbit-c) var(--orbit-h);
+  --accent-ai: 0.78 0.14 195;
+  --accent-violet: 0.62 0.22 300;
+  --accent-blue: 0.62 0.16 255;
   --orbit-accent: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h));
   --border: 1 0 0;
 }
@@ -70,11 +71,8 @@
   }
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(
-      oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.45),
-      oklch(
-        calc(var(--orbit-l) - 0.1) calc(var(--orbit-c) + 0.04)
-          calc(var(--orbit-h) + 45) / 0.45
-      )
+      oklch(var(--accent-cyan) / 0.45),
+      oklch(var(--accent-violet) / 0.45)
     );
     border-radius: 9999px;
     border: 2px solid oklch(var(--void-800));
@@ -107,11 +105,8 @@
   .text-gradient {
     background: linear-gradient(
       120deg,
-      oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h)),
-      oklch(
-        calc(var(--orbit-l) - 0.12) calc(var(--orbit-c) + 0.04)
-          calc(var(--orbit-h) + 50)
-      )
+      oklch(var(--accent-cyan)),
+      oklch(var(--accent-violet))
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -181,7 +176,7 @@
   }
 }
 
-/* Light blue → sky → azure → purpleish → back (drives all neon-* accents) */
+/* Light blue → sky → azure → purpleish → back (brand cyan / neon-cyan only) */
 @keyframes orbit-accent-cycle {
   0%,
   100% {

@@ -16,6 +16,7 @@ const config: Config = {
         },
         neon: {
           cyan: "oklch(var(--accent-cyan) / <alpha-value>)",
+          ai: "oklch(var(--accent-ai) / <alpha-value>)",
           violet: "oklch(var(--accent-violet) / <alpha-value>)",
           blue: "oklch(var(--accent-blue) / <alpha-value>)",
         },

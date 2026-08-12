@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Search, SatelliteDish } from "lucide-react";
 import type { NewsCategory, NewsItem } from "@/lib/types";
 import { interleaveByCategory } from "@/lib/news/balance";
+import { NEWS_FILTER_TONE } from "@/lib/news/category-tone";
 import { NewsCard } from "./NewsCard";
 import { FilterChip } from "@/components/ui/FilterChip";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
@@ -58,6 +59,7 @@ export function RadarExplorer({ items }: { items: NewsItem[] }) {
               key={f}
               active={category === f}
               onClick={() => setCategory(f)}
+              tone={NEWS_FILTER_TONE[f]}
             >
               {f}
               <span className="ml-1.5 tabular-nums text-slate-400">

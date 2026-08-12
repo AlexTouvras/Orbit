@@ -1,17 +1,12 @@
 import type { ReactNode } from "react";
+import type { BadgeTone } from "@/lib/project-status";
 import { cn } from "@/lib/utils";
 
-type Tone =
-  | "cyan"
-  | "violet"
-  | "blue"
-  | "neutral"
-  | "green"
-  | "amber"
-  | "red";
+export type { BadgeTone };
 
-const tones: Record<Tone, string> = {
+const tones: Record<BadgeTone, string> = {
   cyan: "border-neon-cyan/30 bg-neon-cyan/10 text-neon-cyan",
+  ai: "border-neon-ai/30 bg-neon-ai/10 text-neon-ai",
   violet: "border-neon-violet/30 bg-neon-violet/10 text-neon-violet",
   blue: "border-neon-blue/30 bg-neon-blue/10 text-neon-blue",
   neutral: "border-white/10 bg-white/5 text-slate-300",
@@ -26,7 +21,7 @@ export function Badge({
   className,
 }: {
   children: ReactNode;
-  tone?: Tone;
+  tone?: BadgeTone;
   className?: string;
 }) {
   return (
