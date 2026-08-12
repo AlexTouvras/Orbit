@@ -15,7 +15,8 @@
     "weekly:notify": "tsx src/scripts/weekly-write.ts --once --notify --force",
     "weekly:notify-draft": "tsx src/scripts/weekly-write.ts --notify-only",
     "arch:validate-all": "node scripts/architecture/validate-all.mjs",
-    "arch:sync-all": "node scripts/architecture/sync-all.mjs"
+    "arch:sync-all": "node scripts/architecture/sync-all.mjs",
+    "ship:check": "node scripts/check-deploy-author.mjs && npm run build"
   },
   "dependencies": {
     "@tsparticles/engine": "^4.2.0",
