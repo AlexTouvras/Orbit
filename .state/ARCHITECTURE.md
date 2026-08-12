@@ -22,6 +22,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - SEO: App Router `sitemap.ts` / `robots.ts`; site URL from `getSiteUrl()` (`NEXT_PUBLIC_SITE_URL`); JSON-LD Person/WebSite in layout + Article on Writes; blog RSS at `/feed.xml`.
 - Portfolio cards: Case study link from `caseStudyUrl`, or from `liveUrl` when it is already a `/writes/` path
 - Showcase essays for featured workshop projects (Ledger, Power BI, Orbit, Heatmap)
+- Personal-ops projects (mealplan, fitness coach) stay non-featured; Write or `/architecture/` case study, not Home Selected work
 - Essay footer feedback is anonymous, rate-limited, persisted to JSON, and still uses `localStorage` only as a one-browser re-submit gate.
 - Essay pages read their own feedback entries server-side and render a newest-first note list below the feedback CTA.
 - Essay feedback Slack notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (for `#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
@@ -61,6 +62,7 @@ src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for al
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-08-11 | Fitness coach systems Write + non-featured portfolio card | Ops loop (git/Slack/Automations/Intervals), not training diary; same personal-ops lane as mealplan |
 | 2026-08-11 | Data Analytics Field Card + shared Orbit field-card registry | Same weekly discovery → Cursor judgment → #orbit Approve process as AI card; stack is ASK/GRAIN/TRUTH/USE (not a Fabric brochure) |
 | 2026-07-26 | Orbit `caseStudyUrl` → `/writes/building-orbit` | Essay existed; card lacked Case study link |
 | 2026-07-26 | Heatmap case study Write + `caseStudyUrl` | Featured live board had no write-up |

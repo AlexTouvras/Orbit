@@ -4,11 +4,12 @@
 
 ## Now
 
-- [x] Ship home AI competency ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ `/field-card/index.html` + static field card page
+- [x] Ship home AI competency → `/field-card/index.html` + static field card page
 - [x] Field-card fail-closed: discovery Slack ping + judgment watchdog + Approve requires `## Summary` (agentic-ai-field-card PR #3)
 - [ ] Unblock W32 field card: Slack Approve/Skip for PR #2 (judgment + notify done 2026-08-11)
 - [x] Scaffold Data Analytics Field Card repo + Orbit home link (`/analytics-field-card/`) + shared Approve registry
-- [x] Bind Friday Cursor judgment for analytics field card (GH Action Ã¢â€ â€™ Cloud Agents API)`n- [ ] Human: review analytics card + deploy Orbit wiring
+- [x] Bind Friday Cursor judgment for analytics field card (GH Action → Cloud Agents API)
+- [x] Deploy analytics field card Orbit wiring to prod (main)
 - [ ] Human review first analytics field card (stack + tool picker) on home / print PDF
 - [x] Fix Aug 10 weekly Write preview (`invalid signature` + draft not on default branch)
 - [ ] Notify the 2026-07-27 weekly Write in Slack (`SLACK_ORBIT_WEBHOOK_URL` unavailable in automation environment)
@@ -23,16 +24,18 @@
 
 ## Next
 
+- [x] Human review: fitness coach Write rewrite (why / science / weekly gen / life) + portfolio card
+- [x] Commit/push fitness coach Write + portfolio seed when owner asks
 - [ ] Optional browser check: `/portfolio` Case study links + `/writes/nordic-equity-heatmap`
 - [x] Persist essay feedback by slug and notify `#orbit` on new notes
 - [x] Route weekly Write Slack draft/approve/skip to `#orbit`
-- [x] Pressable education cards ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ masterÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢s theses (JYX + Theseus)
+- [x] Pressable education cards → master's theses (JYX + Theseus)
 - [x] Capture thesis writing fingerprint in `docs/essay-voice.md` (improve essays, not academicize them)
 - [x] Draft Delivery essay: AI acceleration + prioritization (Cohn + MobAI)
 - [x] Publish `when-ai-accelerates-work-prioritization-becomes-the-job` to prod (main)
 - [x] Remove Ultimate Reel Maker Write (out of domain)
 - [x] SEO foundations + site analytics
-- [x] Drop ProjectHelm Write; archived card ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ `/architecture/jarvis`
+- [x] Drop ProjectHelm Write; archived card → `/architecture/jarvis`
 - [x] Voice pass: Hub copy, useful-work-per-dollar, Webb pair, building-orbit, project blurbs + Ledger
 
 ## Later

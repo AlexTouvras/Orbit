@@ -1,0 +1,76 @@
+---
+title: "Why Mondays stopped negotiating with me"
+summary: "I built a personal coach that turns readiness science into a Slack week plan — so I spend energy training, not re-deciding the week."
+date: "2026-08-11"
+updated: "2026-08-12"
+category: "Learning"
+featured: false
+showcase: false
+tags: ["Training", "Intervals", "Slack", "Personal ops", "Concurrent training"]
+---
+
+## The question
+
+Why did another watch face and another planning app still leave me arguing with myself every Sunday — and what would it take for the *plan* to show up already decided, with a reason I trust when I'm tired?
+
+## Why I built it
+
+I did not need more workouts. I needed fewer open loops.
+
+The recurring failure looked the same: a good race goal on paper (right now a September 5K, PB 22:34, chase 21:59), then a week that either stacked hard days because ego felt fresh, or went soft because I "felt" tired with no receipt. Strength and running collided. I'd crush legs on Tuesday and wonder why Wednesday quality felt like wet cement. ChatGPT-style planning made it worse in a friendly way — every Sunday I re-explained constraints the model had already "agreed" to last week, then lost the thread in scrollback.
+
+So I built a coach for one athlete: me. Not a product. A closed loop. Garmin feeds Intervals.icu. The repo holds profile, principles, plans, and lift logs. Cursor Automations run the Sunday job and a daily sync. Slack `#fitness` is the phone UI. My job shrinks to two verbs: train, and occasionally `log:`.
+
+The point of the system is life-shaped. If the week is already on my phone with a "why," I stop burning morning willpower on planning theatre.
+
+## The science it actually encodes
+
+Nothing here invents a new physiology paper. The repo's `research/` pack is blunt about the lineage: easy/hard distribution (the Seiler-style "most volume stays conversational" rule), classic recreational 5K shape (one quality focus, one longer easy run, taper in the last week), and concurrent-training spacing so strength does not sabotage the key run.
+
+The non-negotiables live in `research/principles.md` and get cited in the weekly plan:
+
+1. Progressive overload *with* recovery — stress, then adapt; do not stack hard days because the calendar looks empty.
+2. Easy days stay easy — protect the quality session; most running volume is conversational.
+3. Readiness beats ego — Intervals form (CTL / ATL / TSB) plus sleep/HRV flags and Slack RPE can force a quality cut.
+4. One primary focus per block — during the 5K mesocycle, lifting is maintenance, not a second peaking sport.
+5. Concurrent spacing — no lower-body grinders the day before Wednesday quality.
+6. Honest logs — silent no-shows corrupt progression; the coach cannot invent what you did not write.
+7. Cite why — every week lists the signals that fired, not vibes.
+
+On the numbers side, running form comes from Intervals' Fitness chart: chronic load (CTL), acute load (ATL), and form as TSB ≈ CTL − ATL. Zones are wired: fresh, productive, loading, high fatigue. If form is `high_fatigue` or TSB ≤ −20, AthleteState sets `cut_quality` and Wednesday stops pretending to be a hero session.
+
+Strength does not get a free pass. Lifts rarely land as WeightTraining in my Intervals pull, so the coach builds a Foster-style session-RPE load (`RPE × minutes / 10`) and a local Banister EWMA (strength CTL ~28d, ATL ~7d). High recent lift RPE or strength high-fatigue flips `ease_lower_lift` so Tuesday softens before Wednesday. That is the whole joke of concurrent training in one rule: protect the session that pays the race.
+
+Phases are calendar-dumb on purpose. More than 21 days to the event → build. Inside 21 → sharpen. Inside 7 → taper (keep Mon/Wed/Fri anchors, cut volume, keep a little sharpness). The race does not get a motivational speech; it gets a different template.
+
+## How a weekly program gets generated
+
+Sunday Automation runs `coach-week`. Roughly:
+
+1. **Sync.** Pull Intervals activities, wellness, and calendar into a committed summary. Rebuild AthleteState from that summary plus recent Slack logs (RPE ≥ 9, sore/travel/sick hints, strength session-RPE).
+2. **Know the block.** Profile says primary goal + `block_id` (today: `5k-2026-09`). Research pack for that block locks run days Mon / Wed / Fri and lift days Tue / Thu.
+3. **Pick the skeleton.** Build or sharpen week: Monday easy run, Tuesday lower-biased lift, Wednesday strides/quality (or VO2-ish reps in sharpen), Thursday upper-biased lift, Friday long easy (or easier in sharpen), optional Saturday easy bike, Sunday rest. Taper week swaps in shakeouts and race-day prescription.
+4. **Respect the calendar.** If Intervals already has a run on a locked run day, reuse it (those are the workouts that can reach Garmin). Garmin-native plans are not readable through the API, so the coach never pretends it can import watch scribbles; when the calendar is empty it generates and pushes Intervals → Garmin.
+5. **Apply readiness edits.** `cut_quality` turns Wednesday into easy + strides. `ease_lower_lift` annotates Tuesday: keep loads conservative. Body-comp flags from the scale (only meaningful 7d/14d swings) can reinforce "fuel and recover," not an in-season cut.
+6. **Generate strength.** Coach-owned templates (`maintenance` during the 5K block) write Tue/Thu JSON + an HTML page I can print to PDF for the gym. Deload if taper, strength fatigue, or average lift RPE ≥ 8.5 — drop a set / ease target RPE rather than invent a new religion.
+7. **Publish.** Save `data/plans/YYYY-Www.json`, bump the lift week, commit, and post Slack markdown: day-by-day sessions, lift bullets, and a "Why this week" built from the signals list.
+
+That last line matters. The plan is allowed to change my ego. If form says cut quality, Wednesday becomes easier *and the post says so*. I do not get to quietly override it in my head without seeing the receipt.
+
+Midweek can re-check readiness (`coach-midweek`); daily 07:00 sync refreshes summary + AthleteState without rewriting the week. Sunday still owns the story.
+
+## What this does to an ordinary week
+
+Sunday morning: a message lands in `#fitness` while coffee is still optional. I scroll Mon–Sun on the phone. No Notion tab. No "what should I do this week" thread with myself.
+
+Gym days: open the lift bullets (or the HTML export). Squats, RDLs, split squats, the boring accessories — already sized for maintenance so Wednesday is not a crime scene. If last week's `log: lift | … RPE 9` showed up, Tuesday may already be softer. That is the system paying me back for honesty.
+
+Run days: the watch already has the session when the push worked. Easy means easy. Quality means the one hard thing. Long means long and conversational. If I am smashed, the next Sunday (or midweek adjust) can swap quality instead of me inventing a heroic double and calling it discipline.
+
+The life win is boring in the best way. Decision tax drops. Concurrent training stops being two sports fighting in the same body. Bad weeks get a rule instead of a mood. After the 5K I can archive the block, flip lifting intent toward hypertrophy, and keep the same Automations — durable loop, replaceable goal pack.
+
+What still hurts: if I skip lift logs, strength form is fog. Slack is uglier than a native training app. Cloud agents go stale unless they hard-reset to `master` before they speak. Sharp pain still means stop and see a clinician; the coach will not play doctor.
+
+## Takeaway
+
+I built this so the week arrives already argued — by CTL/TSB, RPE debt, and a block's research rules — not by Monday motivation. The science is old and specific. The generation path is mechanical. The payoff is ordinary life: less negotiation, more showing up, and a written reason when the plan tells ego to sit down.

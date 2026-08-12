@@ -84,5 +84,23 @@
     "featured": false,
     "sourcePath": "C:\\\\Users\\\\kater\\\\.cursor\\\\projects\\\\mealplan",
     "order": 8
+  },
+  {
+    "id": "fitness-coach",
+    "name": "Personal ops coach (git + Slack)",
+    "description": "Science-backed personal coach: Intervals form (CTL/ATL/TSB) + Slack RPE → AthleteState → Sunday week plan in Slack. Concurrent run/lift rules, readiness cuts, phone-first week. Domain is training; payoff is less Monday negotiation.",
+    "status": "prototype",
+    "tags": [
+      "Cursor Automations",
+      "Slack",
+      "Git",
+      "Personal ops"
+    ],
+    "repoUrl": "https://github.com/AlexTouvras/fitness-coach",
+    "liveUrl": "/writes/when-the-coach-lives-in-git-and-slack",
+    "caseStudyUrl": "/writes/when-the-coach-lives-in-git-and-slack",
+    "featured": false,
+    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\fitness",
+    "order": 9
   }
 ]
