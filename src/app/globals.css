@@ -2,15 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animatable OKLCH channels — all neon-* tokens ride this orbit */
+@property --orbit-l {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.78;
+}
+@property --orbit-c {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0.14;
+}
+@property --orbit-h {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 195;
+}
+
 :root {
   /* OKLCH tokens — tuned for dark mission-control contrast */
   --void: 0.12 0.025 264;
   --void-800: 0.14 0.028 264;
   --foreground: 0.93 0.015 264;
   --muted: 0.68 0.025 264;
-  --accent-cyan: 0.78 0.14 195;
-  --accent-violet: 0.62 0.22 300;
-  --accent-blue: 0.62 0.16 255;
+  --orbit-l: 0.78;
+  --orbit-c: 0.14;
+  --orbit-h: 195;
+  /* Brand accents (cyan / violet / blue) share the orbit channels */
+  --accent-cyan: var(--orbit-l) var(--orbit-c) var(--orbit-h);
+  --accent-violet: var(--orbit-l) var(--orbit-c) var(--orbit-h);
+  --accent-blue: var(--orbit-l) var(--orbit-c) var(--orbit-h);
+  --orbit-accent: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h));
   --border: 1 0 0;
 }
 
@@ -22,6 +44,7 @@
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
+    animation: orbit-accent-cycle 16s ease-in-out infinite;
   }
 
   body {
@@ -47,8 +70,11 @@
   }
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(
-      oklch(var(--accent-cyan) / 0.45),
-      oklch(var(--accent-violet) / 0.45)
+      oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.45),
+      oklch(
+        calc(var(--orbit-l) - 0.1) calc(var(--orbit-c) + 0.04)
+          calc(var(--orbit-h) + 45) / 0.45
+      )
     );
     border-radius: 9999px;
     border: 2px solid oklch(var(--void-800));
@@ -81,8 +107,11 @@
   .text-gradient {
     background: linear-gradient(
       120deg,
-      oklch(var(--accent-cyan)),
-      oklch(var(--accent-violet))
+      oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h)),
+      oklch(
+        calc(var(--orbit-l) - 0.12) calc(var(--orbit-c) + 0.04)
+          calc(var(--orbit-h) + 50)
+      )
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -112,6 +141,35 @@
     @apply transition-[border-color,box-shadow];
     @apply focus-visible:border-neon-cyan/50;
   }
+
+  /* Explicit brand utilities (same channels as neon-*) */
+  .orbit-accent {
+    color: var(--orbit-accent);
+  }
+  .orbit-accent-bg {
+    background-color: var(--orbit-accent);
+  }
+  .orbit-accent-border {
+    border-color: color-mix(in oklch, var(--orbit-accent) 40%, transparent);
+  }
+  .orbit-accent-soft-bg {
+    background-color: color-mix(in oklch, var(--orbit-accent) 12%, transparent);
+  }
+  .orbit-accent-glow {
+    box-shadow: 0 0 24px -4px color-mix(in oklch, var(--orbit-accent) 45%, transparent);
+  }
+  .orbit-accent-hover-border:hover {
+    border-color: color-mix(in oklch, var(--orbit-accent) 55%, transparent);
+  }
+  .orbit-accent-hover-soft-bg:hover {
+    background-color: color-mix(in oklch, var(--orbit-accent) 16%, transparent);
+  }
+  .orbit-accent-hover-glow:hover {
+    box-shadow: 0 0 20px -6px color-mix(in oklch, var(--orbit-accent) 45%, transparent);
+  }
+  .orbit-accent-cta-glow:hover {
+    box-shadow: 0 0 32px -4px color-mix(in oklch, var(--orbit-accent) 55%, transparent);
+  }
 }
 
 @keyframes orbit-drift {
@@ -123,6 +181,31 @@
   }
 }
 
+/* Light blue → sky → azure → purpleish → back (drives all neon-* accents) */
+@keyframes orbit-accent-cycle {
+  0%,
+  100% {
+    --orbit-l: 0.82;
+    --orbit-c: 0.12;
+    --orbit-h: 195;
+  }
+  25% {
+    --orbit-l: 0.74;
+    --orbit-c: 0.14;
+    --orbit-h: 230;
+  }
+  50% {
+    --orbit-l: 0.68;
+    --orbit-c: 0.16;
+    --orbit-h: 255;
+  }
+  75% {
+    --orbit-l: 0.64;
+    --orbit-c: 0.18;
+    --orbit-h: 295;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -131,5 +214,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+
+  html {
+    animation: none !important;
+    --orbit-l: 0.78;
+    --orbit-c: 0.14;
+    --orbit-h: 195;
   }
 }

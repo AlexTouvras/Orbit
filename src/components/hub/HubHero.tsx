@@ -43,7 +43,7 @@ interface HubHeroProps {
   avatarUrl?: string;
 }
 
-/** First "orbit" matches the cyan of the "Why the name" link. */
+/** First "orbit" shares the brand accent orbit (cyan → purple). */
 function withOrbitMark(text: string) {
   const i = text.toLowerCase().indexOf("orbit");
   if (i < 0) return text;
@@ -51,7 +51,7 @@ function withOrbitMark(text: string) {
   return (
     <>
       {text.slice(0, i)}
-      <span className="font-medium text-neon-cyan/90">{text.slice(i, end)}</span>
+      <span className="orbit-accent font-medium">{text.slice(i, end)}</span>
       {text.slice(end)}
     </>
   );
@@ -82,10 +82,10 @@ export function HubHero({
       <HeroItem delay={0} animate={animate}>
         <Link
           href="/contact"
-          className="focus-ring group mb-8 inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border border-neon-cyan/35 bg-neon-cyan/10 px-4 py-2 text-xs font-medium tracking-wide text-neon-cyan transition-[transform,background-color,border-color,box-shadow] active:scale-[0.98] hover:border-neon-cyan/55 hover:bg-neon-cyan/15 motion-safe:hover:shadow-[0_0_20px_-6px_rgba(34,211,238,0.45)]"
+          className="orbit-accent orbit-accent-border orbit-accent-soft-bg orbit-accent-hover-border orbit-accent-hover-soft-bg orbit-accent-hover-glow focus-ring group mb-8 inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium tracking-wide transition-[transform,background-color,border-color,box-shadow] active:scale-[0.98]"
           aria-label={`${availability} — go to contact`}
         >
-          <span className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full bg-neon-cyan" />
+          <span className="orbit-accent-bg h-1.5 w-1.5 shrink-0 animate-pulse rounded-full" />
           <span>{availability}</span>
           <Mail className="h-3.5 w-3.5 shrink-0 opacity-60 transition-opacity group-hover:opacity-100" aria-hidden />
         </Link>
@@ -119,7 +119,7 @@ export function HubHero({
           {withOrbitMark(whyOrbit)}{" "}
           <Link
             href="/writes/building-orbit"
-            className="focus-ring font-medium text-neon-cyan/90 transition-colors hover:text-neon-cyan"
+            className="orbit-accent focus-ring font-medium transition-opacity hover:opacity-100"
           >
             Why the name
           </Link>
@@ -130,7 +130,7 @@ export function HubHero({
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
             href="/contact"
-            className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl bg-neon-cyan px-5 py-3 text-sm font-semibold text-void shadow-glow transition-[transform,box-shadow] active:scale-[0.98] motion-safe:hover:shadow-[0_0_32px_-4px_rgba(34,211,238,0.55)]"
+            className="orbit-accent-bg orbit-accent-glow orbit-accent-cta-glow focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-void transition-[transform,box-shadow] active:scale-[0.98]"
           >
             Get in touch
             <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />

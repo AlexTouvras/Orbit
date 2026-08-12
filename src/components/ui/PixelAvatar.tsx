@@ -12,7 +12,7 @@ export function PixelAvatar({ src, alt, className }: PixelAvatarProps) {
   return (
     <span
       className={cn(
-        "relative inline-flex h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-neon-cyan/35 bg-void shadow-[0_0_24px_-8px_rgba(34,211,238,0.35)] sm:h-[72px] sm:w-[72px]",
+        "relative inline-flex h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-neon-cyan/35 bg-void shadow-glow sm:h-[72px] sm:w-[72px]",
         className,
       )}
       aria-hidden={alt === "" ? true : undefined}

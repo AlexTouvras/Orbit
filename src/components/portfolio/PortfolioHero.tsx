@@ -5,7 +5,7 @@ import { MissionHero } from "@/components/ui/MissionHero";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
 
 const primaryCta =
-  "focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl bg-neon-cyan px-5 py-3 text-sm font-semibold text-void shadow-glow transition-[transform,box-shadow] active:scale-[0.98] motion-safe:hover:shadow-[0_0_32px_-4px_rgba(34,211,238,0.55)]";
+  "focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl bg-neon-cyan px-5 py-3 text-sm font-semibold text-void shadow-glow transition-[transform,box-shadow] active:scale-[0.98] motion-safe:hover:shadow-glow";
 
 const secondaryCta =
   "focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-100 transition-colors hover:border-neon-cyan/40 hover:text-neon-cyan";

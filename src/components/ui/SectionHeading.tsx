@@ -6,6 +6,8 @@ interface SectionHeadingProps {
   description?: string;
   className?: string;
   align?: "left" | "center";
+  /** Eyebrow rides the shared cyan → purple orbit accent. */
+  orbitAccent?: boolean;
 }
 
 export function SectionHeading({
@@ -14,6 +16,7 @@ export function SectionHeading({
   description,
   className,
   align = "left",
+  orbitAccent = false,
 }: SectionHeadingProps) {
   return (
     <div
@@ -24,7 +27,12 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <p className="mb-2 font-mono text-xs uppercase tracking-[0.3em] text-neon-cyan/80">
+        <p
+          className={cn(
+            "mb-2 font-mono text-xs uppercase tracking-[0.3em]",
+            orbitAccent ? "orbit-accent" : "text-neon-cyan/80",
+          )}
+        >
           {eyebrow}
         </p>
       )}
