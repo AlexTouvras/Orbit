@@ -6,7 +6,7 @@
 
 - [x] Ship home AI competency → `/field-card/index.html` + static field card page
 - [x] Field-card fail-closed: discovery Slack ping + judgment watchdog + Approve requires `## Summary` (agentic-ai-field-card PR #3)
-- [ ] Unblock W32 field card: Slack Approve/Skip for PR #2 (judgment + notify done 2026-08-11)
+- [x] W32 field card PR #2 merged (2026-08-11); Slack Approve/Skip flow verified
 - [x] Scaffold Data Analytics Field Card repo + Orbit home link (`/analytics-field-card/`) + shared Approve registry
 - [x] Bind Friday Cursor judgment for analytics field card (GH Action → Cloud Agents API)
 - [x] Deploy analytics field card Orbit wiring to prod (main)
