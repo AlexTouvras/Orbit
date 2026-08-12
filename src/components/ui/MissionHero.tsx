@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { PixelAvatar } from "@/components/ui/PixelAvatar";
 import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
@@ -43,6 +44,8 @@ interface MissionHeroProps {
   stats?: MissionStat[];
   actions?: ReactNode;
   meta?: ReactNode;
+  avatarUrl?: string;
+  avatarAlt?: string;
 }
 
 /** Orchestrated above-the-fold hero — matches Hub motion cadence. Visible on SSR. */
@@ -55,6 +58,8 @@ export function MissionHero({
   stats,
   actions,
   meta,
+  avatarUrl,
+  avatarAlt = "",
 }: MissionHeroProps) {
   const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
@@ -74,9 +79,14 @@ export function MissionHero({
       </HeroItem>
 
       <HeroItem delay={0.06} animate={animate}>
-        <h1 className="font-display max-w-3xl text-display font-bold tracking-tight text-white">
-          {title}
-        </h1>
+        <div className="flex max-w-3xl items-center gap-4 sm:gap-5">
+          {avatarUrl ? (
+            <PixelAvatar src={avatarUrl} alt={avatarAlt} />
+          ) : null}
+          <h1 className="font-display text-display font-bold tracking-tight text-white">
+            {title}
+          </h1>
+        </div>
       </HeroItem>
 
       {subtitle && (

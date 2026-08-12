@@ -57,7 +57,15 @@ export const profile = {
   yearsExperience: "7+",
   summary:
     "I lead IT application operations on Azure at Santander Consumer Bank Nordics, after years on PD models, scorecards, and ECL-style work. Orbit is the public HQ: one-question Blog essays, portfolio proof (Power BI, Ledger, workshop tools), and a curated Related articles feed. Automation gets a human Approve gate — including the weekly Write draft.",
+  /** Short brand line — why the site is called Orbit (Hub + About). */
+  whyOrbit:
+    "An orbit is a stable relationship around a center. The gravity here is how I build: systems, gates, and the habit of getting better. What orbits are the products, essays, signals, and projects that come out of that.",
+  /** Fuller name story for About (essay has the full version). */
+  whyOrbitDetail:
+    "An orbit is a stable relationship around a center. The center isn't the portfolio card or the latest post. It's the gravitational force that keeps the work from drifting: owned files in git, diagrams that stay with the code, automation that waits for a human Approve, and a commitment to evolve the way I build instead of chasing a prettier homepage. What orbits that center are the products I ship, the Blog essays, the Related signals, workshop projects, and field cards. They move on different schedules. They stay in range because the process at the middle holds.",
   resumeUrl: "/resume.pdf",
+  /** Pixel-art mark — Hub/About hero beside name. Native sprite in public/. */
+  avatarUrl: "/avatar-pixel-64.png",
   email: "a.touvras@gmail.com",
   contactBlurb:
     "Happy to talk delivery, data systems, AI automation, and what's broken in your stack.",

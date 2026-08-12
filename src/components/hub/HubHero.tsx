@@ -6,6 +6,7 @@ import { ArrowRight, Mail } from "lucide-react";
 import type { ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
+import { PixelAvatar } from "@/components/ui/PixelAvatar";
 import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
@@ -36,16 +37,34 @@ interface HubHeroProps {
   name: string;
   pillars: string;
   tagline: string;
+  whyOrbit: string;
   availability: string;
   socials: { label: string; href: string }[];
+  avatarUrl?: string;
+}
+
+/** First "orbit" matches the cyan of the "Why the name" link. */
+function withOrbitMark(text: string) {
+  const i = text.toLowerCase().indexOf("orbit");
+  if (i < 0) return text;
+  const end = i + "orbit".length;
+  return (
+    <>
+      {text.slice(0, i)}
+      <span className="font-medium text-neon-cyan/90">{text.slice(i, end)}</span>
+      {text.slice(end)}
+    </>
+  );
 }
 
 export function HubHero({
   name,
   pillars,
   tagline,
+  whyOrbit,
   availability,
   socials,
+  avatarUrl,
 }: HubHeroProps) {
   const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
@@ -73,9 +92,14 @@ export function HubHero({
       </HeroItem>
 
       <HeroItem delay={0.06} animate={animate}>
-        <h1 className="font-display max-w-3xl text-display font-bold tracking-tight text-white">
-          {name}
-        </h1>
+        <div className="flex max-w-3xl items-center gap-4 sm:gap-5">
+          {avatarUrl ? (
+            <PixelAvatar src={avatarUrl} alt="" />
+          ) : null}
+          <h1 className="font-display text-display font-bold tracking-tight text-white">
+            {name}
+          </h1>
+        </div>
       </HeroItem>
 
       <HeroItem delay={0.12} animate={animate}>
@@ -87,6 +111,18 @@ export function HubHero({
       <HeroItem delay={0.18} animate={animate}>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
           {tagline}
+        </p>
+      </HeroItem>
+
+      <HeroItem delay={0.21} animate={animate}>
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">
+          {withOrbitMark(whyOrbit)}{" "}
+          <Link
+            href="/writes/building-orbit"
+            className="focus-ring font-medium text-neon-cyan/90 transition-colors hover:text-neon-cyan"
+          >
+            Why the name
+          </Link>
         </p>
       </HeroItem>
 

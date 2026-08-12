@@ -18,10 +18,12 @@ export default function AboutPage() {
   return (
     <div className="space-y-24 sm:space-y-32">
       <AboutHero
+        name={profile.name}
         yearsExperience={profile.yearsExperience}
         employerCount={cv.experience.length}
         degreeCount={cv.education.length}
         resumeUrl={resumeUrl}
+        avatarUrl={profile.avatarUrl}
       />
 
       <BackgroundSections />

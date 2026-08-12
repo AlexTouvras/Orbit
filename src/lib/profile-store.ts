@@ -27,6 +27,7 @@ export interface EditableProfile {
   summary: string;
   email: string;
   resumeUrl: string;
+  avatarUrl: string;
   /** Repo names to show on Portfolio. Empty = unfiltered fetch. */
   githubRepoAllowlist: string[];
   socials: EditableSocial[];
@@ -54,6 +55,7 @@ export function getDefaultProfile(): EditableProfile {
     summary: defaults.summary,
     email: defaults.email,
     resumeUrl: defaults.resumeUrl,
+    avatarUrl: defaults.avatarUrl,
     githubRepoAllowlist: [...defaults.githubRepoAllowlist],
     socials: defaultSocials.map((s) => ({ label: s.label, href: s.href })),
   };

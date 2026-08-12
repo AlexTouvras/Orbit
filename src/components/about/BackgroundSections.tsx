@@ -1,5 +1,7 @@
 import { MapPin, Mail, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import { cv } from "@/content/cv";
+import { profile as profileDefaults } from "@/content/profile";
 import { getEditableProfile } from "@/lib/profile-store";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -7,6 +9,20 @@ import { Badge } from "@/components/ui/Badge";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 const skillTones = ["cyan", "blue", "violet"] as const;
+
+/** First "orbit" matches cyan links / Hub brand mark. */
+function withOrbitMark(text: string) {
+  const i = text.toLowerCase().indexOf("orbit");
+  if (i < 0) return text;
+  const end = i + "orbit".length;
+  return (
+    <>
+      {text.slice(0, i)}
+      <span className="font-medium text-neon-cyan">{text.slice(i, end)}</span>
+      {text.slice(end)}
+    </>
+  );
+}
 
 /** CV & background sections — rendered on the about page. */
 export function BackgroundSections() {
@@ -42,6 +58,31 @@ export function BackgroundSections() {
                 {email}
               </a>
             </div>
+          </GlassCard>
+        </Reveal>
+      </section>
+
+      <section id="why-orbit" className="scroll-mt-28">
+        <Reveal>
+          <SectionHeading
+            eyebrow="This site"
+            title="Why Orbit"
+            description="What the name means — and how it connects to the vision for this site."
+          />
+        </Reveal>
+
+        <Reveal delay={0.05}>
+          <GlassCard className="mt-8 p-6 sm:p-8">
+            <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
+              {withOrbitMark(profileDefaults.whyOrbitDetail)}
+            </p>
+            <Link
+              href="/writes/building-orbit"
+              className="focus-ring group mt-6 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-neon-cyan"
+            >
+              Building Orbit — full case study
+              <ArrowUpRight className="h-4 w-4 transition-transform motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5" />
+            </Link>
           </GlassCard>
         </Reveal>
       </section>

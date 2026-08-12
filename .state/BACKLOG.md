@@ -27,6 +27,8 @@
 
 ## Next
 
+- [x] Pixel avatar beside name on Hub + About (`/avatar-pixel-64.png`)
+- [ ] Human review: Hub + About avatar placement
 - [x] Human review: fitness coach Write rewrite (why / science / weekly gen / life) + portfolio card
 - [x] Commit/push fitness coach Write + portfolio seed when owner asks
 - [ ] Optional browser check: `/portfolio` Case study links + `/writes/nordic-equity-heatmap`

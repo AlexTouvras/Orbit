@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { competencies } from "@/content/profile";
+import { competencies, profile as profileDefaults } from "@/content/profile";
 import { getEditableProfile } from "@/lib/profile-store";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -70,8 +70,10 @@ export default function HomePage() {
         name={profile.name}
         pillars={profile.pillars}
         tagline={profile.tagline}
+        whyOrbit={profileDefaults.whyOrbit}
         availability={profile.availability}
         socials={profile.socials}
+        avatarUrl={profile.avatarUrl}
       />
 
       <section>

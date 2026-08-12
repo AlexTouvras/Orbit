@@ -5,17 +5,21 @@ import { MissionHero } from "@/components/ui/MissionHero";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
 
 interface AboutHeroProps {
+  name: string;
   yearsExperience: string;
   employerCount: number;
   degreeCount: number;
   resumeUrl?: string;
+  avatarUrl?: string;
 }
 
 export function AboutHero({
+  name,
   yearsExperience,
   employerCount,
   degreeCount,
   resumeUrl,
+  avatarUrl,
 }: AboutHeroProps) {
   const stats = [
     { label: "Experience", value: yearsExperience },
@@ -32,8 +36,10 @@ export function AboutHero({
           Background dossier
         </Badge>
       }
-      title="Background & experience"
-      subtitle="Nordic banking, credit risk, and technology delivery"
+      avatarUrl={avatarUrl}
+      avatarAlt=""
+      title={name}
+      subtitle="Background & experience"
       description="From PD models and portfolio steering to leading Azure application operations — with a growing focus on AI automation and agent systems."
       stats={stats}
       actions={

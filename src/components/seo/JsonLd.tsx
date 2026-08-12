@@ -18,6 +18,9 @@ export function JsonLd() {
     jobTitle: profile.role,
     description: profile.tagline,
     email: profile.email || undefined,
+    image: profile.avatarUrl
+      ? new URL(profile.avatarUrl, siteUrl).toString()
+      : undefined,
     address: profile.location
       ? {
           "@type": "PostalAddress",
