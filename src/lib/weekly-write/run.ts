@@ -19,17 +19,24 @@ export interface RunWeeklyWriteResult {
   slug?: string;
   source?: WeeklyDraft["source"];
   slack?: boolean;
+  /** Pending draft committed to GitHub default branch (required for preview/Approve). */
+  githubSynced?: boolean;
   briefPath?: string;
   draft?: WeeklyDraft;
 }
 
 async function notifyDraft(
   draft: WeeklyDraft,
+  options?: { githubSynced?: boolean },
 ): Promise<{ ok: true } | { ok: false; reason: string }> {
-  const slack = await sendWeeklyDraftSlack(draft);
+  const slack = await sendWeeklyDraftSlack(draft, {
+    githubSynced: options?.githubSynced,
+  });
   if (!slack.ok) return { ok: false, reason: slack.reason };
   appendWeeklyWriteLog(
-    `Slack notify sent for ${draft.id} (${draft.source}): ${draft.title}`,
+    `Slack notify sent for ${draft.id} (${draft.source}): ${draft.title}${
+      options?.githubSynced === false ? " [github_sync_missing]" : ""
+    }`,
   );
   clearIdeBrief();
   return { ok: true };
@@ -51,20 +58,24 @@ export async function notifyExistingWeeklyDraft(): Promise<RunWeeklyWriteResult>
     };
   }
 
-  // Preview/Approve on Vercel read the draft from GitHub — persist before Slack.
-  // Use CLI-safe persist (no `server-only`) so GitHub Actions / tsx can run.
+  // Preview/Approve on Vercel read the draft from GitHub default branch —
+  // persist before Slack. Use CLI-safe persist (no `server-only`) so GitHub
+  // Actions / tsx / Cloud Automation can run. Feature-branch-only commits are
+  // not enough: readRepoFile always hits the default branch.
   const persisted = await persistWeeklyDraftCli(
     draft,
     `chore: weekly write pending draft ${draft.id}`,
   );
   if (!persisted.viaGithub) {
     const msg =
-      "Draft saved locally only (GITHUB_TOKEN unset). Push data/weekly-write-draft.json before Slack preview links work.";
+      "Draft saved locally only (GITHUB_TOKEN unset). Set GITHUB_TOKEN (+ optional GITHUB_REPO) so preview/Approve work; full essay is still posted in Slack.";
     appendWeeklyWriteLog(`WARN: ${msg}`);
     console.warn(`[weekly-write] ${msg}`);
   }
 
-  const slack = await notifyDraft(draft);
+  const slack = await notifyDraft(draft, {
+    githubSynced: persisted.viaGithub,
+  });
   if (!slack.ok) {
     return {
       ok: false,
@@ -73,6 +84,7 @@ export async function notifyExistingWeeklyDraft(): Promise<RunWeeklyWriteResult>
       slug: draft.slug,
       source: draft.source,
       slack: false,
+      githubSynced: persisted.viaGithub,
       draft,
     };
   }
@@ -83,6 +95,7 @@ export async function notifyExistingWeeklyDraft(): Promise<RunWeeklyWriteResult>
     slug: draft.slug,
     source: draft.source,
     slack: true,
+    githubSynced: persisted.viaGithub,
     draft,
   };
 }
@@ -153,7 +166,7 @@ export async function runWeeklyWritePipeline(options?: {
   );
   if (!persisted.viaGithub) {
     const msg =
-      "Draft saved locally only (GITHUB_TOKEN unset). Push data/weekly-write-draft.json before Slack preview links work.";
+      "Draft saved locally only (GITHUB_TOKEN unset). Set GITHUB_TOKEN (+ optional GITHUB_REPO) so preview/Approve work; full essay is still posted in Slack.";
     appendWeeklyWriteLog(`WARN: ${msg}`);
     console.warn(`[weekly-write] ${msg}`);
   }
@@ -163,7 +176,9 @@ export async function runWeeklyWritePipeline(options?: {
 
   let slackOk = false;
   if (notify) {
-    const slack = await notifyDraft(draft);
+    const slack = await notifyDraft(draft, {
+      githubSynced: persisted.viaGithub,
+    });
     if (!slack.ok) {
       return {
         ok: false,
@@ -172,6 +187,7 @@ export async function runWeeklyWritePipeline(options?: {
         slug: draft.slug,
         source: draft.source,
         slack: false,
+        githubSynced: persisted.viaGithub,
         draft,
       };
     }
@@ -184,6 +200,7 @@ export async function runWeeklyWritePipeline(options?: {
     slug: draft.slug,
     source: draft.source,
     slack: slackOk,
+    githubSynced: persisted.viaGithub,
     draft,
   };
 }

@@ -31,7 +31,7 @@
 |---------|---------|
 | `npm run weekly:draft` | Intake + generate (may write IDE brief if Gemini fails) |
 | `npm run weekly:notify` | Generate + Slack (or IDE brief) |
-| `npm run weekly:notify-draft` | Slack an existing pending local draft |
+| `npm run weekly:notify-draft` | Slack an existing pending local draft (persists to GitHub default branch when `GITHUB_TOKEN` is set; Slack includes the full essay body) |
 | `npm run weekly:notify -- --force` | Replace pending draft |
 
 ## Essay skeleton (Orbit)

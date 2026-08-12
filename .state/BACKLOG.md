@@ -4,6 +4,9 @@
 
 ## Now
 
+- [x] Re-notify 2026-08-03 weekly Write with full essay in Slack + draft synced to default branch
+- [x] Merge weekly Write Slack full-access fix (`fix/weekly-write-slack-full-access`)
+- [x] Refresh weekly Write intake for 2026-08-03 / prepare pending IDE draft
 - [x] Ship home AI competency → `/field-card/index.html` + static field card page
 - [x] Field-card fail-closed: discovery Slack ping + judgment watchdog + Approve requires `## Summary` (agentic-ai-field-card PR #3)
 - [x] W32 field card PR #2 merged (2026-08-11); Slack Approve/Skip flow verified
