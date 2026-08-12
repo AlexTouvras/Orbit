@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T06:16:23.923Z",
+  "generatedAt": "2026-08-12T07:17:58.682Z",
   "count": 219,
   "items": [
     {
@@ -64,15 +64,6 @@
       "category": "AI",
       "pubDate": "2026-08-11T10:00:00.000Z",
       "contentSnippet": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows."
-    },
-    {
-      "id": "1af7276c349c",
-      "title": "Creating DAX functions with AI to remove duplicated code",
-      "link": "https://www.sqlbi.com/tv/creating-dax-functions-with-ai-to-remove-duplicated-code/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-08-11T10:00:00.000Z",
-      "contentSnippet": "How to leverage AI to refactor existing DAX code, remove duplicated parts, and centralize the common code in user-defined functions."
     },
     {
       "id": "0c0f2d0b4495",
@@ -1747,6 +1738,15 @@
       "category": "Data",
       "pubDate": "2026-04-10T14:02:34.000Z",
       "contentSnippet": "Dagster 1.13 makes the framework easier to adopt with AI coding skills, partition-aware asset checks, virtual assets for database views, and 20+ new integration components."
+    },
+    {
+      "id": "29b5602d09b2",
+      "title": "Using visual calculation to highlight an entire row",
+      "link": "https://www.sqlbi.com/tv/using-visual-calculation-to-highlight-an-entire-row/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-04-07T10:00:00.000Z",
+      "contentSnippet": "How to highlight a row based solely on the maximum value in the last column using visual calculations, a tool that can be used efficiently to format visuals."
     },
     {
       "id": "df2be5bd8dc6",
