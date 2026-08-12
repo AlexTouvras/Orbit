@@ -8,6 +8,7 @@ import { RadarHero } from "@/components/radar/RadarHero";
 import { readNewsCacheRemote } from "@/lib/news/cache-remote";
 import { relativeTime } from "@/lib/utils";
 import type { NewsCategory } from "@/lib/types";
+import { getEditableProfile } from "@/lib/profile-store";
 
 export const metadata: Metadata = {
   title: "Related articles",
@@ -21,6 +22,7 @@ export const dynamic = "force-dynamic";
 const STALE_AFTER_MS = 36 * 60 * 60 * 1000;
 
 export default async function RadarPage() {
+  const profile = getEditableProfile();
   const cache = await readNewsCacheRemote();
   const hasItems = cache.items.length > 0;
   const generatedMs = cache.generatedAt ? Date.parse(cache.generatedAt) : 0;
@@ -41,6 +43,7 @@ export default async function RadarPage() {
         totalSignals={cache.count}
         categoryCounts={categoryCounts}
         generatedAt={cache.generatedAt}
+        avatarUrl={profile.avatarUrl}
       />
 
       {isStale && (

@@ -17,7 +17,7 @@ export default function ContactPage() {
 
   return (
     <div className="space-y-16 sm:space-y-20">
-      <ContactHero email={email} />
+      <ContactHero email={email} avatarUrl={profile.avatarUrl} />
       <ContactSection />
     </div>
   );

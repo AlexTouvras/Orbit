@@ -5,9 +5,10 @@ import { OrbitSignature } from "@/components/ui/OrbitSignature";
 
 interface ContactHeroProps {
   email: string;
+  avatarUrl?: string;
 }
 
-export function ContactHero({ email }: ContactHeroProps) {
+export function ContactHero({ email, avatarUrl }: ContactHeroProps) {
   return (
     <MissionHero
       signature={<OrbitSignature variant="violet" duration="95s" />}
@@ -17,6 +18,7 @@ export function ContactHero({ email }: ContactHeroProps) {
           Get in touch
         </Badge>
       }
+      avatarUrl={avatarUrl}
       title="Let's talk"
       subtitle="Delivery, data, and AI automation"
       description="Whether it's a role, a project, or a broken pipeline — send a message and I'll get back to you."

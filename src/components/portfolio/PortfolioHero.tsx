@@ -14,12 +14,14 @@ interface PortfolioHeroProps {
   workshopCount: number;
   tagCount: number;
   powerBiCount?: number;
+  avatarUrl?: string;
 }
 
 export function PortfolioHero({
   workshopCount,
   tagCount,
   powerBiCount = 0,
+  avatarUrl,
 }: PortfolioHeroProps) {
   const stats = [
     { label: "Projects", value: workshopCount > 0 ? String(workshopCount) : "—" },
@@ -39,6 +41,7 @@ export function PortfolioHero({
           Portfolio
         </Badge>
       }
+      avatarUrl={avatarUrl}
       title="What I'm building"
       subtitle="Projects, open source, and Power BI"
       description="Workshop projects, GitHub repos, and Power BI pages that match the committed report definitions."

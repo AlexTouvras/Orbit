@@ -5,6 +5,7 @@ import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
 import { PowerBiShowcase } from "@/components/portfolio/PowerBiShowcase";
 import { powerBiReports } from "@/content/power-bi-reports";
 import { getPublicProjects } from "@/lib/projects-local";
+import { getEditableProfile } from "@/lib/profile-store";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default function PortfolioPage() {
+  const profile = getEditableProfile();
   const workshop = getPublicProjects();
   const tagCount = new Set(workshop.flatMap((p) => p.tags)).size;
 
@@ -23,6 +25,7 @@ export default function PortfolioPage() {
         workshopCount={workshop.length}
         tagCount={tagCount}
         powerBiCount={powerBiReports.length}
+        avatarUrl={profile.avatarUrl}
       />
 
       <div id="workshop" className="scroll-mt-28">

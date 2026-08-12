@@ -9,12 +9,14 @@ interface RadarHeroProps {
   totalSignals: number;
   categoryCounts: Record<NewsCategory, number>;
   generatedAt: string | null;
+  avatarUrl?: string;
 }
 
 export function RadarHero({
   totalSignals,
   categoryCounts,
   generatedAt,
+  avatarUrl,
 }: RadarHeroProps) {
   const stats = [
     { label: "Articles", value: totalSignals > 0 ? String(totalSignals) : "—" },
@@ -33,6 +35,7 @@ export function RadarHero({
           Curated · daily refresh
         </Badge>
       }
+      avatarUrl={avatarUrl}
       title="Related articles"
       subtitle="AI, Data, Analytics, and Delivery — from sources I follow"
       description="External reading from curated RSS feeds, including Power BI and Fabric. Refreshed daily and cached — complementary to my own blog."

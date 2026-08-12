@@ -4,6 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { WritesExplorer } from "@/components/writes/WritesExplorer";
 import { WritesHero } from "@/components/writes/WritesHero";
 import { getAllWrites } from "@/lib/writes";
+import { getEditableProfile } from "@/lib/profile-store";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 };
 
 export default function WritesPage() {
+  const profile = getEditableProfile();
   const writes = getAllWrites();
   const categories = new Set(writes.map((w) => w.category));
   const latestDate = writes[0]?.date ?? null;
@@ -23,6 +25,7 @@ export default function WritesPage() {
         articleCount={writes.length}
         categoryCount={categories.size}
         latestDate={latestDate}
+        avatarUrl={profile.avatarUrl}
       />
 
       <section id="articles" className="scroll-mt-28">

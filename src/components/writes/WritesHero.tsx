@@ -9,12 +9,14 @@ interface WritesHeroProps {
   articleCount: number;
   categoryCount: number;
   latestDate: string | null;
+  avatarUrl?: string;
 }
 
 export function WritesHero({
   articleCount,
   categoryCount,
   latestDate,
+  avatarUrl,
 }: WritesHeroProps) {
   const stats = [
     { label: "Articles", value: articleCount > 0 ? String(articleCount) : "—" },
@@ -34,6 +36,7 @@ export function WritesHero({
           Build in public
         </Badge>
       }
+      avatarUrl={avatarUrl}
       title="Blog"
       subtitle="What I learn, ship, and figure out along the way"
       description="Evergreen notes from delivery, data, and AI — one clear question per article. Documented for future me and anyone on a similar path."
