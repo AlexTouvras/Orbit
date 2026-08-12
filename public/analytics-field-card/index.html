@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agentic AI Field Card — When to use what · Alex Touvras</title>
-  <meta name="description" content="A one-page decision card for RAG, agents, MCP, A2A, skills, and rules. Layers, not rivals. Built for delivery work with a human gate." />
+  <title>Data Analytics Field Card — When the number is real enough · Alex Touvras</title>
+  <meta name="description" content="A one-page decision card for analytics stacks: question, grain, truth layer, and consume path. Tools are lanes — not the map." />
   <meta name="author" content="Alex Touvras" />
-  <meta property="og:title" content="Agentic AI Field Card — When to use what" />
-  <meta property="og:description" content="RAG, agents, MCP, A2A, skills, and rules as layers. Most teams need fewer than they think." />
+  <meta property="og:title" content="Data Analytics Field Card — When the number is real enough" />
+  <meta property="og:description" content="Question → grain → truth → consume. Most teams need fewer tools than the pitch deck suggests." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,10 +27,10 @@
       --signal-soft: #d7ebe8;
       --warn: #9a3412;
       --warn-soft: #f3e0d6;
-      --layer-rag: #245a7a;
-      --layer-agent: #1e4d6b;
+      --layer-rag: #1e4d6b;
+      --layer-agent: #245a7a;
       --layer-mcp: #0f766e;
-      --layer-a2a: #4338ca;
+      --layer-a2a: #334155;
       --shadow: 0 1px 0 rgba(24, 33, 43, 0.06), 0 12px 32px rgba(24, 33, 43, 0.06);
       --radius: 10px;
       --font-display: "Source Serif 4", Georgia, serif;
@@ -391,7 +391,7 @@
 
     .pick {
       display: grid;
-      grid-template-columns: 6.5rem 1fr;
+      grid-template-columns: 7.5rem 1fr;
       gap: 0.65rem;
       padding: 0.55rem 0;
       border-bottom: 1px solid #e2e8ef;
@@ -465,7 +465,7 @@
     }
 
     .anti-list li::before {
-      content: "×";
+      content: "\00D7";
       position: absolute;
       left: 0;
       color: var(--warn);
@@ -589,7 +589,7 @@
 <body>
   <article class="sheet" id="field-card">
     <div class="topbar">
-      <div class="eyebrow">Field card · Agentic systems</div>
+      <div class="eyebrow">Field card · Data &amp; analytics</div>
       <div class="channels no-print">
         <button type="button" onclick="window.print()">Print / PDF</button>
         <button type="button" id="copy-link">Copy link</button>
@@ -599,18 +599,18 @@
 
     <header class="hero">
       <div>
-        <div class="eyebrow">When to use what</div>
-        <h1>Agentic AI is a stack, not a menu</h1>
+        <div class="eyebrow">When the number is real enough</div>
+        <h1>Analytics is a stack, not a dashboard</h1>
         <p class="lede">
-          RAG, agents, MCP, and A2A are <strong>layers</strong>. Skills and rules shape behavior.
-          Most teams need fewer layers than the pitch deck suggests; add autonomy only when the task actually branches.
+          Question, grain, truth layer, and consume path are <strong>layers</strong>.
+          Tools are lanes. Most teams need fewer products than the roadmap implies — add complexity only when the decision actually requires it.
         </p>
       </div>
       <div class="stack" aria-label="Four-layer stack">
-        <div class="layer"><code>RAG</code><span>Knowledge — ground answers in your docs</span></div>
-        <div class="layer"><code>AGENT</code><span>Control loop — plan, act, observe, stop</span></div>
-        <div class="layer"><code>MCP</code><span>Tools — standard reach into systems</span></div>
-        <div class="layer"><code>A2A</code><span>Peers — agents coordinating across boundaries</span></div>
+        <div class="layer"><code>ASK</code><span>Question — what decision does this number serve?</span></div>
+        <div class="layer"><code>GRAIN</code><span>Unit — customer, account, day, claim… named once</span></div>
+        <div class="layer"><code>TRUTH</code><span>Definitions — where the number becomes official</span></div>
+        <div class="layer"><code>USE</code><span>Consume — notebook, model, scorecard, or API</span></div>
       </div>
     </header>
 
@@ -626,93 +626,93 @@
         </thead>
         <tbody>
           <tr>
-            <td class="problem">Answers ignore our docs, go stale, or invent policy</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview" target="_blank" rel="noopener noreferrer" title="Microsoft Learn: RAG overview"><b>RAG</b></a></td>
-            <td class="example">Internal policy bot cites the latest refund SOP; use GraphRAG when the question is about how entities link</td>
+            <td class="problem">Nobody agrees what “active customer” means</td>
+            <td class="reach"><a class="use-link" href="https://docs.getdbt.com/docs/use-dbt-semantic-layer/dbt-sl" target="_blank" rel="noopener noreferrer" title="dbt Semantic Layer overview"><b>Metrics / semantic layer</b></a></td>
+            <td class="example">One definition of active_30d owned upstream; every BI tool and notebook reads it — no local COUNT DISTINCT remixes</td>
           </tr>
           <tr>
-            <td class="problem">Need live reads or writes against systems — not a stale index</td>
-            <td class="reach"><a class="use-link" href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer" title="Model Context Protocol"><b>MCP</b></a></td>
-            <td class="example">Stock check hits ERP now; same agent opens a Jira bug with logs after a failed deploy</td>
+            <td class="problem">Raw dumps keep breaking Monday reports</td>
+            <td class="reach"><a class="use-link" href="https://docs.getdbt.com/docs/build/building-models" target="_blank" rel="noopener noreferrer" title="dbt: building models"><b>Curated / gold tables</b></a></td>
+            <td class="example">SQL or Python builds a typed fact table with tests; dashboards read gold, not the landing zone</td>
           </tr>
           <tr>
-            <td class="problem">Only 1–2 APIs inside one app; no reuse yet</td>
-            <td class="reach"><a class="use-link" href="https://platform.openai.com/docs/guides/function-calling" target="_blank" rel="noopener noreferrer" title="OpenAI: function calling"><b>Direct tools</b></a></td>
-            <td class="example">One Flask service calling Stripe + SendGrid; move to MCP when those same tools must serve multiple apps</td>
+            <td class="problem">Shape of the question is still fuzzy</td>
+            <td class="reach"><a class="use-link" href="https://jupyter.org/" target="_blank" rel="noopener noreferrer" title="Project Jupyter"><b>Notebook + SQL</b></a></td>
+            <td class="example">Spike in churn last week — slice in a notebook first; graduate joins and metrics only after the grain holds</td>
           </tr>
           <tr>
-            <td class="problem">Fixed path with a model in one or two slots</td>
-            <td class="reach"><a class="use-link" href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener noreferrer" title="Anthropic: building effective agents"><b>Workflow</b></a></td>
-            <td class="example">Invoice PDF → extract fields → validate → post to ledger; model fills gaps, code owns order</td>
+            <td class="problem">Leadership needs a cold-open decision pack</td>
+            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/power-bi/create-reports/service-dashboards" target="_blank" rel="noopener noreferrer" title="Power BI dashboards overview"><b>Scorecard / KPI pack</b></a></td>
+            <td class="example">Five measures, one page, named owner; exploration dashboards stay off this path</td>
           </tr>
           <tr>
-            <td class="problem">Multi-step work that branches, retries, and must stop cleanly</td>
-            <td class="reach"><a class="use-link" href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener noreferrer" title="Anthropic: building effective agents"><b>Agent</b></a></td>
-            <td class="example">Month-end expense pack: pull receipts, match policy via RAG, flag outliers, wait for Approve</td>
+            <td class="problem">Self-serve without rewriting business rules in every report</td>
+            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-relationships-understand" target="_blank" rel="noopener noreferrer" title="Power BI: relationships and models"><b>Governed semantic model</b></a></td>
+            <td class="example">Star schema + measures in the model; pages compose, they don’t redefine PD or ECL</td>
           </tr>
           <tr>
-            <td class="problem">Same standing orders across chats</td>
-            <td class="reach"><a class="use-link" href="https://cursor.com/docs/rules" target="_blank" rel="noopener noreferrer" title="Cursor: Rules"><b>Rules</b></a></td>
-            <td class="example">“Never push main; always cite sources; Finnish UI copy stays formal” in every session</td>
+            <td class="problem">Heavy joins or volume that local SQL can’t finish</td>
+            <td class="reach"><a class="use-link" href="https://docs.databricks.com/en/lakehouse/index.html" target="_blank" rel="noopener noreferrer" title="Databricks lakehouse"><b>Warehouse / lakehouse</b></a></td>
+            <td class="example">Multi-year transaction history for RFM; compute close to storage, publish a narrow gold table out</td>
           </tr>
           <tr>
-            <td class="problem">Named playbook with steps and a verify gate</td>
-            <td class="reach"><a class="use-link" href="https://cursor.com/docs/skills" target="_blank" rel="noopener noreferrer" title="Cursor: Agent Skills"><b>Skill</b></a></td>
-            <td class="example">“Author a Power BI page” skill: open model, place visuals, validate PBIR, screenshot check</td>
+            <td class="problem">Fast local analysis that still needs to share</td>
+            <td class="reach"><a class="use-link" href="https://duckdb.org/docs/" target="_blank" rel="noopener noreferrer" title="DuckDB docs"><b>DuckDB / MotherDuck</b></a></td>
+            <td class="example">Parquet on disk for a credit cohort study; push the reproducible query, not a mystery workbook</td>
           </tr>
           <tr>
-            <td class="problem">Money, prod, or irreversible writes in the path</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop" target="_blank" rel="noopener noreferrer" title="Microsoft Agent Framework: human-in-the-loop"><b>Human gate</b></a></td>
-            <td class="example">Refund &gt; €50 pauses for Approve; step and spend caps stop a runaway loop</td>
+            <td class="problem">Regulated / risk number must be auditable</td>
+            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/databricks/delta/history" target="_blank" rel="noopener noreferrer" title="Delta Lake time travel (versioned tables)"><b>Versioned inputs + assumptions</b></a></td>
+            <td class="example">PD scorecard run: freeze feature store cut, document exclusions, store the model ID next to the ECL output</td>
           </tr>
           <tr>
-            <td class="problem">Tone/format still wrong after prompts + RAG</td>
-            <td class="reach"><a class="use-link" href="https://platform.openai.com/docs/guides/fine-tuning" target="_blank" rel="noopener noreferrer" title="OpenAI: fine-tuning"><b>Fine-tune</b></a></td>
-            <td class="example">Bank chat must stick to a fixed compliance template; keep changing facts in retrieval, not weights</td>
+            <td class="problem">One-off exec ask by Friday</td>
+            <td class="reach"><a class="use-link" href="https://support.microsoft.com/en-us/excel" target="_blank" rel="noopener noreferrer" title="Excel support"><b>Spreadsheet (then graduate)</b></a></td>
+            <td class="example">Board slide number from a controlled extract; if it recurs twice, promote grain + definition to gold</td>
           </tr>
           <tr>
-            <td class="problem">Specialist agents owned by different teams or vendors</td>
-            <td class="reach"><a class="use-link" href="https://a2a-protocol.org/" target="_blank" rel="noopener noreferrer" title="A2A Protocol"><b>A2A</b></a></td>
-            <td class="example">Support agent hands a refund packet to Finance-ops across two tenants; each agent keeps its own MCP tools</td>
+            <td class="problem">Don’t know if the number moved for the right reason</td>
+            <td class="reach"><a class="use-link" href="https://openlineage.io/" target="_blank" rel="noopener noreferrer" title="OpenLineage"><b>Reconciliation / lineage</b></a></td>
+            <td class="example">Compare source counts vs gold vs semantic measure; block publish when the gap has no named cause</td>
           </tr>
           <tr>
-            <td class="problem">Don’t know if the system still works after a change</td>
-            <td class="reach"><a class="use-link" href="https://platform.openai.com/docs/guides/evals" target="_blank" rel="noopener noreferrer" title="OpenAI: evals"><b>Evals</b></a></td>
-            <td class="example">20 golden tickets; block ship if pass rate drops; inspect the tool path when a case fails</td>
+            <td class="problem">Ops needs near-now status, not last night’s batch</td>
+            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/stream-processing" target="_blank" rel="noopener noreferrer" title="Stream processing technology choices"><b>Near-real-time path</b></a></td>
+            <td class="example">Queue depth and fail rate on a 5-minute lag; keep strategic KPIs on the batch truth layer</td>
           </tr>
         </tbody>
       </table>
-      <p class="note">Default build order: RAG → one agent with tools/MCP → stateful workflow + human gate → multi-agent inside one framework → A2A only when ownership boundaries are real.</p>
+      <p class="note">Default build order: name the question and grain → curated tables with tests → shared definitions → consume surface → lineage/reconcile before you scale tools.</p>
     </section>
 
     <div class="tri">
       <section>
-        <h2>Framework picker</h2>
+        <h2>Tool picker</h2>
         <div class="picker">
-          <div class="pick"><strong><a href="https://langchain-ai.github.io/langgraph/" target="_blank" rel="noopener noreferrer">LangGraph</a></strong><span>Stateful, auditable, HITL, durable checkpoints</span></div>
-          <div class="pick"><strong><a href="https://docs.crewai.com/" target="_blank" rel="noopener noreferrer">CrewAI</a></strong><span>Fastest role-based prototype</span></div>
-          <div class="pick"><strong><a href="https://docs.llamaindex.ai/" target="_blank" rel="noopener noreferrer">LlamaIndex</a></strong><span>RAG / data-first agents</span></div>
-          <div class="pick"><strong><a href="https://learn.microsoft.com/en-us/agent-framework/overview/" target="_blank" rel="noopener noreferrer">MS Agent Fw</a></strong><span>Azure / .NET enterprise path</span></div>
-          <div class="pick"><strong><a href="https://openai.github.io/openai-agents-python/" target="_blank" rel="noopener noreferrer">OpenAI</a> / <a href="https://code.claude.com/docs/en/agent-sdk/overview" target="_blank" rel="noopener noreferrer">Claude</a> SDKs</strong><span>Handoffs or Anthropic-native loops</span></div>
-          <div class="pick"><strong><a href="https://ai.pydantic.dev/" target="_blank" rel="noopener noreferrer">Pydantic AI</a></strong><span>Schema-first typed Python</span></div>
-          <div class="pick"><strong><a href="https://google.github.io/adk-docs/" target="_blank" rel="noopener noreferrer">Google ADK</a></strong><span>Google / Vertex agent path</span></div>
+          <div class="pick"><strong><a href="https://docs.getdbt.com/" target="_blank" rel="noopener noreferrer">dbt</a></strong><span>Versioned transforms + tests as code</span></div>
+          <div class="pick"><strong><a href="https://duckdb.org/" target="_blank" rel="noopener noreferrer">DuckDB</a> / <a href="https://motherduck.com/docs/" target="_blank" rel="noopener noreferrer">MotherDuck</a></strong><span>Local-to-cloud speed for analytics SQL</span></div>
+          <div class="pick"><strong><a href="https://docs.databricks.com/" target="_blank" rel="noopener noreferrer">Databricks</a></strong><span>Volume, lakehouse, shared compute</span></div>
+          <div class="pick"><strong><a href="https://pandas.pydata.org/" target="_blank" rel="noopener noreferrer">Python</a> / <a href="https://jupyter.org/" target="_blank" rel="noopener noreferrer">Jupyter</a></strong><span>Exploration, features, one-off science</span></div>
+          <div class="pick"><strong><a href="https://learn.microsoft.com/en-us/power-bi/" target="_blank" rel="noopener noreferrer">Power BI</a> / <a href="https://cloud.google.com/looker/docs" target="_blank" rel="noopener noreferrer">Looker</a></strong><span>Governed consume + scorecards</span></div>
+          <div class="pick"><strong><a href="https://www.getdbt.com/product/semantic-layer" target="_blank" rel="noopener noreferrer">Semantic layer</a></strong><span>Shared metrics across tools</span></div>
+          <div class="pick"><strong><a href="https://openlineage.io/" target="_blank" rel="noopener noreferrer">OpenLineage</a></strong><span>Where did this number come from?</span></div>
         </div>
       </section>
 
       <section>
-        <h2>Rules vs skills</h2>
+        <h2>Definition vs report</h2>
         <div class="gates">
           <div class="gate">
-            <strong>Rules · standing orders</strong>
-            <span>Always on or path-scoped. Safety, voice, repo law. Keep short. Cursor: <code>.cursor/rules</code>, <code>AGENTS.md</code>.</span>
+            <strong>Definitions · travel</strong>
+            <span>Grain, keys, and measures that other systems can reuse. Own them upstream of any single dashboard.</span>
           </div>
           <div class="gate">
-            <strong>Skills · runbooks</strong>
-            <span>Load when the task matches. Multi-step + verify. Cursor: <code>SKILL.md</code>. Don’t wrap one API call as a skill.</span>
+            <strong>Reports · compose</strong>
+            <span>Layout and audience. A page should not invent PD, ECL, or “active” — it should bind to named definitions.</span>
           </div>
           <div class="gate">
             <strong>Memory check</strong>
-            <span>Rules = standing orders. Skills = runbooks. MCP = hands. RAG = library.</span>
+            <span>ASK = decision. GRAIN = unit. TRUTH = official number. USE = how humans see it.</span>
           </div>
         </div>
       </section>
@@ -720,16 +720,16 @@
       <section>
         <h2>Ladder + gates</h2>
         <ol class="ladder">
-          <li>Prompted chat</li>
-          <li>RAG assistant with citations</li>
-          <li>Single agent + tools / MCP</li>
-          <li>Stateful workflow + human Approve</li>
-          <li>Multi-agent inside one framework</li>
-          <li>Cross-org A2A (earn this)</li>
+          <li>Named question + grain</li>
+          <li>Trusted extract / spreadsheet (time-boxed)</li>
+          <li>Curated tables + tests</li>
+          <li>Shared definitions / semantic model</li>
+          <li>Scorecard or governed self-serve</li>
+          <li>Lineage + reconcile before scale</li>
         </ol>
         <div class="gate" style="margin-top:0.75rem">
           <strong>Kill switch</strong>
-          <span>Max steps, max €/tokens, tool allowlist. If you can’t stop it, you don’t ship it.</span>
+          <span>If you can’t name the grain, the owner, and how to stop a bad publish, you don’t ship the number.</span>
         </div>
       </section>
     </div>
@@ -737,14 +737,14 @@
     <section class="antis">
       <h2>Anti-patterns</h2>
       <ul class="anti-list">
-        <li>Agent for pure Q&amp;A (start with RAG)</li>
-        <li>Treating MCP and RAG as either/or</li>
-        <li>Fine-tuning for facts that change weekly</li>
-        <li>Premature multi-agent / A2A swarms</li>
-        <li>Calling a fixed pipeline an “agent”</li>
-        <li>Unbounded autonomy where money or prod moves</li>
-        <li>Tools without schemas, budgets, or kill switches</li>
-        <li>Always-on rules that belong in a skill</li>
+        <li>Dashboard first, question never</li>
+        <li>Redefining metrics inside every report</li>
+        <li>Landing-zone tables as the semantic layer</li>
+        <li>Tool shopping before grain is named</li>
+        <li>Treating Excel as forever when it recurs</li>
+        <li>Real-time paths for strategic KPIs</li>
+        <li>Unowned “source of truth” with no tests</li>
+        <li>Publishing when reconcile gaps are unexplained</li>
       </ul>
     </section>
 
@@ -757,7 +757,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> No picker swap — Mastra/Vercel AI SDK/Haystack/SK deferred; incumbents still win by constraint</p>
+      <p class="changed"><b>Changed</b> Initial public card — stack, decision table, tool picker, ladder</p>
     </footer>
   </article>
 

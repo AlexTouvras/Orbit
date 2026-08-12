@@ -1,0 +1,54 @@
+---
+title: "When an agent can change Fabric, the review boundary becomes the product"
+summary: "MCP and CLI can move Fabric work from clicks to agent actions, but the durable gain comes from scoped permissions, inspectable plans, and deliberate approval."
+date: "2026-08-03"
+category: "Data"
+featured: false
+tags: ["Fabric", "MCP", "AI Agents", "Analytics", "Delivery"]
+---
+
+## The question
+
+I used to think governance meant that someone checked a report or deployment and then clicked the final button. That assumption breaks when the reporting stack can act from a conversation. If an agent can list workspaces, create Fabric items, run notebooks, and deploy a report, what has to be true before I treat that speed as delivery rather than a more convenient production incident?
+
+The answer is not another approval button. It is a review boundary that produces evidence before authority moves.
+
+## The click was never the control
+
+In [Fabric MCP Servers, CLI & AI Agents](https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8), Reza Rad's conversation with Hasan Abo-Shally makes the shift concrete. Without an MCP connection, the agent returns instructions. With the connection, it can invoke Fabric tools. A local MCP server can provide platform context, while the Fabric CLI gives the agent an execution path that can later become a CI/CD script.
+
+That changes less about analytics logic than it first appears. Measures still need definitions. Identities still need scopes. A failed refresh still needs an owner. What changes is the evidence I need before execution. A manual click feels controlled because I can see the screen, but the click was never the control. Permission, an inspectable change, a named owner, and a rollback path were the controls.
+
+The wrong default is to replace every click with a prompt and keep the old approval process. A prompt records intent, not a deployable specification. I want a durable artifact between the request and the action: a Terraform plan, a CLI script, a pull request, or a bounded list of proposed tool calls. If nothing records what the agent expects to change, the reviewer can only approve prose.
+
+## Make the plan the unit of review
+
+The strongest moment in the source is not the end-to-end automation. It is the pause. In one demo, a Terraform plan shows the resources to be created and waits for manual approval before the CLI continues the deployment. The plan turns a broad request into objects, identities, connections, and mappings that a person can challenge.
+
+My rule is that an agent may propose widely, but its production authority should grow only with the quality of evidence it leaves. For a low-risk workspace listing, direct invocation may be enough. For a new workspace, I want the name, capacity, and roles shown first. For a semantic-model change, I want a diff of definitions. For deletion or access changes, I want execution stopped until a named owner confirms the impact and the recovery path.
+
+This is a challenger-versus-baseline test. The baseline is an administrator following a runbook. The agent does not win merely by finishing faster; it must leave better evidence than the runbook. If it runs twenty commands invisibly and succeeds, it has won the stopwatch and lost the control test.
+
+## Move autonomy one boundary at a time
+
+MCP standardises how an agent discovers and invokes tools, which makes the boundary easier to move. It also expands the blast radius of a vague request. The source notes that Fabric's remote MCP was still in public preview at the time of recording, describes read-only mode, and distinguishes tools by risk. I read those details as a rollout sequence, not footnotes.
+
+I would start one real job in read-only mode: inventory stale workspaces or inspect refresh states. Next I would let the agent generate a CLI script without running it. Then I would execute the script against a sandbox. Only after the output and logs match the plan would I add an approval step for production. Each stage should expose a different failure clearly enough that I know whether the problem was the request, the generated plan, the permission, or the platform.
+
+There is a counter-case. I would not wrap every query in ceremonial approval. Listing workspaces within an existing permission is not the same risk as deleting one. Too many gates teach people to approve on reflex. Read-only work can flow; additive work should present a visible plan; destructive or high-impact work should remain explicit. Controls need to be proportional or they become theatre.
+
+## The small version I already use
+
+Orbit's weekly Write flow gives me a smaller version of this boundary. Signals become an intake, automation prepares a draft, and Slack approval remains the publish gate. The human does not reproduce every preparation step, but there is a titled, inspectable artifact before public state changes.
+
+That split is deliberate. Automation reduces preparation without hiding the transition. If the draft is weak, nothing is published. If approval waits, the pending file remains reviewable outside the agent conversation. That is the behavior I want from analytics automation too: a visible intermediate state that survives the chat window.
+
+## What I am not handing over
+
+I have not proven this pattern on a production Fabric tenant, so I am not treating an agent-authored deployment as safe by default. I would keep destructive namespaces disabled, identity scopes narrow, and generated scripts or plans in a versioned system. I would also name who owns a bad change before granting the tool that can make it.
+
+Manual approval is not magic either. If the plan is unreadable, or generated faster than a reviewer can understand it, the gate becomes theatre. The objective is not a human click. It is evidence good enough for an accountable decision.
+
+## Takeaway
+
+When the reporting stack moves from buttons to agents, I do not want to preserve the click path. I want to preserve the decision boundary. Let the agent translate intent into an inspectable plan, match its permissions to the risk, and keep production execution separate and reversible. Move that boundary only when the logs, diffs, and plans outperform the manual baseline. The useful agent is not the one that touches production first; it is the one that makes the next change easier to trust.

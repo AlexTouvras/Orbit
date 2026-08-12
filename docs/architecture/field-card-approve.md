@@ -1,0 +1,21 @@
+# Field card Slack Approve (Orbit)
+
+Same gate pattern as weekly Writes. Supports multiple cards via src/lib/field-card/registry.ts:
+
+| Card | Content repo | Orbit path | Soft URL |
+|---|---|---|---|
+| Agentic AI | AlexTouvras/agentic-ai-field-card | public/field-card/index.html | /field-card/ |
+| Data Analytics | AlexTouvras/data-analytics-field-card | public/analytics-field-card/index.html | /analytics-field-card/ |
+
+## Flow
+
+1. Field-card CI discovers candidates (no HTML judgment)
+2. Cursor Automation updates index.html when earned (or records no-change) and runs notify
+3. Notify Slack approve posts Block Kit to **#orbit**: summary · **Open card preview** · Approve / Skip
+4. Preview: /api/field-card/preview serves PR-head index.html (signed preview token; epo in payload)
+5. Approve/Skip: /api/field-card/action — **GET = confirm**, **POST = merge or close**
+6. On Approve: merge field-card PR, then commit that repo's index.html to the **registered** Orbit public/... path (Vercel redeploy). Pages updates from the content repo; the site path is this sync.
+7. Slack gets a short Approved / Skipped follow-up (links both github.io and alextouvras.com)
+
+Signing secret must match across content repos + Orbit (WEEKLY_WRITE_SECRET / CRON_SECRET / FIELD_CARD_ACTION_SECRET).
+GitHub token on Orbit must be allowed to read + merge PRs on **both** field-card repos (FIELD_CARD_GITHUB_TOKEN if the default token is Orbit-only), and GITHUB_TOKEN must be able to write Orbit contents (same as weekly Writes / Studio).

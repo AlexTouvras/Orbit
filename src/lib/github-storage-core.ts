@@ -100,6 +100,12 @@ export async function writeRepoFile(
     } catch {
       /* keep default */
     }
+    // Classic expired/revoked Vercel PAT surface as this exact GitHub message.
+    if (/bad credentials/i.test(detail) || res.status === 401) {
+      throw new Error(
+        "GitHub Bad credentials — Vercel GITHUB_TOKEN is missing, expired, or revoked. Create a new fine-grained PAT (Contents: Read and write on Orbit), update the Vercel env var, redeploy, then retry Approve.",
+      );
+    }
     throw new Error(detail);
   }
 }

@@ -1,15 +1,465 @@
 {
-  "generatedAt": "2026-08-03T09:35:40.945Z",
-  "count": 217,
+  "generatedAt": "2026-08-12T07:17:58.682Z",
+  "count": 219,
   "items": [
     {
-      "id": "28414e2d67cb",
-      "title": "What AI Training Courses Are Available in the Market for Scrum Masters?",
-      "link": "https://www.scrum.org/resources/blog/what-ai-training-courses-are-available-market-scrum-masters",
+      "id": "2d3ea9ff80a0",
+      "title": "Taking AUTO CDC to the next level: Solving the hardest real-world use cases",
+      "link": "https://www.databricks.com/blog/taking-auto-cdc-next-level-solving-hardest-real-world-use-cases",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-11T23:00:00.000Z",
+      "contentSnippet": "Change data capture is one of the most common things data engineers build on Spark..."
+    },
+    {
+      "id": "b54d76a4ad9c",
+      "title": "Open-sourcing Metals v2: Databricks’ Java and Scala language server for multi‑million line codebases",
+      "link": "https://www.databricks.com/blog/open-sourcing-metals-v2-databricks-java-and-scala-language-server-multi-million-line-codebases",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-11T19:00:00.000Z",
+      "contentSnippet": "Most code at Databricks is now written by agents. For the moments engineers still..."
+    },
+    {
+      "id": "8af5b1e57b96",
+      "title": "Why Your Scrum Team Still Works Like Individuals",
+      "link": "https://www.mountaingoatsoftware.com/agile/why-your-scrum-team-still-works-like-individuals",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-08-11T13:00:00.000Z",
+      "contentSnippet": "Many organizations have Scrum teams in name, but not yet in behavior. The people attend sprint…"
+    },
+    {
+      "id": "186fce5f8de0",
+      "title": "Modern Risk Demands a Real-Time Foundation: The CRO’s Mandate",
+      "link": "https://www.databricks.com/blog/modern-risk-demands-real-time-foundation-cros-mandate",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-11T12:30:00.000Z",
+      "contentSnippet": "In a volatile macroeconomic environment, enterprise risk management today is constrained..."
+    },
+    {
+      "id": "0d3bab75e5d5",
+      "title": "TDD inside the agent loop - theater or actual value?",
+      "link": "https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-08-11T11:39:00.000Z",
+      "contentSnippet": "My colleagues at Thoughtworks tend to be big fans of Test-Driven Development, and many people in the industry advocate telling LLM agents to use TDD when building software. Birgitta Böckeler was curious if this really makes a difference, so conducted a few experiments. more…"
+    },
+    {
+      "id": "de2ca3d7578d",
+      "title": "Testing ads in ChatGPT",
+      "link": "https://openai.com/index/testing-ads-in-chatgpt",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-11T10:00:00.000Z",
+      "contentSnippet": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control."
+    },
+    {
+      "id": "b274e00978a8",
+      "title": "Daybreak models are now available on AWS",
+      "link": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-11T10:00:00.000Z",
+      "contentSnippet": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows."
+    },
+    {
+      "id": "0c0f2d0b4495",
+      "title": "How to Create Multilingual User Tutorial Videos with AI",
+      "link": "https://www.scrum.org/resources/blog/how-create-multilingual-user-tutorial-videos-ai",
       "source": "Scrum.org",
       "category": "Delivery",
-      "pubDate": "2026-08-03T05:58:13.000Z",
-      "contentSnippet": "If you search the internet, you will find a flood of AI courses. Most of them are pointless for Scrum Masters. But which one of them is worth thinking about? Let me explain … Image This is important to know because you want to spend your time, money, and effort on a training cour…"
+      "pubDate": "2026-08-11T07:05:58.000Z",
+      "contentSnippet": "Imagine you want to create a tutorial video for your users to learn how to use a specific feature of your product. Your users are from the UK, Germany, and Sweden. Let’s see how you can build a multilingual video for it with AI. Image You are a Product Owner of a product that is…"
+    },
+    {
+      "id": "8b18bfa54356",
+      "title": "Electric joins Databricks to bring WASM Postgres to AI agent sandboxes",
+      "link": "https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-11T07:00:00.000Z",
+      "contentSnippet": "Today, we’re excited to welcome Electric to Databricks. The world is building a new..."
+    },
+    {
+      "id": "13aa163b225a",
+      "title": "How to ground Genie Agents in both structured data and documents without losing governance",
+      "link": "https://www.databricks.com/blog/how-ground-genie-agents-both-structured-data-and-documents-without-losing-governance",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-10T23:08:50.000Z",
+      "contentSnippet": "Building an agent to automate simple business tasks can be easy. But creating one..."
+    },
+    {
+      "id": "ff64cfc34025",
+      "title": "Creating DAX functions with AI to remove duplicated code",
+      "link": "https://www.sqlbi.com/articles/creating-dax-functions-with-ai-to-remove-duplicated-code/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-08-10T20:00:00.000Z",
+      "contentSnippet": "Code written by AI can contain many duplicate parts. User-defined functions are a great tool to simplify complex measures; this article shows how to leverage AI to build better DAX code. AI is getting better and better at generating DAX…"
+    },
+    {
+      "id": "202ffbef3360",
+      "title": "Innocent until combined: Blocking the lethal trifecta with Omnigent Contextual Policies",
+      "link": "https://www.databricks.com/blog/innocent-until-combined-blocking-lethal-trifecta-omnigent-contextual-policies",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-10T18:30:00.000Z",
+      "contentSnippet": "In earlier posts, we introduced contextual policies in Omnigent, showed them blocking..."
+    },
+    {
+      "id": "7a678e9a26d7",
+      "title": "What building an AI-native finance function taught me",
+      "link": "https://openai.com/index/building-an-ai-native-finance-function",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-10T17:00:00.000Z",
+      "contentSnippet": "OpenAI CFO Sarah Friar shares five lessons for building an AI-native finance function, from automated forecasting to stronger controls and AI ROI."
+    },
+    {
+      "id": "2466f0876fe1",
+      "title": "Introducing FILE type: a native column type for multimodal data",
+      "link": "https://www.databricks.com/blog/introducing-file-type-native-column-type-multimodal-data",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-10T15:00:00.000Z",
+      "contentSnippet": "Your data estate holds far more than structured tables, metrics, and transaction..."
+    },
+    {
+      "id": "61282b7420ed",
+      "title": "OpenAI’s letter to Governor Abbott on responsible AI infrastructure in Texas",
+      "link": "https://openai.com/index/responsible-ai-infrastructure-texas",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-10T14:00:00.000Z",
+      "contentSnippet": "OpenAI sent Governor Greg Abbott a letter outlining its commitment to responsible AI infrastructure in Texas. The letter supports reliable, transparent growth that benefits Texans."
+    },
+    {
+      "id": "c7b962b1d9ef",
+      "title": "Model ML completes finance work more efficiently with GPT-5.6 Sol",
+      "link": "https://openai.com/index/model-ml",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-10T12:00:00.000Z",
+      "contentSnippet": "Model ML uses GPT-5.6 Sol to carry finance work from research and analysis through editable, traceable PowerPoint decks and Excel workbooks."
+    },
+    {
+      "id": "3a8585570cab",
+      "title": "Expanding Daybreak as the Cyber Defense Window Narrows",
+      "link": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-10T10:00:00.000Z",
+      "contentSnippet": "Meet GPT-5.6-Cyber, OpenAI’s cybersecurity-specific model available through Daybreak Red for authorized vulnerability research, exploit validation, and security testing."
+    },
+    {
+      "id": "7f776d7829d0",
+      "title": "Putting frontier cyber models in more trusted hands",
+      "link": "https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-10T10:00:00.000Z",
+      "contentSnippet": "Approved Daybreak partners can use OpenAI’s frontier cyber models to deliver authorized, governed cybersecurity services to customers."
+    },
+    {
+      "id": "ee10865ff397",
+      "title": "Survey Results: Agile to the Product Operating Model",
+      "link": "https://www.scrum.org/resources/blog/survey-results-agile-product-operating-model",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-10T09:07:32.000Z",
+      "contentSnippet": "TL; DR: The “Agile to the Product Operating Model” Survey Results Between August 2 and August 10, 2026, 48 practitioners participated in my Agile to Product Operating Model (POM) survey, which tries to shed light on what is actually changing. Let me summarize the answers for you:…"
+    },
+    {
+      "id": "b1c5cfb2f6cc",
+      "title": "Restoring alternating rows in Power BI matrices with Fluent 2",
+      "link": "https://www.sqlbi.com/blog/marco/2026/08/10/restoring-alternating-rows-in-power-bi-matrices-with-fluent-2/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-08-10T07:22:49.000Z",
+      "contentSnippet": "Microsoft recently introduced a new default visual design style for Power BI named Fluent 2. I personally disagree with a few choices in the new defaults, including the removal of alternating row colors from Table and Matrix visuals. However, the…"
+    },
+    {
+      "id": "af2f9387f309",
+      "title": "AI Tools Evaluation & Approval Framework for Scrum Teams",
+      "link": "https://www.scrum.org/resources/blog/ai-tools-evaluation-approval-framework-scrum-teams",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-10T07:05:54.000Z",
+      "contentSnippet": "When you see an impressive AI tool, you want to bring it to your team immediately. But it can bring risks. Don’t blame your organization if they don’t easily allow any AI tool to be used. Why? Image I regularly hear from my students in my AI classes that their organizations don’t…"
+    },
+    {
+      "id": "05f5b5e146e6",
+      "title": "Cognitive Trap: Scrum Master as a Manager",
+      "link": "https://www.scrum.org/resources/blog/cognitive-trap-scrum-master-manager",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-10T04:00:00.000Z",
+      "contentSnippet": "Scrum Master as Manager Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, an…"
+    },
+    {
+      "id": "fc91bece9947",
+      "title": "Data Engineering Weekly #282",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-282",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-10T01:21:26.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "ee449db47d8d",
+      "title": "Premium seats are coming to ChatGPT Business",
+      "link": "https://openai.com/index/premium-seats-chatgpt-business",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-10T00:00:00.000Z",
+      "contentSnippet": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work."
+    },
+    {
+      "id": "6cb1441ecb9f",
+      "title": "Agents can sign up for MotherDuck",
+      "link": "https://motherduck.com/blog/agent-signup",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-08-10T00:00:00.000Z",
+      "contentSnippet": "AI agents can now sign up for MotherDuck with a single API call - no forms, no credentials, no human in the loop (unless you want to be, of course). Experiment faster, share data, or just give your agents a ducking fast set of tools for analytics."
+    },
+    {
+      "id": "eb19341e893a",
+      "title": "Using Detail Rows Expressions To Drill To A Different Fact Table In Power BI",
+      "link": "https://blog.crossjoin.co.uk/2026/08/09/using-detail-rows-expressions-to-drill-to-a-different-fact-table-in-power-bi/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-08-09T21:26:19.000Z",
+      "contentSnippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
+    },
+    {
+      "id": "fa8a01f4f6ef",
+      "title": "Focus Is Not Genius. It Is a Kata.",
+      "link": "https://www.scrum.org/resources/blog/focus-not-genius-it-kata",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-09T06:00:00.000Z",
+      "contentSnippet": "Image In May 1997, at Apple's developer conference, an audience member stood up and insulted Steve Jobs to his face. Jobs paused, took a sip of water, and gave an answer that had nothing to do with the insult and everything to do with how he ran companies. \"Focusing is about sayi…"
+    },
+    {
+      "id": "f58ff2a8bb1e",
+      "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
+      "link": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-entries",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-08-07T23:55:58.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "4cd8dbc4ee36",
+      "title": "Rayfin Data App — The Future of Power BI Reporting",
+      "link": "https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-08-07T21:01:29.000Z",
+      "contentSnippet": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
+    },
+    {
+      "id": "4fffe919132d",
+      "title": "Managing AI Coding Costs at Scale",
+      "link": "https://www.databricks.com/blog/managing-ai-coding-costs-scale",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-07T11:50:39.000Z",
+      "contentSnippet": "AI coding tools deliver immense value: at Databricks, agentic coding has measurably..."
+    },
+    {
+      "id": "39a8a938632c",
+      "title": "What is an AI Assistant?",
+      "link": "https://www.databricks.com/blog/what-is-an-ai-assistant",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-07T11:44:24.000Z",
+      "contentSnippet": "AI assistants use language models, data retrieval, and reasoning to understand requests..."
+    },
+    {
+      "id": "9d27c3063c90",
+      "title": "Your Last Failed Transformation is not a Strategy",
+      "link": "https://www.scrum.org/resources/blog/your-last-failed-transformation-not-strategy",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-06T22:00:00.000Z",
+      "contentSnippet": "\"We tried that before.\" Four words, and the idea was dead. Nobody asked when \"before\" was, or what was different then, or whether the thing that killed it last time even still exists. The four words did all the work a careful argument would have done, minus the argument. The meet…"
+    },
+    {
+      "id": "d855e124a36f",
+      "title": "What are Agentic Workflows?",
+      "link": "https://www.databricks.com/blog/agentic-workflows",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-06T21:36:15.000Z",
+      "contentSnippet": "As organizations move beyond single-prompt AI interactions, agentic workflows are..."
+    },
+    {
+      "id": "e64d5d0646ff",
+      "title": "Declarative Automation in Dagster: Smarter Data Orchestration Without Complex Schedules",
+      "link": "https://dagster.io/blog/orchestration-is-more-than-scheduling-declarative-automation-in-dagster",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-08-06T13:27:33.000Z",
+      "contentSnippet": "Learn how Dagster's Declarative Automation simplifies data orchestration by defining desired asset state instead of managing schedules, sensors, and custom triggers."
+    },
+    {
+      "id": "2aff593adf2a",
+      "title": "On Benchmarking",
+      "link": "https://www.dataengineeringweekly.com/p/on-benchmarking",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-06T05:07:53.000Z",
+      "contentSnippet": "Why a throughput number is not an architecture decision."
+    },
+    {
+      "id": "9f372ab5d0ce",
+      "title": "One-shotting a Raccoon Heist game using Claude Fable 5",
+      "link": "https://simonwillison.net/2026/Aug/5/raccoon-heist/#atom-entries",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-08-05T19:42:38.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "15ab3de19849",
+      "title": "Lack of Agency – When the system swallows the human",
+      "link": "https://blog.crisp.se/2026/08/05/tomasbjorkholm/lack-of-agency-when-the-system-swallows-the-human",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2026-08-05T15:56:45.000Z",
+      "contentSnippet": "In my previous article, I explored the concept of agency — the capacity and freedom of individuals to act independently, make choices, and meaningfully influence their circumstances. But what does it look like when agency is entirely absent? I learned the hard way when I tried to…"
+    },
+    {
+      "id": "41d268902126",
+      "title": "If the Project Manager Was Disassembled, Who Answers to the Customer?",
+      "link": "https://www.scrum.org/resources/blog/if-project-manager-was-disassembled-who-answers-customer",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-05T13:52:11.000Z",
+      "contentSnippet": "Image A while ago I wrote that the Project Manager didn't die under Scrum. The role was taken apart on purpose, its responsibilities distributed across the Scrum Team, and some of them absorbed into the framework itself. Then Daniel Pokrývka read it on LinkedIn and asked the one…"
+    },
+    {
+      "id": "4e3a76965186",
+      "title": "Wenn Chatbots halluzinieren – wer haftet? So machen Scrum Teams ihre „Definition of Done“ KI-sicher",
+      "link": "https://www.scrum.org/resources/blog/wenn-chatbots-halluzinieren-wer-haftet-so-machen-scrum-teams-ihre-definition-done-ki-sicher",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-05T06:00:00.000Z",
+      "contentSnippet": "Braucht es noch Scrum Teams – jetzt, wo wir KI haben? Ich stelle mir diese Frage selbst und wahrscheinlich bin ich nicht der Einzige. Auf meiner Suche nach Antworten schaue ich auf die Menschen, die die agile Softwareentwicklung geprägt haben. Einer von ihnen ist Henrik. Henrik h…"
+    },
+    {
+      "id": "76c0869c87dd",
+      "title": "Thank You for 40 000 Stars on GitHub",
+      "link": "https://duckdb.org/2026/08/05/github-40k-stars.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-08-05T00:00:00.000Z",
+      "contentSnippet": "The duckdb/duckdb GitHub repository has just passed 40 000 stars! We’d like to use this milestone to stop for a moment and revisit recent developments in the DuckStack ecosystem since last summer (2025), when we surpassed 30 000 stars. Releases Since the last milestone, the DuckL…"
+    },
+    {
+      "id": "7c7dca1e7334",
+      "title": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging",
+      "link": "https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-entries",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-08-04T23:58:24.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "643029743c76",
+      "title": "The AWS AI-DLC: Why AI Coding Still Needs Human Accountability",
+      "link": "https://www.scrum.org/resources/blog/aws-ai-dlc-why-ai-coding-still-needs-human-accountability",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-04T15:03:07.000Z",
+      "contentSnippet": "Image Amazon Web Services recently published a paper defining the AI-Driven Development Lifecycle, or AI-DLC — a reimagined SDLC (Software Development Lifecycle) for a world where AI, not humans, initiates the workflow. I read it the way I read most new methodology proposals by h…"
+    },
+    {
+      "id": "17ffabfc7061",
+      "title": "Scrum and AI: AI Doesn’t Replace Scrum, It Sharpens its Focus",
+      "link": "https://www.scrum.org/resources/blog/scrum-and-ai-ai-doesnt-replace-scrum-it-sharpens-its-focus",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-04T13:33:06.000Z",
+      "contentSnippet": "Image Somewhere along the way, Scrum picked up a reputation it never earned. In today’s discussions about Scrum and AI, ask a room full of managers what Scrum is for, and most will say the same thing: it helps teams ship faster. That answer is so common it feels like fact. It is…"
+    },
+    {
+      "id": "a53d7074ed8a",
+      "title": "5 Questions Scrum Teams Ask All the Time",
+      "link": "https://www.scrum.org/resources/blog/5-questions-scrum-teams-ask-all-time",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-04T13:00:00.000Z",
+      "contentSnippet": "I've been teaching Scrum for a while now, and the same questions come up again and again. So if you're new to Scrum or just thinking about making the switch, here are five of the most common questions I hear about Scrum and how I answer them. 1. Do we still have managers in Scrum…"
+    },
+    {
+      "id": "b557000206d1",
+      "title": "Fragments: August  4",
+      "link": "https://martinfowler.com/fragments/2026-08-04.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-08-04T12:08:00.000Z",
+      "contentSnippet": "There’s been a fair bit of publicity of the Open AI “rogue agent” that hacked into Hugging Face. This prompted Anthropic to check what their models were up to and, to my complete lack of surprise, discovered three incidents where models had gained unauthorized access to data in o…"
+    },
+    {
+      "id": "30d8b85bea02",
+      "title": "What You Will Learn & Do in a PSM-AI Essentials Class",
+      "link": "https://www.scrum.org/resources/blog/what-you-will-learn-do-psm-ai-essentials-class",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-04T06:11:07.000Z",
+      "contentSnippet": "In this blog post, I extensively explain what exercises and activities you do in each session of a PSM-AI Essentials class, why you do them, what you learn, and ultimately what benefits you get from them. Image Session 1: Effective Communication with AI In this training, you will…"
+    },
+    {
+      "id": "2ce84f30b442",
+      "title": "I let an agent sign itself up to a cloud data warehouse, then replayed every step",
+      "link": "https://motherduck.com/blog/agent-signup-cloud-data-warehouse",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-08-04T00:00:00.000Z",
+      "contentSnippet": "AI agents can now provision a Postgres database, an email inbox or a data warehouse with no signup and no credit card. Here is how MotherDuck's agent signup endpoint works, and how motherduck.com/try lets you inspect, share and replay everything the agent did."
+    },
+    {
+      "id": "be0402b3fc9f",
+      "title": "Data Engineering Weekly #281",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-281",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-03T12:34:40.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "1b2a409a75ad",
+      "title": "How to check table sizes in a Microsoft Fabric warehouse",
+      "link": "https://data-mozart.com/how-to-check-table-sizes-in-a-microsoft-fabric-warehouse/?utm_source=rss&utm_medium=rss&utm_campaign=how-to-check-table-sizes-in-a-microsoft-fabric-warehouse",
+      "source": "Data Mozart",
+      "category": "Analytics",
+      "pubDate": "2026-08-03T10:23:38.000Z",
+      "contentSnippet": "If you've tried to check how much storage your Fabric warehouse tables consume, you've probably discovered that the usual SQL Server approaches don't work. This post explains why, what else doesn't work, and the one approach that does The post How to check table sizes in a Micros…"
+    },
+    {
+      "id": "fa7741334b51",
+      "title": "Survey: From Agile to a Product Operating Model: What Is Actually Changing?",
+      "link": "https://www.scrum.org/resources/blog/survey-agile-product-operating-model-what-actually-changing",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-03T09:52:51.000Z",
+      "contentSnippet": "Product Operating Model or Product Washing? Update 2026-08-10: The results of the survey are in; see Survey Results: Agile to the Product Operating Model. The debate over the Product Operating Model (POM) has a data problem. Most of us, including me, argue from the organizations…"
+    },
+    {
+      "id": "ccf4833e2826",
+      "title": "Data Integration, Migration & the Future of ETL in Microsoft Fabric — A Conversation with Wee Hyong Tok | Fabric Insider Ep. 9",
+      "link": "https://radacad.com/data-integration-migration-the-future-of-etl-in-microsoft-fabric-a-conversation-with-wee-hyong-tok-fabric-insider-ep-9/?utm_source=rss&utm_medium=rss&utm_campaign=data-integration-migration-the-future-of-etl-in-microsoft-fabric-a-conversation-with-wee-hyong-tok-fabric-insider-ep-9",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-08-02T23:58:47.000Z",
+      "contentSnippet": "Is ETL as we know it coming to an end? What is the real migration path from ADF, Synapse, or SSIS to Microsoft Fabric? And what does AI mean for the future of the ETL developer’s career? I sat down with Wee Hyong Tok — Partner Director of Product Management for Data Integration a…"
     },
     {
       "id": "e70bbfbc4b98",
@@ -30,13 +480,13 @@
       "contentSnippet": "Image Somewhere in a quarterly business review this month, a technology leader is presenting a genuinely impressive number. Pull requests up. Features shipped, way up. The AI tooling landed last year and the output curve bent hard. Then someone from finance asks what all of it di…"
     },
     {
-      "id": "6d58997b466c",
-      "title": "Ten advances in mathematics and theoretical computer science",
-      "link": "https://openai.com/index/ten-advances-in-mathematics",
-      "source": "OpenAI Blog",
-      "category": "AI",
+      "id": "e0449a003f89",
+      "title": "OpenAI Just Made Analytics 10x Cheaper",
+      "link": "https://motherduck.com/blog/openai-just-made-analytics-10x-cheaper",
+      "source": "MotherDuck",
+      "category": "Data",
       "pubDate": "2026-08-01T00:00:00.000Z",
-      "contentSnippet": "OpenAI shares new results on long-standing open problems in mathematics and theoretical computer science, including advances in geometry, cryptography, and complexity."
+      "contentSnippet": "Since OpenAI slashed the price of GPT 5.6 Luna by 80% this week, low latency AI-powered answers are finally feasible for less than half a penny per answer, AI and DB costs included. For data questions, GPT 5.6 Luna is intelligence too cheap to meter. Well documented context, rigo…"
     },
     {
       "id": "83cc35aa7317",
@@ -46,33 +496,6 @@
       "category": "AI",
       "pubDate": "2026-07-31T23:13:22.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "3ab87184f2b7",
-      "title": "Backstage with Lakebase, part 3",
-      "link": "https://www.databricks.com/blog/backstage-lakebase-part-3",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-31T22:21:47.000Z",
-      "contentSnippet": "In the first part of this series, running Backstage on Databricks Lakebase gave us..."
-    },
-    {
-      "id": "b86dc435d64a",
-      "title": "Advancing responsible AI across Europe",
-      "link": "https://openai.com/index/advancing-responsible-ai-across-europe",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-31T15:00:00.000Z",
-      "contentSnippet": "OpenAI shares how its safety, security, transparency, and provenance practices support responsible AI governance in Europe. The work will continue as the EU AI Act advances."
-    },
-    {
-      "id": "6e145b017b5a",
-      "title": "Building abundant intelligence",
-      "link": "https://openai.com/index/building-abundant-intelligence",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-31T15:00:00.000Z",
-      "contentSnippet": "A full-stack approach to making advanced AI more capable, more affordable, and more widely useful."
     },
     {
       "id": "1130e94af268",
@@ -91,24 +514,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-31T10:03:06.000Z",
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
-    },
-    {
-      "id": "487981959078",
-      "title": "Univé builds an AI-ready workforce",
-      "link": "https://openai.com/index/unive",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-31T07:00:00.000Z",
-      "contentSnippet": "See how Univé built an AI-ready workforce with ChatGPT Enterprise by combining leadership, responsible governance, and employee-led innovation to transform work at scale."
-    },
-    {
-      "id": "c5ad624a6ffb",
-      "title": "Disrupting a Criminal Scam Operation",
-      "link": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "OpenAI disrupted a Cambodia-based scam operation using ChatGPT to support investment, romance, gambling, and impersonation schemes."
     },
     {
       "id": "e30c19ad366e",
@@ -147,24 +552,6 @@
       "contentSnippet": "Image This is what a colleague said to me once. Hey, I’m not religious about Scrum, and if it really didn’t work, that’s really fine with me — but in my experience Scrum is so deliberately lightweight that if it isn’t working, it probably isn’t the framework itself, but gaps or d…"
     },
     {
-      "id": "239d3a4cde9f",
-      "title": "Foundations for an AI-forward healthcare organization",
-      "link": "https://www.databricks.com/blog/foundations-ai-forward-healthcare-organization",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-30T19:30:00.000Z",
-      "contentSnippet": "The challenge for healthcare executives adopting AI is the noise when trying to advance an initiative..."
-    },
-    {
-      "id": "f609ca412d70",
-      "title": "Agentic media buying cannot scale without the right foundation. See how buyers and sellers get there on Databricks.",
-      "link": "https://www.databricks.com/blog/agentic-media-buying-cannot-scale-without-right-foundation-see-how-buyers-and-sellers-get",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-30T19:10:00.000Z",
-      "contentSnippet": "The bottleneck in media buying today isn't talent, it's coordinationEvery day, billions..."
-    },
-    {
       "id": "dafe9a2bbb83",
       "title": "The Economic Benefit of Refactoring",
       "link": "https://martinfowler.com/articles/exploring-gen-ai/refactoring-economic-benefit.html",
@@ -192,96 +579,6 @@
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
     },
     {
-      "id": "fc362ba711f5",
-      "title": "Advancing the price-performance frontier with GPT-5.6",
-      "link": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-30T10:00:00.000Z",
-      "contentSnippet": "Explore lower GPT‑5.6 pricing for Luna and Terra—and how OpenAI’s more efficient models help enterprises deploy AI workflows at scale."
-    },
-    {
-      "id": "c1ce6f8c6fdb",
-      "title": "Convert proprietary code to open ANSI SQL with Genie Code",
-      "link": "https://www.databricks.com/blog/convert-proprietary-code-open-ansi-sql-genie-code",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-30T01:00:00.000Z",
-      "contentSnippet": "Migrating from a legacy data warehouse is a complex undertaking, requiring teams..."
-    },
-    {
-      "id": "9146ff1756af",
-      "title": "How avatarin built a 24/7 retail agent with GPT-Realtime",
-      "link": "https://openai.com/index/avatarin",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-30T00:00:00.000Z",
-      "contentSnippet": "avatarin uses OpenAI’s GPT-Realtime to give Yamada Denki shoppers 24/7 multilingual support. In two weeks, 30,000 people used the agent and 92% of survey responses were positive."
-    },
-    {
-      "id": "27cf2ddf08b3",
-      "title": "NBCUniversal’s Seamless Migration: Unlocking Scalable Analytics with Databricks",
-      "link": "https://www.databricks.com/blog/nbcuniversals-seamless-migration-unlocking-scalable-analytics-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T20:35:57.000Z",
-      "contentSnippet": "As one of the world's leading media and entertainment companies, NBCUniversal relies..."
-    },
-    {
-      "id": "743f087f11a5",
-      "title": "Quality care is the mission. Finance protects the margin.",
-      "link": "https://www.databricks.com/blog/quality-care-mission-finance-protects-margin",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T18:59:31.000Z",
-      "contentSnippet": "Ask a health system CFO where this year's margin is landing and you will always get a hard-won answer..."
-    },
-    {
-      "id": "fc2806865e72",
-      "title": "Energy runs on volatile markets. Finance protects the margin.",
-      "link": "https://www.databricks.com/blog/energy-runs-volatile-markets-finance-protects-margin",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T18:30:00.000Z",
-      "contentSnippet": "Ask an energy CFO where this year's margin is landing and you will always get a hard-won answer..."
-    },
-    {
-      "id": "4aefe89265ae",
-      "title": "Manufacturing runs on capital. Finance protects the margin.",
-      "link": "https://www.databricks.com/blog/manufacturing-runs-capital-finance-protects-margin",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T18:30:00.000Z",
-      "contentSnippet": "Ask a manufacturing CFO where this year's margin is landing and you will always get a hard-won answer..."
-    },
-    {
-      "id": "67df04d87492",
-      "title": "Bringing real-time fraud prevention to government benefits",
-      "link": "https://www.databricks.com/blog/bringing-real-time-fraud-prevention-government-benefits",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T17:45:00.000Z",
-      "contentSnippet": "Asked to do the impossibleFraud and improper payments cost federal benefits programs..."
-    },
-    {
-      "id": "a1c3f089efaf",
-      "title": "Agents for production lines: Trusted decisions in real time",
-      "link": "https://www.databricks.com/blog/agents-production-lines-trusted-decisions-real-time",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-07-29T17:30:00.000Z",
-      "contentSnippet": "Executive summary09:14, mid-shift. The filler trips. The line manager has minutes,..."
-    },
-    {
-      "id": "cc8e132c6199",
-      "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark",
-      "link": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-07-29T15:00:00.000Z",
-      "contentSnippet": "How two API settings improved GPT-5.6 performance on ARC-AGI-3, boosting scores and efficiency by retaining reasoning and enabling compaction."
-    },
-    {
       "id": "0a11c907adfc",
       "title": "Context belongs in the warehouse",
       "link": "https://motherduck.com/blog/context-belongs-in-the-warehouse",
@@ -300,6 +597,15 @@
       "contentSnippet": "Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…"
     },
     {
+      "id": "fb549b859ee4",
+      "title": "Leading Agile Initiatives: How Leaders Help Agile Change Succeed",
+      "link": "https://www.mountaingoatsoftware.com/agile/leading-agile-initiatives-how-leaders-help-agile-change-succeed",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-07-28T16:00:00.000Z",
+      "contentSnippet": "An agile initiative is not mainly a one-time rollout of Scrum, Kanban, SAFe, Jira, new job titles, or a different meeting calendar."
+    },
+    {
       "id": "62b7a2b2ead0",
       "title": "The Orchestrator's Tax",
       "link": "https://martinfowler.com/articles/orchestrator-tax.html",
@@ -307,15 +613,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-28T13:10:00.000Z",
       "contentSnippet": "Subagents get justified by time saved and parallel execution, but Rahul Garg explains that's not what matters most. Every token in the orchestrator's context is competing for its attention, and the real value of a subagent is what it keeps out of that context. Subagents should be…"
-    },
-    {
-      "id": "0734e88560bd",
-      "title": "Leading Agile Initiatives: How Leaders Help Agile Change Succeed",
-      "link": "https://www.mountaingoatsoftware.com/blog/leading-agile-initiatives",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-07-28T13:00:00.000Z",
-      "contentSnippet": "An agile initiative is not mainly a one-time rollout of Scrum, Kanban, SAFe, Jira, new job titles, or a different meeting calendar."
     },
     {
       "id": "885ea4719919",
@@ -354,33 +651,6 @@
       "contentSnippet": "Visual calculations can either improve or degrade the performance of a report. In this article, we outline how we ensure visual calculations have a positive impact on performance. The goal of visual calculations is to simplify some reports and calculations,…"
     },
     {
-      "id": "797b9c482989",
-      "title": "Understand Yourself Deeply: Why Scrum Masters Decide to Learn AI",
-      "link": "https://www.scrum.org/resources/blog/understand-yourself-deeply-why-scrum-masters-decide-learn-ai",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-27T14:15:39.000Z",
-      "contentSnippet": "This blog post is like a customer discovery to deeply understand a Scrum Master’s fears, anxieties, hopes, dreams, … in the age of AI. Image In February 2026, Scrum.org released its AI course for Scrum Masters named PSM-AI Essentials. Since then, many Scrum Masters have participa…"
-    },
-    {
-      "id": "731eb6a240e9",
-      "title": "Managing AI Risks in your Definition of Done",
-      "link": "https://www.scrum.org/resources/blog/managing-ai-risks-your-definition-done",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-27T13:50:13.000Z",
-      "contentSnippet": "It passed every check. The automated tests were green. The code review was done. The acceptance criteria were met. The feature was deployed to staging and behaved exactly as described in the ticket. By every measure the team had, this work was done. Then it hit production. Within…"
-    },
-    {
-      "id": "093994b2415f",
-      "title": "How to Avoid AI Debt by Borrowing from Agile Artifacts",
-      "link": "https://www.scrum.org/resources/blog/how-avoid-ai-debt-borrowing-agile-artifacts",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-27T09:16:33.000Z",
-      "contentSnippet": "TL; DR: Reusing Agile Artifacts to Avoid Accumulating AI Debt In this video from the 76th Hands-on Agile Meetup, I walk you through the A3 Delegation System and show how it helps avoid AI debt by borrowing artifacts and practices from Agile, such as the Definition of Done and Ret…"
-    },
-    {
       "id": "144c71381790",
       "title": "Data Engineering Weekly #280",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-280",
@@ -390,15 +660,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "c82d88ed2c22",
-      "title": "The Project Manager Isn't Dead. It Was Disassembled on Purpose!",
-      "link": "https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-27T02:16:33.000Z",
-      "contentSnippet": "Image I see it everywhere. In LinkedIn posts, in heated comment threads, and maybe most tellingly, in job descriptions that quietly list \"Scrum Master / Project Manager\" as if the slash were doing no work at all. The framing is always the same: Scrum Master versus Project Manager…"
-    },
-    {
       "id": "9f106d335bd4",
       "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
       "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
@@ -406,60 +667,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-26T21:13:48.000Z",
       "contentSnippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
-    },
-    {
-      "id": "90546cd0bf78",
-      "title": "The Pyramid of Impediments",
-      "link": "https://www.scrum.org/resources/blog/pyramid-impediments",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-26T16:50:18.000Z",
-      "contentSnippet": "Introduction The Pyramid of Impediments is a decision framework for Scrum Masters, Agile Coaches and other agile leaders. Every agile leader eventually encounters the same situations: A Scrum Team struggles with Sprint Planning, technical debt continues to grow, conflicts remain…"
-    },
-    {
-      "id": "b16d2df3ce85",
-      "title": "Culture Follows Structure. Most Transformations Bet the Other Way.",
-      "link": "https://www.scrum.org/resources/blog/culture-follows-structure-most-transformations-bet-other-way",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-26T06:00:00.000Z",
-      "contentSnippet": "Image Two companies start an agile transformation in the same quarter. Same training provider, same skilled coaches, same framework, comparable budgets, equally sincere executives. Three years later one of them ships weekly, kills bad bets early, and holds onto its best people. T…"
-    },
-    {
-      "id": "add82b419e20",
-      "title": "Do Inicio ao Empreendedor - A Evolução da Carreira de Product Owner",
-      "link": "https://www.scrum.org/resources/blog/do-inicio-ao-empreendedor-evolucao-da-carreira-de-product-owner",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-24T18:35:02.000Z",
-      "contentSnippet": "Simplificando a Jornada do Product Owner: Do Caos do Início à Liderança Estratégica Por Matheus Reis Professional Scrum Trainer (PST) Image Introdução: Dois Caminhos, o Mesmo Ponto de Partida Se você atua no mercado de tecnologia ou está tentando construir sua carreira nele, é mu…"
-    },
-    {
-      "id": "1dc0e8a7b9a4",
-      "title": "Nobody Believes your Values Page. They're Watching the Deeds.",
-      "link": "https://www.scrum.org/resources/blog/nobody-believes-your-values-page-theyre-watching-deeds",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-23T22:00:00.000Z",
-      "contentSnippet": "Every organization will tell you what it values. There's usually a poster. The poster has a competitor, though, and the competitor wins every time. Leadership says \"we trust our teams to decide,\" and the org chart sends every decision over five thousand euros to a committee that…"
-    },
-    {
-      "id": "6027c837dbc7",
-      "title": "How to Manage Product Risk When You Can’t Predict Everything",
-      "link": "https://www.scrum.org/resources/blog/how-manage-product-risk-when-you-cant-predict-everything",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-23T13:09:13.000Z",
-      "contentSnippet": "Image When working on a product, it is very easy to fall into the trap of thinking that good risk management is mainly about predicting everything in advance. In practice, that rarely works. In my work with product teams, leaders, and management, I often see the same problem: org…"
-    },
-    {
-      "id": "f6b1df9a5234",
-      "title": "Flow Metrics in Python: 3 Scripts for Ensuring Transparency",
-      "link": "https://www.scrum.org/resources/blog/flow-metrics-python-3-scripts-ensuring-transparency",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-23T11:46:59.000Z",
-      "contentSnippet": "Image Scrum rests on empiricism: transparency enables inspection, and inspection enables adaptation. Most Scrum Teams I work with are reasonably good at inspection and adaptation. Where they struggle is the first one. Transparency is not the same as having a tool. A board shows w…"
     },
     {
       "id": "8ab3a4be8a66",
@@ -705,21 +912,12 @@
       "contentSnippet": "We had Fabric. Then Real-Time Intelligence. Now Fabric IQ. What comes next? That is the question I most wanted answered when I sat down with Yitzhak Kesselman — Corporate Vice President for Real-Time Intelligence at Microsoft Fabric. Yitzhak leads not only Fabric RTI and Fabric I…"
     },
     {
-      "id": "897da200c5dc",
-      "title": "sqlite-utils 4.0, now with database schema migrations",
-      "link": "https://simonwillison.net/2026/Jul/7/sqlite-utils-4/#atom-entries",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-07T19:32:57.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "672138134936",
+      "id": "6fba33e882ab",
       "title": "Focusing Where We Can Have the Most Impact",
-      "link": "https://www.mountaingoatsoftware.com/blog/focusing-where-we-can-have-the-most-impact",
+      "link": "https://www.mountaingoatsoftware.com/agile/focusing-where-we-can-have-the-most-impact",
       "source": "Mountain Goat Software",
       "category": "Delivery",
-      "pubDate": "2026-07-07T13:00:00.000Z",
+      "pubDate": "2026-07-07T16:00:00.000Z",
       "contentSnippet": "Mountain Goat Software is shifting its training and coaching focus to private client work, where teams and leaders can apply agile to their real challenges."
     },
     {
@@ -786,15 +984,6 @@
       "contentSnippet": "A few months ago I wrote about a rare error – the “Maximum allowable memory allocation” error – that may occur when the physical machine, or node, that a semantic model is running on in the Power BI Service comes under memory pressure. Recently, someone I was working with who was…"
     },
     {
-      "id": "3eb20621a421",
-      "title": "sqlite-utils 4.0rc2, mostly written by Claude Fable (for about $149.25)",
-      "link": "https://simonwillison.net/2026/Jul/5/sqlite-utils-fable/#atom-entries",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-05T01:00:48.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "38e39f8dbc40",
       "title": "Announcing leetdata.ai — A Practice Ground for Data Engineers",
       "link": "https://www.dataengineeringweekly.com/p/announcing-leetdataai-a-practice",
@@ -813,13 +1002,13 @@
       "contentSnippet": "Microsoft is moving Fabric Warehouse CU metering from per-query CPU time to per-workspace virtual-node time. That brings Fabric closer to Snowflake and Databricks, but it also changes the cost equation: dense workloads may benefit, while sparse, chatty workloads could get a surpr…"
     },
     {
-      "id": "baea40580e60",
-      "title": "Have your agent record video demos of its work with shot-scraper video",
-      "link": "https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-entries",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-06-30T16:54:26.000Z",
-      "contentSnippet": ""
+      "id": "37fce4461ebd",
+      "title": "We Tried Agile and It Didn’t Work",
+      "link": "https://www.mountaingoatsoftware.com/agile/we-tried-agile-and-it-didnt-work",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-06-30T16:00:00.000Z",
+      "contentSnippet": "“We tried agile and it didn’t work” is one of the most revealing things a leader can hear."
     },
     {
       "id": "67d4c736c8d1",
@@ -829,15 +1018,6 @@
       "category": "Data",
       "pubDate": "2026-06-30T13:58:14.000Z",
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
-    },
-    {
-      "id": "27794a118f0d",
-      "title": "We Tried Agile and It Didn’t Work",
-      "link": "https://www.mountaingoatsoftware.com/blog/we-tried-agile-and-it-didnt-work",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-06-30T13:00:00.000Z",
-      "contentSnippet": "“We tried agile and it didn’t work” is one of the most revealing things a leader can hear."
     },
     {
       "id": "18ea580d4b89",
@@ -930,6 +1110,15 @@
       "contentSnippet": "The DiveMaxxing winners, and what 48 community Dives taught us about what separates a great data visualization from one that just looks polished."
     },
     {
+      "id": "c3f09e9cfbda",
+      "title": "Why Scrum Isn’t Working Even Though You’re Doing Scrum",
+      "link": "https://www.mountaingoatsoftware.com/agile/why-scrum-isnt-working",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-06-23T16:00:00.000Z",
+      "contentSnippet": "Story splitting helps teams turn large user stories into smaller, valuable pieces they can finish within a sprint without turning them into tasks."
+    },
+    {
       "id": "522c77dc8832",
       "title": "The Dagster Almanack: From Complexity to Composability",
       "link": "https://dagster.io/blog/the-dagster-almanack-from-complexity-to-composability",
@@ -937,15 +1126,6 @@
       "category": "Data",
       "pubDate": "2026-06-23T14:44:57.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "e989675781a3",
-      "title": "Why Scrum Isn’t Working Even Though You’re Doing Scrum",
-      "link": "https://www.mountaingoatsoftware.com/blog/why-scrum-isnt-working",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-06-23T13:00:00.000Z",
-      "contentSnippet": "When Scrum feels heavy, the problem is rarely the framework alone. This article shows how interruptions, weak focus, hidden tradeoffs, and too many rules keep teams from getting Scrum’s benefits."
     },
     {
       "id": "a261589c9ec9",
@@ -1128,15 +1308,6 @@
       "contentSnippet": "Build, deploy, and schedule Python data pipelines from a prompt, a SQL function, or the MotherDuck UI."
     },
     {
-      "id": "7060f9fa361e",
-      "title": "Fabric Spark: Custom Live Pools, Resource Profiles & Performance Fixes — A Conversation with Santhosh Kumar Ravindran | Fabric Insider Ep. 4",
-      "link": "https://radacad.com/fabric-spark-custom-live-pools-resource-profiles-performance-fixes-a-conversation-with-santhosh-kumar-ravindran-fabric-insider-ep-4/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-spark-custom-live-pools-resource-profiles-performance-fixes-a-conversation-with-santhosh-kumar-ravindran-fabric-insider-ep-4",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-06-09T13:53:10.000Z",
-      "contentSnippet": "Fabric Insider Series | Episode 4 | Interview with Santhosh Kumar Ravindran, Principal Product Manager, Microsoft Fabric Data Engineering at Microsoft 📺 Watch the full episode on YouTube: Fabric Insider Ep. 4 — Fabric Spark with Santhosh Kumar Ravindran 🎧 Listen on Spotify: Fab…"
-    },
-    {
       "id": "d8f48e2feb16",
       "title": "How to Orchestrate dbt with Dagster",
       "link": "https://dagster.io/blog/orchestrating-dbt-with-dagster",
@@ -1245,15 +1416,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "91f0cfa07530",
-      "title": "Fabric Dataflows Gen2 And Concurrent Evaluation, Part 2: Partitioned Compute",
-      "link": "https://blog.crossjoin.co.uk/2026/05/31/fabric-dataflows-gen2-and-concurrent-evaluation-part-2-partitioned-compute/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-05-31T16:38:38.000Z",
-      "contentSnippet": "In the first part of this series I showed how the Concurrency setting in a Fabric Dataflows Gen2 can affect refresh performance when there are multiple queries inside the dataflow. In this post I will show how, with Partitioned Compute, this setting can also affect the performanc…"
-    },
-    {
       "id": "12596e9488ac",
       "title": "Beyond “Taking Responsibility”: Why Leading for Agency is the Future of Modern Management",
       "link": "https://blog.crisp.se/2026/05/31/tomasbjorkholm/beyond-taking-responsibility-why-leading-for-agency-is-the-future-of-modern-management",
@@ -1261,15 +1423,6 @@
       "category": "Delivery",
       "pubDate": "2026-05-31T09:12:14.000Z",
       "contentSnippet": "In recent years, a new word has steadily climbed the ranks of leadership literature and corporate strategy sessions: Agency. While many managers intuitively grasp that it has something to do with employees taking ownership, the concept goes far deeper than simply “taking responsi…"
-    },
-    {
-      "id": "516cc8d8833e",
-      "title": "No Code Power BI: How to Use Claude and the Power BI Modeling MCP Server",
-      "link": "https://radacad.com/no-code-power-bi-how-to-use-claude-and-the-power-bi-modeling-mcp-server/?utm_source=rss&utm_medium=rss&utm_campaign=no-code-power-bi-how-to-use-claude-and-the-power-bi-modeling-mcp-server",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-05-30T12:09:23.000Z",
-      "contentSnippet": "What if you could build a complete Power BI semantic model — date table, time intelligence measures, relationships and all — without touching Power BI Desktop at all? Not a future roadmap item. Not a preview feature. Something you can set up today. In this article, I am going to…"
     },
     {
       "id": "8bfee7812037",
@@ -1288,15 +1441,6 @@
       "category": "Data",
       "pubDate": "2026-05-29T00:00:00.000Z",
       "contentSnippet": "Despite the work required to develop the features needed for DuckLake v1.0 and Quack, the DuckLabs team is still hard at work on the DuckDB-Iceberg extension. In this blog post, we will demonstrate some of the features that are available in DuckDB v1.5.3. Many of these features w…"
-    },
-    {
-      "id": "7f4477b33645",
-      "title": "Announcing DiveMaxxing: An Online Data Viz Hackathon",
-      "link": "https://motherduck.com/blog/divemaxxing-data-viz-contest",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-05-28T00:00:00.000Z",
-      "contentSnippet": "DiveMaxxing is an online data viz competition for MotherDuck Dives. Three categories, duckified Mac Minis on the line, and a community vote. Free to enter through June 22."
     },
     {
       "id": "7dad134cf838",
@@ -1344,15 +1488,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "fe20d20dc16c",
-      "title": "Public Training Schedule Changes: Your Last Chance to Take a Public Class",
-      "link": "https://www.mountaingoatsoftware.com/blog/public-training-schedule-changes-your-last-chance-to-take-a-public-class",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-05-22T16:00:00.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "c4a51fbdcc47",
       "title": "We Tried ty for Performance. It Found Real Bugs",
       "link": "https://dagster.io/blog/we-tried-ty-for-performance-it-found-real-bugs",
@@ -1380,24 +1515,6 @@
       "contentSnippet": "With the lance extension, DuckDB users can query Lance datasets with the same familiar SQL interface (via the CLI or SDKs), while adding capabilities for AI and retrieval workloads. This blog post highlights how Lance is a good option for workloads that need to support storage an…"
     },
     {
-      "id": "f3d4c46bb167",
-      "title": "Plan Mode All the Time, Substrait over SQL, and the End of the DE Role ft. Chris Riccomini",
-      "link": "https://motherduck.com/blog/cost-as-tokens-substrait-llm-chris-riccomini",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-05-21T00:00:00.000Z",
-      "contentSnippet": "Chris Riccomini on using AI for data engineering: correctness in financial data, why LLMs should speak Substrait over SQL, the Ralph Loop for context management, security with 'Okta for Agents', and the future of the data engineer role."
-    },
-    {
-      "id": "0966da8f2909",
-      "title": "Three more static code analysis sensors",
-      "link": "https://martinfowler.com/articles/sensors-for-coding-agents.html#StaticCodeAnalysisDependencyRules",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-20T14:27:00.000Z",
-      "contentSnippet": "Birgitta Böckeler adds discussion of three more sensors for static code analysis, focusing on checking and enforcing better modularity. Computational sensors for dependency checks were good at enforcing rules, but the rules were limited. Building a computational sensor for coupli…"
-    },
-    {
       "id": "e9f1993d244f",
       "title": "CLUSTER BY in Fabric Warehouse: when the magic shows up and when it doesn’t!",
       "link": "https://data-mozart.com/cluster-by-in-fabric-warehouse-when-the-magic-shows-up-and-when-it-doesnt/?utm_source=rss&utm_medium=rss&utm_campaign=cluster-by-in-fabric-warehouse-when-the-magic-shows-up-and-when-it-doesnt",
@@ -1414,24 +1531,6 @@
       "category": "Data",
       "pubDate": "2026-05-20T00:00:00.000Z",
       "contentSnippet": "In this blog post, we highlight a few important features shipped in DuckDB v1.5.3, the third patch release in DuckDB's v1.5 line. You can find the complete release notes on GitHub. To install the new version, please visit the installation page. What's New While DuckDB v1.5.3 is a…"
-    },
-    {
-      "id": "356f0193fc2e",
-      "title": "Maintainability sensors for coding agents",
-      "link": "https://martinfowler.com/articles/sensors-for-coding-agents.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-19T16:38:00.000Z",
-      "contentSnippet": "In her recent article about harness engineering for coding agent users, Birgitta Böckeler laid out a mental model for expanding a coding agent harness: a system of guides and sensors that increase the probability of good agent outputs and enable self-correction before issues reac…"
-    },
-    {
-      "id": "5d75679b1176",
-      "title": "Story Splitting: How To Split User Stories So Teams Can Finish",
-      "link": "https://www.mountaingoatsoftware.com/blog/story-splitting-how-to-split-user-stories-so-teams-can-finish",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-05-19T14:00:00.000Z",
-      "contentSnippet": "Story splitting helps teams turn large user stories into smaller, valuable pieces they can finish within a sprint without turning them into tasks."
     },
     {
       "id": "9f64a5c7797f",
@@ -1470,15 +1569,6 @@
       "contentSnippet": "Background: Database Architectures When databases first emerged, there was no distinction between a ‘client’ and a ‘server’, the whole database just ran on a single computer. Somewhere in the 80s, Sybase was the first to introduce the concept of a database ‘server’ and a ‘client’…"
     },
     {
-      "id": "635cc8a72c0a",
-      "title": "If It Quacks Like a Duck: the DuckDB Client-Server Protocol",
-      "link": "https://motherduck.com/blog/duckdb-client-server",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-05-12T00:00:00.000Z",
-      "contentSnippet": "DuckDB Labs announced Quack, a client-server protocol for DuckDB. Here's why we're excited, what it means for MotherDuck, and why it's so great for the DuckDB community."
-    },
-    {
       "id": "d7467a984a4b",
       "title": "Data Engineering Weekly #269",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-269",
@@ -1506,22 +1596,13 @@
       "contentSnippet": "We are excited to announce the program of DuckCon #7 Amsterdam, DuckDB's user conference. The event will be held on Wednesday, June 24, 2026, at the Royal Tropical Institute. The program runs from 15:00 to 20:00 CEST. See the registration link and the full program on the DuckCon…"
     },
     {
-      "id": "37fcb095cf9b",
-      "title": "Delta Grows Up: Writes, Unity Catalog and Time Travel",
-      "link": "https://duckdb.org/2026/05/07/delta-uc-updates.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-05-07T00:00:00.000Z",
-      "contentSnippet": "Welcome back! While we here at DuckLabs are typically of the quacking persuasion, we’ve been busy as beavers, shoring up our Delta to prepare for what’s next… Unity Catalog! Let’s look at how DuckDB’s Delta and Unity Catalog extensions have grown up enough to shed the experimenta…"
-    },
-    {
-      "id": "91e2135e9837",
+      "id": "7094ef6f8071",
       "title": "When Planning Should Become A Shared Problem",
-      "link": "https://www.mountaingoatsoftware.com/blog/when-planning-should-become-a-shared-problem",
+      "link": "https://www.mountaingoatsoftware.com/agile/when-planning-should-become-a-shared-problem",
       "source": "Mountain Goat Software",
       "category": "Delivery",
       "pubDate": "2026-05-05T13:00:00.000Z",
-      "contentSnippet": "When a leader asks for a set of features by a given date, that should be the start of a conversation, not the end of one."
+      "contentSnippet": "Turn planning pressure into a shared conversation about options and tradeoffs."
     },
     {
       "id": "5630cb4150db",
@@ -1542,15 +1623,6 @@
       "contentSnippet": "A slicer cannot filter a measure. In this article, we analyze this common request by explaining how to use a slicer to filter a measure, after discussing the real meaning of using a measure with a slicer. A very common…"
     },
     {
-      "id": "eec9f031b397",
-      "title": "Course Gear from Our In-Person Classes — Now Available",
-      "link": "https://www.mountaingoatsoftware.com/blog/course-gear-from-our-in-person-classes-now-available",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-05-04T17:42:00.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "144cddd0cbf7",
       "title": "Data Engineering Weekly #268",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-268",
@@ -1569,13 +1641,13 @@
       "contentSnippet": "Manage Dagster+ deployments, permissions, and alerting as code with the new Terraform provider. Bring consistency, reviewability, and automation to your data platform."
     },
     {
-      "id": "5dd2dc9f7bd5",
+      "id": "6f76b0ce92bb",
       "title": "How the Story Critic AI Skill Helps Teams Write Better Backlog Items",
-      "link": "https://www.mountaingoatsoftware.com/blog/story-critic-skill-better-backlog-items",
+      "link": "https://www.mountaingoatsoftware.com/agile/story-critic-skill-better-backlog-items",
       "source": "Mountain Goat Software",
       "category": "Delivery",
       "pubDate": "2026-04-28T13:00:00.000Z",
-      "contentSnippet": "See how the Story Critic skill coaches teams toward clearer, more testable backlog items and better refinement conversations, using examples of a simple story, a story with acceptance criteria, and a batch review of one Zoom backlog."
+      "contentSnippet": "See how AI coaching can help teams write clearer, smaller, more testable backlog items."
     },
     {
       "id": "9bc00867b4ad",
@@ -1650,40 +1722,13 @@
       "contentSnippet": "A reference framework for naming everything in Microsoft Fabric - from capacities down to gold-layer fact tables. Patterns, examples, and strong opinions. The post The Name Game – Naming Microsoft Fabric from tenant to table appeared first on Data Mozart."
     },
     {
-      "id": "6c5aefb2f922",
-      "title": "Data Engineering Weekly #266",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-266",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-04-20T03:09:39.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "b371c77b137b",
-      "title": "A Response to Our Reader Survey",
-      "link": "https://www.dataengineeringweekly.com/p/a-response-to-our-reader-survey",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-04-15T16:26:18.000Z",
-      "contentSnippet": "Your feedback prompted us to review 233 articles across 25 issues, clarify our editorial scope, and raise the bar for what belongs in Data Engineering Weekly."
-    },
-    {
-      "id": "abc900131abb",
+      "id": "62d682fc18ad",
       "title": "Why Smart Teams Overcommit And How Leaders Make It Worse",
-      "link": "https://www.mountaingoatsoftware.com/blog/why-smart-teams-overcommit",
+      "link": "https://www.mountaingoatsoftware.com/agile/why-smart-teams-overcommit",
       "source": "Mountain Goat Software",
       "category": "Delivery",
       "pubDate": "2026-04-14T14:00:00.000Z",
-      "contentSnippet": "This article is for leaders who want honest plans from teams without pressuring them into false certainty."
-    },
-    {
-      "id": "cf05c5ebdcca",
-      "title": "Data Engineering Weekly #265",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-265",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-04-13T03:24:30.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
+      "contentSnippet": "Understand how leader pressure can push smart teams into unrealistic commitments."
     },
     {
       "id": "1a3d55c13001",
@@ -1702,24 +1747,6 @@
       "category": "Analytics",
       "pubDate": "2026-04-07T10:00:00.000Z",
       "contentSnippet": "How to highlight a row based solely on the maximum value in the last column using visual calculations, a tool that can be used efficiently to format visuals."
-    },
-    {
-      "id": "4c089de9d78c",
-      "title": "How to navigate the lattice of visual calculations",
-      "link": "https://www.sqlbi.com/tv/how-to-navigate-the-lattice-of-visual-calculations/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-04-06T20:00:24.000Z",
-      "contentSnippet": "This video explains how to navigate the lattice of visual calculations in DAX. The visual context goes beyond the row context and filter context by adding the concept of levels within the lattice. The video shows how to use COLLAPSEALL…"
-    },
-    {
-      "id": "268887b85951",
-      "title": "Using visual calculations to highlight an entire row",
-      "link": "https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-04-06T20:00:04.000Z",
-      "contentSnippet": "Visual calculations can be used efficiently to format visuals. This article presents an interesting technique to highlight a row based solely on the maximum value in the last column. When it comes to visuals, users may want to specific cells…"
     },
     {
       "id": "df2be5bd8dc6",
@@ -1747,24 +1774,6 @@
       "category": "Data",
       "pubDate": "2026-04-02T20:43:14.000Z",
       "contentSnippet": "How we added support for the dbt Fusion engine in the Dagster dbt integration"
-    },
-    {
-      "id": "5576019ef257",
-      "title": "Your GTM Data, Finally Untangled | Dagster Compass",
-      "link": "https://dagster.io/blog/your-gtm-data-finally-untangled",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-04-02T20:43:11.000Z",
-      "contentSnippet": "Connect Salesforce, Google Ads, and Gong to Compass and ask questions in Slack. No dashboards, no SQL, no tickets. Get real answers from your GTM data in seconds."
-    },
-    {
-      "id": "b0dc3a79c9be",
-      "title": "What now for Power BI? The question I can’t escape",
-      "link": "https://data-mozart.com/what-now-for-power-bi-the-question-i-cant-escape/?utm_source=rss&utm_medium=rss&utm_campaign=what-now-for-power-bi-the-question-i-cant-escape",
-      "source": "Data Mozart",
-      "category": "Analytics",
-      "pubDate": "2026-04-01T14:05:08.000Z",
-      "contentSnippet": "Everyone keeps asking me the same question: what now for Power BI? With Microsoft Fabric reshaping its identity and AI-generated dashboards challenging its visual layer, the answer isn't as comfortable as it used to be. Here's my honest take on where Power BI stands today, what's…"
     },
     {
       "id": "9f49ee93f8a0",
@@ -1803,6 +1812,15 @@
       "contentSnippet": "We're launching a new podcast called \"The Shift,\" which does exactly that. Grounded in questions we heard from you after Ignite news, we're releasing eight episodes that bring engineering, product, and strategy perspectives together. The post Unpacking your top questions on agent…"
     },
     {
+      "id": "2ca996a8d7cd",
+      "title": "The Cost of Change Curve Is Outdated",
+      "link": "https://www.mountaingoatsoftware.com/agile/the-cost-of-change-curve-is-outdated",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-03-03T14:00:00.000Z",
+      "contentSnippet": "The cost-of-change curve isn’t what it used to be—modern tools, agile practices, and AI have dramatically flattened it."
+    },
+    {
       "id": "fa6a6191b9f6",
       "title": "Top sessions you won’t want to miss at the Microsoft Fabric Community Conference 2026",
       "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/02/03/top-sessions-you-wont-want-to-miss-at-the-microsoft-fabric-community-conference-2026/",
@@ -1810,6 +1828,15 @@
       "category": "Analytics",
       "pubDate": "2026-02-03T16:00:00.000Z",
       "contentSnippet": "The Microsoft Fabric Community Conference (FabCon) is returning stateside in just a few weeks, taking place at the Georgia World Congress Center in Atlanta, March 16 - 20, and it’s shaping up to be our biggest event yet. The post Top sessions you won’t want to miss at the Microso…"
+    },
+    {
+      "id": "ae3796f11c87",
+      "title": "Estimating and Planning in Agile: Why They Still Matter in 2026",
+      "link": "https://www.mountaingoatsoftware.com/agile/estimating-and-planning-in-agile-why-they-still-matter-in-2026",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-01-27T13:00:00.000Z",
+      "contentSnippet": "By 2026, most agile practitioners have plenty of scar tissue when it comes to estimating and planning."
     },
     {
       "id": "04ac092e60a6",
@@ -1945,15 +1972,6 @@
       "category": "Delivery",
       "pubDate": "2024-11-03T05:15:39.000Z",
       "contentSnippet": "Jennie Mårtensson interviews Petra Wille, a renowned product leadership coach and author of Strong Product People and Strong Product Communities. Petra shares her insights on why being a product manager is one of the most exciting jobs, drawing from her extensive experience acros…"
-    },
-    {
-      "id": "89bf09b4510f",
-      "title": "Interview with Henrik Kniberg on Generative AI",
-      "link": "https://blog.crisp.se/2024/10/28/leadingcomplexity/interview-with-henrik-kniberg-on-generative-ai",
-      "source": "Crisp Blog",
-      "category": "Delivery",
-      "pubDate": "2024-10-28T13:37:44.000Z",
-      "contentSnippet": "We chatted with our colleague Henry Kniberg at Crisp about his latest work on generative AI and his upcoming master class in the Leading Complexity program. He shared some very insightful comments: “Generative AI makes things less predictable but more intelligent.” “If I had to e…"
     }
   ]
 }

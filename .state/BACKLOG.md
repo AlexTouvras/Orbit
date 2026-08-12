@@ -5,11 +5,19 @@
 ## Now
 
 - [x] Re-notify 2026-08-03 weekly Write with full essay in Slack + draft synced to default branch
-- [ ] Merge weekly Write Slack full-access fix (`fix/weekly-write-slack-full-access`)
+- [x] Merge weekly Write Slack full-access fix (`fix/weekly-write-slack-full-access`)
 - [x] Refresh weekly Write intake for 2026-08-03 / prepare pending IDE draft
 - [x] Ship home AI competency → `/field-card/index.html` + static field card page
-- [x] Notify the 2026-07-27 weekly Write in Slack (published; superseded by 2026-08-03 pending)
+- [x] Field-card fail-closed: discovery Slack ping + judgment watchdog + Approve requires `## Summary` (agentic-ai-field-card PR #3)
+- [x] W32 field card PR #2 merged (2026-08-11); Slack Approve/Skip flow verified
+- [x] Scaffold Data Analytics Field Card repo + Orbit home link (`/analytics-field-card/`) + shared Approve registry
+- [x] Bind Friday Cursor judgment for analytics field card (GH Action → Cloud Agents API)
+- [x] Deploy analytics field card Orbit wiring to prod (main)
+- [ ] Human review first analytics field card (stack + tool picker) on home / print PDF
+- [x] Fix Aug 10 weekly Write preview (`invalid signature` + draft not on default branch)
+- [ ] Notify the 2026-07-27 weekly Write in Slack (`SLACK_ORBIT_WEBHOOK_URL` unavailable in automation environment)
 - [x] Refresh weekly Write intake and prepare the 2026-07-27 pending IDE draft
+- [x] Prepare 2026-08-10 pending IDE draft + restore working Slack preview
 - [x] Case study links for Orbit + Nordic Equity Heatmap
 - [x] Rewrite `from-risk-to-delivery.mdx` with orbit-essay + anti-ai-slop
 - [x] Rebalance Related articles RSS (Data / Analytics / Delivery vs AI flood)
@@ -19,10 +27,12 @@
 
 ## Next
 
+- [x] Human review: fitness coach Write rewrite (why / science / weekly gen / life) + portfolio card
+- [x] Commit/push fitness coach Write + portfolio seed when owner asks
 - [ ] Optional browser check: `/portfolio` Case study links + `/writes/nordic-equity-heatmap`
 - [x] Persist essay feedback by slug and notify `#orbit` on new notes
 - [x] Route weekly Write Slack draft/approve/skip to `#orbit`
-- [x] Pressable education cards → master’s theses (JYX + Theseus)
+- [x] Pressable education cards → master's theses (JYX + Theseus)
 - [x] Capture thesis writing fingerprint in `docs/essay-voice.md` (improve essays, not academicize them)
 - [x] Draft Delivery essay: AI acceleration + prioritization (Cohn + MobAI)
 - [x] Publish `when-ai-accelerates-work-prioritization-becomes-the-job` to prod (main)

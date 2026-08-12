@@ -81,6 +81,8 @@ export const competencies: Competency[] = [
       "Python, SQL, and Power BI / Fabric — gold tables, semantic models, and page paths that survive a cold Monday open. Roots in credit risk (PD, scorecards, ECL).",
     accent: "blue",
     icon: LineChart,
+    href: "/analytics-field-card/index.html",
+    hrefLabel: "Field card",
   },
   {
     title: "Technology Delivery",
