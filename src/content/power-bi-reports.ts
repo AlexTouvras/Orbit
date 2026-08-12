@@ -240,6 +240,44 @@ export const powerBiReports: PowerBiReport[] = [
     ],
   },
   {
+    id: "customer-experience",
+    title: "Experience Pulse",
+    summary: "CX / VoC **review-score** report with **detractor propensity** (logistic), Key Influencers, score erosion by delivery, and a probability-ranked recovery queue.",
+    repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
+    pages: [
+      {
+        id: "landing",
+        label: "Landing",
+        caption: "Poster · Avg Review Score hero · page map · `linen-mist`",
+        src: "/portfolio/power-bi/customer-experience/landing.png",
+      },
+      {
+        id: "experience-pulse",
+        label: "Experience Pulse",
+        caption: "Avg score · CSAT % · proxy NPS · avg detractor probability · trend",
+        src: "/portfolio/power-bi/customer-experience/experience-pulse.png",
+      },
+      {
+        id: "drivers",
+        label: "Drivers",
+        caption: "Tall Key Influencers · decomposition + theme matrix · score erosion",
+        src: "/portfolio/power-bi/customer-experience/drivers.png",
+      },
+      {
+        id: "recovery-queue",
+        label: "Recovery Queue",
+        caption: "Prioritization scatter · risk funnel · ranked by `DetractorProbability`",
+        src: "/portfolio/power-bi/customer-experience/recovery-queue.png",
+      },
+      {
+        id: "context",
+        label: "Context",
+        caption: "Metric + model caveats (sample logistic, not production CX)",
+        src: "/portfolio/power-bi/customer-experience/context.png",
+      },
+    ],
+  },
+  {
     id: "credit-risk",
     title: "Credit Risk Pulse",
     summary: "Nordic Boardroom **PD scorecard + cut-off strategy + monitoring + steering** report for consumer credit — domain flagship.",
