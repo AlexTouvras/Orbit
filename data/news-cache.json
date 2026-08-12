@@ -1,7 +1,97 @@
 {
-  "generatedAt": "2026-08-11T06:58:59.958Z",
-  "count": 218,
+  "generatedAt": "2026-08-12T06:16:23.923Z",
+  "count": 219,
   "items": [
+    {
+      "id": "2d3ea9ff80a0",
+      "title": "Taking AUTO CDC to the next level: Solving the hardest real-world use cases",
+      "link": "https://www.databricks.com/blog/taking-auto-cdc-next-level-solving-hardest-real-world-use-cases",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-11T23:00:00.000Z",
+      "contentSnippet": "Change data capture is one of the most common things data engineers build on Spark..."
+    },
+    {
+      "id": "b54d76a4ad9c",
+      "title": "Open-sourcing Metals v2: Databricks’ Java and Scala language server for multi‑million line codebases",
+      "link": "https://www.databricks.com/blog/open-sourcing-metals-v2-databricks-java-and-scala-language-server-multi-million-line-codebases",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-11T19:00:00.000Z",
+      "contentSnippet": "Most code at Databricks is now written by agents. For the moments engineers still..."
+    },
+    {
+      "id": "8af5b1e57b96",
+      "title": "Why Your Scrum Team Still Works Like Individuals",
+      "link": "https://www.mountaingoatsoftware.com/agile/why-your-scrum-team-still-works-like-individuals",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-08-11T13:00:00.000Z",
+      "contentSnippet": "Many organizations have Scrum teams in name, but not yet in behavior. The people attend sprint…"
+    },
+    {
+      "id": "186fce5f8de0",
+      "title": "Modern Risk Demands a Real-Time Foundation: The CRO’s Mandate",
+      "link": "https://www.databricks.com/blog/modern-risk-demands-real-time-foundation-cros-mandate",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-11T12:30:00.000Z",
+      "contentSnippet": "In a volatile macroeconomic environment, enterprise risk management today is constrained..."
+    },
+    {
+      "id": "0d3bab75e5d5",
+      "title": "TDD inside the agent loop - theater or actual value?",
+      "link": "https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-08-11T11:39:00.000Z",
+      "contentSnippet": "My colleagues at Thoughtworks tend to be big fans of Test-Driven Development, and many people in the industry advocate telling LLM agents to use TDD when building software. Birgitta Böckeler was curious if this really makes a difference, so conducted a few experiments. more…"
+    },
+    {
+      "id": "de2ca3d7578d",
+      "title": "Testing ads in ChatGPT",
+      "link": "https://openai.com/index/testing-ads-in-chatgpt",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-11T10:00:00.000Z",
+      "contentSnippet": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control."
+    },
+    {
+      "id": "b274e00978a8",
+      "title": "Daybreak models are now available on AWS",
+      "link": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-11T10:00:00.000Z",
+      "contentSnippet": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows."
+    },
+    {
+      "id": "1af7276c349c",
+      "title": "Creating DAX functions with AI to remove duplicated code",
+      "link": "https://www.sqlbi.com/tv/creating-dax-functions-with-ai-to-remove-duplicated-code/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-08-11T10:00:00.000Z",
+      "contentSnippet": "How to leverage AI to refactor existing DAX code, remove duplicated parts, and centralize the common code in user-defined functions."
+    },
+    {
+      "id": "0c0f2d0b4495",
+      "title": "How to Create Multilingual User Tutorial Videos with AI",
+      "link": "https://www.scrum.org/resources/blog/how-create-multilingual-user-tutorial-videos-ai",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-11T07:05:58.000Z",
+      "contentSnippet": "Imagine you want to create a tutorial video for your users to learn how to use a specific feature of your product. Your users are from the UK, Germany, and Sweden. Let’s see how you can build a multilingual video for it with AI. Image You are a Product Owner of a product that is…"
+    },
+    {
+      "id": "8b18bfa54356",
+      "title": "Electric joins Databricks to bring WASM Postgres to AI agent sandboxes",
+      "link": "https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-11T07:00:00.000Z",
+      "contentSnippet": "Today, we’re excited to welcome Electric to Databricks. The world is building a new..."
+    },
     {
       "id": "13aa163b225a",
       "title": "How to ground Genie Agents in both structured data and documents without losing governance",
@@ -10,6 +100,15 @@
       "category": "Data",
       "pubDate": "2026-08-10T23:08:50.000Z",
       "contentSnippet": "Building an agent to automate simple business tasks can be easy. But creating one..."
+    },
+    {
+      "id": "ff64cfc34025",
+      "title": "Creating DAX functions with AI to remove duplicated code",
+      "link": "https://www.sqlbi.com/articles/creating-dax-functions-with-ai-to-remove-duplicated-code/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-08-10T20:00:00.000Z",
+      "contentSnippet": "Code written by AI can contain many duplicate parts. User-defined functions are a great tool to simplify complex measures; this article shows how to leverage AI to build better DAX code. AI is getting better and better at generating DAX…"
     },
     {
       "id": "202ffbef3360",
@@ -84,6 +183,15 @@
       "contentSnippet": "TL; DR: The “Agile to the Product Operating Model” Survey Results Between August 2 and August 10, 2026, 48 practitioners participated in my Agile to Product Operating Model (POM) survey, which tries to shed light on what is actually changing. Let me summarize the answers for you:…"
     },
     {
+      "id": "b1c5cfb2f6cc",
+      "title": "Restoring alternating rows in Power BI matrices with Fluent 2",
+      "link": "https://www.sqlbi.com/blog/marco/2026/08/10/restoring-alternating-rows-in-power-bi-matrices-with-fluent-2/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-08-10T07:22:49.000Z",
+      "contentSnippet": "Microsoft recently introduced a new default visual design style for Power BI named Fluent 2. I personally disagree with a few choices in the new defaults, including the removal of alternating row colors from Table and Matrix visuals. However, the…"
+    },
+    {
       "id": "af2f9387f309",
       "title": "AI Tools Evaluation & Approval Framework for Scrum Teams",
       "link": "https://www.scrum.org/resources/blog/ai-tools-evaluation-approval-framework-scrum-teams",
@@ -118,24 +226,6 @@
       "category": "AI",
       "pubDate": "2026-08-10T00:00:00.000Z",
       "contentSnippet": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work."
-    },
-    {
-      "id": "1ea3eea3d9a5",
-      "title": "How Zapier transformed core marketing processes with ChatGPT Work",
-      "link": "https://openai.com/index/zapier",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-10T00:00:00.000Z",
-      "contentSnippet": "The enterprise marketing team at Zapier uses ChatGPT Work to reduce the number of drop-offs in its lead funnel, build campaign assets, and automate reporting."
-    },
-    {
-      "id": "8f3f7b571773",
-      "title": "Virgin Atlantic sharpens customer journeys with ChatGPT Work",
-      "link": "https://openai.com/index/virgin-atlantic/chatgpt-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-10T00:00:00.000Z",
-      "contentSnippet": "Virgin Atlantic is accelerating research, product planning, and decision-making with ChatGPT Work, helping teams connect signals across the customer journey."
     },
     {
       "id": "6cb1441ecb9f",
@@ -219,33 +309,6 @@
       "contentSnippet": "As organizations move beyond single-prompt AI interactions, agentic workflows are..."
     },
     {
-      "id": "a99e3d25a72d",
-      "title": "What is Tool Calling?",
-      "link": "https://www.databricks.com/blog/what-is-tool-calling",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-06T21:31:30.000Z",
-      "contentSnippet": "Tool calling is the ability of an AI model to interact with external tools, APIs,..."
-    },
-    {
-      "id": "bac4517942c6",
-      "title": "Introducing OfficeQA Pro V2: A New Benchmark for Enterprise Grounded-Reasoning",
-      "link": "https://www.databricks.com/blog/introducing-officeqa-pro-v2-new-benchmark-enterprise-grounded-reasoning",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-06T16:00:00.000Z",
-      "contentSnippet": "Today, we are releasing OfficeQA Pro V2, a new benchmark designed to evaluate whether..."
-    },
-    {
-      "id": "5d7328432b4c",
-      "title": "Kimi K3 from Moonshot AI is now available on Databricks through Unity AI Gateway",
-      "link": "https://www.databricks.com/blog/kimi-k3-moonshot-ai-now-available-databricks-through-unity-ai-gateway",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-06T15:50:57.000Z",
-      "contentSnippet": "A year ago, the best open-weight models trailed their proprietary counterparts by..."
-    },
-    {
       "id": "e64d5d0646ff",
       "title": "Declarative Automation in Dagster: Smarter Data Orchestration Without Complex Schedules",
       "link": "https://dagster.io/blog/orchestration-is-more-than-scheduling-declarative-automation-in-dagster",
@@ -316,15 +379,6 @@
       "category": "AI",
       "pubDate": "2026-08-04T23:58:24.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "0f1af7da8d93",
-      "title": "Unity AI Gateway is Generally Available",
-      "link": "https://www.databricks.com/blog/unity-ai-gateway-generally-available",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-04T16:10:09.000Z",
-      "contentSnippet": "The last six months have seen a rapid rise in AI-powered productivity and a proliferation..."
     },
     {
       "id": "643029743c76",
@@ -1470,15 +1524,6 @@
       "contentSnippet": "With the lance extension, DuckDB users can query Lance datasets with the same familiar SQL interface (via the CLI or SDKs), while adding capabilities for AI and retrieval workloads. This blog post highlights how Lance is a good option for workloads that need to support storage an…"
     },
     {
-      "id": "0966da8f2909",
-      "title": "Three more static code analysis sensors",
-      "link": "https://martinfowler.com/articles/sensors-for-coding-agents.html#StaticCodeAnalysisDependencyRules",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-20T14:27:00.000Z",
-      "contentSnippet": "Birgitta Böckeler adds discussion of three more sensors for static code analysis, focusing on checking and enforcing better modularity. Computational sensors for dependency checks were good at enforcing rules, but the rules were limited. Building a computational sensor for coupli…"
-    },
-    {
       "id": "e9f1993d244f",
       "title": "CLUSTER BY in Fabric Warehouse: when the magic shows up and when it doesn’t!",
       "link": "https://data-mozart.com/cluster-by-in-fabric-warehouse-when-the-magic-shows-up-and-when-it-doesnt/?utm_source=rss&utm_medium=rss&utm_campaign=cluster-by-in-fabric-warehouse-when-the-magic-shows-up-and-when-it-doesnt",
@@ -1704,33 +1749,6 @@
       "contentSnippet": "Dagster 1.13 makes the framework easier to adopt with AI coding skills, partition-aware asset checks, virtual assets for database views, and 20+ new integration components."
     },
     {
-      "id": "29b5602d09b2",
-      "title": "Using visual calculation to highlight an entire row",
-      "link": "https://www.sqlbi.com/tv/using-visual-calculation-to-highlight-an-entire-row/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-04-07T10:00:00.000Z",
-      "contentSnippet": "How to highlight a row based solely on the maximum value in the last column using visual calculations, a tool that can be used efficiently to format visuals."
-    },
-    {
-      "id": "4c089de9d78c",
-      "title": "How to navigate the lattice of visual calculations",
-      "link": "https://www.sqlbi.com/tv/how-to-navigate-the-lattice-of-visual-calculations/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-04-06T20:00:24.000Z",
-      "contentSnippet": "This video explains how to navigate the lattice of visual calculations in DAX. The visual context goes beyond the row context and filter context by adding the concept of levels within the lattice. The video shows how to use COLLAPSEALL…"
-    },
-    {
-      "id": "268887b85951",
-      "title": "Using visual calculations to highlight an entire row",
-      "link": "https://www.sqlbi.com/articles/using-visual-calculations-to-highlight-an-entire-row/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-04-06T20:00:04.000Z",
-      "contentSnippet": "Visual calculations can be used efficiently to format visuals. This article presents an interesting technique to highlight a row based solely on the maximum value in the last column. When it comes to visuals, users may want to specific cells…"
-    },
-    {
       "id": "df2be5bd8dc6",
       "title": "Monorepos, the hub-and-spoke model, and Copybara",
       "link": "https://dagster.io/blog/monorepos-the-hub-and-spoke-model-and-copybara",
@@ -1819,15 +1837,6 @@
       "category": "Delivery",
       "pubDate": "2026-01-27T13:00:00.000Z",
       "contentSnippet": "By 2026, most agile practitioners have plenty of scar tissue when it comes to estimating and planning."
-    },
-    {
-      "id": "c9da5b4deebf",
-      "title": "Why Soft Skills Outlast Technical Skills on Product Development Teams",
-      "link": "https://www.mountaingoatsoftware.com/agile/why-soft-skills-outlast-technical-skills-on-product-development-teams",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-01-20T13:00:00.000Z",
-      "contentSnippet": "Soft skills are the ones that can lead to lasting success."
     },
     {
       "id": "04ac092e60a6",
