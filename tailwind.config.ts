@@ -15,8 +15,8 @@ const config: Config = {
           700: "#0c0f24",
         },
         neon: {
-          /* Brand cyan: relative color from animated --orbit-accent (channel @property → white) */
-          cyan: "oklch(from var(--orbit-accent) l c h / <alpha-value>)",
+          /* Brand cyan: mix from animated --orbit-accent (channel @property → white) */
+          cyan: "color-mix(in oklch, var(--orbit-accent) calc(100% * <alpha-value>), transparent)",
           ai: "oklch(var(--accent-ai) / <alpha-value>)",
           violet: "oklch(var(--accent-violet) / <alpha-value>)",
           blue: "oklch(var(--accent-blue) / <alpha-value>)",
