@@ -11,7 +11,7 @@ on:
         type: boolean
         default: false
       notify:
-        description: "Post to Slack (#career-ops webhook)"
+        description: "Post to Slack (#orbit webhook)"
         type: boolean
         default: false
 
@@ -33,6 +33,7 @@ jobs:
 
       - name: Build intake + IDE brief (Cloud Automation writes the essay)
         env:
+          SLACK_ORBIT_WEBHOOK_URL: ${{ secrets.SLACK_ORBIT_WEBHOOK_URL }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           CRON_SECRET: ${{ secrets.CRON_SECRET }}
           WEEKLY_WRITE_SECRET: ${{ secrets.WEEKLY_WRITE_SECRET }}
