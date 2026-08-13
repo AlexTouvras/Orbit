@@ -27,7 +27,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Essay pages read their own feedback entries server-side and render a newest-first note list below the feedback CTA.
 - Essay feedback Slack notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (for `#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
 - Weekly Write Slack draft / publish / skip notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (`#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
-- Brand accent orbit: `--orbit-l/c/h` on `html` cycles cyan → sky → azure → purple (~16s) and drives `--accent-cyan` / `neon-cyan` / `.orbit-accent*` via live `oklch(var(--orbit-l)…)` (not a cached `--orbit-accent` color token). Hub `OrbitSignature` cyan uses `.orbit-accent-muted` (ring) + `.orbit-accent` (dot). Header mark uses `text-neon-cyan`. Topic AI uses fixed `--accent-ai` / `neon-ai` (tone `ai`). `--accent-violet` and `--accent-blue` stay fixed. Status tones (green/amber/neutral) stay fixed.
+- Brand accent orbit: `--orbit-l/c/h` on `html` cycles cyan → sky → azure → purple (~16s). Brand cyan (`neon-cyan`, `.orbit-accent*`, glow) must use `oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h)…)` directly — wrapping as `--accent-cyan` then `oklch(var(--accent-cyan) / α)` goes invalid under `@property` animation and falls back to white. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
 - Related articles topic tones live in `src/lib/news/category-tone.ts` and drive both `NewsCard` badges and `FilterChip` active states (`All` = brand cyan orbit; `AI` = fixed ai).
 
 ## Dependencies
