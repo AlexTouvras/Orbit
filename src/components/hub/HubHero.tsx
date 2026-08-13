@@ -51,7 +51,7 @@ function withOrbitMark(text: string) {
   return (
     <>
       {text.slice(0, i)}
-      <span className="orbit-accent font-medium">{text.slice(i, end)}</span>
+      <span className="font-medium text-neon-cyan">{text.slice(i, end)}</span>
       {text.slice(end)}
     </>
   );
@@ -119,7 +119,7 @@ export function HubHero({
           {withOrbitMark(whyOrbit)}{" "}
           <Link
             href="/writes/building-orbit"
-            className="orbit-accent focus-ring font-medium transition-opacity hover:opacity-100"
+            className="focus-ring font-medium text-neon-cyan transition-opacity hover:opacity-100"
           >
             Why the name
           </Link>

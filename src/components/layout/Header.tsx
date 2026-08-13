@@ -42,9 +42,9 @@ export function Header() {
         )}
       >
         <Link href="/" className="focus-ring group flex items-center gap-2 rounded-lg">
-          <Hexagon className="orbit-accent h-6 w-6 transition-transform group-hover:rotate-90" />
+          <Hexagon className="h-6 w-6 text-neon-cyan transition-transform group-hover:rotate-90" />
           <span className="font-mono text-sm font-semibold tracking-widest text-slate-200">
-            ORBIT<span className="orbit-accent">.</span>
+            ORBIT<span className="text-neon-cyan">.</span>
           </span>
         </Link>
 

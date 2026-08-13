@@ -4,13 +4,14 @@ import { cn } from "@/lib/utils";
 type OrbitVariant = "cyan" | "violet" | "blue";
 
 const accent: Record<OrbitVariant, string> = {
-  cyan: "text-neon-cyan/25",
+  /* Brand cyan: live orbit channels (Tailwind /alpha can fall back to inherited white). */
+  cyan: "orbit-accent-muted",
   violet: "text-neon-violet/25",
   blue: "text-neon-blue/25",
 };
 
 const dot: Record<OrbitVariant, string> = {
-  cyan: "text-neon-cyan",
+  cyan: "orbit-accent",
   violet: "text-neon-violet",
   blue: "text-neon-blue",
 };

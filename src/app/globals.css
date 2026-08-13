@@ -137,33 +137,36 @@
     @apply focus-visible:border-neon-cyan/50;
   }
 
-  /* Explicit brand utilities (same channels as neon-*) */
+  /* Explicit brand utilities — resolve channels live (same as text-neon-cyan) */
   .orbit-accent {
-    color: var(--orbit-accent);
+    color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h));
+  }
+  .orbit-accent-muted {
+    color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.4);
   }
   .orbit-accent-bg {
-    background-color: var(--orbit-accent);
+    background-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h));
   }
   .orbit-accent-border {
-    border-color: color-mix(in oklch, var(--orbit-accent) 40%, transparent);
+    border-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.4);
   }
   .orbit-accent-soft-bg {
-    background-color: color-mix(in oklch, var(--orbit-accent) 12%, transparent);
+    background-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.12);
   }
   .orbit-accent-glow {
-    box-shadow: 0 0 24px -4px color-mix(in oklch, var(--orbit-accent) 45%, transparent);
+    box-shadow: 0 0 24px -4px oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.45);
   }
   .orbit-accent-hover-border:hover {
-    border-color: color-mix(in oklch, var(--orbit-accent) 55%, transparent);
+    border-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.55);
   }
   .orbit-accent-hover-soft-bg:hover {
-    background-color: color-mix(in oklch, var(--orbit-accent) 16%, transparent);
+    background-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.16);
   }
   .orbit-accent-hover-glow:hover {
-    box-shadow: 0 0 20px -6px color-mix(in oklch, var(--orbit-accent) 45%, transparent);
+    box-shadow: 0 0 20px -6px oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.45);
   }
   .orbit-accent-cta-glow:hover {
-    box-shadow: 0 0 32px -4px color-mix(in oklch, var(--orbit-accent) 55%, transparent);
+    box-shadow: 0 0 32px -4px oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.55);
   }
 }
 
