@@ -15,8 +15,8 @@ const config: Config = {
           700: "#0c0f24",
         },
         neon: {
-          /* Brand cyan: bind channels directly — `oklch(var(--accent-cyan) / α)` breaks when --orbit-* animate via @property */
-          cyan: "oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / <alpha-value>)",
+          /* Brand cyan: relative color from animated --orbit-accent (channel @property → white) */
+          cyan: "oklch(from var(--orbit-accent) l c h / <alpha-value>)",
           ai: "oklch(var(--accent-ai) / <alpha-value>)",
           violet: "oklch(var(--accent-violet) / <alpha-value>)",
           blue: "oklch(var(--accent-blue) / <alpha-value>)",
@@ -33,14 +33,14 @@ const config: Config = {
         22: "5.5rem",
       },
       boxShadow: {
-        glow: "0 0 24px -4px oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.45)",
+        glow: "0 0 24px -4px color-mix(in oklch, var(--orbit-accent) 45%, transparent)",
         "glow-violet": "0 0 28px -6px oklch(var(--accent-violet) / 0.5)",
       },
       backgroundImage: {
         "grid-faint":
           "linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)",
         "radial-glow":
-          "radial-gradient(60% 60% at 50% 0%, oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.1) 0%, oklch(var(--void) / 0) 70%)",
+          "radial-gradient(60% 60% at 50% 0%, color-mix(in oklch, var(--orbit-accent) 10%, transparent) 0%, oklch(var(--void) / 0) 70%)",
       },
       keyframes: {
         "fade-up": {

@@ -2,21 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Animatable OKLCH channels — brand cyan (neon-cyan) rides this orbit */
-@property --orbit-l {
-  syntax: "<number>";
+/*
+ * Animate a full <color>. Composing oklch() from @property <number> channels
+ * (--orbit-l/c/h) is invalid in Chromium while the animation runs → white text.
+ */
+@property --orbit-accent {
+  syntax: "<color>";
   inherits: true;
-  initial-value: 0.78;
-}
-@property --orbit-c {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 0.14;
-}
-@property --orbit-h {
-  syntax: "<number>";
-  inherits: true;
-  initial-value: 195;
+  initial-value: oklch(0.78 0.14 195);
 }
 
 :root {
@@ -25,11 +18,8 @@
   --void-800: 0.14 0.028 264;
   --foreground: 0.93 0.015 264;
   --muted: 0.68 0.025 264;
-  --orbit-l: 0.78;
-  --orbit-c: 0.14;
-  --orbit-h: 195;
-  /* Brand cyan = live orbit channels (do not re-wrap as a single token for oklch()) */
-  --accent-cyan: var(--orbit-l) var(--orbit-c) var(--orbit-h);
+  --orbit-accent: oklch(0.78 0.14 195);
+  /* Fixed category hues (space-separated channels for Tailwind oklch()) */
   --accent-ai: 0.78 0.14 195;
   --accent-violet: 0.62 0.22 300;
   --accent-blue: 0.62 0.16 255;
@@ -57,7 +47,7 @@
   }
 
   ::selection {
-    background-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.28);
+    background-color: color-mix(in oklch, var(--orbit-accent) 28%, transparent);
     color: white;
   }
 
@@ -70,7 +60,7 @@
   }
   ::-webkit-scrollbar-thumb {
     background: linear-gradient(
-      oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.45),
+      color-mix(in oklch, var(--orbit-accent) 45%, transparent),
       oklch(var(--accent-violet) / 0.45)
     );
     border-radius: 9999px;
@@ -97,14 +87,14 @@
       background-color 0.25s ease;
   }
   .glass-hover:hover {
-    border-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.35);
-    box-shadow: 0 0 24px -12px oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.45);
+    border-color: color-mix(in oklch, var(--orbit-accent) 35%, transparent);
+    box-shadow: 0 0 24px -12px color-mix(in oklch, var(--orbit-accent) 45%, transparent);
   }
 
   .text-gradient {
     background: linear-gradient(
       120deg,
-      oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h)),
+      var(--orbit-accent),
       oklch(var(--accent-violet))
     );
     -webkit-background-clip: text;
@@ -136,36 +126,35 @@
     @apply focus-visible:border-neon-cyan/50;
   }
 
-  /* Explicit brand utilities — resolve channels live (same as text-neon-cyan) */
   .orbit-accent {
-    color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h));
+    color: var(--orbit-accent);
   }
   .orbit-accent-muted {
-    color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.4);
+    color: color-mix(in oklch, var(--orbit-accent) 40%, transparent);
   }
   .orbit-accent-bg {
-    background-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h));
+    background-color: var(--orbit-accent);
   }
   .orbit-accent-border {
-    border-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.4);
+    border-color: color-mix(in oklch, var(--orbit-accent) 40%, transparent);
   }
   .orbit-accent-soft-bg {
-    background-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.12);
+    background-color: color-mix(in oklch, var(--orbit-accent) 12%, transparent);
   }
   .orbit-accent-glow {
-    box-shadow: 0 0 24px -4px oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.45);
+    box-shadow: 0 0 24px -4px color-mix(in oklch, var(--orbit-accent) 45%, transparent);
   }
   .orbit-accent-hover-border:hover {
-    border-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.55);
+    border-color: color-mix(in oklch, var(--orbit-accent) 55%, transparent);
   }
   .orbit-accent-hover-soft-bg:hover {
-    background-color: oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.16);
+    background-color: color-mix(in oklch, var(--orbit-accent) 16%, transparent);
   }
   .orbit-accent-hover-glow:hover {
-    box-shadow: 0 0 20px -6px oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.45);
+    box-shadow: 0 0 20px -6px color-mix(in oklch, var(--orbit-accent) 45%, transparent);
   }
   .orbit-accent-cta-glow:hover {
-    box-shadow: 0 0 32px -4px oklch(var(--orbit-l) var(--orbit-c) var(--orbit-h) / 0.55);
+    box-shadow: 0 0 32px -4px color-mix(in oklch, var(--orbit-accent) 55%, transparent);
   }
 }
 
@@ -178,28 +167,20 @@
   }
 }
 
-/* Light blue → sky → azure → purpleish → back (brand cyan / neon-cyan only) */
+/* Light blue → sky → azure → purpleish → back (brand cyan only) */
 @keyframes orbit-accent-cycle {
   0%,
   100% {
-    --orbit-l: 0.82;
-    --orbit-c: 0.12;
-    --orbit-h: 195;
+    --orbit-accent: oklch(0.82 0.12 195);
   }
   25% {
-    --orbit-l: 0.74;
-    --orbit-c: 0.14;
-    --orbit-h: 230;
+    --orbit-accent: oklch(0.74 0.14 230);
   }
   50% {
-    --orbit-l: 0.68;
-    --orbit-c: 0.16;
-    --orbit-h: 255;
+    --orbit-accent: oklch(0.68 0.16 255);
   }
   75% {
-    --orbit-l: 0.64;
-    --orbit-c: 0.18;
-    --orbit-h: 295;
+    --orbit-accent: oklch(0.64 0.18 295);
   }
 }
 
@@ -215,8 +196,6 @@
 
   html {
     animation: none !important;
-    --orbit-l: 0.78;
-    --orbit-c: 0.14;
-    --orbit-h: 195;
+    --orbit-accent: oklch(0.78 0.14 195);
   }
 }
