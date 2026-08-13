@@ -242,11 +242,11 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" http://127.0.0.1:3000/api/cron/
 
 ## 6b. Weekly Write (Slack approve → publish)
 
-Every Monday a draft Write is built from **Related articles** + **Studio workshop projects**, then posted to Slack **`#career-ops`** (same free Incoming Webhook as CareerOps).
+Every Monday a draft Write is built from **Related articles** + **Studio workshop projects**, then posted to Slack **`#orbit`** (`SLACK_ORBIT_WEBHOOK_URL`; falls back to legacy `SLACK_WEBHOOK_URL` if unset).
 
 ### What you do
 
-1. Open the Slack message in `#career-ops`
+1. Open the Slack message in `#orbit`
 2. Prefer **Open browser preview** to read the full essay on your phone
 3. Tap **Approve & publish** → confirm page → **Approve & publish** again (or **Skip**)
 4. After Vercel redeploys, the article is live at `/writes/…`
@@ -257,7 +257,8 @@ Links are signed and expire in 7 days. Approve/Skip are confirm-then-POST so Sla
 
 | Env / secret | Where |
 | --- | --- |
-| `SLACK_WEBHOOK_URL` | Same webhook URL CareerOps uses for `#career-ops` (Vercel + GitHub Actions) |
+| `SLACK_ORBIT_WEBHOOK_URL` | `#orbit` Incoming Webhook (Vercel + GitHub Actions; prefer this) |
+| `SLACK_WEBHOOK_URL` | Legacy fallback only |
 | `SLACK_BOT_TOKEN` + `SLACK_CHANNEL_ID` (optional) | Attach full essay as `.md` in Slack (`files:write` bot scope — still free) |
 | `CRON_SECRET` / optional `WEEKLY_WRITE_SECRET` | Signs Approve/Skip/Preview links |
 | `GITHUB_TOKEN` | Already required for Studio; used to commit the MDX on Approve |
@@ -424,7 +425,7 @@ npm run news:fetch
 
 ## Minimal habit to grow the site
 
-1. **Weekly:** one Write — automated draft → Slack `#career-ops` Approve (or write MDX by hand).
+1. **Weekly:** one Write — automated draft → Slack `#orbit` Approve (or write MDX by hand).
 2. **When you ship something:** add or update a portfolio MDX or publish via Studio.
 3. **Monthly:** skim About/CV for accuracy; refresh `resume.pdf`.
 4. **Deploy when you have content worth sharing** — not before.
