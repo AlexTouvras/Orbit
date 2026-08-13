@@ -13,9 +13,9 @@
 - [x] Scaffold Data Analytics Field Card repo + Orbit home link (`/analytics-field-card/`) + shared Approve registry
 - [x] Bind Friday Cursor judgment for analytics field card (GH Action → Cloud Agents API)
 - [x] Deploy analytics field card Orbit wiring to prod (main)
-- [ ] Human review first analytics field card (stack + tool picker) on home / print PDF
+- [x] Human review first analytics field card (stack + tool picker) on home / print PDF — skipped 2026-08-13
 - [x] Fix Aug 10 weekly Write preview (`invalid signature` + draft not on default branch)
-- [ ] Notify the 2026-07-27 weekly Write in Slack (`SLACK_ORBIT_WEBHOOK_URL` unavailable in automation environment)
+- [x] Notify the 2026-07-27 weekly Write in Slack (`#orbit` catch-up; essay already live)
 - [x] Refresh weekly Write intake and prepare the 2026-07-27 pending IDE draft
 - [x] Prepare 2026-08-10 pending IDE draft + restore working Slack preview
 - [x] Case study links for Orbit + Nordic Equity Heatmap
@@ -28,10 +28,12 @@
 ## Next
 
 - [x] Pixel avatar beside name on Hub + About (`/avatar-pixel-64.png`)
-- [ ] Human review: Hub + About avatar placement
+- [x] Human review: Hub + About avatar placement — skipped 2026-08-13
+- [x] Brand orbit accents on prod: hexagon + Why the name + signature cyan (`eabb4a0`)
+- [x] Home Case study / Read: static cyan (orbit not on one sibling only)
 - [x] Human review: fitness coach Write rewrite (why / science / weekly gen / life) + portfolio card
 - [x] Commit/push fitness coach Write + portfolio seed when owner asks
-- [ ] Optional browser check: `/portfolio` Case study links + `/writes/nordic-equity-heatmap`
+- [x] Optional browser check: `/portfolio` Case study links + `/writes/nordic-equity-heatmap` — skipped 2026-08-13
 - [x] Persist essay feedback by slug and notify `#orbit` on new notes
 - [x] Route weekly Write Slack draft/approve/skip to `#orbit`
 - [x] Pressable education cards → master's theses (JYX + Theseus)
@@ -46,7 +48,7 @@
 ## Later
 
 - [x] Optional: Google Search Console sitemap submit
-- [ ] Optional: Vercel Speed Insights
+- [x] Optional: Vercel Speed Insights — skipped 2026-08-13
 
 ## Out of scope (strict)
 

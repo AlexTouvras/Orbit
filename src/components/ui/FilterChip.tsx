@@ -5,7 +5,8 @@ import type { BadgeTone } from "@/lib/project-status";
 import { cn } from "@/lib/utils";
 
 const activeTones: Record<BadgeTone, string> = {
-  cyan: "border-neon-cyan/50 bg-neon-cyan/10 text-neon-cyan",
+  /* All chip: explicit orbit classes — neon-cyan is static and must not leak the loop. */
+  cyan: "orbit-accent orbit-accent-border orbit-accent-soft-bg",
   ai: "border-neon-ai/50 bg-neon-ai/10 text-neon-ai",
   violet: "border-neon-violet/50 bg-neon-violet/10 text-neon-violet",
   blue: "border-neon-blue/50 bg-neon-blue/10 text-neon-blue",
