@@ -27,7 +27,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Essay pages read their own feedback entries server-side and render a newest-first note list below the feedback CTA.
 - Essay feedback Slack notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (for `#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
 - Weekly Write Slack draft / publish / skip notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (`#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
-- Brand accent orbit: `@property --orbit-accent` (`<color>`) on `html` cycles cyan → sky → azure → purple (~16s). Brand chrome (`.orbit-accent*`, `neon-cyan` via `color-mix` from `--orbit-accent`, glow) reads that token. Do **not** animate OKLCH channels with `@property <number>` and compose `oklch(var(--orbit-l)…)` — Chromium treats that as invalid mid-animation (falls back to white). Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
+- Brand accent orbit: hex keyframes on unlayered `.orbit-accent` (direct `color` animation) + `@property --orbit-accent` `<color>` for bg/border/mix. Avoid `oklch()` in animated tokens (LightningCSS → lab/@supports; Chromium can blank `color: var(...)`). Never animate OKLCH channels via `@property <number>`. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
 - Related articles topic tones live in `src/lib/news/category-tone.ts` and drive both `NewsCard` badges and `FilterChip` active states (`All` = brand cyan orbit; `AI` = fixed ai).
 
 ## Dependencies

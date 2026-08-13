@@ -3,23 +3,24 @@
 @tailwind utilities;
 
 /*
- * Animate a full <color>. Composing oklch() from @property <number> channels
- * (--orbit-l/c/h) is invalid in Chromium while the animation runs → white text.
+ * Brand orbit accent.
+ * Do NOT animate OKLCH channels via @property <number> (Chromium → white).
+ * Do NOT rely only on color: var(--token) for text/SVG — pair with direct
+ * `color` animation in hex so LightningCSS rewrites cannot blank the paint.
  */
 @property --orbit-accent {
   syntax: "<color>";
   inherits: true;
-  initial-value: oklch(0.78 0.14 195);
+  initial-value: #22d3ee;
 }
 
 :root {
-  /* OKLCH tokens — tuned for dark mission-control contrast */
+  /* OKLCH channel tokens (fixed category hues for Tailwind) */
   --void: 0.12 0.025 264;
   --void-800: 0.14 0.028 264;
   --foreground: 0.93 0.015 264;
   --muted: 0.68 0.025 264;
-  --orbit-accent: oklch(0.78 0.14 195);
-  /* Fixed category hues (space-separated channels for Tailwind oklch()) */
+  --orbit-accent: #22d3ee;
   --accent-ai: 0.78 0.14 195;
   --accent-violet: 0.62 0.22 300;
   --accent-blue: 0.62 0.16 255;
@@ -126,12 +127,6 @@
     @apply focus-visible:border-neon-cyan/50;
   }
 
-  .orbit-accent {
-    color: var(--orbit-accent);
-  }
-  .orbit-accent-muted {
-    color: color-mix(in oklch, var(--orbit-accent) 40%, transparent);
-  }
   .orbit-accent-bg {
     background-color: var(--orbit-accent);
   }
@@ -158,6 +153,19 @@
   }
 }
 
+/*
+ * Unlayered on purpose: must beat Tailwind preflight `a { color: inherit }`
+ * and any utility-layer text color. Hex + direct `color` animation — not var().
+ */
+.orbit-accent {
+  color: #22d3ee;
+  animation: orbit-accent-fg 16s ease-in-out infinite;
+}
+.orbit-accent-muted {
+  color: color-mix(in oklch, #22d3ee 40%, transparent);
+  animation: orbit-accent-fg-muted 16s ease-in-out infinite;
+}
+
 @keyframes orbit-drift {
   from {
     transform: rotate(0deg);
@@ -167,20 +175,53 @@
   }
 }
 
-/* Light blue → sky → azure → purpleish → back (brand cyan only) */
+/* Token for backgrounds / borders / mix */
 @keyframes orbit-accent-cycle {
   0%,
   100% {
-    --orbit-accent: oklch(0.82 0.12 195);
+    --orbit-accent: #4ddcdc;
   }
   25% {
-    --orbit-accent: oklch(0.74 0.14 230);
+    --orbit-accent: #25baf2;
   }
   50% {
-    --orbit-accent: oklch(0.68 0.16 255);
+    --orbit-accent: #4c99f8;
   }
   75% {
-    --orbit-accent: oklch(0.64 0.18 295);
+    --orbit-accent: #9670ec;
+  }
+}
+
+/* Foreground paint for text + Lucide currentColor strokes */
+@keyframes orbit-accent-fg {
+  0%,
+  100% {
+    color: #4ddcdc;
+  }
+  25% {
+    color: #25baf2;
+  }
+  50% {
+    color: #4c99f8;
+  }
+  75% {
+    color: #9670ec;
+  }
+}
+
+@keyframes orbit-accent-fg-muted {
+  0%,
+  100% {
+    color: color-mix(in oklch, #4ddcdc 40%, transparent);
+  }
+  25% {
+    color: color-mix(in oklch, #25baf2 40%, transparent);
+  }
+  50% {
+    color: color-mix(in oklch, #4c99f8 40%, transparent);
+  }
+  75% {
+    color: color-mix(in oklch, #9670ec 40%, transparent);
   }
 }
 
@@ -196,6 +237,16 @@
 
   html {
     animation: none !important;
-    --orbit-accent: oklch(0.78 0.14 195);
+    --orbit-accent: #22d3ee;
+  }
+
+  .orbit-accent,
+  .orbit-accent-muted {
+    animation: none !important;
+    color: #22d3ee;
+  }
+
+  .orbit-accent-muted {
+    color: color-mix(in oklch, #22d3ee 40%, transparent);
   }
 }
