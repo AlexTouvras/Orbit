@@ -188,7 +188,7 @@ Edit **`src/content/profile.ts`**:
 | `githubUsername` | GitHub repo grid on Portfolio |
 | `email`, `resumeUrl` | Contact + CV download |
 | `socials` | Footer + mobile Hub icons |
-| `competencies` | Three cards on Hub (code only, not in Studio) |
+| `competencies` | Three Hub cards (code only, not in Studio). AI and Data already link to field cards; Delivery now links to `/delivery-field-card/index.html` |
 
 After editing `profile.ts`, if Studio previously saved overrides, either update Studio too or delete `data/profile.json` to revert to code defaults.
 

@@ -55,6 +55,7 @@ data/published-projects.json
 src/content/writes/
 public/field-card/index.html            # Agentic AI Field Card (home AI competency)
 public/analytics-field-card/index.html  # Data Analytics Field Card (home Data competency)
+public/delivery-field-card/index.html   # Technology Delivery Field Card (home Delivery competency)
 src/lib/field-card/registry.ts          # Multi-card Approve sync map (repo → Orbit path)
 src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for all registered cards
 .state/
@@ -66,6 +67,7 @@ src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for al
 |------|----------|-----------|
 | 2026-08-11 | Fitness coach systems Write + non-featured portfolio card | Ops loop (git/Slack/Automations/Intervals), not training diary; same personal-ops lane as mealplan |
 | 2026-08-11 | Data Analytics Field Card + shared Orbit field-card registry | Same weekly discovery → Cursor judgment → #orbit Approve process as AI card; stack is ASK/GRAIN/TRUTH/USE (not a Fabric brochure) |
+| 2026-08-13 | Technology Delivery Field Card + Hub competency href | Same weekly discovery → Cursor judgment → #orbit Approve as AI/analytics; stack is INTENT/WINDOW/PROOF/CUTOVER (not a Scrum/SAFe brochure) |
 | 2026-08-03 | Weekly Write Slack posts full essay in-channel (chunked sections); `githubSynced` required for preview/Approve | Teaser + browser preview 404'd when Cloud Automation left the pending draft on a feature branch only |
 | 2026-07-26 | Orbit `caseStudyUrl` → `/writes/building-orbit` | Essay existed; card lacked Case study link |
 | 2026-07-26 | Heatmap case study Write + `caseStudyUrl` | Featured live board had no write-up |

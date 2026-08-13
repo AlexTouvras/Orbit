@@ -2,7 +2,7 @@
  * Registry of weekly field cards that Orbit can preview / Approve / sync.
  * Token payloads already carry `repo`; this maps each repo to site paths + labels.
  */
-export type FieldCardId = "agentic-ai" | "data-analytics";
+export type FieldCardId = "agentic-ai" | "data-analytics" | "technology-delivery";
 
 export interface FieldCardConfig {
   id: FieldCardId;
@@ -34,6 +34,14 @@ export const FIELD_CARDS: readonly FieldCardConfig[] = [
     sitePath: "/analytics-field-card/index.html",
     pagesUrl: "https://alextouvras.github.io/data-analytics-field-card/",
     label: "Data Analytics Field Card",
+  },
+  {
+    id: "technology-delivery",
+    repo: "AlexTouvras/technology-delivery-field-card",
+    orbitPath: "public/delivery-field-card/index.html",
+    sitePath: "/delivery-field-card/index.html",
+    pagesUrl: "https://alextouvras.github.io/technology-delivery-field-card/",
+    label: "Technology Delivery Field Card",
   },
 ] as const;
 

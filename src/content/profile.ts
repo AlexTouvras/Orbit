@@ -98,6 +98,8 @@ export const competencies: Competency[] = [
       "Sequencing Azure and middleware changes across platform, security, and business calendars — evidence before the call, rollback before green.",
     accent: "violet",
     icon: Route,
+    href: "/delivery-field-card/index.html",
+    hrefLabel: "Field card",
   },
 ];
 

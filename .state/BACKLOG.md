@@ -11,6 +11,7 @@
 - [x] Field-card fail-closed: discovery Slack ping + judgment watchdog + Approve requires `## Summary` (agentic-ai-field-card PR #3)
 - [x] W32 field card PR #2 merged (2026-08-11); Slack Approve/Skip flow verified
 - [x] Scaffold Data Analytics Field Card repo + Orbit home link (`/analytics-field-card/`) + shared Approve registry
+- [x] Scaffold Technology Delivery Field Card + Orbit home link (`/delivery-field-card/`) + registry entry
 - [x] Bind Friday Cursor judgment for analytics field card (GH Action → Cloud Agents API)
 - [x] Deploy analytics field card Orbit wiring to prod (main)
 - [x] Human review first analytics field card (stack + tool picker) on home / print PDF — skipped 2026-08-13

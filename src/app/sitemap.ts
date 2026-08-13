@@ -50,6 +50,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.75,
     },
+    {
+      url: `${base}/delivery-field-card/index.html`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
   ];
 
   const writes = getAllWrites().map((write) => ({

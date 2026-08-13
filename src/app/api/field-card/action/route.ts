@@ -257,7 +257,7 @@ export async function POST(req: NextRequest) {
     return htmlPage(
       "Action failed",
       `<p>${escapeHtml(message)}</p>
-       <p>Check that Orbit?s <code>GITHUB_TOKEN</code> (or <code>FIELD_CARD_GITHUB_TOKEN</code>) can write to <code>AlexTouvras/agentic-ai-field-card</code>.</p>`,
+       <p>Check that Orbit's <code>GITHUB_TOKEN</code> (or <code>FIELD_CARD_GITHUB_TOKEN</code>) can write to the registered field-card repo.</p>`,
       false,
     );
   }

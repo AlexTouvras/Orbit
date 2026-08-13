@@ -17,6 +17,7 @@
 | Weekly Write | GHA `weekly-write.yml` + Cursor | `#orbit` Slack preview/approve | Human Approve in Slack |
 | News refresh | GHA `news-refresh.yml` | commit to `data/news-cache.json` | none |
 | Analytics field card judgment | Cursor `.cursor/automations/analytics-field-card-weekly-content-pass.json` | `#orbit` Approve | Human Approve |
+| Delivery field card judgment | Cursor `.cursor/automations/delivery-field-card-weekly-content-pass.json` | `#orbit` Approve | Human Approve |
 | Field-card Approve API | Orbit `/api/field-card/*` | sync HTML to `public/` | Slack Approve |
 
 ## Required secrets (production)
