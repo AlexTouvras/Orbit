@@ -81,7 +81,6 @@ export default function HomePage() {
           eyebrow="Core competencies"
           title="Delivery, data, and agent systems"
           description="How I ship: delivery leadership, analytics I can defend, and automation with a human gate."
-          orbitAccent
         />
         <Stagger className="mt-10 grid gap-6 sm:grid-cols-3">
           {competencies.map((c) => (
@@ -146,19 +145,17 @@ export default function HomePage() {
 
       <section>
         <Reveal>
-          <GlassCard className="p-8 sm:p-10">
-            <SectionHeading eyebrow="About" title="Background in brief" />
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-300">
-              {profile.summary}
-            </p>
-            <Link
-              href="/about"
-              className="focus-ring group mt-6 inline-flex min-h-11 items-center gap-1 text-sm font-medium text-neon-cyan"
-            >
-              Full background &amp; experience
-              <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
-            </Link>
-          </GlassCard>
+          <SectionHeading eyebrow="About" title="Background in brief" />
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-300">
+            {profile.summary}
+          </p>
+          <Link
+            href="/about"
+            className="focus-ring group mt-6 inline-flex min-h-11 items-center gap-1 text-sm font-medium text-neon-cyan"
+          >
+            Full background &amp; experience
+            <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
+          </Link>
         </Reveal>
       </section>
     </div>

@@ -10,7 +10,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
 
 const skillTones = ["cyan", "blue", "violet"] as const;
 
-/** First "orbit" matches cyan links / Hub brand mark. */
+/** First "orbit" shares the brand accent orbit (cyan → purple). */
 function withOrbitMark(text: string) {
   const i = text.toLowerCase().indexOf("orbit");
   if (i < 0) return text;
@@ -18,7 +18,7 @@ function withOrbitMark(text: string) {
   return (
     <>
       {text.slice(0, i)}
-      <span className="font-medium text-neon-cyan">{text.slice(i, end)}</span>
+      <span className="orbit-accent font-medium">{text.slice(i, end)}</span>
       {text.slice(end)}
     </>
   );
@@ -41,7 +41,7 @@ export function BackgroundSections() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <GlassCard className="mt-8 p-6 sm:p-8">
+          <div className="mt-8">
             <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
               {cv.summary}
             </p>
@@ -58,7 +58,7 @@ export function BackgroundSections() {
                 {email}
               </a>
             </div>
-          </GlassCard>
+          </div>
         </Reveal>
       </section>
 
@@ -72,7 +72,7 @@ export function BackgroundSections() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <GlassCard className="mt-8 p-6 sm:p-8">
+          <div className="mt-8">
             <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
               {withOrbitMark(profileDefaults.whyOrbitDetail)}
             </p>
@@ -83,7 +83,7 @@ export function BackgroundSections() {
               Building Orbit — full case study
               <ArrowUpRight className="h-4 w-4 transition-transform motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5" />
             </Link>
-          </GlassCard>
+          </div>
         </Reveal>
       </section>
 
