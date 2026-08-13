@@ -4,7 +4,7 @@ Same gate pattern as weekly Writes. Supports multiple cards via src/lib/field-ca
 
 ## How a card is researched, created, and kept honest
 
-A field card is a **decision stack**, not a vendor brochure. AI is RAG/AGENT/MCP/A2A. Analytics is ASK/GRAIN/TRUTH/USE. Delivery is INTENT/WINDOW/PROOF/CUTOVER.
+A field card is a **decision stack**, not a vendor brochure. AI is LLM floor + RAG/AGENT/MCP/A2A. Analytics is ASK/GRAIN/TRUTH/USE. Delivery is INTENT/WINDOW/PROOF/CUTOVER. Each card has a verb line under the H1 and an **Always on** strip (Security, Governance, Observability, Evals, Human Approve) — those are not picker items.
 
 1. **Research.** Open Hub competency copy, CV, and the related Orbit essays. Fetch live docs URLs (never invent them). Name the four layers from how the owner actually decides, not from a framework pitch.
 2. **Create.** Standalone `index.html` (print/PDF/LinkedIn) in its own repo. Copy into Orbit `public/<path>/`. Link the Hub competency. Register the repo in `src/lib/field-card/registry.ts` and `sitemap.ts`.
