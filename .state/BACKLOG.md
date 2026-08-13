@@ -34,6 +34,7 @@
 - [x] Home Case study / Read: static cyan (orbit not on one sibling only)
 - [x] Home section eyebrows all static; About unboxed
 - [x] MissionHero totals orbit; About prose unboxed like home
+- [x] Section eyebrows all orbit; cycle stays in phase across pages
 - [x] Human review: fitness coach Write rewrite (why / science / weekly gen / life) + portfolio card
 - [x] Commit/push fitness coach Write + portfolio seed when owner asks
 - [x] Optional browser check: `/portfolio` Case study links + `/writes/nordic-equity-heatmap` — skipped 2026-08-13

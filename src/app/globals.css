@@ -37,6 +37,7 @@
     scroll-behavior: smooth;
     color-scheme: dark;
     animation: orbit-accent-cycle 16s ease-in-out infinite;
+    animation-delay: var(--orbit-fg-delay, 0ms);
   }
 
   body {
@@ -161,10 +162,12 @@
 .orbit-accent {
   color: #22d3ee;
   animation: orbit-accent-fg 16s ease-in-out infinite;
+  animation-delay: var(--orbit-fg-delay, 0ms);
 }
 .orbit-accent-muted {
   color: color-mix(in oklch, #22d3ee 40%, transparent);
   animation: orbit-accent-fg-muted 16s ease-in-out infinite;
+  animation-delay: var(--orbit-fg-delay, 0ms);
 }
 
 @keyframes orbit-drift {

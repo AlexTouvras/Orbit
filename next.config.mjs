@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Cursor Simple Browser / some Windows setups hit 127.0.0.1 instead of localhost.
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
   images: {
     // Allow remote thumbnails from news sources if we ever render them.
     remotePatterns: [{ protocol: "https", hostname: "**" }],

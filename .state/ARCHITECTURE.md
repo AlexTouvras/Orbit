@@ -27,7 +27,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Essay pages read their own feedback entries server-side and render a newest-first note list below the feedback CTA.
 - Essay feedback Slack notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (for `#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
 - Weekly Write Slack draft / publish / skip notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (`#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
-- Brand accent orbit: hex keyframes on unlayered `.orbit-accent` (direct `color` animation) + `@property --orbit-accent` `<color>` for bg/border/mix. Tailwind `neon-cyan` is a **fixed** rest-state cyan (`--accent-cyan`); body links (Case study, Read, nav CTAs) do not ride the loop — Chromium will not reliably repaint inherited `color-mix(var(--orbit-accent))` on every sibling. Avoid `oklch()` in animated tokens (LightningCSS → lab/@supports; Chromium can blank `color: var(...)`). Never animate OKLCH channels via `@property <number>`. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
+- Brand accent orbit: hex keyframes on unlayered `.orbit-accent` (direct `color` animation) + `@property --orbit-accent` `<color>` for bg/border/mix. Tailwind `neon-cyan` is a **fixed** rest-state cyan (`--accent-cyan`); body links (Case study, Read, nav CTAs) do not ride the loop. Section eyebrows and hero totals do, via `.orbit-accent`. `--orbit-fg-delay` is applied after hydrate (`OrbitSync` layout effect, not a `Date.now()` SSR script) so new mounts join mid-cycle without a hydration mismatch. Avoid `oklch()` in animated tokens (LightningCSS → lab/@supports; Chromium can blank `color: var(...)`). Never animate OKLCH channels via `@property <number>`. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
 - Related articles topic tones live in `src/lib/news/category-tone.ts` and drive both `NewsCard` badges and `FilterChip` active states (`All` = `.orbit-accent*` so the chip still orbits; `AI` = fixed ai).
 
 ## Dependencies
@@ -68,6 +68,7 @@ src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for al
 | 2026-08-11 | Fitness coach systems Write + non-featured portfolio card | Ops loop (git/Slack/Automations/Intervals), not training diary; same personal-ops lane as mealplan |
 | 2026-08-11 | Data Analytics Field Card + shared Orbit field-card registry | Same weekly discovery → Cursor judgment → #orbit Approve process as AI card; stack is ASK/GRAIN/TRUTH/USE (not a Fabric brochure) |
 | 2026-08-13 | Technology Delivery Field Card + Hub competency href | Same weekly discovery → Cursor judgment → #orbit Approve as AI/analytics; stack is INTENT/WINDOW/PROOF/CUTOVER (not a Scrum/SAFe brochure) |
+| 2026-08-13 | Field cards: verb lede + Always-on strip; AI gets LLM floor | Family pattern from poster comparison; MCP stays tool reach, not orchestration |
 | 2026-08-03 | Weekly Write Slack posts full essay in-channel (chunked sections); `githubSynced` required for preview/Approve | Teaser + browser preview 404'd when Cloud Automation left the pending draft on a feature branch only |
 | 2026-07-26 | Orbit `caseStudyUrl` → `/writes/building-orbit` | Essay existed; card lacked Case study link |
 | 2026-07-26 | Heatmap case study Write + `caseStudyUrl` | Featured live board had no write-up |
@@ -86,7 +87,8 @@ src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for al
 | 2026-08-12 | Canonical local clone is `website/` only | Removed stale `Orbit/` duplicate and Cursor shadow folders pointing at the same repo |
 | 2026-08-12 | Pixel avatar beside name on Hub + About (`profile.avatarUrl`, `PixelAvatar`) | Stylized identity mark without weakening typography-first heroes; JSON-LD Person `image` when set |
 | 2026-08-13 | Brand foreground accents: unlayered `.orbit-accent` + hex `color` keyframes; `--orbit-accent` `<color>` (hex) for bg/border only | Channel `@property` + `oklch(var(--orbit-l)…)` and even `color: var(--orbit-accent)` went white on prod Chromium after LightningCSS; owner confirmed hex fg animation |
-| 2026-08-13 | Hub accent targets = “Why the name”, header hexagon, cyan OrbitSignature, MissionHero stat values — not person-name `h1`, not section eyebrows | Mis-aimed name coloring; screenshot / explicit wording defines the set; Core competencies `orbitAccent` made one home eyebrow cycle; owner asked for hero totals to orbit |
+| 2026-08-13 | Hub accent targets = “Why the name”, header hexagon, cyan OrbitSignature, MissionHero stats, **all** `SectionHeading` eyebrows | Owner: labels like Core competencies should orbit together, not only one |
+| 2026-08-13 | About CV role titles use `.orbit-accent` | Same cyan→purple loop as section eyebrows; were static `text-neon-cyan` |
 | 2026-08-13 | Home About is a plain section (no GlassCard); About page Background / Why Orbit prose unboxed too | Boxed blurb sat next to unboxed section headings |
 | 2026-08-13 | `neon-cyan` is static; only `.orbit-accent` / `--orbit-accent` bg-border utilities orbit | Home Case study / Read: inherited animated `text-neon-cyan` painted on one sibling only; all-or-none → none |
 | 2026-08-13 | `SLACK_ORBIT_WEBHOOK_URL` on Vercel + GH Actions (Orbit + field-card repos); weekly CI prefers `#orbit` | P1-02; legacy `SLACK_WEBHOOK_URL` remains fallback only |

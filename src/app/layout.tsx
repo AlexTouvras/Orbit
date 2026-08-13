@@ -6,6 +6,7 @@ import { ParticleBackground } from "@/components/layout/ParticleBackground";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { OrbitSync } from "@/components/ui/OrbitSync";
 import { getEditableProfile } from "@/lib/profile-store";
 import { getSiteUrl } from "@/lib/site";
 
@@ -66,6 +67,7 @@ export default function RootLayout({
       className={`${syne.variable} ${ibmPlex.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-sans antialiased">
+        <OrbitSync />
         <JsonLd />
         <a
           href="#main-content"
