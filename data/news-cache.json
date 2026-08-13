@@ -1,7 +1,97 @@
 {
-  "generatedAt": "2026-08-12T07:17:58.682Z",
+  "generatedAt": "2026-08-13T06:58:33.795Z",
   "count": 219,
   "items": [
+    {
+      "id": "b975b680ae4f",
+      "title": "Vibe Code Data Apps with Vercel V0 & MotherDuck",
+      "link": "https://motherduck.com/blog/vibe-code-data-apps-with-vercel-v0-and-MotherDuck",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-08-13T00:00:00.000Z",
+      "contentSnippet": "Use an agent to build data apps with the combo of Vercel V0 and MotherDuck! V0 makes prototyping and deployment easy, while MotherDuck Flights provide seamless data ingestion and MotherDuck handles up to billions of rows. Your agent can even sign up for MotherDuck for you! See a…"
+    },
+    {
+      "id": "a0f95b1672f7",
+      "title": "Databricks Network Configuration delivery to Tens of Millions of Serverless VMs",
+      "link": "https://www.databricks.com/blog/databricks-network-configuration-delivery-tens-millions-serverless-vms",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-12T20:00:00.000Z",
+      "contentSnippet": "SummaryDatabricks' serverless platform launches tens of millions of VMs daily, and..."
+    },
+    {
+      "id": "6d7c7b773b20",
+      "title": "How Amtrak is building the data backbone for its largest transformation in over 50 years",
+      "link": "https://www.databricks.com/blog/how-amtrak-building-data-backbone-its-largest-transformation-over-50-years",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-12T19:45:00.000Z",
+      "contentSnippet": "\"Every new trainset is a data-generating asset. The intelligence platform that connects..."
+    },
+    {
+      "id": "9e222714c5d8",
+      "title": "How a major freight railroad scaled pipeline creation with Genie Code",
+      "link": "https://www.databricks.com/blog/how-major-freight-railroad-scaled-pipeline-creation-genie-code",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-12T16:35:18.000Z",
+      "contentSnippet": "One of Canada’s largest railway networks spans roughly 20,000 route miles across..."
+    },
+    {
+      "id": "944f4d659fcd",
+      "title": "The Future of Data Analytics: Why AI is rewriting the Analyst’s Job Description",
+      "link": "https://www.databricks.com/blog/future-data-analytics-why-ai-rewriting-analysts-job-description",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-12T13:00:00.000Z",
+      "contentSnippet": "The Data Analyst role has been declared dead more times than we can count. AI will..."
+    },
+    {
+      "id": "e64d5d0646ff",
+      "title": "Declarative Automation in Dagster: Smarter Data Orchestration Without Complex Schedules",
+      "link": "https://dagster.io/blog/orchestration-is-more-than-scheduling-declarative-automation-in-dagster",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-08-12T10:10:05.000Z",
+      "contentSnippet": "Learn how Dagster's Declarative Automation simplifies data orchestration by defining desired asset state instead of managing schedules, sensors, and custom triggers."
+    },
+    {
+      "id": "61ad811164ff",
+      "title": "Creative Dagster Projects from the Community",
+      "link": "https://dagster.io/blog/community-showcase-part-3",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-08-12T10:10:05.000Z",
+      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
+    },
+    {
+      "id": "ff8242fbd757",
+      "title": "Innovation vs. Novelty: The Distinction Every Scrum Master Must Master",
+      "link": "https://www.scrum.org/resources/blog/innovation-vs-novelty-distinction-every-scrum-master-must-master",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-12T07:25:48.000Z",
+      "contentSnippet": "In 1947, as nations across the globe were redrawing their futures, a company called Convair unveiled something extraordinary: the Convair Model 118 — a flying car. Only two were ever built. Was it innovation? Not quite. It was a clever mashup, a car bolted to an aircraft, an inge…"
+    },
+    {
+      "id": "fb21820d806b",
+      "title": "From assistance to execution: How enterprises put AI to work",
+      "link": "https://openai.com/index/how-enterprises-put-ai-to-work",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-12T06:00:00.000Z",
+      "contentSnippet": "OpenAI research reveals how enterprises are adopting agentic AI, using ChatGPT and Codex, and how frontier firms are pulling ahead in AI adoption."
+    },
+    {
+      "id": "cad35e6294fe",
+      "title": "How RingCentral builds AI-native work from engineering to ops",
+      "link": "https://openai.com/index/ringcentral",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-12T00:00:00.000Z",
+      "contentSnippet": "See how RingCentral uses ChatGPT Work and Codex to accelerate AI product development and centralize operational intelligence across engineering and operations."
+    },
     {
       "id": "2d3ea9ff80a0",
       "title": "Taking AUTO CDC to the next level: Solving the hardest real-world use cases",
@@ -66,6 +156,15 @@
       "contentSnippet": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows."
     },
     {
+      "id": "1af7276c349c",
+      "title": "Creating DAX functions with AI to remove duplicated code",
+      "link": "https://www.sqlbi.com/tv/creating-dax-functions-with-ai-to-remove-duplicated-code/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-08-11T10:00:00.000Z",
+      "contentSnippet": "How to leverage AI to refactor existing DAX code, remove duplicated parts, and centralize the common code in user-defined functions."
+    },
+    {
       "id": "0c0f2d0b4495",
       "title": "How to Create Multilingual User Tutorial Videos with AI",
       "link": "https://www.scrum.org/resources/blog/how-create-multilingual-user-tutorial-videos-ai",
@@ -120,15 +219,6 @@
       "contentSnippet": "OpenAI CFO Sarah Friar shares five lessons for building an AI-native finance function, from automated forecasting to stronger controls and AI ROI."
     },
     {
-      "id": "2466f0876fe1",
-      "title": "Introducing FILE type: a native column type for multimodal data",
-      "link": "https://www.databricks.com/blog/introducing-file-type-native-column-type-multimodal-data",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-10T15:00:00.000Z",
-      "contentSnippet": "Your data estate holds far more than structured tables, metrics, and transaction..."
-    },
-    {
       "id": "61282b7420ed",
       "title": "OpenAI’s letter to Governor Abbott on responsible AI infrastructure in Texas",
       "link": "https://openai.com/index/responsible-ai-infrastructure-texas",
@@ -145,15 +235,6 @@
       "category": "AI",
       "pubDate": "2026-08-10T12:00:00.000Z",
       "contentSnippet": "Model ML uses GPT-5.6 Sol to carry finance work from research and analysis through editable, traceable PowerPoint decks and Excel workbooks."
-    },
-    {
-      "id": "3a8585570cab",
-      "title": "Expanding Daybreak as the Cyber Defense Window Narrows",
-      "link": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-10T10:00:00.000Z",
-      "contentSnippet": "Meet GPT-5.6-Cyber, OpenAI’s cybersecurity-specific model available through Daybreak Red for authorized vulnerability research, exploit validation, and security testing."
     },
     {
       "id": "7f776d7829d0",
@@ -210,15 +291,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "ee449db47d8d",
-      "title": "Premium seats are coming to ChatGPT Business",
-      "link": "https://openai.com/index/premium-seats-chatgpt-business",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-10T00:00:00.000Z",
-      "contentSnippet": "Premium seats are coming to ChatGPT Business. Sign up by August 20 to get $100 in workspace credits and unlock higher usage for your team's most demanding work."
-    },
-    {
       "id": "6cb1441ecb9f",
       "title": "Agents can sign up for MotherDuck",
       "link": "https://motherduck.com/blog/agent-signup",
@@ -246,9 +318,9 @@
       "contentSnippet": "Image In May 1997, at Apple's developer conference, an audience member stood up and insulted Steve Jobs to his face. Jobs paused, took a sip of water, and gave an answer that had nothing to do with the insult and everything to do with how he ran companies. \"Focusing is about sayi…"
     },
     {
-      "id": "f58ff2a8bb1e",
+      "id": "3f6535797a1a",
       "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
-      "link": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-entries",
+      "link": "https://simonwillison.net/2026/Aug/7/openai-timeline/",
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-08-07T23:55:58.000Z",
@@ -264,24 +336,6 @@
       "contentSnippet": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
     },
     {
-      "id": "4fffe919132d",
-      "title": "Managing AI Coding Costs at Scale",
-      "link": "https://www.databricks.com/blog/managing-ai-coding-costs-scale",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-07T11:50:39.000Z",
-      "contentSnippet": "AI coding tools deliver immense value: at Databricks, agentic coding has measurably..."
-    },
-    {
-      "id": "39a8a938632c",
-      "title": "What is an AI Assistant?",
-      "link": "https://www.databricks.com/blog/what-is-an-ai-assistant",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-07T11:44:24.000Z",
-      "contentSnippet": "AI assistants use language models, data retrieval, and reasoning to understand requests..."
-    },
-    {
       "id": "9d27c3063c90",
       "title": "Your Last Failed Transformation is not a Strategy",
       "link": "https://www.scrum.org/resources/blog/your-last-failed-transformation-not-strategy",
@@ -289,24 +343,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-06T22:00:00.000Z",
       "contentSnippet": "\"We tried that before.\" Four words, and the idea was dead. Nobody asked when \"before\" was, or what was different then, or whether the thing that killed it last time even still exists. The four words did all the work a careful argument would have done, minus the argument. The meet…"
-    },
-    {
-      "id": "d855e124a36f",
-      "title": "What are Agentic Workflows?",
-      "link": "https://www.databricks.com/blog/agentic-workflows",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-06T21:36:15.000Z",
-      "contentSnippet": "As organizations move beyond single-prompt AI interactions, agentic workflows are..."
-    },
-    {
-      "id": "e64d5d0646ff",
-      "title": "Declarative Automation in Dagster: Smarter Data Orchestration Without Complex Schedules",
-      "link": "https://dagster.io/blog/orchestration-is-more-than-scheduling-declarative-automation-in-dagster",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-08-06T13:27:33.000Z",
-      "contentSnippet": "Learn how Dagster's Declarative Automation simplifies data orchestration by defining desired asset state instead of managing schedules, sensors, and custom triggers."
     },
     {
       "id": "2aff593adf2a",
@@ -318,9 +354,9 @@
       "contentSnippet": "Why a throughput number is not an architecture decision."
     },
     {
-      "id": "9f372ab5d0ce",
+      "id": "ecbbb6befce1",
       "title": "One-shotting a Raccoon Heist game using Claude Fable 5",
-      "link": "https://simonwillison.net/2026/Aug/5/raccoon-heist/#atom-entries",
+      "link": "https://simonwillison.net/2026/Aug/5/raccoon-heist/",
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-08-05T19:42:38.000Z",
@@ -363,9 +399,9 @@
       "contentSnippet": "The duckdb/duckdb GitHub repository has just passed 40 000 stars! We’d like to use this milestone to stop for a moment and revisit recent developments in the DuckStack ecosystem since last summer (2025), when we surpassed 30 000 stars. Releases Since the last milestone, the DuckL…"
     },
     {
-      "id": "7c7dca1e7334",
+      "id": "e529f54cff05",
       "title": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging",
-      "link": "https://simonwillison.net/2026/Aug/4/new-release-of-llm/#atom-entries",
+      "link": "https://simonwillison.net/2026/Aug/4/new-release-of-llm/",
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-08-04T23:58:24.000Z",
@@ -489,9 +525,9 @@
       "contentSnippet": "Since OpenAI slashed the price of GPT 5.6 Luna by 80% this week, low latency AI-powered answers are finally feasible for less than half a penny per answer, AI and DB costs included. For data questions, GPT 5.6 Luna is intelligence too cheap to meter. Well documented context, rigo…"
     },
     {
-      "id": "83cc35aa7317",
+      "id": "9209ffe6998f",
       "title": "Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)",
-      "link": "https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-entries",
+      "link": "https://simonwillison.net/2026/Jul/31/stateless-mcp/",
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-07-31T23:13:22.000Z",
@@ -561,15 +597,6 @@
       "contentSnippet": "Giles Edwards-Alexander does an experiment to see if decomposing a large function helps reduce token costs, suggesting that is may now be possible to measure the economic benefit of refactoring more…"
     },
     {
-      "id": "61ad811164ff",
-      "title": "Creative Dagster Projects from the Community",
-      "link": "https://dagster.io/blog/community-showcase-part-3",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-07-30T12:37:41.000Z",
-      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
-    },
-    {
       "id": "93b56433d545",
       "title": "Creative Dagster Projects from the Community",
       "link": "https://dagster.io/blog/community-showcase-part-2",
@@ -613,15 +640,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-28T13:10:00.000Z",
       "contentSnippet": "Subagents get justified by time saved and parallel execution, but Rahul Garg explains that's not what matters most. Every token in the orchestrator's context is competing for its attention, and the real value of a subagent is what it keeps out of that context. Subagents should be…"
-    },
-    {
-      "id": "885ea4719919",
-      "title": "Scrum Isn't for Stormtroopers",
-      "link": "https://www.scrum.org/resources/blog/scrum-isnt-stormtroopers",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-28T13:00:00.000Z",
-      "contentSnippet": "Image When managers rely on command-and-control leadership instead of empowering the Scrum Team to solve problems, they stifle creativity and limit the value the team can deliver. Scrum is designed for complex environments: places where creativity, adaptation, and real-time probl…"
     },
     {
       "id": "8dc7a10222b6",
@@ -669,9 +687,9 @@
       "contentSnippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
     },
     {
-      "id": "8ab3a4be8a66",
+      "id": "39f65b2ea8ea",
       "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
-      "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries",
+      "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/",
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-07-22T23:51:33.000Z",
@@ -705,9 +723,9 @@
       "contentSnippet": "With this post, I’ll wrap up my notes from the second Future of Software Development Retreat. But before I do, I should note that the full Thoughtworks report on the retreat is now available. They have five headline findings: Code generation is no longer the bottleneck — verifica…"
     },
     {
-      "id": "c81f5a3c2b22",
+      "id": "557bdf76b1ba",
       "title": "A Fireside Chat with Cat and Thariq from the Claude Code team",
-      "link": "https://simonwillison.net/2026/Jul/21/cat-and-thariq/#atom-entries",
+      "link": "https://simonwillison.net/2026/Jul/21/cat-and-thariq/",
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-07-21T12:54:02.000Z",
@@ -750,9 +768,9 @@
       "contentSnippet": "This episode of Fabric Insider is a little different from the others. We are not talking about a product feature or a technical update. We are talking about a program that has shaped the Microsoft data community for over two decades — and one that a lot of people misunderstand. T…"
     },
     {
-      "id": "32c8d28cc1c5",
+      "id": "619c537f41a7",
       "title": "Kimi K3, and what we can still learn from the pelican benchmark",
-      "link": "https://simonwillison.net/2026/Jul/16/kimi-k3/#atom-entries",
+      "link": "https://simonwillison.net/2026/Jul/16/kimi-k3/",
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-07-16T20:19:30.000Z",
@@ -876,9 +894,9 @@
       "contentSnippet": "What if you could create a complete Dataflow Gen 2 in Microsoft Fabric — with data connections, merge transformations, and a fully built date table — without writing a single line of M code? Not as a theoretical future capability. Right now. Today. In this video, I show you exact…"
     },
     {
-      "id": "8e44a2bffb74",
+      "id": "ba232fcde123",
       "title": "The new GPT-5.6 family: Luna, Terra, Sol",
-      "link": "https://simonwillison.net/2026/Jul/9/gpt-5-6/#atom-entries",
+      "link": "https://simonwillison.net/2026/Jul/9/gpt-5-6/",
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-07-09T19:46:38.000Z",
@@ -1353,15 +1371,6 @@
       "contentSnippet": "Wes McKinney, creator of pandas and co-creator of Apache Arrow, shares how he works with AI coding agents: spec-driven workflows with superpowers, continuous AI code review with Roborev, token economics, and why vibe coding is dangerous but agentic engineering isn't."
     },
     {
-      "id": "f6ce198873bb",
-      "title": "Your Obsidian Vault Can Now Run SQL (and Your Agent Can Read It)",
-      "link": "https://motherduck.com/blog/obsidian-vault-duckdb-ai-agents",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-06-04T00:00:00.000Z",
-      "contentSnippet": "Run DuckDB SQL inside your Obsidian notes and freeze the results as plain markdown tables, local files or MotherDuck cloud data alike. Your vault becomes a local knowledge base your AI agent can read without ever querying the warehouse"
-    },
-    {
       "id": "d9cb1dfc37c6",
       "title": "Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft Databases",
       "link": "https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/",
@@ -1738,15 +1747,6 @@
       "category": "Data",
       "pubDate": "2026-04-10T14:02:34.000Z",
       "contentSnippet": "Dagster 1.13 makes the framework easier to adopt with AI coding skills, partition-aware asset checks, virtual assets for database views, and 20+ new integration components."
-    },
-    {
-      "id": "29b5602d09b2",
-      "title": "Using visual calculation to highlight an entire row",
-      "link": "https://www.sqlbi.com/tv/using-visual-calculation-to-highlight-an-entire-row/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-04-07T10:00:00.000Z",
-      "contentSnippet": "How to highlight a row based solely on the maximum value in the last column using visual calculations, a tool that can be used efficiently to format visuals."
     },
     {
       "id": "df2be5bd8dc6",
