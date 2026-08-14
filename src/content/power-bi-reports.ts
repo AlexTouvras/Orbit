@@ -348,7 +348,7 @@ export const powerBiReports: PowerBiReport[] = [
       {
         id: "risk-mandate",
         label: "Risk & Mandate",
-        caption: "Vol / MDD · IPS rules · review calendar",
+        caption: "Vol / MDD · book 95% VaR · book vs optimizer weights · IPS rules",
         src: "/portfolio/power-bi/investing-desk/risk-mandate.png",
       },
       {
