@@ -1,10 +1,37 @@
 {
-  "generatedAt": "2026-08-14T07:17:56.520Z",
+  "generatedAt": "2026-08-15T06:01:48.913Z",
   "count": 220,
   "items": [
     {
+      "id": "153261e53339",
+      "title": "The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
+      "link": "https://radacad.com/the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10/?utm_source=rss&utm_medium=rss&utm_campaign=the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-08-14T21:35:58.000Z",
+      "contentSnippet": "What is the next evolution of Power BI? Will Power BI Desktop ever become a prompt-first UI? And how do you actually decide whether you need a semantic model, an ontology, or both? I sat down with Mohammad Ali — Director of Product Management for Power BI at Microsoft, overseeing…"
+    },
+    {
+      "id": "6be2619171b0",
+      "title": "Using AI_Functions in Your Data Warehouse: Top Use Cases",
+      "link": "https://www.databricks.com/blog/using-aifunctions-your-data-warehouse-top-use-cases",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-14T21:30:00.000Z",
+      "contentSnippet": "In most organizations, data warehouses hold structured data, while unstructured data..."
+    },
+    {
+      "id": "e2d277d01964",
+      "title": "What an Ontology for AI Agents Actually Needs",
+      "link": "https://www.dataengineeringweekly.com/p/an-ontology-for-ai-agents-is-a-system",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-14T12:38:18.000Z",
+      "contentSnippet": "How to think about the semantic system that makes an agent coherent, governable, and useful."
+    },
+    {
       "id": "0f9d254133b6",
-      "title": "Customers don't buy your exhaustion",
+      "title": "Customers Don't Buy your Exhaustion",
       "link": "https://www.scrum.org/resources/blog/customers-dont-buy-your-exhaustion",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -244,15 +271,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-11T07:05:58.000Z",
       "contentSnippet": "Imagine you want to create a tutorial video for your users to learn how to use a specific feature of your product. Your users are from the UK, Germany, and Sweden. Let’s see how you can build a multilingual video for it with AI. Image You are a Product Owner of a product that is…"
-    },
-    {
-      "id": "8b18bfa54356",
-      "title": "Electric joins Databricks to bring WASM Postgres to AI agent sandboxes",
-      "link": "https://www.databricks.com/blog/electric-joins-databricks-bring-wasm-postgres-ai-agent-sandboxes",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-11T07:00:00.000Z",
-      "contentSnippet": "Today, we’re excited to welcome Electric to Databricks. The world is building a new..."
     },
     {
       "id": "ff64cfc34025",
@@ -1281,15 +1299,6 @@
       "contentSnippet": "This article describes how to define optional parameters in DAX user-defined functions and set default values for parameters not specified by the caller. When Microsoft announced that DAX User-defined functions (UDFs) are generally available (GA), another new feature was also…"
     },
     {
-      "id": "16e776140857",
-      "title": "Power BI Multilingual Reports Made Simple with User-Context-Aware Calculated Columns",
-      "link": "https://radacad.com/power-bi-multilingual-reports-made-simple-with-user-context-aware-calculated-columns/?utm_source=rss&utm_medium=rss&utm_campaign=power-bi-multilingual-reports-made-simple-with-user-context-aware-calculated-columns",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-06-15T17:24:51.000Z",
-      "contentSnippet": "Building a multilingual Power BI report has always been one of those requirements that sounded simple but turned out painful to implement. A French-speaking user opens your report and sees English category names. A Spanish-speaking user opens the same report and sees the same Eng…"
-    },
-    {
       "id": "7ccb02b39f86",
       "title": "Data, AI, and the case for continuous learning",
       "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/15/data-ai-and-the-case-for-continuous-learning/",
@@ -1675,15 +1684,6 @@
       "category": "Analytics",
       "pubDate": "2026-04-27T06:25:47.000Z",
       "contentSnippet": "Five surfaces collapsed into one declarative layer. Here's the full story of Materialized Lake Views in Microsoft Fabric - from syntax to the new GA capabilities announced at FabCon Atlanta The post Materialized Lake Views in Microsoft Fabric: When your medallion fits in a SELECT…"
-    },
-    {
-      "id": "d31bbf422a3b",
-      "title": "Data Engineering Weekly #267",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-267",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-04-27T00:52:38.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "a9c8e6b0271b",
