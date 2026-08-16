@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-15T06:29:58.133Z",
+  "generatedAt": "2026-08-16T06:32:20.916Z",
   "count": 220,
   "items": [
+    {
+      "id": "6390a377f9b1",
+      "title": "Your Juniors Are Still Here. The Reps Are Gone.",
+      "link": "https://www.scrum.org/resources/blog/your-juniors-are-still-here-reps-are-gone",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-16T06:00:00.000Z",
+      "contentSnippet": "Image A surgical resident scrubs in for a prostatectomy. Gowned, credentialed, in the room. The robotic console sits four feet away and the attending surgeon is already at it, running the procedure alone, because the machine allows it. The resident watches from a second console a…"
+    },
     {
       "id": "153261e53339",
       "title": "The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
@@ -613,15 +622,6 @@
       "category": "Data",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Maxime Beauchemin, creator of Airflow and Superset, shares how he uses AI agents for data engineering: orchestrating agents on a shared canvas with Agor, context layers and semantics, Okta for Agents security, and automating CEO work with AI assistants."
-    },
-    {
-      "id": "b4ac64d60227",
-      "title": "Your Framework Has Been Doing Your Thinking. That's the Problem.",
-      "link": "https://www.scrum.org/resources/blog/your-framework-has-been-doing-your-thinking-thats-problem",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-07-30T22:00:00.000Z",
-      "contentSnippet": "Image The new engineer asked her question in the second week, in the most innocent voice imaginable. \"Why do we do the estimation poker?\" The room paused. Someone said it helps with planning. She asked how. Someone else said it surfaces different perspectives. She asked whether i…"
     },
     {
       "id": "dafe9a2bbb83",
