@@ -14,6 +14,8 @@
     "weekly:draft": "tsx src/scripts/weekly-write.ts --once",
     "weekly:notify": "tsx src/scripts/weekly-write.ts --once --notify --force",
     "weekly:notify-draft": "tsx src/scripts/weekly-write.ts --notify-only",
+    "newsletter:draft": "tsx src/scripts/newsletter.ts",
+    "newsletter:notify": "tsx src/scripts/newsletter.ts --notify --force",
     "arch:validate-all": "node scripts/architecture/validate-all.mjs",
     "arch:sync-all": "node scripts/architecture/sync-all.mjs",
     "ship:check": "node scripts/check-deploy-author.mjs && npm run build"

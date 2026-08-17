@@ -1,0 +1,48 @@
+name: Weekly newsletter digest
+
+# Scheduled send is Vercel cron (Tue 07:00 UTC → /api/cron/newsletter).
+# This workflow is manual — assemble + send without waiting for Tuesday.
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Resend even if already sent this week"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Assemble digest and send
+        env:
+          SLACK_ORBIT_WEBHOOK_URL: ${{ secrets.SLACK_ORBIT_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          WEEKLY_WRITE_SECRET: ${{ secrets.WEEKLY_WRITE_SECRET }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || github.token }}
+          GITHUB_REPO: ${{ github.repository }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_NEWSLETTER_FROM: ${{ secrets.RESEND_NEWSLETTER_FROM }}
+          RESEND_NEWSLETTER_AUDIENCE_ID: ${{ secrets.RESEND_NEWSLETTER_AUDIENCE_ID }}
+          RESEND_NEWSLETTER_TEST_TO: ${{ secrets.RESEND_NEWSLETTER_TEST_TO }}
+          RAVENS_GITHUB_TOKEN: ${{ secrets.RAVENS_GITHUB_TOKEN }}
+          RAVENS_GITHUB_REPO: AlexTouvras/ravens
+        run: |
+          FORCE_FLAG=""
+          if [ "${{ inputs.force }}" = "true" ]; then FORCE_FLAG="--force"; fi
+          npx tsx src/scripts/newsletter.ts --notify $FORCE_FLAG

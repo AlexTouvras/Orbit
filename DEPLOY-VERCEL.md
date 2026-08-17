@@ -78,6 +78,26 @@ npx vercel env add CONTACT_FROM_EMAIL production --value "onboarding@resend.dev"
 you used to sign up for Resend. `CONTACT_TO_EMAIL` must be that address (not
 necessarily the address shown on your site).
 
+## Weekly digest (newsletter)
+
+No Slack Approve. Tuesday cron sends. While `RESEND_NEWSLETTER_TEST_TO` is set, only that inbox gets mail.
+
+1. [API keys](https://resend.com/api-keys) — reuse `RESEND_API_KEY`.
+2. Vercel env: `RESEND_NEWSLETTER_FROM`, `RESEND_NEWSLETTER_TEST_TO` (your address). Redeploy.
+3. Smoke: `npm run newsletter:notify` or GitHub **Actions → Weekly newsletter digest**.
+4. For Ravens findings in the email: add `RAVENS_GITHUB_TOKEN` (fine-grained PAT, **Contents: Read** on `AlexTouvras/ravens`). Every domain is included — no topic filter. Falls back to `GITHUB_TOKEN` if that PAT can already read ravens.
+5. When happy: unset `TEST_TO`, [verify domain](https://resend.com/domains), set `RESEND_NEWSLETTER_AUDIENCE_ID` from [Audience](https://resend.com/audience).
+
+## Studio week log
+
+Private board at `/studio/week` (Studio password). It reads this week’s files from GitHub.
+
+Add `OPS_GITHUB_TOKEN` on Vercel (and `.env.local`): a fine-grained PAT with **Contents: Read** on `fitness-coach`, `mealplan-private`, `careerops-private`, and `ravens`. If `RAVENS_GITHUB_TOKEN` already covers those repos, you can skip a second token — the page tries `OPS_GITHUB_TOKEN`, then `RAVENS_GITHUB_TOKEN`, then `GITHUB_TOKEN`.
+
+`GITHUB_TOKEN` for Studio save can stay Orbit-only. Do not widen it unless you want one PAT for both write (Orbit) and read (ops repos).
+
+Full click-path: `CONTENT.md` section 6c. Cron: [Vercel Cron Jobs](https://vercel.com/docs/cron-jobs).
+
 ## Studio on Vercel
 
 Vercel has **no writable disk**. Studio saves by **committing to GitHub**:

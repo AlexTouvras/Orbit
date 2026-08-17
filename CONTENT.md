@@ -19,6 +19,7 @@ Read the section that matches what you want to change.
 | **External news feed (Related articles)** | Auto + optional config | `npm run news:fetch` + `src/lib/news/sources.ts` |
 | **Competency cards on Hub** | Code only | `src/content/profile.ts` → `competencies` |
 | **RSS sources** | Code only | `src/lib/news/sources.ts` |
+| **Weekly digest (newsletter)** | Auto-send Tuesday; test-to-self via `RESEND_NEWSLETTER_TEST_TO` | `/newsletter` + `/api/cron/newsletter` |
 
 **Two ways to edit profile & workshop projects:**
 
@@ -290,6 +291,58 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" "https://YOUR_SITE/api/cron/wee
 
 ---
 
+## 6c. Weekly digest (newsletter)
+
+A **roundup**, not a Write. Tuesday cron **assembles and sends** — no Slack Approve. Slack gets a FYI after the fact.
+
+Contents: last week's Write, four Related-article signals, and **From the ravens** — **one highlight per domain that moved this week** (prefer a new inbox finding over a watch item or a durable note). Domains with nothing new that week are omitted. Email links go to the public canonical source, never the private ravens repo.
+
+Needs `RAVENS_GITHUB_TOKEN` (Contents: Read on `AlexTouvras/ravens`), or a `GITHUB_TOKEN` that can already read that repo. If the token cannot read ravens, the digest still sends Writes + RSS and omits the ravens section.
+
+**Live page:** [alextouvras.com/newsletter](https://alextouvras.com/newsletter)
+
+### Validate on yourself first
+
+Set `RESEND_NEWSLETTER_TEST_TO` to your address (e.g. `a.touvras@gmail.com`). While that is set:
+
+- Every send goes **only** to that inbox (single Resend email, subject prefixed `[test]`)
+- Public subscribe is closed
+- Audience broadcasts do not run
+
+Unset `RESEND_NEWSLETTER_TEST_TO` when you are ready for the Resend audience. Then you need a [verified domain](https://resend.com/domains) — `onboarding@resend.dev` cannot broadcast.
+
+### First-time setup
+
+1. [API keys](https://resend.com/api-keys) — `RESEND_API_KEY` (`re_…`). Same key as contact.
+2. For the test period, `RESEND_NEWSLETTER_FROM` may be `onboarding@resend.dev` **if** `TEST_TO` is the email you used to sign up for Resend. For a real audience later: [verify domain](https://resend.com/docs/dashboard/domains/introduction), check DNS at [dns.email](https://dns.email/).
+3. Vercel **Settings → Environment Variables** ([docs](https://vercel.com/docs/environment-variables)):
+
+   | Variable | Test period | Go-live |
+   | --- | --- | --- |
+   | `RESEND_API_KEY` | required | required |
+   | `RESEND_NEWSLETTER_FROM` | `onboarding@resend.dev` or verified | verified, e.g. `Orbit <hello@alextouvras.com>` |
+   | `RESEND_NEWSLETTER_TEST_TO` | your inbox | **unset** |
+   | `RESEND_NEWSLETTER_AUDIENCE_ID` | optional | [Audience](https://resend.com/audience) id |
+   | `RAVENS_GITHUB_TOKEN` | Contents: Read on `AlexTouvras/ravens` | same |
+
+4. Redeploy. Tuesday 07:00 UTC cron: `/api/cron/newsletter` ([Vercel Cron](https://vercel.com/docs/cron-jobs)).
+5. Smoke now: `npm run newsletter:notify` or GitHub **Actions → Weekly newsletter digest**.
+
+### Local
+
+```powershell
+npm run newsletter:draft    # assemble only
+npm run newsletter:notify   # send (test-to or audience) + Slack FYI
+```
+
+Manual cron:
+
+```bash
+curl -H "Authorization: Bearer YOUR_CRON_SECRET" "https://alextouvras.com/api/cron/newsletter?force=1"
+```
+
+---
+
 ## 7. Replacing your CV PDF
 
 1. Export or copy your latest PDF
@@ -344,6 +397,7 @@ Or follow **`DEPLOY.md`** for first-time setup.
 | URL | Purpose |
 | --- | --- |
 | `/studio` | Edit profile (name, tagline, socials, GitHub username, email, resume URL) |
+| `/studio/week` | Private week log (fitness, meals, Ravens, newsletter, CareerOps) |
 | `/studio/projects` | Scan, publish, and edit workshop projects |
 
 **Required env vars** (in `.env.local` for dev, `.env.production` on server):
@@ -353,7 +407,9 @@ STUDIO_PASSWORD=...
 STUDIO_SESSION_SECRET=...
 CRON_SECRET=...
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
-GITHUB_TOKEN=...          # optional, higher GitHub API limits
+GITHUB_TOKEN=...          # Studio save on Vercel (Orbit Contents: write)
+OPS_GITHUB_TOKEN=...      # Week log: Contents: Read on fitness-coach, mealplan-private, careerops-private, ravens
+RAVENS_GITHUB_TOKEN=...   # Newsletter + week log ravens (if not covered by OPS_)
 ```
 
 Generate secrets: `openssl rand -hex 32` (on the VM) or any long random string locally.
@@ -417,7 +473,9 @@ npm run news:fetch
 /portfolio        Workshop + GitHub + Power BI (#power-bi)
 /about            CV & full background
 /radar            Related articles — external RSS (nav label: Related articles)
+/newsletter       Weekly digest (test-to-self until go-live)
 /studio           Private admin (profile)
+/studio/week      Private week log (ops outputs)
 /studio/projects  Private admin (workshop projects)
 ```
 
@@ -425,7 +483,7 @@ npm run news:fetch
 
 ## Minimal habit to grow the site
 
-1. **Weekly:** one Write — automated draft → Slack `#orbit` Approve (or write MDX by hand).
+1. **Weekly:** one Write — automated draft → Slack `#orbit` Approve (or write MDX by hand). Tuesday: digest auto-sends (test-to-self until you unset `RESEND_NEWSLETTER_TEST_TO`).
 2. **When you ship something:** add or update a portfolio MDX or publish via Studio.
 3. **Monthly:** skim About/CV for accuracy; refresh `resume.pdf`.
 4. **Deploy when you have content worth sharing** — not before.

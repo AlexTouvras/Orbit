@@ -4,7 +4,7 @@
 
 ## Overview
 
-Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub + Power BI), Related articles RSS cache, Studio, architecture sync. Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
+Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub + Power BI), Related articles RSS cache, Studio (profile + week log), architecture sync, weekly digest (Resend auto-send; test-to-self until go-live). Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
 
 ## Data shapes
 
@@ -15,6 +15,10 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
+| Newsletter digest draft | `data/newsletter-draft.json` | Titles/links only. Gitignored locally; persist send status via GitHub |
+| Newsletter subscribers | Resend Audience, or `RESEND_NEWSLETTER_TEST_TO` | Emails never in git. Test-to skips the audience entirely |
+| Ravens findings | GitHub Contents on `AlexTouvras/ravens` | Weekly highlights: one item per domain that moved (inbox first). `RAVENS_GITHUB_TOKEN` |
+| Week log | `/studio/week` via `src/lib/week-log/` | ISO week board. Reads fitness-coach plans, mealplan output, ravens, newsletter draft, careerops-private digest/scan |
 
 ## Design patterns
 
@@ -27,6 +31,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Essay pages read their own feedback entries server-side and render a newest-first note list below the feedback CTA.
 - Essay feedback Slack notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (for `#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
 - Weekly Write Slack draft / publish / skip notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (`#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
+- Weekly digest auto-sends Tuesday (no Slack Approve). `RESEND_NEWSLETTER_TEST_TO` mails only that inbox; unset it to broadcast. Slack is FYI after send. Public subscribe stays closed while test-to is set. Ravens section is **one highlight per domain that moved this week**, not a vault dump.
+- Studio week log is owner-only (`STUDIO_PASSWORD` + `noindex`). Token chain: `OPS_GITHUB_TOKEN` → `RAVENS_GITHUB_TOKEN` → `GITHUB_TOKEN`. Do not put the week log in public nav.
 - Brand accent orbit: hex keyframes on unlayered `.orbit-accent` (direct `color` animation) + `@property --orbit-accent` `<color>` for bg/border/mix. Tailwind `neon-cyan` is a **fixed** rest-state cyan (`--accent-cyan`); body links (Case study, Read, nav CTAs) do not ride the loop. Section eyebrows and hero totals do, via `.orbit-accent`. `--orbit-fg-delay` is applied after hydrate (`OrbitSync` layout effect, not a `Date.now()` SSR script) so new mounts join mid-cycle without a hydration mismatch. Avoid `oklch()` in animated tokens (LightningCSS → lab/@supports; Chromium can blank `color: var(...)`). Never animate OKLCH channels via `@property <number>`. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
 - Related articles topic tones live in `src/lib/news/category-tone.ts` and drive both `NewsCard` badges and `FilterChip` active states (`All` = `.orbit-accent*` so the chip still orbits; `AI` = fixed ai).
 
@@ -58,6 +64,16 @@ public/analytics-field-card/index.html  # Data Analytics Field Card (home Data c
 public/delivery-field-card/index.html   # Technology Delivery Field Card (home Delivery competency)
 src/lib/field-card/registry.ts          # Multi-card Approve sync map (repo → Orbit path)
 src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for all registered cards
+src/lib/newsletter/
+├── digest.ts
+├── ravens.ts       # all domains from AlexTouvras/ravens (no allowlist)
+├── deliver.ts      # test-to or Resend Broadcast (no Approve)
+├── run.ts
+└── tokens.ts
+src/app/newsletter/page.tsx
+src/app/api/cron/newsletter/
+src/lib/week-log/            # Studio /studio/week loaders
+src/app/studio/week/page.tsx
 .state/
 ```
 
@@ -65,6 +81,9 @@ src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for al
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-08-17 | Digest Ravens = one highlight per domain this week | Test email was a vault dump; owner asked for weekly highlights only |
+| 2026-08-17 | Private week log at `/studio/week` behind Studio session, not a secret URL | Reuse existing password + noindex; lanes read git artifacts including CareerOps daily-digest / weekly-scan |
+| 2026-08-17 | Digest auto-sends; `RESEND_NEWSLETTER_TEST_TO` for solo validation | Owner will judge the email in-inbox, not via Slack Approve |
 | 2026-08-11 | Fitness coach systems Write + non-featured portfolio card | Ops loop (git/Slack/Automations/Intervals), not training diary; same personal-ops lane as mealplan |
 | 2026-08-11 | Data Analytics Field Card + shared Orbit field-card registry | Same weekly discovery → Cursor judgment → #orbit Approve process as AI card; stack is ASK/GRAIN/TRUTH/USE (not a Fabric brochure) |
 | 2026-08-13 | Technology Delivery Field Card + Hub competency href | Same weekly discovery → Cursor judgment → #orbit Approve as AI/analytics; stack is INTENT/WINDOW/PROOF/CUTOVER (not a Scrum/SAFe brochure) |

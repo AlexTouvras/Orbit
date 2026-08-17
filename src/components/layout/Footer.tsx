@@ -15,6 +15,12 @@ export function Footer() {
             &copy; {new Date().getFullYear()} {profile.name}. Built with Next.js,
             Tailwind &amp; Framer Motion.
           </p>
+          <Link
+            href="/newsletter"
+            className="focus-ring mt-3 inline-flex min-h-11 items-center text-xs font-medium text-slate-400 transition-colors hover:text-neon-cyan sm:min-h-0"
+          >
+            Weekly digest
+          </Link>
         </div>
 
         <div className="flex items-center gap-4">

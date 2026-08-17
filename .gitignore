@@ -33,6 +33,9 @@ yarn-error.log*
 /data/weekly-write-ide-brief.md
 /data/weekly-write.log
 
+# Local newsletter digest draft (GitHub API persist for send status)
+/data/newsletter-draft.json
+
 # Studio-saved profile (tracked for Vercel; updated via Studio → GitHub)
 # /data/profile.json
 
