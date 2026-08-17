@@ -1,88 +1,87 @@
 {
-  "id": "ww-2026-08-10-ide",
-  "status": "published",
-  "createdAt": "2026-08-10T09:02:51.334Z",
-  "weekOf": "2026-08-10",
-  "slug": "when-the-report-becomes-an-app-the-semantic-model-becomes-the-contract",
-  "title": "When the report becomes an app, the semantic model becomes the contract",
-  "summary": "A React frontend can change the reporting experience quickly, but durable analytics still depends on a stable semantic contract and two deliberate release lanes.",
+  "id": "ww-2026-08-17-ide",
+  "status": "pending",
+  "createdAt": "2026-08-17T08:37:12.459Z",
+  "weekOf": "2026-08-17",
+  "slug": "the-agent-can-count-delays-it-still-cannot-cancel-the-flight",
+  "title": "The agent can count delays. It still cannot cancel the flight.",
+  "summary": "Mohammad Ali's usable split: a semantic model answers a mathematical question; an ontology is for the process that acts. I would not skip the middle doll because Desktop grew a prompt.",
   "category": "Data",
   "tags": [
     "Power BI",
     "Analytics",
-    "React",
-    "Fabric",
-    "Delivery"
+    "AI",
+    "Fabric"
   ],
-  "mdx": "---\ntitle: \"When the report becomes an app, the semantic model becomes the contract\"\nsummary: \"A React frontend can change the reporting experience quickly, but durable analytics still depends on a stable semantic contract and two deliberate release lanes.\"\ndate: \"2026-08-10\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Analytics\", \"React\", \"Fabric\", \"Delivery\"]\n---\n\n## The question\n\nI used to treat a moving reporting stack as a migration problem. A new interface arrived, so the work was to reproduce the old pages, check the totals, and teach people where the filters moved. That assumption breaks when the new interface is not another report canvas at all. If a Power BI semantic model can sit behind a TypeScript application, what should an analytics team preserve, and what should it be willing to rebuild?\n\nMy answer is narrower than a platform choice: preserve the meaning and access contract; let the experience compete for its place.\n\n## The demo changes the delivery boundary\n\nIn [Rayfin Data App — The Future of Power BI Reporting](https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting), Reza Rad shows a React and TypeScript frontend reading from a Power BI semantic model. The result looks and behaves like an analytical product, but it is not a Power BI report. In the demo, the app is scaffolded in VS Code, refined with an AI assistant, previewed locally, and published into a Fabric workspace.\n\nThe tempting conclusion is that report building has become frontend building. That is only half true. The visible artifact changes from report pages to application code, but the numbers still inherit their meaning from the semantic model. A polished React component cannot repair an ambiguous measure, the wrong grain, or access that was granted too broadly.\n\nWhen the interface becomes cheap to regenerate, the semantic model becomes more expensive to get wrong.\n\n## Decide the contract before the layout\n\nI would start this kind of work by writing down what the frontend is allowed to assume. Which measures are authoritative? At what grain can they be sliced? Which relationships and date definitions are stable? What does a user see when data is late, access is missing, or a query returns nothing?\n\nThose are not backend details. They are the analytics contract. A Power BI report can hide weak answers behind familiar interactions because authors and users share the same tool conventions. A custom app removes that shelter. Every tooltip, drill path, loading state, and empty result has to express the contract deliberately.\n\nThat changes my baseline test. I would not compare the app with a blank screen or with how quickly a prompt produced three pages. I would compare it with the current report on a small set of decisions: can a user reach the same trusted total, understand the same filter context, and tell when the result is incomplete? The new frontend wins only if it makes those decisions clearer without creating a second definition of the numbers.\n\n## Run two release lanes\n\nOnce the frontend becomes code, analytics inherits more of software delivery. The team now owns dependency updates, builds, tests, deployment history, accessibility, browser behavior, logs, and rollback. None of that is covered by validating a DAX measure.\n\nI would therefore separate two release lanes. Semantic changes should be reviewed as changes to business meaning: definitions, relationships, security, and refresh behavior. Frontend changes should be reviewed as changes to interaction: routes, components, states, and visual hierarchy. An end-to-end check joins the lanes before release, but one approval should not blur them together.\n\nThis split also makes failures legible. If a total changes, I inspect the model contract. If the right total appears under the wrong label, I inspect the client. If a user sees nothing, I can distinguish data freshness, semantic-model permission, and application behavior instead of calling all three a report issue.\n\n## Where an app is the wrong answer\n\nThe primary Signal is careful about the counter-case: Power BI reports still make sense for self-service users who need to explore and modify analysis. I would keep that boundary. A purpose-built app is strongest when the audience has a recurring job and the team can name the decisions the interface must support. It is a poor bargain when every user needs a different slice and the supposed product is really an open-ended analysis workspace.\n\nThe cost story needs the same caution. The source shows how capacity-based distribution can beat per-user licensing in a specific setup, while also noting that load can require a larger capacity. I would model actual users, query load, support work, and frontend ownership before calling the app cheaper. Moving spend from licenses to engineering does not make it disappear.\n\nThere is a security limit too. The demo explicitly keeps AI-assisted commands in a development workspace rather than production. I would keep that separation even when the generated result looks finished. Fast scaffolding is evidence that an idea can run, not that its permissions and failure modes are ready for real users.\n\n## The small version I already trust\n\nOrbit's weekly Write flow uses a simpler version of the same boundary. Signals and project state become a fixed intake. The essay can be rewritten, but publication waits on an inspectable draft and a Slack approval. The presentation is flexible; the source and the state transition stay explicit.\n\nThat is the pattern I want in analytics products. A React client can evolve quickly, but it should consume named definitions rather than quietly inventing them. Speed belongs at the replaceable edge. Trust belongs in the contract and in the release evidence.\n\n## Takeaway\n\nWhen a report becomes an app, I would not begin by recreating every page. I would first freeze a testable semantic contract: trusted measures, grain, access, freshness, and failure states. Then I would let the report and the app compete as clients of that contract, using real user decisions as the baseline. Keep model meaning and frontend behavior in separate release lanes, and keep self-service reporting where exploration is the job. The stack can keep moving; the agreement behind the numbers should move only on purpose.\n",
-  "preview": "When the report becomes an app, the semantic model becomes the contract\n\nA React frontend can change the reporting experience quickly, but durable analytics still depends on a stable semantic contract and two deliberate release lanes.\n\nInspired by: Rayfin Data App — The Future of Power BI Reporting",
+  "mdx": "---\ntitle: \"The agent can count delays. It still cannot cancel the flight.\"\nsummary: \"Mohammad Ali's usable split: a semantic model answers a mathematical question; an ontology is for the process that acts. I would not skip the middle doll because Desktop grew a prompt.\"\ndate: \"2026-08-17\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Analytics\", \"AI\", \"Fabric\"]\n---\n\n## The question\n\nThe story I keep hearing is that Power BI's next shape is a prompt-first Desktop, and that a chat pane good enough makes the semantic model optional. I don't buy it. If the stack keeps growing web apps, Copilot panes, and ontologies, what still has to be a named object before I let an agent near a decision?\n\n[The Next Evolution of Power BI — A Conversation with Mohammad Ali](https://radacad.com/the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10/?utm_source=rss&utm_medium=rss&utm_campaign=the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10) is the source. Ali is Partner Director for the Power BI product. His answer is not \"type more.\" It is a split most teams blur: what is the answer, versus what the agent is allowed to do.\n\n## Two jobs sitting on the lake\n\nAli describes a nested picture, but the part I can use on a Monday is two jobs on OneLake.\n\nThe semantic model encapsulates facts and dimensions. Revenue has a definition. Tables relate on purpose. That is a mathematical exercise: delayed flights, check-ins, people on a plane. He says the semantic model is going through a rebirth because both humans and agents need that classic definition, and he wants the meaning closer to the lake so SQL and Python can hit the same object, not only a report. He also cites the installed base (about 20 million active semantic models) as the reason most customers are already in that middle stage.\n\nAn ontology is for a process. Seeing delays is not the same as cancelling a flight. The second object holds the decision matrix an agent would walk: rules, sequence, action. Ali's line is the one I will keep. The semantic model tells you the answer; the ontology tells the agent how to act. When people ask which to build, he usually says they want both.\n\nI would still start in the middle. Ontology is preview. Jumping to a master process graph while \"revenue\" is still a vibe in a measure is how you get a confident agent with a wrong total.\n\n## Prompt-first is not the default path\n\nReza asked whether Desktop becomes a prompt-first window. Ali said maybe, later, and probably on Fabric Web Apps rather than JSON-shuffling the interactive report you already have. Prompt fatigue is real. He does not want that UI forced on people who do not find it natural.\n\nThat matches how I actually build. Nordic Boardroom still starts with gold tables and a semantic model, then a reader path from \"are we okay?\" to \"who do we call.\" A prompt that rearranges visuals does not replace the grain of a KPI. Fabric Web Apps can skip PBIR and go straight to HTML, hosted on capacity, with authentication and DAX scaffolding included. Ali treats that as complementary. Conversation and custom apps sit next to reporting; they do not retire the model. Capacity-only, not Pro, so it is also not free.\n\nCopilot-in-the-pane versus Claude-via-MCP is the same lesson in a different costume. Ali's path is to standardise on the MCP server internally so Power BI Copilot, M365, Foundry, and an external model hit one Fabric IQ door. Until that lands, I treat every extra pane as another client of the same definitions, not a second definition of revenue.\n\n## What I already refuse to blur\n\nOrbit's weekly Write is a small version of the same split. Signals and project state are intake: what showed up, what is in the workshop. Slack Approve is the action. The essay can be rewritten; publication waits on a person. I would not let a generator both invent the claim and merge it.\n\nLedger is the limit I live with. A research cycle can name a Sharpe gap and a proposed trim. I still click the trades. No broker automation. That is process-shaped work I have not encoded, on purpose.\n\nThe cost of Ali's picture is coordination. Two objects means two kinds of change. Semantic edits are meaning. Ontology edits are permission to act. Mixing them in one prompt looks fast until you cannot tell whether the agent lied about the number or about the rule.\n\n## Takeaway\n\nWhen the stack moves, I would not start by asking whether Desktop should open as a chat. I would ask whether \"what is the answer?\" has an object an agent can query without inventing grain, and whether \"what may we do?\" is a separate object I am willing to maintain. Most organisations will want both. Ontology is still preview. Skip the middle doll and the agent can count delays all day. It still should not cancel the flight.\n",
+  "preview": "The agent can count delays. It still cannot cancel the flight.\n\nMohammad Ali's usable split: a semantic model answers a mathematical question; an ontology is for the process that acts. I would not skip the middle doll because Desktop grew a prompt.\n\nInspired by: The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
   "intake": {
-    "weekOf": "2026-08-10",
-    "generatedAt": "2026-08-10T09:01:32.572Z",
+    "weekOf": "2026-08-17",
+    "generatedAt": "2026-08-17T08:31:56.923Z",
     "signals": [
       {
-        "id": "eb19341e893a",
-        "title": "Using Detail Rows Expressions To Drill To A Different Fact Table In Power BI",
-        "link": "https://blog.crossjoin.co.uk/2026/08/09/using-detail-rows-expressions-to-drill-to-a-different-fact-table-in-power-bi/",
+        "id": "c42698bae58b",
+        "title": "Displaying The Output Of Detail Rows Expressions In Power BI Reports Using The Paginated Report Visual",
+        "link": "https://blog.crossjoin.co.uk/2026/08/16/displaying-the-output-of-detail-rows-expressions-in-power-bi-reports-using-the-paginated-report-visual/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
+        "snippet": "In last week’s post I mentioned that while Power BI reports (unlike Excel PivotTables) do not support the Detail Rows Expression feature, it is possible to partially work around this limitation by using the paginated report visual. In this post I’ll show you how I was able to do…"
       },
       {
-        "id": "fc91bece9947",
-        "title": "Data Engineering Weekly #282",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-282",
+        "id": "776508c048eb",
+        "title": "Data Engineering Weekly #283",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-283",
         "source": "Data Engineering Weekly",
         "category": "Data",
         "snippet": "The Weekly Data Engineering Newsletter"
       },
       {
-        "id": "af2f9387f309",
-        "title": "AI Tools Evaluation & Approval Framework for Scrum Teams",
-        "link": "https://www.scrum.org/resources/blog/ai-tools-evaluation-approval-framework-scrum-teams",
+        "id": "6390a377f9b1",
+        "title": "Your Juniors Are Still Here. The Reps Are Gone.",
+        "link": "https://www.scrum.org/resources/blog/your-juniors-are-still-here-reps-are-gone",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "When you see an impressive AI tool, you want to bring it to your team immediately. But it can bring risks. Don’t blame your organization if they don’t easily allow any AI tool to be used. Why? Image I regularly hear from my students in my AI classes that their organizations don’t…"
+        "snippet": "Image A surgical resident scrubs in for a prostatectomy. Gowned, credentialed, in the room. The robotic console sits four feet away and the attending surgeon is already at it, running the procedure alone, because the machine allows it. The resident watches from a second console a…"
       },
       {
-        "id": "f58ff2a8bb1e",
-        "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
-        "link": "https://simonwillison.net/2026/Aug/7/openai-timeline/#atom-entries",
+        "id": "097582375e87",
+        "title": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things",
+        "link": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
         "source": "Simon Willison",
         "category": "AI",
         "snippet": ""
       },
       {
-        "id": "4cd8dbc4ee36",
-        "title": "Rayfin Data App — The Future of Power BI Reporting",
-        "link": "https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting",
+        "id": "153261e53339",
+        "title": "The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
+        "link": "https://radacad.com/the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10/?utm_source=rss&utm_medium=rss&utm_campaign=the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10",
         "source": "RADACAD",
         "category": "Analytics",
-        "snippet": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
+        "snippet": "What is the next evolution of Power BI? Will Power BI Desktop ever become a prompt-first UI? And how do you actually decide whether you need a semantic model, an ontology, or both? I sat down with Mohammad Ali — Director of Product Management for Power BI at Microsoft, overseeing…"
       },
       {
-        "id": "4fffe919132d",
-        "title": "Managing AI Coding Costs at Scale",
-        "link": "https://www.databricks.com/blog/managing-ai-coding-costs-scale",
+        "id": "6be2619171b0",
+        "title": "Using AI_Functions in Your Data Warehouse: Top Use Cases",
+        "link": "https://www.databricks.com/blog/using-aifunctions-your-data-warehouse-top-use-cases",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "AI coding tools deliver immense value: at Databricks, agentic coding has measurably..."
+        "snippet": "In most organizations, data warehouses hold structured data, while unstructured data..."
       },
       {
-        "id": "05f5b5e146e6",
-        "title": "Cognitive Trap: Scrum Master as a Manager",
-        "link": "https://www.scrum.org/resources/blog/cognitive-trap-scrum-master-manager",
+        "id": "0f9d254133b6",
+        "title": "Customers Don't Buy your Exhaustion",
+        "link": "https://www.scrum.org/resources/blog/customers-dont-buy-your-exhaustion",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Scrum Master as Manager Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, an…"
+        "snippet": "The team had earned its standing ovation, and it wanted one. Two months of late nights. A release pushed out over a weekend nobody got back. The kind of finish that gets a team a reputation for grit. In the review, they walked through all of it, the heroics and the saves, with th…"
       },
       {
-        "id": "833934ee3b25",
-        "title": "Responding to the next frontier of critical cyber capabilities",
-        "link": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+        "id": "855fa77e93e1",
+        "title": "The builder’s guide to GPT‑5.6",
+        "link": "https://openai.com/index/builders-guide-to-gpt-5-6",
         "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": "OpenAI is sharing preliminary cybersecurity evaluations for Astra and the steps we’re taking to strengthen safeguards and security controls."
+        "snippet": "Learn how startups use GPT-5.6 to build faster, more cost-efficient AI agents with smarter model selection and new Responses API capabilities."
       }
     ],
     "projects": [
@@ -153,10 +152,22 @@
         ],
         "repoUrl": "",
         "liveUrl": "/architecture/mealplan"
+      },
+      {
+        "id": "fitness-coach",
+        "name": "Personal ops coach (git + Slack)",
+        "description": "Science-backed personal coach: Intervals form (CTL/ATL/TSB) + Slack RPE → AthleteState → Sunday week plan in Slack. Concurrent run/lift rules, readiness cuts, phone-first week. Domain is training; payoff is less Monday negotiation.",
+        "status": "prototype",
+        "tags": [
+          "Cursor Automations",
+          "Slack",
+          "Git",
+          "Personal ops"
+        ],
+        "repoUrl": "https://github.com/AlexTouvras/fitness-coach",
+        "liveUrl": "/writes/when-the-coach-lives-in-git-and-slack"
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-08-10T11:45:29.012Z",
-  "publishedSlug": "when-the-report-becomes-an-app-the-semantic-model-becomes-the-contract"
+  "source": "ide"
 }
