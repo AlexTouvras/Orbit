@@ -1,7 +1,34 @@
 {
-  "generatedAt": "2026-08-16T06:32:20.916Z",
+  "generatedAt": "2026-08-17T06:34:24.446Z",
   "count": 220,
   "items": [
+    {
+      "id": "776508c048eb",
+      "title": "Data Engineering Weekly #283",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-283",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-17T02:59:40.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "097582375e87",
+      "title": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things",
+      "link": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-08-16T22:00:39.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "c42698bae58b",
+      "title": "Displaying The Output Of Detail Rows Expressions In Power BI Reports Using The Paginated Report Visual",
+      "link": "https://blog.crossjoin.co.uk/2026/08/16/displaying-the-output-of-detail-rows-expressions-in-power-bi-reports-using-the-paginated-report-visual/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-08-16T15:28:15.000Z",
+      "contentSnippet": "In last week’s post I mentioned that while Power BI reports (unlike Excel PivotTables) do not support the Detail Rows Expression feature, it is possible to partially work around this limitation by using the paginated report visual. In this post I’ll show you how I was able to do…"
+    },
     {
       "id": "6390a377f9b1",
       "title": "Your Juniors Are Still Here. The Reps Are Gone.",
@@ -930,15 +957,6 @@
       "contentSnippet": "What if you could create a complete Dataflow Gen 2 in Microsoft Fabric — with data connections, merge transformations, and a fully built date table — without writing a single line of M code? Not as a theoretical future capability. Right now. Today. In this video, I show you exact…"
     },
     {
-      "id": "ba232fcde123",
-      "title": "The new GPT-5.6 family: Luna, Terra, Sol",
-      "link": "https://simonwillison.net/2026/Jul/9/gpt-5-6/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-09T19:46:38.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "43b30eb7245c",
       "title": "Experiences with local models for coding",
       "link": "https://martinfowler.com/articles/exploring-gen-ai/local-models-for-coding-experiences.html",
@@ -1380,15 +1398,6 @@
       "contentSnippet": "Benchmark-maxxing DABstep to 100% and learning that an AI-native semantic layer isn't a description of your data — it's coupled to the model that reads it."
     },
     {
-      "id": "dbe2b8126cf9",
-      "title": "Fabric Dataflows Gen2 And Concurrent Evaluation, Part 3: Is More Parallelism Always Good?",
-      "link": "https://blog.crossjoin.co.uk/2026/06/07/fabric-dataflows-gen2-and-concurrent-evaluation-part-3-is-more-parallelism-always-good/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-06-07T17:12:31.000Z",
-      "contentSnippet": "To finish off my series of posts on concurrent evaluation in Fabric Dataflows Gen2 (see part 1 and part 2) I decided to do some more realistic tests to see how much parallelism I could get. To do this I uploaded 244 identical Excel files containing almost 542000 rows of data each…"
-    },
-    {
       "id": "d9cb1dfc37c6",
       "title": "Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft Databases",
       "link": "https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/",
@@ -1648,15 +1657,6 @@
       "category": "Analytics",
       "pubDate": "2026-05-04T20:00:33.000Z",
       "contentSnippet": "A slicer cannot filter a measure. In this article, we analyze this common request by explaining how to use a slicer to filter a measure, after discussing the real meaning of using a measure with a slicer. A very common…"
-    },
-    {
-      "id": "144cddd0cbf7",
-      "title": "Data Engineering Weekly #268",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-268",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-05-04T01:09:52.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "0b5754265080",
