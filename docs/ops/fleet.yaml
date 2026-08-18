@@ -1,0 +1,159 @@
+# Fleet registry for the daily ops check.
+# Cloud agent on AlexTouvras/Orbit reads this file. Times are Europe/Helsinki.
+# Evidence is GitHub + Slack only — never ~/.cursor.
+
+channel: "#ops-channel"
+timezone: Europe/Helsinki
+check_at: "08:00"
+silent_when_green: true
+human_gate_sla_hours: 24
+weekday_sla_only: true
+
+reactions:
+  approve: white_check_mark
+  snooze: double_vertical_bar
+  # ignore / no reaction = leave for later
+  # v1 does not auto-fix on approve
+
+jobs:
+  - id: ravens-huginn
+    project: ravens
+    name: Huginn
+    repo: AlexTouvras/ravens
+    kind: cursor_automation
+    schedule: "06:00 daily"
+    check: daily
+    slack: "#ravens"
+    expect:
+      slack_after: "06:00"
+      pattern: "inbox|Huginn|today"
+    miss_if: "No #ravens post for today's date after 06:00"
+    proposed_fix: "Open the Huginn automation, confirm Active, run once. If two days missed, check Cloud Agent compute."
+
+  - id: ravens-muninn
+    project: ravens
+    name: Muninn
+    repo: AlexTouvras/ravens
+    kind: cursor_automation
+    schedule: "06:30 daily"
+    check: daily
+    slack: "#ravens"
+    expect:
+      slack_after: "06:30"
+      pattern: "Muninn|signal|knowledge"
+    miss_if: "No #ravens knowledge/signals post for today's date after 06:30"
+    proposed_fix: "Open the Muninn automation, confirm Active, run once."
+
+  - id: fitness-daily-sync
+    project: fitness
+    name: Daily Intervals sync
+    repo: AlexTouvras/fitness-coach
+    branch: master
+    kind: cursor_automation
+    schedule: "07:00 daily"
+    check: daily
+    slack: "#fitness"
+    expect:
+      # Success is silent. Nothing-new days also commit nothing.
+      github_commit_message: "sync: daily intervals"
+      stale_hours: 48
+      failure_slack: true
+    miss_if: "Failure line in #fitness today, or last sync commit on master older than 48h"
+    proposed_fix: "Run the Daily Intervals sync automation. If INTERVALS_API_KEY is missing in Cloud secrets, restore it. Do not run coach-week."
+
+  - id: fitness-sunday-plan
+    project: fitness
+    name: Sunday weekly plan
+    repo: AlexTouvras/fitness-coach
+    branch: master
+    kind: cursor_automation
+    schedule: "Sunday 09:00"
+    check: monday
+    slack: "#fitness"
+    expect:
+      slack_after: "Sunday 09:00"
+      pattern: "Mon |Tue |week|Why this week"
+      github_commit_message: "coach-week:"
+    miss_if: "No Sunday plan post in #fitness and no coach-week commit since Saturday"
+    proposed_fix: "Run Fitness Sunday plan automation (coach-week). Do not invent a week by hand."
+
+  - id: orbit-news-refresh
+    project: orbit
+    name: News refresh
+    repo: AlexTouvras/Orbit
+    kind: github_actions
+    workflow: "Refresh news cache"
+    schedule: "09:00 daily (06:00 UTC)"
+    check: daily
+    # This job runs at 09:00 — after the 08:00 checker. Judge the last 26h, not 'today'.
+    expect:
+      gh_run_success_within_hours: 26
+    miss_if: "No successful news-refresh run in the last 26 hours"
+    proposed_fix: "gh workflow run 'Refresh news cache' --repo AlexTouvras/Orbit"
+
+  - id: orbit-weekly-write
+    project: orbit
+    name: Weekly Write
+    repo: AlexTouvras/Orbit
+    kind: cursor_automation
+    schedule: "Monday (Cursor writer)"
+    check: tuesday
+    slack: "#orbit"
+    expect:
+      slack_pattern: "Weekly Write|Approve|Skip"
+      gate: true
+    miss_if: "No weekly Write Slack draft this ISO week by Tuesday 08:00"
+    stale_gate_if: "Draft posted, no Approve/Skip within 24 weekday hours"
+    proposed_fix: "If missing: run the Weekly Write automation. If sitting in #orbit: Approve or Skip the Slack message."
+
+  - id: orbit-weekly-digest
+    project: orbit
+    name: Weekly digest
+    repo: AlexTouvras/Orbit
+    kind: vercel_cron
+    schedule: "Tuesday 10:00 (07:00 UTC /api/cron/newsletter)"
+    check: wednesday
+    slack: "#orbit"
+    expect:
+      slack_pattern: "digest|newsletter|Approve"
+      gate: true
+    miss_if: "No digest preview in #orbit this ISO week by Wednesday 08:00"
+    stale_gate_if: "Preview posted, no Approve/Skip within 24 weekday hours"
+    proposed_fix: "If missing: gh workflow run newsletter.yml with notify=true, or wait for Vercel cron. If sitting: Approve/Skip in #orbit. Do not send Resend without Approve."
+
+  - id: field-card-friday
+    project: field-cards
+    name: Weekly field card draft + review
+    repos:
+      - AlexTouvras/agentic-ai-field-card
+      - AlexTouvras/data-analytics-field-card
+      - AlexTouvras/technology-delivery-field-card
+    kind: cursor_automation
+    schedule: "Friday 17:00 draft, 18:00 review"
+    check: saturday
+    slack: "#orbit"
+    expect:
+      open_pr_prefix: "chore/weekly-refresh-"
+      review_applied: true
+    miss_if: "Saturday/Monday: an open chore/weekly-refresh-* PR was not approved or declined by the 18:00 review agent"
+    proposed_fix: "Check Weekly field card review automation (a1c0b46b-9a09-11f1-ba66-0e7d0216e441). If the PR exists, run Apply review from Orbit playbook — do not gh pr merge."
+
+  - id: careerops-sunday
+    project: careerops
+    name: Weekly market pass
+    repo: AlexTouvras/careerops-private
+    kind: cursor_automation
+    schedule: "Sunday ~10:00"
+    check: monday
+    slack: "#career-ops"
+    slack_fallback: "#all-careerops"
+    expect:
+      slack_pattern: "weekly|scan|shortlist|apply"
+    miss_if: "No weekly scan summary in career-ops Slack since Sunday 10:00"
+    proposed_fix: "Run Weekly Market Pass automation on careerops-private. Do not mark jobs Applied."
+
+# On-demand / skip missed_run (still fine to mention if a human gate is visibly stuck)
+skip_missed_run:
+  - mealplan  # Slack kickoff only
+  - ledger    # holdings message trigger
+  - harvest-g5  # local script is canonical; cloud often UNAVAILABLE
