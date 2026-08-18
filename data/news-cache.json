@@ -1,7 +1,61 @@
 {
-  "generatedAt": "2026-08-17T06:44:05.496Z",
+  "generatedAt": "2026-08-18T06:24:24.933Z",
   "count": 220,
   "items": [
+    {
+      "id": "ccf1ae1d5f9e",
+      "title": "How Databricks Feature Store serves features with sub-second freshness",
+      "link": "https://www.databricks.com/blog/how-databricks-feature-store-serves-features-sub-second-freshness",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-17T23:10:00.000Z",
+      "contentSnippet": "Machine learning models are only as good as the signals they receive. A fraud detection..."
+    },
+    {
+      "id": "ef06b870e476",
+      "title": "The prototyping tax is killing your AI roadmap",
+      "link": "https://www.databricks.com/blog/prototyping-tax-killing-your-ai-roadmap",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-17T19:42:33.000Z",
+      "contentSnippet": "You know the feeling. Your team has a great idea for an AI-powered pipeline - maybe..."
+    },
+    {
+      "id": "0f8762857f0a",
+      "title": "The Folly of Tokenmaxxing Or Reinventing the Wheel",
+      "link": "https://www.scrum.org/resources/blog/folly-tokenmaxxing-or-reinventing-wheel",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-17T15:53:41.000Z",
+      "contentSnippet": "TL; DR: Tokenmaxxing Or Reinventing the Wheel Your organization counts AI tokens, seats, and pilots, but can anyone name a single decision those numbers actually changed? Tokenmaxxing is only the symptom; five old Agile Laws explain the cause, and each one comes with a test you c…"
+    },
+    {
+      "id": "f137d9ea2f9f",
+      "title": "The Defender’s Window",
+      "link": "https://openai.com/index/the-defenders-window",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-17T05:30:00.000Z",
+      "contentSnippet": "AI is reshaping cybersecurity for attackers and defenders alike. Learn how OpenAI is strengthening its defenses and what security teams can do now."
+    },
+    {
+      "id": "ad5623d5cc70",
+      "title": "OpenAI joins PORTS-Pike project",
+      "link": "https://openai.com/index/openai-joins-ports-pike-project",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-17T05:00:00.000Z",
+      "contentSnippet": "OpenAI joins PORTS-Pike project, expanding community investment and supporting thousands of Southern Ohio jobs"
+    },
+    {
+      "id": "96670aeff66e",
+      "title": "New policy ideas for the Intelligence Age",
+      "link": "https://openai.com/index/new-policy-ideas-for-the-intelligence-age",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-17T03:15:00.000Z",
+      "contentSnippet": "OpenAI funds 14 independent projects exploring new AI policy ideas to expand economic opportunity and strengthen societal resilience in the Intelligence Age."
+    },
     {
       "id": "776508c048eb",
       "title": "Data Engineering Weekly #283",
@@ -10,6 +64,15 @@
       "category": "Data",
       "pubDate": "2026-08-17T02:59:40.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "6e46e7ef28d8",
+      "title": "A Preview of DuckDB v2.0",
+      "link": "https://duckdb.org/2026/08/17/duckdb-20-highlights.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-08-17T00:00:00.000Z",
+      "contentSnippet": "DuckDB v2.0 will be named “Cyanoptera” after the cinnamon teal (Anas cyanoptera), a strikingly reddish-brown duck found in the western Americas. A major version bump is not something we do lightly, and it is not just ceremony: v2.0 ships a new SQL parser, a new default storage fo…"
     },
     {
       "id": "097582375e87",
@@ -237,15 +300,6 @@
       "contentSnippet": "Change data capture is one of the most common things data engineers build on Spark..."
     },
     {
-      "id": "b54d76a4ad9c",
-      "title": "Open-sourcing Metals v2: Databricks’ Java and Scala language server for multi‑million line codebases",
-      "link": "https://www.databricks.com/blog/open-sourcing-metals-v2-databricks-java-and-scala-language-server-multi-million-line-codebases",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-11T19:00:00.000Z",
-      "contentSnippet": "Most code at Databricks is now written by agents. For the moments engineers still..."
-    },
-    {
       "id": "8af5b1e57b96",
       "title": "Why Your Scrum Team Still Works Like Individuals",
       "link": "https://www.mountaingoatsoftware.com/agile/why-your-scrum-team-still-works-like-individuals",
@@ -255,15 +309,6 @@
       "contentSnippet": "Many organizations have Scrum teams in name, but not yet in behavior. The people attend sprint…"
     },
     {
-      "id": "186fce5f8de0",
-      "title": "Modern Risk Demands a Real-Time Foundation: The CRO’s Mandate",
-      "link": "https://www.databricks.com/blog/modern-risk-demands-real-time-foundation-cros-mandate",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-11T12:30:00.000Z",
-      "contentSnippet": "In a volatile macroeconomic environment, enterprise risk management today is constrained..."
-    },
-    {
       "id": "0d3bab75e5d5",
       "title": "TDD inside the agent loop - theater or actual value?",
       "link": "https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html",
@@ -271,24 +316,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-11T11:39:00.000Z",
       "contentSnippet": "My colleagues at Thoughtworks tend to be big fans of Test-Driven Development, and many people in the industry advocate telling LLM agents to use TDD when building software. Birgitta Böckeler was curious if this really makes a difference, so conducted a few experiments. more…"
-    },
-    {
-      "id": "de2ca3d7578d",
-      "title": "Testing ads in ChatGPT",
-      "link": "https://openai.com/index/testing-ads-in-chatgpt",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-11T10:00:00.000Z",
-      "contentSnippet": "OpenAI begins testing ads in ChatGPT to support free access, with clear labeling, answer independence, strong privacy protections, and user control."
-    },
-    {
-      "id": "b274e00978a8",
-      "title": "Daybreak models are now available on AWS",
-      "link": "https://openai.com/index/daybreak-models-are-now-available-on-aws",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-11T10:00:00.000Z",
-      "contentSnippet": "OpenAI and AWS are making Daybreak cybersecurity capabilities available through Amazon Bedrock to support enterprise security workflows."
     },
     {
       "id": "1af7276c349c",
@@ -316,15 +343,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-10T20:00:00.000Z",
       "contentSnippet": "Code written by AI can contain many duplicate parts. User-defined functions are a great tool to simplify complex measures; this article shows how to leverage AI to build better DAX code. AI is getting better and better at generating DAX…"
-    },
-    {
-      "id": "61282b7420ed",
-      "title": "OpenAI’s letter to Governor Abbott on responsible AI infrastructure in Texas",
-      "link": "https://openai.com/index/responsible-ai-infrastructure-texas",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-10T14:00:00.000Z",
-      "contentSnippet": "OpenAI sent Governor Greg Abbott a letter outlining its commitment to responsible AI infrastructure in Texas. The letter supports reliable, transparent growth that benefits Texans."
     },
     {
       "id": "ee10865ff397",
@@ -586,15 +604,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-02T17:52:45.000Z",
       "contentSnippet": "This week there was another big Copilot-related announcement for Power BI – but on the Excel blog. You can now analyse data from Power BI semantic models using Copilot in Excel. Full details on how to enable this are in the docs here, but what does it look like? Using the same se…"
-    },
-    {
-      "id": "1eb3fd449c86",
-      "title": "AI Made Output Cheap. It Also Made Bad Strategy Impossible to Hide.",
-      "link": "https://www.scrum.org/resources/blog/ai-made-output-cheap-it-also-made-bad-strategy-impossible-hide",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-02T06:00:00.000Z",
-      "contentSnippet": "Image Somewhere in a quarterly business review this month, a technology leader is presenting a genuinely impressive number. Pull requests up. Features shipped, way up. The AI tooling landed last year and the output curve bent hard. Then someone from finance asks what all of it di…"
     },
     {
       "id": "e0449a003f89",
@@ -1621,15 +1630,6 @@
       "category": "Analytics",
       "pubDate": "2026-05-09T17:14:17.000Z",
       "contentSnippet": "Two policies, three storage states, one rule connecting them. A newcomer's guide to caching, retention, and tiered storage in Microsoft Fabric Eventhouse. The post Hot, Cold, Gone: Caching and Retention in Microsoft Fabric Eventhouse appeared first on Data Mozart."
-    },
-    {
-      "id": "f1eb85238bf7",
-      "title": "Announcing the Program of DuckCon #7 Amsterdam",
-      "link": "https://duckdb.org/2026/05/08/announcing-duckcon7.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-05-08T00:00:00.000Z",
-      "contentSnippet": "We are excited to announce the program of DuckCon #7 Amsterdam, DuckDB's user conference. The event will be held on Wednesday, June 24, 2026, at the Royal Tropical Institute. The program runs from 15:00 to 20:00 CEST. See the registration link and the full program on the DuckCon…"
     },
     {
       "id": "7094ef6f8071",
