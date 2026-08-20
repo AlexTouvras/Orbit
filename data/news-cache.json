@@ -1,7 +1,70 @@
 {
-  "generatedAt": "2026-08-19T06:36:11.198Z",
-  "count": 219,
+  "generatedAt": "2026-08-20T06:27:14.604Z",
+  "count": 218,
   "items": [
+    {
+      "id": "e53691799f9e",
+      "title": "Conceptual integrity and counting lines of code",
+      "link": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-08-19T22:46:07.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "ef913e9fdabc",
+      "title": "Offering Zero Data Retention for frontier models",
+      "link": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-19T19:00:00.000Z",
+      "contentSnippet": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy."
+    },
+    {
+      "id": "c0d3ea0920c2",
+      "title": "Citizens Build, Agents Execute, Experts Govern",
+      "link": "https://martinfowler.com/rachels-ramblings/citizens-agents-experts.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-08-19T18:30:00.000Z",
+      "contentSnippet": "TL;DR Why building an app over the weekend isn't the same as building enterprise software I’ve noticed an interesting gap opening up over the last six months. It isn’t really a gap in technology. It’s a gap in what different people think software engineering actually is. The conv…"
+    },
+    {
+      "id": "4f6ea3bc7cf5",
+      "title": "Practitioner Voice: The Writing Category Nobody has Named Yet",
+      "link": "https://martinfowler.com/articles/practitioner-voice.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-08-19T18:15:00.000Z",
+      "contentSnippet": "Jim Highsmith recognizes that effective writing from a practitioner is a style distinct from academic writing or thought-leadership content. It's a style that I advocate, and my contributors mostly follow. Jim decided it was important to give it a name, and identify what makes it…"
+    },
+    {
+      "id": "00a29d18e1f0",
+      "title": "Designing effective Genie Agents from a single prompt",
+      "link": "https://www.databricks.com/blog/designing-effective-genie-agents-single-prompt",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-19T16:00:00.000Z",
+      "contentSnippet": "Ask a generic agent about revenue, and it’ll likely grab the first revenue table..."
+    },
+    {
+      "id": "9ac0643f2427",
+      "title": "Replit expands access to software creation with GPT-5.6 Luna",
+      "link": "https://openai.com/index/replit",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-19T07:00:00.000Z",
+      "contentSnippet": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs."
+    },
+    {
+      "id": "f04ef155fead",
+      "title": "Frequently Asked Questions (FAQ) About PSM-AI Essentials Course",
+      "link": "https://www.scrum.org/resources/blog/frequently-asked-questions-faq-about-psm-ai-essentials-course",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-19T06:22:49.000Z",
+      "contentSnippet": "In this blog post, I answer critical questions you have before choosing a Professional Scrum Master – AI Essentials class. Image 1- Why should I take the class when I can directly take the PSM-AI Essentials exam and get the certificate without attending the class? Yes, you can sk…"
+    },
     {
       "id": "e4563871866d",
       "title": "ChatGPT Ads expands across Europe",
@@ -93,15 +156,6 @@
       "contentSnippet": "ChatGPT for Teens helps teens learn, think critically, and use AI with confidence, with stronger built-in protections, healthy-use features, and additional controls for parents."
     },
     {
-      "id": "7d7eacff40aa",
-      "title": "Asana cleared 5 years of engineering work in 2 weeks with Codex",
-      "link": "https://openai.com/index/asana",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-18T07:00:00.000Z",
-      "contentSnippet": "Asana used OpenAI Codex to replace an outdated testing system in two weeks, completing work expected to take five years for about $12K."
-    },
-    {
       "id": "dfcf73efa3a6",
       "title": "How NVIDIA scales expertise with ChatGPT Work",
       "link": "https://openai.com/index/nvidia/chatgpt-work",
@@ -154,15 +208,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-17T15:53:41.000Z",
       "contentSnippet": "TL; DR: Tokenmaxxing Or Reinventing the Wheel Your organization counts AI tokens, seats, and pilots, but can anyone name a single decision those numbers actually changed? Tokenmaxxing is only the symptom; five old Agile Laws explain the cause, and each one comes with a test you c…"
-    },
-    {
-      "id": "f137d9ea2f9f",
-      "title": "The Defender’s Window",
-      "link": "https://openai.com/index/the-defenders-window",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-17T05:30:00.000Z",
-      "contentSnippet": "AI is reshaping cybersecurity for attackers and defenders alike. Learn how OpenAI is strengthening its defenses and what security teams can do now."
     },
     {
       "id": "776508c048eb",
@@ -298,15 +343,6 @@
       "category": "Data",
       "pubDate": "2026-08-13T00:00:00.000Z",
       "contentSnippet": "The August 2026 DuckDB Ecosystem Newsletter: giving every agent its own embedded DuckDB, the ADBC extension reaching 30+ external databases, async I/O landing in v2.0, ISO GQL graph queries, Perspective 5.0 pushdown, plus a community spotlight on Kyle Cheung."
-    },
-    {
-      "id": "a0f95b1672f7",
-      "title": "Databricks Network Configuration delivery to Tens of Millions of Serverless VMs",
-      "link": "https://www.databricks.com/blog/databricks-network-configuration-delivery-tens-millions-serverless-vms",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-12T20:00:00.000Z",
-      "contentSnippet": "SummaryDatabricks' serverless platform launches tens of millions of VMs daily, and..."
     },
     {
       "id": "e64d5d0646ff",
@@ -550,24 +586,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-04T15:03:07.000Z",
       "contentSnippet": "Image Amazon Web Services recently published a paper defining the AI-Driven Development Lifecycle, or AI-DLC — a reimagined SDLC (Software Development Lifecycle) for a world where AI, not humans, initiates the workflow. I read it the way I read most new methodology proposals by h…"
-    },
-    {
-      "id": "17ffabfc7061",
-      "title": "Scrum and AI: AI Doesn’t Replace Scrum, It Sharpens its Focus",
-      "link": "https://www.scrum.org/resources/blog/scrum-and-ai-ai-doesnt-replace-scrum-it-sharpens-its-focus",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-04T13:33:06.000Z",
-      "contentSnippet": "Image Somewhere along the way, Scrum picked up a reputation it never earned. In today’s discussions about Scrum and AI, ask a room full of managers what Scrum is for, and most will say the same thing: it helps teams ship faster. That answer is so common it feels like fact. It is…"
-    },
-    {
-      "id": "a53d7074ed8a",
-      "title": "5 Questions Scrum Teams Ask All the Time",
-      "link": "https://www.scrum.org/resources/blog/5-questions-scrum-teams-ask-all-time",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-04T13:00:00.000Z",
-      "contentSnippet": "I've been teaching Scrum for a while now, and the same questions come up again and again. So if you're new to Scrum or just thinking about making the switch, here are five of the most common questions I hear about Scrum and how I answer them. 1. Do we still have managers in Scrum…"
     },
     {
       "id": "b557000206d1",
@@ -856,15 +874,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-17T21:49:31.000Z",
       "contentSnippet": "This episode of Fabric Insider is a little different from the others. We are not talking about a product feature or a technical update. We are talking about a program that has shaped the Microsoft data community for over two decades — and one that a lot of people misunderstand. T…"
-    },
-    {
-      "id": "619c537f41a7",
-      "title": "Kimi K3, and what we can still learn from the pelican benchmark",
-      "link": "https://simonwillison.net/2026/Jul/16/kimi-k3/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-16T20:19:30.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "ae8121be2cae",
@@ -1504,24 +1513,6 @@
       "category": "Delivery",
       "pubDate": "2026-05-27T19:40:00.000Z",
       "contentSnippet": "At the GOTO Conference in Copenhagen in 2025, Kent Beck and I spent some time on stage talking and answering questions from the audience - a format I refer to as “two old geezers on a park bench”. We talk about our experiences with LLM-augmented programming (at that point - Octob…"
-    },
-    {
-      "id": "b014be8af80a",
-      "title": "The test suite as a regression sensor",
-      "link": "https://martinfowler.com/articles/sensors-for-coding-agents.html#TheTestSuiteAsARegressionSensor",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-27T15:01:00.000Z",
-      "contentSnippet": "Birgitta Böckeler finishes her post on sensors for coding agents by examining the role of a test suite as a regression sensor, focusing on the role mutation testing can play. more…"
-    },
-    {
-      "id": "78efd7c2c3fa",
-      "title": "The VibeSec Reckoning",
-      "link": "https://martinfowler.com/articles/vibesec-reckoning.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-27T14:03:00.000Z",
-      "contentSnippet": "Vibe coding has significantly accelerated software prototyping but AI agents frequently recommend insecure configurations, creating security problems. Gautam Koul, Lucian Moss, Neil Drew-Lopez, and Daberechi Ruth Edeokoh share their experience while building applications for Thou…"
     },
     {
       "id": "8a228edcb8f5",
