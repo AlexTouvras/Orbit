@@ -1,7 +1,70 @@
 {
-  "generatedAt": "2026-08-20T06:37:31.327Z",
+  "generatedAt": "2026-08-21T06:15:09.516Z",
   "count": 218,
   "items": [
+    {
+      "id": "0dc960876143",
+      "title": "Inbound Private Link now supports account-level Genie One, the account console, and custom URLs",
+      "link": "https://www.databricks.com/blog/inbound-private-link-now-supports-account-level-genie-one-account-console-and-custom-urls",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-20T22:00:00.000Z",
+      "contentSnippet": "Enterprises adopting Databricks for their most sensitive data commonly rely on Inbound..."
+    },
+    {
+      "id": "571f4bc81246",
+      "title": "You can't empower teams and approve everything",
+      "link": "https://www.scrum.org/resources/blog/you-cant-empower-teams-and-approve-everything",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-20T22:00:00.000Z",
+      "contentSnippet": "Most agile transformations don't fail because people resist change. They fail because the organization asked for two things that can't both be true, wrote them on the same slide, and then acted surprised when it only got one. The slide says empowered teams. The workflow tool says…"
+    },
+    {
+      "id": "848a21ea8bf1",
+      "title": "Busting SQL Migration Myths: How New SQL Features Make Lift-and-Shift to Lakehouse Easier",
+      "link": "https://www.databricks.com/blog/busting-sql-migration-myths-how-new-sql-features-make-lift-and-shift-lakehouse-easier",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-20T19:00:00.000Z",
+      "contentSnippet": "Somewhere in your warehouse, hundreds of stored procedures wake up every night and..."
+    },
+    {
+      "id": "027379c08484",
+      "title": "Introducing AI Futures",
+      "link": "https://openai.com/index/introducing-ai-futures",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-20T07:00:00.000Z",
+      "contentSnippet": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom."
+    },
+    {
+      "id": "cb030de2dd94",
+      "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
+      "link": "https://openai.com/index/stampli",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-20T00:00:00.000Z",
+      "contentSnippet": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days."
+    },
+    {
+      "id": "b6f0fc020a49",
+      "title": "DuckDB v2.0: Your Database Deserves a Better Parser",
+      "link": "https://duckdb.org/2026/08/20/duckdb-20-peg-parser.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-08-20T00:00:00.000Z",
+      "contentSnippet": "At DuckDB, one of our goals is to make working with a database system as easy as possible. Users interact with the system through the widely understood Structured Query Language (SQL). Previous blog posts have covered DuckDB’s friendly SQL, including GROUP BY ALL and column selec…"
+    },
+    {
+      "id": "9523952ef85b",
+      "title": "AI Writes the Semantic Layer",
+      "link": "https://motherduck.com/blog/AI-writes-the-semantic-layer",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-08-20T00:00:00.000Z",
+      "contentSnippet": "We proved that AI agents could build a semantic layer. The more interesting result was that the semantic layer itself became disposable. Q&A pairs are unreasonably effective at capturing business intent and give agents something concrete to iterate with. If code can be regenerate…"
+    },
     {
       "id": "e53691799f9e",
       "title": "Conceptual integrity and counting lines of code",
@@ -57,9 +120,9 @@
       "contentSnippet": "Replit introduces Free Mode, powered by GPT-5.6 Luna, so anyone can turn ideas into working software without worrying about token costs."
     },
     {
-      "id": "f04ef155fead",
-      "title": "Frequently Asked Questions (FAQ) About PSM-AI Essentials Course",
-      "link": "https://www.scrum.org/resources/blog/frequently-asked-questions-faq-about-psm-ai-essentials-course",
+      "id": "e8c8298eaee0",
+      "title": "Critical Asked Questions (CAQ) About PSM-AI Essentials Course",
+      "link": "https://www.scrum.org/resources/blog/critical-asked-questions-caq-about-psm-ai-essentials-course",
       "source": "Scrum.org",
       "category": "Delivery",
       "pubDate": "2026-08-19T06:22:49.000Z",
@@ -145,24 +208,6 @@
       "category": "AI",
       "pubDate": "2026-08-18T11:00:00.000Z",
       "contentSnippet": "OpenAI is strengthening monitoring, alignment, and security for frontier AI models. See how new safeguards are guiding the pace of model development."
-    },
-    {
-      "id": "01003c6680bc",
-      "title": "Introducing ChatGPT for Teens: Built for learning, backed by protections",
-      "link": "https://openai.com/index/chatgpt-for-teens",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-18T11:00:00.000Z",
-      "contentSnippet": "ChatGPT for Teens helps teens learn, think critically, and use AI with confidence, with stronger built-in protections, healthy-use features, and additional controls for parents."
-    },
-    {
-      "id": "dfcf73efa3a6",
-      "title": "How NVIDIA scales expertise with ChatGPT Work",
-      "link": "https://openai.com/index/nvidia/chatgpt-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-18T00:00:00.000Z",
-      "contentSnippet": "NVIDIA teams use ChatGPT Work to reduce manual tasks, connect fast-moving signals, and scale successful workflows globally."
     },
     {
       "id": "93fa9face28f",
@@ -298,24 +343,6 @@
       "category": "Data",
       "pubDate": "2026-08-13T21:00:00.000Z",
       "contentSnippet": "Across Scottish Water’s Capital Investment (CI) programme, teams need fast answers..."
-    },
-    {
-      "id": "181ab4b88db4",
-      "title": "What are AI Hallucinations?",
-      "link": "https://www.databricks.com/blog/ai-hallucinations",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-13T19:35:16.000Z",
-      "contentSnippet": "AI hallucinations are outputs that sound coherent and confident but are factually wrong, fabricated..."
-    },
-    {
-      "id": "c738d47a27ab",
-      "title": "Smart Routing in Unity AI Gateway: Match frontier quality with 30%+ lower cost per task",
-      "link": "https://www.databricks.com/blog/smart-routing-unity-ai-gateway-match-frontier-quality-30-lower-cost-task",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-13T17:52:04.000Z",
-      "contentSnippet": "The price and performance frontier for coding tasks features a huge diversity of models and harnesses: in 2026 alone..."
     },
     {
       "id": "6566b300c739",
@@ -577,15 +604,6 @@
       "category": "AI",
       "pubDate": "2026-08-04T23:58:24.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "643029743c76",
-      "title": "The AWS AI-DLC: Why AI Coding Still Needs Human Accountability",
-      "link": "https://www.scrum.org/resources/blog/aws-ai-dlc-why-ai-coding-still-needs-human-accountability",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-04T15:03:07.000Z",
-      "contentSnippet": "Image Amazon Web Services recently published a paper defining the AI-Driven Development Lifecycle, or AI-DLC — a reimagined SDLC (Software Development Lifecycle) for a world where AI, not humans, initiates the workflow. I read it the way I read most new methodology proposals by h…"
     },
     {
       "id": "b557000206d1",
@@ -1398,15 +1416,6 @@
       "contentSnippet": "The June 2026 DuckDB Ecosystem Newsletter: a local-first ETL/ELT studio, the Quack client-server protocol and its OAuth layer, DuckLake inlining, DuckDB internals, MotherDuck Flights for agent-native ingest, plus a community spotlight on Ryan Dolley."
     },
     {
-      "id": "3aec98df7d87",
-      "title": "Introducing Flights: Agent-Native Ingest in MotherDuck",
-      "link": "https://motherduck.com/blog/flights-agent-native-ingest",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-06-10T00:00:00.000Z",
-      "contentSnippet": "Build, deploy, and schedule Python data pipelines from a prompt, a SQL function, or the MotherDuck UI."
-    },
-    {
       "id": "d8f48e2feb16",
       "title": "How to Orchestrate dbt with Dagster",
       "link": "https://dagster.io/blog/orchestrating-dbt-with-dagster",
@@ -1558,15 +1567,6 @@
       "category": "Analytics",
       "pubDate": "2026-05-20T07:06:02.000Z",
       "contentSnippet": "Microsoft's announcement post for data clustering in Fabric Warehouse promised 24x speedups. So I built a 100-million-row clickstream table and tested it myself. The result is more nuanced than the marketing - and more useful for anyone deciding whether to actually adopt this fea…"
-    },
-    {
-      "id": "c61a081bb6f4",
-      "title": "DuckDB 1.5.3: Not an Ordinary Patch Release",
-      "link": "https://duckdb.org/2026/05/20/announcing-duckdb-153.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-05-20T00:00:00.000Z",
-      "contentSnippet": "In this blog post, we highlight a few important features shipped in DuckDB v1.5.3, the third patch release in DuckDB's v1.5 line. You can find the complete release notes on GitHub. To install the new version, please visit the installation page. What's New While DuckDB v1.5.3 is a…"
     },
     {
       "id": "9f64a5c7797f",
