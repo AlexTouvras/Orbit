@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-08-21T06:37:50.994Z",
+  "generatedAt": "2026-08-22T06:13:34.114Z",
   "count": 218,
   "items": [
+    {
+      "id": "b01ab86ac52d",
+      "title": "Connecting retail demand planning to campaign and store execution",
+      "link": "https://www.databricks.com/blog/connecting-retail-demand-planning-campaign-and-store-execution",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-21T17:20:00.000Z",
+      "contentSnippet": "Retail and consumer goods teams make decisions across a connected but complex operating cycle..."
+    },
+    {
+      "id": "c4b52369e09f",
+      "title": "Chunked Query Results in the DuckDB Java Driver",
+      "link": "https://duckdb.org/2026/08/21/chunked-query-results-java-driver.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-08-21T00:00:00.000Z",
+      "contentSnippet": "DuckDB is a columnar, vectorized database. Every operator inside the engine works on data chunks: batches of column vectors, 2,048 rows at a time. That is a big part of why DuckDB is fast: the engine amortizes interpretation overhead over thousands of values instead of paying it…"
+    },
     {
       "id": "0dc960876143",
       "title": "Inbound Private Link now supports account-level Genie One, the account console, and custom URLs",
@@ -334,15 +352,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-13T22:00:00.000Z",
       "contentSnippet": "The team had earned its standing ovation, and it wanted one. Two months of late nights. A release pushed out over a weekend nobody got back. The kind of finish that gets a team a reputation for grit. In the review, they walked through all of it, the heroics and the saves, with th…"
-    },
-    {
-      "id": "5a84e2d944a4",
-      "title": "How Scottish Water Made Its Capital Investment Data Conversational With Databricks Genie",
-      "link": "https://www.databricks.com/blog/how-scottish-water-made-its-capital-investment-data-conversational-databricks-genie",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-13T21:00:00.000Z",
-      "contentSnippet": "Across Scottish Water’s Capital Investment (CI) programme, teams need fast answers..."
     },
     {
       "id": "6566b300c739",
@@ -1549,15 +1558,6 @@
       "category": "Data",
       "pubDate": "2026-05-21T13:32:53.000Z",
       "contentSnippet": "Dagster replaced Pyright with Astral’s new Python type checker, ty, and saw CI type checking drop from minutes to seconds. Along the way, ty surfaced real runtime bugs Pyright missed and improved developer feedback loops across a large Python monorepo."
-    },
-    {
-      "id": "38a8db00a67d",
-      "title": "Test-Driving the Lance Lakehouse Format in DuckDB",
-      "link": "https://duckdb.org/2026/05/21/test-driving-lance.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-05-21T00:00:00.000Z",
-      "contentSnippet": "With the lance extension, DuckDB users can query Lance datasets with the same familiar SQL interface (via the CLI or SDKs), while adding capabilities for AI and retrieval workloads. This blog post highlights how Lance is a good option for workloads that need to support storage an…"
     },
     {
       "id": "e9f1993d244f",
