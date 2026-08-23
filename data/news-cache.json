@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-22T06:32:12.503Z",
+  "generatedAt": "2026-08-23T06:09:15.327Z",
   "count": 218,
   "items": [
+    {
+      "id": "26a12cb0fbda",
+      "title": "You Priced Being Late. Nobody Priced Being Early.",
+      "link": "https://www.scrum.org/resources/blog/you-priced-being-late-nobody-priced-being-early",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-23T06:00:00.000Z",
+      "contentSnippet": "Image A team finishes an app update on a Tuesday. Tested, signed off, ready. It goes into review and stays there. Six days. Nobody sits still for six days, so the team starts three more items and finishes two of them. When the update ships, there is a queue behind it. The year ha…"
+    },
     {
       "id": "b01ab86ac52d",
       "title": "Connecting retail demand planning to campaign and store execution",
@@ -586,15 +595,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-05T13:52:11.000Z",
       "contentSnippet": "Image A while ago I wrote that the Project Manager didn't die under Scrum. The role was taken apart on purpose, its responsibilities distributed across the Scrum Team, and some of them absorbed into the framework itself. Then Daniel Pokrývka read it on LinkedIn and asked the one…"
-    },
-    {
-      "id": "4e3a76965186",
-      "title": "Wenn Chatbots halluzinieren – wer haftet? So machen Scrum Teams ihre „Definition of Done“ KI-sicher",
-      "link": "https://www.scrum.org/resources/blog/wenn-chatbots-halluzinieren-wer-haftet-so-machen-scrum-teams-ihre-definition-done-ki-sicher",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-05T06:00:00.000Z",
-      "contentSnippet": "Braucht es noch Scrum Teams – jetzt, wo wir KI haben? Ich stelle mir diese Frage selbst und wahrscheinlich bin ich nicht der Einzige. Auf meiner Suche nach Antworten schaue ich auf die Menschen, die die agile Softwareentwicklung geprägt haben. Einer von ihnen ist Henrik. Henrik h…"
     },
     {
       "id": "76c0869c87dd",
