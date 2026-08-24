@@ -1,7 +1,34 @@
 {
-  "generatedAt": "2026-08-23T06:33:19.249Z",
+  "generatedAt": "2026-08-24T06:47:56.572Z",
   "count": 218,
   "items": [
+    {
+      "id": "af96e41a881b",
+      "title": "[Episode 5] AI Effects When You Use It In Building Your Product",
+      "link": "https://www.scrum.org/resources/blog/episode-5-ai-effects-when-you-use-it-building-your-product",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-24T05:56:18.000Z",
+      "contentSnippet": "\"AI-native Scrum Team\" is a podcast series that shares how Scrum Teams can effectively take the steps of their AI Transformation journey to become AI-native Scrum Teams. In episode 5, we discussed what effects we will see in our processes when we use AI to build the product. (for…"
+    },
+    {
+      "id": "6c55885c6a96",
+      "title": "Data Engineering Weekly #284",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-284",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-24T02:04:48.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "a8e4761ea034",
+      "title": "Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs",
+      "link": "https://blog.crossjoin.co.uk/2026/08/23/tools-with-interactive-uis-in-fabric-notebooks-with-semantic-link-labs/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-08-23T15:49:31.000Z",
+      "contentSnippet": "There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…"
+    },
     {
       "id": "26a12cb0fbda",
       "title": "You Priced Being Late. Nobody Priced Being Early.",
@@ -586,15 +613,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-05T15:56:45.000Z",
       "contentSnippet": "In my previous article, I explored the concept of agency — the capacity and freedom of individuals to act independently, make choices, and meaningfully influence their circumstances. But what does it look like when agency is entirely absent? I learned the hard way when I tried to…"
-    },
-    {
-      "id": "41d268902126",
-      "title": "If the Project Manager Was Disassembled, Who Answers to the Customer?",
-      "link": "https://www.scrum.org/resources/blog/if-project-manager-was-disassembled-who-answers-customer",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-05T13:52:11.000Z",
-      "contentSnippet": "Image A while ago I wrote that the Project Manager didn't die under Scrum. The role was taken apart on purpose, its responsibilities distributed across the Scrum Team, and some of them absorbed into the framework itself. Then Daniel Pokrývka read it on LinkedIn and asked the one…"
     },
     {
       "id": "76c0869c87dd",
@@ -1407,15 +1425,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "31781ddb18fe",
-      "title": "Improve Performance Of Staging In Fabric Dataflows Gen2 By Disabling V-Order",
-      "link": "https://blog.crossjoin.co.uk/2026/06/14/improve-performance-of-staging-in-fabric-dataflows-gen2-by-disabling-v-order/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-06-14T16:33:43.000Z",
-      "contentSnippet": "Quite a few new Dataflows Gen2 features were released recently without much fanfare, but that doesn’t mean they aren’t important. I will take a look at them all in my next few posts; in this first post I’ll look at the ability to disable V-Order on staged data. As the (very detai…"
-    },
-    {
       "id": "3f766cd4014f",
       "title": "DuckDB Ecosystem Newsletter : June 2026",
       "link": "https://motherduck.com/blog/duckdb-ecosystem-newsletter-june-2026",
@@ -1593,15 +1602,6 @@
       "source": "Data Engineering Weekly",
       "category": "Data",
       "pubDate": "2026-05-18T01:54:53.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "d7467a984a4b",
-      "title": "Data Engineering Weekly #269",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-269",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-05-11T02:50:23.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
