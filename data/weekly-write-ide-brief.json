@@ -1,35 +1,35 @@
 {
   "status": "awaiting_ide",
   "reason": "cloud_automation",
-  "createdAt": "2026-07-27T09:02:08.530Z",
-  "weekOf": "2026-07-27",
+  "createdAt": "2026-08-24T09:03:00.825Z",
+  "weekOf": "2026-08-24",
   "thesis": {
-    "angle": "What Is Fabric App or Rayfin and Why You Should Care",
+    "angle": "Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs",
     "question": "What actually changes in how we build analytics when the reporting stack keeps moving?",
     "primary": {
-      "id": "7147531ddbe3",
-      "title": "What Is Fabric App or Rayfin and Why You Should Care",
-      "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
-      "source": "RADACAD",
+      "id": "a8e4761ea034",
+      "title": "Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs",
+      "link": "https://blog.crossjoin.co.uk/2026/08/23/tools-with-interactive-uis-in-fabric-notebooks-with-semantic-link-labs/",
+      "source": "Chris Webb's BI Blog",
       "category": "Analytics",
-      "snippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
+      "snippet": "There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…"
     },
     "supporting": [
       {
-        "id": "9f106d335bd4",
-        "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
-        "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
+        "id": "c42698bae58b",
+        "title": "Displaying The Output Of Detail Rows Expressions In Power BI Reports Using The Paginated Report Visual",
+        "link": "https://blog.crossjoin.co.uk/2026/08/16/displaying-the-output-of-detail-rows-expressions-in-power-bi-reports-using-the-paginated-report-visual/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
+        "snippet": "In last week’s post I mentioned that while Power BI reports (unlike Excel PivotTables) do not support the Detail Rows Expression feature, it is possible to partially work around this limitation by using the paginated report visual. In this post I’ll show you how I was able to do…"
       },
       {
-        "id": "7d124074cf80",
-        "title": "How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily",
-        "link": "https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily",
-        "source": "Databricks Blog",
-        "category": "Data",
-        "snippet": "“We showed the value of having a foundational data platform, and that success story..."
+        "id": "af96e41a881b",
+        "title": "[Episode 5] AI Effects When You Use It In Building Your Product",
+        "link": "https://www.scrum.org/resources/blog/episode-5-ai-effects-when-you-use-it-building-your-product",
+        "source": "Scrum.org",
+        "category": "Delivery",
+        "snippet": "\"AI-native Scrum Team\" is a podcast series that shares how Scrum Teams can effectively take the steps of their AI Transformation journey to become AI-native Scrum Teams. In episode 5, we discussed what effects we will see in our processes when we use AI to build the product. (for…"
       }
     ],
     "bridgeProject": {
@@ -48,80 +48,79 @@
     "category": "Data",
     "tags": [
       "Power BI",
-      "AI",
       "Analytics",
       "Next.js",
       "React"
     ],
-    "whyInteresting": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
+    "whyInteresting": "There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…"
   },
   "intake": {
-    "weekOf": "2026-07-27",
-    "generatedAt": "2026-07-27T09:02:08.528Z",
+    "weekOf": "2026-08-24",
+    "generatedAt": "2026-08-24T09:03:00.824Z",
     "signals": [
       {
-        "id": "9f106d335bd4",
-        "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
-        "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
+        "id": "a8e4761ea034",
+        "title": "Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs",
+        "link": "https://blog.crossjoin.co.uk/2026/08/23/tools-with-interactive-uis-in-fabric-notebooks-with-semantic-link-labs/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
+        "snippet": "There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…"
       },
       {
-        "id": "144c71381790",
-        "title": "Data Engineering Weekly #280",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-280",
+        "id": "6c55885c6a96",
+        "title": "Data Engineering Weekly #284",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-284",
         "source": "Data Engineering Weekly",
         "category": "Data",
         "snippet": "The Weekly Data Engineering Newsletter"
       },
       {
-        "id": "c82d88ed2c22",
-        "title": "The Project Manager Isn't Dead. It Was Disassembled on Purpose!",
-        "link": "https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose",
+        "id": "af96e41a881b",
+        "title": "[Episode 5] AI Effects When You Use It In Building Your Product",
+        "link": "https://www.scrum.org/resources/blog/episode-5-ai-effects-when-you-use-it-building-your-product",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Image I see it everywhere. In LinkedIn posts, in heated comment threads, and maybe most tellingly, in job descriptions that quietly list \"Scrum Master / Project Manager\" as if the slash were doing no work at all. The framing is always the same: Scrum Master versus Project Manager…"
+        "snippet": "\"AI-native Scrum Team\" is a podcast series that shares how Scrum Teams can effectively take the steps of their AI Transformation journey to become AI-native Scrum Teams. In episode 5, we discussed what effects we will see in our processes when we use AI to build the product. (for…"
       },
       {
-        "id": "7569338ee0d3",
-        "title": "Launching Health in ChatGPT",
-        "link": "https://openai.com/index/health-in-chatgpt",
+        "id": "027379c08484",
+        "title": "Introducing AI Futures",
+        "link": "https://openai.com/index/introducing-ai-futures",
         "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": "Health in ChatGPT now lets eligible U.S. users securely connect medical records and Apple Health to get more personalized insights and better understand their health."
+        "snippet": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom."
       },
       {
-        "id": "7147531ddbe3",
-        "title": "What Is Fabric App or Rayfin and Why You Should Care",
-        "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
-        "source": "RADACAD",
+        "id": "c42698bae58b",
+        "title": "Displaying The Output Of Detail Rows Expressions In Power BI Reports Using The Paginated Report Visual",
+        "link": "https://blog.crossjoin.co.uk/2026/08/16/displaying-the-output-of-detail-rows-expressions-in-power-bi-reports-using-the-paginated-report-visual/",
+        "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
+        "snippet": "In last week’s post I mentioned that while Power BI reports (unlike Excel PivotTables) do not support the Detail Rows Expression feature, it is possible to partially work around this limitation by using the paginated report visual. In this post I’ll show you how I was able to do…"
       },
       {
-        "id": "7d124074cf80",
-        "title": "How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily",
-        "link": "https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily",
+        "id": "b01ab86ac52d",
+        "title": "Connecting retail demand planning to campaign and store execution",
+        "link": "https://www.databricks.com/blog/connecting-retail-demand-planning-campaign-and-store-execution",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "“We showed the value of having a foundational data platform, and that success story..."
+        "snippet": "Retail and consumer goods teams make decisions across a connected but complex operating cycle..."
       },
       {
-        "id": "90546cd0bf78",
-        "title": "The Pyramid of Impediments",
-        "link": "https://www.scrum.org/resources/blog/pyramid-impediments",
+        "id": "26a12cb0fbda",
+        "title": "You Priced Being Late. Nobody Priced Being Early.",
+        "link": "https://www.scrum.org/resources/blog/you-priced-being-late-nobody-priced-being-early",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Introduction The Pyramid of Impediments is a decision framework for Scrum Masters, Agile Coaches and other agile leaders. Every agile leader eventually encounters the same situations: A Scrum Team struggles with Sprint Planning, technical debt continues to grow, conflicts remain…"
+        "snippet": "Image A team finishes an app update on a Tuesday. Tested, signed off, ready. It goes into review and stays there. Six days. Nobody sits still for six days, so the team starts three more items and finishes two of them. When the update ships, there is a queue behind it. The year ha…"
       },
       {
-        "id": "8ab3a4be8a66",
-        "title": "OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened",
-        "link": "https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries",
-        "source": "Simon Willison",
+        "id": "cb030de2dd94",
+        "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
+        "link": "https://openai.com/index/stampli",
+        "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": ""
+        "snippet": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days."
       }
     ],
     "projects": [
@@ -192,6 +191,20 @@
         ],
         "repoUrl": "",
         "liveUrl": "/architecture/mealplan"
+      },
+      {
+        "id": "fitness-coach",
+        "name": "Personal ops coach (git + Slack)",
+        "description": "Science-backed personal coach: Intervals form (CTL/ATL/TSB) + Slack RPE → AthleteState → Sunday week plan in Slack. Concurrent run/lift rules, readiness cuts, phone-first week. Domain is training; payoff is less Monday negotiation.",
+        "status": "prototype",
+        "tags": [
+          "Cursor Automations",
+          "Slack",
+          "Git",
+          "Personal ops"
+        ],
+        "repoUrl": "https://github.com/AlexTouvras/fitness-coach",
+        "liveUrl": "/writes/when-the-coach-lives-in-git-and-slack"
       }
     ]
   },

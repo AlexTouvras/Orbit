@@ -6,8 +6,8 @@ Cursor Cloud Automation writes this week's essay (Gemini skipped). **Generate th
 
 `cloud_automation`
 
-Created: 2026-07-27T09:02:08.530Z  
-Week of: 2026-07-27
+Created: 2026-08-24T09:03:00.825Z  
+Week of: 2026-08-24
 
 ## Your job (in this IDE)
 
@@ -25,23 +25,23 @@ npm run weekly:notify-draft
 ## Thesis
 
 - **Question:** What actually changes in how we build analytics when the reporting stack keeps moving?
-- **Primary inspiration:** [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care) (RADACAD)
-- **Snippet:** Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…
+- **Primary inspiration:** [Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs](https://blog.crossjoin.co.uk/2026/08/23/tools-with-interactive-uis-in-fabric-notebooks-with-semantic-link-labs/) (Chris Webb's BI Blog)
+- **Snippet:** There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…
 - **Optional project bridge:** Orbit — Portfolio & related articles — Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.
 - **Suggested category:** Data
-- **Suggested tags:** Power BI, AI, Analytics, Next.js, React
+- **Suggested tags:** Power BI, Analytics, Next.js, React
 
 ## Intake (reference only)
 
 ### Signals
-- [Power BI, M365 Copilot And The Importance Of DAX UDFs](https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/) — Chris Webb's BI Blog (Analytics)
-- [Data Engineering Weekly #280](https://www.dataengineeringweekly.com/p/data-engineering-weekly-280) — Data Engineering Weekly (Data)
-- [The Project Manager Isn't Dead. It Was Disassembled on Purpose!](https://www.scrum.org/resources/blog/project-manager-isnt-dead-it-was-disassembled-purpose) — Scrum.org (Delivery)
-- [Launching Health in ChatGPT](https://openai.com/index/health-in-chatgpt) — OpenAI Blog (AI)
-- [What Is Fabric App or Rayfin and Why You Should Care](https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care) — RADACAD (Analytics)
-- [How the FDA Built an AI Platform That 85% of Its Staff Now Use Daily](https://www.databricks.com/blog/how-fda-built-ai-platform-85-its-staff-now-use-daily) — Databricks Blog (Data)
-- [The Pyramid of Impediments](https://www.scrum.org/resources/blog/pyramid-impediments) — Scrum.org (Delivery)
-- [OpenAI’s accidental cyberattack against Hugging Face is science fiction that happened](https://simonwillison.net/2026/Jul/22/openai-cyberattack/#atom-entries) — Simon Willison (AI)
+- [Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs](https://blog.crossjoin.co.uk/2026/08/23/tools-with-interactive-uis-in-fabric-notebooks-with-semantic-link-labs/) — Chris Webb's BI Blog (Analytics)
+- [Data Engineering Weekly #284](https://www.dataengineeringweekly.com/p/data-engineering-weekly-284) — Data Engineering Weekly (Data)
+- [[Episode 5] AI Effects When You Use It In Building Your Product](https://www.scrum.org/resources/blog/episode-5-ai-effects-when-you-use-it-building-your-product) — Scrum.org (Delivery)
+- [Introducing AI Futures](https://openai.com/index/introducing-ai-futures) — OpenAI Blog (AI)
+- [Displaying The Output Of Detail Rows Expressions In Power BI Reports Using The Paginated Report Visual](https://blog.crossjoin.co.uk/2026/08/16/displaying-the-output-of-detail-rows-expressions-in-power-bi-reports-using-the-paginated-report-visual/) — Chris Webb's BI Blog (Analytics)
+- [Connecting retail demand planning to campaign and store execution](https://www.databricks.com/blog/connecting-retail-demand-planning-campaign-and-store-execution) — Databricks Blog (Data)
+- [You Priced Being Late. Nobody Priced Being Early.](https://www.scrum.org/resources/blog/you-priced-being-late-nobody-priced-being-early) — Scrum.org (Delivery)
+- [Stampli cuts launch hours by 68% using ChatGPT Work](https://openai.com/index/stampli) — OpenAI Blog (AI)
 
 ### Active projects
 - **Orbit — Portfolio & related articles** (live) — Public HQ: Blog MDX in git, portfolio proof, curated Related articles RSS, and Studio JSON edits. Weekly Write drafts can generate; Slack Approve is the publish gate.
@@ -49,6 +49,7 @@ npm run weekly:notify-draft
 - **Power BI — Nordic Boardroom** (shipped) — Shared report grammar: gold tables → semantic model → Landing / Pulse / Drivers / Queue / Context, then PNG sync into Orbit. Import-shaped demos on purpose; screenshots match the repo.
 - **Ledger — strategy research cycle** (prototype) — Compare equity strategy families on one sample, switch the working rule only when Sharpe clears ~0.08, then list exits/adds/trims with reasons. I still click the trades; no broker automation.
 - **mealplan** (shipped) — Slack-triggered week plan from YAML defaults (overrides in the kickoff message): plate guidance, multi-store grocery split, phone-readable channel post. No checkout; one shared menu.
+- **Personal ops coach (git + Slack)** (prototype) — Science-backed personal coach: Intervals form (CTL/ATL/TSB) + Slack RPE → AthleteState → Sunday week plan in Slack. Concurrent run/lift rules, readiness cuts, phone-first week. Domain is training; payoff is less Monday negotiation.
 
 ## Draft JSON shape
 
@@ -56,10 +57,10 @@ Write `data/weekly-write-draft.json` like:
 
 ```json
 {
-  "id": "ww-2026-07-27-ide",
+  "id": "ww-2026-08-24-ide",
   "status": "pending",
   "createdAt": "<ISO now>",
-  "weekOf": "2026-07-27",
+  "weekOf": "2026-08-24",
   "slug": "<from-title>",
   "title": "<essay title>",
   "summary": "<one sentence>",
