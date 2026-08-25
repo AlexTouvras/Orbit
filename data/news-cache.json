@@ -1,7 +1,61 @@
 {
-  "generatedAt": "2026-08-24T06:47:56.572Z",
+  "generatedAt": "2026-08-25T06:00:16.881Z",
   "count": 218,
   "items": [
+    {
+      "id": "ffe0b198ea80",
+      "title": "Testing DAX measures by using AI",
+      "link": "https://www.sqlbi.com/articles/testing-dax-measures-by-using-ai/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-08-24T20:00:44.000Z",
+      "contentSnippet": "This article describes how to use AI to identify relevant test cases in a semantic model and create repeatable DAX tests for a measure. A DAX measure is correct only when it produces the expected result in every situation of…"
+    },
+    {
+      "id": "9e0202f24c76",
+      "title": "Run, debug, and scale Databricks workloads from your local IDE",
+      "link": "https://www.databricks.com/blog/run-debug-and-scale-databricks-workloads-your-local-ide",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-24T17:01:08.000Z",
+      "contentSnippet": "The Databricks workspace is purposefully built for data analysis and data engineering. However..."
+    },
+    {
+      "id": "0744436aa0d3",
+      "title": "How Databricks Uses AI to Accelerate Incident Investigation",
+      "link": "https://www.databricks.com/blog/how-databricks-uses-ai-accelerate-incident-investigation",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-24T17:00:00.000Z",
+      "contentSnippet": "In our previous blog post, we shared how Databricks uses AI to debug thousands of..."
+    },
+    {
+      "id": "8027dbd813c6",
+      "title": "Fragments: August 24",
+      "link": "https://martinfowler.com/fragments/2026-08-24.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-08-24T15:29:00.000Z",
+      "contentSnippet": "I was listening to Ezra Klein’s interview with Helen Toner about the recent OpenAI hack of Hugging Face and the subsequent discovery that there were swarms of agents inside OpenAI doing unsanctioned activities. One of the points Klein made was that at no point did any of these (t…"
+    },
+    {
+      "id": "df015003760c",
+      "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
+      "link": "https://openai.com/index/gpt-5-6-in-kiro",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-24T12:00:00.000Z",
+      "contentSnippet": "GPT‑5.6 is now available in Kiro, helping developers plan, build, review, and test software with better price-performance."
+    },
+    {
+      "id": "9ac6cd3beb80",
+      "title": "Product Owner Interview Questions for the Age of AI",
+      "link": "https://www.scrum.org/resources/blog/product-owner-interview-questions-age-ai",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-24T09:04:57.000Z",
+      "contentSnippet": "TL; DR: 10 New Product Owner Interview Questions on AI “How do you use AI in your work?” If that is still one of your Product Owner interview questions, you are screening for tooling fluency in a role that lives or dies on product judgment. Every candidate has an answer; LLMs mak…"
+    },
     {
       "id": "af96e41a881b",
       "title": "[Episode 5] AI Effects When You Use It In Building Your Product",
@@ -19,6 +73,15 @@
       "category": "Data",
       "pubDate": "2026-08-24T02:04:48.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "1820df046a76",
+      "title": "O Que É Para Fazer?",
+      "link": "https://www.scrum.org/resources/blog/o-que-e-para-fazer",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-23T23:00:00.000Z",
+      "contentSnippet": "Image Se os teus Developers ainda perguntam apenas “O que é para fazer?”, tens um problema Há bem pouco tempo ouvi mais um Developer a iniciar uma conversa com o Product Owner: “O que é para fazer?” Parece uma pergunta perfeitamente razoável. Até prestável. Mas, numa Scrum Team,…"
     },
     {
       "id": "a8e4761ea034",
@@ -67,7 +130,7 @@
     },
     {
       "id": "571f4bc81246",
-      "title": "You can't empower teams and approve everything",
+      "title": "You Can't Empower Teams and Approve Everything",
       "link": "https://www.scrum.org/resources/blog/you-cant-empower-teams-and-approve-everything",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -255,15 +318,6 @@
       "contentSnippet": "OpenAI and CodeAI are partnering to help students build AI literacy, think critically about AI, and develop the skills to use and shape it responsibly."
     },
     {
-      "id": "68c52c81310f",
-      "title": "Pacing model development in an era of cyber-critical capabilities",
-      "link": "https://openai.com/index/pacing-model-development-cyber-capabilities",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-18T11:00:00.000Z",
-      "contentSnippet": "OpenAI is strengthening monitoring, alignment, and security for frontier AI models. See how new safeguards are guiding the pace of model development."
-    },
-    {
       "id": "93fa9face28f",
       "title": "Reconciling JSON in DuckDB, One Patch at a Time",
       "link": "https://duckdb.org/2026/08/18/reconciling-json.html",
@@ -289,15 +343,6 @@
       "category": "Data",
       "pubDate": "2026-08-17T23:10:00.000Z",
       "contentSnippet": "Machine learning models are only as good as the signals they receive. A fraud detection..."
-    },
-    {
-      "id": "ef06b870e476",
-      "title": "The prototyping tax is killing your AI roadmap",
-      "link": "https://www.databricks.com/blog/prototyping-tax-killing-your-ai-roadmap",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-17T19:42:33.000Z",
-      "contentSnippet": "You know the feeling. Your team has a great idea for an AI-powered pipeline - maybe..."
     },
     {
       "id": "0f8762857f0a",
@@ -361,15 +406,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-14T21:35:58.000Z",
       "contentSnippet": "What is the next evolution of Power BI? Will Power BI Desktop ever become a prompt-first UI? And how do you actually decide whether you need a semantic model, an ontology, or both? I sat down with Mohammad Ali — Director of Product Management for Power BI at Microsoft, overseeing…"
-    },
-    {
-      "id": "6be2619171b0",
-      "title": "Using AI_Functions in Your Data Warehouse: Top Use Cases",
-      "link": "https://www.databricks.com/blog/using-aifunctions-your-data-warehouse-top-use-cases",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-14T21:30:00.000Z",
-      "contentSnippet": "In most organizations, data warehouses hold structured data, while unstructured data..."
     },
     {
       "id": "e2d277d01964",
@@ -552,15 +588,6 @@
       "contentSnippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
     },
     {
-      "id": "fa8a01f4f6ef",
-      "title": "Focus Is Not Genius. It Is a Kata.",
-      "link": "https://www.scrum.org/resources/blog/focus-not-genius-it-kata",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-09T06:00:00.000Z",
-      "contentSnippet": "Image In May 1997, at Apple's developer conference, an audience member stood up and insulted Steve Jobs to his face. Jobs paused, took a sip of water, and gave an answer that had nothing to do with the insult and everything to do with how he ran companies. \"Focusing is about sayi…"
-    },
-    {
       "id": "3f6535797a1a",
       "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
       "link": "https://simonwillison.net/2026/Aug/7/openai-timeline/",
@@ -577,15 +604,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-07T21:01:29.000Z",
       "contentSnippet": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
-    },
-    {
-      "id": "9d27c3063c90",
-      "title": "Your Last Failed Transformation is not a Strategy",
-      "link": "https://www.scrum.org/resources/blog/your-last-failed-transformation-not-strategy",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-06T22:00:00.000Z",
-      "contentSnippet": "\"We tried that before.\" Four words, and the idea was dead. Nobody asked when \"before\" was, or what was different then, or whether the thing that killed it last time even still exists. The four words did all the work a careful argument would have done, minus the argument. The meet…"
     },
     {
       "id": "2aff593adf2a",
@@ -1533,15 +1551,6 @@
       "contentSnippet": "Despite the work required to develop the features needed for DuckLake v1.0 and Quack, the DuckLabs team is still hard at work on the DuckDB-Iceberg extension. In this blog post, we will demonstrate some of the features that are available in DuckDB v1.5.3. Many of these features w…"
     },
     {
-      "id": "7dad134cf838",
-      "title": "Fragments: May 27",
-      "link": "https://martinfowler.com/fragments/2026-05-27.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-05-27T19:40:00.000Z",
-      "contentSnippet": "At the GOTO Conference in Copenhagen in 2025, Kent Beck and I spent some time on stage talking and answering questions from the audience - a format I refer to as “two old geezers on a park bench”. We talk about our experiences with LLM-augmented programming (at that point - Octob…"
-    },
-    {
       "id": "8a228edcb8f5",
       "title": "Catalyst Leadership: You Cannot Optimize the Whole System if Your Inner System Optimizes for Safety",
       "link": "https://blog.crisp.se/2026/05/26/michaelgothe/catalyst-leadership",
@@ -1693,15 +1702,6 @@
       "category": "Analytics",
       "pubDate": "2026-04-21T10:00:00.000Z",
       "contentSnippet": "Learn how to specify the parameter types in DAX user-defined functions using MEASUREREF, COLUMNREF, TABLEREF, and CALENDARREF."
-    },
-    {
-      "id": "487be88ec807",
-      "title": "Understanding parameter types in DAX user-defined functions (UDF)",
-      "link": "https://www.sqlbi.com/articles/understanding-parameter-types-in-dax-user-defined-functions-udf/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-04-20T20:00:43.000Z",
-      "contentSnippet": "This article describes the parameter types available in DAX user-defined functions, focusing on the specialized reference types MEASUREREF, COLUMNREF, TABLEREF, and CALENDARREF. In a previous article, Introducing user-defined functions in DAX, we described the syntax for creating…"
     },
     {
       "id": "9c04af84dc35",
