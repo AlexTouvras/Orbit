@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Prepare and Slack-notify the 2026-08-24 pending weekly Write
 - [x] Re-notify 2026-08-03 weekly Write with full essay in Slack + draft synced to default branch
 - [x] Merge weekly Write Slack full-access fix (`fix/weekly-write-slack-full-access`)
 - [x] Refresh weekly Write intake for 2026-08-03 / prepare pending IDE draft

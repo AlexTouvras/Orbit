@@ -1,24 +1,56 @@
 {
-  "id": "ww-2026-08-17-ide",
-  "status": "published",
-  "createdAt": "2026-08-17T08:37:12.459Z",
-  "weekOf": "2026-08-17",
-  "slug": "the-agent-can-count-delays-it-still-cannot-cancel-the-flight",
-  "title": "The agent can count delays. It still cannot cancel the flight.",
-  "summary": "Mohammad Ali's usable split: a semantic model answers a mathematical question; an ontology is for the process that acts. I would not skip the middle doll because Desktop grew a prompt.",
+  "id": "ww-2026-08-24-ide",
+  "status": "pending",
+  "createdAt": "2026-08-24T09:03:26.124Z",
+  "weekOf": "2026-08-24",
+  "slug": "the-notebook-grew-a-ui-the-contract-still-lives-underneath",
+  "title": "The notebook grew a UI. The contract still lives underneath.",
+  "summary": "Interactive Fabric notebook tools lower the cost of inspection, but I still separate exploration from the definitions and checks that must survive the next interface.",
   "category": "Data",
   "tags": [
     "Power BI",
+    "Fabric",
     "Analytics",
-    "AI",
-    "Fabric"
+    "Notebooks"
   ],
-  "mdx": "---\ntitle: \"The agent can count delays. It still cannot cancel the flight.\"\nsummary: \"Mohammad Ali's usable split: a semantic model answers a mathematical question; an ontology is for the process that acts. I would not skip the middle doll because Desktop grew a prompt.\"\ndate: \"2026-08-17\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Analytics\", \"AI\", \"Fabric\"]\n---\n\n## The question\n\nThe story I keep hearing is that Power BI's next shape is a prompt-first Desktop, and that a chat pane good enough makes the semantic model optional. I don't buy it. If the stack keeps growing web apps, Copilot panes, and ontologies, what still has to be a named object before I let an agent near a decision?\n\n[The Next Evolution of Power BI — A Conversation with Mohammad Ali](https://radacad.com/the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10/?utm_source=rss&utm_medium=rss&utm_campaign=the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10) is the source. Ali is Partner Director for the Power BI product. His answer is not \"type more.\" It is a split most teams blur: what is the answer, versus what the agent is allowed to do.\n\n## Two jobs sitting on the lake\n\nAli describes a nested picture, but the part I can use on a Monday is two jobs on OneLake.\n\nThe semantic model encapsulates facts and dimensions. Revenue has a definition. Tables relate on purpose. That is a mathematical exercise: delayed flights, check-ins, people on a plane. He says the semantic model is going through a rebirth because both humans and agents need that classic definition, and he wants the meaning closer to the lake so SQL and Python can hit the same object, not only a report. He also cites the installed base (about 20 million active semantic models) as the reason most customers are already in that middle stage.\n\nAn ontology is for a process. Seeing delays is not the same as cancelling a flight. The second object holds the decision matrix an agent would walk: rules, sequence, action. Ali's line is the one I will keep. The semantic model tells you the answer; the ontology tells the agent how to act. When people ask which to build, he usually says they want both.\n\nI would still start in the middle. Ontology is preview. Jumping to a master process graph while \"revenue\" is still a vibe in a measure is how you get a confident agent with a wrong total.\n\n## Prompt-first is not the default path\n\nReza asked whether Desktop becomes a prompt-first window. Ali said maybe, later, and probably on Fabric Web Apps rather than JSON-shuffling the interactive report you already have. Prompt fatigue is real. He does not want that UI forced on people who do not find it natural.\n\nThat matches how I actually build. Nordic Boardroom still starts with gold tables and a semantic model, then a reader path from \"are we okay?\" to \"who do we call.\" A prompt that rearranges visuals does not replace the grain of a KPI. Fabric Web Apps can skip PBIR and go straight to HTML, hosted on capacity, with authentication and DAX scaffolding included. Ali treats that as complementary. Conversation and custom apps sit next to reporting; they do not retire the model. Capacity-only, not Pro, so it is also not free.\n\nCopilot-in-the-pane versus Claude-via-MCP is the same lesson in a different costume. Ali's path is to standardise on the MCP server internally so Power BI Copilot, M365, Foundry, and an external model hit one Fabric IQ door. Until that lands, I treat every extra pane as another client of the same definitions, not a second definition of revenue.\n\n## What I already refuse to blur\n\nOrbit's weekly Write is a small version of the same split. Signals and project state are intake: what showed up, what is in the workshop. Slack Approve is the action. The essay can be rewritten; publication waits on a person. I would not let a generator both invent the claim and merge it.\n\nLedger is the limit I live with. A research cycle can name a Sharpe gap and a proposed trim. I still click the trades. No broker automation. That is process-shaped work I have not encoded, on purpose.\n\nThe cost of Ali's picture is coordination. Two objects means two kinds of change. Semantic edits are meaning. Ontology edits are permission to act. Mixing them in one prompt looks fast until you cannot tell whether the agent lied about the number or about the rule.\n\n## Takeaway\n\nWhen the stack moves, I would not start by asking whether Desktop should open as a chat. I would ask whether \"what is the answer?\" has an object an agent can query without inventing grain, and whether \"what may we do?\" is a separate object I am willing to maintain. Most organisations will want both. Ontology is still preview. Skip the middle doll and the agent can count delays all day. It still should not cancel the flight.\n",
-  "preview": "The agent can count delays. It still cannot cancel the flight.\n\nMohammad Ali's usable split: a semantic model answers a mathematical question; an ontology is for the process that acts. I would not skip the middle doll because Desktop grew a prompt.\n\nInspired by: The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
+  "mdx": "---\ntitle: \"The notebook grew a UI. The contract still lives underneath.\"\nsummary: \"Interactive Fabric notebook tools lower the cost of inspection, but I still separate exploration from the definitions and checks that must survive the next interface.\"\ndate: \"2026-08-24\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Fabric\", \"Analytics\", \"Notebooks\"]\n---\n\n## The question\n\nA familiar promise in analytics says every new interface removes technical work. In practice, it often only moves the work. A friendlier screen can make a task easier to start while leaving ownership, definitions, and repeatability exactly where they were.\n\n[Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs](https://blog.crossjoin.co.uk/2026/08/23/tools-with-interactive-uis-in-fabric-notebooks-with-semantic-link-labs/) gave me a useful version of that tension. Chris Webb shows Semantic Link Labs opening interactive tools inside a Fabric notebook: a lineage view that can inspect connected reports and broken visuals, plus a VertiPaq Analyzer, all reached with a small amount of code. If the notebook now has buttons and diagrams, what actually changes in how I build analytics, and what must stay boring underneath?\n\n## The surface moved closer to the evidence\n\nMost BI troubleshooting starts with a gap between where the problem is visible and where it can be investigated. Someone spots a broken visual in a report. Another person opens a workspace, traces a model, looks for a dependency, and eventually lands in code. Each handoff loses context.\n\nPutting an interactive lineage tool inside the notebook compresses that distance. The workspace and semantic model can be selected where the investigation is already happening. The visual result sits beside the cells that opened it. That matters because exploration is rarely clean enough to justify writing a polished script before I know which question is worth keeping.\n\nI do not read this as no-code replacing code. I read it as the interface becoming an on-ramp to a traceable workspace. The decision rule I would keep is simple: use the interface to shorten the path to evidence; use the notebook to preserve how you got there.\n\nThat is a better bargain than pretending every analyst should remember a library's full API before checking a lineage problem. It also beats a separate admin screen when the finding needs immediate investigation. The UI earns its place by reducing search cost, not by making the system less technical.\n\n## A button is not the contract\n\nMoving the surface does not settle the meaning below it. A lineage view can show that a report is connected to a semantic model. It cannot decide whether that connection is intended, who owns the measure, or whether two teams mean the same thing by revenue. A broken-visual check can find a symptom. It cannot tell me which release introduced it or whether the report is still part of a live decision process.\n\nThe same limit applies to VertiPaq analysis. A convenient view can expose model shape and invite the right performance questions. It does not choose the grain, define the KPI, or explain why a slow measure is allowed to remain because changing it would break a board pack.\n\nThis is where moving stacks create false confidence. The newest surface feels like the new architecture, so teams start storing judgment in clicks. Six months later the package, pane, or preferred workflow changes, and the only durable artifact is a screenshot in a chat thread. I want the opposite: changing tools around stable definitions, named ownership, and rerunnable checks.\n\n## The review loop I would trust\n\nI would start interactively. Open the notebook, select the model, use the lineage view to find the suspicious connection, and inspect the report in context. That is the fast path, and forcing a command-line ritual onto every first look would waste the capability the source is showing.\n\nOnce a finding becomes recurring, I would move the question into explicit cells and outputs. The notebook should say which workspace and model were inspected, what condition counts as a failure, and what was found. If the check has to run unattended, I would take it out of the click path entirely. A scheduled regression should not wait for someone to open an interactive widget.\n\nThe manual step stays where interpretation begins. Someone still decides whether a dependency is wrong, whether a model change is safe, and whether the evidence is strong enough to block a release. I am comfortable automating discovery before I automate that call.\n\nOrbit uses the same split in a smaller system. Signals and project state can produce a weekly draft, but Slack Approve remains the publication gate. The interface makes review easier; it does not inherit the authority to publish. That boundary is more important than whether the reviewer arrived through code, a web page, or a button.\n\n## Where convenience becomes debt\n\nAn interactive notebook UI is the wrong endpoint when the same question must pass every night, when reviewers need a stable diff, or when the result depends on notebook state that nobody else can reconstruct. It can also hide access problems: a tool may look self-contained while the person rerunning it lacks the workspace permissions or context of the original author.\n\nThe counter-case matters too. Requiring code for every inspection creates its own debt. It narrows who can test a suspicion and encourages people to export data into less governed tools. A UI beside the code can widen participation without separating the analysis from its technical context.\n\nSo I would not choose between interactive and reproducible as identities. I would choose based on the life of the question. Exploration can begin with controls. A repeated check graduates to code. A production gate needs an owner and an unattended test. The mistake is letting one surface pretend to serve all three.\n\n## Takeaway\n\nWhen the reporting stack moves, I do not need every interface to stay familiar. I need the path from evidence to decision to remain legible. Interactive tools inside Fabric notebooks look valuable because they bring inspection closer to the model and lower the cost of a first look.\n\nBut the UI is a handle, not the contract. I will use it to find the problem faster, then preserve the question, the check, and the owner in forms that can survive the next pane. If a result matters twice, it should not depend on remembering where I clicked the first time.\n",
+  "preview": "The notebook grew a UI. The contract still lives underneath.\n\nInteractive Fabric notebook tools lower the cost of inspection, but I still separate exploration from the definitions and checks that must survive the next interface.\n\nInspired by: Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs",
   "intake": {
-    "weekOf": "2026-08-17",
-    "generatedAt": "2026-08-17T08:31:56.923Z",
+    "weekOf": "2026-08-24",
+    "generatedAt": "2026-08-24T09:03:00.824Z",
     "signals": [
+      {
+        "id": "a8e4761ea034",
+        "title": "Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs",
+        "link": "https://blog.crossjoin.co.uk/2026/08/23/tools-with-interactive-uis-in-fabric-notebooks-with-semantic-link-labs/",
+        "source": "Chris Webb's BI Blog",
+        "category": "Analytics",
+        "snippet": "There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…"
+      },
+      {
+        "id": "6c55885c6a96",
+        "title": "Data Engineering Weekly #284",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-284",
+        "source": "Data Engineering Weekly",
+        "category": "Data",
+        "snippet": "The Weekly Data Engineering Newsletter"
+      },
+      {
+        "id": "af96e41a881b",
+        "title": "[Episode 5] AI Effects When You Use It In Building Your Product",
+        "link": "https://www.scrum.org/resources/blog/episode-5-ai-effects-when-you-use-it-building-your-product",
+        "source": "Scrum.org",
+        "category": "Delivery",
+        "snippet": "\"AI-native Scrum Team\" is a podcast series that shares how Scrum Teams can effectively take the steps of their AI Transformation journey to become AI-native Scrum Teams. In episode 5, we discussed what effects we will see in our processes when we use AI to build the product. (for…"
+      },
+      {
+        "id": "027379c08484",
+        "title": "Introducing AI Futures",
+        "link": "https://openai.com/index/introducing-ai-futures",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom."
+      },
       {
         "id": "c42698bae58b",
         "title": "Displaying The Output Of Detail Rows Expressions In Power BI Reports Using The Paginated Report Visual",
@@ -28,60 +60,28 @@
         "snippet": "In last week’s post I mentioned that while Power BI reports (unlike Excel PivotTables) do not support the Detail Rows Expression feature, it is possible to partially work around this limitation by using the paginated report visual. In this post I’ll show you how I was able to do…"
       },
       {
-        "id": "776508c048eb",
-        "title": "Data Engineering Weekly #283",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-283",
-        "source": "Data Engineering Weekly",
-        "category": "Data",
-        "snippet": "The Weekly Data Engineering Newsletter"
-      },
-      {
-        "id": "6390a377f9b1",
-        "title": "Your Juniors Are Still Here. The Reps Are Gone.",
-        "link": "https://www.scrum.org/resources/blog/your-juniors-are-still-here-reps-are-gone",
-        "source": "Scrum.org",
-        "category": "Delivery",
-        "snippet": "Image A surgical resident scrubs in for a prostatectomy. Gowned, credentialed, in the room. The robotic console sits four feet away and the attending surgeon is already at it, running the procedure alone, because the machine allows it. The resident watches from a second console a…"
-      },
-      {
-        "id": "097582375e87",
-        "title": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things",
-        "link": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
-        "source": "Simon Willison",
-        "category": "AI",
-        "snippet": ""
-      },
-      {
-        "id": "153261e53339",
-        "title": "The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
-        "link": "https://radacad.com/the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10/?utm_source=rss&utm_medium=rss&utm_campaign=the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10",
-        "source": "RADACAD",
-        "category": "Analytics",
-        "snippet": "What is the next evolution of Power BI? Will Power BI Desktop ever become a prompt-first UI? And how do you actually decide whether you need a semantic model, an ontology, or both? I sat down with Mohammad Ali — Director of Product Management for Power BI at Microsoft, overseeing…"
-      },
-      {
-        "id": "6be2619171b0",
-        "title": "Using AI_Functions in Your Data Warehouse: Top Use Cases",
-        "link": "https://www.databricks.com/blog/using-aifunctions-your-data-warehouse-top-use-cases",
+        "id": "b01ab86ac52d",
+        "title": "Connecting retail demand planning to campaign and store execution",
+        "link": "https://www.databricks.com/blog/connecting-retail-demand-planning-campaign-and-store-execution",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "In most organizations, data warehouses hold structured data, while unstructured data..."
+        "snippet": "Retail and consumer goods teams make decisions across a connected but complex operating cycle..."
       },
       {
-        "id": "0f9d254133b6",
-        "title": "Customers Don't Buy your Exhaustion",
-        "link": "https://www.scrum.org/resources/blog/customers-dont-buy-your-exhaustion",
+        "id": "26a12cb0fbda",
+        "title": "You Priced Being Late. Nobody Priced Being Early.",
+        "link": "https://www.scrum.org/resources/blog/you-priced-being-late-nobody-priced-being-early",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "The team had earned its standing ovation, and it wanted one. Two months of late nights. A release pushed out over a weekend nobody got back. The kind of finish that gets a team a reputation for grit. In the review, they walked through all of it, the heroics and the saves, with th…"
+        "snippet": "Image A team finishes an app update on a Tuesday. Tested, signed off, ready. It goes into review and stays there. Six days. Nobody sits still for six days, so the team starts three more items and finishes two of them. When the update ships, there is a queue behind it. The year ha…"
       },
       {
-        "id": "855fa77e93e1",
-        "title": "The builder’s guide to GPT‑5.6",
-        "link": "https://openai.com/index/builders-guide-to-gpt-5-6",
+        "id": "cb030de2dd94",
+        "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
+        "link": "https://openai.com/index/stampli",
         "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": "Learn how startups use GPT-5.6 to build faster, more cost-efficient AI agents with smarter model selection and new Responses API capabilities."
+        "snippet": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days."
       }
     ],
     "projects": [
@@ -169,7 +169,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-08-17T08:42:45.119Z",
-  "publishedSlug": "the-agent-can-count-delays-it-still-cannot-cancel-the-flight"
+  "source": "ide"
 }
