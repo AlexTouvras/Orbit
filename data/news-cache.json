@@ -1,7 +1,34 @@
 {
-  "generatedAt": "2026-08-26T06:40:04.503Z",
-  "count": 218,
+  "generatedAt": "2026-08-27T06:25:22.592Z",
+  "count": 217,
   "items": [
+    {
+      "id": "011663187a2a",
+      "title": "Building an Operational Ontology: An E-Commerce Walkthrough",
+      "link": "https://www.dataengineeringweekly.com/p/building-an-operational-ontology",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-26T14:29:30.000Z",
+      "contentSnippet": "The write side of the ontology conversation: named actions, business rules, and write-back to the systems of record — a pattern already running at enterprise scale."
+    },
+    {
+      "id": "d6bb1031e66b",
+      "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
+      "link": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-26T10:00:00.000Z",
+      "contentSnippet": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff."
+    },
+    {
+      "id": "cdfc10030b4b",
+      "title": "Learning never stops: How AI makes learning continuous",
+      "link": "https://openai.com/index/learning-never-stops",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-26T10:00:00.000Z",
+      "contentSnippet": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom."
+    },
     {
       "id": "3d8012e1730a",
       "title": "Introducing Governance Hub: Intelligent, account-level governance over your Databricks estate",
@@ -12,6 +39,24 @@
       "contentSnippet": "Your FinOps lead needs to easily drill-down into Databricks spend and identify what’s driving costs, ..."
     },
     {
+      "id": "504dd1ec9508",
+      "title": "The Hugging Face incident and the road ahead",
+      "link": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-26T00:00:00.000Z",
+      "contentSnippet": "OpenAI shares findings from the Hugging Face security incident and the steps we’re taking to strengthen AI model security, monitoring, and alignment."
+    },
+    {
+      "id": "d34e82eae2f2",
+      "title": "How loveholidays is making everyone a builder with Codex",
+      "link": "https://openai.com/index/loveholidays",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-26T00:00:00.000Z",
+      "contentSnippet": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster."
+    },
+    {
       "id": "459ecafd8553",
       "title": "Leveraging Databricks to Support FISC Security Guidelines",
       "link": "https://www.databricks.com/blog/leveraging-databricks-support-fisc-security-guidelines",
@@ -19,6 +64,24 @@
       "category": "Data",
       "pubDate": "2026-08-26T00:00:00.000Z",
       "contentSnippet": "The FISC Security Guidelines on Computer Systems for Banking and Related Financial..."
+    },
+    {
+      "id": "d57a043ce5cd",
+      "title": "DuckLabs to Join AWS, Projects to Remain Open Source",
+      "link": "https://duckdb.org/2026/08/26/ducklabs-to-join-aws.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-08-26T00:00:00.000Z",
+      "contentSnippet": "DuckLabs today has announced that they will be joining Amazon Web Services as a new subsidiary. The big news for DuckDB and related projects like DuckLake is that there are no changes for our projects’ roadmap, licensing, and governance model! DuckDB, DuckLake, Quack, and all the…"
+    },
+    {
+      "id": "241e5b601cf5",
+      "title": "DuckDB outgrows its nest",
+      "link": "https://motherduck.com/blog/duckdb-amazon",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-08-26T00:00:00.000Z",
+      "contentSnippet": "Today Duck Labs, the developers of DuckDB, announced they are being acquired by Amazon. This is big news in the duck-iverse, and many people are wondering what this will mean for everyone’s favorite duck-powered database, MotherDuck."
     },
     {
       "id": "0ed8ed36ce84",
@@ -111,6 +174,15 @@
       "contentSnippet": "Use the Admin plugin for ChatGPT Work and Codex to analyze workspace usage, manage members and permissions, adjust limits, and act on admin requests."
     },
     {
+      "id": "0c577b76a17e",
+      "title": "How DuckDB Runs Recursive CTEs Faster",
+      "link": "https://duckdb.org/2026/08/25/how-duckdb-runs-recursive-ctes-faster.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-08-25T00:00:00.000Z",
+      "contentSnippet": "When I implemented DuckDB's first recursive CTE operator in 2020, correctness determined the design: evaluate the non-recursive term once, then evaluate the recursive term until the next working table is empty. That established the right semantic contract, but reusable runtime st…"
+    },
+    {
       "id": "4a7aaf7fd896",
       "title": "DuckDB Table Functions in Java",
       "link": "https://duckdb.org/2026/08/25/table-functions-in-java.html",
@@ -172,15 +244,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-24T15:29:00.000Z",
       "contentSnippet": "I was listening to Ezra Klein’s interview with Helen Toner about the recent OpenAI hack of Hugging Face and the subsequent discovery that there were swarms of agents inside OpenAI doing unsanctioned activities. One of the points Klein made was that at no point did any of these (t…"
-    },
-    {
-      "id": "df015003760c",
-      "title": "Advancing price-performance for developers with GPT‑5.6 in Kiro",
-      "link": "https://openai.com/index/gpt-5-6-in-kiro",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-24T12:00:00.000Z",
-      "contentSnippet": "GPT‑5.6 is now available in Kiro, helping developers plan, build, review, and test software with better price-performance."
     },
     {
       "id": "9ac6cd3beb80",
@@ -255,24 +318,6 @@
       "contentSnippet": "Most agile transformations don't fail because people resist change. They fail because the organization asked for two things that can't both be true, wrote them on the same slide, and then acted surprised when it only got one. The slide says empowered teams. The workflow tool says…"
     },
     {
-      "id": "027379c08484",
-      "title": "Introducing AI Futures",
-      "link": "https://openai.com/index/introducing-ai-futures",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-20T07:00:00.000Z",
-      "contentSnippet": "Introducing AI Futures, a new OpenAI blog exploring how transformative AI could reshape power, governance, the economy, and individual freedom."
-    },
-    {
-      "id": "cb030de2dd94",
-      "title": "Stampli cuts launch hours by 68% using ChatGPT Work",
-      "link": "https://openai.com/index/stampli",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-20T00:00:00.000Z",
-      "contentSnippet": "With a fixed deadline and design resources committed elsewhere, Stampli used Codex and ChatGPT Work to compress weeks of launch production into days."
-    },
-    {
       "id": "b6f0fc020a49",
       "title": "DuckDB v2.0: Your Database Deserves a Better Parser",
       "link": "https://duckdb.org/2026/08/20/duckdb-20-peg-parser.html",
@@ -298,15 +343,6 @@
       "category": "AI",
       "pubDate": "2026-08-19T22:46:07.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "ef913e9fdabc",
-      "title": "Offering Zero Data Retention for frontier models",
-      "link": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-19T19:00:00.000Z",
-      "contentSnippet": "OpenAI reaffirms Zero Data Retention for eligible API customers and previews Private Safety Processing for advanced AI safety without compromising data privacy."
     },
     {
       "id": "c0d3ea0920c2",
@@ -577,15 +613,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-10T07:05:54.000Z",
       "contentSnippet": "When you see an impressive AI tool, you want to bring it to your team immediately. But it can bring risks. Don’t blame your organization if they don’t easily allow any AI tool to be used. Why? Image I regularly hear from my students in my AI classes that their organizations don’t…"
-    },
-    {
-      "id": "05f5b5e146e6",
-      "title": "Cognitive Trap: Scrum Master as a Manager",
-      "link": "https://www.scrum.org/resources/blog/cognitive-trap-scrum-master-manager",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-10T04:00:00.000Z",
-      "contentSnippet": "Scrum Master as Manager Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, an…"
     },
     {
       "id": "fc91bece9947",
@@ -1380,24 +1407,6 @@
       "contentSnippet": "Build full data pipelines by prompting your AI agent, no Python required. MotherDuck Flights are perfect for data ingestion, transformation, and activation. Flight Plan templates show you and your agent how to ingest from Postgres, sync Google Sheets, and send Slack alerts."
     },
     {
-      "id": "12488fb27df3",
-      "title": "Announcing DuckDB 1.4.5 LTS (Andium)",
-      "link": "https://duckdb.org/2026/06/17/announcing-duckdb-145.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-06-17T00:00:00.000Z",
-      "contentSnippet": "We are simultaneously releasing two DuckDB versions: v1.4.5 LTS (Andium) and v1.5.4 (Variegata). This blog post is about the LTS version, v1.4.5 (Andium). Unless you are using specifically using the LTS version, you are likely looking for the latest stable version, v1.5.4 (Varieg…"
-    },
-    {
-      "id": "4a1acb6734d7",
-      "title": "Announcing DuckDB 1.5.4 (Variegata)",
-      "link": "https://duckdb.org/2026/06/17/announcing-duckdb-154.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-06-17T00:00:00.000Z",
-      "contentSnippet": "We are simultaneously releasing two DuckDB versions: v1.4.5 LTS (Andium) and v1.5.4 (Variegata). This blog post is about the latest non-LTS version, v1.5.4 (Variegata). If you are looking for the LTS version, check out the v1.4.5 (Andium) announcement. In this blog post, we highl…"
-    },
-    {
       "id": "455a8f46ffd0",
       "title": "Fragments: June 16",
       "link": "https://martinfowler.com/fragments/2026-06-16.html",
@@ -1423,15 +1432,6 @@
       "category": "Analytics",
       "pubDate": "2026-06-16T10:00:00.000Z",
       "contentSnippet": "How to define optional parameters in DAX user-defined functions and set default values for parameters not specified by the caller."
-    },
-    {
-      "id": "e63243c6ab40",
-      "title": "Replacing Our BI Tool with Dives",
-      "link": "https://motherduck.com/blog/replacing-our-bi-tool-with-dives",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-06-16T00:00:00.000Z",
-      "contentSnippet": "How MotherDuck replaced its BI tool in under a month using Claude Code agents: a migration that once would have taken 3 people six months and $500K."
     },
     {
       "id": "7eef5da11c77",
@@ -1612,15 +1612,6 @@
       "category": "Analytics",
       "pubDate": "2026-05-18T20:00:24.000Z",
       "contentSnippet": "This article describes the new Expression Context property of calculated columns in Power BI, explaining how user-aware calculated columns work, why they are not materialized, and how to use them as virtual calculated columns for localization and custom security scenarios.…"
-    },
-    {
-      "id": "8f3383dddf6b",
-      "title": "Data Engineering Weekly #270",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-270",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-05-18T01:54:53.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "1482c83da309",
