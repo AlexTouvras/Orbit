@@ -1,7 +1,115 @@
 {
-  "generatedAt": "2026-08-27T06:25:22.592Z",
-  "count": 217,
+  "generatedAt": "2026-08-27T17:15:40.605Z",
+  "count": 218,
   "items": [
+    {
+      "id": "dc5c2ff719f2",
+      "title": "Building for the AI Era: Lakebase, Streaming, and Lakehouse Innovations  at VLDB 2026",
+      "link": "https://www.databricks.com/blog/building-ai-era-lakebase-streaming-and-lakehouse-innovations-vldb-2026",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-27T15:22:00.000Z",
+      "contentSnippet": "We are headed to VLDB 2026 to share multiple innovations that power the Databricks platform..."
+    },
+    {
+      "id": "530949a58cd7",
+      "title": "What QSR reports miss about the decisions matter the most",
+      "link": "https://www.databricks.com/blog/what-qsr-reports-miss-about-decisions-matter-most",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-27T15:00:00.000Z",
+      "contentSnippet": "Limited-time offers can be a powerful way to create excitement, bring guests back,..."
+    },
+    {
+      "id": "c5227fe0bc2d",
+      "title": "Enhancing Agent Retrieval with Structured Chart Extraction",
+      "link": "https://www.databricks.com/blog/enhancing-agent-retrieval-structured-chart-extraction",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-27T15:00:00.000Z",
+      "contentSnippet": "The MotivationMore and more enterprises are now asking agents to work with their..."
+    },
+    {
+      "id": "d9866ea09d22",
+      "title": "Making Your Data Ready for Agentic AI",
+      "link": "https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-08-27T13:11:00.000Z",
+      "contentSnippet": "Lots of organizations are excited about what AI can do to streamline their processes, save money, and juice margins. But AI's capabilities are founded on the data that AI accesses, and for many organizations that foundation is little more than sand. Pramod Sadalage and Prem Chand…"
+    },
+    {
+      "id": "14c3eb378998",
+      "title": "Vertical Advantage: Transforming Industries with Lakebase and Agentic AI",
+      "link": "https://www.databricks.com/blog/vertical-advantage-transforming-industries-lakebase-and-agentic-ai",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-27T13:05:00.000Z",
+      "contentSnippet": "In the first blog of this series, we looked at how Lakebase Postgres is rewriting..."
+    },
+    {
+      "id": "1ca4151208c4",
+      "title": "Agility Might Have Been Waiting for AI",
+      "link": "https://www.scrum.org/resources/blog/agility-might-have-been-waiting-ai",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-27T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. AI is forcing everybody to be very agile about who they are, what they do, what impact can they make, and how they're perceived, including myself. I've pivoted from Scaling with Agility to Scaling AI from Activity to Impact. This article ex…"
+    },
+    {
+      "id": "3062d8cdad5f",
+      "title": "Better answers, broader thinking: What students gain from ChatGPT and critical-thinking training",
+      "link": "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-27T09:00:00.000Z",
+      "contentSnippet": "A randomized study of more than 1,000 students examines ChatGPT, critical thinking, originality, and student performance on a real-world university assignment."
+    },
+    {
+      "id": "6bb2ec0cadb1",
+      "title": "Critical Asked Questions (CAQ) About PSPO-AI Essentials Course",
+      "link": "https://www.scrum.org/resources/blog/critical-asked-questions-caq-about-pspo-ai-essentials-course",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-27T08:34:16.000Z",
+      "contentSnippet": "In this blog post, I answer critical questions you have before choosing a Professional Scrum Product Owner – AI Essentials class. Image 1- Why should I take the class when I can directly take the PSPO-AI Essentials exam and get the certificate without attending the class? Yes, yo…"
+    },
+    {
+      "id": "bc0c7be7bc53",
+      "title": "Object Storage + WAL: Lakebase Postgres for the agentic era",
+      "link": "https://www.databricks.com/blog/object-storage-wal-lakebase-postgres-agentic-era",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-27T07:18:59.000Z",
+      "contentSnippet": "Agents that interact with a traditional OLTP database often create bottlenecks at the storage layer. New deployments..."
+    },
+    {
+      "id": "57e276283c19",
+      "title": "Expanding OpenAI’s presence in Brazil",
+      "link": "https://openai.com/index/expanding-our-presence-in-brazil",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-27T03:00:00.000Z",
+      "contentSnippet": "OpenAI is expanding its presence in Brazil, deepening engagement with developers, businesses, and communities to support AI adoption across the country."
+    },
+    {
+      "id": "5b4e1eec98bc",
+      "title": "MotherDuck CLI: query, pipelines, and dashboards from your terminal",
+      "link": "https://motherduck.com/blog/motherduck-cli-announcement",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-08-27T00:00:00.000Z",
+      "contentSnippet": "Meet the MotherDuck CLI: one install to query data, publish Python pipelines, and host dashboards from your terminal, for coding agents and CI alike."
+    },
+    {
+      "id": "8c836a70161f",
+      "title": "No-Code Power BI Report Authoring — GitHub Copilot + Fabric Skills + Power BI Desktop Bridge",
+      "link": "https://radacad.com/no-code-power-bi-report-authoring-github-copilot-fabric-skills-power-bi-desktop-bridge/?utm_source=rss&utm_medium=rss&utm_campaign=no-code-power-bi-report-authoring-github-copilot-fabric-skills-power-bi-desktop-bridge",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-08-26T15:29:05.000Z",
+      "contentSnippet": "AI can perform a lot of interesting tasks these days. It can check your email. It can draft an email response. And it can do many actions within the Power BI environment — including creating a complete Power BI report entirely from a prompt window, without touching anything insid…"
+    },
     {
       "id": "011663187a2a",
       "title": "Building an Operational Ontology: An E-Commerce Walkthrough",
@@ -111,15 +219,6 @@
       "contentSnippet": "Executive Verdict: Organization vs. TechnologyData mesh vs. data fabric hinges on..."
     },
     {
-      "id": "d11360bb1a3d",
-      "title": "Modernizing SQL ETL in Lakehouse with Declarative Patterns",
-      "link": "https://www.databricks.com/blog/modernizing-sql-etl-lakehouse-declarative-patterns",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-25T15:00:00.000Z",
-      "contentSnippet": "Databricks is bringing declarative ETL to data warehousing workflows in Lakehouse..."
-    },
-    {
       "id": "45c8c4ff0994",
       "title": "Testing DAX measures by using AI",
       "link": "https://www.sqlbi.com/tv/testing-dax-measures-by-using-ai/",
@@ -127,15 +226,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-25T10:00:00.000Z",
       "contentSnippet": "How to use AI to identify relevant test cases in a semantic model and create repeatable DAX tests for a measure."
-    },
-    {
-      "id": "0e4d0d4d14e1",
-      "title": "Open Table Formats Explained: Iceberg vs. Delta vs. Hudi",
-      "link": "https://www.databricks.com/blog/open-table-formats",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-25T07:37:09.000Z",
-      "contentSnippet": "Open table formats are metadata layers that sit on top of data files in object storage, adding ACID transactions..."
     },
     {
       "id": "829e237a888d",
@@ -154,24 +244,6 @@
       "category": "AI",
       "pubDate": "2026-08-25T07:00:00.000Z",
       "contentSnippet": "Jalapeño is a custom inference chip from OpenAI that delivers faster, more power-efficient AI inference, with higher throughput and lower latency for modern models."
-    },
-    {
-      "id": "da55f7d7bd9d",
-      "title": "Disrupting a new covert influence campaign from Russia",
-      "link": "https://openai.com/index/disrupting-malicious-uses-of-ai-influence-campaign-russia",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-25T00:00:00.000Z",
-      "contentSnippet": "OpenAI banned Russia-origin accounts using AI to promote a fake Israel-based think tank and a “sovereignty” index praising Russia and criticizing the West."
-    },
-    {
-      "id": "cfc376addf8c",
-      "title": "Introducing the Admin plugin for ChatGPT Work and Codex",
-      "link": "https://openai.com/index/introducing-admin-plugin",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-25T00:00:00.000Z",
-      "contentSnippet": "Use the Admin plugin for ChatGPT Work and Codex to analyze workspace usage, manage members and permissions, adjust limits, and act on admin requests."
     },
     {
       "id": "0c577b76a17e",
@@ -208,33 +280,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-24T20:00:44.000Z",
       "contentSnippet": "This article describes how to use AI to identify relevant test cases in a semantic model and create repeatable DAX tests for a measure. A DAX measure is correct only when it produces the expected result in every situation of…"
-    },
-    {
-      "id": "9e0202f24c76",
-      "title": "Run, debug, and scale Databricks workloads from your local IDE",
-      "link": "https://www.databricks.com/blog/run-debug-and-scale-databricks-workloads-your-local-ide",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-24T17:01:08.000Z",
-      "contentSnippet": "The Databricks workspace is purposefully built for data analysis and data engineering. However..."
-    },
-    {
-      "id": "0744436aa0d3",
-      "title": "How Databricks Uses AI to Accelerate Incident Investigation",
-      "link": "https://www.databricks.com/blog/how-databricks-uses-ai-accelerate-incident-investigation",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-24T17:00:00.000Z",
-      "contentSnippet": "In our previous blog post, we shared how Databricks uses AI to debug thousands of..."
-    },
-    {
-      "id": "81ead8015ec7",
-      "title": "Relational vs Non-Relational Database: Choosing the Right Data Store",
-      "link": "https://www.databricks.com/blog/relational-vs-non-relational-database",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-24T16:56:45.000Z",
-      "contentSnippet": "Choosing between relational and non-relational databases is one of the most consequential..."
     },
     {
       "id": "8027dbd813c6",
@@ -604,15 +649,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-10T07:22:49.000Z",
       "contentSnippet": "Microsoft recently introduced a new default visual design style for Power BI named Fluent 2. I personally disagree with a few choices in the new defaults, including the removal of alternating row colors from Table and Matrix visuals. However, the…"
-    },
-    {
-      "id": "af2f9387f309",
-      "title": "AI Tools Evaluation & Approval Framework for Scrum Teams",
-      "link": "https://www.scrum.org/resources/blog/ai-tools-evaluation-approval-framework-scrum-teams",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-10T07:05:54.000Z",
-      "contentSnippet": "When you see an impressive AI tool, you want to bring it to your team immediately. But it can bring risks. Don’t blame your organization if they don’t easily allow any AI tool to be used. Why? Image I regularly hear from my students in my AI classes that their organizations don’t…"
     },
     {
       "id": "fc91bece9947",
@@ -1263,15 +1299,6 @@
       "contentSnippet": "In this article, we implement a function that removes filter-keep column filters from a calendar, using REMOVEFILTERS as the return value of the function. A DAX user-defined function, also known as a UDF, is expected to return a scalar or…"
     },
     {
-      "id": "da39867ac429",
-      "title": "What’s Hot and New for Power BI Semantic Models in 2026 — A Conversation with Christian Wade | Fabric Insider Ep. 5",
-      "link": "https://radacad.com/whats-hot-and-new-for-power-bi-semantic-models-in-2026-a-conversation-with-christian-wade-fabric-insider-ep-5/?utm_source=rss&utm_medium=rss&utm_campaign=whats-hot-and-new-for-power-bi-semantic-models-in-2026-a-conversation-with-christian-wade-fabric-insider-ep-5",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-06-29T16:13:50.000Z",
-      "contentSnippet": "Christian Wade has been in the enterprise BI space longer than most. He was working with semantic models — Analysis Services, VertiPaq — long before Power BI even existed. Today he is Principal Product Manager Architect for Power BI Semantic Models at Microsoft, responsible for t…"
-    },
-    {
       "id": "db61c1537465",
       "title": "Why data teams are emerging as leaders in AI agent adoption",
       "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/29/why-data-teams-are-emerging-as-leaders-in-ai-agent-adoption/",
@@ -1398,15 +1425,6 @@
       "contentSnippet": "Hardcoded values are the cockroaches of a data platform: you think you got them all, then Test starts reading from Prod and nobody notices for three days. Variable libraries in Microsoft Fabric put your configuration in one versioned place and let each stage resolve its own value…"
     },
     {
-      "id": "1bc32ae215a8",
-      "title": "Flight Plans: Templates for AI-Native Data Pipelines",
-      "link": "https://motherduck.com/blog/flight-plans-templates-for-ai-native-data-pipelines",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-06-18T00:00:00.000Z",
-      "contentSnippet": "Build full data pipelines by prompting your AI agent, no Python required. MotherDuck Flights are perfect for data ingestion, transformation, and activation. Flight Plan templates show you and your agent how to ingest from Postgres, sync Google Sheets, and send Slack alerts."
-    },
-    {
       "id": "455a8f46ffd0",
       "title": "Fragments: June 16",
       "link": "https://martinfowler.com/fragments/2026-06-16.html",
@@ -1495,15 +1513,6 @@
       "category": "Analytics",
       "pubDate": "2026-06-02T17:00:00.000Z",
       "contentSnippet": "Microsoft Build 2026 highlights advancements in app development with Microsoft Fabric and Microsoft Databases, emphasizing a unified data and AI platform for scalable, agentic applications. The post Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft D…"
-    },
-    {
-      "id": "6535772c48e0",
-      "title": "Fragments: June  2",
-      "link": "https://martinfowler.com/fragments/2026-06-02.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-06-02T15:21:00.000Z",
-      "contentSnippet": "Greg Wilson has noticed that lots of folks are using dodgy metrics to figure out if AI tools are worth their costs. Would you measure lines of code generated, or tickets closed? Or would you send out a survey asking whether developers feel more productive? Each of those approache…"
     },
     {
       "id": "187915d15f2a",
