@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-08-27T17:15:40.605Z",
+  "generatedAt": "2026-08-28T06:01:32.004Z",
   "count": 218,
   "items": [
+    {
+      "id": "f2d9d49479b0",
+      "title": "Fast, fault-tolerant PyTorch training on AI Runtime",
+      "link": "https://www.databricks.com/blog/fast-fault-tolerant-pytorch-training-ai-runtime",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-28T01:15:00.000Z",
+      "contentSnippet": "At scale, your training efficiency is determined by a single metric: \"goodput\", the..."
+    },
+    {
+      "id": "fe99bf10b50a",
+      "title": "At some point, not knowing becomes a choice",
+      "link": "https://www.scrum.org/resources/blog/some-point-not-knowing-becomes-choice",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-27T22:00:00.000Z",
+      "contentSnippet": "Open the retro notes from a year ago. Then open last quarter's. The same problem is in both, in almost the same words. The dependency that strangles every release. The hand-off that loses a week. The \"we should really talk about the roadmap\" that never becomes a conversation. It'…"
+    },
     {
       "id": "dc5c2ff719f2",
       "title": "Building for the AI Era: Lakebase, Streaming, and Lakehouse Innovations  at VLDB 2026",
@@ -55,6 +73,15 @@
       "category": "Delivery",
       "pubDate": "2026-08-27T13:00:00.000Z",
       "contentSnippet": "Originally published on yuvalyeret.com. AI is forcing everybody to be very agile about who they are, what they do, what impact can they make, and how they're perceived, including myself. I've pivoted from Scaling with Agility to Scaling AI from Activity to Impact. This article ex…"
+    },
+    {
+      "id": "1f24f2fac291",
+      "title": "SQLBI Whiteboard",
+      "link": "https://www.sqlbi.com/tools/sqlbi-whiteboard/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-08-27T11:29:59.000Z",
+      "contentSnippet": "SQLBI Whiteboard is a free, open-source whiteboard for Windows 11 designed for teaching DAX, SQL, and data modeling, with pen ink, live application capture, and syntax-highlighted code on the same canvas. Pen-first ink — Low-latency, pressure-aware strokes with palm rejection,…"
     },
     {
       "id": "3062d8cdad5f",
@@ -208,15 +235,6 @@
       "category": "Data",
       "pubDate": "2026-08-25T16:17:44.000Z",
       "contentSnippet": "Data governance tools are software platforms that help organizations catalog, secure,..."
-    },
-    {
-      "id": "c83a9c88981d",
-      "title": "Data Mesh vs. Data Fabric: Key Differences and How the Lakehouse Resolves the Debate",
-      "link": "https://www.databricks.com/blog/data-mesh-vs-data-fabric",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-25T16:05:34.000Z",
-      "contentSnippet": "Executive Verdict: Organization vs. TechnologyData mesh vs. data fabric hinges on..."
     },
     {
       "id": "45c8c4ff0994",
@@ -631,15 +649,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-10T20:00:00.000Z",
       "contentSnippet": "Code written by AI can contain many duplicate parts. User-defined functions are a great tool to simplify complex measures; this article shows how to leverage AI to build better DAX code. AI is getting better and better at generating DAX…"
-    },
-    {
-      "id": "ee10865ff397",
-      "title": "Survey Results: Agile to the Product Operating Model",
-      "link": "https://www.scrum.org/resources/blog/survey-results-agile-product-operating-model",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-10T09:07:32.000Z",
-      "contentSnippet": "TL; DR: The “Agile to the Product Operating Model” Survey Results Between August 2 and August 10, 2026, 48 practitioners participated in my Agile to Product Operating Model (POM) survey, which tries to shed light on what is actually changing. Let me summarize the answers for you:…"
     },
     {
       "id": "b1c5cfb2f6cc",
@@ -1648,15 +1657,6 @@
       "category": "Analytics",
       "pubDate": "2026-05-05T10:00:00.000Z",
       "contentSnippet": "A slicer cannot filter a measure: let’s analyze this common request by explaining how to use a slicer to filter a measure, after discussing the real meaning of using a measure with a slicer."
-    },
-    {
-      "id": "e11542038620",
-      "title": "Filtering measures through slicers",
-      "link": "https://www.sqlbi.com/articles/filtering-measures-through-slicers/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-05-04T20:00:33.000Z",
-      "contentSnippet": "A slicer cannot filter a measure. In this article, we analyze this common request by explaining how to use a slicer to filter a measure, after discussing the real meaning of using a measure with a slicer. A very common…"
     },
     {
       "id": "0b5754265080",
