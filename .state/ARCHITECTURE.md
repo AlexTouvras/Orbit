@@ -111,3 +111,4 @@ src/app/studio/week/page.tsx
 | 2026-08-13 | Home About is a plain section (no GlassCard); About page Background / Why Orbit prose unboxed too | Boxed blurb sat next to unboxed section headings |
 | 2026-08-13 | `neon-cyan` is static; only `.orbit-accent` / `--orbit-accent` bg-border utilities orbit | Home Case study / Read: inherited animated `text-neon-cyan` painted on one sibling only; all-or-none → none |
 | 2026-08-13 | `SLACK_ORBIT_WEBHOOK_URL` on Vercel + GH Actions (Orbit + field-card repos); weekly CI prefers `#orbit` | P1-02; legacy `SLACK_WEBHOOK_URL` remains fallback only |
+| 2026-08-28 | Field-card Approve undrafts weekly PRs before squash-merge | Author agents opened W35 AI/analytics PRs as drafts; GitHub 405s `Pull Request is still a draft` |

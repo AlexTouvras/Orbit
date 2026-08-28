@@ -42,8 +42,27 @@ export async function getPullRequest(repoSlug: string, pr: number) {
     html_url: string;
     state: string;
     merged: boolean;
+    draft?: boolean;
     head: { ref: string; sha: string };
   };
+}
+
+/** Author agents often open weekly PRs as drafts; GitHub refuses to merge those. */
+async function markPullRequestReady(repoSlug: string, pr: number): Promise<void> {
+  const token = githubToken();
+  const { owner, repo } = parseRepo(repoSlug || DEFAULT_REPO);
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${pr}`, {
+    method: "PATCH",
+    headers: {
+      ...headers(token),
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ draft: false }),
+  });
+  if (!res.ok) {
+    const errText = await res.text();
+    throw new Error(`Ready-for-review failed (${res.status}): ${errText.slice(0, 400)}`);
+  }
 }
 
 /** Fetch a text file from a commit/ref (e.g. PR head SHA). */
@@ -82,6 +101,9 @@ export async function mergeFieldCardPullRequest(repoSlug: string, pr: number) {
   if (existing.merged) return { alreadyMerged: true as const, title: existing.title, url: existing.html_url };
   if (existing.state !== "open") {
     throw new Error(`PR #${pr} is ${existing.state}, not open`);
+  }
+  if (existing.draft) {
+    await markPullRequestReady(repoSlug, pr);
   }
 
   const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/pulls/${pr}/merge`, {
