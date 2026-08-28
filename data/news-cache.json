@@ -1,7 +1,43 @@
 {
-  "generatedAt": "2026-08-28T06:01:32.004Z",
+  "generatedAt": "2026-08-28T18:08:06.766Z",
   "count": 218,
   "items": [
+    {
+      "id": "a6070956dc64",
+      "title": "How Indra unified EV charging data on Databricks",
+      "link": "https://www.databricks.com/blog/how-indra-unified-ev-charging-data-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-28T17:30:00.000Z",
+      "contentSnippet": "When data grows faster than the systems around it, complexity becomes the default...."
+    },
+    {
+      "id": "078c9699f9be",
+      "title": "How Trackunit turns construction data into decisions with AI",
+      "link": "https://www.databricks.com/blog/how-trackunit-turns-construction-data-decisions-ai",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-28T17:30:00.000Z",
+      "contentSnippet": "Construction generates abundant data, from equipment telemetry and maintenance records..."
+    },
+    {
+      "id": "3de08a17cfd8",
+      "title": "Fabric Apps & Rayfin Deep Dive: A Conversation with Sachin Patney | Fabric Insider Ep. 11",
+      "link": "https://radacad.com/fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-08-28T15:34:35.000Z",
+      "contentSnippet": "I have written and recorded about Rayfin before, what it is, how the Data App template works, and the cost story that makes it genuinely significant. But this conversation goes much deeper. I sat down with Sachin Patney, who leads Fabric App Development at Microsoft, and by exten…"
+    },
+    {
+      "id": "0b00c80d502c",
+      "title": "Supporting Thailand’s next generation of AI startups",
+      "link": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-28T02:00:00.000Z",
+      "contentSnippet": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products."
+    },
     {
       "id": "f2d9d49479b0",
       "title": "Fast, fault-tolerant PyTorch training on AI Runtime",
@@ -13,7 +49,7 @@
     },
     {
       "id": "fe99bf10b50a",
-      "title": "At some point, not knowing becomes a choice",
+      "title": "At Some Point, not Knowing Becomes a Choice",
       "link": "https://www.scrum.org/resources/blog/some-point-not-knowing-becomes-choice",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -219,24 +255,6 @@
       "contentSnippet": "Today Duck Labs, the developers of DuckDB, announced they are being acquired by Amazon. This is big news in the duck-iverse, and many people are wondering what this will mean for everyone’s favorite duck-powered database, MotherDuck."
     },
     {
-      "id": "0ed8ed36ce84",
-      "title": "How Capital Markets Finance Protects Balance Sheet Returns",
-      "link": "https://www.databricks.com/blog/how-capital-markets-finance-protects-balance-sheet-returns",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-25T20:00:01.000Z",
-      "contentSnippet": "An insurer settles a claim months after the loss. An asset manager marks someone..."
-    },
-    {
-      "id": "bb38e3a27717",
-      "title": "Choosing Data Governance Tools for Enterprise Data Governance",
-      "link": "https://www.databricks.com/blog/data-governance-tools",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-25T16:17:44.000Z",
-      "contentSnippet": "Data governance tools are software platforms that help organizations catalog, secure,..."
-    },
-    {
       "id": "45c8c4ff0994",
       "title": "Testing DAX measures by using AI",
       "link": "https://www.sqlbi.com/tv/testing-dax-measures-by-using-ai/",
@@ -253,15 +271,6 @@
       "category": "AI",
       "pubDate": "2026-08-25T07:05:00.000Z",
       "contentSnippet": "OpenAI CFO Sarah Friar explains how advances across chips, compute, models, and products compound to deliver more useful intelligence at greater scale and lower cost."
-    },
-    {
-      "id": "9ad99bb5f40a",
-      "title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
-      "link": "https://openai.com/index/jalapeno-first-results",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-25T07:00:00.000Z",
-      "contentSnippet": "Jalapeño is a custom inference chip from OpenAI that delivers faster, more power-efficient AI inference, with higher throughput and lower latency for modern models."
     },
     {
       "id": "0c577b76a17e",
@@ -1234,15 +1243,6 @@
       "category": "Data",
       "pubDate": "2026-07-06T04:58:46.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "970a9b380cbe",
-      "title": "No Code, No Tools: Documentation for Power BI and Fabric Using Fabric Skills and GitHub Copilot",
-      "link": "https://radacad.com/no-code-no-tools-documentation-for-power-bi-and-fabric-using-fabric-skills-and-github-copilot/?utm_source=rss&utm_medium=rss&utm_campaign=no-code-no-tools-documentation-for-power-bi-and-fabric-using-fabric-skills-and-github-copilot",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-07-06T04:13:23.000Z",
-      "contentSnippet": "Documentation is one of those things that every data team knows they should do — and almost nobody does well. You build a Power BI semantic model. You create reports. You set up workspaces, schedules, and refresh jobs. You document none of it because there is no time, no simple w…"
     },
     {
       "id": "36e720ea185a",
