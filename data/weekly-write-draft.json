@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-08-24-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-08-29T11:37:00.449Z",
   "weekOf": "2026-08-24",
   "slug": "agents-cannot-smell-bad-data-start-there",
@@ -169,5 +169,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-08-29T11:41:30.147Z",
+  "publishedSlug": "agents-cannot-smell-bad-data-start-there"
 }
