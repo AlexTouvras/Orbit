@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { runNewsletterPipeline } from "@/lib/newsletter/run";
+import { notifyNewsletterFailed } from "@/lib/newsletter/slack";
 import { readNewsletterDraft } from "@/lib/newsletter/store-remote";
 
 export const runtime = "nodejs";
@@ -38,6 +39,11 @@ async function handle(req: NextRequest) {
   } catch (err) {
     console.error("[cron/newsletter] failed:", err);
     const message = err instanceof Error ? err.message : "newsletter_failed";
+    if (notify) {
+      await notifyNewsletterFailed({ reason: message }).catch((slackErr) => {
+        console.warn("[cron/newsletter] Slack failure ping failed:", slackErr);
+      });
+    }
     return NextResponse.json({ ok: false, error: message }, { status: 500 });
   }
 }

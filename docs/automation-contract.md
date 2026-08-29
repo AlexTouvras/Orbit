@@ -15,7 +15,7 @@
 | Name | Trigger | Output | Human gate |
 |------|---------|--------|------------|
 | Weekly Write | GHA `weekly-write.yml` + Cursor | `#orbit` Slack preview/approve | Human Approve in Slack |
-| Weekly digest | Vercel cron `Tue 07:00 UTC` `/api/cron/newsletter` | email (test-to or audience) + Slack FYI | none (test-to until `RESEND_NEWSLETTER_TEST_TO` unset) |
+| Weekly digest | GHA `newsletter.yml` Tue 07:15 UTC (primary) + Vercel `/api/cron/newsletter` Tue 08:00 UTC (backup) | email (test-to or audience) + Slack FYI | none (test-to until `RESEND_NEWSLETTER_TEST_TO` unset) |
 | News refresh | GHA `news-refresh.yml` | commit to `data/news-cache.json` | none |
 | Analytics field card judgment | Cursor `.cursor/automations/analytics-field-card-weekly-content-pass.json` | `#orbit` Approve | Human Approve |
 | Delivery field card judgment | Cursor `.cursor/automations/delivery-field-card-weekly-content-pass.json` | `#orbit` Approve | Human Approve |

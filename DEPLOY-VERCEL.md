@@ -80,7 +80,7 @@ necessarily the address shown on your site).
 
 ## Weekly digest (newsletter)
 
-No Slack Approve. Tuesday cron sends. While `RESEND_NEWSLETTER_TEST_TO` is set, only that inbox gets mail.
+No Slack Approve. **Primary:** GitHub Actions every Tuesday 07:15 UTC. **Backup:** Vercel cron Tuesday 08:00 UTC (skips if already sent). While `RESEND_NEWSLETTER_TEST_TO` is set, only that inbox gets mail.
 
 1. [API keys](https://resend.com/api-keys) — reuse `RESEND_API_KEY`.
 2. Vercel env: `RESEND_NEWSLETTER_FROM`, `RESEND_NEWSLETTER_TEST_TO` (your address). Redeploy.

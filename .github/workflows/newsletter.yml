@@ -1,9 +1,12 @@
 name: Weekly newsletter digest
 
-# Scheduled send is Vercel cron (Tue 07:00 UTC → /api/cron/newsletter).
-# This workflow is manual — assemble + send without waiting for Tuesday.
+# Primary send path (do not rely on Vercel Hobby cron alone — it went silent after Aug 18).
+# Vercel `/api/cron/newsletter` at Tue 08:00 UTC is a backup; already_sent_this_week skips doubles.
 
 on:
+  schedule:
+    # Tuesday 07:15 UTC — after news refresh (06:00) has a chance to land.
+    - cron: "15 7 * * 2"
   workflow_dispatch:
     inputs:
       force:
@@ -28,6 +31,7 @@ jobs:
       - run: npm ci
 
       - name: Assemble digest and send
+        id: send
         env:
           SLACK_ORBIT_WEBHOOK_URL: ${{ secrets.SLACK_ORBIT_WEBHOOK_URL }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -44,5 +48,22 @@ jobs:
           RAVENS_GITHUB_REPO: AlexTouvras/ravens
         run: |
           FORCE_FLAG=""
-          if [ "${{ inputs.force }}" = "true" ]; then FORCE_FLAG="--force"; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
           npx tsx src/scripts/newsletter.ts --notify $FORCE_FLAG
+
+      - name: Fail loudly if send failed
+        if: failure()
+        env:
+          SLACK_ORBIT_WEBHOOK_URL: ${{ secrets.SLACK_ORBIT_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          WEBHOOK="${SLACK_ORBIT_WEBHOOK_URL:-$SLACK_WEBHOOK_URL}"
+          if [ -z "$WEBHOOK" ]; then
+            echo "No Slack webhook; see Actions log."
+            exit 0
+          fi
+          curl -sS -X POST -H 'Content-type: application/json' \
+            --data "{\"text\":\"Orbit weekly digest Actions job FAILED — check https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}" \
+            "$WEBHOOK" || true

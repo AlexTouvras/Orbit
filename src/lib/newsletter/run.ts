@@ -1,7 +1,10 @@
 import { buildNewsletterDigest, digestIdFor } from "@/lib/newsletter/digest";
 import { deliverDigest } from "@/lib/newsletter/deliver";
 import { persistNewsletterDraftCli } from "@/lib/newsletter/persist-cli";
-import { notifyNewsletterSent } from "@/lib/newsletter/slack";
+import {
+  notifyNewsletterFailed,
+  notifyNewsletterSent,
+} from "@/lib/newsletter/slack";
 import { readNewsletterDraftFs } from "@/lib/newsletter/store";
 import type { NewsletterDigest } from "@/lib/newsletter/types";
 
@@ -90,6 +93,15 @@ export async function runNewsletterPipeline(options?: {
 
   const delivered = await deliverDigest(draft);
   if (!delivered.ok) {
+    if (notify) {
+      const alert = await notifyNewsletterFailed({
+        reason: delivered.reason,
+        draftId: draft.id,
+      });
+      if (!alert.ok) {
+        console.warn("[newsletter] Slack failure ping failed:", alert.reason);
+      }
+    }
     return {
       ok: false,
       reason: delivered.reason,

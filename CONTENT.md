@@ -297,7 +297,7 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" "https://YOUR_SITE/api/cron/wee
 
 ## 6c. Weekly digest (newsletter)
 
-A **roundup**, not a Write. Tuesday cron **assembles and sends** — no Slack Approve. Slack gets a FYI after the fact.
+A **roundup**, not a Write. **Primary send:** GitHub Actions `newsletter.yml` every Tuesday **07:15 UTC** (assembles and sends — no Slack Approve). Slack gets a FYI after the fact. **Backup:** Vercel cron Tuesday **08:00 UTC** → `/api/cron/newsletter` (skips if that week is already marked sent in `data/newsletter-draft.json` on GitHub).
 
 Contents: last week's Write, four Related-article signals, and **From the ravens** — **one highlight per domain that moved this week** (prefer a new inbox finding over a watch item or a durable note). Domains with nothing new that week are omitted. Email links go to the public canonical source, never the private ravens repo.
 
@@ -329,8 +329,8 @@ Unset `RESEND_NEWSLETTER_TEST_TO` when you are ready for the Resend audience. Th
    | `RESEND_NEWSLETTER_AUDIENCE_ID` | optional | [Audience](https://resend.com/audience) id |
    | `RAVENS_GITHUB_TOKEN` | Contents: Read on `AlexTouvras/ravens` | same |
 
-4. Redeploy. Tuesday 07:00 UTC cron: `/api/cron/newsletter` ([Vercel Cron](https://vercel.com/docs/cron-jobs)).
-5. Smoke now: `npm run newsletter:notify` or GitHub **Actions → Weekly newsletter digest**.
+4. Redeploy. Primary: GitHub Actions Tuesday 07:15 UTC. Backup: Vercel cron Tuesday 08:00 UTC → `/api/cron/newsletter`.
+5. Smoke now: `npm run newsletter:notify` or GitHub **Actions → Weekly newsletter digest → Run workflow**.
 
 ### Local
 
