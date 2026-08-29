@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-28T18:08:06.766Z",
+  "generatedAt": "2026-08-29T06:24:39.720Z",
   "count": 218,
   "items": [
+    {
+      "id": "ad53b50abd4f",
+      "title": "Beyond answers: New Genie One features to turn insights into action",
+      "link": "https://www.databricks.com/blog/beyond-answers-new-genie-one-features-turn-insights-action",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-28T21:00:00.000Z",
+      "contentSnippet": "We all know the pattern: you ask an AI tool a question and get an answer in seconds,..."
+    },
     {
       "id": "a6070956dc64",
       "title": "How Indra unified EV charging data on Databricks",
@@ -28,6 +37,15 @@
       "category": "Analytics",
       "pubDate": "2026-08-28T15:34:35.000Z",
       "contentSnippet": "I have written and recorded about Rayfin before, what it is, how the Data App template works, and the cost story that makes it genuinely significant. But this conversation goes much deeper. I sat down with Sachin Patney, who leads Fabric App Development at Microsoft, and by exten…"
+    },
+    {
+      "id": "092c8de02e8b",
+      "title": "Our decision on Cursor following its acquisition by SpaceX",
+      "link": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-28T06:00:00.000Z",
+      "contentSnippet": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX."
     },
     {
       "id": "0b00c80d502c",
@@ -183,15 +201,6 @@
       "contentSnippet": "The write side of the ontology conversation: named actions, business rules, and write-back to the systems of record — a pattern already running at enterprise scale."
     },
     {
-      "id": "d6bb1031e66b",
-      "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
-      "link": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-26T10:00:00.000Z",
-      "contentSnippet": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff."
-    },
-    {
       "id": "cdfc10030b4b",
       "title": "Learning never stops: How AI makes learning continuous",
       "link": "https://openai.com/index/learning-never-stops",
@@ -199,6 +208,15 @@
       "category": "AI",
       "pubDate": "2026-08-26T10:00:00.000Z",
       "contentSnippet": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom."
+    },
+    {
+      "id": "d6bb1031e66b",
+      "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
+      "link": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-26T10:00:00.000Z",
+      "contentSnippet": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff."
     },
     {
       "id": "3d8012e1730a",
@@ -228,15 +246,6 @@
       "contentSnippet": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster."
     },
     {
-      "id": "459ecafd8553",
-      "title": "Leveraging Databricks to Support FISC Security Guidelines",
-      "link": "https://www.databricks.com/blog/leveraging-databricks-support-fisc-security-guidelines",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-26T00:00:00.000Z",
-      "contentSnippet": "The FISC Security Guidelines on Computer Systems for Banking and Related Financial..."
-    },
-    {
       "id": "d57a043ce5cd",
       "title": "DuckLabs to Join AWS, Projects to Remain Open Source",
       "link": "https://duckdb.org/2026/08/26/ducklabs-to-join-aws.html",
@@ -262,15 +271,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-25T10:00:00.000Z",
       "contentSnippet": "How to use AI to identify relevant test cases in a semantic model and create repeatable DAX tests for a measure."
-    },
-    {
-      "id": "829e237a888d",
-      "title": "The full stack behind abundant intelligence",
-      "link": "https://openai.com/index/the-full-stack-behind-abundant-intelligence",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-25T07:05:00.000Z",
-      "contentSnippet": "OpenAI CFO Sarah Friar explains how advances across chips, compute, models, and products compound to deliver more useful intelligence at greater scale and lower cost."
     },
     {
       "id": "0c577b76a17e",
