@@ -139,16 +139,20 @@ async function runAction(payload: FieldCardTokenPayload, note: string) {
 
   if (payload.action === "skip") {
     const result = await closeFieldCardPullRequest(payload.repo, payload.pr);
-    void notifyFieldCardUpdateFyi({
-      card,
-      outcome: "kept_previous",
-      changed,
-      considered,
-      online: true,
-      onlineDetail: "previous card still live",
-      buttonUrl: site,
-      buttonLabel: "Check card",
-    }).catch(() => undefined);
+    try {
+      await notifyFieldCardUpdateFyi({
+        card,
+        outcome: "kept_previous",
+        changed,
+        considered,
+        online: true,
+        onlineDetail: "previous card still live",
+        buttonUrl: site,
+        buttonLabel: "Check card",
+      });
+    } catch (err) {
+      console.error("[field-card/action] slack FYI failed (skip)", err);
+    }
     return htmlPage(
       result.alreadyClosed ? "Already closed" : `${card.label} skipped`,
       `<p><strong>${escapeHtml(result.title)}</strong> will not merge.</p>
@@ -187,16 +191,20 @@ async function runAction(payload: FieldCardTokenPayload, note: string) {
           ? "Orbit sync skipped — use Pages until fixed"
           : "status unknown";
 
-  void notifyFieldCardUpdateFyi({
-    card,
-    outcome: "published",
-    changed,
-    considered,
-    online,
-    onlineDetail,
-    buttonUrl: siteSync === "failed" || siteSync === "no_github_storage" ? card.pagesUrl : site,
-    buttonLabel: "Check card",
-  }).catch(() => undefined);
+  try {
+    await notifyFieldCardUpdateFyi({
+      card,
+      outcome: "published",
+      changed,
+      considered,
+      online,
+      onlineDetail,
+      buttonUrl: siteSync === "failed" || siteSync === "no_github_storage" ? card.pagesUrl : site,
+      buttonLabel: "Check card",
+    });
+  } catch (err) {
+    console.error("[field-card/action] slack FYI failed (approve)", err);
+  }
 
   return htmlPage(
     result.alreadyMerged ? "Already merged" : `${card.label} approved`,
