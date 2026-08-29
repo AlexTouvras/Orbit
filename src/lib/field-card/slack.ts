@@ -91,13 +91,14 @@ export function buildFieldCardUpdateBlocks(fyi: FieldCardUpdateFyi): {
   const buttonLabel = fyi.buttonLabel || "Check card";
 
   const text = `${card.label} — ${outcomeLabel(outcome)}`;
+  // Same fields every time (all three cards) so posts scan identically.
   const bodyLines = [
     `*${card.label}*`,
     `Review: ${outcomeLabel(outcome)}`,
-    considered ? `Considered: ${considered}` : null,
+    `Considered: ${considered || "none earned entry"}`,
     `Changed: ${changed}`,
     `Online: ${onlineLine}`,
-  ].filter(Boolean) as string[];
+  ];
 
   const button = {
     type: "button",

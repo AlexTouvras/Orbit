@@ -39,11 +39,13 @@ Online: yes · <detail>   OR   no · previous still live
 ```
 
 Rules for that post:
-- One card = one message. Same fields every time.
+- One card = one message. Same fields every time (always include Considered).
 - Keep each line short. No bullet walls. No discovery stats dumps.
 - `Considered` = what you weighed for the picker/table. `Changed` = what actually shipped (or why not).
 - `Online: yes` only when the newest reviewed version is (or is about to be) the live site card.
-- Button label is **Check card** when a live URL exists; **Open PR** only when blocked.
+- Button is a real Slack **actions** button labeled **Check card** (or **Open PR** when blocked).
+
+Backup gate (review agent missed) uses the same laconic body shape with three Block Kit buttons: **Open the new card** · **Approve** · **Decline**.
 
 If a card has no open weekly PR, skip it. Do not open a new PR. Do not edit HTML.
 
