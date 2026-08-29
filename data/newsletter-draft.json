@@ -1,0 +1,110 @@
+{
+  "id": "newsletter-2026-W35",
+  "status": "pending",
+  "createdAt": "2026-08-29T11:27:46.341Z",
+  "weekOf": "2026-08-24",
+  "subject": "Orbit weekly — week of 2026-08-24",
+  "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
+  "writes": [],
+  "signals": [
+    {
+      "title": "Fabric Apps & Rayfin Deep Dive: A Conversation with Sachin Patney | Fabric Insider Ep. 11",
+      "link": "https://radacad.com/fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "snippet": "I have written and recorded about Rayfin before, what it is, how the Data App template works, and the cost story that m…"
+    },
+    {
+      "title": "Beyond answers: New Genie One features to turn insights into action",
+      "link": "https://www.databricks.com/blog/beyond-answers-new-genie-one-features-turn-insights-action",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "snippet": "We all know the pattern: you ask an AI tool a question and get an answer in seconds,..."
+    },
+    {
+      "title": "At Some Point, not Knowing Becomes a Choice",
+      "link": "https://www.scrum.org/resources/blog/some-point-not-knowing-becomes-choice",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "snippet": "Open the retro notes from a year ago. Then open last quarter's. The same problem is in both, in almost the same words.…"
+    },
+    {
+      "title": "Our decision on Cursor following its acquisition by SpaceX",
+      "link": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "snippet": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX."
+    }
+  ],
+  "ravens": [
+    {
+      "kind": "inbox",
+      "domain": "ai-agents",
+      "title": "Cursor ships cloud-agent Subscriptions, Custom Modes, and new agent-conversation hooks",
+      "summary": "Cursor's 19 Aug 2026 changelog entry \"Cloud Agents and Cursor Harness Improvements\" adds Subscriptions (a cloud agent watches a pull reques…",
+      "href": "https://cursor.com/changelog/08-19-26",
+      "sourceTitle": "Cloud Agents and Cursor Harness Improvements — Cursor Changelog",
+      "id": "FIND-20260823-001",
+      "date": "2026-08-19"
+    },
+    {
+      "kind": "inbox",
+      "domain": "data-bi",
+      "title": "August 2026 Power BI update lets you convert individual Direct Lake tables to Import mode directly in web modeling (preview)",
+      "summary": "Microsoft's official August 2026 Power BI Feature Summary (Fabric Community blog) documents a new preview capability, rolling out over the…",
+      "href": "https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-august-2026-feature-summary/5348434",
+      "sourceTitle": "Power BI August 2026 Feature Summary — Microsoft Fabric Community Blog",
+      "id": "FIND-20260825-004",
+      "date": "2026-08-19"
+    },
+    {
+      "kind": "inbox",
+      "domain": "career",
+      "title": "ABB Oy opens a Data Analyst (Snowflake & Power BI) role in Helsinki pairing industrial/SAP data with self-service BI",
+      "summary": "ABB Oy posted (18 Aug 2026) a \"Data Analyst (Snowflake & Power BI)\" role based at Vuosaari, Helsinki, requiring advanced SQL and Power BI p…",
+      "href": "https://www.jobly.fi/tyopaikka/data-analyst-snowflake-power-bi-2736111",
+      "sourceTitle": "Data Analyst (Snowflake & Power BI), ABB Oy — Helsinki | Jobly",
+      "id": "FIND-20260826-003",
+      "date": "2026-08-18"
+    },
+    {
+      "kind": "inbox",
+      "domain": "finance",
+      "title": "New Fed Chair Kevin Warsh delivers his first Jackson Hole keynote on 28 Aug 2026 — a dated rate/dollar catalyst to watch",
+      "summary": "The Federal Reserve Bank of Kansas City confirms (as of 21 Aug 2026) that the 2026 Jackson Hole Economic Policy Symposium runs 27–29 Aug 20…",
+      "href": "https://www.kansascityfed.org/research/jackson-hole-economic-symposium/jackson-hole-faqs/",
+      "sourceTitle": "Jackson Hole FAQs — Federal Reserve Bank of Kansas City",
+      "id": "FIND-20260823-004",
+      "date": "2026-08-23"
+    },
+    {
+      "kind": "signal",
+      "domain": "content",
+      "title": "content-os — agent-agnostic daily source-scan → draft-in-voice pipeline reference",
+      "summary": "`star23/content-os` (MIT, 97 stars, created 15 Aug 2026) is a runnable reference implementation of exactly Orbit's weekly \"build in public\"…",
+      "id": "SIG-20260823-002",
+      "date": "2026-08-23",
+      "priority": "p3"
+    },
+    {
+      "kind": "knowledge",
+      "domain": "parenting",
+      "title": "Expect vitamin K prophylaxis to be offered for the newborn at/around birth",
+      "summary": "Expect a care team to **offer vitamin K prophylaxis** for the newborn around the time of birth, to prevent vitamin K deficiency bleeding —…",
+      "href": "https://www.nice.org.uk/guidance/ng235/chapter/rationale-and-impact",
+      "sourceTitle": "Rationale and impact — Intrapartum care (NG235) — NICE",
+      "id": "KNOW-parenting-nice-vitamin-k-newborn-prophylaxis",
+      "date": "2026-08-27"
+    },
+    {
+      "kind": "inbox",
+      "domain": "security",
+      "title": "GitHub MCP Server 1.11.0 adds per-call OAuth scope checks on top of the existing v1.10.0+ hardening baseline",
+      "summary": "GitHub's `github-mcp-server` v1.11.0 (released 25 Aug 2026) adds \"smarter OAuth challenges\" that request only the permissions each tool inv…",
+      "href": "https://github.com/github/github-mcp-server/releases/tag/v1.11.0",
+      "sourceTitle": "GitHub MCP Server 1.11.0 — Release notes",
+      "id": "FIND-20260828-004",
+      "date": "2026-08-25"
+    }
+  ]
+}
