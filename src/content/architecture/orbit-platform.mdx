@@ -1,6 +1,6 @@
 ---
 title: "Orbit platform — architecture diagrams"
-summary: "Personal HQ: Hub, Blog, Portfolio, Workshop, Related articles, Studio, and weekly blog-draft Slack approve."
+summary: "Personal HQ: Hub, Blog, Portfolio, Workshop, Related articles, Studio, week log, and weekly blog-draft Slack approve."
 projectDir: "website"
 ---
 
@@ -19,6 +19,125 @@ flowchart LR
   Essays[Blog essays] -->|link| Orbit
 ```
 
+## Field card weekly gate (Orbit)
+
+The review agent is the gate. You do not Approve in Slack unless that agent misses.
+
+## Normal week
+
+1. Friday ~15:00 — CI opens a discovery PR (no Slack ping).
+2. Friday 17:00 — content agent may edit the card; leaves the PR open.
+3. Friday 18:00 — **review agent** compares proposed HTML to live, then publishes or keeps the previous card.
+4. Slack gets a short Approved / Declined note. No buttons required.
+
+## Backup
+
+If the review agent misses, Saturday/Monday watchdog can still post **Open the new card / Approve / Decline**.
+
+## Cards
+
+| Card | Content repo | Orbit path | Soft URL |
+|---|---|---|---|
+| Agentic AI | AlexTouvras/agentic-ai-field-card | public/field-card/index.html | /field-card/ |
+| Data Analytics | AlexTouvras/data-analytics-field-card | public/analytics-field-card/index.html | /analytics-field-card/ |
+| Technology Delivery | AlexTouvras/technology-delivery-field-card | public/delivery-field-card/index.html | /delivery-field-card/ |
+
+```mermaid
+flowchart LR
+  CI[Friday discover] --> Author[17:00 content pass]
+  Author --> Review[18:00 review agent]
+  Review -->|publish| Live[Site copy + Vercel]
+  Review -->|keep previous| Stay[Live card unchanged]
+  Review --> Slack["#orbit FYI"]
+```
+
+Signing secret must match across content repos + Orbit (`WEEKLY_WRITE_SECRET` / `CRON_SECRET` / `FIELD_CARD_ACTION_SECRET`).
+GitHub token on Orbit must be allowed to read + merge PRs on **all registered** field-card repos (`FIELD_CARD_GITHUB_TOKEN` if the default token is Orbit-only).
+
+## Field card review (Orbit)
+
+A second Cursor agent is the weekly gate. It does not write the card. It compares the proposed `index.html` to the live one, then **publishes** or **keeps the previous card**. Slack gets a short FYI after the fact. You do not need to Approve.
+
+Friday 17:00 local drafts the PR. This agent runs Friday 18:00 local (`0 15 * * 5` UTC).
+
+## Cards
+
+| Card | Repo | Live |
+|---|---|---|
+| Agentic AI | `AlexTouvras/agentic-ai-field-card` | https://alextouvras.com/field-card/ |
+| Data Analytics | `AlexTouvras/data-analytics-field-card` | https://alextouvras.com/analytics-field-card/ |
+| Technology Delivery | `AlexTouvras/technology-delivery-field-card` | https://alextouvras.com/delivery-field-card/ |
+
+## For each open weekly PR (`chore/weekly-refresh-*`)
+
+1. Fetch `index.html` on the PR head and on `main`.
+2. Read the PR `## Summary` and `data/link-report.json` on the PR head if present.
+3. Check the card-specific spine below. Never invent docs URLs.
+4. Decide **approve** (publish) or **decline** (keep the live card).
+5. Apply — do not merge with `gh pr merge`. Run:
+
+```bash
+gh workflow run "Apply review" --repo <repo> -f pr_number=<N> -f decision=approve -f note="<one sentence>"
+## or decision=decline
+```
+
+6. Stop. Orbit merges or closes, copies HTML if approved, and posts the note to #orbit.
+
+If a card has no open weekly PR, skip it. Do not open a new PR. Do not edit HTML.
+
+## Publish when
+
+- The proposed HTML is a real improvement: picker swap by constraint, docs URL fix, or a new *job* in the decision table.
+- Or the HTML is unchanged aside from the weekly stamp, and the spine is intact (reviewed, no worse).
+- Picker is still ≤7 rows.
+- Link check is clean on URLs this PR touched.
+- Always-on strip, kill switch, and anti-patterns are still there.
+
+## Keep the previous card when
+
+- The PR is discovery noise that would make the public card worse (brochure language, extra picker rows, invented URLs).
+- The author pass never wrote a `## Summary` and the HTML is not a clear fix.
+- Link check failed on URLs the PR touched.
+- You cannot tell what changed.
+
+When keeping previous, decline. Do not try to fix the HTML in this run.
+
+## Spines (do not break)
+
+- **AI:** RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Not a vendor wall.
+- **Analytics:** ASK → GRAIN → TRUTH → USE. Not a Fabric/Power BI brochure.
+- **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
+
+## Backup
+
+If this agent misses, Saturday/Monday watchdog can still post Open / Approve / Decline in Slack so a person can finish the week.
+
+## Fleet ops check
+
+Daily meta-check over projects that run on their own. It does not replace per-project watchdogs (field-card `judgment-watchdog.yml` stays). It notices missed runs, bad output, and stale human gates, then posts a proposed fix to Slack `#ops-channel`. v1 is propose-only: the human approves, snoozes, or leaves it.
+
+Registry: [`docs/ops/fleet.yaml`](../ops/fleet.yaml). Playbook: [`docs/ops/daily-check.md`](../ops/daily-check.md).
+
+```mermaid
+flowchart TB
+  cron[Daily 08:00 Helsinki] --> agent[Cursor Automation on Orbit]
+  agent --> registry[docs/ops/fleet.yaml]
+  registry --> gh[GitHub Actions / commits]
+  registry --> slackRead[Slack project channels]
+  gh --> verdict{Issues?}
+  slackRead --> verdict
+  verdict -->|no| silent[Post nothing]
+  verdict -->|yes| ops["#ops-channel digest + thread per issue"]
+  ops --> human{Human}
+  human -->|white_check_mark| later[Follow-up chat applies the proposed fix]
+  human -->|pause| snooze[Memory: skip until next weekday]
+  human -->|ignore| leave[Leave for later]
+```
+
+**Evidence the cloud agent can actually see:** GitHub (`gh`) and public Slack. It cannot see `~/.cursor/projects`. Do not treat a missing local path as a failed job.
+
+**Not in v1:** auto-fix on emoji, mealplan/ledger missed-run (they are on-demand), harvest G5 (local script is canonical).
+
 ## Orbit content zones
 
 ```mermaid
@@ -27,6 +146,7 @@ flowchart TB
   Hub --> Portfolio[Portfolio and Workshop]
   Hub --> Feed[Related articles cache]
   Studio[Studio JSON edits] --> Hub
+  Studio --> WeekLog[Studio week log]
   Cron[news fetch cron] --> Feed
   Weekly[weekly blog draft cron] --> Slack[Slack career-ops approve]
   Slack -->|Approve| Blog
@@ -34,22 +154,40 @@ flowchart TB
   MDX --> Portfolio
 ```
 
+## Studio week log (private)
+
+Owner-only board of this ISO week’s personal-ops outputs. Not in public nav. Auth is the existing Studio session.
+
+```mermaid
+flowchart TB
+  You[You] --> Login["/studio/login"]
+  Login --> Week["/studio/week"]
+  Week --> Fitness["fitness-coach data/plans"]
+  Week --> Meals["mealplan-private output/Wnn-plan.md"]
+  Week --> Ravens["ravens knowledge/signals/inbox"]
+  Week --> Digest["Orbit newsletter-draft.json"]
+  Week --> Career["careerops-private daily-digest + weekly-scan"]
+```
+
 ## Weekly blog draft pipeline
 
-Automated draft from Related articles + workshop projects → Slack approval in career-ops → publish to Blog.
+Automated draft from Related articles + workshop projects → Slack approval in `#orbit` → publish to Blog.
 
 ```mermaid
 flowchart LR
-  cron[Weekly cron] --> gemini{Gemini OK?}
+  cron[Weekly cron / Cloud Automation] --> gemini{Gemini OK?}
   gemini -->|yes| draft[Draft MDX JSON]
   gemini -->|no| ideBrief[Local IDE brief]
   ideBrief --> cursor[Cursor writes essay]
   cursor --> draft
-  draft --> slack[Incoming webhook career-ops]
-  slack --> you{Approve or Skip link}
+  draft --> sync[Persist draft to GitHub default branch]
+  sync --> slack[Slack #orbit webhook]
+  slack --> you{Approve or Skip}
   you -->|Approve| publish[Commit Blog MDX]
   you -->|Skip| discard[Mark draft skipped]
   publish --> site[Blog slug live after redeploy]
 ```
 
-When Gemini is configured but unavailable (rate limit etc.), the pipeline writes `data/weekly-write-ide-brief.md` and waits. Generate the essay in Cursor, then `npm run weekly:notify-draft` to continue Slack approve.
+**Slack access:** the notify payload includes the **full essay** in chunked Block Kit sections (not a teaser). Browser preview/Approve still need `data/weekly-write-draft.json` on the **default branch** (`GITHUB_TOKEN` via `persistWeeklyDraftCli`). A feature-branch-only commit is not enough — Vercel reads the default branch.
+
+When Gemini is configured but unavailable (rate limit etc.), the pipeline writes `data/weekly-write-ide-brief.md` and waits. Generate the essay in Cursor, then `npm run weekly:notify-draft` to continue Slack approve. Confirm `"githubSynced": true` in the CLI output.

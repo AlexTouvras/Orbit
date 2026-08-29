@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
-import { isAuthenticated } from "@/lib/auth";
+import { isStudioAccessible } from "@/lib/auth";
 import { scanLocalProjects } from "@/lib/projects-local";
 
 export const runtime = "nodejs";
 
 /** Scan local sibling projects (auth-gated). */
 export async function GET() {
-  if (!(await isAuthenticated())) {
+  if (!(await isStudioAccessible())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   try {

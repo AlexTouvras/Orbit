@@ -18,7 +18,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Newsletter digest draft | `data/newsletter-draft.json` | Titles/links only. Gitignored locally; persist send status via GitHub |
 | Newsletter subscribers | Resend Audience, or `RESEND_NEWSLETTER_TEST_TO` | Emails never in git. Test-to skips the audience entirely |
 | Ravens findings | GitHub Contents on `AlexTouvras/ravens` | Weekly highlights: one item per domain that moved (inbox first). `RAVENS_GITHUB_TOKEN` |
-| Week log | `/studio/week` via `src/lib/week-log/` | ISO week board. Reads fitness-coach plans, mealplan output, ravens, Heimdall `watch/`, newsletter draft, careerops-private digest/scan |
+| Week log | `/studio/week` (+ `/fitness` `/meals` `/ravens` `/newsletter` `/careerops`) via `src/lib/week-log/` | ISO week hub. Heimdall embeds inline (Technique on lifts, Watch on Ravens parenting). Auth: GitHub allowlist + 90d sliding session; password fallback; `STUDIO_DEV_OPEN` locally |
 | Fleet registry | `docs/ops/fleet.yaml` | Daily unattended-job checks for `#ops-channel`; cloud evidence is GitHub + Slack only |
 
 ## Design patterns
@@ -34,7 +34,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Weekly Write Slack draft / publish / skip notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (`#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
 - Weekly digest: **GitHub Actions Tuesday 07:15 UTC is primary** (Vercel Hobby cron went silent after 2026-08-18). Vercel `/api/cron/newsletter` Tue 08:00 UTC is backup; `already_sent_this_week` via `data/newsletter-draft.json` on GitHub prevents doubles. `RESEND_NEWSLETTER_TEST_TO` mails only that inbox; unset it to broadcast. **No Slack** for digest content — email only. Public subscribe stays closed while test-to is set. Ravens section is **one highlight per domain that moved this week**, not a vault dump.
 - Daily ops check is a separate Cursor Automation on `Orbit`/`main` at 08:00 GMT+3 posting only exceptions to `#ops-channel`. It is propose-only and must not infer local state from `~/.cursor`; registry and playbook must exist on GitHub `main`.
-- Studio week log is owner-only (`STUDIO_PASSWORD` + `noindex`). Token chain: `OPS_GITHUB_TOKEN` → `RAVENS_GITHUB_TOKEN` → `GITHUB_TOKEN`. Do not put the week log in public nav. Heimdall lane embeds YouTube with `youtube-nocookie` and falls back to the watch URL.
+- Studio week log is owner-only (`STUDIO_PASSWORD` emergency + GitHub OAuth allowlist + `noindex`). Token chain: `OPS_GITHUB_TOKEN` → `RAVENS_GITHUB_TOKEN` → `GITHUB_TOKEN`. Do not put the week log in public nav. Heimdall embeds inline with `youtube-nocookie` (Technique on fitness lifts; parenting Watch on Ravens); falls back to the watch URL.
 - Brand accent orbit: hex keyframes on unlayered `.orbit-accent` (direct `color` animation) + `@property --orbit-accent` `<color>` for bg/border/mix. Tailwind `neon-cyan` is a **fixed** rest-state cyan (`--accent-cyan`); body links (Case study, Read, nav CTAs) do not ride the loop. Section eyebrows and hero totals do, via `.orbit-accent`. `--orbit-fg-delay` is applied after hydrate (`OrbitSync` layout effect, not a `Date.now()` SSR script) so new mounts join mid-cycle without a hydration mismatch. Avoid `oklch()` in animated tokens (LightningCSS → lab/@supports; Chromium can blank `color: var(...)`). Never animate OKLCH channels via `@property <number>`. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
 - Studio profile save: local always writes `data/profile.json`; Vercel requires `GITHUB_TOKEN` and commits for redeploy. UI must show the real server message (not a blanket "Live site updated").
 
@@ -75,8 +75,9 @@ src/lib/newsletter/
 └── tokens.ts
 src/app/newsletter/page.tsx
 src/app/api/cron/newsletter/
-src/lib/week-log/            # Studio /studio/week loaders
-src/app/studio/week/page.tsx
+src/lib/week-log/            # Studio /studio/week loaders + Heimdall matcher
+src/app/studio/week/         # Hub + topic pages
+src/components/studio/week/  # Topic panels + HeimdallEmbed
 .state/
 ```
 

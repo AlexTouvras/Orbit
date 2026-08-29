@@ -14,7 +14,7 @@
       "id": "orbit-platform",
       "dir": "website",
       "title": "Orbit platform — architecture diagrams",
-      "summary": "Personal HQ: Hub, Blog, Portfolio, Workshop, Related articles, Studio, and weekly blog-draft Slack approve.",
+      "summary": "Personal HQ: Hub, Blog, Portfolio, Workshop, Related articles, Studio, week log, and weekly blog-draft Slack approve.",
       "category": "Delivery",
       "tags": ["Next.js", "Portfolio", "Architecture"]
     },

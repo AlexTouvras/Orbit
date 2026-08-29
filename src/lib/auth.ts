@@ -4,7 +4,9 @@ import { cookies } from "next/headers";
 import { SESSION_COOKIE } from "./session";
 
 export { SESSION_COOKIE };
-const SESSION_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+/** 90 days — long enough that Studio does not feel like a daily login chore. */
+export const SESSION_TTL_MS = 90 * 24 * 60 * 60 * 1000;
 
 function getSecret(): string {
   // Fall back to CRON_SECRET so a single secret can power both if desired.
@@ -50,6 +52,22 @@ export async function isAuthenticated(): Promise<boolean> {
   return verifySessionToken(store.get(SESSION_COOKIE)?.value);
 }
 
+/**
+ * Local-only open gate. When STUDIO_DEV_OPEN=1 in development, Studio pages
+ * treat the request as authenticated so week-log review does not need OAuth.
+ */
+export function isStudioDevOpen(): boolean {
+  return (
+    process.env.NODE_ENV !== "production" &&
+    process.env.STUDIO_DEV_OPEN?.trim() === "1"
+  );
+}
+
+export async function isStudioAccessible(): Promise<boolean> {
+  if (isStudioDevOpen()) return true;
+  return isAuthenticated();
+}
+
 /** Constant-time comparison of the submitted password against STUDIO_PASSWORD. */
 export function checkPassword(submitted: string): boolean {
   const expected = process.env.STUDIO_PASSWORD;
@@ -57,6 +75,28 @@ export function checkPassword(submitted: string): boolean {
   const a = Buffer.from(submitted);
   const b = Buffer.from(expected);
   return a.length === b.length && crypto.timingSafeEqual(a, b);
+}
+
+export function githubOAuthConfigured(): boolean {
+  return Boolean(
+    process.env.GITHUB_CLIENT_ID?.trim() &&
+      process.env.GITHUB_CLIENT_SECRET?.trim(),
+  );
+}
+
+/** Comma/space-separated GitHub logins allowed into Studio. */
+export function studioGithubAllowlist(): string[] {
+  const raw = process.env.STUDIO_GITHUB_ALLOWLIST?.trim() || "AlexTouvras";
+  return raw
+    .split(/[\s,]+/)
+    .map((login) => login.trim().toLowerCase())
+    .filter(Boolean);
+}
+
+export function isGithubLoginAllowed(login: string): boolean {
+  const normalized = login.trim().toLowerCase();
+  if (!normalized) return false;
+  return studioGithubAllowlist().includes(normalized);
 }
 
 export const sessionCookieOptions = {

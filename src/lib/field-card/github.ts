@@ -40,8 +40,10 @@ export async function getPullRequest(repoSlug: string, pr: number) {
     number: number;
     title: string;
     html_url: string;
+    body: string | null;
     state: string;
     merged: boolean;
+    draft?: boolean;
     head: { ref: string; sha: string };
   };
 }
@@ -136,6 +138,7 @@ export async function closeFieldCardPullRequest(repoSlug: string, pr: number) {
   return { alreadyClosed: false as const, title: existing.title, url: existing.html_url };
 }
 
+/** @deprecated Prefer notifyFieldCardUpdateFyi for weekly update posts. */
 export async function notifyFieldCardSlack(text: string, bodyMd: string) {
   const url =
     process.env.SLACK_ORBIT_WEBHOOK_URL?.trim() ||

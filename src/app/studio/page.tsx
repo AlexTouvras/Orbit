@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { CalendarDays, FolderGit2, ArrowRight } from "lucide-react";
-import { isAuthenticated } from "@/lib/auth";
+import { isStudioAccessible } from "@/lib/auth";
 import { getEditableProfile } from "@/lib/profile-store";
 import { getPublishedProjects } from "@/lib/projects-local";
 import { ProfileEditor } from "@/components/studio/ProfileEditor";
@@ -10,7 +10,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { LogoutButton } from "@/components/studio/LogoutButton";
 
 export default async function StudioPage() {
-  if (!(await isAuthenticated())) redirect("/studio/login");
+  if (!(await isStudioAccessible())) redirect("/studio/login");
 
   const profile = getEditableProfile();
   const publishedCount = getPublishedProjects().length;
@@ -35,7 +35,7 @@ export default async function StudioPage() {
             <div className="min-w-0">
               <p className="font-semibold text-white">Week log</p>
               <p className="text-sm text-slate-400">
-                Fitness, meals, Ravens, Heimdall, newsletter, CareerOps
+                Fitness, meals, Ravens, newsletter, CareerOps
               </p>
             </div>
             <ArrowRight className="ml-auto h-5 w-5 shrink-0 text-slate-500" />

@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { revalidatePath } from "next/cache";
-import { isAuthenticated } from "@/lib/auth";
+import { isStudioAccessible } from "@/lib/auth";
 import {
   getPublishedProjects,
   writePublishedProjects,
@@ -45,7 +45,7 @@ function sanitize(input: unknown): PublishedProject[] | null {
 
 /** Current published projects (auth-gated). */
 export async function GET() {
-  if (!(await isAuthenticated())) {
+  if (!(await isStudioAccessible())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   return NextResponse.json({ projects: getPublishedProjects() });
@@ -53,7 +53,7 @@ export async function GET() {
 
 /** Save the published project set (auth-gated). */
 export async function POST(req: NextRequest) {
-  if (!(await isAuthenticated())) {
+  if (!(await isStudioAccessible())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

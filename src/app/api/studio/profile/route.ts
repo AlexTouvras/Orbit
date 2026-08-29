@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { revalidatePath } from "next/cache";
-import { isAuthenticated } from "@/lib/auth";
+import { isStudioAccessible } from "@/lib/auth";
 import {
   getEditableProfile,
   writeProfileOverrides,
@@ -61,7 +61,7 @@ function sanitize(input: unknown): EditableProfile | null {
 
 /** GET current editable profile (for the Studio form). Auth-gated. */
 export async function GET() {
-  if (!(await isAuthenticated())) {
+  if (!(await isStudioAccessible())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   return NextResponse.json(getEditableProfile());
@@ -69,7 +69,7 @@ export async function GET() {
 
 /** Save profile edits. Auth-gated; revalidates affected pages. */
 export async function POST(req: NextRequest) {
-  if (!(await isAuthenticated())) {
+  if (!(await isStudioAccessible())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

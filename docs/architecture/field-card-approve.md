@@ -7,7 +7,7 @@ The review agent is the gate. You do not Approve in Slack unless that agent miss
 1. Friday ~15:00 — CI opens a discovery PR (no Slack ping).
 2. Friday 17:00 — content agent may edit the card; leaves the PR open.
 3. Friday 18:00 — **review agent** compares proposed HTML to live, then publishes or keeps the previous card.
-4. Slack gets a short Approved / Declined note. No buttons required.
+4. Slack gets **one laconic FYI per card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
 
 ## Backup
 
@@ -27,7 +27,7 @@ flowchart LR
   Author --> Review[18:00 review agent]
   Review -->|publish| Live[Site copy + Vercel]
   Review -->|keep previous| Stay[Live card unchanged]
-  Review --> Slack["#orbit FYI"]
+  Review --> Slack["#orbit FYI · one post per card"]
 ```
 
 Signing secret must match across content repos + Orbit (`WEEKLY_WRITE_SECRET` / `CRON_SECRET` / `FIELD_CARD_ACTION_SECRET`).

@@ -6,6 +6,7 @@ flowchart TB
   Hub --> Portfolio[Portfolio and Workshop]
   Hub --> Feed[Related articles cache]
   Studio[Studio JSON edits] --> Hub
+  Studio --> WeekLog[Studio week log]
   Cron[news fetch cron] --> Feed
   Weekly[weekly blog draft cron] --> Slack[Slack career-ops approve]
   Slack -->|Approve| Blog

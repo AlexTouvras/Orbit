@@ -1,6 +1,6 @@
 # Field card review (Orbit)
 
-A second Cursor agent is the weekly gate. It does not write the card. It compares the proposed `index.html` to the live one, then **publishes** or **keeps the previous card**. Slack gets a short FYI after the fact. You do not need to Approve.
+A second Cursor agent is the weekly gate. It does not write the card. It compares the proposed `index.html` to the live one, then **publishes** or **keeps the previous card**.
 
 Friday 17:00 local drafts the PR. This agent runs Friday 18:00 local (`0 15 * * 5` UTC).
 
@@ -21,11 +21,29 @@ Friday 17:00 local drafts the PR. This agent runs Friday 18:00 local (`0 15 * * 
 5. Apply — do not merge with `gh pr merge`. Run:
 
 ```bash
-gh workflow run "Apply review" --repo <repo> -f pr_number=<N> -f decision=approve -f note="<one sentence>"
+gh workflow run "Apply review" --repo <repo> -f pr_number=<N> -f decision=approve -f note="<one laconic sentence: what changed or why no-change>"
 # or decision=decline
 ```
 
-6. Stop. Orbit merges or closes, copies HTML if approved, and posts the note to #orbit.
+6. **One Slack post per card** (never a multi-card dump). Prefer Orbit's FYI from Apply review. Only post yourself when Apply review failed or Orbit did not notify.
+
+### Laconic #orbit FYI (identical shape for all three cards)
+
+```
+*<Card label>*
+Review: published | kept previous | blocked
+Considered: <short list or “none earned entry”>
+Changed: <one line — what entered / stamp-only / why declined>
+Online: yes · <detail>   OR   no · previous still live
+[Check card]   ← button to live site URL (or Open PR when blocked)
+```
+
+Rules for that post:
+- One card = one message. Same fields every time.
+- Keep each line short. No bullet walls. No discovery stats dumps.
+- `Considered` = what you weighed for the picker/table. `Changed` = what actually shipped (or why not).
+- `Online: yes` only when the newest reviewed version is (or is about to be) the live site card.
+- Button label is **Check card** when a live URL exists; **Open PR** only when blocked.
 
 If a card has no open weekly PR, skip it. Do not open a new PR. Do not edit HTML.
 

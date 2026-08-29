@@ -4,13 +4,16 @@ import {
   getPullRequest,
   getRepoFileText,
   mergeFieldCardPullRequest,
-  notifyFieldCardSlack,
 } from "@/lib/field-card/github";
 import {
   verifyFieldCardActionToken,
   type FieldCardTokenPayload,
 } from "@/lib/field-card/tokens";
 import { requireFieldCardConfig } from "@/lib/field-card/registry";
+import {
+  laconicChangeFromPrBody,
+  notifyFieldCardUpdateFyi,
+} from "@/lib/field-card/slack";
 import { hasGithubStorage, writeRepoFile } from "@/lib/github-storage";
 import { getSiteUrl } from "@/lib/site";
 
@@ -89,7 +92,7 @@ function confirmPage(
     : `Confirm ${card.label} skip`;
   const body = `
     <p class="title">${escapeHtml(prTitle)}</p>
-    <p>Repo <code>${escapeHtml(payload.repo)}</code> � PR <a href="${escapeHtml(prUrl)}">#${payload.pr}</a></p>
+    <p>Repo <code>${escapeHtml(payload.repo)}</code> · PR <a href="${escapeHtml(prUrl)}">#${payload.pr}</a></p>
     <p>${
       approve
         ? `This will squash-merge the weekly field card PR into <code>main</code>, then sync <code>${escapeHtml(card.orbitPath)}</code> on Orbit (Pages + alextouvras.com).`
@@ -108,7 +111,19 @@ function confirmPage(
   return htmlPage(title, body, true);
 }
 
-async function runAction(payload: FieldCardTokenPayload) {
+function resolveChangedLines(
+  note: string,
+  prBody: string | null | undefined,
+): { changed: string; considered: string } {
+  const fromPr = laconicChangeFromPrBody(prBody || "");
+  const noteLine = note.replace(/\s+/g, " ").trim().slice(0, 200);
+  return {
+    changed: noteLine || fromPr.changed || "—",
+    considered: fromPr.considered,
+  };
+}
+
+async function runAction(payload: FieldCardTokenPayload, note: string) {
   if (payload.action === "preview") {
     return htmlPage(
       "Wrong link",
@@ -118,13 +133,22 @@ async function runAction(payload: FieldCardTokenPayload) {
   }
 
   const card = requireFieldCardConfig(payload.repo);
+  const site = `${getSiteUrl()}${card.sitePath}`;
+  const prMeta = await getPullRequest(payload.repo, payload.pr);
+  const { changed, considered } = resolveChangedLines(note, prMeta.body);
 
   if (payload.action === "skip") {
     const result = await closeFieldCardPullRequest(payload.repo, payload.pr);
-    void notifyFieldCardSlack(
-      `Skipped ${card.label} refresh: ${result.title}`,
-      `*Skipped:* <${result.url}|${result.title}>\nNext Friday's discovery can open a new PR.`,
-    ).catch(() => undefined);
+    void notifyFieldCardUpdateFyi({
+      card,
+      outcome: "kept_previous",
+      changed,
+      considered,
+      online: true,
+      onlineDetail: "previous card still live",
+      buttonUrl: site,
+      buttonLabel: "Check card",
+    }).catch(() => undefined);
     return htmlPage(
       result.alreadyClosed ? "Already closed" : `${card.label} skipped`,
       `<p><strong>${escapeHtml(result.title)}</strong> will not merge.</p>
@@ -134,8 +158,6 @@ async function runAction(payload: FieldCardTokenPayload) {
   }
 
   const result = await mergeFieldCardPullRequest(payload.repo, payload.pr);
-  const pages = card.pagesUrl;
-  const site = `${getSiteUrl()}${card.sitePath}`;
 
   let siteSync = "skipped";
   try {
@@ -155,24 +177,31 @@ async function runAction(payload: FieldCardTokenPayload) {
     siteSync = "failed";
   }
 
-  void notifyFieldCardSlack(
-    `Approved ${card.label} refresh: ${result.title}`,
-    [
-      `*Approved & merged:* <${result.url}|${result.title}>`,
-      `Pages: <${pages}|github.io> · Site: <${site}|${card.sitePath}>${
-        siteSync === "committed"
-          ? " (Orbit redeploy queued)"
-          : siteSync === "failed"
-            ? " (site sync failed — copy index.html manually)"
-            : ""
-      }`,
-    ].join("\n"),
-  ).catch(() => undefined);
+  const online = siteSync === "committed";
+  const onlineDetail =
+    siteSync === "committed"
+      ? "redeploy queued"
+      : siteSync === "failed"
+        ? "site sync failed — previous may still show"
+        : siteSync === "no_github_storage"
+          ? "Orbit sync skipped — use Pages until fixed"
+          : "status unknown";
+
+  void notifyFieldCardUpdateFyi({
+    card,
+    outcome: "published",
+    changed,
+    considered,
+    online,
+    onlineDetail,
+    buttonUrl: siteSync === "failed" || siteSync === "no_github_storage" ? card.pagesUrl : site,
+    buttonLabel: "Check card",
+  }).catch(() => undefined);
 
   return htmlPage(
     result.alreadyMerged ? "Already merged" : `${card.label} approved`,
     `<p><strong>${escapeHtml(result.title)}</strong> is on <code>main</code>.</p>
-     <p>GitHub Pages: <a href="${escapeHtml(pages)}">${escapeHtml(pages)}</a></p>
+     <p>GitHub Pages: <a href="${escapeHtml(card.pagesUrl)}">${escapeHtml(card.pagesUrl)}</a></p>
      <p>Site copy: <a href="${escapeHtml(site)}">${escapeHtml(site)}</a>${
        siteSync === "committed"
          ? " — Orbit commit queued; Vercel redeploys shortly."
@@ -184,7 +213,7 @@ async function runAction(payload: FieldCardTokenPayload) {
   );
 }
 
-/** GET: confirmation only ? never merges (avoids Slack unfurl). */
+/** GET: confirmation only — never merges (avoids Slack unfurl). */
 export async function GET(req: NextRequest) {
   const token = req.nextUrl.searchParams.get("token") ?? "";
   const verified = verifyFieldCardActionToken(token);
@@ -213,6 +242,7 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   let token = "";
   let confirmed = false;
+  let note = "";
 
   const contentType = req.headers.get("content-type") || "";
   if (
@@ -222,11 +252,23 @@ export async function POST(req: NextRequest) {
     const form = await req.formData();
     token = String(form.get("token") ?? "");
     confirmed = String(form.get("confirm") ?? "") === "1";
+    note = String(form.get("note") ?? "")
+      .replace(/\r\n/g, "\n")
+      .trim()
+      .slice(0, 500);
   } else {
     try {
-      const json = (await req.json()) as { token?: string; confirm?: string | boolean };
+      const json = (await req.json()) as {
+        token?: string;
+        confirm?: string | boolean;
+        note?: string;
+      };
       token = String(json.token ?? "");
       confirmed = json.confirm === true || json.confirm === "1";
+      note = String(json.note ?? "")
+        .replace(/\r\n/g, "\n")
+        .trim()
+        .slice(0, 500);
     } catch {
       token = "";
     }
@@ -250,7 +292,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    return await runAction(verified);
+    return await runAction(verified, note);
   } catch (err) {
     console.error("[field-card/action]", err);
     const message = err instanceof Error ? err.message : "action_failed";
