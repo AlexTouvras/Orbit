@@ -1,0 +1,40 @@
+---
+title: Agents cannot smell bad data. Start there.
+summary: Sadalage and Chandrasekaran argue agentic AI fails on sand foundations. As a delivery lead I would fix contracts and quarantine before another orchestration demo.
+date: 2026-08-24
+category: Delivery
+featured: false
+tags: [Agents, AI, Data, Delivery]
+---
+
+## The question
+
+The default move this year is still the same: stand up an agent framework, wire a few tools, and hope the model papers over the warehouse. I do not buy it. If agents are becoming a real consumer of our systems, what should a delivery or analytics lead change first — the orchestration layer, or the data those agents are allowed to treat as true?
+
+[Making Your Data Ready for Agentic AI](https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html) is the piece I keep handing people. Pramod Sadalage and Prem Chandrasekaran write for the Martin Fowler site, and their opening is blunt: thirty years of data work assumed a human who notices when a number looks wrong. Agents supply none of that. They act on whatever they are handed, confidently.
+
+## What the signal is really saying
+
+Their five attributes — trusted, contextual, traceable, governed, operational — are not a maturity poster. Each one is a job humans used to do for free. A pricing agent that reads yesterday's price and quotes it does every step of its workflow correctly. The loss is in the refresh, not the prompt.
+
+That is why they put data contracts and quality first. Schema as law, freshness SLAs, quarantine for bad rows, medallion stages that refuse to promote garbage. Traceability and access come next because an agent that decides in thirty seconds leaves no hallway explanation unless you capture lineage as it happens. The context layer (metrics as code, explicit meaning for "revenue") and actionable access (tools that can write back under scoped credentials) only pay off after the agent stops treating sand as bedrock.
+
+I care about the ordering more than the stack diagram. Most teams I meet want MCP and orchestration first. The article's order is the opposite of the demo calendar.
+
+## What I would change on Monday
+
+On Orbit the weekly Write is a small version of the same split. Signals and workshop state are intake: what showed up, what is in flight. Slack Approve is the action. The essay can be rewritten a dozen times; publication waits on a person. I would not let a generator invent the claim and merge it in one step. That is staged autonomy with a boring gate, not a slogan.
+
+Ledger holds the same line. A research cycle can name a Sharpe gap and a proposed trim. I still click the trades. No broker automation. Process-shaped work I have not encoded, on purpose, because the data and the rule set are not ready to own money without me.
+
+So the first change is not "pick an agent platform." It is name one critical path — pricing, ECL, incident severity, whatever hurts when it is wrong — and put a contract on it with a freshness rule an agent cannot bypass. Quarantine failures instead of letting them flow into the tool that quotes the customer. Only then open a narrow write-back with an audit trail you can reconstruct after the fact.
+
+## Where this still fails
+
+Contracts cost coordination. Product, warehouse, and whoever owns the agent disagree on who breaks when freshness misses the SLA. Quarantine looks like downtime to people who wanted a green dashboard. Staged autonomy feels slow next to a LinkedIn demo where the agent "just books the meeting."
+
+I also do not pretend my personal ops stack is AI-ready in their sense. Mealplan and the fitness coach post plans to Slack; a human still shops and trains. That is fine. The essay is about where I would spend the next engineering week if someone asked me to make an agent safe to act, not about automating every corner of life.
+
+## Takeaway
+
+If agentic systems are becoming the unit of work, I would not start by asking which framework looks newest. I would ask which number an agent is about to treat as truth, and whether that number has a contract, a quarantine path, and a human gate before it spends money or ships change. Sadalage and Chandrasekaran put quality before orchestration for a reason. Skip that middle and the agent will execute perfectly on yesterday's price.
