@@ -1,6 +1,6 @@
 {
   "id": "newsletter-2026-W35",
-  "status": "pending",
+  "status": "sent",
   "createdAt": "2026-08-29T11:27:46.341Z",
   "weekOf": "2026-08-24",
   "subject": "Orbit weekly — week of 2026-08-24",
@@ -106,5 +106,9 @@
       "id": "FIND-20260828-004",
       "date": "2026-08-25"
     }
-  ]
+  ],
+  "sentAt": "2026-08-29T11:27:47.707Z",
+  "broadcastId": "45698e53-e8f4-40b9-993d-94e3bbcd1ce7",
+  "sendMode": "test",
+  "sentTo": "a.touvras@gmail.com"
 }
