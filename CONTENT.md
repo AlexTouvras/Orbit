@@ -248,8 +248,8 @@ Every Monday a draft Write is built from **Related articles** + **Studio worksho
 ### What you do
 
 1. Open the Slack message in `#orbit`
-2. Prefer **Open browser preview** to read the full essay on your phone
-3. Tap **Approve & publish** → confirm page → **Approve & publish** again (or **Skip**)
+2. Prefer **Open preview** (Slack button) to read the full essay on your phone — Approve/Skip sit in a **fixed bottom bar** on that page
+3. Tap **Approve & publish** → confirm page → **Approve & publish** again (or **Skip**). Slack also has the same buttons above and below the in-channel draft.
 4. After Vercel redeploys, the article is live at `/writes/…`
 
 Links are signed and expire in 7 days. Approve/Skip are confirm-then-POST so Slack link previews cannot publish by accident.
@@ -272,8 +272,12 @@ Draft order: **Gemini** (when key works) → else **IDE brief** in this repo for
 When Gemini fails, open `data/weekly-write-ide-brief.md` and follow the project skill **`weekly-write-essay`** (`.cursor/skills/weekly-write-essay/`), or ask Cursor to generate the weekly Write. Save `data/weekly-write-draft.json`, then:
 
 ```powershell
+$env:NEXT_PUBLIC_SITE_URL = "https://alextouvras.com"   # required — Slack links must not point at localhost
+$env:GITHUB_TOKEN = "..."                                # required — Vercel reads the gitignored draft from GitHub
 npm run weekly:notify-draft
 ```
+
+Confirm the CLI JSON includes `"slack": true`, `"githubSynced": true`, and that Approve/Preview URLs use your live domain (not `localhost`).
 
 ### Local dry-run
 
@@ -397,7 +401,7 @@ Or follow **`DEPLOY.md`** for first-time setup.
 | URL | Purpose |
 | --- | --- |
 | `/studio` | Edit profile (name, tagline, socials, GitHub username, email, resume URL) |
-| `/studio/week` | Private week log (fitness, meals, Ravens, newsletter, CareerOps) |
+| `/studio/week` | Private week log (fitness, meals, Ravens, Heimdall videos, newsletter, CareerOps) |
 | `/studio/projects` | Scan, publish, and edit workshop projects |
 
 **Required env vars** (in `.env.local` for dev, `.env.production` on server):
@@ -475,7 +479,7 @@ npm run news:fetch
 /radar            Related articles — external RSS (nav label: Related articles)
 /newsletter       Weekly digest (test-to-self until go-live)
 /studio           Private admin (profile)
-/studio/week      Private week log (ops outputs)
+/studio/week      Private week log (ops outputs + Heimdall videos)
 /studio/projects  Private admin (workshop projects)
 ```
 

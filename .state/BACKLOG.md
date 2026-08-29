@@ -28,12 +28,10 @@
 
 ## Next
 
-- [x] Orbit weekly digest auto-send + test-to-self (`RESEND_NEWSLETTER_TEST_TO`)
-- [x] Digest Ravens = one highlight per domain this week (not a vault dump)
-- [x] Resend key + test-to env on Vercel/GitHub; local W34 test send to `a.touvras@gmail.com`
-- [x] `RAVENS_GITHUB_TOKEN` on Vercel + GitHub Actions
+- [ ] Owner: deploy weekly Write Approve tap-target fix (preview bottom bar + Slack buttons) before next Monday notify
 - [ ] Owner: after happy with the shorter test mail, verify domain + unset `RESEND_NEWSLETTER_TEST_TO` for audience go-live
-- [ ] Owner: review `/studio/week`; set `OPS_GITHUB_TOKEN` (Contents: Read on fitness-coach, mealplan-private, careerops-private, ravens) on Vercel + `.env.local`
+- [ ] Owner: review `/studio/week`; set `OPS_GITHUB_TOKEN` (Contents: Read on fitness-coach, mealplan-private, careerops-private, ravens) on Vercel + `.env.local`; confirm Heimdall embeds behave well enough vs plain links
+- [x] Commit/push ops-fleet files to `main` (`f1be91d`) so Daily ops check can read `docs/ops/fleet.yaml`
 - [x] Pixel avatar beside name on Hub + About (`/avatar-pixel-64.png`)
 - [x] Human review: Hub + About avatar placement — skipped 2026-08-13
 - [x] Brand orbit accents on prod: hexagon + Why the name + signature cyan (`eabb4a0`)

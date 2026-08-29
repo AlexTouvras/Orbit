@@ -1,7 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { publishWeeklyDraft, skipWeeklyDraft } from "@/lib/weekly-write/publish";
 import { notifyPublished, notifySkipped } from "@/lib/weekly-write/slack";
-import { readWeeklyDraft } from "@/lib/weekly-write/store-remote";
+import { weeklyWriteErrorHtml } from "@/lib/weekly-write/html-errors";
+import { resolveWeeklyDraftForToken } from "@/lib/weekly-write/store-remote";
 import {
   siteBaseUrl,
   verifyWeeklyActionToken,
@@ -46,16 +47,20 @@ function htmlPage(
     a { color: #5eead4; }
     .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; }
     button, .btn {
-      appearance: none; border: 0; border-radius: 8px; padding: 0.7rem 1rem;
+      appearance: none; border: 0; border-radius: 8px; padding: 0.75rem 1.1rem;
+      min-height: 48px; min-width: 8rem;
       font: inherit; font-weight: 600; cursor: pointer; text-decoration: none;
       display: inline-flex; align-items: center; justify-content: center;
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+      position: relative; z-index: 1; pointer-events: auto;
     }
     button.primary { background: #0d9488; color: #042f2e; }
-    button.primary:hover { background: #14b8a6; }
+    button.primary:hover, button.primary:active { background: #14b8a6; }
     button.danger { background: #334155; color: #fde68a; }
-    button.danger:hover { background: #475569; }
+    button.danger:hover, button.danger:active { background: #475569; }
+    button:disabled { opacity: 0.65; cursor: wait; }
     .btn.ghost { background: transparent; color: #94a3b8; border: 1px solid #334155; }
-    form { margin: 0; }
+    form { margin: 0; position: relative; z-index: 1; }
     code { font-size: 0.85em; background: #1e293b; padding: 0.1em 0.35em; border-radius: 4px; }
   </style>
 </head>
@@ -85,6 +90,7 @@ function confirmPage(
   const verb = isApprove ? "Approve & publish" : "Skip draft";
   const btnClass = isApprove ? "primary" : "danger";
   const preview = weeklyActionUrl(draft.id, "preview");
+  const postAction = `${siteBaseUrl()}/api/weekly-write/action`;
 
   const body = `
     <p class="title">${escapeHtml(draft.title)}</p>
@@ -95,14 +101,25 @@ function confirmPage(
         : "This marks the draft skipped. Next week's cron can create a fresh one."
     }</p>
     <div class="actions">
-      <form method="post" action="/api/weekly-write/action">
+      <form method="post" action="${escapeHtml(postAction)}" id="confirm-form">
         <input type="hidden" name="token" value="${escapeHtml(token)}" />
         <input type="hidden" name="confirm" value="1" />
-        <button type="submit" class="${btnClass}">${escapeHtml(verb)}</button>
+        <button type="submit" class="${btnClass}" id="confirm-btn">${escapeHtml(verb)}</button>
       </form>
       <a class="btn ghost" href="${escapeHtml(preview)}">Back to preview</a>
     </div>
     <p style="margin-top:1.25rem;font-size:0.85rem;color:#64748b">Confirming prevents Slack link previews from publishing by accident.</p>
+    <script>
+      (function () {
+        var form = document.getElementById("confirm-form");
+        var btn = document.getElementById("confirm-btn");
+        if (!form || !btn) return;
+        form.addEventListener("submit", function () {
+          btn.disabled = true;
+          btn.textContent = "Working…";
+        });
+      })();
+    </script>
   `;
 
   return htmlPage(title, body, true);
@@ -147,18 +164,35 @@ async function loadPendingDraft(draftId: string): Promise<
   | { ok: true; draft: WeeklyDraft }
   | { ok: false; response: NextResponse }
 > {
-  const draft = await readWeeklyDraft();
-  if (!draft || draft.id !== draftId) {
+  const loaded = await resolveWeeklyDraftForToken(draftId);
+  if (!loaded.ok) {
+    const titles: Record<string, string> = {
+      github_unconfigured: "Server cannot load draft",
+      github_missing_file: "Draft not on GitHub",
+      id_mismatch: "Stale Slack link",
+    };
+    const messages: Record<string, string> = {
+      github_unconfigured:
+        "Production is missing GITHUB_TOKEN, so Approve cannot read the pending draft.",
+      github_missing_file:
+        "No pending draft was found on the GitHub default branch for this link.",
+      id_mismatch:
+        loaded.current
+          ? `GitHub has a different draft (${loaded.current.id}, status ${loaded.current.status}).`
+          : "This link points at an older draft id.",
+    };
     return {
       ok: false,
-      response: htmlPage(
-        "Draft not found",
-        `<p>No matching pending draft for this link. It may already have been handled.</p>`,
-        false,
-        404,
+      response: weeklyWriteErrorHtml(
+        titles[loaded.issue] ?? "Draft not found",
+        messages[loaded.issue] ?? "Could not load draft.",
+        loaded.hint,
+        loaded.issue === "github_unconfigured" ? 503 : 404,
       ),
     };
   }
+
+  const draft = loaded.draft;
 
   if (draft.status !== "pending") {
     const site = siteBaseUrl();

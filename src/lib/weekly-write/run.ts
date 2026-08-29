@@ -5,6 +5,7 @@ import {
   clearIdeBrief,
   writeIdeBrief,
 } from "@/lib/weekly-write/ide-brief";
+import { assertWeeklyWriteSlackLinksReady } from "@/lib/weekly-write/link-origin";
 import { sendWeeklyDraftSlack } from "@/lib/weekly-write/slack";
 import { persistWeeklyDraftCli } from "@/lib/weekly-write/persist-cli";
 import { readWeeklyDraftFs } from "@/lib/weekly-write/store";
@@ -27,16 +28,36 @@ export interface RunWeeklyWriteResult {
 
 async function notifyDraft(
   draft: WeeklyDraft,
-  options?: { githubSynced?: boolean },
+  options?: { githubSynced?: boolean; githubVerified?: boolean },
 ): Promise<{ ok: true } | { ok: false; reason: string }> {
+  const links = assertWeeklyWriteSlackLinksReady();
+  if (!links.ok) {
+    return { ok: false, reason: links.reason };
+  }
+
+  if (options?.githubSynced === false) {
+    return {
+      ok: false,
+      reason:
+        "Draft was not synced to GitHub default branch (GITHUB_TOKEN unset). Approve/Preview would 404 on Vercel — fix sync, then re-run notify.",
+    };
+  }
+
+  if (options?.githubVerified === false) {
+    return {
+      ok: false,
+      reason:
+        "Draft was written to GitHub but read-back verification failed. Approve/Preview would not find the draft — retry notify after checking GITHUB_TOKEN repo access.",
+    };
+  }
+
   const slack = await sendWeeklyDraftSlack(draft, {
     githubSynced: options?.githubSynced,
+    linkOrigin: links.origin,
   });
   if (!slack.ok) return { ok: false, reason: slack.reason };
   appendWeeklyWriteLog(
-    `Slack notify sent for ${draft.id} (${draft.source}): ${draft.title}${
-      options?.githubSynced === false ? " [github_sync_missing]" : ""
-    }`,
+    `Slack notify sent for ${draft.id} (${draft.source}): ${draft.title} → ${links.origin}`,
   );
   clearIdeBrief();
   return { ok: true };
@@ -68,13 +89,19 @@ export async function notifyExistingWeeklyDraft(): Promise<RunWeeklyWriteResult>
   );
   if (!persisted.viaGithub) {
     const msg =
-      "Draft saved locally only (GITHUB_TOKEN unset). Set GITHUB_TOKEN (+ optional GITHUB_REPO) so preview/Approve work; full essay is still posted in Slack.";
+      "Draft saved locally only (GITHUB_TOKEN unset). Approve/Preview links will not work on Vercel until the draft is on GitHub default branch.";
+    appendWeeklyWriteLog(`WARN: ${msg}`);
+    console.warn(`[weekly-write] ${msg}`);
+  } else if (!persisted.verified) {
+    const msg =
+      "Draft committed to GitHub but read-back verification failed — not posting to Slack.";
     appendWeeklyWriteLog(`WARN: ${msg}`);
     console.warn(`[weekly-write] ${msg}`);
   }
 
   const slack = await notifyDraft(draft, {
     githubSynced: persisted.viaGithub,
+    githubVerified: persisted.verified,
   });
   if (!slack.ok) {
     return {
@@ -166,7 +193,12 @@ export async function runWeeklyWritePipeline(options?: {
   );
   if (!persisted.viaGithub) {
     const msg =
-      "Draft saved locally only (GITHUB_TOKEN unset). Set GITHUB_TOKEN (+ optional GITHUB_REPO) so preview/Approve work; full essay is still posted in Slack.";
+      "Draft saved locally only (GITHUB_TOKEN unset). Approve/Preview links will not work on Vercel until the draft is on GitHub default branch.";
+    appendWeeklyWriteLog(`WARN: ${msg}`);
+    console.warn(`[weekly-write] ${msg}`);
+  } else if (!persisted.verified) {
+    const msg =
+      "Draft committed to GitHub but read-back verification failed — not posting to Slack.";
     appendWeeklyWriteLog(`WARN: ${msg}`);
     console.warn(`[weekly-write] ${msg}`);
   }
@@ -178,6 +210,7 @@ export async function runWeeklyWritePipeline(options?: {
   if (notify) {
     const slack = await notifyDraft(draft, {
       githubSynced: persisted.viaGithub,
+      githubVerified: persisted.verified,
     });
     if (!slack.ok) {
       return {

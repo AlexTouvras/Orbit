@@ -1,5 +1,6 @@
 import type { WeeklyDraft } from "@/lib/weekly-write/types";
 import { uploadWeeklyDraftMarkdown } from "@/lib/weekly-write/slack-file";
+import { WEEKLY_WRITE_PRODUCTION_ORIGIN } from "@/lib/weekly-write/link-origin";
 import { weeklyActionUrl } from "@/lib/weekly-write/tokens";
 
 /** Strip frontmatter; return essay markdown body. */
@@ -49,6 +50,8 @@ export async function sendWeeklyDraftSlack(
   options?: {
     /** When false, warn that preview/Approve links may 404 until draft is on default branch. */
     githubSynced?: boolean;
+    /** Origin embedded in Approve/Preview links (from assertWeeklyWriteSlackLinksReady). */
+    linkOrigin?: string;
   },
 ): Promise<{ ok: true } | { ok: false; reason: string }> {
   const url = weeklyWriteWebhookUrl();
@@ -63,7 +66,10 @@ export async function sendWeeklyDraftSlack(
   const approve = weeklyActionUrl(draft.id, "approve");
   const skip = weeklyActionUrl(draft.id, "skip");
   const preview = weeklyActionUrl(draft.id, "preview");
-  const site = process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://orbit";
+  const site =
+    options?.linkOrigin?.replace(/\/$/, "") ||
+    process.env.NEXT_PUBLIC_SITE_URL?.trim()?.replace(/\/$/, "") ||
+    WEEKLY_WRITE_PRODUCTION_ORIGIN;
 
   const body = essayBodyMarkdown(draft);
   const wordCount = body.split(/\s+/).filter(Boolean).length;
@@ -80,6 +86,36 @@ export async function sendWeeklyDraftSlack(
 
   const text = `Orbit weekly Write ready: ${draft.title}`;
 
+  /** Real Slack buttons (url) — much more tappable than mrkdwn links in a long message. */
+  const actionButtons = (
+    blockId: string,
+    idSuffix: string,
+  ): Record<string, unknown> => ({
+    type: "actions",
+    block_id: blockId,
+    elements: [
+      {
+        type: "button",
+        text: { type: "plain_text", text: "Open preview", emoji: true },
+        url: preview,
+        action_id: `weekly_write_preview_${idSuffix}`,
+      },
+      {
+        type: "button",
+        text: { type: "plain_text", text: "Approve & publish", emoji: true },
+        style: "primary",
+        url: approve,
+        action_id: `weekly_write_approve_${idSuffix}`,
+      },
+      {
+        type: "button",
+        text: { type: "plain_text", text: "Skip", emoji: true },
+        url: skip,
+        action_id: `weekly_write_skip_${idSuffix}`,
+      },
+    ],
+  });
+
   const blocks: Record<string, unknown>[] = [
     {
       type: "header",
@@ -93,18 +129,12 @@ export async function sendWeeklyDraftSlack(
       type: "section",
       text: {
         type: "mrkdwn",
-        text: `*${draft.title}*\n${draft.summary}\n\n_Source:_ ${draft.source} · _~${wordCount} words_ · _Week of_ ${draft.weekOf}\n_Inspired by:_ ${inspiration}`,
-      },
-    },
-    {
-      type: "section",
-      text: {
-        type: "mrkdwn",
-        text: `*<${preview}|Open browser preview>*  ·  *<${approve}|Approve & publish>*  ·  *<${skip}|Skip>*${
-          attachedMd ? `  ·  also attached as *\`${draft.slug}.md\`*` : ""
+        text: `*${draft.title}*\n${draft.summary}\n\n_Source:_ ${draft.source} · _~${wordCount} words_ · _Week of_ ${draft.weekOf}\n_Inspired by:_ ${inspiration}${
+          attachedMd ? `\n_Also attached as_ \`${draft.slug}.md\`` : ""
         }`,
       },
     },
+    actionButtons("weekly_write_actions_top", "top"),
   ];
 
   if (options?.githubSynced === false) {
@@ -138,12 +168,15 @@ export async function sendWeeklyDraftSlack(
     });
   });
 
+  // Repeat buttons after the essay so you don't scroll back to the top on mobile.
+  blocks.push(actionButtons("weekly_write_actions_bottom", "bottom"));
+
   blocks.push({
     type: "context",
     elements: [
       {
         type: "mrkdwn",
-        text: `Full draft is in this message${attachedMd ? " and the attached .md" : ""}. *Approve* opens a confirm page (won't publish on tap alone). After publish: \`${site}/writes/${draft.slug}\``,
+        text: `Full draft is in this message${attachedMd ? " and the attached .md" : ""}. *Approve* opens a confirm page (won't publish on tap alone). Preview has a fixed bottom Approve bar. After publish: \`${site}/writes/${draft.slug}\``,
       },
     ],
   });

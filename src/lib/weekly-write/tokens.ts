@@ -1,4 +1,5 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
+import { weeklyWriteLinkOrigin } from "@/lib/weekly-write/link-origin";
 
 export type WeeklyAction = "approve" | "skip" | "preview";
 
@@ -80,18 +81,12 @@ export function verifyWeeklyActionToken(
 }
 
 export function siteBaseUrl(): string {
-  const raw =
-    process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
-    process.env.VERCEL_URL?.trim() ||
-    "http://localhost:3000";
-  if (raw.startsWith("http://") || raw.startsWith("https://"))
-    return raw.replace(/\/$/, "");
-  return `https://${raw.replace(/\/$/, "")}`;
+  return weeklyWriteLinkOrigin();
 }
 
 export function weeklyActionUrl(draftId: string, action: WeeklyAction): string {
   const token = signWeeklyActionToken(draftId, action);
-  const base = siteBaseUrl();
+  const base = weeklyWriteLinkOrigin();
   if (action === "preview") {
     return `${base}/api/weekly-write/preview?token=${encodeURIComponent(token)}`;
   }
