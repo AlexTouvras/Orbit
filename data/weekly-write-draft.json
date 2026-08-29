@@ -1,87 +1,87 @@
 {
-  "id": "ww-2026-08-17-ide",
-  "status": "published",
-  "createdAt": "2026-08-17T08:37:12.459Z",
-  "weekOf": "2026-08-17",
-  "slug": "the-agent-can-count-delays-it-still-cannot-cancel-the-flight",
-  "title": "The agent can count delays. It still cannot cancel the flight.",
-  "summary": "Mohammad Ali's usable split: a semantic model answers a mathematical question; an ontology is for the process that acts. I would not skip the middle doll because Desktop grew a prompt.",
-  "category": "Data",
+  "id": "ww-2026-08-24-ide",
+  "status": "pending",
+  "createdAt": "2026-08-29T11:37:00.449Z",
+  "weekOf": "2026-08-24",
+  "slug": "agents-cannot-smell-bad-data-start-there",
+  "title": "Agents cannot smell bad data. Start there.",
+  "summary": "Sadalage and Chandrasekaran argue agentic AI fails on sand foundations. As a delivery lead I would fix contracts and quarantine before another orchestration demo.",
+  "category": "Delivery",
   "tags": [
-    "Power BI",
-    "Analytics",
+    "Agents",
     "AI",
-    "Fabric"
+    "Data",
+    "Delivery"
   ],
-  "mdx": "---\ntitle: \"The agent can count delays. It still cannot cancel the flight.\"\nsummary: \"Mohammad Ali's usable split: a semantic model answers a mathematical question; an ontology is for the process that acts. I would not skip the middle doll because Desktop grew a prompt.\"\ndate: \"2026-08-17\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Analytics\", \"AI\", \"Fabric\"]\n---\n\n## The question\n\nThe story I keep hearing is that Power BI's next shape is a prompt-first Desktop, and that a chat pane good enough makes the semantic model optional. I don't buy it. If the stack keeps growing web apps, Copilot panes, and ontologies, what still has to be a named object before I let an agent near a decision?\n\n[The Next Evolution of Power BI — A Conversation with Mohammad Ali](https://radacad.com/the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10/?utm_source=rss&utm_medium=rss&utm_campaign=the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10) is the source. Ali is Partner Director for the Power BI product. His answer is not \"type more.\" It is a split most teams blur: what is the answer, versus what the agent is allowed to do.\n\n## Two jobs sitting on the lake\n\nAli describes a nested picture, but the part I can use on a Monday is two jobs on OneLake.\n\nThe semantic model encapsulates facts and dimensions. Revenue has a definition. Tables relate on purpose. That is a mathematical exercise: delayed flights, check-ins, people on a plane. He says the semantic model is going through a rebirth because both humans and agents need that classic definition, and he wants the meaning closer to the lake so SQL and Python can hit the same object, not only a report. He also cites the installed base (about 20 million active semantic models) as the reason most customers are already in that middle stage.\n\nAn ontology is for a process. Seeing delays is not the same as cancelling a flight. The second object holds the decision matrix an agent would walk: rules, sequence, action. Ali's line is the one I will keep. The semantic model tells you the answer; the ontology tells the agent how to act. When people ask which to build, he usually says they want both.\n\nI would still start in the middle. Ontology is preview. Jumping to a master process graph while \"revenue\" is still a vibe in a measure is how you get a confident agent with a wrong total.\n\n## Prompt-first is not the default path\n\nReza asked whether Desktop becomes a prompt-first window. Ali said maybe, later, and probably on Fabric Web Apps rather than JSON-shuffling the interactive report you already have. Prompt fatigue is real. He does not want that UI forced on people who do not find it natural.\n\nThat matches how I actually build. Nordic Boardroom still starts with gold tables and a semantic model, then a reader path from \"are we okay?\" to \"who do we call.\" A prompt that rearranges visuals does not replace the grain of a KPI. Fabric Web Apps can skip PBIR and go straight to HTML, hosted on capacity, with authentication and DAX scaffolding included. Ali treats that as complementary. Conversation and custom apps sit next to reporting; they do not retire the model. Capacity-only, not Pro, so it is also not free.\n\nCopilot-in-the-pane versus Claude-via-MCP is the same lesson in a different costume. Ali's path is to standardise on the MCP server internally so Power BI Copilot, M365, Foundry, and an external model hit one Fabric IQ door. Until that lands, I treat every extra pane as another client of the same definitions, not a second definition of revenue.\n\n## What I already refuse to blur\n\nOrbit's weekly Write is a small version of the same split. Signals and project state are intake: what showed up, what is in the workshop. Slack Approve is the action. The essay can be rewritten; publication waits on a person. I would not let a generator both invent the claim and merge it.\n\nLedger is the limit I live with. A research cycle can name a Sharpe gap and a proposed trim. I still click the trades. No broker automation. That is process-shaped work I have not encoded, on purpose.\n\nThe cost of Ali's picture is coordination. Two objects means two kinds of change. Semantic edits are meaning. Ontology edits are permission to act. Mixing them in one prompt looks fast until you cannot tell whether the agent lied about the number or about the rule.\n\n## Takeaway\n\nWhen the stack moves, I would not start by asking whether Desktop should open as a chat. I would ask whether \"what is the answer?\" has an object an agent can query without inventing grain, and whether \"what may we do?\" is a separate object I am willing to maintain. Most organisations will want both. Ontology is still preview. Skip the middle doll and the agent can count delays all day. It still should not cancel the flight.\n",
-  "preview": "The agent can count delays. It still cannot cancel the flight.\n\nMohammad Ali's usable split: a semantic model answers a mathematical question; an ontology is for the process that acts. I would not skip the middle doll because Desktop grew a prompt.\n\nInspired by: The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
+  "mdx": "---\ntitle: Agents cannot smell bad data. Start there.\nsummary: Sadalage and Chandrasekaran argue agentic AI fails on sand foundations. As a delivery lead I would fix contracts and quarantine before another orchestration demo.\ndate: 2026-08-24\ncategory: Delivery\nfeatured: false\ntags: [Agents, AI, Data, Delivery]\n---\n\n## The question\n\nThe default move this year is still the same: stand up an agent framework, wire a few tools, and hope the model papers over the warehouse. I do not buy it. If agents are becoming a real consumer of our systems, what should a delivery or analytics lead change first — the orchestration layer, or the data those agents are allowed to treat as true?\n\n[Making Your Data Ready for Agentic AI](https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html) is the piece I keep handing people. Pramod Sadalage and Prem Chandrasekaran write for the Martin Fowler site, and their opening is blunt: thirty years of data work assumed a human who notices when a number looks wrong. Agents supply none of that. They act on whatever they are handed, confidently.\n\n## What the signal is really saying\n\nTheir five attributes — trusted, contextual, traceable, governed, operational — are not a maturity poster. Each one is a job humans used to do for free. A pricing agent that reads yesterday's price and quotes it does every step of its workflow correctly. The loss is in the refresh, not the prompt.\n\nThat is why they put data contracts and quality first. Schema as law, freshness SLAs, quarantine for bad rows, medallion stages that refuse to promote garbage. Traceability and access come next because an agent that decides in thirty seconds leaves no hallway explanation unless you capture lineage as it happens. The context layer (metrics as code, explicit meaning for \"revenue\") and actionable access (tools that can write back under scoped credentials) only pay off after the agent stops treating sand as bedrock.\n\nI care about the ordering more than the stack diagram. Most teams I meet want MCP and orchestration first. The article's order is the opposite of the demo calendar.\n\n## What I would change on Monday\n\nOn Orbit the weekly Write is a small version of the same split. Signals and workshop state are intake: what showed up, what is in flight. Slack Approve is the action. The essay can be rewritten a dozen times; publication waits on a person. I would not let a generator invent the claim and merge it in one step. That is staged autonomy with a boring gate, not a slogan.\n\nLedger holds the same line. A research cycle can name a Sharpe gap and a proposed trim. I still click the trades. No broker automation. Process-shaped work I have not encoded, on purpose, because the data and the rule set are not ready to own money without me.\n\nSo the first change is not \"pick an agent platform.\" It is name one critical path — pricing, ECL, incident severity, whatever hurts when it is wrong — and put a contract on it with a freshness rule an agent cannot bypass. Quarantine failures instead of letting them flow into the tool that quotes the customer. Only then open a narrow write-back with an audit trail you can reconstruct after the fact.\n\n## Where this still fails\n\nContracts cost coordination. Product, warehouse, and whoever owns the agent disagree on who breaks when freshness misses the SLA. Quarantine looks like downtime to people who wanted a green dashboard. Staged autonomy feels slow next to a LinkedIn demo where the agent \"just books the meeting.\"\n\nI also do not pretend my personal ops stack is AI-ready in their sense. Mealplan and the fitness coach post plans to Slack; a human still shops and trains. That is fine. The essay is about where I would spend the next engineering week if someone asked me to make an agent safe to act, not about automating every corner of life.\n\n## Takeaway\n\nIf agentic systems are becoming the unit of work, I would not start by asking which framework looks newest. I would ask which number an agent is about to treat as truth, and whether that number has a contract, a quarantine path, and a human gate before it spends money or ships change. Sadalage and Chandrasekaran put quality before orchestration for a reason. Skip that middle and the agent will execute perfectly on yesterday's price.\n",
+  "preview": "Agents cannot smell bad data. Start there.\\n\\nSadalage and Chandrasekaran argue agentic AI fails on sand foundations. As a delivery lead I would fix contracts and quarantine before another orchestration demo.\\n\\nInspired by: Making Your Data Ready for Agentic AI",
   "intake": {
-    "weekOf": "2026-08-17",
-    "generatedAt": "2026-08-17T08:31:56.923Z",
+    "weekOf": "2026-08-24",
+    "generatedAt": "2026-08-29T11:36:06.344Z",
     "signals": [
       {
-        "id": "c42698bae58b",
-        "title": "Displaying The Output Of Detail Rows Expressions In Power BI Reports Using The Paginated Report Visual",
-        "link": "https://blog.crossjoin.co.uk/2026/08/16/displaying-the-output-of-detail-rows-expressions-in-power-bi-reports-using-the-paginated-report-visual/",
-        "source": "Chris Webb's BI Blog",
-        "category": "Analytics",
-        "snippet": "In last week’s post I mentioned that while Power BI reports (unlike Excel PivotTables) do not support the Detail Rows Expression feature, it is possible to partially work around this limitation by using the paginated report visual. In this post I’ll show you how I was able to do…"
-      },
-      {
-        "id": "776508c048eb",
-        "title": "Data Engineering Weekly #283",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-283",
-        "source": "Data Engineering Weekly",
-        "category": "Data",
-        "snippet": "The Weekly Data Engineering Newsletter"
-      },
-      {
-        "id": "6390a377f9b1",
-        "title": "Your Juniors Are Still Here. The Reps Are Gone.",
-        "link": "https://www.scrum.org/resources/blog/your-juniors-are-still-here-reps-are-gone",
-        "source": "Scrum.org",
-        "category": "Delivery",
-        "snippet": "Image A surgical resident scrubs in for a prostatectomy. Gowned, credentialed, in the room. The robotic console sits four feet away and the attending surgeon is already at it, running the procedure alone, because the machine allows it. The resident watches from a second console a…"
-      },
-      {
-        "id": "097582375e87",
-        "title": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things",
-        "link": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
-        "source": "Simon Willison",
-        "category": "AI",
-        "snippet": ""
-      },
-      {
-        "id": "153261e53339",
-        "title": "The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
-        "link": "https://radacad.com/the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10/?utm_source=rss&utm_medium=rss&utm_campaign=the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10",
+        "id": "3de08a17cfd8",
+        "title": "Fabric Apps & Rayfin Deep Dive: A Conversation with Sachin Patney | Fabric Insider Ep. 11",
+        "link": "https://radacad.com/fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11",
         "source": "RADACAD",
         "category": "Analytics",
-        "snippet": "What is the next evolution of Power BI? Will Power BI Desktop ever become a prompt-first UI? And how do you actually decide whether you need a semantic model, an ontology, or both? I sat down with Mohammad Ali — Director of Product Management for Power BI at Microsoft, overseeing…"
+        "snippet": "I have written and recorded about Rayfin before, what it is, how the Data App template works, and the cost story that makes it genuinely significant. But this conversation goes much deeper. I sat down with Sachin Patney, who leads Fabric App Development at Microsoft, and by exten…"
       },
       {
-        "id": "6be2619171b0",
-        "title": "Using AI_Functions in Your Data Warehouse: Top Use Cases",
-        "link": "https://www.databricks.com/blog/using-aifunctions-your-data-warehouse-top-use-cases",
+        "id": "ad53b50abd4f",
+        "title": "Beyond answers: New Genie One features to turn insights into action",
+        "link": "https://www.databricks.com/blog/beyond-answers-new-genie-one-features-turn-insights-action",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "In most organizations, data warehouses hold structured data, while unstructured data..."
+        "snippet": "We all know the pattern: you ask an AI tool a question and get an answer in seconds,..."
       },
       {
-        "id": "0f9d254133b6",
-        "title": "Customers Don't Buy your Exhaustion",
-        "link": "https://www.scrum.org/resources/blog/customers-dont-buy-your-exhaustion",
+        "id": "fe99bf10b50a",
+        "title": "At Some Point, not Knowing Becomes a Choice",
+        "link": "https://www.scrum.org/resources/blog/some-point-not-knowing-becomes-choice",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "The team had earned its standing ovation, and it wanted one. Two months of late nights. A release pushed out over a weekend nobody got back. The kind of finish that gets a team a reputation for grit. In the review, they walked through all of it, the heroics and the saves, with th…"
+        "snippet": "Open the retro notes from a year ago. Then open last quarter's. The same problem is in both, in almost the same words. The dependency that strangles every release. The hand-off that loses a week. The \"we should really talk about the roadmap\" that never becomes a conversation. It'…"
       },
       {
-        "id": "855fa77e93e1",
-        "title": "The builder’s guide to GPT‑5.6",
-        "link": "https://openai.com/index/builders-guide-to-gpt-5-6",
+        "id": "092c8de02e8b",
+        "title": "Our decision on Cursor following its acquisition by SpaceX",
+        "link": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
         "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": "Learn how startups use GPT-5.6 to build faster, more cost-efficient AI agents with smarter model selection and new Responses API capabilities."
+        "snippet": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX."
+      },
+      {
+        "id": "1f24f2fac291",
+        "title": "SQLBI Whiteboard",
+        "link": "https://www.sqlbi.com/tools/sqlbi-whiteboard/",
+        "source": "SQLBI",
+        "category": "Analytics",
+        "snippet": "SQLBI Whiteboard is a free, open-source whiteboard for Windows 11 designed for teaching DAX, SQL, and data modeling, with pen ink, live application capture, and syntax-highlighted code on the same canvas. Pen-first ink — Low-latency, pressure-aware strokes with palm rejection,…"
+      },
+      {
+        "id": "a6070956dc64",
+        "title": "How Indra unified EV charging data on Databricks",
+        "link": "https://www.databricks.com/blog/how-indra-unified-ev-charging-data-databricks",
+        "source": "Databricks Blog",
+        "category": "Data",
+        "snippet": "When data grows faster than the systems around it, complexity becomes the default...."
+      },
+      {
+        "id": "d9866ea09d22",
+        "title": "Making Your Data Ready for Agentic AI",
+        "link": "https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html",
+        "source": "Martin Fowler",
+        "category": "Delivery",
+        "snippet": "Lots of organizations are excited about what AI can do to streamline their processes, save money, and juice margins. But AI's capabilities are founded on the data that AI accesses, and for many organizations that foundation is little more than sand. Pramod Sadalage and Prem Chand…"
+      },
+      {
+        "id": "0b00c80d502c",
+        "title": "Supporting Thailand’s next generation of AI startups",
+        "link": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products."
       }
     ],
     "projects": [
@@ -169,7 +169,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-08-17T08:42:45.119Z",
-  "publishedSlug": "the-agent-can-count-delays-it-still-cannot-cancel-the-flight"
+  "source": "ide"
 }
