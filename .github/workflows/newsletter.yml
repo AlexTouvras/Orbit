@@ -31,7 +31,6 @@ jobs:
       - run: npm ci
 
       - name: Assemble digest and send
-        id: send
         env:
           SLACK_ORBIT_WEBHOOK_URL: ${{ secrets.SLACK_ORBIT_WEBHOOK_URL }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -52,18 +51,3 @@ jobs:
             FORCE_FLAG="--force"
           fi
           npx tsx src/scripts/newsletter.ts --notify $FORCE_FLAG
-
-      - name: Fail loudly if send failed
-        if: failure()
-        env:
-          SLACK_ORBIT_WEBHOOK_URL: ${{ secrets.SLACK_ORBIT_WEBHOOK_URL }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: |
-          WEBHOOK="${SLACK_ORBIT_WEBHOOK_URL:-$SLACK_WEBHOOK_URL}"
-          if [ -z "$WEBHOOK" ]; then
-            echo "No Slack webhook; see Actions log."
-            exit 0
-          fi
-          curl -sS -X POST -H 'Content-type: application/json' \
-            --data "{\"text\":\"Orbit weekly digest Actions job FAILED — check https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}\"}" \
-            "$WEBHOOK" || true

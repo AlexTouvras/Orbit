@@ -110,28 +110,3 @@ export async function notifyNewsletterSkipped(
     },
   ]);
 }
-
-/** Fail-closed ping when assemble/send dies — so silence is never the only signal. */
-export async function notifyNewsletterFailed(options: {
-  reason: string;
-  draftId?: string;
-}): Promise<{ ok: true } | { ok: false; reason: string }> {
-  const id = options.draftId ? `\`${options.draftId}\`` : "_(no draft)_";
-  return postSlackText(`Weekly digest failed: ${options.reason}`, [
-    {
-      type: "header",
-      text: {
-        type: "plain_text",
-        text: "Orbit — weekly digest FAILED",
-        emoji: true,
-      },
-    },
-    {
-      type: "section",
-      text: {
-        type: "mrkdwn",
-        text: `*Reason:* ${options.reason}\n*Draft:* ${id}\n\nPrimary path is GitHub Actions → *Weekly newsletter digest*. Re-run with force if needed.`,
-      },
-    },
-  ]);
-}

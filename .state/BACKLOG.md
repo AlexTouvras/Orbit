@@ -28,7 +28,7 @@
 
 ## Next
 
-- [x] Newsletter primary path = GHA Tuesday schedule (Vercel backup); failure Slack ping
+- [x] Newsletter primary path = GHA Tuesday schedule (Vercel backup)
 - [ ] Owner: deploy weekly Write Approve tap-target fix (preview bottom bar + Slack buttons) before next Monday notify
 - [ ] Owner: after happy with the shorter test mail, verify domain + unset `RESEND_NEWSLETTER_TEST_TO` for audience go-live
 - [ ] Owner: review `/studio/week`; set `OPS_GITHUB_TOKEN` (Contents: Read on fitness-coach, mealplan-private, careerops-private, ravens) on Vercel + `.env.local`; confirm Heimdall embeds behave well enough vs plain links
