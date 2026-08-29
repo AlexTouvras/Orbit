@@ -2,6 +2,7 @@ name: Weekly newsletter digest
 
 # Primary send path (do not rely on Vercel Hobby cron alone — it went silent after Aug 18).
 # Vercel `/api/cron/newsletter` at Tue 08:00 UTC is a backup; already_sent_this_week skips doubles.
+# Email only — no Slack digest posts.
 
 on:
   schedule:
@@ -32,8 +33,6 @@ jobs:
 
       - name: Assemble digest and send
         env:
-          SLACK_ORBIT_WEBHOOK_URL: ${{ secrets.SLACK_ORBIT_WEBHOOK_URL }}
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           CRON_SECRET: ${{ secrets.CRON_SECRET }}
           WEEKLY_WRITE_SECRET: ${{ secrets.WEEKLY_WRITE_SECRET }}
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}

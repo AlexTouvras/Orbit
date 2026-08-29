@@ -297,7 +297,7 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" "https://YOUR_SITE/api/cron/wee
 
 ## 6c. Weekly digest (newsletter)
 
-A **roundup**, not a Write. **Primary send:** GitHub Actions `newsletter.yml` every Tuesday **07:15 UTC** (assembles and sends — no Slack Approve). Slack gets a FYI after the fact. **Backup:** Vercel cron Tuesday **08:00 UTC** → `/api/cron/newsletter` (skips if that week is already marked sent in `data/newsletter-draft.json` on GitHub).
+A **roundup**, not a Write. **Primary send:** GitHub Actions `newsletter.yml` every Tuesday **07:15 UTC** (assembles and emails — no Slack). **Backup:** Vercel cron Tuesday **08:00 UTC** → `/api/cron/newsletter` (skips if that week is already marked sent in `data/newsletter-draft.json` on GitHub).
 
 Contents: last week's Write, four Related-article signals, and **From the ravens** — **one highlight per domain that moved this week** (prefer a new inbox finding over a watch item or a durable note). Domains with nothing new that week are omitted. Email links go to the public canonical source, never the private ravens repo.
 
@@ -336,7 +336,7 @@ Unset `RESEND_NEWSLETTER_TEST_TO` when you are ready for the Resend audience. Th
 
 ```powershell
 npm run newsletter:draft    # assemble only
-npm run newsletter:notify   # send (test-to or audience) + Slack FYI
+npm run newsletter:notify   # send (test-to or audience); no Slack
 ```
 
 Manual cron:
@@ -487,7 +487,7 @@ npm run news:fetch
 
 ## Minimal habit to grow the site
 
-1. **Weekly:** one Write — automated draft → Slack `#orbit` Approve (or write MDX by hand). Tuesday: digest auto-sends (test-to-self until you unset `RESEND_NEWSLETTER_TEST_TO`).
+1. **Weekly:** one Write — automated draft → Slack `#orbit` Approve (or write MDX by hand). Tuesday: digest emails (test-to-self until you unset `RESEND_NEWSLETTER_TEST_TO`).
 2. **When you ship something:** add or update a portfolio MDX or publish via Studio.
 3. **Monthly:** skim About/CV for accuracy; refresh `resume.pdf`.
 4. **Deploy when you have content worth sharing** — not before.

@@ -15,7 +15,7 @@
 | Name | Trigger | Output | Human gate |
 |------|---------|--------|------------|
 | Weekly Write | GHA `weekly-write.yml` + Cursor | `#orbit` Slack preview/approve | Human Approve in Slack |
-| Weekly digest | GHA `newsletter.yml` Tue 07:15 UTC (primary) + Vercel `/api/cron/newsletter` Tue 08:00 UTC (backup) | email (test-to or audience) + Slack FYI | none (test-to until `RESEND_NEWSLETTER_TEST_TO` unset) |
+| Weekly digest | GHA `newsletter.yml` Tue 07:15 UTC (primary) + Vercel `/api/cron/newsletter` Tue 08:00 UTC (backup) | email (test-to or audience) | none (test-to until `RESEND_NEWSLETTER_TEST_TO` unset) |
 | News refresh | GHA `news-refresh.yml` | commit to `data/news-cache.json` | none |
 | Analytics field card judgment | Cursor `.cursor/automations/analytics-field-card-weekly-content-pass.json` | `#orbit` Approve | Human Approve |
 | Delivery field card judgment | Cursor `.cursor/automations/delivery-field-card-weekly-content-pass.json` | `#orbit` Approve | Human Approve |
@@ -27,7 +27,7 @@
 | Secret | Used by |
 |--------|---------|
 | `WEEKLY_WRITE_SECRET` | weekly Write + field-card tokens |
-| `SLACK_ORBIT_WEBHOOK_URL` | essay feedback + weekly Write + digest FYI |
+| `SLACK_ORBIT_WEBHOOK_URL` | essay feedback + weekly Write |
 | `GITHUB_TOKEN` / `FIELD_CARD_GITHUB_TOKEN` | merge field-card PRs + sync; persist digest status |
 | `NEXT_PUBLIC_SITE_URL` | canonical URLs |
 | `RESEND_API_KEY` | contact form + newsletter |

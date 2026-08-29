@@ -24,7 +24,8 @@ async function handle(req: NextRequest) {
 
   const force = req.nextUrl.searchParams.get("force") === "1";
   const send = req.nextUrl.searchParams.get("send") !== "0";
-  const notify = req.nextUrl.searchParams.get("notify") !== "0";
+  // Slack off unless explicitly ?notify=1 (digest is email-only by default).
+  const notify = req.nextUrl.searchParams.get("notify") === "1";
 
   try {
     const existing = await readNewsletterDraft();

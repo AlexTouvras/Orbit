@@ -22,12 +22,15 @@ export async function runNewsletterPipeline(options?: {
   force?: boolean;
   /** Persist + send. Default true. */
   send?: boolean;
-  /** Slack FYI after a successful send. Default follows `send`. */
+  /**
+   * Slack after send. Default false — digest stays email-only.
+   * Kept for rare manual debugging (`--slack`).
+   */
   notify?: boolean;
   existingDraft?: NewsletterDigest | null;
 }): Promise<RunNewsletterResult> {
   const send = options?.send !== false;
-  const notify = options?.notify ?? send;
+  const notify = options?.notify === true;
   const existing =
     options?.existingDraft !== undefined
       ? options.existingDraft
