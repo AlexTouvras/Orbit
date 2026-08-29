@@ -88,9 +88,16 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  let result: { viaGithub: boolean };
+  // Keep fields the editor does not send (avatar) so a save cannot wipe them.
+  const existing = getEditableProfile();
+  const toWrite: EditableProfile = {
+    ...clean,
+    avatarUrl: existing.avatarUrl,
+  };
+
+  let result: { viaGithub: boolean; warning?: string };
   try {
-    result = await writeProfileOverrides(clean);
+    result = await writeProfileOverrides(toWrite);
   } catch (err) {
     console.error("[studio] failed to write profile:", err);
     const message =
@@ -100,11 +107,16 @@ export async function POST(req: NextRequest) {
 
   revalidatePath("/", "layout");
 
+  const message =
+    result.warning ??
+    (result.viaGithub
+      ? "Saved to GitHub — the live site updates in ~2 minutes."
+      : "Saved locally. Refresh the home page to see it.");
+
   return NextResponse.json({
     ok: true,
     deploying: result.viaGithub,
-    message: result.viaGithub
-      ? "Saved to GitHub — the live site updates in ~2 minutes."
-      : "Saved.",
+    warning: result.warning ?? null,
+    message,
   });
 }

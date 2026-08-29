@@ -99,7 +99,7 @@ export function getResolvedSocials(): ResolvedSocial[] {
 /** Persist Studio edits to data/profile.json (or GitHub on Vercel). */
 export async function writeProfileOverrides(
   profile: EditableProfile,
-): Promise<{ viaGithub: boolean }> {
+): Promise<{ viaGithub: boolean; warning?: string }> {
   return persistDataJson(
     "data/profile.json",
     profile,

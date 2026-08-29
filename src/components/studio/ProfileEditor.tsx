@@ -48,10 +48,12 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
     "idle",
   );
   const [error, setError] = useState<string | null>(null);
+  const [info, setInfo] = useState<string | null>(null);
 
   function set<K extends keyof EditableProfile>(key: K, value: EditableProfile[K]) {
     setForm((f) => ({ ...f, [key]: value }));
     setStatus("idle");
+    setInfo(null);
   }
 
   function updateSocial(index: number, key: "label" | "href", value: string) {
@@ -62,6 +64,7 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
       ),
     }));
     setStatus("idle");
+    setInfo(null);
   }
 
   function addSocial() {
@@ -78,6 +81,7 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
   async function onSave() {
     setStatus("saving");
     setError(null);
+    setInfo(null);
     try {
       const res = await fetch("/api/studio/profile", {
         method: "POST",
@@ -92,13 +96,19 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
         const parsed = parseRepoAllowlist(repoAllowlistText);
         setForm((f) => ({ ...f, githubRepoAllowlist: parsed }));
         setRepoAllowlistText(formatRepoAllowlist(parsed));
-        setError(data.message ?? null);
+        setInfo(
+          typeof data.message === "string"
+            ? data.message
+            : "Saved.",
+        );
         setStatus("saved");
         router.refresh();
         return;
       }
       const data = await res.json().catch(() => ({}));
-      setError(data.error ?? "Save failed.");
+      setError(
+        typeof data.error === "string" ? data.error : "Save failed.",
+      );
       setStatus("error");
     } catch {
       setError("Network error.");
@@ -155,6 +165,7 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
               onChange={(e) => {
                 setRepoAllowlistText(e.target.value);
                 setStatus("idle");
+                setInfo(null);
               }}
               placeholder={"powerbi-portfolio, orbit, jarvis\nor one repo per line"}
               spellCheck={false}
@@ -266,10 +277,8 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
         {status === "error" && error && (
           <span className="text-sm text-red-400">{error}</span>
         )}
-        {status === "saved" && (
-          <span className="text-sm text-slate-400">
-            Live site updated.
-          </span>
+        {status === "saved" && info && (
+          <span className="text-sm text-slate-400">{info}</span>
         )}
       </div>
     </div>

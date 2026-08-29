@@ -13,27 +13,44 @@ function writeLocalFile(relativePath: string, content: string): void {
 }
 
 /**
- * Persist JSON data locally (dev / VM) or commit to GitHub (Vercel).
- * Returns whether a GitHub commit was made (triggers Vercel redeploy).
+ * Persist JSON data locally (dev) and/or commit to GitHub (Vercel / when token set).
+ * On Vercel, GitHub is required (ephemeral filesystem). Locally, always write disk
+ * so the running Next server sees the change even if a PAT is also configured.
  */
 export async function persistDataJson(
   relativePath: string,
   data: unknown,
   commitMessage: string,
-): Promise<{ viaGithub: boolean }> {
+): Promise<{ viaGithub: boolean; warning?: string }> {
   const content = `${JSON.stringify(data, null, 2)}\n`;
+  const onVercel = Boolean(process.env.VERCEL);
+  const github = hasGithubStorage();
 
-  if (hasGithubStorage()) {
+  if (onVercel) {
+    if (!github) {
+      throw new Error(
+        "GITHUB_TOKEN is not configured on Vercel. Studio cannot save without it.",
+      );
+    }
     await writeRepoFile(relativePath, content, commitMessage);
     return { viaGithub: true };
   }
 
-  if (process.env.VERCEL) {
-    throw new Error(
-      "GITHUB_TOKEN is not configured on Vercel. Studio cannot save without it.",
-    );
+  // Dev / local: always update the file Next reads.
+  writeLocalFile(relativePath, content);
+
+  if (github) {
+    try {
+      await writeRepoFile(relativePath, content, commitMessage);
+      return { viaGithub: true };
+    } catch (err) {
+      const detail = err instanceof Error ? err.message : "GitHub save failed.";
+      return {
+        viaGithub: false,
+        warning: `Saved locally, but GitHub sync failed (${detail}). Live site unchanged until this is fixed.`,
+      };
+    }
   }
 
-  writeLocalFile(relativePath, content);
   return { viaGithub: false };
 }

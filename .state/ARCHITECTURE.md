@@ -36,7 +36,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Daily ops check is a separate Cursor Automation on `Orbit`/`main` at 08:00 GMT+3 posting only exceptions to `#ops-channel`. It is propose-only and must not infer local state from `~/.cursor`; registry and playbook must exist on GitHub `main`.
 - Studio week log is owner-only (`STUDIO_PASSWORD` + `noindex`). Token chain: `OPS_GITHUB_TOKEN` → `RAVENS_GITHUB_TOKEN` → `GITHUB_TOKEN`. Do not put the week log in public nav. Heimdall lane embeds YouTube with `youtube-nocookie` and falls back to the watch URL.
 - Brand accent orbit: hex keyframes on unlayered `.orbit-accent` (direct `color` animation) + `@property --orbit-accent` `<color>` for bg/border/mix. Tailwind `neon-cyan` is a **fixed** rest-state cyan (`--accent-cyan`); body links (Case study, Read, nav CTAs) do not ride the loop. Section eyebrows and hero totals do, via `.orbit-accent`. `--orbit-fg-delay` is applied after hydrate (`OrbitSync` layout effect, not a `Date.now()` SSR script) so new mounts join mid-cycle without a hydration mismatch. Avoid `oklch()` in animated tokens (LightningCSS → lab/@supports; Chromium can blank `color: var(...)`). Never animate OKLCH channels via `@property <number>`. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
-- Related articles topic tones live in `src/lib/news/category-tone.ts` and drive both `NewsCard` badges and `FilterChip` active states (`All` = `.orbit-accent*` so the chip still orbits; `AI` = fixed ai).
+- Studio profile save: local always writes `data/profile.json`; Vercel requires `GITHUB_TOKEN` and commits for redeploy. UI must show the real server message (not a blanket "Live site updated").
 
 ## Dependencies
 

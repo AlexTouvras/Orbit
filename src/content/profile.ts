@@ -51,7 +51,7 @@ export const profile = {
   role: "Technology Delivery Lead · Data & AI Automation",
   location: "Vantaa, Finland",
   tagline:
-    "If nobody owns the decision, it doesn't ship. Credit risk taught me that standard; I hold it leading Azure application ops, and in everything I put in public.",
+    "Anyone can generate a draft nowadays. Fewer teams can prove what works or agree on what deserves to exist. That's the work I lead. If nobody owns that call, nothing ships.",
   pillars: "Delivery · Data · AI automation",
   availability: "Open to Data & AI delivery roles",
   yearsExperience: "7+",
