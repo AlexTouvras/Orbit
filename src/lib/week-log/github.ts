@@ -15,6 +15,9 @@ function normalizeToken(value: string | undefined): string {
 export function opsGithubToken(): string {
   return (
     normalizeToken(process.env.OPS_GITHUB_TOKEN) ||
+    // Vercel secret sometimes saved under this short name.
+    normalizeToken(process.env.studioweek) ||
+    normalizeToken(process.env.STUDIOWEEK) ||
     normalizeToken(process.env.RAVENS_GITHUB_TOKEN) ||
     normalizeToken(process.env.GITHUB_TOKEN)
   );
