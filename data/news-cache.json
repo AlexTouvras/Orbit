@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-29T12:11:08.781Z",
+  "generatedAt": "2026-08-30T06:52:52.647Z",
   "count": 218,
   "items": [
+    {
+      "id": "5aa6982584eb",
+      "title": "Ask Them to Define the Product Role. The Answer Describes Their Last Employer.",
+      "link": "https://www.scrum.org/resources/blog/ask-them-define-product-role-answer-describes-their-last-employer",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-30T06:00:00.000Z",
+      "contentSnippet": "Image Two candidates, same question, same afternoon. What is the job of a product person? The first says it is owning the backlog and keeping the team supplied with clear, ready work. The second says it is working out which problem is worth solving, then finding a solution custom…"
+    },
     {
       "id": "ad53b50abd4f",
       "title": "Beyond answers: New Genie One features to turn insights into action",
@@ -84,15 +93,6 @@
       "contentSnippet": "We are headed to VLDB 2026 to share multiple innovations that power the Databricks platform..."
     },
     {
-      "id": "530949a58cd7",
-      "title": "What QSR reports miss about the decisions matter the most",
-      "link": "https://www.databricks.com/blog/what-qsr-reports-miss-about-decisions-matter-most",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-27T15:00:00.000Z",
-      "contentSnippet": "Limited-time offers can be a powerful way to create excitement, bring guests back,..."
-    },
-    {
       "id": "c5227fe0bc2d",
       "title": "Enhancing Agent Retrieval with Structured Chart Extraction",
       "link": "https://www.databricks.com/blog/enhancing-agent-retrieval-structured-chart-extraction",
@@ -100,6 +100,15 @@
       "category": "Data",
       "pubDate": "2026-08-27T15:00:00.000Z",
       "contentSnippet": "The MotivationMore and more enterprises are now asking agents to work with their..."
+    },
+    {
+      "id": "530949a58cd7",
+      "title": "What QSR reports miss about the decisions matter the most",
+      "link": "https://www.databricks.com/blog/what-qsr-reports-miss-about-decisions-matter-most",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-27T15:00:00.000Z",
+      "contentSnippet": "Limited-time offers can be a powerful way to create excitement, bring guests back,..."
     },
     {
       "id": "d9866ea09d22",
@@ -640,15 +649,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-11T10:00:00.000Z",
       "contentSnippet": "How to leverage AI to refactor existing DAX code, remove duplicated parts, and centralize the common code in user-defined functions."
-    },
-    {
-      "id": "0c0f2d0b4495",
-      "title": "How to Create Multilingual User Tutorial Videos with AI",
-      "link": "https://www.scrum.org/resources/blog/how-create-multilingual-user-tutorial-videos-ai",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-11T07:05:58.000Z",
-      "contentSnippet": "Imagine you want to create a tutorial video for your users to learn how to use a specific feature of your product. Your users are from the UK, Germany, and Sweden. Let’s see how you can build a multilingual video for it with AI. Image You are a Product Owner of a product that is…"
     },
     {
       "id": "ff64cfc34025",
