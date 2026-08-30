@@ -1,27 +1,21 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { currentIsoWeekId } from "@/lib/iso-week";
-import { loadWeekLog } from "@/lib/week-log";
+import type { WeekLog } from "@/lib/week-log/types";
 import { weekHref, type WeekTopicSlug } from "@/lib/week-log/topics";
 import { LogoutButton } from "@/components/studio/LogoutButton";
 import { StudioSessionRefresh } from "@/components/studio/StudioSessionRefresh";
 import { TopicNav } from "@/components/studio/week/TopicNav";
 import { WeekNav } from "@/components/studio/week/WeekNav";
 
-export async function WeekChrome({
-  weekParam,
+export function WeekChrome({
+  log,
   topic,
   children,
 }: {
-  weekParam?: string;
+  log: WeekLog;
   topic?: WeekTopicSlug | null;
   children: React.ReactNode;
 }) {
-  const log = await loadWeekLog(weekParam);
-  const current = currentIsoWeekId();
-  const nextWeekId =
-    log.nextWeekId && log.nextWeekId <= current ? log.nextWeekId : null;
-
   return (
     <div>
       <StudioSessionRefresh />
@@ -41,7 +35,7 @@ export async function WeekChrome({
           weekId={log.weekId}
           range={log.range}
           prevWeekId={log.prevWeekId}
-          nextWeekId={nextWeekId}
+          nextWeekId={log.nextWeekId}
           isCurrent={log.isCurrent}
           topic={topic}
         />

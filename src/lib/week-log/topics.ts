@@ -1,3 +1,5 @@
+import { currentIsoWeekId } from "@/lib/iso-week";
+
 export const WEEK_TOPICS = [
   {
     slug: "fitness",
@@ -29,7 +31,10 @@ export const WEEK_TOPICS = [
 export type WeekTopicSlug = (typeof WEEK_TOPICS)[number]["slug"];
 
 export function weekHref(topic?: WeekTopicSlug | null, weekId?: string | null) {
-  const base = topic ? `/studio/week/${topic}` : "/studio/week";
-  if (!weekId) return base;
-  return `${base}?week=${encodeURIComponent(weekId)}`;
+  const current = currentIsoWeekId();
+  const useWeek = weekId && weekId !== current ? weekId : null;
+  if (useWeek) {
+    return topic ? `/studio/week/${useWeek}/${topic}` : `/studio/week/${useWeek}`;
+  }
+  return topic ? `/studio/week/${topic}` : "/studio/week";
 }
