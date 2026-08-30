@@ -1,5 +1,13 @@
 import Link from "next/link";
+import { currentIsoWeekId } from "@/lib/iso-week";
 import { weekHref, type WeekTopicSlug } from "@/lib/week-log/topics";
+
+function weekLabel(weekId: string, isCurrent: boolean): string {
+  if (isCurrent) return "This week in Helsinki";
+  const current = currentIsoWeekId();
+  if (weekId > current) return "Upcoming week";
+  return "Earlier week";
+}
 
 export function WeekNav({
   weekId,
@@ -25,9 +33,7 @@ export function WeekNav({
         <p className="mt-1 font-display text-2xl font-bold tracking-tight text-white">
           {range}
         </p>
-        <p className="mt-1 text-sm text-slate-400">
-          {isCurrent ? "This week in Helsinki" : "Earlier week"}
-        </p>
+        <p className="mt-1 text-sm text-slate-400">{weekLabel(weekId, isCurrent)}</p>
       </div>
       <nav aria-label="ISO week" className="flex gap-2">
         {prevWeekId ? (
@@ -46,7 +52,7 @@ export function WeekNav({
             This week
           </Link>
         ) : null}
-        {nextWeekId && !isCurrent ? (
+        {nextWeekId ? (
           <Link
             href={weekHref(topic, nextWeekId)}
             className="focus-ring rounded-lg border border-white/10 px-3 py-2 text-sm text-slate-300 hover:border-white/30 hover:text-white"

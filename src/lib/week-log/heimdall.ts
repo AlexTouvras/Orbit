@@ -35,7 +35,7 @@ function firstLineItems(block: string): string[] {
     .filter(Boolean);
 }
 
-function extractYouTubeId(url: string): string | null {
+export function extractYouTubeId(url: string): string | null {
   try {
     const parsed = new URL(url);
     if (parsed.hostname.includes("youtu.be")) {

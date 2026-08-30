@@ -36,11 +36,27 @@ export interface FitnessDay {
   sessions: FitnessSession[];
 }
 
+export interface FitnessKickoff {
+  quoteText: string | null;
+  quoteAttribution: string | null;
+  motivateSlug: string | null;
+  motivateTitle: string | null;
+  motivateUrl: string | null;
+  motivateChannel: string | null;
+  spotifyRunningName: string | null;
+  spotifyRunningUrl: string | null;
+  spotifyStrengthName: string | null;
+  spotifyStrengthUrl: string | null;
+}
+
 export interface FitnessWeek {
   weekId: string;
   generatedAt: string | null;
   theme: string;
+  blockLabel: string | null;
   raceContext: string | null;
+  kickoff: FitnessKickoff | null;
+  coachNotes: string[];
   days: FitnessDay[];
 }
 

@@ -18,7 +18,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Newsletter digest draft | `data/newsletter-draft.json` | Titles/links only. Gitignored locally; persist send status via GitHub |
 | Newsletter subscribers | Resend Audience, or `RESEND_NEWSLETTER_TEST_TO` | Emails never in git. Test-to skips the audience entirely |
 | Ravens findings | GitHub Contents on `AlexTouvras/ravens` | Weekly highlights: one item per domain that moved (inbox first). `RAVENS_GITHUB_TOKEN` |
-| Week log | `/studio/week` (+ `/fitness` `/meals` `/ravens` `/newsletter` `/careerops`) via `src/lib/week-log/` | ISO week hub. Heimdall embeds inline (Technique on lifts, Watch on Ravens parenting). Auth: GitHub allowlist + 90d sliding session; password fallback; `STUDIO_DEV_OPEN` locally |
+| Week log | `/studio/week` (+ `/2026-W36/fitness` etc. for other ISO weeks; legacy `?week=` redirects) via `src/lib/week-log/` | ISO week hub. Heimdall embeds inline (Technique on lifts, Watch on Ravens parenting). Auth: GitHub allowlist + 90d sliding session; password fallback; `STUDIO_DEV_OPEN` locally |
 | Fleet registry | `docs/ops/fleet.yaml` | Daily unattended-job checks for `#ops-channel`; cloud evidence is GitHub + Slack only |
 
 ## Design patterns

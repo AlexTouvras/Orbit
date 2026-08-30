@@ -8,6 +8,7 @@ import {
 import { listLocalDir, readLocalFile, siblingRoot } from "@/lib/week-log/local";
 import type {
   FitnessDay,
+  FitnessKickoff,
   FitnessLift,
   FitnessSession,
   FitnessWeek,
@@ -86,17 +87,43 @@ function parseDay(raw: unknown): FitnessDay | null {
   };
 }
 
+function parseKickoff(raw: unknown): FitnessKickoff | null {
+  if (!raw || typeof raw !== "object") return null;
+  const row = raw as Record<string, unknown>;
+  const motivateUrl = asString(row.motivate_url);
+  const quoteText = asString(row.quote_text);
+  if (!motivateUrl && !quoteText) return null;
+  return {
+    quoteText: quoteText || null,
+    quoteAttribution: asString(row.quote_attribution) || null,
+    motivateSlug: asString(row.motivate_slug) || null,
+    motivateTitle: asString(row.motivate_title) || null,
+    motivateUrl: motivateUrl || null,
+    motivateChannel: asString(row.motivate_channel) || null,
+    spotifyRunningName: asString(row.spotify_running_name) || null,
+    spotifyRunningUrl: asString(row.spotify_running_url) || null,
+    spotifyStrengthName: asString(row.spotify_strength_name) || null,
+    spotifyStrengthUrl: asString(row.spotify_strength_url) || null,
+  };
+}
+
 function parsePlan(text: string, fallbackWeekId: string): FitnessWeek | null {
   try {
     const parsed = JSON.parse(text) as Record<string, unknown>;
     const days = Array.isArray(parsed.days)
       ? parsed.days.map(parseDay).filter((day): day is FitnessDay => Boolean(day))
       : [];
+    const coachNotes = Array.isArray(parsed.coach_notes)
+      ? parsed.coach_notes.map(asString).filter(Boolean)
+      : [];
     return {
       weekId: asString(parsed.week_id) || fallbackWeekId,
       generatedAt: asString(parsed.generated_at) || null,
       theme: asString(parsed.theme) || "Weekly plan",
+      blockLabel: asString(parsed.block_label) || null,
       raceContext: asString(parsed.race_context) || null,
+      kickoff: parseKickoff(parsed.kickoff),
+      coachNotes,
       days,
     };
   } catch {
