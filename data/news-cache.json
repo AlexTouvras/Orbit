@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-08-31T06:34:17.462Z",
-  "count": 218,
+  "generatedAt": "2026-08-31T12:31:59.711Z",
+  "count": 219,
   "items": [
+    {
+      "id": "8fdeeebe0817",
+      "title": "AI Tool Introduction – Gamma",
+      "link": "https://www.scrum.org/resources/blog/ai-tool-introduction-gamma",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-31T07:30:47.000Z",
+      "contentSnippet": "Image Imagine you are a Scrum Master or Product Owner. When you want to deliver your work to your audience, you need a tool to present your work. In the past, we used to use PowerPoint presentations. But how can AI elevate it? Gamma is the AI-based solution for the new generation…"
+    },
     {
       "id": "a721c8cb74dd",
       "title": "Cognitive Trap: Increment Misinterpretation",
