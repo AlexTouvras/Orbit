@@ -1,7 +1,43 @@
 {
-  "generatedAt": "2026-08-30T11:07:30.268Z",
+  "generatedAt": "2026-08-31T06:34:17.462Z",
   "count": 218,
   "items": [
+    {
+      "id": "a721c8cb74dd",
+      "title": "Cognitive Trap: Increment Misinterpretation",
+      "link": "https://www.scrum.org/resources/blog/cognitive-trap-increment-misinterpretation",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-31T04:00:00.000Z",
+      "contentSnippet": "Increment Misconception Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, an…"
+    },
+    {
+      "id": "0c379954319b",
+      "title": "Data Engineering Weekly #285",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-285",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-08-31T02:51:19.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "517370741c36",
+      "title": "Understanding ChatGPT Work",
+      "link": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-08-30T23:59:47.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "bff6fbd27d91",
+      "title": "Referencing Images And Other Files In Power BI Reports Using OneLake URLs",
+      "link": "https://blog.crossjoin.co.uk/2026/08/30/referencing-images-and-other-files-in-power-bi-reports-using-onelake-urls/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-08-30T17:24:52.000Z",
+      "contentSnippet": "Several years ago I wrote a very popular blog post about how to store images for your reports inside your Power BI semantic model. It solved the problem of how you could use display images (for example of products) inside your reports without making those images available via a p…"
+    },
     {
       "id": "5aa6982584eb",
       "title": "Ask Them to Define the Product Role. The Answer Describes Their Last Employer.",
@@ -93,15 +129,6 @@
       "contentSnippet": "We are headed to VLDB 2026 to share multiple innovations that power the Databricks platform..."
     },
     {
-      "id": "c5227fe0bc2d",
-      "title": "Enhancing Agent Retrieval with Structured Chart Extraction",
-      "link": "https://www.databricks.com/blog/enhancing-agent-retrieval-structured-chart-extraction",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-27T15:00:00.000Z",
-      "contentSnippet": "The MotivationMore and more enterprises are now asking agents to work with their..."
-    },
-    {
       "id": "530949a58cd7",
       "title": "What QSR reports miss about the decisions matter the most",
       "link": "https://www.databricks.com/blog/what-qsr-reports-miss-about-decisions-matter-most",
@@ -109,6 +136,15 @@
       "category": "Data",
       "pubDate": "2026-08-27T15:00:00.000Z",
       "contentSnippet": "Limited-time offers can be a powerful way to create excitement, bring guests back,..."
+    },
+    {
+      "id": "c5227fe0bc2d",
+      "title": "Enhancing Agent Retrieval with Structured Chart Extraction",
+      "link": "https://www.databricks.com/blog/enhancing-agent-retrieval-structured-chart-extraction",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-27T15:00:00.000Z",
+      "contentSnippet": "The MotivationMore and more enterprises are now asking agents to work with their..."
     },
     {
       "id": "d9866ea09d22",
@@ -615,15 +651,6 @@
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
     },
     {
-      "id": "ff8242fbd757",
-      "title": "Innovation vs. Novelty: The Distinction Every Scrum Master Must Master",
-      "link": "https://www.scrum.org/resources/blog/innovation-vs-novelty-distinction-every-scrum-master-must-master",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-12T07:25:48.000Z",
-      "contentSnippet": "In 1947, as nations across the globe were redrawing their futures, a company called Convair unveiled something extraordinary: the Convair Model 118 — a flying car. Only two were ever built. Was it innovation? Not quite. It was a clever mashup, a car bolted to an aircraft, an inge…"
-    },
-    {
       "id": "8af5b1e57b96",
       "title": "Why Your Scrum Team Still Works Like Individuals",
       "link": "https://www.mountaingoatsoftware.com/agile/why-your-scrum-team-still-works-like-individuals",
@@ -1000,15 +1027,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-21T13:13:00.000Z",
       "contentSnippet": "With this post, I’ll wrap up my notes from the second Future of Software Development Retreat. But before I do, I should note that the full Thoughtworks report on the retreat is now available. They have five headline findings: Code generation is no longer the bottleneck — verifica…"
-    },
-    {
-      "id": "557bdf76b1ba",
-      "title": "A Fireside Chat with Cat and Thariq from the Claude Code team",
-      "link": "https://simonwillison.net/2026/Jul/21/cat-and-thariq/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-21T12:54:02.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "513a069a215f",
@@ -1407,15 +1425,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "a3ff42be52cd",
-      "title": "New Book: “Extreme DAX” 2nd Edition",
-      "link": "https://blog.crossjoin.co.uk/2026/06/21/new-book-extreme-dax-2nd-edition/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-06-21T18:35:32.000Z",
-      "contentSnippet": "“Extreme DAX” by Michiel Rozema, Madzy Stikkelorum and Henk Vlootman Continuing my series of not-reviews of the latest Power BI-related books (and there are fewer and fewer of them being published) that I receive free copies of, here’s the second edition of a book that for some r…"
-    },
-    {
       "id": "9c167a26354f",
       "title": "MobAI: From Copilot to Team Pilot",
       "link": "https://blog.crisp.se/2026/06/18/michaelgothe/mobai-from-copilot-to-team-pilot",
@@ -1585,15 +1594,6 @@
       "category": "Delivery",
       "pubDate": "2026-05-26T19:40:35.000Z",
       "contentSnippet": "Most leaders are not held back by a lack of competence. They are held back by an inner system that was built for a different kind of world. According to Bob Anderson and Bill Adams at Leadership Circle, their research suggests that 70-80% of leaders lead reactively. That does not…"
-    },
-    {
-      "id": "88ddee677bc0",
-      "title": "Data Engineering Weekly #271",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-271",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-05-25T16:05:00.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "c4a51fbdcc47",
