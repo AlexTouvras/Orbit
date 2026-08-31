@@ -1,0 +1,54 @@
+---
+title: "When the reporting stack moves, preserve the contract"
+summary: "A native Power BI feature can remove a workaround, but the durable improvement is deciding which responsibility moved and what the report can still rely on."
+date: "2026-08-31"
+category: "Data"
+featured: false
+tags: ["Power BI", "Analytics", "Fabric", "Data contracts"]
+---
+
+## The question
+
+A reporting workaround can survive long enough to look like architecture. For years, one way to show private images in Power BI was to encode them as text inside the semantic model. It solved the immediate display problem, so the implementation became part of how the report was built.
+
+Then the stack moved. Power BI can now reference images and other files stored in OneLake. The tempting response is to replace the old M and carry on. I think the more useful question is harder: when a platform removes a workaround, which responsibility should move with it, and what must remain stable for the report user?
+
+## The workaround was carrying too much
+
+Chris Webb's example of [referencing images and other files through OneLake URLs](https://blog.crossjoin.co.uk/2026/08/30/referencing-images-and-other-files-in-power-bi-reports-using-onelake-urls/) makes the shift concrete. The old approach kept image bytes as text in the semantic model. It worked, but the transformation was complicated, refreshes were slower, and the model consumed more memory. The new approach stores the files in a lakehouse and lets the model return a URL. The same pattern also works for a GeoJSON file used by a map visual.
+
+That is not merely a cleaner storage trick. The semantic model stops carrying the file and starts carrying a reference to it. File loading, replacement, security, and lifecycle can now sit with the data platform rather than being smuggled through a reporting model.
+
+Whenever a platform replaces a workaround with a native capability, I ask which responsibility moved—not just which code can be deleted.
+
+In this case, deleting M is the easy part. The real design work is naming the new contract. The report needs a file at an address it can resolve. The intended reader needs access. A refresh or file replacement must not silently break the visual. Someone must own the path after the original report author has moved on.
+
+## Compare the whole delivery path
+
+I like treating the workaround as a baseline and the native feature as a challenger. The baseline is awkward, but it is also self-contained: the image travels inside the semantic model. The challenger can make the model smaller and the refresh path simpler, but it introduces an external dependency on OneLake, workspace and lakehouse identifiers, permissions, and current visual support.
+
+That trade is probably good for a Fabric-enabled Power BI shop. It is not free. Webb notes that Azure Maps did not support the pattern at the time of writing, and a team without Fabric cannot make the same move. A report that must work outside the tenant may also have a different access problem from one used only by authenticated colleagues. Native support reduces one kind of complexity while increasing commitment to the platform boundary.
+
+So I would not approve the migration from a feature demo alone. I would test it with the identity that will consume the report, replace a file without editing the report, move the change through the real release path, and write down who owns a broken reference. I would also compare refresh time and model size before and after instead of assuming the improvement is material. If those numbers do not move enough to matter, the simpler ownership model may still justify the change—but I would say that plainly.
+
+## Keep the seam visible
+
+My own Power BI portfolio has a less elegant seam. The Nordic Boardroom demos are import-shaped, and I sync report images into Orbit. The public site consumes PNGs rather than depending on a live Power BI or Fabric session. That keeps the public artifact simple, but it leaves a manual risk: a report can change while its portfolio image stays stale.
+
+I could hide that seam behind more automation. I have not yet, because the two surfaces have different jobs. The report is the analytical product; the PNG is public evidence of its grammar. Automating the handoff is useful only if I can also make freshness visible. Otherwise I would replace an obvious manual step with a quiet failure mode.
+
+The OneLake change points to the same rule. Moving a file out of a semantic model is valuable when the new seam is explicit. A measure or field should expose the asset reference; the lakehouse should own the asset; the access test should match the audience; and the release check should fail where a missing file can be seen. The report then depends on a declared contract, not on a clever encoding trick understood by one person.
+
+## Build for the next move
+
+Reporting stacks will keep changing. Fabric features will mature, visuals will gain support, and today's recommended storage path may be replaced again. I cannot make a report independent of all of that. I can stop accidental implementation details from becoming its only source of truth.
+
+For each external asset, I want to be able to answer four questions without reopening the original tutorial: What identifies it? Who can read it? Who replaces it? What happens when it disappears? If the answers live only in DAX, M, or one developer's memory, the feature migration is unfinished.
+
+This is where platform churn can improve an analytics system rather than just disturb it. A native capability creates an opportunity to redraw ownership around the business artifact. The useful output is not simply less code. It is a smaller semantic model, a visible dependency, and a failure that the team knows how to detect and reverse.
+
+## Takeaway
+
+When the reporting stack moves, I will not preserve the workaround by habit or adopt the new feature by reflex. I will use the old path as a baseline, identify the responsibility the platform can now carry, and write the remaining dependency as a contract the team can test.
+
+The decision rule is simple: migrate when the new boundary has a named owner, a real access check, and a visible failure path. If it only makes the demo cleaner, the architecture has not changed yet.
