@@ -1,24 +1,56 @@
 {
-  "id": "ww-2026-08-24-ide",
-  "status": "published",
-  "createdAt": "2026-08-29T11:37:00.449Z",
-  "weekOf": "2026-08-24",
-  "slug": "agents-cannot-smell-bad-data-start-there",
-  "title": "Agents cannot smell bad data. Start there.",
-  "summary": "Sadalage and Chandrasekaran argue agentic AI fails on sand foundations. As a delivery lead I would fix contracts and quarantine before another orchestration demo.",
-  "category": "Delivery",
+  "id": "ww-2026-08-31-ide",
+  "status": "pending",
+  "createdAt": "2026-08-31T09:12:45Z",
+  "weekOf": "2026-08-31",
+  "slug": "when-the-reporting-stack-moves-preserve-the-contract",
+  "title": "When the reporting stack moves, preserve the contract",
+  "summary": "A native Power BI feature can remove a workaround, but the durable improvement is deciding which responsibility moved and what the report can still rely on.",
+  "category": "Data",
   "tags": [
-    "Agents",
-    "AI",
-    "Data",
-    "Delivery"
+    "Power BI",
+    "Analytics",
+    "Fabric",
+    "Data contracts"
   ],
-  "mdx": "---\ntitle: Agents cannot smell bad data. Start there.\nsummary: Sadalage and Chandrasekaran argue agentic AI fails on sand foundations. As a delivery lead I would fix contracts and quarantine before another orchestration demo.\ndate: 2026-08-24\ncategory: Delivery\nfeatured: false\ntags: [Agents, AI, Data, Delivery]\n---\n\n## The question\n\nThe default move this year is still the same: stand up an agent framework, wire a few tools, and hope the model papers over the warehouse. I do not buy it. If agents are becoming a real consumer of our systems, what should a delivery or analytics lead change first — the orchestration layer, or the data those agents are allowed to treat as true?\n\n[Making Your Data Ready for Agentic AI](https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html) is the piece I keep handing people. Pramod Sadalage and Prem Chandrasekaran write for the Martin Fowler site, and their opening is blunt: thirty years of data work assumed a human who notices when a number looks wrong. Agents supply none of that. They act on whatever they are handed, confidently.\n\n## What the signal is really saying\n\nTheir five attributes — trusted, contextual, traceable, governed, operational — are not a maturity poster. Each one is a job humans used to do for free. A pricing agent that reads yesterday's price and quotes it does every step of its workflow correctly. The loss is in the refresh, not the prompt.\n\nThat is why they put data contracts and quality first. Schema as law, freshness SLAs, quarantine for bad rows, medallion stages that refuse to promote garbage. Traceability and access come next because an agent that decides in thirty seconds leaves no hallway explanation unless you capture lineage as it happens. The context layer (metrics as code, explicit meaning for \"revenue\") and actionable access (tools that can write back under scoped credentials) only pay off after the agent stops treating sand as bedrock.\n\nI care about the ordering more than the stack diagram. Most teams I meet want MCP and orchestration first. The article's order is the opposite of the demo calendar.\n\n## What I would change on Monday\n\nOn Orbit the weekly Write is a small version of the same split. Signals and workshop state are intake: what showed up, what is in flight. Slack Approve is the action. The essay can be rewritten a dozen times; publication waits on a person. I would not let a generator invent the claim and merge it in one step. That is staged autonomy with a boring gate, not a slogan.\n\nLedger holds the same line. A research cycle can name a Sharpe gap and a proposed trim. I still click the trades. No broker automation. Process-shaped work I have not encoded, on purpose, because the data and the rule set are not ready to own money without me.\n\nSo the first change is not \"pick an agent platform.\" It is name one critical path — pricing, ECL, incident severity, whatever hurts when it is wrong — and put a contract on it with a freshness rule an agent cannot bypass. Quarantine failures instead of letting them flow into the tool that quotes the customer. Only then open a narrow write-back with an audit trail you can reconstruct after the fact.\n\n## Where this still fails\n\nContracts cost coordination. Product, warehouse, and whoever owns the agent disagree on who breaks when freshness misses the SLA. Quarantine looks like downtime to people who wanted a green dashboard. Staged autonomy feels slow next to a LinkedIn demo where the agent \"just books the meeting.\"\n\nI also do not pretend my personal ops stack is AI-ready in their sense. Mealplan and the fitness coach post plans to Slack; a human still shops and trains. That is fine. The essay is about where I would spend the next engineering week if someone asked me to make an agent safe to act, not about automating every corner of life.\n\n## Takeaway\n\nIf agentic systems are becoming the unit of work, I would not start by asking which framework looks newest. I would ask which number an agent is about to treat as truth, and whether that number has a contract, a quarantine path, and a human gate before it spends money or ships change. Sadalage and Chandrasekaran put quality before orchestration for a reason. Skip that middle and the agent will execute perfectly on yesterday's price.\n",
-  "preview": "Agents cannot smell bad data. Start there.\\n\\nSadalage and Chandrasekaran argue agentic AI fails on sand foundations. As a delivery lead I would fix contracts and quarantine before another orchestration demo.\\n\\nInspired by: Making Your Data Ready for Agentic AI",
+  "mdx": "---\ntitle: \"When the reporting stack moves, preserve the contract\"\nsummary: \"A native Power BI feature can remove a workaround, but the durable improvement is deciding which responsibility moved and what the report can still rely on.\"\ndate: \"2026-08-31\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Analytics\", \"Fabric\", \"Data contracts\"]\n---\n\n## The question\n\nA reporting workaround can survive long enough to look like architecture. For years, one way to show private images in Power BI was to encode them as text inside the semantic model. It solved the immediate display problem, so the implementation became part of how the report was built.\n\nThen the stack moved. Power BI can now reference images and other files stored in OneLake. The tempting response is to replace the old M and carry on. I think the more useful question is harder: when a platform removes a workaround, which responsibility should move with it, and what must remain stable for the report user?\n\n## The workaround was carrying too much\n\nChris Webb's example of [referencing images and other files through OneLake URLs](https://blog.crossjoin.co.uk/2026/08/30/referencing-images-and-other-files-in-power-bi-reports-using-onelake-urls/) makes the shift concrete. The old approach kept image bytes as text in the semantic model. It worked, but the transformation was complicated, refreshes were slower, and the model consumed more memory. The new approach stores the files in a lakehouse and lets the model return a URL. The same pattern also works for a GeoJSON file used by a map visual.\n\nThat is not merely a cleaner storage trick. The semantic model stops carrying the file and starts carrying a reference to it. File loading, replacement, security, and lifecycle can now sit with the data platform rather than being smuggled through a reporting model.\n\nWhenever a platform replaces a workaround with a native capability, I ask which responsibility moved—not just which code can be deleted.\n\nIn this case, deleting M is the easy part. The real design work is naming the new contract. The report needs a file at an address it can resolve. The intended reader needs access. A refresh or file replacement must not silently break the visual. Someone must own the path after the original report author has moved on.\n\n## Compare the whole delivery path\n\nI like treating the workaround as a baseline and the native feature as a challenger. The baseline is awkward, but it is also self-contained: the image travels inside the semantic model. The challenger can make the model smaller and the refresh path simpler, but it introduces an external dependency on OneLake, workspace and lakehouse identifiers, permissions, and current visual support.\n\nThat trade is probably good for a Fabric-enabled Power BI shop. It is not free. Webb notes that Azure Maps did not support the pattern at the time of writing, and a team without Fabric cannot make the same move. A report that must work outside the tenant may also have a different access problem from one used only by authenticated colleagues. Native support reduces one kind of complexity while increasing commitment to the platform boundary.\n\nSo I would not approve the migration from a feature demo alone. I would test it with the identity that will consume the report, replace a file without editing the report, move the change through the real release path, and write down who owns a broken reference. I would also compare refresh time and model size before and after instead of assuming the improvement is material. If those numbers do not move enough to matter, the simpler ownership model may still justify the change—but I would say that plainly.\n\n## Keep the seam visible\n\nMy own Power BI portfolio has a less elegant seam. The Nordic Boardroom demos are import-shaped, and I sync report images into Orbit. The public site consumes PNGs rather than depending on a live Power BI or Fabric session. That keeps the public artifact simple, but it leaves a manual risk: a report can change while its portfolio image stays stale.\n\nI could hide that seam behind more automation. I have not yet, because the two surfaces have different jobs. The report is the analytical product; the PNG is public evidence of its grammar. Automating the handoff is useful only if I can also make freshness visible. Otherwise I would replace an obvious manual step with a quiet failure mode.\n\nThe OneLake change points to the same rule. Moving a file out of a semantic model is valuable when the new seam is explicit. A measure or field should expose the asset reference; the lakehouse should own the asset; the access test should match the audience; and the release check should fail where a missing file can be seen. The report then depends on a declared contract, not on a clever encoding trick understood by one person.\n\n## Build for the next move\n\nReporting stacks will keep changing. Fabric features will mature, visuals will gain support, and today's recommended storage path may be replaced again. I cannot make a report independent of all of that. I can stop accidental implementation details from becoming its only source of truth.\n\nFor each external asset, I want to be able to answer four questions without reopening the original tutorial: What identifies it? Who can read it? Who replaces it? What happens when it disappears? If the answers live only in DAX, M, or one developer's memory, the feature migration is unfinished.\n\nThis is where platform churn can improve an analytics system rather than just disturb it. A native capability creates an opportunity to redraw ownership around the business artifact. The useful output is not simply less code. It is a smaller semantic model, a visible dependency, and a failure that the team knows how to detect and reverse.\n\n## Takeaway\n\nWhen the reporting stack moves, I will not preserve the workaround by habit or adopt the new feature by reflex. I will use the old path as a baseline, identify the responsibility the platform can now carry, and write the remaining dependency as a contract the team can test.\n\nThe decision rule is simple: migrate when the new boundary has a named owner, a real access check, and a visible failure path. If it only makes the demo cleaner, the architecture has not changed yet.\n",
+  "preview": "When the reporting stack moves, preserve the contract\n\nA native Power BI feature can remove a workaround, but the durable improvement is deciding which responsibility moved and what the report can still rely on.\n\nInspired by: Referencing Images And Other Files In Power BI Reports Using OneLake URLs",
   "intake": {
-    "weekOf": "2026-08-24",
-    "generatedAt": "2026-08-29T11:36:06.344Z",
+    "weekOf": "2026-08-31",
+    "generatedAt": "2026-08-31T09:12:07.406Z",
     "signals": [
+      {
+        "id": "bff6fbd27d91",
+        "title": "Referencing Images And Other Files In Power BI Reports Using OneLake URLs",
+        "link": "https://blog.crossjoin.co.uk/2026/08/30/referencing-images-and-other-files-in-power-bi-reports-using-onelake-urls/",
+        "source": "Chris Webb's BI Blog",
+        "category": "Analytics",
+        "snippet": "Several years ago I wrote a very popular blog post about how to store images for your reports inside your Power BI semantic model. It solved the problem of how you could use display images (for example of products) inside your reports without making those images available via a p…"
+      },
+      {
+        "id": "0c379954319b",
+        "title": "Data Engineering Weekly #285",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-285",
+        "source": "Data Engineering Weekly",
+        "category": "Data",
+        "snippet": "The Weekly Data Engineering Newsletter"
+      },
+      {
+        "id": "a721c8cb74dd",
+        "title": "Cognitive Trap: Increment Misinterpretation",
+        "link": "https://www.scrum.org/resources/blog/cognitive-trap-increment-misinterpretation",
+        "source": "Scrum.org",
+        "category": "Delivery",
+        "snippet": "Increment Misconception Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, an…"
+      },
+      {
+        "id": "517370741c36",
+        "title": "Understanding ChatGPT Work",
+        "link": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
+        "source": "Simon Willison",
+        "category": "AI",
+        "snippet": ""
+      },
       {
         "id": "3de08a17cfd8",
         "title": "Fabric Apps & Rayfin Deep Dive: A Conversation with Sachin Patney | Fabric Insider Ep. 11",
@@ -36,12 +68,12 @@
         "snippet": "We all know the pattern: you ask an AI tool a question and get an answer in seconds,..."
       },
       {
-        "id": "fe99bf10b50a",
-        "title": "At Some Point, not Knowing Becomes a Choice",
-        "link": "https://www.scrum.org/resources/blog/some-point-not-knowing-becomes-choice",
+        "id": "5aa6982584eb",
+        "title": "Ask Them to Define the Product Role. The Answer Describes Their Last Employer.",
+        "link": "https://www.scrum.org/resources/blog/ask-them-define-product-role-answer-describes-their-last-employer",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Open the retro notes from a year ago. Then open last quarter's. The same problem is in both, in almost the same words. The dependency that strangles every release. The hand-off that loses a week. The \"we should really talk about the roadmap\" that never becomes a conversation. It'…"
+        "snippet": "Image Two candidates, same question, same afternoon. What is the job of a product person? The first says it is owning the backlog and keeping the team supplied with clear, ready work. The second says it is working out which problem is worth solving, then finding a solution custom…"
       },
       {
         "id": "092c8de02e8b",
@@ -50,38 +82,6 @@
         "source": "OpenAI Blog",
         "category": "AI",
         "snippet": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX."
-      },
-      {
-        "id": "1f24f2fac291",
-        "title": "SQLBI Whiteboard",
-        "link": "https://www.sqlbi.com/tools/sqlbi-whiteboard/",
-        "source": "SQLBI",
-        "category": "Analytics",
-        "snippet": "SQLBI Whiteboard is a free, open-source whiteboard for Windows 11 designed for teaching DAX, SQL, and data modeling, with pen ink, live application capture, and syntax-highlighted code on the same canvas. Pen-first ink — Low-latency, pressure-aware strokes with palm rejection,…"
-      },
-      {
-        "id": "a6070956dc64",
-        "title": "How Indra unified EV charging data on Databricks",
-        "link": "https://www.databricks.com/blog/how-indra-unified-ev-charging-data-databricks",
-        "source": "Databricks Blog",
-        "category": "Data",
-        "snippet": "When data grows faster than the systems around it, complexity becomes the default...."
-      },
-      {
-        "id": "d9866ea09d22",
-        "title": "Making Your Data Ready for Agentic AI",
-        "link": "https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html",
-        "source": "Martin Fowler",
-        "category": "Delivery",
-        "snippet": "Lots of organizations are excited about what AI can do to streamline their processes, save money, and juice margins. But AI's capabilities are founded on the data that AI accesses, and for many organizations that foundation is little more than sand. Pramod Sadalage and Prem Chand…"
-      },
-      {
-        "id": "0b00c80d502c",
-        "title": "Supporting Thailand’s next generation of AI startups",
-        "link": "https://openai.com/index/supporting-next-generation-ai-startups-thailand",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "OpenAI and Thailand’s MHESI launch an eight-week accelerator helping 10 health, wellness, and education startups turn AI prototypes into trusted products."
       }
     ],
     "projects": [
@@ -169,7 +169,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-08-29T11:41:30.147Z",
-  "publishedSlug": "agents-cannot-smell-bad-data-start-there"
+  "source": "ide"
 }
