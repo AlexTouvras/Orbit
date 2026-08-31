@@ -25,6 +25,10 @@ export const ARCHITECTURE_ESSAY_LINKS: Record<
     title: "Power BI portfolio",
     href: "/writes/power-bi-portfolio-nordic-boardroom",
   },
+  "fitness-coach": {
+    title: "When the coach lives in git and Slack",
+    href: "/writes/when-the-coach-lives-in-git-and-slack",
+  },
 };
 
 /** Reverse map: write slug → architecture page slug (if any). */

@@ -41,6 +41,14 @@
       "summary": "Channel-triggered meal planning: YAML defaults, Slack overrides, nutrition plate guide, multi-store grocery split.",
       "category": "AI",
       "tags": ["Cursor Automations", "Slack", "YAML", "Personal ops"]
+    },
+    {
+      "id": "fitness-coach",
+      "dir": "fitness",
+      "title": "fitness-coach — personal ops coach architecture",
+      "summary": "Intervals form + Slack RPE → AthleteState → Sunday week plan in git and #fitness. Concurrent run/lift rules, intent: path tweaks, Heimdall kickoff.",
+      "category": "AI",
+      "tags": ["Cursor Automations", "Slack", "Intervals", "Personal ops"]
     }
   ]
 }

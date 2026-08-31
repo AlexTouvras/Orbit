@@ -60,6 +60,19 @@ export interface FitnessWeek {
   days: FitnessDay[];
 }
 
+export interface FitnessKickoff {
+  quoteText: string | null;
+  quoteAttribution: string | null;
+  motivateSlug: string | null;
+  motivateTitle: string | null;
+  motivateUrl: string | null;
+  motivateChannel: string | null;
+  spotifyRunningName: string | null;
+  spotifyRunningUrl: string | null;
+  spotifyStrengthName: string | null;
+  spotifyStrengthUrl: string | null;
+}
+
 export interface MealDay {
   heading: string;
   meals: Array<{ meal: string; dish: string; notes: string }>;
