@@ -39,11 +39,9 @@ Phases are calendar-dumb on purpose. More than 21 days to the event → build. I
 
 The useful upgrade since the first version is routing. Prefixes decide what git is allowed to change.
 
-| Prefix | What it does | Example |
-|--------|----------------|---------|
-| `log:` | Session writeback only (RPE debt, strength form) | `log: lift \| squat 3x5 @ RPE 7` |
-| `intent:` | Path tweak for *this* block: writes `data/course.json`, regenerates the week | `intent: 5K is a fitness test, not chasing sub-22; lean into strength` |
-| `goal:` | Mesocycle swap; proposal until I approve in a follow-up | `goal: after 5K switch primary to hypertrophy 8 weeks` |
+- **`log:`** — session writeback only (RPE debt, strength form). Example: `log: lift | squat 3x5 @ RPE 7`
+- **`intent:`** — path tweak for *this* block: writes `data/course.json`, regenerates the week. Example: `intent: 5K is a fitness test, not chasing sub-22; lean into strength`
+- **`goal:`** — mesocycle swap; proposal until I approve in a follow-up. Example: `goal: after 5K switch primary to hypertrophy 8 weeks`
 
 `intent:` was the missing layer. Life does not always need a new `block_id`. Sometimes I need "keep sessions short" or "simplify Tue/Thu to one lift" without throwing away the 5K pack. `coach-intent` merges that into `data/course.json`, patches profile flags, and regenerates `data/plans/YYYY-Www.json` without bumping the lift week or pushing Intervals unless the plan actually changed.
 
