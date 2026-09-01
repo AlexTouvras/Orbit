@@ -1,100 +1,97 @@
 {
-  "id": "newsletter-2026-W35",
-  "status": "sent",
-  "createdAt": "2026-08-29T11:27:46.341Z",
-  "weekOf": "2026-08-24",
-  "subject": "Orbit weekly — week of 2026-08-24",
+  "id": "newsletter-2026-W36",
+  "status": "pending",
+  "createdAt": "2026-09-01T12:34:10.522Z",
+  "weekOf": "2026-08-31",
+  "subject": "Orbit weekly — week of 2026-08-31",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
-  "writes": [],
+  "writes": [
+    {
+      "slug": "when-the-reporting-stack-moves-preserve-the-contract",
+      "title": "When the reporting stack moves, preserve the contract",
+      "summary": "A native Power BI feature can remove a workaround, but the durable improvement is deciding which responsibility moved and what the report can still rely on.",
+      "date": "2026-08-31",
+      "href": "https://alextouvras.com/writes/when-the-reporting-stack-moves-preserve-the-contract"
+    }
+  ],
   "signals": [
     {
-      "title": "Fabric Apps & Rayfin Deep Dive: A Conversation with Sachin Patney | Fabric Insider Ep. 11",
-      "link": "https://radacad.com/fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11",
-      "source": "RADACAD",
+      "title": "Referencing Images And Other Files In Power BI Reports Using OneLake URLs",
+      "link": "https://blog.crossjoin.co.uk/2026/08/30/referencing-images-and-other-files-in-power-bi-reports-using-onelake-urls/",
+      "source": "Chris Webb's BI Blog",
       "category": "Analytics",
-      "snippet": "I have written and recorded about Rayfin before, what it is, how the Data App template works, and the cost story that m…"
+      "snippet": "Several years ago I wrote a very popular blog post about how to store images for your reports inside your Power BI sema…"
     },
     {
-      "title": "Beyond answers: New Genie One features to turn insights into action",
-      "link": "https://www.databricks.com/blog/beyond-answers-new-genie-one-features-turn-insights-action",
+      "title": "Autoscaling Lakebase Postgres",
+      "link": "https://www.databricks.com/blog/autoscaling-lakebase-postgres",
       "source": "Databricks Blog",
       "category": "Data",
-      "snippet": "We all know the pattern: you ask an AI tool a question and get an answer in seconds,..."
+      "snippet": "Choosing a database instance size before you know the workload is an old building pattern..."
     },
     {
-      "title": "At Some Point, not Knowing Becomes a Choice",
-      "link": "https://www.scrum.org/resources/blog/some-point-not-knowing-becomes-choice",
+      "title": "Scrum Masters — the world needs you now as much as ever",
+      "link": "https://www.scrum.org/resources/blog/scrum-masters-world-needs-you-now-much-ever",
       "source": "Scrum.org",
       "category": "Delivery",
-      "snippet": "Open the retro notes from a year ago. Then open last quarter's. The same problem is in both, in almost the same words.…"
+      "snippet": "Image We all know too little planning is ineffective — and I think most of us know too much planning is wasteful in con…"
     },
     {
-      "title": "Our decision on Cursor following its acquisition by SpaceX",
-      "link": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "title": "OpenAI supports California’s bill to advance youth AI safety",
+      "link": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
       "source": "OpenAI Blog",
       "category": "AI",
-      "snippet": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX."
+      "snippet": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportun…"
     }
   ],
   "ravens": [
     {
-      "kind": "inbox",
+      "kind": "signal",
       "domain": "ai-agents",
-      "title": "Cursor ships cloud-agent Subscriptions, Custom Modes, and new agent-conversation hooks",
-      "summary": "Cursor's 19 Aug 2026 changelog entry \"Cloud Agents and Cursor Harness Improvements\" adds Subscriptions (a cloud agent watches a pull reques…",
-      "href": "https://cursor.com/changelog/08-19-26",
-      "sourceTitle": "Cloud Agents and Cursor Harness Improvements — Cursor Changelog",
-      "id": "FIND-20260823-001",
-      "date": "2026-08-19"
+      "title": "Pydantic AI 2.36.0 — public durable-execution backend API and named @durable_operation",
+      "summary": "Pydantic AI v2.36.0 (GitHub release published 29 Aug 2026; tagged 28 Aug 2026; MIT) adds `@durable_operation` for capabilities plus a **pub…",
+      "id": "SIG-20260831-002",
+      "date": "2026-08-31",
+      "priority": "p3"
     },
     {
-      "kind": "inbox",
+      "kind": "signal",
       "domain": "data-bi",
-      "title": "August 2026 Power BI update lets you convert individual Direct Lake tables to Import mode directly in web modeling (preview)",
-      "summary": "Microsoft's official August 2026 Power BI Feature Summary (Fabric Community blog) documents a new preview capability, rolling out over the…",
-      "href": "https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-august-2026-feature-summary/5348434",
-      "sourceTitle": "Power BI August 2026 Feature Summary — Microsoft Fabric Community Blog",
-      "id": "FIND-20260825-004",
-      "date": "2026-08-19"
+      "title": "Power BI Copilot Summary/Narrative can read bookmark-hidden visuals",
+      "summary": "Microsoft Learn's August 2026 Power BI update (dated 18 Aug 2026) ships \"Copilot Summary and Copilot Narrative can now read visuals hidden…",
+      "id": "SIG-20260830-003",
+      "date": "2026-08-30",
+      "priority": "p3"
     },
     {
       "kind": "inbox",
       "domain": "career",
-      "title": "ABB Oy opens a Data Analyst (Snowflake & Power BI) role in Helsinki pairing industrial/SAP data with self-service BI",
-      "summary": "ABB Oy posted (18 Aug 2026) a \"Data Analyst (Snowflake & Power BI)\" role based at Vuosaari, Helsinki, requiring advanced SQL and Power BI p…",
-      "href": "https://www.jobly.fi/tyopaikka/data-analyst-snowflake-power-bi-2736111",
-      "sourceTitle": "Data Analyst (Snowflake & Power BI), ABB Oy — Helsinki | Jobly",
-      "id": "FIND-20260826-003",
-      "date": "2026-08-18"
+      "title": "Tribedo opens a Helsinki Solution Analyst role pairing SQL/Python/Power BI with banking risk reporting — applications close tomorrow",
+      "summary": "Tribedo Oy (via Barona) published (21 Aug 2026) a fixed-term \"Solution Analyst (Specialist/Senior)\" posting in Helsinki, hybrid (1–2 days/w…",
+      "href": "https://www.jobly.fi/tyopaikka/solution-analyst-2739490",
+      "sourceTitle": "Solution Analyst, Tribedo Oy - Helsinki | Jobly",
+      "id": "FIND-20260829-005",
+      "date": "2026-08-21"
     },
     {
       "kind": "inbox",
       "domain": "finance",
-      "title": "New Fed Chair Kevin Warsh delivers his first Jackson Hole keynote on 28 Aug 2026 — a dated rate/dollar catalyst to watch",
-      "summary": "The Federal Reserve Bank of Kansas City confirms (as of 21 Aug 2026) that the 2026 Jackson Hole Economic Policy Symposium runs 27–29 Aug 20…",
-      "href": "https://www.kansascityfed.org/research/jackson-hole-economic-symposium/jackson-hole-faqs/",
-      "sourceTitle": "Jackson Hole FAQs — Federal Reserve Bank of Kansas City",
-      "id": "FIND-20260823-004",
-      "date": "2026-08-23"
-    },
-    {
-      "kind": "signal",
-      "domain": "content",
-      "title": "content-os — agent-agnostic daily source-scan → draft-in-voice pipeline reference",
-      "summary": "`star23/content-os` (MIT, 97 stars, created 15 Aug 2026) is a runnable reference implementation of exactly Orbit's weekly \"build in public\"…",
-      "id": "SIG-20260823-002",
-      "date": "2026-08-23",
-      "priority": "p3"
+      "title": "Fortum's NOK 47/share cash tender offer for Elmera Group opens; acceptance period runs through 18 Sep 2026",
+      "summary": "Fortum Oyj (Nasdaq Helsinki) launched a recommended voluntary cash tender offer on 21 Aug 2026 for all outstanding shares of Elmera Group A…",
+      "href": "https://news.cision.com/fortum/r/fortum-launches-recommended-voluntary-cash-tender-offer-to-the-shareholders-of-elmera-group-asa-and-,c4385953",
+      "sourceTitle": "Fortum launches recommended voluntary cash tender offer to the shareholders of Elmera Group ASA and offer period commences — Fortum (Cision)",
+      "id": "FIND-20260826-001",
+      "date": "2026-08-21"
     },
     {
       "kind": "knowledge",
       "domain": "parenting",
-      "title": "Expect vitamin K prophylaxis to be offered for the newborn at/around birth",
-      "summary": "Expect a care team to **offer vitamin K prophylaxis** for the newborn around the time of birth, to prevent vitamin K deficiency bleeding —…",
-      "href": "https://www.nice.org.uk/guidance/ng235/chapter/rationale-and-impact",
-      "sourceTitle": "Rationale and impact — Intrapartum care (NG235) — NICE",
-      "id": "KNOW-parenting-nice-vitamin-k-newborn-prophylaxis",
-      "date": "2026-08-27"
+      "title": "Finland — birthing parent can file vanhempainraha in OmaKela before birth",
+      "summary": "The **birthing parent** can apply for parental allowance (vanhempainraha) **already before the child is born**, at the same time as pregnan…",
+      "href": "https://www.kela.fi/vanhempainvapaalla",
+      "sourceTitle": "Vanhempainraha ja vanhempainraha osittaisena — Kela",
+      "id": "KNOW-parenting-fi-kela-vanhempainraha-before-birth",
+      "date": "2026-09-01"
     },
     {
       "kind": "inbox",
@@ -106,9 +103,5 @@
       "id": "FIND-20260828-004",
       "date": "2026-08-25"
     }
-  ],
-  "sentAt": "2026-08-29T11:27:47.707Z",
-  "broadcastId": "45698e53-e8f4-40b9-993d-94e3bbcd1ce7",
-  "sendMode": "test",
-  "sentTo": "a.touvras@gmail.com"
+  ]
 }
