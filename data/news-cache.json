@@ -1,7 +1,43 @@
 {
-  "generatedAt": "2026-08-31T12:31:59.711Z",
+  "generatedAt": "2026-09-01T06:49:00.496Z",
   "count": 219,
   "items": [
+    {
+      "id": "f5b0bd4dd6a7",
+      "title": "Scrum Masters — the world needs you now as much as ever",
+      "link": "https://www.scrum.org/resources/blog/scrum-masters-world-needs-you-now-much-ever",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-31T18:19:09.000Z",
+      "contentSnippet": "Image We all know too little planning is ineffective — and I think most of us know too much planning is wasteful in conditions of uncertainty, volatility, and disruptive competition. Bigger, longer, more predictive planning — thus more assumptive, guessworking, and speculative —…"
+    },
+    {
+      "id": "b59b1be7c36b",
+      "title": "Autoscaling Lakebase Postgres",
+      "link": "https://www.databricks.com/blog/autoscaling-lakebase-postgres",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-31T17:00:00.000Z",
+      "contentSnippet": "Choosing a database instance size before you know the workload is an old building pattern..."
+    },
+    {
+      "id": "81fa3ba0a20a",
+      "title": "Join the AI Delegation Audit Webinar, October 6, by Scrum.org",
+      "link": "https://www.scrum.org/resources/blog/join-ai-delegation-audit-webinar-october-6-scrumorg",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-31T14:29:17.000Z",
+      "contentSnippet": "TL;DR: The AI Delegation Audit Webinar, October 6 Join me on October 6 for the AI Delegation Audit webinar. You will learn how to run a 45-to-60-minute recurring check that reveals whether delegated AI work still meets its required quality standard, still uses the right model, at…"
+    },
+    {
+      "id": "758299fe6265",
+      "title": "How to Leverage Flow Metrics To Accelerate Your Agentic Development Lifecycle",
+      "link": "https://www.scrum.org/resources/blog/how-leverage-flow-metrics-accelerate-your-agentic-development-lifecycle",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-08-31T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. Isn't it surprising that 10x coding doesn't move the needle that much? Fully agentic software factories are of course all the rage these days. But more and more leaders I talk to acknowledge that while creating a fully agentic software deve…"
+    },
     {
       "id": "8fdeeebe0817",
       "title": "AI Tool Introduction – Gamma",
@@ -10,6 +46,33 @@
       "category": "Delivery",
       "pubDate": "2026-08-31T07:30:47.000Z",
       "contentSnippet": "Image Imagine you are a Scrum Master or Product Owner. When you want to deliver your work to your audience, you need a tool to present your work. In the past, we used to use PowerPoint presentations. But how can AI elevate it? Gamma is the AI-based solution for the new generation…"
+    },
+    {
+      "id": "0703988e3a33",
+      "title": "OpenAI supports California’s bill to advance youth AI safety",
+      "link": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-31T07:00:00.000Z",
+      "contentSnippet": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportunities to learn, create, and explore."
+    },
+    {
+      "id": "7bc341571432",
+      "title": "Polimill builds Japan's next-generation public AI infrastructure",
+      "link": "https://openai.com/index/polimill",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-31T07:00:00.000Z",
+      "contentSnippet": "Polimill uses OpenAI GPT models and Codex to help municipalities search and use administrative knowledge while accelerating development."
+    },
+    {
+      "id": "44f61163770f",
+      "title": "A milestone in expanding access to AI",
+      "link": "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-08-31T04:00:00.000Z",
+      "contentSnippet": "ChatGPT Ads reaches $1 billion in annualized revenue run rate and expands globally, supporting broader access to AI through free and affordable options."
     },
     {
       "id": "a721c8cb74dd",
@@ -55,6 +118,15 @@
       "category": "Delivery",
       "pubDate": "2026-08-30T06:00:00.000Z",
       "contentSnippet": "Image Two candidates, same question, same afternoon. What is the job of a product person? The first says it is owning the backlog and keeping the team supplied with clear, ready work. The second says it is working out which problem is worth solving, then finding a solution custom…"
+    },
+    {
+      "id": "8c503268e989",
+      "title": "What is an AI Copilot?",
+      "link": "https://www.databricks.com/blog/ai-copilot",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-08-28T22:22:15.000Z",
+      "contentSnippet": "An AI copilot is an AI assistant embedded directly in a software application. It..."
     },
     {
       "id": "ad53b50abd4f",
@@ -210,15 +282,6 @@
       "contentSnippet": "In this blog post, I answer critical questions you have before choosing a Professional Scrum Product Owner – AI Essentials class. Image 1- Why should I take the class when I can directly take the PSPO-AI Essentials exam and get the certificate without attending the class? Yes, yo…"
     },
     {
-      "id": "bc0c7be7bc53",
-      "title": "Object Storage + WAL: Lakebase Postgres for the agentic era",
-      "link": "https://www.databricks.com/blog/object-storage-wal-lakebase-postgres-agentic-era",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-27T07:18:59.000Z",
-      "contentSnippet": "Agents that interact with a traditional OLTP database often create bottlenecks at the storage layer. New deployments..."
-    },
-    {
       "id": "57e276283c19",
       "title": "Expanding OpenAI’s presence in Brazil",
       "link": "https://openai.com/index/expanding-our-presence-in-brazil",
@@ -255,15 +318,6 @@
       "contentSnippet": "The write side of the ontology conversation: named actions, business rules, and write-back to the systems of record — a pattern already running at enterprise scale."
     },
     {
-      "id": "cdfc10030b4b",
-      "title": "Learning never stops: How AI makes learning continuous",
-      "link": "https://openai.com/index/learning-never-stops",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-26T10:00:00.000Z",
-      "contentSnippet": "OpenAI’s new report explores how students and educators use ChatGPT to make learning more continuous, with support that extends beyond the classroom."
-    },
-    {
       "id": "d6bb1031e66b",
       "title": "Bringing ChatGPT for Teachers to more U.S. school districts",
       "link": "https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts",
@@ -271,33 +325,6 @@
       "category": "AI",
       "pubDate": "2026-08-26T10:00:00.000Z",
       "contentSnippet": "ChatGPT for Teachers is expanding to 55 U.S. school systems, bringing secure AI tools, training, and support to over 100,000 more educators and staff."
-    },
-    {
-      "id": "3d8012e1730a",
-      "title": "Introducing Governance Hub: Intelligent, account-level governance over your Databricks estate",
-      "link": "https://www.databricks.com/blog/introducing-governance-hub-intelligent-account-level-governance-over-your-databricks-estate",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-26T03:00:00.000Z",
-      "contentSnippet": "Your FinOps lead needs to easily drill-down into Databricks spend and identify what’s driving costs, ..."
-    },
-    {
-      "id": "504dd1ec9508",
-      "title": "The Hugging Face incident and the road ahead",
-      "link": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-26T00:00:00.000Z",
-      "contentSnippet": "OpenAI shares findings from the Hugging Face security incident and the steps we’re taking to strengthen AI model security, monitoring, and alignment."
-    },
-    {
-      "id": "d34e82eae2f2",
-      "title": "How loveholidays is making everyone a builder with Codex",
-      "link": "https://openai.com/index/loveholidays",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-26T00:00:00.000Z",
-      "contentSnippet": "Discover how loveholidays uses OpenAI Codex to make software development accessible across the business, helping teams turn ideas into products faster."
     },
     {
       "id": "d57a043ce5cd",
@@ -579,15 +606,6 @@
       "contentSnippet": "In last week’s post I mentioned that while Power BI reports (unlike Excel PivotTables) do not support the Detail Rows Expression feature, it is possible to partially work around this limitation by using the paginated report visual. In this post I’ll show you how I was able to do…"
     },
     {
-      "id": "6390a377f9b1",
-      "title": "Your Juniors Are Still Here. The Reps Are Gone.",
-      "link": "https://www.scrum.org/resources/blog/your-juniors-are-still-here-reps-are-gone",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-16T06:00:00.000Z",
-      "contentSnippet": "Image A surgical resident scrubs in for a prostatectomy. Gowned, credentialed, in the room. The robotic console sits four feet away and the attending surgeon is already at it, running the procedure alone, because the machine allows it. The resident watches from a second console a…"
-    },
-    {
       "id": "153261e53339",
       "title": "The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
       "link": "https://radacad.com/the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10/?utm_source=rss&utm_medium=rss&utm_campaign=the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10",
@@ -604,24 +622,6 @@
       "category": "Data",
       "pubDate": "2026-08-14T12:38:18.000Z",
       "contentSnippet": "How to think about the semantic system that makes an agent coherent, governable, and useful."
-    },
-    {
-      "id": "0f9d254133b6",
-      "title": "Customers Don't Buy your Exhaustion",
-      "link": "https://www.scrum.org/resources/blog/customers-dont-buy-your-exhaustion",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-13T22:00:00.000Z",
-      "contentSnippet": "The team had earned its standing ovation, and it wanted one. Two months of late nights. A release pushed out over a weekend nobody got back. The kind of finish that gets a team a reputation for grit. In the review, they walked through all of it, the heroics and the saves, with th…"
-    },
-    {
-      "id": "6566b300c739",
-      "title": "[Episode 4] Questions Scrum Masters Must Ask Before Choosing Any AI Courses",
-      "link": "https://www.scrum.org/resources/blog/episode-4-questions-scrum-masters-must-ask-choosing-any-ai-courses",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-13T17:21:44.000Z",
-      "contentSnippet": "\"AI-native Scrum Team\" is a podcast series that shares how Scrum Teams can effectively take the steps of their AI Transformation journey to become AI-native Scrum Teams. In episode 4, we discussed and shared 9 questions that Scrum Masters must ask before choosing any AI training…"
     },
     {
       "id": "b975b680ae4f",
