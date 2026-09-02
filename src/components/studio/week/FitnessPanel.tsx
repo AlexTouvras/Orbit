@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArcStatusCard, arcDayAccent } from "@/components/studio/week/ArcStatusCard";
+import { ArcStatusCard } from "@/components/studio/week/ArcStatusCard";
+import { arcDayAccent } from "@/components/studio/week/arcDayAccent";
 import { HeimdallEmbed } from "@/components/studio/week/HeimdallEmbed";
 import { Lane } from "@/components/studio/week/Lane";
 import {
@@ -149,6 +150,7 @@ export function FitnessPanel({
             <ArcStatusCard
               narrative={fitness.narrative}
               dailyQuest={fitness.dailyQuest}
+              weekDays={fitness.days}
             />
           ) : null}
           {fitness.kickoff ? <KickoffSection kickoff={fitness.kickoff} /> : null}
