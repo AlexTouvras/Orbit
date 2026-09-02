@@ -1,18 +1,18 @@
 ---
 title: "JARVIS (ProjectHelm) — RETIRED"
-summary: "Retired 2026-07-22. Former Plan → Agent → Debug control plane; archaeology diagrams only. OS is now Cursor rules + skills per product repo."
+summary: "Retired 2026-07-22. Former Plan → Agent → Debug control plane; archaeology diagrams only. Operating system is now Cursor rules + skills per product repo."
 projectDir: "JARVIS"
 ---
 
-{/* Source of truth: JARVIS/docs/architecture/ — retired; re-sync with npm run arch:sync-all if diagrams change */}
+{/* AUTO-GENERATED from JARVIS/docs/architecture/ — edit source there, then npm run arch:sync-all */}
 
-> **Retired 2026-07-22.** ProjectHelm is no longer the portfolio foreman. Do not start the CEO loop or OODA autopilot. Work in product repos with Cursor rules + skills. See `JARVIS/RETIRED.md`.
-
-Canonical architecture for **JARVIS** (historical). Linked from the project essay; not listed in Blog.
+Canonical architecture for **JARVIS**. Linked from the project essay; not listed in Blog.
 
 ## Plan → Agent → Debug (CEO loop)
 
-> **RETIRED.** Do not start. Former default path (cockpit / `py -3 -m apps.agents`).
+> **RETIRED 2026-07-22.** Do not start. See `RETIRED.md`. Replaced by Cursor rules + skills in each product repo.
+
+Former default product path (cockpit / `py -3 -m apps.agents`). Entry points now refuse to run.
 
 ```mermaid
 flowchart LR
@@ -20,23 +20,13 @@ flowchart LR
   Agent --> Debug[Debug: test_command / staged verify]
   Debug -->|fail| Agent
   Debug -->|pass| Done[Charter checks / done]
-  Plan --> Brief[executive_briefings.jsonl]
-  Agent --> Brief
-  Debug --> Brief
-  Brief --> Ledger[(events in jarvis.db)]
 ```
 
-| Phase | Intent |
-|-------|--------|
-| Plan | Scoped breakdown + done criteria before edits |
-| Agent | Bounded job for a child agent (not the whole chat) |
-| Debug | Named verification; retry Agent on failure |
-
-State: `io/logs/agent_loop/{project_id}.json`. Briefings: `io/logs/executive_briefings.jsonl`.
+Archaeology only. State was `io/logs/agent_loop/{project_id}.json`.
 
 ## Legacy OODA autopilot
 
-> **Also retired.** Entry points refuse to start. Diagrams below are historical only.
+`perpetual_worker.py` Observe → Orient → Decide → Act remains available for milestone / strategy experiments. It is **not** the CEO default. Prefer Plan → Agent → Debug for product work; do not run both loops as primary drivers on the same project.
 
 ```mermaid
 flowchart TB
@@ -62,6 +52,8 @@ flowchart LR
 ```
 
 Webhook from `SLACK_WEBHOOK_URL` in `.env` or cockpit-saved `io/logs/runtime_secrets.json`. Toggle: `slack_enabled` in `runtime_user_settings.json`.
+
+**Channel:** use a dedicated **`#jarvis`** Incoming Webhook (do not reuse the Orbit `#career-ops` weekly webhook). Create `#jarvis` in Slack, then add a webhook pointed at that channel.
 
 ## ProjectHelm control plane
 

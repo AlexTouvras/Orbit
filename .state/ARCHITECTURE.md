@@ -37,6 +37,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Studio week log is owner-only (`STUDIO_PASSWORD` emergency + GitHub OAuth allowlist + `noindex`). Token chain: `OPS_GITHUB_TOKEN` → `RAVENS_GITHUB_TOKEN` → `GITHUB_TOKEN`. Do not put the week log in public nav. Heimdall embeds inline with `youtube-nocookie` (Technique on fitness lifts; parenting Watch on Ravens); falls back to the watch URL.
 - Brand accent orbit: hex keyframes on unlayered `.orbit-accent` (direct `color` animation) + `@property --orbit-accent` `<color>` for bg/border/mix. Tailwind `neon-cyan` is a **fixed** rest-state cyan (`--accent-cyan`); body links (Case study, Read, nav CTAs) do not ride the loop. Section eyebrows and hero totals do, via `.orbit-accent`. `--orbit-fg-delay` is applied after hydrate (`OrbitSync` layout effect, not a `Date.now()` SSR script) so new mounts join mid-cycle without a hydration mismatch. Avoid `oklch()` in animated tokens (LightningCSS → lab/@supports; Chromium can blank `color: var(...)`). Never animate OKLCH channels via `@property <number>`. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
 - Studio profile save: local always writes `data/profile.json`; Vercel requires `GITHUB_TOKEN` and commits for redeploy. UI must show the real server message (not a blanket "Live site updated").
+- ProjectBrain showcase (2026-09-02): essay `when-the-portfolio-needs-a-memory.mdx` (`featured` + `showcase`); portfolio card + `/architecture/projectbrain` synced from `Memory/docs/architecture/`.
 
 ## Dependencies
 

@@ -3,6 +3,14 @@
   "projectsRoot": "..",
   "projects": [
     {
+      "id": "projectbrain",
+      "dir": "Memory",
+      "title": "ProjectBrain — portfolio intelligence for agents",
+      "summary": "Local SQLite + vectors + graph: ingest charters/decisions, score portfolio health, MCP tools for IDE session handoff, playbooks, and semantic search. Cloud automations stay repo-only.",
+      "category": "AI",
+      "tags": ["MCP", "SQLite", "Agents", "Portfolio"]
+    },
+    {
       "id": "jarvis",
       "dir": "JARVIS",
       "title": "JARVIS (ProjectHelm) — RETIRED",

@@ -35,6 +35,24 @@
     "order": 1
   },
   {
+    "id": "projectbrain",
+    "name": "ProjectBrain",
+    "description": "Portfolio memory for Cursor agents: local SQLite + vectors + graph, MCP session handoff, winner playbooks, risk/momentum scoring. IDE-only; cloud automations stay on repo state.",
+    "status": "shipped",
+    "tags": [
+      "Python",
+      "MCP",
+      "SQLite",
+      "Agents"
+    ],
+    "repoUrl": "https://github.com/AlexTouvras/ProjectBrain",
+    "liveUrl": "/architecture/projectbrain",
+    "caseStudyUrl": "/writes/when-the-portfolio-needs-a-memory",
+    "featured": true,
+    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\Memory",
+    "order": 2
+  },
+  {
     "id": "powerbi-portfolio",
     "name": "Power BI — Nordic Boardroom",
     "description": "Shared report grammar: gold tables → semantic model → Landing / Pulse / Drivers / Queue / Context, then PNG sync into Orbit. Import-shaped demos on purpose; screenshots match the repo.",

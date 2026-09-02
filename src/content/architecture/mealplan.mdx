@@ -36,7 +36,7 @@ Durable facts in YAML on a git repo. Weekly judgment in a Cursor Automation. Kic
 
 ## Weekly pipeline
 
-A Slack message in the configured channel that matches the filter starts the run. The agent checks out the repo, applies message overrides on top of YAML, researches season and store offers when it can, writes the week file, and posts back to Slack.
+A Slack message in the configured channel that matches the filter starts the run. The agent checks out the repo, applies message overrides on top of YAML, researches season and store offers when it can, writes the week file, posts back to Slack, then commits and pushes the plan to `main`.
 
 ```mermaid
 flowchart LR
@@ -47,8 +47,8 @@ flowchart LR
   Cfg --> Judge[LLM: season offers recipes portions]
   Over --> Judge
   Judge --> Out[Weekly plan markdown]
-  Judge --> Slack[Post plan to Slack]
-  Out --> Git[Optional commit]
+  Out --> Slack[Post plan to Slack]
+  Slack --> Git[Commit + push origin/main]
 ```
 
 **Runtime notes**
@@ -56,6 +56,7 @@ flowchart LR
 - Laptop can be off; work runs on Cursor cloud agents
 - Slack *triggers* require a public channel
 - Overrides (week start, include ingredient, goal mode, …) are run-only unless the message asks to save to config
+- After Slack, the week file (`output/YYYY-WNN-plan.md`) is required on `origin/main` — no PR
 - Price totals are planning estimates until confirmed in-store
 - Hard rules in config always win over Slack text
 
@@ -85,6 +86,7 @@ flowchart TB
   durable --> weekly
   weekly --> Artifact[Week plan markdown]
   weekly --> Msg[Slack summary]
+  Artifact --> Git[(Commit + push main)]
 ```
 
 | Concern | Owner | Why |
@@ -118,7 +120,7 @@ flowchart TB
 
 Components:
 
-- **Git repo** — household config, style notes, weekly plan artifacts
-- **Cursor Automation** — Slack message trigger, repo checkout, prompt, Send to Slack
+- **Git repo** — household config, style notes, weekly plan artifacts on `main`
+- **Cursor Automation** — Slack message trigger, repo checkout, prompt, Send to Slack, then commit/push the week file (no PR)
 - **Slack channel** — kickoff + delivery surface
 - **Grocery web** — best-effort offers and prices; not a contractual shelf API

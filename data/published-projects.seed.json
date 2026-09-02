@@ -35,6 +35,24 @@
     "order": 1
   },
   {
+    "id": "projectbrain",
+    "name": "ProjectBrain",
+    "description": "Portfolio memory for Cursor agents: local SQLite + vectors + graph, MCP session handoff, winner playbooks, risk/momentum scoring. IDE-only; cloud automations stay on repo state.",
+    "status": "shipped",
+    "tags": [
+      "Python",
+      "MCP",
+      "SQLite",
+      "Agents"
+    ],
+    "repoUrl": "https://github.com/AlexTouvras/ProjectBrain",
+    "liveUrl": "/architecture/projectbrain",
+    "caseStudyUrl": "/writes/when-the-portfolio-needs-a-memory",
+    "featured": true,
+    "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\Memory",
+    "order": 2
+  },
+  {
     "id": "projecthelm-jarvis",
     "name": "ProjectHelm (JARVIS)",
     "description": "Retired 2026-07-22. Was a local control plane (Plan → Agent → Debug + ledger). Replaced by Cursor rules + skills and per-project kits. Repo kept for archaeology only.",
@@ -49,7 +67,7 @@
     "liveUrl": "/architecture/jarvis",
     "featured": false,
     "sourcePath": "C:\\Users\\kater\\.cursor\\projects\\JARVIS",
-    "order": 2
+    "order": 10
   },
   {
     "id": "powerbi-portfolio",

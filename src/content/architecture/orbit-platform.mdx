@@ -28,7 +28,7 @@ The review agent is the gate. You do not Approve in Slack unless that agent miss
 1. Friday ~15:00 — CI opens a discovery PR (no Slack ping).
 2. Friday 17:00 — content agent may edit the card; leaves the PR open.
 3. Friday 18:00 — **review agent** compares proposed HTML to live, then publishes or keeps the previous card.
-4. Slack gets a short Approved / Declined note. No buttons required.
+4. Slack gets **one laconic FYI per card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
 
 ## Backup
 
@@ -48,7 +48,7 @@ flowchart LR
   Author --> Review[18:00 review agent]
   Review -->|publish| Live[Site copy + Vercel]
   Review -->|keep previous| Stay[Live card unchanged]
-  Review --> Slack["#orbit FYI"]
+  Review --> Slack["#orbit FYI · one post per card"]
 ```
 
 Signing secret must match across content repos + Orbit (`WEEKLY_WRITE_SECRET` / `CRON_SECRET` / `FIELD_CARD_ACTION_SECRET`).
@@ -56,7 +56,7 @@ GitHub token on Orbit must be allowed to read + merge PRs on **all registered** 
 
 ## Field card review (Orbit)
 
-A second Cursor agent is the weekly gate. It does not write the card. It compares the proposed `index.html` to the live one, then **publishes** or **keeps the previous card**. Slack gets a short FYI after the fact. You do not need to Approve.
+A second Cursor agent is the weekly gate. It does not write the card. It compares the proposed `index.html` to the live one, then **publishes** or **keeps the previous card**.
 
 Friday 17:00 local drafts the PR. This agent runs Friday 18:00 local (`0 15 * * 5` UTC).
 
@@ -77,11 +77,31 @@ Friday 17:00 local drafts the PR. This agent runs Friday 18:00 local (`0 15 * * 
 5. Apply — do not merge with `gh pr merge`. Run:
 
 ```bash
-gh workflow run "Apply review" --repo <repo> -f pr_number=<N> -f decision=approve -f note="<one sentence>"
+gh workflow run "Apply review" --repo <repo> -f pr_number=<N> -f decision=approve -f note="<one laconic sentence: what changed or why no-change>"
 ## or decision=decline
 ```
 
-6. Stop. Orbit merges or closes, copies HTML if approved, and posts the note to #orbit.
+6. **One Slack post per card** (never a multi-card dump). Prefer Orbit's FYI from Apply review. Only post yourself when Apply review failed or Orbit did not notify.
+
+### Laconic #orbit FYI (identical shape for all three cards)
+
+```
+*<Card label>*
+Review: published | kept previous | blocked
+Considered: <short list or “none earned entry”>
+Changed: <one line — what entered / stamp-only / why declined>
+Online: yes · <detail>   OR   no · previous still live
+[Check card]   ← button to live site URL (or Open PR when blocked)
+```
+
+Rules for that post:
+- One card = one message. Same fields every time (always include Considered).
+- Keep each line short. No bullet walls. No discovery stats dumps.
+- `Considered` = what you weighed for the picker/table. `Changed` = what actually shipped (or why not).
+- `Online: yes` only when the newest reviewed version is (or is about to be) the live site card.
+- Button is a real Slack **actions** button labeled **Check card** (or **Open PR** when blocked).
+
+Backup gate (review agent missed) uses the same laconic body shape with three Block Kit buttons: **Open the new card** · **Approve** · **Decline**.
 
 If a card has no open weekly PR, skip it. Do not open a new PR. Do not edit HTML.
 
@@ -156,18 +176,45 @@ flowchart TB
 
 ## Studio week log (private)
 
-Owner-only board of this ISO week’s personal-ops outputs. Not in public nav. Auth is the existing Studio session.
+Owner-only week hub of personal-ops outputs. Not in public nav. Auth is Studio session (GitHub allowlist primary; password emergency; optional `STUDIO_DEV_OPEN` on localhost).
 
 ```mermaid
 flowchart TB
   You[You] --> Login["/studio/login"]
-  Login --> Week["/studio/week"]
-  Week --> Fitness["fitness-coach data/plans"]
-  Week --> Meals["mealplan-private output/Wnn-plan.md"]
-  Week --> Ravens["ravens knowledge/signals/inbox"]
-  Week --> Digest["Orbit newsletter-draft.json"]
-  Week --> Career["careerops-private daily-digest + weekly-scan"]
+  Login --> Hub["/studio/week"]
+  Hub --> Fitness["/studio/week/fitness"]
+  Hub --> Meals["/studio/week/meals"]
+  Hub --> Ravens["/studio/week/ravens"]
+  Hub --> Newsletter["/studio/week/newsletter"]
+  Hub --> Career["/studio/week/careerops"]
+  Fitness --> Plan["fitness-coach data/plans"]
+  Fitness --> Technique["Heimdall watch/fitness"]
+  Meals --> MealSrc["mealplan-private output"]
+  Ravens --> RavenSrc["ravens knowledge/signals"]
+  Ravens --> ParentWatch["Heimdall watch/parenting"]
+  Newsletter --> Digest["Orbit newsletter-draft.json"]
+  Career --> CareerSrc["careerops-private digest/scan"]
 ```
+
+## Routes
+
+| Path | Purpose |
+|------|---------|
+| `/studio/week` | Hub with status chips |
+| `/studio/week/fitness` | Plan + **Technique** expands on matching lifts |
+| `/studio/week/meals` | Meal plan |
+| `/studio/week/ravens` | Findings + stage-matched parenting **Watch** |
+| `/studio/week/newsletter` | Digest draft |
+| `/studio/week/careerops` | Scan / apply queues |
+
+Heimdall is not a separate topic. Clips attach inline via `HeimdallEmbed` when `ravens/watch/{domain}/{slug}.md` matches.
+
+## Auth
+
+- Primary: GitHub OAuth (`GITHUB_CLIENT_ID` / `GITHUB_CLIENT_SECRET`), allowlist `STUDIO_GITHUB_ALLOWLIST`.
+- Session cookie `orbit_studio`: 90-day TTL, sliding refresh via `/api/studio/session`.
+- Emergency password: `STUDIO_PASSWORD` (collapsed on login).
+- Local review: `STUDIO_DEV_OPEN=1` skips the login gate in development only.
 
 ## Weekly blog draft pipeline
 
