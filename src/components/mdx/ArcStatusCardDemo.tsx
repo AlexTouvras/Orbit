@@ -1,0 +1,99 @@
+import { ArcStatusCard } from "@/components/studio/week/ArcStatusCard";
+import type { ArcNarrativeView, DailyQuestView } from "@/lib/week-log/types";
+
+/** Frozen snapshot from fitness-coach `data/plans/2026-W36.json` (sharpen week). */
+const DEMO_NARRATIVE: ArcNarrativeView = {
+  mode: "arc",
+  arcPhase: "sharpen",
+  gate: {
+    rank: "C",
+    score: 51,
+    phaseCeiling: "B",
+    readinessLock: null,
+    rankHint:
+      "Capable — composite 50–62. Solid block execution. Sharpen phase caps rank at B until race week.",
+    scoreHint:
+      "Weighted blend of STR, AGI, VIT, and PER for this 5K block: AGI 45%, VIT 25%, STR 20%, PER 10%. Rounded 0–100 before rank bands.",
+  },
+  stats: {
+    str: {
+      display: 48,
+      valueLabel: "CTL 0.7",
+      hint: "Strength from session-RPE logs (7-day EWMA). Higher = more consistent heavy lifting this block.",
+      source: "strength_ctl",
+      raw: { strength_ctl: 0.71, lift_week: 8, sessions_7d: 1 },
+    },
+    agi: {
+      display: 44,
+      valueLabel: "VO₂ 50.0",
+      hint: "Agility from Garmin/Intervals VO₂max when synced; otherwise run CTL. Level is absolute fitness, not weekly delta.",
+      source: "vo2max",
+      raw: { ctl: 14.18, vo2max: 50.0, vo2max_delta_30d: 0.0 },
+    },
+    vit: {
+      display: 68,
+      valueLabel: "TSB +11",
+      hint: "Vitality from TSB, HRV vs your baseline, sleep, and form zone. Drops when fatigued or under-recovered.",
+      source: "composite",
+      raw: { tsb: 11.36, hrv: null, form_zone: "fresh" },
+    },
+    per: {
+      display: 42,
+      valueLabel: "24.1% BF",
+      hint: "Persistence from body composition (body-fat %). Lower BF raises PER; not a 'perfect body' score.",
+      source: "bodycomp",
+      raw: { body_fat_pct: 24.1, weight_delta_14d_kg: -1.04 },
+    },
+  },
+  deltas: {
+    vo2max_30d: 0.0,
+    weight_14d_kg: -1.04,
+  },
+  boss: null,
+  warriorQuote: {
+    text: "Perceive that which cannot be seen with the eye.",
+    source: "Miyamoto Musashi",
+  },
+};
+
+const DEMO_QUEST: DailyQuestView = {
+  enabled: true,
+  cadence: "weekly",
+  title: "Grease-the-groove weekly quest",
+  deadline: "2026-09-06",
+  deadlineLabel: "Sunday 06 Sep, end of day",
+  logHint: "Slack: log: quest push-ups 20 (repeat any day; counts toward this week)",
+  targets: {
+    push_ups: { limit: 108, label: "Push-ups" },
+    sit_ups: { limit: 108, label: "Sit-ups" },
+    pull_ups: { limit: 27, label: "Pull-ups" },
+    bar_hang_sec: { limit: 324, label: "Bar hang (sec)" },
+  },
+  progress: {
+    push_ups: 50,
+    sit_ups: 0,
+    pull_ups: 34,
+    bar_hang_sec: 110,
+  },
+  rules:
+    "Sub-max reps spread Mon–Sun. Bank progress in Slack; deadline is end of Sunday.",
+};
+
+export function ArcStatusCardDemo() {
+  return (
+    <figure className="my-8 not-prose">
+      <ArcStatusCard narrative={DEMO_NARRATIVE} dailyQuest={DEMO_QUEST} />
+      <figcaption className="mt-3 text-center text-xs text-slate-500">
+        Live component — snapshot from{" "}
+        <code className="rounded bg-white/10 px-1 py-0.5 font-mono text-slate-400">
+          data/plans/2026-W36.json
+        </code>{" "}
+        (sharpen week). Same card Studio renders at{" "}
+        <code className="rounded bg-white/10 px-1 py-0.5 font-mono text-slate-400">
+          /studio/week/fitness
+        </code>
+        .
+      </figcaption>
+    </figure>
+  );
+}

@@ -2,6 +2,7 @@ import type { MDXComponents } from "mdx/types";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { isValidElement } from "react";
+import { ArcStatusCardDemo } from "@/components/mdx/ArcStatusCardDemo";
 import { MermaidDiagram } from "@/components/mdx/MermaidDiagram";
 
 function extractMermaidSource(children: ReactNode): string | null {
@@ -81,4 +82,22 @@ export const mdxComponents: MDXComponents = {
     <MermaidDiagram chart={chart ?? String(children ?? "")} />
   ),
   hr: () => <hr className="my-8 border-white/10" />,
+  table: (props) => (
+    <div className="my-6 overflow-x-auto rounded-xl border border-white/10">
+      <table className="w-full min-w-[28rem] border-collapse text-sm" {...props} />
+    </div>
+  ),
+  thead: (props) => <thead className="bg-white/[0.04]" {...props} />,
+  tbody: (props) => <tbody {...props} />,
+  tr: (props) => <tr className="border-b border-white/10 last:border-0" {...props} />,
+  th: (props) => (
+    <th
+      className="px-4 py-2.5 text-left font-semibold text-white first:rounded-tl-xl last:rounded-tr-xl"
+      {...props}
+    />
+  ),
+  td: (props) => (
+    <td className="px-4 py-2.5 align-top leading-relaxed text-slate-300" {...props} />
+  ),
+  ArcStatusCardDemo,
 };

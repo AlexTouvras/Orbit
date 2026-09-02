@@ -26,22 +26,11 @@ The skin is playful. The plumbing is still [`athlete_state.py`](https://github.c
 
 ## The card: what you actually see
 
-Picture a violet-bordered panel at the top of the week (Studio week log renders it as `ArcStatusCard`; Slack gets the theme line and signals).
+This is the real component — not a screenshot. Hover gate rank, score, or any stat tile for the hints the live UI shows.
 
-On the left: my pixel avatar and the word **Warrior**, which is slightly embarrassing and therefore correct.
+<ArcStatusCardDemo />
 
-Center top: **Arc Mode · Gate C · score 51** (real numbers from sharpening week 2026-W36). Hover the rank and it explains the band: composite 50–62, solid block execution, phase ceiling B until race week closes in. Hover the score and you get the weights: AGI 45%, VIT 25%, STR 20%, PER 10%.
-
-Four stat tiles underneath:
-
-| Stat | What it is | That week |
-| --- | --- | --- |
-| **STR** | Session-RPE EWMA from Slack lift logs | 48 — strength CTL 0.7 (I had logged one lift; the stat knows) |
-| **AGI** | Garmin VO₂max when present, else run CTL | 44 — VO₂ 50.0 |
-| **VIT** | TSB, HRV vs baseline, sleep score/duration, form zone | 68 — TSB +11, form **fresh** |
-| **PER** | Body-fat % from the scale; direction matters | 42 — 24.1% BF, 14d weight −1.04 kg |
-
-Below that: a Musashi quote hashed from the ISO week id (deterministic, not random vibes). Then **Weekly quest** progress bars — push-ups 50/108, pull-ups already past the ceiling at 34/27 because I bank reps in Slack with `log: quest pull-ups 10`.
+**STR** reads session-RPE from Slack lift logs (48 here because I'd only logged one lift). **AGI** prefers Garmin VO₂max, else run CTL. **VIT** blends TSB, HRV, and sleep. **PER** tracks body-fat direction from the scale. The Musashi line is hashed from the ISO week id, not random. Quest bars bank from `log: quest pull-ups 10` in Slack — note pull-ups already past the ceiling at 34/27.
 
 Each training day gets a narrative skin on the prescription: Monday **Patrol**, Tuesday **STR forge**, Wednesday **Gate break**, Friday **Recovery march**. Same workout syntax pushed to Garmin; different border color in the UI. Ego responds to "gate break" more than it responds to "strides."
 
