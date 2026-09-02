@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArcStatusCard, arcDayAccent } from "@/components/studio/week/ArcStatusCard";
 import { HeimdallEmbed } from "@/components/studio/week/HeimdallEmbed";
 import { Lane } from "@/components/studio/week/Lane";
 import {
@@ -144,6 +145,12 @@ export function FitnessPanel({
               {fitness.raceContext}
             </p>
           ) : null}
+          {fitness.narrative ? (
+            <ArcStatusCard
+              narrative={fitness.narrative}
+              dailyQuest={fitness.dailyQuest}
+            />
+          ) : null}
           {fitness.kickoff ? <KickoffSection kickoff={fitness.kickoff} /> : null}
           <ol className="space-y-5">
             {fitness.days.map((day) => (
@@ -156,10 +163,21 @@ export function FitnessPanel({
                 ) : (
                   <ul className="mt-2 space-y-3">
                     {day.sessions.map((session) => (
-                      <li key={`${day.date}-${session.title}`}>
+                      <li
+                        key={`${day.date}-${session.title}`}
+                        className={`border-l-2 pl-3 ${arcDayAccent(session.arcIcon)}`}
+                      >
                         <p className="text-sm font-medium text-white">
-                          {session.title}
+                          {session.arcTitle ?? session.title}
                         </p>
+                        {session.arcTitle && session.arcTitle !== session.title ? (
+                          <p className="text-xs text-slate-500">{session.title}</p>
+                        ) : null}
+                        {session.arcFlavor ? (
+                          <p className="mt-0.5 text-xs italic text-violet-300/80">
+                            {session.arcFlavor}
+                          </p>
+                        ) : null}
                         {session.prescription ? (
                           <p className="mt-1 text-sm leading-relaxed text-slate-300">
                             {session.prescription}

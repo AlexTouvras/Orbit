@@ -29,6 +29,7 @@
 ## Next
 
 - [x] Newsletter primary path = GHA Tuesday schedule (Vercel backup)
+- [x] Draft featured Write: fitness coach Arc Mode (`when-the-coach-got-gate-ranks`)
 - [ ] Owner: deploy weekly Write Approve tap-target fix (preview bottom bar + Slack buttons) before next Monday notify
 - [ ] Owner: after happy with the shorter test mail, verify domain + unset `RESEND_NEWSLETTER_TEST_TO` for audience go-live
 - [ ] Owner: review `/studio/week`; set `OPS_GITHUB_TOKEN` (Contents: Read on fitness-coach, mealplan-private, careerops-private, ravens) on Vercel + `.env.local`; confirm Heimdall embeds behave well enough vs plain links
@@ -42,6 +43,8 @@
 - [x] Section eyebrows all orbit; cycle stays in phase across pages
 - [x] Human review: fitness coach Write rewrite (why / science / weekly gen / life) + portfolio card
 - [x] Commit/push fitness coach Write + portfolio seed when owner asks
+- [x] Fitness-coach architecture page (`/architecture/fitness-coach`) + research bibliography in repo
+- [x] Fitness-coach essay production polish + table→bullet render fix
 - [x] Optional browser check: `/portfolio` Case study links + `/writes/nordic-equity-heatmap` — skipped 2026-08-13
 - [x] Persist essay feedback by slug and notify `#orbit` on new notes
 - [x] Route weekly Write Slack draft/approve/skip to `#orbit`

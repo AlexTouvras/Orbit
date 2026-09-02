@@ -27,6 +27,9 @@ export interface FitnessSession {
   prescription: string;
   durationMin: number | null;
   lifts: FitnessLift[];
+  arcTitle?: string | null;
+  arcFlavor?: string | null;
+  arcIcon?: string | null;
 }
 
 export interface FitnessDay {
@@ -49,6 +52,58 @@ export interface FitnessKickoff {
   spotifyStrengthUrl: string | null;
 }
 
+export interface ArcStatView {
+  display: number;
+  valueLabel?: string;
+  hint?: string;
+  source: string;
+  raw: Record<string, unknown>;
+}
+
+export interface WarriorQuoteView {
+  text: string;
+  source: string;
+}
+
+export interface ArcGateView {
+  rank: string;
+  score: number;
+  phaseCeiling: string;
+  readinessLock: string | null;
+  rankHint?: string;
+  scoreHint?: string;
+}
+
+export interface ArcNarrativeView {
+  mode: string;
+  arcPhase: string;
+  gate: ArcGateView;
+  stats: Record<string, ArcStatView>;
+  deltas: Record<string, unknown>;
+  boss: Record<string, unknown> | null;
+  warriorQuote?: WarriorQuoteView | null;
+}
+
+export interface DailyQuestTarget {
+  limit?: number;
+  label?: string;
+  /** @deprecated legacy daily floor/ceiling */
+  floor?: number;
+  ceiling?: number;
+}
+
+export interface DailyQuestView {
+  enabled: boolean;
+  cadence?: string;
+  title?: string;
+  deadline?: string;
+  deadlineLabel?: string;
+  logHint?: string;
+  targets: Record<string, DailyQuestTarget>;
+  progress?: Record<string, number>;
+  rules: string;
+}
+
 export interface FitnessWeek {
   weekId: string;
   generatedAt: string | null;
@@ -58,19 +113,8 @@ export interface FitnessWeek {
   kickoff: FitnessKickoff | null;
   coachNotes: string[];
   days: FitnessDay[];
-}
-
-export interface FitnessKickoff {
-  quoteText: string | null;
-  quoteAttribution: string | null;
-  motivateSlug: string | null;
-  motivateTitle: string | null;
-  motivateUrl: string | null;
-  motivateChannel: string | null;
-  spotifyRunningName: string | null;
-  spotifyRunningUrl: string | null;
-  spotifyStrengthName: string | null;
-  spotifyStrengthUrl: string | null;
+  narrative: ArcNarrativeView | null;
+  dailyQuest: DailyQuestView | null;
 }
 
 export interface MealDay {

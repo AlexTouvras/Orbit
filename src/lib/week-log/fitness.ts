@@ -7,6 +7,8 @@ import {
 } from "@/lib/week-log/github";
 import { listLocalDir, readLocalFile, siblingRoot } from "@/lib/week-log/local";
 import type {
+  ArcNarrativeView,
+  DailyQuestView,
   FitnessDay,
   FitnessKickoff,
   FitnessLift,
@@ -66,7 +68,100 @@ function parseSession(raw: unknown): FitnessSession | null {
     prescription: asString(row.prescription),
     durationMin: asNumber(row.duration_min),
     lifts,
+    arcTitle: asString(row.arc_title) || null,
+    arcFlavor: asString(row.arc_flavor) || null,
+    arcIcon: asString(row.arc_icon) || null,
   };
+}
+
+function parseNarrative(raw: unknown): ArcNarrativeView | null {
+  if (!raw || typeof raw !== "object") return null;
+  const row = raw as Record<string, unknown>;
+  const gateRaw = row.gate;
+  if (!gateRaw || typeof gateRaw !== "object") return null;
+  const gate = gateRaw as Record<string, unknown>;
+  const statsRaw = row.stats;
+  const stats: ArcNarrativeView["stats"] = {};
+  if (statsRaw && typeof statsRaw === "object") {
+    for (const [key, val] of Object.entries(statsRaw)) {
+      if (!val || typeof val !== "object") continue;
+      const s = val as Record<string, unknown>;
+      const display = asNumber(s.display);
+      if (display === null) continue;
+      stats[key] = {
+        display,
+        valueLabel: asString(s.value_label) || undefined,
+        hint: asString(s.hint) || undefined,
+        source: asString(s.source),
+        raw: (s.raw as Record<string, unknown>) || {},
+      };
+    }
+  }
+  return {
+    mode: asString(row.mode) || "arc",
+    arcPhase: asString(row.arc_phase) || "",
+    gate: {
+      rank: asString(gate.rank) || "?",
+      score: asNumber(gate.score) ?? 0,
+      phaseCeiling: asString(gate.phase_ceiling) || "",
+      readinessLock: asString(gate.readiness_lock) || null,
+      rankHint: asString(gate.rank_hint) || undefined,
+      scoreHint: asString(gate.score_hint) || undefined,
+    },
+    stats,
+    deltas: (row.deltas as Record<string, unknown>) || {},
+    boss: (row.boss as Record<string, unknown>) || null,
+    warriorQuote: parseWarriorQuote(row.warrior_quote),
+  };
+}
+
+function parseWarriorQuote(raw: unknown): ArcNarrativeView["warriorQuote"] {
+  if (!raw || typeof raw !== "object") return null;
+  const row = raw as Record<string, unknown>;
+  const text = asString(row.text);
+  if (!text) return null;
+  return { text, source: asString(row.source) || "Way of the warrior" };
+}
+
+function parseDailyQuest(raw: unknown): DailyQuestView | null {
+  if (!raw || typeof raw !== "object") return null;
+  const row = raw as Record<string, unknown>;
+  const targetsRaw = row.targets;
+  if (!targetsRaw || typeof targetsRaw !== "object") return null;
+  const targets: DailyQuestView["targets"] = {};
+  for (const [key, val] of Object.entries(targetsRaw)) {
+    if (!val || typeof val !== "object") continue;
+    const t = val as Record<string, unknown>;
+    const limit = asNumber(t.limit);
+    const floor = asNumber(t.floor);
+    const ceiling = asNumber(t.ceiling);
+    if (limit !== null) {
+      targets[key] = { limit, label: asString(t.label) || undefined };
+    } else if (floor !== null && ceiling !== null) {
+      targets[key] = { floor, ceiling, label: asString(t.label) || undefined };
+    }
+  }
+  return {
+    enabled: Boolean(row.enabled),
+    cadence: asString(row.cadence) || undefined,
+    title: asString(row.title) || undefined,
+    deadline: asString(row.deadline) || undefined,
+    deadlineLabel: asString(row.deadline_label) || undefined,
+    logHint: asString(row.log_hint) || undefined,
+    targets,
+    progress: parseQuestProgress(row.progress),
+    rules: asString(row.rules),
+  };
+}
+
+function parseQuestProgress(raw: unknown): Record<string, number> | undefined {
+  if (!raw || typeof raw !== "object") return undefined;
+  const out: Record<string, number> = {};
+  for (const [key, val] of Object.entries(raw as Record<string, unknown>)) {
+    const n = asNumber(val);
+    if (n !== null) out[key] = n;
+  }
+  return Object.keys(out).length > 0 ? out : undefined;
 }
 
 function parseDay(raw: unknown): FitnessDay | null {
@@ -125,16 +220,29 @@ function parsePlan(text: string, fallbackWeekId: string): FitnessWeek | null {
       kickoff: parseKickoff(parsed.kickoff),
       coachNotes,
       days,
+      narrative: parseNarrative(parsed.narrative),
+      dailyQuest: parseDailyQuest(parsed.daily_quest),
     };
   } catch {
     return null;
   }
 }
 
+function preferLocalSibling(): boolean {
+  return (
+    process.env.NODE_ENV === "development" ||
+    process.env.STUDIO_DEV_OPEN?.trim() === "1"
+  );
+}
+
 async function readPlanText(
   weekId: string,
 ): Promise<{ text: string; via: "github" | "local"; path: string } | null> {
   const filePath = `data/plans/${weekId}.json`;
+  if (preferLocalSibling()) {
+    const local = readLocalFile(siblingRoot("fitness"), filePath);
+    if (local) return { text: local, via: "local", path: filePath };
+  }
   const token = opsGithubToken();
   const repo = fitnessRepo();
   if (token && repo) {

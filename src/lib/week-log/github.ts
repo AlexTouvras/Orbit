@@ -45,13 +45,23 @@ async function githubJson<T>(
   url: string,
   token: string,
 ): Promise<{ ok: true; data: T } | { ok: false; status: number }> {
-  const res = await fetch(url, {
-    headers: githubHeaders(token),
-    cache: "no-store",
-    signal: AbortSignal.timeout(15_000),
-  });
-  if (!res.ok) return { ok: false, status: res.status };
-  return { ok: true, data: (await res.json()) as T };
+  const timeoutMs =
+    process.env.NODE_ENV === "development" ? 3_000 : 15_000;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, {
+      headers: githubHeaders(token),
+      cache: "no-store",
+      signal: controller.signal,
+    });
+    if (!res.ok) return { ok: false, status: res.status };
+    return { ok: true, data: (await res.json()) as T };
+  } catch {
+    return { ok: false, status: 0 };
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 function decodeBase64(content: string): string {

@@ -153,6 +153,18 @@ function parentingWindows(stageReadme: string): Set<string> {
 type DirEntry = { name: string; path: string; type: string };
 
 async function listWatch(dirPath: string): Promise<DirEntry[]> {
+  const local = listLocalDir(siblingRoot("ravens"), dirPath);
+  if (
+    local &&
+    (process.env.NODE_ENV === "development" ||
+      process.env.STUDIO_DEV_OPEN?.trim() === "1")
+  ) {
+    return local.map((entry) => ({
+      name: entry.name,
+      path: entry.path,
+      type: entry.type,
+    }));
+  }
   const token = opsGithubToken();
   const repo = ravensRepo();
   const files: DirEntry[] = [];
@@ -160,7 +172,6 @@ async function listWatch(dirPath: string): Promise<DirEntry[]> {
     const remote = await listGithubDir(repo, dirPath, token);
     if (remote.ok) files.push(...remote.entries);
   }
-  const local = listLocalDir(siblingRoot("ravens"), dirPath);
   if (local) {
     for (const entry of local) {
       if (!files.some((file) => file.path === entry.path)) files.push(entry);
@@ -170,6 +181,13 @@ async function listWatch(dirPath: string): Promise<DirEntry[]> {
 }
 
 async function readWatch(filePath: string): Promise<string | null> {
+  if (
+    process.env.NODE_ENV === "development" ||
+    process.env.STUDIO_DEV_OPEN?.trim() === "1"
+  ) {
+    const local = readLocalFile(siblingRoot("ravens"), filePath);
+    if (local) return local;
+  }
   const token = opsGithubToken();
   const repo = ravensRepo();
   if (token && repo) {
@@ -186,6 +204,16 @@ export async function loadHeimdallWeek(
     listWatch("watch/fitness"),
     listWatch("watch/parenting"),
     (async () => {
+      if (
+        process.env.NODE_ENV === "development" ||
+        process.env.STUDIO_DEV_OPEN?.trim() === "1"
+      ) {
+        const local = readLocalFile(
+          siblingRoot("ravens"),
+          "knowledge/parenting/README.md",
+        );
+        if (local) return local;
+      }
       const token = opsGithubToken();
       const repo = ravensRepo();
       if (token && repo) {

@@ -18,7 +18,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Newsletter digest draft | `data/newsletter-draft.json` | Titles/links only. Gitignored locally; persist send status via GitHub |
 | Newsletter subscribers | Resend Audience, or `RESEND_NEWSLETTER_TEST_TO` | Emails never in git. Test-to skips the audience entirely |
 | Ravens findings | GitHub Contents on `AlexTouvras/ravens` | Weekly highlights: one item per domain that moved (inbox first). `RAVENS_GITHUB_TOKEN` |
-| Week log | `/studio/week` (+ `/2026-W36/fitness` etc. for other ISO weeks; legacy `?week=` redirects) via `src/lib/week-log/` | ISO week hub. Heimdall embeds inline (Technique on lifts, Watch on Ravens parenting). Auth: GitHub allowlist + 90d sliding session; password fallback; `STUDIO_DEV_OPEN` locally |
+| Week log | `/studio/week` (+ `/2026-W36/fitness` etc. for other ISO weeks; legacy `?week=` redirects) via `src/lib/week-log/` | ISO week hub. Fitness lane renders `ArcStatusCard` from plan `narrative` + `daily_quest` (fitness-coach repo). Heimdall embeds inline (Technique on lifts, Watch on Ravens parenting). Auth: GitHub allowlist + 90d sliding session; password fallback; `STUDIO_DEV_OPEN` locally |
 | Fleet registry | `docs/ops/fleet.yaml` | Daily unattended-job checks for `#ops-channel`; cloud evidence is GitHub + Slack only |
 
 ## Design patterns
@@ -87,7 +87,7 @@ src/components/studio/week/  # Topic panels + HeimdallEmbed
 |------|----------|-----------|
 | 2026-08-29 | Newsletter is email-only — no Slack digest FYI | Owner: do not post newsletter contents to Slack |
 | 2026-08-29 | Newsletter primary = GHA Tue 07:15 UTC; Vercel cron Tue 08:00 backup | Vercel-only path produced zero Resend sends after 2026-08-18; GHA catch-up worked |
-| 2026-08-29 | Field-card post-review #orbit FYI: one laconic post per card (Review / Considered / Changed / Online + Check card button); same shape for all three | Multi-card dumps and long What-changed walls were hard to scan |
+| 2026-08-31 | Fleet ops field-card check: skip open `chore/weekly-refresh-*` when same repo already merged that ISO week | Delivery W35 had PR #3 live + orphaned discovery PR #4; daily check kept paging #ops-channel |
 | 2026-08-29 | Weekly Write Approve: hard-gate Slack notify until draft verified on GitHub default branch + NEXT_PUBLIC_SITE_URL set; link origin never defaults to localhost | Preview/Approve opened dead hosts or "Draft not found" — gitignored draft is not on Vercel FS; Slack links signed as localhost when notify ran locally |
 | 2026-08-17 | Digest Ravens = one highlight per domain this week | Test email was a vault dump; owner asked for weekly highlights only |
 | 2026-08-17 | Private week log at `/studio/week` behind Studio session, not a secret URL | Reuse existing password + noindex; lanes read git artifacts including CareerOps daily-digest / weekly-scan |
