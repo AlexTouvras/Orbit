@@ -1,7 +1,97 @@
 {
-  "generatedAt": "2026-09-02T10:29:29.817Z",
+  "generatedAt": "2026-09-03T06:46:57.587Z",
   "count": 218,
   "items": [
+    {
+      "id": "96c74a92e873",
+      "title": "Southern Company’s SCOUT: Completing the Storm Intelligence Story",
+      "link": "https://www.databricks.com/blog/southern-companys-scout-completing-storm-intelligence-story",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-02T23:20:00.000Z",
+      "contentSnippet": "Completing the storm intelligence storyIn an earlier post, we explored how Southern..."
+    },
+    {
+      "id": "6ccaaf4161a3",
+      "title": "Bliki: Paracelsus Maxim",
+      "link": "https://martinfowler.com/bliki/ParacelsusMaxim.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-02T22:03:00.000Z",
+      "contentSnippet": "The difference between a medicine and a poison is dosage. Often we talk about certain habits, in programming or life, are good or bad. But few things are simple binaries. Some vary with context: reading a book is a good thing sitting in my garden, but not while driving my car. Bu…"
+    },
+    {
+      "id": "7543d7ccc575",
+      "title": "Expanding Genie Agents: Deep analysis, file reasoning, and more",
+      "link": "https://www.databricks.com/blog/expanding-genie-agents-deep-analysis-file-reasoning-and-more",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-02T19:30:00.000Z",
+      "contentSnippet": "At Data and AI Summit, we announced the evolution of Genie Spaces to Genie Agents,..."
+    },
+    {
+      "id": "7f3a165e271d",
+      "title": "Teach Claude Your Power BI Standards, Custom Skills for the Power BI Modeling MCP Server",
+      "link": "https://radacad.com/teach-claude-your-power-bi-standards-custom-skills-for-the-power-bi-modeling-mcp-server/?utm_source=rss&utm_medium=rss&utm_campaign=teach-claude-your-power-bi-standards-custom-skills-for-the-power-bi-modeling-mcp-server",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-09-02T18:57:23.000Z",
+      "contentSnippet": "Can you teach Claude, or any LLM, to follow your standards and your guidelines, so that when it connects to a Power BI model, when it wants to build a semantic model or a report, it does it exactly as you do, following all the instructions that you would normally provide? Yes, it…"
+    },
+    {
+      "id": "74b078f217f5",
+      "title": "Fostering Agency in Daily Leadership",
+      "link": "https://blog.crisp.se/2026/09/02/tomasbjorkholm/fostering-agency-in-daily-leadership",
+      "source": "Crisp Blog",
+      "category": "Delivery",
+      "pubDate": "2026-09-02T16:32:57.000Z",
+      "contentSnippet": "This is the third and final part of the series on agency. Part one explained what agency actually is, and part two looked at what a lack of agency looks like in practice. This part could almost be short. Most of it is already captured in the fifth principle of the Agile Manifesto…"
+    },
+    {
+      "id": "8182327ec6e3",
+      "title": "An Accidental Blackboard",
+      "link": "https://martinfowler.com/articles/exploring-gen-ai/an-accidental-blackboard.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-02T14:45:00.000Z",
+      "contentSnippet": "Giles Edwards-Alexander reports that during an experiment to see how productive a team could be using fully agentic engineering practices, the team accidentally prompted the agents into creating a blackboard coordination system inside the git repository. more…"
+    },
+    {
+      "id": "bbaa7e92c7f7",
+      "title": "Claude's new system prompt really doesn't want to reproduce song lyrics",
+      "link": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-02T14:16:42.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "0ae88a845983",
+      "title": "Maybe We Shouldn't Be Reviewing All This Code",
+      "link": "https://martinfowler.com/rachels-ramblings/code-review.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-02T13:32:00.000Z",
+      "contentSnippet": "TL;DR Or, perhaps the problem isn't that AI has broken code review, maybe it’s that we've been using code review to solve the wrong problems I was on a panel recently with Brian Houck from DX at Code Remix, hosted by Moderne. It was one of the more interesting panels I’ve done, l…"
+    },
+    {
+      "id": "e261a8057905",
+      "title": "Matrix Totals – The Whiteboard #13",
+      "link": "https://www.sqlbi.com/tv/matrix-totals-the-whiteboard-13/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-09-02T12:44:43.000Z",
+      "contentSnippet": "Let’s talk about matrix totals in this episode of The Whiteboard! Special guest: the SQLBI Whiteboard! Learn abstract DAX concepts in a more interactive way with “The Whiteboard” series. Read more: https://www.sqlbi.com/blog/marco/2022/07/14/the-whiteboard-video-series-on-sqlbi-y…"
+    },
+    {
+      "id": "b07b0b2b4d66",
+      "title": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT",
+      "link": "https://openai.com/index/atv-big-air-tour",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-02T12:00:00.000Z",
+      "contentSnippet": "ATV Big Air Tour uses ChatGPT Work to speed up marketing, merchandising, and more. It even turned merchandise photos into an inventory website in 15 minutes."
+    },
     {
       "id": "1f70dd38b3b3",
       "title": "Announcing the Databricks Big Book of AgentOps",
@@ -10,6 +100,33 @@
       "category": "Data",
       "pubDate": "2026-09-02T01:30:00.000Z",
       "contentSnippet": "What is AgentOps?AgentOps is the operating discipline for building, deploying and..."
+    },
+    {
+      "id": "7163d24d0de2",
+      "title": "Try DuckDB v2.0-alpha",
+      "link": "https://duckdb.org/2026/09/02/try-duckdb-20-alpha.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-09-02T00:00:00.000Z",
+      "contentSnippet": "The State of DuckDB v2.0 A few weeks ago, we published a preview of DuckDB v2.0. Today, we branched off v2.0-cyanoptera from the main development branch in the duckdb/duckdb repository. This marks a feature freeze – in the coming weeks, development work will focus on testing, bug…"
+    },
+    {
+      "id": "0a35ea3a6965",
+      "title": "Context, Semantics, and Ontology: A Primer for the Agentic Era",
+      "link": "https://motherduck.com/blog/context-layer-vs-semantic-layer-ontology",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-09-02T00:00:00.000Z",
+      "contentSnippet": "A primer on the context layer, semantic layer, and ontology: what each term means, how they fit together, and why AI agents still need a human to decide what's true."
+    },
+    {
+      "id": "a84f87603a32",
+      "title": "Agents Don’t Query Like Humans Do",
+      "link": "https://motherduck.com/blog/agents-dont-query-like-humans-do",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-09-02T00:00:00.000Z",
+      "contentSnippet": "We analyzed a slice of MotherDuck query history and found agents ran 29 times more queries than humans last month, a gap that has roughly doubled every month. The average organization now has twice as many agents as human users. Agents are the dominant consumers of the data platf…"
     },
     {
       "id": "ab12481175ff",
@@ -22,7 +139,7 @@
     },
     {
       "id": "0da1f02d5474",
-      "title": "Everything was green. Then it wasn't.",
+      "title": "Everything Was Green. Then it Wasn't.",
       "link": "https://www.scrum.org/resources/blog/everything-was-green-then-it-wasnt",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -264,24 +381,6 @@
       "contentSnippet": "Image Two candidates, same question, same afternoon. What is the job of a product person? The first says it is owning the backlog and keeping the team supplied with clear, ready work. The second says it is working out which problem is worth solving, then finding a solution custom…"
     },
     {
-      "id": "8c503268e989",
-      "title": "What is an AI Copilot?",
-      "link": "https://www.databricks.com/blog/ai-copilot",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-28T22:22:15.000Z",
-      "contentSnippet": "An AI copilot is an AI assistant embedded directly in a software application. It..."
-    },
-    {
-      "id": "ad53b50abd4f",
-      "title": "Beyond answers: New Genie One features to turn insights into action",
-      "link": "https://www.databricks.com/blog/beyond-answers-new-genie-one-features-turn-insights-action",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-08-28T21:00:00.000Z",
-      "contentSnippet": "We all know the pattern: you ask an AI tool a question and get an answer in seconds,..."
-    },
-    {
       "id": "3de08a17cfd8",
       "title": "Fabric Apps & Rayfin Deep Dive: A Conversation with Sachin Patney | Fabric Insider Ep. 11",
       "link": "https://radacad.com/fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-apps-rayfin-deep-dive-a-conversation-with-sachin-patney-fabric-insider-ep-11",
@@ -289,15 +388,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-28T15:34:35.000Z",
       "contentSnippet": "I have written and recorded about Rayfin before, what it is, how the Data App template works, and the cost story that makes it genuinely significant. But this conversation goes much deeper. I sat down with Sachin Patney, who leads Fabric App Development at Microsoft, and by exten…"
-    },
-    {
-      "id": "092c8de02e8b",
-      "title": "Our decision on Cursor following its acquisition by SpaceX",
-      "link": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-08-28T06:00:00.000Z",
-      "contentSnippet": "Our decision to wind down our contract providing OpenAI models to Cursor following its acquisition by SpaceX."
     },
     {
       "id": "00c39e9700a3",
@@ -885,15 +975,6 @@
       "contentSnippet": "Since OpenAI slashed the price of GPT 5.6 Luna by 80% this week, low latency AI-powered answers are finally feasible for less than half a penny per answer, AI and DB costs included. For data questions, GPT 5.6 Luna is intelligence too cheap to meter. Well documented context, rigo…"
     },
     {
-      "id": "9209ffe6998f",
-      "title": "Stateless MCP has recaptured my interest (and inspired mcp-explorer and datasette-mcp)",
-      "link": "https://simonwillison.net/2026/Jul/31/stateless-mcp/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-07-31T23:13:22.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "1130e94af268",
       "title": "The Conductor Developer",
       "link": "https://martinfowler.com/rachels-ramblings/conductor-developer.html",
@@ -1036,15 +1117,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-22T01:52:49.000Z",
       "contentSnippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
-    },
-    {
-      "id": "b040dc108473",
-      "title": "Announcing DuckDB 1.5.5",
-      "link": "https://duckdb.org/2026/07/22/announcing-duckdb-155.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-07-22T00:00:00.000Z",
-      "contentSnippet": "In this blog post, we highlight a few important fixes in DuckDB v1.5.5, the sixth patch release in DuckDB's 1.5 (Variegata) line. The release ships bugfixes, performance improvements and security patches. You can find the full release notes on GitHub. To install the new version,…"
     },
     {
       "id": "341caddc014b",
@@ -1227,15 +1299,6 @@
       "contentSnippet": "3 years ago, we wrote our “Generative AI guidelines at SQLBI”. We think it’s time to update them. Over the past 3 years, the world has changed: it is simply no longer possible to avoid using generative AI services for…"
     },
     {
-      "id": "2ee8bc205ae3",
-      "title": "Fabric Real-Time Intelligence & Fabric IQ — A Conversation with Yitzhak Kesselman | Fabric Insider Ep. 6",
-      "link": "https://radacad.com/fabric-real-time-intelligence-fabric-iq-a-conversation-with-yitzhak-kesselman-fabric-insider-ep-6/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-real-time-intelligence-fabric-iq-a-conversation-with-yitzhak-kesselman-fabric-insider-ep-6",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-07-08T04:41:21.000Z",
-      "contentSnippet": "We had Fabric. Then Real-Time Intelligence. Now Fabric IQ. What comes next? That is the question I most wanted answered when I sat down with Yitzhak Kesselman — Corporate Vice President for Real-Time Intelligence at Microsoft Fabric. Yitzhak leads not only Fabric RTI and Fabric I…"
-    },
-    {
       "id": "6fba33e882ab",
       "title": "Focusing Where We Can Have the Most Impact",
       "link": "https://www.mountaingoatsoftware.com/agile/focusing-where-we-can-have-the-most-impact",
@@ -1245,15 +1308,6 @@
       "contentSnippet": "Mountain Goat Software is shifting its training and coaching focus to private client work, where teams and leaders can apply agile to their real challenges."
     },
     {
-      "id": "bbc024cfc465",
-      "title": "Viability of local models for coding",
-      "link": "https://martinfowler.com/articles/exploring-gen-ai/local-models-for-coding-factors.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-07T12:34:00.000Z",
-      "contentSnippet": "Birgitta Böckeler recently spent some time trying out running local LLMs for some programming tasks. In this memo she outlines the factors that influence how viable they are for the job. more…"
-    },
-    {
       "id": "8f4a91621e81",
       "title": "Liar, liar! What to do when AI writes your pipelines confidently wrong?",
       "link": "https://data-mozart.com/liar-liar-what-to-do-when-ai-writes-your-pipelines-confidently-wrong/?utm_source=rss&utm_medium=rss&utm_campaign=liar-liar-what-to-do-when-ai-writes-your-pipelines-confidently-wrong",
@@ -1261,24 +1315,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-07T11:58:43.000Z",
       "contentSnippet": "Should we let AI write our pipelines? YES...But not the way you probably think. The post Liar, liar! What to do when AI writes your pipelines confidently wrong? appeared first on Data Mozart."
-    },
-    {
-      "id": "002604ab0f7d",
-      "title": "How to build robust data pipelines with AI",
-      "link": "https://motherduck.com/blog/robust-data-pipelines-with-ai",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-07-07T00:00:00.000Z",
-      "contentSnippet": "AI pipelines run green and still return wrong numbers. Four habits to turn a one-shot prompt into a data pipeline you can actually trust."
-    },
-    {
-      "id": "222d3c291025",
-      "title": "Fragments: July  6",
-      "link": "https://martinfowler.com/fragments/2026-07-06.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-06T12:53:00.000Z",
-      "contentSnippet": "Last week, Thoughtworks ran a second Future of Software Development Retreat, this time in Europe. As with the previous event, I’ll be sharing some fragmentary thoughts on this. There were five parallel streams, so I could, at best, only attend ⅕ of sessions. This isn’t an event t…"
     },
     {
       "id": "408f24c63668",
@@ -1371,15 +1407,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "9d9df4d648d1",
-      "title": "What if a full data platform was one prompt away?",
-      "link": "https://motherduck.com/blog/full-data-pipeline-one-prompt",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-06-29T00:00:00.000Z",
-      "contentSnippet": "We launched Flights, an AI-native Python runtime in MotherDuck. Here's how I built a full end-to-end data pipeline (two scheduled Flights and a Dive dashboard) from a single prompt, using an AI coding agent and the MotherDuck MCP."
-    },
-    {
       "id": "d5f77903e27b",
       "title": "Power BI DirectQuery Mode: A Better Choice Than You Might Think",
       "link": "https://blog.crossjoin.co.uk/2026/06/28/power-bi-directquery-mode-a-better-choice-than-you-might-think/",
@@ -1459,15 +1486,6 @@
       "category": "Analytics",
       "pubDate": "2026-06-18T08:18:27.000Z",
       "contentSnippet": "Hardcoded values are the cockroaches of a data platform: you think you got them all, then Test starts reading from Prod and nobody notices for three days. Variable libraries in Microsoft Fabric put your configuration in one versioned place and let each stage resolve its own value…"
-    },
-    {
-      "id": "adb703e42fd4",
-      "title": "Building Reliable Agentic AI Systems",
-      "link": "https://martinfowler.com/articles/reliable-llm-bayer.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-06-16T12:11:00.000Z",
-      "contentSnippet": "One of the most interesting projects my colleagues have done with LLMs has been building a system with Bayer to allow pharmaceutical researchers to query decades of information about studies buried in PDF reports. Sarang Sanjay Kulkarni describes its evolution from keyword-based…"
     },
     {
       "id": "6c2a48806697",
@@ -1657,15 +1675,6 @@
       "category": "Delivery",
       "pubDate": "2026-05-05T13:00:00.000Z",
       "contentSnippet": "Turn planning pressure into a shared conversation about options and tradeoffs."
-    },
-    {
-      "id": "5630cb4150db",
-      "title": "Filtering measures through slicers",
-      "link": "https://www.sqlbi.com/tv/filtering-measures-through-slicers/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-05-05T10:00:00.000Z",
-      "contentSnippet": "A slicer cannot filter a measure: let’s analyze this common request by explaining how to use a slicer to filter a measure, after discussing the real meaning of using a measure with a slicer."
     },
     {
       "id": "0b5754265080",
@@ -1954,15 +1963,6 @@
       "category": "Delivery",
       "pubDate": "2024-11-07T07:30:04.000Z",
       "contentSnippet": "Imagine the following: You live in Germany in 1939. Or perhaps it’s 1938, or even as early as 1935. The Nazis are in power. If you’re an average German, your material conditions are probably quite good. Unemployment is low, and the Nazis have introduced extensive “welfare program…"
-    },
-    {
-      "id": "458f23fba51c",
-      "title": "Interview with Petra Wille",
-      "link": "https://blog.crisp.se/2024/11/03/leadingcomplexity/interview-with-petra-wille",
-      "source": "Crisp Blog",
-      "category": "Delivery",
-      "pubDate": "2024-11-03T05:15:39.000Z",
-      "contentSnippet": "Jennie Mårtensson interviews Petra Wille, a renowned product leadership coach and author of Strong Product People and Strong Product Communities. Petra shares her insights on why being a product manager is one of the most exciting jobs, drawing from her extensive experience acros…"
     }
   ]
 }
