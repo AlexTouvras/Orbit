@@ -11,16 +11,16 @@
   "slug": "kebab-case-title",
   "title": "Essay title",
   "summary": "One sentence.",
-  "category": "AI",
-  "tags": ["Agents", "Delivery"],
-  "mdx": "---\ntitle: \"...\"\nsummary: \"...\"\ndate: \"YYYY-MM-DD\"\ncategory: \"AI\"\nfeatured: false\ntags: [\"...\"]\n---\n\n## The question\n\n...",
+  "category": "Delivery",
+  "tags": ["Delivery", "Learning"],
+  "mdx": "---\ntitle: \"...\"\nsummary: \"...\"\ndate: \"YYYY-MM-DD\"\ncategory: \"Delivery\"\nfeatured: false\ntags: [\"...\"]\n---\n\n## The question\n\n...",
   "preview": "Title\n\nSummary\n\nInspired by: <primary signal title>",
   "intake": {},
   "source": "ide"
 }
 ```
 
-- `category`: one of `Career` | `Data` | `AI` | `Delivery` | `Learning` (match thesis when present).
+- `category`: one of `Career` | `Data` | `AI` | `Delivery` | `Learning`. Match the **decision rule**, not the tool stack. Prefer rotation; do not default to `Data`/`AI` Power BI.
 - `intake`: copy verbatim from `data/weekly-write-ide-brief.json`.
 - `mdx.date`: usually `weekOf`.
 - Prefer `featured: false` for weekly drafts (hub featured is curated separately).
@@ -41,18 +41,18 @@
 …
 
 ## What the signal is really saying
-… (link primary)
+… (link primary; define jargon once)
 
 ## What people get wrong
 …
 
-## … (1–3 more sections tied to delivery/analytics/AI ops)
+## … (1–3 more sections: Delivery / Learning / Career / general data / AI as the thesis requires)
 
 ## Takeaway
 …
 ```
 
-Adjust section titles to the thesis; keep `## The question` first.
+Adjust section titles to the thesis; keep `## The question` first. Gloss workshop nicknames. Pass the stranger test in `docs/essay-voice.md`.
 
 ## After Approve
 
