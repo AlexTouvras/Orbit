@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T06:46:59.701Z",
+  "generatedAt": "2026-09-04T10:27:22.285Z",
   "count": 220,
   "items": [
     {
@@ -127,15 +127,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-02T16:32:57.000Z",
       "contentSnippet": "This is the third and final part of the series on agency. Part one explained what agency actually is, and part two looked at what a lack of agency looks like in practice. This part could almost be short. Most of it is already captured in the fifth principle of the Agile Manifesto…"
-    },
-    {
-      "id": "9ec1882bb0be",
-      "title": "Microsoft Fabric in GCC High: Building the data foundation for AI",
-      "link": "https://www.microsoft.com/en-us/microsoft-cloud/blog/us-government/2026/09/02/microsoft-fabric-in-gcc-high-building-the-data-foundation-for-ai/",
-      "source": "Microsoft Fabric Blog",
-      "category": "Analytics",
-      "pubDate": "2026-09-02T16:22:54.000Z",
-      "contentSnippet": "Government organizations are ready to move beyond using AI to answer questions and toward intelligent systems and agents that can take action. The post Microsoft Fabric in GCC High: Building the data foundation for AI appeared first on Microsoft Fabric Blog."
     },
     {
       "id": "8182327ec6e3",
@@ -1864,6 +1855,15 @@
       "category": "Analytics",
       "pubDate": "2026-02-03T16:00:00.000Z",
       "contentSnippet": "The Microsoft Fabric Community Conference (FabCon) is returning stateside in just a few weeks, taking place at the Georgia World Congress Center in Atlanta, March 16 - 20, and it’s shaping up to be our biggest event yet. The post Top sessions you won’t want to miss at the Microso…"
+    },
+    {
+      "id": "04ac092e60a6",
+      "title": "FabCon and SQLCon: From workshops and keynotes to demos and deep dives",
+      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2025/12/17/fabcon-and-sqlcon-from-workshops-and-keynotes-to-demos-and-deep-dives/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2025-12-17T21:25:00.000Z",
+      "contentSnippet": "FabCon and SQLCon will be one of the year’s largest gatherings of data professionals from around the world, bringing together tech enthusiasts, innovators, and industry leaders to explore the future of data, SQL, analytics, business intelligence, and AI integration. The post FabC…"
     },
     {
       "id": "dd673b26a4ff",
