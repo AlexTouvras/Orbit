@@ -9,11 +9,15 @@ import { listLocalDir, readLocalFile, siblingRoot } from "@/lib/week-log/local";
 import type {
   ArcNarrativeView,
   DailyQuestView,
+  FitnessCourseView,
   FitnessDay,
   FitnessKickoff,
   FitnessLift,
   FitnessSession,
   FitnessWeek,
+  LiftIntent,
+  LiftStyle,
+  RaceEffort,
   WeekLane,
 } from "@/lib/week-log/types";
 
@@ -222,6 +226,7 @@ function parsePlan(text: string, fallbackWeekId: string): FitnessWeek | null {
       days,
       narrative: parseNarrative(parsed.narrative),
       dailyQuest: parseDailyQuest(parsed.daily_quest),
+      course: null,
     };
   } catch {
     return null;
@@ -265,6 +270,123 @@ function latestLocalPlanId(atMost: string): string | null {
   return weeks.at(-1) ?? null;
 }
 
+function parseLiftIntent(raw: unknown, strengthEmphasis: unknown): LiftIntent {
+  if (raw === "maintenance" || raw === "strength" || raw === "hypertrophy") {
+    return raw;
+  }
+  return strengthEmphasis === "build" ? "strength" : "maintenance";
+}
+
+function parseLiftStyle(raw: unknown): LiftStyle {
+  if (raw === "standard" || raw === "full" || raw === "simplified") return raw;
+  if (raw === "focus") return "simplified";
+  return "full";
+}
+
+function parseRaceEffort(raw: unknown): RaceEffort {
+  if (raw === "peak" || raw === "test" || raw === "skip") return raw;
+  return "peak";
+}
+
+export function coursePhaseForDate(raceDate: string | null, today = new Date()): {
+  phase: FitnessCourseView["phase"];
+  daysToEvent: number | null;
+  eventExpired: boolean;
+} {
+  if (!raceDate) {
+    return { phase: "open", daysToEvent: null, eventExpired: false };
+  }
+  const stamp = Date.parse(`${raceDate}T00:00:00`);
+  if (!Number.isFinite(stamp)) {
+    return { phase: "open", daysToEvent: null, eventExpired: false };
+  }
+  const start = Date.UTC(today.getFullYear(), today.getMonth(), today.getDate());
+  const days = Math.round((stamp - start) / 86_400_000);
+  if (days < 0) {
+    return { phase: "open", daysToEvent: days, eventExpired: true };
+  }
+  if (days <= 7) return { phase: "taper", daysToEvent: days, eventExpired: false };
+  if (days <= 21) return { phase: "sharpen", daysToEvent: days, eventExpired: false };
+  return { phase: "build", daysToEvent: days, eventExpired: false };
+}
+
+function parseCourse(
+  courseRaw: unknown,
+  profileRaw: unknown,
+): FitnessCourseView {
+  const course =
+    courseRaw && typeof courseRaw === "object"
+      ? (courseRaw as Record<string, unknown>)
+      : {};
+  const flags =
+    course.flags && typeof course.flags === "object"
+      ? (course.flags as Record<string, unknown>)
+      : {};
+  const profile =
+    profileRaw && typeof profileRaw === "object"
+      ? (profileRaw as Record<string, unknown>)
+      : {};
+  const goals =
+    profile.goals && typeof profile.goals === "object"
+      ? (profile.goals as Record<string, unknown>)
+      : {};
+  const primary =
+    goals.primary && typeof goals.primary === "object"
+      ? (goals.primary as Record<string, unknown>)
+      : {};
+  const raceDate = asString(primary.race_date) || asString(primary.end_date) || null;
+  const derived = coursePhaseForDate(raceDate);
+  return {
+    timeEfficient: Boolean(flags.time_efficient),
+    raceEffort: parseRaceEffort(flags.race_effort),
+    liftIntent: parseLiftIntent(flags.lift_intent, flags.strength_emphasis),
+    liftStyle: parseLiftStyle(flags.lift_style),
+    gtgOptional: Boolean(flags.gtg_optional),
+    raceDate,
+    eventName: asString(primary.event) || asString(primary.sport) || "Event",
+    ...derived,
+  };
+}
+
+async function readJsonText(
+  filePath: string,
+): Promise<{ text: string; via: "github" | "local" } | null> {
+  if (preferLocalSibling()) {
+    const local = readLocalFile(siblingRoot("fitness"), filePath);
+    if (local) return { text: local, via: "local" };
+  }
+  const token = opsGithubToken();
+  const repo = fitnessRepo();
+  if (token && repo) {
+    const remote = await readGithubFile(repo, filePath, token);
+    if (remote.ok) return { text: remote.text, via: "github" };
+  }
+  const local = readLocalFile(siblingRoot("fitness"), filePath);
+  if (local) return { text: local, via: "local" };
+  return null;
+}
+
+export async function loadFitnessCourse(): Promise<FitnessCourseView | null> {
+  const [courseFile, profileFile] = await Promise.all([
+    readJsonText("data/course.json"),
+    readJsonText("data/profile.json"),
+  ]);
+  if (!courseFile && !profileFile) return null;
+  let courseRaw: unknown = null;
+  let profileRaw: unknown = null;
+  try {
+    if (courseFile) courseRaw = JSON.parse(courseFile.text);
+  } catch {
+    courseRaw = null;
+  }
+  try {
+    if (profileFile) profileRaw = JSON.parse(profileFile.text);
+  } catch {
+    profileRaw = null;
+  }
+  return parseCourse(courseRaw, profileRaw);
+}
+
 export async function loadFitnessWeek(weekId: string): Promise<WeekLane<FitnessWeek>> {
   const exact = await readPlanText(weekId);
   if (exact) {
@@ -277,6 +399,7 @@ export async function loadFitnessWeek(weekId: string): Promise<WeekLane<FitnessW
         data: null,
       };
     }
+    data.course = await loadFitnessCourse();
     const repo = fitnessRepo();
     return {
       status: "ok",
@@ -291,6 +414,7 @@ export async function loadFitnessWeek(weekId: string): Promise<WeekLane<FitnessW
     const latest = await readPlanText(latestId);
     const data = latest ? parsePlan(latest.text, latestId) : null;
     if (data) {
+      data.course = await loadFitnessCourse();
       return {
         status: "ok",
         stale: `Latest plan is ${latestId} — nothing committed for ${weekId} yet.`,

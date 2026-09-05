@@ -115,6 +115,25 @@ export interface FitnessWeek {
   days: FitnessDay[];
   narrative: ArcNarrativeView | null;
   dailyQuest: DailyQuestView | null;
+  course: FitnessCourseView | null;
+}
+
+export type LiftIntent = "maintenance" | "strength" | "hypertrophy";
+export type LiftStyle = "full" | "standard" | "simplified";
+export type RaceEffort = "peak" | "test" | "skip";
+export type CoursePhase = "build" | "sharpen" | "taper" | "open";
+
+export interface FitnessCourseView {
+  timeEfficient: boolean;
+  raceEffort: RaceEffort;
+  liftIntent: LiftIntent;
+  liftStyle: LiftStyle;
+  gtgOptional: boolean;
+  raceDate: string | null;
+  eventName: string;
+  phase: CoursePhase;
+  daysToEvent: number | null;
+  eventExpired: boolean;
 }
 
 export interface MealDay {

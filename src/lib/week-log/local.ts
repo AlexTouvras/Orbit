@@ -6,6 +6,13 @@ export function siblingRoot(folder: string): string {
   return path.resolve(process.cwd(), "..", folder);
 }
 
+export function writeLocalFile(root: string, relPath: string, contents: string): string {
+  const full = path.join(root, relPath);
+  fs.mkdirSync(path.dirname(full), { recursive: true });
+  fs.writeFileSync(full, contents, "utf8");
+  return full;
+}
+
 export function readLocalFile(root: string, relPath: string): string | null {
   const full = path.join(root, relPath);
   try {

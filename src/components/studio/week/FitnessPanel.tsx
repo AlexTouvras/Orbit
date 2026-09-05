@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArcStatusCard } from "@/components/studio/week/ArcStatusCard";
+import { CourseStrip } from "@/components/studio/week/CourseStrip";
 import { arcDayAccent } from "@/components/studio/week/arcDayAccent";
 import { HeimdallEmbed } from "@/components/studio/week/HeimdallEmbed";
 import { Lane } from "@/components/studio/week/Lane";
@@ -146,6 +147,7 @@ export function FitnessPanel({
               {fitness.raceContext}
             </p>
           ) : null}
+          {fitness.course ? <CourseStrip initial={fitness.course} /> : null}
           {fitness.narrative ? (
             <ArcStatusCard
               narrative={fitness.narrative}
