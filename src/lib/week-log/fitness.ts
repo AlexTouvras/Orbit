@@ -21,7 +21,7 @@ import type {
   WeekLane,
 } from "@/lib/week-log/types";
 
-function fitnessRepo() {
+export function fitnessRepo() {
   return parseRepoSlug(
     process.env.FITNESS_GITHUB_REPO?.trim() || "AlexTouvras/fitness-coach",
     process.env.FITNESS_GITHUB_BRANCH?.trim() || "master",

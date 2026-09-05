@@ -7,7 +7,7 @@ import { coursePhaseForDate } from "@/lib/week-log/fitness";
 import type { LiftIntent, LiftStyle, RaceEffort } from "@/lib/week-log/types";
 
 export const runtime = "nodejs";
-export const maxDuration = 60;
+export const maxDuration = 120;
 
 const INTENTS: LiftIntent[] = ["maintenance", "strength", "hypertrophy"];
 const STYLES: LiftStyle[] = ["full", "standard", "simplified"];

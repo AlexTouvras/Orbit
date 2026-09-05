@@ -28,11 +28,12 @@
 
 ## Next
 
+- [x] Field-card watchdog: drop Saturday cron; Friday pass + Monday escalate only
 - [x] Newsletter primary path = GHA Tuesday schedule (Vercel backup)
 - [x] Draft featured Write: fitness coach Arc Mode (`when-the-coach-got-gate-ranks`)
 - [ ] Owner: deploy weekly Write Approve tap-target fix (preview bottom bar + Slack buttons) before next Monday notify
 - [ ] Owner: after happy with the shorter test mail, verify domain + unset `RESEND_NEWSLETTER_TEST_TO` for audience go-live
-- [ ] Owner: review `/studio/week`; set `OPS_GITHUB_TOKEN` (Contents: Read on fitness-coach, mealplan-private, careerops-private, ravens) on Vercel + `.env.local`; confirm Heimdall embeds behave well enough vs plain links
+- [ ] Owner: review `/studio/week`; set `OPS_GITHUB_TOKEN` (Contents: **Read and write** on fitness-coach so Studio Apply works on Vercel; Read on mealplan-private, careerops-private, ravens) on Vercel + `.env.local`; confirm Heimdall embeds behave well enough vs plain links
 - [x] Owner: approve fitness weekly course slicers (5 training knobs; no lean/cut or `goal:` on the strip)
 - [ ] Owner: evaluate course strip on localhost `/studio/week/fitness`
 - [x] Commit/push ops-fleet files to `main` (`f1be91d`) so Daily ops check can read `docs/ops/fleet.yaml`

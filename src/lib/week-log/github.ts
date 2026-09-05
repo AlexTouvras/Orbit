@@ -114,3 +114,80 @@ export async function listGithubDir(
 export function githubBlobUrl(repo: GithubRepoRef, filePath: string): string {
   return `https://github.com/${repo.owner}/${repo.repo}/blob/${repo.branch}/${filePath}`;
 }
+
+export async function dispatchRepositoryEvent(
+  repo: GithubRepoRef,
+  eventType: string,
+  clientPayload: Record<string, unknown>,
+  token: string,
+): Promise<{ ok: true } | { ok: false; status: number; detail: string }> {
+  const url = `https://api.github.com/repos/${repo.owner}/${repo.repo}/dispatches`;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15_000);
+  try {
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        ...githubHeaders(token),
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        event_type: eventType,
+        client_payload: clientPayload,
+      }),
+      cache: "no-store",
+      signal: controller.signal,
+    });
+    if (res.status === 204) return { ok: true };
+    const text = await res.text();
+    let detail = text.slice(0, 400) || `GitHub dispatch failed (${res.status}).`;
+    try {
+      const parsed = JSON.parse(text) as { message?: string };
+      if (parsed.message) detail = parsed.message;
+    } catch {
+      /* keep text */
+    }
+    return { ok: false, status: res.status, detail };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "dispatch aborted";
+    return { ok: false, status: 0, detail: message };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+export async function listRepositoryDispatchRuns(
+  repo: GithubRepoRef,
+  token: string,
+): Promise<
+  | {
+      ok: true;
+      runs: Array<{
+        status: string;
+        conclusion: string | null;
+        created_at: string;
+        html_url: string;
+      }>;
+    }
+  | { ok: false; status: number }
+> {
+  const url = `https://api.github.com/repos/${repo.owner}/${repo.repo}/actions/runs?event=repository_dispatch&per_page=8`;
+  const result = await githubJson<{
+    workflow_runs?: Array<{
+      status?: string;
+      conclusion?: string | null;
+      created_at?: string;
+      html_url?: string;
+    }>;
+  }>(url, token);
+  if (!result.ok) return { ok: false, status: result.status };
+  return {
+    ok: true,
+    runs: (result.data.workflow_runs ?? []).map((run) => ({
+      status: run.status ?? "",
+      conclusion: run.conclusion ?? null,
+      created_at: run.created_at ?? "",
+      html_url: run.html_url ?? "",
+    })),
+  };
+}
