@@ -55,3 +55,6 @@ next-env.d.ts
 # Agent local working memory (ARCHITECTURE/BACKLOG stay tracked)
 .state/CURRENT_TASK.md
 .state/LESSONS.md
+
+# Cursor canvases are IDE-only (`cursor/canvas`); Next typecheck cannot resolve them
+/canvases/

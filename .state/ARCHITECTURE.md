@@ -81,6 +81,7 @@ src/app/api/cron/newsletter/
 src/lib/week-log/            # Studio /studio/week loaders + Heimdall matcher
 src/app/studio/week/         # Hub + topic pages
 src/components/studio/week/  # Topic panels + HeimdallEmbed
+canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 .state/
 ```
 
@@ -125,3 +126,4 @@ src/components/studio/week/  # Topic panels + HeimdallEmbed
 | 2026-08-13 | `neon-cyan` is static; only `.orbit-accent` / `--orbit-accent` bg-border utilities orbit | Home Case study / Read: inherited animated `text-neon-cyan` painted on one sibling only; all-or-none → none |
 | 2026-08-13 | `SLACK_ORBIT_WEBHOOK_URL` on Vercel + GH Actions (Orbit + field-card repos); weekly CI prefers `#orbit` | P1-02; legacy `SLACK_WEBHOOK_URL` remains fallback only |
 | 2026-09-05 | Fitness course strip on Studio week fitness: event date + stance + lift intent/density as Sunday input | Owner evaluates on localhost; past race dates must not stick in taper |
+| 2026-09-05 | Cursor `canvases/` stay local (gitignore + tsconfig exclude) | First committed `.canvas.tsx` failed ship-check: Next cannot resolve `cursor/canvas` |
