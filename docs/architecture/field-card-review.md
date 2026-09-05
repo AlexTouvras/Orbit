@@ -47,12 +47,13 @@ Rules for that post:
 
 Backup gate (review agent missed) uses the same laconic body shape with three Block Kit buttons: **Open the new card** · **Approve** · **Decline**.
 
-If a card has no open weekly PR, skip it. Do not open a new PR. Do not edit HTML.
+If a card has no open weekly PR, **still ship the week**: create `chore/weekly-refresh-YYYY-Www` from `main`, bump the version stamp only, write `## Summary` with `Decision: no-change`, then Apply review **approve**. Do not skip a Friday with a silent live card.
 
 ## Publish when
 
 - The proposed HTML is a real improvement: picker swap by constraint, docs URL fix, or a new *job* in the decision table.
-- Or the HTML is unchanged aside from the weekly stamp, and the spine is intact (reviewed, no worse).
+- Or the HTML is unchanged aside from the weekly stamp, and the spine is intact (reviewed, no worse). **Stamp-only still publishes.**
+- Missing `## Summary` on a stamp-only PR is not a decline — write the note in Apply review and publish.
 - Picker is still ≤7 rows.
 - Link check is clean on URLs this PR touched.
 - Always-on strip, kill switch, and anti-patterns are still there.
@@ -60,9 +61,8 @@ If a card has no open weekly PR, skip it. Do not open a new PR. Do not edit HTML
 ## Keep the previous card when
 
 - The PR is discovery noise that would make the public card worse (brochure language, extra picker rows, invented URLs).
-- The author pass never wrote a `## Summary` and the HTML is not a clear fix.
 - Link check failed on URLs the PR touched.
-- You cannot tell what changed.
+- You cannot tell what changed and the HTML is not a stamp-only bump.
 
 When keeping previous, decline. Do not try to fix the HTML in this run.
 
