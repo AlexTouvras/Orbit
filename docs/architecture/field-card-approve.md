@@ -11,7 +11,7 @@ The review agent is the gate. You do not Approve in Slack unless that agent miss
 
 ## Backup
 
-If the review agent misses, Saturday/Monday watchdog can still post **Open the new card / Approve / Decline**.
+If the review agent misses, Monday watchdog can still post **Open the new card / Approve / Decline**. Saturday is not scheduled.
 
 ## Cards
 

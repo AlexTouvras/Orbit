@@ -50,7 +50,7 @@ gh pr list --repo <repo> --state open --limit 20
 gh pr list --repo <repo> --state merged --search "chore/weekly-refresh-" --limit 5
 ```
 
-Flag open heads matching `chore/weekly-refresh-*` on Saturday or Monday. That means the Friday 18:00 review agent did not apply.
+Flag open heads matching `chore/weekly-refresh-*` on Monday. That means the Friday 18:00 review agent did not apply.
 
 **Exception:** if the same repo already merged a `chore/weekly-refresh-<ISO-week>` PR this ISO week, any other open PR on the same head is an orphaned discovery duplicate — status `ok`, and note that it can be closed (do not call it `bad_output`).
 

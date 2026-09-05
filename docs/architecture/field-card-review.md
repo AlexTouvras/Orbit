@@ -74,4 +74,4 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 
 ## Backup
 
-If this agent misses, Saturday/Monday watchdog can still post Open / Approve / Decline in Slack so a person can finish the week.
+If this agent misses, Monday watchdog can still post Open / Approve / Decline in Slack so a person can finish the week. Saturday is not scheduled.

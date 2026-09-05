@@ -130,7 +130,7 @@ jobs:
       - AlexTouvras/technology-delivery-field-card
     kind: cursor_automation
     schedule: "Friday 17:00 draft, 18:00 review"
-    check: saturday
+    check: monday
     slack: "#orbit"
     expect:
       open_pr_prefix: "chore/weekly-refresh-"
@@ -138,7 +138,7 @@ jobs:
       # If the same repo already merged chore/weekly-refresh-<ISO-week> this week, a second
       # discovery-only open PR is orphaned — close it; do not flag.
       skip_open_pr_when_merged_same_week: true
-    miss_if: "Saturday/Monday: an open chore/weekly-refresh-* PR was not approved or declined by the 18:00 review agent — unless that repo already merged the same ISO-week head"
+    miss_if: "Monday: an open chore/weekly-refresh-* PR was not approved or declined by the Friday 18:00 review agent — unless that repo already merged the same ISO-week head"
     proposed_fix: "Check Weekly field card review automation (a1c0b46b-9a09-11f1-ba66-0e7d0216e441). If the PR exists, run Apply review from Orbit playbook — do not gh pr merge. If the week already shipped via an earlier merged PR, close the duplicate discovery PR."
 
   - id: careerops-sunday
