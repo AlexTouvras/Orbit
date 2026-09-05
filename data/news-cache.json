@@ -1,7 +1,79 @@
 {
-  "generatedAt": "2026-09-04T10:27:22.285Z",
+  "generatedAt": "2026-09-05T06:46:59.565Z",
   "count": 220,
   "items": [
+    {
+      "id": "631b6c23c9b3",
+      "title": "The Pelican comparison grid for Astra is pretty interesting",
+      "link": "https://simonwillison.net/2026/Sep/4/astra-pelicans/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-04T23:59:05.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "baa2994d0399",
+      "title": "Achieving Extreme Efficiency through Specialized GPU Kernel Generation",
+      "link": "https://www.databricks.com/blog/achieving-extreme-efficiency-through-specialized-gpu-kernel-generation",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-04T20:00:00.000Z",
+      "contentSnippet": "Traditionally, production inference systems rely on generic kernels to handle diverse..."
+    },
+    {
+      "id": "d11f83e60b54",
+      "title": "Five ways marketers can use Genie One",
+      "link": "https://www.databricks.com/blog/five-ways-marketers-can-use-genie-one",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-04T19:00:00.000Z",
+      "contentSnippet": "Every marketing team sits on a goldmine of data: campaign performance metrics, customer..."
+    },
+    {
+      "id": "7e04cdd95713",
+      "title": "What Happens to Your Scaled Agile Ways of Working When You Adopt an Agentic SDLC?",
+      "link": "https://www.scrum.org/resources/blog/what-happens-your-scaled-agile-ways-working-when-you-adopt-agentic-sdlc",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-04T17:52:25.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. It's time to rethink your ways of working, not get rid of them Every week, I have several conversations with leaders whose teams are implementing an AI harness, adopting spec-driven development, and starting conversations about throwing agi…"
+    },
+    {
+      "id": "19280ad9d1a0",
+      "title": "OpenAI's rogue agents were caught communicating via public wikis",
+      "link": "https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-04T17:38:48.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "d3fdcc599253",
+      "title": "Níveis de Maturidade do Product Owner: Por Que Ninguém Começa Faixa Preta",
+      "link": "https://www.scrum.org/resources/blog/niveis-de-maturidade-do-product-owner-por-que-ninguem-comeca-faixa-preta",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-04T14:53:38.000Z",
+      "contentSnippet": "No mercado corporativo, venderam uma ideia perigosa: a de que todo Product Owner já senta na cadeira como o “mini-CEO” da empresa, com autonomia total para ditar estratégias e gerir orçamentos milionários desde o primeiro dia. A realidade, porém, é bem diferente. Assim como nas a…"
+    },
+    {
+      "id": "3fe5160e7acc",
+      "title": "Implementing SCD Type 2 in Microsoft Fabric – The Definitive Guide!",
+      "link": "https://data-mozart.com/implementing-scd-type-2-in-microsoft-fabric-the-definitive-guide/?utm_source=rss&utm_medium=rss&utm_campaign=implementing-scd-type-2-in-microsoft-fabric-the-definitive-guide",
+      "source": "Data Mozart",
+      "category": "Analytics",
+      "pubDate": "2026-09-04T13:41:48.000Z",
+      "contentSnippet": "Slowly Changing Dimensions (SCD) are one of the fundamental concepts in dimensional modeling. If you are not sure what dimensional modeling is, I suggest you first check the series of articles I wrote on data modeling some time ago. And, when it comes to SCD in particular, SCD Ty…"
+    },
+    {
+      "id": "e01e4e9134c9",
+      "title": "O que sabemos agora que não sabíamos no início da Sprint?",
+      "link": "https://www.scrum.org/resources/blog/o-que-sabemos-agora-que-nao-sabiamos-no-inicio-da-sprint",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-04T13:24:46.000Z",
+      "contentSnippet": "Image Scrum é um framework de aprendizagem Quando pensamos em Scrum, é fácil pensar em Sprints, Product Backlogs, Daily Scrums, Sprint Reviews ou Sprint Retrospectives. Mas estes são mecanismos. A questão mais interessante é: para que existem? Uma forma útil de compreender Scrum…"
+    },
     {
       "id": "96cd5f9c3a94",
       "title": "If You Hate the Organization, You Can't Help it Change",
@@ -57,6 +129,15 @@
       "contentSnippet": "Originally published on yuvalyeret.com. The first thing to change is who writes the artifacts, not how you work \"We didn't change the process. We still have a quarterly planning and we have sprint planning and we have roadmaps and a list of features that we want to deliver in a q…"
     },
     {
+      "id": "7a45b185cff5",
+      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
+      "link": "https://openai.com/index/playco-game-prototyping-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-03T12:00:00.000Z",
+      "contentSnippet": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
+    },
+    {
       "id": "be4a3c542626",
       "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
       "link": "https://openai.com/index/legora-financial-statement-review-with-astra",
@@ -66,13 +147,13 @@
       "contentSnippet": "Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow."
     },
     {
-      "id": "7a45b185cff5",
-      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
-      "link": "https://openai.com/index/playco-game-prototyping-with-astra",
+      "id": "0f3b76bc480d",
+      "title": "GPT-6 Astra: A new generation of intelligence",
+      "link": "https://openai.com/index/gpt-6-astra",
       "source": "OpenAI Blog",
       "category": "AI",
-      "pubDate": "2026-09-03T12:00:00.000Z",
-      "contentSnippet": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
+      "pubDate": "2026-09-03T11:00:00.000Z",
+      "contentSnippet": "Introducing GPT-6 Astra, our most intelligent and aligned model yet, with state-of-the-art capabilities across computer use, coding, cybersecurity, and science."
     },
     {
       "id": "2e155b11d809",
@@ -127,6 +208,15 @@
       "category": "Delivery",
       "pubDate": "2026-09-02T16:32:57.000Z",
       "contentSnippet": "This is the third and final part of the series on agency. Part one explained what agency actually is, and part two looked at what a lack of agency looks like in practice. This part could almost be short. Most of it is already captured in the fifth principle of the Agile Manifesto…"
+    },
+    {
+      "id": "9ec1882bb0be",
+      "title": "Microsoft Fabric in GCC High: Building the data foundation for AI",
+      "link": "https://www.microsoft.com/en-us/microsoft-cloud/blog/us-government/2026/09/02/microsoft-fabric-in-gcc-high-building-the-data-foundation-for-ai/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-09-02T16:22:54.000Z",
+      "contentSnippet": "Government organizations are ready to move beyond using AI to answer questions and toward intelligent systems and agents that can take action. The post Microsoft Fabric in GCC High: Building the data foundation for AI appeared first on Microsoft Fabric Blog."
     },
     {
       "id": "8182327ec6e3",
@@ -255,15 +345,6 @@
       "contentSnippet": "Databricks engineers rely heavily on AI agents to streamline and accelerate their work. In turn..."
     },
     {
-      "id": "8fdb1fcf5e7d",
-      "title": "Collaboration makes us all stronger",
-      "link": "https://www.databricks.com/blog/collaboration-makes-us-all-stronger",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-01T19:00:00.000Z",
-      "contentSnippet": "The best security bugs come with a good storySome of our best security investments haven't been tools or scanners..."
-    },
-    {
       "id": "3b5f2688fec1",
       "title": "How AI-native companies turn workflows into operating capability",
       "link": "https://openai.com/index/ai-native-company-workflows",
@@ -282,15 +363,6 @@
       "contentSnippet": "Scrum teams often work like individuals because the organization staffs, measures, interrupts, and rewards them that way. Leaders can change the conditions that make real teamwork possible."
     },
     {
-      "id": "d3736787702b",
-      "title": "Operationalizing Genie Ontology in Your Data Stack",
-      "link": "https://www.databricks.com/blog/operationalizing-genie-ontology-your-data-stack",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-01T15:00:00.000Z",
-      "contentSnippet": "Beyond the semantic model: Building shared business context for AI agentsLarge language..."
-    },
-    {
       "id": "309be27bdcfe",
       "title": "Path to Astra: critical capabilities and frontier safeguards",
       "link": "https://openai.com/index/path-to-astra",
@@ -307,15 +379,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-01T12:09:26.000Z",
       "contentSnippet": "\"AI-native Scrum Team\" is a podcast series that shares how Scrum Teams can effectively take the steps in their AI Transformation journey to become AI-native Scrum Teams. In episode 6, Mehdi and Gizem discuss how to build and set up AI Agents for Scrum Teams. They share some servi…"
-    },
-    {
-      "id": "50e05f9b472e",
-      "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT",
-      "link": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-01T12:00:00.000Z",
-      "contentSnippet": "ChatGPT can now connect to trusted healthcare data, helping clinicians securely access patient context, medical research, and more."
     },
     {
       "id": "f5b0bd4dd6a7",
@@ -588,15 +651,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "1820df046a76",
-      "title": "O que é para fazer?",
-      "link": "https://www.scrum.org/resources/blog/o-que-e-para-fazer",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-23T23:00:00.000Z",
-      "contentSnippet": "Image Se os teus Developers ainda perguntam apenas “O que é para fazer?”, tens um problema Há bem pouco tempo ouvi mais um Developer a iniciar uma conversa com o Product Owner: “O que é para fazer?” Parece uma pergunta perfeitamente razoável. Até prestável. Mas, numa Scrum Team,…"
-    },
-    {
       "id": "a8e4761ea034",
       "title": "Tools With Interactive UIs In Fabric Notebooks With Semantic Link Labs",
       "link": "https://blog.crossjoin.co.uk/2026/08/23/tools-with-interactive-uis-in-fabric-notebooks-with-semantic-link-labs/",
@@ -606,15 +660,6 @@
       "contentSnippet": "There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…"
     },
     {
-      "id": "26a12cb0fbda",
-      "title": "You Priced Being Late. Nobody Priced Being Early.",
-      "link": "https://www.scrum.org/resources/blog/you-priced-being-late-nobody-priced-being-early",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-23T06:00:00.000Z",
-      "contentSnippet": "Image A team finishes an app update on a Tuesday. Tested, signed off, ready. It goes into review and stays there. Six days. Nobody sits still for six days, so the team starts three more items and finishes two of them. When the update ships, there is a queue behind it. The year ha…"
-    },
-    {
       "id": "c4b52369e09f",
       "title": "Chunked Query Results in the DuckDB Java Driver",
       "link": "https://duckdb.org/2026/08/21/chunked-query-results-java-driver.html",
@@ -622,15 +667,6 @@
       "category": "Data",
       "pubDate": "2026-08-21T00:00:00.000Z",
       "contentSnippet": "DuckDB is a columnar, vectorized database. Every operator inside the engine works on data chunks: batches of column vectors, 2,048 rows at a time. That is a big part of why DuckDB is fast: the engine amortizes interpretation overhead over thousands of values instead of paying it…"
-    },
-    {
-      "id": "571f4bc81246",
-      "title": "You Can't Empower Teams and Approve Everything",
-      "link": "https://www.scrum.org/resources/blog/you-cant-empower-teams-and-approve-everything",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-20T22:00:00.000Z",
-      "contentSnippet": "Most agile transformations don't fail because people resist change. They fail because the organization asked for two things that can't both be true, wrote them on the same slide, and then acted surprised when it only got one. The slide says empowered teams. The workflow tool says…"
     },
     {
       "id": "b6f0fc020a49",
@@ -894,15 +930,6 @@
       "contentSnippet": "Why a throughput number is not an architecture decision."
     },
     {
-      "id": "ecbbb6befce1",
-      "title": "One-shotting a Raccoon Heist game using Claude Fable 5",
-      "link": "https://simonwillison.net/2026/Aug/5/raccoon-heist/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-08-05T19:42:38.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "15ab3de19849",
       "title": "Lack of Agency – When the system swallows the human",
       "link": "https://blog.crisp.se/2026/08/05/tomasbjorkholm/lack-of-agency-when-the-system-swallows-the-human",
@@ -919,15 +946,6 @@
       "category": "Data",
       "pubDate": "2026-08-05T00:00:00.000Z",
       "contentSnippet": "The duckdb/duckdb GitHub repository has just passed 40 000 stars! We’d like to use this milestone to stop for a moment and revisit recent developments in the “Duck Stack” ecosystem since last summer (2025), when we surpassed 30 000 stars. Releases Since the last milestone, the Du…"
-    },
-    {
-      "id": "e529f54cff05",
-      "title": "New release of LLM adds support for reasoning traces, OpenAI Responses, server-side tools, and smarter logging",
-      "link": "https://simonwillison.net/2026/Aug/4/new-release-of-llm/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-08-04T23:58:24.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "b557000206d1",
@@ -1749,15 +1767,6 @@
       "contentSnippet": "Lakeflow Jobs can't see across workspace boundaries. Learn how Dagster unifies multiple Databricks workspaces into a single asset graph with real dependencies."
     },
     {
-      "id": "f1384ddd3acb",
-      "title": "The Name Game – Naming Microsoft Fabric from tenant to table",
-      "link": "https://data-mozart.com/the-name-game-naming-microsoft-fabric-from-tenant-to-table/?utm_source=rss&utm_medium=rss&utm_campaign=the-name-game-naming-microsoft-fabric-from-tenant-to-table",
-      "source": "Data Mozart",
-      "category": "Analytics",
-      "pubDate": "2026-04-20T08:25:24.000Z",
-      "contentSnippet": "A reference framework for naming everything in Microsoft Fabric - from capacities down to gold-layer fact tables. Patterns, examples, and strong opinions. The post The Name Game – Naming Microsoft Fabric from tenant to table appeared first on Data Mozart."
-    },
-    {
       "id": "62d682fc18ad",
       "title": "Why Smart Teams Overcommit And How Leaders Make It Worse",
       "link": "https://www.mountaingoatsoftware.com/agile/why-smart-teams-overcommit",
@@ -1855,15 +1864,6 @@
       "category": "Analytics",
       "pubDate": "2026-02-03T16:00:00.000Z",
       "contentSnippet": "The Microsoft Fabric Community Conference (FabCon) is returning stateside in just a few weeks, taking place at the Georgia World Congress Center in Atlanta, March 16 - 20, and it’s shaping up to be our biggest event yet. The post Top sessions you won’t want to miss at the Microso…"
-    },
-    {
-      "id": "04ac092e60a6",
-      "title": "FabCon and SQLCon: From workshops and keynotes to demos and deep dives",
-      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2025/12/17/fabcon-and-sqlcon-from-workshops-and-keynotes-to-demos-and-deep-dives/",
-      "source": "Microsoft Fabric Blog",
-      "category": "Analytics",
-      "pubDate": "2025-12-17T21:25:00.000Z",
-      "contentSnippet": "FabCon and SQLCon will be one of the year’s largest gatherings of data professionals from around the world, bringing together tech enthusiasts, innovators, and industry leaders to explore the future of data, SQL, analytics, business intelligence, and AI integration. The post FabC…"
     },
     {
       "id": "dd673b26a4ff",
