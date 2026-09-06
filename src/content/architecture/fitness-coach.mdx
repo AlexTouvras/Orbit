@@ -32,11 +32,11 @@ Every Sunday, deliver a phone-readable week in Slack `#fitness`: Mon/Wed/Fri run
 
 **Approach**
 
-Git `data/*` is the database. Python planner encodes readiness rules. Cursor Automations run Sunday plan, daily sync, and chat routing. Intervals.icu is the Garmin hub. Research packs under `research/blocks/<id>/` swap per mesocycle; `research/principles.md` stays durable.
+Git `data/*` is the database. Python planner encodes readiness rules. Cursor Automations run Monday plan, daily sync, and chat routing. Intervals.icu is the Garmin hub. Research packs under `research/blocks/<id>/` swap per mesocycle; `research/principles.md` stays durable.
 
 ## Weekly pipeline
 
-Sunday 09:00 Athens: Automation hard-resets to `origin/master`, runs `coach-week`, posts Slack markdown, then **`coach-publish`** commits and pushes `data/` — Slack alone is not done.
+Monday 07:15 Athens: Automation hard-resets to `origin/master`, runs `coach-week`, posts Slack markdown, then **`coach-publish`** commits and pushes `data/` — Slack alone is not done. Daily 07:00 `coach-sync` runs first.
 
 ```mermaid
 flowchart LR
@@ -54,17 +54,19 @@ flowchart LR
   Plan --> Push[Push missing runs Intervals to Garmin]
 ```
 
-**Daily 07:00** — `coach-sync --with-state` refreshes `data/intervals/summary.json` and `data/progression/` only. No plan rewrite.
+**Daily 07:00** — `coach-sync --with-state` refreshes `data/intervals/summary.json`, `data/progression/` (incl. Codex), and this week's HUD. No session rewrite, no Garmin.
 
-**Wednesday 08:00 (optional)** — `coach-midweek` may cut quality if readiness flipped after Sunday.
+**Saturday 21:00** — `coach-goal-propose` posts when the **effective** mesocycle end is today or past (race date if set, otherwise `start_date + planned_weeks`). Quiet if there is already a pending marker. Runs Saturday evening so there is Sunday to `goal: approve` before the Monday 07:15 week plan. Never mutates `goals.primary`.
+
+**Wednesday 08:00 (optional)** — `coach-midweek` may cut quality if readiness flipped after Monday.
 
 **Chat Automation** — every `#fitness` message: hard-reset to `master`, read latest `data/plans/*.json`, route `intent:` / `log:` / `goal:` / Q&A.
 
 **Runtime notes**
 
 - Cloud agents must `git reset --hard origin/master` before speaking or they invent stale weeks
-- Sunday targets the **upcoming** Monday (`_week_ahead_start`), not the in-progress week
-- If Intervals already has a run on Mon/Wed/Fri, reuse it; otherwise generate and push
+- Monday `coach-week` targets **this** Monday (`_week_ahead_start`); a leftover Sunday run still targets the upcoming Monday
+- If Intervals already has a run on Mon/Wed/Fri, reuse it; otherwise generate and push. Also upsert next Monday's easy run (Garmin ~7-day window)
 - Kickoff block adds quote + Heimdall motivate clip + Spotify playlists (`week_boost.py`)
 
 ## Data vs agent
@@ -82,15 +84,18 @@ flowchart TB
     Logs[data/logs/]
     Prog[data/progression/]
     Lib[data/library/ lift templates + videos]
+    Proposal[data/goal_proposal.json]
   end
   subgraph python [Deterministic coach]
     AS[AthleteState CTL TSB session-RPE]
     PL[planner.py phase + readiness edits]
     STR[strength_program.py templates]
     WK[week_boost.py kickoff]
+    GP[goal_propose.py]
   end
   subgraph agent [Cursor Automation]
-    Sun[Sunday coach-week + publish]
+    Mon[Monday coach-week + publish]
+    Propose[Sat 21h coach-goal-propose]
     Chat[intent log goal Q&A]
     Mid[Wed coach-midweek]
     Day[Daily coach-sync]
@@ -101,12 +106,16 @@ flowchart TB
   agent --> durable
   Chat --> Course
   Chat --> Logs
+  Propose --> GP
+  GP --> Proposal
 ```
 
 | Concern | Owner | Why |
 |---------|--------|-----|
 | Primary goal, block_id, lift week | `data/profile.json` | Mesocycle spine |
-| Path tweaks (time, race effort, lift style) | `data/course.json` via `intent:` | Rewrites this week without a new block |
+| Path tweaks (time, race effort, lift style) | `data/course.json` via `intent:` or Orbit Studio Apply | Rewrites this week without a new block |
+| Parse `intent:` message, commit, push | Automation | Git write + ack in Slack |
+| Orbit Studio Apply (production) | `repository_dispatch` `studio-apply-course` | GHA runs `coach-course`, commits `data/` |
 | CTL/ATL/TSB, wellness, calendar | Intervals sync → summary | Running form |
 | Session RPE, sore/travel hints | Slack `log:` → `data/logs/` | Strength PMC proxy |
 | cut_quality, ease_lower_lift, phase | `athlete_state.py` | Readiness flags the planner must obey |
@@ -114,14 +123,15 @@ flowchart TB
 | Tue/Thu lift prescriptions | `data/library/coach_wN_*.json` | Coach-owned, no paid PDFs |
 | Form-check YouTube links | `exercise_videos.json` (Heimdall snapshot) | Joined at HTML/Slack render |
 | Kickoff quote / motivate / playlists | `week_boost.json` + ravens | Human tone on Sunday |
-| Parse `intent:` message, commit, push | Automation | Git write + ack in Slack |
-| Propose `goal:` mesocycle swap | Automation | Human must approve before commit |
+| Propose next mesocycle when event date ends | `coach-goal-propose` + Sat 21:00 Automation | Effective end = race date or planned duration; marker file only; human must approve before `goals.primary` commit |
+| Propose `goal:` mesocycle swap (chat) | Automation | Human must approve before commit |
 
 **Slack prefix routing (order matters)**
 
 1. `intent:` / `course:` / `path:` → `coach-intent` → course + regenerate week
+   Orbit Studio Apply on production → `repository_dispatch` `studio-apply-course` (same CLI)
 2. `log:` → `CoachService.log_result` → RPE debt / strength form
-3. `goal:` → propose profile + block pack only (no commit until approved)
+3. `goal:` → propose profile + block pack only (no commit until approved). `goal: approve …` against a pending `data/goal_proposal.json` is the follow-up yes.
 4. Else → answer from latest plan + principles (short)
 
 ## System overview
@@ -146,7 +156,7 @@ Components:
 
 - **`fitness-coach` repo** — profile, course, plans, logs, progression, lift library on `master`
 - **`coach-week` CLI** — sync, AthleteState, plan generation, Slack markdown, optional Intervals calendar push
-- **Cursor Automations** — Sunday plan + publish, daily sync, chat router (Slack trigger)
+- **Cursor Automations** — Monday plan + publish, daily sync, chat router (Slack trigger)
 - **Intervals.icu** — activities, wellness, fitness chart (CTL/ATL/TSB), calendar events to Garmin
 - **Slack `#fitness`** — Sunday delivery, session logs, path intents, Q&A
 - **Heimdall (ravens)** — form-check and motivate clips; snapshot in repo for cloud renders
