@@ -23,12 +23,13 @@ export async function ensureStudioWeekAccess(
 export function ensureWeekIdSegment(
   rawWeekId: string,
   topic: WeekTopicSlug | null,
+  inner?: string | null,
 ): string {
   const weekId = resolveWeekParam(rawWeekId);
-  if (!weekId) redirect(weekHref(topic));
+  if (!weekId) redirect(weekHref(topic, null, inner));
 
   if (isCanonicalCurrentWeek(weekId)) {
-    redirect(weekHref(topic));
+    redirect(weekHref(topic, null, inner));
   }
 
   return weekId;

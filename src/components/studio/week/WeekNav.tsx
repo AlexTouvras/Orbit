@@ -61,6 +61,7 @@ export function WeekNav({
   nextWeekId,
   isCurrent,
   topic,
+  innerSheet,
 }: {
   weekId: string;
   range: string;
@@ -68,6 +69,7 @@ export function WeekNav({
   nextWeekId: string | null;
   isCurrent: boolean;
   topic?: WeekTopicSlug | null;
+  innerSheet?: string | null;
 }) {
   return (
     <div className="flex flex-wrap items-end justify-between gap-4">
@@ -82,16 +84,16 @@ export function WeekNav({
       </div>
       <nav aria-label="ISO week" className="flex gap-2">
         <NavButton
-          href={prevWeekId ? weekHref(topic, prevWeekId) : undefined}
+          href={prevWeekId ? weekHref(topic, prevWeekId, innerSheet) : undefined}
           disabled={!prevWeekId}
         >
           Previous
         </NavButton>
-        <NavButton href={weekHref(topic)} active={isCurrent}>
+        <NavButton href={weekHref(topic, null, innerSheet)} active={isCurrent}>
           This week
         </NavButton>
         <NavButton
-          href={nextWeekId ? weekHref(topic, nextWeekId) : undefined}
+          href={nextWeekId ? weekHref(topic, nextWeekId, innerSheet) : undefined}
           disabled={!nextWeekId}
         >
           Next

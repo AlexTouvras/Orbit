@@ -118,6 +118,32 @@ export interface FitnessWeek {
   course: FitnessCourseView | null;
 }
 
+export interface CodexPoint {
+  date: string;
+  weekId: string;
+  vdotEst: number | null;
+  predicted5k: string | null;
+  vdotRace: number | null;
+  vo2: number | null;
+  vo2AbsLMin: number | null;
+  ctl: number | null;
+  atl: number | null;
+  tsb: number | null;
+  sleepScore: number | null;
+  hrv: number | null;
+  weightKg: number | null;
+  bodyFatPct: number | null;
+  fatMassKg: number | null;
+  leanMassKg: number | null;
+  strengthCtl: number | null;
+  strengthAtl: number | null;
+}
+
+export interface CodexSeries {
+  updatedAt: string | null;
+  points: CodexPoint[];
+}
+
 export type LiftIntent = "maintenance" | "strength" | "hypertrophy";
 export type LiftStyle = "full" | "standard" | "simplified";
 export type RaceEffort = "peak" | "test" | "skip";

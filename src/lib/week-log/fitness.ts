@@ -8,6 +8,8 @@ import {
 import { listLocalDir, readLocalFile, siblingRoot } from "@/lib/week-log/local";
 import type {
   ArcNarrativeView,
+  CodexPoint,
+  CodexSeries,
   DailyQuestView,
   FitnessCourseView,
   FitnessDay,
@@ -385,6 +387,75 @@ export async function loadFitnessCourse(): Promise<FitnessCourseView | null> {
     profileRaw = null;
   }
   return parseCourse(courseRaw, profileRaw);
+}
+
+function parseCodexPoint(raw: unknown): CodexPoint | null {
+  if (!raw || typeof raw !== "object") return null;
+  const row = raw as Record<string, unknown>;
+  const date = asString(row.date);
+  const weekId = asString(row.week_id);
+  if (!date && !weekId) return null;
+  return {
+    date,
+    weekId,
+    vdotEst: asNumber(row.vdot_est),
+    predicted5k: asString(row.predicted_5k) || null,
+    vdotRace: asNumber(row.vdot_race),
+    vo2: asNumber(row.vo2),
+    vo2AbsLMin: asNumber(row.vo2_abs_l_min),
+    ctl: asNumber(row.ctl),
+    atl: asNumber(row.atl),
+    tsb: asNumber(row.tsb),
+    sleepScore: asNumber(row.sleep_score),
+    hrv: asNumber(row.hrv),
+    weightKg: asNumber(row.weight_kg),
+    bodyFatPct: asNumber(row.body_fat_pct),
+    fatMassKg: asNumber(row.fat_mass_kg),
+    leanMassKg: asNumber(row.lean_mass_kg),
+    strengthCtl: asNumber(row.strength_ctl),
+    strengthAtl: asNumber(row.strength_atl),
+  };
+}
+
+export async function loadCodexSeries(): Promise<WeekLane<CodexSeries>> {
+  const file = await readJsonText("data/progression/codex_series.json");
+  if (!file) {
+    return {
+      status: "empty",
+      detail: "No Codex series on this machine yet.",
+      source: "data/progression/codex_series.json",
+      data: null,
+    };
+  }
+  try {
+    const parsed = JSON.parse(file.text) as unknown;
+    const rawPoints = Array.isArray(parsed)
+      ? parsed
+      : parsed && typeof parsed === "object"
+        ? (parsed as Record<string, unknown>).points
+        : null;
+    const points = Array.isArray(rawPoints)
+      ? rawPoints
+          .map(parseCodexPoint)
+          .filter((point): point is CodexPoint => Boolean(point))
+      : [];
+    const updatedAt =
+      parsed && typeof parsed === "object"
+        ? asString((parsed as Record<string, unknown>).updated_at) || null
+        : null;
+    return {
+      status: points.length ? "ok" : "empty",
+      source: "data/progression/codex_series.json",
+      data: { updatedAt, points },
+    };
+  } catch {
+    return {
+      status: "unavailable",
+      detail: "Codex series JSON did not parse.",
+      source: "data/progression/codex_series.json",
+      data: null,
+    };
+  }
 }
 
 export async function loadFitnessWeek(weekId: string): Promise<WeekLane<FitnessWeek>> {

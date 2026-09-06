@@ -13,7 +13,7 @@ const DEMO_NARRATIVE: ArcNarrativeView = {
     rankHint:
       "Capable — composite 50–62. Solid block execution. Sharpen phase caps rank at B until race week.",
     scoreHint:
-      "Weighted blend of STR, AGI, VIT, and PER for this 5K block: AGI 45%, VIT 25%, STR 20%, PER 10%. Rounded 0–100 before rank bands.",
+      "Unweighted mean of STR, AGI, END, VIT, and PER (20% each) for every block. Rounded 0–100 before rank bands.",
   },
   stats: {
     str: {
@@ -24,11 +24,18 @@ const DEMO_NARRATIVE: ArcNarrativeView = {
       raw: { strength_ctl: 0.71, lift_week: 8, sessions_7d: 1 },
     },
     agi: {
-      display: 44,
-      valueLabel: "VO₂ 50.0",
-      hint: "Agility from Garmin/Intervals VO₂max when synced; otherwise run CTL. Level is absolute fitness, not weekly delta.",
-      source: "vo2max",
-      raw: { ctl: 14.18, vo2max: 50.0, vo2max_delta_30d: 0.0 },
+      display: 43,
+      valueLabel: "race 22:34 5K",
+      hint: "Race-speed estimate: Daniels VDOT from 5K PB / race, updated from hard 1k or ≥3 min splits. Predicted 5K on the label. Not Garmin VO2.",
+      source: "vdot_est",
+      raw: { vdot_est: 43.23, predicted_5k: "22:34" },
+    },
+    end: {
+      display: 50,
+      valueLabel: "VO₂ 50.0 · 5:13/km",
+      hint: "Cardiorespiratory engine: Garmin VO2max 1:1 (ml·kg⁻¹·min⁻¹).",
+      source: "wellness",
+      raw: { vo2max: 50.0 },
     },
     vit: {
       display: 68,

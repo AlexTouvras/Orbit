@@ -10,18 +10,19 @@ import type { ArcNarrativeView, DailyQuestView, FitnessDay } from "@/lib/week-lo
 const STAT_LABELS: Record<string, string> = {
   str: "STR",
   agi: "AGI",
+  end: "END",
   vit: "VIT",
   per: "PER",
 };
 
-const STAT_ORDER = ["str", "agi", "vit", "per"] as const;
+const STAT_ORDER = ["str", "agi", "end", "vit", "per"] as const;
 
 const GATE_SCORE_HINT_FALLBACK =
-  "Weighted blend of STR, AGI, VIT, and PER for this 5K block: AGI 45%, VIT 25%, STR 20%, PER 10%. Rounded 0–100 before rank bands.";
+  "Unweighted mean of STR, AGI, END, VIT, and PER (20% each) for every block. Rounded 0–100 before rank bands.";
 
 const GATE_RANK_HINTS: Record<string, string> = {
   E: "Entry gate — composite below 35. Build base fitness before rank-ups.",
-  D: "Developing — composite 35–49. Recovery locks may cap you here.",
+  D: "Developing — composite 35–49.",
   C: "Capable — composite 50–62. Solid block execution.",
   B: "Strong — composite 63–74. Race-ready training load.",
   A: "Elite — composite 75–86. Peak sharpening.",
@@ -319,7 +320,7 @@ export function ArcStatusCard({
         </div>
       ) : null}
 
-      <div className="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:grid-cols-4">
+      <div className="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:grid-cols-5">
         {STAT_ORDER.map((key) => {
           const stat = stats[key];
           if (!stat) return null;

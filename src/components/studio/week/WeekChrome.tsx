@@ -10,10 +10,12 @@ import { WeekNav } from "@/components/studio/week/WeekNav";
 export function WeekChrome({
   log,
   topic,
+  innerSheet,
   children,
 }: {
   log: WeekLog;
   topic?: WeekTopicSlug | null;
+  innerSheet?: string | null;
   children: React.ReactNode;
 }) {
   return (
@@ -38,6 +40,7 @@ export function WeekChrome({
           nextWeekId={log.nextWeekId}
           isCurrent={log.isCurrent}
           topic={topic}
+          innerSheet={innerSheet}
         />
         <TopicNav active={topic} weekId={log.weekId} />
       </div>

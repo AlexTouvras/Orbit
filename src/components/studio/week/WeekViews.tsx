@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { loadWeekLog } from "@/lib/week-log";
-import { loadFitnessWeek } from "@/lib/week-log/fitness";
+import { loadCodexSeries, loadFitnessWeek } from "@/lib/week-log/fitness";
 import { WEEK_TOPICS, weekHref } from "@/lib/week-log/topics";
 import { FitnessPanel } from "@/components/studio/week/FitnessPanel";
+import { FitnessCodexPanel } from "@/components/studio/week/FitnessCodexPanel";
+import { FitnessSheetNav } from "@/components/studio/week/FitnessSheetNav";
 import { MealsPanel } from "@/components/studio/week/MealsPanel";
 import { RavensPanel } from "@/components/studio/week/RavensPanel";
 import { NewsletterPanel } from "@/components/studio/week/NewsletterPanel";
@@ -69,30 +71,50 @@ export async function WeekHubView({ weekId }: { weekId?: string }) {
   );
 }
 
-export async function WeekFitnessView({ weekId }: { weekId?: string }) {
+export async function WeekFitnessView({
+  weekId,
+  sheet = "status",
+}: {
+  weekId?: string;
+  sheet?: "status" | "codex";
+}) {
   const log = await loadWeekLog(weekId);
   const nextWeekReady =
-    log.isCurrent && log.nextWeekId
+    sheet === "status" && log.isCurrent && log.nextWeekId
       ? await (async () => {
           const next = await loadFitnessWeek(log.nextWeekId!);
           if (next.status !== "ok" || !next.data) return null;
           return { weekId: log.nextWeekId!, theme: next.data.theme };
         })()
       : null;
+  const codex = sheet === "codex" ? await loadCodexSeries() : null;
 
   return (
-    <WeekChrome log={log} topic="fitness">
+    <WeekChrome log={log} topic="fitness" innerSheet={sheet === "codex" ? "codex" : undefined}>
       <SectionHeading
         eyebrow="Fitness"
-        title={log.fitness.data?.theme ?? "Weekly plan"}
-        description="Week kickoff clip, daily sessions, and Heimdall technique links on lifts."
+        title={
+          sheet === "codex"
+            ? "Codex"
+            : (log.fitness.data?.theme ?? "Weekly plan")
+        }
+        description={
+          sheet === "codex"
+            ? "Native-unit history for estimated VDOT, VO₂, recovery, body comp, and strength. Not HUD integers."
+            : "Week kickoff clip, daily sessions, and Heimdall technique links on lifts."
+        }
       />
       <div className="mt-8">
-        <FitnessPanel
-          lane={log.fitness}
-          heimdall={log.heimdall.data ?? []}
-          nextWeekReady={nextWeekReady}
-        />
+        <FitnessSheetNav weekId={log.weekId} active={sheet} />
+        {sheet === "codex" && codex ? (
+          <FitnessCodexPanel lane={codex} />
+        ) : (
+          <FitnessPanel
+            lane={log.fitness}
+            heimdall={log.heimdall.data ?? []}
+            nextWeekReady={nextWeekReady}
+          />
+        )}
       </div>
     </WeekChrome>
   );
