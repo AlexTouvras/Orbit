@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-09-05T09:53:22.178Z",
+  "generatedAt": "2026-09-06T06:46:56.611Z",
   "count": 220,
   "items": [
+    {
+      "id": "1ba3e47aaae7",
+      "title": "Your Roadmap Ranks Everything. It Rejects Nothing.",
+      "link": "https://www.scrum.org/resources/blog/your-roadmap-ranks-everything-it-rejects-nothing",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-06T06:00:00.000Z",
+      "contentSnippet": "Image Take the product strategy slide from your last quarterly review and write the opposite of every line underneath it. \"Deepen engagement in our core segment\" becomes \"shed engagement in our core segment.\" \"Improve time to value for new customers\" becomes \"slow new customers d…"
+    },
     {
       "id": "631b6c23c9b3",
       "title": "The Pelican comparison grid for Astra is pretty interesting",
@@ -46,6 +55,15 @@
       "category": "AI",
       "pubDate": "2026-09-04T17:38:48.000Z",
       "contentSnippet": ""
+    },
+    {
+      "id": "2e0d08c805e6",
+      "title": "OneLake Updates: A Conversation with Josh Caplan (Fabric Insider Ep 12)",
+      "link": "https://radacad.com/onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12/?utm_source=rss&utm_medium=rss&utm_campaign=onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-09-04T16:56:06.000Z",
+      "contentSnippet": "In this episode of Fabric Insider, I sat down with Josh Caplan, Director of Product for OneLake at Microsoft. Josh has been around this product family for a long time, starting as an intern on the Analysis Services team back in 2007, working on Project Gemini (which became Power…"
     },
     {
       "id": "d3fdcc599253",
@@ -208,6 +226,15 @@
       "category": "Delivery",
       "pubDate": "2026-09-02T16:32:57.000Z",
       "contentSnippet": "This is the third and final part of the series on agency. Part one explained what agency actually is, and part two looked at what a lack of agency looks like in practice. This part could almost be short. Most of it is already captured in the fifth principle of the Agile Manifesto…"
+    },
+    {
+      "id": "9ec1882bb0be",
+      "title": "Microsoft Fabric in GCC High: Building the data foundation for AI",
+      "link": "https://www.microsoft.com/en-us/microsoft-cloud/blog/us-government/2026/09/02/microsoft-fabric-in-gcc-high-building-the-data-foundation-for-ai/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-09-02T16:22:54.000Z",
+      "contentSnippet": "Government organizations are ready to move beyond using AI to answer questions and toward intelligent systems and agents that can take action. The post Microsoft Fabric in GCC High: Building the data foundation for AI appeared first on Microsoft Fabric Blog."
     },
     {
       "id": "8182327ec6e3",
@@ -622,15 +649,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-24T09:04:57.000Z",
       "contentSnippet": "TL; DR: 10 New Product Owner Interview Questions on AI “How do you use AI in your work?” If that is still one of your Product Owner interview questions, you are screening for tooling fluency in a role that lives or dies on product judgment. Every candidate has an answer; LLMs mak…"
-    },
-    {
-      "id": "af96e41a881b",
-      "title": "[Episode 5] AI Effects When You Use It In Building Your Product",
-      "link": "https://www.scrum.org/resources/blog/episode-5-ai-effects-when-you-use-it-building-your-product",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-24T05:56:18.000Z",
-      "contentSnippet": "\"AI-native Scrum Team\" is a podcast series that shares how Scrum Teams can effectively take the steps of their AI Transformation journey to become AI-native Scrum Teams. In episode 5, we discussed what effects we will see in our processes when we use AI to build the product. (for…"
     },
     {
       "id": "6c55885c6a96",
@@ -1299,15 +1317,6 @@
       "contentSnippet": "DuckLake is a next generation data lakehouse and open table format. It is significantly simpler and faster than Apache Iceberg or Delta Lake because it uses a SQL database for storing the catalog and metadata. This post covers an architecture deep dive with a detailed Q&A section…"
     },
     {
-      "id": "5d55efdc41a0",
-      "title": "No Code Dataflow Gen 2 in Microsoft Fabric Using GitHub Copilot and Fabric Skills",
-      "link": "https://radacad.com/no-code-dataflow-gen-2-in-microsoft-fabric-using-github-copilot-and-fabric-skills/?utm_source=rss&utm_medium=rss&utm_campaign=no-code-dataflow-gen-2-in-microsoft-fabric-using-github-copilot-and-fabric-skills",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-07-09T23:37:09.000Z",
-      "contentSnippet": "What if you could create a complete Dataflow Gen 2 in Microsoft Fabric — with data connections, merge transformations, and a fully built date table — without writing a single line of M code? Not as a theoretical future capability. Right now. Today. In this video, I show you exact…"
-    },
-    {
       "id": "43b30eb7245c",
       "title": "Experiences with local models for coding",
       "link": "https://martinfowler.com/articles/exploring-gen-ai/local-models-for-coding-experiences.html",
@@ -1855,15 +1864,6 @@
       "category": "Analytics",
       "pubDate": "2026-02-03T16:00:00.000Z",
       "contentSnippet": "The Microsoft Fabric Community Conference (FabCon) is returning stateside in just a few weeks, taking place at the Georgia World Congress Center in Atlanta, March 16 - 20, and it’s shaping up to be our biggest event yet. The post Top sessions you won’t want to miss at the Microso…"
-    },
-    {
-      "id": "04ac092e60a6",
-      "title": "FabCon and SQLCon: From workshops and keynotes to demos and deep dives",
-      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2025/12/17/fabcon-and-sqlcon-from-workshops-and-keynotes-to-demos-and-deep-dives/",
-      "source": "Microsoft Fabric Blog",
-      "category": "Analytics",
-      "pubDate": "2025-12-17T21:25:00.000Z",
-      "contentSnippet": "FabCon and SQLCon will be one of the year’s largest gatherings of data professionals from around the world, bringing together tech enthusiasts, innovators, and industry leaders to explore the future of data, SQL, analytics, business intelligence, and AI integration. The post FabC…"
     },
     {
       "id": "dd673b26a4ff",
