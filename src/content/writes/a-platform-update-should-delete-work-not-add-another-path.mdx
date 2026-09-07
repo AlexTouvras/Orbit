@@ -1,0 +1,66 @@
+---
+title: "A platform update should delete work, not add another path"
+summary: "When an analytics platform moves, I adopt the change only if it removes a named recurring job without removing the control that kept that job safe."
+date: "2026-09-07"
+category: "Delivery"
+featured: false
+tags: ["Delivery", "Analytics", "Data platforms", "Change management"]
+---
+
+## The question
+
+What actually changes in how I build analytics when the reporting stack keeps moving?
+
+The easy answer is the component diagram. A new shortcut replaces a copy job. A managed transform replaces a notebook. A storage setting moves into the platform. But if I adopt each release by adding one more approved route, the stack does not become simpler. It becomes an archive of every era the team has lived through.
+
+I now use a stricter test: an update earns a place in the architecture when it deletes a named recurring job without deleting the control that made that job safe.
+
+## Count the work an update removes
+
+The useful thread in RADACAD's [conversation with OneLake product director Josh Caplan](https://radacad.com/onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12/?utm_source=rss&utm_medium=rss&utm_campaign=onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12) is subtraction. A shortcut can point at data where it already lives instead of copying it. A shortcut transform can turn a folder of simple files into a table without a team maintaining a separate pipeline or notebook. Caplan is also explicit about the boundary: those transforms make the easy work easy; they do not replace orchestration when several steps, dependencies, or advanced transformations have to move together.
+
+That boundary matters more to me than the feature count. A notebook that pulls reference files from SharePoint may be small, but someone still owns its credentials, schedule, copied data, and failures. If a managed pointer removes that routine, the release has changed the operating model. It has removed work that could wake up stale on a Monday.
+
+A feature earns architecture status when it deletes a recurring obligation, not when it wins a demo.
+
+The opposite is common. A team keeps the old pipeline as a safety blanket, adds the new shortcut, and leaves both available indefinitely. Nothing has been simplified. The same data now has two routes, two failure stories, and an argument waiting for the next incident.
+
+## Preserve the control, not the machinery
+
+Custom machinery often carries useful controls by accident. The old pipeline may check a schema, reject a blank file, record when a source arrived, or stop publication when row counts move sharply. Removing the pipeline can also remove those checks unless the migration names them first.
+
+So I separate the job from the control. Copying files may be the job I want the platform to absorb. Checking that the files still represent the expected business grain is a control I need to preserve. A notebook is replaceable; evidence that the resulting table is fit for a decision is not.
+
+This is where platform adoption can hurt. The more native the path feels, the easier it is to mistake availability for correctness. A file appearing as a table does not prove that its columns kept their meaning, that late records were handled, or that the intended audience can see only what it should. Convenience shortens the route to data. It does not settle the data contract.
+
+## Run the update as a challenger
+
+I prefer to treat the current route as a baseline and the new feature as a challenger. I do not need a six-month migration program to compare them. I need one representative source and a check that exposes the real trade.
+
+For a shortcut transform, I would run the same source through both paths and compare freshness, accepted schema, failure visibility, and the person-hours spent keeping each route alive. Then I would break the source on purpose. A missing column or delayed file tells me more about operational ownership than a successful first load.
+
+The challenger does not have to win every measure. A managed path may be easier to own while offering less freedom for unusual transformations. That can be the right trade. If the source needs coordinated steps, detailed audit history, or custom recovery, the existing pipeline may still be doing valuable work. I would keep it and write down why, rather than calling every line of custom code technical debt.
+
+There is also a cost to migration itself. A low-frequency process that rarely fails may not justify immediate movement. In that case I can record the candidate and wait for the next material change instead of creating work solely to look current.
+
+## The seam I keep visible in Orbit
+
+Orbit, my public portfolio and writing site, has a smaller version of this rule. A weekly essay draft can be prepared through a cloud automation or finished in the development environment. Both routes produce the same pending draft record. The draft then has to be present on the main GitHub branch before the Slack review message is useful, and a human still chooses Approve or Skip.
+
+I am happy for tooling to remove the manual transport between those steps. I do not want it to remove the review boundary. Generation is the recurring job the platform can absorb; publication is the control I keep visible.
+
+That distinction prevents a common automation mistake. If I measure success by whether text was generated, every new route looks productive. If I measure whether a reviewable draft arrived with its source and status intact, only the routes that complete the operating loop count.
+
+## What actually changes
+
+When the stack moves, my architecture review shifts from capability to subtraction. I start with the friction already being paid: repeated copies, hand-run conversions, brittle credentials, or a person checking whether a routine woke up. Then I ask whether the new platform path can retire one of those obligations and where its control will live afterward.
+
+Sometimes the answer is no. The feature stays in a sandbox. Sometimes the answer is yes, but only after I add a visible validation or assign an owner to the new seam. That is still progress because the result has one supported route and a failure the team knows how to see.
+
+I cannot make an analytics stack stop changing. I can refuse to let each change leave another permanent path behind.
+
+## Takeaway
+
+My adoption rule is simple: name the recurring job that disappears, then name the control that remains. Test the new route against the old one with a real source and one deliberate failure. If I cannot state what work ends, the update is still a feature demonstration. If I cannot state where correctness is checked, the update is a shortcut in the dangerous sense.
+
+A moving platform should reduce the operating burden of analytics. When it only adds an option, I wait.
