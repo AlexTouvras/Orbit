@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T06:46:59.622Z",
+  "generatedAt": "2026-09-07T11:25:49.072Z",
   "count": 221,
   "items": [
     {
@@ -19,6 +19,15 @@
       "category": "Data",
       "pubDate": "2026-09-07T00:18:06.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "e02ae19def6b",
+      "title": "Supporting independent journalism in Ukraine",
+      "link": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-07T00:00:00.000Z",
+      "contentSnippet": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience, and independent journalism."
     },
     {
       "id": "276160ac62d4",
@@ -325,15 +334,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-02T12:44:43.000Z",
       "contentSnippet": "Let’s talk about matrix totals in this episode of The Whiteboard! Special guest: the SQLBI Whiteboard! Learn abstract DAX concepts in a more interactive way with “The Whiteboard” series. Read more: https://www.sqlbi.com/blog/marco/2022/07/14/the-whiteboard-video-series-on-sqlbi-y…"
-    },
-    {
-      "id": "b07b0b2b4d66",
-      "title": "ATV Big Air Tour turned 3 days of work into 3 hours with ChatGPT",
-      "link": "https://openai.com/index/atv-big-air-tour",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-02T12:00:00.000Z",
-      "contentSnippet": "ATV Big Air Tour uses ChatGPT Work to speed up marketing, merchandising, and more. It even turned merchandise photos into an inventory website in 15 minutes."
     },
     {
       "id": "1f70dd38b3b3",
