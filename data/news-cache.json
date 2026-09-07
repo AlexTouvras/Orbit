@@ -1,7 +1,61 @@
 {
-  "generatedAt": "2026-09-06T10:10:13.082Z",
-  "count": 220,
+  "generatedAt": "2026-09-07T06:46:59.622Z",
+  "count": 221,
   "items": [
+    {
+      "id": "3d26d2dbcb98",
+      "title": "Which Class Should You Arrange Next?",
+      "link": "https://www.scrum.org/resources/blog/which-class-should-you-arrange-next",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-07T02:08:49.000Z",
+      "contentSnippet": "Image This is written for managers and executives who hold a training budget and are considering Scrum or other Agile training for their employees. Technology leaders hire me to improve the way they manage software product operations. I have been practicing and teaching agile met…"
+    },
+    {
+      "id": "4c1562c02af7",
+      "title": "Data Engineering Weekly #286",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-286",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-09-07T00:18:06.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "276160ac62d4",
+      "title": "Choosing A Power BI Storage Mode For Reporting On Data From Azure Databricks",
+      "link": "https://blog.crossjoin.co.uk/2026/09/06/choosing-a-power-bi-storage-mode-for-reporting-on-data-from-azure-databricks/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-09-06T20:32:03.000Z",
+      "contentSnippet": "In case you haven’t already seen the blog post on the Power BI blog or the discussion on LinkedIn, we at Microsoft published a new white paper last week to help you decide which storage mode to use when you’re using Power BI to create semantic models and reports on data stored in…"
+    },
+    {
+      "id": "a1e3ce7a0ba0",
+      "title": "AI Transformations And Agile Transformations Rhyme",
+      "link": "https://www.scrum.org/resources/blog/ai-transformations-and-agile-transformations-rhyme",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-06T11:15:42.000Z",
+      "contentSnippet": "TL;DR: AI Transformations and Agile Transformations Rhyme AI adoption seems to be scaling: 37% of respondents in McKinsey’s 2026 survey report an EBIT effect from AI, and Gartner finds that 22% of organizations have scaled it across business units. Now, Agile practitioners have s…"
+    },
+    {
+      "id": "a8e8f9dc895a",
+      "title": "An Alien Mind",
+      "link": "https://openai.com/index/an-alien-mind",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-06T09:00:00.000Z",
+      "contentSnippet": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination."
+    },
+    {
+      "id": "19672c4832d4",
+      "title": "Research acceleration: The view inside OpenAI",
+      "link": "https://openai.com/index/research-acceleration-view-inside-openai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-06T08:00:00.000Z",
+      "contentSnippet": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration."
+    },
     {
       "id": "1ba3e47aaae7",
       "title": "Your Roadmap Ranks Everything. It Rejects Nothing.",
@@ -147,15 +201,6 @@
       "contentSnippet": "Originally published on yuvalyeret.com. The first thing to change is who writes the artifacts, not how you work \"We didn't change the process. We still have a quarterly planning and we have sprint planning and we have roadmaps and a list of features that we want to deliver in a q…"
     },
     {
-      "id": "7a45b185cff5",
-      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
-      "link": "https://openai.com/index/playco-game-prototyping-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-03T12:00:00.000Z",
-      "contentSnippet": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
-    },
-    {
       "id": "be4a3c542626",
       "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
       "link": "https://openai.com/index/legora-financial-statement-review-with-astra",
@@ -163,6 +208,15 @@
       "category": "AI",
       "pubDate": "2026-09-03T12:00:00.000Z",
       "contentSnippet": "Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow."
+    },
+    {
+      "id": "7a45b185cff5",
+      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
+      "link": "https://openai.com/index/playco-game-prototyping-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-03T12:00:00.000Z",
+      "contentSnippet": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
     },
     {
       "id": "0f3b76bc480d",
@@ -363,15 +417,6 @@
       "contentSnippet": "Databricks engineers rely heavily on AI agents to streamline and accelerate their work. In turn..."
     },
     {
-      "id": "3b5f2688fec1",
-      "title": "How AI-native companies turn workflows into operating capability",
-      "link": "https://openai.com/index/ai-native-company-workflows",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-01T17:00:00.000Z",
-      "contentSnippet": "Basis, Clay, and Exa Labs use AI agents to improve onboarding, account management, and developer integrations. See what enterprise leaders can apply."
-    },
-    {
       "id": "05fdb9d79c76",
       "title": "What Leaders Do That Keep Scrum Teams Working Like Individuals",
       "link": "https://www.mountaingoatsoftware.com/agile/what-leaders-do-that-keep-scrum-teams-working-like-individuals",
@@ -379,15 +424,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-01T17:00:00.000Z",
       "contentSnippet": "Scrum teams often work like individuals because the organization staffs, measures, interrupts, and rewards them that way. Leaders can change the conditions that make real teamwork possible."
-    },
-    {
-      "id": "309be27bdcfe",
-      "title": "Path to Astra: critical capabilities and frontier safeguards",
-      "link": "https://openai.com/index/path-to-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-01T13:00:00.000Z",
-      "contentSnippet": "Astra is the first OpenAI model to meet the Critical cybersecurity capability threshold under the Preparedness Framework, with stronger safeguards for release."
     },
     {
       "id": "50dee862a4fb",
@@ -640,15 +676,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-24T15:29:00.000Z",
       "contentSnippet": "I was listening to Ezra Klein’s interview with Helen Toner about the recent OpenAI hack of Hugging Face and the subsequent discovery that there were swarms of agents inside OpenAI doing unsanctioned activities. One of the points Klein made was that at no point did any of these (t…"
-    },
-    {
-      "id": "9ac6cd3beb80",
-      "title": "Product Owner Interview Questions for the Age of AI",
-      "link": "https://www.scrum.org/resources/blog/product-owner-interview-questions-age-ai",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-24T09:04:57.000Z",
-      "contentSnippet": "TL; DR: 10 New Product Owner Interview Questions on AI “How do you use AI in your work?” If that is still one of your Product Owner interview questions, you are screening for tooling fluency in a role that lives or dies on product judgment. Every candidate has an answer; LLMs mak…"
     },
     {
       "id": "6c55885c6a96",
@@ -1443,15 +1470,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "d5f77903e27b",
-      "title": "Power BI DirectQuery Mode: A Better Choice Than You Might Think",
-      "link": "https://blog.crossjoin.co.uk/2026/06/28/power-bi-directquery-mode-a-better-choice-than-you-might-think/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-06-28T21:49:11.000Z",
-      "contentSnippet": "For as long as I’ve been using Power BI – which has been from the beginning – the advice about which storage mode to choose has been the same: use Import mode unless you have a really, really good reason to use DirectQuery mode and even then you’re probably wrong and should use I…"
-    },
-    {
       "id": "aadf0f1ace40",
       "title": "Operationalizing Data Orchestration: Best Practices for DevOps, Infra, and Code Locations",
       "link": "https://dagster.io/blog/the-dagster-almanack-operationalizing-data-orchestration",
@@ -1621,15 +1639,6 @@
       "category": "Data",
       "pubDate": "2026-06-01T14:06:54.000Z",
       "contentSnippet": "Brooklyn Data shares how it uses Compass to make operational and financial data accessible in Slack, reducing time-to-answer, improving data discoverability, and enabling governed self-service analytics across the organization."
-    },
-    {
-      "id": "a1d19d2f0e19",
-      "title": "Data Engineering Weekly #272",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-272",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-06-01T03:18:34.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "12596e9488ac",
