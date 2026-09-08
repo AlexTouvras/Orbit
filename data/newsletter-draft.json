@@ -1,6 +1,6 @@
 {
   "id": "newsletter-2026-W37",
-  "status": "pending",
+  "status": "sent",
   "createdAt": "2026-09-08T12:08:27.043Z",
   "weekOf": "2026-09-07",
   "subject": "Orbit weekly — week of 2026-09-07",
@@ -65,5 +65,9 @@
       "snippet": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience…"
     }
   ],
-  "ravens": []
+  "ravens": [],
+  "sentAt": "2026-09-08T12:08:29.113Z",
+  "broadcastId": "95115fdd-272b-4470-b74b-d4354ff39fc0",
+  "sendMode": "test",
+  "sentTo": "a.touvras@gmail.com"
 }
