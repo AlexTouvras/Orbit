@@ -1,111 +1,69 @@
 {
-  "id": "newsletter-2026-W36",
-  "status": "sent",
-  "createdAt": "2026-09-01T12:34:10.522Z",
-  "weekOf": "2026-08-31",
-  "subject": "Orbit weekly — week of 2026-08-31",
+  "id": "newsletter-2026-W37",
+  "status": "pending",
+  "createdAt": "2026-09-08T12:08:27.043Z",
+  "weekOf": "2026-09-07",
+  "subject": "Orbit weekly — week of 2026-09-07",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
   "writes": [
     {
-      "slug": "when-the-reporting-stack-moves-preserve-the-contract",
-      "title": "When the reporting stack moves, preserve the contract",
-      "summary": "A native Power BI feature can remove a workaround, but the durable improvement is deciding which responsibility moved and what the report can still rely on.",
-      "date": "2026-08-31",
-      "href": "https://alextouvras.com/writes/when-the-reporting-stack-moves-preserve-the-contract"
+      "slug": "a-platform-update-should-delete-work-not-add-another-path",
+      "title": "A platform update should delete work, not add another path",
+      "summary": "When an analytics platform moves, I adopt the change only if it removes a named recurring job without removing the control that kept that job safe.",
+      "date": "2026-09-07",
+      "href": "https://alextouvras.com/writes/a-platform-update-should-delete-work-not-add-another-path"
+    },
+    {
+      "slug": "what-one-operator-can-build-when-projects-stop-being-islands",
+      "title": "What one operator can build when projects stop being islands",
+      "summary": "Shipping many side projects teaches almost nothing if each one starts from a blank slate. Here is the shared spine I reuse: write things down, share knowledge, remember across work, and keep a human in the approval loop.",
+      "date": "2026-09-02",
+      "href": "https://alextouvras.com/writes/what-one-operator-can-build-when-projects-stop-being-islands"
+    },
+    {
+      "slug": "when-the-coach-got-gate-ranks",
+      "title": "When the coach got gate ranks",
+      "summary": "My training plan already had honest numbers. They still felt like a parking ticket. Gate ranks wrap the same sensor data in a story so I actually look at readiness before I look at Tuesday squats.",
+      "date": "2026-09-02",
+      "href": "https://alextouvras.com/writes/when-the-coach-got-gate-ranks"
+    },
+    {
+      "slug": "when-the-portfolio-needs-a-memory",
+      "title": "When the portfolio needs a memory",
+      "summary": "Chat history is a transcript, not a filing system. After retiring a heavy local orchestrator, I built a quieter portfolio memory so each new session starts with what I already decided.",
+      "date": "2026-09-02",
+      "href": "https://alextouvras.com/writes/when-the-portfolio-needs-a-memory"
     }
   ],
   "signals": [
     {
-      "title": "Referencing Images And Other Files In Power BI Reports Using OneLake URLs",
-      "link": "https://blog.crossjoin.co.uk/2026/08/30/referencing-images-and-other-files-in-power-bi-reports-using-onelake-urls/",
-      "source": "Chris Webb's BI Blog",
+      "title": "Writing DAX at the correct granularity",
+      "link": "https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/",
+      "source": "SQLBI",
       "category": "Analytics",
-      "snippet": "Several years ago I wrote a very popular blog post about how to store images for your reports inside your Power BI sema…"
+      "snippet": "A DAX calculation can produce convincing values at the detail level and still fail at the total. The problem is often n…"
     },
     {
-      "title": "Autoscaling Lakebase Postgres",
-      "link": "https://www.databricks.com/blog/autoscaling-lakebase-postgres",
-      "source": "Databricks Blog",
+      "title": "Data Engineering Weekly #286",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-286",
+      "source": "Data Engineering Weekly",
       "category": "Data",
-      "snippet": "Choosing a database instance size before you know the workload is an old building pattern..."
+      "snippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "title": "Scrum Masters — the world needs you now as much as ever",
-      "link": "https://www.scrum.org/resources/blog/scrum-masters-world-needs-you-now-much-ever",
+      "title": "Which Class Should You Arrange Next?",
+      "link": "https://www.scrum.org/resources/blog/which-class-should-you-arrange-next",
       "source": "Scrum.org",
       "category": "Delivery",
-      "snippet": "Image We all know too little planning is ineffective — and I think most of us know too much planning is wasteful in con…"
+      "snippet": "Image This is written for managers and executives who hold a training budget and are considering Scrum or other Agile t…"
     },
     {
-      "title": "OpenAI supports California’s bill to advance youth AI safety",
-      "link": "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety",
+      "title": "Supporting independent journalism in Ukraine",
+      "link": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
       "source": "OpenAI Blog",
       "category": "AI",
-      "snippet": "OpenAI supports California SB 1119, advancing strong, age-appropriate AI safeguards for teens while preserving opportun…"
+      "snippet": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience…"
     }
   ],
-  "ravens": [
-    {
-      "kind": "signal",
-      "domain": "ai-agents",
-      "title": "Pydantic AI 2.36.0 — public durable-execution backend API and named @durable_operation",
-      "summary": "Pydantic AI v2.36.0 (GitHub release published 29 Aug 2026; tagged 28 Aug 2026; MIT) adds `@durable_operation` for capabilities plus a **pub…",
-      "id": "SIG-20260831-002",
-      "date": "2026-08-31",
-      "priority": "p3"
-    },
-    {
-      "kind": "signal",
-      "domain": "data-bi",
-      "title": "Power BI Copilot Summary/Narrative can read bookmark-hidden visuals",
-      "summary": "Microsoft Learn's August 2026 Power BI update (dated 18 Aug 2026) ships \"Copilot Summary and Copilot Narrative can now read visuals hidden…",
-      "id": "SIG-20260830-003",
-      "date": "2026-08-30",
-      "priority": "p3"
-    },
-    {
-      "kind": "inbox",
-      "domain": "career",
-      "title": "Tribedo opens a Helsinki Solution Analyst role pairing SQL/Python/Power BI with banking risk reporting — applications close tomorrow",
-      "summary": "Tribedo Oy (via Barona) published (21 Aug 2026) a fixed-term \"Solution Analyst (Specialist/Senior)\" posting in Helsinki, hybrid (1–2 days/w…",
-      "href": "https://www.jobly.fi/tyopaikka/solution-analyst-2739490",
-      "sourceTitle": "Solution Analyst, Tribedo Oy - Helsinki | Jobly",
-      "id": "FIND-20260829-005",
-      "date": "2026-08-21"
-    },
-    {
-      "kind": "inbox",
-      "domain": "finance",
-      "title": "Fortum's NOK 47/share cash tender offer for Elmera Group opens; acceptance period runs through 18 Sep 2026",
-      "summary": "Fortum Oyj (Nasdaq Helsinki) launched a recommended voluntary cash tender offer on 21 Aug 2026 for all outstanding shares of Elmera Group A…",
-      "href": "https://news.cision.com/fortum/r/fortum-launches-recommended-voluntary-cash-tender-offer-to-the-shareholders-of-elmera-group-asa-and-,c4385953",
-      "sourceTitle": "Fortum launches recommended voluntary cash tender offer to the shareholders of Elmera Group ASA and offer period commences — Fortum (Cision)",
-      "id": "FIND-20260826-001",
-      "date": "2026-08-21"
-    },
-    {
-      "kind": "knowledge",
-      "domain": "parenting",
-      "title": "Finland — birthing parent can file vanhempainraha in OmaKela before birth",
-      "summary": "The **birthing parent** can apply for parental allowance (vanhempainraha) **already before the child is born**, at the same time as pregnan…",
-      "href": "https://www.kela.fi/vanhempainvapaalla",
-      "sourceTitle": "Vanhempainraha ja vanhempainraha osittaisena — Kela",
-      "id": "KNOW-parenting-fi-kela-vanhempainraha-before-birth",
-      "date": "2026-09-01"
-    },
-    {
-      "kind": "inbox",
-      "domain": "security",
-      "title": "GitHub MCP Server 1.11.0 adds per-call OAuth scope checks on top of the existing v1.10.0+ hardening baseline",
-      "summary": "GitHub's `github-mcp-server` v1.11.0 (released 25 Aug 2026) adds \"smarter OAuth challenges\" that request only the permissions each tool inv…",
-      "href": "https://github.com/github/github-mcp-server/releases/tag/v1.11.0",
-      "sourceTitle": "GitHub MCP Server 1.11.0 — Release notes",
-      "id": "FIND-20260828-004",
-      "date": "2026-08-25"
-    }
-  ],
-  "sentAt": "2026-09-01T12:34:12.378Z",
-  "broadcastId": "16031cdc-5b12-4bb6-86cd-734144bc309b",
-  "sendMode": "test",
-  "sentTo": "a.touvras@gmail.com"
+  "ravens": []
 }
