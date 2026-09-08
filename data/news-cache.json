@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-09-07T11:25:49.072Z",
-  "count": 221,
+  "generatedAt": "2026-09-08T06:46:57.775Z",
+  "count": 216,
   "items": [
+    {
+      "id": "fddf6f97d147",
+      "title": "Writing DAX at the correct granularity",
+      "link": "https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-09-07T20:00:23.000Z",
+      "contentSnippet": "A DAX calculation can produce convincing values at the detail level and still fail at the total. The problem is often not the total itself: the business rule was evaluated at the wrong granularity. This article introduces four grains, or…"
+    },
     {
       "id": "3d26d2dbcb98",
       "title": "Which Class Should You Arrange Next?",
@@ -1209,15 +1218,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "ac48fd75c489",
-      "title": "Announcing the Data Outpost Conference",
-      "link": "https://motherduck.com/blog/announcing-data-outpost-conference",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-07-20T00:00:00.000Z",
-      "contentSnippet": "Data Outpost is a new conference for data and AI builders, coming to San Francisco November 4-5, 2026. The next evolution of Small Data SF: two days of workshops, talks, and real time with the people building the data layer AI depends on."
-    },
-    {
       "id": "a92c018c9c22",
       "title": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
       "link": "https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/",
@@ -1245,24 +1245,6 @@
       "contentSnippet": "When people think of legacy modernization, most folks aren't imagining the target environment will be Java 8. But this was the challenge facing Nik Malykhin when he needed to run a Java 1.5 codebase on today's hardware. His early use of LLMs gave plausible answers that did not ho…"
     },
     {
-      "id": "5f276307a9b3",
-      "title": "Developer Dad Does Disney: Vacationing in the Personal Software Era",
-      "link": "https://motherduck.com/blog/developer-dad-does-disney",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-07-16T00:00:00.000Z",
-      "contentSnippet": "Waiting in line is no fun! While standing in line at Disney World, a developer dad built a custom data app to pick the perfect next ride. It combines live APIs, historical wait times, and weather data into personal software with MotherDuck's MCP, Dives, and Flights."
-    },
-    {
-      "id": "266c1e8506f7",
-      "title": "DuckDB Ecosystem Newsletter : July 2026",
-      "link": "https://motherduck.com/blog/duckdb-ecosystem-newsletter-july-2026",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-07-15T00:00:00.000Z",
-      "contentSnippet": "July's DuckDB Ecosystem Newsletter: a portable R2 + DuckLake analytics stack, why PostHog rebuilt on DuckDB over ClickHouse, DuckCon #7 and the 1.5.4 / 1.4.5 releases, a SedonaDB WASM build for spatial SQL in the browser, and more."
-    },
-    {
       "id": "51562230a5e4",
       "title": "DSLs Enable Reliable Use of LLMs",
       "link": "https://martinfowler.com/articles/llm-and-dsls.html",
@@ -1279,15 +1261,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-14T10:00:00.000Z",
       "contentSnippet": "How to apply a different formatting rule at each level of a hierarchy using ISINSCOPE in a measure or ISATLEVEL in a visual calculation."
-    },
-    {
-      "id": "a0f7ccd976b0",
-      "title": "Self-hosting DuckDB: the road to production",
-      "link": "https://motherduck.com/blog/self-hosting-duckdb-road-to-production",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-07-14T00:00:00.000Z",
-      "contentSnippet": "A practical map of self-hosting DuckDB, from a laptop to a full data platform: the architectures people actually build at each stage, benchmarks that show the trade-offs, and the boxes you end up maintaining, so you can make an honest build-versus-buy call."
     },
     {
       "id": "dd3037e1acbb",
@@ -1333,15 +1306,6 @@
       "category": "Data",
       "pubDate": "2026-07-10T10:20:21.000Z",
       "contentSnippet": "Why privacy engineering is about governing data in use—not simply hiding it."
-    },
-    {
-      "id": "4cd1b0a5b2dc",
-      "title": "DuckLake Architecture Deep Dive",
-      "link": "https://motherduck.com/blog/ducklake-architecture-deep-dive",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-07-10T00:00:00.000Z",
-      "contentSnippet": "DuckLake is a next generation data lakehouse and open table format. It is significantly simpler and faster than Apache Iceberg or Delta Lake because it uses a SQL database for storing the catalog and metadata. This post covers an architecture deep dive with a detailed Q&A section…"
     },
     {
       "id": "43b30eb7245c",
@@ -1693,15 +1657,6 @@
       "category": "Analytics",
       "pubDate": "2026-05-19T10:00:00.000Z",
       "contentSnippet": "User-aware calculated columns are not materialized: we can use them as virtual calculated columns for localization and for custom security scenarios. This feature is available through the new Expression Context property of calculated columns in Power BI."
-    },
-    {
-      "id": "d5032f26ae69",
-      "title": "Introducing user-aware calculated columns in Power BI",
-      "link": "https://www.sqlbi.com/articles/introducing-user-aware-calculated-columns-in-power-bi/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-05-18T20:00:24.000Z",
-      "contentSnippet": "This article describes the new Expression Context property of calculated columns in Power BI, explaining how user-aware calculated columns work, why they are not materialized, and how to use them as virtual calculated columns for localization and custom security scenarios.…"
     },
     {
       "id": "1482c83da309",
