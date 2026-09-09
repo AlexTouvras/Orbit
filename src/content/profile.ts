@@ -35,7 +35,13 @@ export interface SocialLink {
 
 export interface Competency {
   title: string;
+  /** Compact label for the identity HUD tile. */
+  shortTitle: string;
   description: string;
+  /** Field-card thesis on the identity HUD (Home keeps `description`). */
+  hudTitle?: string;
+  hudVerbs?: string;
+  hudDescription?: string;
   accent: "cyan" | "violet" | "blue";
   icon: LucideIcon;
   /** Optional deep link (e.g. field card) — makes the home card pressable. */
@@ -48,12 +54,18 @@ export const profile = {
   handle: "@alextouvras",
   // Used by the Portfolio page to auto-showcase your public repos.
   githubUsername: "alextouvras",
-  role: "Technology Delivery Lead · Data & AI Automation",
+  role: "Delivery · Data · AI automation",
   location: "Vantaa, Finland",
   tagline:
     "Anyone can generate a draft nowadays. Fewer teams can prove what works or agree on what deserves to exist. That's the work I lead. If nobody owns that call, nothing ships.",
+  /** One line on the identity HUD — stranger-readable, no workshop slang. */
+  cardTagline:
+    "Anyone can generate a draft. I lead the work of proving what works and deciding what deserves to exist.",
   pillars: "Delivery · Data · AI automation",
-  availability: "Open to Data & AI delivery roles",
+  /** Primary contact CTA — replaces a separate “open to …” pill. */
+  contactCta: "Get in touch about a role",
+  availability:
+    "Open to Data & Analytics, Credit Risk, AI or delivery roles",
   yearsExperience: "7+",
   summary:
     "I lead IT application operations on Azure at Santander Consumer Bank Nordics, after years on PD models, scorecards, and ECL-style work. Orbit is the public HQ: one-question Blog essays, portfolio proof (Power BI, Ledger, workshop tools), and a curated Related articles feed. Automation gets a human Approve gate — including the weekly Write draft.",
@@ -76,8 +88,13 @@ export const profile = {
 export const competencies: Competency[] = [
   {
     title: "AI Orchestration & Automation",
+    shortTitle: "AI",
     description:
       "Bounded agent loops with an owner and a kill switch: drafts and runbooks yes; priority calls and production publish stay human.",
+    hudTitle: "Agentic AI is a stack, not a menu",
+    hudVerbs: "Understand → find → act → orchestrate",
+    hudDescription:
+      "Knowledge, a control loop, tools, then peers if you need them. Start at the thinnest layer that solves the job.",
     accent: "cyan",
     icon: Bot,
     href: "/field-card/index.html",
@@ -85,8 +102,13 @@ export const competencies: Competency[] = [
   },
   {
     title: "Data & Analytics",
+    shortTitle: "Data",
     description:
       "Python, SQL, and Power BI / Fabric — gold tables, semantic models, and page paths that survive a cold Monday open. Roots in credit risk (PD, scorecards, ECL).",
+    hudTitle: "Analytics is a stack, not a dashboard",
+    hudVerbs: "Ask → name → define → consume",
+    hudDescription:
+      "Question, grain, truth layer, consume path: those are the layers. Tools are lanes.",
     accent: "blue",
     icon: LineChart,
     href: "/analytics-field-card/index.html",
@@ -94,8 +116,13 @@ export const competencies: Competency[] = [
   },
   {
     title: "Technology Delivery",
+    shortTitle: "Delivery",
     description:
       "Sequencing Azure and middleware changes across platform, security, and business calendars — evidence before the call, rollback before green.",
+    hudTitle: "Delivery is a sequence, not a ticket",
+    hudVerbs: "Name → calendar → prove → cut over",
+    hudDescription:
+      "Intent, window, proof, cutover: those are the layers. Methods are lanes. Name rollback before anyone calls it done.",
     accent: "violet",
     icon: Route,
     href: "/delivery-field-card/index.html",

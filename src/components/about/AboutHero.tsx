@@ -37,6 +37,8 @@ export function AboutHero({
         </Badge>
       }
       avatarUrl={avatarUrl}
+      avatarHref="/card"
+      avatarHrefLabel="Open identity HUD"
       avatarAlt=""
       title={name}
       subtitle="Background & experience"

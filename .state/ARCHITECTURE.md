@@ -48,6 +48,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Dependency | Why introduced | Date |
 |------------|----------------|------|
 | `@vercel/analytics` | Privacy-light page analytics on Vercel | 2026-07-26 |
+| `uqr` | Encode on-screen QR for `/qr-code` → `/card` | 2026-09-09 |
 
 ## File structure
 
@@ -71,6 +72,10 @@ public/analytics-field-card/index.html  # Data Analytics Field Card (home Data c
 public/delivery-field-card/index.html   # Technology Delivery Field Card (home Delivery competency)
 src/lib/field-card/registry.ts          # Multi-card Approve sync map (repo → Orbit path)
 src/lib/field-card/slack.ts             # Laconic one-post-per-card #orbit FYI (Review/Considered/Changed/Online + Check card)
+src/app/card/page.tsx                   # Public identity HUD (chrome-light)
+src/app/qr-code/page.tsx                # On-screen QR to /card
+src/components/card/                    # IdentityHud + CardQr
+src/components/layout/AppChrome.tsx     # Hides header/footer/particles on /card and /qr-code
 src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for all registered cards
 src/lib/newsletter/
 ├── digest.ts
@@ -135,3 +140,5 @@ docs/ops/                    # fleet.yaml, daily-check.md, slack-tickets.md
 | 2026-09-05 | Studio Apply on Vercel = `repository_dispatch` → fitness-coach GHA | Vercel has no fitness `.venv`; `OPS_GITHUB_TOKEN` must be Contents write on fitness-coach |
 | 2026-09-09 | Slack tickets in project channels (`Ticket · orbit ·`), not `#ops-channel` | Fleet exception inbox stays silent-when-green; one Automation per repo; PR + visual review in-thread |
 | 2026-09-09 | Arc remaining HP: max = 100 + VIT, fill = Body Battery share | VIT formula unchanged; bar not in the gate letter |
+| 2026-09-09 | Public identity HUD at `/card`; on-screen QR at `/qr-code`; About avatar opens the HUD | Calling card for IRL scans. No extra About hero button. QR encodes current origin so localhost/LAN works. `/qr-code` is noindex. |
+| 2026-09-09 | HUD lane hints use field-card thesis (`hudTitle` / `hudVerbs` / `hudDescription`); Home keeps skill blurbs | Phone scan should show stack-not-dashboard / sequence-not-ticket, not the Hub competency paragraph |

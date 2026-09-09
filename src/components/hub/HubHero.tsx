@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
@@ -38,7 +38,7 @@ interface HubHeroProps {
   pillars: string;
   tagline: string;
   whyOrbit: string;
-  availability: string;
+  contactCta: string;
   socials: { label: string; href: string }[];
   avatarUrl?: string;
 }
@@ -62,7 +62,7 @@ export function HubHero({
   pillars,
   tagline,
   whyOrbit,
-  availability,
+  contactCta,
   socials,
   avatarUrl,
 }: HubHeroProps) {
@@ -80,18 +80,6 @@ export function HubHero({
       </div>
 
       <HeroItem delay={0} animate={animate}>
-        <Link
-          href="/contact"
-          className="orbit-accent orbit-accent-border orbit-accent-soft-bg orbit-accent-hover-border orbit-accent-hover-soft-bg orbit-accent-hover-glow focus-ring group mb-8 inline-flex min-h-11 max-w-full items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium tracking-wide transition-[transform,background-color,border-color,box-shadow] active:scale-[0.98]"
-          aria-label={`${availability} — go to contact`}
-        >
-          <span className="orbit-accent-bg h-1.5 w-1.5 shrink-0 animate-pulse rounded-full" />
-          <span>{availability}</span>
-          <Mail className="h-3.5 w-3.5 shrink-0 opacity-60 transition-opacity group-hover:opacity-100" aria-hidden />
-        </Link>
-      </HeroItem>
-
-      <HeroItem delay={0.06} animate={animate}>
         <div className="flex max-w-3xl items-center gap-4 sm:gap-5">
           {avatarUrl ? (
             <PixelAvatar src={avatarUrl} alt="" />
@@ -132,7 +120,7 @@ export function HubHero({
             href="/contact"
             className="orbit-accent-bg orbit-accent-glow orbit-accent-cta-glow focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-void transition-[transform,box-shadow] active:scale-[0.98]"
           >
-            Get in touch
+            {contactCta}
             <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
           </Link>
           <Link

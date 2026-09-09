@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Syne, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-import { ParticleBackground } from "@/components/layout/ParticleBackground";
-import { Header } from "@/components/layout/Header";
+import { AppChrome } from "@/components/layout/AppChrome";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { OrbitSync } from "@/components/ui/OrbitSync";
@@ -75,15 +74,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <ParticleBackground />
-        <Header />
-        <main
-          id="main-content"
-          className="relative z-10 mx-auto min-h-[70vh] w-full max-w-5xl px-4 pt-28 pb-12 sm:pt-32"
-        >
-          {children}
-        </main>
-        <Footer />
+        <AppChrome footer={<Footer />}>{children}</AppChrome>
         <Analytics />
       </body>
     </html>

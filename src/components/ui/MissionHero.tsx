@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { PixelAvatar } from "@/components/ui/PixelAvatar";
 import { useHydrated } from "@/lib/use-hydrated";
@@ -46,6 +47,9 @@ interface MissionHeroProps {
   meta?: ReactNode;
   avatarUrl?: string;
   avatarAlt?: string;
+  /** When set, the pixel avatar is a control (e.g. identity HUD). */
+  avatarHref?: string;
+  avatarHrefLabel?: string;
 }
 
 /** Orchestrated above-the-fold hero — matches Hub motion cadence. Visible on SSR. */
@@ -60,6 +64,8 @@ export function MissionHero({
   meta,
   avatarUrl,
   avatarAlt = "",
+  avatarHref,
+  avatarHrefLabel = "Open identity HUD",
 }: MissionHeroProps) {
   const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
@@ -81,7 +87,17 @@ export function MissionHero({
       <HeroItem delay={0.06} animate={animate}>
         <div className="flex max-w-3xl items-center gap-4 sm:gap-5">
           {avatarUrl ? (
-            <PixelAvatar src={avatarUrl} alt={avatarAlt} />
+            avatarHref ? (
+              <Link
+                href={avatarHref}
+                className="focus-ring rounded-xl"
+                aria-label={avatarHrefLabel}
+              >
+                <PixelAvatar src={avatarUrl} alt="" />
+              </Link>
+            ) : (
+              <PixelAvatar src={avatarUrl} alt={avatarAlt} />
+            )
           ) : null}
           <h1 className="font-display text-display font-bold tracking-tight text-white">
             {title}

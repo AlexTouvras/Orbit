@@ -35,7 +35,7 @@
 - [ ] Owner: after happy with the shorter test mail, verify domain + unset `RESEND_NEWSLETTER_TEST_TO` for audience go-live
 - [ ] Owner: review `/studio/week`; set `OPS_GITHUB_TOKEN` (Contents: **Read and write** on fitness-coach so Studio Apply works on Vercel; Read on mealplan-private, careerops-private, ravens) on Vercel + `.env.local`; confirm Heimdall embeds behave well enough vs plain links
 - [x] Owner: approve fitness weekly course slicers (5 training knobs; no lean/cut or `goal:` on the strip)
-- [ ] Owner: evaluate course strip on localhost `/studio/week/fitness`
+- [x] Owner: evaluate identity HUD on localhost `/card` and `/qr-code`
 - [x] Slack tickets · Orbit: playbook + Daily ops ignore + live Automation (`docs/ops/slack-tickets.md`)
 - [x] Fitness Status: remaining HP bar + ▲▼− trends (STR blank until lift-log sample)
 - [x] Commit/push ops-fleet files to `main` (`f1be91d`) so Daily ops check can read `docs/ops/fleet.yaml`

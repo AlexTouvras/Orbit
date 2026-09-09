@@ -72,7 +72,7 @@ export default function HomePage() {
         pillars={profile.pillars}
         tagline={profile.tagline}
         whyOrbit={profileDefaults.whyOrbit}
-        availability={profile.availability}
+        contactCta={profileDefaults.contactCta}
         socials={profile.socials}
         avatarUrl={profile.avatarUrl}
       />
