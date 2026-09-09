@@ -1,7 +1,151 @@
 {
-  "generatedAt": "2026-09-08T10:29:26.660Z",
-  "count": 216,
+  "generatedAt": "2026-09-09T06:46:59.661Z",
+  "count": 215,
   "items": [
+    {
+      "id": "b1bb4c0a37ac",
+      "title": "Launched: Scrum Team Magazine",
+      "link": "https://www.scrum.org/resources/blog/launched-scrum-team-magazine",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-09T05:48:03.000Z",
+      "contentSnippet": "Image WHY SCRUM TEAM MAGAZINE? Many sectors like jewellery, watches, decoration, film, and fashion already have their own exquisite, luxurious, high-quality publications, yet the Scrum community has no such equivalent. To address this, I have decided to create a publication that…"
+    },
+    {
+      "id": "25125979cade",
+      "title": "Evaluation-First AI Agents: How Zepto Scales Customer Support on Databricks and MLflow",
+      "link": "https://www.databricks.com/blog/evaluation-first-ai-agents-how-zepto-scales-customer-support-databricks-and-mlflow",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-09T03:00:00.000Z",
+      "contentSnippet": "Zepto's Push for Reliable, Real-Time Customer SupportZepto is one of India's fastest-growing..."
+    },
+    {
+      "id": "51ede72a71d8",
+      "title": "Your retro is a support group, not an engine.",
+      "link": "https://www.scrum.org/resources/blog/your-retro-support-group-not-engine",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-08T22:00:00.000Z",
+      "contentSnippet": "Image Every couple of weeks, the team stops to reflect. People show up. They talk about what went well and what didn't. Someone captures it on sticky notes or a board. Everyone nods. The hour ends on time. And the next two weeks look exactly like the last two. If that's your retr…"
+    },
+    {
+      "id": "3b84c6dab02a",
+      "title": "SQL Data Types: Reference and Best Practices",
+      "link": "https://www.databricks.com/blog/sql-data-types",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-08T17:16:06.000Z",
+      "contentSnippet": "A SQL data type is a fundamental specification that defines what values a column..."
+    },
+    {
+      "id": "167bce5d47e7",
+      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
+      "link": "https://openai.com/index/codex-quantum-computing-experiments",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-08T17:00:00.000Z",
+      "contentSnippet": "See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits."
+    },
+    {
+      "id": "dbb680cb8a52",
+      "title": "AI Changed the Bottleneck. Your WIP Limits Should Change With It.",
+      "link": "https://www.scrum.org/resources/blog/ai-changed-bottleneck-your-wip-limits-should-change-it",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-08T15:55:47.000Z",
+      "contentSnippet": "Image AI can generate code faster than your team can review it. Especially with the latest iteration of Claude, the code comes packed with lengthy comments, voluminous release notes, and logic in a bunch of different places, all of which needs to be reviewed before it goes to pro…"
+    },
+    {
+      "id": "d491d41c5783",
+      "title": "Build durable agents with Temporal and Lakebase",
+      "link": "https://www.databricks.com/blog/build-durable-agents-temporal-and-lakebase",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-08T15:46:40.000Z",
+      "contentSnippet": "A personal-loan underwriting agent gathers evidence, applies policy, and may wait..."
+    },
+    {
+      "id": "fbcbe1a52ca4",
+      "title": "Fragments: September  8",
+      "link": "https://martinfowler.com/fragments/2026-09-08.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-08T15:22:00.000Z",
+      "contentSnippet": "Christian Catalini says we’re in a situation where we are vastly reducing the cost of generating things, but not the cost of verifying them:. This explains why the first major AI products appeared in chat, image generation, and code assistance. Not because these were the hardest…"
+    },
+    {
+      "id": "38e1528c668d",
+      "title": "Do you even need a presentation?",
+      "link": "https://martinfowler.com/articles/never-send-slides/need-presentation.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-08T13:42:00.000Z",
+      "contentSnippet": "Like me, Sumeet Gayathri Moghe is tired of poor presentations with bad slide decks. He's started to write a series of posts on how to avoid these calamities, beginning with a post that questions whether a presentation is needed at all. more…"
+    },
+    {
+      "id": "aaada63e998e",
+      "title": "The Work Now Within Reach",
+      "link": "https://openai.com/index/the-work-now-within-reach",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-08T13:00:00.000Z",
+      "contentSnippet": "Explore how more capable, affordable AI can expand the work people and businesses can accomplish—and make growth more economical."
+    },
+    {
+      "id": "305f03a4aa6a",
+      "title": "Introducing ChatGPT Images 2.5",
+      "link": "https://openai.com/index/introducing-chatgpt-images-2-5",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-08T11:30:00.000Z",
+      "contentSnippet": "ChatGPT Images 2.5 helps turn your ideas, sketches, and reference photos into more personalized, polished images that better reflect your ideas."
+    },
+    {
+      "id": "fbb79928f7d9",
+      "title": "On the Navier–Stokes Millennium Prize Problem",
+      "link": "https://openai.com/index/navier-stokes-solution",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-08T10:00:00.000Z",
+      "contentSnippet": "We’re sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean."
+    },
+    {
+      "id": "4c6f43d0c3af",
+      "title": "Writing DAX at the correct granularity",
+      "link": "https://www.sqlbi.com/tv/writing-dax-at-the-correct-granularity/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-09-08T10:00:00.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "99c22bc85dd5",
+      "title": "Funding grants for new research into AI and teen development",
+      "link": "https://openai.com/index/teen-development-research-grants",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-08T09:00:00.000Z",
+      "contentSnippet": "Apply now for OpenAI’s $5 million grant program supporting independent research on how generative AI affects teen development, well-being, and safety."
+    },
+    {
+      "id": "671a9fed35e2",
+      "title": "OpenAI expands initiatives to support journalism from classrooms to newsrooms",
+      "link": "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-08T00:00:00.000Z",
+      "contentSnippet": "OpenAI is expanding support for journalism with tools, training, and partnerships for students, educators, journalists, and news organizations."
+    },
+    {
+      "id": "9816f5beea82",
+      "title": "1Password increases engineering productivity 21% with Codex",
+      "link": "https://openai.com/index/1password",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-08T00:00:00.000Z",
+      "contentSnippet": "Engineers at 1Password use Codex to rapidly build new features and internal tools, reaching production-readiness while maintaining rigorous security policies."
+    },
     {
       "id": "fddf6f97d147",
       "title": "Writing DAX at the correct granularity",
@@ -10,6 +154,15 @@
       "category": "Analytics",
       "pubDate": "2026-09-07T20:00:23.000Z",
       "contentSnippet": "A DAX calculation can produce convincing values at the detail level and still fail at the total. The problem is often not the total itself: the business rule was evaluated at the wrong granularity. This article introduces four grains, or…"
+    },
+    {
+      "id": "74cbd35d2f4b",
+      "title": "The 40-year-old database rule agents just broke: How LTAP unifies OLTP and OLAP workloads",
+      "link": "https://www.databricks.com/blog/40-year-old-database-rule-agents-just-broke-how-ltap-unifies-oltp-and-olap-workloads",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-07T12:48:05.000Z",
+      "contentSnippet": "Jonathan Katz has spent his career on both sides of a line that most of the data..."
     },
     {
       "id": "3d26d2dbcb98",
@@ -55,24 +208,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-06T11:15:42.000Z",
       "contentSnippet": "TL;DR: AI Transformations and Agile Transformations Rhyme AI adoption seems to be scaling: 37% of respondents in McKinsey’s 2026 survey report an EBIT effect from AI, and Gartner finds that 22% of organizations have scaled it across business units. Now, Agile practitioners have s…"
-    },
-    {
-      "id": "a8e8f9dc895a",
-      "title": "An Alien Mind",
-      "link": "https://openai.com/index/an-alien-mind",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-06T09:00:00.000Z",
-      "contentSnippet": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination."
-    },
-    {
-      "id": "19672c4832d4",
-      "title": "Research acceleration: The view inside OpenAI",
-      "link": "https://openai.com/index/research-acceleration-view-inside-openai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-06T08:00:00.000Z",
-      "contentSnippet": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration."
     },
     {
       "id": "1ba3e47aaae7",
@@ -201,15 +336,6 @@
       "contentSnippet": "What is data transformation?Data transformation is the process of taking raw data..."
     },
     {
-      "id": "5190d2a1dccd",
-      "title": "Daybreak for Frontline Defenders: $1B to protect essential services",
-      "link": "https://openai.com/index/daybreak-for-frontline-defenders",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-03T13:15:00.000Z",
-      "contentSnippet": "OpenAI introduces Daybreak for Frontline Defenders. A $1 billion commitment expands access to frontier cyber AI, training, and support for essential services."
-    },
-    {
       "id": "c7bd396596af",
       "title": "Don't Redesign Your Process Yet. Change Who Writes the Artifacts.",
       "link": "https://www.scrum.org/resources/blog/dont-redesign-your-process-yet-change-who-writes-artifacts",
@@ -217,42 +343,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-03T13:00:00.000Z",
       "contentSnippet": "Originally published on yuvalyeret.com. The first thing to change is who writes the artifacts, not how you work \"We didn't change the process. We still have a quarterly planning and we have sprint planning and we have roadmaps and a list of features that we want to deliver in a q…"
-    },
-    {
-      "id": "be4a3c542626",
-      "title": "Legora reviewed 41 documents in minutes with GPT-6 Astra",
-      "link": "https://openai.com/index/legora-financial-statement-review-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-03T12:00:00.000Z",
-      "contentSnippet": "Legora used GPT-6 Astra to review 41 documents in minutes, find all four planted errors, and improve performance by nearly 40% in this financial-review workflow."
-    },
-    {
-      "id": "7a45b185cff5",
-      "title": "Playco cut manual fixes 50% prototyping games with GPT-6 Astra",
-      "link": "https://openai.com/index/playco-game-prototyping-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-03T12:00:00.000Z",
-      "contentSnippet": "Using GPT-6 Astra, Playco built three themed game prototypes from one grey box foundation and reported 50% fewer manual fixes than with the previous model."
-    },
-    {
-      "id": "0f3b76bc480d",
-      "title": "GPT-6 Astra: A new generation of intelligence",
-      "link": "https://openai.com/index/gpt-6-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-03T11:00:00.000Z",
-      "contentSnippet": "Introducing GPT-6 Astra, our most intelligent and aligned model yet, with state-of-the-art capabilities across computer use, coding, cybersecurity, and science."
-    },
-    {
-      "id": "2e155b11d809",
-      "title": "Safety overview: GPT-6 Astra",
-      "link": "https://openai.com/index/safety-overview-gpt-6-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-03T00:00:00.000Z",
-      "contentSnippet": "GPT-6 Astra is our most capable broadly deployed model and our first to reach the Critical level of cybersecurity capability under our Preparedness Framework."
     },
     {
       "id": "96c74a92e873",
@@ -271,15 +361,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-02T22:03:00.000Z",
       "contentSnippet": "The difference between a medicine and a poison is dosage. Often we talk about certain habits, in programming or life, are good or bad. But few things are simple binaries. Some vary with context: reading a book is a good thing sitting in my garden, but not while driving my car. Bu…"
-    },
-    {
-      "id": "7543d7ccc575",
-      "title": "Expanding Genie Agents: Deep analysis, file reasoning, and more",
-      "link": "https://www.databricks.com/blog/expanding-genie-agents-deep-analysis-file-reasoning-and-more",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-02T19:30:00.000Z",
-      "contentSnippet": "At Data and AI Summit, we announced the evolution of Genie Spaces to Genie Agents,..."
     },
     {
       "id": "7f3a165e271d",
@@ -345,15 +426,6 @@
       "contentSnippet": "Let’s talk about matrix totals in this episode of The Whiteboard! Special guest: the SQLBI Whiteboard! Learn abstract DAX concepts in a more interactive way with “The Whiteboard” series. Read more: https://www.sqlbi.com/blog/marco/2022/07/14/the-whiteboard-video-series-on-sqlbi-y…"
     },
     {
-      "id": "1f70dd38b3b3",
-      "title": "Announcing the Databricks Big Book of AgentOps",
-      "link": "https://www.databricks.com/blog/announcing-databricks-big-book-agentops",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-02T01:30:00.000Z",
-      "contentSnippet": "What is AgentOps?AgentOps is the operating discipline for building, deploying and..."
-    },
-    {
       "id": "7163d24d0de2",
       "title": "Try DuckDB v2.0-alpha",
       "link": "https://duckdb.org/2026/09/02/try-duckdb-20-alpha.html",
@@ -399,15 +471,6 @@
       "contentSnippet": "Image The status was green all quarter. Green in the weekly report, green in the steering deck, green in the note to the sponsor. Then, close to the deadline, it went red. Not drifted. Snapped. And in the post-mortem, the part that stings: one after another, people say they alrea…"
     },
     {
-      "id": "3d1a406e292e",
-      "title": "How the FDA is building a secure, AI-ready data foundation on Databricks for Government",
-      "link": "https://www.databricks.com/blog/how-fda-building-secure-ai-ready-data-foundation-databricks-government",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-01T21:45:00.000Z",
-      "contentSnippet": "Modernizing a federal data platform is a little like steering an aircraft carrier while rebuilding the engine mid-ocean..."
-    },
-    {
       "id": "ce78c56fbdad",
       "title": "Fragments: September  1",
       "link": "https://martinfowler.com/fragments/2026-09-01.html",
@@ -415,15 +478,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-01T19:50:00.000Z",
       "contentSnippet": "Like many readers, I’m wary of AI generated prose. Simon Wilison has written an LLM cliché highlighter - paste in some text, or a URL, and it will flag various patterns common to LLMs. It references a wikipedia page of signs of AI writing. That page points out that: Humans are no…"
-    },
-    {
-      "id": "2b139af1e1b3",
-      "title": "How we eliminated $1 million a year of wasted AI agent spend in one hour",
-      "link": "https://www.databricks.com/blog/how-we-eliminated-1-million-year-wasted-ai-agent-spend-one-hour",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-01T19:43:51.000Z",
-      "contentSnippet": "Databricks engineers rely heavily on AI agents to streamline and accelerate their work. In turn..."
     },
     {
       "id": "05fdb9d79c76",
@@ -543,15 +597,6 @@
       "contentSnippet": "If your laptop has 16GB of RAM, your agent can write SQL locally for free with Qwen3.8 27B. On the DABstep SQL benchmark, Qwen beat GPT 5.6 Luna and cost under 50 cents in electricity, over 17x less. Add DuckDB and you have a data analyst that runs on your own machine. This post…"
     },
     {
-      "id": "fe99bf10b50a",
-      "title": "At Some Point, not Knowing Becomes a Choice",
-      "link": "https://www.scrum.org/resources/blog/some-point-not-knowing-becomes-choice",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-27T22:00:00.000Z",
-      "contentSnippet": "Open the retro notes from a year ago. Then open last quarter's. The same problem is in both, in almost the same words. The dependency that strangles every release. The hand-off that loses a week. The \"we should really talk about the roadmap\" that never becomes a conversation. It'…"
-    },
-    {
       "id": "d9866ea09d22",
       "title": "Making Your Data Ready for Agentic AI",
       "link": "https://martinfowler.com/articles/making-data-ready-for-agentic-ai.html",
@@ -561,15 +606,6 @@
       "contentSnippet": "Lots of organizations are excited about what AI can do to streamline their processes, save money, and juice margins. But AI's capabilities are founded on the data that AI accesses, and for many organizations that foundation is little more than sand. Pramod Sadalage and Prem Chand…"
     },
     {
-      "id": "1ca4151208c4",
-      "title": "Agility Might Have Been Waiting for AI",
-      "link": "https://www.scrum.org/resources/blog/agility-might-have-been-waiting-ai",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-27T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. AI is forcing everybody to be very agile about who they are, what they do, what impact can they make, and how they're perceived, including myself. I've pivoted from Scaling with Agility to Scaling AI from Activity to Impact. This article ex…"
-    },
-    {
       "id": "1f24f2fac291",
       "title": "SQLBI Whiteboard",
       "link": "https://www.sqlbi.com/tools/sqlbi-whiteboard/",
@@ -577,15 +613,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-27T11:29:59.000Z",
       "contentSnippet": "SQLBI Whiteboard is a free, open-source whiteboard for Windows 11 designed for teaching DAX, SQL, and data modeling, with pen ink, live application capture, and syntax-highlighted code on the same canvas. Pen-first ink — Low-latency, pressure-aware strokes with palm rejection,…"
-    },
-    {
-      "id": "6bb2ec0cadb1",
-      "title": "Critical Asked Questions (CAQ) About PSPO-AI Essentials Course",
-      "link": "https://www.scrum.org/resources/blog/critical-asked-questions-caq-about-pspo-ai-essentials-course",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-27T08:34:16.000Z",
-      "contentSnippet": "In this blog post, I answer critical questions you have before choosing a Professional Scrum Product Owner – AI Essentials class. Image 1- Why should I take the class when I can directly take the PSPO-AI Essentials exam and get the certificate without attending the class? Yes, yo…"
     },
     {
       "id": "5b4e1eec98bc",
@@ -1272,15 +1299,6 @@
       "contentSnippet": "This article describes how to apply different formatting rules at each level of a hierarchy (one rule at the year level, another at the quarter level, another at the month level) using ISINSCOPE in a measure or ISATLEVEL in a…"
     },
     {
-      "id": "767cbb246396",
-      "title": "Fragments: July 13",
-      "link": "https://martinfowler.com/fragments/2026-07-13.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-13T12:51:00.000Z",
-      "contentSnippet": "Some more of my notes from Thoughtworks Future of Software Development Retreat. When we had our first retreat in Utah early this year, nobody had heard of Harness Engineering. This time we had a whole session on it. When comes to the guide side of harnesses, most of the discussio…"
-    },
-    {
       "id": "fad58c67303d",
       "title": "Data Engineering Weekly #278",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-278",
@@ -1306,15 +1324,6 @@
       "category": "Data",
       "pubDate": "2026-07-10T10:20:21.000Z",
       "contentSnippet": "Why privacy engineering is about governing data in use—not simply hiding it."
-    },
-    {
-      "id": "43b30eb7245c",
-      "title": "Experiences with local models for coding",
-      "link": "https://martinfowler.com/articles/exploring-gen-ai/local-models-for-coding-experiences.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-08T11:57:00.000Z",
-      "contentSnippet": "Birgitta Böckeler now reports on her recent experiences trying local LLMs for coding. She compares them using two standard tasks, and tries out the most promising model for day-to-day use. more…"
     },
     {
       "id": "94fe64bbfa0c",
@@ -1650,15 +1659,6 @@
       "contentSnippet": "Microsoft's announcement post for data clustering in Fabric Warehouse promised 24x speedups. So I built a 100-million-row clickstream table and tested it myself. The result is more nuanced than the marketing - and more useful for anyone deciding whether to actually adopt this fea…"
     },
     {
-      "id": "9f64a5c7797f",
-      "title": "Introducing user-aware calculated columns in Power BI",
-      "link": "https://www.sqlbi.com/tv/introducing-user-aware-calculated-columns-in-power-bi/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-05-19T10:00:00.000Z",
-      "contentSnippet": "User-aware calculated columns are not materialized: we can use them as virtual calculated columns for localization and for custom security scenarios. This feature is available through the new Expression Context property of calculated columns in Power BI."
-    },
-    {
       "id": "1482c83da309",
       "title": "Hot, Cold, Gone: Caching and Retention in Microsoft Fabric Eventhouse",
       "link": "https://data-mozart.com/hot-cold-gone-caching-and-retention-in-microsoft-fabric-eventhouse/?utm_source=rss&utm_medium=rss&utm_campaign=hot-cold-gone-caching-and-retention-in-microsoft-fabric-eventhouse",
@@ -1765,15 +1765,6 @@
       "category": "Data",
       "pubDate": "2026-04-03T15:16:44.000Z",
       "contentSnippet": "As AI makes it easier to generate pull requests, reviewing them has become the bottleneck. Learn how Dagster is improving contributor experience with better tooling, clearer guidelines, and a focus on high-impact contributions."
-    },
-    {
-      "id": "994f8cb5324b",
-      "title": "dbt Fusion Support in the Dagster dbt integration",
-      "link": "https://dagster.io/blog/dbt-fusion-support-comes-to-dagster",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-04-02T20:43:14.000Z",
-      "contentSnippet": "How we added support for the dbt Fusion engine in the Dagster dbt integration"
     },
     {
       "id": "9f49ee93f8a0",
