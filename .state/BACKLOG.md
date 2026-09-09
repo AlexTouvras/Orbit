@@ -37,6 +37,7 @@
 - [x] Owner: approve fitness weekly course slicers (5 training knobs; no lean/cut or `goal:` on the strip)
 - [ ] Owner: evaluate course strip on localhost `/studio/week/fitness`
 - [x] Slack tickets · Orbit: playbook + Daily ops ignore + live Automation (`docs/ops/slack-tickets.md`)
+- [x] Fitness Status: remaining HP bar + ▲▼− trends (STR blank until lift-log sample)
 - [x] Commit/push ops-fleet files to `main` (`f1be91d`) so Daily ops check can read `docs/ops/fleet.yaml`
 - [x] Pixel avatar beside name on Hub + About (`/avatar-pixel-64.png`)
 - [x] Human review: Hub + About avatar placement — skipped 2026-08-13

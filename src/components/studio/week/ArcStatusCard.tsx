@@ -5,7 +5,12 @@ import { useCallback, useMemo, useState, type ReactNode } from "react";
 import { PixelAvatar } from "@/components/ui/PixelAvatar";
 import { profile } from "@/content/profile";
 import { cn } from "@/lib/utils";
-import type { ArcNarrativeView, DailyQuestView, FitnessDay } from "@/lib/week-log/types";
+import type {
+  ArcHealthView,
+  ArcNarrativeView,
+  DailyQuestView,
+  FitnessDay,
+} from "@/lib/week-log/types";
 
 const STAT_LABELS: Record<string, string> = {
   str: "STR",
@@ -29,7 +34,7 @@ const GATE_RANK_HINTS: Record<string, string> = {
   S: "Legendary — composite 87+. Full gate clearance.",
 };
 
-type HintId = "gate-rank" | "gate-score" | `stat-${string}`;
+type HintId = "gate-rank" | "gate-score" | "health" | `stat-${string}`;
 
 function gateRankHint(gate: ArcNarrativeView["gate"]): string {
   if (gate.rankHint) return gate.rankHint;
@@ -88,6 +93,89 @@ function HintTrigger({
   );
 }
 
+type TrendDir = "up" | "down" | "flat";
+
+function asFinite(value: unknown): number | null {
+  if (typeof value === "number" && Number.isFinite(value)) return value;
+  if (typeof value === "string" && value.trim()) {
+    const n = Number(value);
+    return Number.isFinite(n) ? n : null;
+  }
+  return null;
+}
+
+function signedTrend(
+  value: number | null,
+  opts?: { invert?: boolean; dead?: number },
+): TrendDir | null {
+  if (value == null) return null;
+  const n = opts?.invert ? -value : value;
+  const dead = opts?.dead ?? 0;
+  if (Math.abs(n) <= dead) return "flat";
+  return n > 0 ? "up" : "down";
+}
+
+function deriveStatTrend(
+  name: string,
+  stat: { trend?: TrendDir | null; raw: Record<string, unknown> },
+): TrendDir | null {
+  if (stat.trend === "up" || stat.trend === "down" || stat.trend === "flat") {
+    return stat.trend;
+  }
+  if (stat.trend === null) return null;
+  const raw = stat.raw || {};
+  if (name === "agi") {
+    const est = asFinite(raw.vdot_est);
+    const race = asFinite(raw.vdot_race);
+    if (est == null || race == null) return null;
+    return signedTrend(est - race, { dead: 0.15 });
+  }
+  if (name === "end") {
+    return signedTrend(asFinite(raw.vo2max_delta_30d), { dead: 0.05 });
+  }
+  if (name === "per") {
+    return signedTrend(asFinite(raw.body_fat_delta_7d), { invert: true, dead: 0.15 });
+  }
+  if (name === "vit") {
+    const hrv = asFinite(raw.hrv_vs_baseline_pct);
+    const fromHrv = signedTrend(hrv == null ? null : hrv - 100, { dead: 5 });
+    if (fromHrv && fromHrv !== "flat") return fromHrv;
+    const fromRhr = signedTrend(asFinite(raw.resting_hr_delta_7d), {
+      invert: true,
+      dead: 1,
+    });
+    return fromRhr ?? fromHrv;
+  }
+  return null;
+}
+
+function TrendMark({ trend }: { trend: TrendDir | null | undefined }) {
+  const glyph = trend === "up" ? "▲" : trend === "down" ? "▼" : trend === "flat" ? "−" : "";
+  const label =
+    trend === "up"
+      ? "trending up"
+      : trend === "down"
+        ? "trending down"
+        : trend === "flat"
+          ? "steady"
+          : undefined;
+  return (
+    <span
+      className={cn(
+        "inline-block w-3 shrink-0 text-center text-[0.7rem] leading-none",
+        trend === "up" && "text-neon-cyan",
+        trend === "down" && "text-red-400",
+        trend === "flat" && "text-slate-400",
+      )}
+      title={label}
+      aria-label={label}
+      aria-hidden={!label}
+    >
+      {glyph || "\u00a0"}
+    </span>
+  );
+}
+
 function StatAttribute({
   name,
   level,
@@ -96,6 +184,7 @@ function StatAttribute({
   hintId,
   activeHint,
   onToggle,
+  trend,
 }: {
   name: string;
   level: number;
@@ -104,6 +193,7 @@ function StatAttribute({
   hintId: HintId;
   activeHint: HintId | null;
   onToggle: (id: HintId) => void;
+  trend?: TrendDir | null;
 }) {
   const active = activeHint === hintId;
   return (
@@ -113,16 +203,24 @@ function StatAttribute({
       activeHint={activeHint}
       onToggle={onToggle}
       className={cn(
-        "w-full rounded-xl border border-white/10 bg-black/20 px-3 py-2.5",
+        "flex h-full w-full flex-col rounded-xl border border-white/10 bg-black/20 px-3 py-2.5",
         "hover:border-violet-400/30",
         active && "border-violet-400/40",
       )}
     >
-      <p className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-violet-300/70">
-        {STAT_LABELS[name] ?? name}
+      <p className="flex items-center justify-between gap-1 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-violet-300/70">
+        <span>{STAT_LABELS[name] ?? name}</span>
+        <TrendMark trend={trend} />
       </p>
-      <p className="mt-1 font-display text-2xl font-bold tabular-nums text-white">{level}</p>
-      <p className="mt-0.5 text-xs text-slate-500">{detail}</p>
+      <p className="mt-1 font-display text-2xl font-bold tabular-nums leading-none text-white">
+        {level}
+      </p>
+      <p
+        className="mt-1 h-4 truncate text-xs leading-4 text-slate-500"
+        title={detail}
+      >
+        {detail || "\u00a0"}
+      </p>
     </HintTrigger>
   );
 }
@@ -149,6 +247,72 @@ function QuestProgressBar({
         <div
           className="h-full rounded-full bg-gradient-to-r from-amber-600 to-neon-cyan transition-all"
           style={{ width: `${pct}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+function healthHint(health: ArcHealthView): string {
+  const vit = health.vit ?? Math.max(0, Math.round(health.max) - 100);
+  const base =
+    `Remaining HP is Garmin Body Battery as a share of max HP (100 + VIT ${vit}). ` +
+    "Fill is not scaled into the gate letter.";
+  if (health.lagDays > 0 && health.asOf) {
+    const lag = health.lagDays === 1 ? "1d" : `${health.lagDays}d`;
+    return `${base} Latest closed day is ${health.asOf} (${lag} lag). Same-day reading posts overnight.`;
+  }
+  return `${base} Today's Body Battery is in.`;
+}
+
+function healthBarTone(pct: number): { fill: string; value: string } {
+  if (pct < 30) {
+    return { fill: "from-red-800 to-red-500", value: "text-red-300" };
+  }
+  if (pct < 50) {
+    return { fill: "from-red-600 to-amber-500", value: "text-amber-200" };
+  }
+  if (pct < 75) {
+    return { fill: "from-amber-500 to-neon-cyan", value: "text-slate-200" };
+  }
+  return { fill: "from-neon-cyan/70 to-neon-cyan", value: "text-neon-cyan" };
+}
+
+function HealthBar({ health }: { health: ArcHealthView }) {
+  const pct =
+    health.fillPct != null
+      ? Math.min(100, Math.max(0, Math.round(health.fillPct)))
+      : health.max > 0
+        ? Math.min(100, Math.max(0, Math.round((health.current / health.max) * 100)))
+        : 0;
+  const tone = healthBarTone(pct);
+  const lagLabel =
+    health.lagDays > 0 && health.asOf ? `as of ${health.asOf}` : null;
+  return (
+    <div>
+      <div className="mb-1 flex items-baseline justify-between gap-2 text-xs">
+        <span className="text-slate-300">
+          HP
+          {lagLabel ? (
+            <span className="ml-2 text-slate-500">{lagLabel}</span>
+          ) : null}
+        </span>
+        <span className={cn("font-mono tabular-nums", tone.value)}>
+          {Math.round(health.current)} / {Math.round(health.max)}
+        </span>
+      </div>
+      <div className="h-2 overflow-hidden rounded-full bg-white/5">
+        <div
+          className={cn(
+            "h-full rounded-full bg-gradient-to-r transition-all",
+            tone.fill,
+          )}
+          style={{ width: `${pct}%` }}
+          role="progressbar"
+          aria-valuenow={health.current}
+          aria-valuemin={0}
+          aria-valuemax={health.max}
+          aria-label={health.label}
         />
       </div>
     </div>
@@ -217,7 +381,7 @@ export function ArcStatusCard({
   dailyQuest: DailyQuestView | null;
   weekDays?: FitnessDay[];
 }) {
-  const { gate, stats, boss, deltas, warriorQuote } = narrative;
+  const { gate, stats, boss, deltas, warriorQuote, health } = narrative;
   const bossActive = boss?.active === true;
   const [activeHint, setActiveHint] = useState<HintId | null>(null);
 
@@ -226,12 +390,13 @@ export function ArcStatusCard({
       "gate-rank": gateRankHint(gate),
       "gate-score": gate.scoreHint || GATE_SCORE_HINT_FALLBACK,
     };
+    if (health) map.health = healthHint(health);
     for (const key of STAT_ORDER) {
       const stat = stats[key];
       if (stat?.hint) map[`stat-${key}`] = stat.hint;
     }
     return map;
-  }, [gate, stats]);
+  }, [gate, stats, health]);
 
   const onToggleHint = useCallback((id: HintId) => {
     setActiveHint((prev) => (prev === id ? null : id));
@@ -314,13 +479,27 @@ export function ArcStatusCard({
         </blockquote>
       ) : null}
 
+      {health ? (
+        <div className="mt-3">
+          <HintTrigger
+            hintId="health"
+            hint={hints.health ?? healthHint(health)}
+            activeHint={activeHint}
+            onToggle={onToggleHint}
+            className="block w-full rounded-xl px-1 py-1.5 hover:bg-violet-500/10"
+          >
+            <HealthBar health={health} />
+          </HintTrigger>
+        </div>
+      ) : null}
+
       {activeHintText ? (
         <div className="mt-3">
           <HintPanel text={activeHintText} />
         </div>
       ) : null}
 
-      <div className="mt-3 grid grid-cols-2 gap-2 sm:mt-4 sm:grid-cols-5">
+      <div className="mt-3 grid grid-cols-2 items-stretch gap-2 sm:mt-4 sm:grid-cols-5">
         {STAT_ORDER.map((key) => {
           const stat = stats[key];
           if (!stat) return null;
@@ -337,6 +516,7 @@ export function ArcStatusCard({
               hintId={`stat-${key}`}
               activeHint={activeHint}
               onToggle={onToggleHint}
+              trend={deriveStatTrend(key, stat)}
             />
           );
         })}
@@ -344,8 +524,8 @@ export function ArcStatusCard({
 
       <p className="mt-2 text-[0.65rem] text-slate-600">
         <span className="sm:hidden">Tap</span>
-        <span className="hidden sm:inline">Hover or tap</span> a stat, gate rank, or score for
-        details.
+        <span className="hidden sm:inline">Hover or tap</span> HP, a stat, gate rank, or score
+        for details.
       </p>
 
       {(vo2Delta || weightDelta || hrvDelta || restingDelta || paceLabel || sleepAvg) && (

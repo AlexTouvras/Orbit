@@ -58,6 +58,8 @@ export interface ArcStatView {
   hint?: string;
   source: string;
   raw: Record<string, unknown>;
+  /** Direction the underlying signal is heading. Null → no sample. */
+  trend?: "up" | "down" | "flat" | null;
 }
 
 export interface WarriorQuoteView {
@@ -74,6 +76,17 @@ export interface ArcGateView {
   scoreHint?: string;
 }
 
+export interface ArcHealthView {
+  current: number;
+  max: number;
+  asOf: string | null;
+  lagDays: number;
+  source: string;
+  label: string;
+  vit?: number | null;
+  fillPct?: number | null;
+}
+
 export interface ArcNarrativeView {
   mode: string;
   arcPhase: string;
@@ -82,6 +95,8 @@ export interface ArcNarrativeView {
   deltas: Record<string, unknown>;
   boss: Record<string, unknown> | null;
   warriorQuote?: WarriorQuoteView | null;
+  /** Remaining HP from Body Battery. Null/omitted → hide the bar; never invent from VIT. */
+  health?: ArcHealthView | null;
 }
 
 export interface DailyQuestTarget {

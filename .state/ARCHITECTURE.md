@@ -18,7 +18,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Newsletter digest draft | `data/newsletter-draft.json` | Titles/links only. Gitignored locally; persist send status via GitHub |
 | Newsletter subscribers | Resend Audience, or `RESEND_NEWSLETTER_TEST_TO` | Emails never in git. Test-to skips the audience entirely |
 | Ravens findings | GitHub Contents on `AlexTouvras/ravens` | Weekly highlights: one item per domain that moved (inbox first). `RAVENS_GITHUB_TOKEN` |
-| Week log | `/studio/week` (+ `/2026-W36/fitness` etc. for other ISO weeks; legacy `?week=` redirects) via `src/lib/week-log/` | ISO week hub. Fitness lane renders `ArcStatusCard` from plan `narrative` + `daily_quest` (fitness-coach repo). Heimdall embeds inline (Technique on lifts, Watch on Ravens parenting). Auth: GitHub allowlist + 90d sliding session; password fallback; `STUDIO_DEV_OPEN` locally |
+| Week log | `/studio/week` (+ `/2026-W36/fitness` etc. for other ISO weeks; legacy `?week=` redirects) via `src/lib/week-log/` | ISO week hub. Fitness lane renders `ArcStatusCard` from plan `narrative` + `daily_quest` (fitness-coach repo). `narrative.health`: max = 100 + VIT, fill = Body Battery share. Heimdall embeds inline (Technique on lifts, Watch on Ravens parenting). Auth: GitHub allowlist + 90d sliding session; password fallback; `STUDIO_DEV_OPEN` locally |
 | Fleet registry | `docs/ops/fleet.yaml` | Daily unattended-job checks for `#ops-channel`; cloud evidence is GitHub + Slack only |
 | Slack ticket | Top-level Slack message | Prefix `Ticket · <project> · <title>`; Orbit live in `#orbit` |
 
@@ -134,3 +134,4 @@ docs/ops/                    # fleet.yaml, daily-check.md, slack-tickets.md
 | 2026-09-05 | Cursor `canvases/` stay local (gitignore + tsconfig exclude) | First committed `.canvas.tsx` failed ship-check: Next cannot resolve `cursor/canvas` |
 | 2026-09-05 | Studio Apply on Vercel = `repository_dispatch` → fitness-coach GHA | Vercel has no fitness `.venv`; `OPS_GITHUB_TOKEN` must be Contents write on fitness-coach |
 | 2026-09-09 | Slack tickets in project channels (`Ticket · orbit ·`), not `#ops-channel` | Fleet exception inbox stays silent-when-green; one Automation per repo; PR + visual review in-thread |
+| 2026-09-09 | Arc remaining HP: max = 100 + VIT, fill = Body Battery share | VIT formula unchanged; bar not in the gate letter |

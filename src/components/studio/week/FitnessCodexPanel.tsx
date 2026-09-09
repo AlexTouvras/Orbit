@@ -126,7 +126,7 @@ export function FitnessCodexPanel({ lane }: { lane: WeekLane<CodexSeries> }) {
             }
             latest={fmt(points.at(-1)?.vdotEst ?? null, 2)}
             series={[{ values: points.map((point) => point.vdotEst), stroke: "#a78bfa" }]}
-            note="One series. Predicted 5K is the inverse of this line, not a second plot. Race floor holds after slower probes."
+            note="Race VDOT is the anchor. The line follows CTL vs that race-week CTL — training down can sit below the PB, a load bump cannot invent a new one. Predicted 5K is the inverse of this line."
           />
           <CodexPane
             title="Effort · run CTL / ATL"
@@ -136,7 +136,7 @@ export function FitnessCodexPanel({ lane }: { lane: WeekLane<CodexSeries> }) {
               { values: points.map((point) => point.ctl), stroke: "#fbbf24" },
               { values: points.map((point) => point.atl), stroke: "#fb7185" },
             ]}
-            note="Yellow CTL = chronic load. Pink ATL = last-week load. Effort can rebuild while AGI stays put."
+            note="Yellow CTL = chronic load. Pink ATL = last-week load. AGI moves with this yellow line versus the race-week CTL, not a second VO₂."
           />
           <CodexPane
             title="END · Garmin VO₂"

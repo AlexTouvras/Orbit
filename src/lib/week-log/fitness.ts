@@ -45,6 +45,11 @@ function asNumber(value: unknown): number | null {
   return null;
 }
 
+function parseTrend(value: unknown): "up" | "down" | "flat" | null {
+  if (value === "up" || value === "down" || value === "flat") return value;
+  return null;
+}
+
 function parseLift(raw: unknown): FitnessLift | null {
   if (!raw || typeof raw !== "object") return null;
   const row = raw as Record<string, unknown>;
@@ -100,6 +105,7 @@ function parseNarrative(raw: unknown): ArcNarrativeView | null {
         hint: asString(s.hint) || undefined,
         source: asString(s.source),
         raw: (s.raw as Record<string, unknown>) || {},
+        trend: "trend" in s ? parseTrend(s.trend) : undefined,
       };
     }
   }
@@ -118,6 +124,26 @@ function parseNarrative(raw: unknown): ArcNarrativeView | null {
     deltas: (row.deltas as Record<string, unknown>) || {},
     boss: (row.boss as Record<string, unknown>) || null,
     warriorQuote: parseWarriorQuote(row.warrior_quote),
+    health: parseHealth(row.health),
+  };
+}
+
+function parseHealth(raw: unknown): ArcNarrativeView["health"] {
+  if (!raw || typeof raw !== "object") return null;
+  const row = raw as Record<string, unknown>;
+  const current = asNumber(row.current);
+  const max = asNumber(row.max);
+  if (current === null || max === null || max <= 0) return null;
+  const lagDays = asNumber(row.lag_days);
+  return {
+    current,
+    max,
+    asOf: asString(row.as_of) || null,
+    lagDays: lagDays === null ? 0 : lagDays,
+    source: asString(row.source),
+    label: asString(row.label) || `HP ${Math.round(current)}/${Math.round(max)}`,
+    vit: asNumber(row.vit),
+    fillPct: asNumber(row.fill_pct),
   };
 }
 
