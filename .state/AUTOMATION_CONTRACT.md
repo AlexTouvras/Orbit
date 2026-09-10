@@ -55,7 +55,7 @@ Do **not** depend on ProjectBrain MCP. Cloud cannot see `~/.cursor/`.
 ## Out of scope
 
 - Daily ops: no commit/push/merge from the agent
-- Field card: no merge without human Slack Approve
+- Field card: no merge except via Friday 18:00 review agent (`Apply review`). Slack is FYI.
 
 ## IDE coexistence
 

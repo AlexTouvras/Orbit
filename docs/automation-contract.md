@@ -17,9 +17,11 @@
 | Weekly Write | GHA `weekly-write.yml` + Cursor | `#orbit` Slack preview/approve | Human Approve in Slack |
 | Weekly digest | GHA `newsletter.yml` Tue 07:15 UTC (primary) + Vercel `/api/cron/newsletter` Tue 08:00 UTC (backup) | email (test-to or audience) | none (test-to until `RESEND_NEWSLETTER_TEST_TO` unset) |
 | News refresh | GHA `news-refresh.yml` | commit to `data/news-cache.json` | none |
-| Analytics field card judgment | Cursor `.cursor/automations/analytics-field-card-weekly-content-pass.json` | `#orbit` Approve | Human Approve |
-| Delivery field card judgment | Cursor `.cursor/automations/delivery-field-card-weekly-content-pass.json` | `#orbit` Approve | Human Approve |
-| Field-card Approve API | Orbit `/api/field-card/*` | sync HTML to `public/` | Slack Approve |
+| Agentic field card judgment | Cursor `.cursor/automations/agentic-field-card-weekly-content-pass.json` | PR `## Summary` | none — Friday 18:00 review |
+| Analytics field card judgment | Cursor `.cursor/automations/analytics-field-card-weekly-content-pass.json` | PR `## Summary` | none — Friday 18:00 review |
+| Delivery field card judgment | Cursor `.cursor/automations/delivery-field-card-weekly-content-pass.json` | PR `## Summary` | none — Friday 18:00 review |
+| Field card review | Cursor `.cursor/automations/field-card-review.json` | Apply review + #orbit FYI | review agent is the gate |
+| Field-card action API | Orbit `/api/field-card/action` | merge + sync HTML to `public/` | called by review agent |
 | Daily ops check | Cursor `.cursor/automations/daily-ops-check.json` | `#ops-channel` issues only | Propose-only; ✅ follow-up / ⏸️ snooze / ignore = later |
 
 ## Required secrets (production)

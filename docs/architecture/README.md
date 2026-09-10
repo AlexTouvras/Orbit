@@ -6,7 +6,7 @@ Orbit platform — this repo. Registry: `architecture-projects.json`.
 |-----|------|
 | [system-overview.md](system-overview.md) | Hub / Blog / Portfolio / feed / identity HUD |
 | [weekly-write-pipeline.md](weekly-write-pipeline.md) | Weekly Write Slack Approve |
-| [field-card-approve.md](field-card-approve.md) | Field-card Slack backup |
+| [field-card-approve.md](field-card-approve.md) | Field-card review gate + #orbit FYI |
 | [field-card-review.md](field-card-review.md) | Friday review agent |
 | [ops-fleet.md](ops-fleet.md) | Daily fleet check → `#ops-channel` |
 | [week-log.md](week-log.md) | Private Studio week log of ops outputs |

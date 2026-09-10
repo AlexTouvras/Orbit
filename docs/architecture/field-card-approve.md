@@ -1,6 +1,6 @@
 # Field card weekly gate (Orbit)
 
-The review agent is the gate. You do not Approve in Slack unless that agent misses.
+The review agent is the gate. Slack is FYI after Apply review.
 
 ## Normal week
 
@@ -10,7 +10,7 @@ The review agent is the gate. You do not Approve in Slack unless that agent miss
 
 ## Backup
 
-If the review agent misses, Monday watchdog can still post **Open the new card / Approve / Decline**. Saturday is not scheduled.
+If the review agent misses, Monday watchdog posts a FYI in #orbit. Finish by re-running the review agent or `gh workflow run "Apply review"`. Do not Slack-Approve. Saturday is not scheduled.
 
 ## Cards
 

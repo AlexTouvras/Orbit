@@ -68,13 +68,13 @@ src/content/writes/
 public/field-card/index.html            # Agentic AI Field Card (home AI competency)
 public/analytics-field-card/index.html  # Data Analytics Field Card (home Data competency)
 public/delivery-field-card/index.html   # Technology Delivery Field Card (home Delivery competency)
-src/lib/field-card/registry.ts          # Multi-card Approve sync map (repo → Orbit path)
+src/lib/field-card/registry.ts          # Multi-card Apply review sync map (repo → Orbit path)
 src/lib/field-card/slack.ts             # Laconic one-post-per-card #orbit FYI (Review/Considered/Changed/Online + Check card)
 src/app/card/page.tsx                   # Public identity HUD (chrome-light)
 src/app/qr-code/page.tsx                # On-screen QR to /card
 src/components/card/                    # IdentityHud + CardQr
 src/components/layout/AppChrome.tsx     # Hides header/footer/particles on /card and /qr-code
-src/app/api/field-card/{preview,action}/ # Shared Slack preview / Approve for all registered cards
+src/app/api/field-card/{preview,action}/ # Shared preview / Apply review for all registered cards
 src/lib/newsletter/
 ├── digest.ts
 ├── ravens.ts       # all domains from AlexTouvras/ravens (no allowlist)

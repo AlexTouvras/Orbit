@@ -45,8 +45,6 @@ Rules for that post:
 - `Online: yes` only when the newest reviewed version is (or is about to be) the live site card.
 - Button is a real Slack **actions** button labeled **Check card** (or **Open PR** when blocked).
 
-Backup gate (review agent missed) uses the same laconic body shape with three Block Kit buttons: **Open the new card** · **Approve** · **Decline**.
-
 If a card has no open weekly PR, **still ship the week**: create `chore/weekly-refresh-YYYY-Www` from `main`, bump the version stamp only, write `## Summary` with `Decision: no-change`, then Apply review **approve**. Do not skip a Friday with a silent live card.
 
 ## Publish when
@@ -74,4 +72,4 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 
 ## Backup
 
-If this agent misses, Monday watchdog can still post Open / Approve / Decline in Slack so a person can finish the week. Saturday is not scheduled.
+If this agent misses, Monday watchdog posts a FYI in #orbit. Finish by re-running this agent (or Apply review). Slack is not the gate. Saturday is not scheduled.
