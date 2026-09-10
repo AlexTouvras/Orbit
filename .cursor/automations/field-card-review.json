@@ -1,0 +1,20 @@
+{
+  "name": "Weekly field card review",
+  "description": "Friday 18:00 review gate for all three field cards. Publishes via Apply review, including stamp-only weeks.",
+  "workflow": {
+    "triggers": [{ "cron": { "cron": "0 15 * * 5" } }],
+    "actions": [],
+    "prompts": [
+      {
+        "prompt": "AUTOMATION_CONTRACT\n\nBefore other steps: read `.state/AUTOMATION_CONTRACT.md`. Do not use ProjectBrain MCP.\n\nWeekly field card review for Alex Touvras.\n\nRepository: AlexTouvras/Orbit (branch main).\nFollow docs/architecture/field-card-review.md exactly.\n\nYou are the gate, not the author. Do not rewrite card HTML beyond a stamp-only bump when no PR exists. Do not gh pr merge.\n\nCards:\n- AlexTouvras/agentic-ai-field-card — spine RAG → AGENT → MCP → A2A\n- AlexTouvras/data-analytics-field-card — spine ASK → GRAIN → TRUTH → USE\n- AlexTouvras/technology-delivery-field-card — spine INTENT → WINDOW → PROOF → CUTOVER\n\nFor each card:\n1. Find an open PR whose head branch matches chore/weekly-refresh-* for this ISO week.\n2. If none: still ship the week. Create chore/weekly-refresh-YYYY-Www from main, bump the version stamp only, write ## Summary with Decision: no-change, then Apply review approve. Do not skip a Friday with a silent live card.\n3. If a PR exists: diff index.html on the PR head vs main. Read ## Summary.\n4. Publish (approve) if the live card should update, or the PR is stamp-only with spine intact. Keep previous (decline) only if the PR would make the live card worse.\n5. Apply with: gh workflow run \"Apply review\" --repo <repo> -f pr_number=<N> -f decision=approve|decline -f note=\"<one sentence>\"\n6. Orbit posts the FYI to Slack #orbit. Only post yourself if Apply review failed.\n\nDone when each of the three cards this week was approved or declined (including stamp-only)."
+      }
+    ],
+    "model": "",
+    "agentOptions": { "skipInstall": false },
+    "memoryEnabled": true,
+    "gitConfig": {
+      "repo": "AlexTouvras/Orbit",
+      "branch": "main"
+    }
+  }
+}
