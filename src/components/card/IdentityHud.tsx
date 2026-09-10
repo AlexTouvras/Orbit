@@ -27,6 +27,8 @@ export interface IdentityHudStat {
   id: string;
   label: string;
   value: string;
+  /** Short unit under the figure (e.g. master's) so phone tiles stay one-line. */
+  unit?: string;
   title: string;
   description: string;
   links?: IdentityHudLink[];
@@ -170,30 +172,29 @@ export function IdentityHud({
       <div className="mt-4 grid grid-cols-3 gap-2">
         {stats.map((stat) => {
           const isActive = activeHint === stat.id;
-          const compact = stat.value.length > 4;
           return (
             <button
               key={stat.id}
               type="button"
               onClick={() => onToggle(stat.id)}
               className={cn(
-                "focus-ring flex min-h-12 w-full flex-col rounded-xl border border-white/10 bg-black/20 px-2.5 py-2.5 text-left transition-colors hover:border-violet-400/40",
+                "focus-ring flex min-h-[4.75rem] w-full flex-col rounded-xl border border-white/10 bg-black/20 px-2 py-2.5 text-left transition-colors hover:border-violet-400/40",
                 isActive && "border-violet-400/50 bg-violet-500/15",
               )}
               aria-expanded={isActive}
               aria-controls={isActive ? "hud-hint" : undefined}
             >
-              <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-violet-300/70">
+              <span className="whitespace-nowrap font-mono text-[0.6rem] uppercase tracking-[0.12em] text-violet-300/70">
                 {stat.label}
               </span>
-              <span
-                className={cn(
-                  "mt-1 font-display font-bold leading-tight text-white",
-                  compact ? "text-sm sm:text-base" : "text-2xl leading-none",
-                )}
-              >
+              <span className="mt-1 font-display text-2xl font-bold leading-none text-white">
                 {stat.value}
               </span>
+              {stat.unit ? (
+                <span className="mt-0.5 whitespace-nowrap text-[0.65rem] font-medium leading-none text-slate-400">
+                  {stat.unit}
+                </span>
+              ) : null}
             </button>
           );
         })}

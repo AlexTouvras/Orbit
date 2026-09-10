@@ -91,7 +91,7 @@ export const competencies: Competency[] = [
     shortTitle: "AI",
     description:
       "Bounded agent loops with an owner and a kill switch: drafts and runbooks yes; priority calls and production publish stay human.",
-    hudTitle: "Agentic AI is a stack, not a menu",
+    hudTitle: "Agentic AI is a loop, not a menu",
     hudVerbs: "Understand → find → act → orchestrate",
     hudDescription:
       "Knowledge, a control loop, tools, then peers if you need them. Start at the thinnest layer that solves the job.",

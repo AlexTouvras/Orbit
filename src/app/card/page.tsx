@@ -13,10 +13,6 @@ const HUD_DOMAINS = [
   "Delivery",
 ] as const;
 
-function experienceLabel(raw: string): string {
-  return /year/i.test(raw) ? raw : `${raw} years`;
-}
-
 export const viewport: Viewport = {
   viewportFit: "cover",
 };
@@ -70,7 +66,8 @@ export default function CardPage() {
           {
             id: "experience",
             label: "Experience",
-            value: experienceLabel(profile.yearsExperience),
+            value: profile.yearsExperience.replace(/\s*years?$/i, ""),
+            unit: "years",
             title: "Experience",
             description:
               "Seven-plus years in Nordic consumer finance: credit analysis, PD models and scorecards, then technology delivery lead for Azure and middleware at Santander Nordics.",
@@ -79,10 +76,11 @@ export default function CardPage() {
             ],
           },
           {
-            id: "degrees",
-            label: "Degrees",
-            value: `${masters.length} master's`,
-            title: "Degrees",
+            id: "education",
+            label: "Education",
+            value: String(masters.length),
+            unit: "master's",
+            title: "Education",
             description:
               "Two master's: Big Data Analytics at Arcada, Banking and International Finance at Jyväskylä. Economics bachelor from AUEB in Athens.",
             links: [
@@ -94,6 +92,7 @@ export default function CardPage() {
             id: "domains",
             label: "Domains",
             value: String(HUD_DOMAINS.length),
+            unit: "fields",
             title: "Domains",
             description: `${HUD_DOMAINS.join(", ")}. Tap a lane above for ways of working in that field.`,
             links: [{ href: "/about#skills", label: "Skills on About" }],
