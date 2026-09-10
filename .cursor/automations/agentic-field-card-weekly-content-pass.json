@@ -1,6 +1,6 @@
 {
   "name": "Weekly agentic AI field card content pass",
-  "description": "Friday 17:00 judgment for agentic-ai-field-card: update vs no-change, PR Summary. 18:00 review publishes. Discovery CI is Thursday.",
+  "description": "Friday 17:00 judgment for agentic-ai-field-card: discover, update vs no-change, PR Summary. 18:00 review publishes.",
   "workflow": {
     "triggers": [{ "cron": { "cron": "0 14 * * 5" } }],
     "actions": [],

@@ -4,10 +4,9 @@ The review agent is the gate. You do not Approve in Slack unless that agent miss
 
 ## Normal week
 
-1. Thursday ~15:00 — CI opens a discovery PR (no Slack ping). Skips if this ISO week already shipped or already has `## Summary`.
-2. Friday 17:00 — content agent may edit the card; leaves the PR open. If CI missed, it creates the weekly branch from `main`.
-3. Friday 18:00 — **review agent** publishes (including stamp-only no-change). Keeps the previous card only when the PR would make the live card worse.
-4. Slack gets **one laconic FYI per card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
+1. Friday 17:00 — content agent runs discover, decides update vs no-change, leaves the weekly PR open.
+2. Friday 18:00 — **review agent** publishes (including stamp-only no-change). Keeps the previous card only when the PR would make the live card worse.
+3. Slack gets **one laconic FYI per card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
 
 ## Backup
 
@@ -23,8 +22,7 @@ If the review agent misses, Monday watchdog can still post **Open the new card /
 
 ```mermaid
 flowchart LR
-  CI[Thursday discover] --> Author[Fri 17:00 content]
-  Author --> Review[Fri 18:00 review]
+  Author[Fri 17:00 content] --> Review[Fri 18:00 review]
   Review -->|publish including stamp-only| Live[Site copy + Vercel]
   Review -->|PR worse than live| Stay[Live card unchanged]
   Review --> Slack["#orbit FYI · one post per card"]

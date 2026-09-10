@@ -129,7 +129,7 @@ jobs:
       - AlexTouvras/data-analytics-field-card
       - AlexTouvras/technology-delivery-field-card
     kind: cursor_automation
-    schedule: "Thu discover, Friday 17:00 draft, 18:00 review"
+    schedule: "Friday 17:00 draft, 18:00 review"
     check: monday
     slack: "#orbit"
     expect:
