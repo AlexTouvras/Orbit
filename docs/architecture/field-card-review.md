@@ -68,7 +68,7 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 
 ## Spines (do not break)
 
-- **AI:** RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Not a vendor wall.
+- **AI:** H1 `Agentic AI is a loop, not a menu` (do not treat “loop” as a break or restore “stack”; analytics owns stack). RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Not a vendor wall. CSS `.stack` is layout only.
 - **Analytics:** ASK → GRAIN → TRUTH → USE. Not a Fabric/Power BI brochure.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
 
