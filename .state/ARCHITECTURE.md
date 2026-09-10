@@ -20,7 +20,6 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Ravens findings | GitHub Contents on `AlexTouvras/ravens` | Weekly highlights: one item per domain that moved (inbox first). `RAVENS_GITHUB_TOKEN` |
 | Week log | `/studio/week` (+ `/2026-W36/fitness` etc. for other ISO weeks; legacy `?week=` redirects) via `src/lib/week-log/` | ISO week hub. Fitness lane renders `ArcStatusCard` from plan `narrative` + `daily_quest` (fitness-coach repo). `narrative.health`: max = 100 + VIT, fill = Body Battery share. Heimdall embeds inline (Technique on lifts, Watch on Ravens parenting). Auth: GitHub allowlist + 90d sliding session; password fallback; `STUDIO_DEV_OPEN` locally |
 | Fleet registry | `docs/ops/fleet.yaml` | Daily unattended-job checks for `#ops-channel`; cloud evidence is GitHub + Slack only |
-| Slack ticket | Top-level Slack message | Prefix `Ticket · <project> · <title>`; Orbit live in `#orbit` |
 
 ## Design patterns
 
@@ -35,7 +34,6 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Weekly Write Slack draft / publish / skip notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (`#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
 - Weekly digest: **GitHub Actions Tuesday 07:15 UTC is primary** (Vercel Hobby cron went silent after 2026-08-18). Vercel `/api/cron/newsletter` Tue 08:00 UTC is backup; `already_sent_this_week` via `data/newsletter-draft.json` on GitHub prevents doubles. `RESEND_NEWSLETTER_TEST_TO` mails only that inbox; unset it to broadcast. **No Slack** for digest content — email only. Public subscribe stays closed while test-to is set. Ravens section is **one highlight per domain that moved this week**, not a vault dump.
 - Daily ops check is a separate Cursor Automation on `Orbit`/`main` at 08:00 GMT+3 posting only exceptions to `#ops-channel`. It is propose-only and must not infer local state from `~/.cursor`; registry and playbook must exist on GitHub `main`.
-- Slack tickets are on-demand in the **project channel** (`docs/ops/slack-tickets.md`), not `#ops-channel`. Orbit job: top-level `#orbit` message `Ticket · orbit ·` / `website`. One ticket → PR + thread review/preview; human merges. Daily ops ignores `Ticket ·` lines.
 - Studio week log is owner-only (`STUDIO_PASSWORD` emergency + GitHub OAuth allowlist + `noindex`). Token chain: `OPS_GITHUB_TOKEN` → `RAVENS_GITHUB_TOKEN` → `GITHUB_TOKEN`. Do not put the week log in public nav. Heimdall embeds inline with `youtube-nocookie` (Technique on fitness lifts; parenting Watch on Ravens); falls back to the watch URL.
 - Fitness course strip on `/studio/week/fitness` writes sibling `fitness-coach` via `coach-course` locally. On Vercel, Apply dispatches `studio-apply-course` on fitness-coach (GitHub Action regenerates the week and commits). Needs `OPS_GITHUB_TOKEN` Contents: Read and write on fitness-coach. Skin (Arc) is not a weekly slicer. Past race dates expire out of taper.
 - Brand accent orbit: hex keyframes on unlayered `.orbit-accent` (direct `color` animation) + `@property --orbit-accent` `<color>` for bg/border/mix. Tailwind `neon-cyan` is a **fixed** rest-state cyan (`--accent-cyan`); body links (Case study, Read, nav CTAs) do not ride the loop. Section eyebrows and hero totals do, via `.orbit-accent`. `--orbit-fg-delay` is applied after hydrate (`OrbitSync` layout effect, not a `Date.now()` SSR script) so new mounts join mid-cycle without a hydration mismatch. Avoid `oklch()` in animated tokens (LightningCSS → lab/@supports; Chromium can blank `color: var(...)`). Never animate OKLCH channels via `@property <number>`. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
@@ -89,8 +87,6 @@ src/lib/week-log/            # Studio /studio/week loaders + Heimdall matcher
 src/app/studio/week/         # Hub + topic pages
 src/components/studio/week/  # Topic panels + HeimdallEmbed
 canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
-docs/ops/                    # fleet.yaml, daily-check.md, slack-tickets.md
-.cursor/automations/         # JSON backups; cloud UI is live truth
 .state/
 ```
 
@@ -138,7 +134,6 @@ docs/ops/                    # fleet.yaml, daily-check.md, slack-tickets.md
 | 2026-09-05 | Fitness course strip on Studio week fitness: event date + stance + lift intent/density as Sunday input | Owner evaluates on localhost; past race dates must not stick in taper |
 | 2026-09-05 | Cursor `canvases/` stay local (gitignore + tsconfig exclude) | First committed `.canvas.tsx` failed ship-check: Next cannot resolve `cursor/canvas` |
 | 2026-09-05 | Studio Apply on Vercel = `repository_dispatch` → fitness-coach GHA | Vercel has no fitness `.venv`; `OPS_GITHUB_TOKEN` must be Contents write on fitness-coach |
-| 2026-09-09 | Slack tickets in project channels (`Ticket · orbit ·`), not `#ops-channel` | Fleet exception inbox stays silent-when-green; one Automation per repo; PR + visual review in-thread |
 | 2026-09-09 | Arc remaining HP: max = 100 + VIT, fill = Body Battery share | VIT formula unchanged; bar not in the gate letter |
 | 2026-09-09 | Public identity HUD at `/card`; on-screen QR at `/qr-code`; About avatar opens the HUD | Calling card for IRL scans. No extra About hero button. QR encodes current origin so localhost/LAN works. `/qr-code` is noindex. |
 | 2026-09-09 | HUD lane hints use field-card thesis (`hudTitle` / `hudVerbs` / `hudDescription`); Home keeps skill blurbs | Phone scan should show stack-not-dashboard / sequence-not-ticket, not the Hub competency paragraph |

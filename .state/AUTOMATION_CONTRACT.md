@@ -3,7 +3,7 @@
 > Orbit hosts automation JSON backups; some automations bind to other repos.
 > IDE agents use the same `.state/` files plus optional ProjectBrain MCP.
 
-**Last updated:** 2026-09-09
+**Last updated:** 2026-09-10
 
 ## Runtime (this workspace)
 
@@ -11,7 +11,7 @@
 |-------|-------|
 | Repo | `AlexTouvras/Orbit` |
 | Branch | `main` |
-| Playbooks | `.cursor/automations/*.json`, `docs/ops/daily-check.md`, `docs/ops/slack-tickets.md` |
+| Playbooks | `.cursor/automations/*.json`, `docs/ops/daily-check.md` |
 
 ## Automations managed from Orbit
 
@@ -22,7 +22,6 @@
 | Analytics field card weekly | `AlexTouvras/data-analytics-field-card` | Fri 17:00 EEST | `.cursor/automations/analytics-field-card-weekly-content-pass.json` | https://cursor.com/automations/dd4bad7c-9558-11f1-ba66-0e7d0216e441 |
 | Agentic AI field card weekly | `AlexTouvras/agentic-ai-field-card` | Fri 17:00 EEST | `.cursor/automations/agentic-field-card-weekly-content-pass.json` | https://cursor.com/automations/c0138489-8c1c-11f1-b532-320a589b8025 |
 | Field card review | `AlexTouvras/Orbit` (gates all three) | Fri 18:00 EEST | `docs/architecture/field-card-review.md` | https://cursor.com/automations/a1c0b46b-9a09-11f1-ba66-0e7d0216e441 |
-| Slack tickets · Orbit | `AlexTouvras/Orbit` | `#orbit` `Ticket · orbit` / `website` | `.cursor/automations/slack-tickets-orbit.json` | https://cursor.com/automations/08773269-ac28-11f1-b532-320a589b8025 |
 
 Live URL (delivery): https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d0216e441
 
@@ -32,11 +31,10 @@ Live URL (delivery): https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d
 |------------|--------|
 | Daily ops | Propose-only run complete; `#ops-channel` silent when green |
 | Field card weekly | `node scripts/check-links.mjs` clean if HTML changed; PR `## Summary` has update/no-change decision |
-| Slack tickets · Orbit | `npx tsc --noEmit` exits 0; trigger thread has review + visual-or-n/a; PR open; not merged |
 
 ## Scope (one run = one item)
 
-One automation invocation → one judgment pass (ops digest, one field-card weekly PR, or one Slack ticket).
+One automation invocation → one judgment pass (ops digest, or one field-card weekly PR).
 
 ## Read order (before acting)
 
@@ -53,13 +51,11 @@ Do **not** depend on ProjectBrain MCP. Cloud cannot see `~/.cursor/`.
 |------------|--------|
 | Daily ops | Slack `#ops-channel` only when issues; memories update |
 | Field card | PR on target repo; Slack Approve via `gh workflow run` |
-| Slack tickets · Orbit | Feature-branch PR on Orbit; review + preview in the `#orbit` trigger thread; never merge |
 
 ## Out of scope
 
 - Daily ops: no commit/push/merge from the agent
 - Field card: no merge without human Slack Approve
-- Slack tickets: no merge; no `#ops-channel`; ignore `Ticket ·` in Daily ops Slack reads
 
 ## IDE coexistence
 

@@ -11,7 +11,6 @@ Read [`fleet.yaml`](./fleet.yaml) first. Follow it literally.
 - Do **not** invent Cursor automation run history. Cursor has no API here — infer from GitHub and Slack.
 - Cloud cannot see `~/.cursor`. Missing local paths are not failures.
 - Ignore bot loops: do not reply to your own `#ops-channel` digest as if it were a project job.
-- Ignore Slack messages that start with `Ticket ·` (or `Ticket -` / `Ticket :`). Those are on-demand Slack tickets (`docs/ops/slack-tickets.md`), not fleet jobs. Do not treat them as Huginn, Weekly Write, Sunday plan, or field-card evidence.
 - Skip jobs whose `check` day has not arrived (e.g. `monday` jobs on Tuesday are in scope; `tuesday` jobs on Monday are not).
 - Weekday SLA only: do not call a weekend-idle Approve "stale" until Monday 08:00.
 - Snooze: if Memories say an issue is snoozed until a date that is still in the future, skip it.

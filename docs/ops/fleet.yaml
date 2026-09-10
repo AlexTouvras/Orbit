@@ -160,5 +160,3 @@ skip_missed_run:
   - mealplan  # Slack kickoff only
   - ledger    # holdings message trigger
   - harvest-g5  # local script is canonical; cloud often UNAVAILABLE
-  # Slack tickets (docs/ops/slack-tickets.md) are not fleet jobs. Daily ops must
-  # ignore `Ticket ·` messages in #orbit and other project channels.
