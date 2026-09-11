@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getWriteModifiedDate } from "@/lib/seo/writes";
 import { getSiteUrl } from "@/lib/site";
 import { getAllWrites } from "@/lib/writes";
 
@@ -86,11 +87,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.75,
     },
+    {
+      url: `${base}/llms.txt`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
   ];
 
   const writes = getAllWrites().map((write) => ({
     url: `${base}/writes/${write.slug}`,
-    lastModified: new Date(write.date),
+    lastModified: new Date(getWriteModifiedDate(write)),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));

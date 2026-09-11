@@ -9,6 +9,12 @@ import { Badge } from "@/components/ui/Badge";
 import { BackLink } from "@/components/ui/BackLink";
 import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
+import { getEditableProfile } from "@/lib/profile-store";
+import {
+  getWriteModifiedDate,
+  writeOgImageUrl,
+  writePath,
+} from "@/lib/seo/writes";
 import { formatDate } from "@/lib/utils";
 
 const categoryTone = {
@@ -31,10 +37,14 @@ export async function generateMetadata({
   const { slug } = await params;
   const write = getWriteBySlug(slug);
   if (!write) return { title: "Article not found" };
-  const path = `/writes/${slug}`;
+  const profile = getEditableProfile();
+  const path = writePath(slug);
+  const modified = getWriteModifiedDate(write);
+  const ogImage = writeOgImageUrl(slug);
   return {
     title: write.title,
     description: write.summary,
+    authors: [{ name: profile.name, url: "/" }],
     alternates: { canonical: path },
     openGraph: {
       title: write.title,
@@ -42,12 +52,16 @@ export async function generateMetadata({
       type: "article",
       url: path,
       publishedTime: write.date,
+      modifiedTime: modified,
+      authors: [profile.name],
       tags: write.tags,
+      images: [{ url: ogImage, width: 1200, height: 630, alt: write.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: write.title,
       description: write.summary,
+      images: [ogImage],
     },
   };
 }
@@ -78,6 +92,11 @@ export default async function WriteDetailPage({
           <span className="font-mono text-xs text-slate-400">
             {formatDate(write.date)}
           </span>
+          {write.updated && write.updated !== write.date && (
+            <span className="font-mono text-xs text-slate-500">
+              Updated {formatDate(write.updated)}
+            </span>
+          )}
           <span className="inline-flex items-center gap-1 font-mono text-xs text-slate-400">
             <Clock className="h-3 w-3" aria-hidden />
             {write.readingTime} min read

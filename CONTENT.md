@@ -91,17 +91,30 @@ One clear conclusion.
 
 | Field | Required | Values / notes |
 | --- | --- | --- |
-| `title` | Yes | Shown on card and article header |
+| `title` | Yes | Shown on card and article header; also powers the per-post Open Graph image |
 | `summary` | Yes | Card teaser + meta description |
-| `date` | Yes | ISO date `"YYYY-MM-DD"` — controls sort order (newest first) |
+| `date` | Yes | ISO date `"YYYY-MM-DD"` — controls sort order (newest first) and `datePublished` |
+| `updated` | No | ISO date when you **revise** an existing essay. Drives sitemap `lastModified`, OG `modifiedTime`, and JSON-LD `dateModified`. Omit on first publish. |
 | `category` | Yes | `Career` · `Data` · `AI` · `Delivery` · `Learning` |
 | `tags` | Yes | Array of strings; used for search on `/writes` |
 | `featured` | No | `true` → Home **From the blog** (article teasers; defaults `false`) |
 | `showcase` | No | `true` → Home **Selected work** (system / project showcases; defaults `false`). Same blog MDX — only Home placement changes. Prefer one of `featured` or `showcase`, not both. |
 
+### SEO is automatic (do not hand-author tags)
+
+Dropping a valid Write MDX is enough. The site derives:
+
+- Canonical URL, title, description, authors
+- Per-slug Open Graph / Twitter image (`/writes/{slug}/opengraph-image`) from `title` + `category`
+- `BlogPosting` + `BreadcrumbList` JSON-LD
+- Sitemap entry + RSS item (`/feed.xml`)
+- Heading `id`s on `##` / `###` for deep links
+
+Weekly Write Approve and showcase essays use the same pipeline — no extra SEO step. On a substantive rewrite, set `updated: "YYYY-MM-DD"` (keep original `date`).
+
 ### Edit an existing article
 
-Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, save, refresh.
+Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, save, refresh. If the change is a real rewrite (not a typo fix), bump `updated`.
 
 ### Tips (from your content vision)
 

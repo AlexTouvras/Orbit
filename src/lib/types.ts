@@ -47,6 +47,12 @@ export interface WriteFrontmatter {
   title: string;
   summary: string;
   date: string;
+  /**
+   * Optional last-substantive-edit date (`YYYY-MM-DD`).
+   * When set, drives sitemap lastModified, OG modifiedTime, and JSON-LD dateModified.
+   * Omit on first publish — `date` is enough. Set when you revise an existing essay.
+   */
+  updated?: string;
   tags: string[];
   category: WriteCategory;
   /** Prefer in the Home “From the blog” strip (article teasers). */

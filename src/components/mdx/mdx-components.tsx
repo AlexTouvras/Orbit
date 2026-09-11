@@ -16,6 +16,34 @@ function extractMermaidSource(children: ReactNode): string | null {
   return inner != null ? String(inner) : null;
 }
 
+function headingText(children: ReactNode): string {
+  if (children == null || typeof children === "boolean") return "";
+  if (typeof children === "string" || typeof children === "number") {
+    return String(children);
+  }
+  if (Array.isArray(children)) {
+    return children.map(headingText).join("");
+  }
+  if (isValidElement(children)) {
+    const props = children.props as { children?: ReactNode };
+    return headingText(props.children);
+  }
+  return "";
+}
+
+/** Stable id for deep links / snippet anchors — automatic for every MDX heading. */
+function headingId(children: ReactNode): string | undefined {
+  const text = headingText(children).trim();
+  if (!text) return undefined;
+  const id = text
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return id || undefined;
+}
+
 function Pre({
   children,
   ...props
@@ -33,17 +61,23 @@ function Pre({
 }
 
 export const mdxComponents: MDXComponents = {
-  h2: (props) => (
+  h2: ({ children, ...props }) => (
     <h2
-      className="mt-10 mb-3 text-2xl font-bold tracking-tight text-white"
+      id={headingId(children)}
+      className="mt-10 mb-3 scroll-mt-24 text-2xl font-bold tracking-tight text-white"
       {...props}
-    />
+    >
+      {children}
+    </h2>
   ),
-  h3: (props) => (
+  h3: ({ children, ...props }) => (
     <h3
-      className="mt-8 mb-2 text-xl font-semibold tracking-tight text-white"
+      id={headingId(children)}
+      className="mt-8 mb-2 scroll-mt-24 text-xl font-semibold tracking-tight text-white"
       {...props}
-    />
+    >
+      {children}
+    </h3>
   ),
   p: (props) => (
     <p className="my-4 leading-relaxed text-slate-300" {...props} />
