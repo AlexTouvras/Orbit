@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/Badge";
 import { MissionHero } from "@/components/ui/MissionHero";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
 import { LiveDeskTile } from "@/components/live/LiveDeskTile";
+import { LiveDeskCarousel } from "@/components/live/LiveDeskCarousel";
 import { liveDesks } from "@/content/live-desks";
 import { Activity } from "lucide-react";
 
@@ -36,13 +37,11 @@ export default function LiveDesksPage() {
         ]}
       />
 
-      <ul className="grid gap-6 sm:grid-cols-2">
+      <LiveDeskCarousel className="mt-0" labels={desks.map((d) => d.title)}>
         {desks.map((desk) => (
-          <li key={desk.slug}>
-            <LiveDeskTile desk={desk} />
-          </li>
+          <LiveDeskTile key={desk.slug} desk={desk} />
         ))}
-      </ul>
+      </LiveDeskCarousel>
     </div>
   );
 }

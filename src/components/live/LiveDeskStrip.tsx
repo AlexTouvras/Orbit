@@ -1,7 +1,8 @@
 import { liveDesks } from "@/content/live-desks";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { LiveDeskTile } from "@/components/live/LiveDeskTile";
+import { LiveDeskCarousel } from "@/components/live/LiveDeskCarousel";
 
 export function LiveDeskStrip() {
   const desks = liveDesks.filter((d) => d.status === "live");
@@ -16,13 +17,11 @@ export function LiveDeskStrip() {
           description="One-page desks that refresh at the grain the data actually moves. Screenshots stay in the Power BI lane."
         />
       </Reveal>
-      <Stagger className="mt-8 grid gap-6 sm:grid-cols-2">
+      <LiveDeskCarousel labels={desks.map((d) => d.title)}>
         {desks.map((desk) => (
-          <StaggerItem key={desk.slug}>
-            <LiveDeskTile desk={desk} />
-          </StaggerItem>
+          <LiveDeskTile key={desk.slug} desk={desk} />
         ))}
-      </Stagger>
+      </LiveDeskCarousel>
     </section>
   );
 }
