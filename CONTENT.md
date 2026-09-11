@@ -113,7 +113,7 @@ Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, sa
 
 ---
 
-## 2. Portfolio (workshop, GitHub & Power BI)
+## 2. Portfolio (workshop, GitHub, Power BI & live)
 
 **URL:** `/portfolio`
 
@@ -122,8 +122,9 @@ The portfolio shows **real work only**:
 - **Workshop** — projects you publish from Studio (scanned from your machine).
 - **GitHub** — live public repos, pulled from your `githubUsername`.
 - **Power BI** — report page screenshots (`#power-bi`), browsable with page arrows and click-to-enlarge.
+- **Live dashboards** — Orbit-chrome one-pagers at `/portfolio/live` (`#live` teaser). Not Power BI. Snapshots: `npm run live:fetch` (power mix), `npm run live:fetch-eu` (EU spot). Do not ship empty desks or Energy-Charts FI/SE3/EE prices.
 
-There are no placeholder case studies. To add workshop projects, see **§5** below. To add a Power BI report, see **§2.1**.
+There are no placeholder case studies. To add workshop projects, see **§5** below. To add a Power BI report, see **§2.1**. Live desks: `src/content/live-desks.ts` + `data/live/*.json`.
 
 GitHub repos update automatically from the API when `githubUsername` is set in profile or Studio.
 
@@ -474,7 +475,9 @@ npm run news:fetch
 /                 Hub — hero, latest writes, competencies, about teaser
 /writes           Your articles (owned content)
 /writes/[slug]    Single article
-/portfolio        Workshop + GitHub + Power BI (#power-bi)
+/portfolio        Workshop + GitHub + Power BI (#power-bi) + live teaser (#live)
+/portfolio/live   Live dashboard gallery
+/portfolio/live/[slug]  Desk (nordic-equity, power, eu-spot)
 /about            CV & full background
 /radar            Related articles — external RSS (nav label: Related articles)
 /newsletter       Weekly digest (test-to-self until go-live)

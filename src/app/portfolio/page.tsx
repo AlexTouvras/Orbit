@@ -3,6 +3,8 @@ import { GithubRepos } from "@/components/portfolio/GithubRepos";
 import { LocalProjects } from "@/components/portfolio/LocalProjects";
 import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
 import { PowerBiShowcase } from "@/components/portfolio/PowerBiShowcase";
+import { LiveDeskStrip } from "@/components/live/LiveDeskStrip";
+import { liveDesks } from "@/content/live-desks";
 import { powerBiReports } from "@/content/power-bi-reports";
 import { getPublicProjects } from "@/lib/projects-local";
 import { getEditableProfile } from "@/lib/profile-store";
@@ -10,7 +12,7 @@ import { getEditableProfile } from "@/lib/profile-store";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Projects, open-source work from GitHub, and Power BI report pages.",
+    "Projects, open-source work from GitHub, Power BI report pages, and live dashboards.",
   alternates: { canonical: "/portfolio" },
 };
 
@@ -25,6 +27,7 @@ export default function PortfolioPage() {
         workshopCount={workshop.length}
         tagCount={tagCount}
         powerBiCount={powerBiReports.length}
+        liveCount={liveDesks.filter((d) => d.status === "live").length}
         avatarUrl={profile.avatarUrl}
       />
 
@@ -35,6 +38,8 @@ export default function PortfolioPage() {
       <GithubRepos />
 
       <PowerBiShowcase reports={powerBiReports} />
+
+      <LiveDeskStrip />
     </div>
   );
 }

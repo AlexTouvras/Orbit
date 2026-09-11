@@ -14,6 +14,7 @@ interface PortfolioHeroProps {
   workshopCount: number;
   tagCount: number;
   powerBiCount?: number;
+  liveCount?: number;
   avatarUrl?: string;
 }
 
@@ -21,6 +22,7 @@ export function PortfolioHero({
   workshopCount,
   tagCount,
   powerBiCount = 0,
+  liveCount = 0,
   avatarUrl,
 }: PortfolioHeroProps) {
   const stats = [
@@ -28,6 +30,10 @@ export function PortfolioHero({
     {
       label: "Power BI",
       value: powerBiCount > 0 ? String(powerBiCount) : "—",
+    },
+    {
+      label: "Live",
+      value: liveCount > 0 ? String(liveCount) : "—",
     },
     { label: "Tags", value: tagCount > 0 ? String(tagCount) : "—" },
   ];
@@ -43,8 +49,8 @@ export function PortfolioHero({
       }
       avatarUrl={avatarUrl}
       title="What I'm building"
-      subtitle="Projects, open source, and Power BI"
-      description="Workshop projects, GitHub repos, and Power BI pages that match the committed report definitions."
+      subtitle="Projects, open source, Power BI, and live desks"
+      description="Workshop projects, GitHub repos, Power BI screenshots, and one-page desks that refresh at the grain the data actually moves."
       stats={stats}
       actions={
         <>
@@ -66,6 +72,12 @@ export function PortfolioHero({
               Power BI reports
               <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
             </a>
+          )}
+          {liveCount > 0 && (
+            <Link href="/portfolio/live" className={secondaryCta}>
+              Live dashboards
+              <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
+            </Link>
           )}
         </>
       }

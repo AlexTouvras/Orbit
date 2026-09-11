@@ -16,6 +16,7 @@ export function AppChrome({
 }) {
   const pathname = usePathname();
   const bare = BARE_ROUTES.has(pathname);
+  const live = pathname.startsWith("/portfolio/live");
 
   if (bare) {
     return (
@@ -31,7 +32,9 @@ export function AppChrome({
       <Header />
       <main
         id="main-content"
-        className="relative z-10 mx-auto min-h-[70vh] w-full max-w-5xl px-4 pt-28 pb-12 sm:pt-32"
+        className={`relative z-10 mx-auto min-h-[70vh] w-full px-4 pt-28 pb-12 sm:pt-32 ${
+          live ? "max-w-6xl" : "max-w-5xl"
+        }`}
       >
         {children}
       </main>

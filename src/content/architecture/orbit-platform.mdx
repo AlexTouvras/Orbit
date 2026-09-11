@@ -21,18 +21,17 @@ flowchart LR
 
 ## Field card weekly gate (Orbit)
 
-The review agent is the gate. You do not Approve in Slack unless that agent misses.
+The review agent is the gate. Slack is FYI after Apply review.
 
 ## Normal week
 
-1. Friday ~15:00 — CI opens a discovery PR (no Slack ping).
-2. Friday 17:00 — content agent may edit the card; leaves the PR open.
-3. Friday 18:00 — **review agent** compares proposed HTML to live, then publishes or keeps the previous card.
-4. Slack gets **one laconic FYI per card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
+1. Friday 17:00 — content agent runs discover, decides update vs no-change, leaves the weekly PR open.
+2. Friday 18:00 — **review agent** publishes (including stamp-only no-change). Keeps the previous card only when the PR would make the live card worse.
+3. Slack gets **one laconic FYI per card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
 
 ## Backup
 
-If the review agent misses, Saturday/Monday watchdog can still post **Open the new card / Approve / Decline**.
+If the review agent misses, Monday watchdog posts a FYI in #orbit. Finish by re-running the review agent or `gh workflow run "Apply review"`. Do not Slack-Approve. Saturday is not scheduled.
 
 ## Cards
 
@@ -44,10 +43,9 @@ If the review agent misses, Saturday/Monday watchdog can still post **Open the n
 
 ```mermaid
 flowchart LR
-  CI[Friday discover] --> Author[17:00 content pass]
-  Author --> Review[18:00 review agent]
-  Review -->|publish| Live[Site copy + Vercel]
-  Review -->|keep previous| Stay[Live card unchanged]
+  Author[Fri 17:00 content] --> Review[Fri 18:00 review]
+  Review -->|publish including stamp-only| Live[Site copy + Vercel]
+  Review -->|PR worse than live| Stay[Live card unchanged]
   Review --> Slack["#orbit FYI · one post per card"]
 ```
 
@@ -101,14 +99,13 @@ Rules for that post:
 - `Online: yes` only when the newest reviewed version is (or is about to be) the live site card.
 - Button is a real Slack **actions** button labeled **Check card** (or **Open PR** when blocked).
 
-Backup gate (review agent missed) uses the same laconic body shape with three Block Kit buttons: **Open the new card** · **Approve** · **Decline**.
-
-If a card has no open weekly PR, skip it. Do not open a new PR. Do not edit HTML.
+If a card has no open weekly PR, **still ship the week**: create `chore/weekly-refresh-YYYY-Www` from `main`, bump the version stamp only, write `## Summary` with `Decision: no-change`, then Apply review **approve**. Do not skip a Friday with a silent live card.
 
 ## Publish when
 
 - The proposed HTML is a real improvement: picker swap by constraint, docs URL fix, or a new *job* in the decision table.
-- Or the HTML is unchanged aside from the weekly stamp, and the spine is intact (reviewed, no worse).
+- Or the HTML is unchanged aside from the weekly stamp, and the spine is intact (reviewed, no worse). **Stamp-only still publishes.**
+- Missing `## Summary` on a stamp-only PR is not a decline — write the note in Apply review and publish.
 - Picker is still ≤7 rows.
 - Link check is clean on URLs this PR touched.
 - Always-on strip, kill switch, and anti-patterns are still there.
@@ -116,21 +113,20 @@ If a card has no open weekly PR, skip it. Do not open a new PR. Do not edit HTML
 ## Keep the previous card when
 
 - The PR is discovery noise that would make the public card worse (brochure language, extra picker rows, invented URLs).
-- The author pass never wrote a `## Summary` and the HTML is not a clear fix.
 - Link check failed on URLs the PR touched.
-- You cannot tell what changed.
+- You cannot tell what changed and the HTML is not a stamp-only bump.
 
 When keeping previous, decline. Do not try to fix the HTML in this run.
 
 ## Spines (do not break)
 
-- **AI:** RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Not a vendor wall.
+- **AI:** H1 `Agentic AI is a loop, not a menu` (do not treat “loop” as a break or restore “stack”; analytics owns stack). RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Not a vendor wall. CSS `.stack` is layout only.
 - **Analytics:** ASK → GRAIN → TRUTH → USE. Not a Fabric/Power BI brochure.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
 
 ## Backup
 
-If this agent misses, Saturday/Monday watchdog can still post Open / Approve / Decline in Slack so a person can finish the week.
+If this agent misses, Monday watchdog posts a FYI in #orbit. Finish by re-running this agent (or Apply review). Slack is not the gate. Saturday is not scheduled.
 
 ## Fleet ops check
 
@@ -163,8 +159,15 @@ flowchart TB
 ```mermaid
 flowchart TB
   Hub[Hub] --> Blog[Blog MDX]
-  Hub --> Portfolio[Portfolio and Workshop]
+  Hub --> Portfolio[Portfolio]
+  Portfolio --> Workshop[Workshop]
+  Portfolio --> Github[GitHub repos]
+  Portfolio --> PowerBI[Power BI screenshots]
+  Portfolio --> Live[Live dashboards /portfolio/live]
+  Live --> Snapshots[GHA or npm run live:fetch JSON]
   Hub --> Feed[Related articles cache]
+  Hub --> Card[Identity HUD /card]
+  Card --> QrPage[QR /qr-code]
   Studio[Studio JSON edits] --> Hub
   Studio --> WeekLog[Studio week log]
   Cron[news fetch cron] --> Feed

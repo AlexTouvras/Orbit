@@ -28,6 +28,15 @@
 
 ## Next
 
+- [x] **Live dashboards lane (localhost)** — `/portfolio/live` with heatmap + Power Pulse. Housing/rail still queued. GHA refresh later.
+- [ ] **Before any live-desk deploy:** strip FI price/nowcast from Power Pulse (Energy-Charts prices are internal-use). Mix tape can ship.
+- [ ] **Helsinki Housing Pulse** — `/portfolio/live/housing`. Stat.fi `ashi`, monthly, ~1 month lag, CC BY 4.0. No empty page.
+- [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
+- [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
+- [x] **EU Spot Desk (localhost)** — `/portfolio/live/eu-spot` map + history. Energy-Charts until ENTSO-E token. Do not deploy while `localhostOnly`.
+- [x] **EU Spot → ENTSO-E A44** — token in `.env.local`; `live:fetch-eu` prefers A44; `localhostOnly: false`. Consider public deploy after owner review.
+- [x] **EU Spot multi-domain pulse** — Market/Load/Gen/Transmission/Outages/Balancing/Operation/OMI; map hover + zone desk. Refresh: `npm run live:fetch-eu-pulse`.
+- [ ] **EU Spot public deploy** — confirm attribution + cron/GHA refresh; add `ENTSOE_SECURITY_TOKEN` on Vercel if server-side refresh.
 - [x] Field-card watchdog: drop Saturday cron; Friday pass + Monday escalate only
 - [x] Newsletter primary path = GHA Tuesday schedule (Vercel backup)
 - [x] Draft featured Write: fitness coach Arc Mode (`when-the-coach-got-gate-ranks`)

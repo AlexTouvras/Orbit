@@ -4,7 +4,7 @@
 
 ## Overview
 
-Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub + Power BI), Related articles RSS cache, Studio (profile + week log), architecture sync, weekly digest (Resend auto-send; test-to-self until go-live). Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
+Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub + Power BI screenshots + live desks at `/portfolio/live`), Related articles RSS cache, Studio (profile + week log), architecture sync, weekly digest (Resend auto-send; test-to-self until go-live). Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
 
 ## Data shapes
 
@@ -12,6 +12,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 |------|------------------|-------|
 | FeedSource | `src/lib/news/sources.ts` | `name`, `url`, `category`, optional `maxItems` |
 | NewsCache | `data/news-cache.json` | Fetched via `npm run news:fetch` |
+| Live Power Pulse | `data/live/power.json` | `npm run live:fetch`. Mix from Energy-Charts `public_power`. FI prices + nowcast are localhost/internal (Energy-Charts `/price` is not CC BY). Do not deploy that series; ENTSO-E A44 later. |
+| Live EU Spot | `data/live/eu-spot.json` | `npm run live:fetch-eu` (A44) + `npm run live:fetch-eu-pulse` (Load A65, Gen A75, Outages A80, Balancing A85, OMI A68, Operation = load forecast error). Map category layers + zone desk. |
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
@@ -38,6 +40,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Fitness course strip on `/studio/week/fitness` writes sibling `fitness-coach` via `coach-course` locally. On Vercel, Apply dispatches `studio-apply-course` on fitness-coach (GitHub Action regenerates the week and commits). Needs `OPS_GITHUB_TOKEN` Contents: Read and write on fitness-coach. Skin (Arc) is not a weekly slicer. Past race dates expire out of taper.
 - Brand accent orbit: hex keyframes on unlayered `.orbit-accent` (direct `color` animation) + `@property --orbit-accent` `<color>` for bg/border/mix. Tailwind `neon-cyan` is a **fixed** rest-state cyan (`--accent-cyan`); body links (Case study, Read, nav CTAs) do not ride the loop. Section eyebrows and hero totals do, via `.orbit-accent`. `--orbit-fg-delay` is applied after hydrate (`OrbitSync` layout effect, not a `Date.now()` SSR script) so new mounts join mid-cycle without a hydration mismatch. Avoid `oklch()` in animated tokens (LightningCSS → lab/@supports; Chromium can blank `color: var(...)`). Never animate OKLCH channels via `@property <number>`. Topic AI uses fixed `--accent-ai` / `neon-ai`. Violet/blue stay fixed.
 - Studio profile save: local always writes `data/profile.json`; Vercel requires `GITHUB_TOKEN` and commits for redeploy. UI must show the real server message (not a blanket "Live site updated").
+- Vercel `ignoreCommand` (`scripts/vercel-ignore.mjs`) skips rebuilds when a commit only touches runtime-read GitHub JSON (news cache, essay feedback, newsletter/weekly-write drafts). Profile, published projects, Writes, field cards, and Power BI screenshots still build. Fail-open: if git cannot list files, Vercel builds.
 - ProjectBrain showcase (2026-09-02): essay `when-the-portfolio-needs-a-memory.mdx` (`featured` + `showcase`); portfolio card + `/architecture/projectbrain` synced from `Memory/docs/architecture/`.
 - Public Writes are stranger-first (`docs/essay-voice.md`): gloss workshop nicknames; category follows the decision rule (rotate Delivery/Learning/Career/general data; do not default Power BI). Active clone for Writes is this `website/` repo; `Documents/Orbit` can lag.
 
@@ -57,7 +60,16 @@ src/lib/news/
 ├── fetcher.ts
 └── cache*.ts
 src/lib/site.ts                 # getSiteUrl()
-src/app/sitemap.ts
+src/content/live-desks.ts
+src/content/live/eu-zone-paths.ts
+src/lib/live/
+src/components/live/
+src/app/portfolio/live/
+data/live/power.json
+data/live/eu-spot.json
+src/scripts/fetch-live-power.ts
+src/scripts/fetch-live-eu-spot.ts
+scripts/live/build-eu-zone-paths.mjs
 src/app/robots.ts
 src/app/feed.xml/route.ts
 src/components/seo/
@@ -137,3 +149,6 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-09 | Arc remaining HP: max = 100 + VIT, fill = Body Battery share | VIT formula unchanged; bar not in the gate letter |
 | 2026-09-09 | Public identity HUD at `/card`; on-screen QR at `/qr-code`; About avatar opens the HUD | Calling card for IRL scans. No extra About hero button. QR encodes current origin so localhost/LAN works. `/qr-code` is noindex. |
 | 2026-09-09 | HUD lane hints use field-card thesis (`hudTitle` / `hudVerbs` / `hudDescription`); Home keeps skill blurbs | Phone scan should show stack-not-dashboard / sequence-not-ticket, not the Hub competency paragraph |
+| 2026-09-11 | EU Spot map uses real bidding-zone polygons (entsoe-py GeoJSON → SVG), not country choropleth | Owner asked for actual map; MIT-licensed zone shapes |
+| 2026-09-11 | EU Spot prices from ENTSO-E A44 when `ENTSOE_SECURITY_TOKEN` set; Energy-Charts fallback | Owner generated API token; clears localhost-only license gate |
+| 2026-09-11 | EU Spot map categories + hover + Finland-style zone pulse from ENTSO-E domains | Owner asked for all TP categories and FI-like zone press |

@@ -3,7 +3,12 @@
 ```mermaid
 flowchart TB
   Hub[Hub] --> Blog[Blog MDX]
-  Hub --> Portfolio[Portfolio and Workshop]
+  Hub --> Portfolio[Portfolio]
+  Portfolio --> Workshop[Workshop]
+  Portfolio --> Github[GitHub repos]
+  Portfolio --> PowerBI[Power BI screenshots]
+  Portfolio --> Live[Live dashboards /portfolio/live]
+  Live --> Snapshots[GHA or npm run live:fetch JSON]
   Hub --> Feed[Related articles cache]
   Hub --> Card[Identity HUD /card]
   Card --> QrPage[QR /qr-code]
