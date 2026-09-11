@@ -14,7 +14,7 @@ function DeskPeek({ slug }: { slug: string }) {
   );
 }
 
-export function LiveDeskTile({ desk }: { desk: LiveDesk }) {
+export async function LiveDeskTile({ desk }: { desk: LiveDesk }) {
   const href = `/portfolio/live/${desk.slug}`;
 
   return (
