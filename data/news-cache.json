@@ -1,7 +1,115 @@
 {
-  "generatedAt": "2026-09-10T10:28:37.080Z",
-  "count": 215,
+  "generatedAt": "2026-09-11T06:47:00.631Z",
+  "count": 214,
   "items": [
+    {
+      "id": "fa9ddf0b7915",
+      "title": "Reality Doesn't Need Your Permission to Escalate",
+      "link": "https://www.scrum.org/resources/blog/reality-doesnt-need-your-permission-escalate",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-10T22:00:00.000Z",
+      "contentSnippet": "\"Let's get this to green by Friday.\" Not the work. The status. The work was exactly where it had been on Monday, which is to say not ready, and everyone in the room knew it. But the report was due, red items invited questions, and questions invited attention nobody wanted. So a y…"
+    },
+    {
+      "id": "42c0fabe6154",
+      "title": "The AI Fluency Gap. Why Most Product Teams Are Stuck",
+      "link": "https://www.scrum.org/resources/blog/ai-fluency-gap-why-most-product-teams-are-stuck",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-10T16:38:59.000Z",
+      "contentSnippet": "Image Learning foreign languages was never my skill. I still think back to high school, when my French teacher looked at me disparagingly during our oral exam. It came as no surprise that I failed, not because my vocab was not great, but because I was not able to really communica…"
+    },
+    {
+      "id": "014159943e4d",
+      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
+      "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-10T16:00:00.000Z",
+      "contentSnippet": "César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections."
+    },
+    {
+      "id": "08a194144f6d",
+      "title": "Unifying governance across engines and catalogs in the Open Lakehouse",
+      "link": "https://www.databricks.com/blog/unifying-governance-across-engines-and-catalogs-open-lakehouse",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-10T15:05:10.000Z",
+      "contentSnippet": "In our previous posts, we showed how open table formats, open APIs and unified governance..."
+    },
+    {
+      "id": "4d4e7920d8a7",
+      "title": "Now everyone can put data to work",
+      "link": "https://openai.com/index/put-data-to-work",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-10T15:00:00.000Z",
+      "contentSnippet": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language."
+    },
+    {
+      "id": "2939f6d2b69f",
+      "title": "Improving Lakebase Postgres compute cache",
+      "link": "https://www.databricks.com/blog/improving-lakebase-postgres-compute-cache",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-10T13:47:03.000Z",
+      "contentSnippet": "The disaggregated storage model of Lakebase Postgres provides a feature rich, flexible..."
+    },
+    {
+      "id": "76a403a84103",
+      "title": "Is Your Agent Harness Still Learning? Check Its Last Updated Time.",
+      "link": "https://www.scrum.org/resources/blog/your-agent-harness-still-learning-check-its-last-updated-time",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-10T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. The oldest continuous-improvement metric works on your agent config There is a story about a Lean sensei who walked onto a factory floor, stopped at one workstation, looked at the standard work document posted above it, and told the manager…"
+    },
+    {
+      "id": "016c3ec9b775",
+      "title": "Introducing ChatGPT for Financial Services",
+      "link": "https://openai.com/index/introducing-chatgpt-financial-services",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-10T07:00:00.000Z",
+      "contentSnippet": "Introducing ChatGPT for Financial Services, combining built-in financial data and GPT-6 Astra for research, modeling, and client-ready materials."
+    },
+    {
+      "id": "1ef5285e671d",
+      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
+      "link": "https://openai.com/index/expanding-ai-access-us-government",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-10T07:00:00.000Z",
+      "contentSnippet": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support."
+    },
+    {
+      "id": "2b26a8066576",
+      "title": "Introducing the Agents API",
+      "link": "https://openai.com/index/introducing-the-agents-api",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-10T00:00:00.000Z",
+      "contentSnippet": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use."
+    },
+    {
+      "id": "4e410dad70fb",
+      "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
+      "link": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-10T00:00:00.000Z",
+      "contentSnippet": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support."
+    },
+    {
+      "id": "ca291efb21c7",
+      "title": "Why DuckDB 2.0 is faster",
+      "link": "https://motherduck.com/blog/why-duckdb-20-is-faster",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-09-10T00:00:00.000Z",
+      "contentSnippet": "DuckDB 2.0 alpha vs 1.5.5 on one laptop: recursive CTEs up to 90x, VARIANT 6x faster than JSON text, async I/O 2.4x on S3. What changes, and how to model data to get the speedup."
+    },
     {
       "id": "68a1d3f7b02e",
       "title": "Five AI Questions We're Hearing from Financial Services Leaders",
@@ -10,15 +118,6 @@
       "category": "Data",
       "pubDate": "2026-09-09T18:09:29.000Z",
       "contentSnippet": "Last year at Sibos Frankfurt, the question was whether AI works. This year: can your..."
-    },
-    {
-      "id": "534907e0d31e",
-      "title": "Paul Christiano joins OpenAI Foundation Board",
-      "link": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-09T17:00:00.000Z",
-      "contentSnippet": "Paul Christiano joins the OpenAI Foundation Board and its Safety and Security Committee, bringing experience in AI alignment, safety, and standards."
     },
     {
       "id": "42b432deee76",
@@ -102,6 +201,15 @@
       "contentSnippet": "Zepto's Push for Reliable, Real-Time Customer SupportZepto is one of India's fastest-growing..."
     },
     {
+      "id": "5a4baff754f8",
+      "title": "Some thoughts on the Navier–Stokes Millennium Prize Problem",
+      "link": "https://simonwillison.net/2026/Sep/8/on-navier-stokes/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-08T23:55:12.000Z",
+      "contentSnippet": ""
+    },
+    {
       "id": "51ede72a71d8",
       "title": "Your Retro is a Support Group, Not an Engine.",
       "link": "https://www.scrum.org/resources/blog/your-retro-support-group-not-engine",
@@ -118,15 +226,6 @@
       "category": "Data",
       "pubDate": "2026-09-08T17:16:06.000Z",
       "contentSnippet": "A SQL data type is a fundamental specification that defines what values a column..."
-    },
-    {
-      "id": "167bce5d47e7",
-      "title": "How GPT-5.6 Sol helps run quantum computing experiments",
-      "link": "https://openai.com/index/codex-quantum-computing-experiments",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-08T17:00:00.000Z",
-      "contentSnippet": "See how an MIT researcher uses GPT-5.6 Sol with Codex to autonomously run quantum computing experiments, analyze results, and calibrate qubits."
     },
     {
       "id": "dbb680cb8a52",
@@ -165,33 +264,6 @@
       "contentSnippet": "Like me, Sumeet Gayathri Moghe is tired of poor presentations with bad slide decks. He's started to write a series of posts on how to avoid these calamities, beginning with a post that questions whether a presentation is needed at all. more…"
     },
     {
-      "id": "aaada63e998e",
-      "title": "The Work Now Within Reach",
-      "link": "https://openai.com/index/the-work-now-within-reach",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-08T13:00:00.000Z",
-      "contentSnippet": "Explore how more capable, affordable AI can expand the work people and businesses can accomplish—and make growth more economical."
-    },
-    {
-      "id": "305f03a4aa6a",
-      "title": "Introducing ChatGPT Images 2.5",
-      "link": "https://openai.com/index/introducing-chatgpt-images-2-5",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-08T11:30:00.000Z",
-      "contentSnippet": "ChatGPT Images 2.5 helps turn your ideas, sketches, and reference photos into more personalized, polished images that better reflect your ideas."
-    },
-    {
-      "id": "fbb79928f7d9",
-      "title": "On the Navier–Stokes Millennium Prize Problem",
-      "link": "https://openai.com/index/navier-stokes-solution",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-08T10:00:00.000Z",
-      "contentSnippet": "We’re sharing an AI-generated solution to the Navier–Stokes Millennium Prize Problem, including a writeup and a formal proof in Lean."
-    },
-    {
       "id": "4c6f43d0c3af",
       "title": "Writing DAX at the correct granularity",
       "link": "https://www.sqlbi.com/tv/writing-dax-at-the-correct-granularity/",
@@ -201,15 +273,6 @@
       "contentSnippet": "A DAX calculation can produce convincing values at the detail level and fail at the total. The problem is often that the business rule was evaluated at the wrong granularity. This video introduces four grains, or levels of granularity, to…"
     },
     {
-      "id": "99c22bc85dd5",
-      "title": "Funding grants for new research into AI and teen development",
-      "link": "https://openai.com/index/teen-development-research-grants",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-08T09:00:00.000Z",
-      "contentSnippet": "Apply now for OpenAI’s $5 million grant program supporting independent research on how generative AI affects teen development, well-being, and safety."
-    },
-    {
       "id": "fddf6f97d147",
       "title": "Writing DAX at the correct granularity",
       "link": "https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/",
@@ -217,15 +280,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-07T20:00:23.000Z",
       "contentSnippet": "A DAX calculation can produce convincing values at the detail level and still fail at the total. The problem is often not the total itself: the business rule was evaluated at the wrong granularity. This article introduces four grains, or…"
-    },
-    {
-      "id": "74cbd35d2f4b",
-      "title": "The 40-year-old database rule agents just broke: How LTAP unifies OLTP and OLAP workloads",
-      "link": "https://www.databricks.com/blog/40-year-old-database-rule-agents-just-broke-how-ltap-unifies-oltp-and-olap-workloads",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-07T12:48:05.000Z",
-      "contentSnippet": "Jonathan Katz has spent his career on both sides of a line that most of the data..."
     },
     {
       "id": "3d26d2dbcb98",
@@ -280,15 +334,6 @@
       "category": "AI",
       "pubDate": "2026-09-04T23:59:05.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "baa2994d0399",
-      "title": "Achieving Extreme Efficiency through Specialized GPU Kernel Generation",
-      "link": "https://www.databricks.com/blog/achieving-extreme-efficiency-through-specialized-gpu-kernel-generation",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-04T20:00:00.000Z",
-      "contentSnippet": "Traditionally, production inference systems rely on generic kernels to handle diverse..."
     },
     {
       "id": "7e04cdd95713",
@@ -525,33 +570,6 @@
       "contentSnippet": "TL;DR: The AI Delegation Audit Webinar, October 6 Join me on October 6 for the AI Delegation Audit webinar. You will learn how to run a 45-to-60-minute recurring check that reveals whether delegated AI work still meets its required quality standard, still uses the right model, at…"
     },
     {
-      "id": "758299fe6265",
-      "title": "How to Leverage Flow Metrics To Accelerate Your Agentic Development Lifecycle",
-      "link": "https://www.scrum.org/resources/blog/how-leverage-flow-metrics-accelerate-your-agentic-development-lifecycle",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-31T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. Isn't it surprising that 10x coding doesn't move the needle that much? Fully agentic software factories are of course all the rage these days. But more and more leaders I talk to acknowledge that while creating a fully agentic software deve…"
-    },
-    {
-      "id": "8fdeeebe0817",
-      "title": "AI Tool Introduction – Gamma",
-      "link": "https://www.scrum.org/resources/blog/ai-tool-introduction-gamma",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-31T07:30:47.000Z",
-      "contentSnippet": "Image Imagine you are a Scrum Master or Product Owner. When you want to deliver your work to your audience, you need a tool to present your work. In the past, we used to use PowerPoint presentations. But how can AI elevate it? Gamma is the AI-based solution for the new generation…"
-    },
-    {
-      "id": "a721c8cb74dd",
-      "title": "Cognitive Trap: Increment Misinterpretation",
-      "link": "https://www.scrum.org/resources/blog/cognitive-trap-increment-misinterpretation",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-31T04:00:00.000Z",
-      "contentSnippet": "Increment Misconception Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, an…"
-    },
-    {
       "id": "0c379954319b",
       "title": "Data Engineering Weekly #285",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-285",
@@ -577,15 +595,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-30T17:24:52.000Z",
       "contentSnippet": "Several years ago I wrote a very popular blog post about how to store images for your reports inside your Power BI semantic model. It solved the problem of how you could use display images (for example of products) inside your reports without making those images available via a p…"
-    },
-    {
-      "id": "5aa6982584eb",
-      "title": "Ask Them to Define the Product Role. The Answer Describes Their Last Employer.",
-      "link": "https://www.scrum.org/resources/blog/ask-them-define-product-role-answer-describes-their-last-employer",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-30T06:00:00.000Z",
-      "contentSnippet": "Image Two candidates, same question, same afternoon. What is the job of a product person? The first says it is owning the backlog and keeping the team supplied with clear, ready work. The second says it is working out which problem is worth solving, then finding a solution custom…"
     },
     {
       "id": "3de08a17cfd8",
@@ -984,15 +993,6 @@
       "contentSnippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
     },
     {
-      "id": "3f6535797a1a",
-      "title": "Now we have a timeline of the OpenAI accidental attack against Hugging Face",
-      "link": "https://simonwillison.net/2026/Aug/7/openai-timeline/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-08-07T23:55:58.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "4cd8dbc4ee36",
       "title": "Rayfin Data App — The Future of Power BI Reporting",
       "link": "https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting",
@@ -1144,15 +1144,6 @@
       "category": "Data",
       "pubDate": "2026-07-30T12:28:26.000Z",
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
-    },
-    {
-      "id": "0a11c907adfc",
-      "title": "Context belongs in the warehouse",
-      "link": "https://motherduck.com/blog/context-belongs-in-the-warehouse",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-07-29T00:00:00.000Z",
-      "contentSnippet": "Introducing Guides, MotherDuck's context layer for AI agents. More accurate queries, lower token spend, and distributed context for your entire organization."
     },
     {
       "id": "477cf0314b9a",
