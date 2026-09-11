@@ -276,12 +276,13 @@ export function EuSpotMap({
     ny: number;
   } | null>(null);
 
-  const hoverPulse = hover ? pulseById.get(hover.id) : undefined;
-  const hoverRow = hover ? byId.get(hover.id) : undefined;
-  const hoverToday = hover
-    ? view.today.find((z) => z.id === hover.id)
+  const peekId = hover?.id ?? selected;
+  const peekPulse = peekId ? pulseById.get(peekId) : undefined;
+  const peekRow = peekId ? byId.get(peekId) : undefined;
+  const peekToday = peekId
+    ? view.today.find((z) => z.id === peekId)
     : undefined;
-  const hoverNowcast = hover ? (nowcastById.get(hover.id) ?? null) : null;
+  const peekNowcast = peekId ? (nowcastById.get(peekId) ?? null) : null;
 
   const setHoverFromEvent = (
     id: EuZoneId,
@@ -299,6 +300,26 @@ export function EuSpotMap({
     });
   };
 
+  const clearHoverIfFinePointer = () => {
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(pointer: coarse)").matches
+    ) {
+      return;
+    }
+    setHover(null);
+  };
+
+  const peekCardProps = peekToday
+    ? {
+        today: peekToday,
+        pulse: peekPulse,
+        nowcast: peekNowcast,
+        category,
+        metric: peekRow?.value ?? null,
+      }
+    : null;
+
   return (
     <section>
       <h2 className="font-display text-lg font-semibold text-white">
@@ -306,15 +327,17 @@ export function EuSpotMap({
       </h2>
       <p className="mt-1 mb-4 text-sm text-slate-400">
         Colour is this category. Hover for mix, peak, and next-hour nowcast.
-        Press a filled zone for the full desk.
+        On a phone, tap a zone — the mix card sits under the map. Press for
+        the full desk.
       </p>
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-void-800/80">
-        <svg
+      <div className="overflow-hidden rounded-2xl border border-white/10 bg-void-800/80">
+        <div className="relative">
+          <svg
           viewBox={EU_ZONE_MAP.viewBox}
           role="img"
           aria-label="European bidding-zone map"
           className="h-auto w-full"
-          onMouseLeave={() => setHover(null)}
+          onMouseLeave={clearHoverIfFinePointer}
         >
           <title>EU spot map — European bidding zones</title>
           <rect width="100%" height="100%" className="fill-void" />
@@ -384,29 +407,23 @@ export function EuSpotMap({
           })}
         </svg>
 
-        {hover && hoverToday ? (
+        {hover && peekCardProps ? (
           <div
-            className="pointer-events-none absolute z-10 w-72 rounded-lg border border-white/15 bg-void/95 px-3 py-2.5 shadow-lg"
+            className="pointer-events-none absolute z-10 hidden max-h-[min(22rem,calc(100%-1rem))] w-[min(18rem,calc(100%-1rem))] overflow-y-auto rounded-lg border border-white/15 bg-void/95 px-3 py-2.5 shadow-lg md:block"
             style={{
-              left: hover.nx > 0.55 ? undefined : `calc(${hover.nx * 100}% + 12px)`,
-              right:
-                hover.nx > 0.55
-                  ? `calc(${(1 - hover.nx) * 100}% + 12px)`
-                  : undefined,
-              top: hover.ny > 0.52 ? undefined : `calc(${hover.ny * 100}% + 8px)`,
-              bottom:
-                hover.ny > 0.52
-                  ? `calc(${(1 - hover.ny) * 100}% + 8px)`
-                  : undefined,
+              left: hover.nx > 0.5 ? undefined : 8,
+              right: hover.nx > 0.5 ? 8 : undefined,
+              top: hover.ny > 0.5 ? undefined : 8,
+              bottom: hover.ny > 0.5 ? 8 : undefined,
             }}
           >
-            <HoverCard
-              today={hoverToday}
-              pulse={hoverPulse}
-              nowcast={hoverNowcast}
-              category={category}
-              metric={hoverRow?.value ?? null}
-            />
+            <HoverCard {...peekCardProps} />
+          </div>
+        ) : null}
+        </div>
+        {peekCardProps ? (
+          <div className="border-t border-white/10 px-3 py-3 md:hidden">
+            <HoverCard {...peekCardProps} />
           </div>
         ) : null}
       </div>
