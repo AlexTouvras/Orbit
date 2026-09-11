@@ -55,6 +55,11 @@ export function olsFit(X: number[][], y: number[]): number[] | null {
       }
     }
   }
+  // Tiny ridge so a constant column (e.g. no wind in NO5) does not singularize XtX.
+  for (let a = 0; a < k; a++) {
+    const r = xtx[a];
+    if (r) r[a] += 1e-6;
+  }
   return solve(xtx, xty);
 }
 
@@ -103,13 +108,14 @@ function mae(pairs: { y: number; yhat: number }[]): number {
 /**
  * One-step: mix at t-1 → day-ahead €/MWh at t.
  * Expanding-window OLS; first `burnIn` points are train-only.
+ * Defaults match 15-minute FI Power Pulse (96 = 24h). Pass 12 / 24 for hourly.
  */
 export function walkForwardNowcast(
   rows: MixRow[],
   burnIn = 96,
+  ydayStep = 96,
 ): { points: NowcastPoint[]; score: NowcastScore } {
   const points: NowcastPoint[] = [];
-  const step = 96; // 15-min → same slot yesterday
   for (let i = 1; i < rows.length; i++) {
     const prev = rows[i - 1];
     const cur = rows[i];
@@ -126,7 +132,7 @@ export function walkForwardNowcast(
     }
     const w = olsFit(X, y);
     if (!w) continue;
-    const ydayRow = rows[i - step];
+    const ydayRow = rows[i - ydayStep];
     points.push({
       t: cur.t,
       actual: cur.price,
@@ -149,9 +155,29 @@ export function walkForwardNowcast(
       persistMae: mae(scored.map((p) => ({ y: p.actual, yhat: p.persist }))),
       ydayMae: ydayPairs.length ? mae(ydayPairs) : null,
       method:
-        "OLS expanding window: last print + wind share, net import, load at t−15m → FI price at t",
+        ydayStep === 24
+          ? "OLS expanding window: last print + wind share, net import, load at t−1h → day-ahead at t"
+          : "OLS expanding window: last print + wind share, net import, load at t−15m → FI price at t",
     },
   };
+}
+
+/** Fit on the full sample, then predict the next price from the last mix row. */
+export function nextStepNowcast(rows: MixRow[]): number | null {
+  if (rows.length < 12) return null;
+  const X: number[][] = [];
+  const y: number[] = [];
+  for (let j = 1; j < rows.length; j++) {
+    const a = rows[j - 1];
+    const b = rows[j];
+    if (!a || !b) continue;
+    X.push(features(a));
+    y.push(b.price);
+  }
+  const w = olsFit(X, y);
+  const last = rows[rows.length - 1];
+  if (!w || !last) return null;
+  return dot(w, features(last));
 }
 
 export function alignPrice(

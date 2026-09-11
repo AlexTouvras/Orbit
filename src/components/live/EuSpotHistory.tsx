@@ -129,15 +129,15 @@ export function EuSpotHistory({
               pathXs.push(xs[i] ?? PAD.l);
               pathYs.push(yAt(v, min, max));
             }
-            const focus = selected === s.id || s.id === "FI";
+            const focus = selected === s.id;
             return (
               <path
                 key={s.id}
                 d={linePath(pathXs, pathYs)}
                 fill="none"
-                stroke={s.id === "FI" ? "#22d3ee" : colorFor(s.id)}
-                strokeWidth={selected === s.id ? 2.4 : focus ? 1.5 : 1}
-                strokeOpacity={selected === s.id ? 1 : focus ? 0.55 : 0.12}
+                stroke={focus ? "#22d3ee" : colorFor(s.id)}
+                strokeWidth={focus ? 2.4 : 1}
+                strokeOpacity={focus ? 1 : 0.12}
               />
             );
           })}
@@ -174,7 +174,7 @@ export function EuSpotHistory({
               <span
                 className="h-2 w-2 rounded-sm"
                 style={{
-                  background: z.id === "FI" ? "#22d3ee" : colorFor(z.id),
+                  background: selected === z.id ? "#22d3ee" : colorFor(z.id),
                 }}
                 aria-hidden
               />

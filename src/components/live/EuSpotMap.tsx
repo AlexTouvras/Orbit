@@ -1,13 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type MouseEvent } from "react";
 import type { EuSpotView, EuZoneId } from "@/lib/live/eu-spot-types";
 import {
   categoryValue,
   formatCategoryValue,
   type EuCategoryId,
+  type EuZonePulse,
 } from "@/lib/live/eu-category-meta";
 import { EU_ZONE_MAP } from "@/content/live/eu-zone-paths";
+import { nowcastForPulse, type ZoneNowcast } from "@/lib/live/zone-nowcast";
 
 function fillFor(
   value: number,
@@ -31,6 +33,187 @@ function fillFor(
   return `hsl(${h} ${s}% ${l}%)`;
 }
 
+function formatMw(n: number | null): string {
+  if (n === null || !Number.isFinite(n)) return "—";
+  return `${Math.round(n).toLocaleString("en-US")} MW`;
+}
+
+function formatEur(n: number | null): string {
+  if (n === null || !Number.isFinite(n)) return "—";
+  return `€${n.toFixed(1)}`;
+}
+
+function lastFinite(arr: Array<number | null> | undefined): number | null {
+  if (!arr) return null;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    const v = arr[i];
+    if (v !== null && Number.isFinite(v)) return v;
+  }
+  return null;
+}
+
+function formatHelsinkiHour(unix: number | undefined): string {
+  if (!unix) return "—";
+  return new Date(unix * 1000).toLocaleString("en-GB", {
+    timeZone: "Europe/Helsinki",
+    day: "numeric",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+}
+
+type MetricRow = {
+  id: EuZoneId;
+  geoStem: string;
+  label: string;
+  value: number;
+};
+
+function MapLegend({
+  low,
+  high,
+  category,
+  diverging,
+}: {
+  low: MetricRow | null;
+  high: MetricRow | null;
+  category: EuCategoryId;
+  diverging: boolean;
+}) {
+  const lowVal = low ? formatCategoryValue(category, low.value) : "—";
+  const highVal = high ? formatCategoryValue(category, high.value) : "—";
+
+  return (
+    <div className="mt-3 flex flex-wrap items-center gap-3">
+      <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
+        Scale
+      </p>
+      <div className="min-w-[14rem] flex-1">
+        <div
+          className="h-2.5 rounded-full"
+          style={{
+            background: diverging
+              ? "linear-gradient(90deg, hsl(190 75% 50%), hsl(0 0% 35%), hsl(350 75% 50%))"
+              : "linear-gradient(90deg, hsl(190 55% 50%), hsl(105 65% 48%), hsl(20 75% 50%))",
+          }}
+          aria-hidden
+        />
+        <div className="mt-1 flex justify-between gap-3 font-mono text-[0.7rem] tabular-nums text-slate-400">
+          <span className="max-w-[45%]">
+            {diverging ? "Export" : "Lowest"} {lowVal}
+            {low ? (
+              <span className="mt-0.5 block truncate text-slate-300">
+                {low.id} · {low.label}
+              </span>
+            ) : null}
+          </span>
+          <span className="max-w-[45%] text-right">
+            {diverging ? "Import" : "Highest"} {highVal}
+            {high ? (
+              <span className="mt-0.5 block truncate text-slate-300">
+                {high.id} · {high.label}
+              </span>
+            ) : null}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function HoverCard({
+  today,
+  pulse,
+  nowcast,
+  category,
+  metric,
+}: {
+  today: EuSpotView["today"][number];
+  pulse: EuZonePulse | undefined;
+  nowcast: ZoneNowcast | null;
+  category: EuCategoryId;
+  metric: number | null;
+}) {
+  const L = pulse?.latest;
+  const lastT = pulse?.t.length ? pulse.t[pulse.t.length - 1] : undefined;
+  const solar = lastFinite(pulse?.solar);
+  const nextHour = nowcast?.nextHour ?? nowcast?.lastNowcast ?? null;
+
+  return (
+    <>
+      <p className="font-mono text-[0.6rem] uppercase tracking-[0.16em] text-slate-400">
+        {today.id}
+      </p>
+      <p className="text-sm font-medium text-white">{today.label}</p>
+      <p className="mt-0.5 font-mono text-[0.65rem] text-slate-500">
+        {formatHelsinkiHour(lastT)} Helsinki
+      </p>
+      <p className="mt-1.5 font-mono text-sm tabular-nums text-neon-cyan">
+        {formatCategoryValue(category, metric)}
+        <span className="ml-1 text-slate-500">
+          {category === "market" ? "baseload" : ""}
+        </span>
+      </p>
+      <dl className="mt-2 grid grid-cols-2 gap-x-3 gap-y-1 font-mono text-[0.7rem] tabular-nums text-slate-300">
+        <div>
+          <dt className="text-slate-500">Latest hour</dt>
+          <dd>{formatEur(L?.price ?? today.latest)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Next-hour nowcast</dt>
+          <dd className="text-amber-300">{formatEur(nextHour)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Peak</dt>
+          <dd>{formatEur(today.peak)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Trough</dt>
+          <dd>{formatEur(today.trough)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Load</dt>
+          <dd>{formatMw(L?.loadMw ?? null)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Generation</dt>
+          <dd>{formatMw(L?.genMw ?? null)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Wind</dt>
+          <dd>{formatMw(L?.windMw ?? null)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Solar</dt>
+          <dd>{formatMw(solar)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Nuclear</dt>
+          <dd>{formatMw(L?.nuclearMw ?? null)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Hydro</dt>
+          <dd>{formatMw(L?.hydroMw ?? null)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Net import</dt>
+          <dd>{formatMw(L?.netImportMw ?? null)}</dd>
+        </div>
+        <div>
+          <dt className="text-slate-500">Outages</dt>
+          <dd>
+            {L?.outageCount === null || L?.outageCount === undefined
+              ? "—"
+              : String(L.outageCount)}
+          </dd>
+        </div>
+      </dl>
+    </>
+  );
+}
+
 export function EuSpotMap({
   view,
   selected,
@@ -38,7 +221,7 @@ export function EuSpotMap({
   onSelect,
 }: {
   view: EuSpotView;
-  selected: EuZoneId;
+  selected: EuZoneId | null;
   category: EuCategoryId;
   onSelect: (id: EuZoneId) => void;
 }) {
@@ -52,6 +235,12 @@ export function EuSpotMap({
   );
   const liveStems = useMemo(() => new Set(liveByStem.keys()), [liveByStem]);
 
+  const nowcastById = useMemo(() => {
+    const m = new Map<string, ZoneNowcast | null>();
+    for (const p of view.pulses) m.set(p.id, nowcastForPulse(p));
+    return m;
+  }, [view.pulses]);
+
   const metricRows = useMemo(() => {
     return view.today
       .map((z) => {
@@ -62,12 +251,7 @@ export function EuSpotMap({
             : categoryValue(pulse, category);
         return { id: z.id, geoStem: z.geoStem, label: z.label, value: raw };
       })
-      .filter((r) => r.value !== null) as Array<{
-      id: EuZoneId;
-      geoStem: string;
-      label: string;
-      value: number;
-    }>;
+      .filter((r) => r.value !== null) as MetricRow[];
   }, [view.today, pulseById, category]);
 
   const values = metricRows.map((r) => r.value);
@@ -75,14 +259,45 @@ export function EuSpotMap({
   const max = values.length ? Math.max(...values) : 1;
   const diverging = category === "transmission";
   const byId = new Map(metricRows.map((r) => [r.id, r]));
+  const lowRow =
+    metricRows.reduce<MetricRow | null>(
+      (acc, r) => (!acc || r.value < acc.value ? r : acc),
+      null,
+    );
+  const highRow =
+    metricRows.reduce<MetricRow | null>(
+      (acc, r) => (!acc || r.value > acc.value ? r : acc),
+      null,
+    );
 
   const [hover, setHover] = useState<{
     id: EuZoneId;
-    label: string;
-    value: number | null;
-    x: number;
-    y: number;
+    nx: number;
+    ny: number;
   } | null>(null);
+
+  const hoverPulse = hover ? pulseById.get(hover.id) : undefined;
+  const hoverRow = hover ? byId.get(hover.id) : undefined;
+  const hoverToday = hover
+    ? view.today.find((z) => z.id === hover.id)
+    : undefined;
+  const hoverNowcast = hover ? (nowcastById.get(hover.id) ?? null) : null;
+
+  const setHoverFromEvent = (
+    id: EuZoneId,
+    e: MouseEvent<SVGPathElement>,
+  ) => {
+    const svg = e.currentTarget.ownerSVGElement;
+    if (!svg) return;
+    const rect = svg.getBoundingClientRect();
+    const w = rect.width || 1;
+    const h = rect.height || 1;
+    setHover({
+      id,
+      nx: (e.clientX - rect.left) / w,
+      ny: (e.clientY - rect.top) / h,
+    });
+  };
 
   return (
     <section>
@@ -90,8 +305,8 @@ export function EuSpotMap({
         Europe by category
       </h2>
       <p className="mt-1 mb-4 text-sm text-slate-400">
-        Hover for a quick read. Press a filled zone for the full desk (load,
-        generation, price — Finland-style).
+        Colour is this category. Hover for mix, peak, and next-hour nowcast.
+        Press a filled zone for the full desk.
       </p>
       <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-void-800/80">
         <svg
@@ -143,102 +358,67 @@ export function EuSpotMap({
               ? fillFor(row.value, min, max, diverging)
               : "rgba(255,255,255,0.08)";
             return (
-              <g key={z.id}>
-                <path
-                  d={shape.d}
-                  fill={fill}
-                  fillOpacity={active ? 0.95 : hasMetric ? 0.78 : 0.35}
-                  stroke={active ? "white" : "rgba(255,255,255,0.45)"}
-                  strokeWidth={active ? 2 : 0.9}
-                  className="cursor-pointer transition-[fill-opacity,stroke-width]"
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`${z.label}, ${formatCategoryValue(category, row?.value ?? null)}`}
-                  aria-pressed={active}
-                  onClick={() => onSelect(z.id)}
-                  onMouseEnter={(e) => {
-                    const svg = e.currentTarget.ownerSVGElement;
-                    if (!svg) return;
-                    const rect = svg.getBoundingClientRect();
-                    setHover({
-                      id: z.id,
-                      label: z.label,
-                      value: row?.value ?? null,
-                      x: e.clientX - rect.left,
-                      y: e.clientY - rect.top,
-                    });
-                  }}
-                  onMouseMove={(e) => {
-                    const svg = e.currentTarget.ownerSVGElement;
-                    if (!svg) return;
-                    const rect = svg.getBoundingClientRect();
-                    setHover((prev) =>
-                      prev
-                        ? {
-                            ...prev,
-                            x: e.clientX - rect.left,
-                            y: e.clientY - rect.top,
-                          }
-                        : prev,
-                    );
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      onSelect(z.id);
-                    }
-                  }}
-                />
-                {active ? (
-                  <>
-                    <text
-                      x={shape.labelX}
-                      y={shape.labelY}
-                      textAnchor="middle"
-                      className="fill-white pointer-events-none"
-                      fontSize={12}
-                      fontFamily="ui-monospace, monospace"
-                      fontWeight={600}
-                    >
-                      {z.id}
-                    </text>
-                    <text
-                      x={shape.labelX}
-                      y={shape.labelY + 14}
-                      textAnchor="middle"
-                      className="fill-white/90 pointer-events-none"
-                      fontSize={11}
-                      fontFamily="ui-monospace, monospace"
-                    >
-                      {formatCategoryValue(category, row?.value ?? null)}
-                    </text>
-                  </>
-                ) : null}
-              </g>
+              <path
+                key={z.id}
+                d={shape.d}
+                fill={fill}
+                fillOpacity={active ? 0.95 : hasMetric ? 0.78 : 0.35}
+                stroke={active ? "white" : "rgba(255,255,255,0.45)"}
+                strokeWidth={active ? 2 : 0.9}
+                className="cursor-pointer transition-[fill-opacity,stroke-width]"
+                role="button"
+                tabIndex={0}
+                aria-label={`${z.label}, ${formatCategoryValue(category, row?.value ?? null)}`}
+                aria-pressed={active}
+                onClick={() => onSelect(z.id)}
+                onMouseEnter={(e) => setHoverFromEvent(z.id, e)}
+                onMouseMove={(e) => setHoverFromEvent(z.id, e)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    onSelect(z.id);
+                  }
+                }}
+              />
             );
           })}
         </svg>
 
-        {hover ? (
+        {hover && hoverToday ? (
           <div
-            className="pointer-events-none absolute z-10 min-w-[9rem] rounded-lg border border-white/15 bg-void/95 px-3 py-2 shadow-lg"
+            className="pointer-events-none absolute z-10 w-72 rounded-lg border border-white/15 bg-void/95 px-3 py-2.5 shadow-lg"
             style={{
-              left: Math.min(hover.x + 12, 280),
-              top: Math.max(hover.y - 8, 8),
+              left: hover.nx > 0.55 ? undefined : `calc(${hover.nx * 100}% + 12px)`,
+              right:
+                hover.nx > 0.55
+                  ? `calc(${(1 - hover.nx) * 100}% + 12px)`
+                  : undefined,
+              top: hover.ny > 0.52 ? undefined : `calc(${hover.ny * 100}% + 8px)`,
+              bottom:
+                hover.ny > 0.52
+                  ? `calc(${(1 - hover.ny) * 100}% + 8px)`
+                  : undefined,
             }}
           >
-            <p className="font-mono text-[0.6rem] uppercase tracking-[0.16em] text-slate-400">
-              {hover.id}
-            </p>
-            <p className="text-sm font-medium text-white">{hover.label}</p>
-            <p className="mt-1 font-mono text-sm tabular-nums text-neon-cyan">
-              {formatCategoryValue(category, hover.value)}
-            </p>
+            <HoverCard
+              today={hoverToday}
+              pulse={hoverPulse}
+              nowcast={hoverNowcast}
+              category={category}
+              metric={hoverRow?.value ?? null}
+            />
           </div>
         ) : null}
       </div>
+      <MapLegend
+        low={lowRow}
+        high={highRow}
+        category={category}
+        diverging={diverging}
+      />
       <p className="mt-3 text-xs leading-relaxed text-slate-500">
-        {EU_ZONE_MAP.attribution}
+        {EU_ZONE_MAP.attribution} Next-hour nowcast is OLS on this zone’s last
+        two days of mix + day-ahead — not an official ENTSO-E forecast.
       </p>
     </section>
   );

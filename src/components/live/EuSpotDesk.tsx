@@ -12,10 +12,6 @@ import { EuSpotMap } from "@/components/live/EuSpotMap";
 import { EuSpotHistory } from "@/components/live/EuSpotHistory";
 import { EuZonePulsePanel } from "@/components/live/EuZonePulsePanel";
 
-function formatEur(n: number): string {
-  return `€${n.toFixed(1)}`;
-}
-
 function formatHelsinki(iso: string): string {
   return `${new Date(iso).toLocaleString("en-GB", {
     timeZone: "Europe/Helsinki",
@@ -29,11 +25,11 @@ function formatHelsinki(iso: string): string {
 
 export function EuSpotDesk({ view }: { view: EuSpotView }) {
   const [mode, setMode] = useState<"map" | "history">("map");
-  const [selected, setSelected] = useState<EuZoneId>("FI");
+  const [selected, setSelected] = useState<EuZoneId | null>(null);
   const [category, setCategory] = useState<EuCategoryId>("market");
-  const fi = view.today.find((z) => z.id === "FI");
-  const selectedPulse = view.pulses.find((p) => p.id === selected);
-  const selectedRow = view.today.find((z) => z.id === selected);
+  const selectedPulse = selected
+    ? view.pulses.find((p) => p.id === selected)
+    : undefined;
 
   return (
     <article className="space-y-8">
@@ -42,47 +38,25 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
       <header>
         <Badge tone="cyan" className="mb-4">
           ENTSO-E · {view.today.length} zones
-          {view.pulses.length
-            ? ` · ${view.pulses.length} zone desks`
-            : ""}
         </Badge>
         <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Where is Europe expensive tonight?
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
-          Bidding zones across Market, Load, Generation, Transmission,
-          Outages, Balancing, Operation, and OMI. Hover the map; press a zone
-          for a Finland-style desk.
+          Hover a bidding zone for mix and price. Press it for the full desk —
+          load, generation, net flow, and a mix nowcast — the same reading
+          order for Finland as for every other zone.
         </p>
       </header>
 
       {view.localhostOnly ? (
         <p className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm leading-relaxed text-amber-100">
-          Localhost only — price source still mixes Energy-Charts private
-          zones. Re-run{" "}
+          Localhost only — re-run{" "}
           <code className="font-mono text-xs">npm run live:fetch-eu</code> with{" "}
           <code className="font-mono text-xs">ENTSOE_SECURITY_TOKEN</code>{" "}
           before any public deploy.
         </p>
       ) : null}
-
-      <div className="border-y border-white/10 py-8">
-        <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-slate-400">
-          FI baseload today
-        </p>
-        <p className="mt-2 font-display text-4xl font-bold tabular-nums tracking-tight text-white sm:text-5xl">
-          {fi ? formatEur(fi.baseload) : "—"}
-          <span className="ml-2 text-lg font-medium text-slate-400">/ MWh</span>
-        </p>
-        {fi ? (
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-300">
-            Peak {formatEur(fi.peak)} · trough {formatEur(fi.trough)}
-            {fi.dayOverDay !== null
-              ? ` · day-over-day ${fi.dayOverDay >= 0 ? "+" : ""}${formatEur(fi.dayOverDay)}`
-              : ""}
-          </p>
-        ) : null}
-      </div>
 
       <div
         className="flex flex-wrap gap-2"
@@ -140,10 +114,16 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
           view={view}
           selected={selected}
           category={category}
-          onSelect={setSelected}
+          onSelect={(id) =>
+            setSelected((prev) => (prev === id ? null : id))
+          }
         />
       ) : (
-        <EuSpotHistory view={view} selected={selected} onSelect={setSelected} />
+        <EuSpotHistory
+          view={view}
+          selected={selected ?? view.today[0]?.id ?? "FI"}
+          onSelect={(id) => setSelected(id)}
+        />
       )}
 
       {mode === "map" && selectedPulse ? (
@@ -151,43 +131,13 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
           pulse={selectedPulse}
           category={category}
           onCategory={setCategory}
-          vsFiBaseload={view.fiBaseload}
         />
       ) : null}
 
-      {mode === "map" && !selectedPulse && selectedRow ? (
-        <section className="border-t border-white/10 pt-6">
-          <h2 className="font-display text-lg font-semibold text-white">
-            {selectedRow.label}
-          </h2>
-          <p className="mt-2 text-sm text-slate-400">
-            Price stats only — run{" "}
-            <code className="font-mono text-xs text-neon-cyan">
-              npm run live:fetch-eu-pulse
-            </code>{" "}
-            for the full zone desk.
-          </p>
-          <dl className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {(
-              [
-                ["Baseload", selectedRow.baseload],
-                ["Peak", selectedRow.peak],
-                ["Trough", selectedRow.trough],
-                ["vs FI", selectedRow.spreadVsFi],
-              ] as const
-            ).map(([label, value]) => (
-              <div key={label}>
-                <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-                  {label}
-                </dt>
-                <dd className="mt-1 font-mono text-lg font-semibold tabular-nums text-white">
-                  {label === "vs FI" && value >= 0 ? "+" : ""}
-                  {formatEur(value)}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </section>
+      {mode === "map" && !selected ? (
+        <p className="text-sm text-slate-500">
+          Press a filled zone to open its desk.
+        </p>
       ) : null}
 
       <footer className="border-t border-white/10 pt-6 text-sm leading-relaxed text-slate-400">

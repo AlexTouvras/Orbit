@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getLiveDesk, liveDeskSlugs } from "@/content/live-desks";
 import { NordicEquityDesk } from "@/components/live/NordicEquityDesk";
-import {
-  PowerPulseDesk,
-  PowerPulseMissing,
-} from "@/components/live/PowerPulseDesk";
 import { EuSpotDesk, EuSpotMissing } from "@/components/live/EuSpotDesk";
-import { readPowerSnapshot, toPowerView } from "@/lib/live/power";
 import { readEuSpotSnapshot, toEuSpotView } from "@/lib/live/eu-spot";
 
 export function generateStaticParams() {
@@ -37,17 +32,12 @@ export default async function LiveDeskPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (slug === "power") redirect("/portfolio/live/eu-spot");
   const desk = getLiveDesk(slug);
   if (!desk || desk.status !== "live") notFound();
 
   if (slug === "nordic-equity") {
     return <NordicEquityDesk />;
-  }
-
-  if (slug === "power") {
-    const snap = readPowerSnapshot();
-    if (!snap) return <PowerPulseMissing />;
-    return <PowerPulseDesk view={toPowerView(snap)} />;
   }
 
   if (slug === "eu-spot") {

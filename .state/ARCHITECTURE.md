@@ -12,8 +12,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 |------|------------------|-------|
 | FeedSource | `src/lib/news/sources.ts` | `name`, `url`, `category`, optional `maxItems` |
 | NewsCache | `data/news-cache.json` | Fetched via `npm run news:fetch` |
-| Live Power Pulse | `data/live/power.json` | `npm run live:fetch`. Mix from Energy-Charts `public_power`. FI prices + nowcast are localhost/internal (Energy-Charts `/price` is not CC BY). Do not deploy that series; ENTSO-E A44 later. |
-| Live EU Spot | `data/live/eu-spot.json` | `npm run live:fetch-eu` (A44) + `npm run live:fetch-eu-pulse` (Load A65, Gen A75, Outages A80, Balancing A85, OMI A68, Operation = load forecast error). Map category layers + zone desk. |
+| Live EU Spot | `data/live/eu-spot.json` | `npm run live:fetch-eu` (A44) + `npm run live:fetch-eu-pulse`. Map category layers + per-zone desk (Finland-style pulse + mix nowcast for every zone). Power Pulse is not a separate Portfolio desk — `/portfolio/live/power` redirects here. |
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
@@ -151,4 +150,4 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-09 | HUD lane hints use field-card thesis (`hudTitle` / `hudVerbs` / `hudDescription`); Home keeps skill blurbs | Phone scan should show stack-not-dashboard / sequence-not-ticket, not the Hub competency paragraph |
 | 2026-09-11 | EU Spot map uses real bidding-zone polygons (entsoe-py GeoJSON → SVG), not country choropleth | Owner asked for actual map; MIT-licensed zone shapes |
 | 2026-09-11 | EU Spot prices from ENTSO-E A44 when `ENTSOE_SECURITY_TOKEN` set; Energy-Charts fallback | Owner generated API token; clears localhost-only license gate |
-| 2026-09-11 | EU Spot map categories + hover + Finland-style zone pulse from ENTSO-E domains | Owner asked for all TP categories and FI-like zone press |
+| 2026-09-11 | Finland Power Pulse folded into EU Spot; mix nowcast on every zone | Owner: remove Pulse from Portfolio; press-a-zone desk is the same reading order for FI as for every other bidding zone. Nowcast is hourly OLS on ENTSO-E mix, not Energy-Charts 15-min FI. |

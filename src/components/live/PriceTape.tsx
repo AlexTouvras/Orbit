@@ -55,10 +55,10 @@ export function PriceTape({ points }: { points: PricePt[] }) {
       <svg
         viewBox={`0 0 ${W} ${H}`}
         role="img"
-        aria-label="Finland day-ahead price versus mix nowcast, euro per megawatt-hour"
+        aria-label="Day-ahead price versus mix nowcast, euro per megawatt-hour"
         className="h-auto w-full"
       >
-        <title>FI day-ahead vs mix nowcast (€/MWh)</title>
+        <title>Day-ahead vs mix nowcast (€/MWh)</title>
         {grid.map((v) => {
           const y = yAt(v, min, max);
           return (

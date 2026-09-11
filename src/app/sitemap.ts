@@ -33,12 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${base}/portfolio/live/power`,
-      lastModified: now,
-      changeFrequency: "hourly",
-      priority: 0.7,
-    },
-    {
       url: `${base}/portfolio/live/eu-spot`,
       lastModified: now,
       changeFrequency: "daily",

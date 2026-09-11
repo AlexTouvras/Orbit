@@ -9,7 +9,7 @@ import { Activity } from "lucide-react";
 export const metadata: Metadata = {
   title: "Live dashboards",
   description:
-    "One-page desks on Orbit: Nordic equity heatmap and Finland Power Pulse. Not Power BI.",
+    "One-page desks on Orbit: Nordic equity heatmap and EU Spot. Not Power BI.",
   alternates: { canonical: "/portfolio/live" },
 };
 
@@ -31,7 +31,7 @@ export default function LiveDesksPage() {
         description="These sit next to Power BI screenshots, not inside them. Housing and rail wait until their first honest snapshot exists."
         stats={[
           { label: "Desks", value: String(desks.length) },
-          { label: "Grain", value: "15 min" },
+          { label: "Grain", value: "Hourly" },
           { label: "Keys in browser", value: "None" },
         ]}
       />

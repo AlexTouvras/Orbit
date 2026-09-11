@@ -24,15 +24,6 @@ export const liveDesks: LiveDesk[] = [
     source: "Yahoo delayed · heatmap-web",
   },
   {
-    slug: "power",
-    title: "Finland Power Pulse",
-    question: "Is Finland importing because the wind dropped?",
-    cadence: "15-minute snapshot",
-    status: "live",
-    kind: "native",
-    source: "Energy-Charts public power (FI)",
-  },
-  {
     slug: "eu-spot",
     title: "EU Spot",
     question: "Where is Europe expensive tonight?",

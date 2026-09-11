@@ -28,8 +28,8 @@
 
 ## Next
 
-- [x] **Live dashboards lane (localhost)** — `/portfolio/live` with heatmap + Power Pulse. Housing/rail still queued. GHA refresh later.
-- [ ] **Before any live-desk deploy:** strip FI price/nowcast from Power Pulse (Energy-Charts prices are internal-use). Mix tape can ship.
+- [x] **Live dashboards lane (localhost)** — `/portfolio/live` with heatmap + EU Spot. Housing/rail still queued. GHA refresh later.
+- [x] **Finland Power Pulse folded into EU Spot** — not a separate live tile; `/portfolio/live/power` redirects to `/eu-spot`. Press a zone for the Pulse-style desk + mix nowcast.
 - [ ] **Helsinki Housing Pulse** — `/portfolio/live/housing`. Stat.fi `ashi`, monthly, ~1 month lag, CC BY 4.0. No empty page.
 - [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
 - [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
