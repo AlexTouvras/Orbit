@@ -41,13 +41,13 @@ async function handle(req: NextRequest) {
 
     let viaGithub = false;
     if (process.env.VERCEL) {
-      // Ephemeral FS — commit so the next deploy ships the new cache.
+      // Commit for request-time GitHub reads. ignoreCommand skips the rebuild.
       const result = await persistDataJson(
         "data/news-cache.json",
         next,
         unchanged
-          ? "chore: touch news cache sweep time [skip ci]"
-          : "chore: refresh news cache [skip ci]",
+          ? "chore: touch news cache sweep time [skip ci] [skip vercel]"
+          : "chore: refresh news cache [skip ci] [skip vercel]",
       );
       viaGithub = result.viaGithub;
     } else {

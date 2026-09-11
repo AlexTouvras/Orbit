@@ -39,12 +39,14 @@ needed). They refresh **daily at 06:00 UTC** via **Vercel Cron** →
 1. Fetches RSS feeds
 2. Commits `data/news-cache.json` to GitHub (`GITHUB_TOKEN` required)
 3. Related articles pick up the new cache on the next page load
+4. `ignoreCommand` (`scripts/vercel-ignore.mjs`) skips the Vercel rebuild for
+   that commit so Hobby Deployment Storage does not grow every morning
 
 Requires env: `CRON_SECRET`, `GITHUB_TOKEN`, `GITHUB_REPO` (same as Studio).
 
-**Backup:** GitHub Action `.github/workflows/news-refresh.yml` also runs daily
-(and can be triggered manually: Actions → **Refresh news cache** → **Run
-workflow**).
+**Backup:** GitHub Action `.github/workflows/news-refresh.yml` is **manual only**
+(Actions → **Refresh news cache** → **Run workflow**). Do not re-add a schedule
+— it doubled production deploys.
 
 **Test now:**
 

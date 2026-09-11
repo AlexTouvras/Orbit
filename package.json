@@ -18,7 +18,8 @@
     "newsletter:notify": "tsx src/scripts/newsletter.ts --notify --force",
     "arch:validate-all": "node scripts/architecture/validate-all.mjs",
     "arch:sync-all": "node scripts/architecture/sync-all.mjs",
-    "ship:check": "node scripts/check-deploy-author.mjs && npm run build"
+    "test:vercel-ignore": "node scripts/vercel-ignore.mjs --test",
+    "ship:check": "node scripts/check-deploy-author.mjs && node scripts/vercel-ignore.mjs --test && npm run build"
   },
   "dependencies": {
     "@tsparticles/engine": "^4.2.0",

@@ -1,6 +1,7 @@
 {
   "buildCommand": "npm run build",
   "framework": "nextjs",
+  "ignoreCommand": "node scripts/vercel-ignore.mjs",
   "crons": [
     {
       "path": "/api/cron/news",

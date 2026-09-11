@@ -66,5 +66,5 @@ jobs:
             echo "No IDE brief change."
             exit 0
           fi
-          git commit -m "chore: weekly write IDE brief [skip ci]"
+          git commit -m "chore: weekly write IDE brief [skip ci] [skip vercel]"
           git push
