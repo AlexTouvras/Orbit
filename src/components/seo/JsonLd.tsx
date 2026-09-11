@@ -36,13 +36,26 @@ export function JsonLd() {
     name: "Orbit",
     url: siteUrl,
     description: profile.tagline,
+    inLanguage: "en",
     publisher: { "@id": `${siteUrl}/#person` },
     author: { "@id": `${siteUrl}/#person` },
   };
 
+  const blog = {
+    "@type": "Blog",
+    "@id": `${siteUrl}/writes#blog`,
+    name: `${profile.name} — Blog`,
+    url: `${siteUrl}/writes`,
+    description: profile.tagline,
+    inLanguage: "en",
+    publisher: { "@id": `${siteUrl}/#person` },
+    author: { "@id": `${siteUrl}/#person` },
+    isPartOf: { "@id": `${siteUrl}/#website` },
+  };
+
   const graph = {
     "@context": "https://schema.org",
-    "@graph": [person, website],
+    "@graph": [person, website, blog],
   };
 
   return (

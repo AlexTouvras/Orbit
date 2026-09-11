@@ -23,6 +23,7 @@ function readWriteFile(fileName: string): Write {
     title: fm.title,
     summary: fm.summary,
     date: fm.date,
+    updated: typeof fm.updated === "string" && fm.updated.trim() ? fm.updated.trim() : undefined,
     tags: fm.tags ?? [],
     category: fm.category,
     featured: fm.featured ?? false,

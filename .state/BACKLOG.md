@@ -67,6 +67,7 @@
 - [x] Publish `when-ai-accelerates-work-prioritization-becomes-the-job` to prod (main)
 - [x] Remove Ultimate Reel Maker Write (out of domain)
 - [x] SEO foundations + site analytics
+- [x] SEO durability: per-Write OG, `updated` freshness, BlogPosting/Breadcrumbs, icon, heading ids, llms.txt, CONTENT auto-pipeline docs
 - [x] Drop ProjectHelm Write; archived card → `/architecture/jarvis`
 - [x] Voice pass: Hub copy, useful-work-per-dollar, Webb pair, building-orbit, project blurbs + Ledger
 

@@ -25,7 +25,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 ## Design patterns
 
 - Portfolio live tiles (`LiveDeskTile`) carry a sneak peek: EU Spot paints the live baseload SVG; Nordic Equity paints a treemap from `heatmap-web` `board.json` (not an iframe of the board page).
-- SEO: App Router `sitemap.ts` / `robots.ts`; site URL from `getSiteUrl()` (`NEXT_PUBLIC_SITE_URL`); JSON-LD Person/WebSite in layout + Article on Writes; blog RSS at `/feed.xml`.
+- SEO: App Router `sitemap.ts` / `robots.ts`; site URL from `getSiteUrl()` (`NEXT_PUBLIC_SITE_URL`); JSON-LD Person/WebSite/Blog in layout + BlogPosting/BreadcrumbList on Writes; per-Write OG via `writes/[slug]/opengraph-image.tsx` (shared `src/lib/seo/og-card.tsx`); optional Write frontmatter `updated` for freshness; blog RSS at `/feed.xml`; `public/llms.txt`; app `icon.tsx`. New MDX Writes inherit SEO automatically from frontmatter — no per-post meta authoring.
+- Field-card static HTML in `public/*-field-card/` should keep `canonical` + `og:url` + `og:image` (points at site `/opengraph-image`). Source field-card repos own the HTML and may overwrite on sync — preserve those meta tags when refreshing cards.
 - Portfolio cards: Case study link from `caseStudyUrl`, or from `liveUrl` when it is already a `/writes/` path
 - Showcase essays for featured workshop projects (Ledger, Power BI, Orbit, Heatmap)
 - Personal-ops projects (mealplan, fitness coach) stay non-featured; Write + `/architecture/` case study, not Home Selected work
@@ -59,6 +60,12 @@ src/lib/news/
 ├── fetcher.ts
 └── cache*.ts
 src/lib/site.ts                 # getSiteUrl()
+src/lib/seo/
+├── writes.ts       # modified date + absolute Write/OG URLs
+└── og-card.tsx     # shared ImageResponse layouts (site + Write)
+src/app/icon.tsx
+src/app/writes/[slug]/opengraph-image.tsx
+public/llms.txt
 src/content/live-desks.ts
 src/content/live/eu-zone-paths.ts
 src/lib/live/
@@ -152,3 +159,4 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-11 | EU Spot prices from ENTSO-E A44 when `ENTSOE_SECURITY_TOKEN` set; Energy-Charts fallback | Owner generated API token; clears localhost-only license gate |
 | 2026-09-11 | Finland Power Pulse folded into EU Spot; mix nowcast on every zone | Owner: remove Pulse from Portfolio; press-a-zone desk is the same reading order for FI as for every other bidding zone. Nowcast is hourly OLS on ENTSO-E mix, not Energy-Charts 15-min FI. |
 | 2026-09-11 | EU Spot mix peek: dock under the map on small screens; float inset-clamped on `md+` | Phone tap clipped the overlay (`overflow-hidden` + `w-72` at the finger). In-flow card shows the full window. |
+| 2026-09-11 | Write SEO is frontmatter-driven and automatic | Per-slug OG + BlogPosting/Breadcrumbs + sitemap freshness from `date`/`updated`; authors never hand-write meta for new posts |

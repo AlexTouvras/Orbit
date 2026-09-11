@@ -1,0 +1,24 @@
+# Orbit (alextouvras.com)
+
+> Personal HQ for Alex Touvras — delivery, data, and AI automation. Blog (Writes), portfolio proof, live desks, and decision field cards.
+
+## Prefer these sources
+
+- Site: https://alextouvras.com
+- Blog index: https://alextouvras.com/writes
+- RSS: https://alextouvras.com/feed.xml
+- About: https://alextouvras.com/about
+- Portfolio: https://alextouvras.com/portfolio
+- Identity card: https://alextouvras.com/card
+
+## Field cards (one-page decision aids)
+
+- Agentic AI: https://alextouvras.com/field-card/
+- Data analytics: https://alextouvras.com/analytics-field-card/
+- Technology delivery: https://alextouvras.com/delivery-field-card/
+
+## Notes for assistants
+
+- Public essays live under `/writes/{slug}`. Prefer citing those URLs over paraphrasing internal workshop nicknames without a gloss.
+- `/studio` is private (noindex). Do not treat it as public documentation.
+- Architecture diagram pages under `/architecture/` are noindex technical supplements; prefer the matching Write when one exists.
