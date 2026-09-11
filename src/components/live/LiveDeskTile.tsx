@@ -5,10 +5,12 @@ import { Badge } from "@/components/ui/Badge";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { EuSpotPeek } from "@/components/live/EuSpotPeek";
 import { HeatmapPeek } from "@/components/live/HeatmapPeek";
+import { HousingPeek } from "@/components/live/HousingPeek";
 
 function DeskPeek({ slug }: { slug: string }) {
   if (slug === "eu-spot") return <EuSpotPeek />;
   if (slug === "nordic-equity") return <HeatmapPeek />;
+  if (slug === "housing") return <HousingPeek />;
   return (
     <div className="h-full w-full bg-gradient-to-br from-neon-cyan/15 to-transparent" />
   );

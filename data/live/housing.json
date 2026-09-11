@@ -1,0 +1,1270 @@
+{
+  "asOf": "2026-09-11T13:22:55.989Z",
+  "source": "Statistics Finland, prices of dwellings in housing companies",
+  "license": "CC BY 4.0 — Statistics Finland",
+  "monthlyTable": "StatFin/ashi/15iq.px",
+  "quarterlyTable": "StatFin/ashi/13mv.px",
+  "buildingType": {
+    "id": "3",
+    "label": "Blocks of flats"
+  },
+  "regions": [
+    {
+      "id": "091",
+      "label": "Helsinki",
+      "short": "HKI",
+      "monthly": [
+        {
+          "period": "2025M01",
+          "provisional": false,
+          "eurM2": 5371,
+          "index": 100.5,
+          "momPct": null,
+          "yoyPct": null,
+          "transactions": 626,
+          "daysToSale": 110
+        },
+        {
+          "period": "2025M02",
+          "provisional": false,
+          "eurM2": 5329,
+          "index": 100.6,
+          "momPct": 0.1,
+          "yoyPct": null,
+          "transactions": 709,
+          "daysToSale": 108
+        },
+        {
+          "period": "2025M03",
+          "provisional": false,
+          "eurM2": 5557,
+          "index": 102.3,
+          "momPct": 1.7,
+          "yoyPct": null,
+          "transactions": 778,
+          "daysToSale": 122
+        },
+        {
+          "period": "2025M04",
+          "provisional": false,
+          "eurM2": 5366,
+          "index": 103.1,
+          "momPct": 0.7,
+          "yoyPct": null,
+          "transactions": 721,
+          "daysToSale": 103
+        },
+        {
+          "period": "2025M05",
+          "provisional": false,
+          "eurM2": 5323,
+          "index": 101.5,
+          "momPct": -1.5,
+          "yoyPct": null,
+          "transactions": 643,
+          "daysToSale": 110
+        },
+        {
+          "period": "2025M06",
+          "provisional": false,
+          "eurM2": 5271,
+          "index": 100.3,
+          "momPct": -1.2,
+          "yoyPct": null,
+          "transactions": 835,
+          "daysToSale": 109
+        },
+        {
+          "period": "2025M07",
+          "provisional": false,
+          "eurM2": 5018,
+          "index": 98.2,
+          "momPct": -2.1,
+          "yoyPct": null,
+          "transactions": 985,
+          "daysToSale": 122
+        },
+        {
+          "period": "2025M08",
+          "provisional": false,
+          "eurM2": 5267,
+          "index": 100.6,
+          "momPct": 2.5,
+          "yoyPct": null,
+          "transactions": 596,
+          "daysToSale": 110
+        },
+        {
+          "period": "2025M09",
+          "provisional": false,
+          "eurM2": 5092,
+          "index": 99.2,
+          "momPct": -1.4,
+          "yoyPct": null,
+          "transactions": 734,
+          "daysToSale": 115
+        },
+        {
+          "period": "2025M10",
+          "provisional": false,
+          "eurM2": 5290,
+          "index": 99.9,
+          "momPct": 0.7,
+          "yoyPct": null,
+          "transactions": 869,
+          "daysToSale": 114
+        },
+        {
+          "period": "2025M11",
+          "provisional": false,
+          "eurM2": 5127,
+          "index": 96.5,
+          "momPct": -3.4,
+          "yoyPct": null,
+          "transactions": 857,
+          "daysToSale": 113
+        },
+        {
+          "period": "2025M12",
+          "provisional": false,
+          "eurM2": 5137,
+          "index": 97.6,
+          "momPct": 1.2,
+          "yoyPct": null,
+          "transactions": 803,
+          "daysToSale": 119
+        },
+        {
+          "period": "2026M01",
+          "provisional": true,
+          "eurM2": 5149,
+          "index": 97.1,
+          "momPct": -0.5,
+          "yoyPct": -3.3,
+          "transactions": 697,
+          "daysToSale": 137
+        },
+        {
+          "period": "2026M02",
+          "provisional": true,
+          "eurM2": 5074,
+          "index": 97.6,
+          "momPct": 0.5,
+          "yoyPct": -3,
+          "transactions": 621,
+          "daysToSale": 118
+        },
+        {
+          "period": "2026M03",
+          "provisional": true,
+          "eurM2": 5052,
+          "index": 96.6,
+          "momPct": -1,
+          "yoyPct": -5.6,
+          "transactions": 657,
+          "daysToSale": 114
+        },
+        {
+          "period": "2026M04",
+          "provisional": true,
+          "eurM2": 5188,
+          "index": 96.7,
+          "momPct": 0.1,
+          "yoyPct": -6.1,
+          "transactions": 608,
+          "daysToSale": 111
+        },
+        {
+          "period": "2026M05",
+          "provisional": true,
+          "eurM2": 5272,
+          "index": 98,
+          "momPct": 1.3,
+          "yoyPct": -3.5,
+          "transactions": 583,
+          "daysToSale": 116
+        },
+        {
+          "period": "2026M06",
+          "provisional": true,
+          "eurM2": 5186,
+          "index": 96.5,
+          "momPct": -1.5,
+          "yoyPct": -3.8,
+          "transactions": 598,
+          "daysToSale": 106
+        },
+        {
+          "period": "2026M07",
+          "provisional": true,
+          "eurM2": 4926,
+          "index": 95.4,
+          "momPct": -1.1,
+          "yoyPct": -2.8,
+          "transactions": 542,
+          "daysToSale": 103
+        }
+      ]
+    },
+    {
+      "id": "049",
+      "label": "Espoo–Kauniainen",
+      "short": "ESP",
+      "monthly": [
+        {
+          "period": "2025M01",
+          "provisional": false,
+          "eurM2": 4204,
+          "index": 99.1,
+          "momPct": null,
+          "yoyPct": null,
+          "transactions": 233,
+          "daysToSale": 119
+        },
+        {
+          "period": "2025M02",
+          "provisional": false,
+          "eurM2": 3620,
+          "index": 99.9,
+          "momPct": 0.8,
+          "yoyPct": null,
+          "transactions": 239,
+          "daysToSale": 127
+        },
+        {
+          "period": "2025M03",
+          "provisional": false,
+          "eurM2": 4076,
+          "index": 102.4,
+          "momPct": 2.5,
+          "yoyPct": null,
+          "transactions": 239,
+          "daysToSale": 135
+        },
+        {
+          "period": "2025M04",
+          "provisional": false,
+          "eurM2": 4026,
+          "index": 104.4,
+          "momPct": 2,
+          "yoyPct": null,
+          "transactions": 191,
+          "daysToSale": 153
+        },
+        {
+          "period": "2025M05",
+          "provisional": false,
+          "eurM2": 3989,
+          "index": 99.4,
+          "momPct": -4.8,
+          "yoyPct": null,
+          "transactions": 327,
+          "daysToSale": 144
+        },
+        {
+          "period": "2025M06",
+          "provisional": false,
+          "eurM2": 3929,
+          "index": 102.6,
+          "momPct": 3.2,
+          "yoyPct": null,
+          "transactions": 206,
+          "daysToSale": 105
+        },
+        {
+          "period": "2025M07",
+          "provisional": false,
+          "eurM2": 3792,
+          "index": 99.3,
+          "momPct": -3.2,
+          "yoyPct": null,
+          "transactions": 171,
+          "daysToSale": 137
+        },
+        {
+          "period": "2025M08",
+          "provisional": false,
+          "eurM2": 3783,
+          "index": 98,
+          "momPct": -1.3,
+          "yoyPct": null,
+          "transactions": 183,
+          "daysToSale": 154
+        },
+        {
+          "period": "2025M09",
+          "provisional": false,
+          "eurM2": 3871,
+          "index": 100.3,
+          "momPct": 2.3,
+          "yoyPct": null,
+          "transactions": 336,
+          "daysToSale": 130
+        },
+        {
+          "period": "2025M10",
+          "provisional": false,
+          "eurM2": 3803,
+          "index": 95.3,
+          "momPct": -4.9,
+          "yoyPct": null,
+          "transactions": 231,
+          "daysToSale": 136
+        },
+        {
+          "period": "2025M11",
+          "provisional": false,
+          "eurM2": 3923,
+          "index": 102.1,
+          "momPct": 7.1,
+          "yoyPct": null,
+          "transactions": 194,
+          "daysToSale": 129
+        },
+        {
+          "period": "2025M12",
+          "provisional": false,
+          "eurM2": 3731,
+          "index": 97.6,
+          "momPct": -4.4,
+          "yoyPct": null,
+          "transactions": 181,
+          "daysToSale": 143
+        },
+        {
+          "period": "2026M01",
+          "provisional": true,
+          "eurM2": 3851,
+          "index": 96.1,
+          "momPct": -1.5,
+          "yoyPct": -3,
+          "transactions": 151,
+          "daysToSale": 134
+        },
+        {
+          "period": "2026M02",
+          "provisional": true,
+          "eurM2": 3548,
+          "index": 92.9,
+          "momPct": -3.3,
+          "yoyPct": -7,
+          "transactions": 154,
+          "daysToSale": 175
+        },
+        {
+          "period": "2026M03",
+          "provisional": true,
+          "eurM2": 3688,
+          "index": 96,
+          "momPct": 3.3,
+          "yoyPct": -6.2,
+          "transactions": 155,
+          "daysToSale": 161
+        },
+        {
+          "period": "2026M04",
+          "provisional": true,
+          "eurM2": 3868,
+          "index": 99.2,
+          "momPct": 3.4,
+          "yoyPct": -5,
+          "transactions": 149,
+          "daysToSale": 158
+        },
+        {
+          "period": "2026M05",
+          "provisional": true,
+          "eurM2": 3648,
+          "index": 94.3,
+          "momPct": -4.9,
+          "yoyPct": -5.1,
+          "transactions": 153,
+          "daysToSale": 132
+        },
+        {
+          "period": "2026M06",
+          "provisional": true,
+          "eurM2": 3733,
+          "index": 95.4,
+          "momPct": 1.1,
+          "yoyPct": -7,
+          "transactions": 152,
+          "daysToSale": 104
+        },
+        {
+          "period": "2026M07",
+          "provisional": true,
+          "eurM2": 3598,
+          "index": 93.9,
+          "momPct": -1.5,
+          "yoyPct": -5.4,
+          "transactions": 139,
+          "daysToSale": 106
+        }
+      ]
+    },
+    {
+      "id": "092",
+      "label": "Vantaa",
+      "short": "VAN",
+      "monthly": [
+        {
+          "period": "2025M01",
+          "provisional": false,
+          "eurM2": 2722,
+          "index": 101.7,
+          "momPct": null,
+          "yoyPct": null,
+          "transactions": 106,
+          "daysToSale": 114
+        },
+        {
+          "period": "2025M02",
+          "provisional": false,
+          "eurM2": 2571,
+          "index": 98.4,
+          "momPct": -3.3,
+          "yoyPct": null,
+          "transactions": 141,
+          "daysToSale": 163
+        },
+        {
+          "period": "2025M03",
+          "provisional": false,
+          "eurM2": 2637,
+          "index": 103,
+          "momPct": 4.7,
+          "yoyPct": null,
+          "transactions": 139,
+          "daysToSale": 143
+        },
+        {
+          "period": "2025M04",
+          "provisional": false,
+          "eurM2": 2746,
+          "index": 101.6,
+          "momPct": -1.3,
+          "yoyPct": null,
+          "transactions": 110,
+          "daysToSale": 154
+        },
+        {
+          "period": "2025M05",
+          "provisional": false,
+          "eurM2": 2782,
+          "index": 103,
+          "momPct": 1.4,
+          "yoyPct": null,
+          "transactions": 129,
+          "daysToSale": 155
+        },
+        {
+          "period": "2025M06",
+          "provisional": false,
+          "eurM2": 2696,
+          "index": 98.9,
+          "momPct": -3.9,
+          "yoyPct": null,
+          "transactions": 134,
+          "daysToSale": 119
+        },
+        {
+          "period": "2025M07",
+          "provisional": false,
+          "eurM2": 2711,
+          "index": 104.7,
+          "momPct": 5.8,
+          "yoyPct": null,
+          "transactions": 449,
+          "daysToSale": 167
+        },
+        {
+          "period": "2025M08",
+          "provisional": false,
+          "eurM2": 2622,
+          "index": 101.1,
+          "momPct": -3.4,
+          "yoyPct": null,
+          "transactions": 129,
+          "daysToSale": 177
+        },
+        {
+          "period": "2025M09",
+          "provisional": false,
+          "eurM2": 2775,
+          "index": 99.9,
+          "momPct": -1.2,
+          "yoyPct": null,
+          "transactions": 130,
+          "daysToSale": 165
+        },
+        {
+          "period": "2025M10",
+          "provisional": false,
+          "eurM2": 2505,
+          "index": 94.2,
+          "momPct": -5.7,
+          "yoyPct": null,
+          "transactions": 194,
+          "daysToSale": 127
+        },
+        {
+          "period": "2025M11",
+          "provisional": false,
+          "eurM2": 2380,
+          "index": 95.6,
+          "momPct": 1.5,
+          "yoyPct": null,
+          "transactions": 125,
+          "daysToSale": 160
+        },
+        {
+          "period": "2025M12",
+          "provisional": false,
+          "eurM2": 2591,
+          "index": 98.5,
+          "momPct": 3,
+          "yoyPct": null,
+          "transactions": 132,
+          "daysToSale": 134
+        },
+        {
+          "period": "2026M01",
+          "provisional": true,
+          "eurM2": 2549,
+          "index": 97.9,
+          "momPct": -0.6,
+          "yoyPct": -3.8,
+          "transactions": 116,
+          "daysToSale": 172
+        },
+        {
+          "period": "2026M02",
+          "provisional": true,
+          "eurM2": 2677,
+          "index": 99,
+          "momPct": 1.1,
+          "yoyPct": 0.7,
+          "transactions": 128,
+          "daysToSale": 154
+        },
+        {
+          "period": "2026M03",
+          "provisional": true,
+          "eurM2": 2723,
+          "index": 96.7,
+          "momPct": -2.3,
+          "yoyPct": -6.1,
+          "transactions": 99,
+          "daysToSale": 151
+        },
+        {
+          "period": "2026M04",
+          "provisional": true,
+          "eurM2": 2386,
+          "index": 95.4,
+          "momPct": -1.3,
+          "yoyPct": -6.1,
+          "transactions": 128,
+          "daysToSale": 143
+        },
+        {
+          "period": "2026M05",
+          "provisional": true,
+          "eurM2": 2374,
+          "index": 93.3,
+          "momPct": -2.2,
+          "yoyPct": -9.4,
+          "transactions": 97,
+          "daysToSale": 162
+        },
+        {
+          "period": "2026M06",
+          "provisional": true,
+          "eurM2": 2558,
+          "index": 94.9,
+          "momPct": 1.7,
+          "yoyPct": -4.1,
+          "transactions": 110,
+          "daysToSale": 113
+        },
+        {
+          "period": "2026M07",
+          "provisional": true,
+          "eurM2": 2516,
+          "index": 93.5,
+          "momPct": -1.4,
+          "yoyPct": -10.6,
+          "transactions": 130,
+          "daysToSale": 135
+        }
+      ]
+    },
+    {
+      "id": "pks",
+      "label": "Greater Helsinki",
+      "short": "PKS",
+      "monthly": [
+        {
+          "period": "2025M01",
+          "provisional": false,
+          "eurM2": 4749,
+          "index": 100.3,
+          "momPct": null,
+          "yoyPct": null,
+          "transactions": 965,
+          "daysToSale": 112
+        },
+        {
+          "period": "2025M02",
+          "provisional": false,
+          "eurM2": 4542,
+          "index": 100.3,
+          "momPct": -0.1,
+          "yoyPct": null,
+          "transactions": 1089,
+          "daysToSale": 120
+        },
+        {
+          "period": "2025M03",
+          "provisional": false,
+          "eurM2": 4789,
+          "index": 102.4,
+          "momPct": 2.1,
+          "yoyPct": null,
+          "transactions": 1156,
+          "daysToSale": 127
+        },
+        {
+          "period": "2025M04",
+          "provisional": false,
+          "eurM2": 4712,
+          "index": 103.1,
+          "momPct": 0.7,
+          "yoyPct": null,
+          "transactions": 1022,
+          "daysToSale": 117
+        },
+        {
+          "period": "2025M05",
+          "provisional": false,
+          "eurM2": 4646,
+          "index": 101.3,
+          "momPct": -1.8,
+          "yoyPct": null,
+          "transactions": 1099,
+          "daysToSale": 122
+        },
+        {
+          "period": "2025M06",
+          "provisional": false,
+          "eurM2": 4592,
+          "index": 100.5,
+          "momPct": -0.8,
+          "yoyPct": null,
+          "transactions": 1175,
+          "daysToSale": 110
+        },
+        {
+          "period": "2025M07",
+          "provisional": false,
+          "eurM2": 4401,
+          "index": 98.9,
+          "momPct": -1.6,
+          "yoyPct": null,
+          "transactions": 1605,
+          "daysToSale": 131
+        },
+        {
+          "period": "2025M08",
+          "provisional": false,
+          "eurM2": 4514,
+          "index": 100.2,
+          "momPct": 1.3,
+          "yoyPct": null,
+          "transactions": 908,
+          "daysToSale": 126
+        },
+        {
+          "period": "2025M09",
+          "provisional": false,
+          "eurM2": 4482,
+          "index": 99.4,
+          "momPct": -0.8,
+          "yoyPct": null,
+          "transactions": 1200,
+          "daysToSale": 124
+        },
+        {
+          "period": "2025M10",
+          "provisional": false,
+          "eurM2": 4543,
+          "index": 98.6,
+          "momPct": -0.8,
+          "yoyPct": null,
+          "transactions": 1294,
+          "daysToSale": 119
+        },
+        {
+          "period": "2025M11",
+          "provisional": false,
+          "eurM2": 4444,
+          "index": 97.3,
+          "momPct": -1.3,
+          "yoyPct": null,
+          "transactions": 1176,
+          "daysToSale": 121
+        },
+        {
+          "period": "2025M12",
+          "provisional": false,
+          "eurM2": 4450,
+          "index": 97.7,
+          "momPct": 0.4,
+          "yoyPct": null,
+          "transactions": 1116,
+          "daysToSale": 126
+        },
+        {
+          "period": "2026M01",
+          "provisional": true,
+          "eurM2": 4471,
+          "index": 97,
+          "momPct": -0.7,
+          "yoyPct": -3.3,
+          "transactions": 964,
+          "daysToSale": 141
+        },
+        {
+          "period": "2026M02",
+          "provisional": true,
+          "eurM2": 4382,
+          "index": 96.9,
+          "momPct": -0.1,
+          "yoyPct": -3.3,
+          "transactions": 903,
+          "daysToSale": 133
+        },
+        {
+          "period": "2026M03",
+          "provisional": true,
+          "eurM2": 4421,
+          "index": 96.5,
+          "momPct": -0.5,
+          "yoyPct": -5.7,
+          "transactions": 911,
+          "daysToSale": 126
+        },
+        {
+          "period": "2026M04",
+          "provisional": true,
+          "eurM2": 4484,
+          "index": 97,
+          "momPct": 0.5,
+          "yoyPct": -6,
+          "transactions": 885,
+          "daysToSale": 124
+        },
+        {
+          "period": "2026M05",
+          "provisional": true,
+          "eurM2": 4493,
+          "index": 97,
+          "momPct": 0,
+          "yoyPct": -4.3,
+          "transactions": 833,
+          "daysToSale": 124
+        },
+        {
+          "period": "2026M06",
+          "provisional": true,
+          "eurM2": 4472,
+          "index": 96.1,
+          "momPct": -0.8,
+          "yoyPct": -4.4,
+          "transactions": 860,
+          "daysToSale": 106
+        },
+        {
+          "period": "2026M07",
+          "provisional": true,
+          "eurM2": 4263,
+          "index": 95,
+          "momPct": -1.2,
+          "yoyPct": -4,
+          "transactions": 811,
+          "daysToSale": 108
+        }
+      ]
+    },
+    {
+      "id": "SSS",
+      "label": "Whole country",
+      "short": "FI",
+      "monthly": [
+        {
+          "period": "2025M01",
+          "provisional": false,
+          "eurM2": 2848,
+          "index": 100.1,
+          "momPct": null,
+          "yoyPct": null,
+          "transactions": 3079,
+          "daysToSale": 127
+        },
+        {
+          "period": "2025M02",
+          "provisional": false,
+          "eurM2": 2803,
+          "index": 100.1,
+          "momPct": 0.1,
+          "yoyPct": null,
+          "transactions": 3459,
+          "daysToSale": 130
+        },
+        {
+          "period": "2025M03",
+          "provisional": false,
+          "eurM2": 2884,
+          "index": 101.7,
+          "momPct": 1.6,
+          "yoyPct": null,
+          "transactions": 3615,
+          "daysToSale": 127
+        },
+        {
+          "period": "2025M04",
+          "provisional": false,
+          "eurM2": 2879,
+          "index": 102.4,
+          "momPct": 0.7,
+          "yoyPct": null,
+          "transactions": 3561,
+          "daysToSale": 120
+        },
+        {
+          "period": "2025M05",
+          "provisional": false,
+          "eurM2": 2869,
+          "index": 101.4,
+          "momPct": -1,
+          "yoyPct": null,
+          "transactions": 3418,
+          "daysToSale": 123
+        },
+        {
+          "period": "2025M06",
+          "provisional": false,
+          "eurM2": 2829,
+          "index": 101.1,
+          "momPct": -0.3,
+          "yoyPct": null,
+          "transactions": 3603,
+          "daysToSale": 125
+        },
+        {
+          "period": "2025M07",
+          "provisional": false,
+          "eurM2": 2788,
+          "index": 100,
+          "momPct": -1,
+          "yoyPct": null,
+          "transactions": 4565,
+          "daysToSale": 126
+        },
+        {
+          "period": "2025M08",
+          "provisional": false,
+          "eurM2": 2787,
+          "index": 100,
+          "momPct": -0.1,
+          "yoyPct": null,
+          "transactions": 3235,
+          "daysToSale": 128
+        },
+        {
+          "period": "2025M09",
+          "provisional": false,
+          "eurM2": 2769,
+          "index": 99.3,
+          "momPct": -0.7,
+          "yoyPct": null,
+          "transactions": 3747,
+          "daysToSale": 132
+        },
+        {
+          "period": "2025M10",
+          "provisional": false,
+          "eurM2": 2816,
+          "index": 98.6,
+          "momPct": -0.7,
+          "yoyPct": null,
+          "transactions": 3926,
+          "daysToSale": 130
+        },
+        {
+          "period": "2025M11",
+          "provisional": false,
+          "eurM2": 2768,
+          "index": 98.5,
+          "momPct": -0.1,
+          "yoyPct": null,
+          "transactions": 3602,
+          "daysToSale": 121
+        },
+        {
+          "period": "2025M12",
+          "provisional": false,
+          "eurM2": 2691,
+          "index": 97,
+          "momPct": -1.5,
+          "yoyPct": null,
+          "transactions": 3419,
+          "daysToSale": 129
+        },
+        {
+          "period": "2026M01",
+          "provisional": true,
+          "eurM2": 2804,
+          "index": 96.8,
+          "momPct": -0.2,
+          "yoyPct": -3.3,
+          "transactions": 2960,
+          "daysToSale": 142
+        },
+        {
+          "period": "2026M02",
+          "provisional": true,
+          "eurM2": 2778,
+          "index": 97.4,
+          "momPct": 0.6,
+          "yoyPct": -2.7,
+          "transactions": 2942,
+          "daysToSale": 137
+        },
+        {
+          "period": "2026M03",
+          "provisional": true,
+          "eurM2": 2723,
+          "index": 97.5,
+          "momPct": 0.1,
+          "yoyPct": -4.1,
+          "transactions": 3138,
+          "daysToSale": 128
+        },
+        {
+          "period": "2026M04",
+          "provisional": true,
+          "eurM2": 2811,
+          "index": 97.7,
+          "momPct": 0.1,
+          "yoyPct": -4.7,
+          "transactions": 3039,
+          "daysToSale": 129
+        },
+        {
+          "period": "2026M05",
+          "provisional": true,
+          "eurM2": 2779,
+          "index": 97.2,
+          "momPct": -0.5,
+          "yoyPct": -4.2,
+          "transactions": 2639,
+          "daysToSale": 131
+        },
+        {
+          "period": "2026M06",
+          "provisional": true,
+          "eurM2": 2797,
+          "index": 96.4,
+          "momPct": -0.8,
+          "yoyPct": -4.6,
+          "transactions": 2768,
+          "daysToSale": 114
+        },
+        {
+          "period": "2026M07",
+          "provisional": true,
+          "eurM2": 2723,
+          "index": 95.7,
+          "momPct": -0.7,
+          "yoyPct": -4.4,
+          "transactions": 2674,
+          "daysToSale": 116
+        }
+      ]
+    }
+  ],
+  "helsinkiQuarterly": [
+    {
+      "period": "2016Q2",
+      "provisional": false,
+      "eurM2": 4503,
+      "transactions": null
+    },
+    {
+      "period": "2016Q3",
+      "provisional": false,
+      "eurM2": 4585,
+      "transactions": null
+    },
+    {
+      "period": "2016Q4",
+      "provisional": false,
+      "eurM2": 4600,
+      "transactions": null
+    },
+    {
+      "period": "2017Q1",
+      "provisional": false,
+      "eurM2": 4698,
+      "transactions": null
+    },
+    {
+      "period": "2017Q2",
+      "provisional": false,
+      "eurM2": 4790,
+      "transactions": null
+    },
+    {
+      "period": "2017Q3",
+      "provisional": false,
+      "eurM2": 4844,
+      "transactions": null
+    },
+    {
+      "period": "2017Q4",
+      "provisional": false,
+      "eurM2": 4854,
+      "transactions": null
+    },
+    {
+      "period": "2018Q1",
+      "provisional": false,
+      "eurM2": 4879,
+      "transactions": null
+    },
+    {
+      "period": "2018Q2",
+      "provisional": false,
+      "eurM2": 5021,
+      "transactions": null
+    },
+    {
+      "period": "2018Q3",
+      "provisional": false,
+      "eurM2": 5035,
+      "transactions": null
+    },
+    {
+      "period": "2018Q4",
+      "provisional": false,
+      "eurM2": 5051,
+      "transactions": null
+    },
+    {
+      "period": "2019Q1",
+      "provisional": false,
+      "eurM2": 5135,
+      "transactions": null
+    },
+    {
+      "period": "2019Q2",
+      "provisional": false,
+      "eurM2": 5204,
+      "transactions": null
+    },
+    {
+      "period": "2019Q3",
+      "provisional": false,
+      "eurM2": 5194,
+      "transactions": null
+    },
+    {
+      "period": "2019Q4",
+      "provisional": false,
+      "eurM2": 5209,
+      "transactions": null
+    },
+    {
+      "period": "2020Q1",
+      "provisional": false,
+      "eurM2": 5418,
+      "transactions": 2811
+    },
+    {
+      "period": "2020Q2",
+      "provisional": false,
+      "eurM2": 5524,
+      "transactions": 2306
+    },
+    {
+      "period": "2020Q3",
+      "provisional": false,
+      "eurM2": 5570,
+      "transactions": 3033
+    },
+    {
+      "period": "2020Q4",
+      "provisional": false,
+      "eurM2": 5601,
+      "transactions": 3158
+    },
+    {
+      "period": "2021Q1",
+      "provisional": false,
+      "eurM2": 5796,
+      "transactions": 3086
+    },
+    {
+      "period": "2021Q2",
+      "provisional": false,
+      "eurM2": 5928,
+      "transactions": 3282
+    },
+    {
+      "period": "2021Q3",
+      "provisional": false,
+      "eurM2": 5890,
+      "transactions": 3046
+    },
+    {
+      "period": "2021Q4",
+      "provisional": false,
+      "eurM2": 5930,
+      "transactions": 3039
+    },
+    {
+      "period": "2022Q1",
+      "provisional": false,
+      "eurM2": 5914,
+      "transactions": 3080
+    },
+    {
+      "period": "2022Q2",
+      "provisional": false,
+      "eurM2": 6026,
+      "transactions": 3127
+    },
+    {
+      "period": "2022Q3",
+      "provisional": false,
+      "eurM2": 5822,
+      "transactions": 2615
+    },
+    {
+      "period": "2022Q4",
+      "provisional": false,
+      "eurM2": 5525,
+      "transactions": 2013
+    },
+    {
+      "period": "2023Q1",
+      "provisional": false,
+      "eurM2": 5575,
+      "transactions": 1914
+    },
+    {
+      "period": "2023Q2",
+      "provisional": false,
+      "eurM2": 5579,
+      "transactions": 1964
+    },
+    {
+      "period": "2023Q3",
+      "provisional": false,
+      "eurM2": 5586,
+      "transactions": 1794
+    },
+    {
+      "period": "2023Q4",
+      "provisional": false,
+      "eurM2": 5342,
+      "transactions": 2282
+    },
+    {
+      "period": "2024Q1",
+      "provisional": false,
+      "eurM2": 5319,
+      "transactions": 1809
+    },
+    {
+      "period": "2024Q2",
+      "provisional": false,
+      "eurM2": 5302,
+      "transactions": 2295
+    },
+    {
+      "period": "2024Q3",
+      "provisional": false,
+      "eurM2": 5213,
+      "transactions": 1902
+    },
+    {
+      "period": "2024Q4",
+      "provisional": false,
+      "eurM2": 5219,
+      "transactions": 2050
+    },
+    {
+      "period": "2025Q1",
+      "provisional": false,
+      "eurM2": 5264,
+      "transactions": 2126
+    },
+    {
+      "period": "2025Q2",
+      "provisional": false,
+      "eurM2": 5213,
+      "transactions": 2215
+    },
+    {
+      "period": "2025Q3",
+      "provisional": false,
+      "eurM2": 5081,
+      "transactions": 2333
+    },
+    {
+      "period": "2025Q4",
+      "provisional": false,
+      "eurM2": 5080,
+      "transactions": 2537
+    },
+    {
+      "period": "2026Q1",
+      "provisional": true,
+      "eurM2": 4949,
+      "transactions": 1783
+    }
+  ],
+  "districts": [
+    {
+      "id": "091-1",
+      "label": "HKI 1",
+      "period": "2026Q1",
+      "eurM2": 7282,
+      "transactions": 397
+    },
+    {
+      "id": "091-2",
+      "label": "HKI 2",
+      "period": "2026Q1",
+      "eurM2": 5459,
+      "transactions": 796
+    },
+    {
+      "id": "091-3",
+      "label": "HKI 3",
+      "period": "2026Q1",
+      "eurM2": 3742,
+      "transactions": 248
+    },
+    {
+      "id": "091-4",
+      "label": "HKI 4",
+      "period": "2026Q1",
+      "eurM2": 2429,
+      "transactions": 342
+    }
+  ]
+}
