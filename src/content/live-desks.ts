@@ -32,6 +32,15 @@ export const liveDesks: LiveDesk[] = [
     kind: "native",
     source: "ENTSO-E Transparency · all domains",
   },
+  {
+    slug: "housing",
+    title: "Helsinki Housing",
+    question: "Are Helsinki €/m² still rising?",
+    cadence: "Monthly · ~1 month lag",
+    status: "live",
+    kind: "native",
+    source: "Statistics Finland · ashi · CC BY 4.0",
+  },
 ];
 
 export function getLiveDesk(slug: string): LiveDesk | undefined {

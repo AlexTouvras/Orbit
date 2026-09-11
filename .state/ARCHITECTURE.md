@@ -13,6 +13,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | FeedSource | `src/lib/news/sources.ts` | `name`, `url`, `category`, optional `maxItems` |
 | NewsCache | `data/news-cache.json` | Fetched via `npm run news:fetch` |
 | Live EU Spot | `data/live/eu-spot.json` | `npm run live:fetch-eu` (A44) + `npm run live:fetch-eu-pulse`. Map category layers + per-zone desk (Finland-style pulse + mix nowcast for every zone). Power Pulse is not a separate Portfolio desk — `/portfolio/live/power` redirects here. |
+| Live Helsinki Housing | `data/live/housing.json` | `npm run live:fetch-housing`. Stat.fi `ashi` monthly 15iq + quarterly 13mv (Helsinki history + HKI 1–4). CC BY 4.0. |
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
@@ -24,7 +25,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 
 ## Design patterns
 
-- Portfolio live tiles (`LiveDeskTile`) carry a sneak peek: EU Spot paints the live baseload SVG; Nordic Equity paints a treemap from `heatmap-web` `board.json` (not an iframe of the board page).
+- Portfolio live tiles (`LiveDeskTile`) carry a sneak peek: EU Spot paints the live baseload SVG; Nordic Equity paints a treemap from `heatmap-web` `board.json` (not an iframe of the board page); Helsinki Housing paints a monthly €/m² sparkline. Portfolio `#live` and `/portfolio/live` use `LiveDeskCarousel` (horizontal snap row + chevrons), not a wrapping grid.
 - SEO: App Router `sitemap.ts` / `robots.ts`; site URL from `getSiteUrl()` (`NEXT_PUBLIC_SITE_URL`); JSON-LD Person/WebSite/Blog in layout + BlogPosting/BreadcrumbList on Writes; per-Write OG via `writes/[slug]/opengraph-image.tsx` (shared `src/lib/seo/og-card.tsx`); optional Write frontmatter `updated` for freshness; blog RSS at `/feed.xml`; `public/llms.txt`; app `icon.tsx`. New MDX Writes inherit SEO automatically from frontmatter — no per-post meta authoring.
 - Field-card static HTML in `public/*-field-card/` should keep `canonical` + `og:url` + `og:image` (points at site `/opengraph-image`). Source field-card repos own the HTML and may overwrite on sync — preserve those meta tags when refreshing cards.
 - Portfolio cards: Case study link from `caseStudyUrl`, or from `liveUrl` when it is already a `/writes/` path
@@ -73,8 +74,10 @@ src/components/live/
 src/app/portfolio/live/
 data/live/power.json
 data/live/eu-spot.json
+data/live/housing.json
 src/scripts/fetch-live-power.ts
 src/scripts/fetch-live-eu-spot.ts
+src/scripts/fetch-live-housing.ts
 scripts/live/build-eu-zone-paths.mjs
 src/app/robots.ts
 src/app/feed.xml/route.ts
@@ -160,3 +163,4 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-11 | Finland Power Pulse folded into EU Spot; mix nowcast on every zone | Owner: remove Pulse from Portfolio; press-a-zone desk is the same reading order for FI as for every other bidding zone. Nowcast is hourly OLS on ENTSO-E mix, not Energy-Charts 15-min FI. |
 | 2026-09-11 | EU Spot mix peek: dock under the map on small screens; float inset-clamped on `md+` | Phone tap clipped the overlay (`overflow-hidden` + `w-72` at the finger). In-flow card shows the full window. |
 | 2026-09-11 | Write SEO is frontmatter-driven and automatic | Per-slug OG + BlogPosting/Breadcrumbs + sitemap freshness from `date`/`updated`; authors never hand-write meta for new posts |
+| 2026-09-11 | Helsinki Housing Pulse live desk from Stat.fi `ashi` (monthly 15iq + quarterly 13mv) | Next queued desk after EU Spot; CC BY 4.0; refuse empty snapshot; flats-only grain matches liquid Helsinki market |

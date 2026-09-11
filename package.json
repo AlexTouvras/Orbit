@@ -16,6 +16,7 @@
     "live:fill-eu": "tsx src/scripts/fetch-live-eu-spot.ts --fill",
     "live:fetch-eu-pulse": "tsx src/scripts/fetch-live-eu-pulse.ts",
     "live:fill-eu-pulse": "tsx src/scripts/fetch-live-eu-pulse.ts --fill",
+    "live:fetch-housing": "tsx src/scripts/fetch-live-housing.ts",
     "live:build-eu-map": "node scripts/live/build-eu-zone-paths.mjs",
     "weekly:draft": "tsx src/scripts/weekly-write.ts --once",
     "weekly:notify": "tsx src/scripts/weekly-write.ts --once --notify --force",

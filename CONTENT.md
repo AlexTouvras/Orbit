@@ -135,7 +135,7 @@ The portfolio shows **real work only**:
 - **Workshop** — projects you publish from Studio (scanned from your machine).
 - **GitHub** — live public repos, pulled from your `githubUsername`.
 - **Power BI** — report page screenshots (`#power-bi`), browsable with page arrows and click-to-enlarge.
-- **Live dashboards** — Orbit-chrome one-pagers at `/portfolio/live` (`#live` teaser). Not Power BI. Snapshots: `npm run live:fetch` (power mix), `npm run live:fetch-eu` (EU spot). Do not ship empty desks or Energy-Charts FI/SE3/EE prices.
+- **Live dashboards** — Orbit-chrome one-pagers at `/portfolio/live` (`#live` teaser). Not Power BI. Snapshots: `npm run live:fetch` (power mix), `npm run live:fetch-eu` (EU spot), `npm run live:fetch-housing` (Stat.fi ashi). Do not ship empty desks or Energy-Charts FI/SE3/EE prices.
 
 There are no placeholder case studies. To add workshop projects, see **§5** below. To add a Power BI report, see **§2.1**. Live desks: `src/content/live-desks.ts` + `data/live/*.json`.
 
