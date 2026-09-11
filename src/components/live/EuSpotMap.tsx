@@ -10,28 +10,7 @@ import {
 } from "@/lib/live/eu-category-meta";
 import { EU_ZONE_MAP } from "@/content/live/eu-zone-paths";
 import { nowcastForPulse, type ZoneNowcast } from "@/lib/live/zone-nowcast";
-
-function fillFor(
-  value: number,
-  min: number,
-  max: number,
-  diverging: boolean,
-): string {
-  if (diverging) {
-    const span = Math.max(Math.abs(min), Math.abs(max), 1);
-    const t = Math.min(1, Math.max(-1, value / span));
-    if (t >= 0) {
-      return `hsl(350 ${50 + t * 25}% ${42 + t * 8}%)`;
-    }
-    return `hsl(190 ${55 + Math.abs(t) * 20}% ${42 + Math.abs(t) * 8}%)`;
-  }
-  const span = max - min || 1;
-  const t = Math.min(1, Math.max(0, (value - min) / span));
-  const h = 190 - t * 170;
-  const s = 55 + t * 20;
-  const l = 42 + (1 - Math.abs(t - 0.5)) * 8;
-  return `hsl(${h} ${s}% ${l}%)`;
-}
+import { fillFor } from "@/lib/live/eu-map-fill";
 
 function formatMw(n: number | null): string {
   if (n === null || !Number.isFinite(n)) return "—";
