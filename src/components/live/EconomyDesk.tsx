@@ -318,7 +318,7 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
             <p className="mt-1 text-sm text-slate-400">
               {geoId === ECONOMY_DEFAULT_GEO || headlinesFallback
                 ? "Latest ECB press and statistics — euro-area official channel."
-                : `Recent economy wires mentioning ${focus.label} (Google News). Not official statistical releases.`}
+                : `Recent macro wires mentioning ${focus.label} (Google News) — inflation, growth, labour, fiscal. Not corporate investment noise, not official statistical releases.`}
               {headlinesFallback
                 ? ` No country wires for ${focus.label} this refresh — showing ECB.`
                 : ""}

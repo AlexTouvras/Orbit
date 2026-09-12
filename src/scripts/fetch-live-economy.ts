@@ -438,6 +438,43 @@ async function fetchOfficialHeadlines(): Promise<EconomyHeadline[]> {
   return headlines.slice(0, MAX_OFFICIAL_HEADLINES);
 }
 
+/** Drop Big Tech / corporate investment stories that only name-check the country. */
+const WIRE_NOISE =
+  /\b(google|microsoft|amazon|meta|apple|openai|nvidia|samsung|tesla)\b.{0,40}\b(invest|investment|funding|fund|billion|€\d|\$\d|data[- ]?cent(?:er|re)|ai infrastructure)\b|\b(invest|investment|funding|fund|billion|€\d|\$\d|data[- ]?cent(?:er|re)|ai infrastructure)\b.{0,40}\b(google|microsoft|amazon|meta|apple|openai|nvidia|samsung|tesla)\b/i;
+
+/** Prefer titles that look like macro / official economy coverage. */
+const WIRE_MACRO =
+  /\b(inflation|hicp|cpi|unemployment|jobless|employment|gdp|recession|deficit|debt|fiscal|budget|growth|pmi|retail sales|industrial production|wage|wages|interest rate|rate hike|rate cut|deposit rate|central bank|ecb|bank of finland|bundesbank|banque de france|banca d['’]italia|banco de españa|consumer confidence|statistics|macro(?:economic)?)\b/i;
+
+function isUsefulWireTitle(title: string, geoLabel: string): boolean {
+  const t = title.toLowerCase();
+  if (WIRE_NOISE.test(t)) return false;
+  // Must mention the country/area somehow (label or demonym-ish token from label).
+  const label = geoLabel.toLowerCase();
+  const labelHit =
+    t.includes(label) ||
+    (label === "european union" &&
+      (t.includes("eu ") || t.includes("eurozone") || t.includes("euro area"))) ||
+    (label === "netherlands" && t.includes("dutch")) ||
+    (label === "germany" && t.includes("german")) ||
+    (label === "france" && t.includes("french")) ||
+    (label === "spain" && t.includes("spanish")) ||
+    (label === "italy" && (t.includes("italian") || t.includes("italy"))) ||
+    (label === "sweden" && t.includes("swedish")) ||
+    (label === "poland" && t.includes("polish")) ||
+    (label === "greece" && t.includes("greek")) ||
+    (label === "ireland" && t.includes("irish")) ||
+    (label === "austria" && t.includes("austrian")) ||
+    (label === "belgium" && t.includes("belgian")) ||
+    (label === "portugal" && t.includes("portuguese")) ||
+    (label === "finland" && t.includes("finnish")) ||
+    (label === "estonia" && t.includes("estonian")) ||
+    (label === "latvia" && t.includes("latvian")) ||
+    (label === "lithuania" && t.includes("lithuanian"));
+  if (!labelHit) return false;
+  return WIRE_MACRO.test(t);
+}
+
 /**
  * Country / EU economy wires via Google News RSS.
  * Soft — one failed geo never fails the snapshot.
@@ -446,10 +483,11 @@ async function fetchWireHeadlinesForGeo(
   geo: EconomyGeoId,
   label: string,
 ): Promise<EconomyHeadline[]> {
+  // Bias the query toward macro prints; exclude common Big Tech investment noise.
   const query =
     geo === "EU27_2020"
-      ? `"European Union" OR eurozone (economy OR inflation OR GDP OR unemployment OR ECB)`
-      : `"${label}" (economy OR inflation OR GDP OR unemployment OR ECB OR "central bank")`;
+      ? `("European Union" OR eurozone OR "euro area") (inflation OR HICP OR unemployment OR GDP OR recession OR deficit OR "interest rate" OR ECB OR "consumer confidence") -Google -Microsoft -Amazon -OpenAI -NVIDIA`
+      : `"${label}" (inflation OR HICP OR unemployment OR GDP OR recession OR deficit OR "interest rate" OR "central bank" OR "consumer confidence" OR fiscal OR budget) -Google -Microsoft -Amazon -OpenAI -NVIDIA`;
   const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=en-GB&gl=GB&ceid=GB:en`;
   try {
     const parsed = await rssParser.parseURL(url);
@@ -460,10 +498,12 @@ async function fetchWireHeadlinesForGeo(
       const rawTitle = item.title?.trim();
       const rawUrl = item.link?.trim();
       if (!rawTitle || !rawUrl) continue;
+      const source = wireSource(item);
+      const title = cleanWireTitle(rawTitle, source);
+      if (!isUsefulWireTitle(title, label)) continue;
       const link = normalizeUrl(rawUrl);
       if (seen.has(link)) continue;
       seen.add(link);
-      const source = wireSource(item);
       const publishedAt = item.isoDate
         ? new Date(item.isoDate).toISOString()
         : item.pubDate
@@ -471,7 +511,7 @@ async function fetchWireHeadlinesForGeo(
           : null;
       out.push({
         id: headlineId(`${geo}:${link}`),
-        title: cleanWireTitle(rawTitle, source),
+        title,
         url: link,
         source,
         publishedAt:
