@@ -52,6 +52,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${base}/portfolio/live/economy`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${base}/about`,
       lastModified: now,
       changeFrequency: "monthly",

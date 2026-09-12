@@ -28,7 +28,8 @@
     "arch:sync-all": "node scripts/architecture/sync-all.mjs",
     "test:vercel-ignore": "node scripts/vercel-ignore.mjs --test",
     "ship:check": "node scripts/check-deploy-author.mjs && node scripts/vercel-ignore.mjs --test && npm run build",
-    "live:fetch-mix": "tsx src/scripts/fetch-live-power-mix.ts"
+    "live:fetch-mix": "tsx src/scripts/fetch-live-power-mix.ts",
+    "live:fetch-economy": "tsx src/scripts/fetch-live-economy.ts"
   },
   "dependencies": {
     "@tsparticles/engine": "^4.2.0",

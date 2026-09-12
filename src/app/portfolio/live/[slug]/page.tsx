@@ -5,9 +5,11 @@ import { NordicEquityDesk } from "@/components/live/NordicEquityDesk";
 import { EuSpotDesk, EuSpotMissing } from "@/components/live/EuSpotDesk";
 import { HousingDesk, HousingMissing } from "@/components/live/HousingDesk";
 import { PowerMixDesk, PowerMixMissing } from "@/components/live/PowerMixDesk";
+import { EconomyDesk, EconomyMissing } from "@/components/live/EconomyDesk";
 import { readEuSpotSnapshot, toEuSpotView } from "@/lib/live/eu-spot";
 import { readHousingSnapshot, toHousingView } from "@/lib/live/housing";
 import { readPowerMixSnapshot, toPowerMixView } from "@/lib/live/power-mix";
+import { readEconomySnapshot, toEconomyView } from "@/lib/live/economy";
 
 export function generateStaticParams() {
   return liveDeskSlugs().map((slug) => ({ slug }));
@@ -60,6 +62,12 @@ export default async function LiveDeskPage({
     const snap = readPowerMixSnapshot();
     if (!snap) return <PowerMixMissing />;
     return <PowerMixDesk view={toPowerMixView(snap)} />;
+  }
+
+  if (slug === "economy") {
+    const snap = readEconomySnapshot();
+    if (!snap) return <EconomyMissing />;
+    return <EconomyDesk view={toEconomyView(snap)} />;
   }
 
   notFound();

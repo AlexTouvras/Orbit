@@ -50,6 +50,15 @@ export const liveDesks: LiveDesk[] = [
     kind: "native",
     source: "Energy-Charts · ENTSO-E / TSO",
   },
+  {
+    slug: "economy",
+    title: "Europe Economy Pulse",
+    question: "How is the euro area economy printing?",
+    cadence: "Monthly · Eurostat + ECB",
+    status: "live",
+    kind: "native",
+    source: "Eurostat · ECB Data Portal",
+  },
 ];
 
 export function getLiveDesk(slug: string): LiveDesk | undefined {

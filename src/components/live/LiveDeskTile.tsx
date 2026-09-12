@@ -7,12 +7,14 @@ import { EuSpotPeek } from "@/components/live/EuSpotPeek";
 import { HeatmapPeek } from "@/components/live/HeatmapPeek";
 import { HousingPeek } from "@/components/live/HousingPeek";
 import { PowerMixPeek } from "@/components/live/PowerMixPeek";
+import { EconomyPeek } from "@/components/live/EconomyPeek";
 
 function DeskPeek({ slug }: { slug: string }) {
   if (slug === "eu-spot") return <EuSpotPeek />;
   if (slug === "nordic-equity") return <HeatmapPeek />;
   if (slug === "housing") return <HousingPeek />;
   if (slug === "power-mix") return <PowerMixPeek />;
+  if (slug === "economy") return <EconomyPeek />;
   return (
     <div className="h-full w-full bg-gradient-to-br from-neon-cyan/15 to-transparent" />
   );
