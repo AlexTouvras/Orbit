@@ -45,7 +45,10 @@ const HEADLINE_FEEDS: { source: string; url: string; limit: number }[] = [
   },
 ];
 
-const MAX_HEADLINES = 10;
+/** Max official ECB headlines kept for the euro-area spotlight. */
+const MAX_OFFICIAL_HEADLINES = 10;
+/** Max Google News wires per country / EU spotlight. */
+const MAX_WIRE_HEADLINES = 5;
 
 const EUROSTAT =
   "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data";
@@ -332,7 +335,50 @@ function buildBundle(
   };
 }
 
-async function fetchHeadlines(): Promise<EconomyHeadline[]> {
+function normalizeUrl(raw: string): string {
+  return raw.replace(/([^:])\/{2,}/g, "$1/");
+}
+
+function headlineId(url: string): string {
+  return crypto.createHash("sha1").update(url).digest("hex").slice(0, 12);
+}
+
+function cleanWireTitle(title: string, source: string): string {
+  let t = title.replace(/\s+/g, " ").trim();
+  // Google News often appends " - BBC" / " - Financial Times"
+  const suffixes = [
+    ` - ${source}`,
+    ` – ${source}`,
+    ` — ${source}`,
+    ` | ${source}`,
+  ];
+  for (const s of suffixes) {
+    if (t.endsWith(s)) t = t.slice(0, -s.length).trim();
+  }
+  // If source was generic, still peel a trailing " - Publisher" chunk.
+  t = t.replace(/\s+[-–—|]\s+[^-–—|]{2,40}$/u, "").trim();
+  return t;
+}
+
+function wireSource(item: { source?: unknown; title?: string }): string {
+  const raw = item.source;
+  if (typeof raw === "string" && raw.trim()) return raw.trim();
+  if (
+    raw &&
+    typeof raw === "object" &&
+    "title" in raw &&
+    typeof (raw as { title: unknown }).title === "string"
+  ) {
+    const title = (raw as { title: string }).title.trim();
+    if (title) return title;
+  }
+  // Fall back to the publisher suffix Google puts on the title.
+  const m = item.title?.match(/\s[-–—|]\s+([^-–—|]{2,40})\s*$/u);
+  if (m?.[1]) return m[1].trim();
+  return "Google News";
+}
+
+async function fetchOfficialHeadlines(): Promise<EconomyHeadline[]> {
   console.log("[live:economy] headlines ← ECB press + statistics RSS");
   const settled = await Promise.allSettled(
     HEADLINE_FEEDS.map(async (feed) => {
@@ -341,20 +387,15 @@ async function fetchHeadlines(): Promise<EconomyHeadline[]> {
         const title = item.title?.trim();
         const rawUrl = item.link?.trim();
         if (!title || !rawUrl) return [];
-        const url = rawUrl.replace(/([^:])\/{2,}/g, "$1/");
+        const url = normalizeUrl(rawUrl);
         const publishedAt = item.isoDate
           ? new Date(item.isoDate).toISOString()
           : item.pubDate
             ? new Date(item.pubDate).toISOString()
             : null;
-        const id = crypto
-          .createHash("sha1")
-          .update(url)
-          .digest("hex")
-          .slice(0, 12);
         return [
           {
-            id,
+            id: headlineId(url),
             title: title.replace(/\s+/g, " "),
             url,
             source: feed.source,
@@ -362,6 +403,8 @@ async function fetchHeadlines(): Promise<EconomyHeadline[]> {
               publishedAt && !Number.isNaN(Date.parse(publishedAt))
                 ? publishedAt
                 : null,
+            geo: "EA21" as const,
+            channel: "official" as const,
           } satisfies EconomyHeadline,
         ];
       });
@@ -392,21 +435,98 @@ async function fetchHeadlines(): Promise<EconomyHeadline[]> {
     const tb = b.publishedAt ? Date.parse(b.publishedAt) : 0;
     return tb - ta;
   });
-  return headlines.slice(0, MAX_HEADLINES);
+  return headlines.slice(0, MAX_OFFICIAL_HEADLINES);
+}
+
+/**
+ * Country / EU economy wires via Google News RSS.
+ * Soft — one failed geo never fails the snapshot.
+ */
+async function fetchWireHeadlinesForGeo(
+  geo: EconomyGeoId,
+  label: string,
+): Promise<EconomyHeadline[]> {
+  const query =
+    geo === "EU27_2020"
+      ? `"European Union" OR eurozone (economy OR inflation OR GDP OR unemployment OR ECB)`
+      : `"${label}" (economy OR inflation OR GDP OR unemployment OR ECB OR "central bank")`;
+  const url = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=en-GB&gl=GB&ceid=GB:en`;
+  try {
+    const parsed = await rssParser.parseURL(url);
+    const out: EconomyHeadline[] = [];
+    const seen = new Set<string>();
+    for (const item of parsed.items ?? []) {
+      if (out.length >= MAX_WIRE_HEADLINES) break;
+      const rawTitle = item.title?.trim();
+      const rawUrl = item.link?.trim();
+      if (!rawTitle || !rawUrl) continue;
+      const link = normalizeUrl(rawUrl);
+      if (seen.has(link)) continue;
+      seen.add(link);
+      const source = wireSource(item);
+      const publishedAt = item.isoDate
+        ? new Date(item.isoDate).toISOString()
+        : item.pubDate
+          ? new Date(item.pubDate).toISOString()
+          : null;
+      out.push({
+        id: headlineId(`${geo}:${link}`),
+        title: cleanWireTitle(rawTitle, source),
+        url: link,
+        source,
+        publishedAt:
+          publishedAt && !Number.isNaN(Date.parse(publishedAt))
+            ? publishedAt
+            : null,
+        geo,
+        channel: "wire",
+      });
+    }
+    return out;
+  } catch (err) {
+    console.warn(
+      `[live:economy] wires ${geo} failed:`,
+      err instanceof Error ? err.message : err,
+    );
+    return [];
+  }
+}
+
+async function fetchAllWireHeadlines(): Promise<EconomyHeadline[]> {
+  const targets = ECONOMY_GEOS.filter((g) => g.id !== "EA21");
+  console.log(
+    `[live:economy] headlines ← Google News wires for ${targets.length} geos`,
+  );
+  const headlines: EconomyHeadline[] = [];
+  // Gentle concurrency — Google News is fine with parallel but stay polite.
+  const batchSize = 4;
+  for (let i = 0; i < targets.length; i += batchSize) {
+    const batch = targets.slice(i, i + batchSize);
+    const parts = await Promise.all(
+      batch.map((g) => fetchWireHeadlinesForGeo(g.id, g.label)),
+    );
+    for (const part of parts) headlines.push(...part);
+    if (i + batchSize < targets.length) await sleep(250);
+  }
+  console.log(`[live:economy] wires collected ${headlines.length}`);
+  return headlines;
 }
 
 async function main() {
   const geos = ECONOMY_GEOS.map((g) => g.id);
 
-  const [inflation, unemployment, confidence, gdp, policyRate, headlines] =
+  const [inflation, unemployment, confidence, gdp, policyRate, official, wires] =
     await Promise.all([
       fetchMetricSeries("inflation", geos, "prc_hicp_manr", { coicop: "CP00" }, 48),
       fetchMetricSeries("unemployment", geos, "une_rt_m", { s_adj: "SA", age: "TOTAL", unit: "PC_ACT", sex: "T" }, 48),
       fetchMetricSeries("confidence", geos, "ei_bssi_m_r2", { indic: "BS-CSMCI-BAL", s_adj: "SA" }, 48),
       fetchMetricSeries("gdp", geos, "namq_10_gdp", { na_item: "B1GQ", unit: "CLV_PCH_PRE", s_adj: "SCA" }, 24),
       fetchPolicyRate(),
-      fetchHeadlines(),
+      fetchOfficialHeadlines(),
+      fetchAllWireHeadlines(),
     ]);
+
+  const headlines = [...official, ...wires];
 
   const bundles: EconomyGeoBundle[] = [];
   for (const geo of geos) {
@@ -429,9 +549,9 @@ async function main() {
   const snap: EconomySnapshot = {
     asOf: new Date().toISOString(),
     source:
-      "Eurostat (HICP, unemployment, consumer confidence, GDP) + ECB Data Portal (deposit facility) + ECB RSS (press / statistics)",
+      "Eurostat (HICP, unemployment, consumer confidence, GDP) + ECB Data Portal (deposit facility) + ECB RSS (press / statistics) + Google News RSS (country wires)",
     license:
-      "Eurostat / ECB — free reuse with attribution (CC BY 4.0 where stated)",
+      "Eurostat / ECB — free reuse with attribution (CC BY 4.0 where stated). Country wires via Google News (publisher copyrights apply; links out).",
     defaultGeo: ECONOMY_DEFAULT_GEO,
     policyRate,
     geos: bundles,
@@ -441,8 +561,9 @@ async function main() {
   const out = path.join(process.cwd(), "data", "live", "economy.json");
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, `${JSON.stringify(snap, null, 2)}\n`, "utf8");
+  const wireGeos = new Set(wires.map((h) => h.geo)).size;
   console.log(
-    `[live:economy] wrote ${out} · EA HICP ${hicp.period} ${hicp.value}% · geos ${bundles.length} · headlines ${headlines.length}`,
+    `[live:economy] wrote ${out} · EA HICP ${hicp.period} ${hicp.value}% · geos ${bundles.length} · official ${official.length} · wires ${wires.length} across ${wireGeos} geos`,
   );
 }
 

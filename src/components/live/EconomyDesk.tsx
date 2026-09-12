@@ -135,6 +135,21 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
   const euroArea = view.euroArea;
   const spotlighting = focus && focus.id !== ECONOMY_DEFAULT_GEO;
 
+  const headlines = useMemo(() => {
+    const forGeo = view.headlines.filter((h) => h.geo === geoId);
+    if (forGeo.length > 0) return forGeo;
+    // Soft fallback when a country wire fetch was empty.
+    if (geoId !== ECONOMY_DEFAULT_GEO) {
+      return view.headlines.filter((h) => h.geo === ECONOMY_DEFAULT_GEO);
+    }
+    return [];
+  }, [view.headlines, geoId]);
+
+  const headlinesFallback =
+    headlines.length > 0 &&
+    geoId !== ECONOMY_DEFAULT_GEO &&
+    headlines.every((h) => h.geo === ECONOMY_DEFAULT_GEO);
+
   if (!focus) {
     return <EconomyMissing />;
   }
@@ -153,8 +168,9 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
           Euro area first — HICP, unemployment, consumer confidence, GDP, and
           the ECB deposit rate. Spotlight one country or the EU aggregate
-          without leaving the desk. Headlines from ECB press and statistics;
-          car registrations stay later.
+          without leaving the desk. Euro-area headlines from ECB; country
+          spotlight pulls Google News economy wires. Car registrations stay
+          later.
         </p>
       </header>
 
@@ -293,19 +309,23 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
         </div>
       </section>
 
-      {view.headlines.length > 0 ? (
-        <section aria-label="ECB headlines">
+      {headlines.length > 0 ? (
+        <section aria-label="Headlines">
           <div className="mb-5">
             <h2 className="font-display text-lg font-semibold text-white">
               Headlines
             </h2>
             <p className="mt-1 text-sm text-slate-400">
-              Latest ECB press and statistics releases — euro-area official
-              channel, not a wire roundup.
+              {geoId === ECONOMY_DEFAULT_GEO || headlinesFallback
+                ? "Latest ECB press and statistics — euro-area official channel."
+                : `Recent economy wires mentioning ${focus.label} (Google News). Not official statistical releases.`}
+              {headlinesFallback
+                ? ` No country wires for ${focus.label} this refresh — showing ECB.`
+                : ""}
             </p>
           </div>
           <ul className="divide-y divide-white/10 border-y border-white/10">
-            {view.headlines.map((h) => (
+            {headlines.map((h) => (
               <li key={h.id}>
                 <a
                   href={h.url}

@@ -141,12 +141,18 @@ export type EconomyGeoBundle = {
   series: EconomySeries[];
 };
 
+export type EconomyHeadlineChannel = "official" | "wire";
+
 export type EconomyHeadline = {
   id: string;
   title: string;
   url: string;
+  /** Publisher label (ECB Press, BBC, …). */
   source: string;
   publishedAt: string | null;
+  /** Spotlight geo this headline belongs to (EA21 for ECB, country for wires). */
+  geo: EconomyGeoId;
+  channel: EconomyHeadlineChannel;
 };
 
 export type EconomySnapshot = {
@@ -156,7 +162,10 @@ export type EconomySnapshot = {
   defaultGeo: EconomyGeoId;
   policyRate: EconomySeries;
   geos: EconomyGeoBundle[];
-  /** Official euro-area headlines (ECB press + stats). Soft — may be empty. */
+  /**
+   * Headlines tagged by geo. EA21 = ECB official; countries = Google News
+   * economy wires. Soft — may be empty per geo.
+   */
   headlines: EconomyHeadline[];
 };
 

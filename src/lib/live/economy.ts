@@ -42,7 +42,11 @@ export function readEconomySnapshot(): EconomySnapshot | null {
     if (!hicp || hicp.value === null) return null;
     return {
       ...parsed,
-      headlines: parsed.headlines ?? [],
+      headlines: (parsed.headlines ?? []).map((h) => ({
+        ...h,
+        geo: h.geo ?? "EA21",
+        channel: h.channel ?? "official",
+      })),
     };
   } catch {
     return null;
