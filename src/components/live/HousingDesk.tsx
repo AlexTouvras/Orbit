@@ -1,6 +1,7 @@
 import type { HousingView } from "@/lib/live/housing-types";
 import { BackLink } from "@/components/ui/BackLink";
 import { Badge } from "@/components/ui/Badge";
+import { HousingMap } from "@/components/live/HousingMap";
 import { HousingTape } from "@/components/live/HousingTape";
 
 function formatHelsinki(iso: string): string {
@@ -170,6 +171,8 @@ export function HousingDesk({ view }: { view: HousingView }) {
           </p>
         </section>
       ) : null}
+
+      <HousingMap regions={view.regions} />
 
       <section>
         <h2 className="font-display text-lg font-semibold text-white">
