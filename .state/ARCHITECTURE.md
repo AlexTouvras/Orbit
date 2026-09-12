@@ -14,6 +14,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | NewsCache | `data/news-cache.json` | Fetched via `npm run news:fetch` |
 | Live EU Spot | `data/live/eu-spot.json` | `npm run live:fetch-eu` (A44) + `npm run live:fetch-eu-pulse`. Map category layers + per-zone desk (Finland-style pulse + mix nowcast for every zone). Power Pulse is not a separate Portfolio desk — `/portfolio/live/power` redirects here. |
 | Live Helsinki Housing | `data/live/housing.json` | `npm run live:fetch-housing`. Stat.fi `ashi` monthly 15iq + quarterly 13mv (Helsinki history + HKI 1–4). CC BY 4.0. |
+| Live Europe Power Mix | `data/live/power-mix.json` | `npm run live:fetch-mix`. Energy-Charts `public_power` last 24h → country 100% stacked shares (fossil/nuclear/wind/hydro/solar/biomass/other), sorted clean→fossil. |
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
@@ -25,7 +26,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 
 ## Design patterns
 
-- Portfolio live tiles (`LiveDeskTile`) carry a sneak peek: EU Spot paints the live baseload SVG; Nordic Equity paints a treemap from `heatmap-web` `board.json` (not an iframe of the board page); Helsinki Housing paints a monthly €/m² sparkline. Portfolio `#live` and `/portfolio/live` use `LiveDeskCarousel` (horizontal snap row + chevrons), not a wrapping grid.
+- Portfolio live tiles (`LiveDeskTile`) carry a sneak peek: EU Spot paints the live baseload SVG; Nordic Equity paints a treemap from `heatmap-web` `board.json` (not an iframe of the board page); Helsinki Housing paints a monthly €/m² sparkline; Europe Power Mix paints mini 100% stacked country bars. Portfolio `#live` and `/portfolio/live` use `LiveDeskCarousel` (horizontal snap row + chevrons), not a wrapping grid.
 - SEO: App Router `sitemap.ts` / `robots.ts`; site URL from `getSiteUrl()` (`NEXT_PUBLIC_SITE_URL`); JSON-LD Person/WebSite/Blog in layout + BlogPosting/BreadcrumbList on Writes; per-Write OG via `writes/[slug]/opengraph-image.tsx` (shared `src/lib/seo/og-card.tsx`); optional Write frontmatter `updated` for freshness; blog RSS at `/feed.xml`; `public/llms.txt`; app `icon.tsx`. New MDX Writes inherit SEO automatically from frontmatter — no per-post meta authoring.
 - Field-card static HTML in `public/*-field-card/` should keep `canonical` + `og:url` + `og:image` (points at site `/opengraph-image`). Source field-card repos own the HTML and may overwrite on sync — preserve those meta tags when refreshing cards.
 - Portfolio cards: Case study link from `caseStudyUrl`, or from `liveUrl` when it is already a `/writes/` path

@@ -41,6 +41,15 @@ export const liveDesks: LiveDesk[] = [
     kind: "native",
     source: "Statistics Finland · ashi · CC BY 4.0",
   },
+  {
+    slug: "power-mix",
+    title: "Europe Power Mix",
+    question: "What is Europe generating from today?",
+    cadence: "Last 24h · daily refresh",
+    status: "live",
+    kind: "native",
+    source: "Energy-Charts · ENTSO-E / TSO",
+  },
 ];
 
 export function getLiveDesk(slug: string): LiveDesk | undefined {
