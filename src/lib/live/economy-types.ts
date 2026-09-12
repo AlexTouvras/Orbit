@@ -141,6 +141,14 @@ export type EconomyGeoBundle = {
   series: EconomySeries[];
 };
 
+export type EconomyHeadline = {
+  id: string;
+  title: string;
+  url: string;
+  source: string;
+  publishedAt: string | null;
+};
+
 export type EconomySnapshot = {
   asOf: string;
   source: string;
@@ -148,6 +156,8 @@ export type EconomySnapshot = {
   defaultGeo: EconomyGeoId;
   policyRate: EconomySeries;
   geos: EconomyGeoBundle[];
+  /** Official euro-area headlines (ECB press + stats). Soft — may be empty. */
+  headlines: EconomyHeadline[];
 };
 
 export type EconomyView = EconomySnapshot & {

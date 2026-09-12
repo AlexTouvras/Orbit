@@ -34,7 +34,8 @@
 - [x] **Housing capital-region map** — choropleth of latest monthly €/m² (Helsinki / Espoo–Kauniainen / Vantaa).
 - [x] **Housing postal-code map** — Asuntomaatti-style 13mu yearly €/m² by postinumero (capital region).
 - [x] **Europe Power Mix** — `/portfolio/live/power-mix`. Energy-Charts last-24h generation share by country; 100% stacked bars; daily refresh via `live:fetch-mix`.
-- [x] **Europe Economy Pulse** — `/portfolio/live/economy`. Euro area default + country/area spotlight; HICP, unemployment, confidence, GDP, ECB deposit. Cars/news later.
+- [x] **Europe Economy Pulse** — `/portfolio/live/economy`. Euro area default + country/area spotlight; HICP, unemployment, confidence, GDP, ECB deposit.
+- [x] **Economy Pulse v2 — headlines** — ECB press + statistics RSS on the desk. Cars later.
 - [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
 - [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
 - [x] **EU Spot Desk (localhost)** — `/portfolio/live/eu-spot` map + history. Energy-Charts until ENTSO-E token. Do not deploy while `localhostOnly`.

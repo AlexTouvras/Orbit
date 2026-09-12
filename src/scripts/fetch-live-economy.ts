@@ -5,19 +5,47 @@
  *
  * Sources: Eurostat Statistics API + ECB Data Portal (CSV). Free with attribution.
  */
+import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import Parser from "rss-parser";
 import {
   ECONOMY_DEFAULT_GEO,
   ECONOMY_GEOS,
   type EconomyGeoBundle,
   type EconomyGeoId,
+  type EconomyHeadline,
   type EconomyLatestCell,
   type EconomyMetricId,
   type EconomyPoint,
   type EconomySeries,
   type EconomySnapshot,
 } from "@/lib/live/economy-types";
+
+const rssParser = new Parser({
+  timeout: 15000,
+  headers: {
+    "User-Agent":
+      "Mozilla/5.0 (compatible; OrbitLive/1.0; +https://github.com/AlexTouvras/Orbit)",
+    Accept:
+      "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
+  },
+});
+
+const HEADLINE_FEEDS: { source: string; url: string; limit: number }[] = [
+  {
+    source: "ECB Press",
+    url: "https://www.ecb.europa.eu/rss/press.html",
+    limit: 8,
+  },
+  {
+    source: "ECB Statistics",
+    url: "https://www.ecb.europa.eu/rss/statpress.html",
+    limit: 6,
+  },
+];
+
+const MAX_HEADLINES = 10;
 
 const EUROSTAT =
   "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data";
@@ -304,16 +332,80 @@ function buildBundle(
   };
 }
 
+async function fetchHeadlines(): Promise<EconomyHeadline[]> {
+  console.log("[live:economy] headlines ← ECB press + statistics RSS");
+  const settled = await Promise.allSettled(
+    HEADLINE_FEEDS.map(async (feed) => {
+      const parsed = await rssParser.parseURL(feed.url);
+      return (parsed.items ?? []).slice(0, feed.limit).flatMap((item) => {
+        const title = item.title?.trim();
+        const rawUrl = item.link?.trim();
+        if (!title || !rawUrl) return [];
+        const url = rawUrl.replace(/([^:])\/{2,}/g, "$1/");
+        const publishedAt = item.isoDate
+          ? new Date(item.isoDate).toISOString()
+          : item.pubDate
+            ? new Date(item.pubDate).toISOString()
+            : null;
+        const id = crypto
+          .createHash("sha1")
+          .update(url)
+          .digest("hex")
+          .slice(0, 12);
+        return [
+          {
+            id,
+            title: title.replace(/\s+/g, " "),
+            url,
+            source: feed.source,
+            publishedAt:
+              publishedAt && !Number.isNaN(Date.parse(publishedAt))
+                ? publishedAt
+                : null,
+          } satisfies EconomyHeadline,
+        ];
+      });
+    }),
+  );
+
+  const seen = new Set<string>();
+  const headlines: EconomyHeadline[] = [];
+  for (let i = 0; i < settled.length; i++) {
+    const result = settled[i]!;
+    const feed = HEADLINE_FEEDS[i]!;
+    if (result.status === "rejected") {
+      console.warn(
+        `[live:economy] headlines ${feed.source} failed:`,
+        result.reason instanceof Error ? result.reason.message : result.reason,
+      );
+      continue;
+    }
+    for (const h of result.value) {
+      if (seen.has(h.url)) continue;
+      seen.add(h.url);
+      headlines.push(h);
+    }
+  }
+
+  headlines.sort((a, b) => {
+    const ta = a.publishedAt ? Date.parse(a.publishedAt) : 0;
+    const tb = b.publishedAt ? Date.parse(b.publishedAt) : 0;
+    return tb - ta;
+  });
+  return headlines.slice(0, MAX_HEADLINES);
+}
+
 async function main() {
   const geos = ECONOMY_GEOS.map((g) => g.id);
 
-  const [inflation, unemployment, confidence, gdp, policyRate] =
+  const [inflation, unemployment, confidence, gdp, policyRate, headlines] =
     await Promise.all([
       fetchMetricSeries("inflation", geos, "prc_hicp_manr", { coicop: "CP00" }, 48),
       fetchMetricSeries("unemployment", geos, "une_rt_m", { s_adj: "SA", age: "TOTAL", unit: "PC_ACT", sex: "T" }, 48),
       fetchMetricSeries("confidence", geos, "ei_bssi_m_r2", { indic: "BS-CSMCI-BAL", s_adj: "SA" }, 48),
       fetchMetricSeries("gdp", geos, "namq_10_gdp", { na_item: "B1GQ", unit: "CLV_PCH_PRE", s_adj: "SCA" }, 24),
       fetchPolicyRate(),
+      fetchHeadlines(),
     ]);
 
   const bundles: EconomyGeoBundle[] = [];
@@ -337,19 +429,20 @@ async function main() {
   const snap: EconomySnapshot = {
     asOf: new Date().toISOString(),
     source:
-      "Eurostat (HICP, unemployment, consumer confidence, GDP) + ECB Data Portal (deposit facility)",
+      "Eurostat (HICP, unemployment, consumer confidence, GDP) + ECB Data Portal (deposit facility) + ECB RSS (press / statistics)",
     license:
       "Eurostat / ECB — free reuse with attribution (CC BY 4.0 where stated)",
     defaultGeo: ECONOMY_DEFAULT_GEO,
     policyRate,
     geos: bundles,
+    headlines,
   };
 
   const out = path.join(process.cwd(), "data", "live", "economy.json");
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, `${JSON.stringify(snap, null, 2)}\n`, "utf8");
   console.log(
-    `[live:economy] wrote ${out} · EA HICP ${hicp.period} ${hicp.value}% · geos ${bundles.length}`,
+    `[live:economy] wrote ${out} · EA HICP ${hicp.period} ${hicp.value}% · geos ${bundles.length} · headlines ${headlines.length}`,
   );
 }
 

@@ -29,6 +29,16 @@ function formatHelsinki(iso: string): string {
   })} Helsinki`;
 }
 
+function formatHeadlineDate(iso: string): string {
+  return new Date(iso).toLocaleString("en-GB", {
+    timeZone: "Europe/Helsinki",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZoneName: undefined,
+  });
+}
+
 function formatPeriod(period: string): string {
   if (/^\d{4}-\d{2}$/.test(period)) {
     const [y, m] = period.split("-");
@@ -143,7 +153,8 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
           Euro area first — HICP, unemployment, consumer confidence, GDP, and
           the ECB deposit rate. Spotlight one country or the EU aggregate
-          without leaving the desk. Cars and news stay later.
+          without leaving the desk. Headlines from ECB press and statistics;
+          car registrations stay later.
         </p>
       </header>
 
@@ -281,6 +292,42 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
           })}
         </div>
       </section>
+
+      {view.headlines.length > 0 ? (
+        <section aria-label="ECB headlines">
+          <div className="mb-5">
+            <h2 className="font-display text-lg font-semibold text-white">
+              Headlines
+            </h2>
+            <p className="mt-1 text-sm text-slate-400">
+              Latest ECB press and statistics releases — euro-area official
+              channel, not a wire roundup.
+            </p>
+          </div>
+          <ul className="divide-y divide-white/10 border-y border-white/10">
+            {view.headlines.map((h) => (
+              <li key={h.id}>
+                <a
+                  href={h.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="focus-ring group flex flex-col gap-1 py-4 transition-colors hover:bg-white/[0.03] sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+                >
+                  <span className="text-sm leading-snug text-slate-200 group-hover:text-white">
+                    {h.title}
+                  </span>
+                  <span className="shrink-0 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
+                    {h.source}
+                    {h.publishedAt
+                      ? ` · ${formatHeadlineDate(h.publishedAt)}`
+                      : ""}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <footer className="border-t border-white/10 pt-6 text-sm leading-relaxed text-slate-400">
         <p>As of {formatHelsinki(view.asOf)}.</p>

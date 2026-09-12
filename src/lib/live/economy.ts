@@ -10,6 +10,7 @@ import {
 export type {
   EconomyGeoBundle,
   EconomyGeoId,
+  EconomyHeadline,
   EconomyLatestCell,
   EconomyMetricId,
   EconomyPoint,
@@ -39,7 +40,10 @@ export function readEconomySnapshot(): EconomySnapshot | null {
     const ea = parsed.geos.find((g) => g.id === "EA21");
     const hicp = ea?.latest.find((c) => c.metric === "inflation");
     if (!hicp || hicp.value === null) return null;
-    return parsed;
+    return {
+      ...parsed,
+      headlines: parsed.headlines ?? [],
+    };
   } catch {
     return null;
   }
