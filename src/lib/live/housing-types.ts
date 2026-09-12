@@ -56,6 +56,18 @@ export type HousingDistrictPoint = {
   transactions: number | null;
 };
 
+/** Postal-code €/m² (ashi 13mu) — Asuntomaatti-style grain. */
+export type HousingPostalPoint = {
+  /** Five-digit postal code, e.g. 00100. */
+  id: string;
+  label: string;
+  /** Municipality code: 091 / 049 / 092 / 235. */
+  kunta: string;
+  period: string;
+  eurM2: number | null;
+  transactions: number | null;
+};
+
 export type HousingLatest = {
   period: string;
   provisional: boolean;
@@ -82,6 +94,10 @@ export type HousingSnapshot = {
   helsinkiQuarterly: HousingQuarterlyPoint[];
   /** Latest available Helsinki 1–4 sub-areas (quarterly). */
   districts: HousingDistrictPoint[];
+  /** Capital-region postal codes (yearly ashi 13mu). */
+  postalTable?: string;
+  postalPeriod?: string | null;
+  postalAreas?: HousingPostalPoint[];
 };
 
 /** Client-safe view model for HousingDesk. */
@@ -93,6 +109,8 @@ export type HousingView = {
   regions: HousingRegionSeries[];
   helsinkiQuarterly: HousingQuarterlyPoint[];
   districts: HousingDistrictPoint[];
+  postalPeriod: string | null;
+  postalAreas: HousingPostalPoint[];
   latest: HousingLatest | null;
   helsinki: HousingRegionSeries | null;
 };

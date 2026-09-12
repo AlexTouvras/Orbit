@@ -12,16 +12,21 @@ import {
   HOUSING_REGIONS,
   type HousingDistrictPoint,
   type HousingMonthlyPoint,
+  type HousingPostalPoint,
   type HousingQuarterlyPoint,
   type HousingRegionId,
   type HousingRegionSeries,
   type HousingSnapshot,
 } from "@/lib/live/housing-types";
+import { HOUSING_POSTAL_SHAPES } from "@/content/live/housing-postal-paths";
 
 const MONTHLY_URL =
   "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/ashi/15iq.px";
 const QUARTERLY_URL =
   "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/ashi/13mv.px";
+
+const POSTAL_URL =
+  "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/ashi/13mu.px";
 
 const REGION_CODE = "alue_43_20260625";
 const BUILDING_CODE = "talotyyppi_5_20111209";
@@ -368,6 +373,123 @@ async function fetchQuarterly(): Promise<{
   return { helsinkiQuarterly, districts };
 }
 
+
+async function fetchPostalAreas(): Promise<{
+  period: string | null;
+  areas: HousingPostalPoint[];
+}> {
+  console.log("[live:housing] meta 13mu.px (postal)");
+  const meta = await fetchJson<PxMeta>(POSTAL_URL, undefined, "13mu meta");
+  const timeVar = meta.variables.find((v) => v.code === "timeperiod_y");
+  if (!timeVar?.values?.length) {
+    throw new Error("13mu: no years");
+  }
+  const year = timeVar.values[timeVar.values.length - 1]!;
+  const postalDim =
+    meta.variables.find((v) => v.code.startsWith("postinumeroalue_"))?.code ??
+    "postinumeroalue_4_20220101";
+  const buildingDim =
+    meta.variables.find((v) => v.code.startsWith("talotyyppi_"))?.code ??
+    "talotyyppi_6_20131021";
+
+  const postalMeta = meta.variables.find((v) => v.code === postalDim);
+  const allowed = new Set(postalMeta?.values ?? []);
+  const codes = HOUSING_POSTAL_SHAPES.map((s) => s.id).filter((id) =>
+    allowed.has(id),
+  );
+  const byId = new Map(HOUSING_POSTAL_SHAPES.map((s) => [s.id, s]));
+  const skipped = HOUSING_POSTAL_SHAPES.length - codes.length;
+  if (skipped > 0) {
+    console.log(`[live:housing] postal skip ${skipped} codes not in 13mu`);
+  }
+
+  console.log(`[live:housing] postal ${year} · ${codes.length} codes`);
+  const js = await postPx(POSTAL_URL, {
+    query: [
+      {
+        code: "timeperiod_y",
+        selection: { filter: "item", values: [year] },
+      },
+      {
+        code: postalDim,
+        selection: { filter: "item", values: codes },
+      },
+      {
+        code: buildingDim,
+        selection: { filter: "item", values: ["1", "2", "3", "5"] },
+      },
+      {
+        code: "contentscode",
+        selection: {
+          filter: "item",
+          values: ["keskihinta_aritm_nw", "lkm_julk20"],
+        },
+      },
+    ],
+    response: { format: "json-stat2" },
+  });
+
+  const buildingTypes = categoryCodes(js, buildingDim);
+  const areas: HousingPostalPoint[] = [];
+
+  for (const code of codes) {
+    const shape = byId.get(code);
+    if (!shape) continue;
+    // Skip codes missing from the PxWeb catalogue for this year.
+    if (js.dimension[postalDim]?.category.index[code] === undefined) continue;
+
+    let priceNum = 0;
+    let txSum = 0;
+    let priceFallback: number[] = [];
+    let txTotal = 0;
+
+    for (const bt of buildingTypes) {
+      const price = valueAt(js, {
+        timeperiod_y: year,
+        [postalDim]: code,
+        [buildingDim]: bt,
+        contentscode: "keskihinta_aritm_nw",
+      });
+      const tx = valueAt(js, {
+        timeperiod_y: year,
+        [postalDim]: code,
+        [buildingDim]: bt,
+        contentscode: "lkm_julk20",
+      });
+      if (price !== null) {
+        priceFallback.push(price);
+        if (tx !== null && tx > 0) {
+          priceNum += price * tx;
+          txSum += tx;
+        }
+      }
+      if (tx !== null && tx > 0) txTotal += tx;
+    }
+
+    const eurM2 =
+      txSum > 0
+        ? priceNum / txSum
+        : priceFallback.length
+          ? priceFallback.reduce((a, b) => a + b, 0) / priceFallback.length
+          : null;
+
+    areas.push({
+      id: code,
+      label: shape.label,
+      kunta: shape.kunta,
+      period: year,
+      eurM2: eurM2 === null ? null : Math.round(eurM2),
+      transactions: txTotal > 0 ? txTotal : null,
+    });
+  }
+
+  const withPrice = areas.filter((a) => a.eurM2 !== null).length;
+  console.log(
+    `[live:housing] postal priced ${withPrice}/${areas.length} for ${year}`,
+  );
+  return { period: year, areas };
+}
+
 function assertHelsinkiHasPrice(regions: HousingRegionSeries[]) {
   const hki = regions.find((r) => r.id === ("091" as HousingRegionId));
   const has = hki?.monthly.some((m) => m.eurM2 !== null);
@@ -380,6 +502,7 @@ async function main() {
   const monthly = await fetchMonthly();
   assertHelsinkiHasPrice(monthly.regions);
   const quarterly = await fetchQuarterly();
+  const postal = await fetchPostalAreas();
 
   const snap: HousingSnapshot = {
     asOf: new Date().toISOString(),
@@ -393,6 +516,9 @@ async function main() {
     regions: monthly.regions,
     helsinkiQuarterly: quarterly.helsinkiQuarterly,
     districts: quarterly.districts,
+    postalTable: "StatFin/ashi/13mu.px",
+    postalPeriod: postal.period,
+    postalAreas: postal.areas,
   };
 
   const out = path.join(process.cwd(), "data", "live", "housing.json");
@@ -403,8 +529,9 @@ async function main() {
   const last = [...(hki?.monthly ?? [])]
     .reverse()
     .find((m) => m.eurM2 !== null);
+  const priced = postal.areas.filter((a) => a.eurM2 !== null).length;
   console.log(
-    `[live:housing] wrote ${out} · Helsinki ${last?.period ?? "?"} €${last?.eurM2 ?? "?"} /m² · districts ${snap.districts.length}`,
+    `[live:housing] wrote ${out} · Helsinki ${last?.period ?? "?"} €${last?.eurM2 ?? "?"} /m² · districts ${snap.districts.length} · postal ${priced}/${postal.areas.length} (${postal.period ?? "?"})`,
   );
 }
 

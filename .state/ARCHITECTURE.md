@@ -13,7 +13,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | FeedSource | `src/lib/news/sources.ts` | `name`, `url`, `category`, optional `maxItems` |
 | NewsCache | `data/news-cache.json` | Fetched via `npm run news:fetch` |
 | Live EU Spot | `data/live/eu-spot.json` | `npm run live:fetch-eu` (A44) + `npm run live:fetch-eu-pulse`. Map category layers + per-zone desk (Finland-style pulse + mix nowcast for every zone). Power Pulse is not a separate Portfolio desk — `/portfolio/live/power` redirects here. |
-| Live Helsinki Housing | `data/live/housing.json` | `npm run live:fetch-housing`. Stat.fi `ashi` monthly 15iq + quarterly 13mv (Helsinki history + HKI 1–4). CC BY 4.0. Capital-region choropleth (`HousingMap`) paints Helsinki / Espoo–Kauniainen / Vantaa from latest monthly €/m² via `housing-map-paths.ts` (Stat.fi kunta4500k, CC BY 4.0). |
+| Live Helsinki Housing | `data/live/housing.json` | `npm run live:fetch-housing`. Stat.fi `ashi` monthly 15iq + quarterly 13mv (Helsinki history + HKI 1–4). CC BY 4.0. Capital-region choropleth (`HousingMap`) paints ~150 postal codes from yearly ashi 13mu €/m² (sales-weighted flats + terraced) via `housing-postal-paths.ts` (Paavo pno, CC BY 4.0) — Asuntomaatti-style grain. |
 | Live Europe Power Mix | `data/live/power-mix.json` | `npm run live:fetch-mix`. Energy-Charts `public_power` last 24h → country 100% stacked shares (fossil/nuclear/wind/hydro/solar/biomass/other), sorted clean→fossil. |
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
@@ -70,7 +70,9 @@ src/app/writes/[slug]/opengraph-image.tsx
 public/llms.txt
 src/content/live-desks.ts
 src/content/live/eu-zone-paths.ts
-src/content/live/housing-map-paths.ts  # capital-region SVG outlines for HousingMap
+src/content/live/housing-map-paths.ts  # municipality outlines (legacy)
+src/content/live/housing-postal-paths.ts  # Paavo postal SVG paths for HousingMap choropleth
+scripts/live/build-housing-postal-paths.mjs
 src/lib/live/
 src/lib/live/housing-map-fill.ts
 src/components/live/

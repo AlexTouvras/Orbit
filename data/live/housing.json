@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-09-11T13:22:55.989Z",
+  "asOf": "2026-09-12T13:24:34.538Z",
   "source": "Statistics Finland, prices of dwellings in housing companies",
   "license": "CC BY 4.0 — Statistics Finland",
   "monthlyTable": "StatFin/ashi/15iq.px",
@@ -1265,6 +1265,1314 @@
       "period": "2026Q1",
       "eurM2": 2429,
       "transactions": 342
+    }
+  ],
+  "postalTable": "StatFin/ashi/13mu.px",
+  "postalPeriod": "2025",
+  "postalAreas": [
+    {
+      "id": "00100",
+      "label": "Helsinki keskusta - Etu-Töölö",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 7323,
+      "transactions": 420
+    },
+    {
+      "id": "00120",
+      "label": "Punavuori - Bulevardi",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 8394,
+      "transactions": 199
+    },
+    {
+      "id": "00130",
+      "label": "Kaartinkaupunki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 7717,
+      "transactions": 52
+    },
+    {
+      "id": "00140",
+      "label": "Kaivopuisto - Ullanlinna",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 8539,
+      "transactions": 217
+    },
+    {
+      "id": "00150",
+      "label": "Punavuori - Eira - Hernesaari",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 8197,
+      "transactions": 269
+    },
+    {
+      "id": "00160",
+      "label": "Katajanokka",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 7390,
+      "transactions": 122
+    },
+    {
+      "id": "00170",
+      "label": "Kruununhaka",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 7279,
+      "transactions": 162
+    },
+    {
+      "id": "00180",
+      "label": "Kamppi - Ruoholahti",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 6724,
+      "transactions": 354
+    },
+    {
+      "id": "00190",
+      "label": "Suomenlinna",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": null
+    },
+    {
+      "id": "00200",
+      "label": "Pohjois-Lauttasaari",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 6330,
+      "transactions": 444
+    },
+    {
+      "id": "00210",
+      "label": "Vattuniemi",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 6255,
+      "transactions": 277
+    },
+    {
+      "id": "00220",
+      "label": "Jätkäsaari",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 7210,
+      "transactions": 130
+    },
+    {
+      "id": "00240",
+      "label": "Länsi-Pasila",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4434,
+      "transactions": 127
+    },
+    {
+      "id": "00250",
+      "label": "Taka-Töölö",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 6410,
+      "transactions": 302
+    },
+    {
+      "id": "00260",
+      "label": "Keski-Töölö",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 7072,
+      "transactions": 165
+    },
+    {
+      "id": "00270",
+      "label": "Pohjois-Meilahti",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5650,
+      "transactions": 144
+    },
+    {
+      "id": "00280",
+      "label": "Ruskeasuo",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5218,
+      "transactions": 57
+    },
+    {
+      "id": "00290",
+      "label": "Meilahden sairaala-alue",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": 1
+    },
+    {
+      "id": "00300",
+      "label": "Pikku Huopalahti",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4560,
+      "transactions": 105
+    },
+    {
+      "id": "00310",
+      "label": "Kivihaka",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3982,
+      "transactions": 20
+    },
+    {
+      "id": "00320",
+      "label": "Etelä-Haaga",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4993,
+      "transactions": 232
+    },
+    {
+      "id": "00330",
+      "label": "Munkkiniemi",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 6330,
+      "transactions": 222
+    },
+    {
+      "id": "00340",
+      "label": "Kuusisaari - Lehtisaari",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4004,
+      "transactions": 31
+    },
+    {
+      "id": "00350",
+      "label": "Munkkivuori - Niemenmäki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4634,
+      "transactions": 175
+    },
+    {
+      "id": "00360",
+      "label": "Pajamäki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3862,
+      "transactions": 32
+    },
+    {
+      "id": "00370",
+      "label": "Reimarla",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3275,
+      "transactions": 55
+    },
+    {
+      "id": "00380",
+      "label": "Pitäjänmäen yritysalue",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4580,
+      "transactions": 47
+    },
+    {
+      "id": "00390",
+      "label": "Konala",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3178,
+      "transactions": 84
+    },
+    {
+      "id": "00400",
+      "label": "Pohjois-Haaga",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4129,
+      "transactions": 144
+    },
+    {
+      "id": "00410",
+      "label": "Malminkartano",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2560,
+      "transactions": 62
+    },
+    {
+      "id": "00420",
+      "label": "Kannelmäki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2952,
+      "transactions": 164
+    },
+    {
+      "id": "00430",
+      "label": "Maununneva - Kuninkaantammi",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3627,
+      "transactions": 67
+    },
+    {
+      "id": "00440",
+      "label": "Lassila",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3369,
+      "transactions": 52
+    },
+    {
+      "id": "00500",
+      "label": "Sörnäinen - Harju",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5246,
+      "transactions": 258
+    },
+    {
+      "id": "00510",
+      "label": "Alppila - Vallila",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5473,
+      "transactions": 232
+    },
+    {
+      "id": "00520",
+      "label": "Itä- ja Keski-Pasila",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5534,
+      "transactions": 190
+    },
+    {
+      "id": "00530",
+      "label": "Kallio",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5638,
+      "transactions": 408
+    },
+    {
+      "id": "00540",
+      "label": "Kalasatama - Sompasaari",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 7571,
+      "transactions": 83
+    },
+    {
+      "id": "00550",
+      "label": "Vallila - Hermanni",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5317,
+      "transactions": 143
+    },
+    {
+      "id": "00560",
+      "label": "Toukola - Kumpula - Vanhakaupunki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5395,
+      "transactions": 196
+    },
+    {
+      "id": "00570",
+      "label": "Kulosaari",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5419,
+      "transactions": 81
+    },
+    {
+      "id": "00580",
+      "label": "Kalasatama - Kyläsaari",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 7370,
+      "transactions": 120
+    },
+    {
+      "id": "00590",
+      "label": "Kruunuvuorenranta",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5199,
+      "transactions": 49
+    },
+    {
+      "id": "00600",
+      "label": "Koskela",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3319,
+      "transactions": 40
+    },
+    {
+      "id": "00610",
+      "label": "Käpylä",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5074,
+      "transactions": 153
+    },
+    {
+      "id": "00620",
+      "label": "Metsälä - Etelä-Oulunkylä",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3848,
+      "transactions": 62
+    },
+    {
+      "id": "00630",
+      "label": "Maunula",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3565,
+      "transactions": 61
+    },
+    {
+      "id": "00640",
+      "label": "Oulunkylä - Patola",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3734,
+      "transactions": 138
+    },
+    {
+      "id": "00650",
+      "label": "Veräjämäki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4169,
+      "transactions": 73
+    },
+    {
+      "id": "00660",
+      "label": "Länsi-Pakila",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4161,
+      "transactions": 95
+    },
+    {
+      "id": "00670",
+      "label": "Paloheinä",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3746,
+      "transactions": 80
+    },
+    {
+      "id": "00680",
+      "label": "Itä-Pakila",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3498,
+      "transactions": 49
+    },
+    {
+      "id": "00690",
+      "label": "Torpparinmäki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3434,
+      "transactions": 16
+    },
+    {
+      "id": "00700",
+      "label": "Malmi",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2966,
+      "transactions": 116
+    },
+    {
+      "id": "00710",
+      "label": "Pihlajamäki - Viikinmäki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2649,
+      "transactions": 194
+    },
+    {
+      "id": "00720",
+      "label": "Pukinmäki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2725,
+      "transactions": 90
+    },
+    {
+      "id": "00730",
+      "label": "Tapanila",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3513,
+      "transactions": 181
+    },
+    {
+      "id": "00740",
+      "label": "Siltamäki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2500,
+      "transactions": 116
+    },
+    {
+      "id": "00750",
+      "label": "Tapulikaupunki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2527,
+      "transactions": 49
+    },
+    {
+      "id": "00760",
+      "label": "Puistola - Heikinlaakso",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3019,
+      "transactions": 60
+    },
+    {
+      "id": "00770",
+      "label": "Jakomäki - Alppikylä",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2582,
+      "transactions": 43
+    },
+    {
+      "id": "00780",
+      "label": "Tapaninvainio",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2962,
+      "transactions": 94
+    },
+    {
+      "id": "00790",
+      "label": "Viikki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4234,
+      "transactions": 115
+    },
+    {
+      "id": "00800",
+      "label": "Länsi-Herttoniemi",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4719,
+      "transactions": 98
+    },
+    {
+      "id": "00810",
+      "label": "Herttoniemenranta",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 5094,
+      "transactions": 213
+    },
+    {
+      "id": "00820",
+      "label": "Roihuvuori",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3801,
+      "transactions": 154
+    },
+    {
+      "id": "00830",
+      "label": "Tammisalo",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4540,
+      "transactions": 37
+    },
+    {
+      "id": "00840",
+      "label": "Yliskylä",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3663,
+      "transactions": 176
+    },
+    {
+      "id": "00850",
+      "label": "Jollas",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4188,
+      "transactions": 27
+    },
+    {
+      "id": "00870",
+      "label": "Gunillanmäki - Hevossalmi",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3123,
+      "transactions": 47
+    },
+    {
+      "id": "00880",
+      "label": "Keski-Herttoniemi - Roihupelto",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": 11
+    },
+    {
+      "id": "00890",
+      "label": "Östersundom",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": 2
+    },
+    {
+      "id": "00900",
+      "label": "Puotinharju",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2235,
+      "transactions": 51
+    },
+    {
+      "id": "00910",
+      "label": "Puotila",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3194,
+      "transactions": 99
+    },
+    {
+      "id": "00920",
+      "label": "Myllypuro",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2830,
+      "transactions": 168
+    },
+    {
+      "id": "00930",
+      "label": "Itäkeskus - Marjaniemi",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2839,
+      "transactions": 56
+    },
+    {
+      "id": "00940",
+      "label": "Kontula - Vesala - Kivikko",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2192,
+      "transactions": 219
+    },
+    {
+      "id": "00950",
+      "label": "Vartioharju",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 3120,
+      "transactions": 56
+    },
+    {
+      "id": "00960",
+      "label": "Pohjois-Vuosaari",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2411,
+      "transactions": 92
+    },
+    {
+      "id": "00970",
+      "label": "Mellunmäki",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2041,
+      "transactions": 102
+    },
+    {
+      "id": "00980",
+      "label": "Etelä-Vuosaari",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 2909,
+      "transactions": 201
+    },
+    {
+      "id": "00990",
+      "label": "Aurinkolahti",
+      "kunta": "091",
+      "period": "2025",
+      "eurM2": 4436,
+      "transactions": 116
+    },
+    {
+      "id": "01200",
+      "label": "Hakunila",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2047,
+      "transactions": 96
+    },
+    {
+      "id": "01230",
+      "label": "Vaarala",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2715,
+      "transactions": 47
+    },
+    {
+      "id": "01260",
+      "label": "Itä-Hakkila",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3050,
+      "transactions": 26
+    },
+    {
+      "id": "01280",
+      "label": "Länsimäki",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2213,
+      "transactions": 111
+    },
+    {
+      "id": "01300",
+      "label": "Tikkurila",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3546,
+      "transactions": 490
+    },
+    {
+      "id": "01340",
+      "label": "Leinelä",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3673,
+      "transactions": 45
+    },
+    {
+      "id": "01350",
+      "label": "Hiekkaharju",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2633,
+      "transactions": 175
+    },
+    {
+      "id": "01360",
+      "label": "Koivukylä-Havukoski",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 1615,
+      "transactions": 115
+    },
+    {
+      "id": "01370",
+      "label": "Jokiniemi",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3145,
+      "transactions": 46
+    },
+    {
+      "id": "01380",
+      "label": "Kuusikko-Hakkila",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3542,
+      "transactions": 10
+    },
+    {
+      "id": "01390",
+      "label": "Ruskeasanta-Ilola",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3055,
+      "transactions": 58
+    },
+    {
+      "id": "01400",
+      "label": "Rekola",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3203,
+      "transactions": 66
+    },
+    {
+      "id": "01420",
+      "label": "Päiväkumpu",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": 4
+    },
+    {
+      "id": "01450",
+      "label": "Korso",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2349,
+      "transactions": 148
+    },
+    {
+      "id": "01480",
+      "label": "Mikkola",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 1842,
+      "transactions": 56
+    },
+    {
+      "id": "01490",
+      "label": "Nikinmäki",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3418,
+      "transactions": 25
+    },
+    {
+      "id": "01510",
+      "label": "Kirkonkylä-Veromäki",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3943,
+      "transactions": 135
+    },
+    {
+      "id": "01520",
+      "label": "Tammisto",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3871,
+      "transactions": 71
+    },
+    {
+      "id": "01530",
+      "label": "Veromiehenkylä",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": 2
+    },
+    {
+      "id": "01600",
+      "label": "Myyrmäki",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2271,
+      "transactions": 288
+    },
+    {
+      "id": "01610",
+      "label": "Kaivoksela",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2628,
+      "transactions": 80
+    },
+    {
+      "id": "01620",
+      "label": "Martinlaakso",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2360,
+      "transactions": 178
+    },
+    {
+      "id": "01630",
+      "label": "Hämeenkylä",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2584,
+      "transactions": 31
+    },
+    {
+      "id": "01640",
+      "label": "Hämevaara",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3003,
+      "transactions": 18
+    },
+    {
+      "id": "01650",
+      "label": "Vapaala",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 1814,
+      "transactions": 43
+    },
+    {
+      "id": "01660",
+      "label": "Varisto",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2789,
+      "transactions": 30
+    },
+    {
+      "id": "01670",
+      "label": "Vantaanlaakso",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2901,
+      "transactions": 44
+    },
+    {
+      "id": "01680",
+      "label": "Askisto",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2041,
+      "transactions": 7
+    },
+    {
+      "id": "01690",
+      "label": "Ylästö",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3816,
+      "transactions": 47
+    },
+    {
+      "id": "01700",
+      "label": "Kivistö",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 3694,
+      "transactions": 170
+    },
+    {
+      "id": "01710",
+      "label": "Pähkinärinne",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2521,
+      "transactions": 85
+    },
+    {
+      "id": "01720",
+      "label": "Petikko",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": null
+    },
+    {
+      "id": "01730",
+      "label": "Vantaanpuisto",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": 2638,
+      "transactions": 23
+    },
+    {
+      "id": "01740",
+      "label": "Tuupakan teollisuusalue",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": null
+    },
+    {
+      "id": "01750",
+      "label": "Keimola",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": null
+    },
+    {
+      "id": "01760",
+      "label": "Seutula",
+      "kunta": "092",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": 1
+    },
+    {
+      "id": "02100",
+      "label": "Tapiola",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 5666,
+      "transactions": 214
+    },
+    {
+      "id": "02110",
+      "label": "Otsolahti",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 5013,
+      "transactions": 81
+    },
+    {
+      "id": "02120",
+      "label": "Länsikorkee-Suvikumpu",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4975,
+      "transactions": 93
+    },
+    {
+      "id": "02130",
+      "label": "Pohjois-Tapiola",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4509,
+      "transactions": 232
+    },
+    {
+      "id": "02140",
+      "label": "Laajalahti",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4032,
+      "transactions": 69
+    },
+    {
+      "id": "02150",
+      "label": "Otaniemi",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4405,
+      "transactions": 11
+    },
+    {
+      "id": "02160",
+      "label": "Westend",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4809,
+      "transactions": 43
+    },
+    {
+      "id": "02170",
+      "label": "Haukilahti",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4354,
+      "transactions": 127
+    },
+    {
+      "id": "02180",
+      "label": "Mankkaa",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3988,
+      "transactions": 91
+    },
+    {
+      "id": "02200",
+      "label": "Niittykumpu",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4881,
+      "transactions": 243
+    },
+    {
+      "id": "02210",
+      "label": "Olari",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3112,
+      "transactions": 217
+    },
+    {
+      "id": "02230",
+      "label": "Matinkylä",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4107,
+      "transactions": 380
+    },
+    {
+      "id": "02240",
+      "label": "Friisilä",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3935,
+      "transactions": 28
+    },
+    {
+      "id": "02250",
+      "label": "Henttaa",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4192,
+      "transactions": 33
+    },
+    {
+      "id": "02260",
+      "label": "Kaitaa",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3686,
+      "transactions": 52
+    },
+    {
+      "id": "02270",
+      "label": "Finnoo-Eestinmalmi",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3528,
+      "transactions": 29
+    },
+    {
+      "id": "02280",
+      "label": "Malminmäki-Eestinlaakso",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3445,
+      "transactions": 38
+    },
+    {
+      "id": "02300",
+      "label": "Nöykkiönpuro",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3332,
+      "transactions": 14
+    },
+    {
+      "id": "02320",
+      "label": "Espoonlahti",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3261,
+      "transactions": 265
+    },
+    {
+      "id": "02330",
+      "label": "Saunalahti-Kattilalaakso",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4000,
+      "transactions": 104
+    },
+    {
+      "id": "02340",
+      "label": "Latokaski",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3218,
+      "transactions": 72
+    },
+    {
+      "id": "02360",
+      "label": "Soukka",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 2986,
+      "transactions": 140
+    },
+    {
+      "id": "02380",
+      "label": "Suvisaaristo",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": 4
+    },
+    {
+      "id": "02600",
+      "label": "Etelä-Leppävaara",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4139,
+      "transactions": 270
+    },
+    {
+      "id": "02610",
+      "label": "Kilo",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3956,
+      "transactions": 46
+    },
+    {
+      "id": "02620",
+      "label": "Karakallio",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 2931,
+      "transactions": 102
+    },
+    {
+      "id": "02630",
+      "label": "Nihtisilta",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3086,
+      "transactions": 43
+    },
+    {
+      "id": "02650",
+      "label": "Pohjois-Leppävaara",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3733,
+      "transactions": 184
+    },
+    {
+      "id": "02660",
+      "label": "Lintuvaara",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4060,
+      "transactions": 26
+    },
+    {
+      "id": "02680",
+      "label": "Uusmäki",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 4298,
+      "transactions": 53
+    },
+    {
+      "id": "02700",
+      "label": "Kauniainen",
+      "kunta": "235",
+      "period": "2025",
+      "eurM2": 4218,
+      "transactions": 185
+    },
+    {
+      "id": "02710",
+      "label": "Viherlaakso",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 2801,
+      "transactions": 101
+    },
+    {
+      "id": "02720",
+      "label": "Lähderanta",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3106,
+      "transactions": 62
+    },
+    {
+      "id": "02730",
+      "label": "Jupperi",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3584,
+      "transactions": 36
+    },
+    {
+      "id": "02740",
+      "label": "Bemböle-Pakankylä",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3341,
+      "transactions": 17
+    },
+    {
+      "id": "02750",
+      "label": "Sepänkylä-Kuurinniitty",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3677,
+      "transactions": 59
+    },
+    {
+      "id": "02760",
+      "label": "Tuomarila-Suvela",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 2839,
+      "transactions": 148
+    },
+    {
+      "id": "02770",
+      "label": "Espoon Keskus",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 2864,
+      "transactions": 65
+    },
+    {
+      "id": "02780",
+      "label": "Kauklahti",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3706,
+      "transactions": 114
+    },
+    {
+      "id": "02810",
+      "label": "Gumböle-Karhusuo",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3295,
+      "transactions": 15
+    },
+    {
+      "id": "02820",
+      "label": "Nupuri-Nuuksio",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3839,
+      "transactions": 10
+    },
+    {
+      "id": "02860",
+      "label": "Siikajärvi",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": null
+    },
+    {
+      "id": "02920",
+      "label": "Niipperi",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3367,
+      "transactions": 43
+    },
+    {
+      "id": "02940",
+      "label": "Lippajärvi-Järvenperä",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": 3030,
+      "transactions": 114
+    },
+    {
+      "id": "02970",
+      "label": "Kalajärvi",
+      "kunta": "049",
+      "period": "2025",
+      "eurM2": null,
+      "transactions": 6
     }
   ]
 }

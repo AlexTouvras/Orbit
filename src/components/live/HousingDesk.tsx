@@ -172,7 +172,7 @@ export function HousingDesk({ view }: { view: HousingView }) {
         </section>
       ) : null}
 
-      <HousingMap regions={view.regions} />
+      <HousingMap postalAreas={view.postalAreas} postalPeriod={view.postalPeriod} />
 
       <section>
         <h2 className="font-display text-lg font-semibold text-white">

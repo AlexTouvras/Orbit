@@ -85,6 +85,8 @@ export function toHousingView(snap: HousingSnapshot): HousingView {
     regions: snap.regions,
     helsinkiQuarterly: snap.helsinkiQuarterly,
     districts: snap.districts,
+    postalPeriod: snap.postalPeriod ?? null,
+    postalAreas: snap.postalAreas ?? [],
     latest,
     helsinki,
   };
