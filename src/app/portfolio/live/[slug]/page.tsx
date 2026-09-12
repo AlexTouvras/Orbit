@@ -4,8 +4,10 @@ import { getLiveDesk, liveDeskSlugs } from "@/content/live-desks";
 import { NordicEquityDesk } from "@/components/live/NordicEquityDesk";
 import { EuSpotDesk, EuSpotMissing } from "@/components/live/EuSpotDesk";
 import { HousingDesk, HousingMissing } from "@/components/live/HousingDesk";
+import { PowerMixDesk, PowerMixMissing } from "@/components/live/PowerMixDesk";
 import { readEuSpotSnapshot, toEuSpotView } from "@/lib/live/eu-spot";
 import { readHousingSnapshot, toHousingView } from "@/lib/live/housing";
+import { readPowerMixSnapshot, toPowerMixView } from "@/lib/live/power-mix";
 
 export function generateStaticParams() {
   return liveDeskSlugs().map((slug) => ({ slug }));
@@ -52,6 +54,12 @@ export default async function LiveDeskPage({
     const snap = readHousingSnapshot();
     if (!snap) return <HousingMissing />;
     return <HousingDesk view={toHousingView(snap)} />;
+  }
+
+  if (slug === "power-mix") {
+    const snap = readPowerMixSnapshot();
+    if (!snap) return <PowerMixMissing />;
+    return <PowerMixDesk view={toPowerMixView(snap)} />;
   }
 
   notFound();

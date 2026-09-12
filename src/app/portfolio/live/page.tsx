@@ -10,7 +10,7 @@ import { Activity } from "lucide-react";
 export const metadata: Metadata = {
   title: "Live dashboards",
   description:
-    "One-page desks on Orbit: Nordic equity heatmap, EU Spot, and Helsinki housing. Not Power BI.",
+    "One-page desks on Orbit: Nordic equity, EU Spot, Helsinki housing, and Europe power mix. Not Power BI.",
   alternates: { canonical: "/portfolio/live" },
 };
 
