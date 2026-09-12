@@ -1,7 +1,70 @@
 {
-  "generatedAt": "2026-09-11T06:47:00.631Z",
+  "generatedAt": "2026-09-12T06:46:59.583Z",
   "count": 214,
   "items": [
+    {
+      "id": "12e9dd685180",
+      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+      "link": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-14T00:00:00.000Z",
+      "contentSnippet": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
+    },
+    {
+      "id": "2ed54a20b866",
+      "title": "OpenAI agents attacked RubyGems back in May",
+      "link": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-12T00:42:25.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "39350de53a5f",
+      "title": "Health Plans: Your BI Tells You MLR Moved. Can Your AI Tell You Why?",
+      "link": "https://www.databricks.com/blog/health-plans-your-bi-tells-you-mlr-moved-can-your-ai-tell-you-why",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-11T18:26:59.000Z",
+      "contentSnippet": "A health plan CFO closes the month after the usual round of extracts, spreadsheets,..."
+    },
+    {
+      "id": "238d2cd6ec3f",
+      "title": "Unify your marketing data with Lakeflow Connect",
+      "link": "https://www.databricks.com/blog/unify-your-marketing-data-lakeflow-connect",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-11T18:00:00.000Z",
+      "contentSnippet": "This is the first post in a new series exploring how Lakeflow Connect brings fully..."
+    },
+    {
+      "id": "c3aa33826442",
+      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
+      "link": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-11T16:00:00.000Z",
+      "contentSnippet": "GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more."
+    },
+    {
+      "id": "f1dda2e4995c",
+      "title": "Do We Need A New Scrum Guide?!",
+      "link": "https://www.scrum.org/resources/blog/do-we-need-new-scrum-guide",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-11T10:00:57.000Z",
+      "contentSnippet": "Image My current car is a Peugeot 508, over ten years old, yet still a great car that I genuinely love. But recently, one of my friends bought a brand-new car and invited me inside to check out the interior and features. My reaction? Wow. A large, high-quality screen with big, re…"
+    },
+    {
+      "id": "c7d3c8aeae42",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-11T10:00:00.000Z",
+      "contentSnippet": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second."
+    },
     {
       "id": "fa9ddf0b7915",
       "title": "Reality Doesn't Need Your Permission to Escalate",
@@ -84,15 +147,6 @@
       "contentSnippet": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support."
     },
     {
-      "id": "2b26a8066576",
-      "title": "Introducing the Agents API",
-      "link": "https://openai.com/index/introducing-the-agents-api",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-10T00:00:00.000Z",
-      "contentSnippet": "Build and launch cloud agents with the Agents API, a managed service powered by the Codex harness for orchestration, long-running sessions, and tool use."
-    },
-    {
       "id": "4e410dad70fb",
       "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
       "link": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
@@ -165,24 +219,6 @@
       "contentSnippet": "Effective enterprise data agents require search that is both accurate and fast. Earlier..."
     },
     {
-      "id": "9786c92a289d",
-      "title": "The AI policy window is open. We need to act.",
-      "link": "https://openai.com/index/ai-policy-window",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-09T13:00:00.000Z",
-      "contentSnippet": "Chris Lehane argues that stronger AI capabilities require stronger safety evidence, shared standards, and durable policy action while the policy window remains open."
-    },
-    {
-      "id": "587a70348a73",
-      "title": "GPT-6 Astra: The next generation in intelligence for work",
-      "link": "https://openai.com/index/gpt-6-astra-next-generation-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-09T11:00:00.000Z",
-      "contentSnippet": "Meet GPT-6 Astra, OpenAI’s most capable model for business, with advanced reasoning, computer use, and stronger writing and design judgment."
-    },
-    {
       "id": "b1bb4c0a37ac",
       "title": "🎉 Launched: Scrum Team Magazine",
       "link": "https://www.scrum.org/resources/blog/launched-scrum-team-magazine",
@@ -219,15 +255,6 @@
       "contentSnippet": "Image Every couple of weeks, the team stops to reflect. People show up. They talk about what went well and what didn't. Someone captures it on sticky notes or a board. Everyone nods. The hour ends on time. And the next two weeks look exactly like the last two. If that's your retr…"
     },
     {
-      "id": "3b84c6dab02a",
-      "title": "SQL Data Types: Reference and Best Practices",
-      "link": "https://www.databricks.com/blog/sql-data-types",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-08T17:16:06.000Z",
-      "contentSnippet": "A SQL data type is a fundamental specification that defines what values a column..."
-    },
-    {
       "id": "dbb680cb8a52",
       "title": "AI Changed the Bottleneck. Your WIP Limits Should Change With It.",
       "link": "https://www.scrum.org/resources/blog/ai-changed-bottleneck-your-wip-limits-should-change-it",
@@ -235,15 +262,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-08T15:55:47.000Z",
       "contentSnippet": "Image AI can generate code faster than your team can review it. Especially with the latest iteration of Claude, the code comes packed with lengthy comments, voluminous release notes, and logic in a bunch of different places, all of which needs to be reviewed before it goes to pro…"
-    },
-    {
-      "id": "d491d41c5783",
-      "title": "Build durable agents with Temporal and Lakebase",
-      "link": "https://www.databricks.com/blog/build-durable-agents-temporal-and-lakebase",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-08T15:46:40.000Z",
-      "contentSnippet": "A personal-loan underwriting agent gathers evidence, applies policy, and may wait..."
     },
     {
       "id": "fbcbe1a52ca4",
@@ -561,15 +579,6 @@
       "contentSnippet": "Image We all know too little planning is ineffective — and I think most of us know too much planning is wasteful in conditions of uncertainty, volatility, and disruptive competition. Bigger, longer, more predictive planning — thus more assumptive, guessworking, and speculative —…"
     },
     {
-      "id": "81fa3ba0a20a",
-      "title": "Join the AI Delegation Audit Webinar, October 6, by Scrum.org",
-      "link": "https://www.scrum.org/resources/blog/join-ai-delegation-audit-webinar-october-6-scrumorg",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-31T14:29:17.000Z",
-      "contentSnippet": "TL;DR: The AI Delegation Audit Webinar, October 6 Join me on October 6 for the AI Delegation Audit webinar. You will learn how to run a 45-to-60-minute recurring check that reveals whether delegated AI work still meets its required quality standard, still uses the right model, at…"
-    },
-    {
       "id": "0c379954319b",
       "title": "Data Engineering Weekly #285",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-285",
@@ -847,15 +856,6 @@
       "category": "Data",
       "pubDate": "2026-08-17T00:00:00.000Z",
       "contentSnippet": "DuckDB v2.0 will be named “Cyanoptera” after the cinnamon teal (Anas cyanoptera), a strikingly reddish-brown duck found in the western Americas. A major version bump is not something we do lightly, and it is not just ceremony: v2.0 ships a new SQL parser, a new default storage fo…"
-    },
-    {
-      "id": "097582375e87",
-      "title": "Qwen 3.8 27B is excellent, but it defaults to wildly overthinking things",
-      "link": "https://simonwillison.net/2026/Aug/16/qwen-38-27b/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-08-16T22:00:39.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "c42698bae58b",
