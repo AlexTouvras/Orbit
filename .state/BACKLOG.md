@@ -36,6 +36,7 @@
 - [x] **Europe Power Mix** — `/portfolio/live/power-mix`. Energy-Charts last-24h generation share by country; 100% stacked bars; daily refresh via `live:fetch-mix`.
 - [x] **Europe Economy Pulse** — `/portfolio/live/economy`. Euro area default + country/area spotlight; HICP, unemployment, confidence, GDP, ECB deposit.
 - [x] **Economy Pulse v2 — headlines** — ECB press/statistics for euro area; Google News economy wires per spotlight country. Cars later.
+- [x] **Economy Pulse — fresher HICP + DK/NO** — merge `prc_hicp_manr` + early `teicp000`; add Denmark and Norway spotlights.
 - [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
 - [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
 - [x] **EU Spot Desk (localhost)** — `/portfolio/live/eu-spot` map + history. Energy-Charts until ENTSO-E token. Do not deploy while `localhostOnly`.

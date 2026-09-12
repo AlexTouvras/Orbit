@@ -468,6 +468,8 @@ function isUsefulWireTitle(title: string, geoLabel: string): boolean {
     (label === "belgium" && t.includes("belgian")) ||
     (label === "portugal" && t.includes("portuguese")) ||
     (label === "finland" && t.includes("finnish")) ||
+    (label === "denmark" && t.includes("danish")) ||
+    (label === "norway" && t.includes("norwegian")) ||
     (label === "estonia" && t.includes("estonian")) ||
     (label === "latvia" && t.includes("latvian")) ||
     (label === "lithuania" && t.includes("lithuanian"));
@@ -552,20 +554,65 @@ async function fetchAllWireHeadlines(): Promise<EconomyHeadline[]> {
   return headlines;
 }
 
+function mergeInflationSeries(
+  historical: EconomySeries[],
+  recent: EconomySeries[],
+): EconomySeries[] {
+  const geos = new Set<EconomyGeoId>([
+    ...historical.map((s) => s.geo),
+    ...recent.map((s) => s.geo),
+  ]);
+  const out: EconomySeries[] = [];
+  for (const geo of geos) {
+    const hist = historical.find((s) => s.geo === geo);
+    const fresh = recent.find((s) => s.geo === geo);
+    const byPeriod = new Map<string, number | null>();
+    for (const p of hist?.points ?? []) byPeriod.set(p.period, p.value);
+    // Early indicator wins on overlap and extends past the final HICP print.
+    // Skip nulls so we do not invent empty months ahead of a geo's last print.
+    for (const p of fresh?.points ?? []) {
+      if (p.value === null) continue;
+      byPeriod.set(p.period, p.value);
+    }
+    const points = [...byPeriod.entries()]
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([period, value]) => ({ period, value }));
+    out.push({ metric: "inflation", geo, points });
+  }
+  return out;
+}
+
 async function main() {
   const geos = ECONOMY_GEOS.map((g) => g.id);
 
-  const [inflation, unemployment, confidence, gdp, policyRate, official, wires] =
-    await Promise.all([
-      fetchMetricSeries("inflation", geos, "prc_hicp_manr", { coicop: "CP00" }, 48),
-      fetchMetricSeries("unemployment", geos, "une_rt_m", { s_adj: "SA", age: "TOTAL", unit: "PC_ACT", sex: "T" }, 48),
-      fetchMetricSeries("confidence", geos, "ei_bssi_m_r2", { indic: "BS-CSMCI-BAL", s_adj: "SA" }, 48),
-      fetchMetricSeries("gdp", geos, "namq_10_gdp", { na_item: "B1GQ", unit: "CLV_PCH_PRE", s_adj: "SCA" }, 24),
-      fetchPolicyRate(),
-      fetchOfficialHeadlines(),
-      fetchAllWireHeadlines(),
-    ]);
+  const [
+    inflationHist,
+    inflationEarly,
+    unemployment,
+    confidence,
+    gdp,
+    policyRate,
+    official,
+    wires,
+  ] = await Promise.all([
+    fetchMetricSeries("inflation", geos, "prc_hicp_manr", { coicop: "CP00" }, 48),
+    // Early HICP (teicp000) stays current months ahead of the final cube.
+    fetchMetricSeries(
+      "inflation",
+      geos,
+      "teicp000",
+      { coicop18: "TOTAL", unit: "PCH_M12" },
+      24,
+    ),
+    fetchMetricSeries("unemployment", geos, "une_rt_m", { s_adj: "SA", age: "TOTAL", unit: "PC_ACT", sex: "T" }, 48),
+    fetchMetricSeries("confidence", geos, "ei_bssi_m_r2", { indic: "BS-CSMCI-BAL", s_adj: "SA" }, 48),
+    fetchMetricSeries("gdp", geos, "namq_10_gdp", { na_item: "B1GQ", unit: "CLV_PCH_PRE", s_adj: "SCA" }, 24),
+    fetchPolicyRate(),
+    fetchOfficialHeadlines(),
+    fetchAllWireHeadlines(),
+  ]);
 
+  const inflation = mergeInflationSeries(inflationHist, inflationEarly);
   const headlines = [...official, ...wires];
 
   const bundles: EconomyGeoBundle[] = [];
@@ -589,7 +636,7 @@ async function main() {
   const snap: EconomySnapshot = {
     asOf: new Date().toISOString(),
     source:
-      "Eurostat (HICP, unemployment, consumer confidence, GDP) + ECB Data Portal (deposit facility) + ECB RSS (press / statistics) + Google News RSS (country wires)",
+      "Eurostat (HICP final + early indicator, unemployment, consumer confidence, GDP) + ECB Data Portal (deposit facility) + ECB RSS (press / statistics) + Google News RSS (country wires)",
     license:
       "Eurostat / ECB — free reuse with attribution (CC BY 4.0 where stated). Country wires via Google News (publisher copyrights apply; links out).",
     defaultGeo: ECONOMY_DEFAULT_GEO,

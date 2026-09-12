@@ -97,16 +97,21 @@ function gdpClause(c: EconomyLatestCell | undefined): string | null {
   return `GDP was flat in ${when}`;
 }
 
-function policyClause(c: EconomyLatestCell | undefined): string | null {
+function policyClause(
+  c: EconomyLatestCell | undefined,
+  focus: EconomyGeoBundle,
+): string | null {
   if (!c || c.value === null) return null;
   const when = formatPeriod(c.period);
+  const nonEuro = focus.id === "DK" || focus.id === "NO" || focus.id === "SE" || focus.id === "PL";
+  const label = nonEuro ? "ECB deposit rate (euro-area policy)" : "ECB deposit rate";
   if (c.delta === null || c.delta === 0) {
-    return `the ECB deposit rate is ${pct(c.value)} (as of ${when})`;
+    return `the ${label} is ${pct(c.value)} (as of ${when})`;
   }
   if (c.delta > 0) {
-    return `the ECB deposit rate is ${pct(c.value)} after a ${signedPp(c.delta)} move (as of ${when})`;
+    return `the ${label} is ${pct(c.value)} after a ${signedPp(c.delta)} move (as of ${when})`;
   }
-  return `the ECB deposit rate is ${pct(c.value)} after a ${signedPp(c.delta)} cut (as of ${when})`;
+  return `the ${label} is ${pct(c.value)} after a ${signedPp(c.delta)} cut (as of ${when})`;
 }
 
 function joinClauses(parts: string[]): string {
@@ -130,7 +135,7 @@ export function economyMonthlyBrief(
     unemploymentClause(cell(latest, "unemployment")),
     confidenceClause(cell(latest, "confidence")),
     gdpClause(cell(latest, "gdp")),
-    policyClause(cell(latest, "policyRate")),
+    policyClause(cell(latest, "policyRate"), focus),
   ].filter((c): c is string => Boolean(c));
 
   if (clauses.length === 0) {

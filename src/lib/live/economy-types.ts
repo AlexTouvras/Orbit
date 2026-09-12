@@ -6,6 +6,7 @@ export type EconomyGeoId =
   | "AT"
   | "BE"
   | "DE"
+  | "DK"
   | "EE"
   | "ES"
   | "FI"
@@ -16,6 +17,7 @@ export type EconomyGeoId =
   | "LT"
   | "LV"
   | "NL"
+  | "NO"
   | "PL"
   | "PT"
   | "SE";
@@ -33,6 +35,7 @@ export const ECONOMY_GEOS: EconomyGeoMeta[] = [
   { id: "AT", label: "Austria", short: "AT", kind: "country" },
   { id: "BE", label: "Belgium", short: "BE", kind: "country" },
   { id: "DE", label: "Germany", short: "DE", kind: "country" },
+  { id: "DK", label: "Denmark", short: "DK", kind: "country" },
   { id: "EE", label: "Estonia", short: "EE", kind: "country" },
   { id: "ES", label: "Spain", short: "ES", kind: "country" },
   { id: "FI", label: "Finland", short: "FI", kind: "country" },
@@ -43,6 +46,7 @@ export const ECONOMY_GEOS: EconomyGeoMeta[] = [
   { id: "LT", label: "Lithuania", short: "LT", kind: "country" },
   { id: "LV", label: "Latvia", short: "LV", kind: "country" },
   { id: "NL", label: "Netherlands", short: "NL", kind: "country" },
+  { id: "NO", label: "Norway", short: "NO", kind: "country" },
   { id: "PL", label: "Poland", short: "PL", kind: "country" },
   { id: "PT", label: "Portugal", short: "PT", kind: "country" },
   { id: "SE", label: "Sweden", short: "SE", kind: "country" },
