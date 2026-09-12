@@ -16,6 +16,7 @@ import {
 import { BackLink } from "@/components/ui/BackLink";
 import { Badge } from "@/components/ui/Badge";
 import { EconomyTape } from "@/components/live/EconomyTape";
+import { economyMonthlyBrief } from "@/lib/live/economy-brief";
 
 function formatHelsinki(iso: string): string {
   return `${new Date(iso).toLocaleString("en-GB", {
@@ -150,6 +151,11 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
     geoId !== ECONOMY_DEFAULT_GEO &&
     headlines.every((h) => h.geo === ECONOMY_DEFAULT_GEO);
 
+  const monthlyBrief = useMemo(
+    () => (focus ? economyMonthlyBrief(focus, euroArea) : ""),
+    [focus, euroArea],
+  );
+
   if (!focus) {
     return <EconomyMissing />;
   }
@@ -160,18 +166,11 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
 
       <header>
         <Badge tone="cyan" className="mb-4">
-          Eurostat + ECB · monthly / quarterly
+          Eurostat + ECB · monthly brief
         </Badge>
         <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
           How is the euro area economy printing?
         </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
-          Euro area first — HICP, unemployment, consumer confidence, GDP, and
-          the ECB deposit rate. Spotlight one country or the EU aggregate
-          without leaving the desk. Euro-area headlines from ECB; country
-          spotlight pulls Google News economy wires. Car registrations stay
-          later.
-        </p>
       </header>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -205,6 +204,10 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
           {spotlighting ? " · vs euro area below" : ""}
         </p>
       </div>
+
+      <p className="max-w-3xl text-base leading-relaxed text-slate-300">
+        {monthlyBrief}
+      </p>
 
       <section aria-label={`${focus.label} latest`}>
         <p className="mb-5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
