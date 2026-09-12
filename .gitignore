@@ -61,3 +61,4 @@ next-env.d.ts
 
 # Cursor canvases are IDE-only (`cursor/canvas`); Next typecheck cannot resolve them
 /canvases/
+agent-tools/
