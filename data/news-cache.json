@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T06:46:59.583Z",
+  "generatedAt": "2026-09-13T06:46:55.968Z",
   "count": 214,
   "items": [
     {
@@ -10,6 +10,24 @@
       "category": "AI",
       "pubDate": "2026-09-14T00:00:00.000Z",
       "contentSnippet": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
+    },
+    {
+      "id": "ae8c183f2002",
+      "title": "Reordering Your Backlog Is Zero Sum. Deleting From It Is Not.",
+      "link": "https://www.scrum.org/resources/blog/reordering-your-backlog-zero-sum-deleting-it-not",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-13T06:00:00.000Z",
+      "contentSnippet": "Image Open the Scrum Guide and look for a word that takes something out. Refinement is \"the act of breaking down and further defining Product Backlog items into smaller more precise items.\" The Product Owner is accountable for \"Ordering Product Backlog items.\" Work that misses th…"
+    },
+    {
+      "id": "3f37b0a02f79",
+      "title": "Generating running routes with GPT-6 Astra and ChatGPT Work",
+      "link": "https://simonwillison.net/2026/Sep/12/astra-running-routes/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-12T23:56:42.000Z",
+      "contentSnippet": ""
     },
     {
       "id": "2ed54a20b866",
@@ -570,15 +588,6 @@
       "contentSnippet": "\"AI-native Scrum Team\" is a podcast series that shares how Scrum Teams can effectively take the steps in their AI Transformation journey to become AI-native Scrum Teams. In episode 6, Mehdi and Gizem discuss how to build and set up AI Agents for Scrum Teams. They share some servi…"
     },
     {
-      "id": "f5b0bd4dd6a7",
-      "title": "Scrum Masters — the World Needs You Now as Much as Ever",
-      "link": "https://www.scrum.org/resources/blog/scrum-masters-world-needs-you-now-much-ever",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-08-31T18:19:09.000Z",
-      "contentSnippet": "Image We all know too little planning is ineffective — and I think most of us know too much planning is wasteful in conditions of uncertainty, volatility, and disruptive competition. Bigger, longer, more predictive planning — thus more assumptive, guessworking, and speculative —…"
-    },
-    {
       "id": "0c379954319b",
       "title": "Data Engineering Weekly #285",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-285",
@@ -784,15 +793,6 @@
       "category": "Data",
       "pubDate": "2026-08-20T00:00:00.000Z",
       "contentSnippet": "We proved that AI agents could build a semantic layer. The more interesting result was that the semantic layer itself became disposable. Q&A pairs are unreasonably effective at capturing business intent and give agents something concrete to iterate with. If code can be regenerate…"
-    },
-    {
-      "id": "e53691799f9e",
-      "title": "Conceptual integrity and counting lines of code",
-      "link": "https://simonwillison.net/2026/Aug/19/conceptual-integrity-and-counting-lines-of-code/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-08-19T22:46:07.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "c0d3ea0920c2",
