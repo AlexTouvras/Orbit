@@ -1,0 +1,56 @@
+---
+title: "When a report slows down, memory is not a change log"
+summary: "I treat semantic-model modification times as incident triage: useful for narrowing suspects, never enough to prove causality."
+date: "2026-09-14"
+category: "Data"
+featured: false
+tags: ["Power BI", "Analytics", "Incident response", "Data operations"]
+---
+
+## The question
+
+A report is fast on Friday and painfully slow on Monday. The first troubleshooting question is predictable: what changed? The answer is often just as predictable. Nobody remembers changing anything important.
+
+That answer may be sincere, but it is weak evidence. A small edit to a measure, relationship, partition, or security rule can alter how a report behaves. The person who made it may not connect the edit to the slowdown, especially when the symptom appears later or only for one query path.
+
+So the question I want an analytics system to answer is more precise: which model objects changed near the moment performance moved, and which of those changes can I test as a cause?
+
+## Turn recollection into a query
+
+Chris Webb shows a practical way to start in [Find What Changed And When In Your Power BI Semantic Model](https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/). Power BI exposes INFO functions that return metadata about a semantic model, the layer that defines measures, relationships, calculations, and access rules behind a report. Many of those functions include a `ModifiedTime` value.
+
+Webb's query brings modification times for measures, calculated columns, calculation groups, relationships, partitions, roles, and other objects into one time-ordered view. Instead of asking a room to reconstruct a week from memory, I can start with a list of recent changes and their expressions.
+
+That changes the opening move in an incident. If users first noticed the slowdown on Monday morning, objects modified shortly before that moment become candidates. Older untouched objects move down the queue. A model without change history asks the incident team to reconstruct causality from confidence; a timestamp makes the claim testable.
+
+## A timestamp is a lead, not a verdict
+
+The same evidence can mislead if I ask too much of it. Webb notes that adding a calculation group changed the modification dates of all his measures, apparently because Power BI also changed a model property. A cluster of fresh timestamps may therefore describe one indirect platform action rather than many deliberate edits.
+
+Modification time also does not prove that an edit caused the performance regression. It does not tell me who made the decision, what they intended, or whether the affected object sits on the slow query's path. Some INFO functions are unavailable at older model compatibility levels, so even the inventory can differ between models.
+
+I treat recency as a ranking signal. A change close to the incident earns investigation, not blame. I still need to reproduce the slow query, identify which objects it touches, and compare behavior with a known baseline. The timestamp narrows the search; the test establishes cause.
+
+That distinction matters when pressure rises. Reverting the newest object may restore performance, but it may also remove a valid business rule. A quick rollback is safer when I know both what changed and what decision that object was meant to preserve.
+
+## Capture the baseline before the incident
+
+A modification query is useful after a failure. It becomes much more useful when I keep a snapshot from the last known-good release. I would store the object type, name, modification time, and relevant expression beside the release evidence for the model. Then an incident starts with a comparison, not only a current-state list.
+
+The comparison should answer four questions. Did the object change? Was it changed inside the incident window? Does the slow query depend on it? Does restoring or correcting it change the measured result? The first pair establishes proximity. The second pair tests causality.
+
+This does add work. Someone must capture the snapshot, keep it tied to a release, and decide how much model logic is appropriate to retain. On a small model with rare edits, the routine may cost more than it saves. I would start with a pre-release export and only automate it when incident frequency or model traffic justifies the maintenance.
+
+There is another limit: modification times are not a full audit trail. If I need author identity, approval history, or an exact line-by-line diff, I need separate release records or version history. Calling the metadata query an audit log would create false confidence precisely when the team needs precision.
+
+## Keep diagnosis human
+
+I do not want the incident response to end with a generated list of recently changed objects. Someone still has to connect the model object to the user-visible symptom, understand the business rule, and choose between a correction and a rollback. That judgment stays manual because the newest change is not automatically the wrong one.
+
+My useful split is simple. The system should preserve enough evidence to show where to look. The analyst should run the causal test and explain what the proposed fix would undo. If a platform-side action has refreshed many timestamps, I fall back to the release comparison rather than pretending the noisy list is decisive.
+
+## Takeaway
+
+When a report slows down, I will not begin with “nobody changed anything.” I will query modification times, compare them with the last known-good model, and test the recent objects that sit on the affected query path.
+
+The reusable rule is this: use change history to rank suspects, then require a measured reproduction before naming a cause. Memory starts the conversation. Evidence decides the fix.
