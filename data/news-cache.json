@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-09-13T06:46:55.968Z",
+  "generatedAt": "2026-09-14T06:46:56.959Z",
   "count": 214,
   "items": [
+    {
+      "id": "359a014790c8",
+      "title": "Data Engineering Weekly #287",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-287",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-09-14T02:52:23.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "14a14220a269",
+      "title": "TEAMWORK: From the Individual Lens to the Collective Lens",
+      "link": "https://www.scrum.org/resources/blog/teamwork-individual-lens-collective-lens",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-14T02:44:28.000Z",
+      "contentSnippet": "How do we help people truly connect and work well together? The question has never been easy. We have invented countless ways to strengthen teamwork, yet few of them work, and those that do rarely last. Between 2012 and 2015, Google looked for what makes a team succeed through it…"
+    },
     {
       "id": "12e9dd685180",
       "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
@@ -10,6 +28,15 @@
       "category": "AI",
       "pubDate": "2026-09-14T00:00:00.000Z",
       "contentSnippet": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
+    },
+    {
+      "id": "8bbe78103d32",
+      "title": "Find What Changed And When In Your Power BI Semantic Model",
+      "link": "https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-09-13T10:03:39.000Z",
+      "contentSnippet": "Here’s a situation I’ve found myself in many times. You’re called to help someone whose Power BI report is suddenly very slow. You ask whether any changes were made to the semantic model around the time performance got worse and the answer is no, absolutely not. You then spend an…"
     },
     {
       "id": "ae8c183f2002",
@@ -577,15 +604,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-01T17:00:00.000Z",
       "contentSnippet": "Scrum teams often work like individuals because the organization staffs, measures, interrupts, and rewards them that way. Leaders can change the conditions that make real teamwork possible."
-    },
-    {
-      "id": "50dee862a4fb",
-      "title": "[Episode 6] How to Build and Set up AI Agents for Scrum Teams",
-      "link": "https://www.scrum.org/resources/blog/episode-6-how-build-and-set-ai-agents-scrum-teams",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-01T12:09:26.000Z",
-      "contentSnippet": "\"AI-native Scrum Team\" is a podcast series that shares how Scrum Teams can effectively take the steps in their AI Transformation journey to become AI-native Scrum Teams. In episode 6, Mehdi and Gizem discuss how to build and set up AI Agents for Scrum Teams. They share some servi…"
     },
     {
       "id": "0c379954319b",
@@ -1353,15 +1371,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "36e720ea185a",
-      "title": "Understanding The “Database Was Evicted To Balance The CPU Load” Error In Power BI",
-      "link": "https://blog.crossjoin.co.uk/2026/07/05/understanding-the-database-was-evicted-to-balance-the-cpu-load-error-in-power-bi/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-07-05T17:47:48.000Z",
-      "contentSnippet": "A few months ago I wrote about a rare error – the “Maximum allowable memory allocation” error – that may occur when the physical machine, or node, that a semantic model is running on in the Power BI Service comes under memory pressure. Recently, someone I was working with who was…"
-    },
-    {
       "id": "38e39f8dbc40",
       "title": "Announcing leetdata.ai — A Practice Ground for Data Engineers",
       "link": "https://www.dataengineeringweekly.com/p/announcing-leetdataai-a-practice",
@@ -1558,15 +1567,6 @@
       "category": "Data",
       "pubDate": "2026-06-08T17:04:46.000Z",
       "contentSnippet": "With Dagster’s dbt integration, run and monitor dbt models as part of a larger, asset-driven pipeline for improved lineage and scheduling."
-    },
-    {
-      "id": "00385e7d5570",
-      "title": "Data Engineering Weekly #273",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-273",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-06-08T02:44:02.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "d9cb1dfc37c6",
