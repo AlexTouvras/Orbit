@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-09-14-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-09-14T09:01:38.131Z",
   "weekOf": "2026-09-14",
   "slug": "when-a-report-slows-down-memory-is-not-a-change-log",
@@ -169,5 +169,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-09-14T09:07:14.070Z",
+  "publishedSlug": "when-a-report-slows-down-memory-is-not-a-change-log"
 }
