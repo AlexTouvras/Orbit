@@ -1,87 +1,87 @@
 {
-  "id": "ww-2026-09-07-ide",
-  "status": "published",
-  "createdAt": "2026-09-07T09:01:05.635Z",
-  "weekOf": "2026-09-07",
-  "slug": "a-platform-update-should-delete-work-not-add-another-path",
-  "title": "A platform update should delete work, not add another path",
-  "summary": "When an analytics platform moves, I adopt the change only if it removes a named recurring job without removing the control that kept that job safe.",
-  "category": "Delivery",
+  "id": "ww-2026-09-14-ide",
+  "status": "pending",
+  "createdAt": "2026-09-14T09:01:38.131Z",
+  "weekOf": "2026-09-14",
+  "slug": "when-a-report-slows-down-memory-is-not-a-change-log",
+  "title": "When a report slows down, memory is not a change log",
+  "summary": "I treat semantic-model modification times as incident triage: useful for narrowing suspects, never enough to prove causality.",
+  "category": "Data",
   "tags": [
-    "Delivery",
+    "Power BI",
     "Analytics",
-    "Data platforms",
-    "Change management"
+    "Incident response",
+    "Data operations"
   ],
-  "mdx": "---\ntitle: \"A platform update should delete work, not add another path\"\nsummary: \"When an analytics platform moves, I adopt the change only if it removes a named recurring job without removing the control that kept that job safe.\"\ndate: \"2026-09-07\"\ncategory: \"Delivery\"\nfeatured: false\ntags: [\"Delivery\", \"Analytics\", \"Data platforms\", \"Change management\"]\n---\n\n## The question\n\nWhat actually changes in how I build analytics when the reporting stack keeps moving?\n\nThe easy answer is the component diagram. A new shortcut replaces a copy job. A managed transform replaces a notebook. A storage setting moves into the platform. But if I adopt each release by adding one more approved route, the stack does not become simpler. It becomes an archive of every era the team has lived through.\n\nI now use a stricter test: an update earns a place in the architecture when it deletes a named recurring job without deleting the control that made that job safe.\n\n## Count the work an update removes\n\nThe useful thread in RADACAD's [conversation with OneLake product director Josh Caplan](https://radacad.com/onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12/?utm_source=rss&utm_medium=rss&utm_campaign=onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12) is subtraction. A shortcut can point at data where it already lives instead of copying it. A shortcut transform can turn a folder of simple files into a table without a team maintaining a separate pipeline or notebook. Caplan is also explicit about the boundary: those transforms make the easy work easy; they do not replace orchestration when several steps, dependencies, or advanced transformations have to move together.\n\nThat boundary matters more to me than the feature count. A notebook that pulls reference files from SharePoint may be small, but someone still owns its credentials, schedule, copied data, and failures. If a managed pointer removes that routine, the release has changed the operating model. It has removed work that could wake up stale on a Monday.\n\nA feature earns architecture status when it deletes a recurring obligation, not when it wins a demo.\n\nThe opposite is common. A team keeps the old pipeline as a safety blanket, adds the new shortcut, and leaves both available indefinitely. Nothing has been simplified. The same data now has two routes, two failure stories, and an argument waiting for the next incident.\n\n## Preserve the control, not the machinery\n\nCustom machinery often carries useful controls by accident. The old pipeline may check a schema, reject a blank file, record when a source arrived, or stop publication when row counts move sharply. Removing the pipeline can also remove those checks unless the migration names them first.\n\nSo I separate the job from the control. Copying files may be the job I want the platform to absorb. Checking that the files still represent the expected business grain is a control I need to preserve. A notebook is replaceable; evidence that the resulting table is fit for a decision is not.\n\nThis is where platform adoption can hurt. The more native the path feels, the easier it is to mistake availability for correctness. A file appearing as a table does not prove that its columns kept their meaning, that late records were handled, or that the intended audience can see only what it should. Convenience shortens the route to data. It does not settle the data contract.\n\n## Run the update as a challenger\n\nI prefer to treat the current route as a baseline and the new feature as a challenger. I do not need a six-month migration program to compare them. I need one representative source and a check that exposes the real trade.\n\nFor a shortcut transform, I would run the same source through both paths and compare freshness, accepted schema, failure visibility, and the person-hours spent keeping each route alive. Then I would break the source on purpose. A missing column or delayed file tells me more about operational ownership than a successful first load.\n\nThe challenger does not have to win every measure. A managed path may be easier to own while offering less freedom for unusual transformations. That can be the right trade. If the source needs coordinated steps, detailed audit history, or custom recovery, the existing pipeline may still be doing valuable work. I would keep it and write down why, rather than calling every line of custom code technical debt.\n\nThere is also a cost to migration itself. A low-frequency process that rarely fails may not justify immediate movement. In that case I can record the candidate and wait for the next material change instead of creating work solely to look current.\n\n## The seam I keep visible in Orbit\n\nOrbit, my public portfolio and writing site, has a smaller version of this rule. A weekly essay draft can be prepared through a cloud automation or finished in the development environment. Both routes produce the same pending draft record. The draft then has to be present on the main GitHub branch before the Slack review message is useful, and a human still chooses Approve or Skip.\n\nI am happy for tooling to remove the manual transport between those steps. I do not want it to remove the review boundary. Generation is the recurring job the platform can absorb; publication is the control I keep visible.\n\nThat distinction prevents a common automation mistake. If I measure success by whether text was generated, every new route looks productive. If I measure whether a reviewable draft arrived with its source and status intact, only the routes that complete the operating loop count.\n\n## What actually changes\n\nWhen the stack moves, my architecture review shifts from capability to subtraction. I start with the friction already being paid: repeated copies, hand-run conversions, brittle credentials, or a person checking whether a routine woke up. Then I ask whether the new platform path can retire one of those obligations and where its control will live afterward.\n\nSometimes the answer is no. The feature stays in a sandbox. Sometimes the answer is yes, but only after I add a visible validation or assign an owner to the new seam. That is still progress because the result has one supported route and a failure the team knows how to see.\n\nI cannot make an analytics stack stop changing. I can refuse to let each change leave another permanent path behind.\n\n## Takeaway\n\nMy adoption rule is simple: name the recurring job that disappears, then name the control that remains. Test the new route against the old one with a real source and one deliberate failure. If I cannot state what work ends, the update is still a feature demonstration. If I cannot state where correctness is checked, the update is a shortcut in the dangerous sense.\n\nA moving platform should reduce the operating burden of analytics. When it only adds an option, I wait.\n",
-  "preview": "A platform update should delete work, not add another path\n\nWhen an analytics platform moves, I adopt the change only if it removes a named recurring job without removing the control that kept that job safe.\n\nInspired by: OneLake Updates: A Conversation with Josh Caplan (Fabric Insider Ep 12)",
+  "mdx": "---\ntitle: \"When a report slows down, memory is not a change log\"\nsummary: \"I treat semantic-model modification times as incident triage: useful for narrowing suspects, never enough to prove causality.\"\ndate: \"2026-09-14\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Analytics\", \"Incident response\", \"Data operations\"]\n---\n\n## The question\n\nA report is fast on Friday and painfully slow on Monday. The first troubleshooting question is predictable: what changed? The answer is often just as predictable. Nobody remembers changing anything important.\n\nThat answer may be sincere, but it is weak evidence. A small edit to a measure, relationship, partition, or security rule can alter how a report behaves. The person who made it may not connect the edit to the slowdown, especially when the symptom appears later or only for one query path.\n\nSo the question I want an analytics system to answer is more precise: which model objects changed near the moment performance moved, and which of those changes can I test as a cause?\n\n## Turn recollection into a query\n\nChris Webb shows a practical way to start in [Find What Changed And When In Your Power BI Semantic Model](https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/). Power BI exposes INFO functions that return metadata about a semantic model, the layer that defines measures, relationships, calculations, and access rules behind a report. Many of those functions include a `ModifiedTime` value.\n\nWebb's query brings modification times for measures, calculated columns, calculation groups, relationships, partitions, roles, and other objects into one time-ordered view. Instead of asking a room to reconstruct a week from memory, I can start with a list of recent changes and their expressions.\n\nThat changes the opening move in an incident. If users first noticed the slowdown on Monday morning, objects modified shortly before that moment become candidates. Older untouched objects move down the queue. A model without change history asks the incident team to reconstruct causality from confidence; a timestamp makes the claim testable.\n\n## A timestamp is a lead, not a verdict\n\nThe same evidence can mislead if I ask too much of it. Webb notes that adding a calculation group changed the modification dates of all his measures, apparently because Power BI also changed a model property. A cluster of fresh timestamps may therefore describe one indirect platform action rather than many deliberate edits.\n\nModification time also does not prove that an edit caused the performance regression. It does not tell me who made the decision, what they intended, or whether the affected object sits on the slow query's path. Some INFO functions are unavailable at older model compatibility levels, so even the inventory can differ between models.\n\nI treat recency as a ranking signal. A change close to the incident earns investigation, not blame. I still need to reproduce the slow query, identify which objects it touches, and compare behavior with a known baseline. The timestamp narrows the search; the test establishes cause.\n\nThat distinction matters when pressure rises. Reverting the newest object may restore performance, but it may also remove a valid business rule. A quick rollback is safer when I know both what changed and what decision that object was meant to preserve.\n\n## Capture the baseline before the incident\n\nA modification query is useful after a failure. It becomes much more useful when I keep a snapshot from the last known-good release. I would store the object type, name, modification time, and relevant expression beside the release evidence for the model. Then an incident starts with a comparison, not only a current-state list.\n\nThe comparison should answer four questions. Did the object change? Was it changed inside the incident window? Does the slow query depend on it? Does restoring or correcting it change the measured result? The first pair establishes proximity. The second pair tests causality.\n\nThis does add work. Someone must capture the snapshot, keep it tied to a release, and decide how much model logic is appropriate to retain. On a small model with rare edits, the routine may cost more than it saves. I would start with a pre-release export and only automate it when incident frequency or model traffic justifies the maintenance.\n\nThere is another limit: modification times are not a full audit trail. If I need author identity, approval history, or an exact line-by-line diff, I need separate release records or version history. Calling the metadata query an audit log would create false confidence precisely when the team needs precision.\n\n## Keep diagnosis human\n\nI do not want the incident response to end with a generated list of recently changed objects. Someone still has to connect the model object to the user-visible symptom, understand the business rule, and choose between a correction and a rollback. That judgment stays manual because the newest change is not automatically the wrong one.\n\nMy useful split is simple. The system should preserve enough evidence to show where to look. The analyst should run the causal test and explain what the proposed fix would undo. If a platform-side action has refreshed many timestamps, I fall back to the release comparison rather than pretending the noisy list is decisive.\n\n## Takeaway\n\nWhen a report slows down, I will not begin with “nobody changed anything.” I will query modification times, compare them with the last known-good model, and test the recent objects that sit on the affected query path.\n\nThe reusable rule is this: use change history to rank suspects, then require a measured reproduction before naming a cause. Memory starts the conversation. Evidence decides the fix.\n",
+  "preview": "When a report slows down, memory is not a change log\n\nI treat semantic-model modification times as incident triage: useful for narrowing suspects, never enough to prove causality.\n\nInspired by: Find What Changed And When In Your Power BI Semantic Model",
   "intake": {
-    "weekOf": "2026-09-07",
-    "generatedAt": "2026-09-07T09:01:05.633Z",
+    "weekOf": "2026-09-14",
+    "generatedAt": "2026-09-14T09:01:03.766Z",
     "signals": [
       {
-        "id": "276160ac62d4",
-        "title": "Choosing A Power BI Storage Mode For Reporting On Data From Azure Databricks",
-        "link": "https://blog.crossjoin.co.uk/2026/09/06/choosing-a-power-bi-storage-mode-for-reporting-on-data-from-azure-databricks/",
+        "id": "8bbe78103d32",
+        "title": "Find What Changed And When In Your Power BI Semantic Model",
+        "link": "https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "In case you haven’t already seen the blog post on the Power BI blog or the discussion on LinkedIn, we at Microsoft published a new white paper last week to help you decide which storage mode to use when you’re using Power BI to create semantic models and reports on data stored in…"
+        "snippet": "Here’s a situation I’ve found myself in many times. You’re called to help someone whose Power BI report is suddenly very slow. You ask whether any changes were made to the semantic model around the time performance got worse and the answer is no, absolutely not. You then spend an…"
       },
       {
-        "id": "4c1562c02af7",
-        "title": "Data Engineering Weekly #286",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-286",
+        "id": "359a014790c8",
+        "title": "Data Engineering Weekly #287",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-287",
         "source": "Data Engineering Weekly",
         "category": "Data",
         "snippet": "The Weekly Data Engineering Newsletter"
       },
       {
-        "id": "3d26d2dbcb98",
-        "title": "Which Class Should You Arrange Next?",
-        "link": "https://www.scrum.org/resources/blog/which-class-should-you-arrange-next",
+        "id": "14a14220a269",
+        "title": "TEAMWORK: From the Individual Lens to the Collective Lens",
+        "link": "https://www.scrum.org/resources/blog/teamwork-individual-lens-collective-lens",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Image This is written for managers and executives who hold a training budget and are considering Scrum or other Agile training for their employees. Technology leaders hire me to improve the way they manage software product operations. I have been practicing and teaching agile met…"
+        "snippet": "How do we help people truly connect and work well together? The question has never been easy. We have invented countless ways to strengthen teamwork, yet few of them work, and those that do rarely last. Between 2012 and 2015, Google looked for what makes a team succeed through it…"
       },
       {
-        "id": "a8e8f9dc895a",
-        "title": "An Alien Mind",
-        "link": "https://openai.com/index/an-alien-mind",
+        "id": "12e9dd685180",
+        "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
+        "link": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
         "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": "Jakub Pachocki reflects on increasingly capable AI and the challenge of keeping it aligned. He calls for stronger safeguards and international coordination."
+        "snippet": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
       },
       {
-        "id": "2e0d08c805e6",
-        "title": "OneLake Updates: A Conversation with Josh Caplan (Fabric Insider Ep 12)",
-        "link": "https://radacad.com/onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12/?utm_source=rss&utm_medium=rss&utm_campaign=onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12",
-        "source": "RADACAD",
+        "id": "4c6f43d0c3af",
+        "title": "Writing DAX at the correct granularity",
+        "link": "https://www.sqlbi.com/tv/writing-dax-at-the-correct-granularity/",
+        "source": "SQLBI",
         "category": "Analytics",
-        "snippet": "In this episode of Fabric Insider, I sat down with Josh Caplan, Director of Product for OneLake at Microsoft. Josh has been around this product family for a long time, starting as an intern on the Analysis Services team back in 2007, working on Project Gemini (which became Power…"
+        "snippet": "A DAX calculation can produce convincing values at the detail level and fail at the total. The problem is often that the business rule was evaluated at the wrong granularity. This video introduces four grains, or levels of granularity, to…"
       },
       {
-        "id": "baa2994d0399",
-        "title": "Achieving Extreme Efficiency through Specialized GPU Kernel Generation",
-        "link": "https://www.databricks.com/blog/achieving-extreme-efficiency-through-specialized-gpu-kernel-generation",
+        "id": "39350de53a5f",
+        "title": "Health Plans: Your BI Tells You MLR Moved. Can Your AI Tell You Why?",
+        "link": "https://www.databricks.com/blog/health-plans-your-bi-tells-you-mlr-moved-can-your-ai-tell-you-why",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "Traditionally, production inference systems rely on generic kernels to handle diverse..."
+        "snippet": "A health plan CFO closes the month after the usual round of extracts, spreadsheets,..."
       },
       {
-        "id": "a1e3ce7a0ba0",
-        "title": "AI Transformations And Agile Transformations Rhyme",
-        "link": "https://www.scrum.org/resources/blog/ai-transformations-and-agile-transformations-rhyme",
+        "id": "ae8c183f2002",
+        "title": "Reordering Your Backlog Is Zero Sum. Deleting From It Is Not.",
+        "link": "https://www.scrum.org/resources/blog/reordering-your-backlog-zero-sum-deleting-it-not",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "TL;DR: AI Transformations and Agile Transformations Rhyme AI adoption seems to be scaling: 37% of respondents in McKinsey’s 2026 survey report an EBIT effect from AI, and Gartner finds that 22% of organizations have scaled it across business units. Now, Agile practitioners have s…"
+        "snippet": "Image Open the Scrum Guide and look for a word that takes something out. Refinement is \"the act of breaking down and further defining Product Backlog items into smaller more precise items.\" The Product Owner is accountable for \"Ordering Product Backlog items.\" Work that misses th…"
       },
       {
-        "id": "19672c4832d4",
-        "title": "Research acceleration: The view inside OpenAI",
-        "link": "https://openai.com/index/research-acceleration-view-inside-openai",
-        "source": "OpenAI Blog",
+        "id": "3f37b0a02f79",
+        "title": "Generating running routes with GPT-6 Astra and ChatGPT Work",
+        "link": "https://simonwillison.net/2026/Sep/12/astra-running-routes/",
+        "source": "Simon Willison",
         "category": "AI",
-        "snippet": "Inside OpenAI, coding agents are reshaping AI research. Explore early data on agent usage, experiment velocity, task complexity, and research acceleration."
+        "snippet": ""
       }
     ],
     "projects": [
@@ -169,7 +169,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-09-07T10:52:50.907Z",
-  "publishedSlug": "a-platform-update-should-delete-work-not-add-another-path"
+  "source": "ide"
 }
