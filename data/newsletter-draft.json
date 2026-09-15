@@ -1,73 +1,48 @@
 {
-  "id": "newsletter-2026-W37",
-  "status": "sent",
-  "createdAt": "2026-09-08T12:08:27.043Z",
-  "weekOf": "2026-09-07",
-  "subject": "Orbit weekly — week of 2026-09-07",
+  "id": "newsletter-2026-W38",
+  "status": "pending",
+  "createdAt": "2026-09-15T12:40:36.823Z",
+  "weekOf": "2026-09-14",
+  "subject": "Orbit weekly — week of 2026-09-14",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
   "writes": [
     {
-      "slug": "a-platform-update-should-delete-work-not-add-another-path",
-      "title": "A platform update should delete work, not add another path",
-      "summary": "When an analytics platform moves, I adopt the change only if it removes a named recurring job without removing the control that kept that job safe.",
-      "date": "2026-09-07",
-      "href": "https://alextouvras.com/writes/a-platform-update-should-delete-work-not-add-another-path"
-    },
-    {
-      "slug": "what-one-operator-can-build-when-projects-stop-being-islands",
-      "title": "What one operator can build when projects stop being islands",
-      "summary": "Shipping many side projects teaches almost nothing if each one starts from a blank slate. Here is the shared spine I reuse: write things down, share knowledge, remember across work, and keep a human in the approval loop.",
-      "date": "2026-09-02",
-      "href": "https://alextouvras.com/writes/what-one-operator-can-build-when-projects-stop-being-islands"
-    },
-    {
-      "slug": "when-the-coach-got-gate-ranks",
-      "title": "When the coach got gate ranks",
-      "summary": "My training plan already had honest numbers. They still felt like a parking ticket. Gate ranks wrap the same sensor data in a story so I actually look at readiness before I look at Tuesday squats.",
-      "date": "2026-09-02",
-      "href": "https://alextouvras.com/writes/when-the-coach-got-gate-ranks"
-    },
-    {
-      "slug": "when-the-portfolio-needs-a-memory",
-      "title": "When the portfolio needs a memory",
-      "summary": "Chat history is a transcript, not a filing system. After retiring a heavy local orchestrator, I built a quieter portfolio memory so each new session starts with what I already decided.",
-      "date": "2026-09-02",
-      "href": "https://alextouvras.com/writes/when-the-portfolio-needs-a-memory"
+      "slug": "when-a-report-slows-down-memory-is-not-a-change-log",
+      "title": "When a report slows down, memory is not a change log",
+      "summary": "I treat semantic-model modification times as incident triage: useful for narrowing suspects, never enough to prove causality.",
+      "date": "2026-09-14",
+      "href": "https://alextouvras.com/writes/when-a-report-slows-down-memory-is-not-a-change-log"
     }
   ],
   "signals": [
     {
-      "title": "Writing DAX at the correct granularity",
-      "link": "https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/",
-      "source": "SQLBI",
+      "title": "Find What Changed And When In Your Power BI Semantic Model",
+      "link": "https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/",
+      "source": "Chris Webb's BI Blog",
       "category": "Analytics",
-      "snippet": "A DAX calculation can produce convincing values at the detail level and still fail at the total. The problem is often n…"
+      "snippet": "Here’s a situation I’ve found myself in many times. You’re called to help someone whose Power BI report is suddenly ver…"
     },
     {
-      "title": "Data Engineering Weekly #286",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-286",
-      "source": "Data Engineering Weekly",
+      "title": "Announcing On-Demand State Repartitioning for Apache Spark™ Structured Streaming on Databricks",
+      "link": "https://www.databricks.com/blog/announcing-demand-state-repartitioning-apache-sparktm-structured-streaming-databricks",
+      "source": "Databricks Blog",
       "category": "Data",
-      "snippet": "The Weekly Data Engineering Newsletter"
+      "snippet": "Anyone running stateful Apache Spark™ Structured Streaming queries in production..."
     },
     {
-      "title": "Which Class Should You Arrange Next?",
-      "link": "https://www.scrum.org/resources/blog/which-class-should-you-arrange-next",
+      "title": "AI Leaders Warn: With The Current Pace Of AI Development, AI Could Kill Us All Soon",
+      "link": "https://www.scrum.org/resources/blog/ai-leaders-warn-current-pace-ai-development-ai-could-kill-us-all-soon",
       "source": "Scrum.org",
       "category": "Delivery",
-      "snippet": "Image This is written for managers and executives who hold a training budget and are considering Scrum or other Agile t…"
+      "snippet": "CNN ran an Interview with Anthropic’s CEO, Dario Amodei, in which he acknowledged one of his former employee's claim th…"
     },
     {
-      "title": "Supporting independent journalism in Ukraine",
-      "link": "https://openai.com/index/supporting-independent-journalism-in-ukraine",
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "link": "https://openai.com/index/fyxer",
       "source": "OpenAI Blog",
       "category": "AI",
-      "snippet": "OpenAI, AIRPPU and WAN-IFRA launch an AI program to help Ukrainian news organizations strengthen innovation, resilience…"
+      "snippet": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user…"
     }
   ],
-  "ravens": [],
-  "sentAt": "2026-09-08T12:08:29.113Z",
-  "broadcastId": "95115fdd-272b-4470-b74b-d4354ff39fc0",
-  "sendMode": "test",
-  "sentTo": "a.touvras@gmail.com"
+  "ravens": []
 }
