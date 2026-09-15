@@ -1,6 +1,6 @@
 {
   "id": "newsletter-2026-W38",
-  "status": "pending",
+  "status": "sent",
   "createdAt": "2026-09-15T12:40:36.823Z",
   "weekOf": "2026-09-14",
   "subject": "Orbit weekly — week of 2026-09-14",
@@ -44,5 +44,9 @@
       "snippet": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user…"
     }
   ],
-  "ravens": []
+  "ravens": [],
+  "sentAt": "2026-09-15T12:40:38.300Z",
+  "broadcastId": "e71fb4e6-e8f2-423a-b736-ec07c3589062",
+  "sendMode": "test",
+  "sentTo": "a.touvras@gmail.com"
 }
