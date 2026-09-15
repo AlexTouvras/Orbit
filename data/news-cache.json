@@ -1,7 +1,88 @@
 {
-  "generatedAt": "2026-09-14T06:46:56.959Z",
-  "count": 214,
+  "generatedAt": "2026-09-15T06:46:59.840Z",
+  "count": 215,
   "items": [
+    {
+      "id": "8d3d7f30932c",
+      "title": "AI Leaders Warn: With The Current Pace Of AI Development, AI Could Kill Us All Soon",
+      "link": "https://www.scrum.org/resources/blog/ai-leaders-warn-current-pace-ai-development-ai-could-kill-us-all-soon",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-15T06:25:12.000Z",
+      "contentSnippet": "CNN ran an Interview with Anthropic’s CEO, Dario Amodei, in which he acknowledged one of his former employee's claim that, at the current pace of AI development, AI could kill us all soon. It shocked me, and I think it is that important that all Agile Professionals should be awar…"
+    },
+    {
+      "id": "c6e9fc42b35e",
+      "title": "Announcing On-Demand State Repartitioning for Apache Spark™ Structured Streaming on Databricks",
+      "link": "https://www.databricks.com/blog/announcing-demand-state-repartitioning-apache-sparktm-structured-streaming-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-14T21:04:30.000Z",
+      "contentSnippet": "Anyone running stateful Apache Spark™ Structured Streaming queries in production..."
+    },
+    {
+      "id": "bb32dc5073c5",
+      "title": "Gallery Walk to IT Roadmap",
+      "link": "https://www.scrum.org/resources/blog/gallery-walk-it-roadmap",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-14T18:04:04.000Z",
+      "contentSnippet": "How do you get meaningful input from an entire IT department without getting everyone in the same meeting or hearing only a few of the loudest voices? A few years ago, I faced that problem with a well-known consumer products company. The leadership team was creating a five-year I…"
+    },
+    {
+      "id": "e0702475c004",
+      "title": "How to Measure AI Impact Beyond Token Caps",
+      "link": "https://www.scrum.org/resources/blog/how-measure-ai-impact-beyond-token-caps",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-14T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. The token cap is the least interesting number in your AI budget Somewhere in your company right now, someone is trying to decide whether an employee should get $100, $300, or $1,000 a month of AI spend. It is a real question with a real inv…"
+    },
+    {
+      "id": "460835f845db",
+      "title": "Hey Scrum Masters, If Your Goal Is to Make Yourself Obsolete, You've Already Stopped Growing",
+      "link": "https://www.scrum.org/resources/blog/hey-scrum-masters-if-your-goal-make-yourself-obsolete-youve-already-stopped-growing",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-14T12:21:00.000Z",
+      "contentSnippet": "Image I keep hearing it at meetups, in interviews, on LinkedIn. A Scrum Master says, with a straight face and a bit of pride: \"my job is to make myself obsolete.\" And every time I hear it, I think: so you've decided when you're done growing? The three levels of serving The Scrum…"
+    },
+    {
+      "id": "320b5054c94d",
+      "title": "Coffee and Scrum - is there a connection?",
+      "link": "https://www.scrum.org/resources/blog/coffee-and-scrum-there-connection",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-14T12:02:49.000Z",
+      "contentSnippet": "Years ago when I was a Scrum Master for a great team we had a ritual. Right before the Daily Scrum, we would walk to our tea/coffee station and fill up our cups with our choice of drink and then walk back to our Jira board to inspect our progress. And I assume, a lot of other tea…"
+    },
+    {
+      "id": "296d33defd03",
+      "title": "How Fyxer built an AI executive assistant people trust",
+      "link": "https://openai.com/index/fyxer",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-14T12:00:00.000Z",
+      "contentSnippet": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice."
+    },
+    {
+      "id": "e5d38ef6bb46",
+      "title": "Can Your Team Name the Work It Already Runs With AI?",
+      "link": "https://www.scrum.org/resources/blog/can-your-team-name-work-it-already-runs-ai",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-14T09:44:54.000Z",
+      "contentSnippet": "TL;DR: The AI Workflow Inventory Finalizes the A3 Delegation System You probably know your own AI shortcuts: the colleague who drafts the stakeholder update, the nightly job somebody set up before they left, the interview notes that go through a model on demand. However, I want t…"
+    },
+    {
+      "id": "5540e81e6445",
+      "title": "Deep Market Research with AI for Product Owners",
+      "link": "https://www.scrum.org/resources/blog/deep-market-research-ai-product-owners",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-14T08:51:25.000Z",
+      "contentSnippet": "Doing market research generally demands a lot of time, effort, and budget. But with the advent of AI, you can leverage it as a highly productive assistant to do deep market research. Let’s see how. Image I want to show you the process with an example. Imagine I want to start a bu…"
+    },
     {
       "id": "359a014790c8",
       "title": "Data Engineering Weekly #287",
@@ -192,15 +273,6 @@
       "contentSnippet": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support."
     },
     {
-      "id": "4e410dad70fb",
-      "title": "Build more natural voice experiences with GPT‑Live‑1 in the API",
-      "link": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-10T00:00:00.000Z",
-      "contentSnippet": "GPT‑Live‑1 brings natural, full-duplex voice conversations to the API, with stronger instruction following, custom voices, and telephony support."
-    },
-    {
       "id": "ca291efb21c7",
       "title": "Why DuckDB 2.0 is faster",
       "link": "https://motherduck.com/blog/why-duckdb-20-is-faster",
@@ -271,15 +343,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-09T05:48:03.000Z",
       "contentSnippet": "Image Click here to read and download the magazine. WHY SCRUM TEAM MAGAZINE? Many sectors like jewellery, watches, decoration, film, and fashion already have their own exquisite, luxurious, high-quality publications, yet the Scrum community has no such equivalent. To address this…"
-    },
-    {
-      "id": "25125979cade",
-      "title": "Evaluation-First AI Agents: How Zepto Scales Customer Support on Databricks and MLflow",
-      "link": "https://www.databricks.com/blog/evaluation-first-ai-agents-how-zepto-scales-customer-support-databricks-and-mlflow",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-09T03:00:00.000Z",
-      "contentSnippet": "Zepto's Push for Reliable, Real-Time Customer SupportZepto is one of India's fastest-growing..."
     },
     {
       "id": "5a4baff754f8",
@@ -399,15 +462,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "7e04cdd95713",
-      "title": "What Happens to Your Scaled Agile Ways of Working When You Adopt an Agentic SDLC?",
-      "link": "https://www.scrum.org/resources/blog/what-happens-your-scaled-agile-ways-working-when-you-adopt-agentic-sdlc",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-04T17:52:25.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. It's time to rethink your ways of working, not get rid of them Every week, I have several conversations with leaders whose teams are implementing an AI harness, adopting spec-driven development, and starting conversations about throwing agi…"
-    },
-    {
       "id": "19280ad9d1a0",
       "title": "OpenAI's rogue agents were caught communicating via public wikis",
       "link": "https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/",
@@ -426,15 +480,6 @@
       "contentSnippet": "In this episode of Fabric Insider, I sat down with Josh Caplan, Director of Product for OneLake at Microsoft. Josh has been around this product family for a long time, starting as an intern on the Analysis Services team back in 2007, working on Project Gemini (which became Power…"
     },
     {
-      "id": "d3fdcc599253",
-      "title": "Níveis de Maturidade do Product Owner: Por Que Ninguém Começa Faixa Preta",
-      "link": "https://www.scrum.org/resources/blog/niveis-de-maturidade-do-product-owner-por-que-ninguem-comeca-faixa-preta",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-04T14:53:38.000Z",
-      "contentSnippet": "No mercado corporativo, venderam uma ideia perigosa: a de que todo Product Owner já senta na cadeira como o “mini-CEO” da empresa, com autonomia total para ditar estratégias e gerir orçamentos milionários desde o primeiro dia. A realidade, porém, é bem diferente. Assim como nas a…"
-    },
-    {
       "id": "3fe5160e7acc",
       "title": "Implementing SCD Type 2 in Microsoft Fabric – The Definitive Guide!",
       "link": "https://data-mozart.com/implementing-scd-type-2-in-microsoft-fabric-the-definitive-guide/?utm_source=rss&utm_medium=rss&utm_campaign=implementing-scd-type-2-in-microsoft-fabric-the-definitive-guide",
@@ -442,33 +487,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-04T13:41:48.000Z",
       "contentSnippet": "Slowly Changing Dimensions (SCD) are one of the fundamental concepts in dimensional modeling. If you are not sure what dimensional modeling is, I suggest you first check the series of articles I wrote on data modeling some time ago. And, when it comes to SCD in particular, SCD Ty…"
-    },
-    {
-      "id": "e01e4e9134c9",
-      "title": "O que sabemos agora que não sabíamos no início da Sprint?",
-      "link": "https://www.scrum.org/resources/blog/o-que-sabemos-agora-que-nao-sabiamos-no-inicio-da-sprint",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-04T13:24:46.000Z",
-      "contentSnippet": "Image Scrum é um framework de aprendizagem Quando pensamos em Scrum, é fácil pensar em Sprints, Product Backlogs, Daily Scrums, Sprint Reviews ou Sprint Retrospectives. Mas estes são mecanismos. A questão mais interessante é: para que existem? Uma forma útil de compreender Scrum…"
-    },
-    {
-      "id": "96cd5f9c3a94",
-      "title": "If You Hate the Organization, You Can't Help it Change",
-      "link": "https://www.scrum.org/resources/blog/if-you-hate-organization-you-cant-help-it-change",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-03T22:00:00.000Z",
-      "contentSnippet": "He was right about everything, and it was helping nothing. Watch the agile coach who has the organization completely figured out. He can name every dysfunction in the building, accurately, usually before lunch. The fake empowerment. The theater dressed up as progress. He isn't wr…"
-    },
-    {
-      "id": "c7bd396596af",
-      "title": "Don't Redesign Your Process Yet. Change Who Writes the Artifacts.",
-      "link": "https://www.scrum.org/resources/blog/dont-redesign-your-process-yet-change-who-writes-artifacts",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-03T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. The first thing to change is who writes the artifacts, not how you work \"We didn't change the process. We still have a quarterly planning and we have sprint planning and we have roadmaps and a list of features that we want to deliver in a q…"
     },
     {
       "id": "6ccaaf4161a3",
@@ -577,15 +595,6 @@
       "category": "AI",
       "pubDate": "2026-09-01T23:57:28.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "0da1f02d5474",
-      "title": "Everything Was Green. Then it Wasn't.",
-      "link": "https://www.scrum.org/resources/blog/everything-was-green-then-it-wasnt",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-01T22:00:00.000Z",
-      "contentSnippet": "Image The status was green all quarter. Green in the weekly report, green in the steering deck, green in the note to the sponsor. Then, close to the deadline, it went red. Not drifted. Snapped. And in the post-mortem, the part that stings: one after another, people say they alrea…"
     },
     {
       "id": "ce78c56fbdad",
