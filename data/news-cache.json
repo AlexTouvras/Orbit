@@ -1,15 +1,87 @@
 {
-  "generatedAt": "2026-09-15T06:46:59.840Z",
+  "generatedAt": "2026-09-16T06:46:57.906Z",
   "count": 215,
   "items": [
     {
-      "id": "8d3d7f30932c",
-      "title": "AI Leaders Warn: With The Current Pace Of AI Development, AI Could Kill Us All Soon",
-      "link": "https://www.scrum.org/resources/blog/ai-leaders-warn-current-pace-ai-development-ai-could-kill-us-all-soon",
+      "id": "25e9756b3143",
+      "title": "The Real Meeting Happens in the Hallway",
+      "link": "https://www.scrum.org/resources/blog/real-meeting-happens-hallway",
       "source": "Scrum.org",
       "category": "Delivery",
-      "pubDate": "2026-09-15T06:25:12.000Z",
-      "contentSnippet": "CNN ran an Interview with Anthropic’s CEO, Dario Amodei, in which he acknowledged one of his former employee's claim that, at the current pace of AI development, AI could kill us all soon. It shocked me, and I think it is that important that all Agile Professionals should be awar…"
+      "pubDate": "2026-09-15T22:00:00.000Z",
+      "contentSnippet": "Image The real meeting happens in the hallway. The meeting ends. Everyone agreed, or at least nobody disagreed. Then, two minutes later, the real conversation starts. In the corridor. In a side chat. In the small group that lingers after the call drops. \"I didn't want to derail i…"
+    },
+    {
+      "id": "8d9968f546a9",
+      "title": "OneLake Security: Setting Up Row Level Security From Lakehouse to Report",
+      "link": "https://radacad.com/onelake-security-setting-up-row-level-security-from-lakehouse-to-report/?utm_source=rss&utm_medium=rss&utm_campaign=onelake-security-setting-up-row-level-security-from-lakehouse-to-report",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-09-15T21:39:42.000Z",
+      "contentSnippet": "If you’ve set up row level security in Power BI before, you know the usual drill: open the semantic model, add a role, write a DAX filter. But once your data lives inside a Microsoft Fabric OneLake structure, there’s a better way to do this. You can implement it directly in OneLa…"
+    },
+    {
+      "id": "d434fda9e8d3",
+      "title": "How energy teams turn theft detection into governed action with Genie and AI business processes",
+      "link": "https://www.databricks.com/blog/how-energy-teams-turn-theft-detection-governed-action-genie-and-ai-business-processes",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-15T16:50:00.000Z",
+      "contentSnippet": "Energy theft is the deliberate use of gas or electricity without paying for it, typically..."
+    },
+    {
+      "id": "8356199c8c98",
+      "title": "Nail the Narrative",
+      "link": "https://martinfowler.com/articles/never-send-slides/nail-your-narrative.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-15T15:11:00.000Z",
+      "contentSnippet": "Sumeet Gayathri Moghe finds many folks building presentations get tangled in building slides without a coherent narrative. He advises distilling the big idea, visualizing the audience, and building a structured storyline. more…"
+    },
+    {
+      "id": "be690d567d15",
+      "title": "AI Can Write Backlog Items. It Can’t Create Shared Understanding",
+      "link": "https://www.mountaingoatsoftware.com/agile/ai-can-write-backlog-items-it-cant-create-shared-understanding",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-09-15T15:00:00.000Z",
+      "contentSnippet": "AI can generate polished user stories and acceptance criteria in seconds. Learn how to use it without skipping product judgment, user evidence, or team conversations."
+    },
+    {
+      "id": "7f26e801c464",
+      "title": "Na era da IA, ainda está a medir trabalho e esforço?   ou finalmente a medir valor?",
+      "link": "https://www.scrum.org/resources/blog/na-era-da-ia-ainda-esta-medir-trabalho-e-esforco-ou-finalmente-medir-valor",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-15T10:06:32.000Z",
+      "contentSnippet": "Image Durante décadas habituámo-nos a medir trabalho através daquilo que conseguimos ver: Horas trabalhadas Número de tarefas concluídas Tickets fechados Linhas de código Story Points entregues Número de funcionalidades lançadas Projetos terminados dentro do prazo São números con…"
+    },
+    {
+      "id": "f6dacea9be17",
+      "title": "How Databricks’ marketers use data 3x more with Genie, an AI analytics assistant",
+      "link": "https://www.databricks.com/blog/databricks-marketers-use-data-3x-genie-ai-analytics-assistant",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-15T00:36:33.000Z",
+      "contentSnippet": "Most marketing teams aspire to be data-driven. In practice, getting a trusted answer,..."
+    },
+    {
+      "id": "f21765b08162",
+      "title": "They All Write, Store, and Read Data: How to Pick The Right Database",
+      "link": "https://motherduck.com/blog/how-to-pick-the-right-database",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-09-15T00:00:00.000Z",
+      "contentSnippet": "SQLite, Postgres, DuckDB and 20 others: they all write, store and read data. The questions you ask every day tell you which one you need."
+    },
+    {
+      "id": "ca2f35c19c99",
+      "title": "Managed Postgres: What Lakebase Actually Takes Off Your Plate",
+      "link": "https://www.databricks.com/blog/managed-postgres",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-14T23:36:59.000Z",
+      "contentSnippet": "Every Postgres vendor calls itself \"managed.\" Few of them agree on what that word..."
     },
     {
       "id": "c6e9fc42b35e",
@@ -109,6 +181,15 @@
       "category": "AI",
       "pubDate": "2026-09-14T00:00:00.000Z",
       "contentSnippet": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
+    },
+    {
+      "id": "416f06ab12e9",
+      "title": "Your DuckDB Flock Deserves A Mother: MotherDuck Now Offers Open Source DuckDB Support",
+      "link": "https://motherduck.com/blog/duckdb-support",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-09-14T00:00:00.000Z",
+      "contentSnippet": "We're launching commercial support for open-source DuckDB, so every organization can get the power of a modern data engine, with direct access to database experts."
     },
     {
       "id": "8bbe78103d32",
@@ -309,33 +390,6 @@
       "contentSnippet": "Solvency II reporting is not only a regulatory submission. It is a business process..."
     },
     {
-      "id": "e5cc8c3f8b22",
-      "title": "Beyond embedding: How to secure AI/BI Dashboards for every viewer",
-      "link": "https://www.databricks.com/blog/beyond-embedding-how-secure-aibi-dashboards-every-viewer",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-09T14:04:44.000Z",
-      "contentSnippet": "The challengeEmbedding a Databricks AI/BI Dashboard in a customer-facing application is relatively straightforward..."
-    },
-    {
-      "id": "c247a3b25113",
-      "title": "Introducing Consort: Test-driven development on a branching database",
-      "link": "https://www.databricks.com/blog/introducing-consort-test-driven-development-branching-database",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-09T13:41:25.000Z",
-      "contentSnippet": "For 25 years I built software on the practices I grew up with: Kent Beck’s TDD, Martin..."
-    },
-    {
-      "id": "d71c12e9c359",
-      "title": "Adaptive Instructed-Retriever: Frontier-Quality Search at 2x Lower Latency",
-      "link": "https://www.databricks.com/blog/adaptive-instructed-retriever-frontier-quality-search-2x-lower-latency",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-09T13:30:00.000Z",
-      "contentSnippet": "Effective enterprise data agents require search that is both accurate and fast. Earlier..."
-    },
-    {
       "id": "b1bb4c0a37ac",
       "title": "🎉 Launched: Scrum Team Magazine",
       "link": "https://www.scrum.org/resources/blog/launched-scrum-team-magazine",
@@ -442,15 +496,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-06T11:15:42.000Z",
       "contentSnippet": "TL;DR: AI Transformations and Agile Transformations Rhyme AI adoption seems to be scaling: 37% of respondents in McKinsey’s 2026 survey report an EBIT effect from AI, and Gartner finds that 22% of organizations have scaled it across business units. Now, Agile practitioners have s…"
-    },
-    {
-      "id": "1ba3e47aaae7",
-      "title": "Your Roadmap Ranks Everything. It Rejects Nothing.",
-      "link": "https://www.scrum.org/resources/blog/your-roadmap-ranks-everything-it-rejects-nothing",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-06T06:00:00.000Z",
-      "contentSnippet": "Image Take the product strategy slide from your last quarterly review and write the opposite of every line underneath it. \"Deepen engagement in our core segment\" becomes \"shed engagement in our core segment.\" \"Improve time to value for new customers\" becomes \"slow new customers d…"
     },
     {
       "id": "631b6c23c9b3",
@@ -1110,15 +1155,6 @@
       "contentSnippet": "This week there was another big Copilot-related announcement for Power BI – but on the Excel blog. You can now analyse data from Power BI semantic models using Copilot in Excel. Full details on how to enable this are in the docs here, but what does it look like? Using the same se…"
     },
     {
-      "id": "e0449a003f89",
-      "title": "OpenAI Just Made Analytics 10x Cheaper",
-      "link": "https://motherduck.com/blog/openai-just-made-analytics-10x-cheaper",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-01T00:00:00.000Z",
-      "contentSnippet": "Since OpenAI slashed the price of GPT 5.6 Luna by 80% this week, low latency AI-powered answers are finally feasible for less than half a penny per answer, AI and DB costs included. For data questions, GPT 5.6 Luna is intelligence too cheap to meter. Well documented context, rigo…"
-    },
-    {
       "id": "1130e94af268",
       "title": "The Conductor Developer",
       "link": "https://martinfowler.com/rachels-ramblings/conductor-developer.html",
@@ -1144,15 +1180,6 @@
       "category": "Data",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "It doesn't matter how fast query operators are in a database system if we can't pull in the data quickly. For most of DuckDB's history, however, this problem was largely avoided by pruning data early. By pushing down filters and projections, we could ensure that we only read what…"
-    },
-    {
-      "id": "aceeb0bce6b4",
-      "title": "Figma for Agents: How Airflow's Creator Coordinates AI ft. Maxime Beauchemin",
-      "link": "https://motherduck.com/blog/figma-for-agents-airflow-creator-maxime-beauchemin",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Maxime Beauchemin, creator of Airflow and Superset, shares how he uses AI agents for data engineering: orchestrating agents on a shared canvas with Agor, context layers and semantics, Okta for Agents security, and automating CEO work with AI assistants."
     },
     {
       "id": "dafe9a2bbb83",
@@ -1279,24 +1306,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-19T17:46:53.000Z",
       "contentSnippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
-    },
-    {
-      "id": "2942b8ae18a6",
-      "title": "Everything About the Microsoft MVP Program — A Conversation with Rie Merritt | Fabric Insider Ep. 7",
-      "link": "https://radacad.com/everything-about-the-microsoft-mvp-program-a-conversation-with-rie-merritt-fabric-insider-ep-7/?utm_source=rss&utm_medium=rss&utm_campaign=everything-about-the-microsoft-mvp-program-a-conversation-with-rie-merritt-fabric-insider-ep-7",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-07-17T21:49:31.000Z",
-      "contentSnippet": "This episode of Fabric Insider is a little different from the others. We are not talking about a product feature or a technical update. We are talking about a program that has shaped the Microsoft data community for over two decades — and one that a lot of people misunderstand. T…"
-    },
-    {
-      "id": "ae8121be2cae",
-      "title": "The Archaeologist’s Copilot",
-      "link": "https://martinfowler.com/articles/archaeologist-copilot.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-16T13:25:00.000Z",
-      "contentSnippet": "When people think of legacy modernization, most folks aren't imagining the target environment will be Java 8. But this was the challenge facing Nik Malykhin when he needed to run a Java 1.5 codebase on today's hardware. His early use of LLMs gave plausible answers that did not ho…"
     },
     {
       "id": "03946207f0a8",
@@ -1801,15 +1810,6 @@
       "category": "Analytics",
       "pubDate": "2026-03-09T20:12:35.000Z",
       "contentSnippet": "We're launching a new podcast called \"The Shift,\" which does exactly that. Grounded in questions we heard from you after Ignite news, we're releasing eight episodes that bring engineering, product, and strategy perspectives together. The post Unpacking your top questions on agent…"
-    },
-    {
-      "id": "2ca996a8d7cd",
-      "title": "The Cost of Change Curve Is Outdated",
-      "link": "https://www.mountaingoatsoftware.com/agile/the-cost-of-change-curve-is-outdated",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-03-03T14:00:00.000Z",
-      "contentSnippet": "The cost-of-change curve isn’t what it used to be—modern tools, agile practices, and AI have dramatically flattened it."
     },
     {
       "id": "fa6a6191b9f6",
