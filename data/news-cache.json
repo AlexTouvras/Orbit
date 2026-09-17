@@ -1,7 +1,115 @@
 {
-  "generatedAt": "2026-09-16T06:46:57.906Z",
+  "generatedAt": "2026-09-17T06:46:56.408Z",
   "count": 215,
   "items": [
+    {
+      "id": "bdbf442fb6ba",
+      "title": "Fragments: September 16",
+      "link": "https://martinfowler.com/fragments/2026-09-16.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-16T20:05:00.000Z",
+      "contentSnippet": "Reports of agentic hacking continue, in this case it happened back in May and it seems OpenAI did not disclose that they were responsible. Simon Willison sees two options: After the Hugging Face and Wiki attacks OpenAI were still unable to review their previous logs and determine…"
+    },
+    {
+      "id": "957733573e7d",
+      "title": "\"Regex for Rows\": Simplifying Pattern Detection in SQL with MATCH_RECOGNIZE",
+      "link": "https://www.databricks.com/blog/regex-rows-simplifying-pattern-detection-sql-matchrecognize",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-16T17:14:05.000Z",
+      "contentSnippet": "Imagine you work in cybersecurity and you have a table that tracks login attempts..."
+    },
+    {
+      "id": "bbe6c30a33c9",
+      "title": "Our framework for reporting model misalignment",
+      "link": "https://openai.com/index/model-misalignment-reporting-framework",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-16T17:00:00.000Z",
+      "contentSnippet": "OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior."
+    },
+    {
+      "id": "027811ca1632",
+      "title": "Helping older adults use AI in everyday life",
+      "link": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-16T16:00:00.000Z",
+      "contentSnippet": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities to build practical AI skills safely."
+    },
+    {
+      "id": "901f6f996bc2",
+      "title": "DAX UDFs, Arrow REST API, and Outbound Access Protection: A Conversation with Kay Unkroth (Fabric Insider Ep. 13)",
+      "link": "https://radacad.com/dax-udfs-arrow-rest-api-and-outbound-access-protection-a-conversation-with-kay-unkroth-fabric-insider-ep-13/?utm_source=rss&utm_medium=rss&utm_campaign=dax-udfs-arrow-rest-api-and-outbound-access-protection-a-conversation-with-kay-unkroth-fabric-insider-ep-13",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-09-16T13:51:06.000Z",
+      "contentSnippet": "DAX UDFs just went GA, there’s a new REST API for running DAX queries at scale, and a network security feature most people haven’t even heard of yet is quietly changing how enterprises govern their semantic models. In this episode of Fabric Insider, I sit down with Kay Unkroth, P…"
+    },
+    {
+      "id": "52752974efc0",
+      "title": "Reimagining advertising with AI",
+      "link": "https://openai.com/index/reimagining-advertising-with-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-16T13:00:00.000Z",
+      "contentSnippet": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify."
+    },
+    {
+      "id": "5f7e182a53f2",
+      "title": "How to connect AI usage to business value",
+      "link": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-16T12:00:00.000Z",
+      "contentSnippet": "Learn how ChatGPT Work and Codex analytics help teams understand AI usage and spend, identify training needs, and connect adoption to business outcomes."
+    },
+    {
+      "id": "ebc6cf4880fe",
+      "title": "AI Tool Introduction: Promptly AI",
+      "link": "https://www.scrum.org/resources/blog/ai-tool-introduction-promptly-ai",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-16T09:14:12.000Z",
+      "contentSnippet": "Image Imagine you are using ChatGPT and writing a prompt. But you are not sure if it is a good prompt or not. Here, Promptly AI comes to life to help you enhance your prompt with just one click. Click here to open its website. Image How to add Promptly AI to your AI chatbots? Pro…"
+    },
+    {
+      "id": "71646fffd914",
+      "title": "How workers are unlocking new ways of working",
+      "link": "https://openai.com/index/unlocking-new-ways-of-working",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-16T09:00:00.000Z",
+      "contentSnippet": "New OpenAI Economic Research shows how workers use AI beyond traditional roles and which new activities become recurring parts of their work."
+    },
+    {
+      "id": "932be409e526",
+      "title": "The query finished…Why is my Fabric SQL database still consuming CUs?",
+      "link": "https://data-mozart.com/the-query-finished-why-is-my-fabric-sql-database-still-consuming-cus/?utm_source=rss&utm_medium=rss&utm_campaign=the-query-finished-why-is-my-fabric-sql-database-still-consuming-cus",
+      "source": "Data Mozart",
+      "category": "Analytics",
+      "pubDate": "2026-09-16T08:00:28.000Z",
+      "contentSnippet": "Two minutes of database activity can mean 17 minutes of compute billing. And a CPU chart doesn't tell the whole story. Let's work through SQL database in Fabric billing with examples from application workloads, development databases, and everyday troubleshooting. The post The que…"
+    },
+    {
+      "id": "bac7d1ddaae2",
+      "title": "DuckDB Skills for Claude Code",
+      "link": "https://duckdb.org/2026/09/16/duckdb-skills.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-09-16T00:00:00.000Z",
+      "contentSnippet": "More likely than not, you've been using AI tools such as Claude Code for day-to-day work. You may have noticed that when AI needs to look at a data file, it makes use of Python, writes a small script, runs it, and then reads the output. This works, although it is slow, and the ag…"
+    },
+    {
+      "id": "8d9769b6fd10",
+      "title": "DuckDB Ecosystem Newsletter : September 2026",
+      "link": "https://motherduck.com/blog/duckdb-ecosystem-newsletter-september-2026",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-09-16T00:00:00.000Z",
+      "contentSnippet": "The September 2026 DuckDB Ecosystem Newsletter: DuckLabs joins AWS and MotherDuck acquires Tower, DuckDB v2.0-alpha lands, table functions in pure Java, bulk loads into SQL Server, Zarr stores as SQL tables, an infinite canvas for your data, plus a community spotlight on Vladimir…"
+    },
     {
       "id": "25e9756b3143",
       "title": "The Real Meeting Happens in the Hallway",
@@ -246,15 +354,6 @@
       "contentSnippet": "This is the first post in a new series exploring how Lakeflow Connect brings fully..."
     },
     {
-      "id": "c3aa33826442",
-      "title": "Cognition helps Devin test its own work with GPT‑6 Astra",
-      "link": "https://openai.com/index/cognition-devin-testing-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-11T16:00:00.000Z",
-      "contentSnippet": "GPT‑6 Astra improves Devin’s ability to test software and show that it works, with the goal of helping engineers review less code and ship more."
-    },
-    {
       "id": "f1dda2e4995c",
       "title": "Do We Need A New Scrum Guide?!",
       "link": "https://www.scrum.org/resources/blog/do-we-need-new-scrum-guide",
@@ -291,15 +390,6 @@
       "contentSnippet": "Image Learning foreign languages was never my skill. I still think back to high school, when my French teacher looked at me disparagingly during our oral exam. It came as no surprise that I failed, not because my vocab was not great, but because I was not able to really communica…"
     },
     {
-      "id": "014159943e4d",
-      "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules",
-      "link": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-10T16:00:00.000Z",
-      "contentSnippet": "César de la Fuente’s lab uses Codex and ChatGPT to search living and extinct genomes for antimicrobial candidates to fight drug-resistant infections."
-    },
-    {
       "id": "08a194144f6d",
       "title": "Unifying governance across engines and catalogs in the Open Lakehouse",
       "link": "https://www.databricks.com/blog/unifying-governance-across-engines-and-catalogs-open-lakehouse",
@@ -307,15 +397,6 @@
       "category": "Data",
       "pubDate": "2026-09-10T15:05:10.000Z",
       "contentSnippet": "In our previous posts, we showed how open table formats, open APIs and unified governance..."
-    },
-    {
-      "id": "4d4e7920d8a7",
-      "title": "Now everyone can put data to work",
-      "link": "https://openai.com/index/put-data-to-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-10T15:00:00.000Z",
-      "contentSnippet": "Meet the Data agent in ChatGPT Work. Connect company data, uncover insights, and build interactive dashboards with AI using natural language."
     },
     {
       "id": "2939f6d2b69f",
@@ -334,24 +415,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-10T13:00:00.000Z",
       "contentSnippet": "Originally published on yuvalyeret.com. The oldest continuous-improvement metric works on your agent config There is a story about a Lean sensei who walked onto a factory floor, stopped at one workstation, looked at the standard work document posted above it, and told the manager…"
-    },
-    {
-      "id": "016c3ec9b775",
-      "title": "Introducing ChatGPT for Financial Services",
-      "link": "https://openai.com/index/introducing-chatgpt-financial-services",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-10T07:00:00.000Z",
-      "contentSnippet": "Introducing ChatGPT for Financial Services, combining built-in financial data and GPT-6 Astra for research, modeling, and client-ready materials."
-    },
-    {
-      "id": "1ef5285e671d",
-      "title": "Expanding AI access and cyber defense for federal, state, local, and tribal governments",
-      "link": "https://openai.com/index/expanding-ai-access-us-government",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-10T07:00:00.000Z",
-      "contentSnippet": "OpenAI and GSA will offer eligible federal, state, local, and tribal governments $0 license fees, 50% off usage, and expanded cyber defense support."
     },
     {
       "id": "ca291efb21c7",
@@ -379,15 +442,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-09T16:21:00.000Z",
       "contentSnippet": "A quick survey of recent engagement of my posts on social media, indicating which service has by far the most engagement, and which service has seen a precipitous decline since early 2025. more…"
-    },
-    {
-      "id": "b6e5be52dc0d",
-      "title": "A practical approach to end-to-end Solvency II reporting in Databricks",
-      "link": "https://www.databricks.com/blog/practical-approach-end-end-solvency-ii-reporting-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-09T16:20:00.000Z",
-      "contentSnippet": "Solvency II reporting is not only a regulatory submission. It is a business process..."
     },
     {
       "id": "b1bb4c0a37ac",
@@ -487,15 +541,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-06T20:32:03.000Z",
       "contentSnippet": "In case you haven’t already seen the blog post on the Power BI blog or the discussion on LinkedIn, we at Microsoft published a new white paper last week to help you decide which storage mode to use when you’re using Power BI to create semantic models and reports on data stored in…"
-    },
-    {
-      "id": "a1e3ce7a0ba0",
-      "title": "AI Transformations And Agile Transformations Rhyme",
-      "link": "https://www.scrum.org/resources/blog/ai-transformations-and-agile-transformations-rhyme",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-06T11:15:42.000Z",
-      "contentSnippet": "TL;DR: AI Transformations and Agile Transformations Rhyme AI adoption seems to be scaling: 37% of respondents in McKinsey’s 2026 survey report an EBIT effect from AI, and Gartner finds that 22% of organizations have scaled it across business units. Now, Agile practitioners have s…"
     },
     {
       "id": "631b6c23c9b3",
@@ -1110,15 +1155,6 @@
       "contentSnippet": "There’s been a fair bit of publicity of the Open AI “rogue agent” that hacked into Hugging Face. This prompted Anthropic to check what their models were up to and, to my complete lack of surprise, discovered three incidents where models had gained unauthorized access to data in o…"
     },
     {
-      "id": "2ce84f30b442",
-      "title": "I let an agent sign itself up to a cloud data warehouse, then replayed every step",
-      "link": "https://motherduck.com/blog/agent-signup-cloud-data-warehouse",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-04T00:00:00.000Z",
-      "contentSnippet": "AI agents can now provision a Postgres database, an email inbox or a data warehouse with no signup and no credit card. Here is how MotherDuck's agent signup endpoint works, and how motherduck.com/try lets you inspect, share and replay everything the agent did."
-    },
-    {
       "id": "be0402b3fc9f",
       "title": "Data Engineering Weekly #281",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-281",
@@ -1171,15 +1207,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-31T10:03:06.000Z",
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
-    },
-    {
-      "id": "e30c19ad366e",
-      "title": "Asynchronous I/O in DuckDB: Work, Thread, Work",
-      "link": "https://duckdb.org/2026/07/31/asynchronous-io.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "It doesn't matter how fast query operators are in a database system if we can't pull in the data quickly. For most of DuckDB's history, however, this problem was largely avoided by pruning data early. By pushing down filters and projections, we could ensure that we only read what…"
     },
     {
       "id": "dafe9a2bbb83",
@@ -1270,24 +1297,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-26T21:13:48.000Z",
       "contentSnippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
-    },
-    {
-      "id": "7147531ddbe3",
-      "title": "What Is Fabric App or Rayfin and Why You Should Care",
-      "link": "https://radacad.com/what-is-fabric-app-or-rayfin-and-why-you-should-care/?utm_source=rss&utm_medium=rss&utm_campaign=what-is-fabric-app-or-rayfin-and-why-you-should-care",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-07-22T01:52:49.000Z",
-      "contentSnippet": "Imagine an application built entirely inside the Microsoft Fabric environment. Not an application that connects to Fabric. Not an application that reads from a Fabric data source. An application where the database is a Fabric SQL database, the semantic model is a Power BI semanti…"
-    },
-    {
-      "id": "341caddc014b",
-      "title": "Fragments: July 21",
-      "link": "https://martinfowler.com/fragments/2026-07-21.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-21T13:13:00.000Z",
-      "contentSnippet": "With this post, I’ll wrap up my notes from the second Future of Software Development Retreat. But before I do, I should note that the full Thoughtworks report on the retreat is now available. They have five headline findings: Code generation is no longer the bottleneck — verifica…"
     },
     {
       "id": "513a069a215f",
@@ -1720,15 +1729,6 @@
       "category": "Data",
       "pubDate": "2026-04-22T19:42:03.000Z",
       "contentSnippet": "Semantic context tells AI agents what data means. Operational context tells them whether to trust it. Learn how Dagster and Atlan combine both halves of the context layer."
-    },
-    {
-      "id": "2567730d0907",
-      "title": "A whirlwind tour on User-context-aware calculated columns in Power BI!",
-      "link": "https://data-mozart.com/a-whirlwind-tour-on-user-context-aware-calculated-columns-in-power-bi/?utm_source=rss&utm_medium=rss&utm_campaign=a-whirlwind-tour-on-user-context-aware-calculated-columns-in-power-bi",
-      "source": "Data Mozart",
-      "category": "Analytics",
-      "pubDate": "2026-04-21T15:08:42.000Z",
-      "contentSnippet": "Bye, bye translation headaches! With the new User-context-aware calculated columns, we can tackle certain challenges more convenient than ever The post A whirlwind tour on User-context-aware calculated columns in Power BI! appeared first on Data Mozart."
     },
     {
       "id": "9c04af84dc35",
