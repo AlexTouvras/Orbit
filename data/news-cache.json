@@ -1,7 +1,97 @@
 {
-  "generatedAt": "2026-09-17T06:46:56.408Z",
-  "count": 215,
+  "generatedAt": "2026-09-18T06:46:54.819Z",
+  "count": 214,
   "items": [
+    {
+      "id": "abcfa66a2190",
+      "title": "Psychological safety is not impunity",
+      "link": "https://www.scrum.org/resources/blog/psychological-safety-not-impunity",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-17T22:00:00.000Z",
+      "contentSnippet": "You can find him in the retro, though he rarely says much. He doesn't need to. The team has learned to write around him. Watch what happens to a good idea in this room. Someone proposes a real improvement, and before it's even finished, you can see a couple of people glance, just…"
+    },
+    {
+      "id": "99646313ef73",
+      "title": "Database for AI Agents: 5 Evaluation Criteria",
+      "link": "https://www.databricks.com/blog/database-for-ai-agents",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-17T17:27:40.000Z",
+      "contentSnippet": "The five criteria for evaluating a database for AI agents are branch isolation, serverless..."
+    },
+    {
+      "id": "fa57b7201ca9",
+      "title": "The Web Search Your Agent Inherited Isn't Good Enough",
+      "link": "https://www.databricks.com/blog/web-search-your-agent-inherited-isnt-good-enough",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-17T17:00:00.000Z",
+      "contentSnippet": "An agent that needs the outside worldAn engineer at a software company is building..."
+    },
+    {
+      "id": "493bde431a9e",
+      "title": "What is AIOps?",
+      "link": "https://www.databricks.com/blog/what-is-aiops",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-17T16:49:43.000Z",
+      "contentSnippet": "Artificial Intelligence for IT Operations (AIOps) applies AI and machine learning to IT operations to detect anomalies..."
+    },
+    {
+      "id": "ad2a2ccfa362",
+      "title": "Fabric Core MCP Server: Scan and Configure OneLake Security with AI",
+      "link": "https://radacad.com/fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-09-17T15:32:26.000Z",
+      "contentSnippet": "With the appearance of AI tools, LLMs, MCP servers, and skills, everyone these days is interested in what tool can do what. I’ve already explained the Power BI Modeling MCP server and Fabric Skills in previous videos. In this one, I’ll talk about the Fabric Core MCP server, an MC…"
+    },
+    {
+      "id": "00c643b32673",
+      "title": "Modernizing the Trade Lifecycle With Governed Data and AI",
+      "link": "https://www.databricks.com/blog/modernizing-trade-lifecycle-governed-data-and-ai",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-17T14:00:00.000Z",
+      "contentSnippet": "Capital-markets firms are modernizing the trade lifecycle under pressure from every direction: growing data volumes..."
+    },
+    {
+      "id": "bd4ec752fcc1",
+      "title": "I don't like LLMs",
+      "link": "https://martinfowler.com/articles/2026-dont-like-llms.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-17T13:50:00.000Z",
+      "contentSnippet": "I have a lot of mixed feelings about AI and LLM technology. I’m fascinated by its effect on our profession, excited by the potential gains in productivity - and thus the products we could rapidly build. On the other hand, I’m fearful of the damage AI might cause: agent swarms tak…"
+    },
+    {
+      "id": "75660e9c84f5",
+      "title": "Scaling Product Orgs with Portfolio Agility",
+      "link": "https://www.scrum.org/resources/blog/scaling-product-orgs-portfolio-agility",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-17T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. Your portfolio process isn’t slowing you down by accident You built empowered product teams. You wrote down a product operating model. And somehow decisions still stall, competitors still pivot faster than you do, and every initiative that…"
+    },
+    {
+      "id": "964ae1dd0fac",
+      "title": "How Cooley is accelerating IPO work with ChatGPT",
+      "link": "https://openai.com/index/cooley-gopublic",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-17T12:00:00.000Z",
+      "contentSnippet": "Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most."
+    },
+    {
+      "id": "363bbead77de",
+      "title": "Introducing Astra for Law",
+      "link": "https://openai.com/index/astra-for-law",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-17T00:00:00.000Z",
+      "contentSnippet": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work."
+    },
     {
       "id": "bdbf442fb6ba",
       "title": "Fragments: September 16",
@@ -282,15 +372,6 @@
       "contentSnippet": "How do we help people truly connect and work well together? The question has never been easy. We have invented countless ways to strengthen teamwork, yet few of them work, and those that do rarely last. Between 2012 and 2015, Google looked for what makes a team succeed through it…"
     },
     {
-      "id": "12e9dd685180",
-      "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
-      "link": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-14T00:00:00.000Z",
-      "contentSnippet": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
-    },
-    {
       "id": "416f06ab12e9",
       "title": "Your DuckDB Flock Deserves A Mother: MotherDuck Now Offers Open Source DuckDB Support",
       "link": "https://motherduck.com/blog/duckdb-support",
@@ -345,15 +426,6 @@
       "contentSnippet": "A health plan CFO closes the month after the usual round of extracts, spreadsheets,..."
     },
     {
-      "id": "238d2cd6ec3f",
-      "title": "Unify your marketing data with Lakeflow Connect",
-      "link": "https://www.databricks.com/blog/unify-your-marketing-data-lakeflow-connect",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-11T18:00:00.000Z",
-      "contentSnippet": "This is the first post in a new series exploring how Lakeflow Connect brings fully..."
-    },
-    {
       "id": "f1dda2e4995c",
       "title": "Do We Need A New Scrum Guide?!",
       "link": "https://www.scrum.org/resources/blog/do-we-need-new-scrum-guide",
@@ -361,15 +433,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-11T10:00:57.000Z",
       "contentSnippet": "Image My current car is a Peugeot 508, over ten years old, yet still a great car that I genuinely love. But recently, one of my friends bought a brand-new car and invited me inside to check out the interior and features. My reaction? Wow. A large, high-quality screen with big, re…"
-    },
-    {
-      "id": "c7d3c8aeae42",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
-      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-11T10:00:00.000Z",
-      "contentSnippet": "Learn how OpenAI evolved Habitat from a Python library into a globally distributed storage platform serving 1 billion ChatGPT users and 22M requests per second."
     },
     {
       "id": "fa9ddf0b7915",
@@ -390,24 +453,6 @@
       "contentSnippet": "Image Learning foreign languages was never my skill. I still think back to high school, when my French teacher looked at me disparagingly during our oral exam. It came as no surprise that I failed, not because my vocab was not great, but because I was not able to really communica…"
     },
     {
-      "id": "08a194144f6d",
-      "title": "Unifying governance across engines and catalogs in the Open Lakehouse",
-      "link": "https://www.databricks.com/blog/unifying-governance-across-engines-and-catalogs-open-lakehouse",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-10T15:05:10.000Z",
-      "contentSnippet": "In our previous posts, we showed how open table formats, open APIs and unified governance..."
-    },
-    {
-      "id": "2939f6d2b69f",
-      "title": "Improving Lakebase Postgres compute cache",
-      "link": "https://www.databricks.com/blog/improving-lakebase-postgres-compute-cache",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-10T13:47:03.000Z",
-      "contentSnippet": "The disaggregated storage model of Lakebase Postgres provides a feature rich, flexible..."
-    },
-    {
       "id": "76a403a84103",
       "title": "Is Your Agent Harness Still Learning? Check Its Last Updated Time.",
       "link": "https://www.scrum.org/resources/blog/your-agent-harness-still-learning-check-its-last-updated-time",
@@ -424,15 +469,6 @@
       "category": "Data",
       "pubDate": "2026-09-10T00:00:00.000Z",
       "contentSnippet": "DuckDB 2.0 alpha vs 1.5.5 on one laptop: recursive CTEs up to 90x, VARIANT 6x faster than JSON text, async I/O 2.4x on S3. What changes, and how to model data to get the speedup."
-    },
-    {
-      "id": "68a1d3f7b02e",
-      "title": "Five AI Questions We're Hearing from Financial Services Leaders",
-      "link": "https://www.databricks.com/blog/five-ai-questions-were-hearing-financial-services-leaders",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-09T18:09:29.000Z",
-      "contentSnippet": "Last year at Sibos Frankfurt, the question was whether AI works. This year: can your..."
     },
     {
       "id": "42b432deee76",
@@ -460,24 +496,6 @@
       "category": "AI",
       "pubDate": "2026-09-08T23:55:12.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "51ede72a71d8",
-      "title": "Your Retro is a Support Group, Not an Engine.",
-      "link": "https://www.scrum.org/resources/blog/your-retro-support-group-not-engine",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-08T22:00:00.000Z",
-      "contentSnippet": "Image Every couple of weeks, the team stops to reflect. People show up. They talk about what went well and what didn't. Someone captures it on sticky notes or a board. Everyone nods. The hour ends on time. And the next two weeks look exactly like the last two. If that's your retr…"
-    },
-    {
-      "id": "dbb680cb8a52",
-      "title": "AI Changed the Bottleneck. Your WIP Limits Should Change With It.",
-      "link": "https://www.scrum.org/resources/blog/ai-changed-bottleneck-your-wip-limits-should-change-it",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-08T15:55:47.000Z",
-      "contentSnippet": "Image AI can generate code faster than your team can review it. Especially with the latest iteration of Claude, the code comes packed with lengthy comments, voluminous release notes, and logic in a bunch of different places, all of which needs to be reviewed before it goes to pro…"
     },
     {
       "id": "fbcbe1a52ca4",
@@ -514,15 +532,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-07T20:00:23.000Z",
       "contentSnippet": "A DAX calculation can produce convincing values at the detail level and still fail at the total. The problem is often not the total itself: the business rule was evaluated at the wrong granularity. This article introduces four grains, or…"
-    },
-    {
-      "id": "3d26d2dbcb98",
-      "title": "Which Class Should You Arrange Next?",
-      "link": "https://www.scrum.org/resources/blog/which-class-should-you-arrange-next",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-07T02:08:49.000Z",
-      "contentSnippet": "Image This is written for managers and executives who hold a training budget and are considering Scrum or other Agile training for their employees. Technology leaders hire me to improve the way they manage software product operations. I have been practicing and teaching agile met…"
     },
     {
       "id": "4c1562c02af7",
@@ -1227,15 +1236,6 @@
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
     },
     {
-      "id": "477cf0314b9a",
-      "title": "Fabric MCP Servers, CLI & AI Agents — A Conversation with Hasan Abo-Shally | Fabric Insider Ep. 8",
-      "link": "https://radacad.com/fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-mcp-servers-cli-ai-agents-a-conversation-with-hasan-abo-shally-fabric-insider-ep-8",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-07-28T20:28:14.000Z",
-      "contentSnippet": "Everyone is talking about MCP Servers. But most people still cannot clearly explain what one actually is, why it matters for Fabric, or how it differs from the APIs and skills they already use. In this episode of Fabric Insider, I sat down with Hasan Abo-Shally — Product Manager…"
-    },
-    {
       "id": "fb549b859ee4",
       "title": "Leading Agile Initiatives: How Leaders Help Agile Change Succeed",
       "link": "https://www.mountaingoatsoftware.com/agile/leading-agile-initiatives-how-leaders-help-agile-change-succeed",
@@ -1252,15 +1252,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-28T13:10:00.000Z",
       "contentSnippet": "Subagents get justified by time saved and parallel execution, but Rahul Garg explains that's not what matters most. Every token in the orchestrator's context is competing for its attention, and the real value of a subagent is what it keeps out of that context. Subagents should be…"
-    },
-    {
-      "id": "8dc7a10222b6",
-      "title": "Why I’m Writing Rachel’s Ramblings",
-      "link": "https://martinfowler.com/rachels-ramblings/intro.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-28T12:32:00.000Z",
-      "contentSnippet": "TL;DR I have ideas. I haven’t been writing them. That’s about to change. I promise… myself. I’ve been thinking a lot about talent. Actually, I’ve been thinking a lot about thinking. And writing. Or more specifically, not writing. This really hit me earlier this year at the Future…"
     },
     {
       "id": "3efe262dfea0",
