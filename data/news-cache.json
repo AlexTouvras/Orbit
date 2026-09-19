@@ -1,10 +1,46 @@
 {
-  "generatedAt": "2026-09-18T06:46:54.819Z",
+  "generatedAt": "2026-09-19T06:46:59.521Z",
   "count": 214,
   "items": [
     {
+      "id": "31b589224678",
+      "title": "RADAR: Catch gray failures with anomaly detection",
+      "link": "https://www.databricks.com/blog/radar-catch-gray-failures-anomaly-detection",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-19T00:00:00.000Z",
+      "contentSnippet": "Some of the most damaging outages are the ones your monitoring never flags: a slice..."
+    },
+    {
+      "id": "fd2a49355af9",
+      "title": "Enabling secure, productive work on personal devices",
+      "link": "https://www.databricks.com/blog/enabling-secure-productive-work-personal-devices",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-18T17:45:00.000Z",
+      "contentSnippet": "At Databricks IT, our vision is to empower people to work from anywhere without putting..."
+    },
+    {
+      "id": "559b0cf11197",
+      "title": "Introducing the Australian Youth Safety Blueprint",
+      "link": "https://openai.com/index/australian-youth-safety-blueprint",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-18T12:00:00.000Z",
+      "contentSnippet": "OpenAI introduces the Australian Youth Safety Blueprint, a six-pillar roadmap for safer AI experiences that protect and empower young people."
+    },
+    {
+      "id": "7e5cf95f9786",
+      "title": "Persistent Databases in the Browser with DuckDB-Wasm and OPFS",
+      "link": "https://duckdb.org/2026/09/18/opfs-wasm.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-09-18T00:00:00.000Z",
+      "contentSnippet": "When DuckDB-Wasm was launched in 2021, databases could not be persisted: everything lived in the Wasm heap and vanished when the tab closed. Keeping data meant serializing tables to Parquet, storing the bytes in IndexedDB, and re-registering them on the next page load. This was d…"
+    },
+    {
       "id": "abcfa66a2190",
-      "title": "Psychological safety is not impunity",
+      "title": "Psychological Safety is not Impunity",
       "link": "https://www.scrum.org/resources/blog/psychological-safety-not-impunity",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -147,6 +183,15 @@
       "contentSnippet": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify."
     },
     {
+      "id": "973a91148c50",
+      "title": "Hex turns complex analysis into visual reports with GPT‑6 Astra",
+      "link": "https://openai.com/index/hex-gpt-6-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-16T12:00:00.000Z",
+      "contentSnippet": "GPT-6 Astra helps Hex’s data agents turn answers into interactive visualizations that employees are proud to share."
+    },
+    {
       "id": "5f7e182a53f2",
       "title": "How to connect AI usage to business value",
       "link": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
@@ -163,15 +208,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-16T09:14:12.000Z",
       "contentSnippet": "Image Imagine you are using ChatGPT and writing a prompt. But you are not sure if it is a good prompt or not. Here, Promptly AI comes to life to help you enhance your prompt with just one click. Click here to open its website. Image How to add Promptly AI to your AI chatbots? Pro…"
-    },
-    {
-      "id": "71646fffd914",
-      "title": "How workers are unlocking new ways of working",
-      "link": "https://openai.com/index/unlocking-new-ways-of-working",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-16T09:00:00.000Z",
-      "contentSnippet": "New OpenAI Economic Research shows how workers use AI beyond traditional roles and which new activities become recurring parts of their work."
     },
     {
       "id": "932be409e526",
@@ -282,15 +318,6 @@
       "contentSnippet": "Every Postgres vendor calls itself \"managed.\" Few of them agree on what that word..."
     },
     {
-      "id": "c6e9fc42b35e",
-      "title": "Announcing On-Demand State Repartitioning for Apache Spark™ Structured Streaming on Databricks",
-      "link": "https://www.databricks.com/blog/announcing-demand-state-repartitioning-apache-sparktm-structured-streaming-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-14T21:04:30.000Z",
-      "contentSnippet": "Anyone running stateful Apache Spark™ Structured Streaming queries in production..."
-    },
-    {
       "id": "bb32dc5073c5",
       "title": "Gallery Walk to IT Roadmap",
       "link": "https://www.scrum.org/resources/blog/gallery-walk-it-roadmap",
@@ -325,15 +352,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-14T12:02:49.000Z",
       "contentSnippet": "Years ago when I was a Scrum Master for a great team we had a ritual. Right before the Daily Scrum, we would walk to our tea/coffee station and fill up our cups with our choice of drink and then walk back to our Jira board to inspect our progress. And I assume, a lot of other tea…"
-    },
-    {
-      "id": "296d33defd03",
-      "title": "How Fyxer built an AI executive assistant people trust",
-      "link": "https://openai.com/index/fyxer",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-14T12:00:00.000Z",
-      "contentSnippet": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user’s voice."
     },
     {
       "id": "e5d38ef6bb46",
@@ -415,15 +433,6 @@
       "category": "AI",
       "pubDate": "2026-09-12T00:42:25.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "39350de53a5f",
-      "title": "Health Plans: Your BI Tells You MLR Moved. Can Your AI Tell You Why?",
-      "link": "https://www.databricks.com/blog/health-plans-your-bi-tells-you-mlr-moved-can-your-ai-tell-you-why",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-11T18:26:59.000Z",
-      "contentSnippet": "A health plan CFO closes the month after the usual round of extracts, spreadsheets,..."
     },
     {
       "id": "f1dda2e4995c",
@@ -1144,15 +1153,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-05T15:56:45.000Z",
       "contentSnippet": "In my previous article, I explored the concept of agency — the capacity and freedom of individuals to act independently, make choices, and meaningfully influence their circumstances. But what does it look like when agency is entirely absent? I learned the hard way when I tried to…"
-    },
-    {
-      "id": "76c0869c87dd",
-      "title": "Thank You for 40 000 Stars on GitHub",
-      "link": "https://duckdb.org/2026/08/05/github-40k-stars.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-08-05T00:00:00.000Z",
-      "contentSnippet": "The duckdb/duckdb GitHub repository has just passed 40 000 stars! We’d like to use this milestone to stop for a moment and revisit recent developments in the “Duck Stack” ecosystem since last summer (2025), when we surpassed 30 000 stars. Releases Since the last milestone, the Du…"
     },
     {
       "id": "b557000206d1",
