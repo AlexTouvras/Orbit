@@ -1,7 +1,16 @@
 {
-  "generatedAt": "2026-09-19T06:46:59.521Z",
+  "generatedAt": "2026-09-20T06:46:58.213Z",
   "count": 214,
   "items": [
+    {
+      "id": "7f9543b7189e",
+      "title": "Scrum's Meetings Are Capped at Five Hours a Week. Something Else Filled Your Calendar.",
+      "link": "https://www.scrum.org/resources/blog/scrums-meetings-are-capped-five-hours-week-something-else-filled-your-calendar",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-20T06:00:00.000Z",
+      "contentSnippet": "Image Scrum has too many meetings. I have heard that sentence in training rooms since 2010 and for years I argued with it. Now I do the arithmetic on the whiteboard instead, because the Scrum Guide caps its own events and the cap is far below what anyone in the room guesses. Add…"
+    },
     {
       "id": "31b589224678",
       "title": "RADAR: Catch gray failures with anomaly detection",
@@ -336,9 +345,9 @@
       "contentSnippet": "Originally published on yuvalyeret.com. The token cap is the least interesting number in your AI budget Somewhere in your company right now, someone is trying to decide whether an employee should get $100, $300, or $1,000 a month of AI spend. It is a real question with a real inv…"
     },
     {
-      "id": "460835f845db",
-      "title": "Hey Scrum Masters, If Your Goal Is to Make Yourself Obsolete, You've Already Stopped Growing",
-      "link": "https://www.scrum.org/resources/blog/hey-scrum-masters-if-your-goal-make-yourself-obsolete-youve-already-stopped-growing",
+      "id": "3df41ddc58a3",
+      "title": "Hi Scrum Masters, if your goal is to make yourself obsolete, then you're doing it all wrong.",
+      "link": "https://www.scrum.org/resources/blog/hi-scrum-masters-if-your-goal-make-yourself-obsolete-then-youre-doing-it-all-wrong",
       "source": "Scrum.org",
       "category": "Delivery",
       "pubDate": "2026-09-14T12:21:00.000Z",
@@ -487,15 +496,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-09T16:21:00.000Z",
       "contentSnippet": "A quick survey of recent engagement of my posts on social media, indicating which service has by far the most engagement, and which service has seen a precipitous decline since early 2025. more…"
-    },
-    {
-      "id": "b1bb4c0a37ac",
-      "title": "🎉 Launched: Scrum Team Magazine",
-      "link": "https://www.scrum.org/resources/blog/launched-scrum-team-magazine",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-09T05:48:03.000Z",
-      "contentSnippet": "Image Click here to read and download the magazine. WHY SCRUM TEAM MAGAZINE? Many sectors like jewellery, watches, decoration, film, and fashion already have their own exquisite, luxurious, high-quality publications, yet the Scrum community has no such equivalent. To address this…"
     },
     {
       "id": "5a4baff754f8",
