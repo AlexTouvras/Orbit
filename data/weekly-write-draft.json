@@ -1,87 +1,87 @@
 {
-  "id": "ww-2026-09-14-ide",
-  "status": "published",
-  "createdAt": "2026-09-14T09:01:38.131Z",
-  "weekOf": "2026-09-14",
-  "slug": "when-a-report-slows-down-memory-is-not-a-change-log",
-  "title": "When a report slows down, memory is not a change log",
-  "summary": "I treat semantic-model modification times as incident triage: useful for narrowing suspects, never enough to prove causality.",
-  "category": "Data",
+  "id": "ww-2026-09-21-ide",
+  "status": "pending",
+  "createdAt": "2026-09-21T09:02:04.036Z",
+  "weekOf": "2026-09-21",
+  "slug": "when-access-rules-become-cheap-policy-becomes-the-bottleneck",
+  "title": "When access rules become cheap, policy becomes the bottleneck",
+  "summary": "AI can remove the repetitive work of configuring data access, but I still need a desired-state policy, a readable diff, and a named owner before permissions change.",
+  "category": "Delivery",
   "tags": [
-    "Power BI",
+    "Delivery",
     "Analytics",
-    "Incident response",
-    "Data operations"
+    "OneLake",
+    "Access control"
   ],
-  "mdx": "---\ntitle: \"When a report slows down, memory is not a change log\"\nsummary: \"I treat semantic-model modification times as incident triage: useful for narrowing suspects, never enough to prove causality.\"\ndate: \"2026-09-14\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\", \"Analytics\", \"Incident response\", \"Data operations\"]\n---\n\n## The question\n\nA report is fast on Friday and painfully slow on Monday. The first troubleshooting question is predictable: what changed? The answer is often just as predictable. Nobody remembers changing anything important.\n\nThat answer may be sincere, but it is weak evidence. A small edit to a measure, relationship, partition, or security rule can alter how a report behaves. The person who made it may not connect the edit to the slowdown, especially when the symptom appears later or only for one query path.\n\nSo the question I want an analytics system to answer is more precise: which model objects changed near the moment performance moved, and which of those changes can I test as a cause?\n\n## Turn recollection into a query\n\nChris Webb shows a practical way to start in [Find What Changed And When In Your Power BI Semantic Model](https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/). Power BI exposes INFO functions that return metadata about a semantic model, the layer that defines measures, relationships, calculations, and access rules behind a report. Many of those functions include a `ModifiedTime` value.\n\nWebb's query brings modification times for measures, calculated columns, calculation groups, relationships, partitions, roles, and other objects into one time-ordered view. Instead of asking a room to reconstruct a week from memory, I can start with a list of recent changes and their expressions.\n\nThat changes the opening move in an incident. If users first noticed the slowdown on Monday morning, objects modified shortly before that moment become candidates. Older untouched objects move down the queue. A model without change history asks the incident team to reconstruct causality from confidence; a timestamp makes the claim testable.\n\n## A timestamp is a lead, not a verdict\n\nThe same evidence can mislead if I ask too much of it. Webb notes that adding a calculation group changed the modification dates of all his measures, apparently because Power BI also changed a model property. A cluster of fresh timestamps may therefore describe one indirect platform action rather than many deliberate edits.\n\nModification time also does not prove that an edit caused the performance regression. It does not tell me who made the decision, what they intended, or whether the affected object sits on the slow query's path. Some INFO functions are unavailable at older model compatibility levels, so even the inventory can differ between models.\n\nI treat recency as a ranking signal. A change close to the incident earns investigation, not blame. I still need to reproduce the slow query, identify which objects it touches, and compare behavior with a known baseline. The timestamp narrows the search; the test establishes cause.\n\nThat distinction matters when pressure rises. Reverting the newest object may restore performance, but it may also remove a valid business rule. A quick rollback is safer when I know both what changed and what decision that object was meant to preserve.\n\n## Capture the baseline before the incident\n\nA modification query is useful after a failure. It becomes much more useful when I keep a snapshot from the last known-good release. I would store the object type, name, modification time, and relevant expression beside the release evidence for the model. Then an incident starts with a comparison, not only a current-state list.\n\nThe comparison should answer four questions. Did the object change? Was it changed inside the incident window? Does the slow query depend on it? Does restoring or correcting it change the measured result? The first pair establishes proximity. The second pair tests causality.\n\nThis does add work. Someone must capture the snapshot, keep it tied to a release, and decide how much model logic is appropriate to retain. On a small model with rare edits, the routine may cost more than it saves. I would start with a pre-release export and only automate it when incident frequency or model traffic justifies the maintenance.\n\nThere is another limit: modification times are not a full audit trail. If I need author identity, approval history, or an exact line-by-line diff, I need separate release records or version history. Calling the metadata query an audit log would create false confidence precisely when the team needs precision.\n\n## Keep diagnosis human\n\nI do not want the incident response to end with a generated list of recently changed objects. Someone still has to connect the model object to the user-visible symptom, understand the business rule, and choose between a correction and a rollback. That judgment stays manual because the newest change is not automatically the wrong one.\n\nMy useful split is simple. The system should preserve enough evidence to show where to look. The analyst should run the causal test and explain what the proposed fix would undo. If a platform-side action has refreshed many timestamps, I fall back to the release comparison rather than pretending the noisy list is decisive.\n\n## Takeaway\n\nWhen a report slows down, I will not begin with “nobody changed anything.” I will query modification times, compare them with the last known-good model, and test the recent objects that sit on the affected query path.\n\nThe reusable rule is this: use change history to rank suspects, then require a measured reproduction before naming a cause. Memory starts the conversation. Evidence decides the fix.\n",
-  "preview": "When a report slows down, memory is not a change log\n\nI treat semantic-model modification times as incident triage: useful for narrowing suspects, never enough to prove causality.\n\nInspired by: Find What Changed And When In Your Power BI Semantic Model",
+  "mdx": "---\ntitle: \"When access rules become cheap, policy becomes the bottleneck\"\nsummary: \"AI can remove the repetitive work of configuring data access, but I still need a desired-state policy, a readable diff, and a named owner before permissions change.\"\ndate: \"2026-09-21\"\ncategory: \"Delivery\"\nfeatured: false\ntags: [\"Delivery\", \"Analytics\", \"OneLake\", \"Access control\"]\n---\n\n## The question\n\nData access often looks controlled because it is slow. An administrator opens a security screen, creates a role, adds members, and checks the result. The friction feels like caution, even when the real policy lives in a ticket or in somebody's memory.\n\nThat illusion breaks when an AI assistant can scan an analytics estate and create hundreds of access rules from one request. The configuration work becomes cheap. The consequence of a vague rule does not.\n\nSo I am asking a narrower question than whether an assistant can manage permissions: when access changes happen at prompt speed, what evidence do I need before I let the prompt become policy?\n\n## The bottleneck moves upstream\n\nReza Rad's [Fabric Core MCP Server demonstration](https://radacad.com/fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai) shows the shift clearly. Microsoft Fabric is an analytics platform, and OneLake is its shared data layer. An MCP server gives an AI assistant a standard way to call the platform's tools.\n\nRad first uses the assistant to list workspaces, scan lakehouses, and inspect a custom security role. That read-only inspection works while the Fabric capacity is paused because the information comes from the catalog. He then starts the capacity and asks the assistant to create one role for every country in a table. Finally, he changes a test user's memberships and verifies that the report shows only the assigned countries.\n\nThe impressive part is scale. Six roles could have been a thousand, with no extra clicking. But that is also the risk. The moment a role can be created at prompt speed, the unit of review has to move from each click to the policy that generates the clicks.\n\n## Exact execution can still be the wrong policy\n\nAn assistant can carry out the request perfectly and still encode a poor access model. One role per country may fit a static demonstration. In a real estate, I would need to know whether countries are truly the business boundary, whether people need overlapping regions, how new values are handled, and who removes access after a role change.\n\nThe source makes one important limit explicit: assigning security groups is better practice than assigning individual users. That distinction matters because a direct user assignment solves today's request while creating tomorrow's cleanup. A group can connect data access to an owned identity process. A person added ad hoc becomes a small exception that is easy to forget.\n\nVerification also needs two layers. Seeing the expected sales total from the test identity proves that the rule was applied. It does not prove that Canada, Germany, and France were the right entitlement for that person. Technical validity answers, “Did the system do what I asked?” Policy validity asks, “Was I allowed to ask for this outcome?” I need both.\n\n## Review desired state, not the conversation\n\nI would put a small, durable artifact between the prompt and the change. For each role, it should state the data scope, the security group, the business reason, the owner, and any expiry or review date. That is the desired state. The assistant can scan the current configuration and produce a difference: roles to create, definitions to alter, memberships to add, and access to remove.\n\nThis changes the review from reading a chat transcript to inspecting consequences. I can spot a role count that suddenly follows every raw value in a column. I can challenge an individual assignment where a group should exist. I can ask why an old membership is being removed before a production report changes for its reader.\n\nAfter approval, the same automation can apply the difference and verify the result from the affected identity. The scan and comparison should stay repeatable, so drift appears as evidence rather than as a surprise during an incident. Someone still has to resolve ambiguous ownership and approve exceptions. I want that judgment to remain manual because the platform catalog cannot tell me why a colleague should see France but not Australia.\n\n## Where speed earns its place\n\nI would not wrap every catalog query in ceremony. Read-only inventory and documentation are good candidates for direct automation. A sandbox is also the right place to generate a large role set and learn how the naming, limits, and report behavior hold up.\n\nProduction changes need a stronger boundary, but even there urgency can alter the path. Removing a compromised identity may justify immediate execution with an after-the-fact review. Routine additions do not deserve the same exception. The cost of a delayed grant is usually visible; the cost of quiet excess access can sit unnoticed for months.\n\nThe practical baseline is not “human clicks are safe.” They are often inconsistent and poorly recorded. Automation earns the production job when it leaves a clearer desired state, a smaller permission scope, and a better record than the manual process it replaces.\n\n## Takeaway\n\nWhen access configuration becomes cheap, I will spend less time reviewing keystrokes and more time reviewing the rule that produces them. I will scan first, compare current access with a named desired state, review the difference, and verify the result through the identity that consumes the data.\n\nMy decision rule is simple: automate a permission change only when the policy is explicit enough to show who should gain access, who should lose it, and who owns the next review. Prompt speed is useful for applying a sound rule. It is dangerous when it hides that no rule was written.",
+  "preview": "When access rules become cheap, policy becomes the bottleneck\n\nAI can remove the repetitive work of configuring data access, but I still need a desired-state policy, a readable diff, and a named owner before permissions change.\n\nInspired by: Fabric Core MCP Server: Scan and Configure OneLake Security with AI",
   "intake": {
-    "weekOf": "2026-09-14",
-    "generatedAt": "2026-09-14T09:01:03.766Z",
+    "weekOf": "2026-09-21",
+    "generatedAt": "2026-09-21T09:01:17.770Z",
     "signals": [
       {
-        "id": "8bbe78103d32",
-        "title": "Find What Changed And When In Your Power BI Semantic Model",
-        "link": "https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/",
+        "id": "6eb24a57fa4d",
+        "title": "Find Unused Objects In Power BI Semantic Models With Semantic Link Labs",
+        "link": "https://blog.crossjoin.co.uk/2026/09/20/find-unused-objects-in-power-bi-semantic-models-with-semantic-link-labs/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "Here’s a situation I’ve found myself in many times. You’re called to help someone whose Power BI report is suddenly very slow. You ask whether any changes were made to the semantic model around the time performance got worse and the answer is no, absolutely not. You then spend an…"
+        "snippet": "A few weeks ago I wrote about how Semantic Link Labs now has tools with interactive UIs and showed how you could use this to view lineage and so Vertipaq-Analyzer-stuff in a notebook. I didn’t show what I think is the coolest new feature though: the ability to find the tables, co…"
       },
       {
-        "id": "359a014790c8",
-        "title": "Data Engineering Weekly #287",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-287",
+        "id": "30fd4a039425",
+        "title": "Data Engineering Weekly #288",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-288",
         "source": "Data Engineering Weekly",
         "category": "Data",
         "snippet": "The Weekly Data Engineering Newsletter"
       },
       {
-        "id": "14a14220a269",
-        "title": "TEAMWORK: From the Individual Lens to the Collective Lens",
-        "link": "https://www.scrum.org/resources/blog/teamwork-individual-lens-collective-lens",
+        "id": "e53dda14685d",
+        "title": "Cognitive Trap: Planning Certainty",
+        "link": "https://www.scrum.org/resources/blog/cognitive-trap-planning-certainty",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "How do we help people truly connect and work well together? The question has never been easy. We have invented countless ways to strengthen teamwork, yet few of them work, and those that do rarely last. Between 2012 and 2015, Google looked for what makes a team succeed through it…"
+        "snippet": "Planning Certainty Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, and ada…"
       },
       {
-        "id": "12e9dd685180",
-        "title": "Perplexity trusts GPT-6 Astra with end-to-end systems",
-        "link": "https://openai.com/index/perplexity-improving-accuracy-with-astra",
+        "id": "559b0cf11197",
+        "title": "Introducing the Australian Youth Safety Blueprint",
+        "link": "https://openai.com/index/australian-youth-safety-blueprint",
         "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": "Perplexity uses Astra to write communications, change software, and monitor production systems, and checks in much less frequently than with earlier models."
+        "snippet": "OpenAI introduces the Australian Youth Safety Blueprint, a six-pillar roadmap for safer AI experiences that protect and empower young people."
       },
       {
-        "id": "4c6f43d0c3af",
-        "title": "Writing DAX at the correct granularity",
-        "link": "https://www.sqlbi.com/tv/writing-dax-at-the-correct-granularity/",
-        "source": "SQLBI",
+        "id": "ad2a2ccfa362",
+        "title": "Fabric Core MCP Server: Scan and Configure OneLake Security with AI",
+        "link": "https://radacad.com/fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai",
+        "source": "RADACAD",
         "category": "Analytics",
-        "snippet": "A DAX calculation can produce convincing values at the detail level and fail at the total. The problem is often that the business rule was evaluated at the wrong granularity. This video introduces four grains, or levels of granularity, to…"
+        "snippet": "With the appearance of AI tools, LLMs, MCP servers, and skills, everyone these days is interested in what tool can do what. I’ve already explained the Power BI Modeling MCP server and Fabric Skills in previous videos. In this one, I’ll talk about the Fabric Core MCP server, an MC…"
       },
       {
-        "id": "39350de53a5f",
-        "title": "Health Plans: Your BI Tells You MLR Moved. Can Your AI Tell You Why?",
-        "link": "https://www.databricks.com/blog/health-plans-your-bi-tells-you-mlr-moved-can-your-ai-tell-you-why",
+        "id": "31b589224678",
+        "title": "RADAR: Catch gray failures with anomaly detection",
+        "link": "https://www.databricks.com/blog/radar-catch-gray-failures-anomaly-detection",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "A health plan CFO closes the month after the usual round of extracts, spreadsheets,..."
+        "snippet": "Some of the most damaging outages are the ones your monitoring never flags: a slice..."
       },
       {
-        "id": "ae8c183f2002",
-        "title": "Reordering Your Backlog Is Zero Sum. Deleting From It Is Not.",
-        "link": "https://www.scrum.org/resources/blog/reordering-your-backlog-zero-sum-deleting-it-not",
+        "id": "cadfc7b3ccdf",
+        "title": "Does Your AI Know the Scrum Guide? Twelve Questions to Find Out",
+        "link": "https://www.scrum.org/resources/blog/does-your-ai-know-scrum-guide-twelve-questions-find-out",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Image Open the Scrum Guide and look for a word that takes something out. Refinement is \"the act of breaking down and further defining Product Backlog items into smaller more precise items.\" The Product Owner is accountable for \"Ordering Product Backlog items.\" Work that misses th…"
+        "snippet": "Image More and more participants in my Professional Scrum Master classes arrive with Scrum \"rules\" they picked up from an AI chatbot. Some of those rules are accurate. Some stopped being true in November 2020. And a few were never part of Scrum at all. The trouble is that from th…"
       },
       {
-        "id": "3f37b0a02f79",
-        "title": "Generating running routes with GPT-6 Astra and ChatGPT Work",
-        "link": "https://simonwillison.net/2026/Sep/12/astra-running-routes/",
-        "source": "Simon Willison",
+        "id": "964ae1dd0fac",
+        "title": "How Cooley is accelerating IPO work with ChatGPT",
+        "link": "https://openai.com/index/cooley-gopublic",
+        "source": "OpenAI Blog",
         "category": "AI",
-        "snippet": ""
+        "snippet": "Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most."
       }
     ],
     "projects": [
@@ -169,7 +169,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-09-14T09:07:14.070Z",
-  "publishedSlug": "when-a-report-slows-down-memory-is-not-a-change-log"
+  "source": "ide"
 }
