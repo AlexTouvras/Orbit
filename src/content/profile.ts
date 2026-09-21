@@ -1,6 +1,6 @@
 import type { ComponentType, SVGProps } from "react";
 import type { LucideIcon } from "lucide-react";
-import { Bot, LineChart, Mail, Globe, Route } from "lucide-react";
+import { Bot, GitBranch, Landmark, LineChart, Mail, Globe, Route } from "lucide-react";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/components/ui/BrandIcons";
 
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
@@ -42,7 +42,7 @@ export interface Competency {
   hudTitle?: string;
   hudVerbs?: string;
   hudDescription?: string;
-  accent: "cyan" | "violet" | "blue";
+  accent: "cyan" | "violet" | "blue" | "amber";
   icon: LucideIcon;
   /** Optional deep link (e.g. field card) — makes the home card pressable. */
   href?: string;
@@ -104,7 +104,7 @@ export const competencies: Competency[] = [
     title: "Data & Analytics",
     shortTitle: "Data",
     description:
-      "Python, SQL, and Power BI / Fabric — gold tables, semantic models, and page paths that survive a cold Monday open. Roots in credit risk (PD, scorecards, ECL).",
+      "Python, SQL, and Power BI / Fabric — gold tables, semantic models, and page paths that survive a cold Monday open.",
     hudTitle: "Analytics is a stack, not a dashboard",
     hudVerbs: "Ask → name → define → consume",
     hudDescription:
@@ -126,6 +126,34 @@ export const competencies: Competency[] = [
     accent: "violet",
     icon: Route,
     href: "/delivery-field-card/index.html",
+    hrefLabel: "Field card",
+  },
+  {
+    title: "Software Development Life Cycle",
+    shortTitle: "SDLC",
+    description:
+      "Gates from bound to merge: named acceptance, smallest build, tests and review before anyone calls it code-complete. Cutover lives on Delivery.",
+    hudTitle: "SDLC is a gate chain, not a phase poster",
+    hudVerbs: "Bound → design → build → verify",
+    hudDescription:
+      "Bound, design, build, verify: those are the layers. Ceremonies are lanes. Delivery owns how the change lands.",
+    accent: "violet",
+    icon: GitBranch,
+    href: "/sdlc-field-card/index.html",
+    hrefLabel: "Field card",
+  },
+  {
+    title: "Credit Risk Management",
+    shortTitle: "Credit",
+    description:
+      "Loan origination and IFRS 9: creditworthiness in the engine, watch the book, stage on SICR, hold 12-month or lifetime ECL.",
+    hudTitle: "Credit risk is a lifetime, not a cutoff",
+    hudVerbs: "Decide → watch → stage → hold",
+    hudDescription:
+      "Originate, monitor, stage, provision: those are the layers. Models are lanes. A score is not the loss you hold.",
+    accent: "amber",
+    icon: Landmark,
+    href: "/credit-risk-field-card/index.html",
     hrefLabel: "Field card",
   },
 ];

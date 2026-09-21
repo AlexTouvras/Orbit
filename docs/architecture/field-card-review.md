@@ -12,6 +12,8 @@ Friday 17:00 local drafts the PR. This agent runs Friday 18:00 local (`0 15 * * 
 | Data Analytics | `AlexTouvras/data-analytics-field-card` | https://alextouvras.com/analytics-field-card/ |
 | Technology Delivery | `AlexTouvras/technology-delivery-field-card` | https://alextouvras.com/delivery-field-card/ |
 
+Orbit also hosts **SDLC** (`/sdlc-field-card/`) and **Credit Risk** (`/credit-risk-field-card/`) as static Hub cards. They are not in the Friday review loop until source repos exist — do not stamp-only bump them from this agent.
+
 ## For each open weekly PR (`chore/weekly-refresh-*`)
 
 1. Fetch `index.html` on the PR head and on `main`.
@@ -69,6 +71,8 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 - **AI:** H1 `Agentic AI is a loop, not a menu` (do not treat “loop” as a break or restore “stack”; analytics owns stack). RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Not a vendor wall. CSS `.stack` is layout only.
 - **Analytics:** ASK → GRAIN → TRUTH → USE. Not a Fabric/Power BI brochure.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
+- **SDLC** (hosted, not yet weekly): BOUND → DESIGN → BUILD → VERIFY. Not a phase-poster / SAFe brochure. Cutover stays on Delivery.
+- **Credit risk** (hosted, not yet weekly): ORIGINATE → MONITOR → STAGE → PROVISION. Not a vendor/scorecard brochure. Grain/gold stays on Analytics.
 
 ## Backup
 

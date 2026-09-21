@@ -106,6 +106,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${base}/sdlc-field-card/index.html`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
+    {
+      url: `${base}/credit-risk-field-card/index.html`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.75,
+    },
+    {
       url: `${base}/llms.txt`,
       lastModified: now,
       changeFrequency: "monthly",

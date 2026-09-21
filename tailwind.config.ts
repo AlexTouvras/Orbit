@@ -20,6 +20,7 @@ const config: Config = {
           ai: "oklch(var(--accent-ai) / <alpha-value>)",
           violet: "oklch(var(--accent-violet) / <alpha-value>)",
           blue: "oklch(var(--accent-blue) / <alpha-value>)",
+          amber: "oklch(var(--accent-amber) / <alpha-value>)",
         },
         glass: "rgba(255,255,255,0.04)",
       },
