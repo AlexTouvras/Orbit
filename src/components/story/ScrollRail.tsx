@@ -6,7 +6,7 @@ import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
 /**
- * Case-study reel: native vertical scroll translates the track to the right
+ * Horizontal reel: native vertical scroll translates the track to the right
  * (sticky + translateX). Reduced motion keeps a swipe rail. Wheel is never captured.
  */
 export function ScrollRail({

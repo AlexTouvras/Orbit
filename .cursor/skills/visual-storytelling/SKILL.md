@@ -28,9 +28,9 @@ Then a browser walk (desktop + a ~390px viewport):
 1. Scroll Hub end to end; the top line fills; chapter rail tracks the scene; Gravity rings/satellites turn; craft rows spotlight
 2. Competency rows are plain `<a href>` to field cards (not `next/link`)
 3. Proof reel: scrolling down advances the cards to the right; Case study and architecture still work. Reduced motion: swipe the rail.
-4. Live questions open the matching desk
+4. Live peek reel: sneak-peek image + `desk.question` as the headline; scrolling down advances cards; the card opens `/portfolio/live/{slug}`. Reduced motion: swipe the rail.
 5. About experience reads as a timeline, not stacked glass cards
-6. `/portfolio` is Open → workshop reel (scroll-down advances cards) → live questions → Power BI reel (scroll-down advances reports) → GitHub list (no 3-up `GlassCard` grid)
+6. `/portfolio` is Open → workshop reel → live peek reel → Power BI reel → GitHub list (no 3-up `GlassCard` grid). `/portfolio/live` uses the same reel (not a list + carousel).
 7. `prefers-reduced-motion`: story still readable; no required animation
 
 ## Minimum evidence (open before editing)
@@ -50,7 +50,7 @@ A page is a sequence of **chapters**, not a stack of sections.
 | Metaphor | Make the brand visible | Gravity field: center + satellites |
 | Craft | Numbered process (how the work actually happens) | Delivery → Data → AI with `hudVerbs` |
 | Proof | Horizontal reel of evidence | Showcase writes |
-| Live | Questions as headlines | `desk.question` → `/portfolio/live/{slug}` |
+| Live | Peek reel of questions | sneak peek + `desk.question` → `/portfolio/live/{slug}` |
 | Signals | Editorial list, not blog cards | Category · title · date |
 | Close | Landing, not another grid | About + contact |
 
@@ -59,7 +59,7 @@ Rules:
 - **One idea per chapter.** If you need a card grid to “fit three things,” you do not have a scene yet.
 - **Type is the primary image.** Photography/video is optional; Orbit’s image is Syne at `.text-story` / `.text-display` plus the orbit ring.
 - **Numbers are characters.** Cadence, zone count, €/m² — `StoryStat` / `.orbit-accent` display figures, not a muted mono row.
-- **No scroll-jacking.** Horizontal snap on reels is fine (`scroll-snap-type: x mandatory`). Do not hijack vertical scroll (no `preventDefault` on wheel, no vertical snap, no pin-jack libraries). Scroll-linked motion is allowed: progress line, ring rotate/scale, sticky chapter kicker, in-view spotlight, count-up, `StoryReveal` scale, and sticky **reels** (`ScrollRail`) whose `translateX` is driven by native vertical scroll. Lists (Craft, live questions, Signals, GitHub, About timeline) stay vertical. Copy must remain readable without it.
+- **No scroll-jacking.** Horizontal snap on reels is fine (`scroll-snap-type: x mandatory`). Do not hijack vertical scroll (no `preventDefault` on wheel, no vertical snap, no pin-jack libraries). Scroll-linked motion is allowed: progress line, ring rotate/scale, sticky chapter kicker, in-view spotlight, count-up, `StoryReveal` scale, and sticky **reels** (`ScrollRail`) whose `translateX` is driven by native vertical scroll. Lists (Craft, Signals, GitHub, About timeline) stay vertical. Copy must remain readable without it.
 - **Reduced motion always works.** `motion-safe:` only. `StoryProgress` may use IntersectionObserver; it must not depend on animation.
 - **Field cards** live as static HTML in `public/`. Home competency links stay plain `<a>`.
 
@@ -80,7 +80,9 @@ Rules:
 | `ScrollLine` | `src/components/story/ScrollLine.tsx` | Top read bar; Hub / Portfolio / About / live (via AppChrome) |
 | `ScrollSpot` | `src/components/story/ScrollSpot.tsx` | Brightens the row in the viewport midline |
 | `StoryReveal` | `src/components/story/StoryReveal.tsx` | Scale/rise when a beat enters view |
-| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Reels (Hub Proof, Portfolio workshop, Power BI): vertical scroll → cards move right; swipe if reduced motion |
+| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Reels (Hub Proof, live, Portfolio workshop, Power BI): vertical scroll → cards move right; swipe if reduced motion |
+| `LiveDeskReel` | `src/components/live/LiveDeskReel.tsx` | Hub / Portfolio / live index: peek + question on a `ScrollRail` |
+| `LiveDeskTile` | `src/components/live/LiveDeskTile.tsx` | One desk card: sneak peek + `desk.question` as headline |
 
 AppChrome: pathname `/` is full-bleed. Other public pages stay `max-w-5xl` (live desks `max-w-6xl`). Do not silently widen Studio.
 
@@ -97,9 +99,9 @@ A desk is already a story if it keeps **one question**. Visual storytelling mean
 When adding a new desk:
 
 - Put `question` on `LiveDesk` in `src/content/live-desks.ts` first
-- Surface it on Hub via `LiveQuestions` (headline only — no heavy peek on Hub)
+- Surface it on Hub / Portfolio / `/portfolio/live` via `LiveQuestions` / `LiveDeskReel` (sneak peek + question as the card headline)
 - Build the desk as Open → Cast → Picture → Move → Close
-- Verify the Hub live chapter still lists the question
+- Verify the live reel still shows the peek and the question
 
 Do not: iframe a Power BI report as the story; duplicate Hub glass cards onto the desk; add a marketing hero above the question.
 
