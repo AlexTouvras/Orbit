@@ -19,8 +19,10 @@ If the review agent misses, Monday watchdog posts a FYI in #orbit. Finish by re-
 | Agentic AI | AlexTouvras/agentic-ai-field-card | public/field-card/index.html | /field-card/ |
 | Data Analytics | AlexTouvras/data-analytics-field-card | public/analytics-field-card/index.html | /analytics-field-card/ |
 | Technology Delivery | AlexTouvras/technology-delivery-field-card | public/delivery-field-card/index.html | /delivery-field-card/ |
-| SDLC | *(Orbit-hosted until a source repo exists)* | public/sdlc-field-card/index.html | /sdlc-field-card/ |
-| Credit Risk | *(Orbit-hosted until a source repo exists)* | public/credit-risk-field-card/index.html | /credit-risk-field-card/ |
+| SDLC | *(Orbit-hosted, monthly review)* | public/sdlc-field-card/index.html | /sdlc-field-card/ |
+| Credit Risk | *(Orbit-hosted, monthly review)* | public/credit-risk-field-card/index.html | /credit-risk-field-card/ |
+
+Public footers are monthly (`Next: <month>`), not “week of”. The Friday loop above is internal discovery for the three source repos. SDLC and Credit Risk are stamped on Orbit once a month (`.cursor/automations/hosted-field-card-monthly-review.json`).
 
 ```mermaid
 flowchart LR

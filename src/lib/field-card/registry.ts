@@ -1,10 +1,11 @@
 /**
- * Registry of weekly field cards that Orbit can preview / Approve / sync.
- * Token payloads already carry `repo`; this maps each repo to site paths + labels.
+ * Registry of field cards that Orbit can preview / Approve / sync from a
+ * source repo. Token payloads already carry `repo`; this maps each repo to
+ * site paths + labels.
  *
- * Orbit-hosted cards without a source repo yet (SDLC, Credit Risk) are linked
- * from Hub / HUD only. Do not add them here until the GitHub repo exists —
- * Friday review iterates this list.
+ * Orbit-hosted cards (SDLC, Credit Risk) are reviewed **monthly** on this
+ * repo. Do not add them here until a GitHub source repo exists — Friday
+ * review iterates this list.
  */
 export type FieldCardId = "agentic-ai" | "data-analytics" | "technology-delivery";
 

@@ -90,31 +90,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${base}/field-card/index.html`,
       lastModified: now,
-      changeFrequency: "weekly",
+      changeFrequency: "monthly",
       priority: 0.75,
     },
     {
       url: `${base}/analytics-field-card/index.html`,
       lastModified: now,
-      changeFrequency: "weekly",
+      changeFrequency: "monthly",
       priority: 0.75,
     },
     {
       url: `${base}/delivery-field-card/index.html`,
       lastModified: now,
-      changeFrequency: "weekly",
+      changeFrequency: "monthly",
       priority: 0.75,
     },
     {
       url: `${base}/sdlc-field-card/index.html`,
       lastModified: now,
-      changeFrequency: "weekly",
+      changeFrequency: "monthly",
       priority: 0.75,
     },
     {
       url: `${base}/credit-risk-field-card/index.html`,
       lastModified: now,
-      changeFrequency: "weekly",
+      changeFrequency: "monthly",
       priority: 0.75,
     },
     {

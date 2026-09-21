@@ -21,6 +21,7 @@
 | Analytics field card judgment | Cursor `.cursor/automations/analytics-field-card-weekly-content-pass.json` | PR `## Summary` | none — Friday 18:00 review |
 | Delivery field card judgment | Cursor `.cursor/automations/delivery-field-card-weekly-content-pass.json` | PR `## Summary` | none — Friday 18:00 review |
 | Field card review | Cursor `.cursor/automations/field-card-review.json` | Apply review + #orbit FYI | review agent is the gate |
+| Hosted field card monthly | Cursor `.cursor/automations/hosted-field-card-monthly-review.json` | Orbit PR stamp for SDLC + Credit Risk | monthly; not Friday |
 | Field-card action API | Orbit `/api/field-card/action` | merge + sync HTML to `public/` | called by review agent |
 | Daily ops check | Cursor `.cursor/automations/daily-ops-check.json` | `#ops-channel` issues only | Propose-only; ✅ follow-up / ⏸️ snooze / ignore = later |
 

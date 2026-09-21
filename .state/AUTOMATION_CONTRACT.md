@@ -3,7 +3,7 @@
 > Orbit hosts automation JSON backups; some automations bind to other repos.
 > IDE agents use the same `.state/` files plus optional ProjectBrain MCP.
 
-**Last updated:** 2026-09-10
+**Last updated:** 2026-09-21
 
 ## Runtime (this workspace)
 
@@ -21,7 +21,8 @@
 | Delivery field card weekly | `AlexTouvras/technology-delivery-field-card` | Fri 17:00 EEST | `.cursor/automations/delivery-field-card-weekly-content-pass.json` | https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d0216e441 |
 | Analytics field card weekly | `AlexTouvras/data-analytics-field-card` | Fri 17:00 EEST | `.cursor/automations/analytics-field-card-weekly-content-pass.json` | https://cursor.com/automations/dd4bad7c-9558-11f1-ba66-0e7d0216e441 |
 | Agentic AI field card weekly | `AlexTouvras/agentic-ai-field-card` | Fri 17:00 EEST | `.cursor/automations/agentic-field-card-weekly-content-pass.json` | https://cursor.com/automations/c0138489-8c1c-11f1-b532-320a589b8025 |
-| Field card review | `AlexTouvras/Orbit` (gates all three) | Fri 18:00 EEST | `.cursor/automations/field-card-review.json` | https://cursor.com/automations/a1c0b46b-9a09-11f1-ba66-0e7d0216e441 |
+| Field card review | `AlexTouvras/Orbit` (gates all three source-repo cards) | Fri 18:00 EEST | `.cursor/automations/field-card-review.json` | https://cursor.com/automations/a1c0b46b-9a09-11f1-ba66-0e7d0216e441 |
+| Hosted field card monthly | `AlexTouvras/Orbit` (SDLC + Credit Risk) | 1st of month 18:00 EEST | `.cursor/automations/hosted-field-card-monthly-review.json` | *(create in Cursor)* |
 
 Live URL (delivery): https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d0216e441
 

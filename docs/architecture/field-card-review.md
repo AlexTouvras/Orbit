@@ -12,7 +12,7 @@ Friday 17:00 local drafts the PR. This agent runs Friday 18:00 local (`0 15 * * 
 | Data Analytics | `AlexTouvras/data-analytics-field-card` | https://alextouvras.com/analytics-field-card/ |
 | Technology Delivery | `AlexTouvras/technology-delivery-field-card` | https://alextouvras.com/delivery-field-card/ |
 
-Orbit also hosts **SDLC** (`/sdlc-field-card/`) and **Credit Risk** (`/credit-risk-field-card/`) as static Hub cards. They are not in the Friday review loop until source repos exist — do not stamp-only bump them from this agent.
+Orbit also hosts **SDLC** (`/sdlc-field-card/`) and **Credit Risk** (`/credit-risk-field-card/`). Public review for those is **monthly** on Orbit (stamp + spine). They are not in the Friday source-repo loop. Do not stamp-only bump them every Friday.
 
 ## For each open weekly PR (`chore/weekly-refresh-*`)
 
@@ -71,9 +71,21 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 - **AI:** H1 `Agentic AI is a loop, not a menu` (do not treat “loop” as a break or restore “stack”; analytics owns stack). RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Not a vendor wall. CSS `.stack` is layout only.
 - **Analytics:** ASK → GRAIN → TRUTH → USE. Not a Fabric/Power BI brochure.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
-- **SDLC** (hosted, not yet weekly): BOUND → DESIGN → BUILD → VERIFY. Not a phase-poster / SAFe brochure. Cutover stays on Delivery.
-- **Credit risk** (hosted, not yet weekly): ORIGINATE → MONITOR → STAGE → PROVISION. Not a vendor/scorecard brochure. Grain/gold stays on Analytics.
+- **SDLC** (Orbit-hosted, monthly): BOUND → DESIGN → BUILD → VERIFY. Not a phase-poster / SAFe brochure. Cutover stays on Delivery.
+- **Credit risk** (Orbit-hosted, monthly): ORIGINATE → MONITOR → STAGE → PROVISION. Not a vendor/scorecard brochure. Grain/gold stays on Analytics.
 
 ## Backup
 
 If this agent misses, Monday watchdog posts a FYI in #orbit. Finish by re-running this agent (or Apply review). Slack is not the gate. Saturday is not scheduled.
+
+## Monthly hosted cards (SDLC, Credit Risk)
+
+Reviewed on Orbit, not via source-repo Apply review.
+
+On the 1st of each month, run `.cursor/automations/hosted-field-card-monthly-review.json`:
+
+1. Confirm spines (SDLC: BOUND → DESIGN → BUILD → VERIFY; Credit: ORIGINATE → MONITOR → STAGE → PROVISION).
+2. Bump the footer stamp: `Reviewed <Month YYYY> · Next: <next month>`. Changed line stays “Monthly review” unless the HTML actually changed.
+3. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. Do not touch the Friday source-repo cards in that run.
+
+Do not stamp these cards on a normal Friday.
