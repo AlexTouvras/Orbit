@@ -28,7 +28,7 @@ async function DeskPeek({ slug }: { slug: string }) {
   return <PeekFallback />;
 }
 
-/** Peek + question for the live ScrollRail. Question is the headline. */
+/** Peek + question for the live ScrollRail. Question sits on the image. */
 export function LiveDeskTile({
   desk,
   index,
@@ -40,17 +40,20 @@ export function LiveDeskTile({
 
   return (
     <ScrollRailCard className="w-[min(88vw,52rem)]">
-      <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
-        <div className="pointer-events-none h-[min(36vh,20rem)] w-full overflow-hidden border-b border-white/10 bg-void-800">
+      <article className="group relative isolate overflow-hidden rounded-3xl border border-white/10 bg-void-800">
+        <div className="pointer-events-none h-[min(42vh,24rem)] w-full">
           <Suspense fallback={<PeekFallback />}>
             <DeskPeek slug={desk.slug} />
           </Suspense>
         </div>
-        <div className="relative px-6 py-5 sm:px-8 sm:py-6">
-          <p className="story-index absolute right-4 top-2 select-none" aria-hidden>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-void via-void/90 to-transparent px-6 pb-6 pt-16 sm:px-8 sm:pb-7">
+          <p
+            className="story-index absolute right-4 top-4 select-none sm:top-6"
+            aria-hidden
+          >
             {pad(index + 1)}
           </p>
-          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500">
+          <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
             {desk.cadence}
           </p>
           <h3 className="relative mt-2 max-w-xl font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
