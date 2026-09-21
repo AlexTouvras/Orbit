@@ -111,9 +111,10 @@ export function FitnessCodexPanel({ lane }: { lane: WeekLane<CodexSeries> }) {
       <p className="mb-6 text-sm text-slate-400">
         Long-term series in the units they were measured in — not HUD integers.
         About one year of weekly points. AGI is VDOT with predicted 5K on the
-        label — same series, one graph. Load is kilograms: weight, fat, lean.
-        STR only appears once lift logs exist. Week previous/next does not
-        rewind the series.
+        label — same series, one graph. SPD is peak km/h from stride/sprint max
+        speed, not that race line. Load is kilograms: weight, fat, lean.
+        STR only appears once lift logs exist; SPD once max-speed samples
+        exist. Week previous/next does not rewind the series.
       </p>
       {points.length ? (
         <div className="grid gap-4 lg:grid-cols-2">
@@ -127,6 +128,19 @@ export function FitnessCodexPanel({ lane }: { lane: WeekLane<CodexSeries> }) {
             latest={fmt(points.at(-1)?.vdotEst ?? null, 2)}
             series={[{ values: points.map((point) => point.vdotEst), stroke: "#a78bfa" }]}
             note="Race VDOT is the anchor. The line follows CTL vs that race-week CTL — training down can sit below the PB, a load bump cannot invent a new one. Predicted 5K is the inverse of this line."
+          />
+          <CodexPane
+            title="SPD · max speed"
+            unit="km/h"
+            latest={fmt(
+              [...points].reverse().find((point) => point.maxSpeedKmh != null)
+                ?.maxSpeedKmh ?? null,
+              1,
+            )}
+            series={[
+              { values: points.map((point) => point.maxSpeedKmh), stroke: "#f472b6" },
+            ]}
+            note="Rolling best from stride/sprint efforts, same honesty rule as STR: no line until fitness-coach writes weekly max_speed_kmh. GPS spikes on easy runs do not count. Peak velocity, not 5K race speed — that is the AGI pane."
           />
           <CodexPane
             title="Effort · run CTL / ATL"

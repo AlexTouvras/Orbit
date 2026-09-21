@@ -139,6 +139,8 @@ export interface CodexPoint {
   vdotEst: number | null;
   predicted5k: string | null;
   vdotRace: number | null;
+  /** Rolling best max speed (km/h) from stride/sprint efforts. */
+  maxSpeedKmh: number | null;
   vo2: number | null;
   vo2AbsLMin: number | null;
   ctl: number | null;

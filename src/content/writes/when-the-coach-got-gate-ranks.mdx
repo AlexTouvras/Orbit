@@ -2,6 +2,7 @@
 title: "When the coach got gate ranks"
 summary: "My training plan already had honest numbers. They still felt like a parking ticket. Gate ranks wrap the same sensor data in a story so I actually look at readiness before I look at Tuesday squats."
 date: "2026-09-02"
+updated: "2026-09-21"
 category: "Learning"
 featured: true
 showcase: false
@@ -20,7 +21,7 @@ I wanted the same receipts to feel like progress without lying about what they m
 
 Arc Mode is not "software thinks you are a hunter." Fantasy skin with zero math is how apps get uninstalled by Wednesday.
 
-The rule I kept: every stat must trace to a sensor or a log line. If the watch stops syncing VO₂max, the agility score falls back to run fitness load. If I skip lift logs for two weeks, strength stops pretending. If freshness crashes through a hard recovery threshold, the gate seals at rank D and the plan says so in plain English: recovery protocol, not hero Wednesday.
+The rule I kept: every stat must trace to a sensor or a log line. If the watch stops syncing VO₂max, endurance goes blank instead of inventing a number. If max speed never shows a clean stride sample, speed stays off the card. If I skip lift logs for two weeks, strength stops pretending. If freshness crashes through a hard recovery threshold, the gate seals at rank D and the plan says so in plain English: recovery protocol, not hero Wednesday.
 
 The skin is playful. The plumbing is still the same athlete-state code plus workout-platform sync and Slack effort ratings described in [the first coach essay](/writes/when-the-coach-lives-in-git-and-slack). Arc Mode is a heads-up display on top, committed to git as narrative inside each week's plan file.
 
@@ -30,7 +31,7 @@ This is the real component, not a screenshot. Hover gate rank, score, or any sta
 
 <ArcStatusCardDemo />
 
-**Strength** reads session effort from Slack lift logs (48 here because I had only logged one lift). **Agility** prefers watch VO₂max, else run fitness load. **Vitality** blends freshness, heart-rate variability, and sleep. **Perception** tracks body-fat direction from the scale. The quote line is hashed from the week id, not random. Quest bars bank from short daily practice logs in Slack; note pull-ups already past the ceiling at 34/27.
+**Strength** reads session effort from Slack lift logs (48 here because I had only logged one lift). **Agility** is race-speed: Daniels VDOT from the 5K, predicted time on the label. **Speed** is peak velocity from max speed on strides and sprints — neuromuscular top-end, not the 5K. **Endurance** is watch VO₂max. **Vitality** blends freshness, heart-rate variability, and sleep. **Perception** tracks body-fat direction from the scale. The quote line is hashed from the week id, not random. Quest bars bank from short daily practice logs in Slack; note pull-ups already past the ceiling at 34/27.
 
 Each training day gets a narrative skin on the prescription: Monday Patrol, Tuesday strength forge, Wednesday Gate break, Friday Recovery march. Same workout syntax pushed to the watch. Different border color in the UI. Ego responds to "gate break" more than it responds to "strides."
 
@@ -53,13 +54,17 @@ Block start captures baselines once per training block: VO₂max, fitness load, 
 
 Strength climbs when I actually log lifts. Miss logs and it flatlines or proxies off lift week number. The coach literally warns "no lift logs; strength form unknown."
 
-Agility prefers absolute VO₂max mapped into a 0–85 band. No VO₂? It uses fitness-load progress versus baseline. The 30-day delta shows up under the card when the platform has it.
+Agility prefers estimated VDOT mapped into the same 0–100 band as the other tiles, with predicted 5K on the label. No recent race? It stays anchored to the personal-best VDOT so a training down-cycle cannot invent a new PB.
+
+Speed is the missing top-end: rolling best max speed from stride and sprint efforts, not the GPS spike on an easy run. It is not a second copy of agility. Race pace is aerobic; peak velocity is neuromuscular. Wednesday strides already train this; the HUD just did not show it.
+
+Endurance is watch VO₂max 1:1. The 30-day delta shows up under the card when the platform has it.
 
 Vitality is the fussy one: half freshness, about a third heart-rate variability versus a two-week baseline, the rest sleep. High fatigue caps the freshness contribution. Cutting hard while form is loading can trigger a vitality critical clamp and seal the gate.
 
 Perception maps body fat inversely. It is explicitly not a beauty score; it tracks composition direction. Weight and body-fat deltas appear when the scale cooperates.
 
-The gate rank is a weighted composite, then clipped by training phase (build caps at C, sharpen at B, taper at A until race week), then clipped again by readiness locks. Poor cut quality or high fatigue means "Gate sealed; recovery protocol" and rank D max. Sleep debt means "Gate unstable." These are the same cuts that already softened Wednesday. Arc Mode just makes the punishment visible.
+The gate rank is an unweighted mean of the stats that have a sample, then clipped by training phase (build caps at C, sharpen at B, taper at A until race week), then clipped again by readiness locks. Poor cut quality or high fatigue means "Gate sealed; recovery protocol" and rank D max. Sleep debt means "Gate unstable." These are the same cuts that already softened Wednesday. Arc Mode just makes the punishment visible.
 
 ## Boss fights, quests, and other optional drama
 
@@ -77,6 +82,6 @@ And yes: warrior quotes are cheesy. I kept them because Sunday morning benefits 
 
 ## Takeaway
 
-Gate ranks are a compression layer: four numbers and a letter grade that summarize the same athlete state the planner already obeyed, updated when the platform syncs, the scale weighs in, or I type a quest log. Fun enough that I scroll to the top of the week before I scroll to Tuesday squats. Honest enough that a sealed gate hurts because freshness says so, not because a game designer hates me.
+Gate ranks are a compression layer: six numbers and a letter grade that summarize the same athlete state the planner already obeyed, updated when the platform syncs, the scale weighs in, or I type a quest log. Fun enough that I scroll to the top of the week before I scroll to Tuesday squats. Honest enough that a sealed gate hurts because freshness says so, not because a game designer hates me.
 
 Repo: [github.com/AlexTouvras/fitness-coach](https://github.com/AlexTouvras/fitness-coach). Systems loop: [/writes/when-the-coach-lives-in-git-and-slack](/writes/when-the-coach-lives-in-git-and-slack). Architecture: [/architecture/fitness-coach](/architecture/fitness-coach).

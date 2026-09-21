@@ -138,7 +138,7 @@
   {
     "id": "fitness-coach",
     "name": "Personal ops coach (git + Slack)",
-    "description": "Science-backed personal coach: Intervals form + Slack RPE → AthleteState → Sunday week plan. Arc Mode adds gate ranks (STR/AGI/VIT/PER), weekly quests, and Red Gate audits on the same deterministic rules.",
+    "description": "Science-backed personal coach: Intervals form + Slack RPE → AthleteState → Sunday week plan. Arc Mode adds gate ranks (STR/AGI/SPD/END/VIT/PER), weekly quests, and Red Gate audits on the same deterministic rules.",
     "status": "prototype",
     "tags": [
       "Cursor Automations",
