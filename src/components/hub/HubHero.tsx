@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
@@ -24,9 +24,9 @@ function HeroItem({
   if (!animate) return <>{children}</>;
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12 }}
+      initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay, ease }}
+      transition={{ duration: 0.65, delay, ease }}
     >
       {children}
     </motion.div>
@@ -37,31 +37,15 @@ interface HubHeroProps {
   name: string;
   pillars: string;
   tagline: string;
-  whyOrbit: string;
   contactCta: string;
   socials: { label: string; href: string }[];
   avatarUrl?: string;
-}
-
-/** First "orbit" shares the brand accent orbit (cyan → purple). */
-function withOrbitMark(text: string) {
-  const i = text.toLowerCase().indexOf("orbit");
-  if (i < 0) return text;
-  const end = i + "orbit".length;
-  return (
-    <>
-      {text.slice(0, i)}
-      <span className="orbit-accent font-medium">{text.slice(i, end)}</span>
-      {text.slice(end)}
-    </>
-  );
 }
 
 export function HubHero({
   name,
   pillars,
   tagline,
-  whyOrbit,
   contactCta,
   socials,
   avatarUrl,
@@ -71,51 +55,46 @@ export function HubHero({
   const animate = hydrated && !reduced;
 
   return (
-    <section className="relative overflow-hidden pb-4">
+    <div className="relative">
       <div
-        className="pointer-events-none absolute -right-12 -top-8 h-72 w-72"
+        className="pointer-events-none absolute -right-8 top-[-12%] h-[28rem] w-[28rem] opacity-80 sm:h-[36rem] sm:w-[36rem] lg:right-[-4%] lg:top-[-18%]"
         aria-hidden
       >
-        <OrbitSignature variant="cyan" />
+        <OrbitSignature variant="cyan" duration="110s" />
       </div>
 
       <HeroItem delay={0} animate={animate}>
-        <div className="flex max-w-3xl items-center gap-4 sm:gap-5">
-          {avatarUrl ? (
-            <PixelAvatar src={avatarUrl} alt="" />
-          ) : null}
-          <h1 className="font-display text-display font-bold tracking-tight text-white">
-            {name}
-          </h1>
+        <div className="flex items-center gap-3 sm:gap-4">
+          {avatarUrl ? <PixelAvatar src={avatarUrl} alt="" /> : null}
+          <div>
+            <p className="orbit-accent font-mono text-xs uppercase tracking-[0.3em]">
+              00 / Open
+            </p>
+          </div>
         </div>
       </HeroItem>
 
-      <HeroItem delay={0.12} animate={animate}>
-        <p className="mt-4 max-w-2xl font-display text-xl font-medium tracking-tight text-slate-200 sm:text-2xl">
-          {pillars}
-        </p>
+      <HeroItem delay={0.1} animate={animate}>
+        <h1 className="mt-8 max-w-5xl">
+          <span className="block font-mono text-xs uppercase tracking-[0.22em] text-slate-400">
+            {name} · {pillars}
+          </span>
+          <span className="mt-4 block font-display text-story font-bold text-white">
+            Prove what
+            <br />
+            <span className="text-gradient">works.</span>
+          </span>
+        </h1>
       </HeroItem>
 
       <HeroItem delay={0.18} animate={animate}>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+        <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-xl">
           {tagline}
         </p>
       </HeroItem>
 
-      <HeroItem delay={0.21} animate={animate}>
-        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">
-          {withOrbitMark(whyOrbit)}{" "}
-          <Link
-            href="/writes/building-orbit"
-            className="orbit-accent focus-ring font-medium transition-opacity hover:opacity-100"
-          >
-            Why the name
-          </Link>
-        </p>
-      </HeroItem>
-
-      <HeroItem delay={0.24} animate={animate}>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
+      <HeroItem delay={0.26} animate={animate}>
+        <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
             href="/contact"
             className="orbit-accent-bg orbit-accent-glow orbit-accent-cta-glow focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-void transition-[transform,box-shadow] active:scale-[0.98]"
@@ -133,7 +112,7 @@ export function HubHero({
         </div>
       </HeroItem>
 
-      <HeroItem delay={0.3} animate={animate}>
+      <HeroItem delay={0.36} animate={animate}>
         <div className="mt-8 flex items-center gap-1 sm:hidden">
           {socials.map((social) => {
             const Icon = socialIconFor(social.label);
@@ -152,6 +131,16 @@ export function HubHero({
           })}
         </div>
       </HeroItem>
-    </section>
+
+      <HeroItem delay={0.42} animate={animate}>
+        <a
+          href="#story-gravity"
+          className="focus-ring mt-16 inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-slate-500 transition-colors hover:text-neon-cyan"
+        >
+          <ArrowDown className="h-3.5 w-3.5 motion-safe:animate-float" />
+          Scroll the story
+        </a>
+      </HeroItem>
+    </div>
   );
 }

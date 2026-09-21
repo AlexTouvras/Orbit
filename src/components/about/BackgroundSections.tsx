@@ -6,7 +6,8 @@ import { getEditableProfile } from "@/lib/profile-store";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
-import { Reveal, Stagger, StaggerItem } from "@/components/ui/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
+import { ExperienceTimeline } from "@/components/about/ExperienceTimeline";
 
 const skillTones = ["cyan", "blue", "violet"] as const;
 
@@ -96,50 +97,7 @@ export function BackgroundSections() {
           />
         </Reveal>
 
-        <Stagger className="mt-8 space-y-6">
-          {cv.experience.map((exp) => (
-            <StaggerItem key={exp.company}>
-              <GlassCard className="p-6">
-                <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                  <h3 className="text-lg font-semibold text-white">
-                    {exp.company}
-                  </h3>
-                  <span className="font-mono text-xs uppercase tracking-wide text-slate-400">
-                    {exp.location}
-                  </span>
-                </div>
-
-                <div className="mt-4 space-y-5">
-                  {exp.roles.map((role) => (
-                    <div
-                      key={role.title + role.period}
-                      className="border-l-2 border-neon-cyan/20 pl-4"
-                    >
-                      <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                        <p className="orbit-accent font-medium">
-                          {role.title}
-                        </p>
-                        <p className="font-mono text-xs text-slate-400">
-                          {role.period}
-                        </p>
-                      </div>
-                      <ul className="mt-2 space-y-2">
-                        {role.bullets.map((b, i) => (
-                          <li
-                            key={i}
-                            className="relative pl-4 text-sm leading-relaxed text-slate-300 before:absolute before:left-0 before:top-2.5 before:h-1 before:w-1 before:rounded-full before:bg-slate-500"
-                          >
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </GlassCard>
-            </StaggerItem>
-          ))}
-        </Stagger>
+        <ExperienceTimeline />
       </section>
 
       <section

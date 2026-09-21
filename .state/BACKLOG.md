@@ -29,7 +29,9 @@
 
 ## Next
 
-- [x] **Live dashboards lane (localhost)** — `/portfolio/live` with heatmap + EU Spot. Housing/rail still queued. GHA refresh later.
+- [ ] **Visual storytelling Hub** — chaptered scroll on `/`; skill at `.cursor/skills/visual-storytelling`. Owner review Hub desktop + mobile before treating as default.
+- [ ] **Visual storytelling dashboards** — apply skill Open → Picture → Cast → Move → Close on each live desk (headers already use `DeskStoryHeader`).
+- [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
 - [x] **Finland Power Pulse folded into EU Spot** — not a separate live tile; `/portfolio/live/power` redirects to `/eu-spot`. Press a zone for the Pulse-style desk + mix nowcast.
 - [x] **Helsinki Housing Pulse** — `/portfolio/live/housing`. Stat.fi `ashi`, monthly, ~1 month lag, CC BY 4.0. No empty page.
 - [x] **Housing capital-region map** — choropleth of latest monthly €/m² (Helsinki / Espoo–Kauniainen / Vantaa).
@@ -38,7 +40,6 @@
 - [x] **Europe Economy Pulse** — `/portfolio/live/economy`. Euro area default + country/area spotlight; HICP, unemployment, confidence, GDP, ECB deposit.
 - [x] **Economy Pulse v2 — headlines** — ECB press/statistics for euro area; Google News economy wires per spotlight country. Cars later.
 - [x] **Economy Pulse — fresher HICP + DK/NO** — merge `prc_hicp_manr` + early `teicp000`; add Denmark and Norway spotlights.
-- [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
 - [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
 - [x] Hub SDLC + Credit Risk field cards (Orbit-hosted HTML, HUD lanes, sitemap)
 - [ ] **SDLC / Credit Risk source repos** — create `sdlc-field-card` and `credit-risk-field-card`, copy discovery + Apply review from analytics/delivery on a **monthly** cadence (1st 17:00 discover / 18:00 review). Register in `FIELD_CARDS` + `fleet.yaml`. Bind `hosted-field-card-monthly-review.json` in Cursor until those repos exist.

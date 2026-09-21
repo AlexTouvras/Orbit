@@ -1,7 +1,7 @@
 import type { PowerMixView } from "@/lib/live/power-mix-types";
 import { MIX_BUCKETS } from "@/lib/live/power-mix-types";
 import { BackLink } from "@/components/ui/BackLink";
-import { Badge } from "@/components/ui/Badge";
+import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
 
 function formatHelsinki(iso: string): string {
   return `${new Date(iso).toLocaleString("en-GB", {
@@ -39,19 +39,11 @@ export function PowerMixDesk({ view }: { view: PowerMixView }) {
     <article className="space-y-10">
       <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
 
-      <header>
-        <Badge tone="cyan" className="mb-4">
-          Last 24h · generation share
-        </Badge>
-        <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          What is Europe generating from today?
-        </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
-          Country bars are 100% of measured generation over the last day —
-          not capacity, not load. Sorted clean → fossil so the story is the
-          mix, not the map.
-        </p>
-      </header>
+      <DeskStoryHeader
+        kicker="Last 24h · generation share"
+        question="What is Europe generating from today?"
+        lede="Country bars are 100% of measured generation over the last day — not capacity, not load. Sorted clean → fossil so the story is the mix, not the map."
+      />
 
       <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
         <div>

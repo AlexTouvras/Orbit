@@ -35,7 +35,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <nav
         className={cn(
-          "flex w-full max-w-5xl items-center justify-between rounded-2xl px-4 py-3 transition-[background-color,border-color,box-shadow] duration-300",
+          "flex w-full max-w-6xl items-center justify-between rounded-2xl px-4 py-3 transition-[background-color,border-color,box-shadow] duration-300",
           scrolled
             ? "border border-white/10 bg-void shadow-glow"
             : "border border-transparent bg-transparent",

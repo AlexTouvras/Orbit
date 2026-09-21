@@ -136,7 +136,7 @@ export function MissionHero({
                 <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
                   {stat.label}
                 </dt>
-                <dd className="orbit-accent mt-1 font-mono text-lg font-semibold tabular-nums sm:text-xl">
+                <dd className="orbit-accent mt-1 font-display text-2xl font-bold tabular-nums tracking-tight sm:text-3xl">
                   {stat.value}
                 </dd>
               </div>

@@ -7,7 +7,7 @@ import {
   type EuCategoryId,
 } from "@/lib/live/eu-category-meta";
 import { BackLink } from "@/components/ui/BackLink";
-import { Badge } from "@/components/ui/Badge";
+import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
 import { EuSpotMap } from "@/components/live/EuSpotMap";
 import { EuSpotHistory } from "@/components/live/EuSpotHistory";
 import { EuZonePulsePanel } from "@/components/live/EuZonePulsePanel";
@@ -35,19 +35,11 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
     <article className="space-y-8">
       <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
 
-      <header>
-        <Badge tone="cyan" className="mb-4">
-          ENTSO-E · {view.today.length} zones
-        </Badge>
-        <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Where is Europe expensive tonight?
-        </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
-          Hover a bidding zone for mix and price. Press it for the full desk —
-          load, generation, net flow, and a mix nowcast — the same reading
-          order for Finland as for every other zone.
-        </p>
-      </header>
+      <DeskStoryHeader
+        kicker={`ENTSO-E · ${view.today.length} zones`}
+        question="Where is Europe expensive tonight?"
+        lede="Hover a bidding zone for mix and price. Press it for the full desk — load, generation, net flow, and a mix nowcast — the same reading order for Finland as for every other zone."
+      />
 
       {view.localhostOnly ? (
         <p className="rounded-xl border border-amber-400/30 bg-amber-400/10 px-4 py-3 text-sm leading-relaxed text-amber-100">

@@ -12,8 +12,8 @@ export function LiveDeskStrip() {
     <section id="live" className="scroll-mt-28">
       <Reveal>
         <SectionHeading
-          eyebrow="Not Power BI"
-          title="Live dashboards"
+          eyebrow="Live desks"
+          title="Questions the desks answer"
           description="One-page desks that refresh at the grain the data actually moves. Screenshots stay in the Power BI lane."
         />
       </Reveal>

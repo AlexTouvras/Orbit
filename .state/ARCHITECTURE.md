@@ -27,7 +27,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 
 ## Design patterns
 
-- Portfolio live tiles (`LiveDeskTile`) carry a sneak peek: EU Spot paints the live baseload SVG; Nordic Equity paints a treemap from `heatmap-web` `board.json` (not an iframe of the board page); Helsinki Housing paints a monthly €/m² sparkline; Europe Power Mix paints mini 100% stacked country bars; Europe Economy Pulse paints euro-area HICP. Portfolio `#live` and `/portfolio/live` use `LiveDeskCarousel` (horizontal snap row + chevrons), not a wrapping grid.
+- Hub is a **chaptered scroll story** (full-bleed on `/`): Open → Gravity → Craft → Proof reel → Live questions → Signals list → Close. Shared primitives live in `src/components/story/` (`StoryScene`, `ChapterMark`, `StoryProgress`, `GravityField`, `DeskStoryHeader`). Interior pages stay `max-w-5xl`; live desks `max-w-6xl`.
+- Portfolio live tiles (`LiveDeskTile`) carry a sneak peek: EU Spot paints the live baseload SVG; Nordic Equity paints a treemap from `heatmap-web` `board.json` (not an iframe of the board page); Helsinki Housing paints a monthly €/m² sparkline; Europe Power Mix paints mini 100% stacked country bars; Europe Economy Pulse paints euro-area HICP. Portfolio `#live` and `/portfolio/live` use `LiveDeskCarousel` (horizontal snap row + chevrons), not a wrapping grid. Desk pages open with `DeskStoryHeader` (cadence kicker + question as `h1`). Hub advertises desks as questions, not previews.
 - SEO: App Router `sitemap.ts` / `robots.ts`; site URL from `getSiteUrl()` (`NEXT_PUBLIC_SITE_URL`); JSON-LD Person/WebSite/Blog in layout + BlogPosting/BreadcrumbList on Writes; per-Write OG via `writes/[slug]/opengraph-image.tsx` (shared `src/lib/seo/og-card.tsx`); optional Write frontmatter `updated` for freshness; blog RSS at `/feed.xml`; `public/llms.txt`; app `icon.tsx`. New MDX Writes inherit SEO automatically from frontmatter — no per-post meta authoring.
 - Field-card static HTML in `public/*-field-card/` should keep `canonical` + `og:url` + `og:image` (points at site `/opengraph-image`). Source field-card repos own the HTML and may overwrite on sync — preserve those meta tags when refreshing cards.
 - Portfolio cards: Case study link from `caseStudyUrl`, or from `liveUrl` when it is already a `/writes/` path
@@ -76,6 +77,7 @@ src/content/live/housing-postal-paths.ts  # Paavo postal SVG paths for HousingMa
 scripts/live/build-housing-postal-paths.mjs
 src/lib/live/
 src/lib/live/housing-map-fill.ts
+src/components/story/           # Hub/desk visual-storytelling primitives
 src/components/live/
 src/components/live/HousingMap.tsx
 src/app/portfolio/live/
@@ -124,6 +126,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-09-21 | Hub is a chaptered visual story; live desks keep question-as-h1 | Owner asked to leave the traditional card-grid HQ for storytelling (inspiration: AI Takes Over, Light Factory, Amanda Lee Peers, OSOS, Haus of Words) without Webflow theatre. Skill: `.cursor/skills/visual-storytelling`. |
 | 2026-08-29 | Newsletter is email-only — no Slack digest FYI | Owner: do not post newsletter contents to Slack |
 | 2026-08-29 | Newsletter primary = GHA Tue 07:15 UTC; Vercel cron Tue 08:00 backup | Vercel-only path produced zero Resend sends after 2026-08-18; GHA catch-up worked |
 | 2026-08-31 | Fleet ops field-card check: skip open `chore/weekly-refresh-*` when same repo already merged that ISO week | Delivery W35 had PR #3 live + orphaned discovery PR #4; daily check kept paging #ops-channel |

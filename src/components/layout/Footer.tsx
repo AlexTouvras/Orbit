@@ -6,7 +6,7 @@ export function Footer() {
   const socials = getResolvedSocials();
   return (
     <footer className="relative z-10 mt-24 border-t border-white/5">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-4 py-10 sm:flex-row">
+      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-10 sm:flex-row">
         <div className="text-center sm:text-left">
           <p className="font-mono text-sm tracking-widest text-slate-300">
             ORBIT<span className="text-neon-cyan">.</span>

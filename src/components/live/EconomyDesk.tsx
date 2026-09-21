@@ -14,7 +14,7 @@ import {
   economyMetricMeta,
 } from "@/lib/live/economy-types";
 import { BackLink } from "@/components/ui/BackLink";
-import { Badge } from "@/components/ui/Badge";
+import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
 import { EconomyTape } from "@/components/live/EconomyTape";
 import { economyMonthlyBrief } from "@/lib/live/economy-brief";
 
@@ -164,14 +164,10 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
     <article className="space-y-10">
       <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
 
-      <header>
-        <Badge tone="cyan" className="mb-4">
-          Eurostat + ECB · monthly brief
-        </Badge>
-        <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          How is the euro area economy printing?
-        </h1>
-      </header>
+      <DeskStoryHeader
+        kicker="Eurostat + ECB · monthly brief"
+        question="How is the euro area economy printing?"
+      />
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <label className="block max-w-md">

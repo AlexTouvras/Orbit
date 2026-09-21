@@ -1,19 +1,15 @@
 import { HEATMAP_BOARD_URL } from "@/content/live-desks";
 import { BackLink } from "@/components/ui/BackLink";
-import { Badge } from "@/components/ui/Badge";
+import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
 
 export function NordicEquityDesk() {
   return (
     <article className="space-y-8">
       <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
-      <header>
-        <Badge tone="cyan" className="mb-4">
-          Weekday gold · delayed quotes
-        </Badge>
-        <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Which Nordic large-caps moved today?
-        </h1>
-      </header>
+      <DeskStoryHeader
+        kicker="Weekday gold · delayed quotes"
+        question="Which Nordic large-caps moved today?"
+      />
 
       <div className="overflow-hidden rounded-2xl border border-white/10 bg-void-800">
         <iframe

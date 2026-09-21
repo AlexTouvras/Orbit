@@ -28,8 +28,8 @@ export default function LiveDesksPage() {
           </Badge>
         }
         title="Follow the tape"
-        subtitle="Public data, cadence-matched, one question each"
-        description="These sit next to Power BI screenshots, not inside them. Rail waits until its first honest snapshot exists."
+        subtitle="One question per desk. Public data, cadence-matched."
+        description="These sit next to Power BI screenshots, not inside them. The Hub names the question; the desk holds the map."
         stats={[
           { label: "Desks", value: String(desks.length) },
           { label: "Grain", value: "Mixed" },

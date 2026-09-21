@@ -1,6 +1,6 @@
 import type { HousingView } from "@/lib/live/housing-types";
 import { BackLink } from "@/components/ui/BackLink";
-import { Badge } from "@/components/ui/Badge";
+import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
 import { HousingMap } from "@/components/live/HousingMap";
 import { HousingTape } from "@/components/live/HousingTape";
 
@@ -88,19 +88,11 @@ export function HousingDesk({ view }: { view: HousingView }) {
     <article className="space-y-10">
       <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
 
-      <header>
-        <Badge tone="cyan" className="mb-4">
-          Stat.fi · monthly · {view.buildingType.label.toLowerCase()}
-        </Badge>
-        <h1 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Are Helsinki €/m² still rising?
-        </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
-          Old flats in housing companies — Helsinki against Espoo, Vantaa,
-          Greater Helsinki, and the country. Monthly prints lag about a month;
-          starred months are provisional.
-        </p>
-      </header>
+      <DeskStoryHeader
+        kicker={`Stat.fi · monthly · ${view.buildingType.label.toLowerCase()}`}
+        question="Are Helsinki €/m² still rising?"
+        lede="Old flats in housing companies — Helsinki against Espoo, Vantaa, Greater Helsinki, and the country. Monthly prints lag about a month; starred months are provisional."
+      />
 
       {latest ? (
         <section aria-label="Helsinki latest">

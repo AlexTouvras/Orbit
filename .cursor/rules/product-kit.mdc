@@ -8,6 +8,7 @@ alwaysApply: true
 Work this repo with **Cursor skills + rules** (fable-method, frontend/architecture skills as needed).
 
 - This Next.js site **is** the product UI.
+- **Public UI:** Hub / About / live desks follow `.cursor/skills/visual-storytelling` (chaptered scroll, not card grids).
 - **Blog / essays:** follow `.cursor/rules/orbit-essays.mdc` → `docs/essay-voice.md` + `weekly-write-essay` (weekly Slack) or personal `orbit-essay` (showcase / rewrite).
 - **JARVIS / ProjectHelm is retired** (2026-07-22). Do not route Orbit work through its CEO loop or cockpit.
 - Portfolio card for JARVIS should stay `archived` / non-featured unless the owner un-retires it in chat.
