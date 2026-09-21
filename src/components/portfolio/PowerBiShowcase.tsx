@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  useCallback,
-  useEffect,
-  useState,
-  type KeyboardEvent,
-} from "react";
+import { useCallback, useEffect, useState, type KeyboardEvent } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import {
@@ -15,52 +10,54 @@ import {
   ExternalLink,
   X,
 } from "lucide-react";
-import type { PowerBiReport } from "@/content/power-bi-reports";
+import type { PowerBiReport, PowerBiReportPage } from "@/content/power-bi-reports";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { DeskPicture } from "@/components/story/DeskPicture";
-import { cn } from "@/lib/utils";
+import { ScrollRail, ScrollRailCard } from "@/components/story/ScrollRail";
+import { useHydrated } from "@/lib/use-hydrated";
+
+function pad(n: number) {
+  return String(n).padStart(2, "0");
+}
 
 export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
-  const [reportIndex, setReportIndex] = useState(0);
-  const [pageIndex, setPageIndex] = useState(0);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const hydrated = useHydrated();
+  const [lightbox, setLightbox] = useState<{
+    report: PowerBiReport;
+    pageIndex: number;
+  } | null>(null);
 
-  useEffect(() => {
-    setMounted(true);
+  const open = useCallback((report: PowerBiReport, pageIndex: number) => {
+    setLightbox({ report, pageIndex });
   }, []);
 
-  const report = reports[reportIndex] ?? reports[0];
-  const pageCount = report?.pages.length ?? 0;
-  const page = report?.pages[pageIndex] ?? report?.pages[0];
+  const close = useCallback(() => setLightbox(null), []);
 
-  const selectReport = useCallback((index: number) => {
-    setReportIndex(index);
-    setPageIndex(0);
+  const goPage = useCallback((delta: number) => {
+    setLightbox((current) => {
+      if (!current) return current;
+      const count = current.report.pages.length;
+      if (count === 0) return current;
+      return {
+        ...current,
+        pageIndex: (current.pageIndex + delta + count) % count,
+      };
+    });
   }, []);
 
-  const goPage = useCallback(
-    (delta: number) => {
-      if (pageCount === 0) return;
-      setPageIndex((i) => (i + delta + pageCount) % pageCount);
-    },
-    [pageCount],
-  );
-
   useEffect(() => {
-    if (!lightboxOpen) return;
+    if (!lightbox) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
       document.body.style.overflow = prev;
     };
-  }, [lightboxOpen]);
+  }, [lightbox]);
 
   useEffect(() => {
-    if (!lightboxOpen) return;
+    if (!lightbox) return;
     function onKey(e: globalThis.KeyboardEvent) {
       if (e.key === "Escape") {
-        setLightboxOpen(false);
+        close();
         return;
       }
       if (e.key === "ArrowLeft") {
@@ -73,26 +70,25 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [goPage, lightboxOpen]);
+  }, [close, goPage, lightbox]);
 
-  if (!reports.length || !report || !page) return null;
+  if (!reports.length) return null;
 
-  function onPreviewKey(e: KeyboardEvent<HTMLButtonElement>) {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      setLightboxOpen(true);
-    }
-  }
+  const repoUrl = reports.find((r) => r.repoUrl)?.repoUrl;
+  const page = lightbox
+    ? (lightbox.report.pages[lightbox.pageIndex] ?? lightbox.report.pages[0])
+    : undefined;
+  const pageCount = lightbox?.report.pages.length ?? 0;
 
-  const lightbox =
-    lightboxOpen && mounted
+  const overlay =
+    lightbox && page && hydrated
       ? createPortal(
           <div
             role="dialog"
             aria-modal="true"
-            aria-label={`${report.title} — ${page.label}`}
+            aria-label={`${lightbox.report.title} — ${page.label}`}
             className="fixed inset-0 z-[100] flex flex-col bg-void/95 backdrop-blur-sm"
-            onClick={() => setLightboxOpen(false)}
+            onClick={close}
           >
             <div
               className="flex items-center justify-between gap-4 border-b border-white/10 px-4 py-3 sm:px-6"
@@ -100,15 +96,15 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
             >
               <div className="min-w-0">
                 <p className="truncate text-sm font-semibold text-white">
-                  {report.title}
+                  {lightbox.report.title}
                 </p>
                 <p className="truncate font-mono text-xs text-slate-400">
-                  {page.label} · {pageIndex + 1} / {pageCount}
+                  {page.label} · {lightbox.pageIndex + 1} / {pageCount}
                 </p>
               </div>
               <button
                 type="button"
-                onClick={() => setLightboxOpen(false)}
+                onClick={close}
                 className="focus-ring inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 text-slate-200 hover:border-white/30"
                 aria-label="Close enlarged view"
               >
@@ -134,7 +130,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={page.src}
-                  alt={`${report.title} — ${page.label}`}
+                  alt={`${lightbox.report.title} — ${page.label}`}
                   className="max-h-full max-w-full object-contain"
                 />
               </div>
@@ -163,153 +159,149 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
 
   return (
     <section id="power-bi" className="scroll-mt-28" aria-label="Power BI reports">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <ChapterMark
-            index="03"
-            eyebrow="Analytics"
-            title="Power BI"
-            description="Report pages from my Power BI portfolio — pick a report, browse pages, enlarge for detail."
-          />
-          <div className="flex shrink-0 flex-wrap items-center gap-x-4 gap-y-2">
-            {report.liveUrl && (
+      <ScrollRail
+        length={reports.length}
+        header={
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <ChapterMark
+              index="03"
+              eyebrow="Analytics"
+              title="Power BI"
+              description="Report pages from my Power BI portfolio — browse pages, enlarge for detail."
+            />
+            {repoUrl ? (
               <Link
-                href={report.liveUrl}
+                href={repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="focus-ring group inline-flex min-h-11 items-center gap-1 text-sm font-medium text-neon-cyan"
-              >
-                Open live board
-                <ExternalLink className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
-              </Link>
-            )}
-            {report.repoUrl && (
-              <Link
-                href={report.repoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="focus-ring group inline-flex min-h-11 items-center gap-1 text-sm font-medium text-slate-300 hover:text-neon-cyan"
+                className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-slate-300 hover:text-neon-cyan"
               >
                 View repo
                 <ExternalLink className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
               </Link>
-            )}
+            ) : null}
           </div>
-      </div>
+        }
+      >
+        {reports.map((report, i) => (
+          <PowerBiRailCard
+            key={report.id}
+            report={report}
+            index={i}
+            onEnlarge={open}
+          />
+        ))}
+      </ScrollRail>
+      {overlay}
+    </section>
+  );
+}
 
-      <div className="mt-12 grid grid-cols-[minmax(9.5rem,10.5rem)_1fr] gap-4 sm:grid-cols-[minmax(11rem,14rem)_1fr] sm:gap-6 md:grid-cols-[minmax(12rem,16rem)_1fr] md:gap-8">
-        <nav
-          className="sticky top-24 self-start sm:top-28"
-          aria-label="Power BI reports"
+function PowerBiRailCard({
+  report,
+  index,
+  onEnlarge,
+}: {
+  report: PowerBiReport;
+  index: number;
+  onEnlarge: (report: PowerBiReport, pageIndex: number) => void;
+}) {
+  const [pageIndex, setPageIndex] = useState(0);
+  const pageCount = report.pages.length;
+  const page: PowerBiReportPage | undefined =
+    report.pages[pageIndex] ?? report.pages[0];
+  if (!page) return null;
+
+  function onPreviewKey(e: KeyboardEvent<HTMLButtonElement>) {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onEnlarge(report, pageIndex);
+    }
+  }
+
+  return (
+    <ScrollRailCard className="w-[min(88vw,52rem)]">
+      <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
+        <div className="relative px-6 pt-6 sm:px-8 sm:pt-8">
+          <p className="story-index absolute right-4 top-2 select-none" aria-hidden>
+            {pad(index + 1)}
+          </p>
+          <h3 className="relative font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+            {report.title}
+          </h3>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300">
+            {report.summary}
+          </p>
+        </div>
+
+        <button
+          type="button"
+          onClick={() => onEnlarge(report, pageIndex)}
+          onKeyDown={onPreviewKey}
+          className="focus-ring group relative mx-6 mt-5 block overflow-hidden rounded-xl border border-white/10 bg-void-800 text-left sm:mx-8"
+          aria-label={`Enlarge ${report.title} — ${page.label}`}
         >
-          <ul className="max-h-[min(70vh,28rem)] space-y-1 overflow-y-auto overscroll-contain pr-0.5 sm:max-h-[min(75vh,32rem)]">
-            {reports.map((r, i) => (
-              <li key={r.id}>
-                <button
-                  type="button"
-                  onClick={() => selectReport(i)}
-                  className={cn(
-                    "focus-ring w-full rounded-xl border px-2.5 py-2.5 text-left transition-[color,background-color,border-color] sm:px-4 sm:py-3",
-                    i === reportIndex
-                      ? "border-neon-cyan/40 bg-neon-cyan/10 text-white"
-                      : "border-transparent text-slate-300 hover:border-white/10 hover:bg-white/5 hover:text-white",
-                  )}
-                  aria-current={i === reportIndex ? "true" : undefined}
-                >
-                  <span className="block text-xs font-semibold leading-snug sm:text-sm">
-                    {r.title}
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <span className="relative block aspect-[16/10] w-full">
+            {/* Native img: large report PNGs skip the image optimizer. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={page.src}
+              alt={`${report.title} — ${page.label}`}
+              className="h-full w-full object-contain object-top"
+              loading={index === 0 && pageIndex === 0 ? "eager" : "lazy"}
+            />
+          </span>
+          <span className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-void/80 px-2.5 py-1.5 text-xs text-slate-200 opacity-90 backdrop-blur-sm transition-opacity group-hover:opacity-100">
+            <Expand className="h-3.5 w-3.5" aria-hidden />
+            Enlarge
+          </span>
+        </button>
 
-        <div>
-          <p className="text-sm text-slate-300">{report.summary}</p>
-
-          <div className="mt-3 flex flex-wrap items-end justify-between gap-3">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-slate-500">
-                {page.label}
-              </p>
-              <p className="mt-1 max-w-xl text-sm text-slate-300">{page.caption}</p>
-            </div>
-            <p className="font-mono text-xs tabular-nums text-slate-500">
-              {pageIndex + 1} / {pageCount}
+        <div className="mt-auto flex flex-wrap items-center justify-between gap-3 px-6 py-5 sm:px-8">
+          <div className="min-w-0">
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500">
+              {page.label}
+              {pageCount > 1 ? ` · ${pageIndex + 1} / ${pageCount}` : ""}
             </p>
+            <p className="mt-1 max-w-md text-sm text-slate-400">{page.caption}</p>
           </div>
-
-          <DeskPicture label="Report page" className="relative mt-4">
-            <button
-              type="button"
-              onClick={() => setLightboxOpen(true)}
-              onKeyDown={onPreviewKey}
-              className="focus-ring group relative block w-full overflow-hidden rounded-xl border border-white/10 bg-void-800 text-left"
-              aria-label={`Enlarge ${page.label}`}
-            >
-              <span className="relative block aspect-[16/10] w-full">
-                {/* Native img: large report PNGs skip the image optimizer. */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={page.src}
-                  alt={`${report.title} — ${page.label}`}
-                  className="h-full w-full object-contain object-top"
-                  loading={reportIndex === 0 && pageIndex === 0 ? "eager" : "lazy"}
-                />
-              </span>
-              <span className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-void/80 px-2.5 py-1.5 text-xs text-slate-200 opacity-90 backdrop-blur-sm transition-opacity group-hover:opacity-100">
-                <Expand className="h-3.5 w-3.5" aria-hidden />
-                Enlarge
-              </span>
-            </button>
-
-            {pageCount > 1 && (
-              <div className="mt-3 flex items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-3">
+            {report.liveUrl ? (
+              <Link
+                href={report.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="focus-ring inline-flex min-h-11 items-center gap-1 text-sm font-medium text-neon-cyan sm:min-h-0"
+              >
+                Open live board
+                <ExternalLink className="h-3.5 w-3.5" />
+              </Link>
+            ) : null}
+            {pageCount > 1 ? (
+              <div className="flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => goPage(-1)}
-                  className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-white/10 text-slate-200 transition-colors hover:border-neon-cyan/40 hover:text-neon-cyan"
+                  onClick={() =>
+                    setPageIndex((i) => (i - 1 + pageCount) % pageCount)
+                  }
+                  className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-white/10 text-slate-200 hover:border-neon-cyan/40 hover:text-neon-cyan"
                   aria-label="Previous page"
                 >
                   <ChevronLeft className="h-5 w-5" />
                 </button>
-                <div
-                  className="flex flex-wrap justify-center gap-1.5"
-                  role="tablist"
-                  aria-label="Report pages"
-                >
-                  {report.pages.map((p, i) => (
-                    <button
-                      key={p.id}
-                      type="button"
-                      role="tab"
-                      aria-selected={i === pageIndex}
-                      aria-label={p.label}
-                      onClick={() => setPageIndex(i)}
-                      className={cn(
-                        "focus-ring h-2.5 w-2.5 rounded-full transition-colors",
-                        i === pageIndex
-                          ? "bg-neon-cyan"
-                          : "bg-white/20 hover:bg-white/40",
-                      )}
-                    />
-                  ))}
-                </div>
                 <button
                   type="button"
-                  onClick={() => goPage(1)}
-                  className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-white/10 text-slate-200 transition-colors hover:border-neon-cyan/40 hover:text-neon-cyan"
+                  onClick={() => setPageIndex((i) => (i + 1) % pageCount)}
+                  className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-white/10 text-slate-200 hover:border-neon-cyan/40 hover:text-neon-cyan"
                   aria-label="Next page"
                 >
                   <ChevronRight className="h-5 w-5" />
                 </button>
               </div>
-            )}
-          </DeskPicture>
+            ) : null}
+          </div>
         </div>
-      </div>
-
-      {lightbox}
-    </section>
+      </article>
+    </ScrollRailCard>
   );
 }
