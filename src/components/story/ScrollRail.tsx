@@ -48,7 +48,7 @@ export function ScrollRail({
 
   const { scrollYProgress } = useScroll({
     target: sceneRef,
-    offset: ["start 6rem", "end end"],
+    offset: ["start start", "end end"],
   });
   const x = useTransform(scrollYProgress, [0, 1], [0, -maxX]);
 
