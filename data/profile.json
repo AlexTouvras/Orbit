@@ -27,6 +27,10 @@
   ],
   "githubRepoAllowlist": [
     "powerbi-portfolio",
-    "MagicMirror"
+    "ProjectBrain",
+    "ledger",
+    "agentic-ai-field-card",
+    "data-analytics-field-card",
+    "technology-delivery-field-card"
   ]
 }

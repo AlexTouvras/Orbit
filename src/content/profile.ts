@@ -82,7 +82,14 @@ export const profile = {
   contactBlurb:
     "Happy to talk delivery, data systems, AI automation, and what's broken in your stack.",
   /** Public repos shown on Portfolio. Empty = show newest non-fork repos (legacy). */
-  githubRepoAllowlist: ["powerbi-portfolio"],
+  githubRepoAllowlist: [
+    "powerbi-portfolio",
+    "ProjectBrain",
+    "ledger",
+    "agentic-ai-field-card",
+    "data-analytics-field-card",
+    "technology-delivery-field-card",
+  ],
 } as const;
 
 export const competencies: Competency[] = [
