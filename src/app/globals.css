@@ -140,6 +140,7 @@
 
   .story-rail {
     display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-padding-inline: 1rem;

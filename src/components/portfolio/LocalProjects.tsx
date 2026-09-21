@@ -38,7 +38,7 @@ export function LocalProjects() {
         />
       </Reveal>
 
-      <div className="story-rail mt-12">
+      <div className="story-rail mt-12 flex-nowrap">
         {ordered.map((p, i) => {
           const caseStudy =
             p.caseStudyUrl ||
@@ -50,7 +50,7 @@ export function LocalProjects() {
           return (
             <article
               key={p.id}
-              className="relative flex w-[min(100%,22rem)] shrink-0 flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:w-[min(100%,26rem)] sm:p-8"
+              className="relative flex w-[min(100%,34rem)] shrink-0 flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:w-[min(100%,38rem)] sm:p-9"
             >
               <p
                 className="story-index absolute right-4 top-2 select-none"
