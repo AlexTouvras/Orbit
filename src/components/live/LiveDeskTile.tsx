@@ -41,27 +41,27 @@ export function LiveDeskTile({
   return (
     <ScrollRailCard className="w-[min(88vw,52rem)]">
       <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
-        <div className="pointer-events-none aspect-[16/10] overflow-hidden border-b border-white/10 bg-void-800">
+        <div className="pointer-events-none h-[min(36vh,20rem)] w-full overflow-hidden border-b border-white/10 bg-void-800">
           <Suspense fallback={<PeekFallback />}>
             <DeskPeek slug={desk.slug} />
           </Suspense>
         </div>
-        <div className="relative px-6 py-6 sm:px-8 sm:py-7">
+        <div className="relative px-6 py-5 sm:px-8 sm:py-6">
           <p className="story-index absolute right-4 top-2 select-none" aria-hidden>
             {pad(index + 1)}
           </p>
           <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500">
             {desk.cadence}
           </p>
-          <h3 className="relative mt-3 max-w-xl font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+          <h3 className="relative mt-2 max-w-xl font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
             {desk.question}
           </h3>
-          <p className="mt-3 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
+          <p className="mt-2 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
             {desk.title}
             <span className="text-slate-600"> · </span>
             {desk.source}
           </p>
-          <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-neon-cyan">
+          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-neon-cyan">
             Open desk
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5" />
           </span>
