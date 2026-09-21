@@ -30,17 +30,15 @@ Public footers use `Next: <month>`, not “week of”.
 | Name | Binds to | Trigger | Backup JSON | Live Cursor |
 |------|----------|---------|-------------|-------------|
 | Daily ops check | `AlexTouvras/Orbit` | Daily 08:00 Helsinki | `.cursor/automations/daily-ops-check.json` | *(not in account — create or restore)* |
-| Agentic AI field card | `AlexTouvras/agentic-ai-field-card` | 1st 17:00 | `.cursor/automations/agentic-field-card-weekly-content-pass.json` | [c0138489…](https://cursor.com/automations/c0138489-8c1c-11f1-b532-320a589b8025) — live name still **Weekly field card content pass**, enabled |
-| Analytics field card | `AlexTouvras/data-analytics-field-card` | 1st 17:00 | `.cursor/automations/analytics-field-card-weekly-content-pass.json` | [dd4bad7c…](https://cursor.com/automations/dd4bad7c-9558-11f1-ba66-0e7d0216e441) — live name still **Weekly analytics field card content pass**, enabled |
-| Delivery field card | `AlexTouvras/technology-delivery-field-card` | 1st 17:00 | `.cursor/automations/delivery-field-card-weekly-content-pass.json` | [c85fb72e…](https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d0216e441) — live name still **Weekly delivery field card content pass**, enabled |
-| Field card review | `AlexTouvras/Orbit` (gates the three source-repo cards) | 1st 18:00 | `.cursor/automations/field-card-review.json` | [a1c0b46b…](https://cursor.com/automations/a1c0b46b-9a09-11f1-ba66-0e7d0216e441) — live name still **Weekly field card review**, enabled |
-| Hosted SDLC + Credit Risk | `AlexTouvras/Orbit` | 1st 17:00 | `.cursor/automations/hosted-field-card-monthly-review.json` | *(not in account — create from the JSON backup)* |
+| Agentic AI field card | `AlexTouvras/agentic-ai-field-card` | 1st 17:00 | `.cursor/automations/agentic-field-card-weekly-content-pass.json` | [c0138489…](https://cursor.com/automations/c0138489-8c1c-11f1-b532-320a589b8025) — **Monthly agentic AI field card content pass**, enabled |
+| Analytics field card | `AlexTouvras/data-analytics-field-card` | 1st 17:00 | `.cursor/automations/analytics-field-card-weekly-content-pass.json` | [dd4bad7c…](https://cursor.com/automations/dd4bad7c-9558-11f1-ba66-0e7d0216e441) — **Monthly analytics field card content pass**, enabled |
+| Delivery field card | `AlexTouvras/technology-delivery-field-card` | 1st 17:00 | `.cursor/automations/delivery-field-card-weekly-content-pass.json` | [c85fb72e…](https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d0216e441) — **Monthly delivery field card content pass**, enabled |
+| Field card review | `AlexTouvras/Orbit` (gates the three source-repo cards) | 1st 18:00 | `.cursor/automations/field-card-review.json` | [a1c0b46b…](https://cursor.com/automations/a1c0b46b-9a09-11f1-ba66-0e7d0216e441) — **Monthly field card review**, enabled |
+| Hosted SDLC + Credit Risk | `AlexTouvras/Orbit` | 1st 17:00 | `.cursor/automations/hosted-field-card-monthly-review.json` | *(paste UUID if local created it — this Cloud Agent cannot list automations)* |
 
-Looked up 2026-09-21 via GetAutomation (name / enabled / owner / URL only — **cron is not returned**).
+Looked up 2026-09-21 via GetAutomation after the local session: the four source-repo automations are **named Monthly** and enabled. Cron is still not returned from here. Hosted SDLC+Credit UUID is unknown unless pasted in.
 
-**Who can mutate live automations:** a **local** Cursor session (`cursor-backend-control` `update_automation` / `/automate`). Cloud Agents on this repo do not get those tools. Do not treat a Cloud Agent “cannot PATCH” as “nobody can.”
-
-If local already switched the four schedules, remaining work is cosmetic rename (live names still say Weekly) plus create the hosted SDLC+Credit pass from `hosted-field-card-monthly-review.json`. Target crons: `0 14 1 * *` discover, `0 15 1 * *` review.
+**Who can mutate live automations:** a **local** Cursor session (`cursor-backend-control` `update_automation` / `/automate`). Cloud Agents on this repo do not get those tools.
 
 ## Primary verify
 
