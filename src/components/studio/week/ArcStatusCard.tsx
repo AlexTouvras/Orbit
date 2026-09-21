@@ -15,15 +15,17 @@ import type {
 const STAT_LABELS: Record<string, string> = {
   str: "STR",
   agi: "AGI",
+  spd: "SPD",
   end: "END",
   vit: "VIT",
   per: "PER",
 };
 
-const STAT_ORDER = ["str", "agi", "end", "vit", "per"] as const;
+/** Peak velocity sits beside race-speed AGI; END stays the aerobic engine. */
+const STAT_ORDER = ["str", "agi", "spd", "end", "vit", "per"] as const;
 
 const GATE_SCORE_HINT_FALLBACK =
-  "Unweighted mean of STR, AGI, END, VIT, and PER (20% each) for every block. Rounded 0–100 before rank bands.";
+  "Unweighted mean of STR, AGI, SPD, END, VIT, and PER (~16.7% each) when all six have a sample; otherwise the present stats equally. Rounded 0–100 before rank bands.";
 
 const GATE_RANK_HINTS: Record<string, string> = {
   E: "Entry gate — composite below 35. Build base fitness before rank-ups.",
@@ -129,6 +131,12 @@ function deriveStatTrend(
     const race = asFinite(raw.vdot_race);
     if (est == null || race == null) return null;
     return signedTrend(est - race, { dead: 0.15 });
+  }
+  if (name === "spd") {
+    return signedTrend(
+      asFinite(raw.max_speed_delta_30d) ?? asFinite(raw.max_speed_delta_kmh),
+      { dead: 0.15 },
+    );
   }
   if (name === "end") {
     return signedTrend(asFinite(raw.vo2max_delta_30d), { dead: 0.05 });
@@ -404,12 +412,16 @@ export function ArcStatusCard({
 
   const activeHintText = activeHint ? hints[activeHint] : null;
 
+  const visibleStatKeys = STAT_ORDER.filter((key) => stats[key]);
+  const sixStats = visibleStatKeys.length >= 6;
+
   const vo2Delta = formatDelta(deltas.vo2max_30d);
   const weightDelta = formatDelta(deltas.weight_14d_kg, " kg");
   const hrvDelta = formatDelta(deltas.hrv_vs_baseline_pct, "% of baseline");
   const restingDelta = formatDelta(deltas.resting_hr_delta_7d, " bpm 7d");
   const paceLabel = formatDelta(deltas.threshold_pace_min_km);
   const sleepAvg = formatDelta(deltas.sleep_score_7d_avg, " sleep 7d avg");
+  const maxSpeedDelta = formatDelta(deltas.max_speed_30d_kmh, " km/h");
 
   return (
     <div className="rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-950/40 to-slate-950/60 p-4 sm:p-5">
@@ -499,8 +511,13 @@ export function ArcStatusCard({
         </div>
       ) : null}
 
-      <div className="mt-3 grid grid-cols-2 items-stretch gap-2 sm:mt-4 sm:grid-cols-5">
-        {STAT_ORDER.map((key) => {
+      <div
+        className={cn(
+          "mt-3 grid items-stretch gap-2 sm:mt-4",
+          sixStats ? "grid-cols-3 lg:grid-cols-6" : "grid-cols-2 sm:grid-cols-5",
+        )}
+      >
+        {visibleStatKeys.map((key) => {
           const stat = stats[key];
           if (!stat) return null;
           const detail =
@@ -528,9 +545,16 @@ export function ArcStatusCard({
         for details.
       </p>
 
-      {(vo2Delta || weightDelta || hrvDelta || restingDelta || paceLabel || sleepAvg) && (
+      {(vo2Delta ||
+        weightDelta ||
+        hrvDelta ||
+        restingDelta ||
+        paceLabel ||
+        sleepAvg ||
+        maxSpeedDelta) && (
         <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500 sm:mt-4">
           {vo2Delta ? <li>VO₂max 30d: {vo2Delta}</li> : null}
+          {maxSpeedDelta ? <li>Max speed 30d: {maxSpeedDelta}</li> : null}
           {paceLabel ? <li>Threshold: {paceLabel}</li> : null}
           {hrvDelta ? <li>HRV: {hrvDelta}</li> : null}
           {restingDelta ? <li>Resting HR: {restingDelta}</li> : null}

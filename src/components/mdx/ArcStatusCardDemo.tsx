@@ -1,19 +1,19 @@
 import { ArcStatusCard } from "@/components/studio/week/ArcStatusCard";
 import type { ArcNarrativeView, DailyQuestView } from "@/lib/week-log/types";
 
-/** Frozen snapshot from fitness-coach `data/plans/2026-W36.json` (sharpen week). */
+/** Frozen snapshot from fitness-coach `data/plans/2026-W36.json` (sharpen week), plus SPD. */
 const DEMO_NARRATIVE: ArcNarrativeView = {
   mode: "arc",
   arcPhase: "sharpen",
   gate: {
     rank: "C",
-    score: 51,
+    score: 50,
     phaseCeiling: "B",
     readinessLock: null,
     rankHint:
       "Capable — composite 50–62. Solid block execution. Sharpen phase caps rank at B until race week.",
     scoreHint:
-      "Unweighted mean of STR, AGI, END, VIT, and PER (20% each) for every block. Rounded 0–100 before rank bands.",
+      "Unweighted mean of STR, AGI, SPD, END, VIT, and PER (~16.7% each) for every block. Rounded 0–100 before rank bands.",
   },
   stats: {
     str: {
@@ -31,6 +31,14 @@ const DEMO_NARRATIVE: ArcNarrativeView = {
       source: "vdot_est",
       raw: { vdot_est: 43.23, vdot_race: 43.23, predicted_5k: "22:34" },
       trend: "flat",
+    },
+    spd: {
+      display: 46,
+      valueLabel: "25.8 km/h",
+      hint: "Peak velocity: rolling 30-day best max speed from Intervals stride/sprint efforts (GPS outliers dropped). Not race pace — that is AGI (VDOT).",
+      source: "max_speed",
+      raw: { max_speed_kmh: 25.8, max_speed_delta_30d: 0.4 },
+      trend: "up",
     },
     end: {
       display: 50,
@@ -59,6 +67,7 @@ const DEMO_NARRATIVE: ArcNarrativeView = {
   },
   deltas: {
     vo2max_30d: 0.0,
+    max_speed_30d_kmh: 0.4,
     weight_14d_kg: -1.04,
   },
   boss: null,
@@ -110,7 +119,8 @@ export function ArcStatusCardDemo() {
         <code className="rounded bg-white/10 px-1 py-0.5 font-mono text-slate-400">
           data/plans/2026-W36.json
         </code>{" "}
-        (sharpen week). Same card Studio renders at{" "}
+        (sharpen week), plus SPD as the sixth tile from max speed. Same card Studio
+        renders at{" "}
         <code className="rounded bg-white/10 px-1 py-0.5 font-mono text-slate-400">
           /studio/week/fitness
         </code>

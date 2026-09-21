@@ -33,6 +33,10 @@ flowchart TB
 
 Heimdall is not a separate topic. Clips attach inline via `HeimdallEmbed` when `ravens/watch/{domain}/{slug}.md` matches.
 
+## Arc HUD
+
+`ArcStatusCard` paints plan `narrative.stats` in order STR, AGI, SPD, END, VIT, PER. Missing keys are skipped (five-stat plans stay five tiles). SPD is peak velocity from max speed — not AGI (race VDOT) and not END (VO₂max). The number is computed in fitness-coach; Orbit only renders `stats.spd` when the plan JSON includes it (`value_label` like `25.8 km/h`, `raw.max_speed_kmh`, optional `raw.max_speed_delta_30d`). Codex reads `max_speed_kmh` the same way.
+
 ## Auth
 
 - Primary: GitHub OAuth (`GITHUB_CLIENT_ID` / `GITHUB_CLIENT_SECRET`), allowlist `STUDIO_GITHUB_ALLOWLIST`.

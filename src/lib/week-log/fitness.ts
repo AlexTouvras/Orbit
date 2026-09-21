@@ -427,6 +427,7 @@ function parseCodexPoint(raw: unknown): CodexPoint | null {
     vdotEst: asNumber(row.vdot_est),
     predicted5k: asString(row.predicted_5k) || null,
     vdotRace: asNumber(row.vdot_race),
+    maxSpeedKmh: asNumber(row.max_speed_kmh) ?? asNumber(row.max_speed),
     vo2: asNumber(row.vo2),
     vo2AbsLMin: asNumber(row.vo2_abs_l_min),
     ctl: asNumber(row.ctl),
