@@ -51,7 +51,7 @@
 - [ ] Owner: review `/studio/week`; set `OPS_GITHUB_TOKEN` (Contents: **Read and write** on fitness-coach so Studio Apply works on Vercel; Read on mealplan-private, careerops-private, ravens) on Vercel + `.env.local`; confirm Heimdall embeds behave well enough vs plain links
 - [x] Owner: approve fitness weekly course slicers (5 training knobs; no lean/cut or `goal:` on the strip)
 - [x] Owner: evaluate identity HUD on localhost `/card` and `/qr-code`
-- [ ] **fitness-coach: emit Arc `stats.spd`** — rolling best max speed (km/h) from stride/sprint efforts, GPS outliers dropped; include in unweighted gate mean only when a sample exists. Orbit HUD already renders the tile.
+- [ ] **fitness-coach: emit Arc `stats.spd` + Codex `max_speed_kmh`** — rolling best max speed from stride/sprint efforts, GPS outliers dropped; include in the unweighted gate mean only when a sample exists; write the same km/h onto weekly Codex points so Studio history can draw. Orbit HUD and Codex pane already render.
 - [x] Fitness Status: remaining HP bar + ▲▼− trends (STR blank until lift-log sample)
 - [x] Arc HUD sixth stat SPD (display + essay demo; live number waits on fitness-coach `stats.spd`)
 - [x] Commit/push ops-fleet files to `main` (`f1be91d`) so Daily ops check can read `docs/ops/fleet.yaml`

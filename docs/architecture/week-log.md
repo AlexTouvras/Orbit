@@ -35,7 +35,7 @@ Heimdall is not a separate topic. Clips attach inline via `HeimdallEmbed` when `
 
 ## Arc HUD
 
-`ArcStatusCard` paints plan `narrative.stats` in order STR, AGI, SPD, END, VIT, PER. Missing keys are skipped (five-stat plans stay five tiles). SPD is peak velocity from max speed — not AGI (race VDOT) and not END (VO₂max). The number is computed in fitness-coach; Orbit only renders `stats.spd` when the plan JSON includes it (`value_label` like `25.8 km/h`, `raw.max_speed_kmh`, optional `raw.max_speed_delta_30d`). Codex reads `max_speed_kmh` the same way.
+`ArcStatusCard` paints plan `narrative.stats` in order STR, AGI, SPD, END, VIT, PER. Missing keys are skipped (five-stat plans stay five tiles). SPD is peak velocity from max speed — not AGI (race VDOT) and not END (VO₂max). The HUD integer and the gate letter are computed in fitness-coach; Orbit does not re-mean the tiles. When a sample exists, SPD is an equal share of that unweighted mean (~16.7% with six stats). Codex always shows an **SPD · max speed** pane and plots `max_speed_kmh` weekly points; the line stays empty until fitness-coach writes them.
 
 ## Auth
 
