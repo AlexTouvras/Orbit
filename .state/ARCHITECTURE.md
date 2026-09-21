@@ -171,3 +171,4 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-11 | EU Spot mix peek: dock under the map on small screens; float inset-clamped on `md+` | Phone tap clipped the overlay (`overflow-hidden` + `w-72` at the finger). In-flow card shows the full window. |
 | 2026-09-11 | Write SEO is frontmatter-driven and automatic | Per-slug OG + BlogPosting/Breadcrumbs + sitemap freshness from `date`/`updated`; authors never hand-write meta for new posts |
 | 2026-09-11 | Helsinki Housing Pulse live desk from Stat.fi `ashi` (monthly 15iq + quarterly 13mv) | Next queued desk after EU Spot; CC BY 4.0; refuse empty snapshot; flats-only grain matches liquid Helsinki market |
+| 2026-09-11 | How-to video pilot scaffold under `docs/howto-pilot/` + `scripts/howto/` (TTS → stills/capture → mux) | Test YouTube-style analytics explainers; agent linger ≠ wall-clock RecordScreen; pad video to VO length |
