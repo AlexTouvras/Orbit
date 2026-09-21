@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-09-21-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-09-21T09:02:04.036Z",
   "weekOf": "2026-09-21",
   "slug": "when-access-rules-become-cheap-policy-becomes-the-bottleneck",
@@ -169,5 +169,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-09-21T09:25:39.628Z",
+  "publishedSlug": "when-access-rules-become-cheap-policy-becomes-the-bottleneck"
 }
