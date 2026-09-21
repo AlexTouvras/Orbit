@@ -6,13 +6,15 @@ import { Reveal } from "@/components/ui/Reveal";
 export function StoryClose({
   summary,
   contactCta,
+  index = "06",
 }: {
   summary: string;
   contactCta: string;
+  index?: string;
 }) {
   return (
     <Reveal>
-      <ChapterMark index="06" eyebrow="Close" title="The record is longer than this page" />
+      <ChapterMark index={index} eyebrow="Close" title="The record is longer than this page" />
       <p className="mt-8 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">
         {summary}
       </p>

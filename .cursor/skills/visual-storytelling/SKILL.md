@@ -30,7 +30,8 @@ Then a browser walk (desktop + a ~390px viewport):
 3. Proof reel scrolls horizontally; case study and architecture still work
 4. Live questions open the matching desk
 5. About experience reads as a timeline, not stacked glass cards
-6. `prefers-reduced-motion`: story still readable; no required animation
+6. `/portfolio` is Open → workshop reel → live questions → Power BI picture → GitHub list (no 3-up `GlassCard` grid)
+7. `prefers-reduced-motion`: story still readable; no required animation
 
 ## Minimum evidence (open before editing)
 

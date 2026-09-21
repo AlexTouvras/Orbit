@@ -3,9 +3,11 @@ import { GithubRepos } from "@/components/portfolio/GithubRepos";
 import { LocalProjects } from "@/components/portfolio/LocalProjects";
 import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
 import { PowerBiShowcase } from "@/components/portfolio/PowerBiShowcase";
-import { LiveDeskStrip } from "@/components/live/LiveDeskStrip";
+import { LiveQuestions } from "@/components/hub/LiveQuestions";
+import { StoryClose } from "@/components/hub/StoryClose";
 import { liveDesks } from "@/content/live-desks";
 import { powerBiReports } from "@/content/power-bi-reports";
+import { profile as profileDefaults } from "@/content/profile";
 import { getPublicProjects } from "@/lib/projects-local";
 import { getEditableProfile } from "@/lib/profile-store";
 
@@ -19,27 +21,35 @@ export const metadata: Metadata = {
 export default function PortfolioPage() {
   const profile = getEditableProfile();
   const workshop = getPublicProjects();
-  const tagCount = new Set(workshop.flatMap((p) => p.tags)).size;
+  const desks = liveDesks.filter((d) => d.status === "live");
 
   return (
     <div className="space-y-24 sm:space-y-32">
       <PortfolioHero
         workshopCount={workshop.length}
-        tagCount={tagCount}
         powerBiCount={powerBiReports.length}
-        liveCount={liveDesks.filter((d) => d.status === "live").length}
+        liveCount={desks.length}
         avatarUrl={profile.avatarUrl}
       />
 
-      <div id="workshop" className="scroll-mt-28">
-        <LocalProjects />
-      </div>
+      <LocalProjects />
 
-      <GithubRepos />
+      <LiveQuestions
+        desks={desks}
+        id="live"
+        index="02"
+        description="One-page desks that refresh at the grain the data actually moves. Screenshots stay in the Power BI lane."
+      />
 
       <PowerBiShowcase reports={powerBiReports} />
 
-      <LiveDeskStrip />
+      <GithubRepos />
+
+      <StoryClose
+        index="05"
+        summary={profile.summary}
+        contactCta={profileDefaults.contactCta}
+      />
     </div>
   );
 }

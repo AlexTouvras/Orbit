@@ -16,7 +16,8 @@ import {
   X,
 } from "lucide-react";
 import type { PowerBiReport } from "@/content/power-bi-reports";
-import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ChapterMark } from "@/components/story/ChapterMark";
+import { DeskPicture } from "@/components/story/DeskPicture";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
@@ -165,7 +166,8 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
     <section id="power-bi" className="scroll-mt-28" aria-label="Power BI reports">
       <Reveal>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading
+          <ChapterMark
+            index="03"
             eyebrow="Analytics"
             title="Power BI"
             description="Report pages from my Power BI portfolio — pick a report, browse pages, enlarge for detail."
@@ -197,7 +199,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
         </div>
       </Reveal>
 
-      <div className="mt-8 grid grid-cols-[minmax(9.5rem,10.5rem)_1fr] gap-4 sm:grid-cols-[minmax(11rem,14rem)_1fr] sm:gap-6 md:grid-cols-[minmax(12rem,16rem)_1fr] md:gap-8">
+      <div className="mt-12 grid grid-cols-[minmax(9.5rem,10.5rem)_1fr] gap-4 sm:grid-cols-[minmax(11rem,14rem)_1fr] sm:gap-6 md:grid-cols-[minmax(12rem,16rem)_1fr] md:gap-8">
         <nav
           className="sticky top-24 self-start sm:top-28"
           aria-label="Power BI reports"
@@ -240,7 +242,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
             </p>
           </div>
 
-          <div className="relative mt-4">
+          <DeskPicture label="Report page" className="relative mt-4">
             <button
               type="button"
               onClick={() => setLightboxOpen(true)}
@@ -306,7 +308,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
                 </button>
               </div>
             )}
-          </div>
+          </DeskPicture>
         </div>
       </div>
 

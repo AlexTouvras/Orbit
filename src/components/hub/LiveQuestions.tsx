@@ -5,18 +5,28 @@ import { ChapterMark } from "@/components/story/ChapterMark";
 import { Reveal } from "@/components/ui/Reveal";
 import { LiveQuestionList } from "@/components/live/LiveQuestionList";
 
-export function LiveQuestions({ desks }: { desks: LiveDesk[] }) {
+export function LiveQuestions({
+  desks,
+  index = "04",
+  id,
+  description = "Public data, cadence-matched. The map and the tape live on the desk. The Hub only names the question.",
+}: {
+  desks: LiveDesk[];
+  index?: string;
+  id?: string;
+  description?: string;
+}) {
   if (desks.length === 0) return null;
 
   return (
-    <div>
+    <div id={id} className={id ? "scroll-mt-28" : undefined}>
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <Reveal>
           <ChapterMark
-            index="04"
+            index={index}
             eyebrow="Live"
             title="Questions the desks answer"
-            description="Public data, cadence-matched. The map and the tape live on the desk. The Hub only names the question."
+            description={description}
           />
         </Reveal>
         <Link
