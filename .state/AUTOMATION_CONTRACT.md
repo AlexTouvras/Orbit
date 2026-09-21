@@ -36,7 +36,11 @@ Public footers use `Next: <month>`, not “week of”.
 | Field card review | `AlexTouvras/Orbit` (gates the three source-repo cards) | 1st 18:00 | `.cursor/automations/field-card-review.json` | [a1c0b46b…](https://cursor.com/automations/a1c0b46b-9a09-11f1-ba66-0e7d0216e441) — live name still **Weekly field card review**, enabled |
 | Hosted SDLC + Credit Risk | `AlexTouvras/Orbit` | 1st 17:00 | `.cursor/automations/hosted-field-card-monthly-review.json` | *(not in account — create from the JSON backup)* |
 
-Looked up 2026-09-21 via AutomationsService GetAutomation. This Cloud Agent can **read** name/enabled/owner; it cannot PATCH cron, prompt, or name. Edit those four live URLs in the Cursor Automations UI (rename Monthly, cron `0 14 1 * *` / `0 15 1 * *`, paste the backup prompt). Create the hosted pass from `hosted-field-card-monthly-review.json`. Disable leftover Friday schedules.
+Looked up 2026-09-21 via GetAutomation (name / enabled / owner / URL only — **cron is not returned**).
+
+**Who can mutate live automations:** a **local** Cursor session (`cursor-backend-control` `update_automation` / `/automate`). Cloud Agents on this repo do not get those tools. Do not treat a Cloud Agent “cannot PATCH” as “nobody can.”
+
+If local already switched the four schedules, remaining work is cosmetic rename (live names still say Weekly) plus create the hosted SDLC+Credit pass from `hosted-field-card-monthly-review.json`. Target crons: `0 14 1 * *` discover, `0 15 1 * *` review.
 
 ## Primary verify
 
@@ -74,3 +78,5 @@ Do **not** depend on ProjectBrain MCP. Cloud cannot see `~/.cursor/`.
 ## IDE coexistence
 
 IDE sessions may use ProjectBrain MCP. Automations use playbooks + target repo state only.
+
+Live Cursor automation **config** (cron, prompt, name) is mutated from a local Cursor session. Cloud Agents here only have GetAutomation metadata.
