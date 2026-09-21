@@ -11,7 +11,7 @@ Read [`fleet.yaml`](./fleet.yaml) first. Follow it literally.
 - Do **not** invent Cursor automation run history. Cursor has no API here — infer from GitHub and Slack.
 - Cloud cannot see `~/.cursor`. Missing local paths are not failures.
 - Ignore bot loops: do not reply to your own `#ops-channel` digest as if it were a project job.
-- Skip jobs whose `check` day has not arrived (e.g. `monday` jobs on Tuesday are in scope; `tuesday` jobs on Monday are not).
+- Skip jobs whose `check` day has not arrived (e.g. `monday` jobs on Tuesday are in scope; `tuesday` jobs on Monday are not). `monthly_after` jobs are in-scope only on the first weekday on or after the 2nd of the month.
 - Weekday SLA only: do not call a weekend-idle Approve "stale" until Monday 08:00.
 - Snooze: if Memories say an issue is snoozed until a date that is still in the future, skip it.
 
@@ -45,14 +45,20 @@ If `#career-ops` is empty, try `#all-careerops`.
 
 ### Field cards
 
+In-scope only on the first weekday on or after the 2nd (`check: monthly_after`). Do not flag leftover weekly PRs on ordinary Mondays.
+
 ```bash
 gh pr list --repo <repo> --state open --limit 20
-gh pr list --repo <repo> --state merged --search "chore/weekly-refresh-" --limit 5
+gh pr list --repo <repo> --state merged --search "chore/monthly-refresh-" --limit 5
 ```
 
-Flag open heads matching `chore/weekly-refresh-*` on Monday. That means the Friday 18:00 review agent did not apply.
+Flag open heads matching `chore/monthly-refresh-*` for this calendar month. That means the 1st 18:00 review agent did not apply.
 
-**Exception:** if the same repo already merged a `chore/weekly-refresh-<ISO-week>` PR this ISO week, any other open PR on the same head is an orphaned discovery duplicate — status `ok`, and note that it can be closed (do not call it `bad_output`).
+On Orbit, look for `chore/monthly-field-cards-YYYY-MM` (SDLC + Credit Risk hosted pass). An open hosted PR is OK (human merge). Miss only if this calendar month has neither an open nor a merged hosted PR.
+
+**Exception:** if the same repo already merged a `chore/monthly-refresh-YYYY-MM` PR this calendar month, any other open PR on the same head is an orphaned discovery duplicate — status `ok`, and note that it can be closed (do not call it `bad_output`).
+
+**Legacy:** open `chore/weekly-refresh-*` heads are leftover weekly discovery. Status `ok`; note they can be closed. Do not call them `missed_run`.
 
 ## Verdict
 

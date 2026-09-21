@@ -95,8 +95,8 @@ function confirmPage(
     <p>Repo <code>${escapeHtml(payload.repo)}</code> · PR <a href="${escapeHtml(prUrl)}">#${payload.pr}</a></p>
     <p>${
       approve
-        ? `This will squash-merge the weekly field card PR into <code>main</code>, then sync <code>${escapeHtml(card.orbitPath)}</code> on Orbit (Pages + alextouvras.com).`
-        : "This will close the PR without merging. Next Friday can open a fresh refresh."
+        ? `This will squash-merge the monthly field card PR into <code>main</code>, then sync <code>${escapeHtml(card.orbitPath)}</code> on Orbit (Pages + alextouvras.com).`
+        : "This will close the PR without merging. Next month can open a fresh refresh."
     }</p>
     <div class="actions">
       <form method="post" action="/api/field-card/action">

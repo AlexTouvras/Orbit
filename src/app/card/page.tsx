@@ -4,11 +4,10 @@ import { cv } from "@/content/cv";
 import { competencies, profile as profileDefaults } from "@/content/profile";
 import { getEditableProfile } from "@/lib/profile-store";
 
-const HUD_PILLAR_ORDER = ["Delivery", "Data", "AI"] as const;
-
 const HUD_DOMAINS = [
   "Data & Analytics",
   "Credit Risk",
+  "SDLC",
   "AI",
   "Delivery",
 ] as const;
@@ -34,24 +33,17 @@ export default function CardPage() {
       label: ed.degree.replace(/^MSc,\s*/i, "") + " thesis",
     }));
 
-  const byShort = new Map(competencies.map((c) => [c.shortTitle, c]));
-  const pillars = HUD_PILLAR_ORDER.flatMap((short) => {
-    const c = byShort.get(short);
-    if (!c) return [];
-    return [
-      {
-        id: c.shortTitle.toLowerCase(),
-        shortTitle: c.shortTitle,
-        title: c.hudTitle ?? c.title,
-        verbs: c.hudVerbs,
-        description: c.hudDescription ?? c.description,
-        accent: c.accent,
-        links: c.href
-          ? [{ href: c.href, label: c.hrefLabel ?? "Open field card" }]
-          : undefined,
-      },
-    ];
-  });
+  const pillars = competencies.map((c) => ({
+    id: c.shortTitle.toLowerCase(),
+    shortTitle: c.shortTitle,
+    title: c.hudTitle ?? c.title,
+    verbs: c.hudVerbs,
+    description: c.hudDescription ?? c.description,
+    accent: c.accent,
+    links: c.href
+      ? [{ href: c.href, label: c.hrefLabel ?? "Open field card" }]
+      : undefined,
+  }));
 
   return (
     <div className="flex min-h-dvh items-center justify-center px-4 py-6 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))]">
@@ -94,7 +86,7 @@ export default function CardPage() {
             value: String(HUD_DOMAINS.length),
             unit: "fields",
             title: "Domains",
-            description: `${HUD_DOMAINS.join(", ")}. Tap a lane above for ways of working in that field.`,
+            description: `${HUD_DOMAINS.join(", ")}. Tap a lane above for the field-card thesis in that field.`,
             links: [{ href: "/about#skills", label: "Skills on About" }],
           },
         ]}

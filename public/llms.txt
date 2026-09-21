@@ -13,9 +13,13 @@
 
 ## Field cards (one-page decision aids)
 
+All five are reviewed monthly (`Next: <month>` on the footer), not weekly.
+
 - Agentic AI: https://alextouvras.com/field-card/
 - Data analytics: https://alextouvras.com/analytics-field-card/
 - Technology delivery: https://alextouvras.com/delivery-field-card/
+- SDLC: https://alextouvras.com/sdlc-field-card/
+- Credit risk (origination + IFRS 9): https://alextouvras.com/credit-risk-field-card/
 
 ## Notes for assistants
 

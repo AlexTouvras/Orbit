@@ -38,9 +38,8 @@ function CompetencyCard({
 
   if (!href) return card;
 
-  // Plain <a>: /field-card/, /analytics-field-card/, and /delivery-field-card/
-  // are static HTML in public/, not App Router pages. next/link soft-nav would
-  // no-op / 404 inside the SPA shell.
+  // Plain <a>: field cards under public/*-field-card/ are static HTML, not
+  // App Router pages. next/link soft-nav would no-op / 404 inside the SPA shell.
   return (
     <a href={href} className="focus-ring block h-full rounded-2xl">
       {card}
@@ -48,16 +47,18 @@ function CompetencyCard({
   );
 }
 
-const accentBar: Record<"cyan" | "violet" | "blue", string> = {
+const accentBar: Record<"cyan" | "violet" | "blue" | "amber", string> = {
   cyan: "border-l-neon-cyan",
   violet: "border-l-neon-violet",
   blue: "border-l-neon-blue",
+  amber: "border-l-neon-amber",
 };
 
-const accentIcon: Record<"cyan" | "violet" | "blue", string> = {
+const accentIcon: Record<"cyan" | "violet" | "blue" | "amber", string> = {
   cyan: "text-neon-cyan",
   violet: "text-neon-violet",
   blue: "text-neon-blue",
+  amber: "text-neon-amber",
 };
 
 export default function HomePage() {
@@ -80,10 +81,10 @@ export default function HomePage() {
       <section>
         <SectionHeading
           eyebrow="Core competencies"
-          title="Delivery, data, and agent systems"
-          description="How I ship: delivery leadership, analytics I can defend, and automation with a human gate."
+          title="How the work is decided and shipped"
+          description="Credit decisions that hold, software with gates, sequenced delivery, analytics I can defend, and automation with a human gate."
         />
-        <Stagger className="mt-10 grid gap-6 sm:grid-cols-3">
+        <Stagger className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {competencies.map((c) => (
             <StaggerItem key={c.title}>
               <CompetencyCard {...c} />

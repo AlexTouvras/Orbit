@@ -121,25 +121,26 @@ jobs:
     stale_gate_if: "Preview posted, no Approve/Skip within 24 weekday hours"
     proposed_fix: "If missing: gh workflow run newsletter.yml with notify=true, or wait for Vercel cron. If sitting: Approve/Skip in #orbit. Do not send Resend without Approve."
 
-  - id: field-card-friday
+  - id: field-card-monthly
     project: field-cards
-    name: Weekly field card draft + review
+    name: Monthly field card draft + review
     repos:
       - AlexTouvras/agentic-ai-field-card
       - AlexTouvras/data-analytics-field-card
       - AlexTouvras/technology-delivery-field-card
+      - AlexTouvras/Orbit
     kind: cursor_automation
-    schedule: "Friday 17:00 draft, 18:00 review"
-    check: monday
+    schedule: "1st 17:00 discover, 18:00 review"
+    check: monthly_after
     slack: "#orbit"
     expect:
-      open_pr_prefix: "chore/weekly-refresh-"
+      open_pr_prefix: "chore/monthly-refresh-"
       review_applied: true
-      # If the same repo already merged chore/weekly-refresh-<ISO-week> this week, a second
+      # If the same repo already merged chore/monthly-refresh-YYYY-MM this month, a second
       # discovery-only open PR is orphaned — close it; do not flag.
-      skip_open_pr_when_merged_same_week: true
-    miss_if: "Monday: an open chore/weekly-refresh-* PR was not approved or declined by the Friday 18:00 review agent — unless that repo already merged the same ISO-week head"
-    proposed_fix: "Check Weekly field card review automation (a1c0b46b-9a09-11f1-ba66-0e7d0216e441). If the PR exists, run Apply review from Orbit playbook — do not gh pr merge. If the week already shipped via an earlier merged PR, close the duplicate discovery PR."
+      skip_open_pr_when_merged_same_month: true
+    miss_if: "First weekday on or after the 2nd: an open chore/monthly-refresh-* PR was not approved or declined by the 1st 18:00 review agent — unless that repo already merged the same YYYY-MM head"
+    proposed_fix: "Check Monthly field card review automation (a1c0b46b-9a09-11f1-ba66-0e7d0216e441). If the PR exists, run Apply review from Orbit playbook — do not gh pr merge. If the month already shipped via an earlier merged PR, close the duplicate discovery PR. Leftover chore/weekly-refresh-* heads are legacy — close them; do not flag as a miss."
 
   - id: careerops-sunday
     project: careerops

@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Agentic AI Field Card — When to use what · Alex Touvras</title>
-  <meta name="description" content="A one-page decision card for RAG, agents, MCP, A2A, skills, and rules. Layers, not rivals. Built for delivery work with a human gate." />
+  <title>Credit Risk Field Card — Lifetime, not a cutoff · Alex Touvras</title>
+  <meta name="description" content="A one-page decision card for loan origination and IFRS 9: originate, monitor, stage, and provision. Models are lanes — not the map." />
   <meta name="author" content="Alex Touvras" />
-  <link rel="canonical" href="https://alextouvras.com/field-card/" />
-  <meta property="og:title" content="Agentic AI Field Card — When to use what" />
-  <meta property="og:description" content="RAG, agents, MCP, A2A, skills, and rules as layers. Most teams need fewer than they think." />
+  <link rel="canonical" href="https://alextouvras.com/credit-risk-field-card/" />
+  <meta property="og:title" content="Credit Risk Field Card — Lifetime, not a cutoff" />
+  <meta property="og:description" content="Originate → monitor → stage → provision. A score is not a lifetime. Analytics owns how the number is built." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://alextouvras.com/field-card/" />
+  <meta property="og:url" content="https://alextouvras.com/credit-risk-field-card/" />
   <meta property="og:image" content="https://alextouvras.com/opengraph-image" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://alextouvras.com/opengraph-image" />
@@ -25,16 +25,16 @@
       --line: #c9d2dc;
       --paper: #eef2f6;
       --card: #f8fafc;
-      --steel: #245a7a;
-      --steel-deep: #1a4158;
+      --steel: #7a4a28;
+      --steel-deep: #5c371c;
       --signal: #0f766e;
       --signal-soft: #d7ebe8;
       --warn: #9a3412;
       --warn-soft: #f3e0d6;
-      --layer-rag: #245a7a;
-      --layer-agent: #1e4d6b;
+      --layer-rag: #6b3d22;
+      --layer-agent: #7a4a28;
       --layer-mcp: #0f766e;
-      --layer-a2a: #4338ca;
+      --layer-a2a: #8a5a38;
       --shadow: 0 1px 0 rgba(24, 33, 43, 0.06), 0 12px 32px rgba(24, 33, 43, 0.06);
       --radius: 10px;
       --font-display: "Source Serif 4", Georgia, serif;
@@ -180,22 +180,6 @@
     .layer:nth-child(2) { background: var(--layer-agent); animation-delay: 110ms; }
     .layer:nth-child(3) { background: var(--layer-mcp); animation-delay: 180ms; }
     .layer:nth-child(4) { background: var(--layer-a2a); animation-delay: 250ms; }
-
-    .stack:has(.layer.llm) .layer.llm {
-      background: #fff;
-      color: var(--ink-soft);
-      border-color: var(--line);
-      padding: 0.38rem 0.7rem;
-      animation-delay: 20ms;
-    }
-    .stack:has(.layer.llm) .layer.llm code {
-      color: var(--steel);
-      opacity: 1;
-    }
-    .stack:has(.layer.llm) .layer:nth-child(2) { background: var(--layer-rag); animation-delay: 80ms; }
-    .stack:has(.layer.llm) .layer:nth-child(3) { background: var(--layer-agent); animation-delay: 140ms; }
-    .stack:has(.layer.llm) .layer:nth-child(4) { background: var(--layer-mcp); animation-delay: 200ms; }
-    .stack:has(.layer.llm) .layer:nth-child(5) { background: var(--layer-a2a); animation-delay: 260ms; }
 
     .layer code {
       font-family: var(--font-mono);
@@ -421,7 +405,7 @@
 
     .pick {
       display: grid;
-      grid-template-columns: 6.5rem 1fr;
+      grid-template-columns: 7.5rem 1fr;
       gap: 0.65rem;
       padding: 0.55rem 0;
       border-bottom: 1px solid #e2e8ef;
@@ -524,7 +508,7 @@
     }
 
     .anti-list li::before {
-      content: "×";
+      content: "\00D7";
       position: absolute;
       left: 0;
       color: var(--warn);
@@ -650,7 +634,7 @@
 <body>
   <article class="sheet" id="field-card">
     <div class="topbar">
-      <div class="eyebrow">Field card · Agentic systems</div>
+      <div class="eyebrow">Field card · Credit risk</div>
       <div class="channels no-print">
         <button type="button" onclick="window.print()">Print / PDF</button>
         <button type="button" id="copy-link">Copy link</button>
@@ -660,20 +644,20 @@
 
     <header class="hero">
       <div>
-        <div class="eyebrow">When to use what</div>
-        <h1>Agentic AI is a loop, not a menu</h1>
-        <p class="verbs">Understand → find → act → orchestrate</p>
+        <div class="eyebrow">Loan origination and IFRS 9</div>
+        <h1>Credit risk is a lifetime, not a cutoff</h1>
+        <p class="verbs">Decide → watch → stage → hold</p>
         <p class="lede">
-          RAG, agents, MCP, and A2A are <strong>layers</strong>. Skills and rules shape behavior.
-          Most teams need fewer layers than the pitch deck suggests; start at the thinnest layer that solves the job.
+          Originate, monitor, stage, and provision are <strong>layers</strong>.
+          Models are lanes. A score at application is not the loss you hold — name SICR before anyone books the number.
+          How the number is <em>built</em> lives on the Analytics card (grain, truth, consume).
         </p>
       </div>
-      <div class="stack" aria-label="Language to peers">
-        <div class="layer llm"><code>LLM</code><span>Language — prompted chat</span></div>
-        <div class="layer"><code>RAG</code><span>Knowledge — ground answers in your docs</span></div>
-        <div class="layer"><code>AGENT</code><span>Control loop — plan, act, observe, stop</span></div>
-        <div class="layer"><code>MCP</code><span>Tools — standard reach into systems</span></div>
-        <div class="layer"><code>A2A</code><span>Peers — agents coordinating across boundaries</span></div>
+      <div class="stack" aria-label="Four-layer stack">
+        <div class="layer"><code>ORIGINATE</code><span>Decision — creditworthiness, policy, engine</span></div>
+        <div class="layer"><code>MONITOR</code><span>Book — arrears, emerging risk, in-production scores</span></div>
+        <div class="layer"><code>STAGE</code><span>IFRS 9 — SICR, stage 1 / 2 / 3</span></div>
+        <div class="layer"><code>PROVISION</code><span>ECL — 12-month or lifetime, PD · LGD · EAD, overlay</span></div>
       </div>
     </header>
 
@@ -689,93 +673,88 @@
         </thead>
         <tbody>
           <tr>
-            <td class="problem">Answers ignore our docs, go stale, or invent policy</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview" target="_blank" rel="noopener noreferrer" title="Microsoft Learn: RAG overview"><b>RAG</b></a></td>
-            <td class="example">Internal policy bot cites the latest refund SOP; use GraphRAG when the question is about how entities link</td>
+            <td class="problem">New credit without a named affordability test</td>
+            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA Guidelines on loan origination and monitoring"><b>Origination standard</b></a></td>
+            <td class="example">B2B partner or consumer loan: creditworthiness, data used, and who can override — not a gut “looks fine”</td>
           </tr>
           <tr>
-            <td class="problem">Need live reads or writes against systems — not a stale index</td>
-            <td class="reach"><a class="use-link" href="https://modelcontextprotocol.io/" target="_blank" rel="noopener noreferrer" title="Model Context Protocol"><b>MCP</b></a></td>
-            <td class="example">Stock check hits ERP now; same agent opens a Jira bug with logs after a failed deploy</td>
+            <td class="problem">Cut-off set once, never watched</td>
+            <td class="reach"><a class="use-link" href="https://www.bis.org/basel_framework/chapter/CRE/31.htm" target="_blank" rel="noopener noreferrer" title="Basel CRE31: IRB risk differentiation"><b>In-production scorecard</b></a></td>
+            <td class="example">Application PD: cut-off, through-the-door mix, and override rate on a named cadence — a launch deck is not monitoring</td>
           </tr>
           <tr>
-            <td class="problem">Only 1–2 APIs inside one app; no reuse yet</td>
-            <td class="reach"><a class="use-link" href="https://platform.openai.com/docs/guides/function-calling" target="_blank" rel="noopener noreferrer" title="OpenAI: function calling"><b>Direct tools</b></a></td>
-            <td class="example">One Flask service calling Stripe + SendGrid; move to MCP when those same tools must serve multiple apps</td>
+            <td class="problem">Policy lives in a person, not the engine</td>
+            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA GL/2020/06 — automated models in origination"><b>Credit engine + owner</b></a></td>
+            <td class="example">Rule or score change in the engine: test, named owner, rollback — chat is not the policy</td>
           </tr>
           <tr>
-            <td class="problem">Fixed path with a model in one or two slots</td>
-            <td class="reach"><a class="use-link" href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener noreferrer" title="Anthropic: building effective agents"><b>Workflow</b></a></td>
-            <td class="example">Invoice PDF → extract fields → validate → post to ledger; model fills gaps, code owns order</td>
+            <td class="problem">Book looks calm; early arrears are not</td>
+            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA loan origination and monitoring — ongoing monitoring"><b>Portfolio watch</b></a></td>
+            <td class="example">Segment PD vs observed default; vintage and product — steering is a change, not a slide</td>
           </tr>
           <tr>
-            <td class="problem">Multi-step work that branches, retries, and must stop cleanly</td>
-            <td class="reach"><a class="use-link" href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener noreferrer" title="Anthropic: building effective agents"><b>Agent</b></a></td>
-            <td class="example">Month-end expense pack: pull receipts, match policy via RAG, flag outliers, wait for Approve</td>
+            <td class="problem">Everyone is still “performing”</td>
+            <td class="reach"><a class="use-link" href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer" title="IFRS 9 Financial Instruments"><b>SICR / staging</b></a></td>
+            <td class="example">Significant increase since origination → lifetime ECL (stage 2); credit-impaired → stage 3. A missed payment is a trigger, not a debate</td>
           </tr>
           <tr>
-            <td class="problem">Same standing orders across chats</td>
-            <td class="reach"><a class="use-link" href="https://cursor.com/docs/rules" target="_blank" rel="noopener noreferrer" title="Cursor: Rules"><b>Rules</b></a></td>
-            <td class="example">“Never push main; always cite sources; Finnish UI copy stays formal” in every session</td>
+            <td class="problem">Allowance is a round number from last year</td>
+            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/guidelines-credit-risk-management-practices-and-accounting-expected-credit-losses" target="_blank" rel="noopener noreferrer" title="EBA GL/2017/06 — accounting for expected credit losses"><b>ECL methodology</b></a></td>
+            <td class="example">PD × LGD × EAD, 12-month vs lifetime, forward-looking info — a spreadsheet total is not IFRS 9</td>
           </tr>
           <tr>
-            <td class="problem">Named playbook with steps and a verify gate</td>
-            <td class="reach"><a class="use-link" href="https://cursor.com/docs/skills" target="_blank" rel="noopener noreferrer" title="Cursor: Agent Skills"><b>Skill</b></a></td>
-            <td class="example">“Author a Power BI page” skill: open model, place visuals, validate PBIR, screenshot check</td>
+            <td class="problem">Model is blind to the downturn you can see</td>
+            <td class="reach"><a class="use-link" href="https://www.bis.org/bcbs/publ/d350.htm" target="_blank" rel="noopener noreferrer" title="BCBS: Guidance on credit risk and accounting for expected credit losses"><b>Judgement overlay</b></a></td>
+            <td class="example">Named overlay, size, and exit test; experienced credit judgement is a control, not a plug</td>
           </tr>
           <tr>
-            <td class="problem">Money, prod, or irreversible writes in the path</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/agent-framework/workflows/human-in-the-loop" target="_blank" rel="noopener noreferrer" title="Microsoft Agent Framework: human-in-the-loop"><b>Human gate</b></a></td>
-            <td class="example">Refund &gt; €50 pauses for Approve; step and spend caps stop a runaway loop</td>
+            <td class="problem">PD/LGD/EAD don’t match the grain of the book</td>
+            <td class="reach"><a class="use-link" href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer" title="IFRS 9 — expected credit losses"><b>Named risk parameters</b></a></td>
+            <td class="example">Auto-loan lifetime ECL: account grain, remaining term, prepayment — Analytics card owns the gold table; this card owns the stage</td>
           </tr>
           <tr>
-            <td class="problem">Tone/format still wrong after prompts + RAG</td>
-            <td class="reach"><a class="use-link" href="https://platform.openai.com/docs/guides/fine-tuning" target="_blank" rel="noopener noreferrer" title="OpenAI: fine-tuning"><b>Fine-tune</b></a></td>
-            <td class="example">Bank chat must stick to a fixed compliance template; keep changing facts in retrieval, not weights</td>
+            <td class="problem">Override rate is “how we actually decide”</td>
+            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA origination guidelines — governance of automated models"><b>Override governance</b></a></td>
+            <td class="example">Who can stretch policy, why, and how it is sampled — silent overrides are a second scorecard</td>
           </tr>
           <tr>
-            <td class="problem">Specialist agents owned by different teams or vendors</td>
-            <td class="reach"><a class="use-link" href="https://a2a-protocol.org/" target="_blank" rel="noopener noreferrer" title="A2A Protocol"><b>A2A</b></a></td>
-            <td class="example">Support agent hands a refund packet to Finance-ops across two tenants; each agent keeps its own MCP tools</td>
-          </tr>
-          <tr>
-            <td class="problem">Don’t know if the system still works after a change</td>
-            <td class="reach"><a class="use-link" href="https://platform.openai.com/docs/guides/evals" target="_blank" rel="noopener noreferrer" title="OpenAI: evals"><b>Evals</b></a></td>
-            <td class="example">20 golden tickets; block ship if pass rate drops; inspect the tool path when a case fails</td>
+            <td class="problem">Capital model and IFRS 9 model never speak</td>
+            <td class="reach"><a class="use-link" href="https://www.bis.org/basel_framework/chapter/CRE/31.htm" target="_blank" rel="noopener noreferrer" title="Basel IRB risk differentiation"><b>Know the two jobs</b></a></td>
+            <td class="example">IRB EL ≠ IFRS 9 ECL. Reconcile the difference; don’t paste one into the other</td>
           </tr>
         </tbody>
       </table>
-      <p class="note">Default build order: prompted chat → RAG → one agent with tools/MCP → stateful workflow + human gate → multi-agent inside one framework → A2A only when ownership boundaries are real.</p>
+      <p class="note">Default order: creditworthiness + policy in the engine → watch the book and the score → stage on SICR → hold 12-month or lifetime ECL (overlay named). Analytics owns grain and gold; this card owns the decision and the stage.</p>
     </section>
 
     <div class="tri">
       <section>
-        <h2>Framework picker</h2>
+        <h2>Tool picker</h2>
         <div class="picker">
-          <div class="pick"><strong><a href="https://langchain-ai.github.io/langgraph/" target="_blank" rel="noopener noreferrer">LangGraph</a></strong><span>Stateful, auditable, HITL, durable checkpoints</span></div>
-          <div class="pick"><strong><a href="https://docs.crewai.com/" target="_blank" rel="noopener noreferrer">CrewAI</a></strong><span>Fastest role-based prototype</span></div>
-          <div class="pick"><strong><a href="https://docs.llamaindex.ai/" target="_blank" rel="noopener noreferrer">LlamaIndex</a></strong><span>RAG / data-first agents</span></div>
-          <div class="pick"><strong><a href="https://learn.microsoft.com/en-us/agent-framework/overview/" target="_blank" rel="noopener noreferrer">MS Agent Fw</a></strong><span>Azure / .NET enterprise path</span></div>
-          <div class="pick"><strong><a href="https://openai.github.io/openai-agents-python/" target="_blank" rel="noopener noreferrer">OpenAI</a> / <a href="https://code.claude.com/docs/en/agent-sdk/overview" target="_blank" rel="noopener noreferrer">Claude</a> SDKs</strong><span>Handoffs or Anthropic-native loops</span></div>
-          <div class="pick"><strong><a href="https://ai.pydantic.dev/" target="_blank" rel="noopener noreferrer">Pydantic AI</a></strong><span>Schema-first typed Python</span></div>
-          <div class="pick"><strong><a href="https://google.github.io/adk-docs/" target="_blank" rel="noopener noreferrer">Google ADK</a></strong><span>Google / Vertex agent path</span></div>
+          <div class="pick"><strong><a href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer">EBA origination GL</a></strong><span>Creditworthiness, monitoring, model governance</span></div>
+          <div class="pick"><strong><a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer">IFRS 9</a></strong><span>Staging, SICR, 12-month vs lifetime ECL</span></div>
+          <div class="pick"><strong><a href="https://www.eba.europa.eu/guidelines-credit-risk-management-practices-and-accounting-expected-credit-losses" target="_blank" rel="noopener noreferrer">EBA ECL GL</a></strong><span>Sound ECL practices next to the Standard</span></div>
+          <div class="pick"><strong><a href="https://www.bis.org/bcbs/publ/d350.htm" target="_blank" rel="noopener noreferrer">BCBS ECL guidance</a></strong><span>Judgement, data, and allowance quality</span></div>
+          <div class="pick"><strong><a href="https://www.bis.org/basel_framework/chapter/CRE/31.htm" target="_blank" rel="noopener noreferrer">IRB differentiation</a></strong><span>PD that actually ranks risk — not a label</span></div>
+          <div class="pick"><strong><a href="https://www.ifrs.org/supporting-implementation/supporting-materials-by-ifrs-standards/ifrs-9/" target="_blank" rel="noopener noreferrer">IFRS 9 support</a></strong><span>Implementation notes, not a vendor deck</span></div>
+          <div class="pick"><strong><a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer">PD · LGD · EAD</a></strong><span>Name the three; freeze the cut you used</span></div>
         </div>
       </section>
 
       <section>
-        <h2>Rules vs skills</h2>
+        <h2>Decision vs number</h2>
         <div class="gates">
           <div class="gate">
-            <strong>Rules · standing orders</strong>
-            <span>Always on or path-scoped. Safety, voice, repo law. Keep short. Cursor: <code>.cursor/rules</code>, <code>AGENTS.md</code>.</span>
+            <strong>Decision · originate</strong>
+            <span>Creditworthiness, policy, engine, override. A score without a cut-off owner is not a decision.</span>
           </div>
           <div class="gate">
-            <strong>Skills · runbooks</strong>
-            <span>Load when the task matches. Multi-step + verify. Cursor: <code>SKILL.md</code>. Don’t wrap one API call as a skill.</span>
+            <strong>Number · hold</strong>
+            <span>Stage, then ECL. Analytics can build the table; this card still owns SICR and the overlay.</span>
           </div>
           <div class="gate">
             <strong>Memory check</strong>
-            <span>LLM = language. RAG = library. MCP = hands. Rules = standing orders. Skills = runbooks.</span>
+            <span>ORIGINATE = decision. MONITOR = book. STAGE = SICR. PROVISION = the loss you hold.</span>
           </div>
         </div>
       </section>
@@ -783,16 +762,16 @@
       <section>
         <h2>Ladder + gates</h2>
         <ol class="ladder">
-          <li>LLM / prompted chat</li>
-          <li>RAG assistant with citations</li>
-          <li>Single agent + tools / MCP</li>
-          <li>Stateful workflow + human Approve</li>
-          <li>Multi-agent inside one framework</li>
-          <li>Cross-org A2A (earn this)</li>
+          <li>Creditworthiness + policy in the engine</li>
+          <li>Cut-off + override owner</li>
+          <li>In-production monitoring</li>
+          <li>SICR / stage 1–3</li>
+          <li>PD · LGD · EAD at the right grain</li>
+          <li>Overlay named — or no plug</li>
         </ol>
         <div class="gate" style="margin-top:0.75rem">
           <strong>Kill switch</strong>
-          <span>Max steps, max €/tokens, tool allowlist. If you can’t stop it, you don’t ship it.</span>
+          <span>If you can’t name the stage, the parameters, and who owns the overlay, you don’t book the number.</span>
         </div>
       </section>
     </div>
@@ -800,41 +779,40 @@
     <section class="antis">
       <h2>Anti-patterns</h2>
       <ul class="anti-list">
-        <li>Agent for pure Q&amp;A (start with RAG)</li>
-        <li>Treating MCP and RAG as either/or</li>
-        <li>Fine-tuning for facts that change weekly</li>
-        <li>Premature multi-agent / A2A swarms</li>
-        <li>Calling a fixed pipeline an “agent”</li>
-        <li>Unbounded autonomy where money or prod moves</li>
-        <li>Tools without schemas, budgets, or kill switches</li>
-        <li>Always-on rules that belong in a skill</li>
+        <li>Cutoff as the whole risk system</li>
+        <li>Silent overrides as a second policy</li>
+        <li>Stage 1 forever because “they’re paying”</li>
+        <li>Pasting IRB EL into IFRS 9 ECL</li>
+        <li>Unnamed overlay that never exits</li>
+        <li>Scorecard with no in-production watch</li>
+        <li>Vendor brochure as the methodology</li>
+        <li>Building gold tables and skipping staging</li>
       </ul>
     </section>
 
     <section class="foundation" aria-label="Always-on foundation">
       <h2>Always on</h2>
       <div class="found-row">
-        <div class="found"><strong>Security</strong><span>Tool allowlist, spend and step caps</span></div>
-        <div class="found"><strong>Governance</strong><span>Who owns policy and the audit trail</span></div>
-        <div class="found"><strong>Observability</strong><span>Traces and the tool path when a case fails</span></div>
-        <div class="found"><strong>Evals</strong><span>Golden tickets before ship</span></div>
-        <div class="found"><strong>Human Approve</strong><span>Money, prod, irreversible writes</span></div>
+        <div class="found"><strong>Security</strong><span>Who can see PII and flip a policy rule</span></div>
+        <div class="found"><strong>Governance</strong><span>Model, cut-off, and overlay owners</span></div>
+        <div class="found"><strong>Observability</strong><span>Score, arrears, and stage movement</span></div>
+        <div class="found"><strong>Evals</strong><span>Backtest and through-the-door mix</span></div>
+        <div class="found"><strong>Human Approve</strong><span>Policy, SICR, overlay — not auto-booked</span></div>
       </div>
     </section>
 
     <footer class="meta">
       <div class="version-row">
-        <div class="version" id="version-stamp">v2026.36 · Reviewed 4 Sep 2026 · Next: October 2026</div>
+        <div class="version" id="version-stamp">v2026.09 · First public card 21 Sep 2026 · Next: October 2026</div>
         <div class="credit">
           <span>Alex Touvras</span>
           <a href="https://alextouvras.com">alextouvras.com</a>
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> Monthly review — picker and jobs unchanged</p>
+      <p class="changed"><b>Changed</b> First public card — ORIGINATE → MONITOR → STAGE → PROVISION</p>
     </footer>
   </article>
-
   <script>
     (function () {
       var btn = document.getElementById("copy-link");

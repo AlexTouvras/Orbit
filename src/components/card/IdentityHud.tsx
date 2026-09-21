@@ -19,7 +19,7 @@ export interface IdentityHudPillar {
   title: string;
   verbs?: string;
   description: string;
-  accent: "cyan" | "violet" | "blue";
+  accent: "cyan" | "violet" | "blue" | "amber";
   links?: IdentityHudLink[];
 }
 
@@ -49,12 +49,14 @@ const accentTile: Record<IdentityHudPillar["accent"], string> = {
   cyan: "hover:border-neon-cyan/40",
   violet: "hover:border-neon-violet/40",
   blue: "hover:border-neon-blue/40",
+  amber: "hover:border-neon-amber/40",
 };
 
 const accentActive: Record<IdentityHudPillar["accent"], string> = {
   cyan: "border-neon-cyan/50 bg-neon-cyan/10",
   violet: "border-neon-violet/50 bg-neon-violet/10",
   blue: "border-neon-blue/50 bg-neon-blue/10",
+  amber: "border-neon-amber/50 bg-neon-amber/10",
 };
 
 type HintId = string;
@@ -209,7 +211,7 @@ export function IdentityHud({
               type="button"
               onClick={() => onToggle(pillar.id)}
               className={cn(
-                "focus-ring flex min-h-12 w-full flex-col rounded-xl border border-white/10 bg-black/20 px-3 py-2.5 text-left transition-colors",
+                "focus-ring flex min-h-12 w-full flex-col rounded-xl border border-white/10 bg-black/20 px-2 py-2.5 text-left transition-colors sm:px-3",
                 accentTile[pillar.accent],
                 isActive && accentActive[pillar.accent],
               )}

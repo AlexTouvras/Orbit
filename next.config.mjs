@@ -28,6 +28,30 @@ const nextConfig = {
         source: "/analytics-field-card/",
         destination: "/analytics-field-card/index.html",
       },
+      {
+        source: "/delivery-field-card",
+        destination: "/delivery-field-card/index.html",
+      },
+      {
+        source: "/delivery-field-card/",
+        destination: "/delivery-field-card/index.html",
+      },
+      {
+        source: "/sdlc-field-card",
+        destination: "/sdlc-field-card/index.html",
+      },
+      {
+        source: "/sdlc-field-card/",
+        destination: "/sdlc-field-card/index.html",
+      },
+      {
+        source: "/credit-risk-field-card",
+        destination: "/credit-risk-field-card/index.html",
+      },
+      {
+        source: "/credit-risk-field-card/",
+        destination: "/credit-risk-field-card/index.html",
+      },
     ];
   },
 };

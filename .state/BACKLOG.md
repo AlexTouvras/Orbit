@@ -39,6 +39,11 @@
 - [x] **Economy Pulse — fresher HICP + DK/NO** — merge `prc_hicp_manr` + early `teicp000`; add Denmark and Norway spotlights.
 - [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
 - [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
+- [x] Hub SDLC + Credit Risk field cards (Orbit-hosted HTML, HUD lanes, sitemap)
+- [ ] **SDLC / Credit Risk source repos** — create `sdlc-field-card` and `credit-risk-field-card`, copy discovery + Apply review from analytics/delivery on a **monthly** cadence (1st 17:00 discover / 18:00 review). Register in `FIELD_CARDS` + `fleet.yaml`. Bind `hosted-field-card-monthly-review.json` in Cursor until those repos exist.
+- [x] **Local IDE: live field-card automations renamed Monthly** — GetAutomation 2026-09-21: AI / analytics / delivery / review all named Monthly, enabled.
+- [ ] **Hosted SDLC + Credit Risk Cursor automation** — confirm it exists (create from `hosted-field-card-monthly-review.json` if missing) and paste the UUID into `.state/AUTOMATION_CONTRACT.md`.
+- [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
 - [x] **EU Spot Desk (localhost)** — `/portfolio/live/eu-spot` map + history. Energy-Charts until ENTSO-E token. Do not deploy while `localhostOnly`.
 - [x] **EU Spot → ENTSO-E A44** — token in `.env.local`; `live:fetch-eu` prefers A44; `localhostOnly: false`. Consider public deploy after owner review.
 - [x] **EU Spot multi-domain pulse** — Market/Load/Gen/Transmission/Outages/Balancing/Operation/OMI; map hover + zone desk. Refresh: `npm run live:fetch-eu-pulse`.

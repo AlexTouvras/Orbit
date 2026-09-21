@@ -96,6 +96,8 @@ src/content/writes/
 public/field-card/index.html            # Agentic AI Field Card (home AI competency)
 public/analytics-field-card/index.html  # Data Analytics Field Card (home Data competency)
 public/delivery-field-card/index.html   # Technology Delivery Field Card (home Delivery competency)
+public/sdlc-field-card/index.html       # SDLC Field Card (home SDLC competency; Orbit-hosted until source repo)
+public/credit-risk-field-card/index.html # Credit Risk Field Card (origination + IFRS 9; Orbit-hosted until source repo)
 src/lib/field-card/registry.ts          # Multi-card Apply review sync map (repo → Orbit path)
 src/lib/field-card/slack.ts             # Laconic one-post-per-card #orbit FYI (Review/Considered/Changed/Online + Check card)
 src/app/card/page.tsx                   # Public identity HUD (chrome-light)
@@ -163,7 +165,9 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-05 | Cursor `canvases/` stay local (gitignore + tsconfig exclude) | First committed `.canvas.tsx` failed ship-check: Next cannot resolve `cursor/canvas` |
 | 2026-09-05 | Studio Apply on Vercel = `repository_dispatch` → fitness-coach GHA | Vercel has no fitness `.venv`; `OPS_GITHUB_TOKEN` must be Contents write on fitness-coach |
 | 2026-09-09 | Arc remaining HP: max = 100 + VIT, fill = Body Battery share | VIT formula unchanged; bar not in the gate letter |
-| 2026-09-21 | Arc HUD sixth stat SPD = peak max speed, not race VDOT | AGI already owns 5K/VDOT; END owns VO₂max. SPD is neuromuscular top-end from stride/sprint max speed (GPS outliers dropped). Tile omitted until fitness-coach emits `stats.spd`. Include in the unweighted gate mean only when a sample exists; do not zero-fill. |
+| 2026-09-21 | SDLC + Credit Risk field cards on Hub/HUD as Orbit-hosted HTML | Distinct spines from Delivery (cutover) and Analytics (grain). Weekly source repos later — do not register phantom GitHub repos in FIELD_CARDS |
+| 2026-09-21 | Public field-card review is monthly | Footers say Next: month, not week of. SDLC/Credit stamped on Orbit (`hosted-field-card-monthly-review.json`). |
+| 2026-09-21 | Field-card discovery is monthly too | All five Hub cards: 1st 17:00 discover + 1st 18:00 source-repo review. Fleet `monthly_after` on the 2nd. Local IDE renamed the four live automations to Monthly (GetAutomation). Hosted SDLC/Credit UUID not listed from Cloud Agent. |
 | 2026-09-09 | Public identity HUD at `/card`; on-screen QR at `/qr-code`; About avatar opens the HUD | Calling card for IRL scans. No extra About hero button. QR encodes current origin so localhost/LAN works. `/qr-code` is noindex. |
 | 2026-09-09 | HUD lane hints use field-card thesis (`hudTitle` / `hudVerbs` / `hudDescription`); Home keeps skill blurbs | Phone scan should show stack-not-dashboard / sequence-not-ticket, not the Hub competency paragraph |
 | 2026-09-11 | EU Spot map uses real bidding-zone polygons (entsoe-py GeoJSON → SVG), not country choropleth | Owner asked for actual map; MIT-licensed zone shapes |
