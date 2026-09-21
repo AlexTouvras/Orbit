@@ -54,7 +54,7 @@ export default function HomePage() {
         <CraftScene competencies={competencies} />
       </StoryScene>
 
-      <StoryScene id="selected-work">
+      <StoryScene id="selected-work" className="lg:py-8">
         <ProofReel writes={showcaseWrites} />
       </StoryScene>
 

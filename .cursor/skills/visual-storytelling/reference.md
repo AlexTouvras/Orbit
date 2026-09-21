@@ -98,3 +98,4 @@ When restyling or adding a live desk:
 - Left-edge chapter rail covering display type (Hub uses a bottom index instead)
 - Viewport-locked chapters copied from AI Takes Over (native scroll only)
 - Progress line / gravity rotate / spotlight / count-up as the *only* scroll motion (pages also need `StoryReveal` + a sticky kicker so something actually happens while you scroll)
+- Proof as a swipe-only rail on desktop (Hub `#selected-work` should advance to the right as you scroll down)

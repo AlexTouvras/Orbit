@@ -27,7 +27,7 @@ Then a browser walk (desktop + a ~390px viewport):
 
 1. Scroll Hub end to end; the top line fills; chapter rail tracks the scene; Gravity rings/satellites turn; craft rows spotlight
 2. Competency rows are plain `<a href>` to field cards (not `next/link`)
-3. Proof reel scrolls horizontally; case study and architecture still work
+3. Proof reel: on large screens, scrolling down advances the cards to the right; Case study and architecture still work. Phone / reduced motion: swipe the rail.
 4. Live questions open the matching desk
 5. About experience reads as a timeline, not stacked glass cards
 6. `/portfolio` is Open → workshop reel → live questions → Power BI picture → GitHub list (no 3-up `GlassCard` grid)
@@ -59,7 +59,7 @@ Rules:
 - **One idea per chapter.** If you need a card grid to “fit three things,” you do not have a scene yet.
 - **Type is the primary image.** Photography/video is optional; Orbit’s image is Syne at `.text-story` / `.text-display` plus the orbit ring.
 - **Numbers are characters.** Cadence, zone count, €/m² — `StoryStat` / `.orbit-accent` display figures, not a muted mono row.
-- **No scroll-jacking.** Horizontal snap on reels is fine (`scroll-snap-type: x mandatory`). Do not hijack vertical scroll. Scroll-linked motion (progress line, ring rotate/scale, sticky chapter kicker, in-view spotlight, count-up, `StoryReveal` scale) is allowed; copy must remain readable without it. Sticky diagrams are native CSS, not pin-jacking.
+- **No scroll-jacking.** Horizontal snap on reels is fine (`scroll-snap-type: x mandatory`). Do not hijack vertical scroll (no `preventDefault` on wheel, no vertical snap, no pin-jack libraries). Scroll-linked motion is allowed: progress line, ring rotate/scale, sticky chapter kicker, in-view spotlight, count-up, `StoryReveal` scale, and a sticky proof reel whose `translateX` is driven by native vertical scroll (`ScrollRail`). Copy must remain readable without it.
 - **Reduced motion always works.** `motion-safe:` only. `StoryProgress` may use IntersectionObserver; it must not depend on animation.
 - **Field cards** live as static HTML in `public/`. Home competency links stay plain `<a>`.
 
@@ -80,6 +80,7 @@ Rules:
 | `ScrollLine` | `src/components/story/ScrollLine.tsx` | Top read bar; Hub / Portfolio / About / live (via AppChrome) |
 | `ScrollSpot` | `src/components/story/ScrollSpot.tsx` | Brightens the row in the viewport midline |
 | `StoryReveal` | `src/components/story/StoryReveal.tsx` | Scale/rise when a beat enters view |
+| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Proof/workshop reel: vertical scroll → cards move right (`lg+`) |
 
 AppChrome: pathname `/` is full-bleed. Other public pages stay `max-w-5xl` (live desks `max-w-6xl`). Do not silently widen Studio.
 

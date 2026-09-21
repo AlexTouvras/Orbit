@@ -3,7 +3,7 @@ import { ArrowRight, Boxes } from "lucide-react";
 import type { Write } from "@/lib/types";
 import { architectureSlugForWrite } from "@/lib/architecture";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { StoryReveal } from "@/components/story/StoryReveal";
+import { ScrollRail, ScrollRailCard } from "@/components/story/ScrollRail";
 
 function pad(n: number) {
   return String(n).padStart(2, "0");
@@ -13,35 +13,31 @@ export function ProofReel({ writes }: { writes: Write[] }) {
   if (writes.length === 0) return null;
 
   return (
-    <div>
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <ChapterMark
-          index="03"
-          eyebrow="Proof"
-          title="Systems I've built"
-          description="Write-ups with architecture, the evidence behind the craft."
-        />
-        <Link
-          href="/portfolio"
-          className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan"
-        >
-          Full portfolio
-          <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
-        </Link>
-      </div>
-
-      <div className="story-rail mt-12">
-        {writes.map((write, i) => {
-          const architectureSlug = architectureSlugForWrite(write.slug);
-          const essayHref = `/writes/${write.slug}`;
-          return (
-            <StoryReveal
-              key={write.slug}
-              className="w-[min(100%,34rem)] shrink-0 sm:w-[min(100%,38rem)]"
-            >
-            <article
-              className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-9"
-            >
+    <ScrollRail
+      header={
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <ChapterMark
+            index="03"
+            eyebrow="Proof"
+            title="Systems I've built"
+            description="Write-ups with architecture, the evidence behind the craft."
+          />
+          <Link
+            href="/portfolio"
+            className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan"
+          >
+            Full portfolio
+            <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
+          </Link>
+        </div>
+      }
+    >
+      {writes.map((write, i) => {
+        const architectureSlug = architectureSlugForWrite(write.slug);
+        const essayHref = `/writes/${write.slug}`;
+        return (
+          <ScrollRailCard key={write.slug}>
+            <article className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-9">
               <p className="story-index absolute right-4 top-2 select-none" aria-hidden>
                 {pad(i + 1)}
               </p>
@@ -77,10 +73,9 @@ export function ProofReel({ writes }: { writes: Write[] }) {
                 ) : null}
               </div>
             </article>
-            </StoryReveal>
-          );
-        })}
-      </div>
-    </div>
+          </ScrollRailCard>
+        );
+      })}
+    </ScrollRail>
   );
 }
