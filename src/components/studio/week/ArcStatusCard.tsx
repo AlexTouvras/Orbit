@@ -79,12 +79,13 @@ function HintTrigger({
       type="button"
       onClick={() => onToggle(hintId)}
       className={cn(
-        "touch-manipulation rounded-md text-left transition-colors",
+        "touch-manipulation rounded-md text-left transition-colors [&_*]:pointer-events-none",
         "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400",
         active && "bg-violet-500/15 ring-1 ring-violet-400/40",
         className,
       )}
       aria-expanded={active}
+      aria-controls={active ? "arc-hud-hint" : undefined}
       aria-label={`Show details: ${hint.slice(0, 80)}`}
       title={hint}
     >
@@ -167,7 +168,6 @@ function TrendMark({ trend }: { trend: TrendDir | null | undefined }) {
         trend === "down" && "text-red-400",
         trend === "flat" && "text-slate-400",
       )}
-      title={label}
       aria-label={label}
       aria-hidden={!label}
     >
@@ -215,10 +215,7 @@ function StatAttribute({
       <p className="mt-1 font-display text-2xl font-bold tabular-nums leading-none text-white">
         {level}
       </p>
-      <p
-        className="mt-1 h-4 truncate text-xs leading-4 text-slate-500"
-        title={detail}
-      >
+      <p className="mt-1 h-4 truncate text-xs leading-4 text-slate-500">
         {detail || "\u00a0"}
       </p>
     </HintTrigger>
@@ -393,7 +390,10 @@ export function ArcStatusCard({
     if (health) map.health = healthHint(health);
     for (const key of STAT_ORDER) {
       const stat = stats[key];
-      if (stat?.hint) map[`stat-${key}`] = stat.hint;
+      if (!stat) continue;
+      map[`stat-${key}`] =
+        stat.hint ||
+        `${STAT_LABELS[key] ?? key} is this week's HUD integer from the plan.`;
     }
     return map;
   }, [gate, stats, health]);
@@ -493,19 +493,14 @@ export function ArcStatusCard({
         </div>
       ) : null}
 
-      {activeHintText ? (
-        <div className="mt-3">
-          <HintPanel text={activeHintText} />
-        </div>
-      ) : null}
-
       <div className="mt-3 grid grid-cols-2 items-stretch gap-2 sm:mt-4 sm:grid-cols-5">
         {STAT_ORDER.map((key) => {
           const stat = stats[key];
           if (!stat) return null;
           const detail =
             stat.valueLabel && stat.valueLabel !== "—" ? stat.valueLabel : stat.source;
-          const hint = stat.hint || STAT_LABELS[key] || key;
+          const hint =
+            hints[`stat-${key}`] || STAT_LABELS[key] || key;
           return (
             <StatAttribute
               key={key}
@@ -522,11 +517,17 @@ export function ArcStatusCard({
         })}
       </div>
 
-      <p className="mt-2 text-[0.65rem] text-slate-600">
-        <span className="sm:hidden">Tap</span>
-        <span className="hidden sm:inline">Hover or tap</span> HP, a stat, gate rank, or score
-        for details.
-      </p>
+      {activeHintText ? (
+        <div className="mt-3" id="arc-hud-hint">
+          <HintPanel text={activeHintText} />
+        </div>
+      ) : (
+        <p className="mt-2 text-[0.65rem] text-slate-600">
+          <span className="sm:hidden">Tap</span>
+          <span className="hidden sm:inline">Hover or tap</span> HP, a stat, gate rank, or score
+          for details.
+        </p>
+      )}
 
       {(vo2Delta || weightDelta || hrvDelta || restingDelta || paceLabel || sleepAvg) && (
         <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500 sm:mt-4">
