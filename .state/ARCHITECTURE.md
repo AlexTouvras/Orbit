@@ -166,7 +166,8 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-05 | Studio Apply on Vercel = `repository_dispatch` → fitness-coach GHA | Vercel has no fitness `.venv`; `OPS_GITHUB_TOKEN` must be Contents write on fitness-coach |
 | 2026-09-09 | Arc remaining HP: max = 100 + VIT, fill = Body Battery share | VIT formula unchanged; bar not in the gate letter |
 | 2026-09-21 | SDLC + Credit Risk field cards on Hub/HUD as Orbit-hosted HTML | Distinct spines from Delivery (cutover) and Analytics (grain). Weekly source repos later — do not register phantom GitHub repos in FIELD_CARDS |
-| 2026-09-21 | Public field-card review is monthly | Footers say Next: month, not week of. SDLC/Credit stamped on Orbit (`hosted-field-card-monthly-review.json`). Friday loop stays internal discovery for the three source-repo cards. |
+| 2026-09-21 | Public field-card review is monthly | Footers say Next: month, not week of. SDLC/Credit stamped on Orbit (`hosted-field-card-monthly-review.json`). |
+| 2026-09-21 | Field-card discovery is monthly too | 1st 17:00 discover (`chore/monthly-refresh-YYYY-MM`) + 1st 18:00 review. No Friday loop. Fleet `monthly_after` on the 2nd, not every Monday. Hosted SDLC/Credit judge picker/jobs, not stamp-only. Live Cursor crons must be rebound. |
 | 2026-09-09 | Public identity HUD at `/card`; on-screen QR at `/qr-code`; About avatar opens the HUD | Calling card for IRL scans. No extra About hero button. QR encodes current origin so localhost/LAN works. `/qr-code` is noindex. |
 | 2026-09-09 | HUD lane hints use field-card thesis (`hudTitle` / `hudVerbs` / `hudDescription`); Home keeps skill blurbs | Phone scan should show stack-not-dashboard / sequence-not-ticket, not the Hub competency paragraph |
 | 2026-09-11 | EU Spot map uses real bidding-zone polygons (entsoe-py GeoJSON → SVG), not country choropleth | Owner asked for actual map; MIT-licensed zone shapes |

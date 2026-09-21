@@ -1,16 +1,18 @@
-# Field card weekly gate (Orbit)
+# Field card monthly gate (Orbit)
 
 The review agent is the gate. Slack is FYI after Apply review.
 
-## Normal week
+Discovery and review both run **monthly**. There is no Friday field-card loop.
 
-1. Friday 17:00 — content agent runs discover, decides update vs no-change, leaves the weekly PR open.
-2. Friday 18:00 — **review agent** publishes (including stamp-only no-change). Keeps the previous card only when the PR would make the live card worse.
-3. Slack gets **one laconic FYI per card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
+## Normal month
+
+1. 1st 17:00 — content agents run discover, decide update vs no-change, leave the monthly PR open. Hosted SDLC / Credit Risk are judged on Orbit in the same hour (picker/jobs, not stamp-only).
+2. 1st 18:00 — **review agent** publishes the three source-repo cards (including stamp-only no-change). Keeps the previous card only when the PR would make the live card worse.
+3. Slack gets **one laconic FYI per source-repo card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
 
 ## Backup
 
-If the review agent misses, Monday watchdog posts a FYI in #orbit. Finish by re-running the review agent or `gh workflow run "Apply review"`. Do not Slack-Approve. Saturday is not scheduled.
+If the review agent misses, the fleet check on the first weekday on or after the 2nd posts a FYI in #orbit. Finish by re-running the review agent or `gh workflow run "Apply review"`. Do not Slack-Approve.
 
 ## Cards
 
@@ -19,14 +21,15 @@ If the review agent misses, Monday watchdog posts a FYI in #orbit. Finish by re-
 | Agentic AI | AlexTouvras/agentic-ai-field-card | public/field-card/index.html | /field-card/ |
 | Data Analytics | AlexTouvras/data-analytics-field-card | public/analytics-field-card/index.html | /analytics-field-card/ |
 | Technology Delivery | AlexTouvras/technology-delivery-field-card | public/delivery-field-card/index.html | /delivery-field-card/ |
-| SDLC | *(Orbit-hosted, monthly review)* | public/sdlc-field-card/index.html | /sdlc-field-card/ |
-| Credit Risk | *(Orbit-hosted, monthly review)* | public/credit-risk-field-card/index.html | /credit-risk-field-card/ |
+| SDLC | *(Orbit-hosted, monthly discovery)* | public/sdlc-field-card/index.html | /sdlc-field-card/ |
+| Credit Risk | *(Orbit-hosted, monthly discovery)* | public/credit-risk-field-card/index.html | /credit-risk-field-card/ |
 
-Public footers are monthly (`Next: <month>`), not “week of”. The Friday loop above is internal discovery for the three source repos. SDLC and Credit Risk are stamped on Orbit once a month (`.cursor/automations/hosted-field-card-monthly-review.json`).
+Public footers are monthly (`Next: <month>`), not “week of”. Source-repo discovery uses `chore/monthly-refresh-YYYY-MM`. SDLC and Credit Risk use `chore/monthly-field-cards-YYYY-MM` on Orbit (`.cursor/automations/hosted-field-card-monthly-review.json`).
 
 ```mermaid
 flowchart LR
-  Author[Fri 17:00 content] --> Review[Fri 18:00 review]
+  Author[1st 17:00 discover] --> Review[1st 18:00 review]
+  Hosted[1st 17:00 hosted judgment] --> OrbitPR[Orbit monthly PR]
   Review -->|publish including stamp-only| Live[Site copy + Vercel]
   Review -->|PR worse than live| Stay[Live card unchanged]
   Review --> Slack["#orbit FYI · one post per card"]

@@ -71,7 +71,7 @@ function outcomeLabel(outcome: FieldCardReviewOutcome): string {
 }
 
 /**
- * One laconic #orbit post per card after weekly review.
+ * One laconic #orbit post per card after monthly review.
  * Same shape for Agentic AI / Analytics / Delivery.
  */
 export function buildFieldCardUpdateBlocks(fyi: FieldCardUpdateFyi): {
