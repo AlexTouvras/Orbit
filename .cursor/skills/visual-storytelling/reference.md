@@ -1,43 +1,43 @@
 # Visual storytelling — reference
 
-Distilled from a review of the inspiration set plus Orbit’s current Hub. Use with `SKILL.md`; do not copy these sites’ tone.
+Distilled from a visual review of the inspiration set plus Orbit’s current Hub. Use with `SKILL.md`; do not copy these sites’ tone.
 
 ## What each reference actually does
 
 ### [AI Takes Over](https://aitakesover.co/)
 
-Scroll **chapters** as jokes → definitions → timeline → stats → myths → close. Full-viewport scenes, conversational narrator, stats as punchlines (70%, 85 million). Motion is the medium.
+Scroll **chapters** as jokes → definitions → timeline → stats → myths → close. Viewport scenes, conversational narrator, stats as punchlines (70%, 85 million). Motion is the medium. Visual: PAST → PRESENT → FUTURE sticky chapter labels, pixel/8-bit display type as a graphic object, toast overlays for asides, letter morphs.
 
-**Steal:** chaptered scroll, stats as beats, a close that lands a decision.  
-**Leave:** robot-dance theatre, joke-bot voice, vertical scroll-jacking. Orbit is a hiring-manager HQ.
+**Steal:** chaptered scroll, stats as beats, a close that lands a decision, a chapter index that tracks position.  
+**Leave:** viewport-locked scroll-jacking, robot-dance theatre, joke-bot voice, 8-bit glitch as identity. Orbit is a hiring-manager HQ.
 
 ### [Light Factory](https://light-factory-ca-2022.webflow.io/)
 
-Work as a **reel**. Services as **01–05 process** (Understand → Design → Capture → Craft → Distribute), not a card grid. Full-bleed, numbered, boutique-but-warehouse.
+Work as a **reel**. Services as **01–05 process** (Understand → Design → Capture → Craft → Distribute), not a card grid. Visual: asymmetric split (type left, oversized still/video right), keyword color (magenta / lime), scroll-reveal scale rather than snap-lock.
 
-**Steal:** numbered craft sequence; horizontal proof; process verbs as the story.  
-**Leave:** video-production chrome and “creative babies” copy.
+**Steal:** numbered craft sequence; horizontal proof; process verbs as the story; keyword color already maps to cyan / blue / violet on Hub craft rows.  
+**Leave:** video-production chrome, manifesto proclamations, hand-drawn doodles.
 
 ### [Amanda Lee Peers](https://www.amandaleepeers.com/)
 
-Biography as **eras** (Beginning → Success → Reality TV → Sinner → Tour). Time is the chapter mark. Large type, dark, photographic.
+Biography as **eras** (Beginning → Success → Reality TV → Sinner → Tour). Time is the chapter mark. Visual: one hero word over a full-bleed image; catalog as framed cards; dark, photographic, little body copy above the fold.
 
-**Steal:** About as timeline/eras, not stacked CV cards.  
-**Leave:** tour-poster density; Orbit’s record is employers and theses, not dates on a marquee.
+**Steal:** About as timeline/eras, not stacked CV cards; a single thesis word at display scale.  
+**Leave:** graffiti overlays, tour-poster density; Orbit’s record is employers and theses.
 
 ### [OSOS](https://osos.webflow.io/)
 
-Typography as identity. Fragmented, kinetic, statement-driven. Whitespace as drama.
+Typography as identity. Visual: outline type that fills, side labels, iridescent ambient objects on deep black, extreme negative space, particle field as a close.
 
-**Steal:** type at display scale as the “image”; one-word chapters.  
-**Leave:** illegible overlap, decoration that fights a decision rule.
+**Steal:** type at display scale as the “image”; one-word chapters; ambient motion behind copy (Orbit already has particles + `GravityField`).  
+**Leave:** illegible overlap, soap-bubble decoration, empty-hero density that hides a decision rule.
 
 ### [Haus of Words](https://www.hausofwords.com/)
 
-Personality-first. Big numbers (6.3 million impressions). FAQ as voice. Close is a conversation.
+Personality-first. Big numbers (6.3 million impressions). FAQ as voice. Close is a conversation. Visual: geometric pattern as a full section, snap color blocks, almost no photography.
 
-**Steal:** oversized stats; close as a landing; questions as headlines.  
-**Leave:** punchy agency humour that would fail `docs/essay-voice.md`.
+**Steal:** oversized stats; close as a landing; questions as headlines; a geometric brand mark as a scene (Orbit: orbital rings, not a maze).  
+**Leave:** pastel Bauhaus blocks, punchy agency humour that would fail `docs/essay-voice.md`.
 
 ## Orbit translation (already on Hub)
 
@@ -94,3 +94,5 @@ When restyling or adding a live desk:
 - Selected work as three equal case-study cards (hides cinematic proof)
 - Writes as blog cards on the Hub (archive cards belong on `/writes`)
 - Live desks advertised as “Not Power BI” instead of their questions
+- Left-edge chapter rail covering display type (Hub uses a bottom index instead)
+- Viewport-locked chapters copied from AI Takes Over (native scroll only)
