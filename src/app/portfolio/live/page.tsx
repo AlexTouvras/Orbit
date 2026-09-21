@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Badge } from "@/components/ui/Badge";
-import { MissionHero } from "@/components/ui/MissionHero";
-import { OrbitSignature } from "@/components/ui/OrbitSignature";
 import { LiveDeskTile } from "@/components/live/LiveDeskTile";
 import { LiveDeskCarousel } from "@/components/live/LiveDeskCarousel";
+import { LiveQuestionList } from "@/components/live/LiveQuestionList";
 import { liveDesks } from "@/content/live-desks";
-import { Activity } from "lucide-react";
+import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
+import { DeskCast } from "@/components/story/DeskCast";
+import { StoryStat } from "@/components/story/StoryStat";
+import { DeskPicture } from "@/components/story/DeskPicture";
 
 export const metadata: Metadata = {
   title: "Live dashboards",
@@ -19,29 +20,27 @@ export default function LiveDesksPage() {
 
   return (
     <div className="space-y-16">
-      <MissionHero
-        signature={<OrbitSignature variant="cyan" duration="90s" />}
-        badge={
-          <Badge tone="cyan" className="mb-8">
-            <Activity className="mr-1.5 h-3.5 w-3.5" />
-            Live dashboards
-          </Badge>
-        }
-        title="Follow the tape"
-        subtitle="One question per desk. Public data, cadence-matched."
-        description="These sit next to Power BI screenshots, not inside them. The Hub names the question; the desk holds the map."
-        stats={[
-          { label: "Desks", value: String(desks.length) },
-          { label: "Grain", value: "Mixed" },
-          { label: "Keys in browser", value: "None" },
-        ]}
+      <DeskStoryHeader
+        kicker="Live desks"
+        question="Questions the desks answer"
+        lede="Public data, cadence-matched, one question each. These sit next to Power BI screenshots, not inside them. The Hub names the question; the desk holds the map."
       />
 
-      <LiveDeskCarousel className="mt-0" labels={desks.map((d) => d.title)}>
-        {desks.map((desk) => (
-          <LiveDeskTile key={desk.slug} desk={desk} />
-        ))}
-      </LiveDeskCarousel>
+      <DeskCast className="lg:grid-cols-3">
+        <StoryStat label="Desks" value={String(desks.length)} />
+        <StoryStat label="Grain" value="Mixed" />
+        <StoryStat label="Keys in browser" value="None" />
+      </DeskCast>
+
+      <LiveQuestionList desks={desks} />
+
+      <DeskPicture label="Desk previews">
+        <LiveDeskCarousel className="mt-0" labels={desks.map((d) => d.title)}>
+          {desks.map((desk) => (
+            <LiveDeskTile key={desk.slug} desk={desk} />
+          ))}
+        </LiveDeskCarousel>
+      </DeskPicture>
     </div>
   );
 }

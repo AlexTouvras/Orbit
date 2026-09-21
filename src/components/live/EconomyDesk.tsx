@@ -15,6 +15,11 @@ import {
 } from "@/lib/live/economy-types";
 import { BackLink } from "@/components/ui/BackLink";
 import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
+import { DeskCast } from "@/components/story/DeskCast";
+import { DeskPicture } from "@/components/story/DeskPicture";
+import { DeskClose } from "@/components/story/DeskClose";
+import { DeskMissing } from "@/components/story/DeskMissing";
+import { StoryStat } from "@/components/story/StoryStat";
 import { EconomyTape } from "@/components/live/EconomyTape";
 import { economyMonthlyBrief } from "@/lib/live/economy-brief";
 
@@ -91,7 +96,7 @@ function toneForMetric(
   metric: EconomyMetricId,
   delta: number | null,
 ): string {
-  if (delta === null || delta === 0) return "text-white";
+  if (delta === null || delta === 0) return "orbit-accent";
   const meta = economyMetricMeta(metric);
   const warmerIsUp = meta?.higherIsWarmer ?? true;
   const up = delta > 0;
@@ -157,7 +162,12 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
   );
 
   if (!focus) {
-    return <EconomyMissing />;
+    return (
+      <DeskMissing
+        question="How is the euro area economy printing?"
+        command="npm run live:fetch-economy"
+      />
+    );
   }
 
   return (
@@ -168,6 +178,34 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
         kicker="Eurostat + ECB · monthly brief"
         question="How is the euro area economy printing?"
       />
+
+      <DeskCast>
+        {ECONOMY_METRICS.map((m) => {
+          const cell = cellFor(focus.latest, m.id);
+          const hintParts = [
+            cell ? formatPeriod(cell.period) : "—",
+            cell?.delta !== null && cell?.delta !== undefined
+              ? formatDelta(m.id, cell.delta)
+              : null,
+          ].filter(Boolean);
+          return (
+            <StoryStat
+              key={m.id}
+              label={m.label}
+              value={formatValue(m.id, cell?.value ?? null)}
+              hint={hintParts.join(" · ")}
+              valueClassName={toneForMetric(m.id, cell?.delta ?? null)}
+            />
+          );
+        })}
+      </DeskCast>
+
+      {spotlighting && focus.kind === "country" ? (
+        <p className="text-sm text-slate-500">
+          ECB deposit rate is the euro-area instrument — same print on every
+          country spotlight.
+        </p>
+      ) : null}
 
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <label className="block max-w-md">
@@ -205,41 +243,6 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
         {monthlyBrief}
       </p>
 
-      <section aria-label={`${focus.label} latest`}>
-        <p className="mb-5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
-          Latest · {focus.label}
-        </p>
-        <dl className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-          {ECONOMY_METRICS.map((m) => {
-            const cell = cellFor(focus.latest, m.id);
-            return (
-              <div key={m.id}>
-                <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-                  {m.label}
-                </dt>
-                <dd
-                  className={`mt-1 font-mono text-2xl font-semibold tabular-nums ${toneForMetric(m.id, cell?.delta ?? null)}`}
-                >
-                  {formatValue(m.id, cell?.value ?? null)}
-                </dd>
-                <p className="mt-1 font-mono text-[0.7rem] text-slate-500">
-                  {cell ? formatPeriod(cell.period) : "—"}
-                  {cell?.delta !== null && cell?.delta !== undefined
-                    ? ` · ${formatDelta(m.id, cell.delta)}`
-                    : ""}
-                </p>
-              </div>
-            );
-          })}
-        </dl>
-        {spotlighting && focus.kind === "country" ? (
-          <p className="mt-4 text-sm text-slate-500">
-            ECB deposit rate is the euro-area instrument — same print on every
-            country spotlight.
-          </p>
-        ) : null}
-      </section>
-
       {spotlighting && euroArea ? (
         <section aria-label="Euro area comparison">
           <p className="mb-4 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
@@ -276,37 +279,39 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
         </section>
       ) : null}
 
-      <section className="space-y-8" aria-label="Trends">
-        <div>
-          <h2 className="font-display text-lg font-semibold text-white">
-            Trends
-          </h2>
-          <p className="mt-1 text-sm text-slate-400">
-            History for {focus.label}. Policy rate is ECB deposit facility
-            (change dates).
-          </p>
+      <DeskPicture label="Trends">
+        <div className="space-y-8">
+          <div>
+            <h2 className="font-display text-lg font-semibold text-white">
+              Trends
+            </h2>
+            <p className="mt-1 text-sm text-slate-400">
+              History for {focus.label}. Policy rate is ECB deposit facility
+              (change dates).
+            </p>
+          </div>
+          <div className="grid gap-8 lg:grid-cols-2">
+            {ECONOMY_METRICS.map((m) => {
+              const series = focus.series.find((s) => s.metric === m.id);
+              const points =
+                series?.points
+                  .filter((p) => p.value !== null)
+                  .map((p) => ({ period: p.period, value: p.value as number })) ??
+                [];
+              return (
+                <EconomyTape
+                  key={m.id}
+                  points={points}
+                  label={m.label}
+                  unit={m.unit}
+                  stroke={TAPE_STROKE[m.id]}
+                  fill={TAPE_FILL[m.id]}
+                />
+              );
+            })}
+          </div>
         </div>
-        <div className="grid gap-8 lg:grid-cols-2">
-          {ECONOMY_METRICS.map((m) => {
-            const series = focus.series.find((s) => s.metric === m.id);
-            const points =
-              series?.points
-                .filter((p) => p.value !== null)
-                .map((p) => ({ period: p.period, value: p.value as number })) ??
-              [];
-            return (
-              <EconomyTape
-                key={m.id}
-                points={points}
-                label={m.label}
-                unit={m.unit}
-                stroke={TAPE_STROKE[m.id]}
-                fill={TAPE_FILL[m.id]}
-              />
-            );
-          })}
-        </div>
-      </section>
+      </DeskPicture>
 
       {headlines.length > 0 ? (
         <section aria-label="Headlines">
@@ -348,7 +353,7 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
         </section>
       ) : null}
 
-      <footer className="border-t border-white/10 pt-6 text-sm leading-relaxed text-slate-400">
+      <DeskClose>
         <p>As of {formatHelsinki(view.asOf)}.</p>
         <p className="mt-2">
           {view.source}. {view.license}.
@@ -358,25 +363,7 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
           is the EU consumer confidence balance. GDP is chain-linked QoQ.
           Not a forecast.
         </p>
-      </footer>
-    </article>
-  );
-}
-
-export function EconomyMissing() {
-  return (
-    <article className="space-y-6">
-      <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
-      <h1 className="font-display text-3xl font-bold text-white">
-        Europe Economy Pulse
-      </h1>
-      <p className="max-w-xl text-slate-300">
-        No snapshot on disk. Run{" "}
-        <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm text-neon-cyan">
-          npm run live:fetch-economy
-        </code>{" "}
-        then reload.
-      </p>
+      </DeskClose>
     </article>
   );
 }

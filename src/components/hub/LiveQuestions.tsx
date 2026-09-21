@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import type { LiveDesk } from "@/content/live-desks";
 import { ChapterMark } from "@/components/story/ChapterMark";
 import { Reveal } from "@/components/ui/Reveal";
+import { LiveQuestionList } from "@/components/live/LiveQuestionList";
 
 export function LiveQuestions({ desks }: { desks: LiveDesk[] }) {
   if (desks.length === 0) return null;
@@ -27,28 +28,9 @@ export function LiveQuestions({ desks }: { desks: LiveDesk[] }) {
         </Link>
       </div>
 
-      <ul className="mt-12 border-t border-white/10">
-        {desks.map((desk) => (
-          <li key={desk.slug} className="border-b border-white/10">
-            <Link
-              href={`/portfolio/live/${desk.slug}`}
-              className="focus-ring group block py-8"
-            >
-              <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500 transition-colors group-hover:text-neon-cyan">
-                {desk.title}
-              </span>
-              <span className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-                <span className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-3xl">
-                  {desk.question}
-                </span>
-                <span className="shrink-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
-                  {desk.cadence}
-                </span>
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="mt-12">
+        <LiveQuestionList desks={desks} />
+      </div>
     </div>
   );
 }

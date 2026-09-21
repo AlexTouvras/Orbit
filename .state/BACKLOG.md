@@ -30,7 +30,7 @@
 ## Next
 
 - [ ] **Visual storytelling Hub** — chaptered scroll on `/`; skill at `.cursor/skills/visual-storytelling`. Owner review Hub desktop + mobile before treating as default.
-- [ ] **Visual storytelling dashboards** — apply skill Open → Picture → Cast → Move → Close on each live desk (headers already use `DeskStoryHeader`).
+- [x] **Visual storytelling dashboards** — Open → Cast → Picture → Move → Close on each live desk (`DeskCast` / `DeskPicture` / `DeskClose`; missing uses desk `question`). Owner review desks after Hub.
 - [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
 - [x] **Finland Power Pulse folded into EU Spot** — not a separate live tile; `/portfolio/live/power` redirects to `/eu-spot`. Press a zone for the Pulse-style desk + mix nowcast.
 - [x] **Helsinki Housing Pulse** — `/portfolio/live/housing`. Stat.fi `ashi`, monthly, ~1 month lag, CC BY 4.0. No empty page.

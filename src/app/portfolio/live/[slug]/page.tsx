@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { getLiveDesk, liveDeskSlugs } from "@/content/live-desks";
 import { NordicEquityDesk } from "@/components/live/NordicEquityDesk";
-import { EuSpotDesk, EuSpotMissing } from "@/components/live/EuSpotDesk";
-import { HousingDesk, HousingMissing } from "@/components/live/HousingDesk";
-import { PowerMixDesk, PowerMixMissing } from "@/components/live/PowerMixDesk";
-import { EconomyDesk, EconomyMissing } from "@/components/live/EconomyDesk";
+import { EuSpotDesk } from "@/components/live/EuSpotDesk";
+import { HousingDesk } from "@/components/live/HousingDesk";
+import { PowerMixDesk } from "@/components/live/PowerMixDesk";
+import { EconomyDesk } from "@/components/live/EconomyDesk";
+import { DeskMissing } from "@/components/story/DeskMissing";
 import { readEuSpotSnapshot, toEuSpotView } from "@/lib/live/eu-spot";
 import { readHousingSnapshot, toHousingView } from "@/lib/live/housing";
 import { readPowerMixSnapshot, toPowerMixView } from "@/lib/live/power-mix";
@@ -48,25 +49,53 @@ export default async function LiveDeskPage({
 
   if (slug === "eu-spot") {
     const snap = readEuSpotSnapshot();
-    if (!snap) return <EuSpotMissing />;
+    if (!snap) {
+      return (
+        <DeskMissing
+          question={desk.question}
+          command="npm run live:fetch-eu"
+        />
+      );
+    }
     return <EuSpotDesk view={toEuSpotView(snap)} />;
   }
 
   if (slug === "housing") {
     const snap = readHousingSnapshot();
-    if (!snap) return <HousingMissing />;
+    if (!snap) {
+      return (
+        <DeskMissing
+          question={desk.question}
+          command="npm run live:fetch-housing"
+        />
+      );
+    }
     return <HousingDesk view={toHousingView(snap)} />;
   }
 
   if (slug === "power-mix") {
     const snap = readPowerMixSnapshot();
-    if (!snap) return <PowerMixMissing />;
+    if (!snap) {
+      return (
+        <DeskMissing
+          question={desk.question}
+          command="npm run live:fetch-mix"
+        />
+      );
+    }
     return <PowerMixDesk view={toPowerMixView(snap)} />;
   }
 
   if (slug === "economy") {
     const snap = readEconomySnapshot();
-    if (!snap) return <EconomyMissing />;
+    if (!snap) {
+      return (
+        <DeskMissing
+          question={desk.question}
+          command="npm run live:fetch-economy"
+        />
+      );
+    }
     return <EconomyDesk view={toEconomyView(snap)} />;
   }
 

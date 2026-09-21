@@ -80,10 +80,11 @@ When restyling or adding a live desk:
 
 - [ ] `question` is the `h1` via `DeskStoryHeader`
 - [ ] Cadence/source is the kicker, not a Badge soup
-- [ ] Primary visual is full-column, not a 16:10 card
-- [ ] 3–5 stats answer the question before any click
+- [ ] 3–5 `StoryStat` figures answer the question before any click (`DeskCast`)
+- [ ] Primary visual is full-column (`DeskPicture`), not a 16:10 card
 - [ ] Interaction changes the same scene
-- [ ] Close names lag, license, and what it is not
+- [ ] Close names lag, license, and what it is not (`DeskClose`)
+- [ ] Missing snapshot uses the desk `question` (`DeskMissing`)
 - [ ] Hub `LiveQuestions` lists the question
 - [ ] Reduced-motion: map/tape still readable
 

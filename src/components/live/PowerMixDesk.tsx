@@ -2,6 +2,10 @@ import type { PowerMixView } from "@/lib/live/power-mix-types";
 import { MIX_BUCKETS } from "@/lib/live/power-mix-types";
 import { BackLink } from "@/components/ui/BackLink";
 import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
+import { DeskCast } from "@/components/story/DeskCast";
+import { DeskPicture } from "@/components/story/DeskPicture";
+import { DeskClose } from "@/components/story/DeskClose";
+import { StoryStat } from "@/components/story/StoryStat";
 
 function formatHelsinki(iso: string): string {
   return `${new Date(iso).toLocaleString("en-GB", {
@@ -31,6 +35,14 @@ function formatPct(n: number): string {
   return `${Math.round(n)}%`;
 }
 
+function countryLabel(
+  row: { iso2: string; label: string } | undefined,
+): string {
+  if (!row) return "—";
+  const flag = flagEmoji(row.iso2);
+  return flag ? `${flag} ${row.label}` : row.label;
+}
+
 export function PowerMixDesk({ view }: { view: PowerMixView }) {
   const cleanest = view.countries[0];
   const dirtiest = view.countries[view.countries.length - 1];
@@ -45,44 +57,32 @@ export function PowerMixDesk({ view }: { view: PowerMixView }) {
         lede="Country bars are 100% of measured generation over the last day — not capacity, not load. Sorted clean → fossil so the story is the mix, not the map."
       />
 
-      <dl className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-        <div>
-          <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-            Countries
-          </dt>
-          <dd className="mt-1 font-mono text-2xl font-semibold tabular-nums text-white">
-            {view.countries.length}
-          </dd>
-        </div>
-        <div>
-          <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-            Europe fossil
-          </dt>
-          <dd className="mt-1 font-mono text-2xl font-semibold tabular-nums text-amber-200">
-            {Math.round(view.europe.fossil)}%
-          </dd>
-        </div>
-        <div>
-          <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-            Cleanest
-          </dt>
-          <dd className="mt-1 text-lg font-semibold text-white">
-            {cleanest
-              ? `${flagEmoji(cleanest.iso2)} ${cleanest.label}`
-              : "—"}
-          </dd>
-        </div>
-        <div>
-          <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-            Most fossil
-          </dt>
-          <dd className="mt-1 text-lg font-semibold text-white">
-            {dirtiest
-              ? `${flagEmoji(dirtiest.iso2)} ${dirtiest.label}`
-              : "—"}
-          </dd>
-        </div>
-      </dl>
+      <DeskCast className="lg:grid-cols-4">
+        <StoryStat
+          label="Europe fossil"
+          value={`${Math.round(view.europe.fossil)}%`}
+          valueClassName="text-amber-200"
+        />
+        <StoryStat label="Countries" value={String(view.countries.length)} />
+        <StoryStat
+          label="Cleanest"
+          value={countryLabel(cleanest)}
+          hint={
+            cleanest
+              ? `${Math.round(cleanest.shares.fossil)}% fossil`
+              : undefined
+          }
+        />
+        <StoryStat
+          label="Most fossil"
+          value={countryLabel(dirtiest)}
+          hint={
+            dirtiest
+              ? `${Math.round(dirtiest.shares.fossil)}% fossil`
+              : undefined
+          }
+        />
+      </DeskCast>
 
       <ul
         className="flex flex-wrap gap-x-4 gap-y-2"
@@ -100,7 +100,7 @@ export function PowerMixDesk({ view }: { view: PowerMixView }) {
         ))}
       </ul>
 
-      <section aria-label="Country generation mix">
+      <DeskPicture label="Country generation mix">
         <ul className="space-y-2.5">
           {view.countries.map((row) => (
             <li
@@ -144,7 +144,7 @@ export function PowerMixDesk({ view }: { view: PowerMixView }) {
             </li>
           ))}
         </ul>
-      </section>
+      </DeskPicture>
 
       <section>
         <h2 className="font-display text-lg font-semibold text-white">
@@ -179,7 +179,7 @@ export function PowerMixDesk({ view }: { view: PowerMixView }) {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 pt-6 text-sm leading-relaxed text-slate-400">
+      <DeskClose>
         <p>As of {formatHelsinki(view.asOf)}.</p>
         <p className="mt-2">
           Window {formatHelsinki(view.windowStart)} →{" "}
@@ -189,25 +189,7 @@ export function PowerMixDesk({ view }: { view: PowerMixView }) {
           Shares exclude load and storage consumption. Small segments omit
           labels. Not a capacity chart.
         </p>
-      </footer>
-    </article>
-  );
-}
-
-export function PowerMixMissing() {
-  return (
-    <article className="space-y-6">
-      <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
-      <h1 className="font-display text-3xl font-bold text-white">
-        Europe Power Mix
-      </h1>
-      <p className="max-w-xl text-slate-300">
-        No snapshot on disk. Run{" "}
-        <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm text-neon-cyan">
-          npm run live:fetch-mix
-        </code>{" "}
-        then reload.
-      </p>
+      </DeskClose>
     </article>
   );
 }

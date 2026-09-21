@@ -72,6 +72,10 @@ Rules:
 | `GravityField` | `src/components/story/GravityField.tsx` | Brand diagram |
 | `StoryStat` | `src/components/story/StoryStat.tsx` | Oversized KPI |
 | `DeskStoryHeader` | `src/components/story/DeskStoryHeader.tsx` | Live desk opening: cadence → question |
+| `DeskCast` | `src/components/story/DeskCast.tsx` | 3–5 `StoryStat` figures before the map |
+| `DeskPicture` | `src/components/story/DeskPicture.tsx` | Primary visual (map / tape / mix / board) |
+| `DeskClose` | `src/components/story/DeskClose.tsx` | Source, lag, what this is not |
+| `DeskMissing` | `src/components/story/DeskMissing.tsx` | Snapshot missing; `question` as `h1` |
 | `.text-story` / `.story-index` / `.story-rail` | `src/app/globals.css` | Scale, ghost numbers, horizontal reel |
 
 AppChrome: pathname `/` is full-bleed. Other public pages stay `max-w-5xl` (live desks `max-w-6xl`). Do not silently widen Studio.
@@ -81,16 +85,16 @@ AppChrome: pathname `/` is full-bleed. Other public pages stay `max-w-5xl` (live
 A desk is already a story if it keeps **one question**. Visual storytelling means the **reading order**, not a new chart library.
 
 1. **Open** — `DeskStoryHeader` (cadence kicker + question as `h1`). Never title the desk with the dataset name first.
-2. **Picture** — the map, tape, or mix is the scene. Full width of the live column. Do not wrap the primary visual in `GlassCard` unless it is a peek/tile.
-3. **Cast** — 3–5 `StoryStat` figures that answer the question before interaction (latest €/m², FI price, HICP).
+2. **Cast** — 3–5 `StoryStat` figures that answer the question before interaction (latest €/m², FI price, HICP). Do not bury them under the map.
+3. **Picture** — the map, tape, or mix is the scene. Full width of the live column. Do not wrap the primary visual in `GlassCard` unless it is a peek/tile.
 4. **Move** — hover/press changes the same scene (zone desk, spotlight country). Do not open a second page for the default drill.
-5. **Close** — source, lag, and what this is not (“delayed quotes; not a trading terminal”).
+5. **Close** — source, lag, and what this is not (“delayed quotes; not a trading terminal”). Missing snapshots use `DeskMissing` with the desk `question`, not the dataset name.
 
 When adding a new desk:
 
 - Put `question` on `LiveDesk` in `src/content/live-desks.ts` first
 - Surface it on Hub via `LiveQuestions` (headline only — no heavy peek on Hub)
-- Build the desk as Open → Picture → Cast → Move → Close
+- Build the desk as Open → Cast → Picture → Move → Close
 - Verify the Hub live chapter still lists the question
 
 Do not: iframe a Power BI report as the story; duplicate Hub glass cards onto the desk; add a marketing hero above the question.

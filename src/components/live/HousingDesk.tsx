@@ -1,6 +1,10 @@
 import type { HousingView } from "@/lib/live/housing-types";
 import { BackLink } from "@/components/ui/BackLink";
 import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
+import { DeskCast } from "@/components/story/DeskCast";
+import { DeskPicture } from "@/components/story/DeskPicture";
+import { DeskClose } from "@/components/story/DeskClose";
+import { StoryStat } from "@/components/story/StoryStat";
 import { HousingMap } from "@/components/live/HousingMap";
 import { HousingTape } from "@/components/live/HousingTape";
 
@@ -65,6 +69,12 @@ function latestEur(
   return null;
 }
 
+function vsHint(n: number | null, label: string): string {
+  if (n === null) return `vs ${label} —`;
+  const sign = n > 0 ? "+" : "";
+  return `vs ${label} ${sign}${Math.round(n).toLocaleString("en-US")} €/m²`;
+}
+
 export function HousingDesk({ view }: { view: HousingView }) {
   const latest = view.latest;
   const monthlyTape =
@@ -95,76 +105,45 @@ export function HousingDesk({ view }: { view: HousingView }) {
       />
 
       {latest ? (
-        <section aria-label="Helsinki latest">
-          <p className="mb-5 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
-            Helsinki · {formatPeriod(latest.period)}
-            {latest.provisional ? " · provisional" : ""}
-          </p>
-          <dl className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-            <div>
-              <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-                €/m²
-              </dt>
-              <dd className="mt-1 font-mono text-2xl font-semibold tabular-nums text-white">
-                {formatEurM2(latest.eurM2)}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-                MoM
-              </dt>
-              <dd
-                className={`mt-1 font-mono text-2xl font-semibold tabular-nums ${toneForDelta(latest.momPct)}`}
-              >
-                {formatPct(latest.momPct)}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-                YoY
-              </dt>
-              <dd
-                className={`mt-1 font-mono text-2xl font-semibold tabular-nums ${toneForDelta(latest.yoyPct)}`}
-              >
-                {formatPct(latest.yoyPct)}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-                Sales
-              </dt>
-              <dd className="mt-1 font-mono text-2xl font-semibold tabular-nums text-white">
-                {formatInt(latest.transactions)}
-              </dd>
-            </div>
-            <div>
-              <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-                Days to sale
-              </dt>
-              <dd className="mt-1 font-mono text-2xl font-semibold tabular-nums text-white">
-                {formatInt(latest.daysToSale)}
-              </dd>
-            </div>
-          </dl>
-          <p className="mt-5 text-sm leading-relaxed text-slate-400">
-            vs Greater Helsinki{" "}
-            <span className={toneForDelta(latest.vsGreater)}>
-              {latest.vsGreater === null
-                ? "—"
-                : `${latest.vsGreater > 0 ? "+" : ""}${Math.round(latest.vsGreater).toLocaleString("en-US")} €/m²`}
-            </span>
-            {" · "}
-            vs country{" "}
-            <span className={toneForDelta(latest.vsCountry)}>
-              {latest.vsCountry === null
-                ? "—"
-                : `${latest.vsCountry > 0 ? "+" : ""}${Math.round(latest.vsCountry).toLocaleString("en-US")} €/m²`}
-            </span>
-          </p>
-        </section>
+        <DeskCast>
+          <StoryStat
+            label="€/m²"
+            value={formatEurM2(latest.eurM2)}
+            hint={`${formatPeriod(latest.period)}${latest.provisional ? " · provisional" : ""}`}
+          />
+          <StoryStat
+            label="MoM"
+            value={formatPct(latest.momPct)}
+            valueClassName={toneForDelta(latest.momPct)}
+          />
+          <StoryStat
+            label="YoY"
+            value={formatPct(latest.yoyPct)}
+            valueClassName={toneForDelta(latest.yoyPct)}
+          />
+          <StoryStat label="Sales" value={formatInt(latest.transactions)} />
+          <StoryStat
+            label="Days to sale"
+            value={formatInt(latest.daysToSale)}
+          />
+        </DeskCast>
       ) : null}
 
-      <HousingMap postalAreas={view.postalAreas} postalPeriod={view.postalPeriod} />
+      {latest ? (
+        <p className="text-sm leading-relaxed text-slate-400">
+          <span className={toneForDelta(latest.vsGreater)}>
+            {vsHint(latest.vsGreater, "Greater Helsinki")}
+          </span>
+          {" · "}
+          <span className={toneForDelta(latest.vsCountry)}>
+            {vsHint(latest.vsCountry, "country")}
+          </span>
+        </p>
+      ) : null}
+
+      <DeskPicture label="Capital-region postal €/m²">
+        <HousingMap postalAreas={view.postalAreas} postalPeriod={view.postalPeriod} />
+      </DeskPicture>
 
       <section>
         <h2 className="font-display text-lg font-semibold text-white">
@@ -267,7 +246,7 @@ export function HousingDesk({ view }: { view: HousingView }) {
         </section>
       ) : null}
 
-      <footer className="border-t border-white/10 pt-6 text-sm leading-relaxed text-slate-400">
+      <DeskClose>
         <p>As of {formatHelsinki(view.asOf)}.</p>
         <p className="mt-2">
           {view.source}. {view.license}. Tables{" "}
@@ -276,25 +255,7 @@ export function HousingDesk({ view }: { view: HousingView }) {
           <code className="font-mono text-xs text-slate-300">13mv</code>{" "}
           (quarterly). Not advice — published statistics only.
         </p>
-      </footer>
-    </article>
-  );
-}
-
-export function HousingMissing() {
-  return (
-    <article className="space-y-6">
-      <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
-      <h1 className="font-display text-3xl font-bold text-white">
-        Helsinki Housing
-      </h1>
-      <p className="max-w-xl text-slate-300">
-        No snapshot on disk. Run{" "}
-        <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm text-neon-cyan">
-          npm run live:fetch-housing
-        </code>{" "}
-        then reload.
-      </p>
+      </DeskClose>
     </article>
   );
 }

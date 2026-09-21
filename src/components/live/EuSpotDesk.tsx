@@ -1,13 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import type { EuSpotView, EuZoneId } from "@/lib/live/eu-spot-types";
+import type { EuSpotView, EuZoneDayStats, EuZoneId } from "@/lib/live/eu-spot-types";
 import {
   EU_CATEGORIES,
   type EuCategoryId,
 } from "@/lib/live/eu-category-meta";
 import { BackLink } from "@/components/ui/BackLink";
 import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
+import { DeskCast } from "@/components/story/DeskCast";
+import { DeskPicture } from "@/components/story/DeskPicture";
+import { DeskClose } from "@/components/story/DeskClose";
+import { StoryStat } from "@/components/story/StoryStat";
 import { EuSpotMap } from "@/components/live/EuSpotMap";
 import { EuSpotHistory } from "@/components/live/EuSpotHistory";
 import { EuZonePulsePanel } from "@/components/live/EuZonePulsePanel";
@@ -23,6 +27,21 @@ function formatHelsinki(iso: string): string {
   })} Helsinki`;
 }
 
+function formatEur(n: number | null | undefined): string {
+  if (n === null || n === undefined || !Number.isFinite(n)) return "—";
+  return `€${n.toFixed(1)}`;
+}
+
+function rankedToday(today: EuZoneDayStats[]) {
+  const priced = today.filter((z) => Number.isFinite(z.baseload));
+  const sorted = [...priced].sort((a, b) => b.baseload - a.baseload);
+  return {
+    expensive: sorted[0],
+    cheap: sorted[sorted.length - 1],
+    fi: today.find((z) => z.id === "FI"),
+  };
+}
+
 export function EuSpotDesk({ view }: { view: EuSpotView }) {
   const [mode, setMode] = useState<"map" | "history">("map");
   const [selected, setSelected] = useState<EuZoneId | null>(null);
@@ -30,6 +49,7 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
   const selectedPulse = selected
     ? view.pulses.find((p) => p.id === selected)
     : undefined;
+  const { expensive, cheap, fi } = rankedToday(view.today);
 
   return (
     <article className="space-y-8">
@@ -49,6 +69,25 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
           before any public deploy.
         </p>
       ) : null}
+
+      <DeskCast className="lg:grid-cols-4">
+        <StoryStat
+          label="Expensive"
+          value={formatEur(expensive?.baseload)}
+          hint={expensive ? `${expensive.label} · /MWh` : "—"}
+        />
+        <StoryStat
+          label="Cheap"
+          value={formatEur(cheap?.baseload)}
+          hint={cheap ? `${cheap.label} · /MWh` : "—"}
+        />
+        <StoryStat
+          label="Finland"
+          value={formatEur(fi?.baseload ?? view.fiBaseload)}
+          hint={fi ? `${fi.label} · /MWh` : "/MWh"}
+        />
+        <StoryStat label="Zones" value={String(view.today.length)} />
+      </DeskCast>
 
       <div
         className="flex flex-wrap gap-2"
@@ -101,22 +140,24 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
         ))}
       </div>
 
-      {mode === "map" ? (
-        <EuSpotMap
-          view={view}
-          selected={selected}
-          category={category}
-          onSelect={(id) =>
-            setSelected((prev) => (prev === id ? null : id))
-          }
-        />
-      ) : (
-        <EuSpotHistory
-          view={view}
-          selected={selected ?? view.today[0]?.id ?? "FI"}
-          onSelect={(id) => setSelected(id)}
-        />
-      )}
+      <DeskPicture label={mode === "map" ? "Bidding-zone map" : "Price history"}>
+        {mode === "map" ? (
+          <EuSpotMap
+            view={view}
+            selected={selected}
+            category={category}
+            onSelect={(id) =>
+              setSelected((prev) => (prev === id ? null : id))
+            }
+          />
+        ) : (
+          <EuSpotHistory
+            view={view}
+            selected={selected ?? view.today[0]?.id ?? "FI"}
+            onSelect={(id) => setSelected(id)}
+          />
+        )}
+      </DeskPicture>
 
       {mode === "map" && selectedPulse ? (
         <EuZonePulsePanel
@@ -132,28 +173,15 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
         </p>
       ) : null}
 
-      <footer className="border-t border-white/10 pt-6 text-sm leading-relaxed text-slate-400">
+      <DeskClose>
         <p>As of {formatHelsinki(view.asOf)}.</p>
         <p className="mt-2">
           {view.source}. {view.license}
         </p>
-      </footer>
-    </article>
-  );
-}
-
-export function EuSpotMissing() {
-  return (
-    <article className="space-y-6">
-      <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
-      <h1 className="font-display text-3xl font-bold text-white">EU Spot</h1>
-      <p className="max-w-xl text-slate-300">
-        No snapshot on disk. Run{" "}
-        <code className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-sm text-neon-cyan">
-          npm run live:fetch-eu
-        </code>{" "}
-        then reload.
-      </p>
+        <p className="mt-2 text-slate-500">
+          Day-ahead baseload, not a live tick. Press a zone for the pulse desk.
+        </p>
+      </DeskClose>
     </article>
   );
 }
