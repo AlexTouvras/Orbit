@@ -128,6 +128,7 @@ jobs:
       - AlexTouvras/agentic-ai-field-card
       - AlexTouvras/data-analytics-field-card
       - AlexTouvras/technology-delivery-field-card
+      - AlexTouvras/Orbit
     kind: cursor_automation
     schedule: "1st 17:00 discover, 18:00 review"
     check: monthly_after

@@ -13,20 +13,30 @@
 | Branch | `main` |
 | Playbooks | `.cursor/automations/*.json`, `docs/ops/daily-check.md` |
 
+## Cadence (all five field cards)
+
+Every Hub field card refreshes **monthly**. There is no Friday field-card loop.
+
+| When (EEST) | What | Cards |
+|-------------|------|-------|
+| 1st 17:00 (`0 14 1 * *` UTC) | Discover / judge picker and jobs | All five: Agentic AI, Analytics, Delivery, SDLC, Credit Risk |
+| 1st 18:00 (`0 15 1 * *` UTC) | Apply review (source-repo publish) | Agentic AI, Analytics, Delivery |
+| First weekday on/after the 2nd | Fleet check | Leftover `chore/monthly-refresh-*` / missing hosted PR |
+
+Public footers use `Next: <month>`, not “week of”.
+
 ## Automations managed from Orbit
 
-| Name | Binds to | Trigger | Backup JSON |
-|------|----------|---------|-------------|
-| Daily ops check | `AlexTouvras/Orbit` | Daily 08:00 Helsinki | `.cursor/automations/daily-ops-check.json` | *(not in Cursor account — create or restore)* |
-| Delivery field card monthly | `AlexTouvras/technology-delivery-field-card` | 1st 17:00 EEST | `.cursor/automations/delivery-field-card-weekly-content-pass.json` | https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d0216e441 |
-| Analytics field card monthly | `AlexTouvras/data-analytics-field-card` | 1st 17:00 EEST | `.cursor/automations/analytics-field-card-weekly-content-pass.json` | https://cursor.com/automations/dd4bad7c-9558-11f1-ba66-0e7d0216e441 |
-| Agentic AI field card monthly | `AlexTouvras/agentic-ai-field-card` | 1st 17:00 EEST | `.cursor/automations/agentic-field-card-weekly-content-pass.json` | https://cursor.com/automations/c0138489-8c1c-11f1-b532-320a589b8025 |
-| Field card review | `AlexTouvras/Orbit` (gates all three source-repo cards) | 1st 18:00 EEST | `.cursor/automations/field-card-review.json` | https://cursor.com/automations/a1c0b46b-9a09-11f1-ba66-0e7d0216e441 |
-| Hosted field card monthly | `AlexTouvras/Orbit` (SDLC + Credit Risk discovery) | 1st 17:00 EEST | `.cursor/automations/hosted-field-card-monthly-review.json` | *(create in Cursor)* |
+| Name | Binds to | Trigger | Backup JSON | Live Cursor |
+|------|----------|---------|-------------|-------------|
+| Daily ops check | `AlexTouvras/Orbit` | Daily 08:00 Helsinki | `.cursor/automations/daily-ops-check.json` | *(not in account — create or restore)* |
+| Agentic AI field card | `AlexTouvras/agentic-ai-field-card` | 1st 17:00 | `.cursor/automations/agentic-field-card-weekly-content-pass.json` | [c0138489…](https://cursor.com/automations/c0138489-8c1c-11f1-b532-320a589b8025) — live name still **Weekly field card content pass**, enabled |
+| Analytics field card | `AlexTouvras/data-analytics-field-card` | 1st 17:00 | `.cursor/automations/analytics-field-card-weekly-content-pass.json` | [dd4bad7c…](https://cursor.com/automations/dd4bad7c-9558-11f1-ba66-0e7d0216e441) — live name still **Weekly analytics field card content pass**, enabled |
+| Delivery field card | `AlexTouvras/technology-delivery-field-card` | 1st 17:00 | `.cursor/automations/delivery-field-card-weekly-content-pass.json` | [c85fb72e…](https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d0216e441) — live name still **Weekly delivery field card content pass**, enabled |
+| Field card review | `AlexTouvras/Orbit` (gates the three source-repo cards) | 1st 18:00 | `.cursor/automations/field-card-review.json` | [a1c0b46b…](https://cursor.com/automations/a1c0b46b-9a09-11f1-ba66-0e7d0216e441) — live name still **Weekly field card review**, enabled |
+| Hosted SDLC + Credit Risk | `AlexTouvras/Orbit` | 1st 17:00 | `.cursor/automations/hosted-field-card-monthly-review.json` | *(not in account — create from the JSON backup)* |
 
-Live Cursor crons do not update from these JSON backups. Rebind each bound automation to `0 14 1 * *` (discovery) / `0 15 1 * *` (review) and disable leftover Friday schedules.
-
-Live URL (delivery): https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d0216e441
+Looked up 2026-09-21 via AutomationsService GetAutomation. This Cloud Agent can **read** name/enabled/owner; it cannot PATCH cron, prompt, or name. Edit those four live URLs in the Cursor Automations UI (rename Monthly, cron `0 14 1 * *` / `0 15 1 * *`, paste the backup prompt). Create the hosted pass from `hosted-field-card-monthly-review.json`. Disable leftover Friday schedules.
 
 ## Primary verify
 
@@ -53,12 +63,13 @@ Do **not** depend on ProjectBrain MCP. Cloud cannot see `~/.cursor/`.
 | Automation | Writes |
 |------------|--------|
 | Daily ops | Slack `#ops-channel` only when issues; memories update |
-| Field card monthly | PR on target repo (`chore/monthly-refresh-YYYY-MM`); stop for 18:00 review. Do not Slack-Approve from 17:00. |
+| Source-repo field card (AI / analytics / delivery) | PR `chore/monthly-refresh-YYYY-MM`; stop for 18:00 review. Do not Slack-Approve from 17:00. |
+| Hosted SDLC / Credit Risk | Orbit PR `chore/monthly-field-cards-YYYY-MM`. Do not merge. |
 
 ## Out of scope
 
 - Daily ops: no commit/push/merge from the agent
-- Field card: no merge except via 1st 18:00 review agent (`Apply review`). Slack is FYI.
+- Source-repo field cards: no merge except via 1st 18:00 review agent (`Apply review`). Slack is FYI.
 
 ## IDE coexistence
 

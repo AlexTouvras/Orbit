@@ -2,6 +2,8 @@
 
 A second Cursor agent is the monthly gate. It does not write the card. It compares the proposed `index.html` to the live one, then **publishes** or **keeps the previous card**.
 
+All five Hub cards are on this monthly cadence. This agent publishes the three source-repo cards. SDLC and Credit Risk are judged in the 17:00 hosted pass.
+
 1st of the month 17:00 local drafts the PR. This agent runs 1st 18:00 local (`0 15 1 * *` UTC).
 
 ## Cards

@@ -13,6 +13,8 @@
 
 ## Field cards (one-page decision aids)
 
+All five are reviewed monthly (`Next: <month>` on the footer), not weekly.
+
 - Agentic AI: https://alextouvras.com/field-card/
 - Data analytics: https://alextouvras.com/analytics-field-card/
 - Technology delivery: https://alextouvras.com/delivery-field-card/

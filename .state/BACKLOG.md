@@ -41,7 +41,7 @@
 - [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
 - [x] Hub SDLC + Credit Risk field cards (Orbit-hosted HTML, HUD lanes, sitemap)
 - [ ] **SDLC / Credit Risk source repos** — create `sdlc-field-card` and `credit-risk-field-card`, copy discovery + Apply review from analytics/delivery on a **monthly** cadence (1st 17:00 discover / 18:00 review). Register in `FIELD_CARDS` + `fleet.yaml`. Bind `hosted-field-card-monthly-review.json` in Cursor until those repos exist.
-- [ ] **Owner: rebind field-card Cursor automations** — JSON backups are monthly (`0 14 1 * *` discover, `0 15 1 * *` review). Live Friday crons stay until rebound; disable leftover weekly schedules.
+- [ ] **Owner: edit live Cursor field-card automations** — Cloud Agent can only GetAutomation. Four live URLs still named Weekly and enabled. In the dashboard: rename Monthly, set cron `0 14 1 * *` (discover) / `0 15 1 * *` (review), paste prompts from `.cursor/automations/`. Create hosted SDLC+Credit from `hosted-field-card-monthly-review.json`. Disable leftover Friday schedules.
 - [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
 - [x] **EU Spot Desk (localhost)** — `/portfolio/live/eu-spot` map + history. Energy-Charts until ENTSO-E token. Do not deploy while `localhostOnly`.
 - [x] **EU Spot → ENTSO-E A44** — token in `.env.local`; `live:fetch-eu` prefers A44; `localhostOnly: false`. Consider public deploy after owner review.

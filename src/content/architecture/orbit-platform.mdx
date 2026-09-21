@@ -23,11 +23,11 @@ flowchart LR
 
 The review agent is the gate. Slack is FYI after Apply review.
 
-Discovery and review both run **monthly**. There is no Friday field-card loop.
+**All five Hub field cards** update monthly: Agentic AI, Data Analytics, Technology Delivery, SDLC, Credit Risk. There is no Friday field-card loop.
 
 ## Normal month
 
-1. 1st 17:00 — content agents run discover, decide update vs no-change, leave the monthly PR open. Hosted SDLC / Credit Risk are judged on Orbit in the same hour (picker/jobs, not stamp-only).
+1. 1st 17:00 — all five cards are judged. Source-repo agents run discover and leave `chore/monthly-refresh-YYYY-MM` open. Hosted SDLC / Credit Risk are judged on Orbit in the same hour (picker/jobs, not stamp-only).
 2. 1st 18:00 — **review agent** publishes the three source-repo cards (including stamp-only no-change). Keeps the previous card only when the PR would make the live card worse.
 3. Slack gets **one laconic FYI per source-repo card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
 
@@ -62,6 +62,8 @@ GitHub token on Orbit must be allowed to read + merge PRs on **all registered** 
 ## Field card review (Orbit)
 
 A second Cursor agent is the monthly gate. It does not write the card. It compares the proposed `index.html` to the live one, then **publishes** or **keeps the previous card**.
+
+All five Hub cards are on this monthly cadence. This agent publishes the three source-repo cards. SDLC and Credit Risk are judged in the 17:00 hosted pass.
 
 1st of the month 17:00 local drafts the PR. This agent runs 1st 18:00 local (`0 15 1 * *` UTC).
 
