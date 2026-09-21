@@ -3,17 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Technology Delivery Field Card — Evidence before the call · Alex Touvras</title>
-  <meta name="description" content="A one-page decision card for sequenced delivery: intent, window, proof, and cutover. Methods are lanes — not the map." />
+  <title>Bayesian Optimisation Field Card — When a trial is expensive · Alex Touvras</title>
+  <meta name="description" content="A one-page decision card for spending a scarce evaluation budget: bounds, surrogate, next trial, stop. Search algorithms are lanes." />
   <meta name="author" content="Alex Touvras" />
-  <link rel="canonical" href="https://alextouvras.com/delivery-field-card/" />
-  <meta property="og:title" content="Technology Delivery Field Card — Evidence before the call" />
-  <meta property="og:description" content="Intent → window → proof → cutover. Pipeline green is not the same as held in production." />
+  <meta property="og:title" content="Bayesian Optimisation Field Card — When a trial is expensive" />
+  <meta property="og:description" content="Bounds, surrogate, next trial, stop. Grid search is fine until each run actually costs." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://alextouvras.com/delivery-field-card/" />
-  <meta property="og:image" content="https://alextouvras.com/opengraph-image" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://alextouvras.com/opengraph-image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
@@ -25,16 +21,16 @@
       --line: #c9d2dc;
       --paper: #eef2f6;
       --card: #f8fafc;
-      --steel: #53478a;
-      --steel-deep: #3d3468;
+      --steel: #245a7a;
+      --steel-deep: #1a4158;
       --signal: #0f766e;
       --signal-soft: #d7ebe8;
       --warn: #9a3412;
       --warn-soft: #f3e0d6;
-      --layer-rag: #43367a;
-      --layer-agent: #53478a;
+      --layer-rag: #1e4d6b;
+      --layer-agent: #245a7a;
       --layer-mcp: #0f766e;
-      --layer-a2a: #5b4d8a;
+      --layer-a2a: #334155;
       --shadow: 0 1px 0 rgba(24, 33, 43, 0.06), 0 12px 32px rgba(24, 33, 43, 0.06);
       --radius: 10px;
       --font-display: "Source Serif 4", Georgia, serif;
@@ -48,7 +44,7 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(1200px 500px at 10% -10%, rgba(83, 71, 138, 0.10), transparent 60%),
+        radial-gradient(1200px 500px at 10% -10%, rgba(36, 90, 122, 0.09), transparent 60%),
         radial-gradient(900px 400px at 100% 0%, rgba(15, 118, 110, 0.07), transparent 55%),
         var(--paper);
       font-family: var(--font-body);
@@ -113,7 +109,7 @@
     .channels button:hover,
     .channels a.btn:hover {
       border-color: var(--steel);
-      background: #f4f2fa;
+      background: #f0f6fa;
     }
 
     .channels button:active,
@@ -634,7 +630,7 @@
 <body>
   <article class="sheet" id="field-card">
     <div class="topbar">
-      <div class="eyebrow">Field card · Technology delivery</div>
+      <div class="eyebrow">Field card · Method</div>
       <div class="channels no-print">
         <button type="button" onclick="window.print()">Print / PDF</button>
         <button type="button" id="copy-link">Copy link</button>
@@ -644,19 +640,19 @@
 
     <header class="hero">
       <div>
-        <div class="eyebrow">Evidence before the call</div>
-        <h1>Delivery is a sequence, not a ticket</h1>
-        <p class="verbs">Name → calendar → prove → cut over</p>
+        <div class="eyebrow">When a trial is expensive</div>
+        <h1>Bayesian optimisation is a budget, not a search</h1>
+        <p class="verbs">Bound → model → pick → stop</p>
         <p class="lede">
-          Intent, window, proof, and cutover are <strong>layers</strong>.
-          Methods are lanes. Pipeline green is not the same as held in production — name rollback before anyone calls the change done.
+          Bounds, surrogate, next trial, and stop rule are <strong>layers</strong>.
+          Algorithms are lanes. Stay on a grid until a trial actually costs; start here when choosing the next point is itself the decision.
         </p>
       </div>
       <div class="stack" aria-label="Four-layer stack">
-        <div class="layer"><code>INTENT</code><span>Outcome — what this change is for, owned</span></div>
-        <div class="layer"><code>WINDOW</code><span>Calendars — platform, security, business freeze</span></div>
-        <div class="layer"><code>PROOF</code><span>Evidence — dependencies, blast radius, metrics</span></div>
-        <div class="layer"><code>CUTOVER</code><span>Sequence — rollback named before green</span></div>
+        <div class="layer"><code>BOUND</code><span>Knobs — legal range, grain, metric named once</span></div>
+        <div class="layer"><code>MODEL</code><span>Surrogate — belief plus uncertainty, not the truth layer</span></div>
+        <div class="layer"><code>ACQ</code><span>Next trial — pick where the budget is spent</span></div>
+        <div class="layer"><code>STOP</code><span>Kill — budget, delta, or a human Approve</span></div>
       </div>
     </header>
 
@@ -672,98 +668,88 @@
         </thead>
         <tbody>
           <tr>
-            <td class="problem">Platform, security, and business clocks disagree</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/approvals" target="_blank" rel="noopener noreferrer" title="Azure Pipelines: approvals and checks"><b>Change window</b></a></td>
-            <td class="example">Middleware patch waits for the freeze, then a named business-hours check — not a chat “we’ll find a slot”</td>
+            <td class="problem">The objective runs in seconds on a laptop</td>
+            <td class="reach"><a class="use-link" href="https://scikit-learn.org/stable/modules/grid_search.html" target="_blank" rel="noopener noreferrer" title="scikit-learn: tuning the hyper-parameters of an estimator"><b>Grid / random</b></a></td>
+            <td class="example">Notebook fit on a small sample: exhaust the grid. A Gaussian process here is theatre.</td>
           </tr>
           <tr>
-            <td class="problem">Nobody can name who owns the dependency</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/devops/boards/plans/review-team-plans" target="_blank" rel="noopener noreferrer" title="Azure Boards: Delivery Plans"><b>Dependency map</b></a></td>
-            <td class="example">Azure app change that needs a cert rotation: owner, blocker, and date on one plan; status names the wait</td>
+            <td class="problem">You have traffic and one treatment to judge</td>
+            <td class="reach"><a class="use-link" href="https://www.evanmiller.org/how-not-to-run-an-ab-test.html" target="_blank" rel="noopener noreferrer" title="Evan Miller: How Not To Run An A/B Test"><b>A/B (fixed n)</b></a></td>
+            <td class="example">One offer vs control, sample size named up front. Don’t re-pick the treatment every hour and call it optimisation.</td>
           </tr>
           <tr>
-            <td class="problem">Must reverse without a weekend restore</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/azure-app-configuration/concept-feature-management" target="_blank" rel="noopener noreferrer" title="Azure App Configuration: feature management"><b>Feature flag</b></a></td>
-            <td class="example">New middleware route ships dark; flip on for one tenant, flip off if error rate moves — code deploy ≠ user release</td>
+            <td class="problem">You will peek before the planned n</td>
+            <td class="reach"><a class="use-link" href="https://www.evanmiller.org/sequential-ab-testing.html" target="_blank" rel="noopener noreferrer" title="Evan Miller: Sequential A/B Testing"><b>Sequential test</b></a></td>
+            <td class="example">Early stop on a lift that already crossed a boundary. Peeking without a sequential rule is just cheating the p-value.</td>
           </tr>
           <tr>
-            <td class="problem">Pipeline is green; ops is not ready</td>
-            <td class="reach"><a class="use-link" href="https://martinfowler.com/bliki/ContinuousDelivery.html" target="_blank" rel="noopener noreferrer" title="Martin Fowler: Continuous Delivery"><b>Done that survives the room</b></a></td>
-            <td class="example">Rollback steps and who gets paged sit in the change note before anyone says green — tests passing is not held</td>
+            <td class="problem">Each trial is a full PD / scorecard backtest</td>
+            <td class="reach"><a class="use-link" href="https://botorch.org/docs/introduction" target="_blank" rel="noopener noreferrer" title="BoTorch: introduction"><b>Bayesian opt</b></a></td>
+            <td class="example">Cut-off search when a portfolio run is the cost. Don’t grid forty cut-offs if last week’s surface already tells you where to look. <a class="use-link" href="/analytics-field-card/index.html">Analytics card</a></td>
           </tr>
           <tr>
-            <td class="problem">Too many “ready” items, no sequence</td>
-            <td class="reach"><a class="use-link" href="https://www.mountaingoatsoftware.com/blog/ai-doesnt-eliminate-agile-teams-it-increases-the-need-for-great-ones" target="_blank" rel="noopener noreferrer" title="Mike Cohn: AI increases the need for great agile teams"><b>Priority gate</b></a></td>
-            <td class="example">Three Azure changes drafted in an afternoon; only the cert that blocks Friday’s window goes first — “not yet” is a decision</td>
+            <td class="problem">ECL lifetime run is the expensive step</td>
+            <td class="reach"><a class="use-link" href="https://scikit-optimize.github.io/stable/" target="_blank" rel="noopener noreferrer" title="scikit-optimize: sequential model-based optimization"><b>Sequential model</b></a></td>
+            <td class="example">Parameter / scenario knobs on an auto-loan lifetime forecast: freeze the grain, spend the next run where uncertainty still moves the decision. <a class="use-link" href="/credit-risk-field-card/index.html">Credit card</a></td>
+          </tr>
+          <tr>
+            <td class="problem">Each trial is a full agent eval pack</td>
+            <td class="reach"><a class="use-link" href="https://botorch.org/docs/introduction" target="_blank" rel="noopener noreferrer" title="BoTorch: introduction"><b>Bayesian opt</b></a></td>
+            <td class="example">Prompt / tool / loop knobs when 20 golden tickets is the cost of one point. Grid the cheap smoke test; model the expensive pack. <a class="use-link" href="/field-card/index.html">AI card</a></td>
+          </tr>
+          <tr>
+            <td class="problem">Many knobs, some categorical, GP is a pain</td>
+            <td class="reach"><a class="use-link" href="https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/003_efficient_optimization_algorithms.html" target="_blank" rel="noopener noreferrer" title="Optuna: efficient optimization algorithms"><b>TPE / Optuna</b></a></td>
+            <td class="example">Mixed search (flags, depths, thresholds) where a Gaussian process wants a smooth box. TPE is a lane, not a different job.</td>
           </tr>
           <tr>
             <td class="problem">The next try is a freeze window</td>
-            <td class="reach"><a class="use-link" href="/bayes-field-card/index.html" title="Bayesian optimisation field card"><b>Bayesian opt</b></a></td>
-            <td class="example">One cutover slot this month: pick the next flag mix from what already held, not a 12-cell grid of rehearsals.</td>
+            <td class="reach"><a class="use-link" href="https://ax.dev/" target="_blank" rel="noopener noreferrer" title="Ax: adaptive experimentation platform"><b>Adaptive experiment</b></a></td>
+            <td class="example">One middleware cutover slot this month: pick the next flag mix from what already held, not a 12-cell grid. <a class="use-link" href="/delivery-field-card/index.html">Delivery card</a></td>
           </tr>
           <tr>
-            <td class="problem">AI made drafts cheap; sequence got worse</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/approvals" target="_blank" rel="noopener noreferrer" title="Azure Pipelines: environment approvals"><b>Human Approve</b></a></td>
-            <td class="example">Copilot wrote the runbook; a person still owns what next and why not yet — same gate Orbit uses for publish</td>
+            <td class="problem">Policy is already written; no search left</td>
+            <td class="reach"><b>Named rule</b></td>
+            <td class="example">Credit-engine threshold that compliance already locked. Log it. Don’t “optimise” a bound you are not allowed to move.</td>
           </tr>
           <tr>
-            <td class="problem">After ship, nobody can tell if it held</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/azure-monitor/overview" target="_blank" rel="noopener noreferrer" title="Azure Monitor overview"><b>Watch the service</b></a></td>
-            <td class="example">Error rate and queue depth for 30 minutes post-cutover; if they move, rollback is already written</td>
-          </tr>
-          <tr>
-            <td class="problem">Snowflake middleware / env drift</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview" target="_blank" rel="noopener noreferrer" title="Bicep overview"><b>Infra as code</b></a></td>
-            <td class="example">App setting and network rule in Bicep (or Terraform); the next environment is a replay, not a memory</td>
-          </tr>
-          <tr>
-            <td class="problem">Status lives in a chat thread</td>
-            <td class="reach"><a class="use-link" href="https://learn.microsoft.com/en-us/azure/devops/boards/get-started/what-is-azure-boards" target="_blank" rel="noopener noreferrer" title="What is Azure Boards"><b>Visible work</b></a></td>
-            <td class="example">Blocker named on the board item; standup does not replace a written wait</td>
-          </tr>
-          <tr>
-            <td class="problem">Need fast feedback on main, not a long-lived branch</td>
-            <td class="reach"><a class="use-link" href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener noreferrer" title="Trunk Based Development"><b>Small batches on trunk</b></a></td>
-            <td class="example">Incomplete UI stays behind a flag; main stays releasable — Fowler’s CD test, not a two-week merge</td>
-          </tr>
-          <tr>
-            <td class="problem">Don’t know if delivery is actually getting healthier</td>
-            <td class="reach"><a class="use-link" href="https://dora.dev/guides/dora-metrics-four-keys/" target="_blank" rel="noopener noreferrer" title="DORA: four keys"><b>Four keys</b></a></td>
-            <td class="example">Lead time and change-fail rate next to the Azure ops pack; velocity theatre stays off this path</td>
+            <td class="problem">You still can’t name the metric</td>
+            <td class="reach"><a class="use-link" href="/analytics-field-card/index.html" title="Analytics field card"><b>Stop. Ask first</b></a></td>
+            <td class="example">No ASK, no search. Optimising an unofficial number just burns the budget on the wrong hill.</td>
           </tr>
         </tbody>
       </table>
-      <p class="note">Default order: name the intent and owner → calendars and dependencies → evidence pack → rollback + page path → small sequenced change (flag if you must reverse) → watch whether it held.</p>
+      <p class="note">Default order: name the decision and metric → bound the knobs (and what’s illegal) → price one trial → grid if cheap → surrogate + acquisition if expensive → stop when the budget or the delta dies.</p>
     </section>
 
     <div class="tri">
       <section>
         <h2>Tool picker</h2>
         <div class="picker">
-          <div class="pick"><strong><a href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener noreferrer">Trunk-based</a></strong><span>Small batches; main stays releasable</span></div>
-          <div class="pick"><strong><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a> / <a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/get-started/what-is-azure-pipelines" target="_blank" rel="noopener noreferrer">Azure Pipelines</a></strong><span>Fast feedback on the change</span></div>
-          <div class="pick"><strong><a href="https://learn.microsoft.com/en-us/azure/azure-app-configuration/concept-feature-management" target="_blank" rel="noopener noreferrer">Feature flags</a></strong><span>Reversible cutover; deploy ≠ release</span></div>
-          <div class="pick"><strong><a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview" target="_blank" rel="noopener noreferrer">Bicep</a> / <a href="https://developer.hashicorp.com/terraform/intro" target="_blank" rel="noopener noreferrer">Terraform</a></strong><span>Repeatable infra, not a snowflake box</span></div>
-          <div class="pick"><strong><a href="https://learn.microsoft.com/en-us/azure/azure-monitor/overview" target="_blank" rel="noopener noreferrer">Azure Monitor</a></strong><span>Did the change hold after green?</span></div>
-          <div class="pick"><strong><a href="https://learn.microsoft.com/en-us/azure/devops/boards/get-started/what-is-azure-boards" target="_blank" rel="noopener noreferrer">Azure Boards</a></strong><span>Work and blockers visible across teams</span></div>
-          <div class="pick"><strong><a href="https://learn.microsoft.com/en-us/azure/devops/pipelines/process/approvals" target="_blank" rel="noopener noreferrer">Approvals / checks</a></strong><span>Human gate + business-hours window</span></div>
+          <div class="pick"><strong><a href="https://scikit-learn.org/stable/modules/grid_search.html" target="_blank" rel="noopener noreferrer">Grid / random</a></strong><span>Cheap objective; exhaust it</span></div>
+          <div class="pick"><strong><a href="https://www.evanmiller.org/sequential-ab-testing.html" target="_blank" rel="noopener noreferrer">Sequential A/B</a></strong><span>Traffic + a peek rule</span></div>
+          <div class="pick"><strong><a href="https://scikit-optimize.github.io/stable/" target="_blank" rel="noopener noreferrer">scikit-optimize</a></strong><span>GP search on a NumPy objective</span></div>
+          <div class="pick"><strong><a href="https://botorch.org/docs/introduction" target="_blank" rel="noopener noreferrer">BoTorch</a></strong><span>Surrogate + acquisition in PyTorch</span></div>
+          <div class="pick"><strong><a href="https://ax.dev/" target="_blank" rel="noopener noreferrer">Ax</a></strong><span>Experiment loop if you are not writing a paper</span></div>
+          <div class="pick"><strong><a href="https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/003_efficient_optimization_algorithms.html" target="_blank" rel="noopener noreferrer">Optuna</a></strong><span>TPE / mixed knobs; GP is optional</span></div>
+          <div class="pick"><strong><a href="https://docs.scipy.org/doc/scipy/tutorial/optimize.html" target="_blank" rel="noopener noreferrer">scipy.optimize</a></strong><span>Smooth, cheap, differentiable-enough</span></div>
         </div>
       </section>
 
       <section>
-        <h2>Ready vs green</h2>
+        <h2>Bound vs search</h2>
         <div class="gates">
           <div class="gate">
-            <strong>Ready · specified</strong>
-            <span>Owner, window, blast radius, and rollback named. A ticket title is not an outcome.</span>
+            <strong>Bound · legal</strong>
+            <span>Knobs, grain, and metric owned before the first trial. Illegal values are not “exploration.”</span>
           </div>
           <div class="gate">
-            <strong>Green · held</strong>
-            <span>Pipeline pass is not ops done. Watch the service; keep the kill switch in reach.</span>
+            <strong>Search · spent</strong>
+            <span>The next point costs a run. Acquisition proposes; it does not publish.</span>
           </div>
           <div class="gate">
             <strong>Memory check</strong>
-            <span>INTENT = outcome. WINDOW = whose clock. PROOF = evidence. CUTOVER = sequence + rollback.</span>
+            <span>BOUND = legal knobs. MODEL = uncertainty. ACQ = next spend. STOP = budget or Approve.</span>
           </div>
         </div>
       </section>
@@ -771,16 +757,16 @@
       <section>
         <h2>Ladder + gates</h2>
         <ol class="ladder">
-          <li>Named intent + owner</li>
-          <li>Calendars + dependency map</li>
-          <li>Evidence pack (blast radius, metrics)</li>
-          <li>Rollback + page path written</li>
-          <li>Small sequenced change / flag</li>
-          <li>Watch whether it held</li>
+          <li>Named decision + metric</li>
+          <li>Legal bounds (and what’s forbidden)</li>
+          <li>Price of one trial</li>
+          <li>Grid / random while cheap</li>
+          <li>Surrogate + acquisition when it isn’t</li>
+          <li>Stop: budget, delta, or Approve</li>
         </ol>
         <div class="gate" style="margin-top:0.75rem">
           <strong>Kill switch</strong>
-          <span>If you can’t name the owner, the window, and how to reverse, you don’t call it green.</span>
+          <span>If you can’t name the bound, the cost of one trial, and how you stop, you don’t start a search.</span>
         </div>
       </section>
     </div>
@@ -788,38 +774,41 @@
     <section class="antis">
       <h2>Anti-patterns</h2>
       <ul class="anti-list">
-        <li>Ticket title as the outcome</li>
-        <li>Calling pipeline green with no rollback</li>
-        <li>Private AI speed as team capability</li>
-        <li>Shipping while calendars still collide</li>
-        <li>Chat-thread status with no named blocker</li>
-        <li>Automating priority or the “not yet” call</li>
-        <li>Long-lived branches instead of flags</li>
-        <li>Framework shopping (SAFe/Scrum) before sequence</li>
+        <li>Bayesian opt on a two-second objective</li>
+        <li>No stop rule, just more trials</li>
+        <li>Optimising a metric that isn’t the decision</li>
+        <li>Proposing illegal cut-offs as “exploration”</li>
+        <li>AutoML as the owner of the call</li>
+        <li>Warm-start from a different grain</li>
+        <li>Peeking an A/B with no sequential boundary</li>
+        <li>Library shopping (BoTorch vs Ax vs Optuna) before the budget is named</li>
       </ul>
     </section>
 
     <section class="foundation" aria-label="Always-on foundation">
       <h2>Always on</h2>
       <div class="found-row">
-        <div class="found"><strong>Security</strong><span>Freeze, access, and who can flip the flag</span></div>
-        <div class="found"><strong>Governance</strong><span>Whose clock, whose change, whose rollback</span></div>
-        <div class="found"><strong>Observability</strong><span>Watch the service after green</span></div>
-        <div class="found"><strong>Evals</strong><span>Held metrics — lead time, fail rate — not velocity theatre</span></div>
-        <div class="found"><strong>Human Approve</strong><span>Rollback named before anyone calls it done</span></div>
+        <div class="found"><strong>Security</strong><span>Who can run a trial against live books</span></div>
+        <div class="found"><strong>Governance</strong><span>Named owner of metric, bounds, and stop</span></div>
+        <div class="found"><strong>Observability</strong><span>Every trial logged with grain and model id</span></div>
+        <div class="found"><strong>Evals</strong><span>Hold-out check before the “best” point ships</span></div>
+        <div class="found"><strong>Human Approve</strong><span>Acquisition proposes; a person publishes</span></div>
       </div>
     </section>
 
     <footer class="meta">
       <div class="version-row">
-        <div class="version" id="version-stamp">v2026.36 · Reviewed 4 Sep 2026 · Next: October 2026</div>
+        <div class="version" id="version-stamp">v2026.09 · Reviewed 21 Sep 2026 · Next: Oct 2026</div>
         <div class="credit">
           <span>Alex Touvras</span>
           <a href="https://alextouvras.com">alextouvras.com</a>
-          <span>Delivery · Data · AI automation</span>
+          <a href="/analytics-field-card/index.html">Analytics</a>
+          <a href="/credit-risk-field-card/index.html">Credit</a>
+          <a href="/field-card/index.html">AI</a>
+          <a href="/delivery-field-card/index.html">Delivery</a>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> Monthly review — picker and jobs unchanged</p>
+      <p class="changed"><b>Changed</b> First hosted method card — BOUND / MODEL / ACQ / STOP</p>
     </footer>
   </article>
 

@@ -14,7 +14,7 @@ All five Hub cards are on this monthly cadence. This agent publishes the three s
 | Data Analytics | `AlexTouvras/data-analytics-field-card` | https://alextouvras.com/analytics-field-card/ |
 | Technology Delivery | `AlexTouvras/technology-delivery-field-card` | https://alextouvras.com/delivery-field-card/ |
 
-Orbit also hosts **SDLC** (`/sdlc-field-card/`) and **Credit Risk** (`/credit-risk-field-card/`). Those are judged on Orbit in the 17:00 hosted pass (picker/jobs + stamp). They are not in this Apply-review loop.
+Orbit also hosts **SDLC** (`/sdlc-field-card/`), **Credit Risk** (`/credit-risk-field-card/`), and **Bayesian optimisation** (`/bayes-field-card/`). Those are judged on Orbit in the 17:00 hosted pass (picker/jobs + stamp). They are not in this Apply-review loop. Bayes is a method card, not a Hub competency.
 
 ## For each open monthly PR (`chore/monthly-refresh-YYYY-MM`)
 
@@ -75,19 +75,20 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
 - **SDLC** (Orbit-hosted, monthly): BOUND → DESIGN → BUILD → VERIFY. Not a phase-poster / SAFe brochure. Cutover stays on Delivery.
 - **Credit risk** (Orbit-hosted, monthly): ORIGINATE → MONITOR → STAGE → PROVISION. Not a vendor/scorecard brochure. Grain/gold stays on Analytics.
+- **Bayesian optimisation** (Orbit-hosted method, not Hub): H1 `Bayesian optimisation is a budget, not a search`. BOUND → MODEL → ACQ → STOP. Not a BoTorch/Ax/AutoML brochure.
 
 ## Backup
 
 If this agent misses, the fleet check on the first weekday on or after the 2nd posts a FYI in #orbit. Finish by re-running this agent (or Apply review). Slack is not the gate. There is no Monday weekly-refresh flag.
 
-## Monthly hosted cards (SDLC, Credit Risk)
+## Monthly hosted cards (SDLC, Credit Risk, Bayesian optimisation)
 
 Judged on Orbit at 17:00 on the 1st, not via source-repo Apply review.
 
 Run `.cursor/automations/hosted-field-card-monthly-review.json`:
 
-1. This is a discovery pass. Judge picker rows and job-table examples against the spine (SDLC: BOUND → DESIGN → BUILD → VERIFY; Credit: ORIGINATE → MONITOR → STAGE → PROVISION). Swap by constraint, not hype. Do not stamp-only skip the judgment.
+1. This is a discovery pass. Judge picker rows and job-table examples against the spine (SDLC: BOUND → DESIGN → BUILD → VERIFY; Credit: ORIGINATE → MONITOR → STAGE → PROVISION; Bayes: BOUND → MODEL → ACQ → STOP). Swap by constraint, not hype. Do not stamp-only skip the judgment.
 2. Bump the footer stamp: `Reviewed <Month YYYY> · Next: <next month>`. Changed line stays “Monthly review — picker and jobs unchanged” unless the HTML actually changed.
-3. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. Do not touch the three source-repo cards in that run.
+3. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. Do not touch the three source-repo cards in that run. Do not add a Hub competency tile for Bayesian optimisation.
 
 Do not stamp these cards from the 18:00 Apply-review agent.
