@@ -15,7 +15,7 @@ export function LiveQuestions({ desks }: { desks: LiveDesk[] }) {
             index="04"
             eyebrow="Live"
             title="Questions the desks answer"
-            description="Public data, cadence-matched. The map and the tape live on the desk — the Hub only names the question."
+            description="Public data, cadence-matched. The map and the tape live on the desk. The Hub only names the question."
           />
         </Reveal>
         <Link
@@ -32,16 +32,18 @@ export function LiveQuestions({ desks }: { desks: LiveDesk[] }) {
           <li key={desk.slug} className="border-b border-white/10">
             <Link
               href={`/portfolio/live/${desk.slug}`}
-              className="focus-ring group grid gap-2 py-8 sm:grid-cols-[9rem_1fr_auto] sm:items-baseline sm:gap-8"
+              className="focus-ring group block py-8"
             >
               <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500 transition-colors group-hover:text-neon-cyan">
                 {desk.title}
               </span>
-              <span className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-3xl">
-                {desk.question}
-              </span>
-              <span className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
-                {desk.cadence}
+              <span className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
+                <span className="font-display text-xl font-semibold tracking-tight text-white sm:text-2xl lg:text-3xl">
+                  {desk.question}
+                </span>
+                <span className="shrink-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
+                  {desk.cadence}
+                </span>
               </span>
             </Link>
           </li>

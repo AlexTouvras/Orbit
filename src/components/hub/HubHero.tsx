@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
@@ -130,16 +130,6 @@ export function HubHero({
             );
           })}
         </div>
-      </HeroItem>
-
-      <HeroItem delay={0.42} animate={animate}>
-        <a
-          href="#story-gravity"
-          className="focus-ring mt-16 inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-slate-500 transition-colors hover:text-neon-cyan"
-        >
-          <ArrowDown className="h-3.5 w-3.5 motion-safe:animate-float" />
-          Scroll the story
-        </a>
       </HeroItem>
     </div>
   );

@@ -16,7 +16,7 @@ export function SignalList({ writes }: { writes: Write[] }) {
             index="05"
             eyebrow="Signals"
             title="One question per article"
-            description="What I'm learning in public — a decision rule, not a digest."
+            description="What I'm learning in public: a decision rule, not a digest."
           />
         </Reveal>
         <Link

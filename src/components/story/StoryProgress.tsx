@@ -34,9 +34,9 @@ export function StoryProgress({ chapters }: { chapters: StoryChapter[] }) {
   return (
     <nav
       aria-label="Story chapters"
-      className="pointer-events-none fixed inset-x-0 bottom-4 z-40 flex justify-center px-4 lg:inset-auto lg:bottom-auto lg:left-4 lg:top-1/2 lg:-translate-y-1/2 lg:px-0"
+      className="pointer-events-none fixed inset-x-0 bottom-4 z-40 flex justify-center px-4"
     >
-      <ol className="pointer-events-auto flex items-center gap-1 rounded-full border border-white/10 bg-void/80 px-2 py-1.5 backdrop-blur-md lg:flex-col lg:items-stretch lg:gap-0 lg:rounded-2xl lg:px-2 lg:py-2">
+      <ol className="pointer-events-auto flex items-center gap-1 rounded-full border border-white/10 bg-void/80 px-2 py-1.5 backdrop-blur-md">
         {chapters.map((chapter) => {
           const isActive = chapter.id === active;
           return (
@@ -45,11 +45,10 @@ export function StoryProgress({ chapters }: { chapters: StoryChapter[] }) {
                 href={`#${chapter.id}`}
                 aria-label={chapter.label}
                 aria-current={isActive ? "true" : undefined}
+                title={chapter.label}
                 className={cn(
-                  "focus-ring flex items-center gap-2 rounded-full px-2.5 py-1.5 text-left transition-colors",
-                  isActive
-                    ? "text-white"
-                    : "text-slate-500 hover:text-slate-200",
+                  "focus-ring flex items-center gap-2 rounded-full px-2 py-1.5 text-left transition-colors",
+                  isActive ? "text-white" : "text-slate-500 hover:text-slate-200",
                 )}
               >
                 <span
@@ -59,7 +58,7 @@ export function StoryProgress({ chapters }: { chapters: StoryChapter[] }) {
                   )}
                   aria-hidden
                 />
-                <span className="hidden font-mono text-[0.6rem] uppercase tracking-[0.18em] xl:inline xl:min-w-[4.5rem]">
+                <span className="hidden font-mono text-[0.6rem] uppercase tracking-[0.18em] xl:inline">
                   {chapter.label}
                 </span>
               </a>

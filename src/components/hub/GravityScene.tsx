@@ -25,7 +25,7 @@ export function GravityScene({ whyOrbit }: { whyOrbit: string }) {
           index="01"
           eyebrow="Gravity"
           title="The name is the operating model"
-          description="A stable relationship around a center — not a prettier homepage."
+          description="A stable relationship around a center, not a prettier homepage."
         />
         <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
           {withOrbitMark(whyOrbit)}

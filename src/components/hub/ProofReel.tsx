@@ -21,7 +21,7 @@ export function ProofReel({ writes }: { writes: Write[] }) {
             index="03"
             eyebrow="Proof"
             title="Systems I've built"
-            description="Write-ups with architecture — the evidence behind the craft."
+            description="Write-ups with architecture, the evidence behind the craft."
           />
         </Reveal>
         <Link

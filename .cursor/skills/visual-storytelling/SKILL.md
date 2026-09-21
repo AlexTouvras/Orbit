@@ -68,7 +68,7 @@ Rules:
 |-----------|------|-----|
 | `StoryScene` | `src/components/story/StoryScene.tsx` | Full-bleed chapter; Hub only (AppChrome drops max-width on `/`) |
 | `ChapterMark` | `src/components/story/ChapterMark.tsx` | `01 / Craft` + title + lede |
-| `StoryProgress` | `src/components/story/StoryProgress.tsx` | Sticky chapter rail |
+| `StoryProgress` | `src/components/story/StoryProgress.tsx` | Bottom chapter index (dots; labels on xl) |
 | `GravityField` | `src/components/story/GravityField.tsx` | Brand diagram |
 | `StoryStat` | `src/components/story/StoryStat.tsx` | Oversized KPI |
 | `DeskStoryHeader` | `src/components/story/DeskStoryHeader.tsx` | Live desk opening: cadence → question |
