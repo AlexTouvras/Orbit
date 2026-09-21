@@ -1,0 +1,54 @@
+---
+title: "When access rules become cheap, policy becomes the bottleneck"
+summary: "AI can remove the repetitive work of configuring data access, but I still need a desired-state policy, a readable diff, and a named owner before permissions change."
+date: "2026-09-21"
+category: "Delivery"
+featured: false
+tags: ["Delivery", "Analytics", "OneLake", "Access control"]
+---
+
+## The question
+
+Data access often looks controlled because it is slow. An administrator opens a security screen, creates a role, adds members, and checks the result. The friction feels like caution, even when the real policy lives in a ticket or in somebody's memory.
+
+That illusion breaks when an AI assistant can scan an analytics estate and create hundreds of access rules from one request. The configuration work becomes cheap. The consequence of a vague rule does not.
+
+So I am asking a narrower question than whether an assistant can manage permissions: when access changes happen at prompt speed, what evidence do I need before I let the prompt become policy?
+
+## The bottleneck moves upstream
+
+Reza Rad's [Fabric Core MCP Server demonstration](https://radacad.com/fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai) shows the shift clearly. Microsoft Fabric is an analytics platform, and OneLake is its shared data layer. An MCP server gives an AI assistant a standard way to call the platform's tools.
+
+Rad first uses the assistant to list workspaces, scan lakehouses, and inspect a custom security role. That read-only inspection works while the Fabric capacity is paused because the information comes from the catalog. He then starts the capacity and asks the assistant to create one role for every country in a table. Finally, he changes a test user's memberships and verifies that the report shows only the assigned countries.
+
+The impressive part is scale. Six roles could have been a thousand, with no extra clicking. But that is also the risk. The moment a role can be created at prompt speed, the unit of review has to move from each click to the policy that generates the clicks.
+
+## Exact execution can still be the wrong policy
+
+An assistant can carry out the request perfectly and still encode a poor access model. One role per country may fit a static demonstration. In a real estate, I would need to know whether countries are truly the business boundary, whether people need overlapping regions, how new values are handled, and who removes access after a role change.
+
+The source makes one important limit explicit: assigning security groups is better practice than assigning individual users. That distinction matters because a direct user assignment solves today's request while creating tomorrow's cleanup. A group can connect data access to an owned identity process. A person added ad hoc becomes a small exception that is easy to forget.
+
+Verification also needs two layers. Seeing the expected sales total from the test identity proves that the rule was applied. It does not prove that Canada, Germany, and France were the right entitlement for that person. Technical validity answers, “Did the system do what I asked?” Policy validity asks, “Was I allowed to ask for this outcome?” I need both.
+
+## Review desired state, not the conversation
+
+I would put a small, durable artifact between the prompt and the change. For each role, it should state the data scope, the security group, the business reason, the owner, and any expiry or review date. That is the desired state. The assistant can scan the current configuration and produce a difference: roles to create, definitions to alter, memberships to add, and access to remove.
+
+This changes the review from reading a chat transcript to inspecting consequences. I can spot a role count that suddenly follows every raw value in a column. I can challenge an individual assignment where a group should exist. I can ask why an old membership is being removed before a production report changes for its reader.
+
+After approval, the same automation can apply the difference and verify the result from the affected identity. The scan and comparison should stay repeatable, so drift appears as evidence rather than as a surprise during an incident. Someone still has to resolve ambiguous ownership and approve exceptions. I want that judgment to remain manual because the platform catalog cannot tell me why a colleague should see France but not Australia.
+
+## Where speed earns its place
+
+I would not wrap every catalog query in ceremony. Read-only inventory and documentation are good candidates for direct automation. A sandbox is also the right place to generate a large role set and learn how the naming, limits, and report behavior hold up.
+
+Production changes need a stronger boundary, but even there urgency can alter the path. Removing a compromised identity may justify immediate execution with an after-the-fact review. Routine additions do not deserve the same exception. The cost of a delayed grant is usually visible; the cost of quiet excess access can sit unnoticed for months.
+
+The practical baseline is not “human clicks are safe.” They are often inconsistent and poorly recorded. Automation earns the production job when it leaves a clearer desired state, a smaller permission scope, and a better record than the manual process it replaces.
+
+## Takeaway
+
+When access configuration becomes cheap, I will spend less time reviewing keystrokes and more time reviewing the rule that produces them. I will scan first, compare current access with a named desired state, review the difference, and verify the result through the identity that consumes the data.
+
+My decision rule is simple: automate a permission change only when the policy is explicit enough to show who should gain access, who should lose it, and who owns the next review. Prompt speed is useful for applying a sound rule. It is dangerous when it hides that no rule was written.
