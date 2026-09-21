@@ -86,7 +86,11 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
           value={formatEur(fi?.baseload ?? view.fiBaseload)}
           hint={fi ? `${fi.label} · /MWh` : "/MWh"}
         />
-        <StoryStat label="Zones" value={String(view.today.length)} />
+        <StoryStat
+          label="Zones"
+          value={String(view.today.length)}
+          countTo={view.today.length}
+        />
       </DeskCast>
 
       <div

@@ -13,6 +13,11 @@ interface AboutHeroProps {
   avatarUrl?: string;
 }
 
+function yearsCount(yearsExperience: string): number {
+  const n = Number.parseInt(yearsExperience, 10);
+  return Number.isFinite(n) ? n : 0;
+}
+
 export function AboutHero({
   name,
   yearsExperience,
@@ -21,10 +26,24 @@ export function AboutHero({
   resumeUrl,
   avatarUrl,
 }: AboutHeroProps) {
+  const years = yearsCount(yearsExperience);
   const stats = [
-    { label: "Experience", value: yearsExperience },
-    { label: "Employers", value: String(employerCount) },
-    { label: "Degrees", value: String(degreeCount) },
+    {
+      label: "Experience",
+      value: yearsExperience,
+      countTo: years || undefined,
+      suffix: yearsExperience.includes("+") ? "+" : "",
+    },
+    {
+      label: "Employers",
+      value: String(employerCount),
+      countTo: employerCount,
+    },
+    {
+      label: "Degrees",
+      value: String(degreeCount),
+      countTo: degreeCount,
+    },
   ];
 
   return (

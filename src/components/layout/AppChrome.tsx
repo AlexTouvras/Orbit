@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
 import { ParticleBackground } from "@/components/layout/ParticleBackground";
+import { ScrollLine } from "@/components/story/ScrollLine";
 
 const BARE_ROUTES = new Set(["/card", "/qr-code"]);
 
@@ -18,6 +19,11 @@ export function AppChrome({
   const bare = BARE_ROUTES.has(pathname);
   const live = pathname.startsWith("/portfolio/live");
   const story = pathname === "/";
+  const scrollStory =
+    story ||
+    live ||
+    pathname === "/about" ||
+    pathname === "/portfolio";
 
   if (bare) {
     return (
@@ -30,6 +36,7 @@ export function AppChrome({
   return (
     <>
       <ParticleBackground />
+      {scrollStory ? <ScrollLine /> : null}
       <Header />
       <main
         id="main-content"

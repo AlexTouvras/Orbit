@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Write } from "@/lib/types";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { Reveal } from "@/components/ui/Reveal";
+import { ScrollSpot } from "@/components/story/ScrollSpot";
 import { formatDate } from "@/lib/utils";
 
 export function SignalList({ writes }: { writes: Write[] }) {
@@ -11,14 +11,12 @@ export function SignalList({ writes }: { writes: Write[] }) {
   return (
     <div>
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <Reveal>
           <ChapterMark
             index="05"
             eyebrow="Signals"
             title="One question per article"
             description="What I'm learning in public: a decision rule, not a digest."
           />
-        </Reveal>
         <Link
           href="/writes"
           className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan"
@@ -31,6 +29,7 @@ export function SignalList({ writes }: { writes: Write[] }) {
       <ul className="mt-12 border-t border-white/10">
         {writes.map((write) => (
           <li key={write.slug} className="border-b border-white/10">
+            <ScrollSpot>
             <Link
               href={`/writes/${write.slug}`}
               className="focus-ring group grid gap-3 py-7 sm:grid-cols-[6.5rem_1fr_auto] sm:items-baseline sm:gap-8"
@@ -52,6 +51,7 @@ export function SignalList({ writes }: { writes: Write[] }) {
                 <ArrowRight className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
               </span>
             </Link>
+            </ScrollSpot>
           </li>
         ))}
       </ul>

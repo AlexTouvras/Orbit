@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import type { Competency } from "@/content/profile";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { Reveal } from "@/components/ui/Reveal";
+import { ScrollSpot } from "@/components/story/ScrollSpot";
 import { cn } from "@/lib/utils";
 
 const STORY_ORDER = [
@@ -38,14 +38,12 @@ export function CraftScene({ competencies }: { competencies: Competency[] }) {
 
   return (
     <div>
-      <Reveal>
-        <ChapterMark
-          index="02"
-          eyebrow="Craft"
-          title="How I ship"
-          description="A sequence, not a stack. Evidence before the call. A human gate before anything publishes."
-        />
-      </Reveal>
+      <ChapterMark
+        index="02"
+        eyebrow="Craft"
+        title="How I ship"
+        description="A sequence, not a stack. Evidence before the call. A human gate before anything publishes."
+      />
 
       <ol className="mt-12 space-y-0 border-t border-white/10">
         {ordered.map((c, i) => {
@@ -93,22 +91,24 @@ export function CraftScene({ competencies }: { competencies: Competency[] }) {
           if (!c.href) {
             return (
               <li key={c.title} className="border-b border-white/10">
-                {body}
+                <ScrollSpot>{body}</ScrollSpot>
               </li>
             );
           }
 
           return (
             <li key={c.title} className="border-b border-white/10">
-              <a
-                href={c.href}
-                className={cn(
-                  "focus-ring group block rounded-none border border-transparent transition-colors",
-                  accentRule[c.accent],
-                )}
-              >
-                {body}
-              </a>
+              <ScrollSpot>
+                <a
+                  href={c.href}
+                  className={cn(
+                    "focus-ring group block rounded-none border border-transparent transition-colors",
+                    accentRule[c.accent],
+                  )}
+                >
+                  {body}
+                </a>
+              </ScrollSpot>
             </li>
           );
         })}

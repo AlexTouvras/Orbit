@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { getGithubRepos } from "@/lib/github";
 import { getEditableProfile } from "@/lib/profile-store";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { Reveal } from "@/components/ui/Reveal";
+import { ScrollSpot } from "@/components/story/ScrollSpot";
 import { relativeTime } from "@/lib/utils";
 
 const languageColor: Record<string, string> = {
@@ -34,14 +34,12 @@ export async function GithubRepos() {
   return (
     <section id="github" className="scroll-mt-28">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <Reveal>
-          <ChapterMark
-            index="04"
-            eyebrow="Open source"
-            title="GitHub"
-            description="Live from my public repositories, refreshed automatically."
-          />
-        </Reveal>
+        <ChapterMark
+          index="04"
+          eyebrow="Open source"
+          title="GitHub"
+          description="Live from my public repositories, refreshed automatically."
+        />
         <Link
           href={profileUrl}
           target="_blank"
@@ -58,6 +56,7 @@ export async function GithubRepos() {
           const updated = relativeTime(repo.pushedAt);
           return (
             <li key={repo.id} className="border-b border-white/10">
+              <ScrollSpot>
               <a
                 href={repo.url}
                 target="_blank"
@@ -97,6 +96,7 @@ export async function GithubRepos() {
                   <ArrowRight className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
                 </span>
               </a>
+              </ScrollSpot>
             </li>
           );
         })}

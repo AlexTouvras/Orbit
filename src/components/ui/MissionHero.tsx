@@ -2,8 +2,10 @@
 
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { PixelAvatar } from "@/components/ui/PixelAvatar";
+import { StoryStat } from "@/components/story/StoryStat";
 import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
@@ -34,6 +36,9 @@ function HeroItem({
 export interface MissionStat {
   label: string;
   value: string;
+  countTo?: number;
+  suffix?: string;
+  hint?: string;
 }
 
 interface MissionHeroProps {
@@ -70,15 +75,22 @@ export function MissionHero({
   const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
   const animate = hydrated && !reduced;
+  const root = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: root,
+    offset: ["start start", "end start"],
+  });
+  const orbitY = useTransform(scrollYProgress, [0, 1], [0, 80]);
 
   return (
-    <section className="relative overflow-hidden pb-4">
-      <div
+    <section ref={root} className="relative overflow-hidden pb-4">
+      <motion.div
         className="pointer-events-none absolute -right-12 -top-8 h-64 w-64 sm:h-72 sm:w-72"
         aria-hidden
+        style={animate ? { y: orbitY } : undefined}
       >
         {signature}
-      </div>
+      </motion.div>
 
       <HeroItem delay={0} animate={animate}>
         {badge}
@@ -123,7 +135,7 @@ export function MissionHero({
 
       {stats && stats.length > 0 && (
         <HeroItem delay={0.24} animate={animate}>
-          <dl
+          <div
             className={cn(
               "mt-8 grid gap-4 border-y border-white/8 py-5 sm:gap-6",
               stats.length <= 3
@@ -132,16 +144,18 @@ export function MissionHero({
             )}
           >
             {stats.map((stat) => (
-              <div key={stat.label}>
-                <dt className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">
-                  {stat.label}
-                </dt>
-                <dd className="orbit-accent mt-1 font-display text-2xl font-bold tabular-nums tracking-tight sm:text-3xl">
-                  {stat.value}
-                </dd>
-              </div>
+              <StoryStat
+                key={stat.label}
+                label={stat.label}
+                value={stat.value}
+                countTo={stat.countTo}
+                suffix={stat.suffix}
+                hint={stat.hint}
+                className="min-w-0"
+                valueClassName="orbit-accent"
+              />
             ))}
-          </dl>
+          </div>
         </HeroItem>
       )}
 

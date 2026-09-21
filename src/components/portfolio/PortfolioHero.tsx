@@ -1,9 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 import { PixelAvatar } from "@/components/ui/PixelAvatar";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
 import { DeskCast } from "@/components/story/DeskCast";
 import { StoryStat } from "@/components/story/StoryStat";
+import { useHydrated } from "@/lib/use-hydrated";
+import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
 interface PortfolioHeroProps {
   workshopCount: number;
@@ -18,14 +24,25 @@ export function PortfolioHero({
   liveCount,
   avatarUrl,
 }: PortfolioHeroProps) {
+  const hydrated = useHydrated();
+  const reduced = usePrefersReducedMotion();
+  const animate = hydrated && !reduced;
+  const root = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: root,
+    offset: ["start start", "end start"],
+  });
+  const orbitY = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
   return (
-    <header className="relative">
-      <div
+    <header ref={root} className="relative">
+      <motion.div
         className="pointer-events-none absolute -right-8 top-[-12%] h-[22rem] w-[22rem] opacity-70 sm:h-[28rem] sm:w-[28rem] lg:right-[-4%]"
         aria-hidden
+        style={animate ? { y: orbitY } : undefined}
       >
         <OrbitSignature variant="violet" duration="110s" />
-      </div>
+      </motion.div>
 
       <div className="flex items-center gap-3 sm:gap-4">
         {avatarUrl ? <PixelAvatar src={avatarUrl} alt="" /> : null}
@@ -47,14 +64,17 @@ export function PortfolioHero({
         <StoryStat
           label="Projects"
           value={workshopCount > 0 ? String(workshopCount) : "—"}
+          countTo={workshopCount || undefined}
         />
         <StoryStat
           label="Live"
           value={liveCount > 0 ? String(liveCount) : "—"}
+          countTo={liveCount || undefined}
         />
         <StoryStat
           label="Power BI"
           value={powerBiCount > 0 ? String(powerBiCount) : "—"}
+          countTo={powerBiCount || undefined}
         />
       </DeskCast>
 

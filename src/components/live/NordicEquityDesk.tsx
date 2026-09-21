@@ -55,11 +55,13 @@ export async function NordicEquityDesk() {
         <StoryStat
           label="Up"
           value={String(up)}
+          countTo={up}
           valueClassName="text-emerald-300"
         />
         <StoryStat
           label="Down"
           value={String(down)}
+          countTo={down}
           valueClassName="text-rose-300"
         />
         <StoryStat
@@ -67,7 +69,11 @@ export async function NordicEquityDesk() {
           value={leader?.ticker ?? "—"}
           hint={leader ? formatPct(leader.changePct) : undefined}
         />
-        <StoryStat label="Names" value={names > 0 ? String(names) : "—"} />
+        <StoryStat
+          label="Names"
+          value={names > 0 ? String(names) : "—"}
+          countTo={names || undefined}
+        />
       </DeskCast>
 
       <DeskPicture label="Nordic equity heatmap board">

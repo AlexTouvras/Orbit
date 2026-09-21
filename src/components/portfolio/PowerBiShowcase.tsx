@@ -18,7 +18,6 @@ import {
 import type { PowerBiReport } from "@/content/power-bi-reports";
 import { ChapterMark } from "@/components/story/ChapterMark";
 import { DeskPicture } from "@/components/story/DeskPicture";
-import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
 export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
@@ -164,8 +163,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
 
   return (
     <section id="power-bi" className="scroll-mt-28" aria-label="Power BI reports">
-      <Reveal>
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <ChapterMark
             index="03"
             eyebrow="Analytics"
@@ -196,8 +194,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
               </Link>
             )}
           </div>
-        </div>
-      </Reveal>
+      </div>
 
       <div className="mt-12 grid grid-cols-[minmax(9.5rem,10.5rem)_1fr] gap-4 sm:grid-cols-[minmax(11rem,14rem)_1fr] sm:gap-6 md:grid-cols-[minmax(12rem,16rem)_1fr] md:gap-8">
         <nav

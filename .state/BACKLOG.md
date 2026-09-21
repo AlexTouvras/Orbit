@@ -29,7 +29,7 @@
 
 ## Next
 
-- [ ] **Visual storytelling Hub** — chaptered scroll on `/`; skill at `.cursor/skills/visual-storytelling`. Owner review Hub desktop + mobile before treating as default.
+- [ ] **Visual storytelling Hub** — chaptered scroll on `/`; skill at `.cursor/skills/visual-storytelling`. Owner review Hub desktop + mobile before treating as default. Scroll-linked motion (line, gravity orbit, spotlight, count-up) is in; still owner-gated.
 - [x] **Visual storytelling dashboards** — Open → Cast → Picture → Move → Close on each live desk (`DeskCast` / `DeskPicture` / `DeskClose`; missing uses desk `question`). Owner review desks after Hub.
 - [x] **Visual storytelling Portfolio** — `/portfolio` Open → workshop reel → live questions → Power BI picture → GitHub list → Close. No 3-up GlassCard grid.
 - [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.

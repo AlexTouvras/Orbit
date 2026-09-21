@@ -1,8 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { GravityField } from "@/components/story/GravityField";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { Reveal } from "@/components/ui/Reveal";
 
 function withOrbitMark(text: string) {
   const i = text.toLowerCase().indexOf("orbit");
@@ -18,9 +20,14 @@ function withOrbitMark(text: string) {
 }
 
 export function GravityScene({ whyOrbit }: { whyOrbit: string }) {
+  const sceneRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
-      <Reveal>
+    <div
+      ref={sceneRef}
+      className="grid min-h-[min(90dvh,48rem)] items-start gap-14 lg:min-h-[min(130dvh,64rem)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16"
+    >
+      <div>
         <ChapterMark
           index="01"
           eyebrow="Gravity"
@@ -37,10 +44,10 @@ export function GravityScene({ whyOrbit }: { whyOrbit: string }) {
           Why the name
           <ArrowUpRight className="h-4 w-4 transition-transform motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5" />
         </Link>
-      </Reveal>
-      <Reveal delay={0.08} className="px-10 sm:px-12">
-        <GravityField />
-      </Reveal>
+      </div>
+      <div className="px-10 sm:px-12 lg:sticky lg:top-28 lg:self-start">
+        <GravityField containerRef={sceneRef} />
+      </div>
     </div>
   );
 }

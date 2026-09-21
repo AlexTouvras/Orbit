@@ -97,3 +97,4 @@ When restyling or adding a live desk:
 - Live desks advertised as “Not Power BI” instead of their questions
 - Left-edge chapter rail covering display type (Hub uses a bottom index instead)
 - Viewport-locked chapters copied from AI Takes Over (native scroll only)
+- Progress line / gravity rotate / spotlight / count-up as the *only* scroll motion (pages also need `StoryReveal` + a sticky kicker so something actually happens while you scroll)

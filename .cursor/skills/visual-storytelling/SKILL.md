@@ -25,7 +25,7 @@ Primary: Hub `/` renders chapter ids `story-open`, `story-gravity`, `story-craft
 
 Then a browser walk (desktop + a ~390px viewport):
 
-1. Scroll Hub end to end; chapter rail tracks the scene
+1. Scroll Hub end to end; the top line fills; chapter rail tracks the scene; Gravity rings/satellites turn; craft rows spotlight
 2. Competency rows are plain `<a href>` to field cards (not `next/link`)
 3. Proof reel scrolls horizontally; case study and architecture still work
 4. Live questions open the matching desk
@@ -59,7 +59,7 @@ Rules:
 - **One idea per chapter.** If you need a card grid to “fit three things,” you do not have a scene yet.
 - **Type is the primary image.** Photography/video is optional; Orbit’s image is Syne at `.text-story` / `.text-display` plus the orbit ring.
 - **Numbers are characters.** Cadence, zone count, €/m² — `StoryStat` / `.orbit-accent` display figures, not a muted mono row.
-- **No scroll-jacking.** Horizontal snap on reels is fine (`scroll-snap-type: x mandatory`). Do not hijack vertical scroll.
+- **No scroll-jacking.** Horizontal snap on reels is fine (`scroll-snap-type: x mandatory`). Do not hijack vertical scroll. Scroll-linked motion (progress line, ring rotate/scale, sticky chapter kicker, in-view spotlight, count-up, `StoryReveal` scale) is allowed; copy must remain readable without it. Sticky diagrams are native CSS, not pin-jacking.
 - **Reduced motion always works.** `motion-safe:` only. `StoryProgress` may use IntersectionObserver; it must not depend on animation.
 - **Field cards** live as static HTML in `public/`. Home competency links stay plain `<a>`.
 
@@ -77,7 +77,9 @@ Rules:
 | `DeskPicture` | `src/components/story/DeskPicture.tsx` | Primary visual (map / tape / mix / board) |
 | `DeskClose` | `src/components/story/DeskClose.tsx` | Source, lag, what this is not |
 | `DeskMissing` | `src/components/story/DeskMissing.tsx` | Snapshot missing; `question` as `h1` |
-| `.text-story` / `.story-index` / `.story-rail` | `src/app/globals.css` | Scale, ghost numbers, horizontal reel |
+| `ScrollLine` | `src/components/story/ScrollLine.tsx` | Top read bar; Hub / Portfolio / About / live (via AppChrome) |
+| `ScrollSpot` | `src/components/story/ScrollSpot.tsx` | Brightens the row in the viewport midline |
+| `StoryReveal` | `src/components/story/StoryReveal.tsx` | Scale/rise when a beat enters view |
 
 AppChrome: pathname `/` is full-bleed. Other public pages stay `max-w-5xl` (live desks `max-w-6xl`). Do not silently widen Studio.
 
@@ -105,7 +107,7 @@ Do not: iframe a Power BI report as the story; duplicate Hub glass cards onto th
 | Gate | Fail if |
 |------|---------|
 | Card relapse | New Hub/About block is a 3-up `GlassCard` grid with eyebrow + title + description |
-| Scroll theatre | Vertical scroll-snap, parallax that hides copy, or motion required to read |
+| Scroll theatre | Vertical scroll-snap, pin-jacking, parallax that hides copy, or motion required to read |
 | Slogan drift | New headlines that a stranger cannot map to `profile.ts` / desk `question` |
 | SEO identity | Hub `h1` omits the person’s name (name may be the kicker inside `h1`, thesis the display span) |
 | Field-card SPA | Competency uses `next/link` to `/field-card/` (soft-nav 404) |

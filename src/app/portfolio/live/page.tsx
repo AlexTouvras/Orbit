@@ -27,7 +27,11 @@ export default function LiveDesksPage() {
       />
 
       <DeskCast className="lg:grid-cols-3">
-        <StoryStat label="Desks" value={String(desks.length)} />
+        <StoryStat
+          label="Desks"
+          value={String(desks.length)}
+          countTo={desks.length}
+        />
         <StoryStat label="Grain" value="Mixed" />
         <StoryStat label="Keys in browser" value="None" />
       </DeskCast>

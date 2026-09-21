@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { Reveal } from "@/components/ui/Reveal";
 
 export function StoryClose({
   summary,
@@ -13,7 +12,7 @@ export function StoryClose({
   index?: string;
 }) {
   return (
-    <Reveal>
+    <div>
       <ChapterMark index={index} eyebrow="Close" title="The record is longer than this page" />
       <p className="mt-8 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">
         {summary}
@@ -34,6 +33,6 @@ export function StoryClose({
           <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
         </Link>
       </div>
-    </Reveal>
+    </div>
   );
 }

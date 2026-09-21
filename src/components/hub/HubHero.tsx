@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import type { ReactNode } from "react";
+import { useRef, type ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
 import { PixelAvatar } from "@/components/ui/PixelAvatar";
+import { DeskCast } from "@/components/story/DeskCast";
+import { StoryStat } from "@/components/story/StoryStat";
 import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
@@ -33,6 +35,11 @@ function HeroItem({
   );
 }
 
+function yearsCount(yearsExperience: string): number {
+  const n = Number.parseInt(yearsExperience, 10);
+  return Number.isFinite(n) ? n : 0;
+}
+
 interface HubHeroProps {
   name: string;
   pillars: string;
@@ -40,6 +47,9 @@ interface HubHeroProps {
   contactCta: string;
   socials: { label: string; href: string }[];
   avatarUrl?: string;
+  yearsExperience: string;
+  liveCount: number;
+  craftCount: number;
 }
 
 export function HubHero({
@@ -49,19 +59,34 @@ export function HubHero({
   contactCta,
   socials,
   avatarUrl,
+  yearsExperience,
+  liveCount,
+  craftCount,
 }: HubHeroProps) {
   const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
   const animate = hydrated && !reduced;
+  const root = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: root,
+    offset: ["start start", "end start"],
+  });
+  const orbitY = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const orbitScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  const titleY = useTransform(scrollYProgress, [0, 1], [0, -56]);
+  const titleScale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const cueOpacity = useTransform(scrollYProgress, [0, 0.28], [1, 0]);
+  const years = yearsCount(yearsExperience);
 
   return (
-    <div className="relative">
-      <div
+    <div ref={root} className="relative">
+      <motion.div
         className="pointer-events-none absolute -right-8 top-[-12%] h-[28rem] w-[28rem] opacity-80 sm:h-[36rem] sm:w-[36rem] lg:right-[-4%] lg:top-[-18%]"
         aria-hidden
+        style={animate ? { y: orbitY, scale: orbitScale } : undefined}
       >
         <OrbitSignature variant="cyan" duration="110s" />
-      </div>
+      </motion.div>
 
       <HeroItem delay={0} animate={animate}>
         <div className="flex items-center gap-3 sm:gap-4">
@@ -75,7 +100,10 @@ export function HubHero({
       </HeroItem>
 
       <HeroItem delay={0.1} animate={animate}>
-        <h1 className="mt-8 max-w-5xl">
+        <motion.h1
+          className="mt-8 max-w-5xl origin-left"
+          style={animate ? { y: titleY, scale: titleScale } : undefined}
+        >
           <span className="block font-mono text-xs uppercase tracking-[0.22em] text-slate-400">
             {name} · {pillars}
           </span>
@@ -84,7 +112,7 @@ export function HubHero({
             <br />
             <span className="text-gradient">works.</span>
           </span>
-        </h1>
+        </motion.h1>
       </HeroItem>
 
       <HeroItem delay={0.18} animate={animate}>
@@ -93,7 +121,29 @@ export function HubHero({
         </p>
       </HeroItem>
 
-      <HeroItem delay={0.26} animate={animate}>
+      <HeroItem delay={0.24} animate={animate}>
+        <DeskCast className="mt-10 max-w-3xl lg:grid-cols-3">
+          <StoryStat
+            label="Years"
+            value={yearsExperience}
+            countTo={years || undefined}
+            suffix={yearsExperience.includes("+") ? "+" : ""}
+          />
+          <StoryStat
+            label="Live desks"
+            value={String(liveCount)}
+            countTo={liveCount}
+          />
+          <StoryStat
+            label="Craft"
+            value={String(craftCount)}
+            countTo={craftCount}
+            hint={pillars}
+          />
+        </DeskCast>
+      </HeroItem>
+
+      <HeroItem delay={0.3} animate={animate}>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <Link
             href="/contact"
@@ -131,6 +181,17 @@ export function HubHero({
           })}
         </div>
       </HeroItem>
+
+      <motion.p
+        className="mt-16 hidden items-center gap-3 font-mono text-[0.65rem] uppercase tracking-[0.28em] text-slate-500 sm:flex"
+        style={animate ? { opacity: cueOpacity } : undefined}
+      >
+        Scroll
+        <span
+          className="inline-block h-8 w-px origin-top bg-white/30 motion-safe:animate-pulse"
+          aria-hidden
+        />
+      </motion.p>
     </div>
   );
 }

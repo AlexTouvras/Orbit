@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { LiveDesk } from "@/content/live-desks";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { Reveal } from "@/components/ui/Reveal";
 import { LiveQuestionList } from "@/components/live/LiveQuestionList";
 
 export function LiveQuestions({
@@ -21,14 +20,12 @@ export function LiveQuestions({
   return (
     <div id={id} className={id ? "scroll-mt-28" : undefined}>
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <Reveal>
-          <ChapterMark
-            index={index}
-            eyebrow="Live"
-            title="Questions the desks answer"
-            description={description}
-          />
-        </Reveal>
+        <ChapterMark
+          index={index}
+          eyebrow="Live"
+          title="Questions the desks answer"
+          description={description}
+        />
         <Link
           href="/portfolio/live"
           className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-neon-cyan"

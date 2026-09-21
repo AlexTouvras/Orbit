@@ -61,9 +61,15 @@ export function PowerMixDesk({ view }: { view: PowerMixView }) {
         <StoryStat
           label="Europe fossil"
           value={`${Math.round(view.europe.fossil)}%`}
+          countTo={Math.round(view.europe.fossil)}
+          suffix="%"
           valueClassName="text-amber-200"
         />
-        <StoryStat label="Countries" value={String(view.countries.length)} />
+        <StoryStat
+          label="Countries"
+          value={String(view.countries.length)}
+          countTo={view.countries.length}
+        />
         <StoryStat
           label="Cleanest"
           value={countryLabel(cleanest)}

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ExternalLink, FolderGit2, LineChart, PenLine } from "lucide-react";
 import { getPublicProjects } from "@/lib/projects-local";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { Reveal } from "@/components/ui/Reveal";
+import { StoryReveal } from "@/components/story/StoryReveal";
 import { Badge } from "@/components/ui/Badge";
 import { StatusBadge } from "./StatusBadge";
 
@@ -29,14 +29,12 @@ export function LocalProjects() {
 
   return (
     <section id="workshop" className="scroll-mt-28">
-      <Reveal>
-        <ChapterMark
-          index="01"
-          eyebrow="Workshop"
-          title="Projects"
-          description="A live snapshot of projects from my machine — each with its current status."
-        />
-      </Reveal>
+      <ChapterMark
+        index="01"
+        eyebrow="Workshop"
+        title="Projects"
+        description="A live snapshot of projects from my machine — each with its current status."
+      />
 
       <div className="story-rail mt-12 flex-nowrap">
         {ordered.map((p, i) => {
@@ -48,9 +46,12 @@ export function LocalProjects() {
           const hasLinks = Boolean(p.repoUrl || researchOrLive || caseStudy);
 
           return (
-            <article
+            <StoryReveal
               key={p.id}
-              className="relative flex w-[min(100%,34rem)] shrink-0 flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:w-[min(100%,38rem)] sm:p-9"
+              className="w-[min(100%,34rem)] shrink-0 sm:w-[min(100%,38rem)]"
+            >
+            <article
+              className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-9"
             >
               <p
                 className="story-index absolute right-4 top-2 select-none"
@@ -124,6 +125,7 @@ export function LocalProjects() {
                 </div>
               ) : null}
             </article>
+            </StoryReveal>
           );
         })}
       </div>

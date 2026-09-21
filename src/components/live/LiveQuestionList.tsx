@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { LiveDesk } from "@/content/live-desks";
+import { ScrollSpot } from "@/components/story/ScrollSpot";
 
 export function LiveQuestionList({ desks }: { desks: LiveDesk[] }) {
   if (desks.length === 0) return null;
@@ -8,10 +9,11 @@ export function LiveQuestionList({ desks }: { desks: LiveDesk[] }) {
     <ul className="border-t border-white/10">
       {desks.map((desk) => (
         <li key={desk.slug} className="border-b border-white/10">
-          <Link
-            href={`/portfolio/live/${desk.slug}`}
-            className="focus-ring group block py-8"
-          >
+          <ScrollSpot>
+            <Link
+              href={`/portfolio/live/${desk.slug}`}
+              className="focus-ring group block py-8"
+            >
             <span className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500 transition-colors group-hover:text-neon-cyan">
               {desk.title}
             </span>
@@ -24,6 +26,7 @@ export function LiveQuestionList({ desks }: { desks: LiveDesk[] }) {
               </span>
             </span>
           </Link>
+          </ScrollSpot>
         </li>
       ))}
     </ul>
