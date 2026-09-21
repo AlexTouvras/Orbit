@@ -14,6 +14,7 @@ export function ProofReel({ writes }: { writes: Write[] }) {
 
   return (
     <ScrollRail
+      length={writes.length}
       header={
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <ChapterMark

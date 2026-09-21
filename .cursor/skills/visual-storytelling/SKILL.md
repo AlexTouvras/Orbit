@@ -27,7 +27,7 @@ Then a browser walk (desktop + a ~390px viewport):
 
 1. Scroll Hub end to end; the top line fills; chapter rail tracks the scene; Gravity rings/satellites turn; craft rows spotlight
 2. Competency rows are plain `<a href>` to field cards (not `next/link`)
-3. Proof reel: on large screens, scrolling down advances the cards to the right; Case study and architecture still work. Phone / reduced motion: swipe the rail.
+3. Proof reel: scrolling down advances the cards to the right; Case study and architecture still work. Reduced motion: swipe the rail.
 4. Live questions open the matching desk
 5. About experience reads as a timeline, not stacked glass cards
 6. `/portfolio` is Open → workshop reel → live questions → Power BI picture → GitHub list (no 3-up `GlassCard` grid)
@@ -80,7 +80,7 @@ Rules:
 | `ScrollLine` | `src/components/story/ScrollLine.tsx` | Top read bar; Hub / Portfolio / About / live (via AppChrome) |
 | `ScrollSpot` | `src/components/story/ScrollSpot.tsx` | Brightens the row in the viewport midline |
 | `StoryReveal` | `src/components/story/StoryReveal.tsx` | Scale/rise when a beat enters view |
-| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Proof/workshop reel: vertical scroll → cards move right (`lg+`) |
+| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Proof reel: vertical scroll → cards move right; swipe if reduced motion |
 
 AppChrome: pathname `/` is full-bleed. Other public pages stay `max-w-5xl` (live desks `max-w-6xl`). Do not silently widen Studio.
 

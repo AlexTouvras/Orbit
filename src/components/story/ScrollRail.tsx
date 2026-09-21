@@ -1,50 +1,32 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
-import { useHydrated } from "@/lib/use-hydrated";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
-const LG = "(min-width: 1024px)";
-
-function subscribeLg(callback: () => void) {
-  const mq = window.matchMedia(LG);
-  mq.addEventListener("change", callback);
-  return () => mq.removeEventListener("change", callback);
-}
-
-function useLgUp() {
-  return useSyncExternalStore(
-    subscribeLg,
-    () => window.matchMedia(LG).matches,
-    () => false,
-  );
-}
-
 /**
- * Case-study reel. On large screens, native vertical scroll drives the track
- * to the right (sticky + translateX). Phone / reduced motion: swipe rail.
- * The wheel is never captured.
+ * Case-study reel: native vertical scroll translates the track to the right
+ * (sticky + translateX). Reduced motion keeps a swipe rail. Wheel is never captured.
  */
 export function ScrollRail({
   header,
   children,
+  length = 3,
   className,
 }: {
   header?: ReactNode;
   children: ReactNode;
+  length?: number;
   className?: string;
 }) {
-  const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
-  const lg = useLgUp();
-  const linked = hydrated && !reduced && lg;
+  const live = !reduced;
 
   const sceneRef = useRef<HTMLDivElement>(null);
   const portRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [maxX, setMaxX] = useState(0);
+  const [maxX, setMaxX] = useState(() => Math.max(0, length - 1) * 720);
 
   const { scrollYProgress } = useScroll({
     target: sceneRef,
@@ -53,7 +35,7 @@ export function ScrollRail({
   const x = useTransform(scrollYProgress, [0, 1], [0, -maxX]);
 
   useEffect(() => {
-    if (!linked) return;
+    if (!live) return;
     const port = portRef.current;
     const track = trackRef.current;
     if (!port || !track) return;
@@ -66,31 +48,38 @@ export function ScrollRail({
     const ro = new ResizeObserver(measure);
     ro.observe(port);
     ro.observe(track);
-    return () => ro.disconnect();
-  }, [linked]);
-
-  if (!linked) {
-    return (
-      <div className={className}>
-        {header}
-        <div className="story-rail mt-12">{children}</div>
-      </div>
-    );
-  }
+    window.addEventListener("resize", measure);
+    const id = requestAnimationFrame(measure);
+    return () => {
+      cancelAnimationFrame(id);
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, [live, length]);
 
   return (
     <div
       ref={sceneRef}
       className={className}
-      style={{ height: `calc(100dvh - 9rem + ${maxX}px)` }}
+      data-scroll-rail={live ? "linked" : "swipe"}
+      style={live ? { height: `calc(100dvh - 9rem + ${maxX}px)` } : undefined}
     >
-      <div className="sticky top-24 flex h-[calc(100dvh-9rem)] flex-col justify-center overflow-hidden">
+      <div
+        className={
+          live
+            ? "sticky top-24 flex h-[calc(100dvh-9rem)] flex-col justify-center overflow-hidden"
+            : undefined
+        }
+      >
         {header}
-        <div ref={portRef} className="mt-12 overflow-hidden">
+        <div
+          ref={portRef}
+          className={live ? "mt-10 overflow-hidden" : "story-rail mt-12"}
+        >
           <motion.div
             ref={trackRef}
-            className="flex w-max gap-5"
-            style={{ x }}
+            className="flex w-max flex-nowrap gap-5"
+            style={live ? { x } : undefined}
           >
             {children}
           </motion.div>
@@ -108,12 +97,7 @@ export function ScrollRailCard({
   className?: string;
 }) {
   return (
-    <div
-      className={cn(
-        "w-[min(85vw,34rem)] shrink-0 sm:w-[min(72vw,38rem)]",
-        className,
-      )}
-    >
+    <div className={cn("w-[min(82vw,46rem)] shrink-0", className)}>
       {children}
     </div>
   );
