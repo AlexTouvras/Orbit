@@ -1,7 +1,52 @@
 {
-  "generatedAt": "2026-09-20T06:46:58.213Z",
-  "count": 214,
+  "generatedAt": "2026-09-21T06:46:56.173Z",
+  "count": 215,
   "items": [
+    {
+      "id": "e53dda14685d",
+      "title": "Cognitive Trap: Planning Certainty",
+      "link": "https://www.scrum.org/resources/blog/cognitive-trap-planning-certainty",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-21T04:00:00.000Z",
+      "contentSnippet": "Planning Certainty Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, and ada…"
+    },
+    {
+      "id": "cadfc7b3ccdf",
+      "title": "Does Your AI Know the Scrum Guide? Twelve Questions to Find Out",
+      "link": "https://www.scrum.org/resources/blog/does-your-ai-know-scrum-guide-twelve-questions-find-out",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-21T02:57:20.000Z",
+      "contentSnippet": "Image More and more participants in my Professional Scrum Master classes arrive with Scrum \"rules\" they picked up from an AI chatbot. Some of those rules are accurate. Some stopped being true in November 2020. And a few were never part of Scrum at all. The trouble is that from th…"
+    },
+    {
+      "id": "30fd4a039425",
+      "title": "Data Engineering Weekly #288",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-288",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-09-21T01:09:33.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "6eb24a57fa4d",
+      "title": "Find Unused Objects In Power BI Semantic Models With Semantic Link Labs",
+      "link": "https://blog.crossjoin.co.uk/2026/09/20/find-unused-objects-in-power-bi-semantic-models-with-semantic-link-labs/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-09-20T16:59:18.000Z",
+      "contentSnippet": "A few weeks ago I wrote about how Semantic Link Labs now has tools with interactive UIs and showed how you could use this to view lineage and so Vertipaq-Analyzer-stuff in a notebook. I didn’t show what I think is the coolest new feature though: the ability to find the tables, co…"
+    },
+    {
+      "id": "0005ee654c00",
+      "title": "AI on Top of a Dysfunctional System (1): The Product Backlog",
+      "link": "https://www.scrum.org/resources/blog/ai-top-dysfunctional-system-1-product-backlog",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-20T14:53:52.000Z",
+      "contentSnippet": "TL;DR: Polished Artifacts, Unchanged Decisions, Or Ten Backlog Anti-Patterns AI Makes Worse Add AI to a Product Backlog process that already struggles, and everything seems to improve within an afternoon. The problem is that polishing artifacts with AI doesn’t fix the root cause:…"
+    },
     {
       "id": "7f9543b7189e",
       "title": "Scrum's Meetings Are Capped at Five Hours a Week. Something Else Filled Your Calendar.",
@@ -460,24 +505,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-10T22:00:00.000Z",
       "contentSnippet": "\"Let's get this to green by Friday.\" Not the work. The status. The work was exactly where it had been on Monday, which is to say not ready, and everyone in the room knew it. But the report was due, red items invited questions, and questions invited attention nobody wanted. So a y…"
-    },
-    {
-      "id": "42c0fabe6154",
-      "title": "The AI Fluency Gap. Why Most Product Teams Are Stuck",
-      "link": "https://www.scrum.org/resources/blog/ai-fluency-gap-why-most-product-teams-are-stuck",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-10T16:38:59.000Z",
-      "contentSnippet": "Image Learning foreign languages was never my skill. I still think back to high school, when my French teacher looked at me disparagingly during our oral exam. It came as no surprise that I failed, not because my vocab was not great, but because I was not able to really communica…"
-    },
-    {
-      "id": "76a403a84103",
-      "title": "Is Your Agent Harness Still Learning? Check Its Last Updated Time.",
-      "link": "https://www.scrum.org/resources/blog/your-agent-harness-still-learning-check-its-last-updated-time",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-10T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. The oldest continuous-improvement metric works on your agent config There is a story about a Lean sensei who walked onto a factory floor, stopped at one workstation, looked at the standard work document posted above it, and told the manager…"
     },
     {
       "id": "ca291efb21c7",
@@ -1335,15 +1362,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "15ef990ae923",
-      "title": "The Benefits Of Using Direct Lake Mode In Power BI",
-      "link": "https://blog.crossjoin.co.uk/2026/07/12/the-benefits-of-using-direct-lake-mode-in-power-bi/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-07-12T20:57:00.000Z",
-      "contentSnippet": "This is a blog post I’ve been meaning to write for a long time. Since Fabric launched there has been a lot of focus on Direct Lake mode in Power BI and a lot of people used it because it was the cool new thing. Arguably, we at Microsoft have been guilty of telling people … Contin…"
-    },
-    {
       "id": "ec95d625f397",
       "title": "Beyond Redaction: Anatomy of a Privacy-Safe Data Platform",
       "link": "https://www.dataengineeringweekly.com/p/beyond-redaction-anatomy-of-a-privacy",
@@ -1567,15 +1585,6 @@
       "category": "Data",
       "pubDate": "2026-06-15T14:41:15.000Z",
       "contentSnippet": "Most orchestration systems answer questions about jobs, but organizations need answers about data. This post introduces the Orchestration Maturity Model and explains why enterprises adopt Dagster to move from job-centric orchestration to asset-aware data platforms."
-    },
-    {
-      "id": "838143ab53b5",
-      "title": "Data Engineering Weekly #274",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-274",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-06-15T05:29:03.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "d8f48e2feb16",
