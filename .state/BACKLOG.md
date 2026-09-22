@@ -30,6 +30,7 @@
 
 ## Next
 
+- [x] **Related articles: economics, credit, lab research** — Economics and Credit filters; VoxEU, BIS, Bank of England PRA, DeepMind, Google Research, Anthropic research mirror. Weekly intake includes the new lanes ahead of AI.
 - [x] **Visual storytelling Hub** — chaptered scroll on `/`; skill at `.cursor/skills/visual-storytelling`. Shipped to prod 2026-09-22 (owner asked to push).
 - [x] **Visual storytelling dashboards** — Open → Cast → Picture → Move → Close on each live desk (`DeskCast` / `DeskPicture` / `DeskClose`; missing uses desk `question`). Owner review desks after Hub.
 - [x] **Visual storytelling Portfolio** — `/portfolio` Open → workshop reel → live peek reel → Power BI picture → GitHub list → Close. No 3-up GlassCard grid.
@@ -43,19 +44,20 @@
 - [x] **Europe Economy Pulse** — `/portfolio/live/economy`. Euro area default + country/area spotlight; HICP, unemployment, confidence, GDP, ECB deposit.
 - [x] **Economy Pulse v2 — headlines** — ECB press/statistics for euro area; Google News economy wires per spotlight country. Cars later.
 - [x] **Economy Pulse — fresher HICP + DK/NO** — merge `prc_hicp_manr` + early `teicp000`; add Denmark and Norway spotlights.
-- [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
+- [ ] **Live desk snapshot clock** — GHA `Refresh live desks` daily 13:00 UTC (mix, housing, economy, EU Spot + pulse). Needs `ENTSOE_SECURITY_TOKEN` repo secret and a push so Vercel rebuilds. Nordic Equity stays on heatmap-web.
 - [x] Hub SDLC + Credit Risk field cards (Orbit-hosted HTML, HUD lanes, sitemap)
 - [x] SDLC opening in plain steps (plan, specify, design, build, test) — localhost 2026-09-22
 - [ ] **SDLC / Credit Risk source repos** — create `sdlc-field-card` and `credit-risk-field-card`, copy discovery + Apply review from analytics/delivery on a **monthly** cadence (1st 17:00 discover / 18:00 review). Register in `FIELD_CARDS` + `fleet.yaml`. Bind `hosted-field-card-monthly-review.json` in Cursor until those repos exist.
 - [x] **Local IDE: live field-card automations renamed Monthly** — GetAutomation 2026-09-21: AI / analytics / delivery / review all named Monthly, enabled.
 - [ ] **Hosted SDLC + Credit Risk Cursor automation** — confirm it exists (create from `hosted-field-card-monthly-review.json` if missing) and paste the UUID into `.state/AUTOMATION_CONTRACT.md`.
-- [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
+- [ ] **Live desk snapshot clock** — GHA `Refresh live desks` daily 13:00 UTC (mix, housing, economy, EU Spot + pulse). Needs `ENTSOE_SECURITY_TOKEN` repo secret and a push so Vercel rebuilds. Nordic Equity stays on heatmap-web.
 - [x] **EU Spot Desk (localhost)** — `/portfolio/live/eu-spot` map + history. Energy-Charts until ENTSO-E token. Do not deploy while `localhostOnly`.
 - [x] **EU Spot → ENTSO-E A44** — token in `.env.local`; `live:fetch-eu` prefers A44; `localhostOnly: false`. Consider public deploy after owner review.
 - [x] **EU Spot multi-domain pulse** — Market/Load/Gen/Transmission/Outages/Balancing/Operation/OMI; map hover + zone desk. Refresh: `npm run live:fetch-eu-pulse`.
 - [ ] **EU Spot public deploy** — confirm attribution + cron/GHA refresh; add `ENTSOE_SECURITY_TOKEN` on Vercel if server-side refresh.
 - [x] Field-card watchdog: drop Saturday cron; Friday pass + Monday escalate only
 - [x] Newsletter primary path = GHA Tuesday schedule (Vercel backup)
+- [x] Digest Ravens beats survive an unquoted colon in one knowledge title (resent 2026-09-22, run 35729975217)
 - [x] Draft featured Write: fitness coach Arc Mode (`when-the-coach-got-gate-ranks`)
 - [ ] Owner: deploy weekly Write Approve tap-target fix (preview bottom bar + Slack buttons) before next Monday notify
 - [ ] Owner: after happy with the shorter test mail, verify domain + unset `RESEND_NEWSLETTER_TEST_TO` for audience go-live

@@ -77,6 +77,19 @@ jobs:
     miss_if: "No Sunday plan post in #fitness and no coach-week commit since Saturday"
     proposed_fix: "Run Fitness Sunday plan automation (coach-week). Do not invent a week by hand."
 
+  - id: orbit-live-refresh
+    project: orbit
+    name: Live desk refresh
+    repo: AlexTouvras/Orbit
+    kind: github_actions
+    workflow: "Refresh live desks"
+    schedule: "16:00 daily (13:00 UTC)"
+    check: daily
+    expect:
+      gh_run_success_within_hours: 26
+    miss_if: "No successful live-desk refresh in the last 26 hours"
+    proposed_fix: "gh workflow run 'Refresh live desks' --repo AlexTouvras/Orbit. Confirm the ENTSOE_SECURITY_TOKEN repo secret is set."
+
   - id: orbit-news-refresh
     project: orbit
     name: News refresh

@@ -176,10 +176,14 @@ async function main() {
   }
 
   const byId = new Map<string, EuZoneSeries>();
-  if (fillOnly && fs.existsSync(out)) {
+  let keptPulses: EuSpotSnapshot["pulses"] | undefined;
+  if (fs.existsSync(out)) {
     const prev = JSON.parse(fs.readFileSync(out, "utf8")) as EuSpotSnapshot;
+    keptPulses = prev.pulses;
     for (const z of prev.zones ?? []) byId.set(z.id, z);
-    console.log(`[live:eu-spot] --fill keeping ${byId.size} existing zones`);
+    if (fillOnly) {
+      console.log(`[live:eu-spot] --fill keeping ${byId.size} existing zones`);
+    }
   }
 
   const skipped: string[] = [];
@@ -238,6 +242,7 @@ async function main() {
     localhostOnly: useEntsoe ? false : anyPrivate,
     zones,
     today: todayFixed,
+    pulses: keptPulses,
   };
 
   fs.mkdirSync(path.dirname(out), { recursive: true });

@@ -176,17 +176,32 @@ async function main() {
     `[live:mix] window ${start.toISOString()} → ${end.toISOString()}`,
   );
 
+  const out = path.join(process.cwd(), "data", "live", "power-mix.json");
+  const previous = new Map<string, CountryMixRow>();
+  if (fs.existsSync(out)) {
+    try {
+      const prev = JSON.parse(fs.readFileSync(out, "utf8")) as PowerMixSnapshot;
+      for (const row of prev.countries ?? []) previous.set(row.id, row);
+    } catch {
+      /* a broken snapshot should not block a fresh fetch */
+    }
+  }
+
   const countries: CountryMixRow[] = [];
+  const kept: string[] = [];
   for (const meta of COUNTRIES) {
     process.stdout.write(`[live:mix] ${meta.id}… `);
     const power = await fetchCountry(meta.id, start, end);
-    if (!power) {
-      console.log("skip");
-      continue;
-    }
-    const row = rowFromPower(meta, power);
+    const row = power ? rowFromPower(meta, power) : null;
     if (!row) {
-      console.log("empty");
+      const old = previous.get(meta.id);
+      if (old) {
+        countries.push(old);
+        kept.push(meta.id);
+        console.log("kept previous");
+      } else {
+        console.log(power ? "empty" : "skip");
+      }
       continue;
     }
     console.log(
@@ -215,11 +230,10 @@ async function main() {
     countries,
   };
 
-  const out = path.join(process.cwd(), "data", "live", "power-mix.json");
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, `${JSON.stringify(snap, null, 2)}\n`, "utf8");
   console.log(
-    `[live:mix] wrote ${out} · ${countries.length} countries · cleanest ${countries[0]?.label} (${countries[0]?.shares.fossil.toFixed(0)}% fossil)`,
+    `[live:mix] wrote ${out} · ${countries.length} countries · kept previous ${kept.length}: ${kept.join(", ") || "—"} · cleanest ${countries[0]?.label} (${countries[0]?.shares.fossil.toFixed(0)}% fossil)`,
   );
 }
 

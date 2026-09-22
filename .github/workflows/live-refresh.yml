@@ -1,0 +1,73 @@
+name: Refresh live desks
+
+# Native desks are JSON baked into the Vercel bundle (fs.readFileSync).
+# Nordic Equity is the exception: it fetches heatmap-web at request time.
+# This job must NOT use [skip ci] or [skip vercel] — a rebuild is the sync.
+# ENTSOE_SECURITY_TOKEN (repo secret) is required for EU Spot A44 + pulse.
+# Without it, mix / housing / economy still refresh and the run fails so ops notices.
+
+on:
+  schedule:
+    # 13:00 UTC = 16:00 Helsinki in summer, 15:00 in winter — after day-ahead ~14:00.
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch native desk snapshots
+        env:
+          ENTSOE_SECURITY_TOKEN: ${{ secrets.ENTSOE_SECURITY_TOKEN }}
+        run: |
+          set -uo pipefail
+          fail=0
+          npm run live:fetch-mix || fail=1
+          npm run live:fetch-economy || fail=1
+          npm run live:fetch-housing || fail=1
+          if [ -n "${ENTSOE_SECURITY_TOKEN:-}" ]; then
+            npm run live:fetch-eu || fail=1
+            npm run live:fetch-eu-pulse || fail=1
+          else
+            echo "::error::ENTSOE_SECURITY_TOKEN is not set — EU Spot left on the last committed snapshot"
+            fail=1
+          fi
+          echo "fetch_fail=$fail" >> "$GITHUB_ENV"
+          exit 0
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/live/economy.json \
+            data/live/eu-spot.json \
+            data/live/housing.json \
+            data/live/power-mix.json
+          if git diff --staged --quiet; then
+            echo "Live snapshots unchanged."
+          else
+            git commit -m "chore: refresh live desk snapshots"
+            git push
+          fi
+          if [ "${fetch_fail:-0}" != "0" ]; then
+            echo "One or more live fetches failed."
+            exit 1
+          fi

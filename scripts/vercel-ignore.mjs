@@ -96,6 +96,7 @@ function runSelfTest() {
     ]),
     false,
   );
+  assert.equal(shouldSkipBuild(["data/live/eu-spot.json"]), false);
   assert.equal(shouldSkipBuild(["data/profile.json"]), false);
   assert.equal(shouldSkipBuild(["data/published-projects.json"]), false);
   assert.equal(
