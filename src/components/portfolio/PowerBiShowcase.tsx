@@ -160,10 +160,12 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
   return (
     <section id="power-bi" className="scroll-mt-28" aria-label="Power BI reports">
       <ScrollRail
+        fit
         length={reports.length}
         header={
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div className="relative">
             <ChapterMark
+              className="[&>p:first-child]:max-w-[calc(100%-6.5rem)]"
               index="03"
               eyebrow="Analytics"
               title="Power BI"
@@ -174,7 +176,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
                 href={repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="focus-ring group inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-medium text-slate-300 hover:text-neon-cyan"
+                className="focus-ring group absolute right-0 top-0 z-30 inline-flex min-h-11 items-center gap-1 text-sm font-medium text-slate-300 hover:text-neon-cyan"
               >
                 View repo
                 <ExternalLink className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
@@ -220,16 +222,16 @@ function PowerBiRailCard({
   }
 
   return (
-    <ScrollRailCard>
-      <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
-        <div className="relative px-6 pt-6 sm:px-8 sm:pt-8">
+    <ScrollRailCard className="h-full min-h-0">
+      <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
+        <div className="relative shrink-0 px-5 pt-5 sm:px-8 sm:pt-8">
           <p className="story-index absolute right-4 top-2 select-none" aria-hidden>
             {pad(index + 1)}
           </p>
-          <h3 className="relative font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+          <h3 className="relative font-display text-xl font-semibold tracking-tight text-white sm:text-3xl">
             {report.title}
           </h3>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-300">
+          <p className="mt-2 line-clamp-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:mt-3 sm:line-clamp-none">
             {report.summary}
           </p>
         </div>
@@ -238,16 +240,16 @@ function PowerBiRailCard({
           type="button"
           onClick={() => onEnlarge(report, pageIndex)}
           onKeyDown={onPreviewKey}
-          className="focus-ring group relative mx-6 mt-5 block overflow-hidden rounded-xl border border-white/10 bg-void-800 text-left sm:mx-8"
+          className="focus-ring group relative mx-5 mt-3 flex min-h-0 flex-auto flex-col overflow-hidden rounded-xl border border-white/10 bg-void-800 text-left sm:mx-8 sm:mt-5"
           aria-label={`Enlarge ${report.title} — ${page.label}`}
         >
-          <span className="relative block aspect-[16/10] w-full">
+          <span className="relative block aspect-[16/9] min-h-[5rem] w-full min-w-0 flex-auto sm:aspect-[16/10] sm:min-h-0 sm:flex-none">
             {/* Native img: large report PNGs skip the image optimizer. */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={page.src}
               alt={`${report.title} — ${page.label}`}
-              className="h-full w-full object-contain object-top"
+              className="absolute inset-0 h-full w-full object-contain object-top"
               loading={index === 0 && pageIndex === 0 ? "eager" : "lazy"}
             />
           </span>
@@ -257,15 +259,17 @@ function PowerBiRailCard({
           </span>
         </button>
 
-        <div className="mt-auto flex flex-wrap items-center justify-between gap-3 px-6 py-5 sm:px-8">
+        <div className="mt-auto flex shrink-0 flex-col gap-2 px-5 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-8 sm:py-5">
           <div className="min-w-0">
-            <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500">
+            <p className="truncate font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500">
               {page.label}
               {pageCount > 1 ? ` · ${pageIndex + 1} / ${pageCount}` : ""}
             </p>
-            <p className="mt-1 max-w-md text-sm text-slate-400">{page.caption}</p>
+            <p className="mt-1 line-clamp-2 max-w-md text-sm text-slate-400 sm:line-clamp-none">
+              {page.caption}
+            </p>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex shrink-0 flex-wrap items-center gap-3">
             {report.liveUrl ? (
               <Link
                 href={report.liveUrl}

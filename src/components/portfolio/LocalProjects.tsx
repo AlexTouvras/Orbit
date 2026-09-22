@@ -30,6 +30,7 @@ export function LocalProjects() {
   return (
     <section id="workshop" className="scroll-mt-28">
       <ScrollRail
+        fit
         length={ordered.length}
         header={
           <ChapterMark
@@ -49,15 +50,15 @@ export function LocalProjects() {
           const hasLinks = Boolean(p.repoUrl || researchOrLive || caseStudy);
 
           return (
-            <ScrollRailCard key={p.id}>
-              <article className="relative flex h-full w-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-9">
+            <ScrollRailCard key={p.id} className="h-full min-h-0">
+              <article className="relative flex h-full min-h-0 w-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-9">
                 <p
                   className="story-index absolute right-4 top-2 select-none"
                   aria-hidden
                 >
                   {pad(i + 1)}
                 </p>
-                <div>
+                <div className="shrink-0">
                   <div className="flex flex-wrap items-center gap-2">
                     <StatusBadge status={p.status} />
                     {p.tags.slice(0, 2).map((tag) => (
@@ -66,17 +67,17 @@ export function LocalProjects() {
                       </Badge>
                     ))}
                   </div>
-                  <h3 className="relative mt-6 font-display text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl">
+                  <h3 className="relative mt-4 font-display text-xl font-semibold leading-tight tracking-tight text-white sm:mt-6 sm:text-3xl">
                     {p.name}
                   </h3>
-                  {p.description ? (
-                    <p className="mt-4 text-sm leading-relaxed text-slate-300 sm:text-base">
-                      {p.description}
-                    </p>
-                  ) : null}
                 </div>
+                {p.description ? (
+                  <p className="mt-3 min-h-0 shrink overflow-hidden text-sm leading-relaxed text-slate-300 sm:mt-4 sm:text-base">
+                    {p.description}
+                  </p>
+                ) : null}
                 {hasLinks ? (
-                  <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/8 pt-5 text-sm">
+                  <div className="mt-auto flex shrink-0 flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/8 pt-3 text-sm sm:pt-5">
                     {p.repoUrl ? (
                       <a
                         href={p.repoUrl}

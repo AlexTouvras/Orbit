@@ -16,11 +16,14 @@ export function ScrollRail({
   children,
   length = 3,
   className,
+  fit = false,
 }: {
   header?: ReactNode;
   children: ReactNode;
   length?: number;
   className?: string;
+  /** Keep header + cards inside the sticky frame so the whole card stays on screen. */
+  fit?: boolean;
 }) {
   const reduced = usePrefersReducedMotion();
   const live = !reduced;
@@ -76,26 +79,35 @@ export function ScrollRail({
       <div
         className={
           live
-            ? "sticky top-24 flex min-h-[calc(100dvh-7.5rem)] flex-col justify-center"
+            ? fit
+              ? "sticky top-24 flex h-[calc(100dvh-7.5rem)] max-h-[calc(100dvh-7.5rem)] flex-col overflow-hidden"
+              : "sticky top-24 flex min-h-[calc(100dvh-7.5rem)] flex-col justify-center"
             : undefined
         }
       >
-        {header}
-        <div
-          ref={portRef}
-          className={
-            live
-              ? "mt-8 w-full overflow-hidden [container-type:inline-size]"
-              : "story-rail mt-8 [container-type:inline-size]"
-          }
-        >
-          <motion.div
-            ref={trackRef}
-            className="flex w-max flex-nowrap items-stretch gap-5"
-            style={live ? { x } : undefined}
+        <div className={live && fit ? "my-auto flex min-h-0 w-full flex-col" : undefined}>
+          <div className={live && fit ? "shrink-0" : undefined}>{header}</div>
+          <div
+            ref={portRef}
+            className={
+              live
+                ? fit
+                  ? "mt-5 min-h-0 w-full shrink overflow-hidden [container-type:inline-size] sm:mt-8"
+                  : "mt-8 w-full overflow-hidden [container-type:inline-size]"
+                : "story-rail mt-8 [container-type:inline-size]"
+            }
           >
-            {children}
-          </motion.div>
+            <motion.div
+              ref={trackRef}
+              className={cn(
+                "flex w-max flex-nowrap items-stretch gap-5",
+                live && fit && "h-full max-h-full min-h-0",
+              )}
+              style={live ? { x } : undefined}
+            >
+              {children}
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>
