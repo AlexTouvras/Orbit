@@ -10,6 +10,8 @@ export const NEWS_CATEGORY_TONE: Record<NewsCategory, BadgeTone> = {
   Data: "blue",
   Delivery: "violet",
   Analytics: "neutral",
+  Economics: "amber",
+  Credit: "green",
 };
 
 export const NEWS_FILTER_TONE: Record<"All" | NewsCategory, BadgeTone> = {

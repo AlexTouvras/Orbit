@@ -243,7 +243,7 @@ Writes `data/news-cache.json`. The page reads only from this cache.
 
 ### Add/remove RSS sources
 
-Edit **`src/lib/news/sources.ts`** — each entry needs `name`, `url`, `category` (`AI`, `Data`, `Delivery`, or `Analytics`). Optional `maxItems` caps high-frequency feeds. The Related articles **All** view and weekly Write intake round-robin by category so daily AI posts do not drown Data / Analytics / Delivery.
+Edit **`src/lib/news/sources.ts`** — each entry needs `name`, `url`, `category` (`AI`, `Data`, `Delivery`, `Analytics`, `Economics`, or `Credit`). Optional `maxItems` caps high-frequency feeds. The Related articles **All** view and weekly Write intake round-robin by category so daily AI posts do not drown the other lanes.
 
 ### On a live server
 

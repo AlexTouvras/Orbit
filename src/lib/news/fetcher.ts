@@ -45,10 +45,24 @@ function isEnglishTitle(title: string): boolean {
   return true;
 }
 
+function itemTime(isoDate?: string, pubDate?: string): number {
+  const raw = isoDate ?? pubDate;
+  if (!raw) return 0;
+  const t = Date.parse(raw);
+  return Number.isNaN(t) ? 0 : t;
+}
+
 async function fetchFeed(source: FeedSource): Promise<NewsItem[]> {
   const feed = await parser.parseURL(source.url);
   const limit = source.maxItems ?? MAX_ITEMS_PER_FEED;
-  const items = (feed.items ?? []).slice(0, limit);
+  // Some mirrors (Anthropic research) list oldest first. Cap after sorting
+  // so maxItems keeps the latest papers, not the archive.
+  const items = [...(feed.items ?? [])]
+    .sort(
+      (a, b) =>
+        itemTime(b.isoDate, b.pubDate) - itemTime(a.isoDate, a.pubDate),
+    )
+    .slice(0, limit);
 
   return items
     .filter((item) => item.link && item.title)
@@ -58,7 +72,7 @@ async function fetchFeed(source: FeedSource): Promise<NewsItem[]> {
       const pubDate = item.isoDate ?? item.pubDate ?? null;
       return {
         id: stableId(link),
-        title: (item.title as string).trim(),
+        title: (item.title as string).replace(/\s+/g, " ").trim(),
         link,
         source: source.name,
         category: source.category,

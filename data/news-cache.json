@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-09-22T06:46:58.915Z",
-  "count": 215,
+  "generatedAt": "2026-09-22T12:54:35.539Z",
+  "count": 262,
   "items": [
+    {
+      "id": "196c90e841c9",
+      "title": "The hidden complexity of a daily average in DAX",
+      "link": "https://www.sqlbi.com/tv/the-hidden-complexity-of-a-daily-average-in-dax/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-09-22T10:00:00.000Z",
+      "contentSnippet": "A simple daily average can hide complexities and return different values. We explore several edge-case scenarios to build the desired calculation using AI to accelerate the development."
+    },
+    {
+      "id": "ba9acd5cf52a",
+      "title": "DuckDB Now Ships inside dbt v2",
+      "link": "https://duckdb.org/2026/09/22/dbt-fusion.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-09-22T00:00:00.000Z",
+      "contentSnippet": "dbt is the tool many data teams use to manage their SQL transformations: you write each model as a SELECT statement, and dbt works out the order to run them in from the references between models, builds the resulting tables and views in your database, and can test them along the…"
+    },
     {
       "id": "c079d2e63304",
       "title": "Jev introduces a new shape of LLM - System One, aka Decision Models",
@@ -10,6 +28,24 @@
       "category": "AI",
       "pubDate": "2026-09-21T23:09:20.000Z",
       "contentSnippet": ""
+    },
+    {
+      "id": "e5ae98e4c3da",
+      "title": "Building resilience to global financial shocks in emerging markets",
+      "link": "https://cepr.org/voxeu/columns/building-resilience-global-financial-shocks-emerging-markets",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-21T23:00:00.000Z",
+      "contentSnippet": "Emerging markets are vulnerable to sudden shifts in investor sentiment, which can lead to pressure on exchange rates and financing conditions. Using panel evidence from 23 emerging markets, this column shows that the sensitivity of portfolio flows to global shocks has weakened si…"
+    },
+    {
+      "id": "9d774c490fe0",
+      "title": "Productive firms can better spot and deploy their internal talent",
+      "link": "https://cepr.org/voxeu/columns/productive-firms-can-better-spot-and-deploy-their-internal-talent",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-21T23:00:00.000Z",
+      "contentSnippet": "When a job vacancy opens, the manager faces a choice: to hire from outside the organisation, or to fill the position with an existing employee through a promotion or horizontal move. This column uses data from Finland to show that more productive firms are more likely to hire fro…"
     },
     {
       "id": "855574f6d840",
@@ -111,6 +147,15 @@
       "contentSnippet": "Classify text in SQL with prompt_jev(), powered by TypeSafe's Jev. 100,000 rows labeled in 40 seconds for $0.50 at frontier-LLM accuracy. Live on paid plans."
     },
     {
+      "id": "923e0414880c",
+      "title": "Anatomy of a rise: Monetary policy and the post-Covid surge in long-term interest rates",
+      "link": "https://cepr.org/voxeu/columns/anatomy-rise-monetary-policy-and-post-covid-surge-long-term-interest-rates",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-20T23:00:00.000Z",
+      "contentSnippet": "The sharp rise in long-term interest rates since 2020 is difficult to explain from slow-moving fundamentals. This column shows that narrow windows around nonfarm payroll releases and speeches by prominent Federal Reserve policymakers capture 80-90% of the observed increase in lon…"
+    },
+    {
       "id": "6eb24a57fa4d",
       "title": "Find Unused Objects In Power BI Semantic Models With Semantic Link Labs",
       "link": "https://blog.crossjoin.co.uk/2026/09/20/find-unused-objects-in-power-bi-semantic-models-with-semantic-link-labs/",
@@ -138,6 +183,15 @@
       "contentSnippet": "Image Scrum has too many meetings. I have heard that sentence in training rooms since 2010 and for years I argued with it. Now I do the arithmetic on the whiteboard instead, because the Scrum Guide caps its own events and the cap is far below what anyone in the room guesses. Add…"
     },
     {
+      "id": "5ba5ae042347",
+      "title": "Beyond trade diversion: How the US-China trade war reshaped global production",
+      "link": "https://cepr.org/voxeu/columns/beyond-trade-diversion-how-us-china-trade-war-reshaped-global-production",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-19T23:00:00.000Z",
+      "contentSnippet": "Trade wars do not simply redirect exports; they also reshape the costs of production, disrupt supplier-customer relationships, and trigger adjustments within multinational firms’ global affiliate networks. This column uses data covering millions of manufacturing plants in 50 majo…"
+    },
+    {
       "id": "31b589224678",
       "title": "RADAR: Catch gray failures with anomaly detection",
       "link": "https://www.databricks.com/blog/radar-catch-gray-failures-anomaly-detection",
@@ -145,6 +199,24 @@
       "category": "Data",
       "pubDate": "2026-09-19T00:00:00.000Z",
       "contentSnippet": "Some of the most damaging outages are the ones your monitoring never flags: a slice..."
+    },
+    {
+      "id": "9b42f142d7ec",
+      "title": "Why we spend so much time in meetings",
+      "link": "https://cepr.org/voxeu/columns/why-we-spend-so-much-time-meetings",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-18T23:00:00.000Z",
+      "contentSnippet": "Few features of modern work are as widely criticised as meetings. Using data from over 9,000 workers in Norway, this column examines how meetings are organised and their effects on firm outcomes. The average worker in our survey spends 4.7 hours per week in meetings, with manager…"
+    },
+    {
+      "id": "90801afbca07",
+      "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
+      "link": "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-09-18T17:46:09.000Z",
+      "contentSnippet": "Algorithms & Theory"
     },
     {
       "id": "fd2a49355af9",
@@ -174,6 +246,33 @@
       "contentSnippet": "When DuckDB-Wasm was launched in 2021, databases could not be persisted: everything lived in the Wasm heap and vanished when the tab closed. Keeping data meant serializing tables to Parquet, storing the bytes in IndexedDB, and re-registering them on the next page load. This was d…"
     },
     {
+      "id": "2a9e51be59ac",
+      "title": "Loosening Inheritance Law",
+      "link": "https://cepr.org/multimedia/loosening-inheritance-law",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-17T23:00:00.000Z",
+      "contentSnippet": "In most of the world you do not get to choose who inherits your money. Across continental Europe, Latin America, and countries governed by Islamic law, a minimum share of your estate will be reserved for your children, your spouse, and in some places your surviving parents. Write…"
+    },
+    {
+      "id": "b560e1d4d346",
+      "title": "Fiscal unsustainability and capture: $40 trillion Treasury debt does not measure the risks; enhanced long-term repurchases don't improve them",
+      "link": "https://cepr.org/voxeu/columns/fiscal-unsustainability-and-capture-40-trillion-treasury-debt-does-not-measure-risks",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-17T23:00:00.000Z",
+      "contentSnippet": "US federal government debt exceeded $40 trillion in August 2026, triggering concerns about fiscal credibility and sustainability. This column argues that fiscal sustainability should be assessed using the consolidated balance sheet of the federal government and central bank and t…"
+    },
+    {
+      "id": "b89a5cc78ced",
+      "title": "New jobs in 140 years of data: Why the AI displacement fear is overstated — and what to worry about instead",
+      "link": "https://cepr.org/voxeu/columns/new-jobs-140-years-data-why-ai-displacement-fear-overstated-and-what-worry-about",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-17T23:00:00.000Z",
+      "contentSnippet": "Forecasts of AI-driven job destruction rest on counting automatable tasks. But labour markets hire, pay, and fire whole occupations, not tasks – and occupations have proved far more durable than task exposure implies. Drawing on 140 years of Swedish census and register data, this…"
+    },
+    {
       "id": "abcfa66a2190",
       "title": "Psychological Safety is not Impunity",
       "link": "https://www.scrum.org/resources/blog/psychological-safety-not-impunity",
@@ -181,6 +280,24 @@
       "category": "Delivery",
       "pubDate": "2026-09-17T22:00:00.000Z",
       "contentSnippet": "You can find him in the retro, though he rarely says much. He doesn't need to. The team has learned to write around him. Watch what happens to a good idea in this room. Someone proposes a real improvement, and before it's even finished, you can see a couple of people glance, just…"
+    },
+    {
+      "id": "26cb68725f0f",
+      "title": "The future of practice: Enabling teachers to create learning interactives with generative UI",
+      "link": "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-09-17T20:45:00.000Z",
+      "contentSnippet": "Education Innovation"
+    },
+    {
+      "id": "0389b68f0dfb",
+      "title": "How Claude is uplifting biomolecular modeling",
+      "link": "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-17T18:44:00.000Z",
+      "contentSnippet": "Claude made the open-source models that scientists use to predict and design biomolecules faster and more memory-efficient. Claude optimized more than 30 of these models in just under four weeks, speeding them up roughly 4x on average. It also created a low-memory mode that enabl…"
     },
     {
       "id": "99646313ef73",
@@ -264,6 +381,15 @@
       "contentSnippet": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work."
     },
     {
+      "id": "e37e271a8b83",
+      "title": "Maritime chokepoints and the global economy: evidence from the Strait of Hormuz",
+      "link": "https://www.bis.org/publications/working-paper-1378-maritime-chokepoints-and-the-global-economy-evidence-strait-hormuz",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-17T00:00:00.000Z",
+      "contentSnippet": "The conflict in the Middle East and the subsequent disruption of traffic in the Strait of Hormuz have triggered an unprecedented shock to the global economy. Using historical data from the IMF/University of Oxford Portwatch database on maritime traffic, this paper empirically exa…"
+    },
+    {
       "id": "bdbf442fb6ba",
       "title": "Fragments: September 16",
       "link": "https://martinfowler.com/fragments/2026-09-16.html",
@@ -345,6 +471,24 @@
       "contentSnippet": "If you’ve set up row level security in Power BI before, you know the usual drill: open the semantic model, add a role, write a DAX filter. But once your data lives inside a Microsoft Fabric OneLake structure, there’s a better way to do this. You can implement it directly in OneLa…"
     },
     {
+      "id": "e0b2eaa994e7",
+      "title": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train",
+      "link": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-09-15T20:00:00.000Z",
+      "contentSnippet": "Algorithms & Theory"
+    },
+    {
+      "id": "f4c3141ce9f2",
+      "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+      "link": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-15T17:05:57.000Z",
+      "contentSnippet": ""
+    },
+    {
       "id": "c52ed0ba8c64",
       "title": "Data Ontology defined: The context layer your AI agents are missing",
       "link": "https://www.databricks.com/blog/data-ontology-defined-context-layer-your-ai-agents-are-missing",
@@ -391,7 +535,7 @@
     },
     {
       "id": "7f26e801c464",
-      "title": "Na era da IA, ainda está a medir trabalho e esforço?   ou finalmente a medir valor?",
+      "title": "Na era da IA, ainda está a medir trabalho e esforço? ou finalmente a medir valor?",
       "link": "https://www.scrum.org/resources/blog/na-era-da-ia-ainda-esta-medir-trabalho-e-esforco-ou-finalmente-medir-valor",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -406,6 +550,15 @@
       "category": "Data",
       "pubDate": "2026-09-15T00:00:00.000Z",
       "contentSnippet": "SQLite, Postgres, DuckDB and 20 others: they all write, store and read data. The questions you ask every day tell you which one you need."
+    },
+    {
+      "id": "45f80c30fed0",
+      "title": "Hidden by complexity? Measuring stablecoin, crypto and decentralised finance ecosystems",
+      "link": "https://www.bis.org/publications/working-paper-1377-hidden-complexity-measuring-stablecoin-crypto-and-decentralised-finance-ecosystems",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-15T00:00:00.000Z",
+      "contentSnippet": "Decentralised finance data presents a distinctive paradox: while every data point is publicly recorded and accessible, deriving meaningful insights is obscured by the scale, fragmentation and complexity of the ecosystem. Key metrics illustrate that the rapidly evolving DeFi ecosy…"
     },
     {
       "id": "bb32dc5073c5",
@@ -489,6 +642,15 @@
       "contentSnippet": "We're launching commercial support for open-source DuckDB, so every organization can get the power of a modern data engine, with direct access to database experts."
     },
     {
+      "id": "44d480b02c13",
+      "title": "BIS Quarterly Review, September 2026",
+      "link": "https://www.bis.org/publications/qr-202609",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-14T00:00:00.000Z",
+      "contentSnippet": ""
+    },
+    {
       "id": "8bbe78103d32",
       "title": "Find What Changed And When In Your Power BI Semantic Model",
       "link": "https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/",
@@ -534,6 +696,24 @@
       "contentSnippet": "Image My current car is a Peugeot 508, over ten years old, yet still a great car that I genuinely love. But recently, one of my friends bought a brand-new car and invited me inside to check out the interior and features. My reaction? Wow. A large, high-quality screen with big, re…"
     },
     {
+      "id": "edd61c314290",
+      "title": "ToolGrad: Efficient tool-use dataset generation with textual \"gradients\"",
+      "link": "https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-09-10T22:50:22.000Z",
+      "contentSnippet": "Machine Intelligence"
+    },
+    {
+      "id": "b007b558c779",
+      "title": "Measuring tactical intelligence targeting and conventional weapons capabilities of AI models",
+      "link": "https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-10T17:00:00.000Z",
+      "contentSnippet": "Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development."
+    },
+    {
       "id": "ca291efb21c7",
       "title": "Why DuckDB 2.0 is faster",
       "link": "https://motherduck.com/blog/why-duckdb-20-is-faster",
@@ -552,6 +732,24 @@
       "contentSnippet": "A quick survey of recent engagement of my posts on social media, indicating which service has by far the most engagement, and which service has seen a precipitous decline since early 2025. more…"
     },
     {
+      "id": "8e96172c31dd",
+      "title": "An alignment assessment of recent cybersecurity incidents",
+      "link": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-09T15:00:00.000Z",
+      "contentSnippet": "We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems."
+    },
+    {
+      "id": "7b90b3111d4c",
+      "title": "When machines attack: frontier AI cyber threats and policy responses in the financial sector",
+      "link": "https://www.bis.org/publications/fsi-paper-28-when-machines-attack-frontier-ai-cyber-threats-and-policy-responses-financial-sector",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-09T00:00:00.000Z",
+      "contentSnippet": "Frontier artificial intelligence (AI) models are a game changer in the cyber threat landscape. Unlike earlier generations of AI models, they can autonomously identify critical vulnerabilities, develop effective exploits and conduct increasingly complex multi-step cyber operations…"
+    },
+    {
       "id": "5a4baff754f8",
       "title": "Some thoughts on the Navier–Stokes Millennium Prize Problem",
       "link": "https://simonwillison.net/2026/Sep/8/on-navier-stokes/",
@@ -562,12 +760,21 @@
     },
     {
       "id": "fbcbe1a52ca4",
-      "title": "Fragments: September  8",
+      "title": "Fragments: September 8",
       "link": "https://martinfowler.com/fragments/2026-09-08.html",
       "source": "Martin Fowler",
       "category": "Delivery",
       "pubDate": "2026-09-08T15:22:00.000Z",
       "contentSnippet": "Christian Catalini says we’re in a situation where we are vastly reducing the cost of generating things, but not the cost of verifying them:. This explains why the first major AI products appeared in chat, image generation, and code assistance. Not because these were the hardest…"
+    },
+    {
+      "id": "80d284f58871",
+      "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
+      "link": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-08T14:00:15.000Z",
+      "contentSnippet": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome."
     },
     {
       "id": "38e1528c668d",
@@ -606,6 +813,15 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "4bc149b71afd",
+      "title": "What determines banks' excess demand for reserves?",
+      "link": "https://www.bis.org/publications/working-paper-1376-what-determines-banks-excess-demand-reserves",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-07T00:00:00.000Z",
+      "contentSnippet": "The amount of central bank reserves to supply has become a highly contentious policy issue for many central banks that shrink their balance sheets which were built up during quantitative easing."
+    },
+    {
       "id": "276160ac62d4",
       "title": "Choosing A Power BI Storage Mode For Reporting On Data From Azure Databricks",
       "link": "https://blog.crossjoin.co.uk/2026/09/06/choosing-a-power-bi-storage-mode-for-reporting-on-data-from-azure-databricks/",
@@ -642,6 +858,15 @@
       "contentSnippet": "In this episode of Fabric Insider, I sat down with Josh Caplan, Director of Product for OneLake at Microsoft. Josh has been around this product family for a long time, starting as an intern on the Analysis Services team back in 2007, working on Project Gemini (which became Power…"
     },
     {
+      "id": "44c50944f9bd",
+      "title": "Formalizing Fermat's Last Theorem",
+      "link": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-04T15:27:00.000Z",
+      "contentSnippet": "We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language."
+    },
+    {
       "id": "3fe5160e7acc",
       "title": "Implementing SCD Type 2 in Microsoft Fabric – The Definitive Guide!",
       "link": "https://data-mozart.com/implementing-scd-type-2-in-microsoft-fabric-the-definitive-guide/?utm_source=rss&utm_medium=rss&utm_campaign=implementing-scd-type-2-in-microsoft-fabric-the-definitive-guide",
@@ -649,6 +874,51 @@
       "category": "Analytics",
       "pubDate": "2026-09-04T13:41:48.000Z",
       "contentSnippet": "Slowly Changing Dimensions (SCD) are one of the fundamental concepts in dimensional modeling. If you are not sure what dimensional modeling is, I suggest you first check the series of articles I wrote on data modeling some time ago. And, when it comes to SCD in particular, SCD Ty…"
+    },
+    {
+      "id": "98769dd27a53",
+      "title": "Transfer learning for genomic prediction in underrepresented populations",
+      "link": "https://research.google/blog/transfer-learning-for-genomic-prediction-in-underrepresented-populations/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-09-03T18:20:31.000Z",
+      "contentSnippet": "General Science"
+    },
+    {
+      "id": "3aacd1631c19",
+      "title": "A connectomics milestone: Mapping the complete male fruit fly brain",
+      "link": "https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-09-03T16:00:03.000Z",
+      "contentSnippet": "General Science"
+    },
+    {
+      "id": "56da2c8ef803",
+      "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
+      "link": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-03T15:02:08.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "206a5fbbe779",
+      "title": "Simple, resilient and proportional: revisiting regulation for small banks",
+      "link": "https://www.bis.org/publications/fsi-insight-78-simple-resilient-and-proportional-revisiting-regulation-small-banks",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-03T00:00:00.000Z",
+      "contentSnippet": "Small banks are the backbone of local economies but have distinct business models and risk profiles compared to larger banks. Recognising these differences, the Basel Committee on Banking Supervision (BCBS) promotes proportionality in global banking standards, encouraging tailore…"
+    },
+    {
+      "id": "549e2a111dfd",
+      "title": "Zombie firms in emerging Asia: domestic and cross border implications",
+      "link": "https://www.bis.org/publications/working-paper-1375-zombie-firms-emerging-asia-domestic-and-cross-border-implications",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-03T00:00:00.000Z",
+      "contentSnippet": "Using firm-bank linked data for 10 Asian emerging market economies (EMEs) over 2005–2021, we study the domestic and cross-border implications of zombie firms. We document three main findings."
     },
     {
       "id": "6ccaaf4161a3",
@@ -678,6 +948,15 @@
       "contentSnippet": "This is the third and final part of the series on agency. Part one explained what agency actually is, and part two looked at what a lack of agency looks like in practice. This part could almost be short. Most of it is already captured in the fifth principle of the Agile Manifesto…"
     },
     {
+      "id": "383dbcd782ab",
+      "title": "Proactive cyber defense for governments and enterprises",
+      "link": "https://deepmind.google/blog/proactive-cyber-defense-for-governments-and-enterprises/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-02T16:24:24.000Z",
+      "contentSnippet": ""
+    },
+    {
       "id": "9ec1882bb0be",
       "title": "Microsoft Fabric in GCC High: Building the data foundation for AI",
       "link": "https://www.microsoft.com/en-us/microsoft-cloud/blog/us-government/2026/09/02/microsoft-fabric-in-gcc-high-building-the-data-foundation-for-ai/",
@@ -685,6 +964,15 @@
       "category": "Analytics",
       "pubDate": "2026-09-02T16:22:54.000Z",
       "contentSnippet": "Government organizations are ready to move beyond using AI to answer questions and toward intelligent systems and agents that can take action. The post Microsoft Fabric in GCC High: Building the data foundation for AI appeared first on Microsoft Fabric Blog."
+    },
+    {
+      "id": "18ef68f77655",
+      "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+      "link": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-02T16:18:31.000Z",
+      "contentSnippet": ""
     },
     {
       "id": "8182327ec6e3",
@@ -750,6 +1038,15 @@
       "contentSnippet": "We analyzed a slice of MotherDuck query history and found agents ran 29 times more queries than humans last month, a gap that has roughly doubled every month. The average organization now has twice as many agents as human users. Agents are the dominant consumers of the data platf…"
     },
     {
+      "id": "1e1f2f14657b",
+      "title": "Verifiable official statistics: a blockchain-based approach",
+      "link": "https://www.bis.org/publications/working-paper-1374-verifiable-official-statistics-blockchain-based-approach",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-02T00:00:00.000Z",
+      "contentSnippet": "International organisations including the Bank for International Settlements (BIS) have adopted SDMx (Statistical Data and Metadata) as the standard for exchanging official statistics. Trust in published data is essential for evidence-based policymaking. This paper shows how bind…"
+    },
+    {
       "id": "ab12481175ff",
       "title": "Claude Fable 5.1 made me a really nice animated pelican",
       "link": "https://simonwillison.net/2026/Sep/1/claude-fable-5-1/",
@@ -760,7 +1057,7 @@
     },
     {
       "id": "ce78c56fbdad",
-      "title": "Fragments: September  1",
+      "title": "Fragments: September 1",
       "link": "https://martinfowler.com/fragments/2026-09-01.html",
       "source": "Martin Fowler",
       "category": "Delivery",
@@ -793,6 +1090,15 @@
       "category": "Analytics",
       "pubDate": "2026-08-30T17:24:52.000Z",
       "contentSnippet": "Several years ago I wrote a very popular blog post about how to store images for your reports inside your Power BI semantic model. It solved the problem of how you could use display images (for example of products) inside your reports without making those images available via a p…"
+    },
+    {
+      "id": "293bd11dfc89",
+      "title": "Automated researchers can reliably mitigate alignment failures",
+      "link": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-08-28T17:00:00.000Z",
+      "contentSnippet": "We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities."
     },
     {
       "id": "3de08a17cfd8",
@@ -838,6 +1144,15 @@
       "category": "Data",
       "pubDate": "2026-08-27T00:00:00.000Z",
       "contentSnippet": "Meet the MotherDuck CLI: one install to query data, publish Python pipelines, and host dashboards from your terminal, for coding agents and CI alike."
+    },
+    {
+      "id": "6b13cfdefeab",
+      "title": "Enabling independent research on how people use Claude",
+      "link": "https://www.anthropic.com/research/enabling-independent-research",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-08-26T18:00:00.000Z",
+      "contentSnippet": "We ran a pilot giving external researchers access to aggregate, real-world Claude usage data. In this post, we share high-level results and what we learned running this pilot."
     },
     {
       "id": "8c836a70161f",
@@ -1029,15 +1344,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "6e46e7ef28d8",
-      "title": "A Preview of DuckDB v2.0",
-      "link": "https://duckdb.org/2026/08/17/duckdb-20-highlights.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-08-17T00:00:00.000Z",
-      "contentSnippet": "DuckDB v2.0 will be named “Cyanoptera” after the cinnamon teal (Anas cyanoptera), a strikingly reddish-brown duck found in the western Americas. A major version bump is not something we do lightly, and it is not just ceremony: v2.0 ships a new SQL parser, a new default storage fo…"
-    },
-    {
       "id": "c42698bae58b",
       "title": "Displaying The Output Of Detail Rows Expressions In Power BI Reports Using The Paginated Report Visual",
       "link": "https://blog.crossjoin.co.uk/2026/08/16/displaying-the-output-of-detail-rows-expressions-in-power-bi-reports-using-the-paginated-report-visual/",
@@ -1173,6 +1479,15 @@
       "contentSnippet": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
     },
     {
+      "id": "6a47534fda8a",
+      "title": "The PRA will hold a captive insurance industry roundtable",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/august/pra-holds-captive-insurance-industry-roundtable",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-08-06T09:00:00.000Z",
+      "contentSnippet": "On 17 September 2026, the PRA will host a roundtable in relation to CP11/26 – A tailored regime for captive insurance."
+    },
+    {
       "id": "2aff593adf2a",
       "title": "On Benchmarking",
       "link": "https://www.dataengineeringweekly.com/p/on-benchmarking",
@@ -1192,7 +1507,7 @@
     },
     {
       "id": "b557000206d1",
-      "title": "Fragments: August  4",
+      "title": "Fragments: August 4",
       "link": "https://martinfowler.com/fragments/2026-08-04.html",
       "source": "Martin Fowler",
       "category": "Delivery",
@@ -1218,6 +1533,24 @@
       "contentSnippet": "If you've tried to check how much storage your Fabric warehouse tables consume, you've probably discovered that the usual SQL Server approaches don't work. This post explains why, what else doesn't work, and the one approach that does The post How to check table sizes in a Micros…"
     },
     {
+      "id": "f1343edd8e74",
+      "title": "PRA Regulatory Digest – July 2026",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/regulatory-digest/2026/july-2026",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-08-03T09:00:00.000Z",
+      "contentSnippet": "The PRA Regulatory Digest is for people working in the UK financial services industry and highlights key regulatory news and publications delivered for the month."
+    },
+    {
+      "id": "640d7055eb58",
+      "title": "Mortgage Lock-in: A Review of the Literature",
+      "link": "https://www.atlantafed.org/-/media/Project/Atlanta/FRBA/Documents/research/publication/working-paper/2026/08/03/11-mortgage-lock-in-review-of-the-literature.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-08-03T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Atlanta Working Papers by Kristopher Gerardi, David Hao Zhang and Franklin Qian"
+    },
+    {
       "id": "ccf4833e2826",
       "title": "Data Integration, Migration & the Future of ETL in Microsoft Fabric — A Conversation with Wee Hyong Tok | Fabric Insider Ep. 9",
       "link": "https://radacad.com/data-integration-migration-the-future-of-etl-in-microsoft-fabric-a-conversation-with-wee-hyong-tok-fabric-insider-ep-9/?utm_source=rss&utm_medium=rss&utm_campaign=data-integration-migration-the-future-of-etl-in-microsoft-fabric-a-conversation-with-wee-hyong-tok-fabric-insider-ep-9",
@@ -1234,6 +1567,24 @@
       "category": "Analytics",
       "pubDate": "2026-08-02T17:52:45.000Z",
       "contentSnippet": "This week there was another big Copilot-related announcement for Power BI – but on the Excel blog. You can now analyse data from Power BI semantic models using Copilot in Excel. Full details on how to enable this are in the docs here, but what does it look like? Using the same se…"
+    },
+    {
+      "id": "7401bc123f1d",
+      "title": "The transmission of shocks across sectors and the dynamics of sectoral prices",
+      "link": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3266~e62e35205b.en.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-08-01T00:00:00.000Z",
+      "contentSnippet": "European Central Bank Working Papers by Francesca Monti and Leïla Van Keirsbilck"
+    },
+    {
+      "id": "c8ecba0edbfe",
+      "title": "Commercial real estate debt financing in Europe: evidence from a network analysis",
+      "link": "https://www.esrb.europa.eu//pub/pdf/wp/esrb.wp155.en.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-08-01T00:00:00.000Z",
+      "contentSnippet": "European Systemic Risk Board Working Papers by Frauke Skudelny, Mihai Aliman, Martin Regnér, Cecilia Sarchi and Matteo Valetto"
     },
     {
       "id": "1130e94af268",
@@ -1254,6 +1605,33 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "d9adb789161e",
+      "title": "How Firms Form Beliefs and the Implications for Inflation",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
+    },
+    {
+      "id": "07b1c1c9fdb7",
+      "title": "Credit Surfaces and Economic Uncertainty",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
+    },
+    {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
+    },
+    {
       "id": "dafe9a2bbb83",
       "title": "The Economic Benefit of Refactoring",
       "link": "https://martinfowler.com/articles/exploring-gen-ai/refactoring-economic-benefit.html",
@@ -1270,6 +1648,33 @@
       "category": "Data",
       "pubDate": "2026-07-30T12:28:26.000Z",
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
+    },
+    {
+      "id": "16fe89b83e2e",
+      "title": "LIAF02/26 – Low Impact Amendments Finalisation July 2026",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-finalisation-july-2026",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Low Impact Amendments Finalisation July 2026"
+    },
+    {
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Policy statement 18/26"
+    },
+    {
+      "id": "054894a68cbf",
+      "title": "LIAC02/26 – Low Impact Amendments Consultation July 2026",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-consultation-july-2026",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Low Impact Amendments Consultation July 2026"
     },
     {
       "id": "fb549b859ee4",
@@ -1326,6 +1731,24 @@
       "contentSnippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
     },
     {
+      "id": "7af90d58db71",
+      "title": "CP12/26 – Insurance friendly societies, amalgamations and transfers",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/insurance-friendly-societies-amalgamations-and-transfers-consultation-paper",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-22T09:00:00.000Z",
+      "contentSnippet": "Consultation paper 12/26"
+    },
+    {
+      "id": "fb91e6df40a1",
+      "title": "Inference Based on Scale, Label, and Economic Restrictions",
+      "link": "https://www.philadelphiafed.org/-/media/frbp/assets/working-papers/2026/wp26-36.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-22T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Philadelphia Working Papers by Daniel F. Waggoner, Juan Francisco Rubio-Ramírez and Jonas E. Arias"
+    },
+    {
       "id": "513a069a215f",
       "title": "Data Engineering Weekly #279",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-279",
@@ -1342,6 +1765,15 @@
       "category": "Analytics",
       "pubDate": "2026-07-19T17:46:53.000Z",
       "contentSnippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
+    },
+    {
+      "id": "4c8cd6ef9ad3",
+      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
+      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-17T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
     },
     {
       "id": "03946207f0a8",
@@ -1612,15 +2044,6 @@
       "category": "Analytics",
       "pubDate": "2026-06-02T17:00:00.000Z",
       "contentSnippet": "Microsoft Build 2026 highlights advancements in app development with Microsoft Fabric and Microsoft Databases, emphasizing a unified data and AI platform for scalable, agentic applications. The post Microsoft Build 2026: Building agentic apps with Microsoft Fabric and Microsoft D…"
-    },
-    {
-      "id": "187915d15f2a",
-      "title": "ALL vs ALLSELECTED vs ALLEXCEPT vs REMOVEFILTERS",
-      "link": "https://www.sqlbi.com/tv/all-vs-allselected-vs-allexcept-vs-removefilters/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-06-02T10:00:00.000Z",
-      "contentSnippet": "Learn the differences between similar but different DAX functions that remove filters from the filter context."
     },
     {
       "id": "f8dc249805ef",

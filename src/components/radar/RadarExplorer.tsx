@@ -16,6 +16,8 @@ const FILTERS: ("All" | NewsCategory)[] = [
   "Data",
   "Analytics",
   "Delivery",
+  "Economics",
+  "Credit",
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;

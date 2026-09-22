@@ -24,6 +24,8 @@ export function RadarHero({
     { label: "Data", value: String(categoryCounts.Data ?? 0) },
     { label: "Analytics", value: String(categoryCounts.Analytics ?? 0) },
     { label: "Delivery", value: String(categoryCounts.Delivery ?? 0) },
+    { label: "Economics", value: String(categoryCounts.Economics ?? 0) },
+    { label: "Credit", value: String(categoryCounts.Credit ?? 0) },
   ];
 
   return (
@@ -38,7 +40,7 @@ export function RadarHero({
       avatarUrl={avatarUrl}
       title="Related"
       headline={{ line: "What I read", accent: "before I decide." }}
-      description="External writing on delivery, data, and AI. I keep a piece when it changes a requirement or a check."
+      description="External writing on delivery, data, AI, economics, and banking. I keep a piece when it changes a requirement or a check."
       stats={stats}
       meta={
         generatedAt ? (

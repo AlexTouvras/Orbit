@@ -1,4 +1,10 @@
-export type NewsCategory = "AI" | "Data" | "Delivery" | "Analytics";
+export type NewsCategory =
+  | "AI"
+  | "Data"
+  | "Delivery"
+  | "Analytics"
+  | "Economics"
+  | "Credit";
 
 export interface NewsItem {
   id: string;

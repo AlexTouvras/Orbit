@@ -169,7 +169,9 @@ export function MissionHero({
               "mt-8 grid gap-4 border-y border-white/8 py-5 sm:gap-6",
               stats.length <= 3
                 ? "max-w-xl grid-cols-3"
-                : "max-w-3xl grid-cols-2 sm:grid-cols-3 md:grid-cols-5",
+                : stats.length > 5
+                  ? "max-w-3xl grid-cols-2 sm:grid-cols-4"
+                  : "max-w-3xl grid-cols-2 sm:grid-cols-3 md:grid-cols-5",
             )}
           >
             {stats.map((stat) => (

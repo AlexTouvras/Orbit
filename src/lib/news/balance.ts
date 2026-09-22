@@ -46,10 +46,12 @@ export function interleaveByCategory(
   return out;
 }
 
-/** Prefer Analytics → Data → Delivery → AI when filling a fixed slot budget. */
+/** Prefer quieter lanes first when filling a fixed slot budget. AI stays last. */
 export const INTAKE_CATEGORY_ORDER: NewsCategory[] = [
   "Analytics",
   "Data",
   "Delivery",
+  "Economics",
+  "Credit",
   "AI",
 ];

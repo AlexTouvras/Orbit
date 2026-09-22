@@ -18,11 +18,13 @@ export interface FeedSource {
  * Add a new feed by dropping one entry here — no UI changes required.
  * Each feed is fetched independently; a single broken feed never breaks the rest.
  *
- * Balance notes (2026-07):
- * - AI publishes daily; Data/Analytics/Delivery are often weekly — keep AI sources few
- *   and prefer blog posts over link-dumps (Simon `entries` vs `everything`).
- * - Prefer fresh Power BI / Fabric / data-platform blogs over stale topic feeds
- *   (InfoQ DevOps topic feed was years behind).
+ * Balance notes:
+ * - AI publishes daily; other lanes are often weekly — keep AI sources few
+ *   and prefer posts over link-dumps (Simon `entries` vs `everything`).
+ * - Lab research (DeepMind, Google Research, Anthropic) stays in AI with a
+ *   low cap. Anthropic publishes no RSS; the Turing Institute mirror is
+ *   oldest-first, so the fetcher sorts by date before applying maxItems.
+ * - Economics and Credit are research and supervision, not newswires.
  */
 export const FEED_SOURCES: FeedSource[] = [
   // --- AI (keep lean — high publish rate) ---
@@ -38,6 +40,25 @@ export const FEED_SOURCES: FeedSource[] = [
     url: "https://simonwillison.net/atom/entries/",
     category: "AI",
     maxItems: 8,
+  },
+  {
+    name: "Google DeepMind",
+    url: "https://deepmind.google/blog/rss.xml",
+    category: "AI",
+    maxItems: 5,
+  },
+  {
+    name: "Google Research",
+    url: "https://research.google/blog/rss/",
+    category: "AI",
+    maxItems: 6,
+  },
+  {
+    // anthropic.com/research has no RSS link. Alan Turing Institute mirror.
+    name: "Anthropic Research",
+    url: "https://raw.githubusercontent.com/alan-turing-institute/ai-rss-feeds/refs/heads/main/feeds/anthropic-research.xml",
+    category: "AI",
+    maxItems: 6,
   },
 
   // --- Data (engineering / platforms) ---
@@ -115,6 +136,34 @@ export const FEED_SOURCES: FeedSource[] = [
     url: "https://data-mozart.com/feed/",
     category: "Analytics",
   },
+
+  // --- Economics (columns and working papers, not market wires) ---
+  {
+    name: "VoxEU",
+    url: "https://cepr.org/rss/vox-content",
+    category: "Economics",
+    maxItems: 8,
+  },
+  {
+    name: "BIS Research",
+    url: "https://www.bis.org/doclist/reshub_papers.rss",
+    category: "Economics",
+    maxItems: 8,
+  },
+
+  // --- Credit (banking supervision and financial stability) ---
+  {
+    name: "BIS Financial Stability",
+    url: "https://www.bis.org/doclist/bis_fsi_publs.rss",
+    category: "Credit",
+    maxItems: 8,
+  },
+  {
+    name: "Bank of England PRA",
+    url: "https://www.bankofengland.co.uk/rss/prudential-regulation-publications",
+    category: "Credit",
+    maxItems: 6,
+  },
 ];
 
 export const NEWS_CATEGORIES: NewsCategory[] = [
@@ -122,4 +171,6 @@ export const NEWS_CATEGORIES: NewsCategory[] = [
   "Data",
   "Delivery",
   "Analytics",
+  "Economics",
+  "Credit",
 ];

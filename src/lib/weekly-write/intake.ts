@@ -55,7 +55,7 @@ export function buildWeeklyIntake(options?: {
   const maxAgeDays = options?.maxAgeDays ?? 10;
 
   const cache = readNewsCache();
-  // Round-robin Analytics → Data → Delivery → AI so weekly essays aren't AI-only.
+  // Round-robin so weekly essays are not AI-only. Economics and Credit sit ahead of AI.
   const recent = interleaveByCategory(
     cache.items.filter((item) => daysAgo(item.pubDate, maxAgeDays)),
     INTAKE_CATEGORY_ORDER,

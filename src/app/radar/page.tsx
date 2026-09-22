@@ -13,7 +13,7 @@ import { getEditableProfile } from "@/lib/profile-store";
 export const metadata: Metadata = {
   title: "Related articles",
   description:
-    "Curated reading across AI, Data, Analytics (Power BI / Fabric), and Delivery — aggregated from RSS and served from cache.",
+    "Curated reading across AI, data, analytics, delivery, economics, and credit risk — aggregated from RSS and served from cache.",
   alternates: { canonical: "/radar" },
 };
 
@@ -34,7 +34,14 @@ export default async function RadarPage() {
       acc[item.category] = (acc[item.category] ?? 0) + 1;
       return acc;
     },
-    { AI: 0, Data: 0, Delivery: 0, Analytics: 0 } as Record<NewsCategory, number>,
+    {
+      AI: 0,
+      Data: 0,
+      Delivery: 0,
+      Analytics: 0,
+      Economics: 0,
+      Credit: 0,
+    } as Record<NewsCategory, number>,
   );
 
   return (
@@ -79,7 +86,7 @@ export default async function RadarPage() {
               </h3>
               <p className="mt-2 max-w-md text-sm text-slate-300">
                 Items will appear here when the feed refreshes. Check back soon
-                for curated updates across AI, Data, Analytics, and Delivery.
+                for curated updates across AI, data, analytics, delivery, economics, and credit risk.
               </p>
             </GlassCard>
           )}
