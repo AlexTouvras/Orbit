@@ -1,7 +1,70 @@
 {
-  "generatedAt": "2026-09-21T06:46:56.173Z",
+  "generatedAt": "2026-09-22T06:46:58.915Z",
   "count": 215,
   "items": [
+    {
+      "id": "c079d2e63304",
+      "title": "Jev introduces a new shape of LLM - System One, aka Decision Models",
+      "link": "https://simonwillison.net/2026/Sep/21/jev/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-21T23:09:20.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "855574f6d840",
+      "title": "The hidden complexity of a daily average in DAX",
+      "link": "https://www.sqlbi.com/articles/the-hidden-complexity-of-a-daily-average-in-dax/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-09-21T20:00:08.000Z",
+      "contentSnippet": "A simple daily average masks a level of complexity that may not be immediately apparent. In this article, we use AI to create a daily average, and then to analyze several edge-case scenarios to build a sound calculation. Computing an…"
+    },
+    {
+      "id": "70fbea204604",
+      "title": "Finding AI Gold With Lean Startup Techniques",
+      "link": "https://www.scrum.org/resources/blog/finding-ai-gold-lean-startup-techniques",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-21T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. How do we deliver valuable real-world AI impact through solutions that solve problems, using some of what we've learned by building products over the last couple of decades? We're not seeing the value yet Unless you've been in a cave, you'r…"
+    },
+    {
+      "id": "a7ca59844a94",
+      "title": "Advisory Group on Mathematics and Artificial Intelligence",
+      "link": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-21T12:00:00.000Z",
+      "contentSnippet": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results."
+    },
+    {
+      "id": "d37f5b2c5927",
+      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
+      "link": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-21T12:00:00.000Z",
+      "contentSnippet": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster."
+    },
+    {
+      "id": "2c9792fbb14a",
+      "title": "Building standards for the next phase of AI",
+      "link": "https://openai.com/index/building-standards-next-phase-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-21T10:00:00.000Z",
+      "contentSnippet": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety."
+    },
+    {
+      "id": "530db518a73a",
+      "title": "Expanding OpenAI Academy with new learning paths",
+      "link": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-21T07:00:00.000Z",
+      "contentSnippet": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills."
+    },
     {
       "id": "e53dda14685d",
       "title": "Cognitive Trap: Planning Certainty",
@@ -28,6 +91,24 @@
       "category": "Data",
       "pubDate": "2026-09-21T01:09:33.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "d1749ba76a98",
+      "title": "How V7 gives AI agents institutional memory",
+      "link": "https://openai.com/index/v7",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-21T00:00:00.000Z",
+      "contentSnippet": "Using GPT-5.6, V7 turns scattered company files into context agents can use to complete complex, source-linked work."
+    },
+    {
+      "id": "9f74bdee107b",
+      "title": "Introducing prompt_jev(): bringing Jev to Motherduck SQL",
+      "link": "https://motherduck.com/blog/motherduck-supports-jev",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-09-21T00:00:00.000Z",
+      "contentSnippet": "Classify text in SQL with prompt_jev(), powered by TypeSafe's Jev. 100,000 rows labeled in 40 seconds for $0.50 at frontier-LLM accuracy. Live on paid plans."
     },
     {
       "id": "6eb24a57fa4d",
@@ -201,24 +282,6 @@
       "contentSnippet": "Imagine you work in cybersecurity and you have a table that tracks login attempts..."
     },
     {
-      "id": "bbe6c30a33c9",
-      "title": "Our framework for reporting model misalignment",
-      "link": "https://openai.com/index/model-misalignment-reporting-framework",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-16T17:00:00.000Z",
-      "contentSnippet": "OpenAI shares a framework for tracking, investigating, and disclosing model misalignment, alongside six reports of unexpected or concerning model behavior."
-    },
-    {
-      "id": "027811ca1632",
-      "title": "Helping older adults use AI in everyday life",
-      "link": "https://openai.com/index/helping-older-adults-use-ai-in-everyday-life",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-16T16:00:00.000Z",
-      "contentSnippet": "OpenAI and AARP are bringing free, hands-on ChatGPT workshops to 1,000 older adults across 10 U.S. cities to build practical AI skills safely."
-    },
-    {
       "id": "901f6f996bc2",
       "title": "DAX UDFs, Arrow REST API, and Outbound Access Protection: A Conversation with Kay Unkroth (Fabric Insider Ep. 13)",
       "link": "https://radacad.com/dax-udfs-arrow-rest-api-and-outbound-access-protection-a-conversation-with-kay-unkroth-fabric-insider-ep-13/?utm_source=rss&utm_medium=rss&utm_campaign=dax-udfs-arrow-rest-api-and-outbound-access-protection-a-conversation-with-kay-unkroth-fabric-insider-ep-13",
@@ -226,33 +289,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-16T13:51:06.000Z",
       "contentSnippet": "DAX UDFs just went GA, there’s a new REST API for running DAX queries at scale, and a network security feature most people haven’t even heard of yet is quietly changing how enterprises govern their semantic models. In this episode of Fabric Insider, I sit down with Kay Unkroth, P…"
-    },
-    {
-      "id": "52752974efc0",
-      "title": "Reimagining advertising with AI",
-      "link": "https://openai.com/index/reimagining-advertising-with-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-16T13:00:00.000Z",
-      "contentSnippet": "Explore new AI-powered advertising experiences from OpenAI, including Sponsored Agents, tools for marketers, and integrations with HubSpot and Shopify."
-    },
-    {
-      "id": "973a91148c50",
-      "title": "Hex turns complex analysis into visual reports with GPT‑6 Astra",
-      "link": "https://openai.com/index/hex-gpt-6-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-16T12:00:00.000Z",
-      "contentSnippet": "GPT-6 Astra helps Hex’s data agents turn answers into interactive visualizations that employees are proud to share."
-    },
-    {
-      "id": "5f7e182a53f2",
-      "title": "How to connect AI usage to business value",
-      "link": "https://openai.com/index/how-to-connect-ai-usage-to-business-value",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-16T12:00:00.000Z",
-      "contentSnippet": "Learn how ChatGPT Work and Codex analytics help teams understand AI usage and spend, identify training needs, and connect adoption to business outcomes."
     },
     {
       "id": "ebc6cf4880fe",
@@ -309,6 +345,15 @@
       "contentSnippet": "If you’ve set up row level security in Power BI before, you know the usual drill: open the semantic model, add a role, write a DAX filter. But once your data lives inside a Microsoft Fabric OneLake structure, there’s a better way to do this. You can implement it directly in OneLa…"
     },
     {
+      "id": "c52ed0ba8c64",
+      "title": "Data Ontology defined: The context layer your AI agents are missing",
+      "link": "https://www.databricks.com/blog/data-ontology-defined-context-layer-your-ai-agents-are-missing",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-15T16:59:01.000Z",
+      "contentSnippet": "Ask five people at the same company what \"revenue\" means and there's a chance you'll get five different answers..."
+    },
+    {
       "id": "d434fda9e8d3",
       "title": "How energy teams turn theft detection into governed action with Genie and AI business processes",
       "link": "https://www.databricks.com/blog/how-energy-teams-turn-theft-detection-governed-action-genie-and-ai-business-processes",
@@ -316,6 +361,15 @@
       "category": "Data",
       "pubDate": "2026-09-15T16:50:00.000Z",
       "contentSnippet": "Energy theft is the deliberate use of gas or electricity without paying for it, typically..."
+    },
+    {
+      "id": "afa31152d6b7",
+      "title": "What is AI analytics? Why it only works on governed data",
+      "link": "https://www.databricks.com/blog/what-ai-analytics-why-it-only-works-governed-data",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-15T16:45:03.000Z",
+      "contentSnippet": "AI analytics is the practice of applying artificial intelligence and machine learning to data analysis..."
     },
     {
       "id": "8356199c8c98",
@@ -345,15 +399,6 @@
       "contentSnippet": "Image Durante décadas habituámo-nos a medir trabalho através daquilo que conseguimos ver: Horas trabalhadas Número de tarefas concluídas Tickets fechados Linhas de código Story Points entregues Número de funcionalidades lançadas Projetos terminados dentro do prazo São números con…"
     },
     {
-      "id": "f6dacea9be17",
-      "title": "How Databricks’ marketers use data 3x more with Genie, an AI analytics assistant",
-      "link": "https://www.databricks.com/blog/databricks-marketers-use-data-3x-genie-ai-analytics-assistant",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-15T00:36:33.000Z",
-      "contentSnippet": "Most marketing teams aspire to be data-driven. In practice, getting a trusted answer,..."
-    },
-    {
       "id": "f21765b08162",
       "title": "They All Write, Store, and Read Data: How to Pick The Right Database",
       "link": "https://motherduck.com/blog/how-to-pick-the-right-database",
@@ -361,15 +406,6 @@
       "category": "Data",
       "pubDate": "2026-09-15T00:00:00.000Z",
       "contentSnippet": "SQLite, Postgres, DuckDB and 20 others: they all write, store and read data. The questions you ask every day tell you which one you need."
-    },
-    {
-      "id": "ca2f35c19c99",
-      "title": "Managed Postgres: What Lakebase Actually Takes Off Your Plate",
-      "link": "https://www.databricks.com/blog/managed-postgres",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-14T23:36:59.000Z",
-      "contentSnippet": "Every Postgres vendor calls itself \"managed.\" Few of them agree on what that word..."
     },
     {
       "id": "bb32dc5073c5",
@@ -496,15 +532,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-11T10:00:57.000Z",
       "contentSnippet": "Image My current car is a Peugeot 508, over ten years old, yet still a great car that I genuinely love. But recently, one of my friends bought a brand-new car and invited me inside to check out the interior and features. My reaction? Wow. A large, high-quality screen with big, re…"
-    },
-    {
-      "id": "fa9ddf0b7915",
-      "title": "Reality Doesn't Need Your Permission to Escalate",
-      "link": "https://www.scrum.org/resources/blog/reality-doesnt-need-your-permission-escalate",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-10T22:00:00.000Z",
-      "contentSnippet": "\"Let's get this to green by Friday.\" Not the work. The status. The work was exactly where it had been on Monday, which is to say not ready, and everyone in the room knew it. But the report was due, red items invited questions, and questions invited attention nobody wanted. So a y…"
     },
     {
       "id": "ca291efb21c7",
@@ -757,15 +784,6 @@
       "category": "Data",
       "pubDate": "2026-08-31T02:51:19.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "517370741c36",
-      "title": "Understanding ChatGPT Work",
-      "link": "https://simonwillison.net/2026/Aug/30/understanding-chatgpt-work/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-08-30T23:59:47.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "bff6fbd27d91",
@@ -1135,15 +1153,6 @@
       "category": "Data",
       "pubDate": "2026-08-10T01:21:26.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "6cb1441ecb9f",
-      "title": "Agents can sign up for MotherDuck",
-      "link": "https://motherduck.com/blog/agent-signup",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-10T00:00:00.000Z",
-      "contentSnippet": "AI agents can now sign up for MotherDuck with a single API call - no forms, no credentials, no human in the loop (unless you want to be, of course). Experiment faster, share data, or just give your agents a ducking fast set of tools for analytics."
     },
     {
       "id": "eb19341e893a",
@@ -1612,15 +1621,6 @@
       "category": "Analytics",
       "pubDate": "2026-06-02T10:00:00.000Z",
       "contentSnippet": "Learn the differences between similar but different DAX functions that remove filters from the filter context."
-    },
-    {
-      "id": "f5a11cdd990e",
-      "title": "ALL vs ALLSELECTED vs ALLEXCEPT vs REMOVEFILTERS",
-      "link": "https://www.sqlbi.com/articles/all-vs-allselected-vs-allexcept-vs-removefilters/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-06-01T20:00:59.000Z",
-      "contentSnippet": "DAX offers many functions to remove filters from the filter context. In this article, we analyze the differences among the most commonly-used functions. Computing values in DAX is all about understanding how to manipulate the filter context to obtain the…"
     },
     {
       "id": "f8dc249805ef",
