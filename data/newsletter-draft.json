@@ -1,52 +1,48 @@
 {
-  "id": "newsletter-2026-W38",
-  "status": "sent",
-  "createdAt": "2026-09-15T12:40:36.823Z",
-  "weekOf": "2026-09-14",
-  "subject": "Orbit weekly — week of 2026-09-14",
+  "id": "newsletter-2026-W39",
+  "status": "pending",
+  "createdAt": "2026-09-22T12:36:53.191Z",
+  "weekOf": "2026-09-21",
+  "subject": "Orbit weekly — week of 2026-09-21",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
   "writes": [
     {
-      "slug": "when-a-report-slows-down-memory-is-not-a-change-log",
-      "title": "When a report slows down, memory is not a change log",
-      "summary": "I treat semantic-model modification times as incident triage: useful for narrowing suspects, never enough to prove causality.",
-      "date": "2026-09-14",
-      "href": "https://alextouvras.com/writes/when-a-report-slows-down-memory-is-not-a-change-log"
+      "slug": "when-access-rules-become-cheap-policy-becomes-the-bottleneck",
+      "title": "When access rules become cheap, policy becomes the bottleneck",
+      "summary": "AI can remove the repetitive work of configuring data access, but I still need a desired-state policy, a readable diff, and a named owner before permissions change.",
+      "date": "2026-09-21",
+      "href": "https://alextouvras.com/writes/when-access-rules-become-cheap-policy-becomes-the-bottleneck"
     }
   ],
   "signals": [
     {
-      "title": "Find What Changed And When In Your Power BI Semantic Model",
-      "link": "https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/",
-      "source": "Chris Webb's BI Blog",
+      "title": "The hidden complexity of a daily average in DAX",
+      "link": "https://www.sqlbi.com/articles/the-hidden-complexity-of-a-daily-average-in-dax/",
+      "source": "SQLBI",
       "category": "Analytics",
-      "snippet": "Here’s a situation I’ve found myself in many times. You’re called to help someone whose Power BI report is suddenly ver…"
+      "snippet": "A simple daily average masks a level of complexity that may not be immediately apparent. In this article, we use AI to…"
     },
     {
-      "title": "Announcing On-Demand State Repartitioning for Apache Spark™ Structured Streaming on Databricks",
-      "link": "https://www.databricks.com/blog/announcing-demand-state-repartitioning-apache-sparktm-structured-streaming-databricks",
-      "source": "Databricks Blog",
+      "title": "Data Engineering Weekly #288",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-288",
+      "source": "Data Engineering Weekly",
       "category": "Data",
-      "snippet": "Anyone running stateful Apache Spark™ Structured Streaming queries in production..."
+      "snippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "title": "AI Leaders Warn: With The Current Pace Of AI Development, AI Could Kill Us All Soon",
-      "link": "https://www.scrum.org/resources/blog/ai-leaders-warn-current-pace-ai-development-ai-could-kill-us-all-soon",
+      "title": "Finding AI Gold With Lean Startup Techniques",
+      "link": "https://www.scrum.org/resources/blog/finding-ai-gold-lean-startup-techniques",
       "source": "Scrum.org",
       "category": "Delivery",
-      "snippet": "CNN ran an Interview with Anthropic’s CEO, Dario Amodei, in which he acknowledged one of his former employee's claim th…"
+      "snippet": "Originally published on yuvalyeret.com. How do we deliver valuable real-world AI impact through solutions that solve pr…"
     },
     {
-      "title": "How Fyxer built an AI executive assistant people trust",
-      "link": "https://openai.com/index/fyxer",
-      "source": "OpenAI Blog",
+      "title": "Jev introduces a new shape of LLM - System One, aka Decision Models",
+      "link": "https://simonwillison.net/2026/Sep/21/jev/",
+      "source": "Simon Willison",
       "category": "AI",
-      "snippet": "Fyxer uses OpenAI models, fine-tuning, memory, and real user feedback to organize inboxes and draft emails in each user…"
+      "snippet": ""
     }
   ],
-  "ravens": [],
-  "sentAt": "2026-09-15T12:40:38.300Z",
-  "broadcastId": "e71fb4e6-e8f2-423a-b736-ec07c3589062",
-  "sendMode": "test",
-  "sentTo": "a.touvras@gmail.com"
+  "ravens": []
 }
