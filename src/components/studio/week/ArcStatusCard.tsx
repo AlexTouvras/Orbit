@@ -25,7 +25,7 @@ const STAT_LABELS: Record<string, string> = {
 const STAT_ORDER = ["str", "agi", "spd", "end", "vit", "per"] as const;
 
 const GATE_SCORE_HINT_FALLBACK =
-  "Unweighted mean of STR, AGI, SPD, END, VIT, and PER (~16.7% each) when all six have a sample; otherwise the present stats equally. Each tile is 50 at average and 100 at world class, linear between those anchors. Rounded 0–100 before rank bands.";
+  "Unweighted mean of STR, AGI, SPD, END, VIT, and PER (~16.7% each) when all six have a sample; otherwise the present stats equally. Each tile is 50 at average and 100 at world class, on a normal curve between those anchors. Rounded 0–100 before rank bands.";
 
 const GATE_RANK_HINTS: Record<string, string> = {
   E: "Entry gate — composite below 35. Build base fitness before rank-ups.",
