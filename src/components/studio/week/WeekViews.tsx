@@ -100,14 +100,14 @@ export async function WeekFitnessView({
         }
         description={
           sheet === "codex"
-            ? "Native-unit history for estimated VDOT, VO₂, recovery, body comp, and strength. Not HUD integers."
+            ? "Where this week sits on the gate curve, then the native-unit history underneath."
             : "Week kickoff clip, daily sessions, and Heimdall technique links on lifts."
         }
       />
       <div className="mt-8">
         <FitnessSheetNav weekId={log.weekId} active={sheet} />
         {sheet === "codex" && codex ? (
-          <FitnessCodexPanel lane={codex} />
+          <FitnessCodexPanel lane={codex} narrative={log.fitness.data?.narrative} />
         ) : (
           <FitnessPanel
             lane={log.fitness}

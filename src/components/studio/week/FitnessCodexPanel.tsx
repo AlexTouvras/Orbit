@@ -1,4 +1,10 @@
-import type { CodexPoint, CodexSeries, WeekLane } from "@/lib/week-log/types";
+import type {
+  ArcNarrativeView,
+  CodexPoint,
+  CodexSeries,
+  WeekLane,
+} from "@/lib/week-log/types";
+import { GateBell } from "@/components/studio/week/GateBell";
 import { Lane } from "@/components/studio/week/Lane";
 
 function Sparkline({
@@ -95,7 +101,13 @@ function CodexPane({
   );
 }
 
-export function FitnessCodexPanel({ lane }: { lane: WeekLane<CodexSeries> }) {
+export function FitnessCodexPanel({
+  lane,
+  narrative,
+}: {
+  lane: WeekLane<CodexSeries>;
+  narrative?: ArcNarrativeView | null;
+}) {
   const series = lane.data;
   const points = series?.points ?? [];
 
@@ -108,6 +120,7 @@ export function FitnessCodexPanel({ lane }: { lane: WeekLane<CodexSeries> }) {
       source={lane.source}
       href={lane.href}
     >
+      <GateBell gate={narrative?.gate ?? null} stats={narrative?.stats} />
       <p className="mb-6 text-sm text-slate-400">
         Long-term series in the units they were measured in — not HUD integers.
         About one year of weekly points. AGI is VDOT with predicted 5K on the
