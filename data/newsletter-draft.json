@@ -1,7 +1,7 @@
 {
   "id": "newsletter-2026-W39",
-  "status": "sent",
-  "createdAt": "2026-09-22T12:36:53.191Z",
+  "status": "pending",
+  "createdAt": "2026-09-22T12:54:24.388Z",
   "weekOf": "2026-09-21",
   "subject": "Orbit weekly — week of 2026-09-21",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
@@ -44,9 +44,46 @@
       "snippet": ""
     }
   ],
-  "ravens": [],
-  "sentAt": "2026-09-22T12:36:54.529Z",
-  "broadcastId": "01a0c91e-803f-743f-b32d-fe85c0a75b37",
-  "sendMode": "test",
-  "sentTo": "a.touvras@gmail.com"
+  "ravens": [
+    {
+      "kind": "inbox",
+      "domain": "ai-agents",
+      "title": "Microsoft Agent Framework Python 1.19.0 makes HTTP cookies explicit, ZIP-only MCP skill archives, and per-invocation MCP sessions",
+      "summary": "microsoft/agent-framework `python-1.19.0` (GitHub release published 18 Sep 2026) is the first 1.19 pin after 1.18.0: HTTP cookie persistenc…",
+      "href": "https://github.com/microsoft/agent-framework/releases/tag/python-1.19.0",
+      "sourceTitle": "python-1.19.0 — microsoft/agent-framework",
+      "id": "FIND-20260921-001",
+      "date": "2026-09-18"
+    },
+    {
+      "kind": "inbox",
+      "domain": "data-bi",
+      "title": "microsoft/skills-for-fabric 0.3.17 moves FabricIQ MCP and merges four report skills into powerbi-report-cli",
+      "summary": "microsoft/skills-for-fabric v0.3.17 (GitHub release published 17 Sep 2026) replaces the four Power BI report skills (`powerbi-report-author…",
+      "href": "https://github.com/microsoft/skills-for-fabric/releases/tag/v0.3.17",
+      "sourceTitle": "v0.3.17 — microsoft/skills-for-fabric",
+      "id": "FIND-20260921-002",
+      "date": "2026-09-17"
+    },
+    {
+      "kind": "inbox",
+      "domain": "finance",
+      "title": "Fortum Elmera tender: 88.59% accepted at the 18 Sep close (92.64% ex-treasury); window extended to 2 Oct 16:30 CEST",
+      "summary": "Fortum’s 21 Sep 2026 stock-exchange release (Cision, 09:00 EEST) reports that as of the initial offer period’s expiry at 16:30 CEST on 18 S…",
+      "href": "https://news.cision.com/fortum/r/update-on-acceptances-of-fortum-s-recommended-voluntary-cash-tender-offer-for-elmera-group-asa,c4398487",
+      "sourceTitle": "Update on acceptances of Fortum’s recommended voluntary cash tender offer for Elmera Group ASA — Fortum, 21 September 2026",
+      "id": "FIND-20260921-005",
+      "date": "2026-09-21"
+    },
+    {
+      "kind": "knowledge",
+      "domain": "parenting",
+      "title": "Finland — infant bronchiolitis is usually RSV; under-3-month feeding or breathing trouble is same-day care",
+      "summary": "Bronchiolitis (ilmatiehyttulehdus) is small-airway inflammation in children **under 1 year**, most often **RSV**, and often peaks in **wint…",
+      "href": "https://www.terveyskirjasto.fi/dlk01308",
+      "sourceTitle": "Ilmatiehyttulehdus (bronkioliitti) lapsella — Terveyskirjasto (Lääkärikirja Duodecim)",
+      "id": "KNOW-parenting-fi-infant-rsv-bronchiolitis-same-day",
+      "date": "2026-09-21"
+    }
+  ]
 }
