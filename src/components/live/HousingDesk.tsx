@@ -100,7 +100,7 @@ export function HousingDesk({ view }: { view: HousingView }) {
 
       <DeskStoryHeader
         kicker={`Stat.fi · monthly · ${view.buildingType.label.toLowerCase()}`}
-        question="Are Helsinki €/m² still rising?"
+        question="Are Helsinki flats still rising in price?"
         lede="Old flats in housing companies — Helsinki against Espoo, Vantaa, Greater Helsinki, and the country. Monthly prints lag about a month; starred months are provisional."
       />
 

@@ -56,12 +56,15 @@ export const profile = {
   githubUsername: "alextouvras",
   role: "Delivery · Data · AI automation",
   location: "Vantaa, Finland",
+  /** Big home line. Second line takes the gradient. */
+  headlineLine: "Drafts take seconds.",
+  headlineAccent: "The call does not.",
   tagline:
-    "Anyone can generate a draft nowadays. Fewer teams can prove what works or agree on what deserves to exist. That's the work I lead. If nobody owns that call, nothing ships.",
+    "A model can hand you a result before the sentence is finished. I define the requirements, guide what gets built, and validate the output to meet objectives.",
   /** One line on the identity HUD — stranger-readable, no workshop slang. */
   cardTagline:
-    "Anyone can generate a draft. I lead the work of proving what works and deciding what deserves to exist.",
-  pillars: "Delivery · Data · AI automation",
+    "Results arrive in seconds. I define the requirements, guide what gets built, and validate the output to meet objectives.",
+  pillars: "Delivery · Data · AI automation · Credit risk · SDLC",
   /** Primary contact CTA — replaces a separate “open to …” pill. */
   contactCta: "Get in touch about a role",
   availability:
@@ -139,11 +142,11 @@ export const competencies: Competency[] = [
     title: "Software Development Life Cycle",
     shortTitle: "SDLC",
     description:
-      "Gates from bound to merge: named acceptance, smallest build, tests and review before anyone calls it code-complete. Cutover lives on Delivery.",
-    hudTitle: "SDLC is a gate chain, not a phase poster",
-    hudVerbs: "Bound → design → build → verify",
+      "Check the goal and the cost, write what users need, design who can reach the data, write the code, and test the bugs and the security holes before anyone calls it done. The release window sits on Delivery.",
+    hudTitle: "Write the plan before the code",
+    hudVerbs: "Plan → specify → design → build → test",
     hudDescription:
-      "Bound, design, build, verify: those are the layers. Ceremonies are lanes. Delivery owns how the change lands.",
+      "Goal and cost first, then the rules and user needs. Design names who can reach the data. Then the code, then tests for bugs and security holes. The release window sits on Delivery.",
     accent: "violet",
     icon: GitBranch,
     href: "/sdlc-field-card/index.html",

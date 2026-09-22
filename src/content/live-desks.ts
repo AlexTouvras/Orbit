@@ -17,7 +17,7 @@ export const liveDesks: LiveDesk[] = [
   {
     slug: "nordic-equity",
     title: "Nordic Equity",
-    question: "Which Nordic large-caps moved today?",
+    question: "Which big Nordic stocks moved today?",
     cadence: "Weekday gold · delayed quotes",
     status: "live",
     kind: "board",
@@ -26,7 +26,7 @@ export const liveDesks: LiveDesk[] = [
   {
     slug: "eu-spot",
     title: "EU Spot",
-    question: "Where is Europe expensive tonight?",
+    question: "Where is electricity expensive today?",
     cadence: "Day-ahead · after ~14:00 Helsinki",
     status: "live",
     kind: "native",
@@ -35,7 +35,7 @@ export const liveDesks: LiveDesk[] = [
   {
     slug: "housing",
     title: "Helsinki Housing",
-    question: "Are Helsinki €/m² still rising?",
+    question: "Are Helsinki flats still rising in price?",
     cadence: "Monthly · ~1 month lag",
     status: "live",
     kind: "native",
@@ -44,7 +44,7 @@ export const liveDesks: LiveDesk[] = [
   {
     slug: "power-mix",
     title: "Europe Power Mix",
-    question: "What is Europe generating from today?",
+    question: "What is Europe making its electricity from today?",
     cadence: "Last 24h · daily refresh",
     status: "live",
     kind: "native",
@@ -53,7 +53,7 @@ export const liveDesks: LiveDesk[] = [
   {
     slug: "economy",
     title: "Europe Economy Pulse",
-    question: "How is the euro area economy printing?",
+    question: "How is the euro area economy doing?",
     cadence: "Monthly · Eurostat + ECB",
     status: "live",
     kind: "native",

@@ -12,7 +12,7 @@ import { isNewsletterTestMode } from "@/lib/newsletter/config";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Evergreen articles on delivery, data, AI, and career — what I learn and ship in public.",
+    "One question per article: what should get built, and how I would know it worked.",
   alternates: { canonical: "/writes" },
 };
 

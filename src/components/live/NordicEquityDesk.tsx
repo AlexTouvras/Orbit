@@ -48,7 +48,7 @@ export async function NordicEquityDesk() {
       <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
       <DeskStoryHeader
         kicker="Weekday gold · delayed quotes"
-        question="Which Nordic large-caps moved today?"
+        question="Which big Nordic stocks moved today?"
       />
 
       <DeskCast className="lg:grid-cols-4">

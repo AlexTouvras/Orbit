@@ -4,17 +4,15 @@ import { LocalProjects } from "@/components/portfolio/LocalProjects";
 import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
 import { PowerBiShowcase } from "@/components/portfolio/PowerBiShowcase";
 import { LiveQuestions } from "@/components/hub/LiveQuestions";
-import { StoryClose } from "@/components/hub/StoryClose";
 import { liveDesks } from "@/content/live-desks";
 import { powerBiReports } from "@/content/power-bi-reports";
-import { profile as profileDefaults } from "@/content/profile";
 import { getPublicProjects } from "@/lib/projects-local";
 import { getEditableProfile } from "@/lib/profile-store";
 
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Projects, open-source work from GitHub, Power BI report pages, and live dashboards.",
+    "The projects I decided were worth building, with the requirement still attached.",
   alternates: { canonical: "/portfolio" },
 };
 
@@ -44,12 +42,6 @@ export default function PortfolioPage() {
       <PowerBiShowcase reports={powerBiReports} />
 
       <GithubRepos />
-
-      <StoryClose
-        index="05"
-        summary={profile.summary}
-        contactCta={profileDefaults.contactCta}
-      />
     </div>
   );
 }

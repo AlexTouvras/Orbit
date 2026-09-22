@@ -36,9 +36,9 @@ export function RadarHero({
         </Badge>
       }
       avatarUrl={avatarUrl}
-      title="Related articles"
-      subtitle="AI, Data, Analytics, and Delivery — from sources I follow"
-      description="External reading from curated RSS feeds, including Power BI and Fabric. Refreshed daily and cached — complementary to my own blog."
+      title="Related"
+      headline={{ line: "What I read", accent: "before I decide." }}
+      description="External writing on delivery, data, and AI. I keep a piece when it changes a requirement or a check."
       stats={stats}
       meta={
         generatedAt ? (

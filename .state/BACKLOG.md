@@ -32,6 +32,7 @@
 - [x] **Visual storytelling Hub** — chaptered scroll on `/`; skill at `.cursor/skills/visual-storytelling`. Shipped to prod 2026-09-22 (owner asked to push).
 - [x] **Visual storytelling dashboards** — Open → Cast → Picture → Move → Close on each live desk (`DeskCast` / `DeskPicture` / `DeskClose`; missing uses desk `question`). Owner review desks after Hub.
 - [x] **Visual storytelling Portfolio** — `/portfolio` Open → workshop reel → live peek reel → Power BI picture → GitHub list → Close. No 3-up GlassCard grid.
+- [x] **Home column + shared title** — same `max-w-5xl` column as Blog; story headline on public pages; human-judgment message; fix scroll rails so card 1 stays in frame and every rail shares one card width; drop the chapter bar and the Portfolio close that copies Home; plain desk questions. Verified on localhost 2026-09-22. Not committed.
 - [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
 - [x] **Finland Power Pulse folded into EU Spot** — not a separate live tile; `/portfolio/live/power` redirects to `/eu-spot`. Press a zone for the Pulse-style desk + mix nowcast.
 - [x] **Helsinki Housing Pulse** — `/portfolio/live/housing`. Stat.fi `ashi`, monthly, ~1 month lag, CC BY 4.0. No empty page.
@@ -43,6 +44,7 @@
 - [x] **Economy Pulse — fresher HICP + DK/NO** — merge `prc_hicp_manr` + early `teicp000`; add Denmark and Norway spotlights.
 - [ ] **Live mix snapshot clock** — GHA `npm run live:fetch` (mix only until ENTSO-E).
 - [x] Hub SDLC + Credit Risk field cards (Orbit-hosted HTML, HUD lanes, sitemap)
+- [x] SDLC opening in plain steps (plan, specify, design, build, test) — localhost 2026-09-22
 - [ ] **SDLC / Credit Risk source repos** — create `sdlc-field-card` and `credit-risk-field-card`, copy discovery + Apply review from analytics/delivery on a **monthly** cadence (1st 17:00 discover / 18:00 review). Register in `FIELD_CARDS` + `fleet.yaml`. Bind `hosted-field-card-monthly-review.json` in Cursor until those repos exist.
 - [x] **Local IDE: live field-card automations renamed Monthly** — GetAutomation 2026-09-21: AI / analytics / delivery / review all named Monthly, enabled.
 - [ ] **Hosted SDLC + Credit Risk Cursor automation** — confirm it exists (create from `hosted-field-card-monthly-review.json` if missing) and paste the UUID into `.state/AUTOMATION_CONTRACT.md`.

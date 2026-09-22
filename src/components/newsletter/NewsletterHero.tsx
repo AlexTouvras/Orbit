@@ -18,9 +18,9 @@ export function NewsletterHero({ avatarUrl }: NewsletterHeroProps) {
         </Badge>
       }
       avatarUrl={avatarUrl}
-      title="Orbit weekly"
-      subtitle="The week's highlights, not the whole notebook"
-      description="Each Tuesday: this week's Write, a few Related articles I actually read, and one Ravens note per beat that moved."
+      title="Weekly digest"
+      headline={{ line: "One article.", accent: "A few links." }}
+      description="Tuesday mail: this week's Write, a few pieces I actually read, and one note per area that moved."
     />
   );
 }

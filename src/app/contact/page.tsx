@@ -7,7 +7,7 @@ import { ContactSection } from "@/components/contact/ContactSection";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch about delivery, data analytics, AI automation, or what's broken in your stack.",
+    "A role in delivery, data, or AI automation. Or a system that produces results nobody has checked.",
   alternates: { canonical: "/contact" },
 };
 

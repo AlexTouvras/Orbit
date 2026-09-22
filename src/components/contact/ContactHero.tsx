@@ -19,9 +19,9 @@ export function ContactHero({ email, avatarUrl }: ContactHeroProps) {
         </Badge>
       }
       avatarUrl={avatarUrl}
-      title="Let's talk"
-      subtitle="Delivery, data, and AI automation"
-      description="Whether it's a role, a project, or a broken pipeline — send a message and I'll get back to you."
+      title="Contact"
+      headline={{ line: "Send the decision", accent: "you can't automate." }}
+      description="A role in delivery, data, or AI automation. Or a system that produces results nobody has checked."
       meta={
         <a
           href={`mailto:${email}`}

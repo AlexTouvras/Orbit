@@ -164,7 +164,7 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
   if (!focus) {
     return (
       <DeskMissing
-        question="How is the euro area economy printing?"
+        question="How is the euro area economy doing?"
         command="npm run live:fetch-economy"
       />
     );
@@ -176,7 +176,7 @@ export function EconomyDesk({ view }: { view: EconomyView }) {
 
       <DeskStoryHeader
         kicker="Eurostat + ECB · monthly brief"
-        question="How is the euro area economy printing?"
+        question="How is the euro area economy doing?"
       />
 
       <DeskCast>

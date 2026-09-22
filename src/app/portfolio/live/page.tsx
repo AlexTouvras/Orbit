@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { LiveDeskReel } from "@/components/live/LiveDeskReel";
 import { liveDesks } from "@/content/live-desks";
-import { DeskStoryHeader } from "@/components/story/DeskStoryHeader";
 import { DeskCast } from "@/components/story/DeskCast";
+import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { StoryStat } from "@/components/story/StoryStat";
 
 export const metadata: Metadata = {
@@ -17,11 +17,15 @@ export default function LiveDesksPage() {
 
   return (
     <div className="space-y-16">
-      <DeskStoryHeader
+      <StoryHeadline
         kicker="Live desks"
-        question="Questions the desks answer"
-        lede="Public data, cadence-matched, one question each. These sit next to Power BI screenshots, not inside them."
+        line="Ask it"
+        accent="in plain words."
       />
+      <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+        Electricity, Helsinki flats, Nordic stocks, the euro area. One question
+        on the card. The picture stays on the desk.
+      </p>
 
       <DeskCast className="lg:grid-cols-3">
         <StoryStat

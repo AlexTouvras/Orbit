@@ -17,13 +17,16 @@ export function AppChrome({
 }) {
   const pathname = usePathname();
   const bare = BARE_ROUTES.has(pathname);
-  const live = pathname.startsWith("/portfolio/live");
-  const story = pathname === "/";
+  const deskPage = /^\/portfolio\/live\/[^/]+/.test(pathname);
   const scrollStory =
-    story ||
-    live ||
+    pathname === "/" ||
     pathname === "/about" ||
-    pathname === "/portfolio";
+    pathname === "/portfolio" ||
+    pathname === "/writes" ||
+    pathname === "/contact" ||
+    pathname === "/radar" ||
+    pathname === "/newsletter" ||
+    pathname.startsWith("/portfolio/live");
 
   if (bare) {
     return (
@@ -40,13 +43,9 @@ export function AppChrome({
       <Header />
       <main
         id="main-content"
-        className={
-          story
-            ? "relative z-10 min-h-[70vh] w-full pt-20 pb-24 sm:pt-24"
-            : `relative z-10 mx-auto min-h-[70vh] w-full px-4 pt-28 pb-12 sm:pt-32 ${
-                live ? "max-w-6xl" : "max-w-5xl"
-              }`
-        }
+        className={`relative z-10 mx-auto min-h-[70vh] w-full px-4 pt-28 pb-16 sm:pt-32 ${
+          deskPage ? "max-w-6xl" : "max-w-5xl"
+        }`}
       >
         {children}
       </main>

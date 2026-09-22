@@ -57,7 +57,7 @@ export function EuSpotDesk({ view }: { view: EuSpotView }) {
 
       <DeskStoryHeader
         kicker={`ENTSO-E · ${view.today.length} zones`}
-        question="Where is Europe expensive tonight?"
+        question="Where is electricity expensive today?"
         lede="Hover a bidding zone for mix and price. Press it for the full desk — load, generation, net flow, and a mix nowcast — the same reading order for Finland as for every other zone."
       />
 

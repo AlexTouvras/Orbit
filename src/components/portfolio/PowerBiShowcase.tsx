@@ -220,7 +220,7 @@ function PowerBiRailCard({
   }
 
   return (
-    <ScrollRailCard className="w-[min(88vw,52rem)]">
+    <ScrollRailCard>
       <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
         <div className="relative px-6 pt-6 sm:px-8 sm:pt-8">
           <p className="story-index absolute right-4 top-2 select-none" aria-hidden>

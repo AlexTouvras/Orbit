@@ -39,7 +39,7 @@ export function LiveDeskTile({
   const href = `/portfolio/live/${desk.slug}`;
 
   return (
-    <ScrollRailCard className="w-[min(88vw,52rem)]">
+    <ScrollRailCard>
       <article className="group relative isolate overflow-hidden rounded-3xl border border-white/10 bg-void-800">
         <div className="pointer-events-none h-[min(42vh,24rem)] w-full">
           <Suspense fallback={<PeekFallback />}>

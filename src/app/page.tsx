@@ -10,17 +10,6 @@ import { LiveQuestions } from "@/components/hub/LiveQuestions";
 import { SignalList } from "@/components/hub/SignalList";
 import { StoryClose } from "@/components/hub/StoryClose";
 import { StoryScene } from "@/components/story/StoryScene";
-import { StoryProgress } from "@/components/story/StoryProgress";
-
-const HUB_CHAPTERS = [
-  { id: "story-open", label: "Open" },
-  { id: "story-gravity", label: "Gravity" },
-  { id: "story-craft", label: "Craft" },
-  { id: "selected-work", label: "Proof" },
-  { id: "story-live", label: "Live" },
-  { id: "story-signals", label: "Signals" },
-  { id: "story-close", label: "Close" },
-];
 
 export default function HomePage() {
   const profile = getEditableProfile();
@@ -30,23 +19,20 @@ export default function HomePage() {
 
   return (
     <div>
-      <StoryProgress chapters={HUB_CHAPTERS} />
-
-      <StoryScene id="story-open" viewport>
+      <StoryScene id="story-open" className="pb-0">
         <HubHero
           name={profile.name}
           pillars={profile.pillars}
+          headlineLine={profileDefaults.headlineLine}
+          headlineAccent={profileDefaults.headlineAccent}
           tagline={profile.tagline}
           contactCta={profileDefaults.contactCta}
           socials={profile.socials}
           avatarUrl={profile.avatarUrl}
-          yearsExperience={profile.yearsExperience}
-          liveCount={desks.length}
-          craftCount={competencies.length}
         />
       </StoryScene>
 
-      <StoryScene id="story-gravity">
+      <StoryScene id="story-gravity" className="pt-10 sm:pt-14">
         <GravityScene whyOrbit={profileDefaults.whyOrbit} />
       </StoryScene>
 

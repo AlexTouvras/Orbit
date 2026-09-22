@@ -53,7 +53,7 @@ export function PowerMixDesk({ view }: { view: PowerMixView }) {
 
       <DeskStoryHeader
         kicker="Last 24h · generation share"
-        question="What is Europe generating from today?"
+        question="What is Europe making its electricity from today?"
         lede="Country bars are 100% of measured generation over the last day — not capacity, not load. Sorted clean → fossil so the story is the mix, not the map."
       />
 

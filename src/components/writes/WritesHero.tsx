@@ -38,8 +38,8 @@ export function WritesHero({
       }
       avatarUrl={avatarUrl}
       title="Blog"
-      subtitle="What I learn, ship, and figure out along the way"
-      description="Evergreen notes from delivery, data, and AI — one clear question per article. Documented for future me and anyone on a similar path."
+      headline={{ line: "The call,", accent: "in writing." }}
+      description="One question per article: what should get built, and how I would know it worked."
       stats={stats}
       actions={
         <a

@@ -60,8 +60,8 @@ export function AboutHero({
       avatarHrefLabel="Open identity HUD"
       avatarAlt=""
       title={name}
-      subtitle="Background & experience"
-      description="From PD models and portfolio steering to leading Azure application operations — with a growing focus on AI automation and agent systems."
+      headline={{ line: "Still my name", accent: "on the check." }}
+      description="From PD models and scorecards to leading Azure application operations. A draft can arrive in seconds. The requirement and the check still have my name on them."
       stats={stats}
       actions={
         <>

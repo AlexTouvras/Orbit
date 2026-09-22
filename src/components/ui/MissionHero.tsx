@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { PixelAvatar } from "@/components/ui/PixelAvatar";
+import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { StoryStat } from "@/components/story/StoryStat";
 import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
@@ -43,8 +44,10 @@ export interface MissionStat {
 
 interface MissionHeroProps {
   signature: ReactNode;
-  badge: ReactNode;
+  badge?: ReactNode;
   title: string;
+  /** Two-line display title. `title` becomes the mono kicker above it. */
+  headline?: { line: string; accent: string };
   subtitle?: string;
   description?: string;
   stats?: MissionStat[];
@@ -62,6 +65,7 @@ export function MissionHero({
   signature,
   badge,
   title,
+  headline,
   subtitle,
   description,
   stats,
@@ -92,29 +96,54 @@ export function MissionHero({
         {signature}
       </motion.div>
 
-      <HeroItem delay={0} animate={animate}>
-        {badge}
-      </HeroItem>
+      {badge ? (
+        <HeroItem delay={0} animate={animate}>
+          {badge}
+        </HeroItem>
+      ) : null}
 
       <HeroItem delay={0.06} animate={animate}>
-        <div className="flex max-w-3xl items-center gap-4 sm:gap-5">
-          {avatarUrl ? (
-            avatarHref ? (
-              <Link
-                href={avatarHref}
-                className="focus-ring rounded-xl"
-                aria-label={avatarHrefLabel}
-              >
-                <PixelAvatar src={avatarUrl} alt="" />
-              </Link>
-            ) : (
-              <PixelAvatar src={avatarUrl} alt={avatarAlt} />
-            )
-          ) : null}
-          <h1 className="font-display text-display font-bold tracking-tight text-white">
-            {title}
-          </h1>
-        </div>
+        {headline ? (
+          <StoryHeadline
+            mark={
+              avatarUrl ? (
+                avatarHref ? (
+                  <Link
+                    href={avatarHref}
+                    className="focus-ring rounded-xl"
+                    aria-label={avatarHrefLabel}
+                  >
+                    <PixelAvatar src={avatarUrl} alt="" />
+                  </Link>
+                ) : (
+                  <PixelAvatar src={avatarUrl} alt={avatarAlt} />
+                )
+              ) : undefined
+            }
+            kicker={title}
+            line={headline.line}
+            accent={headline.accent}
+          />
+        ) : (
+          <div className="flex items-center gap-4 sm:gap-5">
+            {avatarUrl ? (
+              avatarHref ? (
+                <Link
+                  href={avatarHref}
+                  className="focus-ring rounded-xl"
+                  aria-label={avatarHrefLabel}
+                >
+                  <PixelAvatar src={avatarUrl} alt="" />
+                </Link>
+              ) : (
+                <PixelAvatar src={avatarUrl} alt={avatarAlt} />
+              )
+            ) : null}
+            <h1 className="font-display text-display font-bold tracking-tight text-white">
+              {title}
+            </h1>
+          </div>
+        )}
       </HeroItem>
 
       {subtitle && (

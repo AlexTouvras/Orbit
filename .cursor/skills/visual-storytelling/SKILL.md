@@ -25,12 +25,12 @@ Primary: Hub `/` renders chapter ids `story-open`, `story-gravity`, `story-craft
 
 Then a browser walk (desktop + a ~390px viewport):
 
-1. Scroll Hub end to end; the top line fills; chapter rail tracks the scene; Gravity rings/satellites turn; craft rows spotlight
+1. Scroll Hub end to end; the top line fills; Gravity rings turn; craft rows spotlight. There is no fixed chapter bar.
 2. Competency rows are plain `<a href>` to field cards (not `next/link`)
 3. Proof reel: scrolling down advances the cards to the right; Case study and architecture still work. Reduced motion: swipe the rail.
 4. Live peek reel: sneak-peek image + `desk.question` as the headline; scrolling down advances cards; the card opens `/portfolio/live/{slug}`. Reduced motion: swipe the rail.
 5. About experience reads as a timeline, not stacked glass cards
-6. `/portfolio` is Open → workshop reel → live peek reel → Power BI reel → GitHub list (no 3-up `GlassCard` grid). `/portfolio/live` uses the same reel (not a list + carousel).
+6. `/portfolio` is the shared headline, then workshop reel → live peek reel → Power BI reel → GitHub list. No copied Home close. `/portfolio/live` uses the same reel. Home uses the same `max-w-5xl` column as Blog.
 7. `prefers-reduced-motion`: story still readable; no required animation
 
 ## Minimum evidence (open before editing)
@@ -51,7 +51,7 @@ A page is a sequence of **chapters**, not a stack of sections.
 | Craft | Numbered process (how the work actually happens) | Delivery → Data → AI with `hudVerbs` |
 | Proof | Horizontal reel of evidence | Showcase writes |
 | Live | Peek reel of questions | sneak peek + `desk.question` → `/portfolio/live/{slug}` |
-| Signals | Editorial list, not blog cards | Category · title · date |
+| Signals | Horizontal reel of essays | Category · title · date |
 | Close | Landing, not another grid | About + contact |
 
 Rules:
@@ -59,17 +59,17 @@ Rules:
 - **One idea per chapter.** If you need a card grid to “fit three things,” you do not have a scene yet.
 - **Type is the primary image.** Photography/video is optional; Orbit’s image is Syne at `.text-story` / `.text-display` plus the orbit ring.
 - **Numbers are characters.** Cadence, zone count, €/m² — `StoryStat` / `.orbit-accent` display figures, not a muted mono row.
-- **No scroll-jacking.** Horizontal snap on reels is fine (`scroll-snap-type: x mandatory`). Do not hijack vertical scroll (no `preventDefault` on wheel, no vertical snap, no pin-jack libraries). Scroll-linked motion is allowed: progress line, ring rotate/scale, sticky chapter kicker, in-view spotlight, count-up, `StoryReveal` scale, and sticky **reels** (`ScrollRail`) whose `translateX` is driven by native vertical scroll. Lists (Craft, Signals, GitHub, About timeline) stay vertical. Copy must remain readable without it.
-- **Reduced motion always works.** `motion-safe:` only. `StoryProgress` may use IntersectionObserver; it must not depend on animation.
+- **No scroll-jacking.** Do not hijack vertical scroll (no `preventDefault` on wheel, no vertical snap, no pin-jack libraries). Scroll-linked motion is allowed: progress line, ring rotate, in-view spotlight, count-up, `StoryReveal`, and sticky **reels** (`ScrollRail`) whose `translateX` is driven by native vertical scroll. The track moves on the first scroll once the reel reaches the top of the viewport. Every reel uses `ScrollRailCard` with no viewport-width override. Craft, GitHub, and the About timeline stay vertical. Signals is a reel. No fixed chapter bar. Copy must remain readable without the motion.
+- **Reduced motion always works.** `motion-safe:` only. Reels fall back to a swipe rail. Copy must not depend on animation.
 - **Field cards** live as static HTML in `public/`. Home competency links stay plain `<a>`.
 
 ## Component map
 
 | Primitive | Path | Use |
 |-----------|------|-----|
-| `StoryScene` | `src/components/story/StoryScene.tsx` | Full-bleed chapter; Hub only (AppChrome drops max-width on `/`) |
+| `StoryScene` | `src/components/story/StoryScene.tsx` | Chapter inside the shared `max-w-5xl` column |
 | `ChapterMark` | `src/components/story/ChapterMark.tsx` | `01 / Craft` + title + lede |
-| `StoryProgress` | `src/components/story/StoryProgress.tsx` | Bottom chapter index (dots; labels on xl) |
+| `StoryHeadline` | `src/components/story/StoryHeadline.tsx` | Shared two-line title on public pages |
 | `GravityField` | `src/components/story/GravityField.tsx` | Brand diagram |
 | `StoryStat` | `src/components/story/StoryStat.tsx` | Oversized KPI |
 | `DeskStoryHeader` | `src/components/story/DeskStoryHeader.tsx` | Live desk opening: cadence → question |
@@ -80,11 +80,11 @@ Rules:
 | `ScrollLine` | `src/components/story/ScrollLine.tsx` | Top read bar; Hub / Portfolio / About / live (via AppChrome) |
 | `ScrollSpot` | `src/components/story/ScrollSpot.tsx` | Brightens the row in the viewport midline |
 | `StoryReveal` | `src/components/story/StoryReveal.tsx` | Scale/rise when a beat enters view |
-| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Reels (Hub Proof, live, Portfolio workshop, Power BI): vertical scroll → cards move right; swipe if reduced motion |
+| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Reels (Hub Proof, live, Signals, Portfolio workshop, Power BI): vertical scroll moves cards immediately; swipe if reduced motion |
 | `LiveDeskReel` | `src/components/live/LiveDeskReel.tsx` | Hub / Portfolio / live index: peek + question on a `ScrollRail` |
 | `LiveDeskTile` | `src/components/live/LiveDeskTile.tsx` | One desk card: sneak peek + `desk.question` as headline |
 
-AppChrome: pathname `/` is full-bleed. Other public pages stay `max-w-5xl` (live desks `max-w-6xl`). Do not silently widen Studio.
+AppChrome: public pages share `max-w-5xl`. A single live desk (`/portfolio/live/[slug]`) may use `max-w-6xl` for the picture. Do not full-bleed Home. Do not silently widen Studio.
 
 ## Live dashboards (next applications)
 

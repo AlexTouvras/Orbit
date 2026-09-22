@@ -6,8 +6,10 @@ import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
 /**
- * Horizontal reel: native vertical scroll translates the track to the right
- * (sticky + translateX). Reduced motion keeps a swipe rail. Wheel is never captured.
+ * Horizontal reel inside the page column.
+ * Vertical scroll moves the track as soon as the reel reaches the top.
+ * Reduced motion keeps a swipe rail.
+ * Wheel is never captured.
  */
 export function ScrollRail({
   header,
@@ -26,7 +28,7 @@ export function ScrollRail({
   const sceneRef = useRef<HTMLDivElement>(null);
   const portRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [maxX, setMaxX] = useState(() => Math.max(0, length - 1) * 720);
+  const [maxX, setMaxX] = useState(0);
 
   const { scrollYProgress } = useScroll({
     target: sceneRef,
@@ -43,6 +45,11 @@ export function ScrollRail({
     const measure = () => {
       const next = Math.max(0, track.scrollWidth - port.clientWidth);
       setMaxX((prev) => (prev === next ? prev : next));
+      // Height grows after the first measure. Nudge scroll so the track
+      // re-reads progress instead of keeping the pre-measure value.
+      requestAnimationFrame(() => {
+        window.dispatchEvent(new Event("scroll"));
+      });
     };
 
     const ro = new ResizeObserver(measure);
@@ -62,23 +69,29 @@ export function ScrollRail({
       ref={sceneRef}
       className={className}
       data-scroll-rail={live ? "linked" : "swipe"}
-      style={live ? { height: `calc(100dvh - 9rem + ${maxX}px)` } : undefined}
+      style={
+        live ? { height: `calc(100dvh - 7.5rem + ${maxX}px)` } : undefined
+      }
     >
       <div
         className={
           live
-            ? "sticky top-24 flex h-[calc(100dvh-9rem)] flex-col justify-center overflow-hidden"
+            ? "sticky top-24 flex min-h-[calc(100dvh-7.5rem)] flex-col justify-center"
             : undefined
         }
       >
         {header}
         <div
           ref={portRef}
-          className={live ? "mt-10 overflow-hidden" : "story-rail mt-12"}
+          className={
+            live
+              ? "mt-8 w-full overflow-hidden [container-type:inline-size]"
+              : "story-rail mt-8 [container-type:inline-size]"
+          }
         >
           <motion.div
             ref={trackRef}
-            className="flex w-max flex-nowrap gap-5"
+            className="flex w-max flex-nowrap items-stretch gap-5"
             style={live ? { x } : undefined}
           >
             {children}
@@ -89,6 +102,7 @@ export function ScrollRail({
   );
 }
 
+/** One card width for every reel, measured against the column not the viewport. */
 export function ScrollRailCard({
   children,
   className,
@@ -97,7 +111,7 @@ export function ScrollRailCard({
   className?: string;
 }) {
   return (
-    <div className={cn("w-[min(82vw,46rem)] shrink-0", className)}>
+    <div className={cn("w-[min(40rem,86cqw)] shrink-0", className)}>
       {children}
     </div>
   );
