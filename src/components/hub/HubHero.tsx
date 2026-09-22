@@ -67,7 +67,7 @@ export function HubHero({
   const orbitScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
 
   return (
-    <div ref={root} className="relative">
+    <div ref={root} className="relative overflow-hidden">
       <motion.div
         className="pointer-events-none absolute -right-8 top-[-12%] h-[28rem] w-[28rem] opacity-80 sm:h-[36rem] sm:w-[36rem] lg:right-[-4%] lg:top-[-18%]"
         aria-hidden

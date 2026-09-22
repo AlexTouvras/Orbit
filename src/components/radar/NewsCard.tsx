@@ -13,7 +13,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
       rel="noopener noreferrer"
       className="focus-ring block h-full rounded-2xl"
     >
-      <GlassCard hover className="group flex h-full flex-col">
+      <GlassCard hover className="group flex h-full min-w-0 flex-col">
         <div className="flex items-center justify-between gap-3">
           <Badge tone={NEWS_CATEGORY_TONE[item.category]}>{item.category}</Badge>
           <span className="font-mono text-xs text-slate-400">
@@ -21,19 +21,19 @@ export function NewsCard({ item }: { item: NewsItem }) {
           </span>
         </div>
 
-        <h3 className="mt-4 text-base font-semibold leading-snug text-white">
+        <h3 className="mt-4 min-w-0 break-words text-base font-semibold leading-snug text-white">
           {item.title}
         </h3>
 
         {item.contentSnippet && (
-          <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-300">
+          <p className="mt-2 min-w-0 flex-1 break-words text-sm leading-relaxed text-slate-300">
             {item.contentSnippet}
           </p>
         )}
 
         <div className="mt-4 flex items-center justify-between border-t border-white/5 pt-3">
-          <span className="text-xs text-slate-400">{item.source}</span>
-          <span className="inline-flex min-h-11 items-center gap-1 text-xs font-medium text-neon-cyan sm:min-h-0 sm:opacity-0 sm:transition-opacity motion-safe:group-hover:opacity-100">
+          <span className="min-w-0 break-words text-xs text-slate-400">{item.source}</span>
+          <span className="inline-flex shrink-0 min-h-11 items-center gap-1 text-xs font-medium text-neon-cyan sm:min-h-0 sm:opacity-0 sm:transition-opacity motion-safe:group-hover:opacity-100">
             Read
             <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
           </span>

@@ -25,7 +25,7 @@ export function GravityScene({ whyOrbit }: { whyOrbit: string }) {
   return (
     <div
       ref={sceneRef}
-      className="grid min-h-[min(90dvh,48rem)] items-start gap-14 lg:min-h-[min(130dvh,64rem)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16"
+      className="grid min-h-[min(90dvh,48rem)] items-start gap-14 overflow-x-clip lg:min-h-[min(130dvh,64rem)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16"
     >
       <div>
         <ChapterMark
