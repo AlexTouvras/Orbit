@@ -1,6 +1,6 @@
 {
   "id": "newsletter-2026-W39",
-  "status": "pending",
+  "status": "sent",
   "createdAt": "2026-09-22T12:36:53.191Z",
   "weekOf": "2026-09-21",
   "subject": "Orbit weekly — week of 2026-09-21",
@@ -44,5 +44,9 @@
       "snippet": ""
     }
   ],
-  "ravens": []
+  "ravens": [],
+  "sentAt": "2026-09-22T12:36:54.529Z",
+  "broadcastId": "01a0c91e-803f-743f-b32d-fe85c0a75b37",
+  "sendMode": "test",
+  "sentTo": "a.touvras@gmail.com"
 }
