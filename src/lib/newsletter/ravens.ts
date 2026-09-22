@@ -10,6 +10,8 @@ export const RAVENS_DOMAIN_ORDER = [
   "fitness",
   "finance",
   "content",
+  "parenting",
+  "security",
 ] as const;
 
 export const RAVENS_DOMAIN_LABELS: Record<string, string> = {
@@ -20,6 +22,8 @@ export const RAVENS_DOMAIN_LABELS: Record<string, string> = {
   fitness: "Fitness",
   finance: "Finance",
   content: "Content",
+  parenting: "Parenting",
+  security: "Security",
 };
 
 const DEFAULT_REPO = "AlexTouvras/ravens";
@@ -112,6 +116,58 @@ function decodeBase64(content: string): string {
   return Buffer.from(content.replace(/\n/g, ""), "base64").toString("utf8");
 }
 
+/**
+ * Muninn titles are plain YAML scalars. A colon followed by a space
+ * (`first latch: let the baby…`) makes js-yaml throw and used to drop
+ * every beat. Quote those values and retry.
+ */
+function quoteColonScalars(markdown: string): string {
+  const open = markdown.match(/^---\r?\n/);
+  if (!open) return markdown;
+  const start = open[0].length;
+  const closeAt = markdown.indexOf("\n---", start);
+  if (closeAt === -1) return markdown;
+  const fixed = markdown
+    .slice(start, closeAt)
+    .split(/\r?\n/)
+    .map((line) => {
+      const match = line.match(/^(\s*)([A-Za-z0-9_]+):\s+(.+)$/);
+      if (!match) return line;
+      const [, indent, key, value] = match;
+      const trimmed = value.trim();
+      if (
+        trimmed.startsWith('"') ||
+        trimmed.startsWith("'") ||
+        trimmed.startsWith("[") ||
+        trimmed.startsWith("{") ||
+        trimmed === "null" ||
+        trimmed === "true" ||
+        trimmed === "false" ||
+        trimmed === "|" ||
+        trimmed === ">"
+      ) {
+        return line;
+      }
+      if (!/:\s/.test(trimmed)) return line;
+      const escaped = trimmed.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+      return `${indent}${key}: "${escaped}"`;
+    })
+    .join("\n");
+  return markdown.slice(0, start) + fixed + markdown.slice(closeAt);
+}
+
+function readMatter(markdown: string) {
+  try {
+    return matter(markdown);
+  } catch (err) {
+    try {
+      return matter(quoteColonScalars(markdown));
+    } catch {
+      throw err;
+    }
+  }
+}
+
 async function githubJson<T>(
   url: string,
   token: string,
@@ -178,7 +234,7 @@ function parseKnowledge(
   path: string,
   now: Date,
 ): (NewsletterRavenItem & { sourceFindings: string[] }) | null {
-  const parsed = matter(markdown);
+  const parsed = readMatter(markdown);
   const data = parsed.data as Record<string, unknown>;
   if (asString(data.status).toLowerCase() !== "active") return null;
   const updated = asString(data.updated) || asString(data.created);
@@ -218,7 +274,7 @@ function parseSignal(
   markdown: string,
   now: Date,
 ): (NewsletterRavenItem & { sourceFindings: string[] }) | null {
-  const parsed = matter(markdown);
+  const parsed = readMatter(markdown);
   const data = parsed.data as Record<string, unknown>;
   if (asString(data.status).toLowerCase() !== "watching") return null;
   const expires = asString(data.expires);
@@ -388,7 +444,13 @@ export async function fetchRavensForDigest(
     const knowledge: NewsletterRavenItem[] = [];
     for (const file of knowledgeFiles) {
       if (!file) continue;
-      const item = parseKnowledge(file.text, file.path, now);
+      let item: ReturnType<typeof parseKnowledge>;
+      try {
+        item = parseKnowledge(file.text, file.path, now);
+      } catch (err) {
+        console.warn(`[newsletter/ravens] skip ${file.path}:`, err);
+        continue;
+      }
       if (!item) continue;
       item.sourceFindings.forEach((id) => promoted.add(id));
       knowledge.push({
@@ -406,7 +468,13 @@ export async function fetchRavensForDigest(
     const signals: NewsletterRavenItem[] = [];
     for (const file of signalFiles) {
       if (!file) continue;
-      const item = parseSignal(file.text, now);
+      let item: ReturnType<typeof parseSignal>;
+      try {
+        item = parseSignal(file.text, now);
+      } catch (err) {
+        console.warn(`[newsletter/ravens] skip ${file.path}:`, err);
+        continue;
+      }
       if (!item) continue;
       item.sourceFindings.forEach((id) => promoted.add(id));
       signals.push({

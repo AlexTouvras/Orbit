@@ -64,7 +64,7 @@ export default function NewsletterPage() {
             </li>
             <li>
               One Ravens highlight per beat that moved this week (AI, data,
-              career, food, fitness, finance, content)
+              career, food, fitness, finance, content, parenting, security)
             </li>
             <li>Tuesday cadence, after Monday&apos;s Write has time to ship</li>
             <li>
