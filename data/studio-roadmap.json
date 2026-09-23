@@ -1,13 +1,13 @@
 {
   "focusNow": "Evidence Layer: make AI & Data Systems Lead obvious from the work, not only the title.",
-  "updatedAt": "2026-09-23T09:13:00.000Z",
+  "updatedAt": "2026-09-23T09:18:39Z",
   "milestones": [
     {
       "id": "product-docs",
       "title": "Product docs + agent hooks live",
       "track": "website",
       "status": "evidence",
-      "notes": "Foundation shipped 2026-09-23. Website infrastructure EVIDENCE — not career PROVEN."
+      "notes": "Foundation shipped 2026-09-23. Website infrastructure EVIDENCE \u2014 not career PROVEN."
     },
     {
       "id": "positioning",
@@ -32,22 +32,22 @@
       "id": "evidence-audit",
       "title": "Evidence audit: inventory + classify existing work against the chain",
       "track": "evidence",
-      "status": "planned",
-      "notes": "Classify projects, desks, essays, AI/data/delivery/FS work. Find gap: ambiguous business problem → deployed data/AI system."
+      "status": "evidence",
+      "notes": "Draft audit in docs/product/EVIDENCE_AUDIT.md (2026-09-23). Owner to accept and pick flagship."
     },
     {
       "id": "flagship-gap",
       "title": "Select one flagship that demonstrates the full chain",
       "track": "career",
       "status": "planned",
-      "notes": "Only after audit. Decision Intelligence Lab is a candidate, not automatic."
+      "notes": "Blocked on owner selection after audit review."
     },
     {
       "id": "archetype-proven",
       "title": "AI & Data Systems Lead becomes an obvious description of the work",
       "track": "career",
       "status": "planned",
-      "notes": "Do not mark PROVEN early. Needs repeated public evidence over 6–12 months."
+      "notes": "Do not mark PROVEN early. Needs repeated public evidence over 6\u201312 months."
     }
   ]
 }
