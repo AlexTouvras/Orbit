@@ -30,7 +30,7 @@
 
 ## Next
 
-- [x] **Orbit 2.0 Foundation** — product docs + agent hooks; positioning (AI & Data Systems Lead); Studio roadmap + HUD `focusNow` only. Branch `orbit-2-foundation`. Coherence, not labs/redesign. **Gate 3:** merge to `main` only on owner OK.
+- [x] **Orbit 2.0 Foundation** — shipped to `main` (`6892531` / Gate 3). Product docs, AI & Data Systems Lead positioning, Studio `/studio/roadmap`. Card keeps STATEMENT only (no NOW box).
 - [ ] **Orbit 2.0 Later** — Decision Intelligence Lab; career timeline visual; AI workflow case study; career-track EVIDENCE items. Not Foundation.
 - [x] **Related articles: economics, credit, lab research** — Economics and Credit filters; VoxEU, BIS, Bank of England PRA, DeepMind, Google Research, Anthropic research mirror. Weekly intake includes the new lanes ahead of AI.
 - [x] **Visual storytelling Hub** — chaptered scroll on `/`; skill at `.cursor/skills/visual-storytelling`. Shipped to prod 2026-09-22 (owner asked to push).
