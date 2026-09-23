@@ -33,7 +33,7 @@ Do not change product direction because an implementation seems easier or cooler
 
 | Product decision (docs / owner) | Implementation decision (agent) |
 |---------------------------------|----------------------------------|
-| HUd is a 15–30s identity card | Reuse card components; add `focusNow` display |
+| HUd is a 15–30s identity card | Reuse card components; STATEMENT only on `/card` |
 | Hub answers WHAT / HOW HE THINKS | Copy alignment only; keep chapter grammar |
 | Studio tracks trajectory | Smallest persistence compatible with existing Studio |
 
@@ -61,11 +61,11 @@ Do not rebuild from scratch unless explicitly requested.
 
 ## HUd rule
 
-`/card` is an existing product. Iterative improvement only. NOW = `focusNow` only.
+`/card` is an existing product. Iterative improvement only. STATEMENT on the card; `focusNow` stays in Studio.
 
 ## Studio rule
 
-Private-by-convention. Do not expose Studio content publicly unless marked public (`focusNow`).
+Private-by-convention. Do not expose Studio content publicly unless the owner explicitly marks it for a public surface.
 
 ## Design rule
 

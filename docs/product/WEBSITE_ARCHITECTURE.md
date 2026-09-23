@@ -22,7 +22,7 @@ Timeline   → history
 
 Studio is source of truth for:
 
-- `focusNow` (public-safe)
+- `focusNow` (Studio trajectory; not on `/card`)
 - roadmap milestone status (private)
 
 Public pages consume only information explicitly marked public. Do not automatically expose Studio notes.

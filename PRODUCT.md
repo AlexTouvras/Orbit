@@ -38,7 +38,9 @@ Docs decide product. Agents pick implementation only inside that box.
 
 ## Foundation vs later
 
-**Orbit 2.0 Foundation** = infrastructure (product truth, positioning, Studio tracker, HUD NOW). It does **not** create new career achievements or labs.
+**Orbit 2.0 Foundation** (shipped 2026-09-23) = infrastructure (product truth, positioning, Studio tracker). Website Foundation is **EVIDENCE**, not career **PROVEN**.
+
+**Orbit 2.0 Evidence Layer** (next) = audit existing work, find the chain gap, then one flagship proof. Do **not** jump to Decision Intelligence Lab before the audit.
 
 Deep chapters: [`docs/product/`](docs/product/).
 

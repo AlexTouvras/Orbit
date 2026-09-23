@@ -16,7 +16,7 @@ Connect: **Capability → Evidence → Public Proof → Opportunity**
 - Owner-only (`/studio`, existing auth)
 - `noindex`
 - Never auto-publish notes or confidential employer detail
-- Only `focusNow` may feed the public HUd
+- `focusNow` is Studio trajectory copy only (not shown on `/card`)
 
 ## Milestone statuses
 
@@ -35,18 +35,25 @@ Examples:
 
 Do not mark something PROVEN because a course or certification finished.
 
-## Foundation vs career achievement
+## Foundation (shipped)
 
-**Orbit 2.0 Foundation creates the tracking system.** It does not create new career evidence.
+Website infrastructure milestones are **EVIDENCE** (docs, positioning, Studio roadmap). That does **not** make the career archetype PROVEN.
 
-Foundation seed milestones (infrastructure / website track):
+HUd shows STATEMENT only. `focusNow` stays in Studio.
 
-1. Product docs + agent hooks live
-2. Public positioning aligned (Hub + HUD + About)
-3. Studio roadmap v1 private
-4. HUD NOW wired from Studio (`focusNow` only)
+## Evidence Layer (next)
 
-Career-track EVIDENCE/PROVEN items are owner-added **after** Foundation ships.
+Goal: demonstrate that “AI & Data Systems Lead” is supported by visible work, not only a title.
+
+Sequence:
+
+1. **Evidence audit** — inventory projects, desks, essays, AI / data / delivery / FS work; classify by what each proves
+2. **Find the chain gap** — Business problem → Data → Intelligent system → Delivery → Measurable outcome
+3. **One flagship** — only after the audit (Decision Intelligence Lab is a candidate, not automatic)
+4. **Case study + interactive proof** — then repeat 2–3 times
+5. **Archetype PROVEN** — when visitors conclude it themselves (6–12 months)
+
+Do not start another architecture/foundation phase. Do not build the Lab before the audit.
 
 ## Review cadence
 
@@ -61,13 +68,13 @@ At each review:
 
 ## Persistence
 
-Inspect how Studio already persists JSON (`persistDataJson`, profile/projects pattern). Implement the smallest compatible roadmap model. Do not invent a second persistence architecture.
+Use existing Studio `persistDataJson` / profile-store pattern. Do not invent a second persistence architecture.
 
 ## Logical shape
 
 ```text
 Roadmap {
-  focusNow: string          // ONLY field allowed on /card
+  focusNow: string          // Studio only; not on /card
   updatedAt: ISO string
   milestones: [{
     id, title, track: career|website|evidence,

@@ -1,30 +1,53 @@
 {
-  "focusNow": "Building an AI & Data Systems practice at the intersection of technology delivery, analytics and automation.",
-  "updatedAt": "2026-09-23T00:00:00.000Z",
+  "focusNow": "Evidence Layer: make AI & Data Systems Lead obvious from the work, not only the title.",
+  "updatedAt": "2026-09-23T09:13:00.000Z",
   "milestones": [
     {
       "id": "product-docs",
       "title": "Product docs + agent hooks live",
       "track": "website",
-      "status": "active"
+      "status": "evidence",
+      "notes": "Foundation shipped 2026-09-23. Website infrastructure EVIDENCE — not career PROVEN."
     },
     {
       "id": "positioning",
       "title": "Public positioning aligned (Hub + HUD + About)",
       "track": "website",
-      "status": "active"
+      "status": "evidence"
     },
     {
       "id": "studio-roadmap-v1",
       "title": "Studio roadmap v1 private",
       "track": "website",
-      "status": "active"
+      "status": "evidence"
     },
     {
-      "id": "hud-now",
-      "title": "HUD NOW wired from Studio (focusNow only)",
+      "id": "hud-statement-only",
+      "title": "HUd stays identity (STATEMENT); focusNow lives in Studio only",
       "track": "website",
-      "status": "active"
+      "status": "evidence",
+      "notes": "Owner 2026-09-23: no NOW box on /card (duplicated STATEMENT)."
+    },
+    {
+      "id": "evidence-audit",
+      "title": "Evidence audit: inventory + classify existing work against the chain",
+      "track": "evidence",
+      "status": "planned",
+      "notes": "Classify projects, desks, essays, AI/data/delivery/FS work. Find gap: ambiguous business problem → deployed data/AI system."
+    },
+    {
+      "id": "flagship-gap",
+      "title": "Select one flagship that demonstrates the full chain",
+      "track": "career",
+      "status": "planned",
+      "notes": "Only after audit. Decision Intelligence Lab is a candidate, not automatic."
+    },
+    {
+      "id": "archetype-proven",
+      "title": "AI & Data Systems Lead becomes an obvious description of the work",
+      "track": "career",
+      "status": "planned",
+      "notes": "Do not mark PROVEN early. Needs repeated public evidence over 6–12 months."
     }
   ]
 }
