@@ -1,7 +1,79 @@
 {
-  "generatedAt": "2026-09-22T12:54:35.539Z",
+  "generatedAt": "2026-09-23T06:46:58.027Z",
   "count": 262,
   "items": [
+    {
+      "id": "f526d7679022",
+      "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
+      "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-22T23:46:41.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "7d0bfe7abe25",
+      "title": "The energy transition: Progress and challenges",
+      "link": "https://cepr.org/voxeu/columns/energy-transition-progress-and-challenges",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-22T23:00:00.000Z",
+      "contentSnippet": "Solar and wind have become the cheapest sources of new electricity almost everywhere, yet Europe is now switching them off in record numbers. This column argues that the binding constraint on the energy transition is no longer technology but market design — and that fixing it mea…"
+    },
+    {
+      "id": "ef25691dc93e",
+      "title": "Your Team Isn't Slow. Your Handoffs Are.",
+      "link": "https://www.scrum.org/resources/blog/your-team-isnt-slow-your-handoffs-are",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-22T22:00:00.000Z",
+      "contentSnippet": "Image Watch where the work actually spends its time. Not the hours someone is heads-down building. The days it sits, waiting. Waiting for the one person who knows that system. Waiting for the other team to finish their sprint. Waiting for a review, a sign-off, an environment, an…"
+    },
+    {
+      "id": "b6b1e4118cdb",
+      "title": "Better prompt caching for GPT-6",
+      "link": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-22T21:00:00.000Z",
+      "contentSnippet": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs."
+    },
+    {
+      "id": "3d48e529ad7a",
+      "title": "Introducing GPT-6 Sol and Luna",
+      "link": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-22T18:00:00.000Z",
+      "contentSnippet": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost."
+    },
+    {
+      "id": "84da03a25e9c",
+      "title": "Genie One MCP: Give any AI Agent the Right Business Context",
+      "link": "https://www.databricks.com/blog/genie-one-mcp-give-any-ai-agent-right-business-context",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-22T16:00:00.000Z",
+      "contentSnippet": "Business leaders often have access to plenty of data, but still can’t get a reliable..."
+    },
+    {
+      "id": "42d88f7d50b6",
+      "title": "The Genie One MCP is now Generally Available",
+      "link": "https://www.databricks.com/blog/genie-one-mcp-now-generally-available",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-22T16:00:00.000Z",
+      "contentSnippet": "AI coworkers and coding agents are spreading fast across organizations, and each..."
+    },
+    {
+      "id": "ce45d8dc0f6c",
+      "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
+      "link": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-22T12:00:00.000Z",
+      "contentSnippet": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models."
+    },
     {
       "id": "196c90e841c9",
       "title": "The hidden complexity of a daily average in DAX",
@@ -12,6 +84,24 @@
       "contentSnippet": "A simple daily average can hide complexities and return different values. We explore several edge-case scenarios to build the desired calculation using AI to accelerate the development."
     },
     {
+      "id": "2431a2db1a33",
+      "title": "PBIP, PBIR, and Making Power BI AI-Addressable: A Conversation with Rui Romano (Fabric Insider Ep. 14)",
+      "link": "https://radacad.com/pbip-pbir-and-making-power-bi-ai-addressable-a-conversation-with-rui-romano-fabric-insider-ep-14/?utm_source=rss&utm_medium=rss&utm_campaign=pbip-pbir-and-making-power-bi-ai-addressable-a-conversation-with-rui-romano-fabric-insider-ep-14",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-09-22T09:19:36.000Z",
+      "contentSnippet": "PBIX isn’t going away, but the code behind it is finally becoming something you can version, script, and hand to an AI agent without things blowing up. In this episode of Fabric Insider, I sit down with Rui Romano, Product Manager on the Power BI team within Fabric, the person be…"
+    },
+    {
+      "id": "b4fb82cc1313",
+      "title": "Priorities and principles for effective third party assessments",
+      "link": "https://openai.com/index/priorities-principles-third-party-assessments",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-22T00:00:00.000Z",
+      "contentSnippet": "OpenAI outlines priorities and principles for rigorous, secure, and independent third-party AI safety assessments of frontier models and safeguards."
+    },
+    {
       "id": "ba9acd5cf52a",
       "title": "DuckDB Now Ships inside dbt v2",
       "link": "https://duckdb.org/2026/09/22/dbt-fusion.html",
@@ -19,6 +109,15 @@
       "category": "Data",
       "pubDate": "2026-09-22T00:00:00.000Z",
       "contentSnippet": "dbt is the tool many data teams use to manage their SQL transformations: you write each model as a SELECT statement, and dbt works out the order to run them in from the references between models, builds the resulting tables and views in your database, and can test them along the…"
+    },
+    {
+      "id": "c0e73749e2be",
+      "title": "Querying the entire internet (100 billion rows!) with MotherDuck",
+      "link": "https://motherduck.com/blog/querying-the-entire-internet-100-billion-rows-with-motherduck",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-09-22T00:00:00.000Z",
+      "contentSnippet": "Common Crawl publishes petabytes of web crawl data on S3. With DuckDB and MotherDuck you can query the Common Crawl dataset directly, no cluster and no download, and measure how fast the vibe-coded web is growing."
     },
     {
       "id": "c079d2e63304",
@@ -66,15 +165,6 @@
       "contentSnippet": "Originally published on yuvalyeret.com. How do we deliver valuable real-world AI impact through solutions that solve problems, using some of what we've learned by building products over the last couple of decades? We're not seeing the value yet Unless you've been in a cave, you'r…"
     },
     {
-      "id": "a7ca59844a94",
-      "title": "Advisory Group on Mathematics and Artificial Intelligence",
-      "link": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-21T12:00:00.000Z",
-      "contentSnippet": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results."
-    },
-    {
       "id": "d37f5b2c5927",
       "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
       "link": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
@@ -82,6 +172,15 @@
       "category": "AI",
       "pubDate": "2026-09-21T12:00:00.000Z",
       "contentSnippet": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster."
+    },
+    {
+      "id": "a7ca59844a94",
+      "title": "Advisory Group on Mathematics and Artificial Intelligence",
+      "link": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-21T12:00:00.000Z",
+      "contentSnippet": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results."
     },
     {
       "id": "2c9792fbb14a",
@@ -129,13 +228,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "d1749ba76a98",
-      "title": "How V7 gives AI agents institutional memory",
-      "link": "https://openai.com/index/v7",
-      "source": "OpenAI Blog",
-      "category": "AI",
+      "id": "6547962f0772",
+      "title": "dbt Charts on MotherDuck: Declarative Dashboards",
+      "link": "https://motherduck.com/blog/dbt-Charts-on-MotherDuck-Declarative-Dashboards",
+      "source": "MotherDuck",
+      "category": "Data",
       "pubDate": "2026-09-21T00:00:00.000Z",
-      "contentSnippet": "Using GPT-5.6, V7 turns scattered company files into context agents can use to complete complex, source-linked work."
+      "contentSnippet": "Define your dashboards in YAML with dbt Charts, then the same dbt build that runs your pipeline deploys them to MotherDuck Dives. Just 2 config changes! Your Dives will refresh live whenever your stakeholders take a look. See how we constructed the dbt package as well."
     },
     {
       "id": "9f74bdee107b",
@@ -228,13 +327,13 @@
       "contentSnippet": "At Databricks IT, our vision is to empower people to work from anywhere without putting..."
     },
     {
-      "id": "559b0cf11197",
-      "title": "Introducing the Australian Youth Safety Blueprint",
-      "link": "https://openai.com/index/australian-youth-safety-blueprint",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-18T12:00:00.000Z",
-      "contentSnippet": "OpenAI introduces the Australian Youth Safety Blueprint, a six-pillar roadmap for safer AI experiences that protect and empower young people."
+      "id": "f36bba4d43df",
+      "title": "Database Branching: A Developer's Guide to Git-Style Workflows",
+      "link": "https://www.databricks.com/blog/database-branching",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-18T09:31:51.000Z",
+      "contentSnippet": "Git made isolated development a baseline for software teams. Each developer can create..."
     },
     {
       "id": "7e5cf95f9786",
@@ -244,15 +343,6 @@
       "category": "Data",
       "pubDate": "2026-09-18T00:00:00.000Z",
       "contentSnippet": "When DuckDB-Wasm was launched in 2021, databases could not be persisted: everything lived in the Wasm heap and vanished when the tab closed. Keeping data meant serializing tables to Parquet, storing the bytes in IndexedDB, and re-registering them on the next page load. This was d…"
-    },
-    {
-      "id": "2a9e51be59ac",
-      "title": "Loosening Inheritance Law",
-      "link": "https://cepr.org/multimedia/loosening-inheritance-law",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-17T23:00:00.000Z",
-      "contentSnippet": "In most of the world you do not get to choose who inherits your money. Across continental Europe, Latin America, and countries governed by Islamic law, a minimum share of your estate will be reserved for your children, your spouse, and in some places your surviving parents. Write…"
     },
     {
       "id": "b560e1d4d346",
@@ -363,22 +453,13 @@
       "contentSnippet": "Originally published on yuvalyeret.com. Your portfolio process isn’t slowing you down by accident You built empowered product teams. You wrote down a product operating model. And somehow decisions still stall, competitors still pivot faster than you do, and every initiative that…"
     },
     {
-      "id": "964ae1dd0fac",
-      "title": "How Cooley is accelerating IPO work with ChatGPT",
-      "link": "https://openai.com/index/cooley-gopublic",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-17T12:00:00.000Z",
-      "contentSnippet": "Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most."
-    },
-    {
-      "id": "363bbead77de",
-      "title": "Introducing Astra for Law",
-      "link": "https://openai.com/index/astra-for-law",
-      "source": "OpenAI Blog",
+      "id": "fb225a3bcd84",
+      "title": "Measurements for understanding the pace of AI development inside frontier labs",
+      "link": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "source": "Anthropic Research",
       "category": "AI",
       "pubDate": "2026-09-17T00:00:00.000Z",
-      "contentSnippet": "OpenAI for Law brings frontier intelligence for law, custom firm workflows, connected legal data sources, and legal-grade controls for confidential client work."
+      "contentSnippet": "Today, the world can’t see what’s going on inside AI labs. Anthropic is proposing new metrics that would give the public visibility into frontier AI development."
     },
     {
       "id": "e37e271a8b83",
@@ -487,33 +568,6 @@
       "category": "AI",
       "pubDate": "2026-09-15T17:05:57.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "c52ed0ba8c64",
-      "title": "Data Ontology defined: The context layer your AI agents are missing",
-      "link": "https://www.databricks.com/blog/data-ontology-defined-context-layer-your-ai-agents-are-missing",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-15T16:59:01.000Z",
-      "contentSnippet": "Ask five people at the same company what \"revenue\" means and there's a chance you'll get five different answers..."
-    },
-    {
-      "id": "d434fda9e8d3",
-      "title": "How energy teams turn theft detection into governed action with Genie and AI business processes",
-      "link": "https://www.databricks.com/blog/how-energy-teams-turn-theft-detection-governed-action-genie-and-ai-business-processes",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-15T16:50:00.000Z",
-      "contentSnippet": "Energy theft is the deliberate use of gas or electricity without paying for it, typically..."
-    },
-    {
-      "id": "afa31152d6b7",
-      "title": "What is AI analytics? Why it only works on governed data",
-      "link": "https://www.databricks.com/blog/what-ai-analytics-why-it-only-works-governed-data",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-15T16:45:03.000Z",
-      "contentSnippet": "AI analytics is the practice of applying artificial intelligence and machine learning to data analysis..."
     },
     {
       "id": "8356199c8c98",
@@ -685,15 +739,6 @@
       "category": "AI",
       "pubDate": "2026-09-12T00:42:25.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "f1dda2e4995c",
-      "title": "Do We Need A New Scrum Guide?!",
-      "link": "https://www.scrum.org/resources/blog/do-we-need-new-scrum-guide",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-11T10:00:57.000Z",
-      "contentSnippet": "Image My current car is a Peugeot 508, over ten years old, yet still a great car that I genuinely love. But recently, one of my friends bought a brand-new car and invited me inside to check out the interior and features. My reaction? Wow. A large, high-quality screen with big, re…"
     },
     {
       "id": "edd61c314290",
@@ -890,7 +935,7 @@
       "link": "https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/",
       "source": "Google Research",
       "category": "AI",
-      "pubDate": "2026-09-03T16:00:03.000Z",
+      "pubDate": "2026-09-03T16:00:00.000Z",
       "contentSnippet": "General Science"
     },
     {
@@ -1047,15 +1092,6 @@
       "contentSnippet": "International organisations including the Bank for International Settlements (BIS) have adopted SDMx (Statistical Data and Metadata) as the standard for exchanging official statistics. Trust in published data is essential for evidence-based policymaking. This paper shows how bind…"
     },
     {
-      "id": "ab12481175ff",
-      "title": "Claude Fable 5.1 made me a really nice animated pelican",
-      "link": "https://simonwillison.net/2026/Sep/1/claude-fable-5-1/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-09-01T23:57:28.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "ce78c56fbdad",
       "title": "Fragments: September 1",
       "link": "https://martinfowler.com/fragments/2026-09-01.html",
@@ -1144,15 +1180,6 @@
       "category": "Data",
       "pubDate": "2026-08-27T00:00:00.000Z",
       "contentSnippet": "Meet the MotherDuck CLI: one install to query data, publish Python pipelines, and host dashboards from your terminal, for coding agents and CI alike."
-    },
-    {
-      "id": "6b13cfdefeab",
-      "title": "Enabling independent research on how people use Claude",
-      "link": "https://www.anthropic.com/research/enabling-independent-research",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-08-26T18:00:00.000Z",
-      "contentSnippet": "We ran a pilot giving external researchers access to aggregate, real-world Claude usage data. In this post, we share high-level results and what we learned running this pilot."
     },
     {
       "id": "8c836a70161f",
@@ -1371,24 +1398,6 @@
       "contentSnippet": "How to think about the semantic system that makes an agent coherent, governable, and useful."
     },
     {
-      "id": "b975b680ae4f",
-      "title": "Vibe Code Data Apps with Vercel V0 & MotherDuck",
-      "link": "https://motherduck.com/blog/vibe-code-data-apps-with-vercel-v0-and-MotherDuck",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-13T00:00:00.000Z",
-      "contentSnippet": "Use an agent to build data apps with the combo of Vercel V0 and MotherDuck! V0 makes prototyping and deployment easy, while MotherDuck Flights provide seamless data ingestion and MotherDuck handles up to billions of rows. Your agent can even sign up for MotherDuck for you! See a…"
-    },
-    {
-      "id": "e2a20994a108",
-      "title": "DuckDB Ecosystem Newsletter : August 2026",
-      "link": "https://motherduck.com/blog/duckdb-ecosystem-newsletter-august-2026",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-13T00:00:00.000Z",
-      "contentSnippet": "The August 2026 DuckDB Ecosystem Newsletter: giving every agent its own embedded DuckDB, the ADBC extension reaching 30+ external databases, async I/O landing in v2.0, ISO GQL graph queries, Perspective 5.0 pushdown, plus a community spotlight on Kyle Cheung."
-    },
-    {
       "id": "e64d5d0646ff",
       "title": "Declarative Automation in Dagster: Smarter Data Orchestration Without Complex Schedules",
       "link": "https://dagster.io/blog/orchestration-is-more-than-scheduling-declarative-automation-in-dagster",
@@ -1551,15 +1560,6 @@
       "contentSnippet": "Federal Reserve Bank of Atlanta Working Papers by Kristopher Gerardi, David Hao Zhang and Franklin Qian"
     },
     {
-      "id": "ccf4833e2826",
-      "title": "Data Integration, Migration & the Future of ETL in Microsoft Fabric — A Conversation with Wee Hyong Tok | Fabric Insider Ep. 9",
-      "link": "https://radacad.com/data-integration-migration-the-future-of-etl-in-microsoft-fabric-a-conversation-with-wee-hyong-tok-fabric-insider-ep-9/?utm_source=rss&utm_medium=rss&utm_campaign=data-integration-migration-the-future-of-etl-in-microsoft-fabric-a-conversation-with-wee-hyong-tok-fabric-insider-ep-9",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-08-02T23:58:47.000Z",
-      "contentSnippet": "Is ETL as we know it coming to an end? What is the real migration path from ADF, Synapse, or SSIS to Microsoft Fabric? And what does AI mean for the future of the ETL developer’s career? I sat down with Wee Hyong Tok — Partner Director of Product Management for Data Integration a…"
-    },
-    {
       "id": "e70bbfbc4b98",
       "title": "Analysing Power BI Data Using Copilot In Excel",
       "link": "https://blog.crossjoin.co.uk/2026/08/02/analysing-power-bi-data-using-copilot-in-excel/",
@@ -1659,15 +1659,6 @@
       "contentSnippet": "Low Impact Amendments Finalisation July 2026"
     },
     {
-      "id": "d834dadfb202",
-      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Policy statement 18/26"
-    },
-    {
       "id": "054894a68cbf",
       "title": "LIAC02/26 – Low Impact Amendments Consultation July 2026",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-consultation-july-2026",
@@ -1675,6 +1666,15 @@
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
       "contentSnippet": "Low Impact Amendments Consultation July 2026"
+    },
+    {
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "fb549b859ee4",
