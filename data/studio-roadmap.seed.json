@@ -1,0 +1,30 @@
+{
+  "focusNow": "Building an AI & Data Systems practice at the intersection of technology delivery, analytics and automation.",
+  "updatedAt": "2026-09-23T00:00:00.000Z",
+  "milestones": [
+    {
+      "id": "product-docs",
+      "title": "Product docs + agent hooks live",
+      "track": "website",
+      "status": "active"
+    },
+    {
+      "id": "positioning",
+      "title": "Public positioning aligned (Hub + HUD + About)",
+      "track": "website",
+      "status": "active"
+    },
+    {
+      "id": "studio-roadmap-v1",
+      "title": "Studio roadmap v1 private",
+      "track": "website",
+      "status": "active"
+    },
+    {
+      "id": "hud-now",
+      "title": "HUD NOW wired from Studio (focusNow only)",
+      "track": "website",
+      "status": "active"
+    }
+  ]
+}

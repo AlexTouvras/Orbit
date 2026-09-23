@@ -2,10 +2,13 @@
   "name": "Alex Touvras",
   "handle": "@alextouvras",
   "githubUsername": "alextouvras",
-  "role": "Technology Delivery Lead · Data & AI Automation",
+  "role": "AI & Data Systems Lead",
   "location": "Vantaa, Finland",
-  "tagline": "If nobody owns the decision, it doesn't ship. Credit risk taught me that standard; I hold it leading Azure application ops, and in everything I put in public.",
-  "summary": "I lead IT application operations on Azure at Santander Consumer Bank Nordics, after years on PD models, scorecards, and ECL-style work. Orbit is the public HQ: one-question Blog essays, portfolio proof (Power BI, Ledger, workshop tools), and a curated Related articles feed. Automation gets a human Approve gate — including the weekly Write draft.",
+  "tagline": "Building and leading data & AI systems that solve complex business problems.",
+  "pillars": "AI · Data · Delivery · Credit · SDLC",
+  "availability": "Open to AI & Data Systems, delivery, and analytics roles",
+  "yearsExperience": "7+",
+  "summary": "I build and lead systems along the chain from business problems to data, intelligent systems, delivery, and measurable outcomes. Financial services is the domain I know deepest — credit risk, portfolio analytics, then Azure application operations at Santander Nordics — and a starting advantage, not a ceiling. Orbit is the public HQ: essays, portfolio proof, live desks, and automation that waits for a human Approve.",
   "email": "a.touvras@gmail.com",
   "resumeUrl": "/resume.pdf",
   "socials": [
@@ -21,5 +24,13 @@
       "label": "Email",
       "href": "mailto:a.touvras@gmail.com"
     }
+  ],
+  "githubRepoAllowlist": [
+    "powerbi-portfolio",
+    "ProjectBrain",
+    "ledger",
+    "agentic-ai-field-card",
+    "data-analytics-field-card",
+    "technology-delivery-field-card"
   ]
 }

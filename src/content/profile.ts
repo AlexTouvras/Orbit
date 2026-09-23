@@ -54,24 +54,25 @@ export const profile = {
   handle: "@alextouvras",
   // Used by the Portfolio page to auto-showcase your public repos.
   githubUsername: "alextouvras",
-  role: "Delivery · Data · AI automation",
+  role: "AI & Data Systems Lead",
   location: "Vantaa, Finland",
   /** Big home line. Second line takes the gradient. */
   headlineLine: "Drafts take seconds.",
   headlineAccent: "The call does not.",
   tagline:
-    "A model can hand you a result before the sentence is finished. I define the requirements, guide what gets built, and validate the output to meet objectives.",
+    "Building and leading data & AI systems that solve complex business problems.",
   /** One line on the identity HUD — stranger-readable, no workshop slang. */
   cardTagline:
-    "Results arrive in seconds. I define the requirements, guide what gets built, and validate the output to meet objectives.",
-  pillars: "Delivery · Data · AI automation · Credit risk · SDLC",
+    "Building and leading data & AI systems that solve complex business problems.",
+  /** Hub kicker under the name — capability breadth along the chain. */
+  pillars: "AI · Data · Delivery · Credit · SDLC",
   /** Primary contact CTA — replaces a separate “open to …” pill. */
   contactCta: "Get in touch about a role",
   availability:
-    "Open to Data & Analytics, Credit Risk, AI or delivery roles",
+    "Open to AI & Data Systems, delivery, and analytics roles",
   yearsExperience: "7+",
   summary:
-    "I lead IT application operations on Azure at Santander Consumer Bank Nordics, after years on PD models, scorecards, and ECL-style work. Orbit is the public HQ: one-question Blog essays, portfolio proof (Power BI, Ledger, workshop tools), and a curated Related articles feed. Automation gets a human Approve gate — including the weekly Write draft.",
+    "I build and lead systems along the chain from business problems to data, intelligent systems, delivery, and measurable outcomes. Financial services is the domain I know deepest — credit risk, portfolio analytics, then Azure application operations at Santander Nordics — and a starting advantage, not a ceiling. Orbit is the public HQ: essays, portfolio proof, live desks, and automation that waits for a human Approve.",
   /** Short brand line — why the site is called Orbit (Hub + About). */
   whyOrbit:
     "An orbit is a stable relationship around a center. The gravity here is how I build: systems, gates, and the habit of getting better. What orbits are the products, essays, signals, and projects that come out of that.",
@@ -83,7 +84,7 @@ export const profile = {
   avatarUrl: "/avatar-pixel-64.png",
   email: "a.touvras@gmail.com",
   contactBlurb:
-    "Happy to talk delivery, data systems, AI automation, and what's broken in your stack.",
+    "Happy to talk AI and data systems, delivery, and hard business problems — especially where financial-domain depth helps.",
   /** Public repos shown on Portfolio. Empty = show newest non-fork repos (legacy). */
   githubRepoAllowlist: [
     "powerbi-portfolio",

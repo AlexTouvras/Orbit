@@ -4,7 +4,9 @@
 
 ## Overview
 
-Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub + Power BI screenshots + live desks at `/portfolio/live`), Related articles RSS cache, Studio (profile + week log), architecture sync, weekly digest (Resend auto-send; test-to-self until go-live). Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
+Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub + Power BI screenshots + live desks at `/portfolio/live`), Related articles RSS cache, Studio (profile + week log + roadmap), architecture sync, weekly digest (Resend auto-send; test-to-self until go-live). Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
+
+**Product truth (2026-09-23):** Root `PRODUCT.md` + `docs/product/*` are authoritative for identity layers (HUd WHO / Hub WHAT / Studio WHERE / timeline HOW). Agents must Scope-check via `docs/product/AGENT_RULES.md`. Wired from `.cursor/rules/product-kit.mdc`.
 
 ## Data shapes
 
@@ -19,6 +21,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
+| Studio roadmap | `data/studio-roadmap.json` (+ `.seed.json`) | `focusNow` (public on `/card` only) + private milestones (`planned`/`active`/`evidence`/`proven`). Persist via `persistDataJson` same as profile. Store: `src/lib/studio-roadmap.ts`. |
 | Newsletter digest draft | `data/newsletter-draft.json` | Titles/links only. Gitignored locally; persist send status via GitHub |
 | Newsletter subscribers | Resend Audience, or `RESEND_NEWSLETTER_TEST_TO` | Emails never in git. Test-to skips the audience entirely |
 | Ravens findings | GitHub Contents on `AlexTouvras/ravens` | Weekly highlights: one item per domain that moved (inbox first). `RAVENS_GITHUB_TOKEN` |
@@ -117,8 +120,15 @@ src/lib/newsletter/
 src/app/newsletter/page.tsx
 src/app/api/cron/newsletter/
 src/lib/week-log/            # Studio /studio/week loaders + Heimdall matcher
+src/lib/studio-roadmap.ts    # focusNow + milestones; persistDataJson like profile
 src/app/studio/week/         # Hub + topic pages
+src/app/studio/roadmap/      # Private trajectory editor (feeds /card NOW)
 src/components/studio/week/  # Topic panels + HeimdallEmbed
+src/components/studio/RoadmapEditor.tsx
+data/studio-roadmap.json
+data/studio-roadmap.seed.json
+PRODUCT.md
+docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, AGENT_RULES
 canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 .state/
 ```
@@ -182,7 +192,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-09 | HUD lane hints use field-card thesis (`hudTitle` / `hudVerbs` / `hudDescription`); Home keeps skill blurbs | Phone scan should show stack-not-dashboard / sequence-not-ticket, not the Hub competency paragraph |
 | 2026-09-11 | EU Spot map uses real bidding-zone polygons (entsoe-py GeoJSON → SVG), not country choropleth | Owner asked for actual map; MIT-licensed zone shapes |
 | 2026-09-22 | Visual storytelling stays on live desks | Owner: the Anthropic-style reading order (question, cast of figures, picture, a comparison you can move) is for `/portfolio/live/*`, not weekly Writes. Essays stay MDX prose. |
-| 2026-09-22 | Related articles lanes: Economics (VoxEU, BIS research) and Credit (BIS FSI, Bank of England PRA). Lab research stays in AI with a low cap (DeepMind, Google Research, Anthropic via the Turing Institute mirror). Fetcher sorts by date before `maxItems`. | Owner asked for economics, banking/credit risk, and research like anthropic.com/research. Anthropic publishes no RSS. ECB working papers return XML the parser rejects. Weekly intake round-robin now includes Economics and Credit ahead of AI. |
+| 2026-09-23 | Orbit 2.0 Foundation: `PRODUCT.md` + `docs/product/*`; HUd WHO / Hub WHAT / Studio WHERE; HUD NOW = `focusNow` only; Foundation = infrastructure not career achievements | Owner-locked identity (AI & Data Systems Lead); agents Scope-check via AGENT_RULES; branch `orbit-2-foundation` |
 | 2026-09-22 | Native live desks refresh on GHA `Refresh live desks` (13:00 UTC); commit triggers a Vercel rebuild | Nordic Equity fetches heatmap-web at request time. EU Spot, Housing, Power Mix, and Economy are JSON in the deployment bundle. Do not `[skip vercel]`. EU Spot scripts use `tsx --conditions=react-server` because `entsoe-xml` / `eu-categories` import `server-only` (plain `tsx` throws). EU Spot runs only when `ENTSOE_SECURITY_TOKEN` is a repo secret. |
 | 2026-09-11 | EU Spot prices from ENTSO-E A44 when `ENTSOE_SECURITY_TOKEN` set; Energy-Charts fallback | Owner generated API token; clears localhost-only license gate |
 | 2026-09-11 | Finland Power Pulse folded into EU Spot; mix nowcast on every zone | Owner: remove Pulse from Portfolio; press-a-zone desk is the same reading order for FI as for every other bidding zone. Nowcast is hourly OLS on ENTSO-E mix, not Energy-Charts 15-min FI. |

@@ -37,7 +37,7 @@ export function BackgroundSections() {
           <SectionHeading
             eyebrow="Background"
             title="Story & record"
-            description="Credit risk roots, delivery leadership, and the quantitative tooling in between."
+            description="Business problems → data → intelligent systems → delivery → outcomes. Financial services is the deepest domain so far — not the whole identity."
           />
         </Reveal>
 

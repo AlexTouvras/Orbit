@@ -122,5 +122,5 @@ Do not: iframe a Power BI report as the story; duplicate Hub glass cards onto th
 
 - Replacing tsParticles with video
 - Webflow-style page transitions
-- Rewriting essay MDX into scrollytelling
+- Rewriting essay MDX into scrollytelling. Owner 2026-09-22: the cast, the picture, and a comparison the reader can move stay on live desks. Weekly Writes stay prose.
 - Garmin / hobby embeds

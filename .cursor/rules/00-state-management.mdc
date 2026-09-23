@@ -16,6 +16,8 @@ Before starting any new feature, silently read:
 
 Also skim `.state/BACKLOG.md` for the active item and **Out of scope**.
 
+For product intent (positioning, Hub/HUD, Studio roadmap, public identity): also skim root `PRODUCT.md`.
+
 If `.state/` is missing, run the personal skill `project-state` to scaffold it (idempotent) before continuing.
 
 ## BOOTSTRAP GATE (first non-tiny task)
