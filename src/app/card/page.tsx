@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Identity HUD",
   description:
-    "Compact identity card — delivery, data, and AI automation, then into the rest of the site.",
+    "Compact identity card — AI & Data Systems Lead; then into the rest of the site.",
   alternates: { canonical: "/card" },
 };
 

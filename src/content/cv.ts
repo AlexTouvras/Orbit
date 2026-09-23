@@ -54,7 +54,7 @@ export const cv: Cv = {
   email: "a.touvras@gmail.com",
   linkedin: "linkedin.com/in/alextouvras",
   summary:
-    "Credit risk and data professional with ~7 years in consumer finance and banking, now bridging into technology delivery and IT operations. Strong track record in PD models, scorecards, ECL forecasting, credit engine optimization, and portfolio steering. Combines quantitative risk expertise (Python, SQL, Power BI / Fabric) with cross-functional delivery experience across Azure platforms, middleware, and DevOps-aligned operations.",
+    "AI & Data Systems Lead with ~7 years in consumer finance and banking. Domain depth in PD models, scorecards, ECL forecasting, credit engines, and portfolio steering - used as an advantage, not a permanent label. Combines that background with data work (Python, SQL, Power BI / Fabric) and technology delivery across Azure platforms, middleware, and DevOps-aligned operations.",
   experience: [
     {
       company: "Santander Consumer Bank Nordics",
