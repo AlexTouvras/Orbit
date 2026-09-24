@@ -68,6 +68,7 @@ Rules:
 | Primitive | Path | Use |
 |-----------|------|-----|
 | `LiveProofStream` | `src/components/hub/LiveProofStream.tsx` | Hub Open atmosphere: desk questions + system pulse (Pinloop cue) |
+| `SignalField` | `src/components/layout/SignalField.tsx` | Site background: record streams → selected chain → vortex. Not a Hub chapter. |
 | `StoryScene` | `src/components/story/StoryScene.tsx` | Chapter inside the shared `max-w-5xl` column |
 | `ChapterMark` | `src/components/story/ChapterMark.tsx` | `01 / Craft` + title + lede |
 | `StoryHeadline` | `src/components/story/StoryHeadline.tsx` | Shared two-line title on public pages |
@@ -121,7 +122,7 @@ Do not: iframe a Power BI report as the story; duplicate Hub glass cards onto th
 
 ## Out of scope
 
-- Replacing tsParticles with video
+- Replacing the Signal Convergence canvas (`SignalField`) with video, WebGL, or a second particle system
 - Webflow-style page transitions
 - Rewriting essay MDX into scrollytelling. Owner 2026-09-22: the cast, the picture, and a comparison the reader can move stay on live desks. Weekly Writes stay prose.
 - Garmin / hobby embeds

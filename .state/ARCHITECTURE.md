@@ -58,6 +58,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 |------------|----------------|------|
 | `@vercel/analytics` | Privacy-light page analytics on Vercel | 2026-07-26 |
 | `uqr` | Encode on-screen QR for `/qr-code` → `/card` | 2026-09-09 |
+| `@tsparticles/*` removed | Site background is now the Signal Convergence canvas. The starfield links were a generic field; the chain is the one relationship. | 2026-09-24 |
 
 ## File structure
 
@@ -109,7 +110,9 @@ src/lib/field-card/slack.ts             # Laconic one-post-per-card #orbit FYI (
 src/app/card/page.tsx                   # Public identity HUD (chrome-light)
 src/app/qr-code/page.tsx                # On-screen QR to /card
 src/components/card/                    # IdentityHud + CardQr
-src/components/layout/AppChrome.tsx     # Hides header/footer/particles on /card and /qr-code
+src/components/layout/AppChrome.tsx     # Hides header/footer/background on /card and /qr-code
+src/components/layout/SignalField.tsx   # Signal Convergence canvas (streams → chain → vortex)
+src/lib/signal-field.ts                 # Scroll poses for that background
 src/app/api/field-card/{preview,action}/ # Shared preview / Apply review for all registered cards
 src/lib/newsletter/
 ├── digest.ts
@@ -137,6 +140,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-09-24 | Public pages share a Signal Convergence background (canvas). Scroll bends record streams through one chain into a vortex, then a calmer field. `/card` and `/qr-code` stay bare. Reduced motion paints the opening streams once. | Owner asked for the “stream of records → stellar vortex” background while the storytelling flagship is still in progress. Lightweight canvas first; no WebGL, no scroll-jack. |
 | 2026-09-21 | Hub is a chaptered visual story; live desks keep question-as-h1 | Owner asked to leave the traditional card-grid HQ for storytelling (inspiration: AI Takes Over, Light Factory, Amanda Lee Peers, OSOS, Haus of Words) without Webflow theatre. Skill: `.cursor/skills/visual-storytelling`. |
 | 2026-09-21 | Hub scroll story: things happen as you scroll, without jacking | Owner: inspiration sites move as you read down; Orbit was still a static chapter stack. Allowed: progress line, gravity rotate/orbit, sticky kicker, in-view spotlight, count-up, `StoryReveal`. Forbidden: pin-jack / vertical snap. |
 | 2026-09-21 | Reels (Proof, workshop, Power BI, live desks) track vertical scroll | Owner: should Systems I've built — and PBI — move right as you scroll down. Live desks later needed sneak peeks + the question on the same rail. Lists stay vertical. `ScrollRail` is the primitive. |
