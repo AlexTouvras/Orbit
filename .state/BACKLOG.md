@@ -38,6 +38,7 @@
 - [x] **Pinloop Hub cue** — `LiveProofStream` under thesis + reference.md steal/leave (2026-09-24; uncommitted)
 - [x] **Visual storytelling dashboards** — Open → Cast → Picture → Move → Close on each live desk (`DeskCast` / `DeskPicture` / `DeskClose`; missing uses desk `question`). Owner review desks after Hub.
 - [x] **Visual storytelling Portfolio** — `/portfolio` Open → workshop reel → live peek reel → Power BI picture → GitHub list → Close. No 3-up GlassCard grid.
+- [x] **Package the flagship** — storytelling system named as chapter `01 / Flagship` on `/portfolio`, with `/portfolio/stories` as its landing page (owner-approved new route, 2026-09-24). Stories extend via `src/content/stories.ts`.
 - [x] **Home column + shared title** — same `max-w-5xl` column as Blog; story headline on public pages; human-judgment message; fix scroll rails so card 1 stays in frame and every rail shares one card width; drop the chapter bar and the Portfolio close that copies Home; plain desk questions. Verified on localhost 2026-09-22. Not committed.
 - [ ] **Rail punctuality desk** — `/portfolio/live/rail`. Digitraffic / Fintraffic CC BY 4.0; corridor delay %, not a GPS map.
 - [x] **Finland Power Pulse folded into EU Spot** — not a separate live tile; `/portfolio/live/power` redirects to `/eu-spot`. Press a zone for the Pulse-style desk + mix nowcast.

@@ -73,11 +73,11 @@ export default function StoriesPage() {
 
         <ol className="border-t border-white/10">
           {stories.map((story, i) => (
-            <li key={story.id}>
+            <li key={story.id} className="border-b border-white/10">
               <ScrollSpot>
                 <Link
                   href={story.href}
-                  className="focus-ring group flex flex-col gap-4 border-b border-white/10 py-7 transition-colors hover:bg-white/[0.02] sm:flex-row sm:items-baseline sm:gap-8 sm:py-9"
+                  className="focus-ring group flex items-baseline gap-4 py-7 transition-colors hover:bg-white/[0.02] sm:gap-8 sm:py-9"
                 >
                   <span
                     className="orbit-accent shrink-0 font-mono text-xs tabular-nums tracking-[0.3em]"
