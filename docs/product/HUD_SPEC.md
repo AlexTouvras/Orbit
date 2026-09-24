@@ -38,7 +38,11 @@ Preserve:
 
 - `focusNow` lives in Studio roadmap only (private trajectory)
 - **Do not** put NOW / milestone titles on the card
-- **Do not** turn HUd into a progress dashboard
+- **Do not** turn HUd into a progress dashboard for visitors
+
+## Private face (owner, 2026-09-24)
+
+The same `/card` can flip to the fitness Arc HUD. The control is **Flip for stats**. It renders only when the Studio session is present. The stats are loaded from `/api/card/arc` and are not in the public HTML. Visitors still get the identity card alone.
 
 ## Hierarchy for the visitor
 

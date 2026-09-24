@@ -384,10 +384,12 @@ export function ArcStatusCard({
   narrative,
   dailyQuest,
   weekDays,
+  footer,
 }: {
   narrative: ArcNarrativeView;
   dailyQuest: DailyQuestView | null;
   weekDays?: FitnessDay[];
+  footer?: ReactNode;
 }) {
   const { gate, stats, boss, deltas, warriorQuote, health } = narrative;
   const bossActive = boss?.active === true;
@@ -598,6 +600,8 @@ export function ArcStatusCard({
           ) : null}
         </div>
       ) : null}
+
+      {footer ? <div className="mt-4 border-t border-white/10 pt-3">{footer}</div> : null}
     </div>
   );
 }

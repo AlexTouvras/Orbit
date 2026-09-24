@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IdentityHud } from "@/components/card/IdentityHud";
+import { IdentityCardFlip } from "@/components/card/IdentityCardFlip";
 import { cv } from "@/content/cv";
 import { competencies, profile as profileDefaults } from "@/content/profile";
 import { getEditableProfile } from "@/lib/profile-store";
@@ -47,8 +47,9 @@ export default function CardPage() {
   }));
 
   return (
-    <div className="flex min-h-dvh items-center justify-center px-4 py-6 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))]">
-      <IdentityHud
+    <div className="flex min-h-dvh flex-col items-center px-4 py-6 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))]">
+      <div className="my-auto w-full max-w-md">
+        <IdentityCardFlip
         name={profile.name}
         role={profile.role || profileDefaults.pillars}
         location={profile.location || cv.location}
@@ -91,8 +92,9 @@ export default function CardPage() {
             links: [{ href: "/about#skills", label: "Skills on About" }],
           },
         ]}
-        pillars={pillars}
-      />
+          pillars={pillars}
+        />
+      </div>
     </div>
   );
 }

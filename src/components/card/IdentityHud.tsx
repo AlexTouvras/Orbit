@@ -43,6 +43,8 @@ export interface IdentityHudProps {
   avatarUrl: string;
   stats: IdentityHudStat[];
   pillars: IdentityHudPillar[];
+  /** Owner-only control. Omitted for everyone else. */
+  privateAction?: { label: string; onClick: () => void } | null;
 }
 
 const accentTile: Record<IdentityHudPillar["accent"], string> = {
@@ -107,6 +109,7 @@ export function IdentityHud({
   avatarUrl,
   stats,
   pillars,
+  privateAction,
 }: IdentityHudProps) {
   const [activeHint, setActiveHint] = useState<HintId | null>(null);
   const hydrated = useHydrated();
@@ -288,6 +291,16 @@ export function IdentityHud({
           Show QR
         </Link>
       </nav>
+
+      {privateAction ? (
+        <button
+          type="button"
+          onClick={privateAction.onClick}
+          className="focus-ring mt-4 w-full border-t border-white/10 pt-3 text-center font-mono text-[0.65rem] uppercase tracking-[0.18em] text-violet-300/80 hover:text-violet-100"
+        >
+          {privateAction.label}
+        </button>
+      ) : null}
     </div>
   );
 }

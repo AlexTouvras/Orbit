@@ -72,6 +72,7 @@
 - [ ] **fitness-coach: emit Arc `stats.spd` + Codex `max_speed_kmh`** — rolling best max speed from stride/sprint efforts, GPS outliers dropped; include in the unweighted gate mean only when a sample exists; write the same km/h onto weekly Codex points so Studio history can draw. Orbit HUD and Codex pane already render.
 - [x] Fitness Status: remaining HP bar + ▲▼− trends (STR blank until lift-log sample)
 - [x] Arc HUD sixth stat SPD (display + essay demo; live number waits on fitness-coach `stats.spd`)
+- [x] **Identity card flip** — `/card` back face is the fitness Arc HUD. “Flip for stats” only with a Studio session. Public face unchanged.
 - [x] Commit/push ops-fleet files to `main` (`f1be91d`) so Daily ops check can read `docs/ops/fleet.yaml`
 - [x] Pixel avatar beside name on Hub + About (`/avatar-pixel-64.png`)
 - [x] Human review: Hub + About avatar placement — skipped 2026-08-13
