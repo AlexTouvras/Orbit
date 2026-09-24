@@ -51,7 +51,7 @@
 - [x] **Live desk snapshot clock** — GHA `Refresh live desks` daily 13:00 UTC (mix, housing, economy, EU Spot + pulse). Pushed `07220d6`. `ENTSOE_SECURITY_TOKEN` set as a repo secret. Nordic Equity stays on heatmap-web.
 - [x] Hub SDLC + Credit Risk field cards (Orbit-hosted HTML, HUD lanes, sitemap)
 - [x] SDLC opening in plain steps (plan, specify, design, build, test) — localhost 2026-09-22
-- [x] **Story field card** — `/story-field-card/`. Hub competency Story. Spine ask → cast → show → move → close. Orbit-hosted. Not in FIELD_CARDS.
+- [x] **Story field card** — `/story-field-card/`. Hub competency Story. Spine dwell → claim → sketch → lead → open (rewritten 2026-09-24 after the checklist version was rejected). Orbit-hosted. Not in FIELD_CARDS.
 - [ ] **SDLC / Credit Risk source repos** — create `sdlc-field-card` and `credit-risk-field-card`, copy discovery + Apply review from analytics/delivery on a **monthly** cadence (1st 17:00 discover / 18:00 review). Register in `FIELD_CARDS` + `fleet.yaml`. Bind `hosted-field-card-monthly-review.json` in Cursor until those repos exist.
 - [x] **Local IDE: live field-card automations renamed Monthly** — GetAutomation 2026-09-21: AI / analytics / delivery / review all named Monthly, enabled.
 - [ ] **Hosted SDLC + Credit Risk Cursor automation** — confirm it exists (create from `hosted-field-card-monthly-review.json` if missing) and paste the UUID into `.state/AUTOMATION_CONTRACT.md`.

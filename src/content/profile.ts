@@ -171,11 +171,11 @@ export const competencies: Competency[] = [
     title: "Data & Visual Storytelling",
     shortTitle: "Story",
     description:
-      "One question, the figures that answer it, then one picture you can move. Source, lag, and the limit sit in the close. A chart gallery is not a story.",
-    hudTitle: "A reading order, not a dashboard",
-    hudVerbs: "Ask → cast → show → move → close",
+      "The art of a number: whose life is in it, the sentence it argues, a mark drawn for that sentence, and the doubt left in the picture.",
+    hudTitle: "A point of view, not a chart",
+    hudVerbs: "Dwell → claim → sketch → lead → open",
     hudDescription:
-      "Question, figures, one picture, that same picture moving, then source and limit. Charts and themes are lanes.",
+      "Sit until a life is in the file. One sentence. A mark drawn for it. Then the eye’s path, and the doubt left visible.",
     accent: "cyan",
     icon: ScrollText,
     href: "/story-field-card/index.html",

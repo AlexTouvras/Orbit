@@ -75,7 +75,7 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
 - **SDLC** (Orbit-hosted, monthly): H1 `Write the plan before the code`. Opening PLAN → SPEC → DESIGN → BUILD → TEST. Security is named in design (who can reach the data) and checked in test. Job table still judges a written plan, threat-in-design, smallest build, and tests before merge. Cutover stays on Delivery. Not a SAFe brochure.
 - **Credit risk** (Orbit-hosted, monthly): ORIGINATE → MONITOR → STAGE → PROVISION. Not a vendor/scorecard brochure. Grain/gold stays on Analytics.
-- **Data & visual storytelling** (Orbit-hosted, monthly): H1 `A reading order, not a dashboard`. ASK → CAST → SHOW → MOVE → CLOSE. Charts and themes are lanes. Essays stay prose. Grain stays on Analytics. Cutover stays on Delivery.
+- **Data & visual storytelling** (Orbit-hosted, monthly): H1 `A point of view, not a chart`. DWELL → CLAIM → SKETCH → LEAD → OPEN. An art card: a life in the number, one sentence, a mark, the eye’s path, the doubt in the picture. Chart type is a lane. Essays stay prose. Grain stays on Analytics. Cutover stays on Delivery.
 - **Bayesian optimisation** (Orbit-hosted method, not Hub): H1 `Bayesian optimisation is a budget of trials, not a search of space`. BOUND → MODEL → ACQ → STOP. Lede is the scarce-trial loop, not the layers/lanes clone. Inference is MODEL only. Not a BoTorch/Ax/AutoML brochure.
 
 ## Backup
@@ -88,7 +88,7 @@ Judged on Orbit at 17:00 on the 1st, not via source-repo Apply review.
 
 Run `.cursor/automations/hosted-field-card-monthly-review.json`:
 
-1. This is a discovery pass. Judge picker rows and job-table examples against the spine (SDLC: PLAN → SPEC → DESIGN → BUILD → TEST; Credit: ORIGINATE → MONITOR → STAGE → PROVISION; Story: ASK → CAST → SHOW → MOVE → CLOSE; Bayes: BOUND → MODEL → ACQ → STOP). Swap by constraint, not hype. Do not stamp-only skip the judgment.
+1. This is a discovery pass. Judge picker rows and job-table examples against the spine (SDLC: PLAN → SPEC → DESIGN → BUILD → TEST; Credit: ORIGINATE → MONITOR → STAGE → PROVISION; Story: DWELL → CLAIM → SKETCH → LEAD → OPEN; Bayes: BOUND → MODEL → ACQ → STOP). Swap by constraint, not hype. Do not stamp-only skip the judgment.
 2. Bump the footer stamp: `Reviewed <Month YYYY> · Next: <next month>`. Changed line stays “Monthly review — picker and jobs unchanged” unless the HTML actually changed.
 3. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. Do not touch the three source-repo cards in that run. Do not add a Hub competency tile for Bayesian optimisation.
 

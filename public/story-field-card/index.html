@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Storytelling Field Card — A reading order, not a dashboard · Alex Touvras</title>
-  <meta name="description" content="Data and visual storytelling as a reading order: one question, the figures that answer it, one picture you can move, then the source, the lag, and the limit." />
+  <title>Storytelling Field Card — A point of view, not a chart · Alex Touvras</title>
+  <meta name="description" content="Data and visual storytelling as an art: dwell until a life is in the number, claim one sentence, sketch a mark for it, lead the eye, and leave the doubt in the picture." />
   <meta name="author" content="Alex Touvras" />
   <link rel="canonical" href="https://alextouvras.com/story-field-card/" />
-  <meta property="og:title" content="Storytelling Field Card — A reading order, not a dashboard" />
+  <meta property="og:title" content="Storytelling Field Card — A point of view, not a chart" />
   <meta property="og:description" content="Ask, cast the figures, show one picture, move that same picture, then name the source and the limit. Charts and themes are lanes." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alextouvras.com/story-field-card/" />
@@ -144,8 +144,10 @@
       margin: 0;
       color: var(--ink-soft);
       font-size: 1.02rem;
-      max-width: 42ch;
+      max-width: 46ch;
     }
+
+    .lede + .lede { margin-top: 0.7rem; }
 
     .lede strong { color: var(--ink); font-weight: 600; }
 
@@ -645,28 +647,33 @@
 
     <header class="hero">
       <div>
-        <div class="eyebrow">The order of the reading</div>
-        <h1>A reading order, not a dashboard</h1>
-        <p class="verbs">Ask → cast → show → move → close</p>
+        <div class="eyebrow">The art of the picture</div>
+        <h1>A point of view, not a chart</h1>
+        <p class="verbs">Dwell → claim → sketch → lead → open</p>
         <p class="lede">
-          A data story is a question a stranger can ask, answered before they have to explore.
-          The question is the title.
-          A few figures answer it before the picture.
-          The picture is one scene: a map, a tape, or a mix.
-          Moving it changes that same scene.
-          The close names the source, the lag, and what the picture does not establish.
-          Chart type, colour, and motion are lanes.
-          A gallery that needs a tour is not a story.
-          Essays stay prose. This order is for a live desk and for the front door.
-          Grain, gold, and the semantic model stay on the Analytics card.
+          A data story is a point of view drawn so a stranger can feel it.
+          The number already had a life in it: a person, a place, a decision.
+          The work is to spend time until that life is nameable, then to say one sentence, then to draw a mark that belongs to that sentence.
+          Giorgia Lupi calls this data humanism. Data is a language. It is taken, not given. It is imperfect. The picture should admit that.
+        </p>
+        <p class="lede">
+          Alberto Cairo’s warning belongs on the same card.
+          “Story” is not a licence to omit the inconvenient window, start the axis where the drama starts, or glue a beginning, middle, and end onto a picture that argues by where the marks sit.
+          Truthful, then functional, then beautiful, then insightful, then enlightening.
+          Beauty is the invitation. It comes after honesty, or it is a trick.
+        </p>
+        <p class="lede">
+          Chart type is a lane. A bar is the honest lyric when the sentence is simply “this is larger.”
+          A custom mark is earned when the standard chart cannot carry the life.
+          Grain and the semantic model stay on the Analytics card. Cutover stays on Delivery. Essays stay prose.
         </p>
       </div>
-      <div class="stack" aria-label="Reading order">
-        <div class="layer"><code>ASK</code><span>One question a stranger can use</span></div>
-        <div class="layer"><code>CAST</code><span>The figures that answer it, before the picture</span></div>
-        <div class="layer"><code>SHOW</code><span>One picture: map, tape, or mix</span></div>
-        <div class="layer"><code>MOVE</code><span>That same picture changes. No second page</span></div>
-        <div class="layer"><code>CLOSE</code><span>Source, lag, and what this is not</span></div>
+      <div class="stack" aria-label="The art">
+        <div class="layer"><code>DWELL</code><span>Until a life is nameable in the file</span></div>
+        <div class="layer"><code>CLAIM</code><span>One sentence. If it needs “and,” it is two pictures</span></div>
+        <div class="layer"><code>SKETCH</code><span>A mark for that sentence, before the library</span></div>
+        <div class="layer"><code>LEAD</code><span>The eye’s first stop, and the turn</span></div>
+        <div class="layer"><code>OPEN</code><span>The doubt stays in the picture</span></div>
       </div>
     </header>
 
@@ -682,55 +689,66 @@
         </thead>
         <tbody>
           <tr>
-            <td class="problem">The title is the dataset</td>
-            <td class="reach"><a class="use-link" href="https://alextouvras.com/portfolio/live/housing"><b>Question as the title</b></a></td>
-            <td class="example">“Are Helsinki flats still rising in price?” The table name stays in the close</td>
+            <td class="problem">The file is a crowd and nobody is in it</td>
+            <td class="reach"><a class="use-link" href="https://www.dear-data.com/theproject" target="_blank" rel="noopener noreferrer" title="Dear Data, Giorgia Lupi and Stefanie Posavec"><b>Dwell until a life is nameable</b></a></td>
+            <td class="example">Dear Data: a week of ordinary life as a hand-drawn postcard. The self is not a dashboard</td>
           </tr>
           <tr>
-            <td class="problem">The number is under the map</td>
-            <td class="reach"><a class="use-link" href="https://clauswilke.com/dataviz/" target="_blank" rel="noopener noreferrer" title="Claus O. Wilke, Fundamentals of Data Visualization"><b>Figures before the picture</b></a></td>
-            <td class="example">Euro-area inflation, unemployment, and the deposit rate before the trend chart</td>
+            <td class="problem">You can filter everything and say nothing</td>
+            <td class="reach"><a class="use-link" href="https://www.storytellingwithdata.com/" target="_blank" rel="noopener noreferrer" title="Storytelling with Data, Cole Nussbaumer Knaflic"><b>One sentence, then the picture</b></a></td>
+            <td class="example">The big idea is a sentence you can say without the chart. If it needs “and,” draw two pictures</td>
           </tr>
           <tr>
-            <td class="problem">Every chart type is in the deck</td>
-            <td class="reach"><a class="use-link" href="https://github.com/Financial-Times/chart-doctor" target="_blank" rel="noopener noreferrer" title="Financial Times Chart Doctor, including the visual vocabulary"><b>One picture for the question</b></a></td>
-            <td class="example">Europe’s last-24h generation mix is one stacked comparison, not a gallery of fuel icons</td>
+            <td class="problem">The library chose the form</td>
+            <td class="reach"><a class="use-link" href="https://giorgialupi.com/" target="_blank" rel="noopener noreferrer" title="Giorgia Lupi, Data Humanism"><b>Sketch before you encode</b></a></td>
+            <td class="example">Lupi starts on paper. A custom mark is for a life a bar cannot carry. A bar stays when “larger” is the whole poem</td>
           </tr>
           <tr>
-            <td class="problem">The drill opens a second product</td>
-            <td class="reach"><a class="use-link" href="https://alextouvras.com/portfolio/live/eu-spot"><b>Move the same picture</b></a></td>
-            <td class="example">Press a bidding zone. The price question stays. The zone desk is the same page</td>
+            <td class="problem">Sixteen menus and no way in</td>
+            <td class="reach"><a class="use-link" href="http://vis.stanford.edu/papers/narrative" target="_blank" rel="noopener noreferrer" title="Segel and Heer, Narrative Visualization, 2010"><b>Lead, then let go</b></a></td>
+            <td class="example">Segel and Heer: an author-driven opening, then a reader-driven wander. The martini glass. Not a control panel</td>
           </tr>
           <tr>
-            <td class="problem">You need the animation to get the number</td>
-            <td class="reach"><a class="use-link" href="https://www.datawrapper.de/academy" target="_blank" rel="noopener noreferrer" title="Datawrapper Academy"><b>Readable without motion</b></a></td>
-            <td class="example">The question, the figures, and the source still read when animation is off</td>
+            <td class="problem">The picture is correct and nobody stays</td>
+            <td class="reach"><a class="use-link" href="https://info3312.infosci.cornell.edu/notes/great-viz.html" target="_blank" rel="noopener noreferrer" title="Alberto Cairo, five qualities, via Cornell INFO 3312"><b>Beauty after truth</b></a></td>
+            <td class="example">Cairo: truthful, functional, beautiful, insightful, enlightening. Beauty invites. It does not start the axis where the drama starts</td>
           </tr>
           <tr>
-            <td class="problem">No source, no lag, no limit</td>
-            <td class="reach"><a class="use-link" href="https://alextouvras.com/portfolio/live"><b>Close the story</b></a></td>
-            <td class="example">Housing is Statistics Finland, CC BY 4.0, about a month late. It is not a listing site</td>
+            <td class="problem">A plot forced onto a map</td>
+            <td class="reach"><a class="use-link" href="https://datastori.es/data-stories-35-visual-storytelling-w-alberto-cairo-and-robert-kosara/" target="_blank" rel="noopener noreferrer" title="Data Stories 35, Cairo and Kosara on visual storytelling"><b>Some pictures argue by placement</b></a></td>
+            <td class="example">Snow’s cholera map has no three acts. The pump is the argument. Not every true picture is a story</td>
           </tr>
           <tr>
-            <td class="problem">Five equal cards and a tour</td>
-            <td class="reach"><a class="use-link" href="https://www.storytellingwithdata.com/" target="_blank" rel="noopener noreferrer" title="Storytelling with Data"><b>One idea, then the next</b></a></td>
-            <td class="example">Delivery, then data, then AI — a sequence. Not a grid that asks the visitor to synthesise</td>
+            <td class="problem">The doubt is in a footnote</td>
+            <td class="reach"><a class="use-link" href="https://www.pentagram.com/work/giorgia-lupi-data-humanism-at-gallerie-d-italia" target="_blank" rel="noopener noreferrer" title="Pentagram on Lupi’s Data Humanism"><b>Draw the imperfection</b></a></td>
+            <td class="example">Missing, approximate, situated. The flaw is part of the language. A 6-point caveat is a refusal to draw</td>
+          </tr>
+          <tr>
+            <td class="problem">Every series, so you cannot be wrong</td>
+            <td class="reach"><a class="use-link" href="https://arxiv.org/abs/2509.00440" target="_blank" rel="noopener noreferrer" title="Data Humanism Decoded, Al-Hazwani, Zhang, Garrison, Bernard, 2025"><b>Layer, and leave a door</b></a></td>
+            <td class="example">Embrace complexity is a main construct plus the minor tales. A dump is not a layer. Getting lost is a gift only after the way in</td>
+          </tr>
+          <tr>
+            <td class="problem">A clever mark that hides the comparison</td>
+            <td class="reach"><a class="use-link" href="https://github.com/Financial-Times/chart-doctor" target="_blank" rel="noopener noreferrer" title="Financial Times Chart Doctor"><b>The kinder form</b></a></td>
+            <td class="example">When the claim is a comparison, the FT visual vocabulary is the art. Novelty that makes “larger” harder is vanity</td>
           </tr>
         </tbody>
       </table>
-      <p class="note">Default order: name the question → put the answering figures first → one picture → interaction on that picture → source, lag, and the limit. If the grain is the problem, use the Analytics card. If the release is the problem, use the Delivery card.</p>
+      <p class="note">The art, in order: dwell until someone is in the file → one sentence → a sketch that is not a screenshot → the eye’s path → the doubt left visible. If the grain is the problem, use the Analytics card. If the release is the problem, use the Delivery card.</p>
     </section>
 
     <div class="tri">
       <section>
         <h2>Tool picker</h2>
         <div class="picker">
-          <div class="pick"><strong><a href="https://github.com/Financial-Times/chart-doctor" target="_blank" rel="noopener noreferrer">FT Chart Doctor</a></strong><span>One chart for the question, not a set</span></div>
-          <div class="pick"><strong><a href="https://clauswilke.com/dataviz/" target="_blank" rel="noopener noreferrer">Fundamentals of Data Visualization</a></strong><span>Scales, labels, and what the picture hides</span></div>
-          <div class="pick"><strong><a href="https://datavizcatalogue.com/" target="_blank" rel="noopener noreferrer">Data Viz Catalogue</a></strong><span>Name the chart. Do not collect them</span></div>
-          <div class="pick"><strong><a href="https://www.datawrapper.de/academy" target="_blank" rel="noopener noreferrer">Datawrapper Academy</a></strong><span>The sentence is the annotation</span></div>
-          <div class="pick"><strong><a href="https://www.storytellingwithdata.com/" target="_blank" rel="noopener noreferrer">Storytelling with Data</a></strong><span>The point before the chart</span></div>
-          <div class="pick"><strong><a href="https://alextouvras.com/portfolio/live">Live desks</a></strong><span>Question, figures, picture, move, close</span></div>
+          <div class="pick"><strong><a href="https://giorgialupi.com/" target="_blank" rel="noopener noreferrer">Giorgia Lupi</a></strong><span>Data is a language. Spend time. Draw the person</span></div>
+          <div class="pick"><strong><a href="https://www.dear-data.com/theproject" target="_blank" rel="noopener noreferrer">Dear Data</a></strong><span>A year of weeks, drawn by hand with Stefanie Posavec</span></div>
+          <div class="pick"><strong><a href="https://www.pentagram.com/work/giorgia-lupi-data-humanism-at-gallerie-d-italia" target="_blank" rel="noopener noreferrer">Data Humanism</a></strong><span>Context, imperfection, a mark that is not a default</span></div>
+          <div class="pick"><strong><a href="https://info3312.infosci.cornell.edu/notes/great-viz.html" target="_blank" rel="noopener noreferrer">The truthful art</a></strong><span>Cairo: truthful before beautiful</span></div>
+          <div class="pick"><strong><a href="http://vis.stanford.edu/papers/narrative" target="_blank" rel="noopener noreferrer">Narrative visualization</a></strong><span>Segel and Heer: who leads, the author or the reader</span></div>
+          <div class="pick"><strong><a href="https://www.storytellingwithdata.com/" target="_blank" rel="noopener noreferrer">Storytelling with Data</a></strong><span>One sentence. Then remove what does not serve it</span></div>
+          <div class="pick"><strong><a href="https://github.com/Financial-Times/chart-doctor" target="_blank" rel="noopener noreferrer">FT Chart Doctor</a></strong><span>The conventional form, when it is the kinder art</span></div>
         </div>
       </section>
 
@@ -738,16 +756,16 @@
         <h2>What has to be written down</h2>
         <div class="gates">
           <div class="gate">
-            <strong>The question</strong>
-            <span>A stranger can ask it. The dataset name is not the title.</span>
+            <strong>The life</strong>
+            <span>You can name who, or what decision, is inside the number. If you cannot, you have not dwelled.</span>
           </div>
           <div class="gate">
-            <strong>The cast</strong>
-            <span>Three to five figures answer the question before the picture.</span>
+            <strong>The sentence</strong>
+            <span>Say it with the picture covered. One sentence. A second claim is a second picture.</span>
           </div>
           <div class="gate">
-            <strong>The limit</strong>
-            <span>Source, lag, and what this picture does not establish. A human still makes the call.</span>
+            <strong>The doubt</strong>
+            <span>The miss, the gap, the window you refused — visible in the drawing, not only under it.</span>
           </div>
         </div>
       </section>
@@ -755,16 +773,16 @@
       <section>
         <h2>Ladder + gates</h2>
         <ol class="ladder">
-          <li>One question</li>
-          <li>Figures that answer it</li>
-          <li>One picture</li>
-          <li>Move that picture</li>
-          <li>Source, lag, limit</li>
+          <li>Dwell until a life is nameable</li>
+          <li>One sentence, said aloud</li>
+          <li>A sketch that is not a chart-library screenshot</li>
+          <li>The eye’s first stop, and the turn</li>
+          <li>The doubt left in the picture</li>
           <li>Analytics if the grain is wrong — Delivery if the release is the job</li>
         </ol>
         <div class="gate" style="margin-top:0.75rem">
           <strong>Kill switch</strong>
-          <span>If you cannot name the question, the source, and what the picture does not establish, it is not a story yet.</span>
+          <span>If you cannot name the life, the sentence, and the doubt, it is a chart. It is not a story yet.</span>
         </div>
       </section>
     </div>
@@ -772,25 +790,25 @@
     <section class="antis">
       <h2>Anti-patterns</h2>
       <ul class="anti-list">
-        <li>Dataset name as the title</li>
-        <li>A chart gallery before the question</li>
-        <li>A second page for the default drill</li>
-        <li>Motion required to read the number</li>
-        <li>No source, no lag, no limit</li>
-        <li>A dark theme standing in for a story</li>
-        <li>Turning an essay into a scroll animation</li>
-        <li>Calling the grain a story — that’s the Analytics card</li>
+        <li>A chart gallery titled “story”</li>
+        <li>A hero’s journey glued onto a distribution</li>
+        <li>A custom metaphor that makes “larger” harder to see</li>
+        <li>Sixteen filters and no sentence</li>
+        <li>Beauty that moves the axis to where the drama starts</li>
+        <li>A footnote doing the work of the drawing</li>
+        <li>An essay turned into a scroll animation — essays stay prose</li>
+        <li>Calling the grain a story — that is the Analytics card</li>
       </ul>
     </section>
 
     <section class="foundation" aria-label="Always-on foundation">
       <h2>Always on</h2>
       <div class="found-row">
-        <div class="found"><strong>Source</strong><span>Named, with the licence</span></div>
-        <div class="found"><strong>Lag</strong><span>How late the picture is</span></div>
-        <div class="found"><strong>Limit</strong><span>What this does not establish</span></div>
-        <div class="found"><strong>Still readable</strong><span>The order works with motion off</span></div>
-        <div class="found"><strong>Human call</strong><span>The picture does not make the decision</span></div>
+        <div class="found"><strong>A life</strong><span>Someone, or some decision, is in the file</span></div>
+        <div class="found"><strong>A sentence</strong><span>One claim, sayable with the picture covered</span></div>
+        <div class="found"><strong>A mark</strong><span>Drawn for that sentence, not borrowed from a gallery</span></div>
+        <div class="found"><strong>A path</strong><span>The eye knows where to land, and where it turns</span></div>
+        <div class="found"><strong>A doubt</strong><span>Visible. The picture does not pretend to be the world</span></div>
       </div>
     </section>
 
@@ -803,7 +821,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> First card. Reading order for a live desk: question, figures, one picture, move, close</p>
+      <p class="changed"><b>Changed</b> Rewritten as an art. Dwell, claim, sketch, lead, open — after the first version read as a checklist</p>
     </footer>
   </article>
   <script>
