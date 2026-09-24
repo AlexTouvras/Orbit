@@ -5,7 +5,7 @@
 | Layer | Question | Routes |
 |-------|----------|--------|
 | HUd | WHO | `/card`, `/qr-code` |
-| Hub / evidence | WHAT / HOW HE THINKS | `/`, `/portfolio`, `/portfolio/live/*`, `/writes`, `/radar`, `/about`, `/contact`, `/newsletter` |
+| Hub / evidence | WHAT / HOW HE THINKS | `/`, `/portfolio`, `/portfolio/stories`, `/portfolio/live/*`, `/writes`, `/radar`, `/about`, `/contact`, `/newsletter` |
 | Studio | WHERE | `/studio`, `/studio/week`, `/studio/projects`, `/studio/roadmap` |
 | Timeline | HOW HE GOT HERE | About experience (no separate Foundation page) |
 

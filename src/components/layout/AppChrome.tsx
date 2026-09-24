@@ -21,12 +21,11 @@ export function AppChrome({
   const scrollStory =
     pathname === "/" ||
     pathname === "/about" ||
-    pathname === "/portfolio" ||
     pathname === "/writes" ||
     pathname === "/contact" ||
     pathname === "/radar" ||
     pathname === "/newsletter" ||
-    pathname.startsWith("/portfolio/live");
+    pathname.startsWith("/portfolio");
 
   if (bare) {
     return (

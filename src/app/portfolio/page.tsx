@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FlagshipStories } from "@/components/portfolio/FlagshipStories";
 import { GithubRepos } from "@/components/portfolio/GithubRepos";
 import { LocalProjects } from "@/components/portfolio/LocalProjects";
 import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
@@ -30,12 +31,14 @@ export default function PortfolioPage() {
         avatarUrl={profile.avatarUrl}
       />
 
+      <FlagshipStories />
+
       <LocalProjects />
 
       <LiveQuestions
         desks={desks}
         id="live"
-        index="02"
+        index="03"
         description="One-page desks that refresh at the grain the data actually moves. Screenshots stay in the Power BI lane."
       />
 
