@@ -34,7 +34,7 @@ export function LocalProjects() {
         length={ordered.length}
         header={
           <ChapterMark
-            index="01"
+            index="02"
             eyebrow="Workshop"
             title="Projects"
             description="A live snapshot of projects from my machine — each with its current status."
