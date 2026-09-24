@@ -229,6 +229,25 @@
   }
 }
 
+/* Hub Open live proof stream (Pinloop cue: product-as-atmosphere) */
+@keyframes proof-stream-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes proof-stream-scroll-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* Token for backgrounds / borders / mix */
 @keyframes orbit-accent-cycle {
   0%,

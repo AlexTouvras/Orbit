@@ -29,6 +29,7 @@ export default function HomePage() {
           contactCta={profileDefaults.contactCta}
           socials={profile.socials}
           avatarUrl={profile.avatarUrl}
+          desks={desks}
         />
       </StoryScene>
 

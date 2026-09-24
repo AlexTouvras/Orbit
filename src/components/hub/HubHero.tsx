@@ -5,9 +5,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef, type ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
+import type { LiveDesk } from "@/content/live-desks";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
 import { PixelAvatar } from "@/components/ui/PixelAvatar";
+import { LiveProofStream } from "@/components/hub/LiveProofStream";
 import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
@@ -43,6 +45,7 @@ interface HubHeroProps {
   contactCta: string;
   socials: { label: string; href: string }[];
   avatarUrl?: string;
+  desks?: LiveDesk[];
 }
 
 export function HubHero({
@@ -54,6 +57,7 @@ export function HubHero({
   contactCta,
   socials,
   avatarUrl,
+  desks = [],
 }: HubHeroProps) {
   const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
@@ -67,14 +71,15 @@ export function HubHero({
   const orbitScale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
 
   return (
-    <div ref={root} className="relative overflow-hidden">
-      <motion.div
-        className="pointer-events-none absolute -right-8 top-[-12%] h-[28rem] w-[28rem] opacity-80 sm:h-[36rem] sm:w-[36rem] lg:right-[-4%] lg:top-[-18%]"
-        aria-hidden
-        style={animate ? { y: orbitY, scale: orbitScale } : undefined}
-      >
-        <OrbitSignature variant="cyan" duration="110s" />
-      </motion.div>
+    <div ref={root} className="relative">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+        <motion.div
+          className="absolute -right-8 top-[-12%] h-[28rem] w-[28rem] opacity-80 sm:h-[36rem] sm:w-[36rem] lg:right-[-4%] lg:top-[-18%]"
+          style={animate ? { y: orbitY, scale: orbitScale } : undefined}
+        >
+          <OrbitSignature variant="cyan" duration="110s" />
+        </motion.div>
+      </div>
 
       <HeroItem delay={0} animate={animate}>
         <StoryHeadline
@@ -134,6 +139,12 @@ export function HubHero({
           })}
         </div>
       </HeroItem>
+
+      {desks.length > 0 ? (
+        <HeroItem delay={0.42} animate={animate}>
+          <LiveProofStream desks={desks} pillars={pillars} />
+        </HeroItem>
+      ) : null}
     </div>
   );
 }

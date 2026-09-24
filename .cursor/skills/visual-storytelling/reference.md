@@ -39,11 +39,19 @@ Personality-first. Big numbers (6.3 million impressions). FAQ as voice. Close is
 **Steal:** oversized stats; close as a landing; questions as headlines; a geometric brand mark as a scene (Orbit: orbital rings, not a maze).  
 **Leave:** pastel Bauhaus blocks, punchy agency humour that would fail `docs/essay-voice.md`.
 
+### [Pinloop](https://pinloop.ai/)
+
+Agent-first product page. Hero is **the product running**: a live job-feed ticker under one brutal thesis (“Humans should not scroll job boards”), then one claim per section (hourly from ATS; judged overnight). Motion *is* the proof — the stream updates; there is no stock hero photo.
+
+**Steal:** live data stream as hero atmosphere (system visibly working); one unmissable thesis with brand secondary but present; section = one claim + one demonstration; mechanism over vanity metrics.  
+**Leave:** job-board ticker content, SaaS pricing blocks, feature grids, Pinloop voice/palette, floating badges or promo chips on the hero.
+
 ## Orbit translation (already on Hub)
 
 | Inspiration | Orbit chapter |
 |-------------|----------------|
 | Full-viewport open | `story-open` — “Prove what works.” |
+| Live product-as-atmosphere | `story-open` — `LiveProofStream` (desk questions / system pulse under the thesis) |
 | Brand made visible | `story-gravity` — `GravityField` |
 | 01–05 process | `story-craft` — Delivery / Data / AI + `hudVerbs` |
 | Work reel | `selected-work` — `ProofReel` |

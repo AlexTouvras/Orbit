@@ -46,7 +46,7 @@ A page is a sequence of **chapters**, not a stack of sections.
 
 | Beat | Job | Orbit example |
 |------|-----|----------------|
-| Open | One thesis in huge type; identity is supporting | Hub: “Prove what works.” + name as kicker |
+| Open | One thesis in huge type; identity is supporting; live product-as-atmosphere under the thesis | Hub: “Prove what works.” + name as kicker + `LiveProofStream` |
 | Metaphor | Make the brand visible | Gravity field: center + satellites |
 | Craft | Numbered process (how the work actually happens) | Delivery → Data → AI with `hudVerbs` |
 | Proof | Horizontal reel of evidence | Showcase writes |
@@ -67,6 +67,7 @@ Rules:
 
 | Primitive | Path | Use |
 |-----------|------|-----|
+| `LiveProofStream` | `src/components/hub/LiveProofStream.tsx` | Hub Open atmosphere: desk questions + system pulse (Pinloop cue) |
 | `StoryScene` | `src/components/story/StoryScene.tsx` | Chapter inside the shared `max-w-5xl` column |
 | `ChapterMark` | `src/components/story/ChapterMark.tsx` | `01 / Craft` + title + lede |
 | `StoryHeadline` | `src/components/story/StoryHeadline.tsx` | Shared two-line title on public pages |
