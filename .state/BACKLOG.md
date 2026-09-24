@@ -31,11 +31,11 @@
 ## Next
 
 - [x] **Orbit 2.0 Foundation** — shipped to `main` (`6892531` / Gate 3). Product docs, AI & Data Systems Lead positioning, Studio `/studio/roadmap`. Card keeps STATEMENT only (no NOW box). Website infra = EVIDENCE; career archetype not PROVEN.
-- [ ] **Orbit 2.0 Evidence Layer** — (1) ~~audit~~ draft in `docs/product/EVIDENCE_AUDIT.md` (owner review), (2) name flagship capability gap, (3) one flagship only after selection, (4) case study + interactive proof, repeat. Do not build Decision Intelligence Lab before owner picks.
-- [ ] **Orbit 2.0 Later** — Decision Intelligence Lab (candidate flagship); career timeline visual; AI workflow case study; career-track EVIDENCE items. After Evidence audit.
+- [ ] **Orbit 2.0 Evidence Layer** — re-audit 2026-09-24. Flagship = storytelling system (owner). First story = Hub Open (`LiveProofStream`, `250e3e3`), almost ready: browser pass + width call, then the next story on the same grammar.
+- [ ] **Orbit 2.0 Later** — further stories on the storytelling system (a decision story, possibly a Decision Intelligence Lab); career timeline visual; AI workflow case study; career-track EVIDENCE items. After the first story is evidence.
 - [x] **Related articles: economics, credit, lab research** — Economics and Credit filters; VoxEU, BIS, Bank of England PRA, DeepMind, Google Research, Anthropic research mirror. Weekly intake includes the new lanes ahead of AI.
 - [x] **Visual storytelling Hub** — chaptered scroll on `/`; skill at `.cursor/skills/visual-storytelling`. Shipped to prod 2026-09-22 (owner asked to push).
-- [x] **Pinloop Hub cue** — `LiveProofStream` under thesis + reference.md steal/leave (2026-09-24; uncommitted)
+- [x] **Pinloop Hub cue** — `LiveProofStream` under the Hub thesis (`250e3e3`, 2026-09-24). First story of the storytelling-system flagship; almost ready pending browser pass + width call.
 - [x] **Visual storytelling dashboards** — Open → Cast → Picture → Move → Close on each live desk (`DeskCast` / `DeskPicture` / `DeskClose`; missing uses desk `question`). Owner review desks after Hub.
 - [x] **Visual storytelling Portfolio** — `/portfolio` Open → workshop reel → live peek reel → Power BI picture → GitHub list → Close. No 3-up GlassCard grid.
 - [x] **Home column + shared title** — same `max-w-5xl` column as Blog; story headline on public pages; human-judgment message; fix scroll rails so card 1 stays in frame and every rail shares one card width; drop the chapter bar and the Portfolio close that copies Home; plain desk questions. Verified on localhost 2026-09-22. Not committed.

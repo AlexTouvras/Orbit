@@ -40,7 +40,7 @@ Docs decide product. Agents pick implementation only inside that box.
 
 **Orbit 2.0 Foundation** (shipped 2026-09-23) = infrastructure (product truth, positioning, Studio tracker). Website Foundation is **EVIDENCE**, not career **PROVEN**.
 
-**Orbit 2.0 Evidence Layer** (next) = audit existing work, find the chain gap, then one flagship proof. Do **not** jump to Decision Intelligence Lab before the audit.
+**Orbit 2.0 Evidence Layer** (active) = the storytelling system is the flagship (owner 2026-09-24). The first story is Hub Open, almost ready. Re-audit: [`docs/product/EVIDENCE_AUDIT.md`](docs/product/EVIDENCE_AUDIT.md).
 
 Deep chapters: [`docs/product/`](docs/product/).
 
