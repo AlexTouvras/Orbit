@@ -1,7 +1,160 @@
 {
-  "generatedAt": "2026-09-23T06:46:58.027Z",
-  "count": 262,
+  "generatedAt": "2026-09-24T06:46:54.046Z",
+  "count": 261,
   "items": [
+    {
+      "id": "d85d1291df9f",
+      "title": "How I built agent-based security reviews on Databricks",
+      "link": "https://www.databricks.com/blog/how-i-built-agent-based-security-reviews-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-24T02:00:00.000Z",
+      "contentSnippet": "We already had automation in parts of our security review process. It was useful,..."
+    },
+    {
+      "id": "7c11e0647e23",
+      "title": "‘Batches’ in Scrum",
+      "link": "https://www.scrum.org/resources/blog/batches-scrum",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-24T01:47:45.000Z",
+      "contentSnippet": "Image If you consider each of Scrum’s events, you’ll notice batches of various kinds: Sprint: The team conducts all their work in the context of Sprints and each Sprint is an opportunity to focus on, and get feedback about, a batch of new work. Sprint Planning: The team is consid…"
+    },
+    {
+      "id": "701c0d6a81c8",
+      "title": "The quality of capital allocation in Europe",
+      "link": "https://cepr.org/voxeu/columns/quality-capital-allocation-europe",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-23T23:00:00.000Z",
+      "contentSnippet": "Europe's investment debate tends to ask how much capital can be mobilised and how quickly. Allocation quality also depends on who receives capital and on the spillovers their expansion creates. This column argues that for public allocation, Europe should combine simpler administr…"
+    },
+    {
+      "id": "20ea19d17da7",
+      "title": "How data centres affect electricity prices and for whom",
+      "link": "https://cepr.org/voxeu/columns/how-data-centres-affect-electricity-prices-and-whom",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-23T23:00:00.000Z",
+      "contentSnippet": "Increases in US electricity prices since 2020 have coincided with a sharp rise in demand from data centres. This column analyses the impact of the surge in data centre growth since 2021 on electricity prices across US utility service territories. It finds that data centres raise…"
+    },
+    {
+      "id": "952c54fa1fd4",
+      "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
+      "link": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-23T16:06:00.000Z",
+      "contentSnippet": "We’re announcing a new life sciences research group and laboratory at Anthropic. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR, with only high-level direction from our…"
+    },
+    {
+      "id": "9d02eeb8cef1",
+      "title": "Two years of OpenAI Academy",
+      "link": "https://openai.com/index/two-years-of-openai-academy",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-23T16:00:00.000Z",
+      "contentSnippet": "Marking two years of OpenAI Academy and bringing AI skills to even more communities."
+    },
+    {
+      "id": "1d77064cbebb",
+      "title": "OpenAI extends cyber access to Ukraine for civilian defense",
+      "link": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-23T13:00:00.000Z",
+      "contentSnippet": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure."
+    },
+    {
+      "id": "839a215b4b69",
+      "title": "How Concurrence governs clinical AI at a trillion-token scale with Unity Gateway",
+      "link": "https://www.databricks.com/blog/how-concurrence-governs-clinical-ai-trillion-token-scale-unity-gateway",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-23T12:19:55.000Z",
+      "contentSnippet": "Healthcare AI has little margin for error. AI agents helping coordinate patient care..."
+    },
+    {
+      "id": "01d4e543c941",
+      "title": "Sam Altman’s remarks at the United Nations Security Council",
+      "link": "https://openai.com/index/sam-altman-un-security-council-remarks",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-23T12:00:00.000Z",
+      "contentSnippet": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council."
+    },
+    {
+      "id": "f7558dc5c9de",
+      "title": "Harvey turns legal context into stronger drafts with GPT-6 Astra",
+      "link": "https://openai.com/index/harvey-from-context-to-confidence-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-23T12:00:00.000Z",
+      "contentSnippet": "GPT-6 Astra produces more structured, context-aware legal documents, freeing lawyers to focus on strategy."
+    },
+    {
+      "id": "7357353a1f1d",
+      "title": "How invideo improves color grading 3x with GPT‑6 Astra",
+      "link": "https://openai.com/index/invideo-builds-with-gpt-6-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-23T12:00:00.000Z",
+      "contentSnippet": "With GPT‑6 Astra, invideo plans edits with greater precision, improves color correction and grading threefold, and produces 50 custom effects in one day."
+    },
+    {
+      "id": "7cff1964bf19",
+      "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
+      "link": "https://openai.com/index/ringg",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-23T12:00:00.000Z",
+      "contentSnippet": "Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1."
+    },
+    {
+      "id": "c5a1b694eb86",
+      "title": "Fabric CLI Explained: Install, Use, and Connect It to GitHub Copilot",
+      "link": "https://radacad.com/fabric-cli-explained-install-use-and-connect-it-to-github-copilot/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-cli-explained-install-use-and-connect-it-to-github-copilot",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-09-23T10:09:35.000Z",
+      "contentSnippet": "There are multiple ways you can connect AI to Power BI and Microsoft Fabric. You could use MCP servers, you could use Fabric Skills, but there’s also another way: Fabric CLI, the command line interface. It’s not used as much as the other methods, but it’s quite powerful. In this…"
+    },
+    {
+      "id": "de5a14652ebb",
+      "title": "Start using DAX with AI",
+      "link": "https://www.sqlbi.com/tv/start-using-dax-with-ai/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-09-23T10:00:42.000Z",
+      "contentSnippet": "The time has come: in 2026, using AI to write DAX has started to be effective. Latest news and the new courses are at https://www.sqlbi.com/ai/ We also created three new video courses that should not become obsolete in two weeks!…"
+    },
+    {
+      "id": "1d5a9cc2d950",
+      "title": "Introducing MentalHealthBench",
+      "link": "https://openai.com/index/introducing-mentalhealthbench",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-23T10:00:00.000Z",
+      "contentSnippet": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations."
+    },
+    {
+      "id": "1dd9ce125c6e",
+      "title": "ChatGPT Ads expands to Southeast Asia and Taiwan",
+      "link": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-23T02:00:00.000Z",
+      "contentSnippet": "ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries."
+    },
+    {
+      "id": "6fd99847fffa",
+      "title": "Unraveling the cobweb of global imbalances: drivers, vulnerabilities, and adjustment scenarios",
+      "link": "https://www.bis.org/publications/working-paper-1379-unraveling-cobweb-global-imbalances-drivers-vulnerabilities-and-adjustment-scenarios",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-23T00:00:00.000Z",
+      "contentSnippet": "This paper analyses the evolution and drivers of the stock of global imbalances in order to assess associated vulnerabilities and potential adjustment scenarios. These imbalances have recently increased sharply, with a deterioration in the US net international investment position…"
+    },
     {
       "id": "f526d7679022",
       "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
@@ -21,6 +174,15 @@
       "contentSnippet": "Solar and wind have become the cheapest sources of new electricity almost everywhere, yet Europe is now switching them off in record numbers. This column argues that the binding constraint on the energy transition is no longer technology but market design — and that fixing it mea…"
     },
     {
+      "id": "51bf797f0562",
+      "title": "Pourquoi passons-nous autant de temps en réunions ?",
+      "link": "https://cepr.org/voxeu/columns/pourquoi-passons-nous-autant-de-temps-en-reunions",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-22T23:00:00.000Z",
+      "contentSnippet": "Peu d’aspects du monde du travail moderne sont aussi largement critiqués que les réunions. À partir de données recueillies auprès de plus de 9 000 salariés en Norvège, cet article examine la manière dont les réunions sont organisées et leurs effets sur les résultats des entrepris…"
+    },
+    {
       "id": "ef25691dc93e",
       "title": "Your Team Isn't Slow. Your Handoffs Are.",
       "link": "https://www.scrum.org/resources/blog/your-team-isnt-slow-your-handoffs-are",
@@ -28,24 +190,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-22T22:00:00.000Z",
       "contentSnippet": "Image Watch where the work actually spends its time. Not the hours someone is heads-down building. The days it sits, waiting. Waiting for the one person who knows that system. Waiting for the other team to finish their sprint. Waiting for a review, a sign-off, an environment, an…"
-    },
-    {
-      "id": "b6b1e4118cdb",
-      "title": "Better prompt caching for GPT-6",
-      "link": "https://openai.com/index/better-prompt-caching-for-gpt-6",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-22T21:00:00.000Z",
-      "contentSnippet": "Learn how GPT-6 improves prompt caching with higher cache hit rates, new diagnostics, explicit breakpoints, and controls that reduce latency and costs."
-    },
-    {
-      "id": "3d48e529ad7a",
-      "title": "Introducing GPT-6 Sol and Luna",
-      "link": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-22T18:00:00.000Z",
-      "contentSnippet": "Meet GPT-6 Sol and Luna, two models that bring frontier intelligence to everyday work with different balances of capability and cost."
     },
     {
       "id": "84da03a25e9c",
@@ -66,13 +210,13 @@
       "contentSnippet": "AI coworkers and coding agents are spreading fast across organizations, and each..."
     },
     {
-      "id": "ce45d8dc0f6c",
-      "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
-      "link": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-22T12:00:00.000Z",
-      "contentSnippet": "GPT‑6 Astra allowed Parallel’s agents to research and synthesize labor-market data in half the time and at half the cost vs. prior models."
+      "id": "9e928ccbd576",
+      "title": "Unity Catalog Pages: a governed home for your business knowledge in Genie Ontology",
+      "link": "https://www.databricks.com/blog/unity-catalog-pages-governed-home-your-business-knowledge-genie-ontology",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-22T13:57:06.000Z",
+      "contentSnippet": "Every AI agent is only as good as the context it is grounded in. Ask an agent a question..."
     },
     {
       "id": "196c90e841c9",
@@ -93,13 +237,13 @@
       "contentSnippet": "PBIX isn’t going away, but the code behind it is finally becoming something you can version, script, and hand to an AI agent without things blowing up. In this episode of Fabric Insider, I sit down with Rui Romano, Product Manager on the Power BI team within Fabric, the person be…"
     },
     {
-      "id": "b4fb82cc1313",
-      "title": "Priorities and principles for effective third party assessments",
-      "link": "https://openai.com/index/priorities-principles-third-party-assessments",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-22T00:00:00.000Z",
-      "contentSnippet": "OpenAI outlines priorities and principles for rigorous, secure, and independent third-party AI safety assessments of frontier models and safeguards."
+      "id": "be7478f941e6",
+      "title": "Where we stand on AI and DAX in 2026",
+      "link": "https://www.sqlbi.com/blog/marco/2026/09/22/where-we-stand-on-ai-and-dax-in-2026/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-09-22T08:30:38.000Z",
+      "contentSnippet": "The time has come: in 2026, using AI to write DAX has started to be effective. Let me recap what has changed between 2023 and 2026, and what we are doing with our three new courses to best assist you…"
     },
     {
       "id": "ba9acd5cf52a",
@@ -163,42 +307,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-21T13:00:00.000Z",
       "contentSnippet": "Originally published on yuvalyeret.com. How do we deliver valuable real-world AI impact through solutions that solve problems, using some of what we've learned by building products over the last couple of decades? We're not seeing the value yet Unless you've been in a cave, you'r…"
-    },
-    {
-      "id": "d37f5b2c5927",
-      "title": "Higgsfield AI ships new video features in a day with GPT-6 Astra",
-      "link": "https://openai.com/index/higgsfield-from-prompt-to-production-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-21T12:00:00.000Z",
-      "contentSnippet": "With GPT-6 Astra, Higgsfield AI makes video ad creation easier for small businesses and brings new creative tools to market faster."
-    },
-    {
-      "id": "a7ca59844a94",
-      "title": "Advisory Group on Mathematics and Artificial Intelligence",
-      "link": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-21T12:00:00.000Z",
-      "contentSnippet": "OpenAI is working with an independent Advisory Group on Mathematics and Artificial Intelligence to guide the review and communication of emerging AI results."
-    },
-    {
-      "id": "2c9792fbb14a",
-      "title": "Building standards for the next phase of AI",
-      "link": "https://openai.com/index/building-standards-next-phase-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-21T10:00:00.000Z",
-      "contentSnippet": "OpenAI outlines a path to shared global AI standards, calling for coordinated evaluation, reporting, and governance to improve safety."
-    },
-    {
-      "id": "530db518a73a",
-      "title": "Expanding OpenAI Academy with new learning paths",
-      "link": "https://openai.com/index/expanding-openai-academy-with-new-learning-paths",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-21T07:00:00.000Z",
-      "contentSnippet": "Explore new OpenAI Academy learning paths for employees, developers, leaders, educators, and students to build and demonstrate practical AI skills."
     },
     {
       "id": "e53dda14685d",
@@ -300,15 +408,6 @@
       "contentSnippet": "Some of the most damaging outages are the ones your monitoring never flags: a slice..."
     },
     {
-      "id": "9b42f142d7ec",
-      "title": "Why we spend so much time in meetings",
-      "link": "https://cepr.org/voxeu/columns/why-we-spend-so-much-time-meetings",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-18T23:00:00.000Z",
-      "contentSnippet": "Few features of modern work are as widely criticised as meetings. Using data from over 9,000 workers in Norway, this column examines how meetings are organised and their effects on firm outcomes. The average worker in our survey spends 4.7 hours per week in meetings, with manager…"
-    },
-    {
       "id": "90801afbca07",
       "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
       "link": "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/",
@@ -343,24 +442,6 @@
       "category": "Data",
       "pubDate": "2026-09-18T00:00:00.000Z",
       "contentSnippet": "When DuckDB-Wasm was launched in 2021, databases could not be persisted: everything lived in the Wasm heap and vanished when the tab closed. Keeping data meant serializing tables to Parquet, storing the bytes in IndexedDB, and re-registering them on the next page load. This was d…"
-    },
-    {
-      "id": "b560e1d4d346",
-      "title": "Fiscal unsustainability and capture: $40 trillion Treasury debt does not measure the risks; enhanced long-term repurchases don't improve them",
-      "link": "https://cepr.org/voxeu/columns/fiscal-unsustainability-and-capture-40-trillion-treasury-debt-does-not-measure-risks",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-17T23:00:00.000Z",
-      "contentSnippet": "US federal government debt exceeded $40 trillion in August 2026, triggering concerns about fiscal credibility and sustainability. This column argues that fiscal sustainability should be assessed using the consolidated balance sheet of the federal government and central bank and t…"
-    },
-    {
-      "id": "b89a5cc78ced",
-      "title": "New jobs in 140 years of data: Why the AI displacement fear is overstated — and what to worry about instead",
-      "link": "https://cepr.org/voxeu/columns/new-jobs-140-years-data-why-ai-displacement-fear-overstated-and-what-worry-about",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-17T23:00:00.000Z",
-      "contentSnippet": "Forecasts of AI-driven job destruction rest on counting automatable tasks. But labour markets hire, pay, and fire whole occupations, not tasks – and occupations have proved far more durable than task exposure implies. Drawing on 140 years of Swedish census and register data, this…"
     },
     {
       "id": "abcfa66a2190",
@@ -408,15 +489,6 @@
       "contentSnippet": "An agent that needs the outside worldAn engineer at a software company is building..."
     },
     {
-      "id": "493bde431a9e",
-      "title": "What is AIOps?",
-      "link": "https://www.databricks.com/blog/what-is-aiops",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-17T16:49:43.000Z",
-      "contentSnippet": "Artificial Intelligence for IT Operations (AIOps) applies AI and machine learning to IT operations to detect anomalies..."
-    },
-    {
       "id": "ad2a2ccfa362",
       "title": "Fabric Core MCP Server: Scan and Configure OneLake Security with AI",
       "link": "https://radacad.com/fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai",
@@ -424,15 +496,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-17T15:32:26.000Z",
       "contentSnippet": "With the appearance of AI tools, LLMs, MCP servers, and skills, everyone these days is interested in what tool can do what. I’ve already explained the Power BI Modeling MCP server and Fabric Skills in previous videos. In this one, I’ll talk about the Fabric Core MCP server, an MC…"
-    },
-    {
-      "id": "00c643b32673",
-      "title": "Modernizing the Trade Lifecycle With Governed Data and AI",
-      "link": "https://www.databricks.com/blog/modernizing-trade-lifecycle-governed-data-and-ai",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-17T14:00:00.000Z",
-      "contentSnippet": "Capital-markets firms are modernizing the trade lifecycle under pressure from every direction: growing data volumes..."
     },
     {
       "id": "bd4ec752fcc1",
@@ -478,15 +541,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-16T20:05:00.000Z",
       "contentSnippet": "Reports of agentic hacking continue, in this case it happened back in May and it seems OpenAI did not disclose that they were responsible. Simon Willison sees two options: After the Hugging Face and Wiki attacks OpenAI were still unable to review their previous logs and determine…"
-    },
-    {
-      "id": "957733573e7d",
-      "title": "\"Regex for Rows\": Simplifying Pattern Detection in SQL with MATCH_RECOGNIZE",
-      "link": "https://www.databricks.com/blog/regex-rows-simplifying-pattern-detection-sql-matchrecognize",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-16T17:14:05.000Z",
-      "contentSnippet": "Imagine you work in cybersecurity and you have a table that tracks login attempts..."
     },
     {
       "id": "901f6f996bc2",
@@ -678,15 +732,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "14a14220a269",
-      "title": "TEAMWORK: From the Individual Lens to the Collective Lens",
-      "link": "https://www.scrum.org/resources/blog/teamwork-individual-lens-collective-lens",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-14T02:44:28.000Z",
-      "contentSnippet": "How do we help people truly connect and work well together? The question has never been easy. We have invented countless ways to strengthen teamwork, yet few of them work, and those that do rarely last. Between 2012 and 2015, Google looked for what makes a team succeed through it…"
-    },
-    {
       "id": "416f06ab12e9",
       "title": "Your DuckDB Flock Deserves A Mother: MotherDuck Now Offers Open Source DuckDB Support",
       "link": "https://motherduck.com/blog/duckdb-support",
@@ -712,15 +757,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-13T10:03:39.000Z",
       "contentSnippet": "Here’s a situation I’ve found myself in many times. You’re called to help someone whose Power BI report is suddenly very slow. You ask whether any changes were made to the semantic model around the time performance got worse and the answer is no, absolutely not. You then spend an…"
-    },
-    {
-      "id": "ae8c183f2002",
-      "title": "Reordering Your Backlog Is Zero Sum. Deleting From It Is Not.",
-      "link": "https://www.scrum.org/resources/blog/reordering-your-backlog-zero-sum-deleting-it-not",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-13T06:00:00.000Z",
-      "contentSnippet": "Image Open the Scrum Guide and look for a word that takes something out. Refinement is \"the act of breaking down and further defining Product Backlog items into smaller more precise items.\" The Product Owner is accountable for \"Ordering Product Backlog items.\" Work that misses th…"
     },
     {
       "id": "3f37b0a02f79",
@@ -1083,15 +1119,6 @@
       "contentSnippet": "We analyzed a slice of MotherDuck query history and found agents ran 29 times more queries than humans last month, a gap that has roughly doubled every month. The average organization now has twice as many agents as human users. Agents are the dominant consumers of the data platf…"
     },
     {
-      "id": "1e1f2f14657b",
-      "title": "Verifiable official statistics: a blockchain-based approach",
-      "link": "https://www.bis.org/publications/working-paper-1374-verifiable-official-statistics-blockchain-based-approach",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-02T00:00:00.000Z",
-      "contentSnippet": "International organisations including the Bank for International Settlements (BIS) have adopted SDMx (Statistical Data and Metadata) as the standard for exchanging official statistics. Trust in published data is essential for evidence-based policymaking. This paper shows how bind…"
-    },
-    {
       "id": "ce78c56fbdad",
       "title": "Fragments: September 1",
       "link": "https://martinfowler.com/fragments/2026-09-01.html",
@@ -1126,15 +1153,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-30T17:24:52.000Z",
       "contentSnippet": "Several years ago I wrote a very popular blog post about how to store images for your reports inside your Power BI semantic model. It solved the problem of how you could use display images (for example of products) inside your reports without making those images available via a p…"
-    },
-    {
-      "id": "293bd11dfc89",
-      "title": "Automated researchers can reliably mitigate alignment failures",
-      "link": "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-08-28T17:00:00.000Z",
-      "contentSnippet": "We had Claude autonomously train models to improve their performance on several public benchmarks that measure 10 categories of alignment failure. For all 10, Claude found fixes that improved the target benchmarks without degrading capabilities."
     },
     {
       "id": "3de08a17cfd8",
@@ -1479,15 +1497,6 @@
       "contentSnippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
     },
     {
-      "id": "4cd8dbc4ee36",
-      "title": "Rayfin Data App — The Future of Power BI Reporting",
-      "link": "https://radacad.com/rayfin-data-app-the-future-of-power-bi-reporting/?utm_source=rss&utm_medium=rss&utm_campaign=rayfin-data-app-the-future-of-power-bi-reporting",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-08-07T21:01:29.000Z",
-      "contentSnippet": "You can build an application whose frontend is TypeScript and ReactJS, and whose backend is a Power BI semantic model — meaning you get a fully interactive, visualized report inside your application without it being a Power BI report at all. Project Rayfin makes this possible. An…"
-    },
-    {
       "id": "6a47534fda8a",
       "title": "The PRA will hold a captive insurance industry roundtable",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/august/pra-holds-captive-insurance-industry-roundtable",
@@ -1650,6 +1659,15 @@
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
     },
     {
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Policy statement 18/26"
+    },
+    {
       "id": "16fe89b83e2e",
       "title": "LIAF02/26 – Low Impact Amendments Finalisation July 2026",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-finalisation-july-2026",
@@ -1666,15 +1684,6 @@
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
       "contentSnippet": "Low Impact Amendments Consultation July 2026"
-    },
-    {
-      "id": "d834dadfb202",
-      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "fb549b859ee4",
@@ -1990,24 +1999,6 @@
       "category": "Analytics",
       "pubDate": "2026-06-18T08:18:27.000Z",
       "contentSnippet": "Hardcoded values are the cockroaches of a data platform: you think you got them all, then Test starts reading from Prod and nobody notices for three days. Variable libraries in Microsoft Fabric put your configuration in one versioned place and let each stage resolve its own value…"
-    },
-    {
-      "id": "6c2a48806697",
-      "title": "Optional parameters in DAX user defined functions",
-      "link": "https://www.sqlbi.com/tv/optional-parameters-in-dax-user-defined-functions/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-06-16T10:00:00.000Z",
-      "contentSnippet": "How to define optional parameters in DAX user-defined functions and set default values for parameters not specified by the caller."
-    },
-    {
-      "id": "7eef5da11c77",
-      "title": "Optional parameters in DAX user-defined functions",
-      "link": "https://www.sqlbi.com/articles/optional-parameters-in-dax-user-defined-functions/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-06-15T20:00:50.000Z",
-      "contentSnippet": "This article describes how to define optional parameters in DAX user-defined functions and set default values for parameters not specified by the caller. When Microsoft announced that DAX User-defined functions (UDFs) are generally available (GA), another new feature was also…"
     },
     {
       "id": "7ccb02b39f86",
