@@ -13,13 +13,13 @@
 | Branch | `main` |
 | Playbooks | `.cursor/automations/*.json`, `docs/ops/daily-check.md` |
 
-## Cadence (all five field cards)
+## Cadence (all six Hub field cards)
 
 Every Hub field card refreshes **monthly**. There is no Friday field-card loop.
 
 | When (EEST) | What | Cards |
 |-------------|------|-------|
-| 1st 17:00 (`0 14 1 * *` UTC) | Discover / judge picker and jobs | All five: Agentic AI, Analytics, Delivery, SDLC, Credit Risk |
+| 1st 17:00 (`0 14 1 * *` UTC) | Discover / judge picker and jobs | All six: Agentic AI, Analytics, Delivery, SDLC, Credit Risk, Story |
 | 1st 18:00 (`0 15 1 * *` UTC) | Apply review (source-repo publish) | Agentic AI, Analytics, Delivery |
 | First weekday on/after the 2nd | Fleet check | Leftover `chore/monthly-refresh-*` / missing hosted PR |
 
@@ -34,7 +34,7 @@ Public footers use `Next: <month>`, not “week of”.
 | Analytics field card | `AlexTouvras/data-analytics-field-card` | 1st 17:00 | `.cursor/automations/analytics-field-card-weekly-content-pass.json` | [dd4bad7c…](https://cursor.com/automations/dd4bad7c-9558-11f1-ba66-0e7d0216e441) — **Monthly analytics field card content pass**, enabled |
 | Delivery field card | `AlexTouvras/technology-delivery-field-card` | 1st 17:00 | `.cursor/automations/delivery-field-card-weekly-content-pass.json` | [c85fb72e…](https://cursor.com/automations/c85fb72e-970e-11f1-ba66-0e7d0216e441) — **Monthly delivery field card content pass**, enabled |
 | Field card review | `AlexTouvras/Orbit` (gates the three source-repo cards) | 1st 18:00 | `.cursor/automations/field-card-review.json` | [a1c0b46b…](https://cursor.com/automations/a1c0b46b-9a09-11f1-ba66-0e7d0216e441) — **Monthly field card review**, enabled |
-| Hosted SDLC + Credit Risk | `AlexTouvras/Orbit` | 1st 17:00 | `.cursor/automations/hosted-field-card-monthly-review.json` | *(paste UUID if local created it — this Cloud Agent cannot list automations)* |
+| Hosted SDLC + Credit Risk + Story | `AlexTouvras/Orbit` | 1st 17:00 | `.cursor/automations/hosted-field-card-monthly-review.json` | *(paste UUID if local created it — this Cloud Agent cannot list automations)* |
 
 Looked up 2026-09-21 via GetAutomation after the local session: the four source-repo automations are **named Monthly** and enabled. Cron is still not returned from here. Hosted SDLC+Credit UUID is unknown unless pasted in.
 

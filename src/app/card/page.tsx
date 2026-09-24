@@ -10,6 +10,7 @@ const HUD_DOMAINS = [
   "SDLC",
   "AI",
   "Delivery",
+  "Story",
 ] as const;
 
 export const viewport: Viewport = {

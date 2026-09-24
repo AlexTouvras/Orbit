@@ -2,7 +2,7 @@
 
 A second Cursor agent is the monthly gate. It does not write the card. It compares the proposed `index.html` to the live one, then **publishes** or **keeps the previous card**.
 
-All five Hub cards are on this monthly cadence. This agent publishes the three source-repo cards. SDLC and Credit Risk are judged in the 17:00 hosted pass.
+All six Hub cards are on this monthly cadence. This agent publishes the three source-repo cards. SDLC, Credit Risk, and Data & Visual Storytelling are judged in the 17:00 hosted pass.
 
 1st of the month 17:00 local drafts the PR. This agent runs 1st 18:00 local (`0 15 1 * *` UTC).
 
@@ -14,7 +14,7 @@ All five Hub cards are on this monthly cadence. This agent publishes the three s
 | Data Analytics | `AlexTouvras/data-analytics-field-card` | https://alextouvras.com/analytics-field-card/ |
 | Technology Delivery | `AlexTouvras/technology-delivery-field-card` | https://alextouvras.com/delivery-field-card/ |
 
-Orbit also hosts **SDLC** (`/sdlc-field-card/`), **Credit Risk** (`/credit-risk-field-card/`), and **Bayesian optimisation** (`/bayes-field-card/`). Those are judged on Orbit in the 17:00 hosted pass (picker/jobs + stamp). They are not in this Apply-review loop. Bayes is a method card, not a Hub competency.
+Orbit also hosts **SDLC** (`/sdlc-field-card/`), **Credit Risk** (`/credit-risk-field-card/`), **Data & Visual Storytelling** (`/story-field-card/`), and **Bayesian optimisation** (`/bayes-field-card/`). Those are judged on Orbit in the 17:00 hosted pass (picker/jobs + stamp). They are not in this Apply-review loop. Bayes is a method card, not a Hub competency. Story is a Hub competency.
 
 ## For each open monthly PR (`chore/monthly-refresh-YYYY-MM`)
 
@@ -75,19 +75,20 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
 - **SDLC** (Orbit-hosted, monthly): H1 `Write the plan before the code`. Opening PLAN → SPEC → DESIGN → BUILD → TEST. Security is named in design (who can reach the data) and checked in test. Job table still judges a written plan, threat-in-design, smallest build, and tests before merge. Cutover stays on Delivery. Not a SAFe brochure.
 - **Credit risk** (Orbit-hosted, monthly): ORIGINATE → MONITOR → STAGE → PROVISION. Not a vendor/scorecard brochure. Grain/gold stays on Analytics.
+- **Data & visual storytelling** (Orbit-hosted, monthly): H1 `A reading order, not a dashboard`. ASK → CAST → SHOW → MOVE → CLOSE. Charts and themes are lanes. Essays stay prose. Grain stays on Analytics. Cutover stays on Delivery.
 - **Bayesian optimisation** (Orbit-hosted method, not Hub): H1 `Bayesian optimisation is a budget of trials, not a search of space`. BOUND → MODEL → ACQ → STOP. Lede is the scarce-trial loop, not the layers/lanes clone. Inference is MODEL only. Not a BoTorch/Ax/AutoML brochure.
 
 ## Backup
 
 If this agent misses, the fleet check on the first weekday on or after the 2nd posts a FYI in #orbit. Finish by re-running this agent (or Apply review). Slack is not the gate. There is no Monday weekly-refresh flag.
 
-## Monthly hosted cards (SDLC, Credit Risk, Bayesian optimisation)
+## Monthly hosted cards (SDLC, Credit Risk, Story, Bayesian optimisation)
 
 Judged on Orbit at 17:00 on the 1st, not via source-repo Apply review.
 
 Run `.cursor/automations/hosted-field-card-monthly-review.json`:
 
-1. This is a discovery pass. Judge picker rows and job-table examples against the spine (SDLC: PLAN → SPEC → DESIGN → BUILD → TEST; Credit: ORIGINATE → MONITOR → STAGE → PROVISION; Bayes: BOUND → MODEL → ACQ → STOP). Swap by constraint, not hype. Do not stamp-only skip the judgment.
+1. This is a discovery pass. Judge picker rows and job-table examples against the spine (SDLC: PLAN → SPEC → DESIGN → BUILD → TEST; Credit: ORIGINATE → MONITOR → STAGE → PROVISION; Story: ASK → CAST → SHOW → MOVE → CLOSE; Bayes: BOUND → MODEL → ACQ → STOP). Swap by constraint, not hype. Do not stamp-only skip the judgment.
 2. Bump the footer stamp: `Reviewed <Month YYYY> · Next: <next month>`. Changed line stays “Monthly review — picker and jobs unchanged” unless the HTML actually changed.
 3. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. Do not touch the three source-repo cards in that run. Do not add a Hub competency tile for Bayesian optimisation.
 

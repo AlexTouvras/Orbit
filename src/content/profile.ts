@@ -1,6 +1,6 @@
 import type { ComponentType, SVGProps } from "react";
 import type { LucideIcon } from "lucide-react";
-import { Bot, GitBranch, Landmark, LineChart, Mail, Globe, Route } from "lucide-react";
+import { Bot, GitBranch, Landmark, LineChart, Mail, Globe, Route, ScrollText } from "lucide-react";
 import { GithubIcon, LinkedinIcon, XIcon } from "@/components/ui/BrandIcons";
 
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
@@ -65,7 +65,7 @@ export const profile = {
   cardTagline:
     "Building and leading data & AI systems that solve complex business problems.",
   /** Hub kicker under the name — capability breadth along the chain. */
-  pillars: "AI · Data · Delivery · Credit · SDLC",
+  pillars: "AI · Data · Delivery · Credit · SDLC · Story",
   /** Primary contact CTA — replaces a separate “open to …” pill. */
   contactCta: "Get in touch about a role",
   availability:
@@ -165,6 +165,20 @@ export const competencies: Competency[] = [
     accent: "amber",
     icon: Landmark,
     href: "/credit-risk-field-card/index.html",
+    hrefLabel: "Field card",
+  },
+  {
+    title: "Data & Visual Storytelling",
+    shortTitle: "Story",
+    description:
+      "One question, the figures that answer it, then one picture you can move. Source, lag, and the limit sit in the close. A chart gallery is not a story.",
+    hudTitle: "A reading order, not a dashboard",
+    hudVerbs: "Ask → cast → show → move → close",
+    hudDescription:
+      "Question, figures, one picture, that same picture moving, then source and limit. Charts and themes are lanes.",
+    accent: "cyan",
+    icon: ScrollText,
+    href: "/story-field-card/index.html",
     hrefLabel: "Field card",
   },
 ];

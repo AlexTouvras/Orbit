@@ -104,6 +104,7 @@ public/analytics-field-card/index.html  # Data Analytics Field Card (home Data c
 public/delivery-field-card/index.html   # Technology Delivery Field Card (home Delivery competency)
 public/sdlc-field-card/index.html       # SDLC Field Card (home SDLC competency; Orbit-hosted until source repo)
 public/credit-risk-field-card/index.html # Credit Risk Field Card (origination + IFRS 9; Orbit-hosted until source repo)
+public/story-field-card/index.html      # Data & visual storytelling (Hub Story competency; Orbit-hosted)
 src/lib/field-card/registry.ts          # Multi-card Apply review sync map (repo → Orbit path)
 src/lib/field-card/slack.ts             # Laconic one-post-per-card #orbit FYI (Review/Considered/Changed/Online + Check card)
 src/app/card/page.tsx                   # Public identity HUD (chrome-light)
@@ -185,6 +186,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-05 | Studio Apply on Vercel = `repository_dispatch` → fitness-coach GHA | Vercel has no fitness `.venv`; `OPS_GITHUB_TOKEN` must be Contents write on fitness-coach |
 | 2026-09-09 | Arc remaining HP: max = 100 + VIT, fill = Body Battery share | VIT formula unchanged; bar not in the gate letter |
 | 2026-09-22 | SDLC opening is the life cycle in plain steps: plan, specify, design, build, test | “Gate chain / layers / lanes” did not read. Cutover still sits on the Delivery card. |
+| 2026-09-24 | Data & visual storytelling field card on Hub/HUD (`/story-field-card/`). Spine ASK → CAST → SHOW → MOVE → CLOSE. Orbit-hosted. Not in FIELD_CARDS. | Owner asked for one final field card. Charts are lanes. Essays stay prose. |
 | 2026-09-21 | SDLC + Credit Risk field cards on Hub/HUD as Orbit-hosted HTML | Distinct spines from Delivery (cutover) and Analytics (grain). Weekly source repos later — do not register phantom GitHub repos in FIELD_CARDS |
 | 2026-09-21 | Public field-card review is monthly | Footers say Next: month, not week of. SDLC/Credit stamped on Orbit (`hosted-field-card-monthly-review.json`). |
 | 2026-09-21 | Field-card discovery is monthly too | All five Hub cards: 1st 17:00 discover + 1st 18:00 source-repo review. Fleet `monthly_after` on the 2nd. Local IDE renamed the four live automations to Monthly (GetAutomation). Hosted SDLC/Credit UUID not listed from Cloud Agent. |

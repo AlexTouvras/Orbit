@@ -203,7 +203,7 @@ Edit **`src/content/profile.ts`**:
 | `githubUsername` | GitHub repo grid on Portfolio |
 | `email`, `resumeUrl` | Contact + CV download |
 | `socials` | Footer + mobile Hub icons |
-| `competencies` | Five Hub cards (code only, not in Studio). Each links to a static field card under `public/` (`/field-card/`, `/analytics-field-card/`, `/delivery-field-card/`, `/sdlc-field-card/`, `/credit-risk-field-card/`). All five cards refresh **monthly**. |
+| `competencies` | Six Hub cards (code only, not in Studio). Each links to a static field card under `public/` (`/field-card/`, `/analytics-field-card/`, `/delivery-field-card/`, `/sdlc-field-card/`, `/credit-risk-field-card/`, `/story-field-card/`). All six cards refresh **monthly**. |
 
 After editing `profile.ts`, if Studio previously saved overrides, either update Studio too or delete `data/profile.json` to revert to code defaults.
 

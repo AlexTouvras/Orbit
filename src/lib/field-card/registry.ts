@@ -3,10 +3,11 @@
  * source repo. Token payloads already carry `repo`; this maps each repo to
  * site paths + labels.
  *
- * Orbit-hosted cards (SDLC, Credit Risk, Bayesian optimisation) are reviewed
+ * Orbit-hosted cards (SDLC, Credit Risk, Story, Bayesian optimisation) are reviewed
  * **monthly** on this repo. Do not add them here until a GitHub source repo
  * exists — monthly Apply review iterates this list. Bayes is a method card
- * and should not get a source repo or a Hub competency tile.
+ * and should not get a source repo or a Hub competency tile. Story is a Hub
+ * competency and stays hosted until a source repo exists.
  */
 export type FieldCardId = "agentic-ai" | "data-analytics" | "technology-delivery";
 
