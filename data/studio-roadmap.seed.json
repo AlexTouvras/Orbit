@@ -1,6 +1,6 @@
 {
-  "focusNow": "Evidence Layer: make AI & Data Systems Lead obvious from the work, not only the title.",
-  "updatedAt": "2026-09-23T09:18:39Z",
+  "focusNow": "Finish the first Hub story. The flagship is the storytelling system.",
+  "updatedAt": "2026-09-24T10:45:00Z",
   "milestones": [
     {
       "id": "product-docs",
@@ -33,14 +33,21 @@
       "title": "Evidence audit: inventory + classify existing work against the chain",
       "track": "evidence",
       "status": "evidence",
-      "notes": "Draft audit in docs/product/EVIDENCE_AUDIT.md (2026-09-23). Owner to accept and pick flagship."
+      "notes": "Re-audit 2026-09-24 in docs/product/EVIDENCE_AUDIT.md. Owner selected the flagship: the storytelling system."
     },
     {
       "id": "flagship-gap",
-      "title": "Select one flagship that demonstrates the full chain",
+      "title": "Storytelling system is the flagship",
       "track": "career",
-      "status": "planned",
-      "notes": "Blocked on owner selection after audit review."
+      "status": "active",
+      "notes": "Owner 2026-09-24. Grammar: .cursor/skills/visual-storytelling and src/components/story/. A Decision Intelligence Lab can be a later story on this system."
+    },
+    {
+      "id": "first-story",
+      "title": "Finish the first story: Hub Open",
+      "track": "evidence",
+      "status": "active",
+      "notes": "LiveProofStream is on main (250e3e3). Ready after a browser pass (desktop and phone) and the width call: keep the wide stream, or bring it back into the shared column. Then this becomes EVIDENCE. Archetype stays unproven."
     },
     {
       "id": "archetype-proven",

@@ -8,6 +8,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 
 **Product truth (2026-09-23):** Root `PRODUCT.md` + `docs/product/*` are authoritative for identity layers (HUd WHO / Hub WHAT / Studio WHERE / timeline HOW). Agents must Scope-check via `docs/product/AGENT_RULES.md`. Wired from `.cursor/rules/product-kit.mdc`.
 
+**Evidence Layer (2026-09-24):** Flagship is the storytelling system. First story is Hub Open (`LiveProofStream`), almost ready. See `docs/product/EVIDENCE_AUDIT.md`.
+
 ## Data shapes
 
 | Name | Shape / location | Notes |
@@ -194,6 +196,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-22 | Visual storytelling stays on live desks | Owner: the Anthropic-style reading order (question, cast of figures, picture, a comparison you can move) is for `/portfolio/live/*`, not weekly Writes. Essays stay MDX prose. |
 | 2026-09-23 | Orbit 2.0 Foundation: `PRODUCT.md` + `docs/product/*`; HUd WHO / Hub WHAT / Studio WHERE; HUD NOW = `focusNow` only; Foundation = infrastructure not career achievements | Owner-locked identity (AI & Data Systems Lead); agents Scope-check via AGENT_RULES; branch `orbit-2-foundation` |
 | 2026-09-23 | After Foundation ship: next phase = Evidence Layer (audit → gap → one flagship). Lab is candidate only. `/card` shows STATEMENT only (no NOW box). Foundation website milestones = EVIDENCE; archetype not PROVEN. | Owner direction 2026-09-23 |
+| 2026-09-24 | Evidence Layer flagship is the storytelling system. First story is Hub Open (`LiveProofStream`), almost ready. Lab is a later story on that system, not the flagship. | Owner selection after the design-review proposal. Re-audit: `docs/product/EVIDENCE_AUDIT.md`. |
 | 2026-09-22 | Native live desks refresh on GHA `Refresh live desks` (13:00 UTC); commit triggers a Vercel rebuild | Nordic Equity fetches heatmap-web at request time. EU Spot, Housing, Power Mix, and Economy are JSON in the deployment bundle. Do not `[skip vercel]`. EU Spot scripts use `tsx --conditions=react-server` because `entsoe-xml` / `eu-categories` import `server-only` (plain `tsx` throws). EU Spot runs only when `ENTSOE_SECURITY_TOKEN` is a repo secret. |
 | 2026-09-11 | EU Spot prices from ENTSO-E A44 when `ENTSOE_SECURITY_TOKEN` set; Energy-Charts fallback | Owner generated API token; clears localhost-only license gate |
 | 2026-09-11 | Finland Power Pulse folded into EU Spot; mix nowcast on every zone | Owner: remove Pulse from Portfolio; press-a-zone desk is the same reading order for FI as for every other bidding zone. Nowcast is hourly OLS on ENTSO-E mix, not Energy-Charts 15-min FI. |

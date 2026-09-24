@@ -41,19 +41,20 @@ Website infrastructure milestones are **EVIDENCE** (docs, positioning, Studio ro
 
 HUd shows STATEMENT only. `focusNow` stays in Studio.
 
-## Evidence Layer (next)
+## Evidence Layer (active)
 
 Goal: demonstrate that “AI & Data Systems Lead” is supported by visible work, not only a title.
 
 Sequence:
 
-1. **Evidence audit** — inventory projects, desks, essays, AI / data / delivery / FS work; classify by what each proves
-2. **Find the chain gap** — Business problem → Data → Intelligent system → Delivery → Measurable outcome
-3. **One flagship** — only after the audit (Decision Intelligence Lab is a candidate, not automatic)
-4. **Case study + interactive proof** — then repeat 2–3 times
-5. **Archetype PROVEN** — when visitors conclude it themselves (6–12 months)
+1. **Evidence audit** — re-done 2026-09-24 in `EVIDENCE_AUDIT.md`
+2. **Chain gap** — question, data, and delivery of a reading system are public. Intelligent system and measured outcome stay thin.
+3. **Flagship** — the storytelling system (owner 2026-09-24). One grammar: Hub, Portfolio, live desks. Spec: `.cursor/skills/visual-storytelling`.
+4. **First story** — Hub Open (`LiveProofStream` under the thesis). Almost ready: browser pass, then the width call (wide atmosphere vs the shared column).
+5. **Next stories** — the same grammar, one decision at a time. A Decision Intelligence Lab can be one of those stories later. It is not the flagship.
+6. **Archetype PROVEN** — when visitors conclude it themselves. Hub Open shipping does not do that.
 
-Do not start another architecture/foundation phase. Do not build the Lab before the audit.
+Do not start another architecture/foundation phase while the first story is unfinished.
 
 ## Review cadence
 
