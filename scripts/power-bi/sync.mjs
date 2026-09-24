@@ -122,11 +122,19 @@ function findScreenshotFile(pngs, pageId) {
     const hit = lowerMap.get(c.toLowerCase());
     if (hit) return hit;
   }
-  // Last resort: file stem equals pageId with "and" removed from both sides
-  const compact = pageId.replace(/-and-/g, "-");
+  // Last resort: ignore "and" and hyphen breaks.
+  // README slug "cut-off-strategy" must still find screenshots/cutoff-strategy.png.
+  const withoutAnd = pageId.replace(/-and-/g, "-");
+  const collapsed = withoutAnd.replace(/-/g, "");
   for (const f of pngs) {
     const stem = f.replace(/\.png$/i, "").toLowerCase();
-    if (stem === compact || stem.replace(/-and-/g, "-") === compact) return f;
+    if (
+      stem === withoutAnd ||
+      stem.replace(/-and-/g, "-") === withoutAnd ||
+      stem.replace(/-/g, "") === collapsed
+    ) {
+      return f;
+    }
   }
   return null;
 }

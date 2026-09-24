@@ -302,6 +302,12 @@ export const powerBiReports: PowerBiReport[] = [
         src: "/portfolio/power-bi/credit-risk/scorecard-validation.png",
       },
       {
+        id: "cutoff-strategy",
+        label: "Cut-off Strategy",
+        caption: "Acceptance frontier (new vs EXT_MEAN) · budget · operating / Youden policy",
+        src: "/portfolio/power-bi/credit-risk/cutoff-strategy.png",
+      },
+      {
         id: "monitoring-steering",
         label: "Monitoring & Steering",
         caption: "New-business PD vs realized · PSI on IVs · steering queue",
