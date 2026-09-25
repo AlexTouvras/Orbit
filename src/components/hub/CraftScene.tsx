@@ -8,6 +8,9 @@ const STORY_ORDER = [
   "Technology Delivery",
   "Data & Analytics",
   "AI Orchestration & Automation",
+  "Software Development Life Cycle",
+  "Credit Risk Management",
+  "Data & Visual Storytelling",
 ] as const;
 
 const accentText: Record<Competency["accent"], string> = {

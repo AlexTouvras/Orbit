@@ -75,7 +75,7 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
 - **SDLC** (Orbit-hosted, monthly): H1 `Write the plan before the code`. Opening PLAN → SPEC → DESIGN → BUILD → TEST. Security is named in design (who can reach the data) and checked in test. Job table still judges a written plan, threat-in-design, smallest build, and tests before merge. Cutover stays on Delivery. Not a SAFe brochure.
 - **Credit risk** (Orbit-hosted, monthly): ORIGINATE → MONITOR → STAGE → PROVISION. Not a vendor/scorecard brochure. Grain/gold stays on Analytics.
-- **Data & visual storytelling** (Orbit-hosted, monthly): H1 `A point of view, not a chart`. DWELL → CLAIM → SKETCH → LEAD → OPEN. An art card: a life in the number, one sentence, a mark, the eye’s path, the doubt in the picture. Chart type is a lane. Essays stay prose. Grain stays on Analytics. Cutover stays on Delivery.
+- **Data & visual storytelling** (Orbit-hosted, monthly): H1 `Turn evidence into a decision`. Operating chain Question → Evidence → Tension → Narrative → Experience → Decision (Representation as form-choice). Craft inside: DWELL → CLAIM → SKETCH → LEAD → OPEN. Story spec + quality gates + kill criteria. The card’s signal field evolves on scroll. Essays stay prose. Grain stays on Analytics. Cutover stays on Delivery.
 - **Bayesian optimisation** (Orbit-hosted method, not Hub): H1 `Bayesian optimisation is a budget of trials, not a search of space`. BOUND → MODEL → ACQ → STOP. Lede is the scarce-trial loop, not the layers/lanes clone. Inference is MODEL only. Not a BoTorch/Ax/AutoML brochure.
 
 ## Backup

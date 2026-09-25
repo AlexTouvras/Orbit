@@ -171,11 +171,11 @@ export const competencies: Competency[] = [
     title: "Data & Visual Storytelling",
     shortTitle: "Story",
     description:
-      "The art of a number: whose life is in it, the sentence it argues, a mark drawn for that sentence, and the doubt left in the picture.",
-    hudTitle: "A point of view, not a chart",
-    hudVerbs: "Dwell → claim → sketch → lead → open",
+      "Turn evidence into a decision: question, evidence, tension, narrative, experience — then what changes. Craft (dwell, claim, sketch, lead, open) sits inside that spine.",
+    hudTitle: "Turn evidence into a decision",
+    hudVerbs: "Question → evidence → tension → narrative → experience → decision",
     hudDescription:
-      "Sit until a life is in the file. One sentence. A mark drawn for it. Then the eye’s path, and the doubt left visible.",
+      "Start with the decision, not the dataset. Find the tension. Unfold understanding. Leave uncertainty visible. End on what changes.",
     accent: "cyan",
     icon: ScrollText,
     href: "/story-field-card/index.html",

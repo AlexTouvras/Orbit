@@ -6,30 +6,34 @@ Live: `/story-field-card/` (this folder’s `index.html`). Hub competency: **Sto
 
 ## Spine (do not break)
 
-- H1: `A point of view, not a chart`
-- Layers: DWELL → CLAIM → SKETCH → LEAD → OPEN
-- Verbs: Dwell → claim → sketch → lead → open
-- This is an art card. A life in the number, one sentence, a mark drawn for that sentence, the eye’s path, the doubt left in the picture.
-- Chart type is a lane. A bar is allowed when “larger” is the whole claim. A custom mark is earned, not a style.
-- “Story” is not a licence to omit. Truth before beauty (Cairo). Not every true picture needs a three-act plot.
+- H1: `Turn evidence into a decision`
+- Principle: Story is the controlled transformation of evidence into understanding.
+- Operating chain: Question → Evidence → Tension → Narrative → Experience → Decision
+- Classic field-card sheet (same grammar as Delivery / Analytics): topbar, hero + layer stack, problem→use→example, tri, kill list, craft foundation.
+- Craft (secondary, always-on strip): Dwell → Claim → Sketch → Lead → Open
+- Field test: Can someone understand what changed, why it matters, and what remains uncertain?
+- Chart type is a lane. Break convention only when the conventional form cannot express the idea.
 - Essays stay prose. Grain stays on Analytics. Cutover stays on Delivery.
 
-## Where the art comes from
+## Artifacts on the card
 
-Judged against these, not against a chart catalogue:
+- Story spec (question/claim, evidence/tension, narrative/visual, interaction/implication)
+- Ladder + kill switch
+- Kill-when list
 
-- Giorgia Lupi, Data Humanism — https://giorgialupi.com/ and Dear Data with Stefanie Posavec — https://www.dear-data.com/theproject
-- Alberto Cairo, the five qualities — https://info3312.infosci.cornell.edu/notes/great-viz.html — and his caution that storytelling is not every picture: https://datastori.es/data-stories-35-visual-storytelling-w-alberto-cairo-and-robert-kosara/
+## Where the practice comes from
+
+- Giorgia Lupi — https://giorgialupi.com/
+- Alberto Cairo — https://info3312.infosci.cornell.edu/notes/great-viz.html
 - Segel and Heer, *Narrative Visualization* (2010) — http://vis.stanford.edu/papers/narrative
-- Cole Nussbaumer Knaflic — https://www.storytellingwithdata.com/
-- FT Chart Doctor, for the conventional form when it is the kinder one — https://github.com/Financial-Times/chart-doctor
+- Storytelling with Data — https://www.storytellingwithdata.com/
+- FT Chart Doctor — https://github.com/Financial-Times/chart-doctor
+- Live proof: `/stories`
 
 ## Monthly judgment
 
-This is **not** stamp-only. Read picker (≤7 rows) and the jobs table. Never invent docs URLs. Stamp `Next: <month>`.
-
-Publish an update when a picker swap is earned by the art (a source that teaches a judgment this card lacks), a jobs row is a real artistic problem, or a docs URL is wrong. Otherwise stamp only after the judgment is written.
+Not stamp-only. Check whether the operating spine still matches how stories are built on Orbit. Never invent docs URLs. Stamp `Next: <month>`.
 
 ## Cross-links
 
-Points at Analytics and Delivery so this card does not become a science manual. Bayes stays a method card and is not a Hub tile.
+Analytics and Delivery stay the homes for grain and cutover. Bayes is not a Hub tile.
