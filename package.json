@@ -11,6 +11,7 @@
     "news:fetch": "tsx src/scripts/fetch-news.ts --once",
     "news:watch": "tsx src/scripts/fetch-news.ts",
     "powerbi:sync": "node scripts/power-bi/sync.mjs",
+    "stories:sync": "node scripts/sync-storytelling.mjs",
     "live:fetch": "tsx src/scripts/fetch-live-power.ts",
     "live:fetch-eu": "tsx --conditions=react-server src/scripts/fetch-live-eu-spot.ts",
     "live:fill-eu": "tsx --conditions=react-server src/scripts/fetch-live-eu-spot.ts --fill",

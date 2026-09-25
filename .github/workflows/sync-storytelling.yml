@@ -1,0 +1,74 @@
+name: Sync storytelling
+
+# storytelling main is the source. This job copies the engine into Orbit and
+# pushes so Vercel redeploys /stories. Triggered by storytelling's notify-orbit
+# workflow (repository_dispatch) the moment that repo is pushed.
+# Private checkout uses the read-only deploy key STORYTELLING_DEPLOY_KEY.
+# [skip ci] skips this repo's GitHub builds; Vercel still deploys (ignore step
+# is path-based, not commit-message-based).
+
+on:
+  repository_dispatch:
+    types: [storytelling-sync]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: storytelling-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout Orbit
+        uses: actions/checkout@v4
+
+      - name: Checkout storytelling
+        uses: actions/checkout@v4
+        with:
+          repository: AlexTouvras/storytelling
+          ref: main
+          path: .storytelling
+          ssh-key: ${{ secrets.STORYTELLING_DEPLOY_KEY }}
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync engine into Orbit
+        env:
+          STORYTELLING_ROOT: ${{ github.workspace }}/.storytelling
+        run: npm run stories:sync
+
+      - name: Build before publishing
+        run: npm run build
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            data/figures \
+            src/app/stories \
+            src/components/film \
+            src/components/storytelling \
+            src/lib/loadStory.ts \
+            src/lib/resolveScene.ts \
+            src/lib/sim \
+            src/lib/use-is-compact-viewport.ts \
+            src/stories \
+            src/types/react-scrollama.d.ts
+          if git diff --staged --quiet; then
+            echo "Storytelling engine unchanged."
+            exit 0
+          fi
+          git commit -m "chore: sync interactive decision storytelling [skip ci]"
+          git push

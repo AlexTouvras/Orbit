@@ -11,7 +11,7 @@ export default function StoryNotFound() {
         href="/stories"
         className="focus-ring mt-8 inline-block text-neon-cyan hover:underline"
       >
-        Back to Decision Stories
+        Back home
       </Link>
     </div>
   );
