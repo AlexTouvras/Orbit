@@ -1,7 +1,124 @@
 {
-  "generatedAt": "2026-09-24T06:46:54.046Z",
+  "generatedAt": "2026-09-25T06:46:55.034Z",
   "count": 261,
   "items": [
+    {
+      "id": "5ab6c9c2726c",
+      "title": "How minimum wages reshape firms and their productivity from within",
+      "link": "https://cepr.org/voxeu/columns/how-minimum-wages-reshape-firms-and-their-productivity-within",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-24T23:00:00.000Z",
+      "contentSnippet": "How far can minimum wages rise without damaging jobs and output? This column uses evidence from France to show that firms respond not only by employing fewer workers, but also by increasing training and flattening management hierarchies. A quantitative model suggests that this re…"
+    },
+    {
+      "id": "8989b01a22f8",
+      "title": "Measuring what work generative AI does: Survey evidence versus chat logs",
+      "link": "https://cepr.org/voxeu/columns/measuring-what-work-generative-ai-does-survey-evidence-versus-chat-logs",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-24T23:00:00.000Z",
+      "contentSnippet": "The chat logs of AI companies are often used to measure what work AI actually does. This column uses a nationally representative US survey that links generative AI use to workers’ detailed tasks and compares them with task shares derived from Anthropic, Microsoft, and OpenAI chat…"
+    },
+    {
+      "id": "38064fae2be7",
+      "title": "You can't choose the system. You choose how you act inside it.",
+      "link": "https://www.scrum.org/resources/blog/you-cant-choose-system-you-choose-how-you-act-inside-it",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-24T22:00:00.000Z",
+      "contentSnippet": "Ask almost anyone on a struggling team why they've stopped pushing, and you'll get the same answer in slightly different words. There's no point. The org won't change. Leadership doesn't listen. The deadline is fixed, the mandate is thin, the priorities flip every week, and none…"
+    },
+    {
+      "id": "da79314d1ca0",
+      "title": "Automating coherent long-form video generation",
+      "link": "https://research.google/blog/coherent-long-form-video-generation/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-09-24T19:40:00.000Z",
+      "contentSnippet": "Generative AI"
+    },
+    {
+      "id": "3a09c87aa734",
+      "title": "Project Swap: What happens when agents trade for us?",
+      "link": "https://www.anthropic.com/research/project-swap",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-24T18:37:00.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "d444739f2328",
+      "title": "Current State vs. Future State in Business Analysis: Why You Need Both",
+      "link": "https://www.scrum.org/resources/blog/current-state-vs-future-state-business-analysis-why-you-need-both",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-24T17:17:15.000Z",
+      "contentSnippet": "Image Current state vs future state analysis helps teams understand where they are today, where they need to go, and what needs to change along the way. It sounds simple, but teams often skip this thinking. A business problem is identified, and the conversation quickly shifts to…"
+    },
+    {
+      "id": "da0bf4ec78d8",
+      "title": "Running open-Jev in SQL on Databricks",
+      "link": "https://www.databricks.com/blog/running-open-jev-sql-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-24T16:55:01.000Z",
+      "contentSnippet": "Over the weekend, “System One” decision models such as Jev have launched, which are..."
+    },
+    {
+      "id": "2dce1c71be0d",
+      "title": "Deploy and manage coding agents at scale with the Unity Gateway CLI",
+      "link": "https://www.databricks.com/blog/deploy-and-manage-coding-agents-scale-unity-gateway-cli",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-24T16:46:05.000Z",
+      "contentSnippet": "In the last six months, GPT-6, Claude Opus 5.5, Gemini 3.8, and Grok 4.7 all shipped,..."
+    },
+    {
+      "id": "1edd9ca3b0b4",
+      "title": "Fragments: September 24",
+      "link": "https://martinfowler.com/fragments/2026-09-24.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-24T15:35:00.000Z",
+      "contentSnippet": "Rob Bowley is “flipping tables in his head” with anger at the current media coverage of the danger of AI killing us all The risk I’m worried about isn’t a future machine deciding to wipe us out. It’s today’s AI, being wired into everything, carelessly and fast. Cyber attacks have…"
+    },
+    {
+      "id": "563a504a8ec7",
+      "title": "Healthy Feedback",
+      "link": "https://martinfowler.com/articles/healthy-peer-feedback.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-24T14:10:00.000Z",
+      "contentSnippet": "Human collaboration, like most things, improves with feedback. But it's not obvious how to make feedback effective. Anuja Karnik and Sumeet Gayathri Moghe pass on a bevy of tips for healthy feedback, based on the principle that both praise and criticism should be seen as positive…"
+    },
+    {
+      "id": "2c7cfc8aac87",
+      "title": "From Deployed to Actually Used: The Lane Most Boards Are Missing",
+      "link": "https://www.scrum.org/resources/blog/deployed-actually-used-lane-most-boards-are-missing",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-24T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. Why is nobody using the AI agents you shipped? People are deploying a feature and calling it a day, essentially. The problem is that while the feature might be working, it might not be useful. Or even if it's useful, it might not be used. O…"
+    },
+    {
+      "id": "cf2f25fae056",
+      "title": "How Next Insurance Broke Its Whole Lifecycle Into Agent Skills",
+      "link": "https://www.scrum.org/resources/blog/how-next-insurance-broke-its-whole-lifecycle-agent-skills",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-24T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. What an agentic development lifecycle looks like when it is actually running Shay Mandel has spent his career on the boundary between engineering and product. A developer at heart, as he puts it, who also likes to see big systems: how we im…"
+    },
+    {
+      "id": "6c06272599dc",
+      "title": "Skills for Report Authoring in Power BI: A Conversation with Harleen Kaur (Fabric Insider Ep. 15)",
+      "link": "https://radacad.com/skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15/?utm_source=rss&utm_medium=rss&utm_campaign=skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15",
+      "source": "RADACAD",
+      "category": "Analytics",
+      "pubDate": "2026-09-24T06:56:03.000Z",
+      "contentSnippet": "We’ve already covered how AI can build and modify a semantic model using the Power BI Modeling MCP server. But building the semantic model is only half the job, someone still has to build the actual report on top of it. In this episode of Fabric Insider, I sit down with Harleen K…"
+    },
     {
       "id": "d85d1291df9f",
       "title": "How I built agent-based security reviews on Databricks",
@@ -19,6 +136,15 @@
       "category": "Delivery",
       "pubDate": "2026-09-24T01:47:45.000Z",
       "contentSnippet": "Image If you consider each of Scrum’s events, you’ll notice batches of various kinds: Sprint: The team conducts all their work in the context of Sprints and each Sprint is an opportunity to focus on, and get feedback about, a batch of new work. Sprint Planning: The team is consid…"
+    },
+    {
+      "id": "f87d00160702",
+      "title": "Old workers, young machines: can AI and automation offset population ageing?",
+      "link": "https://www.bis.org/publications/bulletin-135-old-workers-young-machines-can-ai-and-automation-offset-population-ageing",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-24T00:00:00.000Z",
+      "contentSnippet": "Key takeawaysArtificial intelligence (AI) and robots have the potential to offset the macroeconomic consequences of an ageing workforce, but the ability to automate jobs depends on which industries are ageing.AI and robots substitute most readily for jobs in industries with young…"
     },
     {
       "id": "701c0d6a81c8",
@@ -354,15 +480,6 @@
       "contentSnippet": "Classify text in SQL with prompt_jev(), powered by TypeSafe's Jev. 100,000 rows labeled in 40 seconds for $0.50 at frontier-LLM accuracy. Live on paid plans."
     },
     {
-      "id": "923e0414880c",
-      "title": "Anatomy of a rise: Monetary policy and the post-Covid surge in long-term interest rates",
-      "link": "https://cepr.org/voxeu/columns/anatomy-rise-monetary-policy-and-post-covid-surge-long-term-interest-rates",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-20T23:00:00.000Z",
-      "contentSnippet": "The sharp rise in long-term interest rates since 2020 is difficult to explain from slow-moving fundamentals. This column shows that narrow windows around nonfarm payroll releases and speeches by prominent Federal Reserve policymakers capture 80-90% of the observed increase in lon…"
-    },
-    {
       "id": "6eb24a57fa4d",
       "title": "Find Unused Objects In Power BI Semantic Models With Semantic Link Labs",
       "link": "https://blog.crossjoin.co.uk/2026/09/20/find-unused-objects-in-power-bi-semantic-models-with-semantic-link-labs/",
@@ -388,15 +505,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-20T06:00:00.000Z",
       "contentSnippet": "Image Scrum has too many meetings. I have heard that sentence in training rooms since 2010 and for years I argued with it. Now I do the arithmetic on the whiteboard instead, because the Scrum Guide caps its own events and the cap is far below what anyone in the room guesses. Add…"
-    },
-    {
-      "id": "5ba5ae042347",
-      "title": "Beyond trade diversion: How the US-China trade war reshaped global production",
-      "link": "https://cepr.org/voxeu/columns/beyond-trade-diversion-how-us-china-trade-war-reshaped-global-production",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-19T23:00:00.000Z",
-      "contentSnippet": "Trade wars do not simply redirect exports; they also reshape the costs of production, disrupt supplier-customer relationships, and trigger adjustments within multinational firms’ global affiliate networks. This column uses data covering millions of manufacturing plants in 50 majo…"
     },
     {
       "id": "31b589224678",
@@ -469,24 +577,6 @@
       "category": "AI",
       "pubDate": "2026-09-17T18:44:00.000Z",
       "contentSnippet": "Claude made the open-source models that scientists use to predict and design biomolecules faster and more memory-efficient. Claude optimized more than 30 of these models in just under four weeks, speeding them up roughly 4x on average. It also created a low-memory mode that enabl…"
-    },
-    {
-      "id": "99646313ef73",
-      "title": "Database for AI Agents: 5 Evaluation Criteria",
-      "link": "https://www.databricks.com/blog/database-for-ai-agents",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-17T17:27:40.000Z",
-      "contentSnippet": "The five criteria for evaluating a database for AI agents are branch isolation, serverless..."
-    },
-    {
-      "id": "fa57b7201ca9",
-      "title": "The Web Search Your Agent Inherited Isn't Good Enough",
-      "link": "https://www.databricks.com/blog/web-search-your-agent-inherited-isnt-good-enough",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-17T17:00:00.000Z",
-      "contentSnippet": "An agent that needs the outside worldAn engineer at a software company is building..."
     },
     {
       "id": "ad2a2ccfa362",
@@ -685,42 +775,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-14T13:00:00.000Z",
       "contentSnippet": "Originally published on yuvalyeret.com. The token cap is the least interesting number in your AI budget Somewhere in your company right now, someone is trying to decide whether an employee should get $100, $300, or $1,000 a month of AI spend. It is a real question with a real inv…"
-    },
-    {
-      "id": "3df41ddc58a3",
-      "title": "Hi Scrum Masters, if your goal is to make yourself obsolete, then you're doing it all wrong.",
-      "link": "https://www.scrum.org/resources/blog/hi-scrum-masters-if-your-goal-make-yourself-obsolete-then-youre-doing-it-all-wrong",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-14T12:21:00.000Z",
-      "contentSnippet": "Image I keep hearing it at meetups, in interviews, on LinkedIn. A Scrum Master says, with a straight face and a bit of pride: \"my job is to make myself obsolete.\" And every time I hear it, I think: so you've decided when you're done growing? The three levels of serving The Scrum…"
-    },
-    {
-      "id": "320b5054c94d",
-      "title": "Coffee and Scrum - is there a connection?",
-      "link": "https://www.scrum.org/resources/blog/coffee-and-scrum-there-connection",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-14T12:02:49.000Z",
-      "contentSnippet": "Years ago when I was a Scrum Master for a great team we had a ritual. Right before the Daily Scrum, we would walk to our tea/coffee station and fill up our cups with our choice of drink and then walk back to our Jira board to inspect our progress. And I assume, a lot of other tea…"
-    },
-    {
-      "id": "e5d38ef6bb46",
-      "title": "Can Your Team Name the Work It Already Runs With AI?",
-      "link": "https://www.scrum.org/resources/blog/can-your-team-name-work-it-already-runs-ai",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-14T09:44:54.000Z",
-      "contentSnippet": "TL;DR: The AI Workflow Inventory Finalizes the A3 Delegation System You probably know your own AI shortcuts: the colleague who drafts the stakeholder update, the nightly job somebody set up before they left, the interview notes that go through a model on demand. However, I want t…"
-    },
-    {
-      "id": "5540e81e6445",
-      "title": "Deep Market Research with AI for Product Owners",
-      "link": "https://www.scrum.org/resources/blog/deep-market-research-ai-product-owners",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-14T08:51:25.000Z",
-      "contentSnippet": "Doing market research generally demands a lot of time, effort, and budget. But with the advent of AI, you can leverage it as a highly productive assistant to do deep market research. Let’s see how. Image I want to show you the process with an example. Imagine I want to start a bu…"
     },
     {
       "id": "359a014790c8",
@@ -939,15 +993,6 @@
       "contentSnippet": "In this episode of Fabric Insider, I sat down with Josh Caplan, Director of Product for OneLake at Microsoft. Josh has been around this product family for a long time, starting as an intern on the Analysis Services team back in 2007, working on Project Gemini (which became Power…"
     },
     {
-      "id": "44c50944f9bd",
-      "title": "Formalizing Fermat's Last Theorem",
-      "link": "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-04T15:27:00.000Z",
-      "contentSnippet": "We are sharing the first complete computer-checked proof of Fermat’s Last Theorem. Claude worked largely autonomously over 11 days to write the proof in the Lean programming language."
-    },
-    {
       "id": "3fe5160e7acc",
       "title": "Implementing SCD Type 2 in Microsoft Fabric – The Definitive Guide!",
       "link": "https://data-mozart.com/implementing-scd-type-2-in-microsoft-fabric-the-definitive-guide/?utm_source=rss&utm_medium=rss&utm_campaign=implementing-scd-type-2-in-microsoft-fabric-the-definitive-guide",
@@ -963,15 +1008,6 @@
       "source": "Google Research",
       "category": "AI",
       "pubDate": "2026-09-03T18:20:31.000Z",
-      "contentSnippet": "General Science"
-    },
-    {
-      "id": "3aacd1631c19",
-      "title": "A connectomics milestone: Mapping the complete male fruit fly brain",
-      "link": "https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-09-03T16:00:00.000Z",
       "contentSnippet": "General Science"
     },
     {
@@ -991,15 +1027,6 @@
       "category": "Credit",
       "pubDate": "2026-09-03T00:00:00.000Z",
       "contentSnippet": "Small banks are the backbone of local economies but have distinct business models and risk profiles compared to larger banks. Recognising these differences, the Basel Committee on Banking Supervision (BCBS) promotes proportionality in global banking standards, encouraging tailore…"
-    },
-    {
-      "id": "549e2a111dfd",
-      "title": "Zombie firms in emerging Asia: domestic and cross border implications",
-      "link": "https://www.bis.org/publications/working-paper-1375-zombie-firms-emerging-asia-domestic-and-cross-border-implications",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-03T00:00:00.000Z",
-      "contentSnippet": "Using firm-bank linked data for 10 Asian emerging market economies (EMEs) over 2005–2021, we study the domestic and cross-border implications of zombie firms. We document three main findings."
     },
     {
       "id": "6ccaaf4161a3",
@@ -1398,15 +1425,6 @@
       "contentSnippet": "In last week’s post I mentioned that while Power BI reports (unlike Excel PivotTables) do not support the Detail Rows Expression feature, it is possible to partially work around this limitation by using the paginated report visual. In this post I’ll show you how I was able to do…"
     },
     {
-      "id": "153261e53339",
-      "title": "The Next Evolution of Power BI — A Conversation with Mohammad Ali | Fabric Insider Ep. 10",
-      "link": "https://radacad.com/the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10/?utm_source=rss&utm_medium=rss&utm_campaign=the-next-evolution-of-power-bi-a-conversation-with-mohammad-ali-fabric-insider-ep-10",
-      "source": "RADACAD",
-      "category": "Analytics",
-      "pubDate": "2026-08-14T21:35:58.000Z",
-      "contentSnippet": "What is the next evolution of Power BI? Will Power BI Desktop ever become a prompt-first UI? And how do you actually decide whether you need a semantic model, an ontology, or both? I sat down with Mohammad Ali — Director of Product Management for Power BI at Microsoft, overseeing…"
-    },
-    {
       "id": "e2d277d01964",
       "title": "What an Ontology for AI Agents Actually Needs",
       "link": "https://www.dataengineeringweekly.com/p/an-ontology-for-ai-agents-is-a-system",
@@ -1614,6 +1632,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
+    },
+    {
       "id": "d9adb789161e",
       "title": "How Firms Form Beliefs and the Implications for Inflation",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
@@ -1630,24 +1657,6 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
-    },
-    {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
-    },
-    {
-      "id": "dafe9a2bbb83",
-      "title": "The Economic Benefit of Refactoring",
-      "link": "https://martinfowler.com/articles/exploring-gen-ai/refactoring-economic-benefit.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-30T13:04:00.000Z",
-      "contentSnippet": "Giles Edwards-Alexander does an experiment to see if decomposing a large function helps reduce token costs, suggesting that is may now be possible to measure the economic benefit of refactoring more…"
     },
     {
       "id": "93b56433d545",
@@ -1693,15 +1702,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-28T16:00:00.000Z",
       "contentSnippet": "An agile initiative is not mainly a one-time rollout of Scrum, Kanban, SAFe, Jira, new job titles, or a different meeting calendar."
-    },
-    {
-      "id": "62b7a2b2ead0",
-      "title": "The Orchestrator's Tax",
-      "link": "https://martinfowler.com/articles/orchestrator-tax.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-28T13:10:00.000Z",
-      "contentSnippet": "Subagents get justified by time saved and parallel execution, but Rahul Garg explains that's not what matters most. Every token in the orchestrator's context is competing for its attention, and the real value of a subagent is what it keeps out of that context. Subagents should be…"
     },
     {
       "id": "3efe262dfea0",
@@ -1776,13 +1776,13 @@
       "contentSnippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
     },
     {
-      "id": "4c8cd6ef9ad3",
-      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
-      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
+      "id": "370e7bd96562",
+      "title": "Transmission Growth-at-Risk: How Foreign Financial Vulnerabilities Shape U.S. Growth Prospects",
+      "link": "https://www.federalreserve.gov/econres/ifdp/files/ifdp1442.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
+      "contentSnippet": "Board of Governors of the Federal Reserve System International Financial Discussion Papers by Viktors Stebunovs, Judit Temesvary and Sai Ma"
     },
     {
       "id": "03946207f0a8",
