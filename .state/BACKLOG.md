@@ -31,8 +31,9 @@
 ## Next
 
 - [x] **Orbit 2.0 Foundation** — shipped to `main` (`6892531` / Gate 3). Product docs, AI & Data Systems Lead positioning, Studio `/studio/roadmap`. Card keeps STATEMENT only (no NOW box). Website infra = EVIDENCE; career archetype not PROVEN.
-- [ ] **Orbit 2.0 Evidence Layer** — (1) ~~audit~~ draft in `docs/product/EVIDENCE_AUDIT.md` (owner review), (2) name flagship capability gap, (3) one flagship only after selection, (4) case study + interactive proof, repeat. Do not build Decision Intelligence Lab before owner picks.
-- [ ] **Orbit 2.0 Later** — Decision Intelligence Lab (candidate flagship); career timeline visual; AI workflow case study; career-track EVIDENCE items. After Evidence audit.
+- [ ] **Orbit 2.0 Evidence Layer** — (1) ~~audit~~ draft in `docs/product/EVIDENCE_AUDIT.md` (owner review), (2) ~~name flagship~~ owner selected **Interactive Decision Storytelling**, (3) ~~publish flagship on Orbit~~ local port + Portfolio teaser (2026-09-24; uncommitted), (4) case study Write + deeper evidence chain, repeat. Decision Intelligence Lab is not the selected flagship.
+- [x] **IDS on Orbit** — `/stories` landing + `/stories/when-rates-rise` + Portfolio `FlagshipTeaser` after title (build green; owner review before commit/push)
+- [ ] **Orbit 2.0 Later** — career timeline visual; AI workflow case study; career-track EVIDENCE items; optional Lab as a later proof shape.
 - [x] **Related articles: economics, credit, lab research** — Economics and Credit filters; VoxEU, BIS, Bank of England PRA, DeepMind, Google Research, Anthropic research mirror. Weekly intake includes the new lanes ahead of AI.
 - [x] **Visual storytelling Hub** — chaptered scroll on `/`; skill at `.cursor/skills/visual-storytelling`. Shipped to prod 2026-09-22 (owner asked to push).
 - [x] **Pinloop Hub cue** — `LiveProofStream` under thesis + reference.md steal/leave (2026-09-24; uncommitted)

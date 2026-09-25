@@ -5,6 +5,7 @@ const config: Config = {
     "./src/app/**/*.{ts,tsx,mdx}",
     "./src/components/**/*.{ts,tsx}",
     "./src/content/**/*.{ts,tsx,mdx}",
+    "./src/stories/**/*.{ts,tsx,json}",
   ],
   theme: {
     extend: {

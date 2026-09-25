@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { listManifestSlugs, loadStoryManifest } from "@/lib/loadStory";
 import { getWriteModifiedDate } from "@/lib/seo/writes";
 import { getSiteUrl } from "@/lib/site";
 import { getAllWrites } from "@/lib/writes";
@@ -20,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+    {
+      url: `${base}/stories`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.95,
     },
     {
       url: `${base}/portfolio/live`,
@@ -144,5 +151,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...writes];
+  const stories = listManifestSlugs()
+    .map((slug) => {
+      try {
+        return loadStoryManifest(slug);
+      } catch {
+        return null;
+      }
+    })
+    .filter(
+      (m): m is NonNullable<typeof m> =>
+        m !== null && m.meta.role !== "fixture",
+    )
+    .map((manifest) => ({
+      url: `${base}/stories/${manifest.meta.slug}`,
+      lastModified: new Date(manifest.meta.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    }));
+
+  return [...staticRoutes, ...writes, ...stories];
 }

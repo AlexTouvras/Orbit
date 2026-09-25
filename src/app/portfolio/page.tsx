@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { FlagshipTeaser } from "@/components/portfolio/FlagshipTeaser";
 import { GithubRepos } from "@/components/portfolio/GithubRepos";
 import { LocalProjects } from "@/components/portfolio/LocalProjects";
 import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
@@ -23,12 +24,16 @@ export default function PortfolioPage() {
 
   return (
     <div className="space-y-24 sm:space-y-32">
-      <PortfolioHero
-        workshopCount={workshop.length}
-        powerBiCount={powerBiReports.length}
-        liveCount={desks.length}
-        avatarUrl={profile.avatarUrl}
-      />
+      <div className="space-y-10 sm:space-y-12">
+        <PortfolioHero
+          workshopCount={workshop.length}
+          powerBiCount={powerBiReports.length}
+          liveCount={desks.length}
+          avatarUrl={profile.avatarUrl}
+        />
+
+        <FlagshipTeaser />
+      </div>
 
       <LocalProjects />
 

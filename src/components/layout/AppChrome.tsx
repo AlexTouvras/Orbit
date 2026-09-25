@@ -17,6 +17,9 @@ export function AppChrome({
 }) {
   const pathname = usePathname();
   const bare = BARE_ROUTES.has(pathname);
+  /** Flagship landing + films need full-viewport sticky chrome (matches storytelling repo). */
+  const storiesPage =
+    pathname === "/stories" || pathname.startsWith("/stories/");
   const deskPage = /^\/portfolio\/live\/[^/]+/.test(pathname);
   const scrollStory =
     pathname === "/" ||
@@ -28,13 +31,15 @@ export function AppChrome({
     pathname === "/newsletter" ||
     pathname.startsWith("/portfolio/live");
 
-  if (bare) {
+  if (bare || storiesPage) {
     return (
       <main id="main-content" className="relative z-10 min-h-dvh w-full">
         {children}
       </main>
     );
   }
+
+  const mainWidth = deskPage ? "max-w-6xl px-4" : "max-w-5xl px-4";
 
   return (
     <>
@@ -43,9 +48,7 @@ export function AppChrome({
       <Header />
       <main
         id="main-content"
-        className={`relative z-10 mx-auto min-h-[70vh] w-full px-4 pt-28 pb-16 sm:pt-32 ${
-          deskPage ? "max-w-6xl" : "max-w-5xl"
-        }`}
+        className={`relative z-10 mx-auto min-h-[70vh] w-full pt-28 pb-16 sm:pt-32 ${mainWidth}`}
       >
         {children}
       </main>

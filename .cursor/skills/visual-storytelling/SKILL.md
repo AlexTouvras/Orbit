@@ -30,7 +30,7 @@ Then a browser walk (desktop + a ~390px viewport):
 3. Proof reel: scrolling down advances the cards to the right; Case study and architecture still work. Reduced motion: swipe the rail.
 4. Live peek reel: sneak-peek image + `desk.question` as the headline; scrolling down advances cards; the card opens `/portfolio/live/{slug}`. Reduced motion: swipe the rail.
 5. About experience reads as a timeline, not stacked glass cards
-6. `/portfolio` is the shared headline, then workshop reel → live peek reel → Power BI reel → GitHub list. No copied Home close. `/portfolio/live` uses the same reel. Home uses the same `max-w-5xl` column as Blog.
+6. `/portfolio` is the shared headline, then flagship teaser (`FlagshipTeaser` → `/stories`) → workshop reel → live peek reel → Power BI reel → GitHub list. No copied Home close. `/portfolio/live` uses the same reel. Home uses the same `max-w-5xl` column as Blog.
 7. `prefers-reduced-motion`: story still readable; no required animation
 
 ## Minimum evidence (open before editing)
