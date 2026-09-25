@@ -3,7 +3,10 @@ import { listManifestSlugs, loadStoryManifest } from "@/lib/loadStory";
 import { FlagshipLanding } from "@/components/storytelling/FlagshipLanding";
 
 /** Stories shown on the flagship index. Add slugs here when a story is ready to list. */
-const LISTED_SLUGS = new Set<string>(["when-rates-rise"]);
+const LISTED_SLUGS = new Set<string>([
+  "when-rates-rise",
+  "where-should-the-cutoff-sit",
+]);
 
 export const metadata: Metadata = {
   title: "Interactive Decision Storytelling",
