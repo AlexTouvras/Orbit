@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Credit Risk Pulse cut-off page on `/portfolio` — sync matches `cutoff-strategy.png` to the Cut-off Strategy page
 - [x] Portfolio mobile cards — project and Power BI reels fit the phone frame (actions stay on screen)
 - [x] Hosted Bayesian optimisation method card (`/bayes-field-card/`); not Hub; not FIELD_CARDS
 - [x] Re-notify 2026-08-03 weekly Write with full essay in Slack + draft synced to default branch
