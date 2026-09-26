@@ -1,7 +1,79 @@
 {
-  "generatedAt": "2026-09-25T06:46:55.034Z",
+  "generatedAt": "2026-09-26T06:46:55.621Z",
   "count": 261,
   "items": [
+    {
+      "id": "1bd84a7b42a7",
+      "title": "Quantifying financial repression through the lens of portfolio choice: A century of evidence",
+      "link": "https://cepr.org/voxeu/columns/quantifying-financial-repression-through-lens-portfolio-choice-century-evidence",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-25T23:00:00.000Z",
+      "contentSnippet": "With public debt at high peacetime levels, how advanced economies can reduce debt burdens is again at the centre of policy debate. This column examines the role of financial repression, perhaps the least studied channel, by applying new quantity-based measures to more than a cent…"
+    },
+    {
+      "id": "d2d497e5eee4",
+      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+      "link": "https://openai.com/index/proaction",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-25T19:00:00.000Z",
+      "contentSnippet": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster."
+    },
+    {
+      "id": "cd57170eb38e",
+      "title": "Yes, Claude can do Nine Loops",
+      "link": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-25T16:58:00.000Z",
+      "contentSnippet": "Guest writer and physicist Matt von Hippel shares what happened when he issued a challenge to AI companies to solve a problem in his former subfield of theoretical physics."
+    },
+    {
+      "id": "783a14311687",
+      "title": "From Data to Dialogue: How S&P Global Energy Made Its Structured Data Estate Conversational with Databricks Genie Agents and MCP",
+      "link": "https://www.databricks.com/blog/data-dialogue-how-sp-global-energy-made-its-structured-data-estate-conversational-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-25T16:00:00.000Z",
+      "contentSnippet": "S&P Global's goal was to fundamentally improve how customers discover and consume..."
+    },
+    {
+      "id": "6a47534fda8a",
+      "title": "The PRA held a captive insurance industry roundtable",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/august/pra-holds-captive-insurance-industry-roundtable",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-09-25T09:00:00.000Z",
+      "contentSnippet": "On 17 September 2026, the PRA hosted a roundtable in relation to CP11/26 – A tailored regime for captive insurance."
+    },
+    {
+      "id": "a133106d4d8e",
+      "title": "DuckDB and Hugging Face: Querying Datasets Directly",
+      "link": "https://duckdb.org/2026/09/25/hugging-face.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-09-25T00:00:00.000Z",
+      "contentSnippet": "Hugging Face is where much of the machine learning community publishes and finds its datasets, while DuckDB is the in-process analytical database that queries files like CSV and Parquet directly, with no server or warehouse to install or run. Did you know that, since DuckDB v0.10…"
+    },
+    {
+      "id": "34d5ed94e667",
+      "title": "Trusted execution environments for central banks",
+      "link": "https://www.bis.org/publications/paper-173-trusted-execution-environments-central-banks",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-25T00:00:00.000Z",
+      "contentSnippet": "This paper considers what TEEs can responsibly deliver for central banks, the conditions under which they are most effective and how they can be deployed without widening who must be trusted. It takes a balanced view, outlining core assurances and boundaries, highlighting impleme…"
+    },
+    {
+      "id": "b8955cbcdb32",
+      "title": "Decoupling from China after Trump's Trade Wars",
+      "link": "https://cepr.org/multimedia/decoupling-china-after-trumps-trade-wars",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-24T23:00:00.000Z",
+      "contentSnippet": "In March 2025, Apple chartered cargo flights to deliver 600 tonnes of iPhones from India to the United States. A year earlier, four in five smartphones that imported to the US came from China. One of the aims of US trade policy has been to decouple the US economy from China. So i…"
+    },
     {
       "id": "5ab6c9c2726c",
       "title": "How minimum wages reshape firms and their productivity from within",
@@ -22,7 +94,7 @@
     },
     {
       "id": "38064fae2be7",
-      "title": "You can't choose the system. You choose how you act inside it.",
+      "title": "You Can't Choose the System. You Choose How You Act Inside It.",
       "link": "https://www.scrum.org/resources/blog/you-cant-choose-system-you-choose-how-you-act-inside-it",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -45,7 +117,7 @@
       "source": "Anthropic Research",
       "category": "AI",
       "pubDate": "2026-09-24T18:37:00.000Z",
-      "contentSnippet": ""
+      "contentSnippet": "To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes—a more controlled sequel to Project Deal, our first experiment with agents interacting in a marketplace on people's behalf."
     },
     {
       "id": "d444739f2328",
@@ -73,6 +145,15 @@
       "category": "Data",
       "pubDate": "2026-09-24T16:46:05.000Z",
       "contentSnippet": "In the last six months, GPT-6, Claude Opus 5.5, Gemini 3.8, and Grok 4.7 all shipped,..."
+    },
+    {
+      "id": "e7107d9a76d9",
+      "title": "Introducing Gemini 3.8 Live with Live Avatar",
+      "link": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-24T16:20:39.000Z",
+      "contentSnippet": ""
     },
     {
       "id": "1edd9ca3b0b4",
@@ -174,6 +255,15 @@
       "contentSnippet": "We’re announcing a new life sciences research group and laboratory at Anthropic. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR, with only high-level direction from our…"
     },
     {
+      "id": "4c4abcff4acd",
+      "title": "Advancing Private AI Compute with secure, server-side memory",
+      "link": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-23T16:00:57.000Z",
+      "contentSnippet": "Introducing private, server-side memory to Private AI Compute for personal AI."
+    },
+    {
       "id": "9d02eeb8cef1",
       "title": "Two years of OpenAI Academy",
       "link": "https://openai.com/index/two-years-of-openai-academy",
@@ -181,6 +271,15 @@
       "category": "AI",
       "pubDate": "2026-09-23T16:00:00.000Z",
       "contentSnippet": "Marking two years of OpenAI Academy and bringing AI skills to even more communities."
+    },
+    {
+      "id": "be2314c62992",
+      "title": "Gemini 3.8 text-to-speech says hello",
+      "link": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-23T15:25:14.000Z",
+      "contentSnippet": ""
     },
     {
       "id": "1d77064cbebb",
@@ -264,15 +363,6 @@
       "contentSnippet": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations."
     },
     {
-      "id": "1dd9ce125c6e",
-      "title": "ChatGPT Ads expands to Southeast Asia and Taiwan",
-      "link": "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-23T02:00:00.000Z",
-      "contentSnippet": "ChatGPT Ads is expanding to Southeast Asia and Taiwan, giving eligible businesses new ways to reach people across more than 60 countries."
-    },
-    {
       "id": "6fd99847fffa",
       "title": "Unraveling the cobweb of global imbalances: drivers, vulnerabilities, and adjustment scenarios",
       "link": "https://www.bis.org/publications/working-paper-1379-unraveling-cobweb-global-imbalances-drivers-vulnerabilities-and-adjustment-scenarios",
@@ -316,6 +406,15 @@
       "category": "Delivery",
       "pubDate": "2026-09-22T22:00:00.000Z",
       "contentSnippet": "Image Watch where the work actually spends its time. Not the hours someone is heads-down building. The days it sits, waiting. Waiting for the one person who knows that system. Waiting for the other team to finish their sprint. Waiting for a review, a sign-off, an environment, an…"
+    },
+    {
+      "id": "2f49e089415b",
+      "title": "Top 5 System Table Queries for Understanding Your Databricks Costs",
+      "link": "https://www.databricks.com/blog/top-5-system-table-queries-understanding-your-databricks-costs",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-22T16:22:39.000Z",
+      "contentSnippet": "Databricks system tables provide a wealth of information into how you use Databricks and what it costs...."
     },
     {
       "id": "84da03a25e9c",
@@ -397,24 +496,6 @@
       "category": "AI",
       "pubDate": "2026-09-21T23:09:20.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "e5ae98e4c3da",
-      "title": "Building resilience to global financial shocks in emerging markets",
-      "link": "https://cepr.org/voxeu/columns/building-resilience-global-financial-shocks-emerging-markets",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-21T23:00:00.000Z",
-      "contentSnippet": "Emerging markets are vulnerable to sudden shifts in investor sentiment, which can lead to pressure on exchange rates and financing conditions. Using panel evidence from 23 emerging markets, this column shows that the sensitivity of portfolio flows to global shocks has weakened si…"
-    },
-    {
-      "id": "9d774c490fe0",
-      "title": "Productive firms can better spot and deploy their internal talent",
-      "link": "https://cepr.org/voxeu/columns/productive-firms-can-better-spot-and-deploy-their-internal-talent",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-21T23:00:00.000Z",
-      "contentSnippet": "When a job vacancy opens, the manager faces a choice: to hire from outside the organisation, or to fill the position with an existing employee through a promotion or horizontal move. This column uses data from Finland to show that more productive firms are more likely to hire fro…"
     },
     {
       "id": "855574f6d840",
@@ -523,24 +604,6 @@
       "category": "AI",
       "pubDate": "2026-09-18T17:46:09.000Z",
       "contentSnippet": "Algorithms & Theory"
-    },
-    {
-      "id": "fd2a49355af9",
-      "title": "Enabling secure, productive work on personal devices",
-      "link": "https://www.databricks.com/blog/enabling-secure-productive-work-personal-devices",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-18T17:45:00.000Z",
-      "contentSnippet": "At Databricks IT, our vision is to empower people to work from anywhere without putting..."
-    },
-    {
-      "id": "f36bba4d43df",
-      "title": "Database Branching: A Developer's Guide to Git-Style Workflows",
-      "link": "https://www.databricks.com/blog/database-branching",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-18T09:31:51.000Z",
-      "contentSnippet": "Git made isolated development a baseline for software teams. Each developer can create..."
     },
     {
       "id": "7e5cf95f9786",
@@ -867,15 +930,6 @@
       "contentSnippet": "A quick survey of recent engagement of my posts on social media, indicating which service has by far the most engagement, and which service has seen a precipitous decline since early 2025. more…"
     },
     {
-      "id": "8e96172c31dd",
-      "title": "An alignment assessment of recent cybersecurity incidents",
-      "link": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-09T15:00:00.000Z",
-      "contentSnippet": "We present an alignment assessment of four incidents in which Claude models gained unauthorized access to real third-party systems."
-    },
-    {
       "id": "7b90b3111d4c",
       "title": "When machines attack: frontier AI cyber threats and policy responses in the financial sector",
       "link": "https://www.bis.org/publications/fsi-paper-28-when-machines-attack-frontier-ai-cyber-threats-and-policy-responses-financial-sector",
@@ -1011,24 +1065,6 @@
       "contentSnippet": "General Science"
     },
     {
-      "id": "56da2c8ef803",
-      "title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
-      "link": "https://deepmind.google/blog/introducing-weathernext-3-our-most-advanced-and-accurate-global-weather-ai-model/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-03T15:02:08.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "206a5fbbe779",
-      "title": "Simple, resilient and proportional: revisiting regulation for small banks",
-      "link": "https://www.bis.org/publications/fsi-insight-78-simple-resilient-and-proportional-revisiting-regulation-small-banks",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-03T00:00:00.000Z",
-      "contentSnippet": "Small banks are the backbone of local economies but have distinct business models and risk profiles compared to larger banks. Recognising these differences, the Basel Committee on Banking Supervision (BCBS) promotes proportionality in global banking standards, encouraging tailore…"
-    },
-    {
       "id": "6ccaaf4161a3",
       "title": "Bliki: Paracelsus Maxim",
       "link": "https://martinfowler.com/bliki/ParacelsusMaxim.html",
@@ -1056,15 +1092,6 @@
       "contentSnippet": "This is the third and final part of the series on agency. Part one explained what agency actually is, and part two looked at what a lack of agency looks like in practice. This part could almost be short. Most of it is already captured in the fifth principle of the Agile Manifesto…"
     },
     {
-      "id": "383dbcd782ab",
-      "title": "Proactive cyber defense for governments and enterprises",
-      "link": "https://deepmind.google/blog/proactive-cyber-defense-for-governments-and-enterprises/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-02T16:24:24.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "9ec1882bb0be",
       "title": "Microsoft Fabric in GCC High: Building the data foundation for AI",
       "link": "https://www.microsoft.com/en-us/microsoft-cloud/blog/us-government/2026/09/02/microsoft-fabric-in-gcc-high-building-the-data-foundation-for-ai/",
@@ -1072,15 +1099,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-02T16:22:54.000Z",
       "contentSnippet": "Government organizations are ready to move beyond using AI to answer questions and toward intelligent systems and agents that can take action. The post Microsoft Fabric in GCC High: Building the data foundation for AI appeared first on Microsoft Fabric Blog."
-    },
-    {
-      "id": "18ef68f77655",
-      "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
-      "link": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-02T16:18:31.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "8182327ec6e3",
@@ -1389,15 +1407,6 @@
       "contentSnippet": "Part of the reason why I’m at Thoughtworks is because I’d like to see a software development organization founded on technical excellence as an example for the rest of the industry. The trouble is that I have little aptitude or inclination for the hard work of building such an or…"
     },
     {
-      "id": "93fa9face28f",
-      "title": "Reconciling JSON in DuckDB, One Patch at a Time",
-      "link": "https://duckdb.org/2026/08/18/reconciling-json.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-08-18T00:00:00.000Z",
-      "contentSnippet": "Guest blog post by Mustafa Khan (Atlan). DuckDB's JSON extension already covers reading JSON, extracting paths, applying RFC 7396 merge patches, and the usual scalar accessors. The upcoming v2.0 release will extend it with four new scalar functions: json_merge_patch_diff computes…"
-    },
-    {
       "id": "c5565ec9e99f",
       "title": "Scalable Data Apps with MotherDuck & Replit",
       "link": "https://motherduck.com/blog/scalable-data-apps-with-motherduck-and-replit",
@@ -1515,15 +1524,6 @@
       "contentSnippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
     },
     {
-      "id": "6a47534fda8a",
-      "title": "The PRA will hold a captive insurance industry roundtable",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/august/pra-holds-captive-insurance-industry-roundtable",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-08-06T09:00:00.000Z",
-      "contentSnippet": "On 17 September 2026, the PRA will host a roundtable in relation to CP11/26 – A tailored regime for captive insurance."
-    },
-    {
       "id": "2aff593adf2a",
       "title": "On Benchmarking",
       "link": "https://www.dataengineeringweekly.com/p/on-benchmarking",
@@ -1632,6 +1632,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "07b1c1c9fdb7",
+      "title": "Credit Surfaces and Economic Uncertainty",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
+    },
+    {
       "id": "30c8bc5d5e3c",
       "title": "Structural Estimation with Unstructured Data",
       "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
@@ -1648,15 +1657,6 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
-    },
-    {
-      "id": "07b1c1c9fdb7",
-      "title": "Credit Surfaces and Economic Uncertainty",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
       "id": "93b56433d545",
@@ -1776,13 +1776,13 @@
       "contentSnippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
     },
     {
-      "id": "370e7bd96562",
-      "title": "Transmission Growth-at-Risk: How Foreign Financial Vulnerabilities Shape U.S. Growth Prospects",
-      "link": "https://www.federalreserve.gov/econres/ifdp/files/ifdp1442.pdf",
+      "id": "4c8cd6ef9ad3",
+      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
+      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System International Financial Discussion Papers by Viktors Stebunovs, Judit Temesvary and Sai Ma"
+      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
     },
     {
       "id": "03946207f0a8",
