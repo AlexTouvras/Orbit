@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-09-26T06:46:55.621Z",
+  "generatedAt": "2026-09-27T06:46:53.558Z",
   "count": 261,
   "items": [
+    {
+      "id": "a6f7b0bb55df",
+      "title": "Scrum's Protocol Is Easy to Copy. Its Agenda Is Not.",
+      "link": "https://www.scrum.org/resources/blog/scrums-protocol-easy-copy-its-agenda-not",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-27T06:00:00.000Z",
+      "contentSnippet": "Image I have been a Professional Scrum Trainer since 2010, which means I have sat in the room when organizations decide Scrum is not working. Sprint Planning on Monday, Daily Scrum at nine, Sprint Review on the last Friday, Retrospective right after; every event on the calendar a…"
+    },
+    {
+      "id": "7ea52f3c5aa2",
+      "title": "The smokestack illusion: Who really pays for net zero",
+      "link": "https://cepr.org/voxeu/columns/smokestack-illusion-who-really-pays-net-zero",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-26T23:00:00.000Z",
+      "contentSnippet": "Reaching net-zero CO2 emissions by 2050, as prescribed by the Paris Agreement, is hard to imagine without a carbon tax. This column estimates that reaching the goal by carbon taxation will require a tax path that peaks at around $1,300 per tonne of CO2, ten times current prices a…"
+    },
     {
       "id": "1bd84a7b42a7",
       "title": "Quantifying financial repression through the lens of portfolio choice: A century of evidence",
@@ -216,7 +234,7 @@
       "source": "Scrum.org",
       "category": "Delivery",
       "pubDate": "2026-09-24T01:47:45.000Z",
-      "contentSnippet": "Image If you consider each of Scrum’s events, you’ll notice batches of various kinds: Sprint: The team conducts all their work in the context of Sprints and each Sprint is an opportunity to focus on, and get feedback about, a batch of new work. Sprint Planning: The team is consid…"
+      "contentSnippet": "Image Image In 1995, when Scrum was introduced, the release of software was a monumental task involving the printing of floppy disks or CDs, user manuals, reference cards, and boxes. Producers directed immense capital toward packaging and distribution and hoped for prime visibili…"
     },
     {
       "id": "f87d00160702",
@@ -388,15 +406,6 @@
       "category": "Economics",
       "pubDate": "2026-09-22T23:00:00.000Z",
       "contentSnippet": "Solar and wind have become the cheapest sources of new electricity almost everywhere, yet Europe is now switching them off in record numbers. This column argues that the binding constraint on the energy transition is no longer technology but market design — and that fixing it mea…"
-    },
-    {
-      "id": "51bf797f0562",
-      "title": "Pourquoi passons-nous autant de temps en réunions ?",
-      "link": "https://cepr.org/voxeu/columns/pourquoi-passons-nous-autant-de-temps-en-reunions",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-22T23:00:00.000Z",
-      "contentSnippet": "Peu d’aspects du monde du travail moderne sont aussi largement critiqués que les réunions. À partir de données recueillies auprès de plus de 9 000 salariés en Norvège, cet article examine la manière dont les réunions sont organisées et leurs effets sur les résultats des entrepris…"
     },
     {
       "id": "ef25691dc93e",
@@ -829,15 +838,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-14T18:04:04.000Z",
       "contentSnippet": "How do you get meaningful input from an entire IT department without getting everyone in the same meeting or hearing only a few of the loudest voices? A few years ago, I faced that problem with a well-known consumer products company. The leadership team was creating a five-year I…"
-    },
-    {
-      "id": "e0702475c004",
-      "title": "How to Measure AI Impact Beyond Token Caps",
-      "link": "https://www.scrum.org/resources/blog/how-measure-ai-impact-beyond-token-caps",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-14T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. The token cap is the least interesting number in your AI budget Somewhere in your company right now, someone is trying to decide whether an employee should get $100, $300, or $1,000 a month of AI spend. It is a real question with a real inv…"
     },
     {
       "id": "359a014790c8",
@@ -1668,15 +1668,6 @@
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
     },
     {
-      "id": "d834dadfb202",
-      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Policy statement 18/26"
-    },
-    {
       "id": "16fe89b83e2e",
       "title": "LIAF02/26 – Low Impact Amendments Finalisation July 2026",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-finalisation-july-2026",
@@ -1693,6 +1684,15 @@
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
       "contentSnippet": "Low Impact Amendments Consultation July 2026"
+    },
+    {
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "fb549b859ee4",
