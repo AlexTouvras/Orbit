@@ -102,7 +102,9 @@ function writeFile(dest, buf) {
   if (fs.existsSync(dest)) {
     const existing = fs.readFileSync(dest);
     if (sameBytes(existing, buf)) return false;
-    if (existing.includes(13) && existing.includes(10) && !buf.includes(0)) {
+    // Binary assets (e.g. .riv) can contain CR/LF bytes; never rewrite their line endings.
+    const isText = TEXT_EXT.has(path.extname(dest));
+    if (isText && existing.includes(13) && existing.includes(10) && !buf.includes(0)) {
       const lf = buf.toString("utf8").replaceAll("\r\n", "\n");
       next = Buffer.from(lf.replaceAll("\n", "\r\n"), "utf8");
     }
@@ -208,14 +210,31 @@ function main() {
       {},
     ),
     ...mirrorDir(
+      path.join(storytellingRoot, "src", "components", "director"),
+      path.join(websiteRoot, "src", "components", "director"),
+      {},
+    ),
+    ...mirrorDir(
+      path.join(storytellingRoot, "src", "components", "reader"),
+      path.join(websiteRoot, "src", "components", "reader"),
+      {},
+    ),
+    ...mirrorDir(
+      path.join(storytellingRoot, "src", "illustrations"),
+      path.join(websiteRoot, "src", "illustrations"),
+      {},
+    ),
+    ...mirrorDir(
       path.join(storytellingRoot, "src", "stories"),
       path.join(websiteRoot, "src", "stories"),
       {},
     ),
-    ...mirrorDir(
-      path.join(storytellingRoot, "src", "lib", "sim"),
-      path.join(websiteRoot, "src", "lib", "sim"),
-      {},
+    ...["sim", "director", "reader", "rive"].flatMap((dir) =>
+      mirrorDir(
+        path.join(storytellingRoot, "src", "lib", dir),
+        path.join(websiteRoot, "src", "lib", dir),
+        {},
+      ),
     ),
     ...mirrorDir(
       path.join(storytellingRoot, "data", "figures"),

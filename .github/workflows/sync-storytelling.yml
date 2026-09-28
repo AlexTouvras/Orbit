@@ -58,10 +58,16 @@ jobs:
           git add \
             data/figures \
             src/app/stories \
+            src/components/director \
             src/components/film \
+            src/components/reader \
             src/components/storytelling \
+            src/illustrations \
+            src/lib/director \
             src/lib/loadStory.ts \
+            src/lib/reader \
             src/lib/resolveScene.ts \
+            src/lib/rive \
             src/lib/sim \
             src/lib/use-is-compact-viewport.ts \
             src/stories \
