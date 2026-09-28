@@ -1,87 +1,87 @@
 {
-  "id": "ww-2026-09-21-ide",
-  "status": "published",
-  "createdAt": "2026-09-21T09:02:04.036Z",
-  "weekOf": "2026-09-21",
-  "slug": "when-access-rules-become-cheap-policy-becomes-the-bottleneck",
-  "title": "When access rules become cheap, policy becomes the bottleneck",
-  "summary": "AI can remove the repetitive work of configuring data access, but I still need a desired-state policy, a readable diff, and a named owner before permissions change.",
-  "category": "Delivery",
+  "id": "ww-2026-09-28-ide",
+  "status": "pending",
+  "createdAt": "2026-09-28T09:08:57.348Z",
+  "weekOf": "2026-09-28",
+  "slug": "when-ai-can-build-the-report-the-brief-becomes-the-work",
+  "title": "When AI can build the report, the brief becomes the work",
+  "summary": "As report construction gets cheaper, I need a testable brief and a separate check for decision quality before a polished page earns trust.",
+  "category": "Learning",
   "tags": [
-    "Delivery",
+    "Learning",
     "Analytics",
-    "OneLake",
-    "Access control"
+    "Report authoring",
+    "AI"
   ],
-  "mdx": "---\ntitle: \"When access rules become cheap, policy becomes the bottleneck\"\nsummary: \"AI can remove the repetitive work of configuring data access, but I still need a desired-state policy, a readable diff, and a named owner before permissions change.\"\ndate: \"2026-09-21\"\ncategory: \"Delivery\"\nfeatured: false\ntags: [\"Delivery\", \"Analytics\", \"OneLake\", \"Access control\"]\n---\n\n## The question\n\nData access often looks controlled because it is slow. An administrator opens a security screen, creates a role, adds members, and checks the result. The friction feels like caution, even when the real policy lives in a ticket or in somebody's memory.\n\nThat illusion breaks when an AI assistant can scan an analytics estate and create hundreds of access rules from one request. The configuration work becomes cheap. The consequence of a vague rule does not.\n\nSo I am asking a narrower question than whether an assistant can manage permissions: when access changes happen at prompt speed, what evidence do I need before I let the prompt become policy?\n\n## The bottleneck moves upstream\n\nReza Rad's [Fabric Core MCP Server demonstration](https://radacad.com/fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai) shows the shift clearly. Microsoft Fabric is an analytics platform, and OneLake is its shared data layer. An MCP server gives an AI assistant a standard way to call the platform's tools.\n\nRad first uses the assistant to list workspaces, scan lakehouses, and inspect a custom security role. That read-only inspection works while the Fabric capacity is paused because the information comes from the catalog. He then starts the capacity and asks the assistant to create one role for every country in a table. Finally, he changes a test user's memberships and verifies that the report shows only the assigned countries.\n\nThe impressive part is scale. Six roles could have been a thousand, with no extra clicking. But that is also the risk. The moment a role can be created at prompt speed, the unit of review has to move from each click to the policy that generates the clicks.\n\n## Exact execution can still be the wrong policy\n\nAn assistant can carry out the request perfectly and still encode a poor access model. One role per country may fit a static demonstration. In a real estate, I would need to know whether countries are truly the business boundary, whether people need overlapping regions, how new values are handled, and who removes access after a role change.\n\nThe source makes one important limit explicit: assigning security groups is better practice than assigning individual users. That distinction matters because a direct user assignment solves today's request while creating tomorrow's cleanup. A group can connect data access to an owned identity process. A person added ad hoc becomes a small exception that is easy to forget.\n\nVerification also needs two layers. Seeing the expected sales total from the test identity proves that the rule was applied. It does not prove that Canada, Germany, and France were the right entitlement for that person. Technical validity answers, “Did the system do what I asked?” Policy validity asks, “Was I allowed to ask for this outcome?” I need both.\n\n## Review desired state, not the conversation\n\nI would put a small, durable artifact between the prompt and the change. For each role, it should state the data scope, the security group, the business reason, the owner, and any expiry or review date. That is the desired state. The assistant can scan the current configuration and produce a difference: roles to create, definitions to alter, memberships to add, and access to remove.\n\nThis changes the review from reading a chat transcript to inspecting consequences. I can spot a role count that suddenly follows every raw value in a column. I can challenge an individual assignment where a group should exist. I can ask why an old membership is being removed before a production report changes for its reader.\n\nAfter approval, the same automation can apply the difference and verify the result from the affected identity. The scan and comparison should stay repeatable, so drift appears as evidence rather than as a surprise during an incident. Someone still has to resolve ambiguous ownership and approve exceptions. I want that judgment to remain manual because the platform catalog cannot tell me why a colleague should see France but not Australia.\n\n## Where speed earns its place\n\nI would not wrap every catalog query in ceremony. Read-only inventory and documentation are good candidates for direct automation. A sandbox is also the right place to generate a large role set and learn how the naming, limits, and report behavior hold up.\n\nProduction changes need a stronger boundary, but even there urgency can alter the path. Removing a compromised identity may justify immediate execution with an after-the-fact review. Routine additions do not deserve the same exception. The cost of a delayed grant is usually visible; the cost of quiet excess access can sit unnoticed for months.\n\nThe practical baseline is not “human clicks are safe.” They are often inconsistent and poorly recorded. Automation earns the production job when it leaves a clearer desired state, a smaller permission scope, and a better record than the manual process it replaces.\n\n## Takeaway\n\nWhen access configuration becomes cheap, I will spend less time reviewing keystrokes and more time reviewing the rule that produces them. I will scan first, compare current access with a named desired state, review the difference, and verify the result through the identity that consumes the data.\n\nMy decision rule is simple: automate a permission change only when the policy is explicit enough to show who should gain access, who should lose it, and who owns the next review. Prompt speed is useful for applying a sound rule. It is dangerous when it hides that no rule was written.",
-  "preview": "When access rules become cheap, policy becomes the bottleneck\n\nAI can remove the repetitive work of configuring data access, but I still need a desired-state policy, a readable diff, and a named owner before permissions change.\n\nInspired by: Fabric Core MCP Server: Scan and Configure OneLake Security with AI",
+  "mdx": "---\ntitle: \"When AI can build the report, the brief becomes the work\"\nsummary: \"As report construction gets cheaper, I need a testable brief and a separate check for decision quality before a polished page earns trust.\"\ndate: \"2026-09-28\"\ncategory: \"Learning\"\nfeatured: false\ntags: [\"Learning\", \"Analytics\", \"Report authoring\", \"AI\"]\n---\n\n## The question\n\nThe old bottleneck in analytics was turning a useful question into dozens of careful clicks. That bottleneck is shrinking. An AI agent can now build a data model, plan report pages, apply a visual theme, and inspect what it produced.\n\nIf I keep measuring report skill by manual construction, I will get better at the part that is becoming cheap. So what should I learn to do differently when the reporting stack can handle more of the build?\n\nMy answer is to move effort into a testable brief and a separate review of whether the result helps someone decide. Faster authoring raises the value of judgment because a polished wrong answer can now arrive sooner.\n\n## The build moved from the canvas to the contract\n\nReza Rad's conversation with Harleen Kaur on [AI-assisted report authoring in Power BI](https://radacad.com/skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15/?utm_source=rss&utm_medium=rss&utm_campaign=skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15) shows a useful sequence. Power BI is Microsoft's analytics reporting product. Its semantic model defines the business measures and relationships that sit beneath a report.\n\nIn the demonstrated workflow, a planner asks three to five questions about audience, theme, and page needs. A design step turns the answers into a brief. An authoring step then creates the pages and visuals. If a plan already exists, the agent can skip straight to the later stage.\n\nThe important change is not that an agent can place a chart. It is that intent can become an input artifact rather than staying in the report author's head. In a manual build, I can make small choices on the canvas without ever writing down why a page exists. That works until another person has to review, regenerate, or change it.\n\nWith delegated authoring, vague intent becomes visible immediately. “Build an executive dashboard” leaves the agent to guess the audience, the decision, the useful level of detail, and what should happen when the data is incomplete. Better prompting alone does not solve that. I need a brief that another builder, human or automated, could test.\n\n## A screenshot can prove the wrong thing\n\nThe source also describes a Desktop Bridge that opens the generated report, takes a screenshot, detects some errors, and tries to correct them. That closes an important feedback loop. A visual that failed to load is no longer hidden inside a successful command.\n\nBut a clean screenshot proves execution, not usefulness.\n\nThe bridge can see that a chart rendered. It cannot settle whether the revenue definition matches the finance team's definition, whether a manager needs a weekly or monthly view, or whether the brightest number draws attention to the least actionable issue. Those are decision-quality checks. They depend on context outside the pixels.\n\nI therefore want two different kinds of evidence. The build check asks whether fields resolve, filters behave, pages open, and the intended theme holds together. The decision check asks whether the right reader can answer the named question without an explanation from the author. Passing the first does not imply the second.\n\n## What I keep stable while the tools move\n\nBefore I delegate a report, I now want one short statement for each page. It names the reader, the decision the page should support, the measures and level of detail it may use, and an observable acceptance check. “Show sales” is weak. “Let a regional manager identify which account caused this week's variance, while keeping the approved margin definition” gives the builder something to produce and the reviewer something to challenge.\n\nI would then compare the generated result with a small baseline. The comparison does not have to be a fully hand-built report. It can be approved totals, a known filter case, one reference layout, and a short task completed by the intended reader. The point is to make disagreement inspectable. If the agent changes the page later, I can tell whether it improved the report or merely made it different.\n\nThis also changes what I practice. I still need enough craft to recognize a misleading scale, a broken interaction, or poor visual hierarchy. I spend less practice time memorizing every route through a changing interface. I spend more on framing the question, choosing the useful level of detail, and designing checks that survive a tool update.\n\n## Where I would still start rough\n\nA detailed brief can be premature during exploration. Sometimes I do not yet know which question the data can support. In that case, a fast generated page is useful as a sketch. I can react to it, find missing measures, and learn what the audience does not need.\n\nThe limit is promotion. I should not let a convincing sketch quietly become the production report. The authoring features in the source are still described as preview capabilities, and even mature automation cannot supply missing business ownership. Before the sketch becomes evidence, I still need named definitions, representative data, an audience check, and someone willing to own the result after the demo.\n\n## Takeaway\n\nWhen report construction gets faster, I will judge my process by the quality of the contract around it. I want intent written before scale, build checks separated from decision checks, and rough exploration labelled as disposable.\n\nMy decision rule is simple: I delegate report authoring when I can state who will use the page, what decision it supports, and how we will know the result is correct. If I cannot write that brief, faster construction only helps me produce uncertainty in a more polished form.",
+  "preview": "When AI can build the report, the brief becomes the work\n\nAs report construction gets cheaper, I need a testable brief and a separate check for decision quality before a polished page earns trust.\n\nInspired by: Skills for Report Authoring in Power BI: A Conversation with Harleen Kaur (Fabric Insider Ep. 15)",
   "intake": {
-    "weekOf": "2026-09-21",
-    "generatedAt": "2026-09-21T09:01:17.770Z",
+    "weekOf": "2026-09-28",
+    "generatedAt": "2026-09-28T09:08:13.414Z",
     "signals": [
       {
-        "id": "6eb24a57fa4d",
-        "title": "Find Unused Objects In Power BI Semantic Models With Semantic Link Labs",
-        "link": "https://blog.crossjoin.co.uk/2026/09/20/find-unused-objects-in-power-bi-semantic-models-with-semantic-link-labs/",
+        "id": "f950d4b13b41",
+        "title": "Improvements To Power Query Integration In Power BI Report Builder",
+        "link": "https://blog.crossjoin.co.uk/2026/09/27/improvements-to-power-query-integration-in-power-bi-report-builder/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "A few weeks ago I wrote about how Semantic Link Labs now has tools with interactive UIs and showed how you could use this to view lineage and so Vertipaq-Analyzer-stuff in a notebook. I didn’t show what I think is the coolest new feature though: the ability to find the tables, co…"
+        "snippet": "There are some nice improvements to Power Query integration in the latest version of Power BI Report Builder that, while they are documented, didn’t get an official blog post but which I think deserve to be highlighted. First of all the “Get Data” button has been renamed “Power Q…"
       },
       {
-        "id": "30fd4a039425",
-        "title": "Data Engineering Weekly #288",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-288",
+        "id": "eeac3b47b588",
+        "title": "Data Engineering Weekly #289",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-289",
         "source": "Data Engineering Weekly",
         "category": "Data",
         "snippet": "The Weekly Data Engineering Newsletter"
       },
       {
-        "id": "e53dda14685d",
-        "title": "Cognitive Trap: Planning Certainty",
-        "link": "https://www.scrum.org/resources/blog/cognitive-trap-planning-certainty",
+        "id": "0338664a5fc3",
+        "title": "The Jobs Matrix for AI: Four Boxes Instead of Forty Tools",
+        "link": "https://www.scrum.org/resources/blog/jobs-matrix-ai-four-boxes-instead-forty-tools",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "Planning Certainty Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, and ada…"
+        "snippet": "TL;DR: A 2×2 Matrix on AI for Agile Practitioners You probably think making sense of AI means keeping up with every new tool, agent, and pricing tier. Steve Jobs faced a similar mess at Apple in 1997, with a dozen versions of the Macintosh, and he fixed it with a two-by-two grid…"
       },
       {
-        "id": "559b0cf11197",
-        "title": "Introducing the Australian Youth Safety Blueprint",
-        "link": "https://openai.com/index/australian-youth-safety-blueprint",
-        "source": "OpenAI Blog",
+        "id": "859aa16dba9f",
+        "title": "Capital inflows boost output, even after accounting for expectations",
+        "link": "https://cepr.org/voxeu/columns/capital-inflows-boost-output-even-after-accounting-expectations",
+        "source": "VoxEU",
+        "category": "Economics",
+        "snippet": "Emerging market economies that are expected to perform well may attract more foreign capital, making it difficult to establish the causal effects of capital inflows on output. Using professional forecasts to account for expectations about future economic conditions, this column c…"
+      },
+      {
+        "id": "6a47534fda8a",
+        "title": "The PRA held a captive insurance industry roundtable",
+        "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/august/pra-holds-captive-insurance-industry-roundtable",
+        "source": "Bank of England PRA",
+        "category": "Credit",
+        "snippet": "On 17 September 2026, the PRA hosted a roundtable in relation to CP11/26 – A tailored regime for captive insurance."
+      },
+      {
+        "id": "558841854585",
+        "title": "2026 in LLMs (so far)",
+        "link": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
+        "source": "Simon Willison",
         "category": "AI",
-        "snippet": "OpenAI introduces the Australian Youth Safety Blueprint, a six-pillar roadmap for safer AI experiences that protect and empower young people."
+        "snippet": ""
       },
       {
-        "id": "ad2a2ccfa362",
-        "title": "Fabric Core MCP Server: Scan and Configure OneLake Security with AI",
-        "link": "https://radacad.com/fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai",
+        "id": "6c06272599dc",
+        "title": "Skills for Report Authoring in Power BI: A Conversation with Harleen Kaur (Fabric Insider Ep. 15)",
+        "link": "https://radacad.com/skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15/?utm_source=rss&utm_medium=rss&utm_campaign=skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15",
         "source": "RADACAD",
         "category": "Analytics",
-        "snippet": "With the appearance of AI tools, LLMs, MCP servers, and skills, everyone these days is interested in what tool can do what. I’ve already explained the Power BI Modeling MCP server and Fabric Skills in previous videos. In this one, I’ll talk about the Fabric Core MCP server, an MC…"
+        "snippet": "We’ve already covered how AI can build and modify a semantic model using the Power BI Modeling MCP server. But building the semantic model is only half the job, someone still has to build the actual report on top of it. In this episode of Fabric Insider, I sit down with Harleen K…"
       },
       {
-        "id": "31b589224678",
-        "title": "RADAR: Catch gray failures with anomaly detection",
-        "link": "https://www.databricks.com/blog/radar-catch-gray-failures-anomaly-detection",
+        "id": "783a14311687",
+        "title": "From Data to Dialogue: How S&P Global Energy Made Its Structured Data Estate Conversational with Databricks Genie Agents and MCP",
+        "link": "https://www.databricks.com/blog/data-dialogue-how-sp-global-energy-made-its-structured-data-estate-conversational-databricks",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "Some of the most damaging outages are the ones your monitoring never flags: a slice..."
-      },
-      {
-        "id": "cadfc7b3ccdf",
-        "title": "Does Your AI Know the Scrum Guide? Twelve Questions to Find Out",
-        "link": "https://www.scrum.org/resources/blog/does-your-ai-know-scrum-guide-twelve-questions-find-out",
-        "source": "Scrum.org",
-        "category": "Delivery",
-        "snippet": "Image More and more participants in my Professional Scrum Master classes arrive with Scrum \"rules\" they picked up from an AI chatbot. Some of those rules are accurate. Some stopped being true in November 2020. And a few were never part of Scrum at all. The trouble is that from th…"
-      },
-      {
-        "id": "964ae1dd0fac",
-        "title": "How Cooley is accelerating IPO work with ChatGPT",
-        "link": "https://openai.com/index/cooley-gopublic",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most."
+        "snippet": "S&P Global's goal was to fundamentally improve how customers discover and consume..."
       }
     ],
     "projects": [
@@ -169,7 +169,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-09-21T09:25:39.628Z",
-  "publishedSlug": "when-access-rules-become-cheap-policy-becomes-the-bottleneck"
+  "source": "ide"
 }
