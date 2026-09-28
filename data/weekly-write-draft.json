@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-09-28-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-09-28T09:08:57.348Z",
   "weekOf": "2026-09-28",
   "slug": "when-ai-can-build-the-report-the-brief-becomes-the-work",
@@ -169,5 +169,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-09-28T09:14:41.010Z",
+  "publishedSlug": "when-ai-can-build-the-report-the-brief-becomes-the-work"
 }
