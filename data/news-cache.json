@@ -1,7 +1,70 @@
 {
-  "generatedAt": "2026-09-27T06:46:53.558Z",
+  "generatedAt": "2026-09-28T06:46:57.085Z",
   "count": 261,
   "items": [
+    {
+      "id": "eeac3b47b588",
+      "title": "Data Engineering Weekly #289",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-289",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-09-28T02:50:27.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "558841854585",
+      "title": "2026 in LLMs (so far)",
+      "link": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-27T23:54:15.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "859aa16dba9f",
+      "title": "Capital inflows boost output, even after accounting for expectations",
+      "link": "https://cepr.org/voxeu/columns/capital-inflows-boost-output-even-after-accounting-expectations",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-27T23:00:00.000Z",
+      "contentSnippet": "Emerging market economies that are expected to perform well may attract more foreign capital, making it difficult to establish the causal effects of capital inflows on output. Using professional forecasts to account for expectations about future economic conditions, this column c…"
+    },
+    {
+      "id": "502e765966d8",
+      "title": "The cost of not innovating: Frontier AI models, cyber defence, and EU strategic autonomy",
+      "link": "https://cepr.org/voxeu/columns/cost-not-innovating-frontier-ai-models-cyber-defence-and-eu-strategic-autonomy",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-27T23:00:00.000Z",
+      "contentSnippet": "The cyber threat landscape changed dramatically in April 2026 with the emergence of frontier AI models from OpenAI and Anthropic. Access to these models was initially limited, and the US imposed a de facto export ban, since lifted. This column argues that these models turn the EU…"
+    },
+    {
+      "id": "f950d4b13b41",
+      "title": "Improvements To Power Query Integration In Power BI Report Builder",
+      "link": "https://blog.crossjoin.co.uk/2026/09/27/improvements-to-power-query-integration-in-power-bi-report-builder/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-09-27T17:49:52.000Z",
+      "contentSnippet": "There are some nice improvements to Power Query integration in the latest version of Power BI Report Builder that, while they are documented, didn’t get an official blog post but which I think deserve to be highlighted. First of all the “Get Data” button has been renamed “Power Q…"
+    },
+    {
+      "id": "0338664a5fc3",
+      "title": "The Jobs Matrix for AI: Four Boxes Instead of Forty Tools",
+      "link": "https://www.scrum.org/resources/blog/jobs-matrix-ai-four-boxes-instead-forty-tools",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-27T14:38:57.000Z",
+      "contentSnippet": "TL;DR: A 2×2 Matrix on AI for Agile Practitioners You probably think making sense of AI means keeping up with every new tool, agent, and pricing tier. Steve Jobs faced a similar mess at Apple in 1997, with a dozen versions of the Macintosh, and he fixed it with a two-by-two grid…"
+    },
+    {
+      "id": "7502376ff671",
+      "title": "Your Scrum Team Might Be Excellent at Building the Wrong Thing",
+      "link": "https://www.scrum.org/resources/blog/your-scrum-team-might-be-excellent-building-wrong-thing",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-27T14:15:19.000Z",
+      "contentSnippet": "Image Most Scrum Teams I work with are good at delivery. They have a stable Sprint cadence, a clear Definition of Done, and they deliver a usable Increment every Sprint. The Sprint Review runs on time and stakeholders nod along. And yet, when I ask Product Owners in class how man…"
+    },
     {
       "id": "a6f7b0bb55df",
       "title": "Scrum's Protocol Is Easy to Copy. Its Agenda Is Not.",
@@ -255,15 +318,6 @@
       "contentSnippet": "Europe's investment debate tends to ask how much capital can be mobilised and how quickly. Allocation quality also depends on who receives capital and on the spillovers their expansion creates. This column argues that for public allocation, Europe should combine simpler administr…"
     },
     {
-      "id": "20ea19d17da7",
-      "title": "How data centres affect electricity prices and for whom",
-      "link": "https://cepr.org/voxeu/columns/how-data-centres-affect-electricity-prices-and-whom",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-23T23:00:00.000Z",
-      "contentSnippet": "Increases in US electricity prices since 2020 have coincided with a sharp rise in demand from data centres. This column analyses the impact of the surge in data centre growth since 2021 on electricity prices across US utility service territories. It finds that data centres raise…"
-    },
-    {
       "id": "952c54fa1fd4",
       "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
       "link": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system",
@@ -397,15 +451,6 @@
       "category": "AI",
       "pubDate": "2026-09-22T23:46:41.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "7d0bfe7abe25",
-      "title": "The energy transition: Progress and challenges",
-      "link": "https://cepr.org/voxeu/columns/energy-transition-progress-and-challenges",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-22T23:00:00.000Z",
-      "contentSnippet": "Solar and wind have become the cheapest sources of new electricity almost everywhere, yet Europe is now switching them off in record numbers. This column argues that the binding constraint on the energy transition is no longer technology but market design — and that fixing it mea…"
     },
     {
       "id": "ef25691dc93e",
@@ -804,15 +849,6 @@
       "contentSnippet": "AI can generate polished user stories and acceptance criteria in seconds. Learn how to use it without skipping product judgment, user evidence, or team conversations."
     },
     {
-      "id": "7f26e801c464",
-      "title": "Na era da IA, ainda está a medir trabalho e esforço? ou finalmente a medir valor?",
-      "link": "https://www.scrum.org/resources/blog/na-era-da-ia-ainda-esta-medir-trabalho-e-esforco-ou-finalmente-medir-valor",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-15T10:06:32.000Z",
-      "contentSnippet": "Image Durante décadas habituámo-nos a medir trabalho através daquilo que conseguimos ver: Horas trabalhadas Número de tarefas concluídas Tickets fechados Linhas de código Story Points entregues Número de funcionalidades lançadas Projetos terminados dentro do prazo São números con…"
-    },
-    {
       "id": "f21765b08162",
       "title": "They All Write, Store, and Read Data: How to Pick The Right Database",
       "link": "https://motherduck.com/blog/how-to-pick-the-right-database",
@@ -829,15 +865,6 @@
       "category": "Credit",
       "pubDate": "2026-09-15T00:00:00.000Z",
       "contentSnippet": "Decentralised finance data presents a distinctive paradox: while every data point is publicly recorded and accessible, deriving meaningful insights is obscured by the scale, fragmentation and complexity of the ecosystem. Key metrics illustrate that the rapidly evolving DeFi ecosy…"
-    },
-    {
-      "id": "bb32dc5073c5",
-      "title": "Gallery Walk to IT Roadmap",
-      "link": "https://www.scrum.org/resources/blog/gallery-walk-it-roadmap",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-14T18:04:04.000Z",
-      "contentSnippet": "How do you get meaningful input from an entire IT department without getting everyone in the same meeting or hearing only a few of the loudest voices? A few years ago, I faced that problem with a well-known consumer products company. The leadership team was creating a five-year I…"
     },
     {
       "id": "359a014790c8",
@@ -1108,15 +1135,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-02T14:45:00.000Z",
       "contentSnippet": "Giles Edwards-Alexander reports that during an experiment to see how productive a team could be using fully agentic engineering practices, the team accidentally prompted the agents into creating a blackboard coordination system inside the git repository. more…"
-    },
-    {
-      "id": "bbaa7e92c7f7",
-      "title": "Claude's new system prompt really doesn't want to reproduce song lyrics",
-      "link": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-09-02T14:16:42.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "0ae88a845983",
@@ -1632,6 +1650,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "d9adb789161e",
+      "title": "How Firms Form Beliefs and the Implications for Inflation",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
+    },
+    {
       "id": "07b1c1c9fdb7",
       "title": "Credit Surfaces and Economic Uncertainty",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
@@ -1650,15 +1677,6 @@
       "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
-      "id": "d9adb789161e",
-      "title": "How Firms Form Beliefs and the Implications for Inflation",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
-    },
-    {
       "id": "93b56433d545",
       "title": "Creative Dagster Projects from the Community",
       "link": "https://dagster.io/blog/community-showcase-part-2",
@@ -1666,6 +1684,15 @@
       "category": "Data",
       "pubDate": "2026-07-30T12:28:26.000Z",
       "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
+    },
+    {
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "16fe89b83e2e",
@@ -1684,15 +1711,6 @@
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
       "contentSnippet": "Low Impact Amendments Consultation July 2026"
-    },
-    {
-      "id": "d834dadfb202",
-      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "fb549b859ee4",
@@ -1767,22 +1785,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "a92c018c9c22",
-      "title": "Using Fabric Operations Agents And Workspace Monitoring With Power BI",
-      "link": "https://blog.crossjoin.co.uk/2026/07/19/using-fabric-operations-agents-and-workspace-monitoring-with-power-bi/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-07-19T17:46:53.000Z",
-      "contentSnippet": "This week, in the announcement about support for Fabric Pipelines in Workspace Monitoring, I noticed that it came with an Operations Agent that actively monitors and analyses Pipeline activity. And that got me thinking, since Workspace Monitoring also contains Power BI activity d…"
-    },
-    {
-      "id": "4c8cd6ef9ad3",
-      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
-      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
+      "id": "d817a88ce0e9",
+      "title": "The Last Taxi: LCR Buffers and Bank Liquidity Provision",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026051pap.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Alexandros Vardoulakis, Matt Darst, Arazi Lubis and Lucia Gurrieri"
     },
     {
       "id": "03946207f0a8",
@@ -1972,15 +1981,6 @@
       "category": "Data",
       "pubDate": "2026-06-23T03:47:56.000Z",
       "contentSnippet": "Introducing aidataengineer.io — an AI-powered learning platform built on 275+ editions of Data Engineering Weekly."
-    },
-    {
-      "id": "dbddbf7d9d33",
-      "title": "Data Engineering Weekly #275",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-275",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-06-22T04:02:10.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "9c167a26354f",
