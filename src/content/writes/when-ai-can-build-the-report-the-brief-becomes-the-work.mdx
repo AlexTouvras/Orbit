@@ -1,0 +1,56 @@
+---
+title: "When AI can build the report, the brief becomes the work"
+summary: "As report construction gets cheaper, I need a testable brief and a separate check for decision quality before a polished page earns trust."
+date: "2026-09-28"
+category: "Learning"
+featured: false
+tags: ["Learning", "Analytics", "Report authoring", "AI"]
+---
+
+## The question
+
+The old bottleneck in analytics was turning a useful question into dozens of careful clicks. That bottleneck is shrinking. An AI agent can now build a data model, plan report pages, apply a visual theme, and inspect what it produced.
+
+If I keep measuring report skill by manual construction, I will get better at the part that is becoming cheap. So what should I learn to do differently when the reporting stack can handle more of the build?
+
+My answer is to move effort into a testable brief and a separate review of whether the result helps someone decide. Faster authoring raises the value of judgment because a polished wrong answer can now arrive sooner.
+
+## The build moved from the canvas to the contract
+
+Reza Rad's conversation with Harleen Kaur on [AI-assisted report authoring in Power BI](https://radacad.com/skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15/?utm_source=rss&utm_medium=rss&utm_campaign=skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15) shows a useful sequence. Power BI is Microsoft's analytics reporting product. Its semantic model defines the business measures and relationships that sit beneath a report.
+
+In the demonstrated workflow, a planner asks three to five questions about audience, theme, and page needs. A design step turns the answers into a brief. An authoring step then creates the pages and visuals. If a plan already exists, the agent can skip straight to the later stage.
+
+The important change is not that an agent can place a chart. It is that intent can become an input artifact rather than staying in the report author's head. In a manual build, I can make small choices on the canvas without ever writing down why a page exists. That works until another person has to review, regenerate, or change it.
+
+With delegated authoring, vague intent becomes visible immediately. “Build an executive dashboard” leaves the agent to guess the audience, the decision, the useful level of detail, and what should happen when the data is incomplete. Better prompting alone does not solve that. I need a brief that another builder, human or automated, could test.
+
+## A screenshot can prove the wrong thing
+
+The source also describes a Desktop Bridge that opens the generated report, takes a screenshot, detects some errors, and tries to correct them. That closes an important feedback loop. A visual that failed to load is no longer hidden inside a successful command.
+
+But a clean screenshot proves execution, not usefulness.
+
+The bridge can see that a chart rendered. It cannot settle whether the revenue definition matches the finance team's definition, whether a manager needs a weekly or monthly view, or whether the brightest number draws attention to the least actionable issue. Those are decision-quality checks. They depend on context outside the pixels.
+
+I therefore want two different kinds of evidence. The build check asks whether fields resolve, filters behave, pages open, and the intended theme holds together. The decision check asks whether the right reader can answer the named question without an explanation from the author. Passing the first does not imply the second.
+
+## What I keep stable while the tools move
+
+Before I delegate a report, I now want one short statement for each page. It names the reader, the decision the page should support, the measures and level of detail it may use, and an observable acceptance check. “Show sales” is weak. “Let a regional manager identify which account caused this week's variance, while keeping the approved margin definition” gives the builder something to produce and the reviewer something to challenge.
+
+I would then compare the generated result with a small baseline. The comparison does not have to be a fully hand-built report. It can be approved totals, a known filter case, one reference layout, and a short task completed by the intended reader. The point is to make disagreement inspectable. If the agent changes the page later, I can tell whether it improved the report or merely made it different.
+
+This also changes what I practice. I still need enough craft to recognize a misleading scale, a broken interaction, or poor visual hierarchy. I spend less practice time memorizing every route through a changing interface. I spend more on framing the question, choosing the useful level of detail, and designing checks that survive a tool update.
+
+## Where I would still start rough
+
+A detailed brief can be premature during exploration. Sometimes I do not yet know which question the data can support. In that case, a fast generated page is useful as a sketch. I can react to it, find missing measures, and learn what the audience does not need.
+
+The limit is promotion. I should not let a convincing sketch quietly become the production report. The authoring features in the source are still described as preview capabilities, and even mature automation cannot supply missing business ownership. Before the sketch becomes evidence, I still need named definitions, representative data, an audience check, and someone willing to own the result after the demo.
+
+## Takeaway
+
+When report construction gets faster, I will judge my process by the quality of the contract around it. I want intent written before scale, build checks separated from decision checks, and rough exploration labelled as disposable.
+
+My decision rule is simple: I delegate report authoring when I can state who will use the page, what decision it supports, and how we will know the result is correct. If I cannot write that brief, faster construction only helps me produce uncertainty in a more polished form.
