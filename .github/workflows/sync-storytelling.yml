@@ -55,23 +55,16 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Parent trees, not a folder allowlist. stories:sync discovers new
+          # component and lib folders; this add publishes them.
           git add \
             data/figures \
             src/app/stories \
-            src/components/director \
-            src/components/film \
-            src/components/reader \
-            src/components/storytelling \
+            src/components \
             src/illustrations \
-            src/lib/director \
-            src/lib/loadStory.ts \
-            src/lib/reader \
-            src/lib/resolveScene.ts \
-            src/lib/rive \
-            src/lib/sim \
-            src/lib/use-is-compact-viewport.ts \
+            src/lib \
             src/stories \
-            src/types/react-scrollama.d.ts
+            src/types
           if git diff --staged --quiet; then
             echo "Storytelling engine unchanged."
             exit 0
