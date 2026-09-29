@@ -1,93 +1,78 @@
 {
-  "id": "newsletter-2026-W39",
-  "status": "sent",
-  "createdAt": "2026-09-22T12:54:24.388Z",
-  "weekOf": "2026-09-21",
-  "subject": "Orbit weekly — week of 2026-09-21",
+  "id": "newsletter-2026-W40",
+  "status": "pending",
+  "createdAt": "2026-09-29T14:04:13.100Z",
+  "weekOf": "2026-09-28",
+  "subject": "Orbit weekly — week of 2026-09-28",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
   "writes": [
     {
-      "slug": "when-access-rules-become-cheap-policy-becomes-the-bottleneck",
-      "title": "When access rules become cheap, policy becomes the bottleneck",
-      "summary": "AI can remove the repetitive work of configuring data access, but I still need a desired-state policy, a readable diff, and a named owner before permissions change.",
-      "date": "2026-09-21",
-      "href": "https://alextouvras.com/writes/when-access-rules-become-cheap-policy-becomes-the-bottleneck"
+      "slug": "when-ai-can-build-the-report-the-brief-becomes-the-work",
+      "title": "When AI can build the report, the brief becomes the work",
+      "summary": "As report construction gets cheaper, I need a testable brief and a separate check for decision quality before a polished page earns trust.",
+      "date": "2026-09-28",
+      "href": "https://alextouvras.com/writes/when-ai-can-build-the-report-the-brief-becomes-the-work"
     }
   ],
   "signals": [
     {
-      "title": "The hidden complexity of a daily average in DAX",
-      "link": "https://www.sqlbi.com/articles/the-hidden-complexity-of-a-daily-average-in-dax/",
-      "source": "SQLBI",
+      "title": "Improvements To Power Query Integration In Power BI Report Builder",
+      "link": "https://blog.crossjoin.co.uk/2026/09/27/improvements-to-power-query-integration-in-power-bi-report-builder/",
+      "source": "Chris Webb's BI Blog",
       "category": "Analytics",
-      "snippet": "A simple daily average masks a level of complexity that may not be immediately apparent. In this article, we use AI to…"
+      "snippet": "There are some nice improvements to Power Query integration in the latest version of Power BI Report Builder that, whil…"
     },
     {
-      "title": "Data Engineering Weekly #288",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-288",
-      "source": "Data Engineering Weekly",
+      "title": "How Databricks rolls out frontier models to 12,000 employees on Day 1",
+      "link": "https://www.databricks.com/blog/how-databricks-rolls-out-frontier-models-14000-employees-day-1",
+      "source": "Databricks Blog",
       "category": "Data",
-      "snippet": "The Weekly Data Engineering Newsletter"
+      "snippet": "Providing our employees access to frontier AI capabilities is a top priority at Databricks, and consequently..."
     },
     {
-      "title": "Finding AI Gold With Lean Startup Techniques",
-      "link": "https://www.scrum.org/resources/blog/finding-ai-gold-lean-startup-techniques",
+      "title": "AI Made Engineering Faster. Why Not The Business?",
+      "link": "https://www.scrum.org/resources/blog/ai-made-engineering-faster-why-not-business",
       "source": "Scrum.org",
       "category": "Delivery",
-      "snippet": "Originally published on yuvalyeret.com. How do we deliver valuable real-world AI impact through solutions that solve pr…"
+      "snippet": "Originally published on yuvalyeret.com. Why More AI Activity Is Not Showing Up In The Business You can 10x engineering…"
     },
     {
-      "title": "Jev introduces a new shape of LLM - System One, aka Decision Models",
-      "link": "https://simonwillison.net/2026/Sep/21/jev/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "snippet": ""
+      "title": "Lifting the curtain on the EU’s debt",
+      "link": "https://cepr.org/voxeu/columns/lifting-curtain-eus-debt",
+      "source": "VoxEU",
+      "category": "Economics",
+      "snippet": "The EU’s far-reaching response to a series of major shocks has turned it into a major borrower on international financi…"
     }
   ],
   "ravens": [
     {
-      "kind": "inbox",
+      "kind": "signal",
       "domain": "ai-agents",
-      "title": "Microsoft Agent Framework Python 1.19.0 makes HTTP cookies explicit, ZIP-only MCP skill archives, and per-invocation MCP sessions",
-      "summary": "microsoft/agent-framework `python-1.19.0` (GitHub release published 18 Sep 2026) is the first 1.19 pin after 1.18.0: HTTP cookie persistenc…",
-      "href": "https://github.com/microsoft/agent-framework/releases/tag/python-1.19.0",
-      "sourceTitle": "python-1.19.0 — microsoft/agent-framework",
-      "id": "FIND-20260921-001",
-      "date": "2026-09-18"
-    },
-    {
-      "kind": "inbox",
-      "domain": "data-bi",
-      "title": "microsoft/skills-for-fabric 0.3.17 moves FabricIQ MCP and merges four report skills into powerbi-report-cli",
-      "summary": "microsoft/skills-for-fabric v0.3.17 (GitHub release published 17 Sep 2026) replaces the four Power BI report skills (`powerbi-report-author…",
-      "href": "https://github.com/microsoft/skills-for-fabric/releases/tag/v0.3.17",
-      "sourceTitle": "v0.3.17 — microsoft/skills-for-fabric",
-      "id": "FIND-20260921-002",
-      "date": "2026-09-17"
+      "title": "Cursor Rollouts and Security Review — Teams/Enterprise last-mile PR bots; no auto-merge",
+      "summary": "Cursor’s changelog dated **23 Sep 2026** launches two bots on **Teams and Enterprise**, enabled from the automations tab. **Rollouts** atta…",
+      "id": "SIG-20260928-001",
+      "date": "2026-09-28",
+      "priority": "p2"
     },
     {
       "kind": "inbox",
       "domain": "finance",
-      "title": "Fortum Elmera tender: 88.59% accepted at the 18 Sep close (92.64% ex-treasury); window extended to 2 Oct 16:30 CEST",
-      "summary": "Fortum’s 21 Sep 2026 stock-exchange release (Cision, 09:00 EEST) reports that as of the initial offer period’s expiry at 16:30 CEST on 18 S…",
-      "href": "https://news.cision.com/fortum/r/update-on-acceptances-of-fortum-s-recommended-voluntary-cash-tender-offer-for-elmera-group-asa,c4398487",
-      "sourceTitle": "Update on acceptances of Fortum’s recommended voluntary cash tender offer for Elmera Group ASA — Fortum, 21 September 2026",
-      "id": "FIND-20260921-005",
-      "date": "2026-09-21"
+      "title": "Fortum Elmera tender: 90.02% accepted; Minimum Acceptance condition satisfied; window still 2 Oct 16:30 CEST",
+      "summary": "Fortum’s 25 Sep 2026 stock-exchange release (Cision, 13:20 EEST) reports that, subject to customary verification of acceptances, the offero…",
+      "href": "https://news.cision.com/fortum/r/90--minimum-acceptance-condition-satisfied-for-fortum-s-recommended-voluntary-cash-tender-offer-for-,c4400820",
+      "sourceTitle": "90% Minimum Acceptance condition satisfied for Fortum’s recommended voluntary cash tender offer for Elmera Group ASA — Fortum, 25 September 2026",
+      "id": "FIND-20260928-003",
+      "date": "2026-09-25"
     },
     {
       "kind": "knowledge",
       "domain": "parenting",
-      "title": "Finland — infant bronchiolitis is usually RSV; under-3-month feeding or breathing trouble is same-day care",
-      "summary": "Bronchiolitis (ilmatiehyttulehdus) is small-airway inflammation in children **under 1 year**, most often **RSV**, and often peaks in **wint…",
-      "href": "https://www.terveyskirjasto.fi/dlk01308",
-      "sourceTitle": "Ilmatiehyttulehdus (bronkioliitti) lapsella — Terveyskirjasto (Lääkärikirja Duodecim)",
-      "id": "KNOW-parenting-fi-infant-rsv-bronchiolitis-same-day",
-      "date": "2026-09-21"
+      "title": "Finland — rotavirus first dose from 6 weeks and before 12 weeks; series at 2, 3 and 5 months",
+      "summary": "The national programme uses **oral RotaTeq**, free of charge for infants **6–31 weeks**. THL recommends doses at **2, 3 and 5 months**.",
+      "href": "https://thl.fi/ohjeita-ammattilaisille/rotavirusrokote",
+      "sourceTitle": "Rotavirusrokote — THL",
+      "id": "KNOW-parenting-fi-infant-rotavirus-2-3-5m",
+      "date": "2026-09-28"
     }
-  ],
-  "sentAt": "2026-09-22T12:54:25.909Z",
-  "broadcastId": "01a0c92e-8b1f-77b0-be8c-2c4ea6f5edfc",
-  "sendMode": "test",
-  "sentTo": "a.touvras@gmail.com"
+  ]
 }
