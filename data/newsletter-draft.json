@@ -1,6 +1,6 @@
 {
   "id": "newsletter-2026-W40",
-  "status": "pending",
+  "status": "sent",
   "createdAt": "2026-09-29T14:04:13.100Z",
   "weekOf": "2026-09-28",
   "subject": "Orbit weekly — week of 2026-09-28",
@@ -74,5 +74,9 @@
       "id": "KNOW-parenting-fi-infant-rotavirus-2-3-5m",
       "date": "2026-09-28"
     }
-  ]
+  ],
+  "sentAt": "2026-09-29T14:04:16.155Z",
+  "broadcastId": "01a0ed7a-ff55-74ac-94f3-360dc1efe42b",
+  "sendMode": "test",
+  "sentTo": "a.touvras@gmail.com"
 }
