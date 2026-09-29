@@ -1,7 +1,115 @@
 {
-  "generatedAt": "2026-09-28T06:46:57.085Z",
+  "generatedAt": "2026-09-29T06:46:55.018Z",
   "count": 261,
   "items": [
+    {
+      "id": "d780d27addbc",
+      "title": "Lifting the curtain on the EU’s debt",
+      "link": "https://cepr.org/voxeu/columns/lifting-curtain-eus-debt",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-28T23:00:00.000Z",
+      "contentSnippet": "The EU’s far-reaching response to a series of major shocks has turned it into a major borrower on international financial markets. Debt issued by the EU on behalf of its member states now stands at close to 5½% of GDP, almost twice as much as six years ago. This column highlights…"
+    },
+    {
+      "id": "7bd49ce9a7b1",
+      "title": "Geopolitical risk is reshaping global finance, one bank loan at a time",
+      "link": "https://cepr.org/voxeu/columns/geopolitical-risk-reshaping-global-finance-one-bank-loan-time",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-28T23:00:00.000Z",
+      "contentSnippet": "Geopolitical tensions are increasingly reshaping the flow of trade, investment and capital flows. This column documents that the same process is also reshaping bank lending. Using confidential supervisory data on thousands of international bank lending relationships, the authors…"
+    },
+    {
+      "id": "3899d52a5026",
+      "title": "Better work, not always better workers",
+      "link": "https://cepr.org/voxeu/columns/better-work-not-always-better-workers",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-28T23:00:00.000Z",
+      "contentSnippet": "Professional judgement comes from learning by doing, but AI has the potential to disrupt this learning process. This column explores how randomised access to an AI patent-writing product affects the performance of lawyers on certain writing tasks. Using the AI tool raised the qua…"
+    },
+    {
+      "id": "107f1a0fdf41",
+      "title": "How Databricks rolls out frontier models to 12,000 employees on Day 1",
+      "link": "https://www.databricks.com/blog/how-databricks-rolls-out-frontier-models-14000-employees-day-1",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-28T20:11:23.000Z",
+      "contentSnippet": "Providing our employees access to frontier AI capabilities is a top priority at Databricks, and consequently..."
+    },
+    {
+      "id": "542e54a12253",
+      "title": "Lakebase Search: State-of-the-art full text and vector search for Postgres",
+      "link": "https://www.databricks.com/blog/lakebase-search-state-art-full-text-and-vector-search-postgres",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-28T20:04:33.000Z",
+      "contentSnippet": "Traditional OLTP systems weren't built for the search demands of AI agents. They..."
+    },
+    {
+      "id": "5fca8d7babdc",
+      "title": "Manufacturing data and AI: Connecting the product value chain",
+      "link": "https://www.databricks.com/blog/manufacturing-data-and-ai-connecting-product-value-chain",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-28T19:47:19.000Z",
+      "contentSnippet": "A manufacturing defect rarely belongs to one system. A scrap spike may relate to..."
+    },
+    {
+      "id": "cfe8e900401f",
+      "title": "How we will do better for Australia",
+      "link": "https://openai.com/index/how-we-will-do-better-for-australia",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-28T19:00:00.000Z",
+      "contentSnippet": "OpenAI apologises for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia’s cyber defences."
+    },
+    {
+      "id": "26f8d7081d07",
+      "title": "How to roll out Genie One: A step-by-step enterprise playbook",
+      "link": "https://www.databricks.com/blog/how-roll-out-genie-one-step-step-enterprise-playbook",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-28T16:30:00.000Z",
+      "contentSnippet": "A regional sales director wants to know why the Northeast pipeline looks soft this quarter..."
+    },
+    {
+      "id": "2069ce7b61ef",
+      "title": "AI Made Engineering Faster. Why Not The Business?",
+      "link": "https://www.scrum.org/resources/blog/ai-made-engineering-faster-why-not-business",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-28T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. Why More AI Activity Is Not Showing Up In The Business You can 10x engineering and still not 10x the business. AI agents are getting very good at coding, debugging, test generation, documentation, and a lot of engineering activities. That i…"
+    },
+    {
+      "id": "3ae70186f32f",
+      "title": "The 24 most commonly misunderstood marketing data terms",
+      "link": "https://www.databricks.com/blog/helping-marketing-data-engineering-same-word-different-meaning",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-28T07:01:10.000Z",
+      "contentSnippet": "Imagine you’re a marketer planning a win-back campaign and you ask your data team for a list of “inactive customers.” Y..."
+    },
+    {
+      "id": "216d56bba26c",
+      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
+      "link": "https://openai.com/index/lenfest-ai-collaborative-expansion",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-28T07:00:00.000Z",
+      "contentSnippet": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support."
+    },
+    {
+      "id": "82913a57eebf",
+      "title": "How I Enriched The PSM Class For New Scrum Masters",
+      "link": "https://www.scrum.org/resources/blog/how-i-enriched-psm-class-new-scrum-masters",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-28T06:35:26.000Z",
+      "contentSnippet": "Learning from the PSM class alone is not enough for New Scrum Masters. To effectively apply their knowledge in the field, they require extra, enriched content and support. So, let’s explore how I enriched the PSM class. Image Imagine you join a PSM class and you learn a lot from…"
+    },
     {
       "id": "eeac3b47b588",
       "title": "Data Engineering Weekly #289",
@@ -10,6 +118,42 @@
       "category": "Data",
       "pubDate": "2026-09-28T02:50:27.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "914f14710638",
+      "title": "Are you a Codex Original?",
+      "link": "https://openai.com/form/codex-originals",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-28T00:00:00.000Z",
+      "contentSnippet": "We’re collecting real stories of builders, tinkerers, researchers, and creators who are using Codex to do incredible things. If you want to be a part of the next chapter of the Codex Originals program, tell us more about your story and project below."
+    },
+    {
+      "id": "bf0fe8cc388a",
+      "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
+      "link": "https://openai.com/index/basis-tax-workbook-with-astra",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-28T00:00:00.000Z",
+      "contentSnippet": "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol, and its stronger understanding of user intent gives Basis more confidence in real-world use."
+    },
+    {
+      "id": "76744a1a704f",
+      "title": "Announcing DuckDB 1.5.6",
+      "link": "https://duckdb.org/2026/09/28/announcing-duckdb-156.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-09-28T00:00:00.000Z",
+      "contentSnippet": "In this blog post, we highlight a few important fixes in DuckDB v1.5.6, the sixth patch release in DuckDB's 1.5 (Variegata) line. The release ships bugfixes, performance improvements and security patches. You can find the full release notes on GitHub. To install the new version,…"
+    },
+    {
+      "id": "4a87760ef222",
+      "title": "The leverage ratio and the output floor: complementarities and overlaps",
+      "link": "https://www.bis.org/publications/fsi-paper-29-leverage-ratio-and-output-floor-complementarities-and-overlaps",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-28T00:00:00.000Z",
+      "contentSnippet": "This paper examines analytically and empirically whether the Basel III leverage ratio (LR) and output floor (OF) requirements act as substitutes for or complements to each other and how they interact with risk‑based regulatory requirements. These requirements determine banks’ ove…"
     },
     {
       "id": "558841854585",
@@ -156,24 +300,6 @@
       "contentSnippet": "In March 2025, Apple chartered cargo flights to deliver 600 tonnes of iPhones from India to the United States. A year earlier, four in five smartphones that imported to the US came from China. One of the aims of US trade policy has been to decouple the US economy from China. So i…"
     },
     {
-      "id": "5ab6c9c2726c",
-      "title": "How minimum wages reshape firms and their productivity from within",
-      "link": "https://cepr.org/voxeu/columns/how-minimum-wages-reshape-firms-and-their-productivity-within",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-24T23:00:00.000Z",
-      "contentSnippet": "How far can minimum wages rise without damaging jobs and output? This column uses evidence from France to show that firms respond not only by employing fewer workers, but also by increasing training and flattening management hierarchies. A quantitative model suggests that this re…"
-    },
-    {
-      "id": "8989b01a22f8",
-      "title": "Measuring what work generative AI does: Survey evidence versus chat logs",
-      "link": "https://cepr.org/voxeu/columns/measuring-what-work-generative-ai-does-survey-evidence-versus-chat-logs",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-24T23:00:00.000Z",
-      "contentSnippet": "The chat logs of AI companies are often used to measure what work AI actually does. This column uses a nationally representative US survey that links generative AI use to workers’ detailed tasks and compares them with task shares derived from Anthropic, Microsoft, and OpenAI chat…"
-    },
-    {
       "id": "38064fae2be7",
       "title": "You Can't Choose the System. You Choose How You Act Inside It.",
       "link": "https://www.scrum.org/resources/blog/you-cant-choose-system-you-choose-how-you-act-inside-it",
@@ -198,7 +324,7 @@
       "source": "Anthropic Research",
       "category": "AI",
       "pubDate": "2026-09-24T18:37:00.000Z",
-      "contentSnippet": "To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes—a more controlled sequel to Project Deal, our first experiment with agents interacting in a marketplace on people's behalf."
+      "contentSnippet": "To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes."
     },
     {
       "id": "d444739f2328",
@@ -309,15 +435,6 @@
       "contentSnippet": "Key takeawaysArtificial intelligence (AI) and robots have the potential to offset the macroeconomic consequences of an ageing workforce, but the ability to automate jobs depends on which industries are ageing.AI and robots substitute most readily for jobs in industries with young…"
     },
     {
-      "id": "701c0d6a81c8",
-      "title": "The quality of capital allocation in Europe",
-      "link": "https://cepr.org/voxeu/columns/quality-capital-allocation-europe",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-23T23:00:00.000Z",
-      "contentSnippet": "Europe's investment debate tends to ask how much capital can be mobilised and how quickly. Allocation quality also depends on who receives capital and on the spillovers their expansion creates. This column argues that for public allocation, Europe should combine simpler administr…"
-    },
-    {
       "id": "952c54fa1fd4",
       "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
       "link": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system",
@@ -372,33 +489,6 @@
       "contentSnippet": "Healthcare AI has little margin for error. AI agents helping coordinate patient care..."
     },
     {
-      "id": "01d4e543c941",
-      "title": "Sam Altman’s remarks at the United Nations Security Council",
-      "link": "https://openai.com/index/sam-altman-un-security-council-remarks",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-23T12:00:00.000Z",
-      "contentSnippet": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council."
-    },
-    {
-      "id": "f7558dc5c9de",
-      "title": "Harvey turns legal context into stronger drafts with GPT-6 Astra",
-      "link": "https://openai.com/index/harvey-from-context-to-confidence-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-23T12:00:00.000Z",
-      "contentSnippet": "GPT-6 Astra produces more structured, context-aware legal documents, freeing lawyers to focus on strategy."
-    },
-    {
-      "id": "7357353a1f1d",
-      "title": "How invideo improves color grading 3x with GPT‑6 Astra",
-      "link": "https://openai.com/index/invideo-builds-with-gpt-6-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-23T12:00:00.000Z",
-      "contentSnippet": "With GPT‑6 Astra, invideo plans edits with greater precision, improves color correction and grading threefold, and produces 50 custom effects in one day."
-    },
-    {
       "id": "7cff1964bf19",
       "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
       "link": "https://openai.com/index/ringg",
@@ -426,15 +516,6 @@
       "contentSnippet": "The time has come: in 2026, using AI to write DAX has started to be effective. Latest news and the new courses are at https://www.sqlbi.com/ai/ We also created three new video courses that should not become obsolete in two weeks!…"
     },
     {
-      "id": "1d5a9cc2d950",
-      "title": "Introducing MentalHealthBench",
-      "link": "https://openai.com/index/introducing-mentalhealthbench",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-23T10:00:00.000Z",
-      "contentSnippet": "MentalHealthBench is an expert-informed benchmark for evaluating helpful and safe AI responses across realistic mental health conversations."
-    },
-    {
       "id": "6fd99847fffa",
       "title": "Unraveling the cobweb of global imbalances: drivers, vulnerabilities, and adjustment scenarios",
       "link": "https://www.bis.org/publications/working-paper-1379-unraveling-cobweb-global-imbalances-drivers-vulnerabilities-and-adjustment-scenarios",
@@ -460,42 +541,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-22T22:00:00.000Z",
       "contentSnippet": "Image Watch where the work actually spends its time. Not the hours someone is heads-down building. The days it sits, waiting. Waiting for the one person who knows that system. Waiting for the other team to finish their sprint. Waiting for a review, a sign-off, an environment, an…"
-    },
-    {
-      "id": "2f49e089415b",
-      "title": "Top 5 System Table Queries for Understanding Your Databricks Costs",
-      "link": "https://www.databricks.com/blog/top-5-system-table-queries-understanding-your-databricks-costs",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-22T16:22:39.000Z",
-      "contentSnippet": "Databricks system tables provide a wealth of information into how you use Databricks and what it costs...."
-    },
-    {
-      "id": "84da03a25e9c",
-      "title": "Genie One MCP: Give any AI Agent the Right Business Context",
-      "link": "https://www.databricks.com/blog/genie-one-mcp-give-any-ai-agent-right-business-context",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-22T16:00:00.000Z",
-      "contentSnippet": "Business leaders often have access to plenty of data, but still can’t get a reliable..."
-    },
-    {
-      "id": "42d88f7d50b6",
-      "title": "The Genie One MCP is now Generally Available",
-      "link": "https://www.databricks.com/blog/genie-one-mcp-now-generally-available",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-22T16:00:00.000Z",
-      "contentSnippet": "AI coworkers and coding agents are spreading fast across organizations, and each..."
-    },
-    {
-      "id": "9e928ccbd576",
-      "title": "Unity Catalog Pages: a governed home for your business knowledge in Genie Ontology",
-      "link": "https://www.databricks.com/blog/unity-catalog-pages-governed-home-your-business-knowledge-genie-ontology",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-22T13:57:06.000Z",
-      "contentSnippet": "Every AI agent is only as good as the context it is grounded in. Ask an agent a question..."
     },
     {
       "id": "196c90e841c9",
@@ -642,15 +687,6 @@
       "contentSnippet": "Image Scrum has too many meetings. I have heard that sentence in training rooms since 2010 and for years I argued with it. Now I do the arithmetic on the whiteboard instead, because the Scrum Guide caps its own events and the cap is far below what anyone in the room guesses. Add…"
     },
     {
-      "id": "31b589224678",
-      "title": "RADAR: Catch gray failures with anomaly detection",
-      "link": "https://www.databricks.com/blog/radar-catch-gray-failures-anomaly-detection",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-19T00:00:00.000Z",
-      "contentSnippet": "Some of the most damaging outages are the ones your monitoring never flags: a slice..."
-    },
-    {
       "id": "90801afbca07",
       "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
       "link": "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/",
@@ -759,15 +795,6 @@
       "contentSnippet": "DAX UDFs just went GA, there’s a new REST API for running DAX queries at scale, and a network security feature most people haven’t even heard of yet is quietly changing how enterprises govern their semantic models. In this episode of Fabric Insider, I sit down with Kay Unkroth, P…"
     },
     {
-      "id": "ebc6cf4880fe",
-      "title": "AI Tool Introduction: Promptly AI",
-      "link": "https://www.scrum.org/resources/blog/ai-tool-introduction-promptly-ai",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-16T09:14:12.000Z",
-      "contentSnippet": "Image Imagine you are using ChatGPT and writing a prompt. But you are not sure if it is a good prompt or not. Here, Promptly AI comes to life to help you enhance your prompt with just one click. Click here to open its website. Image How to add Promptly AI to your AI chatbots? Pro…"
-    },
-    {
       "id": "932be409e526",
       "title": "The query finished…Why is my Fabric SQL database still consuming CUs?",
       "link": "https://data-mozart.com/the-query-finished-why-is-my-fabric-sql-database-still-consuming-cus/?utm_source=rss&utm_medium=rss&utm_campaign=the-query-finished-why-is-my-fabric-sql-database-still-consuming-cus",
@@ -793,15 +820,6 @@
       "category": "Data",
       "pubDate": "2026-09-16T00:00:00.000Z",
       "contentSnippet": "The September 2026 DuckDB Ecosystem Newsletter: DuckLabs joins AWS and MotherDuck acquires Tower, DuckDB v2.0-alpha lands, table functions in pure Java, bulk loads into SQL Server, Zarr stores as SQL tables, an infinite canvas for your data, plus a community spotlight on Vladimir…"
-    },
-    {
-      "id": "25e9756b3143",
-      "title": "The Real Meeting Happens in the Hallway",
-      "link": "https://www.scrum.org/resources/blog/real-meeting-happens-hallway",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-15T22:00:00.000Z",
-      "contentSnippet": "Image The real meeting happens in the hallway. The meeting ends. Everyone agreed, or at least nobody disagreed. Then, two minutes later, the real conversation starts. In the corridor. In a side chat. In the small group that lingers after the call drops. \"I didn't want to derail i…"
     },
     {
       "id": "8d9968f546a9",
@@ -1027,15 +1045,6 @@
       "category": "Data",
       "pubDate": "2026-09-07T00:18:06.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "4bc149b71afd",
-      "title": "What determines banks' excess demand for reserves?",
-      "link": "https://www.bis.org/publications/working-paper-1376-what-determines-banks-excess-demand-reserves",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-07T00:00:00.000Z",
-      "contentSnippet": "The amount of central bank reserves to supply has become a highly contentious policy issue for many central banks that shrink their balance sheets which were built up during quantitative easing."
     },
     {
       "id": "276160ac62d4",
@@ -1380,15 +1389,6 @@
       "contentSnippet": "DuckDB is a columnar, vectorized database. Every operator inside the engine works on data chunks: batches of column vectors, 2,048 rows at a time. That is a big part of why DuckDB is fast: the engine amortizes interpretation overhead over thousands of values instead of paying it…"
     },
     {
-      "id": "b6f0fc020a49",
-      "title": "DuckDB v2.0: Your Database Deserves a Better Parser",
-      "link": "https://duckdb.org/2026/08/20/duckdb-20-peg-parser.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-08-20T00:00:00.000Z",
-      "contentSnippet": "At DuckDB, one of our goals is to make working with a database system as easy as possible. Users interact with the system through the widely understood Structured Query Language (SQL). Previous blog posts have covered DuckDB’s friendly SQL, including GROUP BY ALL and column selec…"
-    },
-    {
       "id": "9523952ef85b",
       "title": "AI Writes the Semantic Layer",
       "link": "https://motherduck.com/blog/AI-writes-the-semantic-layer",
@@ -1650,15 +1650,6 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
-      "id": "d9adb789161e",
-      "title": "How Firms Form Beliefs and the Implications for Inflation",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
-    },
-    {
       "id": "07b1c1c9fdb7",
       "title": "Credit Surfaces and Economic Uncertainty",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
@@ -1675,6 +1666,15 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
+    },
+    {
+      "id": "d9adb789161e",
+      "title": "How Firms Form Beliefs and the Implications for Inflation",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
     },
     {
       "id": "93b56433d545",
@@ -1785,13 +1785,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "d817a88ce0e9",
-      "title": "The Last Taxi: LCR Buffers and Bank Liquidity Provision",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026051pap.pdf",
+      "id": "4c8cd6ef9ad3",
+      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
+      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Alexandros Vardoulakis, Matt Darst, Arazi Lubis and Lucia Gurrieri"
+      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
     },
     {
       "id": "03946207f0a8",
