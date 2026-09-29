@@ -14,6 +14,10 @@
  * - src/app/stories/page.tsx stays Orbit's (canonical metadata). Only
  *   LISTED_SLUGS is taken from storytelling's home page.
  *
+ * Component folders and lib folders are discovered from the storytelling
+ * checkout. Do not add a new engine folder to an allowlist here or in
+ * the workflow. A new npm dependency still has to land in package.json.
+ *
  * Usage (from website/):
  *   npm run stories:sync
  *   STORYTELLING_ROOT=/path/to/storytelling npm run stories:sync
@@ -43,6 +47,15 @@ const TEXT_EXT = new Set([
 
 /** Relative to the destination stories app dir. Not deleted or overwritten. */
 const STORIES_APP_OWNED = new Set(["page.tsx", "layout.tsx"]);
+
+/**
+ * Loose files in storytelling src/lib that Orbit does not copy.
+ * Imports of these are rewritten onto Orbit's own helpers.
+ */
+const LIB_SKIP_FILES = new Set([
+  "cn.ts",
+  "prefers-reduced-motion.ts",
+]);
 
 const HERO_PADDING_FROM = "pb-14 pt-28 sm:pb-20 sm:pt-32";
 const HERO_PADDING_TO = "pb-14 pt-6 sm:pb-20 sm:pt-10";
@@ -170,6 +183,68 @@ function mirrorFile(srcRel, destRel, opts = {}) {
   return writeFile(dest, buf) ? [destRel] : [];
 }
 
+function childEntries(dir) {
+  if (!fs.existsSync(dir)) return [];
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/**
+ * Mirror every storytelling component folder. New folders (reader, onepager,
+ * …) ship without editing this script or the workflow's git add list.
+ * Orbit-only folders under src/components are left alone.
+ */
+function mirrorDiscoveredComponents() {
+  const srcRoot = path.join(storytellingRoot, "src", "components");
+  const destRoot = path.join(websiteRoot, "src", "components");
+  const names = childEntries(srcRoot)
+    .filter((ent) => ent.isDirectory())
+    .map((ent) => ent.name);
+  console.log(`stories:sync components: ${names.join(", ") || "(none)"}`);
+  return names.flatMap((name) =>
+    mirrorDir(path.join(srcRoot, name), path.join(destRoot, name), {
+      hero: name === "storytelling",
+    }),
+  );
+}
+
+/**
+ * Mirror storytelling lib subfolders and loose lib files.
+ * Subfolders Orbit already owns (field-card, news, …) are not in the
+ * storytelling tree, so they are not touched. cn.ts and
+ * prefers-reduced-motion.ts stay skipped; their imports are rewritten.
+ */
+function mirrorDiscoveredLib() {
+  const srcRoot = path.join(storytellingRoot, "src", "lib");
+  const destRoot = path.join(websiteRoot, "src", "lib");
+  const changed = [];
+  const dirs = [];
+  const files = [];
+  for (const ent of childEntries(srcRoot)) {
+    if (ent.isDirectory()) {
+      dirs.push(ent.name);
+      changed.push(
+        ...mirrorDir(
+          path.join(srcRoot, ent.name),
+          path.join(destRoot, ent.name),
+          {},
+        ),
+      );
+      continue;
+    }
+    if (!ent.isFile() || isTestFile(ent.name) || LIB_SKIP_FILES.has(ent.name)) {
+      continue;
+    }
+    files.push(ent.name);
+    const rel = `src/lib/${ent.name}`;
+    changed.push(...mirrorFile(rel, rel));
+  }
+  console.log(`stories:sync lib dirs: ${dirs.join(", ") || "(none)"}`);
+  console.log(`stories:sync lib files: ${files.join(", ") || "(none)"}`);
+  return changed;
+}
+
 function syncListedSlugs() {
   const srcPath = path.join(storytellingRoot, "src", "app", "page.tsx");
   const src = fs.readFileSync(srcPath, "utf8");
@@ -199,26 +274,8 @@ function main() {
   }
 
   const changed = [
-    ...mirrorDir(
-      path.join(storytellingRoot, "src", "components", "storytelling"),
-      path.join(websiteRoot, "src", "components", "storytelling"),
-      { hero: true },
-    ),
-    ...mirrorDir(
-      path.join(storytellingRoot, "src", "components", "film"),
-      path.join(websiteRoot, "src", "components", "film"),
-      {},
-    ),
-    ...mirrorDir(
-      path.join(storytellingRoot, "src", "components", "director"),
-      path.join(websiteRoot, "src", "components", "director"),
-      {},
-    ),
-    ...mirrorDir(
-      path.join(storytellingRoot, "src", "components", "reader"),
-      path.join(websiteRoot, "src", "components", "reader"),
-      {},
-    ),
+    ...mirrorDiscoveredComponents(),
+    ...mirrorDiscoveredLib(),
     ...mirrorDir(
       path.join(storytellingRoot, "src", "illustrations"),
       path.join(websiteRoot, "src", "illustrations"),
@@ -229,12 +286,10 @@ function main() {
       path.join(websiteRoot, "src", "stories"),
       {},
     ),
-    ...["sim", "director", "reader", "rive"].flatMap((dir) =>
-      mirrorDir(
-        path.join(storytellingRoot, "src", "lib", dir),
-        path.join(websiteRoot, "src", "lib", dir),
-        {},
-      ),
+    ...mirrorDir(
+      path.join(storytellingRoot, "src", "types"),
+      path.join(websiteRoot, "src", "types"),
+      {},
     ),
     ...mirrorDir(
       path.join(storytellingRoot, "data", "figures"),
@@ -250,16 +305,6 @@ function main() {
       path.join(storytellingRoot, "src", "app", "lab"),
       path.join(websiteRoot, "src", "app", "stories", "lab"),
       { homeLinks: true },
-    ),
-    ...mirrorFile("src/lib/loadStory.ts", "src/lib/loadStory.ts"),
-    ...mirrorFile("src/lib/resolveScene.ts", "src/lib/resolveScene.ts"),
-    ...mirrorFile(
-      "src/lib/use-is-compact-viewport.ts",
-      "src/lib/use-is-compact-viewport.ts",
-    ),
-    ...mirrorFile(
-      "src/types/react-scrollama.d.ts",
-      "src/types/react-scrollama.d.ts",
     ),
     ...syncListedSlugs(),
   ];
