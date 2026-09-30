@@ -427,25 +427,23 @@ export function ArcStatusCard({
 
   return (
     <div className="rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-950/40 to-slate-950/60 p-4 sm:p-5">
-      {/* Compact header: avatar beside gate — no tall empty column on mobile */}
+      {/* Compact header: avatar beside name, role, and gate */}
       <div className="flex items-start gap-3">
         <div className="shrink-0">
           <PixelAvatar
             src={profile.avatarUrl}
-            alt={profile.name}
+            alt=""
             className="h-14 w-14 sm:h-20 sm:w-20"
           />
-          <p className="mt-1 hidden text-center font-mono text-[0.5rem] uppercase tracking-[0.15em] text-amber-200/80 sm:block">
-            Warrior
-          </p>
         </div>
 
         <div className="min-w-0 flex-1">
           <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-violet-300/80">
             Arc Mode
           </p>
+          <p className="mt-0.5 text-xl font-semibold text-white sm:text-2xl">{profile.name}</p>
           <p className="mt-1 text-sm leading-snug text-slate-300">{profile.role}</p>
-          <p className="mt-0.5 text-xl font-semibold text-white sm:text-2xl">
+          <p className="mt-0.5 text-base font-semibold text-white sm:text-lg">
             Gate{" "}
             <HintTrigger
               hintId="gate-rank"

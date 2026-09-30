@@ -5,6 +5,7 @@
 ## Now
 
 - [x] Public title is AI & Data Systems Lead; portrait opens the Arc HUD (`/card?face=arc`)
+- [x] Arc Mode title is the name (role under it); drop the Warrior class caption
 - [x] Portfolio mobile cards — project and Power BI reels fit the phone frame (actions stay on screen)
 - [x] Hosted Bayesian optimisation method card (`/bayes-field-card/`); not Hub; not FIELD_CARDS
 - [x] Re-notify 2026-08-03 weekly Write with full essay in Slack + draft synced to default branch
