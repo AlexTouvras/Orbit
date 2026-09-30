@@ -214,14 +214,14 @@ export function IdentityHud({
               type="button"
               onClick={() => onToggle(pillar.id)}
               className={cn(
-                "focus-ring flex min-h-12 w-full flex-col rounded-xl border border-white/10 bg-black/20 px-2 py-2.5 text-left transition-colors sm:px-3",
+                "focus-ring flex min-h-12 w-full flex-col rounded-xl border border-white/10 bg-black/20 px-1.5 py-2.5 text-left transition-colors min-[400px]:px-2 sm:px-3",
                 accentTile[pillar.accent],
                 isActive && accentActive[pillar.accent],
               )}
               aria-expanded={isActive}
               aria-controls={isActive ? "hud-hint" : undefined}
             >
-              <span className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-violet-300/70">
+              <span className="font-mono text-[0.5rem] uppercase leading-none tracking-[0.02em] text-violet-300/70 min-[400px]:text-[0.6rem] min-[400px]:tracking-[0.12em]">
                 {pillar.shortTitle}
               </span>
               <span className="mt-1 text-xs leading-4 text-slate-400">Tap</span>
