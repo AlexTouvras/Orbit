@@ -1,0 +1,746 @@
+From 935fe8375e31e8cd9630621afcd49935c234c7b3 Mon Sep 17 00:00:00 2001
+From: Cursor Agent <cursoragent@cursor.com>
+Date: Wed, 30 Sep 2026 07:39:49 +0000
+Subject: [PATCH] Search practice writing during field-card discovery
+
+Monthly discover was GitHub framework search only, so essays never reached the card. Fetch Anthropic Engineering, Ars Contextus, and filtered Simon Willison posts, and run four web queries. Hits can earn a job row, not a picker row.
+---
+ data/practice-seen.json           |   3 +
+ data/watchlist.json               |  33 +++
+ docs/weekly-refresh-prompt.md     |  25 ++-
+ package.json                      |   2 +
+ scripts/check-practice-seen.mjs   |  31 +++
+ scripts/discover.mjs              |  55 ++++-
+ scripts/practice-sources.mjs      | 351 ++++++++++++++++++++++++++++++
+ scripts/practice-sources.test.mjs | 103 +++++++++
+ 8 files changed, 589 insertions(+), 14 deletions(-)
+ create mode 100644 data/practice-seen.json
+ create mode 100644 scripts/check-practice-seen.mjs
+ create mode 100644 scripts/practice-sources.mjs
+ create mode 100644 scripts/practice-sources.test.mjs
+
+diff --git a/data/practice-seen.json b/data/practice-seen.json
+new file mode 100644
+index 0000000..45d9aaf
+--- /dev/null
++++ b/data/practice-seen.json
+@@ -0,0 +1,3 @@
++{
++  "urls": []
++}
+diff --git a/data/watchlist.json b/data/watchlist.json
+index d7bf30b..6d19f26 100644
+--- a/data/watchlist.json
++++ b/data/watchlist.json
+@@ -129,5 +129,38 @@
+     "langchain-ai/langchainjs",
+     "obra/superpowers",
+     "microsoft/autogen"
++  ],
++  "readings": [
++    {
++      "name": "Anthropic Engineering",
++      "url": "https://www.anthropic.com/engineering",
++      "parser": "anthropic-engineering"
++    },
++    {
++      "name": "Ars Contextus",
++      "url": "https://arsctx.com/rss.xml"
++    },
++    {
++      "name": "Simon Willison",
++      "url": "https://simonwillison.net/atom/entries/",
++      "skipTitlePrefix": ["Quoting"],
++      "requireAny": ["harness", "context rot", "context window", "lethal", "mcp", "coding agent", "sandbox", "feedback loop", "evaluator", "evals"]
++    }
++  ],
++  "practiceQueries": [
++    "context rot increasing input tokens LLM performance",
++    "harness engineering coding agents feedback loops evaluator",
++    "OpenAI harness engineering leveraging Codex agent-first",
++    "lethal trifecta AI agents private data untrusted content"
++  ],
++  "practiceIgnoreHosts": [
++    "reddit.com",
++    "medium.com",
++    "x.com",
++    "twitter.com",
++    "linkedin.com",
++    "youtube.com",
++    "facebook.com",
++    "instagram.com"
+   ]
+ }
+diff --git a/docs/weekly-refresh-prompt.md b/docs/weekly-refresh-prompt.md
+index 7c329cd..1fc30de 100644
+--- a/docs/weekly-refresh-prompt.md
++++ b/docs/weekly-refresh-prompt.md
+@@ -28,12 +28,15 @@ Do not add capability icon walls, ACP as a hero protocol, or an evolution-as-pro
+ 2. Run `npm run discover` (GitHub access via `gh` in the Cloud Agent). Read `data/discovery-report.md` and the current `index.html`.
+ 3. **Decide (required):**
+    - **Update card** if a picker swap, docs URL fix, or new *job* in the decision table is earned.
+-   - **No HTML change** if candidates are noise, picker is full with better incumbents, or nothing new belongs on a one-pager.
+-   - Write the decision in the PR `## Summary` either way. Never skip this step.
++   - Read the report's **Practice** section as well as framework candidates. `npm run discover` fetches allowlisted engineering feeds and runs `practiceQueries` web searches. Those hits are jobs, not frameworks.
++   - A practice hit earns a row only when it names a decision the card does not already make. It may add one decision-table row or one anti-pattern line. It cannot add a picker row. At most two new decision-table rows in a run.
++   - Prompting hacks, install guides, model launches, and listicles are no-change.
++   - **No HTML change** if candidates are noise, picker is full with better incumbents, practice hits restate rows already on the card, or nothing new belongs on a one-pager.
++   - Write the decision in the PR `## Summary` either way. Name which practice hits you adopted or deferred. Never skip this step.
+ 4. If updating `index.html`:
+-   - Framework picker ≤ 7 rows; swap by constraint (control, speed, data, enterprise, handoffs, typed, google, …) — not hype or star count alone.
++   - Framework picker ≤ 7 rows; swap by constraint (control, speed, data, enterprise, handoffs, typed, google, …) — not hype or star count alone. Practice hits do not swap the picker.
+    - Do not invent docs URLs; use discovery report, watchlist, or existing card links.
+-   - Decision table: only if a new *job* appeared (new brand ≠ new layer).
++   - Decision table: only if a new *job* appeared (a practice hit can be that job; a new brand ≠ a new layer).
+    - Keep Use labels short and linked; nuance in Example.
+    - Do not change the public H1.
+    - No editor notes on the public HTML.
+@@ -41,15 +44,17 @@ Do not add capability icon walls, ACP as a hero protocol, or an evolution-as-pro
+ 5. If **no HTML change**: leave picker/table alone. Keep the weekly stamp CI (or you) already bumped. Stamp-only still ships — the review agent **approves** it. Still commit discovery artifacts if you re-ran discover on this branch.
+ 6. Run `node scripts/check-links.mjs` and fix failures on any URLs you touched.
+ 7. Update `data/watchlist.json` for tools you confirm for ongoing tracking (`onCard` true/false).
+-8. Commit and push to the weekly PR. Do not merge. Do not force-push `main`.
+-9. Rewrite the PR body to include at least:
+-   - `## Summary` — 3–6 bullets: what changed on the card **or** why nothing changed; what was deferred.
++8. Add every URL in `data/discovery-report.json` → `practice.hits` to `data/practice-seen.json` (`{"url","decision":"adopt"|"defer","at":"YYYY-MM-DD"}`). Run `node scripts/check-practice-seen.mjs`. A no-change decision still records the URLs. The run is not done if that check fails.
++9. Commit and push to the monthly PR. Do not merge. Do not force-push `main`.
++10. Rewrite the PR body to include at least:
++   - `## Summary` — 3–6 bullets: what changed on the card **or** why nothing changed; which practice hits were adopted or deferred.
+    - `## Card preview` — one line: the review agent will compare this HTML to live.
+-10. Stop. Do not notify Slack. Do not merge. The Friday 18:00 review agent publishes (including stamp-only). It declines only when the PR would make the live card worse.
++11. Stop. Do not notify Slack. Do not merge. The 1st-of-month 18:00 review agent publishes (including stamp-only). It declines only when the PR would make the live card worse.
+ 
+ ## Done when
+ 
+-- Discovery ran this session
+-- Explicit update **or** no-change decision is in `## Summary`
++- Discovery ran this session and the report has a Practice section
++- Explicit update **or** no-change decision is in `## Summary`, including practice adopt/defer
++- `node scripts/check-practice-seen.mjs` exits 0
+ - Link check exits 0 (if HTML or links changed)
+ - PR left open for the review agent
+diff --git a/package.json b/package.json
+index e3e6dec..cfdac82 100644
+--- a/package.json
++++ b/package.json
+@@ -6,6 +6,8 @@
+     "check:links": "node scripts/check-links.mjs",
+     "bump:version": "node scripts/bump-version.mjs",
+     "discover": "node scripts/discover.mjs",
++    "test": "node --test scripts/practice-sources.test.mjs",
++    "check:practice-seen": "node scripts/check-practice-seen.mjs",
+     "notify:slack": "node scripts/notify-slack.mjs",
+     "refresh": "node scripts/check-links.mjs; node scripts/discover.mjs; node scripts/bump-version.mjs",
+     "ship:check": "npm run check:links"
+diff --git a/scripts/check-practice-seen.mjs b/scripts/check-practice-seen.mjs
+new file mode 100644
+index 0000000..a1221e5
+--- /dev/null
++++ b/scripts/check-practice-seen.mjs
+@@ -0,0 +1,31 @@
++#!/usr/bin/env node
++/**
++ * Fail when this run's practice hits are not recorded in data/practice-seen.json.
++ * The monthly agent runs this after judging, including on a no-change decision.
++ */
++import fs from "node:fs";
++import path from "node:path";
++import { fileURLToPath } from "node:url";
++import { loadSeenUrls, normalizeUrl } from "./practice-sources.mjs";
++
++const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
++const reportPath = path.join(root, "data", "discovery-report.json");
++const seenPath = path.join(root, "data", "practice-seen.json");
++
++const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
++if (!report.practice || !Array.isArray(report.practice.hits)) {
++  console.error("discovery report has no practice.hits — re-run npm run discover");
++  process.exit(1);
++}
++
++const seenRaw = fs.existsSync(seenPath) ? JSON.parse(fs.readFileSync(seenPath, "utf8")) : { urls: [] };
++const seen = new Set(loadSeenUrls(seenRaw).map(normalizeUrl));
++const missing = report.practice.hits.filter((hit) => !seen.has(normalizeUrl(hit.url)));
++
++if (missing.length) {
++  console.error(`practice-seen.json is missing ${missing.length} URL(s) from this discovery report:`);
++  for (const hit of missing) console.error(`- ${hit.url}`);
++  process.exit(1);
++}
++
++console.log(`practice-seen: ${report.practice.hits.length} discovery URL(s) recorded`);
+diff --git a/scripts/discover.mjs b/scripts/discover.mjs
+index 1568dd0..f8ee62c 100644
+--- a/scripts/discover.mjs
++++ b/scripts/discover.mjs
+@@ -1,13 +1,15 @@
+ #!/usr/bin/env node
+ /**
+  * Discover framework / protocol / tool signals that may belong on the field card.
+- * Uses GitHub Search + watchlist release checks. Writes data/discovery-report.json.
++ * Uses GitHub Search + watchlist release checks, plus practice readings and
++ * web searches (jobs, not frameworks). Writes data/discovery-report.json.
+  *
+  * Auth: GITHUB_TOKEN (Actions) or unauthenticated (lower rate limit).
+  */
+ import fs from "node:fs";
+ import path from "node:path";
+ import { fileURLToPath } from "node:url";
++import { collectPractice, loadSeenUrls } from "./practice-sources.mjs";
+ 
+ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+ const watchlist = JSON.parse(fs.readFileSync(path.join(root, "data", "watchlist.json"), "utf8"));
+@@ -156,6 +158,14 @@ for (const hit of flatSearch) {
+ 
+ novelFromSearch.sort((a, b) => (b.stars || 0) - (a.stars || 0));
+ 
++let seenUrls = [];
++try {
++  seenUrls = loadSeenUrls(JSON.parse(fs.readFileSync(path.join(root, "data", "practice-seen.json"), "utf8")));
++} catch {
++  seenUrls = [];
++}
++const practice = await collectPractice({ watchlist, html, seenUrls });
++
+ const notOnCard = watchlistStatus.filter((w) => !w.onCardDetected);
+ const freshReleases = watchlistStatus.filter(
+   (w) => w.signal?.daysSinceRelease != null && w.signal.daysSinceRelease <= 21
+@@ -192,8 +202,18 @@ const report = {
+     freshReleases: freshReleases.length,
+     novelSearchHits: novelFromSearch.length,
+     candidateCount: candidates.length,
++    practiceHits: practice.hits.length,
++    practiceErrors: practice.errors.length,
+   },
+   candidates,
++  practice: {
++    cutoff: practice.cutoff,
++    readings: practice.readings,
++    searchQueries: practice.searchQueries,
++    hits: practice.hits,
++    errors: practice.errors,
++    searches: practice.searches,
++  },
+   freshReleases: freshReleases.map((w) => ({
+     name: w.name,
+     onCard: w.onCardDetected,
+@@ -223,11 +243,12 @@ md.push(`- Candidates: **${report.summary.candidateCount}**`);
+ md.push(`- Watchlist items not on card: **${report.summary.notOnCard}**`);
+ md.push(`- Fresh releases (≤21 days): **${report.summary.freshReleases}**`);
+ md.push(`- Novel GitHub search hits: **${report.summary.novelSearchHits}**`);
++md.push(`- Practice hits (readings + web search): **${report.summary.practiceHits}**`);
+ md.push("");
+-md.push(`## Candidates (review before adding to the card)`);
++md.push(`## Candidates (frameworks — review before adding to the picker)`);
+ md.push("");
+ if (!candidates.length) {
+-  md.push("_No new candidates this week._");
++  md.push("_No new framework candidates._");
+ } else {
+   for (const c of candidates) {
+     md.push(
+@@ -246,8 +267,34 @@ for (const f of report.freshReleases) {
+   );
+ }
+ md.push("");
++md.push(`## Practice`);
++md.push("");
++md.push(
++  `Essays and engineering posts since the card stamp (cutoff ${practice.cutoff}). A hit can earn a decision-table row or an anti-pattern. It cannot earn a picker row. At most two new decision rows. Prompting hacks, install guides, and model launches stay off the card.`
++);
++md.push("");
++md.push(
++  `After judging, add every URL below to \`data/practice-seen.json\` (\`decision\` \`adopt\` or \`defer\`) and run \`node scripts/check-practice-seen.mjs\`.`
++);
++md.push("");
++if (!practice.hits.length) {
++  md.push("_No new practice hits._");
++} else {
++  for (const hit of practice.hits) {
++    const when = hit.publishedAt ? ` · ${String(hit.publishedAt).slice(0, 16)}` : "";
++    const where = hit.via === "reading" ? hit.source : `search: ${hit.query}`;
++    md.push(`- **${hit.title}** (${hit.via} · ${where}${when})`);
++    md.push(`  - ${hit.url}`);
++  }
++}
++if (practice.errors.length) {
++  md.push("");
++  md.push(`Practice fetch errors:`);
++  for (const err of practice.errors) md.push(`- ${err.source}: ${err.error}`);
++}
++md.push("");
+ 
+ fs.writeFileSync(path.join(root, "data", "discovery-report.md"), md.join("\n"));
+ console.log(
+-  `Discovery: ${candidates.length} candidates, ${freshReleases.length} fresh releases → data/discovery-report.json`
++  `Discovery: ${candidates.length} candidates, ${freshReleases.length} fresh releases, ${practice.hits.length} practice hits → data/discovery-report.json`
+ );
+diff --git a/scripts/practice-sources.mjs b/scripts/practice-sources.mjs
+new file mode 100644
+index 0000000..d4eeff5
+--- /dev/null
++++ b/scripts/practice-sources.mjs
+@@ -0,0 +1,351 @@
++/**
++ * Practice discovery for the agentic field card: engineering writing and
++ * web searches, separate from the GitHub framework search.
++ *
++ * A hit can earn a decision-table row or an anti-pattern. It cannot earn
++ * a picker row. URLs already listed in data/practice-seen.json stay quiet.
++ */
++
++const MONTHS = {
++  jan: 0,
++  feb: 1,
++  mar: 2,
++  apr: 3,
++  may: 4,
++  jun: 5,
++  jul: 6,
++  aug: 7,
++  sep: 8,
++  oct: 9,
++  nov: 10,
++  dec: 11,
++};
++
++export const READING_CAP = 8;
++export const SEARCH_PER_QUERY = 2;
++export const SEARCH_CAP = 8;
++
++import https from "node:https";
++
++const UA = "Mozilla/5.0 (compatible; agentic-ai-field-card-discover/1.0)";
++
++export function decodeEntities(value) {
++  return String(value || "")
++    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
++    .replace(/&amp;/g, "&")
++    .replace(/&lt;/g, "<")
++    .replace(/&gt;/g, ">")
++    .replace(/&quot;/g, '"')
++    .replace(/&#39;/g, "'")
++    .replace(/&apos;/g, "'")
++    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
++    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
++}
++
++export function stripTags(value) {
++  return decodeEntities(value)
++    .replace(/<[^>]+>/g, " ")
++    .replace(/\s+/g, " ")
++    .trim();
++}
++
++export function normalizeUrl(url) {
++  try {
++    const u = new URL(String(url).trim());
++    u.hash = "";
++    for (const key of [...u.searchParams.keys()]) {
++      if (key.toLowerCase().startsWith("utm_") || key === "ref" || key === "source") {
++        u.searchParams.delete(key);
++      }
++    }
++    let out = u.toString();
++    if (out.endsWith("/")) out = out.slice(0, -1);
++    return out;
++  } catch {
++    return String(url || "").trim();
++  }
++}
++
++export function hostOf(url) {
++  try {
++    return new URL(url).hostname.toLowerCase().replace(/^www\./, "");
++  } catch {
++    return "";
++  }
++}
++
++export function parseLooseDate(value) {
++  if (!value) return null;
++  const text = String(value).trim();
++  const iso = text.match(/(\d{4})-(\d{2})-(\d{2})/);
++  if (iso) return Date.UTC(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3]));
++  const dmy = text.match(/(\d{1,2})\s+([A-Za-z]{3,9})\s+(\d{4})/);
++  if (dmy) {
++    const month = MONTHS[dmy[2].slice(0, 3).toLowerCase()];
++    if (month == null) return null;
++    return Date.UTC(Number(dmy[3]), month, Number(dmy[1]));
++  }
++  const parsed = Date.parse(text);
++  return Number.isNaN(parsed) ? null : parsed;
++}
++
++/** Card stamp `Reviewed 4 Sep 2026`, else 40 days before now. */
++export function reviewCutoffMs(html, now = Date.now()) {
++  const match = String(html || "").match(/Reviewed\s+(\d{1,2}\s+[A-Za-z]{3,9}\s+\d{4})/i);
++  if (match) {
++    const ms = parseLooseDate(match[1]);
++    if (ms != null) return ms;
++  }
++  return now - 40 * 86400000;
++}
++
++function tagText(block, tag) {
++  const match = block.match(new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)</${tag}>`, "i"));
++  return match ? match[1] : "";
++}
++
++function atomLink(block) {
++  const links = [...block.matchAll(/<link\b([^>]*)\/?>/gi)];
++  let fallback = "";
++  for (const link of links) {
++    const attrs = link[1];
++    const href = attrs.match(/\bhref="([^"]+)"/i);
++    if (!href) continue;
++    const rel = attrs.match(/\brel="([^"]+)"/i);
++    if (rel && /\balternate\b/i.test(rel[1])) return href[1];
++    if (!rel && !fallback) fallback = href[1];
++  }
++  return fallback;
++}
++
++export function parseRssOrAtom(xml) {
++  const items = [];
++  for (const match of String(xml || "").matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)) {
++    const block = match[1];
++    const title = stripTags(tagText(block, "title"));
++    const url = stripTags(tagText(block, "link"));
++    const publishedAt = stripTags(tagText(block, "pubDate") || tagText(block, "dc:date"));
++    const summary = stripTags(tagText(block, "description")).slice(0, 240);
++    if (title && url) items.push({ title, url, publishedAt: publishedAt || null, summary });
++  }
++  if (items.length) return items;
++
++  for (const match of String(xml || "").matchAll(/<entry\b[^>]*>([\s\S]*?)<\/entry>/gi)) {
++    const block = match[1];
++    const title = stripTags(tagText(block, "title"));
++    const url = atomLink(block);
++    const publishedAt = stripTags(tagText(block, "published") || tagText(block, "updated"));
++    const summary = stripTags(tagText(block, "summary") || tagText(block, "content")).slice(0, 240);
++    if (title && url) items.push({ title, url, publishedAt: publishedAt || null, summary });
++  }
++  return items;
++}
++
++export function parseAnthropicEngineering(html) {
++  const items = [];
++  const seen = new Set();
++  const re =
++    /<a\b[^>]*\bhref="(\/engineering\/[^"#?]+)"[^>]*>[\s\S]*?<h3\b[^>]*>([\s\S]*?)<\/h3>[\s\S]*?<time\b[^>]*\bdateTime="(\d{4}-\d{2}-\d{2})"/gi;
++  for (const match of String(html || "").matchAll(re)) {
++    const path = match[1];
++    if (seen.has(path)) continue;
++    seen.add(path);
++    items.push({
++      title: stripTags(match[2]),
++      url: `https://www.anthropic.com${path}`,
++      publishedAt: match[3],
++      summary: "",
++    });
++  }
++  return items;
++}
++
++export function parseDuckDuckGoLite(html) {
++  const items = [];
++  const seen = new Set();
++  const re = /<a\b[^>]*\bhref="(https?:\/\/[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
++  for (const match of String(html || "").matchAll(re)) {
++    const url = match[1];
++    if (/duckduckgo\.com/i.test(url)) continue;
++    const title = stripTags(match[2]);
++    if (title.length < 8) continue;
++    const key = normalizeUrl(url);
++    if (seen.has(key)) continue;
++    seen.add(key);
++    items.push({ title, url, publishedAt: null, summary: "" });
++  }
++  return items;
++}
++
++function skipTitle(title, prefixes) {
++  if (!prefixes?.length) return false;
++  const text = title.trim().toLowerCase();
++  return prefixes.some((prefix) => text.startsWith(String(prefix).toLowerCase()));
++}
++
++function matchesTerms(text, terms) {
++  if (!terms?.length) return true;
++  const hay = text.toLowerCase();
++  return terms.some((term) => hay.includes(String(term).toLowerCase()));
++}
++
++function inWindow(item, cutoffMs) {
++  const ms = parseLooseDate(item.publishedAt);
++  if (ms == null) return true;
++  return ms >= cutoffMs - 86400000;
++}
++
++function ignoredHost(url, ignoreHosts) {
++  const host = hostOf(url);
++  if (!host) return true;
++  return ignoreHosts.has(host);
++}
++
++/**
++ * @param {{ readings: object[], searches: {query: string, hits: object[]}[], seenUrls: string[], ignoreHosts: string[], cutoffMs: number }} input
++ */
++export function buildPracticeHits(input) {
++  const seen = new Set((input.seenUrls || []).map(normalizeUrl));
++  const ignore = new Set((input.ignoreHosts || []).map((host) => host.toLowerCase().replace(/^www\./, "")));
++  const hits = [];
++  const used = new Set();
++
++  function push(item, via, source, query) {
++    if (hits.length >= READING_CAP + SEARCH_CAP && via === "search") return false;
++    const url = normalizeUrl(item.url);
++    if (!url || used.has(url) || seen.has(url)) return false;
++    if (ignoredHost(url, ignore)) return false;
++    if (!inWindow(item, input.cutoffMs)) return false;
++    if (via === "reading" && hits.filter((hit) => hit.via === "reading").length >= READING_CAP) return false;
++    if (via === "search" && hits.filter((hit) => hit.via === "search").length >= SEARCH_CAP) return false;
++    used.add(url);
++    hits.push({
++      title: item.title,
++      url,
++      publishedAt: item.publishedAt || null,
++      summary: item.summary || "",
++      via,
++      source: source || null,
++      query: query || null,
++    });
++    return true;
++  }
++
++  for (const item of input.readings || []) push(item, "reading", item.source, null);
++  for (const group of input.searches || []) {
++    let kept = 0;
++    for (const item of group.hits || []) {
++      if (kept >= SEARCH_PER_QUERY) break;
++      if (push(item, "search", null, group.query)) kept += 1;
++    }
++  }
++  return hits;
++}
++
++async function getText(url, fetchImpl) {
++  const res = await fetchImpl(url, {
++    headers: { "User-Agent": UA, Accept: "text/html,application/xml,application/atom+xml,*/*" },
++    redirect: "follow",
++  });
++  if (!res.ok) throw new Error(`${res.status} ${url}`);
++  return res.text();
++}
++
++function postDuckDuckGo(query) {
++  const body = new URLSearchParams({ q: query }).toString();
++  return new Promise((resolve, reject) => {
++    const req = https.request(
++      {
++        hostname: "lite.duckduckgo.com",
++        path: "/lite/",
++        method: "POST",
++        headers: {
++          "User-Agent": "Mozilla/5.0",
++          Accept: "text/html",
++          "Content-Type": "application/x-www-form-urlencoded",
++          "Content-Length": Buffer.byteLength(body),
++        },
++      },
++      (res) => {
++        const chunks = [];
++        res.on("data", (chunk) => chunks.push(chunk));
++        res.on("end", () => {
++          const text = Buffer.concat(chunks).toString("utf8");
++          if (res.statusCode < 200 || res.statusCode >= 300) {
++            reject(new Error(`${res.statusCode} web search`));
++            return;
++          }
++          resolve(text);
++        });
++      },
++    );
++    req.on("error", reject);
++    req.write(body);
++    req.end();
++  });
++}
++
++export async function searchWeb(query) {
++  const hits = parseDuckDuckGoLite(await postDuckDuckGo(query));
++  if (!hits.length) throw new Error("web search returned no results");
++  return hits;
++}
++
++export function loadSeenUrls(raw) {
++  const urls = Array.isArray(raw?.urls) ? raw.urls : [];
++  return urls
++    .map((entry) => (typeof entry === "string" ? entry : entry?.url))
++    .filter(Boolean);
++}
++
++export async function collectPractice({ watchlist, html, seenUrls, fetchImpl = globalThis.fetch, now = Date.now() }) {
++  const cutoffMs = reviewCutoffMs(html, now);
++  const readings = [];
++  const searches = [];
++  const errors = [];
++
++  for (const source of watchlist.readings || []) {
++    try {
++      const body = await getText(source.url, fetchImpl);
++      let items =
++        source.parser === "anthropic-engineering" ? parseAnthropicEngineering(body) : parseRssOrAtom(body);
++      items = items.filter((item) => !skipTitle(item.title, source.skipTitlePrefix));
++      items = items.filter((item) => matchesTerms(`${item.title} ${item.summary || ""}`, source.requireAny));
++      items.sort((a, b) => (parseLooseDate(b.publishedAt) || 0) - (parseLooseDate(a.publishedAt) || 0));
++      for (const item of items) readings.push({ ...item, source: source.name });
++    } catch (err) {
++      errors.push({ source: source.name, error: String(err.message || err) });
++    }
++  }
++
++  for (const query of watchlist.practiceQueries || []) {
++    try {
++      const hits = await searchWeb(query);
++      searches.push({ query, error: null, hits });
++    } catch (err) {
++      searches.push({ query, error: String(err.message || err), hits: [] });
++      errors.push({ source: query, error: String(err.message || err) });
++    }
++  }
++
++  const hits = buildPracticeHits({
++    readings,
++    searches,
++    seenUrls,
++    ignoreHosts: watchlist.practiceIgnoreHosts || [],
++    cutoffMs,
++  });
++
++  return {
++    cutoff: new Date(cutoffMs).toISOString().slice(0, 10),
++    readings: readings.length,
++    searchQueries: (watchlist.practiceQueries || []).length,
++    hits,
++    errors,
++    searches: searches.map((group) => ({
++      query: group.query,
++      error: group.error,
++      top: group.hits.slice(0, SEARCH_PER_QUERY).map((hit) => ({ title: hit.title, url: normalizeUrl(hit.url) })),
++    })),
++  };
++}
+diff --git a/scripts/practice-sources.test.mjs b/scripts/practice-sources.test.mjs
+new file mode 100644
+index 0000000..7594787
+--- /dev/null
++++ b/scripts/practice-sources.test.mjs
+@@ -0,0 +1,103 @@
++import assert from "node:assert/strict";
++import test from "node:test";
++import {
++  buildPracticeHits,
++  parseAnthropicEngineering,
++  parseDuckDuckGoLite,
++  parseRssOrAtom,
++  reviewCutoffMs,
++} from "./practice-sources.mjs";
++
++const RSS = `<?xml version="1.0"?><rss version="2.0"><channel>
++<item><title><![CDATA[My 2026 guide for becoming an AI-native developer]]></title>
++<link>https://arsctx.com/blog/2026-guide-for-becoming-ai-native/</link>
++<pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
++<description>Context, harness engineering, and feedback loops.</description></item>
++<item><title>Old note</title><link>https://arsctx.com/blog/old/</link>
++<pubDate>Thu, 01 Jan 2026 00:00:00 GMT</pubDate><description>stale</description></item>
++</channel></rss>`;
++
++test("rss parse keeps title, link, and date", () => {
++  const items = parseRssOrAtom(RSS);
++  assert.equal(items.length, 2);
++  assert.equal(items[0].title, "My 2026 guide for becoming an AI-native developer");
++  assert.equal(items[0].url, "https://arsctx.com/blog/2026-guide-for-becoming-ai-native/");
++  assert.match(items[0].summary, /harness engineering/);
++});
++
++test("atom parse prefers the alternate link", () => {
++  const xml = `<feed><entry>
++<title>Harness notes</title>
++<link href="https://simonwillison.net/atom/entries/" rel="self"/>
++<link href="https://simonwillison.net/2026/Sep/10/harness/" rel="alternate"/>
++<published>2026-09-10T00:00:00+00:00</published>
++<summary>A feedback loop.</summary>
++</entry></feed>`;
++  const items = parseRssOrAtom(xml);
++  assert.equal(items.length, 1);
++  assert.equal(items[0].url, "https://simonwillison.net/2026/Sep/10/harness/");
++});
++
++test("anthropic engineering list parses title and date", () => {
++  const html = `<article><a class="cardLink" href="/engineering/harness-design-long-running-apps"><h3 class="headline-4">Harness design for long-running apps</h3><time dateTime="2026-03-25">Mar 25, 2026</time></a></article>`;
++  const items = parseAnthropicEngineering(html);
++  assert.equal(items.length, 1);
++  assert.equal(items[0].url, "https://www.anthropic.com/engineering/harness-design-long-running-apps");
++  assert.equal(items[0].publishedAt, "2026-03-25");
++});
++
++test("duckduckgo lite skips its own links", () => {
++  const html = `<a href="https://duckduckgo.com/about">About</a>
++<a href="https://www.trychroma.com/research/context-rot">Context Rot: How Increasing Input Tokens Impacts LLM Performance</a>`;
++  const items = parseDuckDuckGoLite(html);
++  assert.equal(items.length, 1);
++  assert.match(items[0].url, /trychroma\.com/);
++});
++
++test("cutoff reads the card stamp", () => {
++  const ms = reviewCutoffMs(`<div>Reviewed 4 Sep 2026 · Next: October 2026</div>`);
++  assert.equal(new Date(ms).toISOString().slice(0, 10), "2026-09-04");
++});
++
++test("buildPracticeHits drops seen, ignored, and stale reading urls", () => {
++  const hits = buildPracticeHits({
++    cutoffMs: Date.UTC(2026, 8, 4),
++    seenUrls: ["https://example.com/already"],
++    ignoreHosts: ["reddit.com"],
++    readings: [
++      {
++        title: "Guide",
++        url: "https://arsctx.com/blog/2026-guide-for-becoming-ai-native/",
++        publishedAt: "Thu, 10 Sep 2026 00:00:00 GMT",
++        summary: "",
++        source: "Ars Contextus",
++      },
++      {
++        title: "Old",
++        url: "https://arsctx.com/blog/old/",
++        publishedAt: "Thu, 01 Jan 2026 00:00:00 GMT",
++        summary: "",
++        source: "Ars Contextus",
++      },
++    ],
++    searches: [
++      {
++        query: "context rot",
++        hits: [
++          { title: "Context Rot paper", url: "https://www.trychroma.com/research/context-rot", publishedAt: null },
++          { title: "Already judged", url: "https://example.com/already/", publishedAt: null },
++          { title: "Thread", url: "https://www.reddit.com/r/LocalLLaMA/comments/x", publishedAt: null },
++        ],
++      },
++    ],
++  });
++  assert.deepEqual(
++    hits.map((hit) => hit.url),
++    [
++      "https://arsctx.com/blog/2026-guide-for-becoming-ai-native",
++      "https://www.trychroma.com/research/context-rot",
++    ],
++  );
++  assert.equal(hits[0].via, "reading");
++  assert.equal(hits[1].via, "search");
++});
+-- 
+2.43.0
+

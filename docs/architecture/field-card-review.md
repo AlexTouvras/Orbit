@@ -54,6 +54,7 @@ If a card has no open monthly PR, **still ship the month**: create `chore/monthl
 ## Publish when
 
 - The proposed HTML is a real improvement: picker swap by constraint, docs URL fix, or a new *job* in the decision table.
+- Agentic AI practice hits (engineering feeds and web searches in that repo's discovery report) may earn a decision-table row or an anti-pattern. They do not earn a picker row. More than two new decision rows in one month is noise — decline.
 - Or the HTML is unchanged aside from the monthly stamp, and the spine is intact (reviewed, no worse). **Stamp-only still publishes.**
 - Missing `## Summary` on a stamp-only PR is not a decline — write the note in Apply review and publish.
 - Picker is still ≤7 rows.
