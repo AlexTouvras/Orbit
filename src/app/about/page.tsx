@@ -19,6 +19,7 @@ export default function AboutPage() {
     <div className="space-y-24 sm:space-y-32">
       <AboutHero
         name={profile.name}
+        role={profile.role}
         yearsExperience={profile.yearsExperience}
         employerCount={cv.experience.length}
         degreeCount={cv.education.length}

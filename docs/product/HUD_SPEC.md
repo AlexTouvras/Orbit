@@ -42,7 +42,9 @@ Preserve:
 
 ## Private face (owner, 2026-09-24)
 
-The same `/card` can flip to the fitness Arc HUD. The control is **Flip for stats**. It renders only when the Studio session is present. The stats are loaded from `/api/card/arc` and are not in the public HTML. Visitors still get the identity card alone.
+The same `/card` can flip to the fitness Arc HUD. The control is **Flip for stats**, and the portrait on that card does the same flip. It renders only when the Studio session is present. The stats are loaded from `/api/card/arc` and are not in the public HTML. Visitors still get the identity card alone.
+
+The public portrait on Hub, About, and the other page heroes links to `/card?face=arc`. A Studio session lands on the Arc face. Everyone else still sees the identity card. The Arc face shows the same role string as the site title: **AI & Data Systems Lead**.
 
 ## Hierarchy for the visitor
 

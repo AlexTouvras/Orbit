@@ -444,6 +444,7 @@ export function ArcStatusCard({
           <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-violet-300/80">
             Arc Mode
           </p>
+          <p className="mt-1 text-sm leading-snug text-slate-300">{profile.role}</p>
           <p className="mt-0.5 text-xl font-semibold text-white sm:text-2xl">
             Gate{" "}
             <HintTrigger

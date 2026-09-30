@@ -6,6 +6,7 @@ import { OrbitSignature } from "@/components/ui/OrbitSignature";
 
 interface AboutHeroProps {
   name: string;
+  role: string;
   yearsExperience: string;
   employerCount: number;
   degreeCount: number;
@@ -20,6 +21,7 @@ function yearsCount(yearsExperience: string): number {
 
 export function AboutHero({
   name,
+  role,
   yearsExperience,
   employerCount,
   degreeCount,
@@ -56,10 +58,9 @@ export function AboutHero({
         </Badge>
       }
       avatarUrl={avatarUrl}
-      avatarHref="/card"
-      avatarHrefLabel="Open identity HUD"
       avatarAlt=""
       title={name}
+      titleNote={role}
       headline={{ line: "Still my name", accent: "on the check." }}
       description="From PD models and scorecards to leading Azure application operations. A draft can arrive in seconds. The requirement and the check still have my name on them."
       stats={stats}

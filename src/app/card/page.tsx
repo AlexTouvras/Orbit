@@ -24,7 +24,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/card" },
 };
 
-export default function CardPage() {
+export default async function CardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ face?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const face = Array.isArray(params.face) ? params.face[0] : params.face;
   const profile = getEditableProfile();
   const masters = cv.education.filter((ed) => /^MSc\b/i.test(ed.degree));
   const thesisLinks = masters
@@ -50,6 +56,7 @@ export default function CardPage() {
     <div className="flex min-h-dvh flex-col items-center px-4 py-6 pt-[max(1.5rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))]">
       <div className="my-auto w-full max-w-md">
         <IdentityCardFlip
+        openArc={face === "arc"}
         name={profile.name}
         role={profile.role || profileDefaults.pillars}
         location={profile.location || cv.location}

@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { useRef, type ReactNode } from "react";
 import { socialIconFor } from "@/content/profile";
 import type { LiveDesk } from "@/content/live-desks";
+import { ARC_HUD_HREF, ARC_HUD_LABEL } from "@/components/card/href";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
 import { PixelAvatar } from "@/components/ui/PixelAvatar";
@@ -38,6 +39,7 @@ function HeroItem({
 
 interface HubHeroProps {
   name: string;
+  role: string;
   pillars: string;
   headlineLine: string;
   headlineAccent: string;
@@ -50,6 +52,7 @@ interface HubHeroProps {
 
 export function HubHero({
   name,
+  role,
   pillars,
   headlineLine,
   headlineAccent,
@@ -83,11 +86,23 @@ export function HubHero({
 
       <HeroItem delay={0} animate={animate}>
         <StoryHeadline
-          mark={avatarUrl ? <PixelAvatar src={avatarUrl} alt="" /> : undefined}
+          mark={
+            avatarUrl ? (
+              <Link
+                href={ARC_HUD_HREF}
+                className="focus-ring inline-flex rounded-xl"
+                aria-label={ARC_HUD_LABEL}
+              >
+                <PixelAvatar src={avatarUrl} alt="" />
+              </Link>
+            ) : undefined
+          }
           kicker={
             <>
               {name}
-              <span className="mt-1.5 block">{pillars}</span>
+              <span className="mt-1.5 block normal-case tracking-normal text-slate-300">
+                {role}
+              </span>
             </>
           }
           line={headlineLine}

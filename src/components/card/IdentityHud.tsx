@@ -150,11 +150,26 @@ export function IdentityHud({
       )}
     >
       <div className="flex items-start gap-3">
-        <PixelAvatar
-          src={avatarUrl}
-          alt=""
-          className="h-14 w-14 sm:h-16 sm:w-16"
-        />
+        {privateAction ? (
+          <button
+            type="button"
+            onClick={privateAction.onClick}
+            className="focus-ring inline-flex rounded-xl p-0"
+            aria-label="Open Arc HUD"
+          >
+            <PixelAvatar
+              src={avatarUrl}
+              alt=""
+              className="h-14 w-14 sm:h-16 sm:w-16"
+            />
+          </button>
+        ) : (
+          <PixelAvatar
+            src={avatarUrl}
+            alt=""
+            className="h-14 w-14 sm:h-16 sm:w-16"
+          />
+        )}
         <div className="min-w-0 flex-1">
           <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-violet-300/80">
             Identity HUD
