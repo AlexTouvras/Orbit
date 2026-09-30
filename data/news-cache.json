@@ -1,7 +1,178 @@
 {
-  "generatedAt": "2026-09-29T06:46:55.018Z",
-  "count": 261,
+  "generatedAt": "2026-09-30T06:46:59.910Z",
+  "count": 265,
   "items": [
+    {
+      "id": "e5132c65f5be",
+      "title": "Thinking Like a Data Architect",
+      "link": "https://www.dataengineeringweekly.com/p/thinking-like-a-data-architect",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-09-30T04:17:33.000Z",
+      "contentSnippet": "A Field guide for data leaders"
+    },
+    {
+      "id": "22a02ab5bf54",
+      "title": "When Wall Street drifts from Main Street: Consumption as an anchor for stock prices",
+      "link": "https://cepr.org/voxeu/columns/when-wall-street-drifts-main-street-consumption-anchor-stock-prices",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-29T23:00:00.000Z",
+      "contentSnippet": "Debate over whether buoyant equity markets reflect durable economic gains or a widening gap between Wall Street and Main Street has intensified with the AI boom. This column argues that aggregate consumption provides a useful real-economy anchor for stock prices. Temporary depart…"
+    },
+    {
+      "id": "9a4d5d73c8b1",
+      "title": "Beyond flows: How natural gas supply risk fuels inflation",
+      "link": "https://cepr.org/voxeu/columns/beyond-flows-how-natural-gas-supply-risk-fuels-inflation",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-29T23:00:00.000Z",
+      "contentSnippet": "Europe’s output losses proved limited following the 2022 cutoff of Russian gas flows, yet inflation rose sharply. This column uses weather variation and gas-market events to distinguish gas-demand shocks from interruptions to current flows and news about future availability. A de…"
+    },
+    {
+      "id": "99f68fe68635",
+      "title": "Nobody owns whether it worked.",
+      "link": "https://www.scrum.org/resources/blog/nobody-owns-whether-it-worked",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-29T22:00:00.000Z",
+      "contentSnippet": "Image Release day. The feature goes out, the team channel fills with rocket emoji, the demo lands well, and someone says \"great job, everyone.\" Monday, the next thing starts. Three months later, in some steering meeting, somebody asks the question: did that feature actually chang…"
+    },
+    {
+      "id": "105e76d8cdee",
+      "title": "How Diffusion Controller unifies and simplifies AI image generation",
+      "link": "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-09-29T18:38:27.000Z",
+      "contentSnippet": "Algorithms & Theory"
+    },
+    {
+      "id": "ee2e9e6d148e",
+      "title": "Your data, your storage, your rules: a 2026 guide to storing Unity Catalog managed tables",
+      "link": "https://www.databricks.com/blog/your-data-your-storage-your-rules-2026-guide-storing-unity-catalog-managed-tables",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-29T16:40:16.000Z",
+      "contentSnippet": "Unity catalog managed tables allow you to control the placement of your data when..."
+    },
+    {
+      "id": "7f9fa97d486b",
+      "title": "What do you want from AI?",
+      "link": "https://www.anthropic.com/research/your-thoughts-on-ai",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-29T16:39:00.000Z",
+      "contentSnippet": "We’re launching a new study using Anthropic Interviewer to learn from your experiences with AI, and we invite you to participate."
+    },
+    {
+      "id": "3bd3ec89a48c",
+      "title": "OpenAI DevDay 2026 live blog",
+      "link": "https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-09-29T15:55:13.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "80e4ef842b12",
+      "title": "GLM-5.3 and the spread of advanced cyber capabilities",
+      "link": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-29T15:46:00.000Z",
+      "contentSnippet": "Like Claude Mythos Preview, GLM-5.3 has strong capabilities for autonomously building end-to-end cyber exploits. But GLM-5.3 is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse."
+    },
+    {
+      "id": "166f92c2b1ef",
+      "title": "AI Changes What Makes a Product Backlog Valuable",
+      "link": "https://www.mountaingoatsoftware.com/agile/ai-changes-what-makes-a-product-backlog-valuable",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-09-29T15:00:00.000Z",
+      "contentSnippet": "AI makes detailed backlog items and working software easier to produce. Learn why that favors more dynamic backlogs and makes early validation more important."
+    },
+    {
+      "id": "6102ac4cd82d",
+      "title": "Bliki: Sensible Default",
+      "link": "https://martinfowler.com/bliki/SensibleDefault.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-29T13:43:00.000Z",
+      "contentSnippet": "A Sensible Default is a practice that, absent some overriding context, should be used when carrying out a certain kind of task. In software development such sensible defaults might include things like “use version control”, “separate UI logic from domain logic”, “automate deploym…"
+    },
+    {
+      "id": "e4727fbfcdfd",
+      "title": "5 Things the Product Owner Shouldn’t Be Doing",
+      "link": "https://www.scrum.org/resources/blog/5-things-product-owner-shouldnt-be-doing",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-29T13:00:00.000Z",
+      "contentSnippet": "Image Product Owners are accountable for maximizing the value of the product. That means setting direction, establishing the Product Goal, and ordering the Product Backlog around what matters most. But accountability doesn't mean doing everything yourself. Great Product Owners de…"
+    },
+    {
+      "id": "7344bae708cb",
+      "title": "Fragments: September 29",
+      "link": "https://martinfowler.com/fragments/2026-09-29.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-29T12:41:00.000Z",
+      "contentSnippet": "Simon Willison: The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge This has been a constan…"
+    },
+    {
+      "id": "dd66acaed2a0",
+      "title": "Introducing GPT-6.1 Sol",
+      "link": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-29T10:00:00.000Z",
+      "contentSnippet": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices."
+    },
+    {
+      "id": "19db7cc5ca5c",
+      "title": "DevDay 2026 Recap",
+      "link": "https://openai.com/index/devday-2026-recap",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-29T10:00:00.000Z",
+      "contentSnippet": "Explore more than 20 announcements from OpenAI DevDay 2026, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders."
+    },
+    {
+      "id": "884977ecb800",
+      "title": "Introducing dots",
+      "link": "https://openai.com/index/introducing-dots",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-29T00:00:00.000Z",
+      "contentSnippet": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward."
+    },
+    {
+      "id": "a8130eeb76e2",
+      "title": "Jev and DuckDB: Plain-English Conditions in SQL",
+      "link": "https://duckdb.org/2026/09/29/jev.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-09-29T00:00:00.000Z",
+      "contentSnippet": "Say you have a Parquet file of 50,000 support tickets and want to know which customers are angry. A LIKE pattern won't find that. The usual options are to label data and train a classifier, or to send each row to a chat LLM and parse the text it returns. The first takes work up f…"
+    },
+    {
+      "id": "7b2184e25136",
+      "title": "Jev for analytics: turn text columns into gold, in plain SQL",
+      "link": "https://motherduck.com/blog/jev-for-analytics",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-09-29T00:00:00.000Z",
+      "contentSnippet": "Turn a free-text column into typed SQL columns with prompt_jev(): 100,000 consumer complaints classified in 82 seconds, at about 1% of a frontier LLM's cost, plus how to check the labels before you trust them."
+    },
+    {
+      "id": "a10a3c5a16f0",
+      "title": "High public debt, NBFIs and the risk of market dysfunction",
+      "link": "https://www.bis.org/publications/bulletin-136-high-public-debt-nbfis-and-risk-market-dysfunction",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-29T00:00:00.000Z",
+      "contentSnippet": "Near record-high government debt levels and the growing role of non-banks have reshaped government debt markets in recent years. High levels of government sector debt are expected to worsen future government debt market liquidity conditions in general, including by increasing the…"
+    },
     {
       "id": "d780d27addbc",
       "title": "Lifting the curtain on the EU’s debt",
@@ -30,9 +201,18 @@
       "contentSnippet": "Professional judgement comes from learning by doing, but AI has the potential to disrupt this learning process. This column explores how randomised access to an AI patent-writing product affects the performance of lawyers on certain writing tasks. Using the AI tool raised the qua…"
     },
     {
-      "id": "107f1a0fdf41",
+      "id": "36139b5ec7f0",
+      "title": "L'illusion de la cheminée : qui paie réellement pour la neutralité carbone ?",
+      "link": "https://cepr.org/voxeu/columns/lillusion-de-la-cheminee-qui-paie-reellement-pour-la-neutralite-carbone",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-28T23:00:00.000Z",
+      "contentSnippet": "Il est difficile d’imaginer atteindre la neutralité carbone d’ici 2050, comme le prévoit l’Accord de Paris, sans une taxe carbone. Cet article estime que pour atteindre cet objectif par le biais d’une taxe carbone, il faudra une trajectoire fiscale culminant à environ 1 300 dolla…"
+    },
+    {
+      "id": "8bfa6ceb2929",
       "title": "How Databricks rolls out frontier models to 12,000 employees on Day 1",
-      "link": "https://www.databricks.com/blog/how-databricks-rolls-out-frontier-models-14000-employees-day-1",
+      "link": "https://www.databricks.com/blog/how-databricks-rolls-out-frontier-models-12000-employees-day-1",
       "source": "Databricks Blog",
       "category": "Data",
       "pubDate": "2026-09-28T20:11:23.000Z",
@@ -55,6 +235,15 @@
       "category": "Data",
       "pubDate": "2026-09-28T19:47:19.000Z",
       "contentSnippet": "A manufacturing defect rarely belongs to one system. A scrap spike may relate to..."
+    },
+    {
+      "id": "cf468ec39dd6",
+      "title": "Towards safety cases for frontier AI training",
+      "link": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-28T19:00:00.000Z",
+      "contentSnippet": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents"
     },
     {
       "id": "cfe8e900401f",
@@ -153,7 +342,7 @@
       "source": "BIS Financial Stability",
       "category": "Credit",
       "pubDate": "2026-09-28T00:00:00.000Z",
-      "contentSnippet": "This paper examines analytically and empirically whether the Basel III leverage ratio (LR) and output floor (OF) requirements act as substitutes for or complements to each other and how they interact with risk‑based regulatory requirements. These requirements determine banks’ ove…"
+      "contentSnippet": "This paper examines analytically and empirically whether the Basel III leverage ratio (LR) and output floor (OF) requirements act as substitutes for or complements to each other and how they interact with risk‑based regulatory requirements."
     },
     {
       "id": "558841854585",
@@ -219,33 +408,6 @@
       "contentSnippet": "Image I have been a Professional Scrum Trainer since 2010, which means I have sat in the room when organizations decide Scrum is not working. Sprint Planning on Monday, Daily Scrum at nine, Sprint Review on the last Friday, Retrospective right after; every event on the calendar a…"
     },
     {
-      "id": "7ea52f3c5aa2",
-      "title": "The smokestack illusion: Who really pays for net zero",
-      "link": "https://cepr.org/voxeu/columns/smokestack-illusion-who-really-pays-net-zero",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-26T23:00:00.000Z",
-      "contentSnippet": "Reaching net-zero CO2 emissions by 2050, as prescribed by the Paris Agreement, is hard to imagine without a carbon tax. This column estimates that reaching the goal by carbon taxation will require a tax path that peaks at around $1,300 per tonne of CO2, ten times current prices a…"
-    },
-    {
-      "id": "1bd84a7b42a7",
-      "title": "Quantifying financial repression through the lens of portfolio choice: A century of evidence",
-      "link": "https://cepr.org/voxeu/columns/quantifying-financial-repression-through-lens-portfolio-choice-century-evidence",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-25T23:00:00.000Z",
-      "contentSnippet": "With public debt at high peacetime levels, how advanced economies can reduce debt burdens is again at the centre of policy debate. This column examines the role of financial repression, perhaps the least studied channel, by applying new quantity-based measures to more than a cent…"
-    },
-    {
-      "id": "d2d497e5eee4",
-      "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
-      "link": "https://openai.com/index/proaction",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-25T19:00:00.000Z",
-      "contentSnippet": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster."
-    },
-    {
       "id": "cd57170eb38e",
       "title": "Yes, Claude can do Nine Loops",
       "link": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
@@ -289,15 +451,6 @@
       "category": "Credit",
       "pubDate": "2026-09-25T00:00:00.000Z",
       "contentSnippet": "This paper considers what TEEs can responsibly deliver for central banks, the conditions under which they are most effective and how they can be deployed without widening who must be trusted. It takes a balanced view, outlining core assurances and boundaries, highlighting impleme…"
-    },
-    {
-      "id": "b8955cbcdb32",
-      "title": "Decoupling from China after Trump's Trade Wars",
-      "link": "https://cepr.org/multimedia/decoupling-china-after-trumps-trade-wars",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-24T23:00:00.000Z",
-      "contentSnippet": "In March 2025, Apple chartered cargo flights to deliver 600 tonnes of iPhones from India to the United States. A year earlier, four in five smartphones that imported to the US came from China. One of the aims of US trade policy has been to decouple the US economy from China. So i…"
     },
     {
       "id": "38064fae2be7",
@@ -453,15 +606,6 @@
       "contentSnippet": "Introducing private, server-side memory to Private AI Compute for personal AI."
     },
     {
-      "id": "9d02eeb8cef1",
-      "title": "Two years of OpenAI Academy",
-      "link": "https://openai.com/index/two-years-of-openai-academy",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-23T16:00:00.000Z",
-      "contentSnippet": "Marking two years of OpenAI Academy and bringing AI skills to even more communities."
-    },
-    {
       "id": "be2314c62992",
       "title": "Gemini 3.8 text-to-speech says hello",
       "link": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
@@ -469,33 +613,6 @@
       "category": "AI",
       "pubDate": "2026-09-23T15:25:14.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "1d77064cbebb",
-      "title": "OpenAI extends cyber access to Ukraine for civilian defense",
-      "link": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-23T13:00:00.000Z",
-      "contentSnippet": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure."
-    },
-    {
-      "id": "839a215b4b69",
-      "title": "How Concurrence governs clinical AI at a trillion-token scale with Unity Gateway",
-      "link": "https://www.databricks.com/blog/how-concurrence-governs-clinical-ai-trillion-token-scale-unity-gateway",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-23T12:19:55.000Z",
-      "contentSnippet": "Healthcare AI has little margin for error. AI agents helping coordinate patient care..."
-    },
-    {
-      "id": "7cff1964bf19",
-      "title": "Ringg’s AI agents resolve up to 65% of customer calls with OpenAI",
-      "link": "https://openai.com/index/ringg",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-23T12:00:00.000Z",
-      "contentSnippet": "Using GPT-5.6, Ringg powers multilingual agents across voice, chat, WhatsApp, and web for 90% less cost vs. GPT-4.1."
     },
     {
       "id": "c5a1b694eb86",
@@ -750,24 +867,6 @@
       "contentSnippet": "I have a lot of mixed feelings about AI and LLM technology. I’m fascinated by its effect on our profession, excited by the potential gains in productivity - and thus the products we could rapidly build. On the other hand, I’m fearful of the damage AI might cause: agent swarms tak…"
     },
     {
-      "id": "75660e9c84f5",
-      "title": "Scaling Product Orgs with Portfolio Agility",
-      "link": "https://www.scrum.org/resources/blog/scaling-product-orgs-portfolio-agility",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-17T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. Your portfolio process isn’t slowing you down by accident You built empowered product teams. You wrote down a product operating model. And somehow decisions still stall, competitors still pivot faster than you do, and every initiative that…"
-    },
-    {
-      "id": "fb225a3bcd84",
-      "title": "Measurements for understanding the pace of AI development inside frontier labs",
-      "link": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-17T00:00:00.000Z",
-      "contentSnippet": "Today, the world can’t see what’s going on inside AI labs. Anthropic is proposing new metrics that would give the public visibility into frontier AI development."
-    },
-    {
       "id": "e37e271a8b83",
       "title": "Maritime chokepoints and the global economy: evidence from the Strait of Hormuz",
       "link": "https://www.bis.org/publications/working-paper-1378-maritime-chokepoints-and-the-global-economy-evidence-strait-hormuz",
@@ -948,15 +1047,6 @@
       "contentSnippet": "Machine Intelligence"
     },
     {
-      "id": "b007b558c779",
-      "title": "Measuring tactical intelligence targeting and conventional weapons capabilities of AI models",
-      "link": "https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-10T17:00:00.000Z",
-      "contentSnippet": "Anthropic’s Frontier Red Team developed new evaluations to measure AI capabilities in tactical intelligence targeting and conventional weapons development."
-    },
-    {
       "id": "ca291efb21c7",
       "title": "Why DuckDB 2.0 is faster",
       "link": "https://motherduck.com/blog/why-duckdb-20-is-faster",
@@ -973,15 +1063,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-09T16:21:00.000Z",
       "contentSnippet": "A quick survey of recent engagement of my posts on social media, indicating which service has by far the most engagement, and which service has seen a precipitous decline since early 2025. more…"
-    },
-    {
-      "id": "7b90b3111d4c",
-      "title": "When machines attack: frontier AI cyber threats and policy responses in the financial sector",
-      "link": "https://www.bis.org/publications/fsi-paper-28-when-machines-attack-frontier-ai-cyber-threats-and-policy-responses-financial-sector",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-09T00:00:00.000Z",
-      "contentSnippet": "Frontier artificial intelligence (AI) models are a game changer in the cyber threat landscape. Unlike earlier generations of AI models, they can autonomously identify critical vulnerabilities, develop effective exploits and conduct increasingly complex multi-step cyber operations…"
     },
     {
       "id": "5a4baff754f8",
@@ -1029,6 +1110,15 @@
       "contentSnippet": "A DAX calculation can produce convincing values at the detail level and fail at the total. The problem is often that the business rule was evaluated at the wrong granularity. This video introduces four grains, or levels of granularity, to…"
     },
     {
+      "id": "d8249216ebe2",
+      "title": "The Data Plane Is Yours: Dagster+ Hybrid on Kubernetes and Azure",
+      "link": "https://dagster.io/blog/the-data-plane-is-yours-dagster-hybrid-on-kubernetes-and-azure",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-09-08T00:00:00.000Z",
+      "contentSnippet": "This article draws on a Dagster+ Hybrid deployment on Kubernetes and Azure at a very large enterprise. It covers the work outside the Helm chart: workload ownership, isolation, networking, identity, sizing, and capacity."
+    },
+    {
       "id": "fddf6f97d147",
       "title": "Writing DAX at the correct granularity",
       "link": "https://www.sqlbi.com/articles/writing-dax-at-the-correct-granularity/",
@@ -1065,15 +1155,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "19280ad9d1a0",
-      "title": "OpenAI's rogue agents were caught communicating via public wikis",
-      "link": "https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-09-04T17:38:48.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "2e0d08c805e6",
       "title": "OneLake Updates: A Conversation with Josh Caplan (Fabric Insider Ep 12)",
       "link": "https://radacad.com/onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12/?utm_source=rss&utm_medium=rss&utm_campaign=onelake-updates-a-conversation-with-josh-caplan-fabric-insider-ep-12",
@@ -1090,15 +1171,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-04T13:41:48.000Z",
       "contentSnippet": "Slowly Changing Dimensions (SCD) are one of the fundamental concepts in dimensional modeling. If you are not sure what dimensional modeling is, I suggest you first check the series of articles I wrote on data modeling some time ago. And, when it comes to SCD in particular, SCD Ty…"
-    },
-    {
-      "id": "98769dd27a53",
-      "title": "Transfer learning for genomic prediction in underrepresented populations",
-      "link": "https://research.google/blog/transfer-learning-for-genomic-prediction-in-underrepresented-populations/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-09-03T18:20:31.000Z",
-      "contentSnippet": "General Science"
     },
     {
       "id": "6ccaaf4161a3",
@@ -1380,15 +1452,6 @@
       "contentSnippet": "There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…"
     },
     {
-      "id": "c4b52369e09f",
-      "title": "Chunked Query Results in the DuckDB Java Driver",
-      "link": "https://duckdb.org/2026/08/21/chunked-query-results-java-driver.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-08-21T00:00:00.000Z",
-      "contentSnippet": "DuckDB is a columnar, vectorized database. Every operator inside the engine works on data chunks: batches of column vectors, 2,048 rows at a time. That is a big part of why DuckDB is fast: the engine amortizes interpretation overhead over thousands of values instead of paying it…"
-    },
-    {
       "id": "9523952ef85b",
       "title": "AI Writes the Semantic Layer",
       "link": "https://motherduck.com/blog/AI-writes-the-semantic-layer",
@@ -1425,15 +1488,6 @@
       "contentSnippet": "Part of the reason why I’m at Thoughtworks is because I’d like to see a software development organization founded on technical excellence as an example for the rest of the industry. The trouble is that I have little aptitude or inclination for the hard work of building such an or…"
     },
     {
-      "id": "c5565ec9e99f",
-      "title": "Scalable Data Apps with MotherDuck & Replit",
-      "link": "https://motherduck.com/blog/scalable-data-apps-with-motherduck-and-replit",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-18T00:00:00.000Z",
-      "contentSnippet": "AI agents make building data apps easy, but what about deploying them or making sure they scale? Replit provides a way for just about anyone to build real applications, and MotherDuck is the easiest way to help them scale to larger data sizes. Load data with MotherDuck Flights an…"
-    },
-    {
       "id": "776508c048eb",
       "title": "Data Engineering Weekly #283",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-283",
@@ -1459,24 +1513,6 @@
       "category": "Data",
       "pubDate": "2026-08-14T12:38:18.000Z",
       "contentSnippet": "How to think about the semantic system that makes an agent coherent, governable, and useful."
-    },
-    {
-      "id": "e64d5d0646ff",
-      "title": "Declarative Automation in Dagster: Smarter Data Orchestration Without Complex Schedules",
-      "link": "https://dagster.io/blog/orchestration-is-more-than-scheduling-declarative-automation-in-dagster",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-08-12T10:10:05.000Z",
-      "contentSnippet": "Learn how Dagster's Declarative Automation simplifies data orchestration by defining desired asset state instead of managing schedules, sensors, and custom triggers."
-    },
-    {
-      "id": "61ad811164ff",
-      "title": "Creative Dagster Projects from the Community",
-      "link": "https://dagster.io/blog/community-showcase-part-3",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-08-12T10:10:05.000Z",
-      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
     },
     {
       "id": "8af5b1e57b96",
@@ -1551,6 +1587,15 @@
       "contentSnippet": "Why a throughput number is not an architecture decision."
     },
     {
+      "id": "e64d5d0646ff",
+      "title": "Orchestration is More than Scheduling: Declarative Automation in Dagster",
+      "link": "https://dagster.io/blog/orchestration-is-more-than-scheduling-declarative-automation-in-dagster",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-08-06T00:00:00.000Z",
+      "contentSnippet": "Define the outcome, not the orchestration. Declarative Automation lets you express your desired asset state while Dagster continuously handles the work needed to achieve it."
+    },
+    {
       "id": "15ab3de19849",
       "title": "Lack of Agency – When the system swallows the human",
       "link": "https://blog.crisp.se/2026/08/05/tomasbjorkholm/lack-of-agency-when-the-system-swallows-the-human",
@@ -1558,15 +1603,6 @@
       "category": "Delivery",
       "pubDate": "2026-08-05T15:56:45.000Z",
       "contentSnippet": "In my previous article, I explored the concept of agency — the capacity and freedom of individuals to act independently, make choices, and meaningfully influence their circumstances. But what does it look like when agency is entirely absent? I learned the hard way when I tried to…"
-    },
-    {
-      "id": "b557000206d1",
-      "title": "Fragments: August 4",
-      "link": "https://martinfowler.com/fragments/2026-08-04.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-08-04T12:08:00.000Z",
-      "contentSnippet": "There’s been a fair bit of publicity of the Open AI “rogue agent” that hacked into Hugging Face. This prompted Anthropic to check what their models were up to and, to my complete lack of surprise, discovered three incidents where models had gained unauthorized access to data in o…"
     },
     {
       "id": "be0402b3fc9f",
@@ -1632,15 +1668,6 @@
       "contentSnippet": "European Systemic Risk Board Working Papers by Frauke Skudelny, Mihai Aliman, Martin Regnér, Cecilia Sarchi and Matteo Valetto"
     },
     {
-      "id": "1130e94af268",
-      "title": "The Conductor Developer",
-      "link": "https://martinfowler.com/rachels-ramblings/conductor-developer.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-07-31T13:48:00.000Z",
-      "contentSnippet": "TL;DR Why I think software development is starting to feel a little more like conducting an orchestra. There’s a shift happening in software development that I don’t think we’re talking about clearly enough. For the last couple of years we’ve framed AI as a productivity tool. How…"
-    },
-    {
       "id": "f776967f28fc",
       "title": "(Don’t) Stop materializing your silver layer!",
       "link": "https://data-mozart.com/dont-stop-materializing-your-silver-layer/?utm_source=rss&utm_medium=rss&utm_campaign=dont-stop-materializing-your-silver-layer",
@@ -1648,15 +1675,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-31T10:03:06.000Z",
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
-    },
-    {
-      "id": "07b1c1c9fdb7",
-      "title": "Credit Surfaces and Economic Uncertainty",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
       "id": "30c8bc5d5e3c",
@@ -1677,22 +1695,22 @@
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
     },
     {
-      "id": "93b56433d545",
-      "title": "Creative Dagster Projects from the Community",
-      "link": "https://dagster.io/blog/community-showcase-part-2",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-07-30T12:28:26.000Z",
-      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
+      "id": "07b1c1c9fdb7",
+      "title": "Credit Surfaces and Economic Uncertainty",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
-      "id": "d834dadfb202",
-      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Policy statement 18/26"
+      "id": "61ad811164ff",
+      "title": "Community Showcase Part 3",
+      "link": "https://dagster.io/blog/community-showcase-part-3",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-07-30T00:00:00.000Z",
+      "contentSnippet": "Some of the most interesting Dagster projects come from the community. This post highlights creative community-built applications."
     },
     {
       "id": "16fe89b83e2e",
@@ -1702,6 +1720,15 @@
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
       "contentSnippet": "Low Impact Amendments Finalisation July 2026"
+    },
+    {
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "054894a68cbf",
@@ -1794,6 +1821,15 @@
       "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
     },
     {
+      "id": "ed6bd26c4997",
+      "title": "Classifying a Million Snowflake Columns in 9 Days, Solo, with Dagster",
+      "link": "https://dagster.io/blog/classifying-a-million-snowflake-columns-in-9-days-solo-with-dagster",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-07-16T00:00:00.000Z",
+      "contentSnippet": "data governance. I built a tiered AI classification system, human review workflow, and the Dagster orchestration that ties it all together in production in nine days."
+    },
+    {
       "id": "03946207f0a8",
       "title": "Dynamic formatting by hierarchy level with ISINSCOPE and ISATLEVEL",
       "link": "https://www.sqlbi.com/tv/dynamic-formatting-by-hierarchy-level-with-isinscope-and-isatlevel/",
@@ -1819,6 +1855,15 @@
       "category": "Data",
       "pubDate": "2026-07-13T02:44:42.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "88bab00549f3",
+      "title": "Prefect is Acquiring Dagster",
+      "link": "https://dagster.io/blog/prefect-is-acquiring-dagster",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-07-13T00:00:00.000Z",
+      "contentSnippet": "A letter from Nick Schrock, founder and creator of Dagster"
     },
     {
       "id": "ec95d625f397",
@@ -1893,15 +1938,6 @@
       "contentSnippet": "“We tried agile and it didn’t work” is one of the most revealing things a leader can hear."
     },
     {
-      "id": "67d4c736c8d1",
-      "title": "Creative Dagster Projects from the Community",
-      "link": "https://dagster.io/blog/community-showcase-part-1",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-06-30T13:58:14.000Z",
-      "contentSnippet": "From public dataset explorers to infrastructure monitoring and research automation, the Dagster community is building projects we never could have predicted. Here are a few creative community-built use cases that caught our attention."
-    },
-    {
       "id": "18ea580d4b89",
       "title": "Using REMOVEFILTERS in DAX user defined functions",
       "link": "https://www.sqlbi.com/tv/using-removefilters-in-dax-user-defined-functions/",
@@ -1909,6 +1945,15 @@
       "category": "Analytics",
       "pubDate": "2026-06-30T10:00:00.000Z",
       "contentSnippet": "How to implement a DAX function that removes filter-keep column filters from a calendar, using REMOVEFILTERS as the return value of the function."
+    },
+    {
+      "id": "93b56433d545",
+      "title": "Community Showcase Part 2",
+      "link": "https://dagster.io/blog/community-showcase-part-2",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-06-30T00:00:00.000Z",
+      "contentSnippet": "Some of the most interesting Dagster projects come from the community. This post highlights creative community-built applications."
     },
     {
       "id": "c5ab1d19b713",
@@ -1938,15 +1983,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "aadf0f1ace40",
-      "title": "Operationalizing Data Orchestration: Best Practices for DevOps, Infra, and Code Locations",
-      "link": "https://dagster.io/blog/the-dagster-almanack-operationalizing-data-orchestration",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-06-26T17:05:40.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "7869bed7e57f",
       "title": "FabCon Europe 2026: The sessions we’re most excited to bring to Barcelona",
       "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/06/25/fabcon-europe-2026-the-sessions-were-most-excited-to-bring-to-barcelona/",
@@ -1956,6 +1992,15 @@
       "contentSnippet": "Get a first look at FabCon Europe 2026 in Barcelona, with curated session picks across Microsoft Fabric, SQL, AI, real-time intelligence, and data engineering—plus insights into the innovations shaping the future of data. The post FabCon Europe 2026: The sessions we’re most excit…"
     },
     {
+      "id": "aadf0f1ace40",
+      "title": "Operationalizing Data Orchestration: Best Practices for DevOps, Infra, and Code Locations",
+      "link": "https://dagster.io/blog/the-dagster-almanack-operationalizing-data-orchestration",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-06-24T00:00:00.000Z",
+      "contentSnippet": "A complete guide with all the insights, tips, and some predictions for the data platform engineer, just like an Almanack provides, with practical information for daily life."
+    },
+    {
       "id": "c3f09e9cfbda",
       "title": "Why Scrum Isn’t Working Even Though You’re Doing Scrum",
       "link": "https://www.mountaingoatsoftware.com/agile/why-scrum-isnt-working",
@@ -1963,24 +2008,6 @@
       "category": "Delivery",
       "pubDate": "2026-06-23T16:00:00.000Z",
       "contentSnippet": "Story splitting helps teams turn large user stories into smaller, valuable pieces they can finish within a sprint without turning them into tasks."
-    },
-    {
-      "id": "522c77dc8832",
-      "title": "The Dagster Almanack: From Complexity to Composability",
-      "link": "https://dagster.io/blog/the-dagster-almanack-from-complexity-to-composability",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-06-23T14:44:57.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "a261589c9ec9",
-      "title": "You Don't Graduate From Data Engineering: Why We Built aide for Continuous Learning",
-      "link": "https://www.dataengineeringweekly.com/p/you-dont-graduate-from-data-engineering",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-06-23T03:47:56.000Z",
-      "contentSnippet": "Introducing aidataengineer.io — an AI-powered learning platform built on 275+ editions of Data Engineering Weekly."
     },
     {
       "id": "9c167a26354f",
@@ -2011,21 +2038,21 @@
     },
     {
       "id": "02394f5752b7",
-      "title": "The Orchestration Maturity Model: Why Teams Move from Jobs to Assets",
+      "title": "How to Make the Architectural Case for Dagster",
       "link": "https://dagster.io/blog/how-to-make-the-architectural-case-for-dagster",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-06-15T14:41:15.000Z",
-      "contentSnippet": "Most orchestration systems answer questions about jobs, but organizations need answers about data. This post introduces the Orchestration Maturity Model and explains why enterprises adopt Dagster to move from job-centric orchestration to asset-aware data platforms."
+      "pubDate": "2026-06-09T00:00:00.000Z",
+      "contentSnippet": "Mature orchestration environments often work operationally while still leaving critical data dependencies implicit. This post introduces the Orchestration Maturity Model, explains the architectural ceiling of job-centric systems, and shows how Dagster’s asset-aware approach helps…"
     },
     {
-      "id": "d8f48e2feb16",
-      "title": "How to Orchestrate dbt with Dagster",
-      "link": "https://dagster.io/blog/orchestrating-dbt-with-dagster",
+      "id": "67d4c736c8d1",
+      "title": "Community Showcase Part 1",
+      "link": "https://dagster.io/blog/community-showcase-part-1",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-06-08T17:04:46.000Z",
-      "contentSnippet": "With Dagster’s dbt integration, run and monitor dbt models as part of a larger, asset-driven pipeline for improved lineage and scheduling."
+      "pubDate": "2026-06-03T00:00:00.000Z",
+      "contentSnippet": "Some of the most interesting Dagster projects come from the community. This post highlights creative community-built applications."
     },
     {
       "id": "d9cb1dfc37c6",
@@ -2038,12 +2065,12 @@
     },
     {
       "id": "f8dc249805ef",
-      "title": "How Brooklyn Data Uses Compass for Self-Service Analytics in Slack",
+      "title": "How Dagster Compass Powers Brooklyn Data’s Self-Service Analytics",
       "link": "https://dagster.io/blog/how-dagster-compass-powers-brooklyn-datas-self-service-analytics",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-06-01T14:06:54.000Z",
-      "contentSnippet": "Brooklyn Data shares how it uses Compass to make operational and financial data accessible in Slack, reducing time-to-answer, improving data discoverability, and enabling governed self-service analytics across the organization."
+      "pubDate": "2026-06-01T00:00:00.000Z",
+      "contentSnippet": "Text-to-analytics promises self-service access to data, but adoption depends on usability, governance, and trust. In this guest post, Brooklyn Data explains how it evaluated Compass, deployed it on top of Snowflake, and enabled teams to answer operational questions directly in Sl…"
     },
     {
       "id": "12596e9488ac",
@@ -2056,12 +2083,12 @@
     },
     {
       "id": "8bfee7812037",
-      "title": "Snowflake Runs Your Data. Dagster Runs Everything Else",
+      "title": "Snowflake Runs Your Data: Dagster Runs Everything Else",
       "link": "https://dagster.io/blog/snowflake-runs-your-data-dagster-runs-everything-else",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-05-29T17:45:52.000Z",
-      "contentSnippet": "Snowflake powers modern data platforms, but orchestration still matters. Learn how Dagster complements Snowflake with SQL-native assets, Dynamic Table lineage, virtual assets, downstream automation, and Snowflake cost attribution."
+      "pubDate": "2026-05-28T00:00:00.000Z",
+      "contentSnippet": "Snowflake increasingly handles transformation and data freshness internally through features like Dynamic Tables and Cortex. Dagster complements Snowflake by providing orchestration, lineage, automation, and cost visibility across your broader data platform from SQL-defined asset…"
     },
     {
       "id": "8a228edcb8f5",
@@ -2078,8 +2105,8 @@
       "link": "https://dagster.io/blog/we-tried-ty-for-performance-it-found-real-bugs",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-05-21T13:32:53.000Z",
-      "contentSnippet": "Dagster replaced Pyright with Astral’s new Python type checker, ty, and saw CI type checking drop from minutes to seconds. Along the way, ty surfaced real runtime bugs Pyright missed and improved developer feedback loops across a large Python monorepo."
+      "pubDate": "2026-05-21T00:00:00.000Z",
+      "contentSnippet": "We adopted Astral’s new Python type checker, ty, to speed up type checking in the Dagster monorepo. The performance gains were dramatic, but the bigger surprise was that ty caught real runtime bugs Pyright missed. Here’s what we learned migrating a large Python codebase increment…"
     },
     {
       "id": "e9f1993d244f",
@@ -2089,6 +2116,15 @@
       "category": "Analytics",
       "pubDate": "2026-05-20T07:06:02.000Z",
       "contentSnippet": "Microsoft's announcement post for data clustering in Fabric Warehouse promised 24x speedups. So I built a 100-million-row clickstream table and tested it myself. The result is more nuanced than the marketing - and more useful for anyone deciding whether to actually adopt this fea…"
+    },
+    {
+      "id": "522c77dc8832",
+      "title": "The Dagster Almanack: From Complexity to Composability",
+      "link": "https://dagster.io/blog/the-dagster-almanack-from-complexity-to-composability",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-05-19T00:00:00.000Z",
+      "contentSnippet": "A complete guide with all the insights, tips, and some predictions for the data platform engineer, just like an Almanack provides, with practical information for daily life."
     },
     {
       "id": "1482c83da309",
@@ -2109,15 +2145,6 @@
       "contentSnippet": "Turn planning pressure into a shared conversation about options and tradeoffs."
     },
     {
-      "id": "0b5754265080",
-      "title": "Announcing the Dagster+ Terraform Provider",
-      "link": "https://dagster.io/blog/announcing-the-dagster-terraform-provider",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-04-28T15:03:12.000Z",
-      "contentSnippet": "Manage Dagster+ deployments, permissions, and alerting as code with the new Terraform provider. Bring consistency, reviewability, and automation to your data platform."
-    },
-    {
       "id": "6f76b0ce92bb",
       "title": "How the Story Critic AI Skill Helps Teams Write Better Backlog Items",
       "link": "https://www.mountaingoatsoftware.com/agile/story-critic-skill-better-backlog-items",
@@ -2125,6 +2152,15 @@
       "category": "Delivery",
       "pubDate": "2026-04-28T13:00:00.000Z",
       "contentSnippet": "See how AI coaching can help teams write clearer, smaller, more testable backlog items."
+    },
+    {
+      "id": "0b5754265080",
+      "title": "Announcing the Dagster+ Terraform Provider",
+      "link": "https://dagster.io/blog/announcing-the-dagster-terraform-provider",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-04-28T00:00:00.000Z",
+      "contentSnippet": "The Dagster+ Terraform provider lets platform teams manage deployments, access controls, alerting, and more as code. Define entire environments declaratively, review changes through pull requests, and integrate Dagster+ into your existing infrastructure workflows."
     },
     {
       "id": "9bc00867b4ad",
@@ -2137,39 +2173,30 @@
     },
     {
       "id": "a9c8e6b0271b",
-      "title": "Why AI Agents Need Operational Context — Not Just Semantic Definitions",
+      "title": "The Missing Half of the Enterprise Context Layer",
       "link": "https://dagster.io/blog/the-missing-half-of-the-enterprise-context-layer",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-04-22T19:42:03.000Z",
-      "contentSnippet": "Semantic context tells AI agents what data means. Operational context tells them whether to trust it. Learn how Dagster and Atlan combine both halves of the context layer."
+      "pubDate": "2026-04-22T00:00:00.000Z",
+      "contentSnippet": "AI agents that only understand business definitions without knowing whether the underlying pipeline actually succeeded are confidently wrong and operational context from the orchestrator is the missing piece."
     },
     {
       "id": "9c04af84dc35",
-      "title": "Databricks Cross-Workspace Orchestration with Dagster",
+      "title": "How to Orchestrate Across Multiple Databricks Workspaces Without Losing Your Mind",
       "link": "https://dagster.io/blog/how-to-orchestrate-across-multiple-databricks-workspaces-without-losing-your-mind",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-04-20T19:45:25.000Z",
-      "contentSnippet": "Lakeflow Jobs can't see across workspace boundaries. Learn how Dagster unifies multiple Databricks workspaces into a single asset graph with real dependencies."
-    },
-    {
-      "id": "62d682fc18ad",
-      "title": "Why Smart Teams Overcommit And How Leaders Make It Worse",
-      "link": "https://www.mountaingoatsoftware.com/agile/why-smart-teams-overcommit",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-04-14T14:00:00.000Z",
-      "contentSnippet": "Understand how leader pressure can push smart teams into unrealistic commitments."
+      "pubDate": "2026-04-20T00:00:00.000Z",
+      "contentSnippet": "Once your pipelines span multiple Databricks workspaces, you're no longer orchestrating a single system you're coordinating a distributed one."
     },
     {
       "id": "1a3d55c13001",
-      "title": "Dagster 1.13: AI Skills, Partitioned Asset Checks, Virtual Assets & 20+ New Components",
+      "title": "Dagster 1.13: Octopus's Garden",
       "link": "https://dagster.io/blog/dagster-1-13-octopuss-garden",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-04-10T14:02:34.000Z",
-      "contentSnippet": "Dagster 1.13 makes the framework easier to adopt with AI coding skills, partition-aware asset checks, virtual assets for database views, and 20+ new integration components."
+      "pubDate": "2026-04-09T00:00:00.000Z",
+      "contentSnippet": "Dagster skills, partitioned asset checks, state backed components, virtual assets, and stronger integrations."
     },
     {
       "id": "df2be5bd8dc6",
@@ -2177,8 +2204,8 @@
       "link": "https://dagster.io/blog/monorepos-the-hub-and-spoke-model-and-copybara",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-04-03T15:16:44.000Z",
-      "contentSnippet": "How we use Copybara to build a hub-and-spoke model of public and private git repositories"
+      "pubDate": "2026-04-03T00:00:00.000Z",
+      "contentSnippet": "How we configure Copybara for bi-directional syncing to enable a hub-and-spoke model for Git repositories"
     },
     {
       "id": "082d6c5abcd7",
@@ -2186,8 +2213,8 @@
       "link": "https://dagster.io/blog/making-dagster-easier-to-contribute",
       "source": "Dagster",
       "category": "Data",
-      "pubDate": "2026-04-03T15:16:44.000Z",
-      "contentSnippet": "As AI makes it easier to generate pull requests, reviewing them has become the bottleneck. Learn how Dagster is improving contributor experience with better tooling, clearer guidelines, and a focus on high-impact contributions."
+      "pubDate": "2026-04-01T00:00:00.000Z",
+      "contentSnippet": "AI has made contributing to open source easier but reviewing contributions is still hard. At Dagster, we’re improving the contributor experience with smarter review tooling, clearer guidelines, and a focus on contributions that are easier to evaluate, merge, and maintain."
     },
     {
       "id": "9f49ee93f8a0",
@@ -2215,6 +2242,15 @@
       "category": "Analytics",
       "pubDate": "2026-03-18T12:50:00.000Z",
       "contentSnippet": "Built on a consistent Microsoft SQL foundation from on premises to the cloud, Azure SQL brings AI capabilities directly into your database experience. The post Advancing agentic AI with Microsoft databases across a unified data estate appeared first on Microsoft Fabric Blog."
+    },
+    {
+      "id": "5f92c800d292",
+      "title": "DataOps with Dagster: A Practical Guide to Building a Reliable Data Platform",
+      "link": "https://dagster.io/blog/dataops-with-dagster-a-practical-guide-to-building-a-reliable-data-platform",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-03-17T00:00:00.000Z",
+      "contentSnippet": "DataOps is about building a system that provides visibility into what's happening and control over how it behaves"
     },
     {
       "id": "ea0336fdaaec",
