@@ -22,6 +22,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
 | Studio roadmap | `data/studio-roadmap.json` (+ `.seed.json`) | `focusNow` (public on `/card` only) + private milestones (`planned`/`active`/`evidence`/`proven`). Persist via `persistDataJson` same as profile. Store: `src/lib/studio-roadmap.ts`. |
+| Directive archive | `data/directive-archive.json` | Read-only snapshot of `AlexTouvras/AlexTouvras` `governance/`. Private `/studio/directives`. Not a second editor. Do not add this file to `RUNTIME_DATA_FILES` — the page reads the deployment copy, not GitHub at request time. |
 | Newsletter digest draft | `data/newsletter-draft.json` | Titles/links only. Gitignored locally; persist send status via GitHub |
 | Newsletter subscribers | Resend Audience, or `RESEND_NEWSLETTER_TEST_TO` | Emails never in git. Test-to skips the audience entirely |
 | Ravens findings | GitHub Contents on `AlexTouvras/ravens` | Weekly highlights: one item per domain that moved (inbox first). `RAVENS_GITHUB_TOKEN` |
@@ -127,6 +128,10 @@ src/app/newsletter/page.tsx
 src/app/api/cron/newsletter/
 src/lib/week-log/            # Studio /studio/week loaders + Heimdall matcher
 src/lib/studio-roadmap.ts    # focusNow + milestones; persistDataJson like profile
+src/lib/directives.ts        # read data/directive-archive.json (server-only)
+src/lib/directive-types.ts
+src/app/studio/directives/   # private read-only archive browser
+src/components/studio/DirectiveArchive.tsx
 src/app/studio/week/         # Hub + topic pages
 src/app/studio/roadmap/      # Private trajectory editor (feeds /card NOW)
 src/components/studio/week/  # Topic panels + HeimdallEmbed
@@ -143,6 +148,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-09-30 | Private `/studio/directives` reads the governance snapshot | `AlexTouvras/AlexTouvras` `governance/orbit-studio/` is the published view of the directive archive. Studio home links it. Login, `noindex`, and `robots` disallow `/studio`. The public site does not list it. Edits stay in that archive; refresh by copying a new `data/directive-archive.json`. |
 | 2026-09-30 | One storytelling robot on every homepage field card | Storytelling PR 25 binds six lines and an accent. Orbit sheets load that character from `main` (`public/field-card-robot.mjs`). Agentic AI keeps its own script. Approve re-inserts the tag on Analytics and Delivery. Bayes stays without it. |
 | 2026-09-30 | Public title under the name is `profile.role` (`AI & Data Systems Lead`); the portrait opens `/card?face=arc` | Owner: website title matches the Arc HUD, and pressing the avatar opens that HUD. Hub and About kickers use the role (sentence case). Pillars stay on the Home ticker. `IdentityCardFlip` starts on the Arc face when `face=arc` and `/api/card/arc` returns a gate; strangers still get the identity card. The portrait on the identity face flips the same way. Arc header shows `profile.role`. |
 | 2026-09-30 | Agentic field-card discovery should also search practice writing | GitHub framework search never surfaced essays. Discover should read Anthropic Engineering, Ars Contextus, and filtered Simon Willison entries, plus four web queries. Hits can earn a job row, not a picker row. Seen URLs live in that repo's `data/practice-seen.json`. Patch: `docs/ops/agentic-field-card-practice-search.patch` (this agent cannot push `agentic-ai-field-card`). |
