@@ -54,7 +54,7 @@ gh pr list --repo <repo> --state merged --search "chore/monthly-refresh-" --limi
 
 Flag open heads matching `chore/monthly-refresh-*` for this calendar month. That means the 1st 18:00 review agent did not apply.
 
-On Orbit, look for `chore/monthly-field-cards-YYYY-MM` (SDLC + Credit Risk hosted pass). An open hosted PR is OK (human merge). Miss only if this calendar month has neither an open nor a merged hosted PR.
+On Orbit, look for `chore/monthly-field-cards-YYYY-MM` (SDLC + Credit Risk hosted pass). An open hosted PR is OK (human merge). Miss only if this calendar month has neither an open nor a merged hosted PR. `bad_output` if that PR body has no SDLC research note: opened URLs plus `Decision: update` or `Decision: no-change`. A stamp with no sources is not a finished SDLC pass.
 
 **Exception:** if the same repo already merged a `chore/monthly-refresh-YYYY-MM` PR this calendar month, any other open PR on the same head is an orphaned discovery duplicate — status `ok`, and note that it can be closed (do not call it `bad_output`).
 

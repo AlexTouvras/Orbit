@@ -86,10 +86,11 @@ If this agent misses, the fleet check on the first weekday on or after the 2nd p
 
 Judged on Orbit at 17:00 on the 1st, not via source-repo Apply review.
 
-Run `.cursor/automations/hosted-field-card-monthly-review.json`:
+Run `.cursor/automations/hosted-field-card-monthly-review.json`. This section is the procedure. If the stored Cursor prompt is shorter, follow this section.
 
-1. This is a discovery pass. Read `PLAYBOOK.md` beside each hosted card that has one (SDLC, Story, Bayes). Judge picker rows and job-table examples against the spine (SDLC: PLAN → SPEC → DESIGN → BUILD → TEST; Credit: ORIGINATE → MONITOR → STAGE → PROVISION; Story: DWELL → CLAIM → SKETCH → LEAD → OPEN; Bayes: BOUND → MODEL → ACQ → STOP). Swap by constraint, not hype. Do not stamp-only skip the judgment. The pass does not crawl essays; constraints that must survive live in the playbook.
-2. Bump the footer stamp: `Reviewed <Month YYYY> · Next: <next month>`. Changed line stays “Monthly review — picker and jobs unchanged” unless the HTML actually changed.
-3. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. Do not touch the three source-repo cards in that run. Do not add a Hub competency tile for Bayesian optimisation.
+1. SDLC research is required before any SDLC edit or no-change decision. Follow `public/sdlc-field-card/PLAYBOOK.md` section “Monthly research”: open sources on the life cycle, then assess whether the picker or job table should change. A month with no opened URLs is not a finished SDLC judgment.
+2. Credit, Story, and Bayes: read `PLAYBOOK.md` when one exists. Judge picker rows and job-table examples against the spine (Credit: ORIGINATE → MONITOR → STAGE → PROVISION; Story: DWELL → CLAIM → SKETCH → LEAD → OPEN; Bayes: BOUND → MODEL → ACQ → STOP). SDLC spine stays PLAN → SPEC → DESIGN → BUILD → TEST. Swap by constraint, not hype. Do not invent docs URLs.
+3. Bump each footer stamp: `Reviewed <Month YYYY> · Next: <next month>`. Changed line stays “Monthly review — picker and jobs unchanged” unless that card’s HTML actually changed.
+4. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. `## Summary` has `Decision: update` or `Decision: no-change` per card. SDLC also lists the URLs opened and one sentence of assessment. Do not touch the three source-repo cards in that run. Do not add a Hub competency tile for Bayesian optimisation.
 
 Do not stamp these cards from the 18:00 Apply-review agent.
