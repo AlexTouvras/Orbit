@@ -23,6 +23,12 @@ export interface FieldCardConfig {
   pagesUrl: string;
   /** Short label for confirm pages / Slack follow-ups */
   label: string;
+  /**
+   * Id in storytelling `field-cards.ts`. Approve re-inserts
+   * `/field-card-robot.mjs` on the Orbit copy unless the source HTML
+   * already mounts the character.
+   */
+  robotId: "ai" | "delivery" | "analytics";
 }
 
 export const FIELD_CARDS: readonly FieldCardConfig[] = [
@@ -33,6 +39,7 @@ export const FIELD_CARDS: readonly FieldCardConfig[] = [
     sitePath: "/field-card/index.html",
     pagesUrl: "https://alextouvras.github.io/agentic-ai-field-card/",
     label: "Agentic AI Field Card",
+    robotId: "ai",
   },
   {
     id: "data-analytics",
@@ -41,6 +48,7 @@ export const FIELD_CARDS: readonly FieldCardConfig[] = [
     sitePath: "/analytics-field-card/index.html",
     pagesUrl: "https://alextouvras.github.io/data-analytics-field-card/",
     label: "Data Analytics Field Card",
+    robotId: "analytics",
   },
   {
     id: "technology-delivery",
@@ -49,6 +57,7 @@ export const FIELD_CARDS: readonly FieldCardConfig[] = [
     sitePath: "/delivery-field-card/index.html",
     pagesUrl: "https://alextouvras.github.io/technology-delivery-field-card/",
     label: "Technology Delivery Field Card",
+    robotId: "delivery",
   },
 ] as const;
 

@@ -10,6 +10,7 @@ import {
   type FieldCardTokenPayload,
 } from "@/lib/field-card/tokens";
 import { requireFieldCardConfig } from "@/lib/field-card/registry";
+import { ensureFieldCardRobot } from "@/lib/field-card/robot-tag";
 import {
   laconicChangeFromPrBody,
   notifyFieldCardUpdateFyi,
@@ -165,7 +166,10 @@ async function runAction(payload: FieldCardTokenPayload, note: string) {
 
   let siteSync = "skipped";
   try {
-    const html = await getRepoFileText(payload.repo, "index.html", "main");
+    const html = ensureFieldCardRobot(
+      await getRepoFileText(payload.repo, "index.html", "main"),
+      card.robotId,
+    );
     if (hasGithubStorage()) {
       await writeRepoFile(
         card.orbitPath,
