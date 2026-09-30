@@ -10,6 +10,7 @@
 - [x] Merge weekly Write Slack full-access fix (`fix/weekly-write-slack-full-access`)
 - [x] Refresh weekly Write intake for 2026-08-03 / prepare pending IDE draft
 - [x] Ship home AI competency → `/field-card/index.html` + static field card page
+- [ ] Agentic field-card discovery searches practice writing (feeds + web), not only GitHub frameworks — patch ready; source repo push blocked for this agent
 - [x] Field-card fail-closed: discovery Slack ping + judgment watchdog + Approve requires `## Summary` (agentic-ai-field-card PR #3)
 - [x] W32 field card PR #2 merged (2026-08-11); Slack Approve/Skip flow verified
 - [x] Scaffold Data Analytics Field Card repo + Orbit home link (`/analytics-field-card/`) + shared Approve registry
