@@ -682,7 +682,7 @@
           <tr>
             <td class="problem">“Build the thing” with no acceptance</td>
             <td class="reach"><a class="use-link" href="https://12factor.net/" target="_blank" rel="noopener noreferrer" title="The Twelve-Factor App"><b>Written plan</b></a></td>
-            <td class="example">Credit-engine rule change: who, which products, what “done” looks like — not a two-line chat ticket</td>
+            <td class="example">Credit-engine rule change: who, which products, what “done” looks like, on one page — not a two-line chat ticket and not a spec no one will read</td>
           </tr>
           <tr>
             <td class="problem">Security shows up after the demo</td>
@@ -697,7 +697,7 @@
           <tr>
             <td class="problem">Nobody can tell if the change is safe to merge</td>
             <td class="reach"><a class="use-link" href="https://martinfowler.com/articles/practical-test-pyramid.html" target="_blank" rel="noopener noreferrer" title="Ham Vocke / Martin Fowler: the practical test pyramid"><b>Test pyramid</b></a></td>
-            <td class="example">Unit on the scoring function, contract on the engine API, one path through the UI — not a week of manual clicking</td>
+            <td class="example">Unit on the scoring function, contract on the engine API, one path through the UI. A person throws out tests that do not fail for the right reason</td>
           </tr>
           <tr>
             <td class="problem">Main is a graveyard of long-lived branches</td>
@@ -758,11 +758,11 @@
         <div class="gates">
           <div class="gate">
             <strong>Plan and requirements</strong>
-            <span>Goal, cost, and the rules are named. Design includes who can reach the data and how it can be abused, along with the happy path.</span>
+            <span>Goal, cost, and the rules are named, and they fit on a page a person will review. Design includes who can reach the data and how it can be abused, along with the happy path.</span>
           </div>
           <div class="gate">
             <strong>Meetings stay optional</strong>
-            <span>Stand-ups can help a team move. A committee after the code is written doesn’t make the change safer. Review of the plan and the test does.</span>
+            <span>Stand-ups can help a team move. A committee after the code is written doesn’t make the change safer. The written plan is required, and it is not shared understanding until someone can walk the journey and the ways it can fail.</span>
           </div>
           <div class="gate">
             <strong>Memory check</strong>
@@ -774,7 +774,7 @@
       <section>
         <h2>Ladder + gates</h2>
         <ol class="ladder">
-          <li>Named plan and owner</li>
+          <li>Named plan on one page, and an owner</li>
           <li>Design the system, who can reach the data, and how it can be abused</li>
           <li>Smallest build on trunk / flag</li>
           <li>Tests that fail for the right reason</li>
@@ -794,6 +794,7 @@
         <li>Code before the requirements exist</li>
         <li>Security as a late finding</li>
         <li>Meetings with nothing written down</li>
+        <li>A spec file no one can walk through</li>
         <li>Long-lived branches instead of flags</li>
         <li>“Works on my machine” as evidence</li>
         <li>Rubber-stamp review after merge</li>
@@ -808,7 +809,7 @@
         <div class="found"><strong>Security</strong><span>Threat model, ASVS level, supply chain</span></div>
         <div class="found"><strong>Governance</strong><span>Who owns the plan and the merge</span></div>
         <div class="found"><strong>Observability</strong><span>CI evidence on every change</span></div>
-        <div class="found"><strong>Evals</strong><span>Tests that fail for the right reason</span></div>
+        <div class="found"><strong>Evals</strong><span>Tests that fail for the right reason; a person drops the rest</span></div>
         <div class="found"><strong>Human Approve</strong><span>A person still owns the merge</span></div>
       </div>
     </section>
@@ -822,7 +823,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> Small tested changes, from Accelerate: speed and safety move together. The four delivery numbers stay on the Delivery card</p>
+      <p class="changed"><b>Changed</b> The plan fits on a page a person will review. A spec file is not shared understanding. A person drops tests that do not fail for the right reason</p>
     </footer>
   </article>
   <script>
