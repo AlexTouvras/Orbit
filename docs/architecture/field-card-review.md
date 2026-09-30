@@ -73,7 +73,7 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 - **AI:** H1 `Agentic AI is a loop, not a menu` (do not treat “loop” as a break or restore “stack”; analytics owns stack). RAG → AGENT → MCP → A2A, thin LLM floor, verb line, Always on strip. Not a vendor wall. CSS `.stack` is layout only.
 - **Analytics:** ASK → GRAIN → TRUTH → USE. Not a Fabric/Power BI brochure.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
-- **SDLC** (Orbit-hosted, monthly): H1 `Write the plan before the code`. Opening PLAN → SPEC → DESIGN → BUILD → TEST. Security is named in design (who can reach the data) and checked in test. Job table still judges a written plan, threat-in-design, smallest build, and tests before merge. Cutover stays on Delivery. Not a SAFe brochure.
+- **SDLC** (Orbit-hosted, monthly): H1 `Write the plan before the code`. Opening PLAN → SPEC → DESIGN → BUILD → TEST. Read `public/sdlc-field-card/PLAYBOOK.md`. Security is named in design (who can reach the data) and checked in test. Job table still judges a written plan, threat-in-design, smallest build, and tests before merge. Keep: the plan fits on a page a person will review; a spec file is not shared understanding; a person drops tests that do not fail for the right reason. Cutover stays on Delivery. Not a SAFe brochure. Not an AI-native brochure.
 - **Credit risk** (Orbit-hosted, monthly): ORIGINATE → MONITOR → STAGE → PROVISION. Not a vendor/scorecard brochure. Grain/gold stays on Analytics.
 - **Data & visual storytelling** (Orbit-hosted, monthly): H1 `Turn evidence into a decision`. Operating chain Question → Evidence → Tension → Narrative → Experience → Decision (Representation as form-choice). Craft inside: DWELL → CLAIM → SKETCH → LEAD → OPEN. Story spec + quality gates + kill criteria. The card’s signal field evolves on scroll. Essays stay prose. Grain stays on Analytics. Cutover stays on Delivery.
 - **Bayesian optimisation** (Orbit-hosted method, not Hub): H1 `Bayesian optimisation is a budget of trials, not a search of space`. BOUND → MODEL → ACQ → STOP. Lede is the scarce-trial loop, not the layers/lanes clone. Inference is MODEL only. Not a BoTorch/Ax/AutoML brochure.
@@ -88,7 +88,7 @@ Judged on Orbit at 17:00 on the 1st, not via source-repo Apply review.
 
 Run `.cursor/automations/hosted-field-card-monthly-review.json`:
 
-1. This is a discovery pass. Judge picker rows and job-table examples against the spine (SDLC: PLAN → SPEC → DESIGN → BUILD → TEST; Credit: ORIGINATE → MONITOR → STAGE → PROVISION; Story: DWELL → CLAIM → SKETCH → LEAD → OPEN; Bayes: BOUND → MODEL → ACQ → STOP). Swap by constraint, not hype. Do not stamp-only skip the judgment.
+1. This is a discovery pass. Read `PLAYBOOK.md` beside each hosted card that has one (SDLC, Story, Bayes). Judge picker rows and job-table examples against the spine (SDLC: PLAN → SPEC → DESIGN → BUILD → TEST; Credit: ORIGINATE → MONITOR → STAGE → PROVISION; Story: DWELL → CLAIM → SKETCH → LEAD → OPEN; Bayes: BOUND → MODEL → ACQ → STOP). Swap by constraint, not hype. Do not stamp-only skip the judgment. The pass does not crawl essays; constraints that must survive live in the playbook.
 2. Bump the footer stamp: `Reviewed <Month YYYY> · Next: <next month>`. Changed line stays “Monthly review — picker and jobs unchanged” unless the HTML actually changed.
 3. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. Do not touch the three source-repo cards in that run. Do not add a Hub competency tile for Bayesian optimisation.
 
