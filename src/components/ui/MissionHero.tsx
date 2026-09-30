@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { ARC_HUD_HREF, ARC_HUD_LABEL } from "@/components/card/href";
 import { PixelAvatar } from "@/components/ui/PixelAvatar";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { StoryStat } from "@/components/story/StoryStat";
@@ -46,6 +47,8 @@ interface MissionHeroProps {
   signature: ReactNode;
   badge?: ReactNode;
   title: string;
+  /** Second kicker line under `title` — the public role, in the HUD's own casing. */
+  titleNote?: string;
   /** Two-line display title. `title` becomes the mono kicker above it. */
   headline?: { line: string; accent: string };
   subtitle?: string;
@@ -55,9 +58,21 @@ interface MissionHeroProps {
   meta?: ReactNode;
   avatarUrl?: string;
   avatarAlt?: string;
-  /** When set, the pixel avatar is a control (e.g. identity HUD). */
+  /** Portrait control. Defaults to the Arc HUD. Pass "" to leave the avatar static. */
   avatarHref?: string;
   avatarHrefLabel?: string;
+}
+
+function Kicker({ title, titleNote }: { title: string; titleNote?: string }) {
+  if (!titleNote) return title;
+  return (
+    <>
+      {title}
+      <span className="mt-1.5 block normal-case tracking-normal text-slate-300">
+        {titleNote}
+      </span>
+    </>
+  );
 }
 
 /** Orchestrated above-the-fold hero — matches Hub motion cadence. Visible on SSR. */
@@ -65,6 +80,7 @@ export function MissionHero({
   signature,
   badge,
   title,
+  titleNote,
   headline,
   subtitle,
   description,
@@ -73,8 +89,8 @@ export function MissionHero({
   meta,
   avatarUrl,
   avatarAlt = "",
-  avatarHref,
-  avatarHrefLabel = "Open identity HUD",
+  avatarHref = ARC_HUD_HREF,
+  avatarHrefLabel = ARC_HUD_LABEL,
 }: MissionHeroProps) {
   const hydrated = useHydrated();
   const reduced = usePrefersReducedMotion();
@@ -110,7 +126,7 @@ export function MissionHero({
                 avatarHref ? (
                   <Link
                     href={avatarHref}
-                    className="focus-ring rounded-xl"
+                    className="focus-ring inline-flex rounded-xl"
                     aria-label={avatarHrefLabel}
                   >
                     <PixelAvatar src={avatarUrl} alt="" />
@@ -120,7 +136,7 @@ export function MissionHero({
                 )
               ) : undefined
             }
-            kicker={title}
+            kicker={<Kicker title={title} titleNote={titleNote} />}
             line={headline.line}
             accent={headline.accent}
           />
@@ -130,7 +146,7 @@ export function MissionHero({
               avatarHref ? (
                 <Link
                   href={avatarHref}
-                  className="focus-ring rounded-xl"
+                  className="focus-ring inline-flex rounded-xl"
                   aria-label={avatarHrefLabel}
                 >
                   <PixelAvatar src={avatarUrl} alt="" />

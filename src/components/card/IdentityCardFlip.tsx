@@ -20,10 +20,14 @@ interface ArcPayload {
 const FLIP_BUTTON =
   "focus-ring w-full text-center font-mono text-[0.65rem] uppercase tracking-[0.18em] text-violet-300/80 hover:text-violet-100";
 
-export function IdentityCardFlip(props: IdentityHudProps) {
+export function IdentityCardFlip({
+  openArc = false,
+  ...props
+}: IdentityHudProps & { openArc?: boolean }) {
   const reduced = usePrefersReducedMotion();
   const [arc, setArc] = useState<ArcPayload | null>(null);
   const [flipped, setFlipped] = useState(false);
+  const [settled, setSettled] = useState(false);
   const [height, setHeight] = useState<number | null>(null);
   const frontRef = useRef<HTMLDivElement>(null);
   const backRef = useRef<HTMLDivElement>(null);
@@ -33,18 +37,24 @@ export function IdentityCardFlip(props: IdentityHudProps) {
     fetch("/api/card/arc", { credentials: "same-origin" })
       .then(async (res) => (res.ok ? res.json() : null))
       .then((data: ArcPayload | null) => {
-        if (cancel || !data?.narrative?.gate) return;
-        setArc({
-          narrative: data.narrative,
-          dailyQuest: data.dailyQuest ?? null,
-          days: Array.isArray(data.days) ? data.days : [],
-        });
+        if (cancel) return;
+        if (data?.narrative?.gate) {
+          setArc({
+            narrative: data.narrative,
+            dailyQuest: data.dailyQuest ?? null,
+            days: Array.isArray(data.days) ? data.days : [],
+          });
+          if (openArc) setFlipped(true);
+        }
+        setSettled(true);
       })
-      .catch(() => {});
+      .catch(() => {
+        if (!cancel) setSettled(true);
+      });
     return () => {
       cancel = true;
     };
-  }, []);
+  }, [openArc]);
 
   useLayoutEffect(() => {
     const el = flipped ? backRef.current : frontRef.current;
@@ -55,6 +65,16 @@ export function IdentityCardFlip(props: IdentityHudProps) {
     observer.observe(el);
     return () => observer.disconnect();
   }, [flipped, arc]);
+
+  if (openArc && !settled) {
+    return (
+      <div
+        className="min-h-96 w-full max-w-md"
+        aria-busy="true"
+        aria-label="Opening Arc HUD"
+      />
+    );
+  }
 
   if (!arc) return <IdentityHud {...props} />;
 

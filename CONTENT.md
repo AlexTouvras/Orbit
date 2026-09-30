@@ -175,7 +175,7 @@ Structured CV data lives in **`src/content/cv.ts`** — experience, education, s
 
 ## 4. Updating the Hub hero & identity
 
-What visitors see first: name, pillars line, tagline, stats, social links.
+What visitors see first: name, role (`AI & Data Systems Lead`), tagline, and on Home the social links. The portrait opens the Arc HUD (`/card?face=arc`).
 
 ### Option A — Studio (easiest, no code)
 
@@ -195,11 +195,11 @@ Edit **`src/content/profile.ts`**:
 
 | Field | What it controls |
 | --- | --- |
-| `name` | H1 on Hub |
-| `pillars` | Line under name (e.g. `Delivery · Data · AI automation`) |
-| `tagline` | Paragraph under pillars |
-| `summary` | "Background in brief" on Hub + About-adjacent copy |
-| `role` | Browser tab / SEO title suffix |
+| `name` | Kicker on Hub |
+| `role` | Line under the name on Hub and About; Arc HUD; browser tab / SEO title. Locked archetype: `AI & Data Systems Lead` |
+| `pillars` | Home live-proof ticker, not the title under the name |
+| `tagline` | Paragraph under the headline |
+| `summary` | Close on Hub |
 | `githubUsername` | GitHub repo grid on Portfolio |
 | `email`, `resumeUrl` | Contact + CV download |
 | `socials` | Footer + mobile Hub icons |

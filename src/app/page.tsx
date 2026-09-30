@@ -22,6 +22,7 @@ export default function HomePage() {
       <StoryScene id="story-open" className="pb-0">
         <HubHero
           name={profile.name}
+          role={profile.role}
           pillars={profile.pillars}
           headlineLine={profileDefaults.headlineLine}
           headlineAccent={profileDefaults.headlineAccent}
