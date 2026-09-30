@@ -130,10 +130,10 @@ export const competencies: Competency[] = [
     shortTitle: "Delivery",
     description:
       "Sequencing Azure and middleware changes across platform, security, and business calendars — evidence before the call, rollback before green.",
-    hudTitle: "Delivery is a sequence, not a ticket",
-    hudVerbs: "Name → calendar → prove → cut over",
+    hudTitle: "Delivery is a sequence. Match the calendars first.",
+    hudVerbs: "Name → match calendars → prove → cut over",
     hudDescription:
-      "Intent, window, proof, cutover: those are the layers. Methods are lanes. Name rollback before anyone calls it done.",
+      "Name the outcome, match platform, security, and business calendars, then prove it and cut over. Methods are lanes. Name rollback before anyone calls it done.",
     accent: "violet",
     icon: Route,
     href: "/delivery-field-card/index.html",
@@ -158,10 +158,10 @@ export const competencies: Competency[] = [
     shortTitle: "Credit",
     description:
       "Loan origination and IFRS 9: creditworthiness in the engine, watch the book, stage on SICR, hold 12-month or lifetime ECL.",
-    hudTitle: "Credit risk is a lifetime, not a cutoff",
-    hudVerbs: "Decide → watch → stage → hold",
+    hudTitle: "Credit risk is for a lifetime. Act early.",
+    hudVerbs: "Decide → watch early → stage → hold",
     hudDescription:
-      "Originate, monitor, stage, provision: those are the layers. Models are lanes. A score is not the loss you hold.",
+      "Originate, watch the book before the loss is lifetime, then stage and hold 12-month or lifetime expected loss. Models are lanes. A score is not the loss you hold.",
     accent: "amber",
     icon: Landmark,
     href: "/credit-risk-field-card/index.html",
@@ -169,7 +169,7 @@ export const competencies: Competency[] = [
   },
   {
     title: "Data & Visual Storytelling",
-    shortTitle: "Story",
+    shortTitle: "Storytelling",
     description:
       "Turn evidence into a decision: question, evidence, tension, narrative, experience — then what changes. Craft (dwell, claim, sketch, lead, open) sits inside that spine.",
     hudTitle: "Turn evidence into a decision",
