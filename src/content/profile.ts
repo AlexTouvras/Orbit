@@ -65,7 +65,7 @@ export const profile = {
   cardTagline:
     "Building and leading data & AI systems that solve complex business problems.",
   /** Hub kicker under the name — capability breadth along the chain. */
-  pillars: "AI · Data · Delivery · Credit · SDLC · Story",
+  pillars: "AI · Data · Delivery · Credit · SDLC · Storytelling",
   /** Primary contact CTA — replaces a separate “open to …” pill. */
   contactCta: "Get in touch about a role",
   availability:
@@ -130,10 +130,10 @@ export const competencies: Competency[] = [
     shortTitle: "Delivery",
     description:
       "Sequencing Azure and middleware changes across platform, security, and business calendars — evidence before the call, rollback before green.",
-    hudTitle: "Delivery is a sequence. Match the calendars first.",
+    hudTitle: "Match the calendars, then cut over.",
     hudVerbs: "Name → match calendars → prove → cut over",
     hudDescription:
-      "Name the outcome, match platform, security, and business calendars, then prove it and cut over. Methods are lanes. Name rollback before anyone calls it done.",
+      "Name the outcome, then match platform, security, and business calendars before you prove it and cut over. Methods are lanes. Name rollback before anyone calls it done.",
     accent: "violet",
     icon: Route,
     href: "/delivery-field-card/index.html",
@@ -159,9 +159,9 @@ export const competencies: Competency[] = [
     description:
       "Loan origination and IFRS 9: creditworthiness in the engine, watch the book, stage on SICR, hold 12-month or lifetime ECL.",
     hudTitle: "Credit risk is for a lifetime. Act early.",
-    hudVerbs: "Decide → watch early → stage → hold",
+    hudVerbs: "Decide → act early → stage → hold",
     hudDescription:
-      "Originate, watch the book before the loss is lifetime, then stage and hold 12-month or lifetime expected loss. Models are lanes. A score is not the loss you hold.",
+      "Act early. Originate on creditworthiness, watch the book before the loss is lifetime, then stage and hold 12-month or lifetime expected loss. Models are lanes. A score is not the loss you hold.",
     accent: "amber",
     icon: Landmark,
     href: "/credit-risk-field-card/index.html",
