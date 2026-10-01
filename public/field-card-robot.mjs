@@ -1,16 +1,25 @@
 /**
  * One storytelling robot for every homepage field card.
  *
+ * Orbit publishes this file at `public/field-card-robot.mjs`. The storytelling
+ * sync does not copy it. The pages are `/delivery-field-card/` and the other
+ * `*-field-card` sheets, not the `/stories` overlays.
+ *
  * Storytelling PR 25 binds six bubble lines and an accent on `robot.riv`.
  * This page does not vendor that file. Each visit resolves `main`, then
  * loads that commit's character, the `ROBOT` contract, and the card's six
  * judgements from `field-cards.ts`.
  *
- * The Agentic AI sheet keeps its own script, which sets only the first line.
- * The baked defaults are that card, so it still speaks the AI judgements.
+ * The Agentic AI sheet keeps its own script (`host/ai-field-card-robot.mjs`).
+ * The baked defaults are that card, so a blocked fetch still speaks its lines.
  *
  * https://alextouvras.com/stories/<card> draws the same robot over an iframe
  * of the sheet. When this page is that iframe, it stays out of the way.
+ *
+ * On the sheet itself, scrolling speaks the section crossing the reading
+ * band, and a fine pointer speaks the section under the cursor. The words
+ * are that section's line from `field-cards.ts`. All six runs show that one
+ * line, so the crossfade cannot swap in a different judgement.
  */
 
 export const STORY_REPO = "AlexTouvras/storytelling";
@@ -57,6 +66,9 @@ export const HOST = {
 };
 
 const TUCK = "Tap me and I'll wait in the corner.";
+
+/** Same band as storytelling `card-frame.ts`. About a third of the way down. */
+export const READING_BAND = 0.38;
 
 /**
  * Same words as storytelling `field-cards.ts` the day PR 25 merged.
@@ -326,12 +338,45 @@ export function parseFieldCards(source) {
     const linesAt = obj.indexOf("lines:");
     const linesBlock = linesAt < 0 ? null : sliceBracket(obj, linesAt + "lines:".length);
     const lines = linesBlock ? parseLineItems(linesBlock, tuck) : [];
+    const sections = parseSections(obj);
     if (id && accent && lines.length === 6 && lines.every(Boolean)) {
-      cards.push({ id, accent, lines });
+      cards.push({ id, accent, lines, sections });
     }
     i = at + obj.length;
   }
   return cards.length ? cards : null;
+}
+
+function parseSections(obj) {
+  const at = obj.indexOf("sections:");
+  if (at < 0) return [];
+  const block = sliceBracket(obj, at + "sections:".length);
+  if (!block) return [];
+  const sections = [];
+  let i = 0;
+  while (i < block.length) {
+    const start = block.indexOf("{", i);
+    if (start < 0) break;
+    const item = sliceObject(block, start);
+    if (!item) break;
+    const heading = pickString(item, "heading");
+    const line = pickString(item, "line");
+    if (heading && line) sections.push({ heading, line });
+    i = start + item.length;
+  }
+  return sections;
+}
+
+export function sectionKey(heading) {
+  return String(heading).replace(/\s+/g, " ").trim().toLowerCase();
+}
+
+/** The section line for a heading, or null when this card has no such block. */
+export function sectionLine(sections, heading) {
+  const key = sectionKey(heading);
+  if (!key) return null;
+  const found = (sections || []).find((section) => sectionKey(section.heading) === key);
+  return found?.line ?? null;
 }
 
 /** Accent id → sRGB from `FIELD_CARD_ACCENTS`. */
@@ -356,7 +401,7 @@ export function cardSpeech(cardId, cards, accents) {
   if (!card) return null;
   const accent = (accents || []).find((item) => item.id === card.accent);
   if (!accent || accent.rgb.length !== 3) return null;
-  return { lines: card.lines, rgb: accent.rgb };
+  return { lines: card.lines, rgb: accent.rgb, sections: card.sections || [] };
 }
 
 export function linePropNames(robot) {
@@ -523,6 +568,96 @@ function placeHit(hit, robot, where) {
   hit.style.height = `${box.bh * h}px`;
 }
 
+function headingOf(el) {
+  if (!el) return "";
+  const node = el.querySelector("h1, h2");
+  const text = node ? node.textContent : el.getAttribute("aria-label") || "";
+  return String(text).replace(/\s+/g, " ").trim();
+}
+
+/** The section heading at a viewport point. A row inside the section stays unnamed. */
+export function headingAt(x, y) {
+  const hit = document.elementFromPoint(x, y);
+  const direct = hit && hit.closest ? hit.closest("header.hero, section, footer.meta") : null;
+  const named = headingOf(direct);
+  if (named) return named;
+  const nodes = document.querySelectorAll("header.hero, section, footer.meta");
+  let best = "";
+  let bestScore = -Infinity;
+  for (let i = 0; i < nodes.length; i += 1) {
+    const box = nodes[i].getBoundingClientRect();
+    if (y < box.top || y > box.bottom || box.height < 1) continue;
+    const containsX = x >= box.left && x <= box.right;
+    const dist = containsX ? 0 : Math.min(Math.abs(x - box.left), Math.abs(x - box.right));
+    const score = (containsX ? 1e9 : 0) - dist;
+    if (score > bestScore) {
+      bestScore = score;
+      best = headingOf(nodes[i]);
+    }
+  }
+  return best;
+}
+
+function writeLines(instance, robot, names, lines) {
+  const vm = safeVm(instance);
+  names.forEach((name, index) => {
+    const slot = vm?.string(name);
+    if (slot && lines[index]) slot.value = lines[index];
+  });
+  instance?.play();
+}
+
+/**
+ * Scrolling speaks the section at the reading band. A fine pointer speaks
+ * the section under the cursor. The same sentence is written to every run.
+ */
+function followSections(instance, robot, names, speech, layer) {
+  const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
+  let pointer = null;
+  let sample = "band";
+  let scheduled = false;
+  let spoken = "";
+
+  const apply = () => {
+    const usePointer = sample === "pointer" && fine.matches && pointer;
+    const x = usePointer ? pointer.x : window.innerWidth / 2;
+    const y = usePointer ? pointer.y : window.innerHeight * READING_BAND;
+    const line = sectionLine(speech.sections, headingAt(x, y));
+    const next = line || "";
+    if (next === spoken) return;
+    spoken = next;
+    writeLines(instance, robot, names, next ? names.map(() => next) : speech.lines);
+    layer.dataset.speech = next || speech.lines[0] || "";
+  };
+
+  const place = (next) => {
+    sample = next;
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(() => {
+      scheduled = false;
+      apply();
+    });
+  };
+
+  document.addEventListener(
+    "pointermove",
+    (event) => {
+      pointer = { x: event.clientX, y: event.clientY };
+      if (fine.matches) place("pointer");
+    },
+    { passive: true },
+  );
+  window.addEventListener("scroll", () => place("band"), { passive: true });
+  document.addEventListener("scroll", () => place("band"), true);
+  window.addEventListener("resize", () => place("band"));
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => place("band"));
+  } else {
+    place("band");
+  }
+}
+
 function removeChrome() {
   document.getElementById("field-robot")?.remove();
   document.getElementById("field-robot-hit")?.remove();
@@ -608,6 +743,26 @@ async function mount(cardId) {
     if (reducedMotion()) settle();
   });
 
+  hit.addEventListener(
+    "wheel",
+    (event) => {
+      event.preventDefault();
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1;
+      let dx = Number(event.deltaX);
+      let dy = Number(event.deltaY);
+      if (!Number.isFinite(dx) || !Number.isFinite(dy)) return;
+      dx = Math.max(-2400, Math.min(2400, dx)) * unit;
+      dy = Math.max(-2400, Math.min(2400, dy)) * unit;
+      const root = document.scrollingElement || document.documentElement;
+      const prev = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      root.scrollLeft += dx;
+      root.scrollTop += dy;
+      root.style.scrollBehavior = prev;
+    },
+    { passive: false },
+  );
+
   instance = new api.Rive({
     canvas,
     buffer: riv,
@@ -626,6 +781,7 @@ async function mount(cardId) {
         const slot = vm?.string(name);
         if (slot) slot.value = speech.lines[index];
       });
+      if (speech.sections?.length) followSections(instance, robot, props, speech, layer);
       const color = vm?.color(robot.props.accent);
       if (color) color.value = argb(speech.rgb[0], speech.rgb[1], speech.rgb[2]);
       if (!reducedMotion()) instance.play();

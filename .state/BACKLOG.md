@@ -15,6 +15,7 @@
 - [x] Ship home AI competency → `/field-card/index.html` + static field card page
 - [ ] Agentic field-card discovery searches practice writing (feeds + web), not only GitHub frameworks — patch ready; source repo push blocked for this agent
 - [x] Storytelling robot on homepage field cards (PR 25 lines + accent) — Delivery, Analytics, SDLC, Credit, Story. AI sheet already mounts it. Bayes stays plain.
+- [x] Field-card robot speech follows the section being read (storytelling PR 30 scripts copied into `public/field-card-robot.mjs` and the AI sheet).
 - [x] Field-card fail-closed: discovery Slack ping + judgment watchdog + Approve requires `## Summary` (agentic-ai-field-card PR #3)
 - [x] W32 field card PR #2 merged (2026-08-11); Slack Approve/Skip flow verified
 - [x] Scaffold Data Analytics Field Card repo + Orbit home link (`/analytics-field-card/`) + shared Approve registry
