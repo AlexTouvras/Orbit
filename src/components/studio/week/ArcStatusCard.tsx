@@ -427,7 +427,7 @@ export function ArcStatusCard({
 
   return (
     <div className="rounded-2xl border border-violet-500/30 bg-gradient-to-br from-violet-950/40 to-slate-950/60 p-4 sm:p-5">
-      {/* Compact header: avatar beside name, role, and gate */}
+      {/* Compact header: avatar beside name, class, and gate */}
       <div className="flex items-start gap-3">
         <div className="shrink-0">
           <PixelAvatar
@@ -442,7 +442,7 @@ export function ArcStatusCard({
             Arc Mode
           </p>
           <p className="mt-0.5 text-xl font-semibold text-white sm:text-2xl">{profile.name}</p>
-          <p className="mt-1 text-sm leading-snug text-slate-300">{profile.role}</p>
+          <p className="mt-1 text-sm leading-snug text-slate-300">Warrior</p>
           <p className="mt-0.5 text-base font-semibold text-white sm:text-lg">
             Gate{" "}
             <HintTrigger

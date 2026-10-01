@@ -196,7 +196,7 @@ Edit **`src/content/profile.ts`**:
 | Field | What it controls |
 | --- | --- |
 | `name` | Kicker on Hub |
-| `role` | Line under the name on Hub and About; Arc HUD; browser tab / SEO title. Locked archetype: `AI & Data Systems Lead` |
+| `role` | Line under the name on Hub and About; browser tab / SEO title. Locked archetype: `AI & Data Systems Lead`. The Arc HUD line under the name is Warrior. |
 | `pillars` | Home live-proof ticker, not the title under the name |
 | `tagline` | Paragraph under the headline |
 | `summary` | Close on Hub |
