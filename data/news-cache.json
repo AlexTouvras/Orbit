@@ -1,7 +1,151 @@
 {
-  "generatedAt": "2026-09-30T06:46:59.910Z",
+  "generatedAt": "2026-10-01T06:46:54.614Z",
   "count": 265,
   "items": [
+    {
+      "id": "a48e6a8f4e9b",
+      "title": "IP Functions are Generally Available, bringing high-performance network analytics to the Lakehouse",
+      "link": "https://www.databricks.com/blog/ip-functions-are-generally-available-bringing-high-performance-network-analytics-lakehouse",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-01T01:46:05.000Z",
+      "contentSnippet": "IP data is warehousing dataEvery firewall, load balancer, VPN, CDN edge, DNS resolver,..."
+    },
+    {
+      "id": "e1d9917f2540",
+      "title": "Global imbalances and the China challenge",
+      "link": "https://cepr.org/voxeu/columns/global-imbalances-and-china-challenge",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-30T23:00:00.000Z",
+      "contentSnippet": "China's trade surplus is widening, its manufactured exports are surging, and the political backlash is intensifying. This column argues that the widening trade surplus reflects not just macroeconomic imbalances but a growth model aiming at industrial and technological dominance,…"
+    },
+    {
+      "id": "d0037729d555",
+      "title": "Training novices to think in the age of large language models",
+      "link": "https://cepr.org/voxeu/columns/training-novices-think-age-large-language-models",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-30T23:00:00.000Z",
+      "contentSnippet": "Whether teaching a cognitive skill remains valuable in this era of AI is a crucial question in education and for firms. This column reports on an experiment in which around 1,000 undergraduates in Italy received either (1) causal-reasoning training, (2) access to ChatGPT, (3) bot…"
+    },
+    {
+      "id": "15e70ee5e4a7",
+      "title": "Gemini 4 Argon: our next era of frontier intelligence",
+      "link": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-30T20:01:45.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "25714c24d796",
+      "title": "Introducing ai_decide: make fast decisions on your governed data",
+      "link": "https://www.databricks.com/blog/introducing-aidecide-make-fast-decisions-your-governed-data",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-30T16:59:34.000Z",
+      "contentSnippet": "Today, we’re launching a new Databricks AI Function ai_decide that makes fast decisions..."
+    },
+    {
+      "id": "412a615366dd",
+      "title": "A practical guide to cost optimization with Lakebase Postgres",
+      "link": "https://www.databricks.com/blog/practical-guide-cost-optimization-lakebase-postgres",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-30T16:53:12.000Z",
+      "contentSnippet": "Lakebase is a fully managed Postgres database, built for the operational realities..."
+    },
+    {
+      "id": "eceee48dbbb4",
+      "title": "How to scale agentic applications without creating AI sprawl",
+      "link": "https://www.databricks.com/blog/how-scale-agentic-applications-without-creating-ai-sprawl",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-09-30T16:46:25.000Z",
+      "contentSnippet": "Building an agent is getting easier. More capable models and coding agents are making..."
+    },
+    {
+      "id": "fb6067b5bbd7",
+      "title": "What work can robots do?",
+      "link": "https://www.anthropic.com/research/what-work-can-robots-do",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-09-30T16:01:00.000Z",
+      "contentSnippet": "We built an index of how well today’s robots can perform US job tasks. Robots can already do three-quarters of physical tasks, mostly in limited settings, but are cost-competitive for just 0.3% of them."
+    },
+    {
+      "id": "0a622a33b8e3",
+      "title": "Introducing SynthID Bio",
+      "link": "https://deepmind.google/blog/introducing-synthid-bio/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-09-30T15:03:07.000Z",
+      "contentSnippet": "Proof of concept for watermarking AI-generated proteins while preserving biological function."
+    },
+    {
+      "id": "4bea5e365c61",
+      "title": "The New SDLC From Google Has a Harness. It Doesn't Have a Team.",
+      "link": "https://www.scrum.org/resources/blog/new-sdlc-google-has-harness-it-doesnt-have-team",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-30T14:54:22.000Z",
+      "contentSnippet": "Image 85% of professional developers now regularly use AI coding agents. Forty-one percent of new code is AI-generated. Those numbers come from Google's own May 2026 paper, The New SDLC With Vibe Coding, the numbers themselves are interesting but not as interesting as how those p…"
+    },
+    {
+      "id": "5c34efbd94af",
+      "title": "Principles for effective slides",
+      "link": "https://martinfowler.com/articles/never-send-slides/slide-principles.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-09-30T14:14:00.000Z",
+      "contentSnippet": "Not every presentation needs slides, but when they earn their place, they work as a visual channel that complements the speaker rather than replacing them. Sumeet Gayathri Moghe sets out the principles that follow from that idea — control over the rate of knowledge exposition, ti…"
+    },
+    {
+      "id": "fc1d5ef89d1e",
+      "title": "Letter from David Bailey 'Thematic feedback on accounting for IFRS 9 expected credit losses (ECL)'",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/letter/2026/thematic-feedback-on-accounting-for-ifrs-9-ecl",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-09-30T14:00:00.000Z",
+      "contentSnippet": "Letter to chief financial officers of selected PRA-regulated deposit-takers which provides thematic feedback from the PRA’s review of written auditor reports received in 2026 covering IFRS 9 expected credit loss accounting (ECL) and accounting for climate risk."
+    },
+    {
+      "id": "6a91381a4292",
+      "title": "Disrupting a coordinated model-distillation campaign",
+      "link": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-30T10:30:00.000Z",
+      "contentSnippet": "Learn how OpenAI disrupted a campaign to extract protected model reasoning and is strengthening defenses against adversarial distillation."
+    },
+    {
+      "id": "b5e5e43443d2",
+      "title": "Helping small businesses put AI to work",
+      "link": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-30T10:00:00.000Z",
+      "contentSnippet": "OpenAI is partnering with America’s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI."
+    },
+    {
+      "id": "80daa53e20f4",
+      "title": "Your Sprint Has Fewer Hours Than You Think: Sprint Capacity in the Age of AI Agents",
+      "link": "https://www.scrum.org/resources/blog/your-sprint-has-fewer-hours-you-think-sprint-capacity-age-ai-agents",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-30T08:46:22.000Z",
+      "contentSnippet": "Image Most Scrum Teams don't miss their Sprint forecast because they estimate badly. They miss it because they plan against hours that never existed. Picture a Sprint Planning I have watched play out, in one form or another, in dozens of organisations. Five Developers. A two-week…"
+    },
+    {
+      "id": "92f5c3ef8527",
+      "title": "🎉 Published: Scrum Team Magazine - October 2026 - Issue #2",
+      "link": "https://www.scrum.org/resources/blog/published-scrum-team-magazine-october-2026-issue-2",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-09-30T08:12:00.000Z",
+      "contentSnippet": "Image Click here to read and download the magazine. The first high-quality magazine for the Scrum world is now live. This is the second issue, October 2026. WHY SCRUM TEAM MAGAZINE? Many sectors like jewellery, watches, decoration, film, and fashion already have their own exquisi…"
+    },
     {
       "id": "e5132c65f5be",
       "title": "Thinking Like a Data Architect",
@@ -10,6 +154,15 @@
       "category": "Data",
       "pubDate": "2026-09-30T04:17:33.000Z",
       "contentSnippet": "A Field guide for data leaders"
+    },
+    {
+      "id": "b8b7e5a337cd",
+      "title": "Core Principles for Effective Deposit Insurance Systems – Executive Summary",
+      "link": "https://www.bis.org/publications/core-principles-effective-deposit-insurance-systems-executive-summary",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-09-30T00:00:00.000Z",
+      "contentSnippet": "The Core Principles for Effective Deposit Insurance Systems (core principles) of the International Association of Deposit Insurers are the international standard for the design, implementation and assessment of deposit insurance systems. They provide a benchmark for jurisdictions…"
     },
     {
       "id": "22a02ab5bf54",
@@ -30,8 +183,17 @@
       "contentSnippet": "Europe’s output losses proved limited following the 2022 cutoff of Russian gas flows, yet inflation rose sharply. This column uses weather variation and gas-market events to distinguish gas-demand shocks from interruptions to current flows and news about future availability. A de…"
     },
     {
+      "id": "79b7039cebc0",
+      "title": "Changing structure and challenges of the international financial system: Imbalances, currencies, and financial stability",
+      "link": "https://cepr.org/voxeu/columns/changing-structure-and-challenges-international-financial-system-imbalances",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-09-29T23:00:00.000Z",
+      "contentSnippet": "Concerns are growing about the state of the global economic and financial architecture. The 29th Geneva Report on the World Economy focuses on four key pillars of the global economic order – global imbalances, the international role of major currencies and risks to the US dollar’…"
+    },
+    {
       "id": "99f68fe68635",
-      "title": "Nobody owns whether it worked.",
+      "title": "Nobody Owns Whether it Worked.",
       "link": "https://www.scrum.org/resources/blog/nobody-owns-whether-it-worked",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -201,15 +363,6 @@
       "contentSnippet": "Professional judgement comes from learning by doing, but AI has the potential to disrupt this learning process. This column explores how randomised access to an AI patent-writing product affects the performance of lawyers on certain writing tasks. Using the AI tool raised the qua…"
     },
     {
-      "id": "36139b5ec7f0",
-      "title": "L'illusion de la cheminée : qui paie réellement pour la neutralité carbone ?",
-      "link": "https://cepr.org/voxeu/columns/lillusion-de-la-cheminee-qui-paie-reellement-pour-la-neutralite-carbone",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-28T23:00:00.000Z",
-      "contentSnippet": "Il est difficile d’imaginer atteindre la neutralité carbone d’ici 2050, comme le prévoit l’Accord de Paris, sans une taxe carbone. Cet article estime que pour atteindre cet objectif par le biais d’une taxe carbone, il faudra une trajectoire fiscale culminant à environ 1 300 dolla…"
-    },
-    {
       "id": "8bfa6ceb2929",
       "title": "How Databricks rolls out frontier models to 12,000 employees on Day 1",
       "link": "https://www.databricks.com/blog/how-databricks-rolls-out-frontier-models-12000-employees-day-1",
@@ -237,15 +390,6 @@
       "contentSnippet": "A manufacturing defect rarely belongs to one system. A scrap spike may relate to..."
     },
     {
-      "id": "cf468ec39dd6",
-      "title": "Towards safety cases for frontier AI training",
-      "link": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-28T19:00:00.000Z",
-      "contentSnippet": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents"
-    },
-    {
       "id": "cfe8e900401f",
       "title": "How we will do better for Australia",
       "link": "https://openai.com/index/how-we-will-do-better-for-australia",
@@ -253,6 +397,15 @@
       "category": "AI",
       "pubDate": "2026-09-28T19:00:00.000Z",
       "contentSnippet": "OpenAI apologises for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia’s cyber defences."
+    },
+    {
+      "id": "cf468ec39dd6",
+      "title": "Towards safety cases for frontier AI training",
+      "link": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-09-28T19:00:00.000Z",
+      "contentSnippet": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents"
     },
     {
       "id": "26f8d7081d07",
@@ -309,24 +462,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "914f14710638",
-      "title": "Are you a Codex Original?",
-      "link": "https://openai.com/form/codex-originals",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-28T00:00:00.000Z",
-      "contentSnippet": "We’re collecting real stories of builders, tinkerers, researchers, and creators who are using Codex to do incredible things. If you want to be a part of the next chapter of the Codex Originals program, tell us more about your story and project below."
-    },
-    {
-      "id": "bf0fe8cc388a",
-      "title": "Basis completes a tax workbook 2x faster with GPT-6 Astra",
-      "link": "https://openai.com/index/basis-tax-workbook-with-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-28T00:00:00.000Z",
-      "contentSnippet": "GPT-6 Astra completed a 50-tab tax workbook twice as fast as GPT-5.6 Sol, and its stronger understanding of user intent gives Basis more confidence in real-world use."
-    },
-    {
       "id": "76744a1a704f",
       "title": "Announcing DuckDB 1.5.6",
       "link": "https://duckdb.org/2026/09/28/announcing-duckdb-156.html",
@@ -352,24 +487,6 @@
       "category": "AI",
       "pubDate": "2026-09-27T23:54:15.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "859aa16dba9f",
-      "title": "Capital inflows boost output, even after accounting for expectations",
-      "link": "https://cepr.org/voxeu/columns/capital-inflows-boost-output-even-after-accounting-expectations",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-27T23:00:00.000Z",
-      "contentSnippet": "Emerging market economies that are expected to perform well may attract more foreign capital, making it difficult to establish the causal effects of capital inflows on output. Using professional forecasts to account for expectations about future economic conditions, this column c…"
-    },
-    {
-      "id": "502e765966d8",
-      "title": "The cost of not innovating: Frontier AI models, cyber defence, and EU strategic autonomy",
-      "link": "https://cepr.org/voxeu/columns/cost-not-innovating-frontier-ai-models-cyber-defence-and-eu-strategic-autonomy",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-27T23:00:00.000Z",
-      "contentSnippet": "The cyber threat landscape changed dramatically in April 2026 with the emergence of frontier AI models from OpenAI and Anthropic. Access to these models was initially limited, and the US imposed a de facto export ban, since lifted. This column argues that these models turn the EU…"
     },
     {
       "id": "f950d4b13b41",
@@ -415,15 +532,6 @@
       "category": "AI",
       "pubDate": "2026-09-25T16:58:00.000Z",
       "contentSnippet": "Guest writer and physicist Matt von Hippel shares what happened when he issued a challenge to AI companies to solve a problem in his former subfield of theoretical physics."
-    },
-    {
-      "id": "783a14311687",
-      "title": "From Data to Dialogue: How S&P Global Energy Made Its Structured Data Estate Conversational with Databricks Genie Agents and MCP",
-      "link": "https://www.databricks.com/blog/data-dialogue-how-sp-global-energy-made-its-structured-data-estate-conversational-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-25T16:00:00.000Z",
-      "contentSnippet": "S&P Global's goal was to fundamentally improve how customers discover and consume..."
     },
     {
       "id": "6a47534fda8a",
@@ -489,24 +597,6 @@
       "contentSnippet": "Image Current state vs future state analysis helps teams understand where they are today, where they need to go, and what needs to change along the way. It sounds simple, but teams often skip this thinking. A business problem is identified, and the conversation quickly shifts to…"
     },
     {
-      "id": "da0bf4ec78d8",
-      "title": "Running open-Jev in SQL on Databricks",
-      "link": "https://www.databricks.com/blog/running-open-jev-sql-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-24T16:55:01.000Z",
-      "contentSnippet": "Over the weekend, “System One” decision models such as Jev have launched, which are..."
-    },
-    {
-      "id": "2dce1c71be0d",
-      "title": "Deploy and manage coding agents at scale with the Unity Gateway CLI",
-      "link": "https://www.databricks.com/blog/deploy-and-manage-coding-agents-scale-unity-gateway-cli",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-24T16:46:05.000Z",
-      "contentSnippet": "In the last six months, GPT-6, Claude Opus 5.5, Gemini 3.8, and Grok 4.7 all shipped,..."
-    },
-    {
       "id": "e7107d9a76d9",
       "title": "Introducing Gemini 3.8 Live with Live Avatar",
       "link": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
@@ -559,15 +649,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-24T06:56:03.000Z",
       "contentSnippet": "We’ve already covered how AI can build and modify a semantic model using the Power BI Modeling MCP server. But building the semantic model is only half the job, someone still has to build the actual report on top of it. In this episode of Fabric Insider, I sit down with Harleen K…"
-    },
-    {
-      "id": "d85d1291df9f",
-      "title": "How I built agent-based security reviews on Databricks",
-      "link": "https://www.databricks.com/blog/how-i-built-agent-based-security-reviews-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-24T02:00:00.000Z",
-      "contentSnippet": "We already had automation in parts of our security review process. It was useful,..."
     },
     {
       "id": "7c11e0647e23",
@@ -786,24 +867,6 @@
       "contentSnippet": "A few weeks ago I wrote about how Semantic Link Labs now has tools with interactive UIs and showed how you could use this to view lineage and so Vertipaq-Analyzer-stuff in a notebook. I didn’t show what I think is the coolest new feature though: the ability to find the tables, co…"
     },
     {
-      "id": "0005ee654c00",
-      "title": "AI on Top of a Dysfunctional System (1): The Product Backlog",
-      "link": "https://www.scrum.org/resources/blog/ai-top-dysfunctional-system-1-product-backlog",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-20T14:53:52.000Z",
-      "contentSnippet": "TL;DR: Polished Artifacts, Unchanged Decisions, Or Ten Backlog Anti-Patterns AI Makes Worse Add AI to a Product Backlog process that already struggles, and everything seems to improve within an afternoon. The problem is that polishing artifacts with AI doesn’t fix the root cause:…"
-    },
-    {
-      "id": "7f9543b7189e",
-      "title": "Scrum's Meetings Are Capped at Five Hours a Week. Something Else Filled Your Calendar.",
-      "link": "https://www.scrum.org/resources/blog/scrums-meetings-are-capped-five-hours-week-something-else-filled-your-calendar",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-20T06:00:00.000Z",
-      "contentSnippet": "Image Scrum has too many meetings. I have heard that sentence in training rooms since 2010 and for years I argued with it. Now I do the arithmetic on the whiteboard instead, because the Scrum Guide caps its own events and the cap is far below what anyone in the room guesses. Add…"
-    },
-    {
       "id": "90801afbca07",
       "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
       "link": "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/",
@@ -822,15 +885,6 @@
       "contentSnippet": "When DuckDB-Wasm was launched in 2021, databases could not be persisted: everything lived in the Wasm heap and vanished when the tab closed. Keeping data meant serializing tables to Parquet, storing the bytes in IndexedDB, and re-registering them on the next page load. This was d…"
     },
     {
-      "id": "abcfa66a2190",
-      "title": "Psychological Safety is not Impunity",
-      "link": "https://www.scrum.org/resources/blog/psychological-safety-not-impunity",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-17T22:00:00.000Z",
-      "contentSnippet": "You can find him in the retro, though he rarely says much. He doesn't need to. The team has learned to write around him. Watch what happens to a good idea in this room. Someone proposes a real improvement, and before it's even finished, you can see a couple of people glance, just…"
-    },
-    {
       "id": "26cb68725f0f",
       "title": "The future of practice: Enabling teachers to create learning interactives with generative UI",
       "link": "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/",
@@ -838,15 +892,6 @@
       "category": "AI",
       "pubDate": "2026-09-17T20:45:00.000Z",
       "contentSnippet": "Education Innovation"
-    },
-    {
-      "id": "0389b68f0dfb",
-      "title": "How Claude is uplifting biomolecular modeling",
-      "link": "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-17T18:44:00.000Z",
-      "contentSnippet": "Claude made the open-source models that scientists use to predict and design biomolecules faster and more memory-efficient. Claude optimized more than 30 of these models in just under four weeks, speeding them up roughly 4x on average. It also created a low-memory mode that enabl…"
     },
     {
       "id": "ad2a2ccfa362",
@@ -939,15 +984,6 @@
       "contentSnippet": "Algorithms & Theory"
     },
     {
-      "id": "f4c3141ce9f2",
-      "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
-      "link": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-15T17:05:57.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "8356199c8c98",
       "title": "Nail the Narrative",
       "link": "https://martinfowler.com/articles/never-send-slides/nail-your-narrative.html",
@@ -1000,15 +1036,6 @@
       "category": "Data",
       "pubDate": "2026-09-14T00:00:00.000Z",
       "contentSnippet": "We're launching commercial support for open-source DuckDB, so every organization can get the power of a modern data engine, with direct access to database experts."
-    },
-    {
-      "id": "44d480b02c13",
-      "title": "BIS Quarterly Review, September 2026",
-      "link": "https://www.bis.org/publications/qr-202609",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-14T00:00:00.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "8bbe78103d32",
@@ -1081,15 +1108,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-08T15:22:00.000Z",
       "contentSnippet": "Christian Catalini says we’re in a situation where we are vastly reducing the cost of generating things, but not the cost of verifying them:. This explains why the first major AI products appeared in chat, image generation, and code assistance. Not because these were the hardest…"
-    },
-    {
-      "id": "80d284f58871",
-      "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
-      "link": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-08T14:00:15.000Z",
-      "contentSnippet": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome."
     },
     {
       "id": "38e1528c668d",
@@ -1228,21 +1246,21 @@
     },
     {
       "id": "e261a8057905",
-      "title": "Matrix Totals – The Whiteboard #13",
+      "title": "Matrix Totals - The Whiteboard #13",
       "link": "https://www.sqlbi.com/tv/matrix-totals-the-whiteboard-13/",
       "source": "SQLBI",
       "category": "Analytics",
       "pubDate": "2026-09-02T12:44:43.000Z",
-      "contentSnippet": "Let’s talk about matrix totals in this episode of The Whiteboard! Special guest: the SQLBI Whiteboard! Learn abstract DAX concepts in a more interactive way with “The Whiteboard” series. Read more: https://www.sqlbi.com/blog/marco/2022/07/14/the-whiteboard-video-series-on-sqlbi-y…"
+      "contentSnippet": "Let's talk about matrix totals in this episode of The Whiteboard! Special guest: the SQLBI Whiteboard! Learn abstract DAX concepts in a more interactive way with \"The Whiteboard\" series. Read more: https://www.sqlbi.com/blog/marco/2022/07/14/the-whiteboard-video-series-on-sqlbi-y…"
     },
     {
       "id": "7163d24d0de2",
-      "title": "Try DuckDB v2.0-alpha",
+      "title": "Try DuckDB v2.0-dev",
       "link": "https://duckdb.org/2026/09/02/try-duckdb-20-alpha.html",
       "source": "DuckDB",
       "category": "Data",
       "pubDate": "2026-09-02T00:00:00.000Z",
-      "contentSnippet": "The State of DuckDB v2.0 A few weeks ago, we published a preview of DuckDB v2.0. Today, we branched off v2.0-cyanoptera from the main development branch in the duckdb/duckdb repository. This marks a feature freeze – in the coming weeks, development work will focus on testing, bug…"
+      "contentSnippet": "Update You can now select the 2.0.0-dev version on the installation page. The State of DuckDB v2.0 A few weeks ago, we published a preview of DuckDB v2.0. Today, we branched off v2.0-cyanoptera from the main development branch in the duckdb/duckdb repository. This marks a feature…"
     },
     {
       "id": "0a35ea3a6965",
@@ -1524,15 +1542,6 @@
       "contentSnippet": "Learn how handoffs, individual task ownership, and status-report daily scrums keep Scrum teams from collaborating—and what to change next sprint."
     },
     {
-      "id": "0d3bab75e5d5",
-      "title": "TDD inside the agent loop - theater or actual value?",
-      "link": "https://martinfowler.com/articles/exploring-gen-ai/tdd-in-the-agent-loop.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-08-11T11:39:00.000Z",
-      "contentSnippet": "My colleagues at Thoughtworks tend to be big fans of Test-Driven Development, and many people in the industry advocate telling LLM agents to use TDD when building software. Birgitta Böckeler was curious if this really makes a difference, so conducted a few experiments. more…"
-    },
-    {
       "id": "1af7276c349c",
       "title": "Creating DAX functions with AI to remove duplicated code",
       "link": "https://www.sqlbi.com/tv/creating-dax-functions-with-ai-to-remove-duplicated-code/",
@@ -1677,6 +1686,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "07b1c1c9fdb7",
+      "title": "Credit Surfaces and Economic Uncertainty",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
+    },
+    {
       "id": "30c8bc5d5e3c",
       "title": "Structural Estimation with Unstructured Data",
       "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
@@ -1693,15 +1711,6 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
-    },
-    {
-      "id": "07b1c1c9fdb7",
-      "title": "Credit Surfaces and Economic Uncertainty",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
       "id": "61ad811164ff",
@@ -1722,15 +1731,6 @@
       "contentSnippet": "Low Impact Amendments Finalisation July 2026"
     },
     {
-      "id": "d834dadfb202",
-      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Policy statement 18/26"
-    },
-    {
       "id": "054894a68cbf",
       "title": "LIAC02/26 – Low Impact Amendments Consultation July 2026",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-consultation-july-2026",
@@ -1738,6 +1738,15 @@
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
       "contentSnippet": "Low Impact Amendments Consultation July 2026"
+    },
+    {
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "fb549b859ee4",
@@ -1755,7 +1764,7 @@
       "source": "SQLBI",
       "category": "Analytics",
       "pubDate": "2026-07-28T10:00:00.000Z",
-      "contentSnippet": "Visual calculations can either improve or degrade the performance of a report. Let’s see how we ensure visual calculations have a positive impact on performance."
+      "contentSnippet": "Visual calculations can either improve or degrade the performance of a report. Let's see how we ensure visual calculations have a positive impact on performance."
     },
     {
       "id": "65b8da05b262",
@@ -1783,15 +1792,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-26T21:13:48.000Z",
       "contentSnippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
-    },
-    {
-      "id": "7af90d58db71",
-      "title": "CP12/26 – Insurance friendly societies, amalgamations and transfers",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/insurance-friendly-societies-amalgamations-and-transfers-consultation-paper",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-22T09:00:00.000Z",
-      "contentSnippet": "Consultation paper 12/26"
     },
     {
       "id": "fb91e6df40a1",
