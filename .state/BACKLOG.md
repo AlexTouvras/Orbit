@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Arc HUD line under the name is Warrior (not the site role)
 - [x] Private `/studio/directives` from the governance snapshot (`data/directive-archive.json`, Studio card). Public site does not list it.
 - [x] Public title is AI & Data Systems Lead; portrait opens the Arc HUD (`/card?face=arc`)
 - [x] Arc Mode title is the name (role under it); drop the Warrior class caption
