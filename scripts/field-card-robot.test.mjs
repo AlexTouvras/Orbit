@@ -3,11 +3,13 @@ import { readFileSync } from "node:fs";
 import { describe, it } from "node:test";
 import {
   FALLBACK_CARDS,
+  READING_BAND,
   argb,
   cardSpeech,
   parseAccents,
   parseFieldCards,
   parseRobotContract,
+  sectionLine,
 } from "../public/field-card-robot.mjs";
 
 const TUCK = "Tap me and I'll wait in the corner.";
@@ -46,6 +48,14 @@ describe("field card robot copy", () => {
     assert.equal(cardSpeech("story", cards, accents).rgb.join(","), "0,210,211");
     assert.equal(cardSpeech("credit", cards, accents).rgb.join(","), "240,166,70");
     assert.equal(cards[0].lines[0], FALLBACK_CARDS[0].lines[0]);
+    const delivery = cards.find((card) => card.id === "delivery");
+    assert.equal(
+      sectionLine(delivery.sections, "Match the calendars, then cut over."),
+      "This card is evidence before the change is called done.",
+    );
+    assert.equal(sectionLine(delivery.sections, "Tool picker"), "Flags and pipelines are lanes. The sequence is the call.");
+    assert.equal(sectionLine(delivery.sections, "not a section"), null);
+    assert.equal(READING_BAND, 0.38);
   });
 
   it("reads the six line slots and the accent from the robot contract", async () => {
@@ -93,5 +103,7 @@ describe("field card pages", () => {
     assert.equal(bayes.includes("field-card-robot"), false);
     assert.equal(ai.includes("field-card-robot.mjs"), false);
     assert.equal(ai.includes('id = "field-robot"'), true);
+    assert.match(ai, /function followSections/);
+    assert.match(readFileSync("public/field-card-robot.mjs", "utf8"), /function followSections/);
   });
 });
