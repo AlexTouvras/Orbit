@@ -27,8 +27,10 @@
     "newsletter:notify": "tsx src/scripts/newsletter.ts --notify --force",
     "arch:validate-all": "node scripts/architecture/validate-all.mjs",
     "arch:sync-all": "node scripts/architecture/sync-all.mjs",
+    "docs:check": "node scripts/check-doc-registry.mjs",
+    "docs:check:diff": "node scripts/check-doc-registry.mjs --since origin/main",
     "test:vercel-ignore": "node scripts/vercel-ignore.mjs --test",
-    "ship:check": "node scripts/check-deploy-author.mjs && node scripts/vercel-ignore.mjs --test && npm run build",
+    "ship:check": "node scripts/check-doc-registry.mjs && node scripts/check-deploy-author.mjs && node scripts/vercel-ignore.mjs --test && npm run build",
     "live:fetch-mix": "tsx src/scripts/fetch-live-power-mix.ts",
     "live:fetch-economy": "tsx src/scripts/fetch-live-economy.ts"
   },

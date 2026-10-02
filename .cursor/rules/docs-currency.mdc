@@ -1,0 +1,32 @@
+---
+description: Keep one current doc per topic. Archive the rest. Fail the check when a second current claim appears.
+alwaysApply: true
+---
+
+# Doc currency
+
+`docs/ops/doc-registry.json` names the single owner for each topic. Product truth stays in `PRODUCT.md` and `docs/product/`. Schedules stay in `.state/AUTOMATION_CONTRACT.md`. Diagrams stay in `docs/architecture/`. Working decisions stay in `.state/ARCHITECTURE.md`.
+
+## When behavior changes
+
+Update the owner in the same change:
+
+- Public route, cron, or pipeline that a diagram already draws → edit that file under `docs/architecture/`, list any new file in `docs/architecture/README.md`, then `npm run arch:validate-all` and `npm run arch:sync-all`.
+- Cursor automation JSON under `.cursor/automations/` → update `.state/AUTOMATION_CONTRACT.md` in the same change.
+- Identity, Hub, HUD, or Studio meaning → the matching file under `docs/product/`. Do not invent a second product doc.
+- A reason a future session would get wrong → one dated row in `.state/ARCHITECTURE.md`.
+
+## When text is no longer current
+
+1. Move the prose to `docs/archive/YYYY-MM-DD-slug.md`.
+2. The archive file includes the line `Archived from \`original/path.md\``.
+3. If anything still links the old path (rules, automations, smoke, inbound URLs), leave a pointer there. The pointer says `Superseded by` the owner and links the archive. Keep it under the registry line limit.
+4. Register the pointer on that topic in `docs/ops/doc-registry.json`.
+
+Do not delete the only copy of a decision. Do not leave two files that both tell a new session to read them first.
+
+## Check
+
+`npm run docs:check` runs inside `npm run ship:check`.
+
+When the change touches `.cursor/automations/`, also run `npm run docs:check:diff` (needs `origin/main`). Pull requests run that diff against the base branch.

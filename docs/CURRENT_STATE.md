@@ -1,17 +1,7 @@
 # Current state
 
-> New chats: read this, not conversation history.
+Superseded by `.state/ARCHITECTURE.md` (current shape and decisions), `.state/BACKLOG.md` (open work), and `PRODUCT.md` (product truth).
 
-**Last updated:** 2026-07-26
+Archived copy: [2026-07-current-state.md](archive/2026-07-current-state.md).
 
-## Done
-
-- Wired **Orbit** + **Nordic Equity Heatmap** portfolio Case study links (`caseStudyUrl`).
-- New Write: `/writes/nordic-equity-heatmap` (showcase). Orbit reuses `/writes/building-orbit`.
-- Informed of **JARVIS retirement**: portfolio `projecthelm-jarvis` → `archived` / unfeatured; `architecture-projects.json` + `jarvis.mdx` marked retired; ProjectHelm Write **removed** (2026-07-26); `product-kit.mdc` + charter operating model.
-
-## Next
-
-1. Optional: verify `/portfolio` Case study buttons + open new heatmap Write in browser.
-2. Normal Orbit product work in this repo (rules + skills).
-3. Do not start JARVIS CEO loop / cockpit for Orbit.
+Do not add status here.

@@ -3,7 +3,7 @@
 > Orbit hosts automation JSON backups; some automations bind to other repos.
 > IDE agents use the same `.state/` files plus optional ProjectBrain MCP.
 
-**Last updated:** 2026-09-21
+**Last updated:** 2026-10-02
 
 ## Runtime (this workspace)
 
@@ -72,6 +72,35 @@ Do **not** depend on ProjectBrain MCP. Cloud cannot see `~/.cursor/`.
 
 - Daily ops: no commit/push/merge from the agent
 - Source-repo field cards: no merge except via 1st 18:00 review agent (`Apply review`). Slack is FYI.
+
+## Required secrets (production)
+
+Copied from `docs/automation-contract.md` when that file became a pointer (2026-10-02).
+
+| Secret | Used by |
+|--------|---------|
+| `WEEKLY_WRITE_SECRET` | weekly Write + field-card tokens |
+| `SLACK_ORBIT_WEBHOOK_URL` | essay feedback + weekly Write |
+| `GITHUB_TOKEN` / `FIELD_CARD_GITHUB_TOKEN` | merge field-card PRs + sync; persist digest status |
+| `NEXT_PUBLIC_SITE_URL` | canonical URLs |
+| `RESEND_API_KEY` | contact form + newsletter |
+| `RESEND_NEWSLETTER_FROM` | digest from-address |
+| `RESEND_NEWSLETTER_TEST_TO` | if set, digest mails only this inbox |
+| `RESEND_NEWSLETTER_AUDIENCE_ID` | required only after test-to is unset |
+| `RAVENS_GITHUB_TOKEN` | read `AlexTouvras/ravens` for digest findings (all domains) |
+
+## Ship checklist
+
+```bash
+npm run ship:check
+```
+
+`npm run ship:check` includes `npm run docs:check`. Deploy-safe commits must use the owner GitHub noreply identity (Vercel may block a generic `Cursor Agent` alias).
+
+- [ ] `npm run ship:check` passes locally
+- [ ] Pushed to `main`
+- [ ] Vercel deploy success
+- [ ] One live URL smoke check
 
 ## IDE coexistence
 

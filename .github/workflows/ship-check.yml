@@ -18,6 +18,15 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Doc currency
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git fetch origin "${{ github.base_ref }}" --depth=1
+            node scripts/check-doc-registry.mjs --since "origin/${{ github.base_ref }}"
+          else
+            node scripts/check-doc-registry.mjs
+          fi
+
       - name: Install dependencies
         run: npm ci
 
