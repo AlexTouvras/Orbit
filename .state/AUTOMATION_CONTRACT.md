@@ -66,7 +66,7 @@ Do **not** depend on ProjectBrain MCP. Cloud cannot see `~/.cursor/`.
 |------------|--------|
 | Daily ops | Slack `#ops-channel` only when issues; memories update |
 | Source-repo field card (AI / analytics / delivery) | PR `chore/monthly-refresh-YYYY-MM`; stop for 18:00 review. Do not Slack-Approve from 17:00. |
-| Hosted SDLC / Credit Risk | Orbit PR `chore/monthly-field-cards-YYYY-MM`. SDLC Summary lists opened URLs and `Decision: update` or `Decision: no-change`. Do not merge. |
+| Hosted SDLC / Credit Risk | Orbit PR `chore/monthly-field-cards-YYYY-MM`. SDLC Summary lists opened URLs and `Decision: update` or `Decision: no-change`. Do not merge. SDLC pillars stay plan & design, build & verify, release & deploy, maintain & improve. |
 
 ## Out of scope
 

@@ -6,6 +6,7 @@ import {
   READING_BAND,
   argb,
   cardSpeech,
+  cardsForSheet,
   parseAccents,
   parseFieldCards,
   parseRobotContract,
@@ -56,6 +57,35 @@ describe("field card robot copy", () => {
     assert.equal(sectionLine(delivery.sections, "Tool picker"), "Flags and pipelines are lanes. The sequence is the call.");
     assert.equal(sectionLine(delivery.sections, "not a section"), null);
     assert.equal(READING_BAND, 0.38);
+  });
+
+  it("speaks the Orbit SDLC pillars even when storytelling still hands release to Delivery", () => {
+    const remote = FALLBACK_CARDS.map((card) =>
+      card.id === "sdlc"
+        ? {
+            ...card,
+            lines: [
+              "Release, proof, and cutover live on the Delivery card.",
+              "a",
+              "b",
+              "c",
+              "d",
+              TUCK,
+            ],
+            sections: [{ heading: "Write the plan before the code", line: "old" }],
+          }
+        : card,
+    );
+    const cards = cardsForSheet("sdlc", remote);
+    const sdlc = cards.find((card) => card.id === "sdlc");
+    assert.ok(sdlc);
+    assert.equal(sdlc.lines.length, 6);
+    assert.equal(sdlc.lines.some((line) => line.includes("Delivery")), false);
+    assert.equal(sectionLine(sdlc.sections, "Build software that stays in use"), sdlc.lines[0]);
+    assert.equal(
+      cardsForSheet("delivery", remote).find((card) => card.id === "delivery").lines[0],
+      remote.find((card) => card.id === "delivery").lines[0],
+    );
   });
 
   it("reads the six line slots and the accent from the robot contract", async () => {

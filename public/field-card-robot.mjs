@@ -116,12 +116,21 @@ export const FALLBACK_CARDS = [
     id: "sdlc",
     accent: "delivery",
     lines: [
-      "This card is the order of the work, before the code.",
-      "Write what done means while the plan is still cheap.",
-      "Security sits in design and in test, not after the demo.",
+      "This card is how software stays in use.",
+      "Plan and design who can reach the data.",
       "A test that cannot fail for the right reason is out.",
-      "Release, proof, and cutover live on the Delivery card.",
+      "Release a version people run, and keep the last one.",
+      "A defect goes back through the same four pillars.",
       TUCK,
+    ],
+    sections: [
+      { heading: "Build software that stays in use", line: "This card is how software stays in use." },
+      { heading: "Problem → use → example", line: "Name the pillar before you pick the practice." },
+      { heading: "Tool picker", line: "The picker is a lane. The four pillars set the order." },
+      { heading: "What has to be written down", line: "The plan fits on a page a person will review." },
+      { heading: "Ladder + gates", line: "Verify it, release it, and keep the last version ready." },
+      { heading: "Anti-patterns", line: "A production fix still needs a plan and a test." },
+      { heading: "Always on", line: "Plan, verify, release, and the next fix stay on." },
     ],
   },
   {
@@ -664,6 +673,27 @@ function removeChrome() {
   document.getElementById("field-robot-presence")?.remove();
 }
 
+/**
+ * SDLC is hosted on Orbit. Storytelling `field-cards.ts` can still hand
+ * release to Delivery. The sheet speaks the lines in FALLBACK_CARDS.
+ */
+export function cardsForSheet(cardId, parsed) {
+  const cards = parsed || FALLBACK_CARDS;
+  if (cardId !== "sdlc") return cards;
+  const local = FALLBACK_CARDS.find((card) => card.id === "sdlc");
+  if (!local) return cards;
+  if (!cards.some((card) => card.id === "sdlc")) return [...cards, local];
+  return cards.map((card) =>
+    card.id === "sdlc"
+      ? {
+          ...card,
+          lines: local.lines,
+          sections: local.sections?.length ? local.sections : card.sections,
+        }
+      : card,
+  );
+}
+
 async function mount(cardId) {
   const sha = (await currentStorySha()) || "main";
   const ref = sha;
@@ -674,7 +704,7 @@ async function mount(cardId) {
     fetchBuffer(storyFileUrl(ref, FILES.riv)),
   ]);
 
-  const cards = (cardsText && parseFieldCards(cardsText)) || FALLBACK_CARDS;
+  const cards = cardsForSheet(cardId, cardsText && parseFieldCards(cardsText));
   const accents = (cardsText && parseAccents(cardsText)) || FALLBACK_ACCENTS;
   const speech = cardSpeech(cardId, cards, accents);
   if (!speech) return;
