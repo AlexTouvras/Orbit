@@ -9,7 +9,7 @@ Live: `/sdlc-field-card/` (this folder’s `index.html`). Hub competency: **SDLC
 - H1: `Build software that stays in use`
 - Pillars: Plan & design → Build & verify → Release & deploy → Maintain & improve
 - Security is named in design (who can reach the data, how it can be abused). Verify includes those security checks: they have to fail the build, with the tests.
-- Job table still judges a written plan, threat-in-design, a verified build, a release people run, and a fix that goes back through the same four pillars.
+- Job table still judges a written plan, threat-in-design, a verified build, a release people run, and continuous improvement from what you learn in use. A fix goes back through the same four pillars. The first release is not the end.
 - Technology delivery — calendars, proof, and the cutover sequence — stays on the Delivery card. This card still owns release, deploy, maintain, and improve of the software.
 - Not a SAFe / Scrum brochure. Not an AI-native SDLC brochure.
 

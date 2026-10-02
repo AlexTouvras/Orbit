@@ -655,14 +655,14 @@
           <strong>Plan and design</strong> name the goal, the cost, the rules, and who can reach the data, including how it can be abused. The plan fits on a page a person will review.
           <strong>Build and verify</strong> is the code, the tests, and the security checks. A person drops tests that do not fail for the right reason, and those checks have to fail the build.
           <strong>Release and deploy</strong> puts a version where people run it, and keeps the previous version ready to put back.
-          <strong>Maintain and improve</strong> is the defect, the patch, and the next smaller change, through those same pillars.
+          <strong>Maintain and improve</strong> is the defect, the patch, and continuous improvement from what you learn in use, through those same pillars.
         </p>
       </div>
       <div class="stack" aria-label="Life cycle pillars">
         <div class="layer"><code>Plan &amp; design</code><span>Goal, rules, architecture, and who can reach the data</span></div>
         <div class="layer"><code>Build &amp; verify</code><span>The code, the tests, and the security checks</span></div>
         <div class="layer"><code>Release &amp; deploy</code><span>A version people run, and a way back to the last one</span></div>
-        <div class="layer"><code>Maintain &amp; improve</code><span>The defect, the patch, and the next smaller change</span></div>
+        <div class="layer"><code>Maintain &amp; improve</code><span>The defect, the patch, and continuous improvement</span></div>
       </div>
     </header>
 
@@ -734,7 +734,7 @@
           </tr>
         </tbody>
       </table>
-      <p class="note">Default order: plan and design → build and verify → release and deploy → maintain and improve. A defect in use starts again at plan and design.</p>
+      <p class="note">Default order: plan and design → build and verify → release and deploy → maintain and improve. A defect, or the next improvement, starts again at plan and design.</p>
     </section>
 
     <div class="tri">
@@ -764,7 +764,7 @@
           </div>
           <div class="gate">
             <strong>Memory check</strong>
-            <span>Plan &amp; design = the goal, the rules, and who can reach the data. Build &amp; verify = the code, the tests, and the security checks. Release &amp; deploy = a version in use, with a way back. Maintain &amp; improve = the next fix through those same pillars.</span>
+            <span>Plan &amp; design = the goal, the rules, and who can reach the data. Build &amp; verify = the code, the tests, and the security checks. Release &amp; deploy = a version in use, with a way back. Maintain &amp; improve = the fix, and continuous improvement from use.</span>
           </div>
         </div>
       </section>
@@ -777,7 +777,7 @@
           <li>Tests and security checks that fail for the right reason, and a person reviews</li>
           <li>Release a version and deploy it where people run it</li>
           <li>Keep the previous version deployable</li>
-          <li>A defect or a patch goes back through the same four pillars</li>
+          <li>A defect, a patch, or continuous improvement goes back through the same four pillars</li>
         </ol>
         <div class="gate" style="margin-top:0.75rem">
           <strong>Kill switch</strong>
@@ -799,6 +799,7 @@
         <li>Picking a framework before the plan exists</li>
         <li>A green build that never gets deployed</li>
         <li>A production fix that skips the plan and the test</li>
+        <li>Treating the first release as the end</li>
       </ul>
     </section>
 
@@ -822,7 +823,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> Verify includes the security checks. They have to fail the build.</p>
+      <p class="changed"><b>Changed</b> Improve is continuous improvement from what you learn in use.</p>
     </footer>
   </article>
   <script>

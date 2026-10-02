@@ -123,7 +123,7 @@ export const FIELD_CARDS = [
       "Plan and design who can reach the data.",
       "Security checks sit in verify, with the tests.",
       "Release a version people run, and keep the last one.",
-      "A defect goes back through the same four pillars.",
+      "Continuous improvement comes from what you learn in use.",
       TUCK_LINE,
     ],
     sections: [
@@ -133,7 +133,7 @@ export const FIELD_CARDS = [
       { heading: "What has to be written down", line: "The plan fits on a page a person will review." },
       { heading: "Ladder + gates", line: "Verify includes the security checks, then release." },
       { heading: "Anti-patterns", line: "A production fix still needs a plan and a test." },
-      { heading: "Always on", line: "Plan, verify, release, and the next fix stay on." },
+      { heading: "Always on", line: "Continuous improvement stays on after the release." },
     ],
   },
   {
