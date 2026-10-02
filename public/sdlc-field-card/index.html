@@ -8,7 +8,7 @@
   <meta name="author" content="Alex Touvras" />
   <link rel="canonical" href="https://alextouvras.com/sdlc-field-card/" />
   <meta property="og:title" content="SDLC Field Card — Build software that stays in use" />
-  <meta property="og:description" content="Plan and design, build and verify, release and deploy, maintain and improve. Security is named in design and checked when you verify." />
+  <meta property="og:description" content="Plan and design, build and verify, release and deploy, maintain and improve. Verify includes the security checks." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alextouvras.com/sdlc-field-card/" />
   <meta property="og:image" content="https://alextouvras.com/opengraph-image" />
@@ -652,16 +652,15 @@
         <p class="verbs">Plan &amp; design → build &amp; verify → release &amp; deploy → maintain &amp; improve</p>
         <p class="lede">
           The software development life cycle is four pillars.
-          <strong>Plan and design</strong> name the goal, the cost, the rules, and who can reach the data. The plan fits on a page a person will review.
-          <strong>Build and verify</strong> is the code, and tests a person drops when they do not fail for the right reason.
+          <strong>Plan and design</strong> name the goal, the cost, the rules, and who can reach the data, including how it can be abused. The plan fits on a page a person will review.
+          <strong>Build and verify</strong> is the code, the tests, and the security checks. A person drops tests that do not fail for the right reason, and those checks have to fail the build.
           <strong>Release and deploy</strong> puts a version where people run it, and keeps the previous version ready to put back.
           <strong>Maintain and improve</strong> is the defect, the patch, and the next smaller change, through those same pillars.
-          Security is named in design, including how the data can be abused, and those checks have to fail the build.
         </p>
       </div>
       <div class="stack" aria-label="Life cycle pillars">
         <div class="layer"><code>Plan &amp; design</code><span>Goal, rules, architecture, and who can reach the data</span></div>
-        <div class="layer"><code>Build &amp; verify</code><span>The code, and tests that fail for the right reason</span></div>
+        <div class="layer"><code>Build &amp; verify</code><span>The code, the tests, and the security checks</span></div>
         <div class="layer"><code>Release &amp; deploy</code><span>A version people run, and a way back to the last one</span></div>
         <div class="layer"><code>Maintain &amp; improve</code><span>The defect, the patch, and the next smaller change</span></div>
       </div>
@@ -765,7 +764,7 @@
           </div>
           <div class="gate">
             <strong>Memory check</strong>
-            <span>Plan &amp; design = the goal, the rules, and who can reach the data. Build &amp; verify = the code and the tests. Release &amp; deploy = a version in use, with a way back. Maintain &amp; improve = the next fix through those same pillars.</span>
+            <span>Plan &amp; design = the goal, the rules, and who can reach the data. Build &amp; verify = the code, the tests, and the security checks. Release &amp; deploy = a version in use, with a way back. Maintain &amp; improve = the next fix through those same pillars.</span>
           </div>
         </div>
       </section>
@@ -775,14 +774,14 @@
         <ol class="ladder">
           <li>Plan and design on one page, including who can reach the data</li>
           <li>Smallest build on trunk / flag</li>
-          <li>Tests that fail for the right reason, and a person reviews</li>
+          <li>Tests and security checks that fail for the right reason, and a person reviews</li>
           <li>Release a version and deploy it where people run it</li>
           <li>Keep the previous version deployable</li>
           <li>A defect or a patch goes back through the same four pillars</li>
         </ol>
         <div class="gate" style="margin-top:0.75rem">
           <strong>Kill switch</strong>
-          <span>If you can’t name the plan, the test, and who reviews, you don’t merge. If you can’t put the last version back, you don’t call it released.</span>
+          <span>If you can’t name the plan, the test, the security check, and who reviews, you don’t merge. If you can’t put the last version back, you don’t call it released.</span>
         </div>
       </section>
     </div>
@@ -823,7 +822,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> Pillars are plan &amp; design, build &amp; verify, release &amp; deploy, and maintain &amp; improve</p>
+      <p class="changed"><b>Changed</b> Verify includes the security checks. They have to fail the build.</p>
     </footer>
   </article>
   <script>

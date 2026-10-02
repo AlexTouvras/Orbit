@@ -143,11 +143,11 @@ export const competencies: Competency[] = [
     title: "Software Development Life Cycle",
     shortTitle: "SDLC",
     description:
-      "Plan and design the goal, the rules, and who can reach the data. Build and verify the code. Release and deploy a version people run. Maintain and improve through the same four pillars.",
+      "Plan and design the goal, the rules, and who can reach the data. Build and verify the code, the tests, and the security checks. Release and deploy a version people run. Maintain and improve through the same four pillars.",
     hudTitle: "Build software that stays in use",
     hudVerbs: "Plan & design → build & verify → release & deploy → maintain & improve",
     hudDescription:
-      "Plan and design the goal, the rules, and who can reach the data. Build and verify the code. Release and deploy a version people run, with the last one still ready. A defect goes back through the same four pillars.",
+      "Plan and design the goal, the rules, and who can reach the data. Build and verify the code, the tests, and the security checks. Release and deploy a version people run, with the last one still ready. A defect goes back through the same four pillars.",
     accent: "violet",
     icon: GitBranch,
     href: "/sdlc-field-card/index.html",

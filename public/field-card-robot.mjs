@@ -118,7 +118,7 @@ export const FALLBACK_CARDS = [
     lines: [
       "This card is how software stays in use.",
       "Plan and design who can reach the data.",
-      "A test that cannot fail for the right reason is out.",
+      "Security checks sit in verify, with the tests.",
       "Release a version people run, and keep the last one.",
       "A defect goes back through the same four pillars.",
       TUCK,
@@ -128,7 +128,7 @@ export const FALLBACK_CARDS = [
       { heading: "Problem → use → example", line: "Name the pillar before you pick the practice." },
       { heading: "Tool picker", line: "The picker is a lane. The four pillars set the order." },
       { heading: "What has to be written down", line: "The plan fits on a page a person will review." },
-      { heading: "Ladder + gates", line: "Verify it, release it, and keep the last version ready." },
+      { heading: "Ladder + gates", line: "Verify includes the security checks, then release." },
       { heading: "Anti-patterns", line: "A production fix still needs a plan and a test." },
       { heading: "Always on", line: "Plan, verify, release, and the next fix stay on." },
     ],
