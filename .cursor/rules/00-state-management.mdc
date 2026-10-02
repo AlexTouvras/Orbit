@@ -40,6 +40,8 @@ When you complete a sub-task, you MUST:
 
 If you introduce a new dependency, file structure, or design pattern, document it in `.state/ARCHITECTURE.md` in the same turn.
 
+Doc currency (one owner per topic, archive the rest): `.cursor/rules/docs-currency.mdc`. `npm run docs:check` must pass.
+
 ## Git
 
 - `.state/CURRENT_TASK.md` is local-only (gitignored)

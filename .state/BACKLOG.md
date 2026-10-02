@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Doc currency guard — `docs/ops/doc-registry.json`, `docs/archive/`, `npm run docs:check` on ship. Pointers replace `docs/CURRENT_STATE.md` and `docs/automation-contract.md`.
 - [x] Arc HUD line under the name is Warrior (not the site role)
 - [x] Private `/studio/directives` from the governance snapshot (`data/directive-archive.json`, Studio card). Public site does not list it.
 - [x] Public title is AI & Data Systems Lead; portrait opens the Arc HUD (`/card?face=arc`)

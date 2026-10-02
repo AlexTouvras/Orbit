@@ -8,6 +8,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 
 **Product truth (2026-09-23):** Root `PRODUCT.md` + `docs/product/*` are authoritative for identity layers (HUd WHO / Hub WHAT / Studio WHERE / timeline HOW). Agents must Scope-check via `docs/product/AGENT_RULES.md`. Wired from `.cursor/rules/product-kit.mdc`.
 
+**Doc currency (2026-10-02):** One owner per topic in `docs/ops/doc-registry.json`. Retired prose moves to `docs/archive/` and the old path stays as a short `Superseded by` pointer when links still need it. `npm run docs:check` (inside `ship:check`) fails if a pointer grows, a primacy phrase shows up outside the owner, README cites a missing path, or a diagram file is missing from `docs/architecture/README.md`. Pull requests also fail when `.cursor/automations/` changes without `.state/AUTOMATION_CONTRACT.md`. Rule: `.cursor/rules/docs-currency.mdc`.
+
 ## Data shapes
 
 | Name | Shape / location | Notes |
@@ -140,6 +142,9 @@ data/studio-roadmap.json
 data/studio-roadmap.seed.json
 PRODUCT.md
 docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, AGENT_RULES
+docs/ops/doc-registry.json   # one owner per doc topic; pointers + couplings
+docs/archive/                # retired prose (Archived from `path`)
+scripts/check-doc-registry.mjs
 canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 .state/
 ```
@@ -148,6 +153,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-02 | Doc currency is a registry plus `docs:check`, not a periodic rewrite | Two files both said "read this first" (`docs/CURRENT_STATE.md` from July, `docs/automation-contract.md` beside `.state/AUTOMATION_CONTRACT.md`). Secrets and the ship checklist moved into the `.state/` contract. The old files are pointers. Archives keep the prose. README no longer tells people to add `src/content/projects/*.mdx`. |
 | 2026-09-30 | Private `/studio/directives` reads the governance snapshot | `AlexTouvras/AlexTouvras` `governance/orbit-studio/` is the published view of the directive archive. Studio home links it. Login, `noindex`, and `robots` disallow `/studio`. The public site does not list it. Edits stay in that archive; refresh by copying a new `data/directive-archive.json`. |
 | 2026-10-01 | Field-card robot speech follows the section on screen | Storytelling PR 30. `public/field-card-robot.mjs` is `host/field-card-robot.mjs`. The AI sheet inlines `host/ai-field-card-robot.mjs`. Sync does not copy either file. |
 | 2026-09-30 | One storytelling robot on every homepage field card | Storytelling PR 25 binds six lines and an accent. Orbit sheets load that character from `main` (`public/field-card-robot.mjs`). Agentic AI keeps its own script. Approve re-inserts the tag on Analytics and Delivery. Bayes stays without it. |

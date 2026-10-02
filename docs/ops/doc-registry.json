@@ -1,0 +1,97 @@
+{
+  "pointerMaxLines": 28,
+  "archiveDir": "docs/archive",
+  "architectureIndex": "docs/architecture/README.md",
+  "readmePathScan": "README.md",
+  "primacyPhrases": ["New chats: read this", "Canonical workspace:"],
+  "forbiddenClaims": [
+    {
+      "path": "README.md",
+      "text": "src/content/projects"
+    }
+  ],
+  "topics": [
+    {
+      "id": "product",
+      "owner": "PRODUCT.md",
+      "companions": [
+        "docs/product/README.md",
+        "docs/product/VISION.md",
+        "docs/product/POSITIONING.md",
+        "docs/product/HUD_SPEC.md",
+        "docs/product/STUDIO_ROADMAP.md",
+        "docs/product/WEBSITE_ARCHITECTURE.md",
+        "docs/product/AGENT_RULES.md",
+        "docs/product/EVIDENCE_AUDIT.md"
+      ]
+    },
+    {
+      "id": "automations",
+      "owner": ".state/AUTOMATION_CONTRACT.md",
+      "pointers": [
+        {
+          "path": "docs/automation-contract.md",
+          "archive": "docs/archive/2026-09-automation-contract.md"
+        }
+      ]
+    },
+    {
+      "id": "working-memory",
+      "owner": ".state/ARCHITECTURE.md",
+      "companions": [".state/BACKLOG.md"],
+      "pointers": [
+        {
+          "path": "docs/CURRENT_STATE.md",
+          "archive": "docs/archive/2026-07-current-state.md"
+        }
+      ]
+    },
+    {
+      "id": "architecture-diagrams",
+      "owner": "docs/architecture/README.md",
+      "companions": [
+        "docs/architecture/system-overview.md",
+        "docs/architecture/weekly-write-pipeline.md",
+        "docs/architecture/field-card-approve.md",
+        "docs/architecture/field-card-review.md",
+        "docs/architecture/ops-fleet.md",
+        "docs/architecture/week-log.md",
+        "docs/architecture/diagram-pipeline.md"
+      ]
+    },
+    {
+      "id": "daily-ops",
+      "owner": "docs/ops/daily-check.md",
+      "companions": ["docs/ops/fleet.yaml"]
+    },
+    {
+      "id": "essay-voice",
+      "owner": "docs/essay-voice.md"
+    },
+    {
+      "id": "content-guide",
+      "owner": "CONTENT.md"
+    },
+    {
+      "id": "deploy-vercel",
+      "owner": "DEPLOY-VERCEL.md"
+    },
+    {
+      "id": "deploy-oracle",
+      "owner": "DEPLOY.md",
+      "companions": ["deploy/ORACLE-CHECKLIST.md"]
+    },
+    {
+      "id": "charter",
+      "owner": "PROJECT_CHARTER.md"
+    }
+  ],
+  "couplings": [
+    {
+      "id": "cursor-automations",
+      "when": [".cursor/automations/"],
+      "alsoTouch": [".state/AUTOMATION_CONTRACT.md"],
+      "message": "Automation JSON changed. Update .state/AUTOMATION_CONTRACT.md in the same change."
+    }
+  ]
+}
