@@ -1,7 +1,88 @@
 {
-  "generatedAt": "2026-10-01T06:46:54.614Z",
-  "count": 265,
+  "generatedAt": "2026-10-02T06:46:59.978Z",
+  "count": 263,
   "items": [
+    {
+      "id": "97db45500e1a",
+      "title": "Faster String Aggregations with Dimension Tables",
+      "link": "https://duckdb.org/2026/10/02/dimension-tables.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-10-02T00:00:00.000Z",
+      "contentSnippet": "Analytical workloads are full of repeated strings: product names, country names, station names, user agents, category labels. Take DuckDB's public train services dataset, which has one row for every stop a Dutch railway train makes. The data comes from the open datasets published…"
+    },
+    {
+      "id": "32acac8fa6db",
+      "title": "Navigating geoeconomic risk in the US stock market",
+      "link": "https://cepr.org/voxeu/columns/navigating-geoeconomic-risk-us-stock-market",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-01T23:00:00.000Z",
+      "contentSnippet": "Geoeconomic risk has become a first-order concern for investors. This column shows that domestic US stocks expose investors to substantial geoeconomic risk through firms’ global supply-chain relations. Stocks of US suppliers decline sharply after the announcement that export cont…"
+    },
+    {
+      "id": "0aae1476f059",
+      "title": "Fourteen ways to stop lying to yourself: the Wizard's Rules in one place",
+      "link": "https://www.scrum.org/resources/blog/fourteen-ways-stop-lying-yourself-wizards-rules-one-place",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-01T22:00:00.000Z",
+      "contentSnippet": "Fourteen Wizard’s Rules ago, this series made a claim: most agile failures aren’t failures of process, they’re failures of honesty. An organization rarely breaks because it skipped a ceremony. It breaks because it avoided a reality, protected a story, or kept doing something nobo…"
+    },
+    {
+      "id": "e79eb7ef5d76",
+      "title": "Lakebase Postgres branch-based restores for fast recovery at scale",
+      "link": "https://www.databricks.com/blog/lakebase-postgres-branch-based-restores-fast-recovery-scale",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-01T17:53:52.000Z",
+      "contentSnippet": "In managed OLTP, restores have always been painfully slow and they get slower at..."
+    },
+    {
+      "id": "7e67b43cf9d0",
+      "title": "The eternal complement",
+      "link": "https://openai.com/index/the-eternal-complement",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-01T17:00:00.000Z",
+      "contentSnippet": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress."
+    },
+    {
+      "id": "a80484c2d584",
+      "title": "How Albertsons Companies is reimagining retail from the inside out",
+      "link": "https://openai.com/index/albertsons-reimagining-retail",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-01T16:00:00.000Z",
+      "contentSnippet": "Albertsons Cos. is using ChatGPT Enterprise and the OpenAI API to help teams work faster and make grocery shopping easier for millions of customers."
+    },
+    {
+      "id": "1eadfb1cd5ee",
+      "title": "Claude-shaped science",
+      "link": "https://www.anthropic.com/research/claude-shaped-science",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-01T14:02:00.000Z",
+      "contentSnippet": "Guest author Prof. Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems: ones best suited to the capabilities of the current generation of LLM tools. This led him to build BootLoops, a toolkit for exact calcu…"
+    },
+    {
+      "id": "82ffe0e1ed6b",
+      "title": "Connecting customer context to measurable ROI with agentic marketing",
+      "link": "https://www.databricks.com/blog/connecting-customer-context-measurable-roi-agentic-marketing",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-01T12:11:31.000Z",
+      "contentSnippet": "Marketing leaders today face greater complexity than ever before. They work with..."
+    },
+    {
+      "id": "0460e0adb0a8",
+      "title": "PRA Regulatory Digest – September 2026",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/regulatory-digest/2026/september-2026",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-10-01T09:00:00.000Z",
+      "contentSnippet": "The PRA Regulatory Digest is for people working in the UK financial services industry and highlights key regulatory news and publications delivered for the month."
+    },
     {
       "id": "a48e6a8f4e9b",
       "title": "IP Functions are Generally Available, bringing high-performance network analytics to the Lakehouse",
@@ -10,6 +91,24 @@
       "category": "Data",
       "pubDate": "2026-10-01T01:46:05.000Z",
       "contentSnippet": "IP data is warehousing dataEvery firewall, load balancer, VPN, CDN edge, DNS resolver,..."
+    },
+    {
+      "id": "37913aa0381f",
+      "title": "AI Needs Data, Data Needs AI: What You'll Learn at Data Outpost",
+      "link": "https://motherduck.com/blog/data-outpost-2026-agenda",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-01T00:00:00.000Z",
+      "contentSnippet": "Data Outpost is an AI and data conference in San Francisco. Its main day, November 5, 2026, has 13 talks and panels from teams at Canva, Stripe, DoorDash, Posit, dbt and more. Here's what each session covers, from agents that write back to context layers, SQL harnesses, and AI fo…"
+    },
+    {
+      "id": "1d20657e6835",
+      "title": "Circular relationships among AI firms",
+      "link": "https://www.bis.org/publications/bulletin-137-circular-relationships-among-ai-firms",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-01T00:00:00.000Z",
+      "contentSnippet": "Between 2021 and 2025, 28.7% of artificial intelligence (AI) firms’ investment deals (by deal value) involved a target company that was also an AI firm, while 55.2% of incoming investments in AI firms came from other AI firms."
     },
     {
       "id": "e1d9917f2540",
@@ -300,6 +399,15 @@
       "contentSnippet": "Explore more than 20 announcements from OpenAI DevDay 2026, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders."
     },
     {
+      "id": "6cf866657b71",
+      "title": "FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents",
+      "link": "https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/",
+      "source": "Microsoft Fabric Blog",
+      "category": "Analytics",
+      "pubDate": "2026-09-29T06:35:00.000Z",
+      "contentSnippet": "Microsoft Fabric and SQL innovations announced at FabCon and SQLCon Barcelona 2026 help organizations build trusted data foundations for AI. The post FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents appeared first on Microsoft Fab…"
+    },
+    {
       "id": "884977ecb800",
       "title": "Introducing dots",
       "link": "https://openai.com/index/introducing-dots",
@@ -354,15 +462,6 @@
       "contentSnippet": "Geopolitical tensions are increasingly reshaping the flow of trade, investment and capital flows. This column documents that the same process is also reshaping bank lending. Using confidential supervisory data on thousands of international bank lending relationships, the authors…"
     },
     {
-      "id": "3899d52a5026",
-      "title": "Better work, not always better workers",
-      "link": "https://cepr.org/voxeu/columns/better-work-not-always-better-workers",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-28T23:00:00.000Z",
-      "contentSnippet": "Professional judgement comes from learning by doing, but AI has the potential to disrupt this learning process. This column explores how randomised access to an AI patent-writing product affects the performance of lawyers on certain writing tasks. Using the AI tool raised the qua…"
-    },
-    {
       "id": "8bfa6ceb2929",
       "title": "How Databricks rolls out frontier models to 12,000 employees on Day 1",
       "link": "https://www.databricks.com/blog/how-databricks-rolls-out-frontier-models-12000-employees-day-1",
@@ -390,33 +489,6 @@
       "contentSnippet": "A manufacturing defect rarely belongs to one system. A scrap spike may relate to..."
     },
     {
-      "id": "cfe8e900401f",
-      "title": "How we will do better for Australia",
-      "link": "https://openai.com/index/how-we-will-do-better-for-australia",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-28T19:00:00.000Z",
-      "contentSnippet": "OpenAI apologises for incidents involving Australian government websites and outlines stronger safeguards and support to strengthen Australia’s cyber defences."
-    },
-    {
-      "id": "cf468ec39dd6",
-      "title": "Towards safety cases for frontier AI training",
-      "link": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-28T19:00:00.000Z",
-      "contentSnippet": "Our early guidelines for safety cases in frontier AI training cover technical safeguards, operational practices, and investigating misalignment incidents"
-    },
-    {
-      "id": "26f8d7081d07",
-      "title": "How to roll out Genie One: A step-by-step enterprise playbook",
-      "link": "https://www.databricks.com/blog/how-roll-out-genie-one-step-step-enterprise-playbook",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-28T16:30:00.000Z",
-      "contentSnippet": "A regional sales director wants to know why the Northeast pipeline looks soft this quarter..."
-    },
-    {
       "id": "2069ce7b61ef",
       "title": "AI Made Engineering Faster. Why Not The Business?",
       "link": "https://www.scrum.org/resources/blog/ai-made-engineering-faster-why-not-business",
@@ -424,24 +496,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-28T13:00:00.000Z",
       "contentSnippet": "Originally published on yuvalyeret.com. Why More AI Activity Is Not Showing Up In The Business You can 10x engineering and still not 10x the business. AI agents are getting very good at coding, debugging, test generation, documentation, and a lot of engineering activities. That i…"
-    },
-    {
-      "id": "3ae70186f32f",
-      "title": "The 24 most commonly misunderstood marketing data terms",
-      "link": "https://www.databricks.com/blog/helping-marketing-data-engineering-same-word-different-meaning",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-28T07:01:10.000Z",
-      "contentSnippet": "Imagine you’re a marketer planning a win-back campaign and you ask your data team for a list of “inactive customers.” Y..."
-    },
-    {
-      "id": "216d56bba26c",
-      "title": "The Lenfest Institute grows landmark program with expanded OpenAI support",
-      "link": "https://openai.com/index/lenfest-ai-collaborative-expansion",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-28T07:00:00.000Z",
-      "contentSnippet": "OpenAI is expanding the Lenfest AI Collaborative and Fellowship Program with $5 million in funding and up to $5 million in software credits and engineering support."
     },
     {
       "id": "82913a57eebf",
@@ -669,15 +723,6 @@
       "contentSnippet": "Key takeawaysArtificial intelligence (AI) and robots have the potential to offset the macroeconomic consequences of an ageing workforce, but the ability to automate jobs depends on which industries are ageing.AI and robots substitute most readily for jobs in industries with young…"
     },
     {
-      "id": "952c54fa1fd4",
-      "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
-      "link": "https://www.anthropic.com/research/claude-discovers-novel-enzyme-system",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-23T16:06:00.000Z",
-      "contentSnippet": "We’re announcing a new life sciences research group and laboratory at Anthropic. This post introduces the team behind this work and shares early results in which Claude discovered a novel enzyme system with properties reminiscent of CRISPR, with only high-level direction from our…"
-    },
-    {
       "id": "4c4abcff4acd",
       "title": "Advancing Private AI Compute with secure, server-side memory",
       "link": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
@@ -811,24 +856,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-21T13:00:00.000Z",
       "contentSnippet": "Originally published on yuvalyeret.com. How do we deliver valuable real-world AI impact through solutions that solve problems, using some of what we've learned by building products over the last couple of decades? We're not seeing the value yet Unless you've been in a cave, you'r…"
-    },
-    {
-      "id": "e53dda14685d",
-      "title": "Cognitive Trap: Planning Certainty",
-      "link": "https://www.scrum.org/resources/blog/cognitive-trap-planning-certainty",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-21T04:00:00.000Z",
-      "contentSnippet": "Planning Certainty Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, and ada…"
-    },
-    {
-      "id": "cadfc7b3ccdf",
-      "title": "Does Your AI Know the Scrum Guide? Twelve Questions to Find Out",
-      "link": "https://www.scrum.org/resources/blog/does-your-ai-know-scrum-guide-twelve-questions-find-out",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-21T02:57:20.000Z",
-      "contentSnippet": "Image More and more participants in my Professional Scrum Master classes arrive with Scrum \"rules\" they picked up from an AI chatbot. Some of those rules are accurate. Some stopped being true in November 2020. And a few were never part of Scrum at all. The trouble is that from th…"
     },
     {
       "id": "30fd4a039425",
@@ -1009,15 +1036,6 @@
       "category": "Data",
       "pubDate": "2026-09-15T00:00:00.000Z",
       "contentSnippet": "SQLite, Postgres, DuckDB and 20 others: they all write, store and read data. The questions you ask every day tell you which one you need."
-    },
-    {
-      "id": "45f80c30fed0",
-      "title": "Hidden by complexity? Measuring stablecoin, crypto and decentralised finance ecosystems",
-      "link": "https://www.bis.org/publications/working-paper-1377-hidden-complexity-measuring-stablecoin-crypto-and-decentralised-finance-ecosystems",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-15T00:00:00.000Z",
-      "contentSnippet": "Decentralised finance data presents a distinctive paradox: while every data point is publicly recorded and accessible, deriving meaningful insights is obscured by the scale, fragmentation and complexity of the ecosystem. Key metrics illustrate that the rapidly evolving DeFi ecosy…"
     },
     {
       "id": "359a014790c8",
@@ -1416,15 +1434,6 @@
       "contentSnippet": "When I implemented DuckDB's first recursive CTE operator in 2020, correctness determined the design: evaluate the non-recursive term once, then evaluate the recursive term until the next working table is empty. That established the right semantic contract, but reusable runtime st…"
     },
     {
-      "id": "4a7aaf7fd896",
-      "title": "DuckDB Table Functions in Java",
-      "link": "https://duckdb.org/2026/08/25/table-functions-in-java.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-08-25T00:00:00.000Z",
-      "contentSnippet": "In a large organization, data is spread across many systems, including relational databases, document stores, message queues, data lakes, and cloud data warehouses. Some of these systems can be reached only through a vendor SDK, usually provided in Java, or a SOAP endpoint, and m…"
-    },
-    {
       "id": "887a4f8a3654",
       "title": "MotherDuck Acquires Tower: Agents Can Answer. Now They Can Build.",
       "link": "https://motherduck.com/blog/motherduck-acquires-tower",
@@ -1468,15 +1477,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-23T15:49:31.000Z",
       "contentSnippet": "There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…"
-    },
-    {
-      "id": "9523952ef85b",
-      "title": "AI Writes the Semantic Layer",
-      "link": "https://motherduck.com/blog/AI-writes-the-semantic-layer",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-20T00:00:00.000Z",
-      "contentSnippet": "We proved that AI agents could build a semantic layer. The more interesting result was that the semantic layer itself became disposable. Q&A pairs are unreasonably effective at capturing business intent and give agents something concrete to iterate with. If code can be regenerate…"
     },
     {
       "id": "c0d3ea0920c2",
@@ -1686,15 +1686,6 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
-      "id": "07b1c1c9fdb7",
-      "title": "Credit Surfaces and Economic Uncertainty",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
-    },
-    {
       "id": "30c8bc5d5e3c",
       "title": "Structural Estimation with Unstructured Data",
       "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
@@ -1711,6 +1702,15 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
+    },
+    {
+      "id": "07b1c1c9fdb7",
+      "title": "Credit Surfaces and Economic Uncertainty",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
       "id": "61ad811164ff",
@@ -1738,15 +1738,6 @@
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
       "contentSnippet": "Low Impact Amendments Consultation July 2026"
-    },
-    {
-      "id": "d834dadfb202",
-      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "fb549b859ee4",
@@ -2260,15 +2251,6 @@
       "category": "Analytics",
       "pubDate": "2026-03-09T20:12:35.000Z",
       "contentSnippet": "We're launching a new podcast called \"The Shift,\" which does exactly that. Grounded in questions we heard from you after Ignite news, we're releasing eight episodes that bring engineering, product, and strategy perspectives together. The post Unpacking your top questions on agent…"
-    },
-    {
-      "id": "fa6a6191b9f6",
-      "title": "Top sessions you won’t want to miss at the Microsoft Fabric Community Conference 2026",
-      "link": "https://www.microsoft.com/en-us/microsoft-fabric/blog/2026/02/03/top-sessions-you-wont-want-to-miss-at-the-microsoft-fabric-community-conference-2026/",
-      "source": "Microsoft Fabric Blog",
-      "category": "Analytics",
-      "pubDate": "2026-02-03T16:00:00.000Z",
-      "contentSnippet": "The Microsoft Fabric Community Conference (FabCon) is returning stateside in just a few weeks, taking place at the Georgia World Congress Center in Atlanta, March 16 - 20, and it’s shaping up to be our biggest event yet. The post Top sessions you won’t want to miss at the Microso…"
     },
     {
       "id": "dd673b26a4ff",
