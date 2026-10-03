@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cv } from "@/content/cv";
+import { profile as profileDefaults } from "@/content/profile";
 import { getEditableProfile } from "@/lib/profile-store";
 import { AboutHero } from "@/components/about/AboutHero";
 import { BackgroundSections } from "@/components/about/BackgroundSections";
@@ -12,8 +13,7 @@ const languageCodes: Record<string, string> = {
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "Background, experience, education, and skills — AI & Data Systems Lead; financial services as domain depth, not a ceiling.",
+  description: profileDefaults.aboutStatement,
   alternates: { canonical: "/about" },
 };
 

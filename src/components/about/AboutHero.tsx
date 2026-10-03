@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { UserRound } from "lucide-react";
+import { profile } from "@/content/profile";
 import { Badge } from "@/components/ui/Badge";
 import { MissionHero } from "@/components/ui/MissionHero";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
@@ -62,8 +63,10 @@ export function AboutHero({
       avatarAlt=""
       title={name}
       titleNote={role}
-      headline={{ line: "Credit, then", accent: "the systems." }}
-      description="PD models and scorecards, then data, then Azure application operations. Consumer finance is the deepest domain so far."
+      headline={{ line: profile.aboutStatement, size: "display" }}
+      description={profile.aboutLede.map((paragraph) => (
+        <p key={paragraph}>{paragraph}</p>
+      ))}
       stats={stats}
       meta={
         <Link

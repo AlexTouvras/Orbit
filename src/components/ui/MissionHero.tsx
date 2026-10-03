@@ -49,10 +49,10 @@ interface MissionHeroProps {
   title: string;
   /** Second kicker line under `title` — the public role, in the HUD's own casing. */
   titleNote?: string;
-  /** Two-line display title. `title` becomes the mono kicker above it. */
-  headline?: { line: string; accent: string };
+  /** Display title. `title` becomes the mono kicker above it. */
+  headline?: { line: string; accent?: string; size?: "story" | "display" };
   subtitle?: string;
-  description?: string;
+  description?: ReactNode;
   stats?: MissionStat[];
   actions?: ReactNode;
   meta?: ReactNode;
@@ -139,6 +139,7 @@ export function MissionHero({
             kicker={<Kicker title={title} titleNote={titleNote} />}
             line={headline.line}
             accent={headline.accent}
+            size={headline.size}
           />
         ) : (
           <div className="flex items-center gap-4 sm:gap-5">
@@ -172,9 +173,9 @@ export function MissionHero({
 
       {description && (
         <HeroItem delay={0.18} animate={animate}>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-            {description}
-          </p>
+          <div className="mt-5 max-w-2xl space-y-4 text-base leading-relaxed text-slate-300 sm:text-lg">
+            {typeof description === "string" ? <p>{description}</p> : description}
+          </div>
         </HeroItem>
       )}
 
