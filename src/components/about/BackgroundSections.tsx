@@ -1,13 +1,13 @@
-import { MapPin, Mail, ArrowUpRight } from "lucide-react";
+import { MapPin, Mail, ArrowUpRight, Download } from "lucide-react";
 import Link from "next/link";
-import { cv } from "@/content/cv";
+import { cv, placePath } from "@/content/cv";
 import { profile as profileDefaults } from "@/content/profile";
 import { getEditableProfile } from "@/lib/profile-store";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { GlassCard } from "@/components/ui/GlassCard";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
 import { ExperienceTimeline } from "@/components/about/ExperienceTimeline";
+import { PlaceLink } from "@/components/about/PlaceLink";
 
 const skillTones = ["cyan", "blue", "violet"] as const;
 
@@ -29,6 +29,7 @@ function withOrbitMark(text: string) {
 export function BackgroundSections() {
   const profile = getEditableProfile();
   const email = profile.email || cv.email;
+  const resumeUrl = profile.resumeUrl || "/resume.pdf";
 
   return (
     <>
@@ -93,147 +94,139 @@ export function BackgroundSections() {
           <SectionHeading
             eyebrow="Career"
             title="Experience"
-            description="Seven years across Nordic consumer finance — from credit analysis to technology delivery lead."
+            description="Nordic consumer finance, from credit analysis to technology delivery, plus earlier roles in Helsinki and Greece."
           />
         </Reveal>
 
         <ExperienceTimeline />
       </section>
 
-      <section
-        id="education-skills"
-        className="scroll-mt-28 grid gap-16 lg:grid-cols-2 lg:gap-8"
-      >
-        <div id="education">
-          <Reveal>
-            <SectionHeading
-              eyebrow="Academic"
-              title="Education"
-              description="Quantitative finance and big data analytics foundations."
-            />
-          </Reveal>
-          <div className="mt-8 space-y-4">
-            {cv.education.map((ed) => {
-              const card = (
-                <GlassCard
-                  hover={Boolean(ed.thesisUrl)}
-                  className="group relative p-5"
-                >
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                    <h3 className="font-semibold text-white">{ed.degree}</h3>
-                    {ed.period && (
-                      <span className="font-mono text-xs text-slate-400">
-                        {ed.period}
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-1 text-sm text-slate-300">{ed.school}</p>
-                  {ed.thesisTitle && (
-                    <p className="mt-2 text-sm leading-relaxed text-slate-300">
-                      Thesis: {ed.thesisTitle}
-                    </p>
-                  )}
-                  {ed.detail && (
-                    <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                      {ed.detail}
-                    </p>
-                  )}
-                  {ed.thesisUrl && (
-                    <p className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.15em] text-neon-cyan transition-colors group-hover:text-white">
-                      Press for master&apos;s thesis
-                      <ArrowUpRight
-                        className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        aria-hidden
-                      />
-                    </p>
-                  )}
-                </GlassCard>
-              );
-
-              return (
-                <Reveal key={ed.degree}>
-                  {ed.thesisUrl ? (
-                    <a
-                      href={ed.thesisUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="focus-ring block rounded-2xl"
-                      aria-label={`${ed.degree} — press for master's thesis`}
-                    >
-                      {card}
-                    </a>
-                  ) : (
-                    card
-                  )}
-                </Reveal>
-              );
-            })}
-          </div>
-        </div>
-
-        <div id="skills" className="space-y-16">
-          <div>
-            <Reveal>
-              <SectionHeading
-                eyebrow="Toolkit"
-                title="Skills"
-                description="Credit risk, data analytics, and delivery operations."
-              />
-            </Reveal>
-            <div className="mt-8 space-y-6">
-              {cv.skills.map((group, gi) => (
-                <Reveal key={group.label} delay={gi * 0.03}>
-                  <div>
-                    <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-slate-400">
-                      {group.label}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {group.items.map((item) => (
-                        <Badge
-                          key={item}
-                          tone={skillTones[gi % skillTones.length]}
-                        >
-                          {item}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <Reveal>
-              <SectionHeading eyebrow="Multilingual" title="Languages" />
-            </Reveal>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {cv.languages.map((lang) => (
-                <Badge key={lang.name} tone="neutral">
-                  {lang.name} · {lang.level}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          {cv.training.length > 0 && (
-            <div>
-              <Reveal>
-                <SectionHeading eyebrow="Continuous" title="Training & more" />
-              </Reveal>
-              <ul className="mt-6 space-y-3">
-                {cv.training.map((t) => (
-                  <li
-                    key={t}
-                    className="relative pl-4 text-sm leading-relaxed text-slate-300 before:absolute before:left-0 before:top-2.5 before:h-1 before:w-1 before:rounded-full before:bg-neon-cyan/60"
+      <section id="education" className="scroll-mt-28">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Academic"
+            title="Education"
+            description="Quantitative finance and big data analytics foundations."
+          />
+        </Reveal>
+        <ol className="mt-10">
+          {cv.education.map((ed) => (
+            <li key={ed.slug} className="border-t border-white/10">
+              <div className="py-10">
+                <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+                  <PlaceLink
+                    href={placePath(ed.slug)}
+                    name={ed.school}
+                    mark={ed.mark}
+                  />
+                  {ed.period ? (
+                    <span className="font-mono text-xs text-slate-400">
+                      {ed.period}
+                    </span>
+                  ) : null}
+                </div>
+                <p className="orbit-accent mt-6 font-medium">{ed.degree}</p>
+                {ed.thesisTitle ? (
+                  <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                    Thesis: {ed.thesisTitle}
+                  </p>
+                ) : null}
+                {ed.detail ? (
+                  <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                    {ed.detail}
+                  </p>
+                ) : null}
+                {ed.thesisUrl ? (
+                  <a
+                    href={ed.thesisUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="focus-ring mt-4 inline-flex min-h-11 items-center gap-1.5 text-sm font-medium text-neon-cyan"
                   >
-                    {t}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+                    Press for master&apos;s thesis
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
+                  </a>
+                ) : null}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section id="skills" className="scroll-mt-28">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Toolkit"
+            title="Skills"
+            description="Credit risk, data analytics, and delivery operations."
+          />
+        </Reveal>
+        <div className="mt-8 space-y-6">
+          {cv.skills.map((group, gi) => (
+            <Reveal key={group.label} delay={gi * 0.03}>
+              <div>
+                <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-slate-400">
+                  {group.label}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <Badge key={item} tone={skillTones[gi % skillTones.length]}>
+                      {item}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
+      </section>
+
+      <section id="languages" className="scroll-mt-28">
+        <Reveal>
+          <SectionHeading eyebrow="Multilingual" title="Languages" />
+        </Reveal>
+        <div className="mt-6 flex flex-wrap gap-2">
+          {cv.languages.map((lang) => (
+            <Badge key={lang.name} tone="neutral">
+              {lang.name} · {lang.level}
+            </Badge>
+          ))}
+        </div>
+      </section>
+
+      {cv.training.length > 0 && (
+        <section id="training" className="scroll-mt-28">
+          <Reveal>
+            <SectionHeading eyebrow="Continuous" title="Training & more" />
+          </Reveal>
+          <ul className="mt-6 space-y-3">
+            {cv.training.map((t) => (
+              <li
+                key={t}
+                className="relative pl-4 text-sm leading-relaxed text-slate-300 before:absolute before:left-0 before:top-2.5 before:h-1 before:w-1 before:rounded-full before:bg-neon-cyan/60"
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section id="cv" className="scroll-mt-28">
+        <Reveal>
+          <SectionHeading
+            eyebrow="File"
+            title="Download the CV"
+            description="The same record, as a PDF."
+          />
+          <a
+            href={resumeUrl}
+            className="focus-ring group mt-8 inline-flex min-h-11 items-center gap-2 rounded-xl bg-neon-cyan px-5 py-3 text-sm font-semibold text-void shadow-glow transition-[transform,box-shadow] active:scale-[0.98] motion-safe:hover:shadow-glow"
+          >
+            <Download className="h-4 w-4" />
+            Download CV
+          </a>
+        </Reveal>
       </section>
     </>
   );

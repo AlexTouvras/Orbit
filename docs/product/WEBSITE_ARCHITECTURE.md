@@ -7,7 +7,7 @@
 | HUd | WHO | `/card`, `/qr-code` |
 | Hub / evidence | WHAT / HOW HE THINKS | `/`, `/portfolio`, `/portfolio/live/*`, `/writes`, `/radar`, `/about`, `/contact`, `/newsletter` |
 | Studio | WHERE | `/studio`, `/studio/week`, `/studio/projects`, `/studio/roadmap` |
-| Timeline | HOW HE GOT HERE | About experience (no separate Foundation page) |
+| Timeline | HOW HE GOT HERE | About experience, plus `/about/[slug]` for one employer or school |
 
 ## Relationship
 

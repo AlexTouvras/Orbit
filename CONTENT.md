@@ -167,9 +167,11 @@ Optional: set `POWERBI_ROOT` for local sync if the repo isn’t at `../PowerBI`.
 Structured CV data lives in **`src/content/cv.ts`** — experience, education, skills, languages, training.
 
 - Edit the `cv` object (company names, bullets, degrees, skills).
+- The opening is `aboutHeadlineLine`, `aboutHeadlineAccent`, and `aboutSummary` in `src/content/profile.ts`.
+- Each employer and school has a `slug`, a short `mark`, a one-sentence `about`, and an official `url`. The name on About links to `/about/{slug}`.
 - The **summary** on About comes from `cv.summary` (via the Background section).
-- **Download CV** serves **`public/resume.pdf`** — replace that file to update the PDF.
-- The Hub shows a short **Background in brief** teaser linking to `/about`.
+- **Download CV** is the last block on About. It serves **`public/resume.pdf`** — replace that file to update the PDF.
+- The Hub close links to `/about`.
 
 ---
 

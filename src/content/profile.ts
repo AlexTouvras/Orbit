@@ -61,6 +61,11 @@ export const profile = {
   headlineAccent: "The call does not.",
   tagline:
     "Building and leading data & AI systems that solve complex business problems.",
+  /** About hero. Same two-line shape as the other public pages. */
+  aboutHeadlineLine: "Complex problems",
+  aboutHeadlineAccent: "into decisions.",
+  aboutSummary:
+    "Data, AI, and delivery, in the space between a messy problem and a system a team can use.",
   /** One line on the identity HUD — stranger-readable, no workshop slang. */
   cardTagline:
     "Building and leading data & AI systems that solve complex business problems.",

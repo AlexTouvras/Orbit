@@ -9,18 +9,31 @@ export interface CvRole {
   bullets: string[];
 }
 
-export interface CvExperience {
+/** Shared public fields for an employer or school place note. */
+export interface CvPlaceFields {
+  slug: string;
+  /** Original monogram beside the name. Not the institution's trademark. */
+  mark: string;
+  /** One public sentence about the institution. */
+  about: string;
+  /** Official website. */
+  url: string;
+  urlLabel: string;
+}
+
+export interface CvExperience extends CvPlaceFields {
   company: string;
   location: string;
   roles: CvRole[];
 }
 
-export interface CvEducation {
+export interface CvEducation extends CvPlaceFields {
   degree: string;
   school: string;
+  location?: string;
   period?: string;
   detail?: string;
-  /** Public thesis landing page or PDF — makes the education card pressable. */
+  /** Public thesis landing page or PDF. */
   thesisUrl?: string;
   thesisTitle?: string;
 }
@@ -59,6 +72,11 @@ export const cv: Cv = {
     {
       company: "Santander Consumer Bank Nordics",
       location: "Finland / Nordics",
+      slug: "santander-consumer-bank-nordics",
+      mark: "SC",
+      about: "Consumer finance in the Nordics, in the Santander group.",
+      url: "https://www.santanderconsumer.fi/",
+      urlLabel: "Santander Consumer Finland",
       roles: [
         {
           title: "Delivery Lead (Technology Delivery)",
@@ -93,6 +111,11 @@ export const cv: Cv = {
     {
       company: "Resurs Bank",
       location: "Finland / Nordics",
+      slug: "resurs-bank",
+      mark: "RB",
+      about: "Nordic consumer-finance bank, with a business in Finland.",
+      url: "https://www.resursbank.fi/",
+      urlLabel: "Resurs Bank Finland",
       roles: [
         {
           title: "Credit Analyst",
@@ -110,6 +133,11 @@ export const cv: Cv = {
     {
       company: "Finnish Defence Forces",
       location: "Finland",
+      slug: "finnish-defence-forces",
+      mark: "FDF",
+      about: "Finland's armed forces.",
+      url: "https://puolustusvoimat.fi/en/frontpage",
+      urlLabel: "Finnish Defence Forces",
       roles: [
         {
           title: "Conscript (Kaartin Jääkäri)",
@@ -121,6 +149,12 @@ export const cv: Cv = {
     {
       company: "City of Helsinki — Social and Health Authority",
       location: "Helsinki, Finland",
+      slug: "city-of-helsinki",
+      mark: "HKI",
+      about:
+        "The City of Helsinki's social and health services, as that work was organised in 2016–2017.",
+      url: "https://www.hel.fi/en",
+      urlLabel: "City of Helsinki",
       roles: [
         {
           title: "Office Administrator",
@@ -134,6 +168,11 @@ export const cv: Cv = {
     {
       company: "Bank of Greece",
       location: "Greece",
+      slug: "bank-of-greece",
+      mark: "BoG",
+      about: "Greece's central bank, and a member of the Eurosystem.",
+      url: "https://www.bankofgreece.gr/",
+      urlLabel: "Bank of Greece",
       roles: [
         {
           title: "Intern",
@@ -150,7 +189,13 @@ export const cv: Cv = {
     {
       degree: "MSc, Big Data Analytics",
       school: "Arcada University of Applied Sciences, Helsinki",
+      location: "Helsinki, Finland",
       period: "2021–2024",
+      slug: "arcada",
+      mark: "ARC",
+      about: "University of applied sciences in Helsinki.",
+      url: "https://www.arcada.fi/en",
+      urlLabel: "Arcada",
       detail:
         "Machine learning methods in business environments; analytical service design.",
       thesisTitle:
@@ -160,7 +205,13 @@ export const cv: Cv = {
     {
       degree: "MSc, Banking and International Finance",
       school: "University of Jyväskylä",
+      location: "Jyväskylä, Finland",
       period: "2017–2019",
+      slug: "university-of-jyvaskyla",
+      mark: "JYU",
+      about: "Research university in Jyväskylä.",
+      url: "https://www.jyu.fi/en",
+      urlLabel: "University of Jyväskylä",
       detail:
         "Quantitative finance, economics, financial accounting, and banking.",
       thesisTitle:
@@ -170,6 +221,12 @@ export const cv: Cv = {
     {
       degree: "Bachelor's in Economics",
       school: "Athens University of Economics and Business (AUEB)",
+      location: "Athens, Greece",
+      slug: "aueb",
+      mark: "AUEB",
+      about: "University in Athens, focused on economics and business.",
+      url: "https://www.aueb.gr/en",
+      urlLabel: "Athens University of Economics and Business",
     },
   ],
   skills: [
@@ -220,3 +277,61 @@ export const cv: Cv = {
     "ScanAgile 2026 — Nordic agile conference, Helsinki (Agile Finland)",
   ],
 };
+
+export type PlaceKind = "employer" | "school";
+
+export interface ResolvedPlace {
+  kind: PlaceKind;
+  slug: string;
+  name: string;
+  location?: string;
+  mark: string;
+  about: string;
+  url: string;
+  urlLabel: string;
+  experience?: CvExperience;
+  education?: CvEducation;
+}
+
+export function placePath(slug: string): string {
+  return `/about/${slug}`;
+}
+
+export function listPlaceSlugs(): string[] {
+  return [
+    ...cv.experience.map((item) => item.slug),
+    ...cv.education.map((item) => item.slug),
+  ];
+}
+
+export function getPlace(slug: string): ResolvedPlace | undefined {
+  const experience = cv.experience.find((item) => item.slug === slug);
+  if (experience) {
+    return {
+      kind: "employer",
+      slug: experience.slug,
+      name: experience.company,
+      location: experience.location,
+      mark: experience.mark,
+      about: experience.about,
+      url: experience.url,
+      urlLabel: experience.urlLabel,
+      experience,
+    };
+  }
+
+  const education = cv.education.find((item) => item.slug === slug);
+  if (!education) return undefined;
+
+  return {
+    kind: "school",
+    slug: education.slug,
+    name: education.school,
+    location: education.location,
+    mark: education.mark,
+    about: education.about,
+    url: education.url,
+    urlLabel: education.urlLabel,
+    education,
+  };
+}

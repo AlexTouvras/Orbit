@@ -24,6 +24,7 @@ export function AppChrome({
   const scrollStory =
     pathname === "/" ||
     pathname === "/about" ||
+    pathname.startsWith("/about/") ||
     pathname === "/portfolio" ||
     pathname === "/writes" ||
     pathname === "/contact" ||
