@@ -13,7 +13,7 @@ const languageCodes: Record<string, string> = {
 
 export const metadata: Metadata = {
   title: "About",
-  description: profileDefaults.aboutStatement,
+  description: profileDefaults.aboutSummary,
   alternates: { canonical: "/about" },
 };
 

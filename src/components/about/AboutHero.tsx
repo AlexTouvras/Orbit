@@ -63,10 +63,11 @@ export function AboutHero({
       avatarAlt=""
       title={name}
       titleNote={role}
-      headline={{ line: profile.aboutStatement, size: "display" }}
-      description={profile.aboutLede.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
-      ))}
+      headline={{
+        line: profile.aboutHeadlineLine,
+        accent: profile.aboutHeadlineAccent,
+      }}
+      description={profile.aboutSummary}
       stats={stats}
       meta={
         <Link

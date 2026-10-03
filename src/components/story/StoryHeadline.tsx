@@ -7,17 +7,13 @@ export function StoryHeadline({
   line,
   accent,
   mark,
-  size = "story",
   className,
 }: {
   kicker?: ReactNode;
   line: string;
-  /** Gradient second line. Omit when `line` is already a full sentence. */
-  accent?: string;
+  accent: string;
   /** Sits beside the kicker. The display line stays full width underneath. */
   mark?: ReactNode;
-  /** `story` is the poster scale. `display` fits a full sentence. */
-  size?: "story" | "display";
   className?: string;
 }) {
   return (
@@ -32,19 +28,10 @@ export function StoryHeadline({
           ) : null}
         </span>
       ) : null}
-      <span
-        className={cn(
-          "mt-6 block font-display font-bold text-white",
-          size === "display" ? "max-w-4xl text-balance text-display" : "text-story",
-        )}
-      >
+      <span className="mt-6 block font-display text-story font-bold text-white">
         {line}
-        {accent ? (
-          <>
-            <br />
-            <span className="text-gradient">{accent}</span>
-          </>
-        ) : null}
+        <br />
+        <span className="text-gradient">{accent}</span>
       </span>
     </h1>
   );

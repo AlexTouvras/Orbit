@@ -61,13 +61,11 @@ export const profile = {
   headlineAccent: "The call does not.",
   tagline:
     "Building and leading data & AI systems that solve complex business problems.",
-  /** About opening. Owner wording, kept as sentences rather than a slogan. */
-  aboutStatement:
-    "I build systems that turn complex problems into decisions people can act on.",
-  aboutLede: [
-    "My work sits at the intersection of data, AI, technology delivery, and the people who have to make something happen with them.",
-    "I’m interested in the space between the problem and the outcome — where messy information becomes a useful model, a model becomes a system, and a system becomes something a team can actually use.",
-  ],
+  /** About hero. Same two-line shape as the other public pages. */
+  aboutHeadlineLine: "Complex problems",
+  aboutHeadlineAccent: "into decisions.",
+  aboutSummary:
+    "Data, AI, and delivery, in the space between a messy problem and a system a team can use.",
   /** One line on the identity HUD — stranger-readable, no workshop slang. */
   cardTagline:
     "Building and leading data & AI systems that solve complex business problems.",
