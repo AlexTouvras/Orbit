@@ -58,6 +58,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - ProjectBrain showcase (2026-09-02): essay `when-the-portfolio-needs-a-memory.mdx` (`featured` + `showcase`); portfolio card + `/architecture/projectbrain` synced from `Memory/docs/architecture/`.
 - Public Writes are stranger-first (`docs/essay-voice.md`): gloss workshop nicknames; category follows the decision rule (rotate Delivery/Learning/Career/general data; do not default Power BI). Active clone for Writes is this `website/` repo; `Documents/Orbit` can lag.
 
+- **About place notes (2026-10-03):** `/about` opens on the path (“Credit, then the systems.”). Stats are years, languages, and degrees. Experience and education titles link to `/about/[slug]`. Each note repeats the CV lines for that place, one public sentence, and the official site. `PlaceMark` is an original monogram, not a trademarked logo. Download CV closes the page.
+
 ## Dependencies
 
 | Dependency | Why introduced | Date |
@@ -115,6 +117,9 @@ public/credit-risk-field-card/index.html # Credit Risk Field Card (origination +
 public/story-field-card/index.html      # Data & visual storytelling (Hub Story competency; Orbit-hosted)
 src/lib/field-card/registry.ts          # Multi-card Apply review sync map (repo → Orbit path)
 src/lib/field-card/slack.ts             # Laconic one-post-per-card #orbit FYI (Review/Considered/Changed/Online + Check card)
+src/app/about/[slug]/page.tsx          # Employer or school place note
+src/components/about/PlaceLink.tsx      # Pressable title → place note
+src/components/about/PlaceMark.tsx      # Original monogram, not a trademark
 src/app/card/page.tsx                   # Public identity HUD (chrome-light)
 src/app/qr-code/page.tsx                # On-screen QR to /card
 src/components/card/                    # IdentityHud + CardQr; href.ts is the portrait → Arc HUD link
@@ -153,6 +158,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-03 | About place notes live at `/about/[slug]` | Owner: the “still my name on the check” line did not read, the employer count mixed a conscript term with the banks, and each employer or school title should open a public note. Marks are original monograms. Bullets stay the CV record. CV download closes the page. |
 | 2026-10-02 | Doc currency is a registry plus `docs:check`, not a periodic rewrite | Two files both said "read this first" (`docs/CURRENT_STATE.md` from July, `docs/automation-contract.md` beside `.state/AUTOMATION_CONTRACT.md`). Secrets and the ship checklist moved into the `.state/` contract. The old files are pointers. Archives keep the prose. README no longer tells people to add `src/content/projects/*.mdx`. |
 | 2026-09-30 | Private `/studio/directives` reads the governance snapshot | `AlexTouvras/AlexTouvras` `governance/orbit-studio/` is the published view of the directive archive. Studio home links it. Login, `noindex`, and `robots` disallow `/studio`. The public site does not list it. Edits stay in that archive; refresh by copying a new `data/directive-archive.json`. |
 | 2026-10-01 | Field-card robot speech follows the section on screen | Storytelling PR 30. `public/field-card-robot.mjs` is `host/field-card-robot.mjs`. The AI sheet inlines `host/ai-field-card-robot.mjs`. Sync does not copy either file. |

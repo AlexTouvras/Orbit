@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Download, UserRound } from "lucide-react";
+import { UserRound } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { MissionHero } from "@/components/ui/MissionHero";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
@@ -8,9 +8,9 @@ interface AboutHeroProps {
   name: string;
   role: string;
   yearsExperience: string;
-  employerCount: number;
+  languageCount: number;
+  languageHint: string;
   degreeCount: number;
-  resumeUrl?: string;
   avatarUrl?: string;
 }
 
@@ -23,9 +23,9 @@ export function AboutHero({
   name,
   role,
   yearsExperience,
-  employerCount,
+  languageCount,
+  languageHint,
   degreeCount,
-  resumeUrl,
   avatarUrl,
 }: AboutHeroProps) {
   const years = yearsCount(yearsExperience);
@@ -37,9 +37,10 @@ export function AboutHero({
       suffix: yearsExperience.includes("+") ? "+" : "",
     },
     {
-      label: "Employers",
-      value: String(employerCount),
-      countTo: employerCount,
+      label: "Languages",
+      value: String(languageCount),
+      countTo: languageCount,
+      hint: languageHint,
     },
     {
       label: "Degrees",
@@ -61,29 +62,9 @@ export function AboutHero({
       avatarAlt=""
       title={name}
       titleNote={role}
-      headline={{ line: "Still my name", accent: "on the check." }}
-      description="From PD models and scorecards to leading Azure application operations. A draft can arrive in seconds. The requirement and the check still have my name on them."
+      headline={{ line: "Credit, then", accent: "the systems." }}
+      description="PD models and scorecards, then data, then Azure application operations. Consumer finance is the deepest domain so far."
       stats={stats}
-      actions={
-        <>
-          <a
-            href="#experience"
-            className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl bg-neon-cyan px-5 py-3 text-sm font-semibold text-void shadow-glow transition-[transform,box-shadow] active:scale-[0.98] motion-safe:hover:shadow-glow"
-          >
-            View experience
-            <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
-          </a>
-          {resumeUrl && (
-            <a
-              href={resumeUrl}
-              className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white transition-[transform,border-color,color] active:scale-[0.98] hover:border-neon-cyan/50 hover:text-neon-cyan"
-            >
-              <Download className="h-4 w-4" />
-              Download CV
-            </a>
-          )}
-        </>
-      }
       meta={
         <Link
           href="/"

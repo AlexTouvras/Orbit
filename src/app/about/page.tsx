@@ -4,6 +4,12 @@ import { getEditableProfile } from "@/lib/profile-store";
 import { AboutHero } from "@/components/about/AboutHero";
 import { BackgroundSections } from "@/components/about/BackgroundSections";
 
+const languageCodes: Record<string, string> = {
+  English: "EN",
+  Finnish: "FI",
+  Greek: "GR",
+};
+
 export const metadata: Metadata = {
   title: "About",
   description:
@@ -13,7 +19,6 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const profile = getEditableProfile();
-  const resumeUrl = profile.resumeUrl || "/resume.pdf";
 
   return (
     <div className="space-y-24 sm:space-y-32">
@@ -21,9 +26,11 @@ export default function AboutPage() {
         name={profile.name}
         role={profile.role}
         yearsExperience={profile.yearsExperience}
-        employerCount={cv.experience.length}
+        languageCount={cv.languages.length}
+        languageHint={cv.languages
+          .map((lang) => languageCodes[lang.name] ?? lang.name)
+          .join(" · ")}
         degreeCount={cv.education.length}
-        resumeUrl={resumeUrl}
         avatarUrl={profile.avatarUrl}
       />
 

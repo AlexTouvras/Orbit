@@ -1,4 +1,5 @@
-import { cv, type CvExperience } from "@/content/cv";
+import { cv, placePath, type CvExperience } from "@/content/cv";
+import { PlaceLink } from "@/components/about/PlaceLink";
 import { ScrollSpot } from "@/components/story/ScrollSpot";
 
 function eraLabel(exp: CvExperience): string {
@@ -24,10 +25,12 @@ export function ExperienceTimeline() {
               <span className="mt-2 block text-slate-400">{eraLabel(exp)}</span>
             </p>
             <div>
-              <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                <h3 className="font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-                  {exp.company}
-                </h3>
+              <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+                <PlaceLink
+                  href={placePath(exp.slug)}
+                  name={exp.company}
+                  mark={exp.mark}
+                />
                 <span className="font-mono text-xs uppercase tracking-wide text-slate-400">
                   {exp.location}
                 </span>
