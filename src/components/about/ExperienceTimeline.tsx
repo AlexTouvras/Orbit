@@ -1,4 +1,4 @@
-import { cv, placePath, type CvExperience } from "@/content/cv";
+import { cv, type CvExperience } from "@/content/cv";
 import { PlaceLink } from "@/components/about/PlaceLink";
 import { ScrollSpot } from "@/components/story/ScrollSpot";
 
@@ -27,9 +27,9 @@ export function ExperienceTimeline() {
             <div>
               <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
                 <PlaceLink
-                  href={placePath(exp.slug)}
+                  href={exp.url}
                   name={exp.company}
-                  mark={exp.mark}
+                  logo={exp.logo}
                 />
                 <span className="font-mono text-xs uppercase tracking-wide text-slate-400">
                   {exp.location}

@@ -1,6 +1,6 @@
 import { MapPin, Mail, ArrowUpRight, Download } from "lucide-react";
 import Link from "next/link";
-import { cv, placePath } from "@/content/cv";
+import { cv } from "@/content/cv";
 import { profile as profileDefaults } from "@/content/profile";
 import { getEditableProfile } from "@/lib/profile-store";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -114,9 +114,9 @@ export function BackgroundSections() {
               <div className="py-10">
                 <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
                   <PlaceLink
-                    href={placePath(ed.slug)}
+                    href={ed.url}
                     name={ed.school}
-                    mark={ed.mark}
+                    logo={ed.logo}
                   />
                   {ed.period ? (
                     <span className="font-mono text-xs text-slate-400">

@@ -17,7 +17,7 @@ It communicates:
 1. **HUd** (`/card`) — identity compression (WHO)
 2. **Main website** (`/`, Portfolio, Writes, live desks) — evidence (WHAT / HOW HE THINKS)
 3. **Studio** (`/studio`) — trajectory (WHERE)
-4. **Career timeline** — history (HOW HE GOT HERE); lives on About, including a short place note for each employer and school (`/about/[slug]`). Not a separate timeline product.
+4. **Career timeline** — history (HOW HE GOT HERE); lives on About. Each employer and school title opens that institution’s site. Not a separate timeline product.
 
 ## Design philosophy
 
@@ -33,4 +33,4 @@ Optimize for: **clearer identity + stronger evidence + better professional optio
 
 ## Foundation note
 
-Orbit 2.0 Foundation makes the existing site understand and communicate this system. It is **coherence**, not feature expansion. New labs and career achievement projects are out of Foundation scope. About place notes stay inside the existing timeline.
+Orbit 2.0 Foundation makes the existing site understand and communicate this system. It is **coherence**, not feature expansion. New labs and career achievement projects are out of Foundation scope. The career record stays on About.
