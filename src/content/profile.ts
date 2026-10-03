@@ -66,6 +66,11 @@ export const profile = {
   aboutHeadlineAccent: "into decisions.",
   aboutSummary:
     "Data, AI, and delivery, in the space between a messy problem and a system a team can use.",
+  /** Story & record on About. The question is set apart from the paragraph. */
+  aboutStory:
+    "I started in credit and risk, where the consequences of a decision are tangible. Over time, that led me deeper into data, machine learning, technology delivery, and ultimately into the question I find most interesting:",
+  aboutQuestion:
+    "How do you build intelligent systems that survive contact with the real world?",
   /** One line on the identity HUD — stranger-readable, no workshop slang. */
   cardTagline:
     "Building and leading data & AI systems that solve complex business problems.",

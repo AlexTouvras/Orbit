@@ -35,17 +35,16 @@ export function BackgroundSections() {
     <>
       <section id="background" className="scroll-mt-28">
         <Reveal>
-          <SectionHeading
-            eyebrow="Background"
-            title="Story & record"
-            description="Business problems → data → intelligent systems → delivery → outcomes. Financial services is the deepest domain so far — not the whole identity."
-          />
+          <SectionHeading eyebrow="Background" title="Story & record" />
         </Reveal>
 
         <Reveal delay={0.05}>
-          <div className="mt-8">
+          <div className="mt-8 max-w-2xl">
             <p className="text-sm leading-relaxed text-slate-300 sm:text-base">
-              {cv.summary}
+              {profileDefaults.aboutStory}
+            </p>
+            <p className="mt-6 font-display text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              {profileDefaults.aboutQuestion}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-4 text-sm">
               <span className="inline-flex min-h-11 items-center gap-1.5 text-slate-300">
