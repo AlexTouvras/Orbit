@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SDLC Field Card — Write the plan before the code · Alex Touvras</title>
-  <meta name="description" content="The software development life cycle in plain steps: plan the goal, write the requirements, design who can reach the data, write the code, and test bugs and security holes before anyone calls it done." />
+  <title>SDLC Field Card — Build software that stays in use · Alex Touvras</title>
+  <meta name="description" content="The software development life cycle in four pillars: plan and design, build and verify, release and deploy, maintain and improve." />
   <meta name="author" content="Alex Touvras" />
   <link rel="canonical" href="https://alextouvras.com/sdlc-field-card/" />
-  <meta property="og:title" content="SDLC Field Card — Write the plan before the code" />
-  <meta property="og:description" content="Plan the goal, write the requirements, design who can reach the data, code it, and test bugs and security holes. The release window lives on the Delivery card." />
+  <meta property="og:title" content="SDLC Field Card — Build software that stays in use" />
+  <meta property="og:description" content="Plan and design, build and verify, release and deploy, maintain and improve. Verify includes the security checks." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alextouvras.com/sdlc-field-card/" />
   <meta property="og:image" content="https://alextouvras.com/opengraph-image" />
@@ -156,7 +156,7 @@
       letter-spacing: 0.02em;
       color: var(--steel);
       font-weight: 600;
-      max-width: 46ch;
+      max-width: 72ch;
     }
 
     .stack {
@@ -166,7 +166,7 @@
 
     .layer {
       display: grid;
-      grid-template-columns: 4.6rem 1fr;
+      grid-template-columns: 9.75rem 1fr;
       gap: 0.75rem;
       align-items: center;
       padding: 0.55rem 0.7rem;
@@ -184,9 +184,11 @@
 
     .layer code {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 600;
       letter-spacing: 0.04em;
+      line-height: 1.25;
+      text-transform: uppercase;
       opacity: 0.92;
     }
 
@@ -645,26 +647,22 @@
 
     <header class="hero">
       <div>
-        <div class="eyebrow">The order of the work</div>
-        <h1>Write the plan before the code</h1>
-        <p class="verbs">Plan → specify → design → build → test</p>
+        <div class="eyebrow">The life of the software</div>
+        <h1>Build software that stays in use</h1>
+        <p class="verbs">Plan &amp; design → build &amp; verify → release &amp; deploy → maintain &amp; improve</p>
         <p class="lede">
-          The software development life cycle is how a team builds, tests, and releases software that still works for someone else.
-          Planning checks the goal, the cost, and whether the project is realistic.
-          Requirements put the rules and the user needs in writing.
-          Design is the architecture, the data, and the screens. Development is the code.
-          Testing is where the bugs get found and fixed.
-          Security sits in that same order: in design, write who can reach the data and how it can be abused; in test, those checks have to fail the build.
-          Put what “done” means on paper while the plan is still cheap to change.
-          The release window, the proof, and the cutover live on the Delivery card.
+          The software development life cycle is four pillars.
+          <strong>Plan and design</strong> name the goal, the cost, the rules, and who can reach the data, including how it can be abused. The plan fits on a page a person will review.
+          <strong>Build and verify</strong> is the code, the tests, and the security checks. A person drops tests that do not fail for the right reason, and those checks have to fail the build.
+          <strong>Release and deploy</strong> puts a version where people run it, and keeps the previous version ready to put back.
+          <strong>Maintain and improve</strong> is the defect, the patch, and continuous improvement from what you learn in use, through those same pillars.
         </p>
       </div>
-      <div class="stack" aria-label="Life cycle steps">
-        <div class="layer"><code>PLAN</code><span>Goal, cost, and a realistic yes or no</span></div>
-        <div class="layer"><code>SPEC</code><span>Rules and user needs, in writing</span></div>
-        <div class="layer"><code>DESIGN</code><span>Architecture, data, screens, and who can reach them</span></div>
-        <div class="layer"><code>BUILD</code><span>The code</span></div>
-        <div class="layer"><code>TEST</code><span>Bugs and security holes, found and fixed</span></div>
+      <div class="stack" aria-label="Life cycle pillars">
+        <div class="layer"><code>Plan &amp; design</code><span>Goal, rules, architecture, and who can reach the data</span></div>
+        <div class="layer"><code>Build &amp; verify</code><span>The code, the tests, and the security checks</span></div>
+        <div class="layer"><code>Release &amp; deploy</code><span>A version people run, and a way back to the last one</span></div>
+        <div class="layer"><code>Maintain &amp; improve</code><span>The defect, the patch, and continuous improvement</span></div>
       </div>
     </header>
 
@@ -702,7 +700,7 @@
           <tr>
             <td class="problem">Main is a graveyard of long-lived branches</td>
             <td class="reach"><a class="use-link" href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener noreferrer" title="Trunk Based Development"><b>Small batches on trunk</b></a></td>
-            <td class="example">Incomplete UI behind a flag; main stays releasable — same CD test the Delivery card uses at cutover</td>
+            <td class="example">Incomplete UI behind a flag; the version you release is the one you just verified, and main stays releasable</td>
           </tr>
           <tr>
             <td class="problem">Review is a rubber stamp after the fact</td>
@@ -725,18 +723,18 @@
             <td class="example">Lockfile + advisory scan on the credit-engine client; a new package is a change, not a convenience</td>
           </tr>
           <tr>
-            <td class="problem">Meetings replaced the written plan</td>
-            <td class="reach"><a class="use-link" href="https://dora.dev/guides/dora-metrics-four-keys/" target="_blank" rel="noopener noreferrer" title="DORA four keys, from Accelerate (Forsgren, Humble, Kim)"><b>Lead time</b></a></td>
-            <td class="example">Time from the written plan to a change you can merge. A filled Scrum board doesn’t show the software is safer</td>
+            <td class="problem">Tests passed, and nobody is running that version</td>
+            <td class="reach"><a class="use-link" href="https://12factor.net/build-release-run" target="_blank" rel="noopener noreferrer" title="The Twelve-Factor App: build, release, run"><b>Build, release, run</b></a></td>
+            <td class="example">Credit-engine change: a build becomes a release in the environment users hit. The previous release is still one deploy away</td>
           </tr>
           <tr>
-            <td class="problem">Skip the tests so the change ships sooner</td>
-            <td class="reach"><a class="use-link" href="https://dora.dev/guides/dora-metrics-four-keys/" target="_blank" rel="noopener noreferrer" title="Accelerate: speed and stability move together"><b>Small tested changes</b></a></td>
-            <td class="example">Smaller changes with tests in the loop ship more often and fail less often. Skipping the test does not buy the speed. How often a change reaches production, and how fast you recover, sit on the Delivery card</td>
+            <td class="problem">A production bug skips the plan and the test</td>
+            <td class="reach"><a class="use-link" href="https://csrc.nist.gov/projects/ssdf" target="_blank" rel="noopener noreferrer" title="NIST SSDF: respond to vulnerabilities inside the life cycle"><b>Fix inside the life cycle</b></a></td>
+            <td class="example">A scoring defect or a dependency advisory is a page, a test that fails for the right reason, a release, and then it is in use</td>
           </tr>
         </tbody>
       </table>
-      <p class="note">Default order: name the plan and the owner → write the requirements → design the system, including how it can fail → smallest build → test (bugs, review, security) → then the Delivery card for the window and the cutover.</p>
+      <p class="note">Default order: plan and design → build and verify → release and deploy → maintain and improve. A defect, or the next improvement, starts again at plan and design.</p>
     </section>
 
     <div class="tri">
@@ -757,16 +755,16 @@
         <h2>What has to be written down</h2>
         <div class="gates">
           <div class="gate">
-            <strong>Plan and requirements</strong>
-            <span>Goal, cost, and the rules are named, and they fit on a page a person will review. Design includes who can reach the data and how it can be abused, along with the happy path.</span>
+            <strong>Plan and design</strong>
+            <span>Goal, cost, and the rules fit on a page a person will review. Design includes who can reach the data and how it can be abused, along with the happy path. A spec file is not shared understanding until someone can walk the journey and the ways it can fail.</span>
           </div>
           <div class="gate">
             <strong>Meetings stay optional</strong>
-            <span>Stand-ups can help a team move. A committee after the code is written doesn’t make the change safer. The written plan is required, and it is not shared understanding until someone can walk the journey and the ways it can fail.</span>
+            <span>Stand-ups can help a team move. A committee after the code is written doesn’t make the change safer. The written plan is required.</span>
           </div>
           <div class="gate">
             <strong>Memory check</strong>
-            <span>PLAN = the goal. SPEC = the rules. DESIGN = the system and who can reach it. BUILD = the code. TEST = bugs and security holes fixed before release.</span>
+            <span>Plan &amp; design = the goal, the rules, and who can reach the data. Build &amp; verify = the code, the tests, and the security checks. Release &amp; deploy = a version in use, with a way back. Maintain &amp; improve = the fix, and continuous improvement from use.</span>
           </div>
         </div>
       </section>
@@ -774,16 +772,16 @@
       <section>
         <h2>Ladder + gates</h2>
         <ol class="ladder">
-          <li>Named plan on one page, and an owner</li>
-          <li>Design the system, who can reach the data, and how it can be abused</li>
+          <li>Plan and design on one page, including who can reach the data</li>
           <li>Smallest build on trunk / flag</li>
-          <li>Tests that fail for the right reason</li>
-          <li>Review + security checks</li>
-          <li>Mergeable — then Delivery for cutover</li>
+          <li>Tests and security checks that fail for the right reason, and a person reviews</li>
+          <li>Release a version and deploy it where people run it</li>
+          <li>Keep the previous version deployable</li>
+          <li>A defect, a patch, or continuous improvement goes back through the same four pillars</li>
         </ol>
         <div class="gate" style="margin-top:0.75rem">
           <strong>Kill switch</strong>
-          <span>If you can’t name the plan, the test, and who reviews, you don’t merge.</span>
+          <span>If you can’t name the plan, the test, the security check, and who reviews, you don’t merge. If you can’t put the last version back, you don’t call it released.</span>
         </div>
       </section>
     </div>
@@ -799,7 +797,9 @@
         <li>“Works on my machine” as evidence</li>
         <li>Rubber-stamp review after merge</li>
         <li>Picking a framework before the plan exists</li>
-        <li>Calling it shipped — that’s the Delivery card</li>
+        <li>A green build that never gets deployed</li>
+        <li>A production fix that skips the plan and the test</li>
+        <li>Treating the first release as the end</li>
       </ul>
     </section>
 
@@ -808,7 +808,7 @@
       <div class="found-row">
         <div class="found"><strong>Security</strong><span>Threat model, ASVS level, supply chain</span></div>
         <div class="found"><strong>Governance</strong><span>Who owns the plan and the merge</span></div>
-        <div class="found"><strong>Observability</strong><span>CI evidence on every change</span></div>
+        <div class="found"><strong>Observability</strong><span>CI on the change, and which version is running</span></div>
         <div class="found"><strong>Evals</strong><span>Tests that fail for the right reason; a person drops the rest</span></div>
         <div class="found"><strong>Human Approve</strong><span>A person still owns the merge</span></div>
       </div>
@@ -823,7 +823,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> The plan fits on a page a person will review. A spec file is not shared understanding. A person drops tests that do not fail for the right reason</p>
+      <p class="changed"><b>Changed</b> Improve is continuous improvement from what you learn in use.</p>
     </footer>
   </article>
   <script>
