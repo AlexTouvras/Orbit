@@ -1,29 +1,29 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-/** Original monogram for an employer or school. Not a trademarked logo. */
+/** Institution mark beside an employer or school name. */
 export function PlaceMark({
-  mark,
-  size = "md",
+  src,
+  className,
 }: {
-  mark: string;
-  size?: "md" | "lg";
+  src: string;
+  className?: string;
 }) {
   return (
     <span
       aria-hidden
       className={cn(
-        "inline-flex shrink-0 items-center justify-center rounded-2xl border border-white/12 bg-white/[0.04] font-display font-semibold leading-none tracking-tight text-white transition-colors group-hover:border-neon-cyan/50",
-        size === "lg" ? "h-16 w-16" : "h-12 w-12",
-        mark.length > 3
-          ? size === "lg"
-            ? "text-xs"
-            : "text-[0.6rem]"
-          : size === "lg"
-            ? "text-sm"
-            : "text-[0.7rem]",
+        "relative inline-flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/12 bg-white transition-colors group-hover:border-neon-cyan/50",
+        className,
       )}
     >
-      {mark}
+      <Image
+        src={src}
+        alt=""
+        fill
+        sizes="48px"
+        className="object-contain p-1.5"
+      />
     </span>
   );
 }

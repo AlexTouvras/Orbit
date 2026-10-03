@@ -4,7 +4,7 @@
 
 ## Now
 
-- [x] About page — headline states the path, languages replace the employer count, CV download closes the page, each employer and school opens `/about/[slug]`
+- [x] About page — headline states the path, languages replace the employer count, CV download closes the page, each employer and school logo opens that institution’s site
 - [x] Doc currency guard — `docs/ops/doc-registry.json`, `docs/archive/`, `npm run docs:check` on ship. Pointers replace `docs/CURRENT_STATE.md` and `docs/automation-contract.md`.
 - [x] Arc HUD line under the name is Warrior (not the site role)
 - [x] Private `/studio/directives` from the governance snapshot (`data/directive-archive.json`, Studio card). Public site does not list it.

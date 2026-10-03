@@ -3,7 +3,6 @@ import { listManifestSlugs, loadStoryManifest } from "@/lib/loadStory";
 import { getWriteModifiedDate } from "@/lib/seo/writes";
 import { getSiteUrl } from "@/lib/site";
 import { getAllWrites } from "@/lib/writes";
-import { listPlaceSlugs } from "@/content/cv";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
@@ -145,13 +144,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const places = listPlaceSlugs().map((slug) => ({
-    url: `${base}/about/${slug}`,
-    lastModified: now,
-    changeFrequency: "yearly" as const,
-    priority: 0.5,
-  }));
-
   const writes = getAllWrites().map((write) => ({
     url: `${base}/writes/${write.slug}`,
     lastModified: new Date(getWriteModifiedDate(write)),
@@ -178,5 +170,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     }));
 
-  return [...staticRoutes, ...places, ...writes, ...stories];
+  return [...staticRoutes, ...writes, ...stories];
 }
