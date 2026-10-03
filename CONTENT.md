@@ -169,7 +169,7 @@ Structured CV data lives in **`src/content/cv.ts`** — experience, education, s
 - Edit the `cv` object (company names, bullets, degrees, skills).
 - The opening is `aboutHeadlineLine`, `aboutHeadlineAccent`, and `aboutSummary` in `src/content/profile.ts`.
 - Each employer and school has a `slug`, a short `mark`, a one-sentence `about`, and an official `url`. The name on About links to `/about/{slug}`.
-- The **summary** on About comes from `cv.summary` (via the Background section).
+- **Story & record** uses `aboutStory` and `aboutQuestion` in `src/content/profile.ts`. `cv.summary` stays the short CV bio and is not shown on the page.
 - **Download CV** is the last block on About. It serves **`public/resume.pdf`** — replace that file to update the PDF.
 - The Hub close links to `/about`.
 

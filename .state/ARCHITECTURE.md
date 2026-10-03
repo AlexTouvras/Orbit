@@ -158,6 +158,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-03 | Story & record is the credit-and-risk path, then one question | Owner copy: started in credit and risk, then data, machine learning, and technology delivery. The question is set in display type: how do you build intelligent systems that survive contact with the real world? `cv.summary` stays off the page. |
 | 2026-10-03 | About headline stays the two-line public shape | Owner: the three sentences were the right idea and too long for the hero. Line is “Complex problems”, accent is “into decisions.”, and one sentence covers data, AI, delivery, and a system a team can use. |
 | 2026-10-03 | About place notes live at `/about/[slug]` | Owner: the “still my name on the check” line did not read, the employer count mixed a conscript term with the banks, and each employer or school title should open a public note. Marks are original monograms. Bullets stay the CV record. CV download closes the page. |
 | 2026-10-02 | Doc currency is a registry plus `docs:check`, not a periodic rewrite | Two files both said "read this first" (`docs/CURRENT_STATE.md` from July, `docs/automation-contract.md` beside `.state/AUTOMATION_CONTRACT.md`). Secrets and the ship checklist moved into the `.state/` contract. The old files are pointers. Archives keep the prose. README no longer tells people to add `src/content/projects/*.mdx`. |
