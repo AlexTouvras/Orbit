@@ -1,7 +1,97 @@
 {
-  "generatedAt": "2026-10-02T06:46:59.978Z",
+  "generatedAt": "2026-10-03T06:46:56.992Z",
   "count": 263,
   "items": [
+    {
+      "id": "20a8850851de",
+      "title": "Strategic sovereignty, social movements, and political agency: Evidence from the US-Israeli military campaign in Iran",
+      "link": "https://cepr.org/voxeu/columns/strategic-sovereignty-social-movements-and-political-agency-evidence-us-israeli",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-02T23:00:00.000Z",
+      "contentSnippet": "Military intervention may be undertaken to weaken a hostile regime and strengthen the position of its opponents. This column argues that evidence from the 2026 US-Israeli strikes on Iran points to a different outcome: the strikes left total protest levels broadly unchanged but sh…"
+    },
+    {
+      "id": "940cc51f651e",
+      "title": "Hiding in the mean: AI is adding jobs and removing them at the same time",
+      "link": "https://cepr.org/voxeu/columns/hiding-mean-ai-adding-jobs-and-removing-them-same-time",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-02T23:00:00.000Z",
+      "contentSnippet": "Estimates of AI's employment effect disagree in size and even in sign. This column argues the disagreement is built into the measurement: AI substitutes for humans on some tasks and complements humans on others, and any single exposure index nets these opposing forces into one nu…"
+    },
+    {
+      "id": "4d35a34035ec",
+      "title": "In Capital Markets, the Buy Side Runs on NAV. Finance Protects the Fee.",
+      "link": "https://www.databricks.com/blog/capital-markets-buy-side-runs-nav-finance-protects-fee",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-02T17:40:26.000Z",
+      "contentSnippet": "Ask a capital markets CFO on the buy side how the quarter looks, and the answer starts..."
+    },
+    {
+      "id": "8e206c4d9ed6",
+      "title": "A model guide for the GPT-6 family",
+      "link": "https://openai.com/index/practical-guide-building-gpt-6",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-02T16:15:00.000Z",
+      "contentSnippet": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production."
+    },
+    {
+      "id": "cfb7986dd65f",
+      "title": "How to choose your first Genie Agents for maximum impact",
+      "link": "https://www.databricks.com/blog/how-choose-your-first-genie-agents-maximum-impact",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-02T16:15:00.000Z",
+      "contentSnippet": "With more than 1 million Genie Agents created in 2026 alone, the question facing..."
+    },
+    {
+      "id": "b9b18411de99",
+      "title": "Toward provably private learning from federated data",
+      "link": "https://research.google/blog/toward-provably-private-learning-from-federated-data/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-10-02T14:57:41.000Z",
+      "contentSnippet": "Mobile Systems"
+    },
+    {
+      "id": "fb8b899b1641",
+      "title": "O Dojo de Product Ownership: Gestão Avançada de Produtos na Era da Inteligência Artificial",
+      "link": "https://www.scrum.org/resources/blog/o-dojo-de-product-ownership-gestao-avancada-de-produtos-na-era-da-inteligencia-artificial",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-02T11:34:32.000Z",
+      "contentSnippet": "A maioria das organizações ainda encara a gestão de produtos como uma linha de montagem: escrever histórias de usuário, alimentar o backlog, acompanhar a velocidade das sprints e torcer para que a funcionalidade entregue gere algum resultado. Essa postura é o teto de vidro do \"PO…"
+    },
+    {
+      "id": "baf7e7666686",
+      "title": "Real-Time Retail Intelligence: Building E-Commerce Recommendations with Lakebase and AI Search on Databricks",
+      "link": "https://www.databricks.com/blog/real-time-retail-intelligence-building-e-commerce-recommendations-lakebase-and-ai-search",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-02T11:00:00.000Z",
+      "contentSnippet": "The opportunity: Personalization as a revenue engineEvery second a shopper spends..."
+    },
+    {
+      "id": "82d5ce1845d4",
+      "title": "If I Wanted To Write A New Scrum Guide",
+      "link": "https://www.scrum.org/resources/blog/if-i-wanted-write-new-scrum-guide",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-02T09:16:39.000Z",
+      "contentSnippet": "Image Scrum Guide 2020 is the latest version, nearly six years old. Over the past 6 years, the market has changed enormously, especially with the rise of AI. With millions of people using Scrum worldwide over the past 6 years, I am sure there is a lot of feedback that needs to be…"
+    },
+    {
+      "id": "a97398f76ee5",
+      "title": "Chatham scales its capital markets expertise with OpenAI",
+      "link": "https://openai.com/index/chatham-financial",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-02T00:00:00.000Z",
+      "contentSnippet": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4."
+    },
     {
       "id": "97db45500e1a",
       "title": "Faster String Aggregations with Dimension Tables",
@@ -21,8 +111,26 @@
       "contentSnippet": "Geoeconomic risk has become a first-order concern for investors. This column shows that domestic US stocks expose investors to substantial geoeconomic risk through firms’ global supply-chain relations. Stocks of US suppliers decline sharply after the announcement that export cont…"
     },
     {
+      "id": "8e5ae68b2bec",
+      "title": "Merit, Masters and China's Imperial Exam",
+      "link": "https://cepr.org/multimedia/merit-masters-and-chinas-imperial-exam",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-01T23:00:00.000Z",
+      "contentSnippet": "For more than 1,300 years, China chose its top officials by written exam. Its top officials were chosen meritocratic ally — or were they? When the results came out, each successful candidate went to pay his respects to the men who had marked his exam. He called the examiner maste…"
+    },
+    {
+      "id": "8df4814de428",
+      "title": "How Genie One reshapes work for finance teams",
+      "link": "https://www.databricks.com/blog/how-genie-one-reshapes-work-finance-teams",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-01T22:46:51.000Z",
+      "contentSnippet": "A finance team’s job is not simply to report the numbers: it’s to interpret what..."
+    },
+    {
       "id": "0aae1476f059",
-      "title": "Fourteen ways to stop lying to yourself: the Wizard's Rules in one place",
+      "title": "Fourteen Ways to Stop Lying to Yourself: the Wizard's Rules in One place",
       "link": "https://www.scrum.org/resources/blog/fourteen-ways-stop-lying-yourself-wizards-rules-one-place",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -282,15 +390,6 @@
       "contentSnippet": "Europe’s output losses proved limited following the 2022 cutoff of Russian gas flows, yet inflation rose sharply. This column uses weather variation and gas-market events to distinguish gas-demand shocks from interruptions to current flows and news about future availability. A de…"
     },
     {
-      "id": "79b7039cebc0",
-      "title": "Changing structure and challenges of the international financial system: Imbalances, currencies, and financial stability",
-      "link": "https://cepr.org/voxeu/columns/changing-structure-and-challenges-international-financial-system-imbalances",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-29T23:00:00.000Z",
-      "contentSnippet": "Concerns are growing about the state of the global economic and financial architecture. The 29th Geneva Report on the World Economy focuses on four key pillars of the global economic order – global imbalances, the international role of major currencies and risks to the US dollar’…"
-    },
-    {
       "id": "99f68fe68635",
       "title": "Nobody Owns Whether it Worked.",
       "link": "https://www.scrum.org/resources/blog/nobody-owns-whether-it-worked",
@@ -307,15 +406,6 @@
       "category": "AI",
       "pubDate": "2026-09-29T18:38:27.000Z",
       "contentSnippet": "Algorithms & Theory"
-    },
-    {
-      "id": "ee2e9e6d148e",
-      "title": "Your data, your storage, your rules: a 2026 guide to storing Unity Catalog managed tables",
-      "link": "https://www.databricks.com/blog/your-data-your-storage-your-rules-2026-guide-storing-unity-catalog-managed-tables",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-29T16:40:16.000Z",
-      "contentSnippet": "Unity catalog managed tables allow you to control the placement of your data when..."
     },
     {
       "id": "7f9fa97d486b",
@@ -381,15 +471,6 @@
       "contentSnippet": "Simon Willison: The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge This has been a constan…"
     },
     {
-      "id": "dd66acaed2a0",
-      "title": "Introducing GPT-6.1 Sol",
-      "link": "https://openai.com/index/introducing-gpt-6-1-sol",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-29T10:00:00.000Z",
-      "contentSnippet": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices."
-    },
-    {
       "id": "19db7cc5ca5c",
       "title": "DevDay 2026 Recap",
       "link": "https://openai.com/index/devday-2026-recap",
@@ -406,15 +487,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-29T06:35:00.000Z",
       "contentSnippet": "Microsoft Fabric and SQL innovations announced at FabCon and SQLCon Barcelona 2026 help organizations build trusted data foundations for AI. The post FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents appeared first on Microsoft Fab…"
-    },
-    {
-      "id": "884977ecb800",
-      "title": "Introducing dots",
-      "link": "https://openai.com/index/introducing-dots",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-29T00:00:00.000Z",
-      "contentSnippet": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward."
     },
     {
       "id": "a8130eeb76e2",
@@ -442,51 +514,6 @@
       "category": "Credit",
       "pubDate": "2026-09-29T00:00:00.000Z",
       "contentSnippet": "Near record-high government debt levels and the growing role of non-banks have reshaped government debt markets in recent years. High levels of government sector debt are expected to worsen future government debt market liquidity conditions in general, including by increasing the…"
-    },
-    {
-      "id": "d780d27addbc",
-      "title": "Lifting the curtain on the EU’s debt",
-      "link": "https://cepr.org/voxeu/columns/lifting-curtain-eus-debt",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-28T23:00:00.000Z",
-      "contentSnippet": "The EU’s far-reaching response to a series of major shocks has turned it into a major borrower on international financial markets. Debt issued by the EU on behalf of its member states now stands at close to 5½% of GDP, almost twice as much as six years ago. This column highlights…"
-    },
-    {
-      "id": "7bd49ce9a7b1",
-      "title": "Geopolitical risk is reshaping global finance, one bank loan at a time",
-      "link": "https://cepr.org/voxeu/columns/geopolitical-risk-reshaping-global-finance-one-bank-loan-time",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-28T23:00:00.000Z",
-      "contentSnippet": "Geopolitical tensions are increasingly reshaping the flow of trade, investment and capital flows. This column documents that the same process is also reshaping bank lending. Using confidential supervisory data on thousands of international bank lending relationships, the authors…"
-    },
-    {
-      "id": "8bfa6ceb2929",
-      "title": "How Databricks rolls out frontier models to 12,000 employees on Day 1",
-      "link": "https://www.databricks.com/blog/how-databricks-rolls-out-frontier-models-12000-employees-day-1",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-28T20:11:23.000Z",
-      "contentSnippet": "Providing our employees access to frontier AI capabilities is a top priority at Databricks, and consequently..."
-    },
-    {
-      "id": "542e54a12253",
-      "title": "Lakebase Search: State-of-the-art full text and vector search for Postgres",
-      "link": "https://www.databricks.com/blog/lakebase-search-state-art-full-text-and-vector-search-postgres",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-28T20:04:33.000Z",
-      "contentSnippet": "Traditional OLTP systems weren't built for the search demands of AI agents. They..."
-    },
-    {
-      "id": "5fca8d7babdc",
-      "title": "Manufacturing data and AI: Connecting the product value chain",
-      "link": "https://www.databricks.com/blog/manufacturing-data-and-ai-connecting-product-value-chain",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-28T19:47:19.000Z",
-      "contentSnippet": "A manufacturing defect rarely belongs to one system. A scrap spike may relate to..."
     },
     {
       "id": "2069ce7b61ef",
@@ -777,15 +804,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "ef25691dc93e",
-      "title": "Your Team Isn't Slow. Your Handoffs Are.",
-      "link": "https://www.scrum.org/resources/blog/your-team-isnt-slow-your-handoffs-are",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-22T22:00:00.000Z",
-      "contentSnippet": "Image Watch where the work actually spends its time. Not the hours someone is heads-down building. The days it sits, waiting. Waiting for the one person who knows that system. Waiting for the other team to finish their sprint. Waiting for a review, a sign-off, an environment, an…"
-    },
-    {
       "id": "196c90e841c9",
       "title": "The hidden complexity of a daily average in DAX",
       "link": "https://www.sqlbi.com/tv/the-hidden-complexity-of-a-daily-average-in-dax/",
@@ -847,15 +865,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-21T20:00:08.000Z",
       "contentSnippet": "A simple daily average masks a level of complexity that may not be immediately apparent. In this article, we use AI to create a daily average, and then to analyze several edge-case scenarios to build a sound calculation. Computing an…"
-    },
-    {
-      "id": "70fbea204604",
-      "title": "Finding AI Gold With Lean Startup Techniques",
-      "link": "https://www.scrum.org/resources/blog/finding-ai-gold-lean-startup-techniques",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-21T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. How do we deliver valuable real-world AI impact through solutions that solve problems, using some of what we've learned by building products over the last couple of decades? We're not seeing the value yet Unless you've been in a cave, you'r…"
     },
     {
       "id": "30fd4a039425",
@@ -1081,15 +1090,6 @@
       "category": "AI",
       "pubDate": "2026-09-12T00:42:25.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "edd61c314290",
-      "title": "ToolGrad: Efficient tool-use dataset generation with textual \"gradients\"",
-      "link": "https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-09-10T22:50:22.000Z",
-      "contentSnippet": "Machine Intelligence"
     },
     {
       "id": "ca291efb21c7",
@@ -1686,15 +1686,6 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
-    },
-    {
       "id": "d9adb789161e",
       "title": "How Firms Form Beliefs and the Implications for Inflation",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
@@ -1713,13 +1704,22 @@
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
-      "id": "61ad811164ff",
-      "title": "Community Showcase Part 3",
-      "link": "https://dagster.io/blog/community-showcase-part-3",
-      "source": "Dagster",
-      "category": "Data",
-      "pubDate": "2026-07-30T00:00:00.000Z",
-      "contentSnippet": "Some of the most interesting Dagster projects come from the community. This post highlights creative community-built applications."
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
+    },
+    {
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-07-29T09:00:00.000Z",
+      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "16fe89b83e2e",
@@ -1729,15 +1729,6 @@
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
       "contentSnippet": "Low Impact Amendments Finalisation July 2026"
-    },
-    {
-      "id": "054894a68cbf",
-      "title": "LIAC02/26 – Low Impact Amendments Consultation July 2026",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-consultation-july-2026",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Low Impact Amendments Consultation July 2026"
     },
     {
       "id": "fb549b859ee4",
@@ -1803,13 +1794,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "4c8cd6ef9ad3",
-      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
-      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
+      "id": "d817a88ce0e9",
+      "title": "The Last Taxi: LCR Buffers and Bank Liquidity Provision",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026051pap.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Alexandros Vardoulakis, Matt Darst, Arazi Lubis and Lucia Gurrieri"
     },
     {
       "id": "ed6bd26c4997",
@@ -2242,6 +2233,15 @@
       "category": "Data",
       "pubDate": "2026-03-17T00:00:00.000Z",
       "contentSnippet": "DataOps is about building a system that provides visibility into what's happening and control over how it behaves"
+    },
+    {
+      "id": "82ce64e9fa62",
+      "title": "Unlocking the Full Value of Your Databricks",
+      "link": "https://dagster.io/blog/unlocking-the-full-value-of-your-databricks",
+      "source": "Dagster",
+      "category": "Data",
+      "pubDate": "2026-03-12T00:00:00.000Z",
+      "contentSnippet": "Standardizing on Databricks is a smart strategic move, but consolidation alone does not create a working operating model across teams, tools, and downstream systems. By pairing Databricks and Unity Catalog with Dagster, enterprises can add the coordination layer needed for depend…"
     },
     {
       "id": "ea0336fdaaec",
