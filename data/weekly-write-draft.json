@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-10-05-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-10-05T09:04:55.440Z",
   "weekOf": "2026-10-05",
   "slug": "before-an-agent-writes-back-name-who-is-allowed-to-speak",
@@ -168,5 +168,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-10-05T11:57:54.267Z",
+  "publishedSlug": "before-an-agent-writes-back-name-who-is-allowed-to-speak"
 }
