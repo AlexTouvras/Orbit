@@ -1,87 +1,86 @@
 {
-  "id": "ww-2026-09-28-ide",
-  "status": "published",
-  "createdAt": "2026-09-28T09:08:57.348Z",
-  "weekOf": "2026-09-28",
-  "slug": "when-ai-can-build-the-report-the-brief-becomes-the-work",
-  "title": "When AI can build the report, the brief becomes the work",
-  "summary": "As report construction gets cheaper, I need a testable brief and a separate check for decision quality before a polished page earns trust.",
-  "category": "Learning",
+  "id": "ww-2026-10-05-ide",
+  "status": "pending",
+  "createdAt": "2026-10-05T09:04:55.440Z",
+  "weekOf": "2026-10-05",
+  "slug": "before-an-agent-writes-back-name-who-is-allowed-to-speak",
+  "title": "Before an agent writes back, name who is allowed to speak",
+  "summary": "Barcelona's Copilot and Power BI updates let a report's definitions leave the report and change stored data. I would name the speaking model, the allowed writes, and who can stop a bad action before I turn that on.",
+  "category": "Delivery",
   "tags": [
-    "Learning",
-    "Analytics",
-    "Report authoring",
-    "AI"
+    "Delivery",
+    "Agents",
+    "Analytics"
   ],
-  "mdx": "---\ntitle: \"When AI can build the report, the brief becomes the work\"\nsummary: \"As report construction gets cheaper, I need a testable brief and a separate check for decision quality before a polished page earns trust.\"\ndate: \"2026-09-28\"\ncategory: \"Learning\"\nfeatured: false\ntags: [\"Learning\", \"Analytics\", \"Report authoring\", \"AI\"]\n---\n\n## The question\n\nThe old bottleneck in analytics was turning a useful question into dozens of careful clicks. That bottleneck is shrinking. An AI agent can now build a data model, plan report pages, apply a visual theme, and inspect what it produced.\n\nIf I keep measuring report skill by manual construction, I will get better at the part that is becoming cheap. So what should I learn to do differently when the reporting stack can handle more of the build?\n\nMy answer is to move effort into a testable brief and a separate review of whether the result helps someone decide. Faster authoring raises the value of judgment because a polished wrong answer can now arrive sooner.\n\n## The build moved from the canvas to the contract\n\nReza Rad's conversation with Harleen Kaur on [AI-assisted report authoring in Power BI](https://radacad.com/skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15/?utm_source=rss&utm_medium=rss&utm_campaign=skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15) shows a useful sequence. Power BI is Microsoft's analytics reporting product. Its semantic model defines the business measures and relationships that sit beneath a report.\n\nIn the demonstrated workflow, a planner asks three to five questions about audience, theme, and page needs. A design step turns the answers into a brief. An authoring step then creates the pages and visuals. If a plan already exists, the agent can skip straight to the later stage.\n\nThe important change is not that an agent can place a chart. It is that intent can become an input artifact rather than staying in the report author's head. In a manual build, I can make small choices on the canvas without ever writing down why a page exists. That works until another person has to review, regenerate, or change it.\n\nWith delegated authoring, vague intent becomes visible immediately. “Build an executive dashboard” leaves the agent to guess the audience, the decision, the useful level of detail, and what should happen when the data is incomplete. Better prompting alone does not solve that. I need a brief that another builder, human or automated, could test.\n\n## A screenshot can prove the wrong thing\n\nThe source also describes a Desktop Bridge that opens the generated report, takes a screenshot, detects some errors, and tries to correct them. That closes an important feedback loop. A visual that failed to load is no longer hidden inside a successful command.\n\nBut a clean screenshot proves execution, not usefulness.\n\nThe bridge can see that a chart rendered. It cannot settle whether the revenue definition matches the finance team's definition, whether a manager needs a weekly or monthly view, or whether the brightest number draws attention to the least actionable issue. Those are decision-quality checks. They depend on context outside the pixels.\n\nI therefore want two different kinds of evidence. The build check asks whether fields resolve, filters behave, pages open, and the intended theme holds together. The decision check asks whether the right reader can answer the named question without an explanation from the author. Passing the first does not imply the second.\n\n## What I keep stable while the tools move\n\nBefore I delegate a report, I now want one short statement for each page. It names the reader, the decision the page should support, the measures and level of detail it may use, and an observable acceptance check. “Show sales” is weak. “Let a regional manager identify which account caused this week's variance, while keeping the approved margin definition” gives the builder something to produce and the reviewer something to challenge.\n\nI would then compare the generated result with a small baseline. The comparison does not have to be a fully hand-built report. It can be approved totals, a known filter case, one reference layout, and a short task completed by the intended reader. The point is to make disagreement inspectable. If the agent changes the page later, I can tell whether it improved the report or merely made it different.\n\nThis also changes what I practice. I still need enough craft to recognize a misleading scale, a broken interaction, or poor visual hierarchy. I spend less practice time memorizing every route through a changing interface. I spend more on framing the question, choosing the useful level of detail, and designing checks that survive a tool update.\n\n## Where I would still start rough\n\nA detailed brief can be premature during exploration. Sometimes I do not yet know which question the data can support. In that case, a fast generated page is useful as a sketch. I can react to it, find missing measures, and learn what the audience does not need.\n\nThe limit is promotion. I should not let a convincing sketch quietly become the production report. The authoring features in the source are still described as preview capabilities, and even mature automation cannot supply missing business ownership. Before the sketch becomes evidence, I still need named definitions, representative data, an audience check, and someone willing to own the result after the demo.\n\n## Takeaway\n\nWhen report construction gets faster, I will judge my process by the quality of the contract around it. I want intent written before scale, build checks separated from decision checks, and rough exploration labelled as disposable.\n\nMy decision rule is simple: I delegate report authoring when I can state who will use the page, what decision it supports, and how we will know the result is correct. If I cannot write that brief, faster construction only helps me produce uncertainty in a more polished form.",
-  "preview": "When AI can build the report, the brief becomes the work\n\nAs report construction gets cheaper, I need a testable brief and a separate check for decision quality before a polished page earns trust.\n\nInspired by: Skills for Report Authoring in Power BI: A Conversation with Harleen Kaur (Fabric Insider Ep. 15)",
+  "mdx": "---\ntitle: \"Before an agent writes back, name who is allowed to speak\"\nsummary: \"Barcelona's Copilot and Power BI updates let a report's definitions leave the report and change stored data. I would name the speaking model, the allowed writes, and who can stop a bad action before I turn that on.\"\ndate: \"2026-10-05\"\ncategory: \"Delivery\"\nfeatured: false\ntags: [\"Delivery\", \"Agents\", \"Analytics\"]\n---\n\n## The question\n\nThe easy plan is still sitting on the table. The report is already trusted, so let the assistant use it. In Power BI, Microsoft's reporting product, the semantic model is the layer that holds the measures and how they relate. If a finance meeting already argues from those measures, pointing a chat assistant at the same model looks like a free upgrade.\n\nThat plan misses who the new reader is. [FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents](https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/) is Arun Ulag's write-up of the change. Fabric IQ, Microsoft's shared layer for business context, is generally available inside Copilot Chat and Cowork. Copilot is the assistant people already open in Microsoft 365. A separate preview in Power BI Desktop, due in the coming weeks, lets someone describe an application, generate it from a semantic model, and publish it. Those apps can accept inputs and write data back: they can change stored numbers, not only draw them. They are not another chart page.\n\nThe question I can check is specific. Before I allow that assistant, or that generated app, to act on a model, can I name the model allowed to speak outside the report, the writes already approved, and the person who can stop a bad action?\n\n## A meeting's trust does not travel\n\nUlag states the dependency in plain terms. Organizations need more than models and agents. They need governed data, shared definitions, operational knowledge, and guardrails so the assistant can act reliably. The announcements follow that sentence. Copilot can pull these Fabric insights with no extra AI token charge. The app path starts from a model the post calls trusted, then gives the app a database, sign-in, and security. Power BI Pro and Premium Per User, the ordinary paid licenses, get that preview at no added license cost, capped at 1 GB per app.\n\nTrusted, in that usage, means the definitions already live in a model. It does not mean I checked whether they survive a reader who never sat in the meeting. A steering pack can carry a margin figure because the room knows the adjustment, the close calendar, and what the number leaves out. Copilot does not bring the room along. Someone in another function asks an ordinary question and receives the finance definition as if the company had agreed on one.\n\nI would treat that as a change of speaker. The model that may answer outside the report gets an owner, and a written list of measures allowed to travel. Models that still disagree on revenue stay inside the report. I do not ask the assistant to reconcile them.\n\n## The write is the release\n\nThe same post hides a second decision inside a long feature list. Operations agents, still in preview, are gaining pre-approved actions and root-cause notes, with a person kept in the loop. The data engineering agent, also in preview, is described the same way. A person states the outcome and the guardrails, and the agent works inside them. The generated Power BI app is the case I care about more, because it can write data back and keep shared state for an operational workflow.\n\nA wrong chart wastes a meeting. A wrong write changes the record the next chart reads.\n\nMy baseline is the report that cannot write. The challenger is the app that can. I would let the app win on one path only: the table it may change, and a way to reverse one bad write without a war room. Pre-approved has to stay a short list. If the list is every action someone might want on a Friday, the approval is a catalog, and the agent is guessing again.\n\nI keep a smaller version of that gate on Orbit, the public site where these essays live. A draft can be written each Monday. It stays a draft until I approve it in Slack. The generator does not get the publish action. The allowed change is named before the automation runs. I want that same shape on a write-back app.\n\n## Where I would leave the switch off\n\nMost of this is still preview, and I have not run it against a production model. A launch post is not a postmortem. The 1 GB cap limits size. It does not decide which definition is allowed to speak. Private-by-default access on these apps is a useful default, and it still will not choose which margin figure Copilot should repeat.\n\nThere is a counter-case I want to keep. While I am still finding which question the data can support, a generated app is a sketch. Certifying a speaker is the wrong tool on a sketch. It slows the only part of the work that should stay loose. The failure mode is promotion. A convincing preview, sitting on an ordinary Power BI license at no extra cost, should not quietly become the workflow that updates a shared number. I label the sketch as disposable and leave write-back off it.\n\nThe post closes on a claim I can check. The shift will not be defined by how many agents an organization creates. It will be defined by whether those agents understand the business. I read that as a shared definition with an owner, not a longer list of agents. The announcement is wide. The first change I would make is narrow enough to audit.\n\n## Takeaway\n\nWhen an assistant or a generated app can inherit a report's measures and then write data, I do not start by enabling the feature. I name the model that may speak outside the report, the writes already approved, and the person who can stop a bad action. If I cannot write that down, the model stays a report. Faster app creation would only move an unsettled definition into a place where it can change the record.\n",
+  "preview": "Before an agent writes back, name who is allowed to speak\n\nBarcelona's Copilot and Power BI updates let a report's definitions leave the report and change stored data. I would name the speaking model, the allowed writes, and who can stop a bad action before I turn that on.\n\nInspired by: FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents",
   "intake": {
-    "weekOf": "2026-09-28",
-    "generatedAt": "2026-09-28T09:08:13.414Z",
+    "weekOf": "2026-10-05",
+    "generatedAt": "2026-10-05T09:02:09.382Z",
     "signals": [
       {
-        "id": "f950d4b13b41",
-        "title": "Improvements To Power Query Integration In Power BI Report Builder",
-        "link": "https://blog.crossjoin.co.uk/2026/09/27/improvements-to-power-query-integration-in-power-bi-report-builder/",
+        "id": "c652d822df81",
+        "title": "The Problem With Approximate Distinct Counts In Power BI – And How To Solve It",
+        "link": "https://blog.crossjoin.co.uk/2026/10/04/the-problem-with-approximate-distinct-counts-in-power-bi-and-how-to-solve-it/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "There are some nice improvements to Power Query integration in the latest version of Power BI Report Builder that, while they are documented, didn’t get an official blog post but which I think deserve to be highlighted. First of all the “Get Data” button has been renamed “Power Q…"
+        "snippet": "As you’ve probably seen in the blog post for the September 2026 release of Power BI, Import mode and Direct Lake mode semantic models now support the ApproximateDistinctCount() DAX function. I tested its performance on a Direct Lake semantic model with a 1.4 billion row fact tabl…"
       },
       {
-        "id": "eeac3b47b588",
-        "title": "Data Engineering Weekly #289",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-289",
-        "source": "Data Engineering Weekly",
+        "id": "a8c0638d220f",
+        "title": "Unlocking Data Portability: Preventing Catalog Lock-in with REGISTER and UNREGISTER APIs",
+        "link": "https://www.databricks.com/blog/unlocking-data-portability-preventing-catalog-lock-register-and-unregister-apis",
+        "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "The Weekly Data Engineering Newsletter"
+        "snippet": "As organizations embrace the lakehouse architecture, data is shifting from proprietary..."
       },
       {
-        "id": "0338664a5fc3",
-        "title": "The Jobs Matrix for AI: Four Boxes Instead of Forty Tools",
-        "link": "https://www.scrum.org/resources/blog/jobs-matrix-ai-four-boxes-instead-forty-tools",
-        "source": "Scrum.org",
+        "id": "f6ff5f6917ea",
+        "title": "Fragments: October 4",
+        "link": "https://martinfowler.com/fragments/2026-10-04.html",
+        "source": "Martin Fowler",
         "category": "Delivery",
-        "snippet": "TL;DR: A 2×2 Matrix on AI for Agile Practitioners You probably think making sense of AI means keeping up with every new tool, agent, and pricing tier. Steve Jobs faced a similar mess at Apple in 1997, with a dozen versions of the Macintosh, and he fixed it with a two-by-two grid…"
+        "snippet": "In response to my last fragments (probably the bit about us worrying if LLMs have consciousness when we when we should be wondering why they don’t have a conscience) “Metalanguage” replied: we shipped the id and forgot the superego. classic software lifecycle. I don’t know what w…"
       },
       {
-        "id": "859aa16dba9f",
-        "title": "Capital inflows boost output, even after accounting for expectations",
-        "link": "https://cepr.org/voxeu/columns/capital-inflows-boost-output-even-after-accounting-expectations",
+        "id": "c1cd391cd548",
+        "title": "Bonding through crises with nonbank financial institutions",
+        "link": "https://cepr.org/voxeu/columns/bonding-through-crises-nonbank-financial-institutions",
         "source": "VoxEU",
         "category": "Economics",
-        "snippet": "Emerging market economies that are expected to perform well may attract more foreign capital, making it difficult to establish the causal effects of capital inflows on output. Using professional forecasts to account for expectations about future economic conditions, this column c…"
+        "snippet": "Nonbank financial institutions are often seen as procyclical lenders, cutting credit more sharply than banks during stress, while bond markets can substitute for bank lending when credit supply contracts. This column brings these perspectives together and argues that this cyclica…"
       },
       {
-        "id": "6a47534fda8a",
-        "title": "The PRA held a captive insurance industry roundtable",
-        "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/august/pra-holds-captive-insurance-industry-roundtable",
+        "id": "0460e0adb0a8",
+        "title": "PRA Regulatory Digest – September 2026",
+        "link": "https://www.bankofengland.co.uk/prudential-regulation/regulatory-digest/2026/september-2026",
         "source": "Bank of England PRA",
         "category": "Credit",
-        "snippet": "On 17 September 2026, the PRA hosted a roundtable in relation to CP11/26 – A tailored regime for captive insurance."
+        "snippet": "The PRA Regulatory Digest is for people working in the UK financial services industry and highlights key regulatory news and publications delivered for the month."
       },
       {
-        "id": "558841854585",
-        "title": "2026 in LLMs (so far)",
-        "link": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
+        "id": "5a3f1f4a82c5",
+        "title": "We're going to need default hard budget caps on pretty much everything",
+        "link": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
         "source": "Simon Willison",
         "category": "AI",
         "snippet": ""
       },
       {
-        "id": "6c06272599dc",
-        "title": "Skills for Report Authoring in Power BI: A Conversation with Harleen Kaur (Fabric Insider Ep. 15)",
-        "link": "https://radacad.com/skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15/?utm_source=rss&utm_medium=rss&utm_campaign=skills-for-report-authoring-in-power-bi-a-conversation-with-harleen-kaur-fabric-insider-ep-15",
-        "source": "RADACAD",
+        "id": "6cf866657b71",
+        "title": "FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents",
+        "link": "https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/",
+        "source": "Microsoft Fabric Blog",
         "category": "Analytics",
-        "snippet": "We’ve already covered how AI can build and modify a semantic model using the Power BI Modeling MCP server. But building the semantic model is only half the job, someone still has to build the actual report on top of it. In this episode of Fabric Insider, I sit down with Harleen K…"
+        "snippet": "Microsoft Fabric and SQL innovations announced at FabCon and SQLCon Barcelona 2026 help organizations build trusted data foundations for AI. The post FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents appeared first on Microsoft Fab…"
       },
       {
-        "id": "783a14311687",
-        "title": "From Data to Dialogue: How S&P Global Energy Made Its Structured Data Estate Conversational with Databricks Genie Agents and MCP",
-        "link": "https://www.databricks.com/blog/data-dialogue-how-sp-global-energy-made-its-structured-data-estate-conversational-databricks",
-        "source": "Databricks Blog",
+        "id": "4aa0bee4983e",
+        "title": "Data Engineering Weekly #290",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-290",
+        "source": "Data Engineering Weekly",
         "category": "Data",
-        "snippet": "S&P Global's goal was to fundamentally improve how customers discover and consume..."
+        "snippet": "The Weekly Data Engineering Newsletter"
       }
     ],
     "projects": [
@@ -169,7 +168,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-09-28T09:14:41.010Z",
-  "publishedSlug": "when-ai-can-build-the-report-the-brief-becomes-the-work"
+  "source": "ide"
 }
