@@ -6,6 +6,8 @@ import { EuSpotDesk } from "@/components/live/EuSpotDesk";
 import { HousingDesk } from "@/components/live/HousingDesk";
 import { PowerMixDesk } from "@/components/live/PowerMixDesk";
 import { EconomyDesk } from "@/components/live/EconomyDesk";
+import { WhichModel } from "@/components/model-choice/WhichModel";
+import { BackLink } from "@/components/ui/BackLink";
 import { DeskMissing } from "@/components/story/DeskMissing";
 import { readEuSpotSnapshot, toEuSpotView } from "@/lib/live/eu-spot";
 import { readHousingSnapshot, toHousingView } from "@/lib/live/housing";
@@ -97,6 +99,15 @@ export default async function LiveDeskPage({
       );
     }
     return <EconomyDesk view={toEconomyView(snap)} />;
+  }
+
+  if (slug === "which-model") {
+    return (
+      <>
+        <BackLink fallbackHref="/portfolio/live" label="Live dashboards" />
+        <WhichModel frame="desk" />
+      </>
+    );
   }
 
   notFound();

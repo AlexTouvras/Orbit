@@ -59,6 +59,15 @@ export const liveDesks: LiveDesk[] = [
     kind: "native",
     source: "Eurostat · ECB Data Portal",
   },
+  {
+    slug: "which-model",
+    title: "Which model?",
+    question: "Which model should I use for this job?",
+    cadence: "Monthly · OpenRouter catalog",
+    status: "live",
+    kind: "native",
+    source: "OpenRouter · Artificial Analysis",
+  },
 ];
 
 export function getLiveDesk(slug: string): LiveDesk | undefined {

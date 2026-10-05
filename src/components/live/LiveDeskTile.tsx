@@ -7,6 +7,7 @@ import { HeatmapPeek } from "@/components/live/HeatmapPeek";
 import { HousingPeek } from "@/components/live/HousingPeek";
 import { PowerMixPeek } from "@/components/live/PowerMixPeek";
 import { EconomyPeek } from "@/components/live/EconomyPeek";
+import { WhichModelPeek } from "@/components/live/WhichModelPeek";
 import { ScrollRailCard } from "@/components/story/ScrollRail";
 
 function pad(n: number) {
@@ -25,6 +26,7 @@ async function DeskPeek({ slug }: { slug: string }) {
   if (slug === "housing") return <HousingPeek />;
   if (slug === "power-mix") return <PowerMixPeek />;
   if (slug === "economy") return <EconomyPeek />;
+  if (slug === "which-model") return <WhichModelPeek />;
   return <PeekFallback />;
 }
 

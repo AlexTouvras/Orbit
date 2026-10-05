@@ -43,6 +43,7 @@ Do **not** treat this as permission to build the Decision Intelligence Lab. Lab 
 | Helsinki Housing | Interactive desk | Data → Map | Official stats; communication of market state. |
 | Europe Power Mix | Interactive desk | Data → Comparison | Generation shares. |
 | Europe Economy Pulse | Interactive desk | Data → Headlines | Macro pulse; closest “economy → narrative” desk. |
+| Which model? | Interactive desk | Catalog → Fit → Workload cost | Monthly OpenRouter instrument. Scores current shipping lines for a job. Not a flagship story. |
 
 **Desk pattern strength:** Open → Cast → Picture → Move → Close. That is rare and valuable evidence of **systems communication**.  
 **Desk pattern gap:** Desks answer “what is the state?” more than “I owned a business problem through to a deployed decision system with measured outcome.”
