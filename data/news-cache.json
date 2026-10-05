@@ -1,7 +1,70 @@
 {
-  "generatedAt": "2026-10-04T06:46:57.266Z",
+  "generatedAt": "2026-10-05T06:46:59.854Z",
   "count": 264,
   "items": [
+    {
+      "id": "a8c0638d220f",
+      "title": "Unlocking Data Portability: Preventing Catalog Lock-in with REGISTER and UNREGISTER APIs",
+      "link": "https://www.databricks.com/blog/unlocking-data-portability-preventing-catalog-lock-register-and-unregister-apis",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-05T16:00:00.000Z",
+      "contentSnippet": "As organizations embrace the lakehouse architecture, data is shifting from proprietary..."
+    },
+    {
+      "id": "f6ff5f6917ea",
+      "title": "Fragments: October 4",
+      "link": "https://martinfowler.com/fragments/2026-10-04.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-10-05T04:28:00.000Z",
+      "contentSnippet": "In response to my last fragments (probably the bit about us worrying if LLMs have consciousness when we when we should be wondering why they don’t have a conscience) “Metalanguage” replied: we shipped the id and forgot the superego. classic software lifecycle. I don’t know what w…"
+    },
+    {
+      "id": "4aa0bee4983e",
+      "title": "Data Engineering Weekly #290",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-290",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-10-05T02:08:21.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "c1cd391cd548",
+      "title": "Bonding through crises with nonbank financial institutions",
+      "link": "https://cepr.org/voxeu/columns/bonding-through-crises-nonbank-financial-institutions",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-04T23:00:00.000Z",
+      "contentSnippet": "Nonbank financial institutions are often seen as procyclical lenders, cutting credit more sharply than banks during stress, while bond markets can substitute for bank lending when credit supply contracts. This column brings these perspectives together and argues that this cyclica…"
+    },
+    {
+      "id": "c652d822df81",
+      "title": "The Problem With Approximate Distinct Counts In Power BI – And How To Solve It",
+      "link": "https://blog.crossjoin.co.uk/2026/10/04/the-problem-with-approximate-distinct-counts-in-power-bi-and-how-to-solve-it/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-10-04T15:02:08.000Z",
+      "contentSnippet": "As you’ve probably seen in the blog post for the September 2026 release of Power BI, Import mode and Direct Lake mode semantic models now support the ApproximateDistinctCount() DAX function. I tested its performance on a Direct Lake semantic model with a 1.4 billion row fact tabl…"
+    },
+    {
+      "id": "518438b7e164",
+      "title": "5 Things the Scrum Master Shouldn’t Be Doing",
+      "link": "https://www.scrum.org/resources/blog/5-things-scrum-master-shouldnt-be-doing",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-04T13:00:00.000Z",
+      "contentSnippet": "Image I love being a Scrum Master. What I love about it is helping a team accomplish something and honestly just making Developers' work lives as hassle-free as possible. I love working with smart people and seeing them accomplish amazing things. As a Scrum Master, most of us wan…"
+    },
+    {
+      "id": "abfa4005e148",
+      "title": "Outcome-Based Leadership in Project Management: Measuring What Really Matters",
+      "link": "https://www.scrum.org/resources/blog/outcome-based-leadership-project-management-measuring-what-really-matters",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-04T11:35:53.000Z",
+      "contentSnippet": "Image The Context I once led a software development program with more than 100 developers and several project managers. The projects were strategically important for the company, and expectations from upper leadership were high. Officially, the organization was working with Scrum…"
+    },
     {
       "id": "16f06ffd347c",
       "title": "Not All Complexity Can Be Processed Away. Fred Brooks Proved This in 1986.",
@@ -309,15 +372,6 @@
       "contentSnippet": "Lakebase is a fully managed Postgres database, built for the operational realities..."
     },
     {
-      "id": "eceee48dbbb4",
-      "title": "How to scale agentic applications without creating AI sprawl",
-      "link": "https://www.databricks.com/blog/how-scale-agentic-applications-without-creating-ai-sprawl",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-30T16:46:25.000Z",
-      "contentSnippet": "Building an agent is getting easier. More capable models and coding agents are making..."
-    },
-    {
       "id": "fb6067b5bbd7",
       "title": "What work can robots do?",
       "link": "https://www.anthropic.com/research/what-work-can-robots-do",
@@ -415,15 +469,6 @@
       "category": "Credit",
       "pubDate": "2026-09-30T00:00:00.000Z",
       "contentSnippet": "The Core Principles for Effective Deposit Insurance Systems (core principles) of the International Association of Deposit Insurers are the international standard for the design, implementation and assessment of deposit insurance systems. They provide a benchmark for jurisdictions…"
-    },
-    {
-      "id": "22a02ab5bf54",
-      "title": "When Wall Street drifts from Main Street: Consumption as an anchor for stock prices",
-      "link": "https://cepr.org/voxeu/columns/when-wall-street-drifts-main-street-consumption-anchor-stock-prices",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-29T23:00:00.000Z",
-      "contentSnippet": "Debate over whether buoyant equity markets reflect durable economic gains or a widening gap between Wall Street and Main Street has intensified with the AI boom. This column argues that aggregate consumption provides a useful real-economy anchor for stock prices. Temporary depart…"
     },
     {
       "id": "99f68fe68635",
@@ -705,15 +750,6 @@
       "contentSnippet": "To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes."
     },
     {
-      "id": "d444739f2328",
-      "title": "Current State vs. Future State in Business Analysis: Why You Need Both",
-      "link": "https://www.scrum.org/resources/blog/current-state-vs-future-state-business-analysis-why-you-need-both",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-24T17:17:15.000Z",
-      "contentSnippet": "Image Current state vs future state analysis helps teams understand where they are today, where they need to go, and what needs to change along the way. It sounds simple, but teams often skip this thinking. A business problem is identified, and the conversation quickly shifts to…"
-    },
-    {
       "id": "e7107d9a76d9",
       "title": "Introducing Gemini 3.8 Live with Live Avatar",
       "link": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
@@ -739,15 +775,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-24T14:10:00.000Z",
       "contentSnippet": "Human collaboration, like most things, improves with feedback. But it's not obvious how to make feedback effective. Anuja Karnik and Sumeet Gayathri Moghe pass on a bevy of tips for healthy feedback, based on the principle that both praise and criticism should be seen as positive…"
-    },
-    {
-      "id": "2c7cfc8aac87",
-      "title": "From Deployed to Actually Used: The Lane Most Boards Are Missing",
-      "link": "https://www.scrum.org/resources/blog/deployed-actually-used-lane-most-boards-are-missing",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-24T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. Why is nobody using the AI agents you shipped? People are deploying a feature and calling it a day, essentially. The problem is that while the feature might be working, it might not be useful. Or even if it's useful, it might not be used. O…"
     },
     {
       "id": "6c06272599dc",
@@ -1506,15 +1533,6 @@
       "contentSnippet": "Jim Highsmith recognizes that effective writing from a practitioner is a style distinct from academic writing or thought-leadership content. It's a style that I advocate, and my contributors mostly follow. Jim decided it was important to give it a name, and identify what makes it…"
     },
     {
-      "id": "cfc19209babc",
-      "title": "Fragments: August 18",
-      "link": "https://martinfowler.com/fragments/2026-08-18.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-08-18T15:04:00.000Z",
-      "contentSnippet": "Part of the reason why I’m at Thoughtworks is because I’d like to see a software development organization founded on technical excellence as an example for the rest of the industry. The trouble is that I have little aptitude or inclination for the hard work of building such an or…"
-    },
-    {
       "id": "776508c048eb",
       "title": "Data Engineering Weekly #283",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-283",
@@ -1695,6 +1713,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "d9adb789161e",
+      "title": "How Firms Form Beliefs and the Implications for Inflation",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
+    },
+    {
       "id": "07b1c1c9fdb7",
       "title": "Credit Surfaces and Economic Uncertainty",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
@@ -1713,15 +1740,6 @@
       "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
-      "id": "d9adb789161e",
-      "title": "How Firms Form Beliefs and the Implications for Inflation",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
-    },
-    {
       "id": "16fe89b83e2e",
       "title": "LIAF02/26 – Low Impact Amendments Finalisation July 2026",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-finalisation-july-2026",
@@ -1731,13 +1749,13 @@
       "contentSnippet": "Low Impact Amendments Finalisation July 2026"
     },
     {
-      "id": "054894a68cbf",
-      "title": "LIAC02/26 – Low Impact Amendments Consultation July 2026",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-consultation-july-2026",
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
       "source": "Bank of England PRA",
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Low Impact Amendments Consultation July 2026"
+      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "fb549b859ee4",
@@ -1774,15 +1792,6 @@
       "category": "Data",
       "pubDate": "2026-07-27T03:37:19.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "9f106d335bd4",
-      "title": "Power BI, M365 Copilot And The Importance Of DAX UDFs",
-      "link": "https://blog.crossjoin.co.uk/2026/07/26/power-bi-m365-copilot-and-the-importance-of-dax-udfs/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-07-26T21:13:48.000Z",
-      "contentSnippet": "This was a big week for Power BI Copilot with the announcement of a new direction for the feature. If you haven’t done so already, read the two announcement blog posts here and here and check out this demo video. There are some pros and cons to this change (yes, you’re going to n…"
     },
     {
       "id": "fb91e6df40a1",
@@ -1963,15 +1972,6 @@
       "category": "Analytics",
       "pubDate": "2026-06-29T15:00:00.000Z",
       "contentSnippet": "New research from Microsoft and MIT Technology Review Insights reveals how organizations are building trust in AI agents—starting with structured data workflows and scaling through shared context and real-time intelligence. The post Why data teams are emerging as leaders in AI ag…"
-    },
-    {
-      "id": "f8c684b806ac",
-      "title": "Data Engineering Weekly #276",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-276",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-06-29T03:52:17.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "7869bed7e57f",
