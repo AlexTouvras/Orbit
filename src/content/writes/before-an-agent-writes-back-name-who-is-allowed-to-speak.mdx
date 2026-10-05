@@ -1,0 +1,46 @@
+---
+title: "Before an agent writes back, name who is allowed to speak"
+summary: "Barcelona's Copilot and Power BI updates let a report's definitions leave the report and change stored data. I would name the speaking model, the allowed writes, and who can stop a bad action before I turn that on."
+date: "2026-10-05"
+category: "Delivery"
+featured: false
+tags: ["Delivery", "Agents", "Analytics"]
+---
+
+## The question
+
+The easy plan is still sitting on the table. The report is already trusted, so let the assistant use it. In Power BI, Microsoft's reporting product, the semantic model is the layer that holds the measures and how they relate. If a finance meeting already argues from those measures, pointing a chat assistant at the same model looks like a free upgrade.
+
+That plan misses who the new reader is. [FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents](https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/) is Arun Ulag's write-up of the change. Fabric IQ, Microsoft's shared layer for business context, is generally available inside Copilot Chat and Cowork. Copilot is the assistant people already open in Microsoft 365. A separate preview in Power BI Desktop, due in the coming weeks, lets someone describe an application, generate it from a semantic model, and publish it. Those apps can accept inputs and write data back: they can change stored numbers, not only draw them. They are not another chart page.
+
+The question I can check is specific. Before I allow that assistant, or that generated app, to act on a model, can I name the model allowed to speak outside the report, the writes already approved, and the person who can stop a bad action?
+
+## A meeting's trust does not travel
+
+Ulag states the dependency in plain terms. Organizations need more than models and agents. They need governed data, shared definitions, operational knowledge, and guardrails so the assistant can act reliably. The announcements follow that sentence. Copilot can pull these Fabric insights with no extra AI token charge. The app path starts from a model the post calls trusted, then gives the app a database, sign-in, and security. Power BI Pro and Premium Per User, the ordinary paid licenses, get that preview at no added license cost, capped at 1 GB per app.
+
+Trusted, in that usage, means the definitions already live in a model. It does not mean I checked whether they survive a reader who never sat in the meeting. A steering pack can carry a margin figure because the room knows the adjustment, the close calendar, and what the number leaves out. Copilot does not bring the room along. Someone in another function asks an ordinary question and receives the finance definition as if the company had agreed on one.
+
+I would treat that as a change of speaker. The model that may answer outside the report gets an owner, and a written list of measures allowed to travel. Models that still disagree on revenue stay inside the report. I do not ask the assistant to reconcile them.
+
+## The write is the release
+
+The same post hides a second decision inside a long feature list. Operations agents, still in preview, are gaining pre-approved actions and root-cause notes, with a person kept in the loop. The data engineering agent, also in preview, is described the same way. A person states the outcome and the guardrails, and the agent works inside them. The generated Power BI app is the case I care about more, because it can write data back and keep shared state for an operational workflow.
+
+A wrong chart wastes a meeting. A wrong write changes the record the next chart reads.
+
+My baseline is the report that cannot write. The challenger is the app that can. I would let the app win on one path only: the table it may change, and a way to reverse one bad write without a war room. Pre-approved has to stay a short list. If the list is every action someone might want on a Friday, the approval is a catalog, and the agent is guessing again.
+
+I keep a smaller version of that gate on Orbit, the public site where these essays live. A draft can be written each Monday. It stays a draft until I approve it in Slack. The generator does not get the publish action. The allowed change is named before the automation runs. I want that same shape on a write-back app.
+
+## Where I would leave the switch off
+
+Most of this is still preview, and I have not run it against a production model. A launch post is not a postmortem. The 1 GB cap limits size. It does not decide which definition is allowed to speak. Private-by-default access on these apps is a useful default, and it still will not choose which margin figure Copilot should repeat.
+
+There is a counter-case I want to keep. While I am still finding which question the data can support, a generated app is a sketch. Certifying a speaker is the wrong tool on a sketch. It slows the only part of the work that should stay loose. The failure mode is promotion. A convincing preview, sitting on an ordinary Power BI license at no extra cost, should not quietly become the workflow that updates a shared number. I label the sketch as disposable and leave write-back off it.
+
+The post closes on a claim I can check. The shift will not be defined by how many agents an organization creates. It will be defined by whether those agents understand the business. I read that as a shared definition with an owner, not a longer list of agents. The announcement is wide. The first change I would make is narrow enough to audit.
+
+## Takeaway
+
+When an assistant or a generated app can inherit a report's measures and then write data, I do not start by enabling the feature. I name the model that may speak outside the report, the writes already approved, and the person who can stop a bad action. If I cannot write that down, the model stays a report. Faster app creation would only move an unsettled definition into a place where it can change the record.
