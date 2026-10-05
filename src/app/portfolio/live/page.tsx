@@ -8,7 +8,7 @@ import { StoryStat } from "@/components/story/StoryStat";
 export const metadata: Metadata = {
   title: "Live dashboards",
   description:
-    "One-page desks on Orbit: Nordic equity, EU Spot, Helsinki housing, and Europe power mix. Not Power BI.",
+    "One-page desks on Orbit: Nordic equity, EU Spot, Helsinki housing, Europe power mix, and which model fits a job.",
   alternates: { canonical: "/portfolio/live" },
 };
 
@@ -23,8 +23,9 @@ export default function LiveDesksPage() {
         accent="in plain words."
       />
       <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-        Electricity, Helsinki flats, Nordic stocks, the euro area. One question
-        on the card. The picture stays on the desk.
+        Electricity, Helsinki flats, Nordic stocks, the euro area, and which
+        model fits a job. One question on the card. The picture stays on the
+        desk.
       </p>
 
       <DeskCast className="lg:grid-cols-3">
