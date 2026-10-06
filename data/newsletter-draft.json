@@ -1,82 +1,97 @@
 {
-  "id": "newsletter-2026-W40",
-  "status": "sent",
-  "createdAt": "2026-09-29T14:04:13.100Z",
-  "weekOf": "2026-09-28",
-  "subject": "Orbit weekly — week of 2026-09-28",
+  "id": "newsletter-2026-W41",
+  "status": "pending",
+  "createdAt": "2026-10-06T14:11:35.779Z",
+  "weekOf": "2026-10-05",
+  "subject": "Orbit weekly — week of 2026-10-05",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
   "writes": [
     {
-      "slug": "when-ai-can-build-the-report-the-brief-becomes-the-work",
-      "title": "When AI can build the report, the brief becomes the work",
-      "summary": "As report construction gets cheaper, I need a testable brief and a separate check for decision quality before a polished page earns trust.",
-      "date": "2026-09-28",
-      "href": "https://alextouvras.com/writes/when-ai-can-build-the-report-the-brief-becomes-the-work"
+      "slug": "before-an-agent-writes-back-name-who-is-allowed-to-speak",
+      "title": "Before an agent writes back, name who is allowed to speak",
+      "summary": "Barcelona's Copilot and Power BI updates let a report's definitions leave the report and change stored data. I would name the speaking model, the allowed writes, and who can stop a bad action before I turn that on.",
+      "date": "2026-10-05",
+      "href": "https://alextouvras.com/writes/before-an-agent-writes-back-name-who-is-allowed-to-speak"
     }
   ],
   "signals": [
     {
-      "title": "Improvements To Power Query Integration In Power BI Report Builder",
-      "link": "https://blog.crossjoin.co.uk/2026/09/27/improvements-to-power-query-integration-in-power-bi-report-builder/",
-      "source": "Chris Webb's BI Blog",
+      "title": "FabCon Europe 2026: 4 announcements that may change how we work with data and AI",
+      "link": "https://data-mozart.com/fabcon-europe-2026-4-announcements-that-may-change-how-we-work-with-data-and-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabcon-europe-2026-4-announcements-that-may-change-how-we-work-with-data-and-ai",
+      "source": "Data Mozart",
       "category": "Analytics",
-      "snippet": "There are some nice improvements to Power Query integration in the latest version of Power BI Report Builder that, whil…"
+      "snippet": "Barcelona is done. Nearly 5,000 people, 130+ sessions, and a very long list of announcements. This is my cut of the one…"
     },
     {
-      "title": "How Databricks rolls out frontier models to 12,000 employees on Day 1",
-      "link": "https://www.databricks.com/blog/how-databricks-rolls-out-frontier-models-14000-employees-day-1",
+      "title": "NEAREST BY Join: Scaling Vector Search in Databricks Runtime",
+      "link": "https://www.databricks.com/blog/nearest-join-scaling-vector-search-databricks-runtime",
       "source": "Databricks Blog",
       "category": "Data",
-      "snippet": "Providing our employees access to frontier AI capabilities is a top priority at Databricks, and consequently..."
+      "snippet": "Vector search originated as a serving problem. The classical use case is a chatbot..."
     },
     {
-      "title": "AI Made Engineering Faster. Why Not The Business?",
-      "link": "https://www.scrum.org/resources/blog/ai-made-engineering-faster-why-not-business",
+      "title": "Scrum Day India 2026 Recap: Scrum Teams in the Age of Autonomous Agents",
+      "link": "https://www.scrum.org/resources/blog/scrum-day-india-2026-recap-scrum-teams-age-autonomous-agents",
       "source": "Scrum.org",
       "category": "Delivery",
-      "snippet": "Originally published on yuvalyeret.com. Why More AI Activity Is Not Showing Up In The Business You can 10x engineering…"
+      "snippet": "Image On Saturday, 26 September 2026, Scrum practitioners gathered at To The New in Sector 144, Noida, for Scrum Day In…"
     },
     {
-      "title": "Lifting the curtain on the EU’s debt",
-      "link": "https://cepr.org/voxeu/columns/lifting-curtain-eus-debt",
+      "title": "Venture capital – a global perspective",
+      "link": "https://cepr.org/voxeu/columns/venture-capital-global-perspective",
       "source": "VoxEU",
       "category": "Economics",
-      "snippet": "The EU’s far-reaching response to a series of major shocks has turned it into a major borrower on international financi…"
+      "snippet": "Existing views on what venture capital finances and how its markets are structured are primarily shaped by the experien…"
     }
   ],
   "ravens": [
     {
-      "kind": "signal",
+      "kind": "inbox",
       "domain": "ai-agents",
-      "title": "Cursor Rollouts and Security Review — Teams/Enterprise last-mile PR bots; no auto-merge",
-      "summary": "Cursor’s changelog dated **23 Sep 2026** launches two bots on **Teams and Enterprise**, enabled from the automations tab. **Rollouts** atta…",
-      "id": "SIG-20260928-001",
-      "date": "2026-09-28",
+      "title": "Agent Framework Python 1.20.0 isolates session file access and fail-closes unresolved approvals",
+      "summary": "microsoft/agent-framework python-1.20.0 (published 2 Oct 2026) adds response-stream gates and buffering, session-scoped file-access isolati…",
+      "href": "https://github.com/microsoft/agent-framework/releases/tag/python-1.20.0",
+      "sourceTitle": "microsoft/agent-framework python-1.20.0",
+      "id": "FIND-20261005-002",
+      "date": "2026-10-02"
+    },
+    {
+      "kind": "signal",
+      "domain": "data-bi",
+      "title": "ApproximateDistinctCount on Import and Direct Lake — keep an exact distinct-count switch",
+      "summary": "Chris Webb’s 4 Oct 2026 post (blog.crossjoin.co.uk) says Import and Direct Lake semantic models now support `ApproximateDistinctCount()`, w…",
+      "id": "SIG-20261005-003",
+      "date": "2026-10-05",
       "priority": "p2"
+    },
+    {
+      "kind": "signal",
+      "domain": "career",
+      "title": "Lokki banking BI Developer contract, Helsinki or Oulu — apply by 7 Oct 19:00",
+      "summary": "Lokki Henkilöstöpalvelut Oy posted a BI Developer – Transaction Monitoring assignment on 4 Oct 2026 at 18:36 (laura.fi) for an **unnamed ba…",
+      "id": "SIG-20261005-002",
+      "date": "2026-10-05",
+      "priority": "p1"
     },
     {
       "kind": "inbox",
       "domain": "finance",
-      "title": "Fortum Elmera tender: 90.02% accepted; Minimum Acceptance condition satisfied; window still 2 Oct 16:30 CEST",
-      "summary": "Fortum’s 25 Sep 2026 stock-exchange release (Cision, 13:20 EEST) reports that, subject to customary verification of acceptances, the offero…",
-      "href": "https://news.cision.com/fortum/r/90--minimum-acceptance-condition-satisfied-for-fortum-s-recommended-voluntary-cash-tender-offer-for-,c4400820",
-      "sourceTitle": "90% Minimum Acceptance condition satisfied for Fortum’s recommended voluntary cash tender offer for Elmera Group ASA — Fortum, 25 September 2026",
-      "id": "FIND-20260928-003",
-      "date": "2026-09-25"
+      "title": "Fortum Elmera offer expired 2 Oct; 91.61% accepted; settlement expected about 23 Oct",
+      "summary": "Fortum’s 2 Oct 2026 stock-exchange release (Cision, 20:00 EEST / 19:00 CET) says the Elmera offer period expired at 16:30 CEST on 2 October…",
+      "href": "https://news.cision.com/fortum/r/fortum-announces-settlement-and-results-of-its-recommended-voluntary-cash-tender-offer-for-elmera-gr,c4404065",
+      "sourceTitle": "Fortum announces settlement and results of its recommended voluntary cash tender offer for Elmera Group ASA — 2 October 2026",
+      "id": "FIND-20261005-008",
+      "date": "2026-10-02"
     },
     {
       "kind": "knowledge",
       "domain": "parenting",
-      "title": "Finland — rotavirus first dose from 6 weeks and before 12 weeks; series at 2, 3 and 5 months",
-      "summary": "The national programme uses **oral RotaTeq**, free of charge for infants **6–31 weeks**. THL recommends doses at **2, 3 and 5 months**.",
-      "href": "https://thl.fi/ohjeita-ammattilaisille/rotavirusrokote",
-      "sourceTitle": "Rotavirusrokote — THL",
-      "id": "KNOW-parenting-fi-infant-rotavirus-2-3-5m",
-      "date": "2026-09-28"
+      "title": "THL — 0–1 month development is eye contact and moving limbs together; birth weight back by ~2 weeks",
+      "summary": "**0–1 month** (THL *Meille tulee vauva* table, via Terveyskirjasto): occasional involuntary smiles, attentive eye contact, moving arms and…",
+      "href": "https://www.terveyskirjasto.fi/osv00012",
+      "sourceTitle": "Vauvan kasvu ja kehitys — Terveyskirjasto (THL Meille tulee vauva)",
+      "id": "KNOW-parenting-thl-0-1-month-development-growth",
+      "date": "2026-10-05"
     }
-  ],
-  "sentAt": "2026-09-29T14:04:16.155Z",
-  "broadcastId": "01a0ed7a-ff55-74ac-94f3-360dc1efe42b",
-  "sendMode": "test",
-  "sentTo": "a.touvras@gmail.com"
+  ]
 }
