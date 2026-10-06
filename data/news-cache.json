@@ -1,7 +1,34 @@
 {
-  "generatedAt": "2026-10-05T06:46:59.854Z",
+  "generatedAt": "2026-10-06T06:46:56.007Z",
   "count": 264,
   "items": [
+    {
+      "id": "c9abee08b28d",
+      "title": "Venture capital – a global perspective",
+      "link": "https://cepr.org/voxeu/columns/venture-capital-global-perspective",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-05T23:00:00.000Z",
+      "contentSnippet": "Existing views on what venture capital finances and how its markets are structured are primarily shaped by the experience of the US and a few other high-income economies. This column presents evidence covering nearly 270,000 venture capital-backed startups in over 150 economies t…"
+    },
+    {
+      "id": "c3d66983a8dc",
+      "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+      "link": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-10-05T21:08:31.000Z",
+      "contentSnippet": "Education Innovation"
+    },
+    {
+      "id": "ae0435475eea",
+      "title": "NEAREST BY Join: Scaling Vector Search in Databricks Runtime",
+      "link": "https://www.databricks.com/blog/nearest-join-scaling-vector-search-databricks-runtime",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-05T20:00:00.000Z",
+      "contentSnippet": "Vector search originated as a serving problem. The classical use case is a chatbot..."
+    },
     {
       "id": "a8c0638d220f",
       "title": "Unlocking Data Portability: Preventing Catalog Lock-in with REGISTER and UNREGISTER APIs",
@@ -10,6 +37,51 @@
       "category": "Data",
       "pubDate": "2026-10-05T16:00:00.000Z",
       "contentSnippet": "As organizations embrace the lakehouse architecture, data is shifting from proprietary..."
+    },
+    {
+      "id": "8518910180a4",
+      "title": "How Genie Ontology powers product development at Databricks",
+      "link": "https://www.databricks.com/blog/how-genie-ontology-powers-product-development-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-05T15:07:02.000Z",
+      "contentSnippet": "General-purpose AI agents are good at searching the web, reasoning, and writing code...."
+    },
+    {
+      "id": "78ad53815846",
+      "title": "Our approach to EU text provenance rules",
+      "link": "https://openai.com/index/eu-text-provenance",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-05T15:00:00.000Z",
+      "contentSnippet": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers."
+    },
+    {
+      "id": "54a9a35daff2",
+      "title": "FabCon Europe 2026: 4 announcements that may change how we work with data and AI",
+      "link": "https://data-mozart.com/fabcon-europe-2026-4-announcements-that-may-change-how-we-work-with-data-and-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabcon-europe-2026-4-announcements-that-may-change-how-we-work-with-data-and-ai",
+      "source": "Data Mozart",
+      "category": "Analytics",
+      "pubDate": "2026-10-05T14:17:32.000Z",
+      "contentSnippet": "Barcelona is done. Nearly 5,000 people, 130+ sessions, and a very long list of announcements. This is my cut of the ones that matter, why they matter, and what you should do about them. TL;DR Everything you build in Fabric now reaches Microsoft Copilot and agents directly. Fabric…"
+    },
+    {
+      "id": "3cbec84de8bf",
+      "title": "Building advertising for the way people use AI",
+      "link": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-05T10:00:00.000Z",
+      "contentSnippet": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers."
+    },
+    {
+      "id": "98600d3a924c",
+      "title": "Scrum Day India 2026 Recap: Scrum Teams in the Age of Autonomous Agents",
+      "link": "https://www.scrum.org/resources/blog/scrum-day-india-2026-recap-scrum-teams-age-autonomous-agents",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-05T09:29:36.000Z",
+      "contentSnippet": "Image On Saturday, 26 September 2026, Scrum practitioners gathered at To The New in Sector 144, Noida, for Scrum Day India 2026. The theme was Scrum Teams in the Age of Autonomous Agents. For the last two years, most conversations about AI in Scrum have been about assistance: a b…"
     },
     {
       "id": "f6ff5f6917ea",
@@ -28,6 +100,15 @@
       "category": "Data",
       "pubDate": "2026-10-05T02:08:21.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "71fd3f61bf18",
+      "title": "Importing Data using Java Table Functions",
+      "link": "https://duckdb.org/2026/10/05/import-data-with-java.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-10-05T00:00:00.000Z",
+      "contentSnippet": "Guest blog post by a DuckDB user. The Analytics Screen Problem At the company where I work, we store vulnerability data for our clients as a collection of documents in MongoDB. Initially, our analytics screen performed well, but as our data volume increased, response times began…"
     },
     {
       "id": "c1cd391cd548",
@@ -64,15 +145,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-04T11:35:53.000Z",
       "contentSnippet": "Image The Context I once led a software development program with more than 100 developers and several project managers. The projects were strategically important for the company, and expectations from upper leadership were high. Officially, the organization was working with Scrum…"
-    },
-    {
-      "id": "16f06ffd347c",
-      "title": "Not All Complexity Can Be Processed Away. Fred Brooks Proved This in 1986.",
-      "link": "https://www.scrum.org/resources/blog/not-all-complexity-can-be-processed-away-fred-brooks-proved-1986",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-04T06:00:00.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "5a3f1f4a82c5",
@@ -336,15 +408,6 @@
       "contentSnippet": "China's trade surplus is widening, its manufactured exports are surging, and the political backlash is intensifying. This column argues that the widening trade surplus reflects not just macroeconomic imbalances but a growth model aiming at industrial and technological dominance,…"
     },
     {
-      "id": "d0037729d555",
-      "title": "Training novices to think in the age of large language models",
-      "link": "https://cepr.org/voxeu/columns/training-novices-think-age-large-language-models",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-30T23:00:00.000Z",
-      "contentSnippet": "Whether teaching a cognitive skill remains valuable in this era of AI is a crucial question in education and for firms. This column reports on an experiment in which around 1,000 undergraduates in Italy received either (1) causal-reasoning training, (2) access to ChatGPT, (3) bot…"
-    },
-    {
       "id": "15e70ee5e4a7",
       "title": "Gemini 4 Argon: our next era of frontier intelligence",
       "link": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
@@ -352,24 +415,6 @@
       "category": "AI",
       "pubDate": "2026-09-30T20:01:45.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "25714c24d796",
-      "title": "Introducing ai_decide: make fast decisions on your governed data",
-      "link": "https://www.databricks.com/blog/introducing-aidecide-make-fast-decisions-your-governed-data",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-30T16:59:34.000Z",
-      "contentSnippet": "Today, we’re launching a new Databricks AI Function ai_decide that makes fast decisions..."
-    },
-    {
-      "id": "412a615366dd",
-      "title": "A practical guide to cost optimization with Lakebase Postgres",
-      "link": "https://www.databricks.com/blog/practical-guide-cost-optimization-lakebase-postgres",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-09-30T16:53:12.000Z",
-      "contentSnippet": "Lakebase is a fully managed Postgres database, built for the operational realities..."
     },
     {
       "id": "fb6067b5bbd7",
@@ -424,15 +469,6 @@
       "category": "AI",
       "pubDate": "2026-09-30T10:30:00.000Z",
       "contentSnippet": "Learn how OpenAI disrupted a campaign to extract protected model reasoning and is strengthening defenses against adversarial distillation."
-    },
-    {
-      "id": "b5e5e43443d2",
-      "title": "Helping small businesses put AI to work",
-      "link": "https://openai.com/index/helping-small-businesses-put-ai-to-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-30T10:00:00.000Z",
-      "contentSnippet": "OpenAI is partnering with America’s SBDC to expand hands-on AI training and local support for small businesses, alongside a new report on how small teams are using AI."
     },
     {
       "id": "80daa53e20f4",
@@ -550,15 +586,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-29T12:41:00.000Z",
       "contentSnippet": "Simon Willison: The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge This has been a constan…"
-    },
-    {
-      "id": "19db7cc5ca5c",
-      "title": "DevDay 2026 Recap",
-      "link": "https://openai.com/index/devday-2026-recap",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-29T10:00:00.000Z",
-      "contentSnippet": "Explore more than 20 announcements from OpenAI DevDay 2026, including GPT-6 Astra, ChatGPT, Codex, APIs, security, and new tools for builders."
     },
     {
       "id": "6cf866657b71",
@@ -1056,15 +1083,6 @@
       "contentSnippet": "If you’ve set up row level security in Power BI before, you know the usual drill: open the semantic model, add a role, write a DAX filter. But once your data lives inside a Microsoft Fabric OneLake structure, there’s a better way to do this. You can implement it directly in OneLa…"
     },
     {
-      "id": "e0b2eaa994e7",
-      "title": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train",
-      "link": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-09-15T20:00:00.000Z",
-      "contentSnippet": "Algorithms & Theory"
-    },
-    {
       "id": "8356199c8c98",
       "title": "Nail the Narrative",
       "link": "https://martinfowler.com/articles/never-send-slides/nail-your-narrative.html",
@@ -1461,15 +1479,6 @@
       "contentSnippet": "How to use AI to identify relevant test cases in a semantic model and create repeatable DAX tests for a measure."
     },
     {
-      "id": "0c577b76a17e",
-      "title": "How DuckDB Runs Recursive CTEs Faster",
-      "link": "https://duckdb.org/2026/08/25/how-duckdb-runs-recursive-ctes-faster.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-08-25T00:00:00.000Z",
-      "contentSnippet": "When I implemented DuckDB's first recursive CTE operator in 2020, correctness determined the design: evaluate the non-recursive term once, then evaluate the recursive term until the next working table is empty. That established the right semantic contract, but reusable runtime st…"
-    },
-    {
       "id": "887a4f8a3654",
       "title": "MotherDuck Acquires Tower: Agents Can Answer. Now They Can Build.",
       "link": "https://motherduck.com/blog/motherduck-acquires-tower",
@@ -1749,13 +1758,13 @@
       "contentSnippet": "Low Impact Amendments Finalisation July 2026"
     },
     {
-      "id": "d834dadfb202",
-      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "id": "054894a68cbf",
+      "title": "LIAC02/26 – Low Impact Amendments Consultation July 2026",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-consultation-july-2026",
       "source": "Bank of England PRA",
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Policy statement 18/26"
+      "contentSnippet": "Low Impact Amendments Consultation July 2026"
     },
     {
       "id": "fb549b859ee4",
@@ -1812,13 +1821,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "4c8cd6ef9ad3",
-      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
-      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
+      "id": "99c54272067a",
+      "title": "Rethinking Central Bank LSAPs: The Power of Market Functioning Purchases",
+      "link": "https://www.kansascityfed.org/research/research-working-papers/rethinking-central-bank-lsaps-the-power-of-market-functioning-purchases/",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
+      "contentSnippet": "Federal Reserve Bank of Kansas City Research Working Papers by Andrew Lee Smith and Victor J. Valcarcel"
     },
     {
       "id": "ed6bd26c4997",
@@ -2152,15 +2161,6 @@
       "category": "Data",
       "pubDate": "2026-04-28T00:00:00.000Z",
       "contentSnippet": "The Dagster+ Terraform provider lets platform teams manage deployments, access controls, alerting, and more as code. Define entire environments declaratively, review changes through pull requests, and integrate Dagster+ into your existing infrastructure workflows."
-    },
-    {
-      "id": "9bc00867b4ad",
-      "title": "Materialized Lake Views in Microsoft Fabric: When your medallion fits in a SELECT statement",
-      "link": "https://data-mozart.com/materialized-lake-views-in-microsoft-fabric-when-your-medallion-fits-in-a-select-statement/?utm_source=rss&utm_medium=rss&utm_campaign=materialized-lake-views-in-microsoft-fabric-when-your-medallion-fits-in-a-select-statement",
-      "source": "Data Mozart",
-      "category": "Analytics",
-      "pubDate": "2026-04-27T06:25:47.000Z",
-      "contentSnippet": "Five surfaces collapsed into one declarative layer. Here's the full story of Materialized Lake Views in Microsoft Fabric - from syntax to the new GA capabilities announced at FabCon Atlanta The post Materialized Lake Views in Microsoft Fabric: When your medallion fits in a SELECT…"
     },
     {
       "id": "a9c8e6b0271b",
