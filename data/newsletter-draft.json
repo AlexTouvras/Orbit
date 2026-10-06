@@ -1,6 +1,6 @@
 {
   "id": "newsletter-2026-W41",
-  "status": "pending",
+  "status": "sent",
   "createdAt": "2026-10-06T14:11:35.779Z",
   "weekOf": "2026-10-05",
   "subject": "Orbit weekly — week of 2026-10-05",
@@ -93,5 +93,9 @@
       "id": "KNOW-parenting-thl-0-1-month-development-growth",
       "date": "2026-10-05"
     }
-  ]
+  ],
+  "sentAt": "2026-10-06T14:11:37.429Z",
+  "broadcastId": "01a1118e-3ee1-70f8-bb64-c334c51a1667",
+  "sendMode": "test",
+  "sentTo": "a.touvras@gmail.com"
 }
