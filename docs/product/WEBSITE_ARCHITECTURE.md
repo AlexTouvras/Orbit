@@ -6,7 +6,7 @@
 |-------|----------|--------|
 | HUd | WHO | `/card`, `/qr-code` |
 | Hub / evidence | WHAT / HOW HE THINKS | `/`, `/portfolio`, `/portfolio/live/*`, `/writes`, `/radar`, `/about`, `/contact`, `/newsletter` |
-| Studio | WHERE | `/studio`, `/studio/week`, `/studio/projects`, `/studio/roadmap` |
+| Studio | WHERE | `/studio`, `/studio/week`, `/studio/projects`, `/studio/roadmap`, `/studio/directives`, `/studio/daycare` |
 | Timeline | HOW HE GOT HERE | About experience and education. Titles open each institution’s site. |
 
 ## Relationship
@@ -26,6 +26,8 @@ Studio is source of truth for:
 - roadmap milestone status (private)
 
 Public pages consume only information explicitly marked public. Do not automatically expose Studio notes.
+
+`/studio/daycare` is a temporary private shortlist (Rekola, November 2027). It does not answer the trajectory question, and the public site does not link it.
 
 ## Existing product grammar (do not reinvent in Foundation)
 

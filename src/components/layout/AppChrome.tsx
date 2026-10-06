@@ -16,7 +16,8 @@ export function AppChrome({
   footer: ReactNode;
 }) {
   const pathname = usePathname();
-  const bare = BARE_ROUTES.has(pathname);
+  const bare =
+    BARE_ROUTES.has(pathname) || pathname.startsWith("/studio/daycare");
   /** Flagship landing + films need full-viewport sticky chrome (matches storytelling repo). */
   const storiesPage =
     pathname === "/stories" || pathname.startsWith("/stories/");
