@@ -1,7 +1,151 @@
 {
-  "generatedAt": "2026-10-06T06:46:56.007Z",
-  "count": 264,
+  "generatedAt": "2026-10-07T06:46:57.502Z",
+  "count": 263,
   "items": [
+    {
+      "id": "b7d8f3f5004d",
+      "title": "Not all geopolitical shocks are inflationary",
+      "link": "https://cepr.org/voxeu/columns/not-all-geopolitical-shocks-are-inflationary",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-06T23:00:00.000Z",
+      "contentSnippet": "Geopolitical tensions are often seen as a source of inflation. But this is only part of the story. This column shows that geopolitical shocks transmitted through energy markets raise prices while depressing economic activity. But geopolitical shocks unrelated to energy markets re…"
+    },
+    {
+      "id": "f3b80adccabb",
+      "title": "Worker-managed firms can curb inequality and protect free markets",
+      "link": "https://cepr.org/voxeu/columns/worker-managed-firms-can-curb-inequality-and-protect-free-markets",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-06T23:00:00.000Z",
+      "contentSnippet": "Rising income inequality in Western high-income countries threatens democratic governance and social cohesion, and AI risks making it worse. Drawing on a forthcoming book, this column argues for worker-managed firms as a durable remedy. With no external owners taking profits, wor…"
+    },
+    {
+      "id": "bd187777a5e2",
+      "title": "Your framework isn't broken. Your fundamentals are.",
+      "link": "https://www.scrum.org/resources/blog/your-framework-isnt-broken-your-fundamentals-are",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-06T22:00:00.000Z",
+      "contentSnippet": "Image You've done the reorganization. You've swapped the framework, maybe more than once. Scrum, then a bit of SAFe, then something homegrown. New ceremonies, a new tool. And the same problems came back. The status that was green until it snapped. The retro that produces conversa…"
+    },
+    {
+      "id": "4dd290070848",
+      "title": "EmbeddingGemma 2: an open, lightweight multimodal embedding model",
+      "link": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-10-06T19:57:04.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "6a93de677b1c",
+      "title": "The lakehouse is a better data warehouse: 2026 benchmarks and proof",
+      "link": "https://www.databricks.com/blog/lakehouse-better-data-warehouse-2026-benchmarks-and-proof",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-06T16:35:12.000Z",
+      "contentSnippet": "The warehouse was the right answer for 20 yearsThe data warehouse earned its place. For two decades..."
+    },
+    {
+      "id": "60ef2af305e7",
+      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
+      "link": "https://openai.com/index/atlassian-partnership",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-06T16:00:00.000Z",
+      "contentSnippet": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work."
+    },
+    {
+      "id": "45312a386b29",
+      "title": "Scaling and Operating a Large dbt Project on Databricks: IFCO's Data Team on Performance, Visibility, and Debugging",
+      "link": "https://www.databricks.com/blog/scaling-and-operating-large-dbt-project-databricks-ifcos-data-team-performance-visibility-and-debugging",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-06T16:00:00.000Z",
+      "contentSnippet": "AbstractIFCO runs one of the world's largest reusable packaging pools with hundreds of millions of crates and pallets..."
+    },
+    {
+      "id": "0ec0c3cc2f3e",
+      "title": "Unlocking Earth AI’s planetary geospatial foundation models for global public health",
+      "link": "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-10-06T15:05:11.000Z",
+      "contentSnippet": "Earth AI"
+    },
+    {
+      "id": "b217381f6cb5",
+      "title": "The Role of Agency in Scrum: Why Self-Management Without Agency is a Lie",
+      "link": "https://www.scrum.org/resources/blog/role-agency-scrum-why-self-management-without-agency-lie",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-06T14:00:00.000Z",
+      "contentSnippet": "Originally published on Engineering Leadership. Scrum is often misunderstood as a set of ceremonies or a lightweight project management method. It is neither. Scrum is a social technology built around the ethos of Agile, enabling teams to deliver adaptive solutions in complex env…"
+    },
+    {
+      "id": "df71d97f7fe8",
+      "title": "Meta’s ads MCP server comes to Databricks: Put your customer intelligence to work in advertising campaigns",
+      "link": "https://www.databricks.com/blog/meta-ads-mcp-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-06T12:45:00.000Z",
+      "contentSnippet": "Here’s a familiar scenario for enterprise advertisers: the data team has done real..."
+    },
+    {
+      "id": "342677ae7ead",
+      "title": "How Jump Trading is scaling quant research with ChatGPT",
+      "link": "https://openai.com/index/jump-trading",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-06T12:00:00.000Z",
+      "contentSnippet": "Jump Trading uses OpenAI to expand quantitative research. See how longer-running AI workflows combine multiple data sources with human review."
+    },
+    {
+      "id": "47b9255d8fa0",
+      "title": "Sharing AI progress in mathematics",
+      "link": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-06T12:00:00.000Z",
+      "contentSnippet": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub."
+    },
+    {
+      "id": "9964af802e9c",
+      "title": "Advancing computer use with Ironclad",
+      "link": "https://openai.com/index/advancing-computer-use-with-ironclad",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-06T10:00:00.000Z",
+      "contentSnippet": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work."
+    },
+    {
+      "id": "e4b469e972e8",
+      "title": "Understanding DAX contracts when using AI",
+      "link": "https://www.sqlbi.com/tv/understanding-dax-contracts-when-using-ai/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-10-06T10:00:00.000Z",
+      "contentSnippet": "Defining the right contract is a key activity for a DAX developer using AI. Here we introduce the concept of a contract through simple examples."
+    },
+    {
+      "id": "20013f5c8abe",
+      "title": "5 Jev use cases for analytics, with real queries and datasets",
+      "link": "https://motherduck.com/blog/jev-analytics-use-cases",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-06T00:00:00.000Z",
+      "contentSnippet": "Five prompt_jev() use cases on real data, with SQL you can rerun: AI agent traces, Hacker News sentiment, sales calls, cloud job postings and a regex replacement."
+    },
+    {
+      "id": "446217aa6de1",
+      "title": "Chasing El Dorado: gold under shifting geopolitical and financial conditions",
+      "link": "https://www.bis.org/publications/working-paper-1380-chasing-el-dorado-gold-under-shifting-geopolitical-and-financial-condition",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-06T00:00:00.000Z",
+      "contentSnippet": "This paper analyses the state-dependent effects of geopolitical risks on gold prices (i.e. the safe-haven role of gold), conditional on financial conditions. Geopolitical risks are often associated with tighter financial conditions. However, recent data reveal a decoupling be twe…"
+    },
     {
       "id": "c9abee08b28d",
       "title": "Venture capital – a global perspective",
@@ -12,13 +156,31 @@
       "contentSnippet": "Existing views on what venture capital finances and how its markets are structured are primarily shaped by the experience of the US and a few other high-income economies. This column presents evidence covering nearly 270,000 venture capital-backed startups in over 150 economies t…"
     },
     {
+      "id": "79bda435d6e0",
+      "title": "Apprendre aux débutants à réfléchir à l’ère des grands modèles linguistiques",
+      "link": "https://cepr.org/voxeu/columns/apprendre-aux-debutants-reflechir-lere-des-grands-modeles-linguistiques",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-05T23:00:00.000Z",
+      "contentSnippet": "La question de savoir si l’enseignement des compétences cognitives reste pertinent à l’ère de l’IA est cruciale tant pour le monde de l’éducation que pour les entreprises. Cet article rend compte d’une expérience menée auprès d’environ 1 000 étudiants de premier cycle en Italie,…"
+    },
+    {
       "id": "c3d66983a8dc",
       "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
       "link": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
       "source": "Google Research",
       "category": "AI",
-      "pubDate": "2026-10-05T21:08:31.000Z",
-      "contentSnippet": "Education Innovation"
+      "pubDate": "2026-10-05T21:08:00.000Z",
+      "contentSnippet": "Generative AI"
+    },
+    {
+      "id": "b3f03a1d6ca5",
+      "title": "Understanding DAX contracts when using AI",
+      "link": "https://www.sqlbi.com/articles/understanding-dax-contracts-when-using-ai/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-10-05T20:00:41.000Z",
+      "contentSnippet": "Defining the right contract is a key activity for a DAX developer using AI. In this article, we introduce the concept of a contract through simple examples. Contract. As a DAX developer, you will use this term frequently; indeed, when…"
     },
     {
       "id": "ae0435475eea",
@@ -111,6 +273,15 @@
       "contentSnippet": "Guest blog post by a DuckDB user. The Analytics Screen Problem At the company where I work, we store vulnerability data for our clients as a collection of documents in MongoDB. Initially, our analytics screen performed well, but as our data volume increased, response times began…"
     },
     {
+      "id": "cd903fec972f",
+      "title": "Build It Yourself: What You'll Make at the Data Outpost Workshops",
+      "link": "https://motherduck.com/blog/data-outpost-2026-workshops",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-05T00:00:00.000Z",
+      "contentSnippet": "Data Outpost kicks off on November 4, 2026 in San Francisco with 11 hands-on workshops from MotherDuck, Vercel, Sigma, Prefect, Estuary, Airbyte, Reducto, Braintrust, and Together AI. Here's what you'll build in each one: your own agents, the data pipelines they need, and the ski…"
+    },
+    {
       "id": "c1cd391cd548",
       "title": "Bonding through crises with nonbank financial institutions",
       "link": "https://cepr.org/voxeu/columns/bonding-through-crises-nonbank-financial-institutions",
@@ -145,6 +316,15 @@
       "category": "Delivery",
       "pubDate": "2026-10-04T11:35:53.000Z",
       "contentSnippet": "Image The Context I once led a software development program with more than 100 developers and several project managers. The projects were strategically important for the company, and expectations from upper leadership were high. Officially, the organization was working with Scrum…"
+    },
+    {
+      "id": "16f06ffd347c",
+      "title": "Not All Complexity Can Be Processed Away. Fred Brooks Proved This in 1986.",
+      "link": "https://www.scrum.org/resources/blog/not-all-complexity-can-be-processed-away-fred-brooks-proved-1986",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-04T06:00:00.000Z",
+      "contentSnippet": "Image Every struggling product organization I sit with arrives at the same prescription: add more process, a pre-sprint refinement session, a mid-sprint review, more documents, more sign-offs, better status visibility. I have watched this pattern since 2010, and it almost never w…"
     },
     {
       "id": "5a3f1f4a82c5",
@@ -282,24 +462,6 @@
       "contentSnippet": "Analytical workloads are full of repeated strings: product names, country names, station names, user agents, category labels. Take DuckDB's public train services dataset, which has one row for every stop a Dutch railway train makes. The data comes from the open datasets published…"
     },
     {
-      "id": "8e5ae68b2bec",
-      "title": "Merit, Masters and China's Imperial Exam",
-      "link": "https://cepr.org/multimedia/merit-masters-and-chinas-imperial-exam",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-01T23:00:00.000Z",
-      "contentSnippet": "For more than 1,300 years, China chose its top officials by written exam. Its top officials were chosen meritocratic ally — or were they? When the results came out, each successful candidate went to pay his respects to the men who had marked his exam. He called the examiner maste…"
-    },
-    {
-      "id": "32acac8fa6db",
-      "title": "Navigating geoeconomic risk in the US stock market",
-      "link": "https://cepr.org/voxeu/columns/navigating-geoeconomic-risk-us-stock-market",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-01T23:00:00.000Z",
-      "contentSnippet": "Geoeconomic risk has become a first-order concern for investors. This column shows that domestic US stocks expose investors to substantial geoeconomic risk through firms’ global supply-chain relations. Stocks of US suppliers decline sharply after the announcement that export cont…"
-    },
-    {
       "id": "8df4814de428",
       "title": "How Genie One reshapes work for finance teams",
       "link": "https://www.databricks.com/blog/how-genie-one-reshapes-work-finance-teams",
@@ -318,33 +480,6 @@
       "contentSnippet": "Fourteen Wizard’s Rules ago, this series made a claim: most agile failures aren’t failures of process, they’re failures of honesty. An organization rarely breaks because it skipped a ceremony. It breaks because it avoided a reality, protected a story, or kept doing something nobo…"
     },
     {
-      "id": "e79eb7ef5d76",
-      "title": "Lakebase Postgres branch-based restores for fast recovery at scale",
-      "link": "https://www.databricks.com/blog/lakebase-postgres-branch-based-restores-fast-recovery-scale",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-01T17:53:52.000Z",
-      "contentSnippet": "In managed OLTP, restores have always been painfully slow and they get slower at..."
-    },
-    {
-      "id": "7e67b43cf9d0",
-      "title": "The eternal complement",
-      "link": "https://openai.com/index/the-eternal-complement",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-01T17:00:00.000Z",
-      "contentSnippet": "Advanced AI may matter most for the routine work behind breakthrough ideas. Explore why execution could shape the next economy and the pace of progress."
-    },
-    {
-      "id": "a80484c2d584",
-      "title": "How Albertsons Companies is reimagining retail from the inside out",
-      "link": "https://openai.com/index/albertsons-reimagining-retail",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-01T16:00:00.000Z",
-      "contentSnippet": "Albertsons Cos. is using ChatGPT Enterprise and the OpenAI API to help teams work faster and make grocery shopping easier for millions of customers."
-    },
-    {
       "id": "1eadfb1cd5ee",
       "title": "Claude-shaped science",
       "link": "https://www.anthropic.com/research/claude-shaped-science",
@@ -354,15 +489,6 @@
       "contentSnippet": "Guest author Prof. Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems: ones best suited to the capabilities of the current generation of LLM tools. This led him to build BootLoops, a toolkit for exact calcu…"
     },
     {
-      "id": "82ffe0e1ed6b",
-      "title": "Connecting customer context to measurable ROI with agentic marketing",
-      "link": "https://www.databricks.com/blog/connecting-customer-context-measurable-roi-agentic-marketing",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-01T12:11:31.000Z",
-      "contentSnippet": "Marketing leaders today face greater complexity than ever before. They work with..."
-    },
-    {
       "id": "0460e0adb0a8",
       "title": "PRA Regulatory Digest – September 2026",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/regulatory-digest/2026/september-2026",
@@ -370,15 +496,6 @@
       "category": "Credit",
       "pubDate": "2026-10-01T09:00:00.000Z",
       "contentSnippet": "The PRA Regulatory Digest is for people working in the UK financial services industry and highlights key regulatory news and publications delivered for the month."
-    },
-    {
-      "id": "a48e6a8f4e9b",
-      "title": "IP Functions are Generally Available, bringing high-performance network analytics to the Lakehouse",
-      "link": "https://www.databricks.com/blog/ip-functions-are-generally-available-bringing-high-performance-network-analytics-lakehouse",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-01T01:46:05.000Z",
-      "contentSnippet": "IP data is warehousing dataEvery firewall, load balancer, VPN, CDN edge, DNS resolver,..."
     },
     {
       "id": "37913aa0381f",
@@ -397,15 +514,6 @@
       "category": "Credit",
       "pubDate": "2026-10-01T00:00:00.000Z",
       "contentSnippet": "Between 2021 and 2025, 28.7% of artificial intelligence (AI) firms’ investment deals (by deal value) involved a target company that was also an AI firm, while 55.2% of incoming investments in AI firms came from other AI firms."
-    },
-    {
-      "id": "e1d9917f2540",
-      "title": "Global imbalances and the China challenge",
-      "link": "https://cepr.org/voxeu/columns/global-imbalances-and-china-challenge",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-09-30T23:00:00.000Z",
-      "contentSnippet": "China's trade surplus is widening, its manufactured exports are surging, and the political backlash is intensifying. This column argues that the widening trade surplus reflects not just macroeconomic imbalances but a growth model aiming at industrial and technological dominance,…"
     },
     {
       "id": "15e70ee5e4a7",
@@ -460,15 +568,6 @@
       "category": "Credit",
       "pubDate": "2026-09-30T14:00:00.000Z",
       "contentSnippet": "Letter to chief financial officers of selected PRA-regulated deposit-takers which provides thematic feedback from the PRA’s review of written auditor reports received in 2026 covering IFRS 9 expected credit loss accounting (ECL) and accounting for climate risk."
-    },
-    {
-      "id": "6a91381a4292",
-      "title": "Disrupting a coordinated model-distillation campaign",
-      "link": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-09-30T10:30:00.000Z",
-      "contentSnippet": "Learn how OpenAI disrupted a campaign to extract protected model reasoning and is strengthening defenses against adversarial distillation."
     },
     {
       "id": "80daa53e20f4",
@@ -687,33 +786,6 @@
       "contentSnippet": "There are some nice improvements to Power Query integration in the latest version of Power BI Report Builder that, while they are documented, didn’t get an official blog post but which I think deserve to be highlighted. First of all the “Get Data” button has been renamed “Power Q…"
     },
     {
-      "id": "0338664a5fc3",
-      "title": "The Jobs Matrix for AI: Four Boxes Instead of Forty Tools",
-      "link": "https://www.scrum.org/resources/blog/jobs-matrix-ai-four-boxes-instead-forty-tools",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-27T14:38:57.000Z",
-      "contentSnippet": "TL;DR: A 2×2 Matrix on AI for Agile Practitioners You probably think making sense of AI means keeping up with every new tool, agent, and pricing tier. Steve Jobs faced a similar mess at Apple in 1997, with a dozen versions of the Macintosh, and he fixed it with a two-by-two grid…"
-    },
-    {
-      "id": "7502376ff671",
-      "title": "Your Scrum Team Might Be Excellent at Building the Wrong Thing",
-      "link": "https://www.scrum.org/resources/blog/your-scrum-team-might-be-excellent-building-wrong-thing",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-27T14:15:19.000Z",
-      "contentSnippet": "Image Most Scrum Teams I work with are good at delivery. They have a stable Sprint cadence, a clear Definition of Done, and they deliver a usable Increment every Sprint. The Sprint Review runs on time and stakeholders nod along. And yet, when I ask Product Owners in class how man…"
-    },
-    {
-      "id": "a6f7b0bb55df",
-      "title": "Scrum's Protocol Is Easy to Copy. Its Agenda Is Not.",
-      "link": "https://www.scrum.org/resources/blog/scrums-protocol-easy-copy-its-agenda-not",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-27T06:00:00.000Z",
-      "contentSnippet": "Image I have been a Professional Scrum Trainer since 2010, which means I have sat in the room when organizations decide Scrum is not working. Sprint Planning on Monday, Daily Scrum at nine, Sprint Review on the last Friday, Retrospective right after; every event on the calendar a…"
-    },
-    {
       "id": "cd57170eb38e",
       "title": "Yes, Claude can do Nine Loops",
       "link": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
@@ -748,15 +820,6 @@
       "category": "Credit",
       "pubDate": "2026-09-25T00:00:00.000Z",
       "contentSnippet": "This paper considers what TEEs can responsibly deliver for central banks, the conditions under which they are most effective and how they can be deployed without widening who must be trusted. It takes a balanced view, outlining core assurances and boundaries, highlighting impleme…"
-    },
-    {
-      "id": "38064fae2be7",
-      "title": "You Can't Choose the System. You Choose How You Act Inside It.",
-      "link": "https://www.scrum.org/resources/blog/you-cant-choose-system-you-choose-how-you-act-inside-it",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-24T22:00:00.000Z",
-      "contentSnippet": "Ask almost anyone on a struggling team why they've stopped pushing, and you'll get the same answer in slightly different words. There's no point. The org won't change. Leadership doesn't listen. The deadline is fixed, the mandate is thin, the priorities flip every week, and none…"
     },
     {
       "id": "da79314d1ca0",
@@ -829,15 +892,6 @@
       "category": "AI",
       "pubDate": "2026-09-23T16:00:57.000Z",
       "contentSnippet": "Introducing private, server-side memory to Private AI Compute for personal AI."
-    },
-    {
-      "id": "be2314c62992",
-      "title": "Gemini 3.8 text-to-speech says hello",
-      "link": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-23T15:25:14.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "c5a1b694eb86",
@@ -993,15 +1047,6 @@
       "contentSnippet": "When DuckDB-Wasm was launched in 2021, databases could not be persisted: everything lived in the Wasm heap and vanished when the tab closed. Keeping data meant serializing tables to Parquet, storing the bytes in IndexedDB, and re-registering them on the next page load. This was d…"
     },
     {
-      "id": "26cb68725f0f",
-      "title": "The future of practice: Enabling teachers to create learning interactives with generative UI",
-      "link": "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-09-17T20:45:00.000Z",
-      "contentSnippet": "Education Innovation"
-    },
-    {
       "id": "ad2a2ccfa362",
       "title": "Fabric Core MCP Server: Scan and Configure OneLake Security with AI",
       "link": "https://radacad.com/fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabric-core-mcp-server-scan-and-configure-onelake-security-with-ai",
@@ -1018,15 +1063,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-17T13:50:00.000Z",
       "contentSnippet": "I have a lot of mixed feelings about AI and LLM technology. I’m fascinated by its effect on our profession, excited by the potential gains in productivity - and thus the products we could rapidly build. On the other hand, I’m fearful of the damage AI might cause: agent swarms tak…"
-    },
-    {
-      "id": "e37e271a8b83",
-      "title": "Maritime chokepoints and the global economy: evidence from the Strait of Hormuz",
-      "link": "https://www.bis.org/publications/working-paper-1378-maritime-chokepoints-and-the-global-economy-evidence-strait-hormuz",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-17T00:00:00.000Z",
-      "contentSnippet": "The conflict in the Middle East and the subsequent disruption of traffic in the Strait of Hormuz have triggered an unprecedented shock to the global economy. Using historical data from the IMF/University of Oxford Portwatch database on maritime traffic, this paper empirically exa…"
     },
     {
       "id": "bdbf442fb6ba",
@@ -1461,15 +1497,6 @@
       "contentSnippet": "DuckLabs today has announced that they will be joining Amazon Web Services as a new subsidiary. The big news for DuckDB and related projects like DuckLake is that there are no changes for our projects’ roadmap, licensing, and governance model! DuckDB, DuckLake, Quack, and all the…"
     },
     {
-      "id": "241e5b601cf5",
-      "title": "DuckDB outgrows its nest",
-      "link": "https://motherduck.com/blog/duckdb-amazon",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-26T00:00:00.000Z",
-      "contentSnippet": "Today Duck Labs, the developers of DuckDB, announced they are being acquired by Amazon. This is big news in the duck-iverse, and many people are wondering what this will mean for everyone’s favorite duck-powered database, MotherDuck."
-    },
-    {
       "id": "45c8c4ff0994",
       "title": "Testing DAX measures by using AI",
       "link": "https://www.sqlbi.com/tv/testing-dax-measures-by-using-ai/",
@@ -1477,15 +1504,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-25T10:00:00.000Z",
       "contentSnippet": "How to use AI to identify relevant test cases in a semantic model and create repeatable DAX tests for a measure."
-    },
-    {
-      "id": "887a4f8a3654",
-      "title": "MotherDuck Acquires Tower: Agents Can Answer. Now They Can Build.",
-      "link": "https://motherduck.com/blog/motherduck-acquires-tower",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-25T00:00:00.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "ffe0b198ea80",
@@ -1722,6 +1740,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
+    },
+    {
       "id": "d9adb789161e",
       "title": "How Firms Form Beliefs and the Implications for Inflation",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
@@ -1740,15 +1767,6 @@
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
-    },
-    {
       "id": "16fe89b83e2e",
       "title": "LIAF02/26 – Low Impact Amendments Finalisation July 2026",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-finalisation-july-2026",
@@ -1758,13 +1776,13 @@
       "contentSnippet": "Low Impact Amendments Finalisation July 2026"
     },
     {
-      "id": "054894a68cbf",
-      "title": "LIAC02/26 – Low Impact Amendments Consultation July 2026",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-consultation-july-2026",
+      "id": "d834dadfb202",
+      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
       "source": "Bank of England PRA",
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Low Impact Amendments Consultation July 2026"
+      "contentSnippet": "Policy statement 18/26"
     },
     {
       "id": "fb549b859ee4",
@@ -1821,13 +1839,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "99c54272067a",
-      "title": "Rethinking Central Bank LSAPs: The Power of Market Functioning Purchases",
-      "link": "https://www.kansascityfed.org/research/research-working-papers/rethinking-central-bank-lsaps-the-power-of-market-functioning-purchases/",
+      "id": "4c8cd6ef9ad3",
+      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
+      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Kansas City Research Working Papers by Andrew Lee Smith and Victor J. Valcarcel"
+      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
     },
     {
       "id": "ed6bd26c4997",
@@ -1947,15 +1965,6 @@
       "contentSnippet": "“We tried agile and it didn’t work” is one of the most revealing things a leader can hear."
     },
     {
-      "id": "18ea580d4b89",
-      "title": "Using REMOVEFILTERS in DAX user defined functions",
-      "link": "https://www.sqlbi.com/tv/using-removefilters-in-dax-user-defined-functions/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-06-30T10:00:00.000Z",
-      "contentSnippet": "How to implement a DAX function that removes filter-keep column filters from a calendar, using REMOVEFILTERS as the return value of the function."
-    },
-    {
       "id": "93b56433d545",
       "title": "Community Showcase Part 2",
       "link": "https://dagster.io/blog/community-showcase-part-2",
@@ -1963,15 +1972,6 @@
       "category": "Data",
       "pubDate": "2026-06-30T00:00:00.000Z",
       "contentSnippet": "Some of the most interesting Dagster projects come from the community. This post highlights creative community-built applications."
-    },
-    {
-      "id": "c5ab1d19b713",
-      "title": "Using REMOVEFILTERS in DAX user-defined functions",
-      "link": "https://www.sqlbi.com/articles/using-removefilters-in-dax-user-defined-functions/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-06-29T20:00:16.000Z",
-      "contentSnippet": "In this article, we implement a function that removes filter-keep column filters from a calendar, using REMOVEFILTERS as the return value of the function. A DAX user-defined function, also known as a UDF, is expected to return a scalar or…"
     },
     {
       "id": "db61c1537465",
@@ -2368,15 +2368,6 @@
       "category": "Delivery",
       "pubDate": "2024-11-07T12:15:29.000Z",
       "contentSnippet": "What actually empowers a team? Despite all the talk about empowered teams in tech, there's often confusion about what real empowerment looks like. At its core, an empowered product team is given significant customer or business problems to solve, rather than being handed features…"
-    },
-    {
-      "id": "70ef1598e3d6",
-      "title": "If You Lived in Germany in 1939, What Would You Do?",
-      "link": "https://blog.crisp.se/2024/11/07/davidbarnholdt/if-you-lived-in-germany-in-1939-what-would-you-do",
-      "source": "Crisp Blog",
-      "category": "Delivery",
-      "pubDate": "2024-11-07T07:30:04.000Z",
-      "contentSnippet": "Imagine the following: You live in Germany in 1939. Or perhaps it’s 1938, or even as early as 1935. The Nazis are in power. If you’re an average German, your material conditions are probably quite good. Unemployment is low, and the Nazis have introduced extensive “welfare program…"
     }
   ]
 }
