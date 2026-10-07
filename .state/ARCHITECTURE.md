@@ -4,7 +4,7 @@
 
 ## Overview
 
-Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub + Power BI screenshots + live desks at `/portfolio/live`), Related articles RSS cache, Studio (profile + week log + roadmap + directives + temporary daycare shortlist), architecture sync, weekly digest (Resend auto-send; test-to-self until go-live). Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
+Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub + Power BI screenshots + live desks at `/portfolio/live`), Related articles RSS cache, Studio (profile + week log + roadmap + directives), architecture sync, weekly digest (Resend auto-send; test-to-self until go-live). Public discovery via `sitemap.xml` / `robots.txt` / blog `feed.xml`, plus Vercel Analytics.
 
 **Product truth (2026-09-23):** Root `PRODUCT.md` + `docs/product/*` are authoritative for identity layers (HUd WHO / Hub WHAT / Studio WHERE / timeline HOW). Agents must Scope-check via `docs/product/AGENT_RULES.md`. Wired from `.cursor/rules/product-kit.mdc`.
 
@@ -26,7 +26,6 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
 | Studio roadmap | `data/studio-roadmap.json` (+ `.seed.json`) | `focusNow` (public on `/card` only) + private milestones (`planned`/`active`/`evidence`/`proven`). Persist via `persistDataJson` same as profile. Store: `src/lib/studio-roadmap.ts`. |
 | Directive archive | `data/directive-archive.json` | Read-only snapshot of `AlexTouvras/AlexTouvras` `governance/`. Private `/studio/directives`. Not a second editor. Do not add this file to `RUNTIME_DATA_FILES` — the page reads the deployment copy, not GitHub at request time. |
-| Studio daycare | `data/studio-daycare/` | Private `/studio/daycare`. HTML/JS/CSS/JSON copied from `AlexTouvras/AlexTouvras` `governance/orbit-studio/`. Served by `site/[[...path]]` after `isStudioAccessible()`. Not under `public/`. Not in `RUNTIME_DATA_FILES` — the deployment copy is what the page reads. Refresh by copying that folder again. |
 | Newsletter digest draft | `data/newsletter-draft.json` | Titles/links only. Gitignored locally; persist send status via GitHub |
 | Newsletter subscribers | Resend Audience, or `RESEND_NEWSLETTER_TEST_TO` | Emails never in git. Test-to skips the audience entirely |
 | Ravens findings | GitHub Contents on `AlexTouvras/ravens` | Weekly highlights: one item per domain that moved (inbox first). `RAVENS_GITHUB_TOKEN` |
@@ -144,8 +143,6 @@ src/lib/studio-roadmap.ts    # focusNow + milestones; persistDataJson like profi
 src/lib/directives.ts        # read data/directive-archive.json (server-only)
 src/lib/directive-types.ts
 src/app/studio/directives/   # private read-only archive browser
-src/app/studio/daycare/      # private shortlist; site/[[...path]] serves data/studio-daycare
-data/studio-daycare/         # map assets; not under public/
 src/components/studio/DirectiveArchive.tsx
 src/app/studio/week/         # Hub + topic pages
 src/app/studio/roadmap/      # Private trajectory editor (feeds /card NOW)
@@ -166,7 +163,8 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
-| 2026-10-06 | Private `/studio/daycare` serves the Rekola shortlist from `data/studio-daycare/` | Owner asked to bring `AlexTouvras/AlexTouvras` PR 2 onto Studio. The card sits with Week log, Roadmap, and Directives. `isStudioAccessible()` gates the page and the file route. Assets stay out of `public/`. AppChrome hides the site header on this path. `outputFileTracingIncludes` keeps the folder in the Vercel function because the read path is computed. |
+| 2026-10-07 | `/studio/daycare` is gone | Owner asked to remove the daycare page from Studio. The home card, the iframe page, the gated file route, `data/studio-daycare/`, and the Vercel file-trace include are deleted. Studio home is Week log, Roadmap, Directives, and Manage projects. |
+| 2026-10-06 | Private `/studio/daycare` serves the Rekola shortlist from `data/studio-daycare/` | Owner asked to bring `AlexTouvras/AlexTouvras` PR 2 onto Studio. Removed 2026-10-07. The card sat with Week log, Roadmap, and Directives. `isStudioAccessible()` gated the page and the file route. Assets stayed out of `public/`. AppChrome hid the site header on this path. `outputFileTracingIncludes` kept the folder in the Vercel function because the read path was computed. |
 | 2026-10-05 | Which model? is a live desk, not a flagship story | Storytelling PR 31. The instrument, scorer, and frozen OpenRouter pack sync from that repo. Orbit owns the card, the reel peek, the sitemap entry, and `/portfolio/live/which-model`. The page keeps the instrument’s own open. It is not listed under `/stories`. Catalog refresh stays on storytelling’s monthly workflow. |
 | 2026-10-03 | Employer and school titles open the official site | Owner: the letter tiles were not logos, and the place note was an extra click. `PlaceMark` is the institution’s symbol. `PlaceLink` is a direct link. `/about/[slug]` is gone. |
 | 2026-10-03 | Story & record is the credit-and-risk path, then one question | Owner copy: started in credit and risk, then data, machine learning, and technology delivery. The question is set in display type: how do you build intelligent systems that survive contact with the real world? `cv.summary` stays off the page. |

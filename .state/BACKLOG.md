@@ -4,7 +4,8 @@
 
 ## Now
 
-- [x] Private `/studio/daycare` — Rekola November 2027 shortlist from AlexTouvras PR 2 (Studio card, gated files, not on the public site)
+- [x] Remove private `/studio/daycare` — card, page, file route, and `data/studio-daycare/`
+- [x] Private `/studio/daycare` — Rekola November 2027 shortlist from AlexTouvras PR 2 (Studio card, gated files, not on the public site). Removed 2026-10-07.
 - [x] Which model? live desk — storytelling PR 31 on `/portfolio/live/which-model` (card, reel peek, sitemap). Not under `/stories`.
 - [x] About page — headline states the path, languages replace the employer count, CV download closes the page, each employer and school logo opens that institution’s site
 - [x] Doc currency guard — `docs/ops/doc-registry.json`, `docs/archive/`, `npm run docs:check` on ship. Pointers replace `docs/CURRENT_STATE.md` and `docs/automation-contract.md`.
