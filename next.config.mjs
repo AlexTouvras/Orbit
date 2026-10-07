@@ -14,11 +14,6 @@ const nextConfig = {
   },
   // Keep these out of the server component bundle; only used in scripts / route handlers.
   serverExternalPackages: ["rss-parser", "node-cron"],
-  // The daycare route reads data/studio-daycare at request time. The path is
-  // computed, so the tracer will not pick the folder up on its own.
-  outputFileTracingIncludes: {
-    "/studio/daycare/site/[[...path]]": ["./data/studio-daycare/**/*"],
-  },
   // public/field-card/index.html is not auto-served at /field-card (App Router 404).
   // Soft URLs rewrite to the static file; competency card links to index.html directly.
   async rewrites() {
