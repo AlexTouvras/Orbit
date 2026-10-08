@@ -1,7 +1,124 @@
 {
-  "generatedAt": "2026-10-07T06:46:57.502Z",
+  "generatedAt": "2026-10-08T06:46:58.082Z",
   "count": 263,
   "items": [
+    {
+      "id": "d3e16e5779e8",
+      "title": "Announcing Workday Data Connect federation in Unity Catalog",
+      "link": "https://www.databricks.com/blog/announcing-workday-data-connect-federation-unity-catalog",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-08T23:00:00.000Z",
+      "contentSnippet": "We're excited to announce the publicly available Beta of the Workday Data Connect federation connector for Unity Catalog..."
+    },
+    {
+      "id": "6a86976136d7",
+      "title": "Cultural norms matter for macroeconomic development",
+      "link": "https://cepr.org/voxeu/columns/cultural-norms-matter-macroeconomic-development",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-07T23:00:00.000Z",
+      "contentSnippet": "Interest in the role of cultural norms, institutions, and development has resurfaced in recent years especially post the 2024 Nobel Prize in Economics. This column revisits Bhutan, which has pursued ‘gross national happiness’ rather than GDP since the 1970s. Four decades of data…"
+    },
+    {
+      "id": "d2b51ea2e227",
+      "title": "The adjustment of the Danish labour market to AI has begun",
+      "link": "https://cepr.org/voxeu/columns/adjustment-danish-labour-market-ai-has-begun",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-07T23:00:00.000Z",
+      "contentSnippet": "Policymakers are asking whether generative AI is reshaping labour demand, and the literature has found mixed results so far. This column links Denmark’s official IT-use survey to monthly employer–employee records and compares firms that started using AI in 2023 with those that di…"
+    },
+    {
+      "id": "6dcb3088ac59",
+      "title": "Claude Haiku 5.5",
+      "link": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-10-07T20:56:21.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "fc6c16485847",
+      "title": "Does better work always mean better workers?",
+      "link": "https://research.google/blog/does-better-work-always-mean-better-workers/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-10-07T20:19:57.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "738ed9214713",
+      "title": "Set Budgets and Alerts for Cloud Data Warehouse Costs",
+      "link": "https://www.databricks.com/blog/set-budgets-and-alerts-cloud-data-warehouse-costs",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-07T19:02:06.000Z",
+      "contentSnippet": "Every analytics team has been here: a month-end invoice arrives, and a single SQL..."
+    },
+    {
+      "id": "b9bad5ef7a03",
+      "title": "Now GA: Building permission-aware Databricks Apps with on-behalf-of-user authorization",
+      "link": "https://www.databricks.com/blog/now-ga-building-permission-aware-databricks-apps-behalf-user-authorization",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-07T16:40:00.000Z",
+      "contentSnippet": "Databricks Apps lets developers build and deploy data and AI applications directly on the Databricks platform..."
+    },
+    {
+      "id": "ec2f5293782d",
+      "title": "📺 How to Catch AI Delegation Drift Before Your Board Does",
+      "link": "https://www.scrum.org/resources/blog/how-catch-ai-delegation-drift-your-board-does",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-07T14:15:54.000Z",
+      "contentSnippet": "TL;DR: The AI Delegation Audit Webinar Recording When AI-assisted output still looks fine, it is tempting to conclude the delegation is fine. In my October 6 webinar with Scrum.org on the AI Delegation Audit, I walked through a fictional case in which that belief held for months,…"
+    },
+    {
+      "id": "ad4e14640e35",
+      "title": "Helping teens learn, plan, and shape the future of AI",
+      "link": "https://openai.com/index/teens-learn-and-plan",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-07T12:00:00.000Z",
+      "contentSnippet": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council."
+    },
+    {
+      "id": "4f8adf7897b4",
+      "title": "CP13/26 – The Prudential Regulation Authority’s automatic thresholds indexation framework",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/updating-regulatory-thresholds-consultation-paper",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-10-07T09:00:00.000Z",
+      "contentSnippet": "Consultation paper 13/26"
+    },
+    {
+      "id": "04e9dc3828b5",
+      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
+      "link": "https://openai.com/index/radisson",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-07T07:00:00.000Z",
+      "contentSnippet": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips."
+    },
+    {
+      "id": "0ca1450969b5",
+      "title": "GPT-6 and Intelligent UI for everyone",
+      "link": "https://openai.com/index/gpt-6-for-everyone",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-07T00:00:00.000Z",
+      "contentSnippet": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
+    },
+    {
+      "id": "338a2fbf5a99",
+      "title": "A DuckDB Database with No Data in It",
+      "link": "https://duckdb.org/2026/10/07/view-only-mode.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-10-07T00:00:00.000Z",
+      "contentSnippet": "A DuckDB database file does not have to contain any data. It can store nothing but view definitions that point at files stored somewhere else, such as Parquet on object storage. The file stays a few hundred kilobytes no matter how large the data it describes, and anyone who attac…"
+    },
     {
       "id": "b7d8f3f5004d",
       "title": "Not all geopolitical shocks are inflationary",
@@ -22,7 +139,7 @@
     },
     {
       "id": "bd187777a5e2",
-      "title": "Your framework isn't broken. Your fundamentals are.",
+      "title": "Your Framework Isn't Broken. Your Fundamentals Are.",
       "link": "https://www.scrum.org/resources/blog/your-framework-isnt-broken-your-fundamentals-are",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -37,6 +154,15 @@
       "category": "AI",
       "pubDate": "2026-10-06T19:57:04.000Z",
       "contentSnippet": ""
+    },
+    {
+      "id": "d46a23c5bf49",
+      "title": "How to Repoint dbt ETL Pipelines to Databricks",
+      "link": "https://www.databricks.com/blog/how-repoint-dbt-etl-pipelines-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-06T18:53:48.000Z",
+      "contentSnippet": "More teams are running their dbt transformations on Databricks Lakehouse: an open..."
     },
     {
       "id": "6a93de677b1c",
@@ -228,15 +354,6 @@
       "contentSnippet": "Barcelona is done. Nearly 5,000 people, 130+ sessions, and a very long list of announcements. This is my cut of the ones that matter, why they matter, and what you should do about them. TL;DR Everything you build in Fabric now reaches Microsoft Copilot and agents directly. Fabric…"
     },
     {
-      "id": "3cbec84de8bf",
-      "title": "Building advertising for the way people use AI",
-      "link": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-05T10:00:00.000Z",
-      "contentSnippet": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers."
-    },
-    {
       "id": "98600d3a924c",
       "title": "Scrum Day India 2026 Recap: Scrum Teams in the Age of Autonomous Agents",
       "link": "https://www.scrum.org/resources/blog/scrum-day-india-2026-recap-scrum-teams-age-autonomous-agents",
@@ -345,24 +462,6 @@
       "contentSnippet": "AI is transforming digital services, and mobile apps, which routinely reach users far beyond their home markets, show just how global that transformation has become. This column shows that AI makes these products dramatically more attractive, increasing their user base at home an…"
     },
     {
-      "id": "20a8850851de",
-      "title": "Strategic sovereignty, social movements, and political agency: Evidence from the US-Israeli military campaign in Iran",
-      "link": "https://cepr.org/voxeu/columns/strategic-sovereignty-social-movements-and-political-agency-evidence-us-israeli",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-02T23:00:00.000Z",
-      "contentSnippet": "Military intervention may be undertaken to weaken a hostile regime and strengthen the position of its opponents. This column argues that evidence from the 2026 US-Israeli strikes on Iran points to a different outcome: the strikes left total protest levels broadly unchanged but sh…"
-    },
-    {
-      "id": "940cc51f651e",
-      "title": "Hiding in the mean: AI is adding jobs and removing them at the same time",
-      "link": "https://cepr.org/voxeu/columns/hiding-mean-ai-adding-jobs-and-removing-them-same-time",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-02T23:00:00.000Z",
-      "contentSnippet": "Estimates of AI's employment effect disagree in size and even in sign. This column argues the disagreement is built into the measurement: AI substitutes for humans on some tasks and complements humans on others, and any single exposure index nets these opposing forces into one nu…"
-    },
-    {
       "id": "25c5bfb96a91",
       "title": "Does Your Organisation Need an AI Product Owner?",
       "link": "https://www.scrum.org/resources/blog/does-your-organisation-need-ai-product-owner",
@@ -370,33 +469,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-02T21:56:17.000Z",
       "contentSnippet": "Appointing one person accountable for AI is a sound first step. In an organisation moving to a product operating model, or already running one, the same role puts a dependency and a handoff between product teams and the decisions the model gives them. Most organisations adopted A…"
-    },
-    {
-      "id": "4d35a34035ec",
-      "title": "In Capital Markets, the Buy Side Runs on NAV. Finance Protects the Fee.",
-      "link": "https://www.databricks.com/blog/capital-markets-buy-side-runs-nav-finance-protects-fee",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-02T17:40:26.000Z",
-      "contentSnippet": "Ask a capital markets CFO on the buy side how the quarter looks, and the answer starts..."
-    },
-    {
-      "id": "8e206c4d9ed6",
-      "title": "A model guide for the GPT-6 family",
-      "link": "https://openai.com/index/practical-guide-building-gpt-6",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-02T16:15:00.000Z",
-      "contentSnippet": "Learn how startups can choose GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production."
-    },
-    {
-      "id": "cfb7986dd65f",
-      "title": "How to choose your first Genie Agents for maximum impact",
-      "link": "https://www.databricks.com/blog/how-choose-your-first-genie-agents-maximum-impact",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-02T16:15:00.000Z",
-      "contentSnippet": "With more than 1 million Genie Agents created in 2026 alone, the question facing..."
     },
     {
       "id": "b9b18411de99",
@@ -417,15 +489,6 @@
       "contentSnippet": "A maioria das organizações ainda encara a gestão de produtos como uma linha de montagem: escrever histórias de usuário, alimentar o backlog, acompanhar a velocidade das sprints e torcer para que a funcionalidade entregue gere algum resultado. Essa postura é o teto de vidro do \"PO…"
     },
     {
-      "id": "baf7e7666686",
-      "title": "Real-Time Retail Intelligence: Building E-Commerce Recommendations with Lakebase and AI Search on Databricks",
-      "link": "https://www.databricks.com/blog/real-time-retail-intelligence-building-e-commerce-recommendations-lakebase-and-ai-search",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-02T11:00:00.000Z",
-      "contentSnippet": "The opportunity: Personalization as a revenue engineEvery second a shopper spends..."
-    },
-    {
       "id": "82d5ce1845d4",
       "title": "If I Wanted To Write A New Scrum Guide",
       "link": "https://www.scrum.org/resources/blog/if-i-wanted-write-new-scrum-guide",
@@ -444,15 +507,6 @@
       "contentSnippet": "Scrum governs three things: who decides what gets built, what counts as finished, and how the rules change when they stop working. For eighteen months, I have been Product Owner of a Scrum Team of eight AI agents, the Relentless Raptors. At our current token budget, the team comp…"
     },
     {
-      "id": "a97398f76ee5",
-      "title": "Chatham scales its capital markets expertise with OpenAI",
-      "link": "https://openai.com/index/chatham-financial",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-02T00:00:00.000Z",
-      "contentSnippet": "Chatham Financial uses Codex and GPT-5.6 to build technology and redesign workflows, cutting trade validation from 30 minutes to under 4."
-    },
-    {
       "id": "97db45500e1a",
       "title": "Faster String Aggregations with Dimension Tables",
       "link": "https://duckdb.org/2026/10/02/dimension-tables.html",
@@ -460,15 +514,6 @@
       "category": "Data",
       "pubDate": "2026-10-02T00:00:00.000Z",
       "contentSnippet": "Analytical workloads are full of repeated strings: product names, country names, station names, user agents, category labels. Take DuckDB's public train services dataset, which has one row for every stop a Dutch railway train makes. The data comes from the open datasets published…"
-    },
-    {
-      "id": "8df4814de428",
-      "title": "How Genie One reshapes work for finance teams",
-      "link": "https://www.databricks.com/blog/how-genie-one-reshapes-work-finance-teams",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-01T22:46:51.000Z",
-      "contentSnippet": "A finance team’s job is not simply to report the numbers: it’s to interpret what..."
     },
     {
       "id": "0aae1476f059",
@@ -630,7 +675,7 @@
       "source": "Anthropic Research",
       "category": "AI",
       "pubDate": "2026-09-29T16:39:00.000Z",
-      "contentSnippet": "We’re launching a new study using Anthropic Interviewer to learn from your experiences with AI, and we invite you to participate."
+      "contentSnippet": "We’re launching a new study using Anthropic Interviewer to learn from your experiences with AI."
     },
     {
       "id": "3bd3ec89a48c",
@@ -730,15 +775,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-28T13:00:00.000Z",
       "contentSnippet": "Originally published on yuvalyeret.com. Why More AI Activity Is Not Showing Up In The Business You can 10x engineering and still not 10x the business. AI agents are getting very good at coding, debugging, test generation, documentation, and a lot of engineering activities. That i…"
-    },
-    {
-      "id": "82913a57eebf",
-      "title": "How I Enriched The PSM Class For New Scrum Masters",
-      "link": "https://www.scrum.org/resources/blog/how-i-enriched-psm-class-new-scrum-masters",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-28T06:35:26.000Z",
-      "contentSnippet": "Learning from the PSM class alone is not enough for New Scrum Masters. To effectively apply their knowledge in the field, they require extra, enriched content and support. So, let’s explore how I enriched the PSM class. Image Imagine you join a PSM class and you learn a lot from…"
     },
     {
       "id": "eeac3b47b588",
@@ -1029,15 +1065,6 @@
       "contentSnippet": "A few weeks ago I wrote about how Semantic Link Labs now has tools with interactive UIs and showed how you could use this to view lineage and so Vertipaq-Analyzer-stuff in a notebook. I didn’t show what I think is the coolest new feature though: the ability to find the tables, co…"
     },
     {
-      "id": "90801afbca07",
-      "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
-      "link": "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-09-18T17:46:09.000Z",
-      "contentSnippet": "Algorithms & Theory"
-    },
-    {
       "id": "7e5cf95f9786",
       "title": "Persistent Databases in the Browser with DuckDB-Wasm and OPFS",
       "link": "https://duckdb.org/2026/09/18/opfs-wasm.html",
@@ -1207,15 +1234,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-09T16:21:00.000Z",
       "contentSnippet": "A quick survey of recent engagement of my posts on social media, indicating which service has by far the most engagement, and which service has seen a precipitous decline since early 2025. more…"
-    },
-    {
-      "id": "5a4baff754f8",
-      "title": "Some thoughts on the Navier–Stokes Millennium Prize Problem",
-      "link": "https://simonwillison.net/2026/Sep/8/on-navier-stokes/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-09-08T23:55:12.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "fbcbe1a52ca4",
@@ -1488,15 +1506,6 @@
       "contentSnippet": "The write side of the ontology conversation: named actions, business rules, and write-back to the systems of record — a pattern already running at enterprise scale."
     },
     {
-      "id": "d57a043ce5cd",
-      "title": "DuckLabs to Join AWS, Projects to Remain Open Source",
-      "link": "https://duckdb.org/2026/08/26/ducklabs-to-join-aws.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-08-26T00:00:00.000Z",
-      "contentSnippet": "DuckLabs today has announced that they will be joining Amazon Web Services as a new subsidiary. The big news for DuckDB and related projects like DuckLake is that there are no changes for our projects’ roadmap, licensing, and governance model! DuckDB, DuckLake, Quack, and all the…"
-    },
-    {
       "id": "45c8c4ff0994",
       "title": "Testing DAX measures by using AI",
       "link": "https://www.sqlbi.com/tv/testing-dax-measures-by-using-ai/",
@@ -1767,15 +1776,6 @@
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
-      "id": "16fe89b83e2e",
-      "title": "LIAF02/26 – Low Impact Amendments Finalisation July 2026",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-finalisation-july-2026",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Low Impact Amendments Finalisation July 2026"
-    },
-    {
       "id": "d834dadfb202",
       "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
@@ -1839,13 +1839,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "4c8cd6ef9ad3",
-      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
-      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
+      "id": "370e7bd96562",
+      "title": "Transmission Growth-at-Risk: How Foreign Financial Vulnerabilities Shape U.S. Growth Prospects",
+      "link": "https://www.federalreserve.gov/econres/ifdp/files/ifdp1442.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
+      "contentSnippet": "Board of Governors of the Federal Reserve System International Financial Discussion Papers by Viktors Stebunovs, Judit Temesvary and Sai Ma"
     },
     {
       "id": "ed6bd26c4997",
@@ -1854,7 +1854,7 @@
       "source": "Dagster",
       "category": "Data",
       "pubDate": "2026-07-16T00:00:00.000Z",
-      "contentSnippet": "data governance. I built a tiered AI classification system, human review workflow, and the Dagster orchestration that ties it all together in production in nine days."
+      "contentSnippet": "We’re consolidating a decade of legacy systems into Snowflake, which leaves us with over a million columns that all need to be classified and tagged for data governance. I built the system that does it: a tiered classification engine, a human-in-the-loop override workflow, and th…"
     },
     {
       "id": "03946207f0a8",
