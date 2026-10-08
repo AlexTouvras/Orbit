@@ -118,7 +118,8 @@ public/field-card/index.html            # Agentic AI Field Card (home AI compete
 public/analytics-field-card/index.html  # Data Analytics Field Card (home Data competency)
 public/delivery-field-card/index.html   # Technology Delivery Field Card (home Delivery competency)
 public/sdlc-field-card/index.html       # SDLC Field Card (home SDLC competency; Orbit-hosted until source repo)
-public/credit-risk-field-card/index.html # Credit Risk Field Card (origination + IFRS 9; Orbit-hosted until source repo)
+public/credit-risk-field-card/index.html # Credit Risk Field Card (one-account scene; Orbit-hosted until source repo)
+public/credit-risk-field-card/PLAYBOOK.md # Credit scene must stay; monthly pass must not restore the job table
 public/story-field-card/index.html      # Data & visual storytelling (Hub Story competency; Orbit-hosted)
 src/lib/field-card/registry.ts          # Multi-card Apply review sync map (repo → Orbit path)
 src/lib/field-card/slack.ts             # Laconic one-post-per-card #orbit FYI (Review/Considered/Changed/Online + Check card)
@@ -227,6 +228,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-05 | Studio Apply on Vercel = `repository_dispatch` → fitness-coach GHA | Vercel has no fitness `.venv`; `OPS_GITHUB_TOKEN` must be Contents write on fitness-coach |
 | 2026-09-09 | Arc remaining HP: max = 100 + VIT, fill = Body Battery share | VIT formula unchanged; bar not in the gate letter |
 | 2026-09-22 | SDLC opening is the life cycle in plain steps: plan, specify, design, build, test | “Gate chain / layers / lanes” did not read. Cutover still sits on the Delivery card. |
+| 2026-10-08 | Credit field card is the scene pilot | Owner: a card should show the hire value and the handling, with a useful moving picture rather than a table. Credit is the pilot because it is Orbit-hosted. H1 stays “Credit risk is for a lifetime. Act early.” The picture is one account: engine, watch while paying, stage the increase, hold lifetime. `PLAYBOOK.md` forbids putting the job table back. Credit speech in `public/field-card-robot.mjs` wins over storytelling `field-cards.ts`, same as SDLC. The other five cards wait until this pattern is the one to copy. |
 | 2026-10-02 | SDLC pillars are plan & design, build & verify, release & deploy, maintain & improve | The sheet was still a pre-release handoff to Delivery. H1 is “Build software that stays in use.” Calendars, proof, and cutover stay on Delivery. The hosted sheet robot speaks the SDLC lines in `public/field-card-robot.mjs` so a storytelling sync cannot put the Delivery sentence back on `/sdlc-field-card/`. |
 | 2026-10-02 | SDLC verify includes the security checks | Threats are named in design. The checks that fail the build sit in verify, with the tests. |
 | 2026-10-02 | SDLC improve is continuous improvement from use | Maintain stays the defect and the patch. Improve is the next change from what you learn while it is in use, through the same four pillars. Not a SAFe loop. |

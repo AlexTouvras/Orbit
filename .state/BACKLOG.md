@@ -65,6 +65,8 @@
 - [x] **Economy Pulse — fresher HICP + DK/NO** — merge `prc_hicp_manr` + early `teicp000`; add Denmark and Norway spotlights.
 - [x] **Live desk snapshot clock** — GHA `Refresh live desks` daily 13:00 UTC (mix, housing, economy, EU Spot + pulse). Pushed `07220d6`. `ENTSOE_SECURITY_TOKEN` set as a repo secret. Nordic Equity stays on heatmap-web.
 - [x] Hub SDLC + Credit Risk field cards (Orbit-hosted HTML, HUD lanes, sitemap)
+- [x] Credit field card scene pilot — one account, hire handling, motion with a still end state (`/credit-risk-field-card/`)
+- [ ] Field-card scene pattern on the other Hub cards — only after the credit pilot is the pattern to copy (AI, Analytics, Delivery, SDLC, Story)
 - [x] SDLC opening in plain steps (plan, specify, design, build, test) — localhost 2026-09-22
 - [x] SDLC pillars are plan & design, build & verify, release & deploy, maintain & improve (2026-10-02)
 - [x] **Story field card** — `/story-field-card/`. Hub competency Story (sixth craft row + hero pillars). Classic sheet + OS message (2026-09-25). Orbit-hosted. Not in FIELD_CARDS.

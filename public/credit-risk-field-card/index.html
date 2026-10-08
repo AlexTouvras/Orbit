@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Credit Risk Field Card — For a lifetime. Act early · Alex Touvras</title>
-  <meta name="description" content="A one-page decision card for loan origination and IFRS 9: originate, monitor, stage, and provision. Models are lanes — not the map." />
+  <meta name="description" content="How Alex Touvras runs credit risk: one account, from the engine to a lifetime hold. A score is not the loss you book." />
   <meta name="author" content="Alex Touvras" />
   <link rel="canonical" href="https://alextouvras.com/credit-risk-field-card/" />
   <meta property="og:title" content="Credit Risk Field Card — For a lifetime. Act early" />
-  <meta property="og:description" content="Decide → act early → stage → hold. A score is not a lifetime. Analytics owns how the number is built." />
+  <meta property="og:description" content="One account. Watch it while it is still paying, name the increase, and hold the lifetime loss." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alextouvras.com/credit-risk-field-card/" />
   <meta property="og:image" content="https://alextouvras.com/opengraph-image" />
@@ -123,10 +123,7 @@
 
     header.hero {
       padding: 1.5rem 1.35rem 1.25rem;
-      display: grid;
-      gap: 1.25rem;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: end;
+      display: block;
       border-bottom: 1px solid var(--line);
     }
 
@@ -137,14 +134,14 @@
       line-height: 1.12;
       letter-spacing: -0.02em;
       font-weight: 700;
-      max-width: 16ch;
+      max-width: 18ch;
     }
 
     .lede {
       margin: 0;
       color: var(--ink-soft);
       font-size: 1.02rem;
-      max-width: 42ch;
+      max-width: 62ch;
     }
 
     .lede strong { color: var(--ink); font-weight: 600; }
@@ -581,6 +578,419 @@
       display: none;
     }
 
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .life {
+      padding: 1.15rem 1.35rem 1.25rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .life h2 { margin-bottom: 0.35rem; }
+
+    .life .explain {
+      margin: 0 0 0.85rem;
+      max-width: 68ch;
+      color: var(--ink-soft);
+    }
+
+    .life-board {
+      position: relative;
+      margin: 0;
+      background:
+        radial-gradient(420px 180px at 12% 0%, rgba(122, 74, 40, 0.08), transparent 70%),
+        linear-gradient(180deg, #fbf7f2, #f3ece3);
+      border: 1px solid #e4d8cc;
+      border-radius: 12px;
+    }
+
+    .rooms {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0.85rem 0.85rem 4.6rem;
+      list-style: none;
+    }
+
+    .room {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 0.45rem;
+      align-content: start;
+      min-height: 11.5rem;
+      padding: 0.7rem 0.7rem 0.75rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.42);
+      box-shadow: inset 0 0 0 1px transparent;
+    }
+
+    .room:nth-child(1) { animation: room-1 16s infinite; }
+    .room:nth-child(2) { animation: room-2 16s infinite; }
+    .room:nth-child(3) { animation: room-3 16s infinite; }
+    .room:nth-child(4) { animation: room-4 16s infinite; }
+
+    @keyframes room-1 {
+      0%, 16% { background: #fff; box-shadow: inset 0 0 0 1.5px var(--steel); }
+      22%, 100% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+    }
+    @keyframes room-2 {
+      0%, 22% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+      26%, 42% { background: #fff; box-shadow: inset 0 0 0 1.5px var(--steel); }
+      48%, 100% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+    }
+    @keyframes room-3 {
+      0%, 48% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+      52%, 68% { background: #fff; box-shadow: inset 0 0 0 1.5px var(--steel); }
+      74%, 100% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+    }
+    @keyframes room-4 {
+      0%, 74% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+      78%, 100% { background: #fff; box-shadow: inset 0 0 0 1.5px var(--steel); }
+    }
+
+    .room-kicker {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--steel);
+    }
+
+    .room-line {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    .art {
+      height: 4.6rem;
+      display: flex;
+      align-items: flex-end;
+      gap: 0.45rem;
+    }
+
+    .sheetlet {
+      width: 3.1rem;
+      height: 3.8rem;
+      padding: 0.45rem 0.4rem;
+      border-radius: 3px;
+      background: #fff;
+      border: 1px solid #d7c7b6;
+      box-shadow: 2px 2px 0 rgba(92, 55, 28, 0.08);
+      display: grid;
+      align-content: start;
+      gap: 0.28rem;
+    }
+
+    .sheetlet i {
+      display: block;
+      height: 0.28rem;
+      border-radius: 99px;
+      background: #e4d8cc;
+    }
+
+    .sheetlet i:first-child { width: 70%; background: var(--steel); }
+
+    .seal {
+      width: 1.7rem;
+      height: 1.7rem;
+      margin-bottom: 0.35rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--signal);
+      color: #fff;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .book {
+      width: 100%;
+      max-width: 8.5rem;
+      display: grid;
+      gap: 0.32rem;
+    }
+
+    .book .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 0.85rem;
+      padding: 0 0.35rem;
+      border-radius: 3px;
+      background: var(--signal-soft);
+    }
+
+    .book .row.hot {
+      animation: heat 16s infinite;
+    }
+
+    .book .row em {
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: var(--signal);
+    }
+
+    @keyframes heat {
+      0%, 22% { background: var(--signal-soft); }
+      30%, 100% { background: var(--warn-soft); }
+    }
+
+    .book .row.hot em { animation: heat-word 16s infinite; }
+
+    @keyframes heat-word {
+      0%, 22% { color: var(--signal); }
+      30%, 100% { color: var(--warn); }
+    }
+
+    .stage-gate {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.35rem;
+      height: 4.2rem;
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+
+    .stage-gate .post {
+      width: 0.38rem;
+      height: 3.4rem;
+      border-radius: 2px;
+      background: var(--steel);
+    }
+
+    .plaque {
+      position: relative;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-bottom: 0.45rem;
+      border-radius: 6px;
+      background: #fff;
+      border: 1.5px solid var(--steel);
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--steel-deep);
+    }
+
+    .plaque b {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    .plaque .n2 { opacity: 0; animation: show-two 16s infinite; }
+    .plaque .n1 { animation: hide-one 16s infinite; }
+
+    @keyframes hide-one {
+      0%, 50% { opacity: 1; }
+      56%, 100% { opacity: 0; }
+    }
+    @keyframes show-two {
+      0%, 50% { opacity: 0; }
+      56%, 100% { opacity: 1; }
+    }
+
+    .holds {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.7rem;
+      height: 4.4rem;
+    }
+
+    .hold {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 2.6rem;
+      height: 100%;
+      gap: 0.25rem;
+    }
+
+    .hold b {
+      display: block;
+      width: 100%;
+      border-radius: 4px 4px 1px 1px;
+      background-image: repeating-linear-gradient(
+        to top,
+        var(--signal) 0 6px,
+        rgba(255, 255, 255, 0.55) 6px 8px
+      );
+      background-color: var(--signal);
+    }
+
+    .hold-12 b { height: 32%; opacity: 0.55; }
+
+    .hold-life b {
+      height: 32%;
+      opacity: 0.45;
+      animation: fill-life 16s infinite;
+    }
+
+    @keyframes fill-life {
+      0%, 62% { height: 32%; opacity: 0.45; }
+      78%, 100% { height: 100%; opacity: 1; }
+    }
+
+    .hold small {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .motion {
+      position: absolute;
+      left: 0.85rem;
+      right: 0.85rem;
+      bottom: 0;
+      height: 4.4rem;
+      pointer-events: none;
+    }
+
+    .track {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 1.85rem;
+      height: 2px;
+      background: #e0d2c4;
+      z-index: 1;
+    }
+
+    .walker,
+    .ghost {
+      position: absolute;
+      z-index: 2;
+      bottom: 1.15rem;
+      width: 1.15rem;
+      height: 1.45rem;
+      margin-left: -0.57rem;
+      border-radius: 2px 2px 1px 1px;
+      background: var(--steel);
+    }
+
+    .walker {
+      left: 12.5%;
+      animation: walk 16s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+    }
+
+    .walker::before,
+    .ghost::before {
+      content: "";
+      position: absolute;
+      top: 0.28rem;
+      left: 0.22rem;
+      right: 0.22rem;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: 0 5px 0 rgba(255, 255, 255, 0.45);
+    }
+
+    .ghost {
+      left: 37.5%;
+      background: var(--warn-soft);
+      border: 1.5px dashed var(--warn);
+      opacity: 0;
+      animation: ghost-in 16s infinite;
+    }
+
+    .ghost::before { display: none; }
+
+    .ghost-label {
+      position: absolute;
+      z-index: 2;
+      left: 37.5%;
+      bottom: 2.75rem;
+      margin: 0;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.02em;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      background: #fff;
+      border: 1px solid #e0d2c4;
+      border-radius: 99px;
+      padding: 0.05rem 0.35rem;
+      opacity: 0;
+      animation: ghost-in 16s infinite;
+    }
+
+    @keyframes walk {
+      0%, 16% { left: 12.5%; }
+      26%, 42% { left: 37.5%; }
+      52%, 68% { left: 62.5%; }
+      78%, 100% { left: 87.5%; }
+    }
+
+    @keyframes ghost-in {
+      0%, 42% { opacity: 0; }
+      50%, 100% { opacity: 1; }
+    }
+
+    .life figcaption,
+    .refuse p,
+    .sources p {
+      margin: 0.75rem 0 0;
+      max-width: 72ch;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .refuse,
+    .sources {
+      padding: 1rem 1.35rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .source-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.65rem;
+      margin-top: 0.75rem;
+    }
+
+    .source-row a {
+      display: block;
+      color: var(--steel-deep);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .source-row a:hover { border-bottom-color: var(--steel); }
+
+    .source-row span {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--ink-soft);
+      font-weight: 400;
+      font-size: 0.82rem;
+    }
+
     @media (max-width: 900px) {
       header.hero,
       .tri,
@@ -593,9 +1003,32 @@
       .pick { grid-template-columns: 1fr; gap: 0.2rem; }
       h1 { max-width: none; }
       .found-row { grid-template-columns: 1fr 1fr; }
+      .rooms { grid-template-columns: 1fr 1fr; padding-bottom: 0.85rem; }
+      .motion { display: none; }
+      .room { animation: none; background: #fff; box-shadow: inset 0 0 0 1px #e4d8cc; }
+      .plaque .n1, .plaque .n2, .book .row.hot, .book .row.hot em, .hold-life b { animation: none; }
+      .plaque .n1 { opacity: 0; }
+      .plaque .n2 { opacity: 1; }
+      .book .row.hot { background: var(--warn-soft); }
+      .book .row.hot em { color: var(--warn); }
+      .hold-life b { height: 100%; opacity: 1; }
+      .source-row { grid-template-columns: 1fr 1fr; }
       table.decisions td.problem,
       table.decisions td.reach,
       table.decisions td.example { width: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .room, .walker, .ghost, .ghost-label, .book .row.hot, .book .row.hot em,
+      .plaque .n1, .plaque .n2, .hold-life b { animation: none; }
+      .room { background: #fff; box-shadow: inset 0 0 0 1px #e4d8cc; }
+      .walker { left: 87.5%; }
+      .ghost, .ghost-label { opacity: 1; }
+      .plaque .n1 { opacity: 0; }
+      .plaque .n2 { opacity: 1; }
+      .book .row.hot { background: var(--warn-soft); }
+      .book .row.hot em { color: var(--warn); }
+      .hold-life b { height: 100%; opacity: 1; }
     }
 
     @media print {
@@ -625,8 +1058,20 @@
       section { padding: 0.55rem 0 0.65rem; }
       footer.meta { padding: 0.45rem 0 0; background: none; }
       .foundation { padding: 0.45rem 0; background: none; }
-      .layer { animation: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .panel, .antis, .foundation { break-inside: avoid; }
+      .layer, .room, .walker, .ghost, .ghost-label, .book .row.hot, .book .row.hot em,
+      .plaque .n1, .plaque .n2, .hold-life b {
+        animation: none !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .walker { left: 87.5%; }
+      .ghost, .ghost-label { opacity: 1; }
+      .plaque .n1 { opacity: 0; }
+      .plaque .n2 { opacity: 1; }
+      .hold-life b { height: 100%; opacity: 1; }
+      .book .row.hot { background: var(--warn-soft); }
+      .book .row.hot em { color: var(--warn); }
+      .life-board, .panel, .foundation, .refuse { break-inside: avoid; }
       a { color: inherit; text-decoration: none; border-bottom: none !important; }
     }
   </style>
@@ -648,151 +1093,106 @@
         <h1>Credit risk is for a lifetime. Act early.</h1>
         <p class="verbs">Decide → act early → stage → hold</p>
         <p class="lede">
-          Act early. Originate on creditworthiness, then watch the book before the loss is lifetime.
-          Models are lanes. A score at application is not the loss you hold — name SICR before anyone books the number.
-          How the number is <em>built</em> lives on the Analytics card (grain, truth, consume).
+          The cutoff is not the system. Who we lend to is written into the engine, and every override has a name.
+          I watch the book while people are still paying. When risk has risen since origination, I move the account and hold the loss for the rest of its life.
+          The application score is not that number. A person signs any amount we add on top.
         </p>
-      </div>
-      <div class="stack" aria-label="Four-layer stack">
-        <div class="layer"><code>ORIGINATE</code><span>Decision — creditworthiness, policy, engine</span></div>
-        <div class="layer"><code>MONITOR</code><span>Book — arrears, emerging risk, in-production scores</span></div>
-        <div class="layer"><code>STAGE</code><span>IFRS 9 — SICR, stage 1 / 2 / 3</span></div>
-        <div class="layer"><code>PROVISION</code><span>ECL — 12-month or lifetime, PD · LGD · EAD, overlay</span></div>
       </div>
     </header>
 
-    <section>
-      <h2>Problem → use → example</h2>
-      <table class="decisions">
-        <thead>
-          <tr>
-            <th>If the real problem is…</th>
-            <th>Use</th>
-            <th>Example case</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="problem">New credit without a named affordability test</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA Guidelines on loan origination and monitoring"><b>Origination standard</b></a></td>
-            <td class="example">B2B partner or consumer loan: creditworthiness, data used, and who can override — not a gut “looks fine”</td>
-          </tr>
-          <tr>
-            <td class="problem">Cut-off set once, never watched</td>
-            <td class="reach"><a class="use-link" href="https://www.bis.org/basel_framework/chapter/CRE/31.htm" target="_blank" rel="noopener noreferrer" title="Basel CRE31: IRB risk differentiation"><b>In-production scorecard</b></a></td>
-            <td class="example">Application PD: cut-off, through-the-door mix, and override rate on a named cadence — a launch deck is not monitoring</td>
-          </tr>
-          <tr>
-            <td class="problem">Each cut-off trial is a full book backtest</td>
-            <td class="reach"><a class="use-link" href="/bayes-field-card/index.html" title="Bayesian optimisation field card"><b>Bayesian opt</b></a></td>
-            <td class="example">Spend the next portfolio run where last week’s surface still moves the decision. Don’t grid forty cut-offs because the engine can.</td>
-          </tr>
-          <tr>
-            <td class="problem">Policy lives in a person, not the engine</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA GL/2020/06 — automated models in origination"><b>Credit engine + owner</b></a></td>
-            <td class="example">Rule or score change in the engine: test, named owner, rollback — chat is not the policy</td>
-          </tr>
-          <tr>
-            <td class="problem">Book looks calm; early arrears are not</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA loan origination and monitoring — ongoing monitoring"><b>Portfolio watch</b></a></td>
-            <td class="example">Segment PD vs observed default; vintage and product — steering is a change, not a slide</td>
-          </tr>
-          <tr>
-            <td class="problem">Everyone is still “performing”</td>
-            <td class="reach"><a class="use-link" href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer" title="IFRS 9 Financial Instruments"><b>SICR / staging</b></a></td>
-            <td class="example">Significant increase since origination → lifetime ECL (stage 2); credit-impaired → stage 3. A missed payment is a trigger, not a debate</td>
-          </tr>
-          <tr>
-            <td class="problem">Allowance is a round number from last year</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/guidelines-credit-risk-management-practices-and-accounting-expected-credit-losses" target="_blank" rel="noopener noreferrer" title="EBA GL/2017/06 — accounting for expected credit losses"><b>ECL methodology</b></a></td>
-            <td class="example">PD × LGD × EAD, 12-month vs lifetime, forward-looking info — a spreadsheet total is not IFRS 9</td>
-          </tr>
-          <tr>
-            <td class="problem">Model is blind to the downturn you can see</td>
-            <td class="reach"><a class="use-link" href="https://www.bis.org/bcbs/publ/d350.htm" target="_blank" rel="noopener noreferrer" title="BCBS: Guidance on credit risk and accounting for expected credit losses"><b>Judgement overlay</b></a></td>
-            <td class="example">Named overlay, size, and exit test; experienced credit judgement is a control, not a plug</td>
-          </tr>
-          <tr>
-            <td class="problem">PD/LGD/EAD don’t match the grain of the book</td>
-            <td class="reach"><a class="use-link" href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer" title="IFRS 9 — expected credit losses"><b>Named risk parameters</b></a></td>
-            <td class="example">Auto-loan lifetime ECL: account grain, remaining term, prepayment — Analytics card owns the gold table; this card owns the stage</td>
-          </tr>
-          <tr>
-            <td class="problem">Override rate is “how we actually decide”</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA origination guidelines — governance of automated models"><b>Override governance</b></a></td>
-            <td class="example">Who can stretch policy, why, and how it is sampled — silent overrides are a second scorecard</td>
-          </tr>
-          <tr>
-            <td class="problem">Capital model and IFRS 9 model never speak</td>
-            <td class="reach"><a class="use-link" href="https://www.bis.org/basel_framework/chapter/CRE/31.htm" target="_blank" rel="noopener noreferrer" title="Basel IRB risk differentiation"><b>Know the two jobs</b></a></td>
-            <td class="example">IRB EL ≠ IFRS 9 ECL. Reconcile the difference; don’t paste one into the other</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="note">Default order: creditworthiness + policy in the engine → watch the book and the score → stage on SICR → hold 12-month or lifetime ECL (overlay named). Analytics owns grain and gold; this card owns the decision and the stage.</p>
+    <section class="life">
+      <h2>How I run one account</h2>
+      <p class="explain">One account. It is still marked paid when the risk turns. The stage changes. The hold grows from the next 12 months to the rest of the life. The faded file never leaves the cutoff.</p>
+      <figure>
+        <p id="life-desc" class="sr">
+          Four moves on one account. Originate: creditworthiness is in the engine and an override has a name.
+          Monitor: the account is still paying and the risk since origination is already up. A faded file stops here and keeps a 12-month hold.
+          Stage: that increase is named, so the account leaves stage 1.
+          Provision: the hold becomes the rest of the life. Any extra amount has an owner and a date to come off.
+          How the number is built lives on the Analytics card.
+        </p>
+        <div class="life-board">
+          <ol class="rooms">
+            <li class="room">
+              <p class="room-kicker">Originate</p>
+              <div class="art" aria-hidden="true">
+                <span class="sheetlet"><i></i><i></i><i></i></span>
+                <span class="seal">yes</span>
+              </div>
+              <p class="room-line">Creditworthiness sits in the engine. An override has a name.</p>
+            </li>
+            <li class="room">
+              <p class="room-kicker">Monitor</p>
+              <div class="art" aria-hidden="true">
+                <span class="book">
+                  <span class="row"></span>
+                  <span class="row hot"><em>paid</em></span>
+                  <span class="row"></span>
+                </span>
+              </div>
+              <p class="room-line">Still paying. The risk since we lent is already up.</p>
+            </li>
+            <li class="room">
+              <p class="room-kicker">Stage</p>
+              <div class="art" aria-hidden="true">
+                <span class="stage-gate">
+                  <span class="post"></span>
+                  <span class="plaque"><b class="n1">1</b><b class="n2">2</b></span>
+                  <span class="post"></span>
+                </span>
+              </div>
+              <p class="room-line">Name the increase. The account leaves stage 1.</p>
+            </li>
+            <li class="room">
+              <p class="room-kicker">Provision</p>
+              <div class="art" aria-hidden="true">
+                <span class="holds">
+                  <span class="hold hold-12"><b></b><small>12 mo</small></span>
+                  <span class="hold hold-life"><b></b><small>life</small></span>
+                </span>
+              </div>
+              <p class="room-line">Hold the rest of the life, not only the next year.</p>
+            </li>
+          </ol>
+          <div class="motion" aria-hidden="true">
+            <div class="track"></div>
+            <div class="walker"></div>
+            <div class="ghost"></div>
+            <p class="ghost-label">cutoff only</p>
+          </div>
+        </div>
+        <figcaption>
+          The solid file is the book I would run. The faded file stays because the payment arrived, so the hold never leaves 12 months.
+          Analytics owns the grain of the number. This card owns the decision and the stage.
+          If the stage, the chance of default, the loss if it happens, the amount outstanding, and the overlay owner cannot be named, the number does not get booked.
+        </figcaption>
+      </figure>
     </section>
 
-    <div class="tri">
-      <section>
-        <h2>Tool picker</h2>
-        <div class="picker">
-          <div class="pick"><strong><a href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer">EBA origination GL</a></strong><span>Creditworthiness, monitoring, model governance</span></div>
-          <div class="pick"><strong><a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer">IFRS 9</a></strong><span>Staging, SICR, 12-month vs lifetime ECL</span></div>
-          <div class="pick"><strong><a href="https://www.eba.europa.eu/guidelines-credit-risk-management-practices-and-accounting-expected-credit-losses" target="_blank" rel="noopener noreferrer">EBA ECL GL</a></strong><span>Sound ECL practices next to the Standard</span></div>
-          <div class="pick"><strong><a href="https://www.bis.org/bcbs/publ/d350.htm" target="_blank" rel="noopener noreferrer">BCBS ECL guidance</a></strong><span>Judgement, data, and allowance quality</span></div>
-          <div class="pick"><strong><a href="https://www.bis.org/basel_framework/chapter/CRE/31.htm" target="_blank" rel="noopener noreferrer">IRB differentiation</a></strong><span>PD that actually ranks risk — not a label</span></div>
-          <div class="pick"><strong><a href="https://www.ifrs.org/supporting-implementation/supporting-materials-by-ifrs-standards/ifrs-9/" target="_blank" rel="noopener noreferrer">IFRS 9 support</a></strong><span>Implementation notes, not a vendor deck</span></div>
-          <div class="pick"><strong><a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer">PD · LGD · EAD</a></strong><span>Name the three; freeze the cut you used</span></div>
-        </div>
-      </section>
+    <section class="refuse">
+      <h2>What I will not book</h2>
+      <p>
+        I will not leave a paying account in stage 1 because the installment arrived, paste a capital expected-loss figure into the accounting allowance, or book an extra amount with no owner and no date to come off.
+        An unwatched scorecard is not monitoring. A vendor deck is not the method.
+      </p>
+    </section>
 
-      <section>
-        <h2>Decision vs number</h2>
-        <div class="gates">
-          <div class="gate">
-            <strong>Decision · originate</strong>
-            <span>Creditworthiness, policy, engine, override. A score without a cut-off owner is not a decision.</span>
-          </div>
-          <div class="gate">
-            <strong>Number · hold</strong>
-            <span>Stage, then ECL. Analytics can build the table; this card still owns SICR and the overlay.</span>
-          </div>
-          <div class="gate">
-            <strong>Memory check</strong>
-            <span>ORIGINATE = decision. MONITOR = book. STAGE = SICR. PROVISION = the loss you hold.</span>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Ladder + gates</h2>
-        <ol class="ladder">
-          <li>Creditworthiness + policy in the engine</li>
-          <li>Cut-off + override owner</li>
-          <li>In-production monitoring</li>
-          <li>SICR / stage 1–3</li>
-          <li>PD · LGD · EAD at the right grain</li>
-          <li>Overlay named — or no plug</li>
-        </ol>
-        <div class="gate" style="margin-top:0.75rem">
-          <strong>Kill switch</strong>
-          <span>If you can’t name the stage, the parameters, and who owns the overlay, you don’t book the number.</span>
-        </div>
-      </section>
-    </div>
-
-    <section class="antis">
-      <h2>Anti-patterns</h2>
-      <ul class="anti-list">
-        <li>Cutoff as the whole risk system</li>
-        <li>Silent overrides as a second policy</li>
-        <li>Stage 1 forever because “they’re paying”</li>
-        <li>Pasting IRB EL into IFRS 9 ECL</li>
-        <li>Unnamed overlay that never exits</li>
-        <li>Scorecard with no in-production watch</li>
-        <li>Vendor brochure as the methodology</li>
-        <li>Building gold tables and skipping staging</li>
-      </ul>
+    <section class="sources">
+      <h2>Where the rules live</h2>
+      <div class="source-row">
+        <a href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer">EBA origination
+          <span>Creditworthiness, monitoring, who may override</span>
+        </a>
+        <a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer">IFRS 9
+          <span>Stage the increase. 12-month or lifetime loss.</span>
+        </a>
+        <a href="https://www.eba.europa.eu/guidelines-credit-risk-management-practices-and-accounting-expected-credit-losses" target="_blank" rel="noopener noreferrer">EBA expected loss
+          <span>How the allowance is built, next to the Standard</span>
+        </a>
+        <a href="https://www.bis.org/bcbs/publ/d350.htm" target="_blank" rel="noopener noreferrer">Basel expected loss
+          <span>Judgement is a control, with an exit</span>
+        </a>
+      </div>
     </section>
 
     <section class="foundation" aria-label="Always-on foundation">
@@ -808,14 +1208,14 @@
 
     <footer class="meta">
       <div class="version-row">
-        <div class="version" id="version-stamp">v2026.09 · First public card 21 Sep 2026 · Next: October 2026</div>
+        <div class="version" id="version-stamp">Reviewed October 2026 · Next: November 2026</div>
         <div class="credit">
           <span>Alex Touvras</span>
           <a href="https://alextouvras.com">alextouvras.com</a>
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> First public card — ORIGINATE → MONITOR → STAGE → PROVISION</p>
+      <p class="changed"><b>Changed</b> One account shows the handling: engine, watch while paying, stage the increase, hold lifetime.</p>
     </footer>
   </article>
   <script>

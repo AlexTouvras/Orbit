@@ -88,6 +88,41 @@ describe("field card robot copy", () => {
     );
   });
 
+  it("speaks the Orbit credit scene even when storytelling still has the old headings", () => {
+    const remote = FALLBACK_CARDS.map((card) =>
+      card.id === "credit"
+        ? {
+            ...card,
+            lines: [
+              "A score at application is not the loss you hold.",
+              "a",
+              "b",
+              "c",
+              "d",
+              TUCK,
+            ],
+            sections: [{ heading: "Problem → use → example", line: "old" }],
+          }
+        : card,
+    );
+    const cards = cardsForSheet("credit", remote);
+    const credit = cards.find((card) => card.id === "credit");
+    assert.ok(credit);
+    assert.equal(credit.lines.length, 6);
+    assert.equal(credit.lines[0], "This card is the life of the loan. Act before the loss.");
+    assert.equal(
+      sectionLine(credit.sections, "How I run one account"),
+      "Who we lend to sits in the engine. Override named.",
+    );
+    for (const words of credit.lines) {
+      assert.ok(words.length <= 64);
+    }
+    assert.equal(
+      cardsForSheet("analytics", remote).find((card) => card.id === "analytics").lines[0],
+      remote.find((card) => card.id === "analytics").lines[0],
+    );
+  });
+
   it("reads the six line slots and the accent from the robot contract", async () => {
     const res = await fetch(
       "https://raw.githubusercontent.com/AlexTouvras/storytelling/main/src/illustrations/robot.ts",
