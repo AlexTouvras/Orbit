@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Credit Risk Field Card — For a lifetime. Act early · Alex Touvras</title>
-  <meta name="description" content="How Alex Touvras runs credit risk: one account, from the engine to a lifetime hold. A score is not the loss you book." />
+  <meta name="description" content="The cutoff is not the system. One account is watched, staged, and held for life, then the outcome returns to the watch." />
   <meta name="author" content="Alex Touvras" />
   <link rel="canonical" href="https://alextouvras.com/credit-risk-field-card/" />
   <meta property="og:title" content="Credit Risk Field Card — For a lifetime. Act early" />
@@ -145,6 +145,15 @@
     }
 
     .lede strong { color: var(--ink); font-weight: 600; }
+
+    .hook {
+      margin: 0 0 0.45rem;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      max-width: 28ch;
+    }
 
     .verbs {
       margin: 0 0 0.45rem;
@@ -618,8 +627,47 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 0.7rem;
       margin: 0;
-      padding: 0.85rem 0.85rem 4.6rem;
+      padding: 2.5rem 0.85rem 4.6rem;
       list-style: none;
+    }
+
+    .learn {
+      position: absolute;
+      left: 4%;
+      width: 92%;
+      top: 0.15rem;
+      height: 2.8rem;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .learn path {
+      fill: none;
+      stroke: var(--steel);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw-learn 16s linear infinite;
+    }
+
+    .learn-label {
+      position: absolute;
+      top: 0;
+      left: 58%;
+      margin: 0;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--steel);
+    }
+
+    @keyframes draw-learn {
+      0%, 68% { stroke-dashoffset: 1; }
+      86%, 100% { stroke-dashoffset: 0; }
     }
 
     .room {
@@ -966,6 +1014,33 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .principles {
+      margin: 0.7rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+      max-width: 68ch;
+    }
+
+    .principles li {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .principles strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .sources .explain,
+    .foundation .explain {
+      margin: 0 0 0.75rem;
+      max-width: 62ch;
+      color: var(--ink-soft);
+    }
+
     .source-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1003,7 +1078,8 @@
       .pick { grid-template-columns: 1fr; gap: 0.2rem; }
       h1 { max-width: none; }
       .found-row { grid-template-columns: 1fr 1fr; }
-      .rooms { grid-template-columns: 1fr 1fr; padding-bottom: 0.85rem; }
+      .rooms { grid-template-columns: 1fr 1fr; padding: 0.85rem 0.85rem 0.85rem; }
+      .learn, .learn-label { display: none; }
       .motion { display: none; }
       .room { animation: none; background: #fff; box-shadow: inset 0 0 0 1px #e4d8cc; }
       .plaque .n1, .plaque .n2, .book .row.hot, .book .row.hot em, .hold-life b { animation: none; }
@@ -1020,7 +1096,8 @@
 
     @media (prefers-reduced-motion: reduce) {
       .room, .walker, .ghost, .ghost-label, .book .row.hot, .book .row.hot em,
-      .plaque .n1, .plaque .n2, .hold-life b { animation: none; }
+      .plaque .n1, .plaque .n2, .hold-life b, .learn path { animation: none; }
+      .learn path { stroke-dashoffset: 0; }
       .room { background: #fff; box-shadow: inset 0 0 0 1px #e4d8cc; }
       .walker { left: 87.5%; }
       .ghost, .ghost-label { opacity: 1; }
@@ -1059,7 +1136,7 @@
       footer.meta { padding: 0.45rem 0 0; background: none; }
       .foundation { padding: 0.45rem 0; background: none; }
       .layer, .room, .walker, .ghost, .ghost-label, .book .row.hot, .book .row.hot em,
-      .plaque .n1, .plaque .n2, .hold-life b {
+      .plaque .n1, .plaque .n2, .hold-life b, .learn path {
         animation: none !important;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
@@ -1069,6 +1146,7 @@
       .plaque .n1 { opacity: 0; }
       .plaque .n2 { opacity: 1; }
       .hold-life b { height: 100%; opacity: 1; }
+      .learn path { stroke-dashoffset: 0; }
       .book .row.hot { background: var(--warn-soft); }
       .book .row.hot em { color: var(--warn); }
       .life-board, .panel, .foundation, .refuse { break-inside: avoid; }
@@ -1089,29 +1167,31 @@
 
     <header class="hero">
       <div>
-        <div class="eyebrow">Loan origination and IFRS 9</div>
+        <div class="eyebrow">Decision system</div>
         <h1>Credit risk is for a lifetime. Act early.</h1>
+        <p class="hook">The cutoff is not the system.</p>
         <p class="verbs">Decide → act early → stage → hold</p>
         <p class="lede">
-          The cutoff is not the system. Who we lend to is written into the engine, and every override has a name.
-          I watch the book while people are still paying. When risk has risen since origination, I move the account and hold the loss for the rest of its life.
-          The application score is not that number. A person signs any amount we add on top.
+          A score says where the account sits today. I watch what happens next, and a person owns the call.
         </p>
       </div>
     </header>
 
     <section class="life">
       <h2>How I run one account</h2>
-      <p class="explain">One account. It is still marked paid when the risk turns. The stage changes. The hold grows from the next 12 months to the rest of the life. The faded file never leaves the cutoff.</p>
+      <p class="explain">Still marked paid when the risk turns. The stage changes. The hold grows from 12 months to the rest of the life. Then that outcome goes back into the watch.</p>
       <figure>
         <p id="life-desc" class="sr">
-          Four moves on one account. Originate: creditworthiness is in the engine and an override has a name.
+          Four moves on one account, then the outcome returns to the watch. Originate: creditworthiness is in the engine and an override has a name.
           Monitor: the account is still paying and the risk since origination is already up. A faded file stops here and keeps a 12-month hold.
           Stage: that increase is named, so the account leaves stage 1.
-          Provision: the hold becomes the rest of the life. Any extra amount has an owner and a date to come off.
-          How the number is built lives on the Analytics card.
+          Provision: the hold becomes the rest of the life. The learn arc sends that result back into the watch.
         </p>
         <div class="life-board">
+          <svg class="learn" viewBox="0 0 1000 72" preserveAspectRatio="none" aria-hidden="true">
+            <path pathLength="1" d="M 880 66 C 880 10, 420 10, 370 66" />
+          </svg>
+          <p class="learn-label">learn</p>
           <ol class="rooms">
             <li class="room">
               <p class="room-kicker">Originate</p>
@@ -1162,41 +1242,42 @@
           </div>
         </div>
         <figcaption>
-          The solid file is the book I would run. The faded file stays because the payment arrived, so the hold never leaves 12 months.
-          Analytics owns the grain of the number. This card owns the decision and the stage.
-          If the stage, the chance of default, the loss if it happens, the amount outstanding, and the overlay owner cannot be named, the number does not get booked.
+          The faded file is the cutoff: the payment arrived, so nothing moves. The arc is the next decision. Analytics owns how the number is built.
         </figcaption>
       </figure>
     </section>
 
     <section class="refuse">
-      <h2>What I will not book</h2>
-      <p>
-        I will not leave a paying account in stage 1 because the installment arrived, paste a capital expected-loss figure into the accounting allowance, or book an extra amount with no owner and no date to come off.
-        An unwatched scorecard is not monitoring. A vendor deck is not the method.
-      </p>
+      <h2>Where judgement stays</h2>
+      <ol class="principles">
+        <li><strong>A paying account is not low risk.</strong> The installment can arrive while the risk since origination is already up.</li>
+        <li><strong>A score is not the decision.</strong> Policy, the cutoff, and the person who may override are.</li>
+        <li><strong>An extra amount needs an exit.</strong> If the stage, the parameters, and that owner cannot be named, the number does not get booked.</li>
+      </ol>
     </section>
 
     <section class="sources">
-      <h2>Where the rules live</h2>
+      <h2>Inside the fence</h2>
+      <p class="explain">These standards fence the decision. They are not the capability.</p>
       <div class="source-row">
         <a href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer">EBA origination
-          <span>Creditworthiness, monitoring, who may override</span>
+          <span>What the lending decision must show</span>
         </a>
         <a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer">IFRS 9
-          <span>Stage the increase. 12-month or lifetime loss.</span>
+          <span>How an increase becomes the loss we hold</span>
         </a>
         <a href="https://www.eba.europa.eu/guidelines-credit-risk-management-practices-and-accounting-expected-credit-losses" target="_blank" rel="noopener noreferrer">EBA expected loss
-          <span>How the allowance is built, next to the Standard</span>
+          <span>How the allowance is built</span>
         </a>
         <a href="https://www.bis.org/bcbs/publ/d350.htm" target="_blank" rel="noopener noreferrer">Basel expected loss
-          <span>Judgement is a control, with an exit</span>
+          <span>When judgement may enter, and when it leaves</span>
         </a>
       </div>
     </section>
 
     <section class="foundation" aria-label="Always-on foundation">
       <h2>Always on</h2>
+      <p class="explain">A model that ends at deployment is not this system.</p>
       <div class="found-row">
         <div class="found"><strong>Security</strong><span>Who can see PII and flip a policy rule</span></div>
         <div class="found"><strong>Governance</strong><span>Model, cut-off, and overlay owners</span></div>
@@ -1215,7 +1296,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> One account shows the handling: engine, watch while paying, stage the increase, hold lifetime.</p>
+      <p class="changed"><b>Changed</b> The cutoff is the hook. One account still moves, then the outcome returns to the watch.</p>
     </footer>
   </article>
   <script>

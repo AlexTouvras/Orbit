@@ -112,7 +112,7 @@ describe("field card robot copy", () => {
     assert.equal(credit.lines[0], "This card is the life of the loan. Act before the loss.");
     assert.equal(
       sectionLine(credit.sections, "How I run one account"),
-      "Who we lend to sits in the engine. Override named.",
+      "The cutoff is not the system. Watch what is next.",
     );
     for (const words of credit.lines) {
       assert.ok(words.length <= 64);
