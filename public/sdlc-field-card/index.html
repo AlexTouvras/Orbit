@@ -757,9 +757,9 @@
       20%, 100% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
     }
     @keyframes station-2 {
-      0%, 20% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
-      24%, 38% { background: #1a261c; box-shadow: inset 0 0 0 1px var(--lime), 0 0 16px rgba(198, 241, 53, 0.2); }
-      44%, 100% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
+      0%, 16% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
+      20%, 44% { background: #1a261c; box-shadow: inset 0 0 0 1px var(--lime), 0 0 16px rgba(198, 241, 53, 0.2); }
+      50%, 100% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
     }
     @keyframes station-3 {
       0%, 44% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
@@ -807,7 +807,7 @@
     }
 
     .sheetlet {
-      width: 2.7rem;
+      width: 4.4rem;
       height: 2.6rem;
       padding: 0.45rem 0.4rem;
       border-radius: 3px;
@@ -823,10 +823,39 @@
       display: block;
       height: 0.28rem;
       border-radius: 99px;
-      background: #2a4032;
+      background: #9aaf9c;
     }
 
-    .sheetlet i:first-child { width: 72%; background: var(--lime); }
+    .sheetlet i:nth-child(1) {
+      width: 72%;
+      background: var(--lime);
+      animation: ink-1 16s infinite;
+    }
+
+    .sheetlet i:nth-child(2) {
+      width: 92%;
+      animation: ink-2 16s infinite;
+    }
+
+    .sheetlet i:nth-child(3) {
+      width: 58%;
+      animation: ink-3 16s infinite;
+    }
+
+    @keyframes ink-1 {
+      0% { width: 14%; background: #2a4032; }
+      8%, 100% { width: 72%; background: var(--lime); }
+    }
+
+    @keyframes ink-2 {
+      0%, 6% { width: 10%; background: #2a4032; }
+      14%, 100% { width: 92%; background: #9aaf9c; }
+    }
+
+    @keyframes ink-3 {
+      0%, 10% { width: 10%; background: #2a4032; }
+      18%, 100% { width: 58%; background: #9aaf9c; }
+    }
 
     .who {
       width: 2.15rem;
@@ -841,6 +870,14 @@
       font-size: 0.58rem;
       font-weight: 600;
       letter-spacing: 0.02em;
+      transform-origin: center;
+      animation: stamp 16s infinite;
+    }
+
+    @keyframes stamp {
+      0%, 8% { transform: scale(0.2); opacity: 0; }
+      16% { transform: scale(1.08); opacity: 1; }
+      20%, 100% { transform: scale(1); opacity: 1; }
     }
 
     .checks {
@@ -877,25 +914,45 @@
     }
 
     .check.drop { animation: drop-check 16s infinite; }
-    .check.keep { background: rgba(198, 241, 53, 0.16); }
+    .check.keep {
+      background: rgba(198, 241, 53, 0.16);
+      animation: keep-live 16s infinite;
+    }
 
     @keyframes drop-check {
-      0%, 30% { opacity: 1; }
-      40%, 100% { opacity: 0.35; }
+      0%, 28% { opacity: 1; transform: none; }
+      33% { opacity: 1; transform: translateX(-7px); }
+      40%, 100% { opacity: 0.35; transform: none; }
     }
 
     .check.drop em { animation: drop-word 16s infinite; }
 
     @keyframes drop-word {
-      0%, 30% { text-decoration: none; }
-      40%, 100% { text-decoration: line-through; }
+      0%, 28% { text-decoration: none; }
+      34%, 100% { text-decoration: line-through; }
+    }
+
+    @keyframes keep-live {
+      0%, 18% { background: #18241c; box-shadow: none; }
+      24%, 42% { background: rgba(198, 241, 53, 0.32); box-shadow: 0 0 12px rgba(198, 241, 53, 0.5); }
+      50%, 100% { background: rgba(198, 241, 53, 0.16); box-shadow: none; }
     }
 
     .vers {
       display: flex;
       align-items: flex-end;
-      gap: 0.7rem;
+      gap: 0.35rem;
       height: 2.9rem;
+    }
+
+    .recover {
+      align-self: center;
+      width: 1.15rem;
+      height: 0;
+      margin-bottom: 0.95rem;
+      border-top: 2px dashed #d9d3e2;
+      opacity: 1;
+      animation: prior-in 16s infinite;
     }
 
     .ver {
@@ -915,7 +972,16 @@
       background: linear-gradient(180deg, #eaff9a, var(--lime-deep));
     }
 
-    .ver.now b { height: 100%; }
+    .ver.now b {
+      height: 100%;
+      transform-origin: bottom center;
+      animation: rise-now 16s infinite;
+    }
+
+    @keyframes rise-now {
+      0%, 46% { transform: scaleY(0.22); }
+      56%, 100% { transform: scaleY(1); }
+    }
 
     .ver.last {
       opacity: 0;
@@ -953,9 +1019,15 @@
       background: #243228;
     }
 
+    .log i:nth-child(1) {
+      background: #3a4e40;
+      animation: log-row 16s infinite;
+    }
+
     .log i.hot {
       background: rgba(198, 241, 53, 0.2);
       box-shadow: inset 0 0 0 1px var(--lime);
+      animation: log-hot 16s infinite;
     }
 
     .log em {
@@ -964,6 +1036,24 @@
       font-size: 0.62rem;
       font-weight: 600;
       color: var(--lime);
+      opacity: 1;
+      animation: log-em 16s infinite;
+    }
+
+    @keyframes log-row {
+      0%, 70% { background: #1a2420; }
+      78%, 100% { background: #3a4e40; }
+    }
+
+    @keyframes log-hot {
+      0%, 74% { background: #1a2420; box-shadow: none; }
+      82%, 90% { background: rgba(198, 241, 53, 0.35); box-shadow: inset 0 0 0 1px var(--lime), 0 0 10px rgba(198, 241, 53, 0.55); }
+      96%, 100% { background: rgba(198, 241, 53, 0.2); box-shadow: inset 0 0 0 1px var(--lime); }
+    }
+
+    @keyframes log-em {
+      0%, 74% { opacity: 0.3; }
+      82%, 100% { opacity: 1; }
     }
 
     .motion {
@@ -1003,7 +1093,7 @@
 
     .change {
       left: 12.5%;
-      animation: walk 16s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+      animation: walk 16s linear infinite;
     }
 
     .change::before,
@@ -1042,10 +1132,12 @@
     }
 
     @keyframes walk {
-      0%, 14% { left: 12.5%; }
-      24%, 38% { left: 37.5%; }
-      48%, 62% { left: 62.5%; }
-      72%, 100% { left: 87.5%; }
+      0%, 12% { left: 12.5%; animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1); }
+      20%, 28% { left: 37.5%; animation-timing-function: ease-in; }
+      33% { left: 30%; animation-timing-function: ease-out; }
+      40%, 44% { left: 37.5%; animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1); }
+      52%, 64% { left: 62.5%; animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1); }
+      74%, 100% { left: 87.5%; }
     }
 
     @keyframes prior-in {
@@ -1214,7 +1306,8 @@
       .art { height: auto; min-height: 3.2rem; }
       .motion { display: none; }
       .return-line { transform: scaleX(1); animation: none; }
-      .check.drop, .check.drop em, .ver.last { animation: none; }
+      .sheetlet i:nth-child(n), .who, .check.drop, .check.drop em, .check.keep,
+      .ver.now b, .ver.last, .recover, .log i:nth-child(n), .log em { animation: none; }
       .check.drop { opacity: 0.35; }
       .check.drop em { text-decoration: line-through; }
       .ver.last { opacity: 1; }
@@ -1231,8 +1324,10 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .station:nth-child(n), .change, .prior, .prior-label, .check.drop, .check.drop em,
-      .ver.last, .return-line, .latch.l1 i, .latch.l2 i, .latch.l3 i { animation: none; }
+      .station:nth-child(n), .change, .prior, .prior-label,
+      .sheetlet i:nth-child(n), .who, .check.drop, .check.drop em, .check.keep,
+      .ver.now b, .ver.last, .recover, .log i:nth-child(n), .log em,
+      .return-line, .latch.l1 i, .latch.l2 i, .latch.l3 i { animation: none; }
       .return-line { transform: scaleX(1); }
       .station:nth-child(n) { background: #141c16; box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.28); }
       .change { left: 87.5%; }
@@ -1274,7 +1369,10 @@
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
-      .ver.last, .return-line, .latch.l1 i, .latch.l2 i, .latch.l3 i {
+      .station:nth-child(n), .change, .prior, .prior-label,
+      .sheetlet i:nth-child(n), .who, .check.drop, .check.drop em, .check.keep,
+      .ver.now b, .ver.last, .recover, .log i:nth-child(n), .log em,
+      .return-line, .latch.l1 i, .latch.l2 i, .latch.l3 i {
         animation: none !important;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
@@ -1362,6 +1460,7 @@
               <div class="art" aria-hidden="true">
                 <span class="vers">
                   <span class="ver now"><b></b><small>running</small></span>
+                  <span class="recover"></span>
                   <span class="ver last"><b></b><small>last</small></span>
                 </span>
               </div>
@@ -1440,7 +1539,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> The pipeline is a dark rail. Each pillar names what arrives and what leaves. Use returns underneath as the next change.</p>
+      <p class="changed"><b>Changed</b> The drawings move with the change. The page is written, a wrong test fails and the change steps back, the last version stays beside the one people run, and use lights the next change.</p>
     </footer>
   </article>
   <script>

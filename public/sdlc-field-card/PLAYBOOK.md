@@ -34,7 +34,7 @@ These stay on the sheet, under Where judgement stays, unless that month’s rese
 
 ## Motion
 
-The change walks plan, then build, then release, then maintain along the lime rail. Each gate holds, then opens. At build, the test that fails for the wrong reason is struck through and the check that stops the build stays. At release, the previous version appears and stays while the change moves on. The return rail under the pillars then draws back to plan and design.
+The change walks plan, then build, then release, then maintain along the lime rail. The drawings move on that same loop. At plan, the page is written and the who seal stamps. At build, the test that fails for the wrong reason is struck through, the change steps back, and the check that stops the build holds until the gate opens. At release, the running version rises and the previous version appears beside it, joined by a short recovery mark, and stays while the change moves on. At maintain, the use line lights, then the return rail under the pillars draws back to plan and design.
 
 `prefers-reduced-motion` and print show the end state: the change at maintain, the last version still visible, the bad test struck, the gates open, the return rail drawn. Under 900px the pillars stack on a vertical rail, the walking change hides, and the return rail stays under the stack. The words stay readable with the motion off. No scroll-jack.
 
