@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SDLC Field Card — Build software that stays in use · Alex Touvras</title>
-  <meta name="description" content="The software development life cycle in four pillars: plan and design, build and verify, release and deploy, maintain and improve." />
+  <meta name="description" content="One change moves through plan and design, build and verify, release and deploy, and maintain and improve. A gate has to be able to fail." />
   <meta name="author" content="Alex Touvras" />
   <link rel="canonical" href="https://alextouvras.com/sdlc-field-card/" />
   <meta property="og:title" content="SDLC Field Card — Build software that stays in use" />
@@ -31,10 +31,13 @@
       --signal-soft: #d7ebe8;
       --warn: #9a3412;
       --warn-soft: #f3e0d6;
-      --layer-rag: #2c3d52;
-      --layer-agent: #3f4f63;
-      --layer-mcp: #0f766e;
-      --layer-a2a: #445066;
+      --violet: #9d5bf4;
+      --violet-deep: #6d28d9;
+      --violet-soft: #f3e8ff;
+      --lime: #c6f135;
+      --lime-deep: #8fb800;
+      --stage: #101614;
+      --stage-ink: #d7e2d4;
       --shadow: 0 1px 0 rgba(24, 33, 43, 0.06), 0 12px 32px rgba(24, 33, 43, 0.06);
       --radius: 10px;
       --font-display: "Source Serif 4", Georgia, serif;
@@ -124,9 +127,9 @@
     header.hero {
       padding: 1.5rem 1.35rem 1.25rem;
       display: grid;
-      gap: 1.25rem;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: end;
+      gap: 1.1rem 1.25rem;
+      grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
+      align-items: center;
       border-bottom: 1px solid var(--line);
     }
 
@@ -149,62 +152,119 @@
 
     .lede strong { color: var(--ink); font-weight: 600; }
 
-    .verbs {
+    .hook {
       margin: 0 0 0.45rem;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      max-width: 28ch;
+    }
+
+    .verbs {
+      grid-column: 1 / -1;
+      margin: 0.15rem 0 0;
       font-family: var(--font-mono);
       font-size: 0.78rem;
       letter-spacing: 0.02em;
       color: var(--steel);
       font-weight: 600;
-      max-width: 72ch;
+      max-width: none;
     }
 
-    .stack {
-      display: grid;
-      gap: 0.45rem;
+    header.hero .lede { grid-column: 1 / -1; max-width: 68ch; }
+
+    .glance {
+      margin: 0;
     }
 
-    .layer {
-      display: grid;
-      grid-template-columns: 9.75rem 1fr;
-      gap: 0.75rem;
-      align-items: center;
-      padding: 0.55rem 0.7rem;
-      border-radius: 8px;
-      border: 1px solid transparent;
-      color: #fff;
-      animation: rise 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+    .glance-stage {
+      position: relative;
+      height: 7.4rem;
+      border-radius: 12px;
+      background:
+        radial-gradient(240px 80px at 70% 30%, rgba(198, 241, 53, 0.16), transparent 70%),
+        var(--stage);
+      border: 1px solid #243028;
     }
 
-    .layer:nth-child(1) { background: var(--layer-rag); animation-delay: 40ms; }
-    .layer:nth-child(2) { background: var(--layer-agent); animation-delay: 110ms; }
-    .layer:nth-child(3) { background: var(--layer-mcp); animation-delay: 180ms; }
-    .layer:nth-child(4) { background: var(--layer-a2a); animation-delay: 250ms; }
-    .layer:nth-child(5) { background: #1c4a52; animation-delay: 320ms; }
+    .glance-line {
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      top: 2.35rem;
+      height: 2px;
+      background: var(--lime);
+      box-shadow: 0 0 10px rgba(198, 241, 53, 0.75);
+    }
 
-    .layer code {
+    .glance-return {
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      top: auto;
+      bottom: 1.15rem;
+      height: 0;
+      border: none;
+      border-top: 1.5px dashed var(--lime);
+      border-radius: 0;
+      opacity: 0.85;
+    }
+
+    .glance-node {
+      position: absolute;
+      top: 2.35rem;
+      z-index: 1;
+      transform: translate(-50%, -50%);
       font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-size: 0.62rem;
       font-weight: 600;
       letter-spacing: 0.04em;
-      line-height: 1.25;
       text-transform: uppercase;
-      opacity: 0.92;
+      color: var(--stage-ink);
+      background: var(--stage);
+      border: 1px solid #3d5244;
+      border-radius: 999px;
+      padding: 0.28rem 0.45rem;
     }
 
-    .layer span {
-      font-size: 0.84rem;
-      line-height: 1.3;
-      font-weight: 500;
+    .glance-node:nth-child(3) { left: 12.5%; }
+    .glance-node:nth-child(4) { left: 37.5%; }
+    .glance-node:nth-child(5) { left: 62.5%; }
+    .glance-node:nth-child(6) { left: 87.5%; }
+
+    .glance-node.on {
+      color: var(--stage);
+      border-color: var(--lime);
+      background: var(--lime);
     }
 
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
+    .glance-last {
+      position: absolute;
+      z-index: 1;
+      left: 62.5%;
+      top: 3.15rem;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--lime);
+      background: var(--stage);
+      border: 1px dashed var(--lime);
+      border-radius: 999px;
+      padding: 0.12rem 0.4rem;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .layer { animation: none; }
+    .glance figcaption {
+      margin: 0.35rem 0 0;
+      text-align: right;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--steel);
     }
 
     section {
@@ -584,21 +644,602 @@
       display: none;
     }
 
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .pipe h2 { margin-bottom: 0.35rem; }
+
+    .pipe .explain,
+    .judgement .explain,
+    .practices .explain {
+      margin: 0 0 0.85rem;
+      max-width: 68ch;
+      color: var(--ink-soft);
+    }
+
+    .pipe-board {
+      position: relative;
+      margin: 0;
+      background-color: var(--stage);
+      background-image:
+        linear-gradient(rgba(198, 241, 53, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(198, 241, 53, 0.045) 1px, transparent 1px),
+        radial-gradient(560px 180px at 50% 12%, rgba(198, 241, 53, 0.16), transparent 72%);
+      background-size: 22px 22px, 22px 22px, auto;
+      border: 1px solid #243028;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .stations {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0.85rem 0.85rem 3.5rem;
+      list-style: none;
+    }
+
+    .return-rail {
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      bottom: 0.85rem;
+      height: 1.5rem;
+      pointer-events: none;
+    }
+
+    .return-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0.72rem;
+      border-top: 1.5px dashed var(--lime);
+      transform: scaleX(0);
+      transform-origin: right center;
+      animation: draw-return 16s linear infinite;
+    }
+
+    .return-label {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin: 0;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stage);
+      background: var(--lime);
+      border-radius: 99px;
+      padding: 0.08rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    @keyframes draw-return {
+      0%, 70% { transform: scaleX(0); }
+      88%, 100% { transform: scaleX(1); }
+    }
+
+    .station {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 0.45rem;
+      align-content: start;
+      min-width: 0;
+      min-height: 11.5rem;
+      padding: 0.7rem 0.7rem 0.75rem;
+      border-radius: 10px;
+      background: rgba(16, 22, 18, 0.55);
+      box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16);
+    }
+
+    .station:nth-child(1) { animation: station-1 16s infinite; }
+    .station:nth-child(2) { animation: station-2 16s infinite; }
+    .station:nth-child(3) { animation: station-3 16s infinite; }
+    .station:nth-child(4) { animation: station-4 16s infinite; }
+
+    @keyframes station-1 {
+      0%, 14% { background: #1a261c; box-shadow: inset 0 0 0 1px var(--lime), 0 0 16px rgba(198, 241, 53, 0.2); }
+      20%, 100% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
+    }
+    @keyframes station-2 {
+      0%, 20% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
+      24%, 38% { background: #1a261c; box-shadow: inset 0 0 0 1px var(--lime), 0 0 16px rgba(198, 241, 53, 0.2); }
+      44%, 100% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
+    }
+    @keyframes station-3 {
+      0%, 44% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
+      48%, 62% { background: #1a261c; box-shadow: inset 0 0 0 1px var(--lime), 0 0 16px rgba(198, 241, 53, 0.2); }
+      68%, 100% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
+    }
+    @keyframes station-4 {
+      0%, 68% { background: rgba(16, 22, 18, 0.55); box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.16); }
+      72%, 100% { background: #1a261c; box-shadow: inset 0 0 0 1px var(--lime), 0 0 16px rgba(198, 241, 53, 0.2); }
+    }
+
+    .station-kicker {
+      margin: 1.7rem 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--lime);
+    }
+
+    .station-line {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.35;
+      color: var(--stage-ink);
+      overflow-wrap: break-word;
+    }
+
+    .handoff {
+      margin: 0.1rem 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--lime);
+    }
+
+    .art {
+      position: relative;
+      height: 3.3rem;
+      display: flex;
+      align-items: flex-end;
+      gap: 0.45rem;
+    }
+
+    .sheetlet {
+      width: 2.7rem;
+      height: 2.6rem;
+      padding: 0.45rem 0.4rem;
+      border-radius: 3px;
+      background: #0c1410;
+      border: 1px solid #34523c;
+      box-shadow: 0 0 0 1px rgba(198, 241, 53, 0.12);
+      display: grid;
+      align-content: start;
+      gap: 0.28rem;
+    }
+
+    .sheetlet i {
+      display: block;
+      height: 0.28rem;
+      border-radius: 99px;
+      background: #2a4032;
+    }
+
+    .sheetlet i:first-child { width: 72%; background: var(--lime); }
+
+    .who {
+      width: 2.15rem;
+      height: 2.15rem;
+      margin-bottom: 0.35rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--lime);
+      color: var(--stage);
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .checks {
+      width: 100%;
+      max-width: 8.5rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .check {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      height: 1.15rem;
+      padding: 0 0.4rem;
+      border-radius: 4px;
+      background: #18241c;
+    }
+
+    .check i {
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 50%;
+      background: var(--lime);
+      flex: none;
+    }
+
+    .check em {
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: var(--lime);
+    }
+
+    .check.drop { animation: drop-check 16s infinite; }
+    .check.keep { background: rgba(198, 241, 53, 0.16); }
+
+    @keyframes drop-check {
+      0%, 30% { opacity: 1; }
+      40%, 100% { opacity: 0.35; }
+    }
+
+    .check.drop em { animation: drop-word 16s infinite; }
+
+    @keyframes drop-word {
+      0%, 30% { text-decoration: none; }
+      40%, 100% { text-decoration: line-through; }
+    }
+
+    .vers {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.7rem;
+      height: 2.9rem;
+    }
+
+    .ver {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 2.7rem;
+      height: 100%;
+      gap: 0.25rem;
+    }
+
+    .ver b {
+      display: block;
+      width: 100%;
+      border-radius: 4px 4px 1px 1px;
+      background: linear-gradient(180deg, #eaff9a, var(--lime-deep));
+    }
+
+    .ver.now b { height: 100%; }
+
+    .ver.last {
+      opacity: 0;
+      animation: show-last 16s infinite;
+    }
+
+    .ver.last b {
+      height: 62%;
+      background: #d9d3e2;
+    }
+
+    @keyframes show-last {
+      0%, 48% { opacity: 0; }
+      56%, 100% { opacity: 1; }
+    }
+
+    .ver small {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: #9aaf9c;
+      white-space: nowrap;
+    }
+
+    .log {
+      width: 100%;
+      max-width: 8rem;
+      display: grid;
+      gap: 0.32rem;
+    }
+
+    .log i {
+      display: block;
+      height: 0.7rem;
+      border-radius: 4px;
+      background: #243228;
+    }
+
+    .log i.hot {
+      background: rgba(198, 241, 53, 0.2);
+      box-shadow: inset 0 0 0 1px var(--lime);
+    }
+
+    .log em {
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: var(--lime);
+    }
+
+    .motion {
+      position: absolute;
+      left: 0.85rem;
+      right: 0.85rem;
+      top: 4.35rem;
+      height: 1.85rem;
+      pointer-events: none;
+    }
+
+    .track {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0.55rem;
+      height: 2px;
+      background: var(--lime);
+      box-shadow: 0 0 12px rgba(198, 241, 53, 0.8);
+      z-index: 1;
+    }
+
+    .change,
+    .prior {
+      position: absolute;
+      z-index: 2;
+      top: 0.28rem;
+      bottom: auto;
+      width: 0.72rem;
+      height: 0.72rem;
+      margin-left: -0.36rem;
+      border-radius: 50%;
+      background: var(--lime);
+      border: 2px solid var(--stage);
+      box-shadow: 0 0 10px rgba(198, 241, 53, 0.85);
+    }
+
+    .change {
+      left: 12.5%;
+      animation: walk 16s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+    }
+
+    .change::before,
+    .prior::before { content: none; }
+
+    .prior {
+      left: 62.5%;
+      background: transparent;
+      border: 1.5px dashed var(--lime);
+      box-shadow: none;
+      opacity: 0;
+      animation: prior-in 16s infinite;
+    }
+
+    .prior::before { background: var(--steel); box-shadow: none; }
+
+    .prior-label {
+      position: absolute;
+      z-index: 2;
+      left: 62.5%;
+      top: -1.15rem;
+      bottom: auto;
+      margin: 0;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.02em;
+      color: var(--lime);
+      white-space: nowrap;
+      background: var(--stage);
+      border: 1px solid #3d5244;
+      border-radius: 99px;
+      padding: 0.05rem 0.35rem;
+      opacity: 0;
+      animation: prior-in 16s infinite;
+    }
+
+    @keyframes walk {
+      0%, 14% { left: 12.5%; }
+      24%, 38% { left: 37.5%; }
+      48%, 62% { left: 62.5%; }
+      72%, 100% { left: 87.5%; }
+    }
+
+    @keyframes prior-in {
+      0%, 48% { opacity: 0; }
+      56%, 100% { opacity: 1; }
+    }
+
+    .latch {
+      position: absolute;
+      z-index: 2;
+      top: 0.15rem;
+      bottom: auto;
+      transform: translateX(-50%);
+      width: 4.2rem;
+      text-align: center;
+    }
+
+    .latch i {
+      display: block;
+      width: 2px;
+      height: 0.42rem;
+      margin: 0 auto 0.08rem;
+      background: var(--lime);
+      box-shadow: 0 0 8px var(--lime);
+      transform-origin: bottom center;
+    }
+
+    .latch b {
+      display: block;
+      margin-top: 0;
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--stage);
+      background: var(--lime);
+      border-radius: 99px;
+      padding: 0.04rem 0.28rem;
+      font-style: normal;
+    }
+
+    .latch.l1 { left: 25%; }
+    .latch.l2 { left: 50%; }
+    .latch.l3 { left: 75%; }
+
+    .latch.l1 i { animation: open-1 16s infinite; }
+    .latch.l2 i { animation: open-2 16s infinite; }
+    .latch.l3 i { animation: open-3 16s infinite; }
+
+    @keyframes open-1 {
+      0%, 16% { transform: scaleY(1); opacity: 1; }
+      22%, 100% { transform: scaleY(0.28); opacity: 0.4; }
+    }
+    @keyframes open-2 {
+      0%, 40% { transform: scaleY(1); opacity: 1; }
+      46%, 100% { transform: scaleY(0.28); opacity: 0.4; }
+    }
+    @keyframes open-3 {
+      0%, 64% { transform: scaleY(1); opacity: 1; }
+      70%, 100% { transform: scaleY(0.28); opacity: 0.4; }
+    }
+
+    .pipe figcaption,
+    .judgement p.kill {
+      margin: 0.75rem 0 0;
+      max-width: 72ch;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .principles {
+      margin: 0.7rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+
+    .principles li {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      padding: 0.85rem 0.9rem 0.95rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .principles strong { color: var(--ink); }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      margin-bottom: 0.65rem;
+      border-radius: 50%;
+      background: var(--violet-soft);
+      color: var(--violet-deep);
+    }
+
+    .mark svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .source-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.65rem 0.85rem;
+      margin-top: 0.75rem;
+    }
+
+    .source-row a {
+      display: block;
+      color: var(--steel-deep);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .source-row a:hover { border-bottom-color: var(--violet); }
+
+    .source-row span {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--ink-soft);
+      font-weight: 400;
+      font-size: 0.82rem;
+    }
+
     @media (max-width: 900px) {
       header.hero,
-      .tri,
-      .behavior,
-      .anti-list {
+      .principles {
         grid-template-columns: 1fr;
       }
-      .tri > section { border-right: none; border-bottom: 1px solid var(--line); }
-      .tri > section:last-child { border-bottom: none; }
-      .pick { grid-template-columns: 1fr; gap: 0.2rem; }
+      .glance { grid-column: 1; }
+      .glance figcaption { text-align: left; }
       h1 { max-width: none; }
+      .hook { font-size: 1.35rem; }
       .found-row { grid-template-columns: 1fr 1fr; }
-      table.decisions td.problem,
-      table.decisions td.reach,
-      table.decisions td.example { width: auto; }
+      .stations {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 0.85rem 0.85rem 3.5rem 1.35rem;
+      }
+      .stations::before {
+        content: "";
+        position: absolute;
+        left: 0.72rem;
+        top: 1.15rem;
+        bottom: 3.3rem;
+        width: 2px;
+        background: var(--lime);
+        box-shadow: 0 0 10px rgba(198, 241, 53, 0.6);
+      }
+      .station:nth-child(n) { min-height: 0; padding: 0.85rem; animation: none; background: #141c16; box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.28); }
+      .station-kicker { font-size: 0.78rem; }
+      .station-line { font-size: 1rem; }
+      .art { height: auto; min-height: 3.2rem; }
+      .motion { display: none; }
+      .return-line { transform: scaleX(1); animation: none; }
+      .check.drop, .check.drop em, .ver.last { animation: none; }
+      .check.drop { opacity: 0.35; }
+      .check.drop em { text-decoration: line-through; }
+      .ver.last { opacity: 1; }
+      .source-row { grid-template-columns: 1fr 1fr; }
+      .principles li { font-size: 1.02rem; }
+    }
+
+    @media (max-width: 640px) {
+      .sheet { width: min(1100px, calc(100% - 0.75rem)); }
+      .topbar, header.hero, section, footer.meta { padding-left: 0.9rem; padding-right: 0.9rem; }
+      .stations { grid-template-columns: 1fr; gap: 0.7rem; }
+      .station-line { font-size: 1.02rem; }
+      .source-row, .found-row { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .station:nth-child(n), .change, .prior, .prior-label, .check.drop, .check.drop em,
+      .ver.last, .return-line, .latch.l1 i, .latch.l2 i, .latch.l3 i { animation: none; }
+      .return-line { transform: scaleX(1); }
+      .station:nth-child(n) { background: #141c16; box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.28); }
+      .change { left: 87.5%; }
+      .prior, .prior-label, .ver.last { opacity: 1; }
+      .check.drop { opacity: 0.35; }
+      .check.drop em { text-decoration: line-through; }
+      .latch.l1 i, .latch.l2 i, .latch.l3 i { transform: scaleY(0.28); opacity: 0.4; }
     }
 
     @media print {
@@ -628,8 +1269,24 @@
       section { padding: 0.55rem 0 0.65rem; }
       footer.meta { padding: 0.45rem 0 0; background: none; }
       .foundation { padding: 0.45rem 0; background: none; }
-      .layer { animation: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .panel, .antis, .foundation { break-inside: avoid; }
+      .station:nth-child(n), .change, .prior, .prior-label, .check.drop, .check.drop em,
+      .pipe-board, .glance-stage, .return-label, .art::after, .track {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .ver.last, .return-line, .latch.l1 i, .latch.l2 i, .latch.l3 i {
+        animation: none !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .return-line { transform: scaleX(1); }
+      .station:nth-child(n) { background: #141c16; box-shadow: inset 0 0 0 1px rgba(198, 241, 53, 0.28); }
+      .change { left: 87.5%; }
+      .prior, .prior-label, .ver.last { opacity: 1; }
+      .check.drop { opacity: 0.35; }
+      .check.drop em { text-decoration: line-through; }
+      .latch.l1 i, .latch.l2 i, .latch.l3 i { transform: scaleY(0.28); opacity: 0.4; }
+      .pipe-board, .principles li, .foundation { break-inside: avoid; }
       a { color: inherit; text-decoration: none; border-bottom: none !important; }
     }
   </style>
@@ -649,158 +1306,118 @@
       <div>
         <div class="eyebrow">The life of the software</div>
         <h1>Build software that stays in use</h1>
-        <p class="verbs">Plan &amp; design → build &amp; verify → release &amp; deploy → maintain &amp; improve</p>
-        <p class="lede">
-          The software development life cycle is four pillars.
-          <strong>Plan and design</strong> name the goal, the cost, the rules, and who can reach the data, including how it can be abused. The plan fits on a page a person will review.
-          <strong>Build and verify</strong> is the code, the tests, and the security checks. A person drops tests that do not fail for the right reason, and those checks have to fail the build.
-          <strong>Release and deploy</strong> puts a version where people run it, and keeps the previous version ready to put back.
-          <strong>Maintain and improve</strong> is the defect, the patch, and continuous improvement from what you learn in use, through those same pillars.
-        </p>
+        <p class="hook">A check that cannot fail is not a gate.</p>
       </div>
-      <div class="stack" aria-label="Life cycle pillars">
-        <div class="layer"><code>Plan &amp; design</code><span>Goal, rules, architecture, and who can reach the data</span></div>
-        <div class="layer"><code>Build &amp; verify</code><span>The code, the tests, and the security checks</span></div>
-        <div class="layer"><code>Release &amp; deploy</code><span>A version people run, and a way back to the last one</span></div>
-        <div class="layer"><code>Maintain &amp; improve</code><span>The defect, the patch, and continuous improvement</span></div>
-      </div>
+      <figure class="glance">
+        <div class="glance-stage" aria-hidden="true">
+          <span class="glance-line"></span>
+          <span class="glance-return"></span>
+          <span class="glance-node">Plan</span>
+          <span class="glance-node">Build</span>
+          <span class="glance-node on">Release</span>
+          <span class="glance-node">Maintain</span>
+          <span class="glance-last">last</span>
+        </div>
+        <figcaption>The previous version stays deployable.</figcaption>
+      </figure>
+      <p class="verbs">Plan &amp; design → build &amp; verify → release &amp; deploy → maintain &amp; improve</p>
+      <p class="lede">One change moves through those four pillars. What you learn in use comes back as the next change.</p>
     </header>
 
-    <section>
-      <h2>Problem → use → example</h2>
-      <table class="decisions">
-        <thead>
-          <tr>
-            <th>If the real problem is…</th>
-            <th>Use</th>
-            <th>Example case</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="problem">“Build the thing” with no acceptance</td>
-            <td class="reach"><a class="use-link" href="https://12factor.net/" target="_blank" rel="noopener noreferrer" title="The Twelve-Factor App"><b>Written plan</b></a></td>
-            <td class="example">Credit-engine rule change: who, which products, what “done” looks like, on one page — not a two-line chat ticket and not a spec no one will read</td>
-          </tr>
-          <tr>
-            <td class="problem">Security shows up after the demo</td>
-            <td class="reach"><a class="use-link" href="https://www.microsoft.com/en-us/securityengineering/sdl" target="_blank" rel="noopener noreferrer" title="Microsoft Security Development Lifecycle"><b>Threat model in design</b></a></td>
-            <td class="example">New partner API: data class, auth, and abuse cases written before the first commit — SDL practice, not a retro finding</td>
-          </tr>
-          <tr>
-            <td class="problem">Secure practices live in a binder, not the loop</td>
-            <td class="reach"><a class="use-link" href="https://csrc.nist.gov/projects/ssdf" target="_blank" rel="noopener noreferrer" title="NIST Secure Software Development Framework"><b>SSDF in the SDLC</b></a></td>
-            <td class="example">Review, tests, and supply-chain checks happen before merge; a phase diagram does not make the software secure</td>
-          </tr>
-          <tr>
-            <td class="problem">Nobody can tell if the change is safe to merge</td>
-            <td class="reach"><a class="use-link" href="https://martinfowler.com/articles/practical-test-pyramid.html" target="_blank" rel="noopener noreferrer" title="Ham Vocke / Martin Fowler: the practical test pyramid"><b>Test pyramid</b></a></td>
-            <td class="example">Unit on the scoring function, contract on the engine API, one path through the UI. A person throws out tests that do not fail for the right reason</td>
-          </tr>
-          <tr>
-            <td class="problem">Main is a graveyard of long-lived branches</td>
-            <td class="reach"><a class="use-link" href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener noreferrer" title="Trunk Based Development"><b>Small batches on trunk</b></a></td>
-            <td class="example">Incomplete UI behind a flag; the version you release is the one you just verified, and main stays releasable</td>
-          </tr>
-          <tr>
-            <td class="problem">Review is a rubber stamp after the fact</td>
-            <td class="reach"><a class="use-link" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" target="_blank" rel="noopener noreferrer" title="GitHub: about pull requests"><b>Review before merge</b></a></td>
-            <td class="example">The pull request names the plan and the test. A Copilot draft is a draft; a person still owns the merge</td>
-          </tr>
-          <tr>
-            <td class="problem">“It works on my machine” is the evidence</td>
-            <td class="reach"><a class="use-link" href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank" rel="noopener noreferrer" title="Martin Fowler: Continuous Integration"><b>CI on every change</b></a></td>
-            <td class="example">Push to main runs tests and lint; broken trunk is the incident, not a Friday surprise</td>
-          </tr>
-          <tr>
-            <td class="problem">Don’t know what “secure enough” means for this app</td>
-            <td class="reach"><a class="use-link" href="https://owasp.org/projects/asvs" target="_blank" rel="noopener noreferrer" title="OWASP Application Security Verification Standard"><b>ASVS level</b></a></td>
-            <td class="example">Consumer-finance API: pick a verification level and fail the build on the controls that matter — not a 400-row audit dump</td>
-          </tr>
-          <tr>
-            <td class="problem">Dependencies are a mystery zip</td>
-            <td class="reach"><a class="use-link" href="https://www.microsoft.com/en-us/securityengineering/sdl/practices" target="_blank" rel="noopener noreferrer" title="Microsoft SDL practices — supply chain"><b>Known supply chain</b></a></td>
-            <td class="example">Lockfile + advisory scan on the credit-engine client; a new package is a change, not a convenience</td>
-          </tr>
-          <tr>
-            <td class="problem">Tests passed, and nobody is running that version</td>
-            <td class="reach"><a class="use-link" href="https://12factor.net/build-release-run" target="_blank" rel="noopener noreferrer" title="The Twelve-Factor App: build, release, run"><b>Build, release, run</b></a></td>
-            <td class="example">Credit-engine change: a build becomes a release in the environment users hit. The previous release is still one deploy away</td>
-          </tr>
-          <tr>
-            <td class="problem">A production bug skips the plan and the test</td>
-            <td class="reach"><a class="use-link" href="https://csrc.nist.gov/projects/ssdf" target="_blank" rel="noopener noreferrer" title="NIST SSDF: respond to vulnerabilities inside the life cycle"><b>Fix inside the life cycle</b></a></td>
-            <td class="example">A scoring defect or a dependency advisory is a page, a test that fails for the right reason, a release, and then it is in use</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="note">Default order: plan and design → build and verify → release and deploy → maintain and improve. A defect, or the next improvement, starts again at plan and design.</p>
+    <section class="pipe">
+      <h2>How a change moves</h2>
+      <p class="explain">One scoring-rule change. Each gate can stop it. Calendars and cutover stay on Technology Delivery.</p>
+      <figure>
+        <p id="pipe-desc" class="sr">
+          Four pillars, then the learning returns as the next change.
+          Plan and design: the plan fits on a page a person will review, and it names who can reach the data.
+          Build and verify: a person drops a test that fails for the wrong reason. The security checks have to fail the build.
+          Release and deploy: people run the version just verified, and the previous version stays one deploy away.
+          Maintain and improve: a defect in use comes back through the same four pillars.
+          The gates between them are reviewed, can fail, and deployed. They are checks, not extra pillars.
+        </p>
+        <div class="pipe-board">
+          <ol class="stations">
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="sheetlet"><i></i><i></i><i></i></span>
+                <span class="who">who</span>
+              </div>
+              <p class="station-kicker">Plan &amp; design</p>
+              <p class="station-line">The plan fits on a page a person will review. It names who can reach the data, and how it can be abused.</p>
+              <p class="handoff">Need → a page someone reviews</p>
+            </li>
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="checks">
+                  <span class="check drop"><i></i><em>wrong</em></span>
+                  <span class="check keep"><i></i><em>stops</em></span>
+                </span>
+              </div>
+              <p class="station-kicker">Build &amp; verify</p>
+              <p class="station-line">A person drops a test that fails for the wrong reason. The security checks have to fail the build.</p>
+              <p class="handoff">Page → a change the checks can stop</p>
+            </li>
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="vers">
+                  <span class="ver now"><b></b><small>running</small></span>
+                  <span class="ver last"><b></b><small>last</small></span>
+                </span>
+              </div>
+              <p class="station-kicker">Release &amp; deploy</p>
+              <p class="station-line">People run the version just verified. The previous version stays one deploy away.</p>
+              <p class="handoff">Change → a version people run</p>
+            </li>
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="log"><i></i><i class="hot"></i><em>in use</em></span>
+              </div>
+              <p class="station-kicker">Maintain &amp; improve</p>
+              <p class="station-line">A defect, or what you learn in use, comes back as the next change through these same pillars.</p>
+              <p class="handoff">Use → the next change</p>
+            </li>
+          </ol>
+          <div class="motion" aria-hidden="true">
+            <div class="track"></div>
+            <span class="latch l1"><i></i><b>reviewed</b></span>
+            <span class="latch l2"><i></i><b>can fail</b></span>
+            <span class="latch l3"><i></i><b>deployed</b></span>
+            <div class="change"></div>
+            <div class="prior"></div>
+          </div>
+          <div class="return-rail" aria-hidden="true">
+            <span class="return-line"></span>
+            <p class="return-label">next change</p>
+          </div>
+        </div>
+        <figcaption>The previous version stays deployable, and a fix goes back through the same four pillars.</figcaption>
+      </figure>
     </section>
 
-    <div class="tri">
-      <section>
-        <h2>Tool picker</h2>
-        <div class="picker">
-          <div class="pick"><strong><a href="https://csrc.nist.gov/projects/ssdf" target="_blank" rel="noopener noreferrer">NIST SSDF</a></strong><span>Secure practices inside the SDLC, not after</span></div>
-          <div class="pick"><strong><a href="https://www.microsoft.com/en-us/securityengineering/sdl" target="_blank" rel="noopener noreferrer">Microsoft SDL</a></strong><span>Threat model, supply chain, security tests</span></div>
-          <div class="pick"><strong><a href="https://owasp.org/projects/asvs" target="_blank" rel="noopener noreferrer">OWASP ASVS</a></strong><span>What “verified” means for this app</span></div>
-          <div class="pick"><strong><a href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener noreferrer">Trunk-based</a></strong><span>Small batches; main stays releasable</span></div>
-          <div class="pick"><strong><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" target="_blank" rel="noopener noreferrer">Pull requests</a></strong><span>A person reviews the plan and the test</span></div>
-          <div class="pick"><strong><a href="https://martinfowler.com/articles/practical-test-pyramid.html" target="_blank" rel="noopener noreferrer">Test pyramid</a></strong><span>Fast evidence close to the change</span></div>
-          <div class="pick"><strong><a href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank" rel="noopener noreferrer">Continuous Integration</a></strong><span>Broken trunk is the incident</span></div>
-        </div>
-      </section>
+    <section class="judgement">
+      <h2>Where judgement stays</h2>
+      <p class="explain">Someone still reviews the page, walks how it can fail, and throws out the bad test.</p>
+      <ol class="principles">
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h6l4 4v12H8z"/><path d="M14 4v4h4"/><path d="M10.5 13h5M10.5 16h3.5"/></svg></span><strong>The plan fits on a page a person will review.</strong> Goal, cost, and what done means. A file no one will read is not a plan.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14"/><path d="M7 12h10"/><path d="M9 17h6"/><path d="M4 4l16 16"/></svg></span><strong>A spec file is not shared understanding.</strong> Someone has to walk the journey and the ways it can fail before build and verify.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h9"/><path d="M5 12h7"/><path d="M5 16h5"/><path d="M14 14.5l5 5M19 14.5l-5 5"/></svg></span><strong>A person drops tests that do not fail for the right reason.</strong> Agent-written tests are drafts. The security checks stay, and they have to fail the build.</li>
+      </ol>
+      <p class="kill">If you can’t name the plan, the test, the security check, and who reviews, you don’t merge. If you can’t put the last version back, you don’t call it released.</p>
+    </section>
 
-      <section>
-        <h2>What has to be written down</h2>
-        <div class="gates">
-          <div class="gate">
-            <strong>Plan and design</strong>
-            <span>Goal, cost, and the rules fit on a page a person will review. Design includes who can reach the data and how it can be abused, along with the happy path. A spec file is not shared understanding until someone can walk the journey and the ways it can fail.</span>
-          </div>
-          <div class="gate">
-            <strong>Meetings stay optional</strong>
-            <span>Stand-ups can help a team move. A committee after the code is written doesn’t make the change safer. The written plan is required.</span>
-          </div>
-          <div class="gate">
-            <strong>Memory check</strong>
-            <span>Plan &amp; design = the goal, the rules, and who can reach the data. Build &amp; verify = the code, the tests, and the security checks. Release &amp; deploy = a version in use, with a way back. Maintain &amp; improve = the fix, and continuous improvement from use.</span>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Ladder + gates</h2>
-        <ol class="ladder">
-          <li>Plan and design on one page, including who can reach the data</li>
-          <li>Smallest build on trunk / flag</li>
-          <li>Tests and security checks that fail for the right reason, and a person reviews</li>
-          <li>Release a version and deploy it where people run it</li>
-          <li>Keep the previous version deployable</li>
-          <li>A defect, a patch, or continuous improvement goes back through the same four pillars</li>
-        </ol>
-        <div class="gate" style="margin-top:0.75rem">
-          <strong>Kill switch</strong>
-          <span>If you can’t name the plan, the test, the security check, and who reviews, you don’t merge. If you can’t put the last version back, you don’t call it released.</span>
-        </div>
-      </section>
-    </div>
-
-    <section class="antis">
-      <h2>Anti-patterns</h2>
-      <ul class="anti-list">
-        <li>Code before the requirements exist</li>
-        <li>Security as a late finding</li>
-        <li>Meetings with nothing written down</li>
-        <li>A spec file no one can walk through</li>
-        <li>Long-lived branches instead of flags</li>
-        <li>“Works on my machine” as evidence</li>
-        <li>Rubber-stamp review after merge</li>
-        <li>Picking a framework before the plan exists</li>
-        <li>A green build that never gets deployed</li>
-        <li>A production fix that skips the plan and the test</li>
-        <li>Treating the first release as the end</li>
-      </ul>
+    <section class="practices">
+      <h2>Named practices</h2>
+      <p class="explain">Seven links. The four pillars still set the order.</p>
+      <div class="source-row">
+        <a href="https://csrc.nist.gov/projects/ssdf" target="_blank" rel="noopener noreferrer">NIST SSDF<span>Secure practices inside the life cycle, not after</span></a>
+        <a href="https://www.microsoft.com/en-us/securityengineering/sdl" target="_blank" rel="noopener noreferrer">Microsoft SDL<span>Threat model, supply chain, security tests</span></a>
+        <a href="https://owasp.org/projects/asvs" target="_blank" rel="noopener noreferrer">OWASP ASVS<span>What verified means for this app</span></a>
+        <a href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener noreferrer">Trunk-based<span>Small batches; main stays releasable</span></a>
+        <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" target="_blank" rel="noopener noreferrer">Pull requests<span>A person reviews the plan and the test</span></a>
+        <a href="https://martinfowler.com/articles/practical-test-pyramid.html" target="_blank" rel="noopener noreferrer">Test pyramid<span>Fast evidence close to the change</span></a>
+        <a href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank" rel="noopener noreferrer">Continuous Integration<span>Broken trunk is the incident</span></a>
+      </div>
     </section>
 
     <section class="foundation" aria-label="Always-on foundation">
@@ -823,7 +1440,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> Improve is continuous improvement from what you learn in use.</p>
+      <p class="changed"><b>Changed</b> The pipeline is a dark rail. Each pillar names what arrives and what leaves. Use returns underneath as the next change.</p>
     </footer>
   </article>
   <script>
