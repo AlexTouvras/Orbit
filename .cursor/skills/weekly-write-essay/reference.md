@@ -52,7 +52,9 @@
 …
 ```
 
-Adjust section titles to the thesis; keep `## The question` first. Gloss workshop nicknames. Pass the stranger test in `docs/essay-voice.md`.
+Adjust section titles to the thesis; keep `## The question` first. Gloss workshop nicknames. Pass the stranger test and the hiring-manager story in `docs/essay-voice.md`.
+
+The hiring-manager story is five answers inside those sections: the decision, the evidence that moved you, what you rejected, what stays unproven, and what changes Monday. One chain link leads. Do not add a standing "Behind the decision" block or a role badge.
 
 ## After Approve
 

@@ -62,9 +62,51 @@ Length: ~600–1200 words typical; weekly path hard bounds 500–1600.
 - [ ] No digest shape (no "Week of…", no multi-link roundup as the thesis)
 - [ ] Claims (metrics, features, dates) trace to opened sources or are hedged
 - [ ] Would you send this to a hiring manager or peer without apology? If no, cut fluff
+- [ ] A hiring manager can retell the decision, what you rejected, and what you will not claim
 - [ ] If you recommend a move, you also say where it fails or what it costs
 - [ ] Reads like a practitioner deciding, not a student summarizing literature
 - [ ] Would not be mistaken for raw LLM output (banned words, em-dash budget, no tricolon habit)
+
+## Hiring-manager story (weekly Writes)
+
+Owner ask, 2026-10-09, after a hiring-demand conversation. Weekly Writes already work. The next level is that a hiring manager in Finland or the Nordics can retell the piece as evidence of how you lead a decision.
+
+Essays stay MDX prose. The picture, the cast, and the thing a visitor can move stay on live desks and `/stories`.
+
+### Two jobs, one essay
+
+1. **The story.** A consequential decision, a false belief, evidence that moves it.
+2. **The judgment.** Enough of the work behind that story that a stranger can see you frame, choose, reject, and limit.
+
+Before the draft is locked, answer these in sentences a stranger could repeat:
+
+- What decision is this?
+- What did I assume, and which evidence moved me?
+- What did I choose, and what did I reject?
+- What stays unproven, broken, or out of scope?
+- What should change on Monday, and where does that move fail?
+
+Those answers live inside the existing shape (`## The question`, middle sections named for the work, `## Takeaway`). If an answer is missing, rewrite a section. If the answers only appear as a checklist at the end, fold them back into the prose.
+
+One link of the chain leads: business problem → data → intelligent system → delivery → measurable outcome. A second link may support it. Prefer the gap between a demo that works and a decision a team can own. A Signal about a tool still has to land on that gap.
+
+### Leave these out
+
+| Tempting addition | Why it stays out |
+|-------------------|------------------|
+| A standing `## Behind the decision` card (sources, system design, validation, delivery, next step) | Turns the close into a lab report. The same facts belong in the sections, in sentences. |
+| Role-title badges, a competency pair, or a hiring soft-close | The essay is the evidence. A pitch undoes it. Career may name a role change only when the user asked for that angle. |
+| A month of topics chosen in advance | This week's Signal still picks the thesis. The territory only chooses the angle. |
+| A hypothetical company as the default subject | Open on friction from the Signal or from work you can say in public. If a scene is synthetic, say so in one clause. |
+| Interactive charts, a film, or a metadata block beside the essay | Desks and `/stories` already carry the picture. Weekly Writes stay prose. |
+| A volume target | One essay that survives an interview conversation is the unit. |
+| A market statistic you did not open | Cite the primary Signal. Hedge anything you did not read. |
+
+### Fail (rewrite)
+
+- A hiring manager outside the workshop cannot say what you decided, what you rejected, and what you will not claim.
+- The piece is a good story with no judgment, or a method note with no stakes.
+- The close sells the author.
 
 ## Anti-patterns (reject)
 
@@ -77,6 +119,8 @@ Length: ~600–1200 words typical; weekly path hard bounds 500–1600.
 - Tool-catalog essay (lists of MCP tools, file paths, or CLI flags as the narrative)
 - Power BI tunnel vision when the Signal supports Delivery / Learning / Career / general data
 - Hiring-manager soft close ("ask for the repos", "the interesting hire") unless the piece is explicitly Career and the user asked for that angle
+- Story with no judgment, or a method note with no stakes
+- A trailing evidence card or role badge standing in for the prose
 
 ## Punctuation and cadence (anti-slop)
 

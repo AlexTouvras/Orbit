@@ -96,7 +96,7 @@ Week of: ${brief.weekOf}
 ## Your job (in this IDE)
 
 1. Write **one** focused Orbit essay (not a digest) inspired by the thesis below.
-2. Match voice/structure of existing Writes (\`## The question\` … \`## Takeaway\`, 700–1000 words).
+2. Match voice/structure of existing Writes (\`## The question\` … \`## Takeaway\`, 700–1000 words). Pass the hiring-manager story in \`docs/essay-voice.md\`: the reader can name the decision, what you rejected, and what stays unproven.
 3. Save pending draft JSON to \`data/weekly-write-draft.json\` with \`source: "ide"\` and \`status: "pending"\`.
 4. Run:
 

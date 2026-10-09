@@ -336,6 +336,7 @@ CANONICAL ORBIT VOICE (study; do not copy sentences):
 - Example takeaway: "The best operational dashboard isn't the prettiest — it's the one people trust on Monday."
 - Example career essay move: contrast what stayed the same vs what changed; end with a transferable principle ("make the system legible").
 - Include at least one concrete "mistake I made / refuse to repeat" or "what I am not doing yet" section when it fits.
+- A hiring manager who does not know the workshop should be able to say what you decided, what you rejected, and what you will not claim.
 - Prefer 700–1000 words of original argument. Cite the inspiration once; do not paraphrase the whole article.
 `;
 
@@ -359,6 +360,15 @@ REQUIRED ARC
 4. How it lands for analytics, Power BI/Fabric, AI tooling, or delivery — optional bridge to one real project from intake
 5. Mistakes / what you are not doing yet
 6. ## Takeaway — one sharp conclusion
+
+HIRING-MANAGER STORY
+Put these inside the sections above. Do not add a "Behind the decision" heading, a competency badge, or a closing pitch about being hireable.
+- The decision.
+- The assumption, and the evidence that moved it.
+- What you chose, and what you rejected.
+- What stays unproven.
+- What should change on Monday, and where that move fails.
+One link leads: business problem, data, intelligent system, delivery, or measurable outcome. Prefer the gap between a demo that works and a decision a team can own. If a scene is hypothetical, say so in one clause.
 
 FORMAT RULES
 - Normal markdown prose with ## headings. NEVER markdown tables.
