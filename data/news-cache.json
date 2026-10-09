@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T06:46:58.082Z",
+  "generatedAt": "2026-10-09T06:46:59.725Z",
   "count": 263,
   "items": [
     {
@@ -10,6 +10,141 @@
       "category": "Data",
       "pubDate": "2026-10-08T23:00:00.000Z",
       "contentSnippet": "We're excited to announce the publicly available Beta of the Workday Data Connect federation connector for Unity Catalog..."
+    },
+    {
+      "id": "9934a6d239f3",
+      "title": "Protecting indigenous cultural resources from within the IP system",
+      "link": "https://cepr.org/voxeu/columns/protecting-indigenous-cultural-resources-within-ip-system",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-08T23:00:00.000Z",
+      "contentSnippet": "Across food, tourism, cosmetics, and luxury goods, indigenous language and heritage increasingly anchor premium market positions, but when it comes to trademarks, few jurisdictions have developed national rules to explicitly protect and preserve traditional knowledge. This column…"
+    },
+    {
+      "id": "a36eb805bfca",
+      "title": "A Mediterranean Community of Human Capital",
+      "link": "https://cepr.org/voxeu/columns/mediterranean-community-human-capital",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-08T23:00:00.000Z",
+      "contentSnippet": "Europe's shrinking workforce is weighing on its productivity and welfare systems. Meanwhile, its southern Mediterranean neighbours currently produce growing numbers of graduates whom domestic labour markets cannot absorb. This column makes the case for a Mediterranean Community o…"
+    },
+    {
+      "id": "d5fccd45a740",
+      "title": "Covered interest parity deviations and financial market frictions: Six decades of evidence",
+      "link": "https://cepr.org/voxeu/columns/covered-interest-parity-deviations-and-financial-market-frictions-six-decades",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-08T23:00:00.000Z",
+      "contentSnippet": "Persistent deviations from the covered interest parity no-arbitrage condition are viewed as evidence of the new and central role of balance sheet constraints and financial market frictions since the Global Financial Crisis. This column argues that covered interest parity deviatio…"
+    },
+    {
+      "id": "714c79df7b98",
+      "title": "Introducing Funke: Native HL7v2 Parsing on Databricks",
+      "link": "https://www.databricks.com/blog/introducing-funke-native-hl7v2-parsing-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-08T22:00:00.000Z",
+      "contentSnippet": "The HL7v2 problem in the lakehouseHL7v2 is the messaging standard that quietly runs healthcare..."
+    },
+    {
+      "id": "d953dbc7e61c",
+      "title": "Lakebase and Agentic SDLC: Branching Databases for Coding Agents",
+      "link": "https://www.databricks.com/blog/lakebase-and-agentic-sdlc-branching-databases-coding-agents",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-08T22:00:00.000Z",
+      "contentSnippet": "AI has changed how software gets built. As coding agents take on a growing share..."
+    },
+    {
+      "id": "20268ddf9c0f",
+      "title": "Biomedical Imaging's Real Bottleneck Is the Data, Not the Model",
+      "link": "https://www.databricks.com/blog/biomedical-imagings-real-bottleneck-data-not-model",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-08T21:00:00.000Z",
+      "contentSnippet": "Part I — The problemFour sectors, one bottleneckHospitals and health systems generate..."
+    },
+    {
+      "id": "2999c3c463fc",
+      "title": "The missing map of the sky",
+      "link": "https://www.anthropic.com/research/the-missing-map-of-the-sky",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-08T20:59:00.000Z",
+      "contentSnippet": "Astronomers have mapped the entire sky in visible light, infrared, radio, X-rays, and gamma rays. No one, however, had created a complete map of the sky in ultraviolet (UV) light. Here, Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, exp…"
+    },
+    {
+      "id": "ecaa805484ea",
+      "title": "Launching an opt-in vulnerability-finding service for open-source software",
+      "link": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-08T19:00:00.000Z",
+      "contentSnippet": "We’re making available OSS Scanner, an opt-in vulnerability scanner for the open-source ecosystem that’s informed by our experience using Claude to find vulnerabilities during Project Glasswing."
+    },
+    {
+      "id": "4ef67c426724",
+      "title": "Load terabytes of data in minutes into Lakebase Postgres",
+      "link": "https://www.databricks.com/blog/load-terabytes-data-minutes-lakebase-postgres",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-08T18:49:31.000Z",
+      "contentSnippet": "Operational databases like Postgres are built to reliably execute highly concurrent..."
+    },
+    {
+      "id": "112b5f00879d",
+      "title": "How Oracle turns days of work into minutes with ChatGPT and Codex",
+      "link": "https://openai.com/index/oracle",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-08T16:00:00.000Z",
+      "contentSnippet": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex."
+    },
+    {
+      "id": "4e5d15a89e0b",
+      "title": "How to build governed enterprise apps on Databricks with Replit and Lakebase",
+      "link": "https://www.databricks.com/blog/how-build-governed-enterprise-apps-databricks-replit-and-lakebase",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-08T13:00:00.000Z",
+      "contentSnippet": "The combination of Replit & Databricks gives enterprises a complete development-to-deployment platform..."
+    },
+    {
+      "id": "ca1ec6c6a1a1",
+      "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
+      "link": "https://openai.com/index/pollo-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-08T12:00:00.000Z",
+      "contentSnippet": "With GPT-5.6, GPT-6 Astra, and GPT‑Image‑2.5, Pollo AI helps creators turn bold ideas into detailed images and cinematic video ads."
+    },
+    {
+      "id": "f6d3626eb7c8",
+      "title": "LegalOn halves Codex costs while maintaining development speed",
+      "link": "https://openai.com/index/legalon-halves-codex-costs",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-08T12:00:00.000Z",
+      "contentSnippet": "LegalOn cut estimated daily Codex costs by 65% while maintaining development speed. It matched Astra, Sol, and Luna to tasks and managed budgets strategically."
+    },
+    {
+      "id": "077dea1e8a7a",
+      "title": "Disrupting AI-enabled “false front” operations",
+      "link": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-08T00:00:00.000Z",
+      "contentSnippet": "OpenAI disrupted two AI-enabled influence operations that used false-front journalists and a think tank to spread geopolitical messaging."
+    },
+    {
+      "id": "471acfb3b17e",
+      "title": "Artificial intelligence and climate change: balancing innovation and sustainability",
+      "link": "https://www.bis.org/publications/paper-174-artificial-intelligence-and-climate-change-balancing-innovation-and-sustainability",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-08T00:00:00.000Z",
+      "contentSnippet": "Artificial intelligence (AI) is becoming an increasingly important factor in the climate transition. AI can improve energy efficiency, optimise resource use, accelerate climate innovation and strengthen climate forecasting, adaptation and risk management. At the same time, the de…"
     },
     {
       "id": "6a86976136d7",
@@ -165,13 +300,13 @@
       "contentSnippet": "More teams are running their dbt transformations on Databricks Lakehouse: an open..."
     },
     {
-      "id": "6a93de677b1c",
-      "title": "The lakehouse is a better data warehouse: 2026 benchmarks and proof",
-      "link": "https://www.databricks.com/blog/lakehouse-better-data-warehouse-2026-benchmarks-and-proof",
+      "id": "497dbb712354",
+      "title": "AI-powered analytics: Building data visualizations with natural language vs. SQL",
+      "link": "https://www.databricks.com/blog/ai-powered-analytics-building-data-visualizations-natural-language-vs-sql",
       "source": "Databricks Blog",
       "category": "Data",
-      "pubDate": "2026-10-06T16:35:12.000Z",
-      "contentSnippet": "The warehouse was the right answer for 20 yearsThe data warehouse earned its place. For two decades..."
+      "pubDate": "2026-10-06T18:16:25.000Z",
+      "contentSnippet": "Richard Tomlinson, who leads product marketing for Databricks' business intelligence..."
     },
     {
       "id": "60ef2af305e7",
@@ -181,15 +316,6 @@
       "category": "AI",
       "pubDate": "2026-10-06T16:00:00.000Z",
       "contentSnippet": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work."
-    },
-    {
-      "id": "45312a386b29",
-      "title": "Scaling and Operating a Large dbt Project on Databricks: IFCO's Data Team on Performance, Visibility, and Debugging",
-      "link": "https://www.databricks.com/blog/scaling-and-operating-large-dbt-project-databricks-ifcos-data-team-performance-visibility-and-debugging",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-06T16:00:00.000Z",
-      "contentSnippet": "AbstractIFCO runs one of the world's largest reusable packaging pools with hundreds of millions of crates and pallets..."
     },
     {
       "id": "0ec0c3cc2f3e",
@@ -208,42 +334,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-06T14:00:00.000Z",
       "contentSnippet": "Originally published on Engineering Leadership. Scrum is often misunderstood as a set of ceremonies or a lightweight project management method. It is neither. Scrum is a social technology built around the ethos of Agile, enabling teams to deliver adaptive solutions in complex env…"
-    },
-    {
-      "id": "df71d97f7fe8",
-      "title": "Meta’s ads MCP server comes to Databricks: Put your customer intelligence to work in advertising campaigns",
-      "link": "https://www.databricks.com/blog/meta-ads-mcp-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-06T12:45:00.000Z",
-      "contentSnippet": "Here’s a familiar scenario for enterprise advertisers: the data team has done real..."
-    },
-    {
-      "id": "342677ae7ead",
-      "title": "How Jump Trading is scaling quant research with ChatGPT",
-      "link": "https://openai.com/index/jump-trading",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-06T12:00:00.000Z",
-      "contentSnippet": "Jump Trading uses OpenAI to expand quantitative research. See how longer-running AI workflows combine multiple data sources with human review."
-    },
-    {
-      "id": "47b9255d8fa0",
-      "title": "Sharing AI progress in mathematics",
-      "link": "https://openai.com/index/sharing-ai-progress-in-mathematics",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-06T12:00:00.000Z",
-      "contentSnippet": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub."
-    },
-    {
-      "id": "9964af802e9c",
-      "title": "Advancing computer use with Ironclad",
-      "link": "https://openai.com/index/advancing-computer-use-with-ironclad",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-06T10:00:00.000Z",
-      "contentSnippet": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work."
     },
     {
       "id": "e4b469e972e8",
@@ -282,15 +372,6 @@
       "contentSnippet": "Existing views on what venture capital finances and how its markets are structured are primarily shaped by the experience of the US and a few other high-income economies. This column presents evidence covering nearly 270,000 venture capital-backed startups in over 150 economies t…"
     },
     {
-      "id": "79bda435d6e0",
-      "title": "Apprendre aux débutants à réfléchir à l’ère des grands modèles linguistiques",
-      "link": "https://cepr.org/voxeu/columns/apprendre-aux-debutants-reflechir-lere-des-grands-modeles-linguistiques",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-05T23:00:00.000Z",
-      "contentSnippet": "La question de savoir si l’enseignement des compétences cognitives reste pertinent à l’ère de l’IA est cruciale tant pour le monde de l’éducation que pour les entreprises. Cet article rend compte d’une expérience menée auprès d’environ 1 000 étudiants de premier cycle en Italie,…"
-    },
-    {
       "id": "c3d66983a8dc",
       "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
       "link": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
@@ -307,42 +388,6 @@
       "category": "Analytics",
       "pubDate": "2026-10-05T20:00:41.000Z",
       "contentSnippet": "Defining the right contract is a key activity for a DAX developer using AI. In this article, we introduce the concept of a contract through simple examples. Contract. As a DAX developer, you will use this term frequently; indeed, when…"
-    },
-    {
-      "id": "ae0435475eea",
-      "title": "NEAREST BY Join: Scaling Vector Search in Databricks Runtime",
-      "link": "https://www.databricks.com/blog/nearest-join-scaling-vector-search-databricks-runtime",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-05T20:00:00.000Z",
-      "contentSnippet": "Vector search originated as a serving problem. The classical use case is a chatbot..."
-    },
-    {
-      "id": "a8c0638d220f",
-      "title": "Unlocking Data Portability: Preventing Catalog Lock-in with REGISTER and UNREGISTER APIs",
-      "link": "https://www.databricks.com/blog/unlocking-data-portability-preventing-catalog-lock-register-and-unregister-apis",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-05T16:00:00.000Z",
-      "contentSnippet": "As organizations embrace the lakehouse architecture, data is shifting from proprietary..."
-    },
-    {
-      "id": "8518910180a4",
-      "title": "How Genie Ontology powers product development at Databricks",
-      "link": "https://www.databricks.com/blog/how-genie-ontology-powers-product-development-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-05T15:07:02.000Z",
-      "contentSnippet": "General-purpose AI agents are good at searching the web, reasoning, and writing code...."
-    },
-    {
-      "id": "78ad53815846",
-      "title": "Our approach to EU text provenance rules",
-      "link": "https://openai.com/index/eu-text-provenance",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-05T15:00:00.000Z",
-      "contentSnippet": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers."
     },
     {
       "id": "54a9a35daff2",
@@ -399,15 +444,6 @@
       "contentSnippet": "Data Outpost kicks off on November 4, 2026 in San Francisco with 11 hands-on workshops from MotherDuck, Vercel, Sigma, Prefect, Estuary, Airbyte, Reducto, Braintrust, and Together AI. Here's what you'll build in each one: your own agents, the data pipelines they need, and the ski…"
     },
     {
-      "id": "c1cd391cd548",
-      "title": "Bonding through crises with nonbank financial institutions",
-      "link": "https://cepr.org/voxeu/columns/bonding-through-crises-nonbank-financial-institutions",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-04T23:00:00.000Z",
-      "contentSnippet": "Nonbank financial institutions are often seen as procyclical lenders, cutting credit more sharply than banks during stress, while bond markets can substitute for bank lending when credit supply contracts. This column brings these perspectives together and argues that this cyclica…"
-    },
-    {
       "id": "c652d822df81",
       "title": "The Problem With Approximate Distinct Counts In Power BI – And How To Solve It",
       "link": "https://blog.crossjoin.co.uk/2026/10/04/the-problem-with-approximate-distinct-counts-in-power-bi-and-how-to-solve-it/",
@@ -453,15 +489,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "e96055c375b4",
-      "title": "The impact of AI and cross-border data regulation on international trade in digital services",
-      "link": "https://cepr.org/voxeu/columns/impact-ai-and-cross-border-data-regulation-international-trade-digital-services",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-03T23:00:00.000Z",
-      "contentSnippet": "AI is transforming digital services, and mobile apps, which routinely reach users far beyond their home markets, show just how global that transformation has become. This column shows that AI makes these products dramatically more attractive, increasing their user base at home an…"
-    },
-    {
       "id": "25c5bfb96a91",
       "title": "Does Your Organisation Need an AI Product Owner?",
       "link": "https://www.scrum.org/resources/blog/does-your-organisation-need-ai-product-owner",
@@ -487,6 +514,15 @@
       "category": "Delivery",
       "pubDate": "2026-10-02T11:34:32.000Z",
       "contentSnippet": "A maioria das organizações ainda encara a gestão de produtos como uma linha de montagem: escrever histórias de usuário, alimentar o backlog, acompanhar a velocidade das sprints e torcer para que a funcionalidade entregue gere algum resultado. Essa postura é o teto de vidro do \"PO…"
+    },
+    {
+      "id": "459578b1b15c",
+      "title": "The printing press didn't make you an author",
+      "link": "https://www.scrum.org/resources/blog/printing-press-didnt-make-you-author",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-02T10:22:26.000Z",
+      "contentSnippet": "In 2010 a Spanish civil servant named Joaquín García was called up on stage to receive an award for two decades of loyal service at the water board in Cádiz. There was one problem. When his boss went into the crowd to hand over the plaque, nobody could find him. As it turned out,…"
     },
     {
       "id": "82d5ce1845d4",
@@ -768,15 +804,6 @@
       "contentSnippet": "Near record-high government debt levels and the growing role of non-banks have reshaped government debt markets in recent years. High levels of government sector debt are expected to worsen future government debt market liquidity conditions in general, including by increasing the…"
     },
     {
-      "id": "2069ce7b61ef",
-      "title": "AI Made Engineering Faster. Why Not The Business?",
-      "link": "https://www.scrum.org/resources/blog/ai-made-engineering-faster-why-not-business",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-28T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. Why More AI Activity Is Not Showing Up In The Business You can 10x engineering and still not 10x the business. AI agents are getting very good at coding, debugging, test generation, documentation, and a lot of engineering activities. That i…"
-    },
-    {
       "id": "eeac3b47b588",
       "title": "Data Engineering Weekly #289",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-289",
@@ -822,15 +849,6 @@
       "contentSnippet": "There are some nice improvements to Power Query integration in the latest version of Power BI Report Builder that, while they are documented, didn’t get an official blog post but which I think deserve to be highlighted. First of all the “Get Data” button has been renamed “Power Q…"
     },
     {
-      "id": "cd57170eb38e",
-      "title": "Yes, Claude can do Nine Loops",
-      "link": "https://www.anthropic.com/research/yes-claude-can-do-nine-loops",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-25T16:58:00.000Z",
-      "contentSnippet": "Guest writer and physicist Matt von Hippel shares what happened when he issued a challenge to AI companies to solve a problem in his former subfield of theoretical physics."
-    },
-    {
       "id": "6a47534fda8a",
       "title": "The PRA held a captive insurance industry roundtable",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/august/pra-holds-captive-insurance-industry-roundtable",
@@ -865,15 +883,6 @@
       "category": "AI",
       "pubDate": "2026-09-24T19:40:00.000Z",
       "contentSnippet": "Generative AI"
-    },
-    {
-      "id": "3a09c87aa734",
-      "title": "Project Swap: What happens when agents trade for us?",
-      "link": "https://www.anthropic.com/research/project-swap",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-24T18:37:00.000Z",
-      "contentSnippet": "To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes."
     },
     {
       "id": "e7107d9a76d9",
@@ -946,15 +955,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-23T10:00:42.000Z",
       "contentSnippet": "The time has come: in 2026, using AI to write DAX has started to be effective. Latest news and the new courses are at https://www.sqlbi.com/ai/ We also created three new video courses that should not become obsolete in two weeks!…"
-    },
-    {
-      "id": "6fd99847fffa",
-      "title": "Unraveling the cobweb of global imbalances: drivers, vulnerabilities, and adjustment scenarios",
-      "link": "https://www.bis.org/publications/working-paper-1379-unraveling-cobweb-global-imbalances-drivers-vulnerabilities-and-adjustment-scenarios",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-23T00:00:00.000Z",
-      "contentSnippet": "This paper analyses the evolution and drivers of the stock of global imbalances in order to assess associated vulnerabilities and potential adjustment scenarios. These imbalances have recently increased sharply, with a deterioration in the US net international investment position…"
     },
     {
       "id": "f526d7679022",
@@ -1749,15 +1749,6 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
-    },
-    {
       "id": "d9adb789161e",
       "title": "How Firms Form Beliefs and the Implications for Inflation",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
@@ -1774,6 +1765,15 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
+    },
+    {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "d834dadfb202",
@@ -1839,13 +1839,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "370e7bd96562",
-      "title": "Transmission Growth-at-Risk: How Foreign Financial Vulnerabilities Shape U.S. Growth Prospects",
-      "link": "https://www.federalreserve.gov/econres/ifdp/files/ifdp1442.pdf",
+      "id": "d817a88ce0e9",
+      "title": "The Last Taxi: LCR Buffers and Bank Liquidity Provision",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026051pap.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System International Financial Discussion Papers by Viktors Stebunovs, Judit Temesvary and Sai Ma"
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Alexandros Vardoulakis, Matt Darst, Arazi Lubis and Lucia Gurrieri"
     },
     {
       "id": "ed6bd26c4997",
