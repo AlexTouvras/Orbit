@@ -17,8 +17,8 @@ Live: `/credit-risk-field-card/` (this folder’s `index.html`). Hub competency:
 
 ## What the picture has to keep saying
 
-- Who we lend to is in the engine, and an override has a name.
-- Still paying is not still safe.
+- The terms come from the customer, the product, and the first risk, and an override has a name.
+- Still paying is not the same risk that was booked.
 - Name the increase since origination, then leave stage 1.
 - Stage 1 holds twelve months. Lifetime capital replaces that hold only in stage 2. An extra amount has an owner and a date to come off.
 - If the stage, the parameters, and the overlay owner cannot be named, do not book the number.
