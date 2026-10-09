@@ -25,7 +25,7 @@ Live: `/credit-risk-field-card/` (this folder’s `index.html`). Hub competency:
 
 ## Motion
 
-The file walks originate, then monitor, then stage, then provision. The watched row turns while it still says paid. The plaque turns from 1 to 2. The lifetime stack fills. The learn arc draws back toward monitor. `prefers-reduced-motion` and print show that end state, with the faded file and the arc still visible. The words stay readable with the motion off. On a narrow screen the arc hides and the sentence carries the return.
+The file walks originate, then monitor, then stage, then provision. The watched row turns while it still says paid. The plaque turns from 1 to 2. The lifetime stack fills. The arc labeled “next decision” draws back toward monitor: observed performance changes the next cutoff and the next control. `prefers-reduced-motion` and print show that end state, with the faded file and the arc still visible. The words stay readable with the motion off. On a narrow screen the arc hides and the sentence carries the return.
 
 ## Sources
 

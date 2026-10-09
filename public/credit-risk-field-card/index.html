@@ -658,11 +658,15 @@
       margin: 0;
       transform: translateX(-50%);
       font-family: var(--font-mono);
-      font-size: 0.62rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--steel);
+      background: #fff;
+      border-radius: 99px;
+      padding: 0.05rem 0.45rem;
+      white-space: nowrap;
     }
 
     @keyframes draw-learn {
@@ -1078,7 +1082,14 @@
       .pick { grid-template-columns: 1fr; gap: 0.2rem; }
       h1 { max-width: none; }
       .found-row { grid-template-columns: 1fr 1fr; }
-      .rooms { grid-template-columns: 1fr 1fr; padding: 0.85rem 0.85rem 0.85rem; }
+      .hook { font-size: 1.35rem; }
+      .lede { font-size: 1.08rem; }
+      .rooms { grid-template-columns: 1fr 1fr; gap: 0.85rem; padding: 0.85rem; }
+      .room { min-height: 0; padding: 0.85rem; }
+      .room-kicker { font-size: 0.78rem; }
+      .room-line { font-size: 1rem; }
+      .art { height: auto; min-height: 3.2rem; }
+      .principles li { font-size: 1.02rem; }
       .learn, .learn-label { display: none; }
       .motion { display: none; }
       .room { animation: none; background: #fff; box-shadow: inset 0 0 0 1px #e4d8cc; }
@@ -1172,26 +1183,26 @@
         <p class="hook">The cutoff is not the system.</p>
         <p class="verbs">Decide → act early → stage → hold</p>
         <p class="lede">
-          A score says where the account sits today. I watch what happens next, and a person owns the call.
+          A credit decision is originated, watched, and revised for the life of the exposure.
         </p>
       </div>
     </header>
 
     <section class="life">
       <h2>How I run one account</h2>
-      <p class="explain">Still marked paid when the risk turns. The stage changes. The hold grows from 12 months to the rest of the life. Then that outcome goes back into the watch.</p>
+      <p class="explain">Observed performance changes the next cutoff and the next control.</p>
       <figure>
         <p id="life-desc" class="sr">
           Four moves on one account, then the outcome returns to the watch. Originate: creditworthiness is in the engine and an override has a name.
           Monitor: the account is still paying and the risk since origination is already up. A faded file stops here and keeps a 12-month hold.
           Stage: that increase is named, so the account leaves stage 1.
-          Provision: the hold becomes the rest of the life. The learn arc sends that result back into the watch.
+          Provision: the hold becomes the rest of the life. The return arc is the next decision: what was observed changes the next cutoff and the next control.
         </p>
         <div class="life-board">
           <svg class="learn" viewBox="0 0 1000 72" preserveAspectRatio="none" aria-hidden="true">
             <path pathLength="1" d="M 880 66 C 880 10, 420 10, 370 66" />
           </svg>
-          <p class="learn-label">learn</p>
+          <p class="learn-label">next decision</p>
           <ol class="rooms">
             <li class="room">
               <p class="room-kicker">Originate</p>
@@ -1242,7 +1253,7 @@
           </div>
         </div>
         <figcaption>
-          The faded file is the cutoff: the payment arrived, so nothing moves. The arc is the next decision. Analytics owns how the number is built.
+          The faded file stopped because the payment arrived. Analytics owns how the number is built.
         </figcaption>
       </figure>
     </section>
@@ -1250,15 +1261,15 @@
     <section class="refuse">
       <h2>Where judgement stays</h2>
       <ol class="principles">
-        <li><strong>A paying account is not low risk.</strong> The installment can arrive while the risk since origination is already up.</li>
-        <li><strong>A score is not the decision.</strong> Policy, the cutoff, and the person who may override are.</li>
-        <li><strong>An extra amount needs an exit.</strong> If the stage, the parameters, and that owner cannot be named, the number does not get booked.</li>
+        <li><strong>Move it while it is still paying.</strong> If risk has risen since origination, do not wait for a missed installment.</li>
+        <li><strong>Write the decision, not the score.</strong> Name the cutoff and who may override before anyone calls it decided.</li>
+        <li><strong>Leave a way back.</strong> An extra amount has an owner and a date to come off, or it is not booked.</li>
       </ol>
     </section>
 
     <section class="sources">
       <h2>Inside the fence</h2>
-      <p class="explain">These standards fence the decision. They are not the capability.</p>
+      <p class="explain">Regulation is the fence. Judgement connects it to the decision.</p>
       <div class="source-row">
         <a href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer">EBA origination
           <span>What the lending decision must show</span>
@@ -1277,7 +1288,7 @@
 
     <section class="foundation" aria-label="Always-on foundation">
       <h2>Always on</h2>
-      <p class="explain">A model that ends at deployment is not this system.</p>
+      <p class="explain">Watch the result, then change the next decision.</p>
       <div class="found-row">
         <div class="found"><strong>Security</strong><span>Who can see PII and flip a policy rule</span></div>
         <div class="found"><strong>Governance</strong><span>Model, cut-off, and overlay owners</span></div>
@@ -1296,7 +1307,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> The cutoff is the hook. One account still moves, then the outcome returns to the watch.</p>
+      <p class="changed"><b>Changed</b> The return arc is the next decision. Each principle says what changes in practice.</p>
     </footer>
   </article>
   <script>
