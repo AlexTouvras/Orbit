@@ -122,8 +122,7 @@
     }
 
     header.hero {
-      padding: 1.5rem 1.35rem 1.25rem;
-      display: block;
+      padding: 1.5rem 1.35rem 1.15rem;
       border-bottom: 1px solid var(--line);
     }
 
@@ -163,6 +162,178 @@
       color: var(--steel);
       font-weight: 600;
       max-width: 46ch;
+    }
+
+    header.hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+      column-gap: 1.25rem;
+      row-gap: 0.35rem;
+      align-items: center;
+    }
+
+    .lifetime {
+      margin: 0;
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+    }
+
+    .lifetime figcaption {
+      margin: 0.15rem 0 0;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--steel);
+    }
+
+    .stream {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .guide path,
+    .trails path {
+      fill: none;
+      stroke: #9a3412;
+      stroke-width: 1.15;
+      stroke-linecap: round;
+    }
+
+    .guide path { opacity: 0.22; }
+
+    .trails path {
+      opacity: 0.55;
+      stroke-dasharray: 1.6 8.4;
+      animation: stream-flow 4.6s linear infinite;
+    }
+
+    .trails path:nth-child(odd) {
+      opacity: 0.28;
+      animation-duration: 5.6s;
+    }
+
+    .hold-core { fill: #1a120c; }
+    .hold-ring {
+      fill: none;
+      stroke: #c4a574;
+      stroke-width: 1.25;
+      animation: hold-pulse 4.6s ease-in-out infinite;
+    }
+
+    .stream text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      fill: #7a4a28;
+    }
+
+    @keyframes stream-flow {
+      to { stroke-dashoffset: -80; }
+    }
+
+    @keyframes hold-pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .path-note {
+      grid-column: 1 / -1;
+      margin: 0.85rem 0 0.35rem;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      max-width: 62ch;
+    }
+
+    .decision-path {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.35rem;
+      list-style: none;
+      margin: 0.15rem 0 0;
+      padding: 0.15rem 0 0;
+      position: relative;
+    }
+
+    .decision-path::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 0.72rem;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .decision-path li {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      animation: pip-word 7.2s infinite;
+    }
+
+    .decision-path li:nth-child(1) { animation-delay: 0s; }
+    .decision-path li:nth-child(2) { animation-delay: 1.2s; }
+    .decision-path li:nth-child(3) { animation-delay: 2.4s; }
+    .decision-path li:nth-child(4) { animation-delay: 3.6s; }
+    .decision-path li:nth-child(5) { animation-delay: 4.8s; }
+    .decision-path li:nth-child(6) { animation-delay: 6s; }
+
+    .decision-path .pip {
+      display: block;
+      width: 1.15rem;
+      height: 1.15rem;
+      margin: 0 auto 0.35rem;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #fff;
+      animation: pip 7.2s infinite;
+    }
+
+    .decision-path li:nth-child(1) .pip { animation-delay: 0s; }
+    .decision-path li:nth-child(2) .pip { animation-delay: 1.2s; }
+    .decision-path li:nth-child(3) .pip { animation-delay: 2.4s; }
+    .decision-path li:nth-child(4) .pip { animation-delay: 3.6s; }
+    .decision-path li:nth-child(5) .pip { animation-delay: 4.8s; }
+    .decision-path li:nth-child(6) .pip { animation-delay: 6s; }
+
+    .decision-path li:hover {
+      animation: none;
+      color: var(--ink);
+    }
+
+    .decision-path li:hover .pip {
+      animation: none;
+      background: var(--warn-soft);
+      border-color: var(--steel);
+      box-shadow: 0 0 0 4px rgba(154, 52, 18, 0.12);
+    }
+
+    @keyframes pip {
+      0%, 18%, 100% {
+        background: #fff;
+        border-color: var(--line);
+        box-shadow: none;
+      }
+      2%, 15% {
+        background: var(--warn-soft);
+        border-color: var(--steel);
+        box-shadow: 0 0 0 4px rgba(154, 52, 18, 0.12);
+      }
+    }
+
+    @keyframes pip-word {
+      0%, 18%, 100% { color: var(--muted); }
+      2%, 15% { color: var(--ink); }
     }
 
     .stack {
@@ -1023,13 +1194,31 @@
       padding: 0;
       list-style: none;
       display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.65rem;
-      max-width: 68ch;
     }
 
     .principles li {
       color: var(--ink-soft);
       font-size: 0.95rem;
+      padding: 0.75rem 0.8rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .principles li,
+      .found-row {
+        animation: card-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      .principles li:nth-child(2) { animation-delay: 70ms; }
+      .principles li:nth-child(3) { animation-delay: 140ms; }
+    }
+
+    @keyframes card-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: none; }
     }
 
     .principles strong {
@@ -1074,9 +1263,13 @@
       header.hero,
       .tri,
       .behavior,
-      .anti-list {
+      .anti-list,
+      .principles {
         grid-template-columns: 1fr;
       }
+      .lifetime { grid-column: 1; grid-row: auto; }
+      .decision-path { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 0.65rem; }
+      .decision-path::before { display: none; }
       .tri > section { border-right: none; border-bottom: 1px solid var(--line); }
       .tri > section:last-child { border-bottom: none; }
       .pick { grid-template-columns: 1fr; gap: 0.2rem; }
@@ -1107,7 +1300,16 @@
 
     @media (prefers-reduced-motion: reduce) {
       .room, .walker, .ghost, .ghost-label, .book .row.hot, .book .row.hot em,
-      .plaque .n1, .plaque .n2, .hold-life b, .learn path { animation: none; }
+      .plaque .n1, .plaque .n2, .hold-life b, .learn path,
+      .trails path, .hold-ring, .decision-path li, .decision-path .pip, .principles li, .found-row { animation: none; }
+      .trails path { opacity: 0; }
+      .guide path { opacity: 0.5; }
+      .decision-path li { color: var(--ink); }
+      .hold-ring { opacity: 1; }
+      .decision-path .pip {
+        background: var(--warn-soft);
+        border-color: var(--steel);
+      }
       .learn path { stroke-dashoffset: 0; }
       .room { background: #fff; box-shadow: inset 0 0 0 1px #e4d8cc; }
       .walker { left: 87.5%; }
@@ -1147,11 +1349,15 @@
       footer.meta { padding: 0.45rem 0 0; background: none; }
       .foundation { padding: 0.45rem 0; background: none; }
       .layer, .room, .walker, .ghost, .ghost-label, .book .row.hot, .book .row.hot em,
-      .plaque .n1, .plaque .n2, .hold-life b, .learn path {
+      .plaque .n1, .plaque .n2, .hold-life b, .learn path,
+      .trails path, .hold-ring, .decision-path li, .decision-path .pip, .principles li, .found-row {
         animation: none !important;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
+      .trails path { opacity: 0; }
+      .guide path { opacity: 0.55; }
+      .hold-ring { opacity: 1; }
       .walker { left: 87.5%; }
       .ghost, .ghost-label { opacity: 1; }
       .plaque .n1 { opacity: 0; }
@@ -1186,6 +1392,47 @@
           A credit decision is originated, watched, and revised for the life of the exposure.
         </p>
       </div>
+      <figure class="lifetime">
+        <svg class="stream" viewBox="0 0 460 150" aria-hidden="true">
+          <defs>
+            <radialGradient id="hold-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#e7c49a" stop-opacity="0.85" />
+              <stop offset="42%" stop-color="#9a3412" stop-opacity="0.28" />
+              <stop offset="100%" stop-color="#9a3412" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <g class="guide">
+            <path d="M8 22 C 130 16, 260 70, 392 74" />
+            <path d="M8 48 C 150 42, 270 72, 392 74" />
+            <path d="M8 76 C 170 92, 280 80, 392 74" />
+            <path d="M8 108 C 150 132, 280 100, 392 74" />
+            <path d="M8 134 C 180 146, 290 108, 392 74" />
+            <path d="M78 8 C 170 28, 290 62, 392 74" />
+          </g>
+          <g class="trails">
+            <path d="M8 22 C 130 16, 260 70, 392 74" />
+            <path d="M8 48 C 150 42, 270 72, 392 74" />
+            <path d="M8 76 C 170 92, 280 80, 392 74" />
+            <path d="M8 108 C 150 132, 280 100, 392 74" />
+            <path d="M8 134 C 180 146, 290 108, 392 74" />
+            <path d="M78 8 C 170 28, 290 62, 392 74" />
+          </g>
+          <circle class="hold-glow" cx="392" cy="74" r="48" fill="url(#hold-glow)" />
+          <circle class="hold-ring" cx="392" cy="74" r="24" />
+          <circle class="hold-core" cx="392" cy="74" r="16" />
+          <text x="392" y="122" text-anchor="middle">lifetime</text>
+        </svg>
+        <figcaption>Many accounts, one lifetime hold.</figcaption>
+      </figure>
+      <p class="path-note">A score says where the account sits. The system decides what happens next.</p>
+      <ol class="decision-path" aria-label="From the score to the evidence">
+        <li><span class="pip" aria-hidden="true"></span>Score</li>
+        <li><span class="pip" aria-hidden="true"></span>Policy</li>
+        <li><span class="pip" aria-hidden="true"></span>Decision</li>
+        <li><span class="pip" aria-hidden="true"></span>Action</li>
+        <li><span class="pip" aria-hidden="true"></span>Outcome</li>
+        <li><span class="pip" aria-hidden="true"></span>Evidence</li>
+      </ol>
     </header>
 
     <section class="life">
@@ -1307,7 +1554,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> The return arc is the next decision. Each principle says what changes in practice.</p>
+      <p class="changed"><b>Changed</b> Accounts converge on the lifetime hold. Score, policy, decision, action, outcome, and evidence light in that order.</p>
     </footer>
   </article>
   <script>

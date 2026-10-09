@@ -25,7 +25,13 @@ Live: `/credit-risk-field-card/` (this folder’s `index.html`). Hub competency:
 
 ## Motion
 
-The file walks originate, then monitor, then stage, then provision. The watched row turns while it still says paid. The plaque turns from 1 to 2. The lifetime stack fills. The arc labeled “next decision” draws back toward monitor: observed performance changes the next cutoff and the next control. `prefers-reduced-motion` and print show that end state, with the faded file and the arc still visible. The words stay readable with the motion off. On a narrow screen the arc hides and the sentence carries the return.
+The file walks originate, then monitor, then stage, then provision. The watched row turns while it still says paid. The plaque turns from 1 to 2. The lifetime stack fills. The arc labeled “next decision” draws back toward monitor: observed performance changes the next cutoff and the next control.
+
+Beside the headline, streams of accounts run into one lifetime hold. Under the hook, Score → Policy → Decision → Action → Outcome → Evidence lights in that order, and a hovered step stays lit. The three judgement lines are cards. Always on fades in once, together. Do not hide those words until scroll, and do not scroll-jack.
+
+`prefers-reduced-motion` and print show the end state: streams drawn, hold lit, every path step lit, the faded file and the arc still visible. The words stay readable with the motion off. On a narrow screen the arc hides and the sentence carries the return. The stream and the path stay.
+
+Storytelling `household` and `grid` pictures stay on their own stories. The robot is the only storytelling piece on this sheet.
 
 ## Sources
 
