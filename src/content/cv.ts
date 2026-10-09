@@ -14,13 +14,20 @@ export interface CvRole {
   bullets: string[];
 }
 
-export interface CvExperience {
+/** Institution mark and official site. About titles open these in one press. */
+export interface CvPlaceFields {
+  slug: string;
+  logo: string;
+  url: string;
+}
+
+export interface CvExperience extends CvPlaceFields {
   company: string;
   location: string;
   roles: CvRole[];
 }
 
-export interface CvEducation {
+export interface CvEducation extends CvPlaceFields {
   degree: string;
   school: string;
   period?: string;
@@ -62,6 +69,9 @@ export const cv: Cv = {
   experience: [
     {
       company: "Santander Consumer Bank Nordics",
+      slug: "santander-consumer-bank-nordics",
+      logo: "/about/logos/santander-consumer-bank-nordics.png",
+      url: "https://www.santanderconsumer.fi/",
       location: "Finland / Nordics",
       roles: [
         {
@@ -97,6 +107,9 @@ export const cv: Cv = {
     },
     {
       company: "Resurs Bank",
+      slug: "resurs-bank",
+      logo: "/about/logos/resurs-bank.png",
+      url: "https://www.resursbank.fi/",
       location: "Sweden / Nordics",
       roles: [
         {
@@ -115,6 +128,9 @@ export const cv: Cv = {
     },
     {
       company: "Finnish Defence Forces",
+      slug: "finnish-defence-forces",
+      logo: "/about/logos/finnish-defence-forces.png",
+      url: "https://puolustusvoimat.fi/en/frontpage",
       location: "Finland",
       roles: [
         {
@@ -128,6 +144,9 @@ export const cv: Cv = {
     },
     {
       company: "City of Helsinki Social and Health Authority",
+      slug: "city-of-helsinki",
+      logo: "/about/logos/city-of-helsinki.png",
+      url: "https://www.hel.fi/en",
       location: "",
       roles: [
         {
@@ -141,6 +160,9 @@ export const cv: Cv = {
     },
     {
       company: "Bank of Greece",
+      slug: "bank-of-greece",
+      logo: "/about/logos/bank-of-greece.png",
+      url: "https://www.bankofgreece.gr/",
       location: "Greece",
       roles: [
         {
@@ -158,6 +180,9 @@ export const cv: Cv = {
     {
       degree: "MSc, Big Data Analytics",
       school: "Arcada University of Applied Sciences, Helsinki",
+      slug: "arcada",
+      logo: "/about/logos/arcada.png",
+      url: "https://www.arcada.fi/en",
       period: "2021–2024",
       detail: "Machine learning methods in business environments; analytical service design.",
       thesisUrl: "https://www.theseus.fi/handle/10024/860989",
@@ -166,6 +191,9 @@ export const cv: Cv = {
     {
       degree: "MSc, Banking and International Finance",
       school: "University of Jyväskylä",
+      slug: "university-of-jyvaskyla",
+      logo: "/about/logos/university-of-jyvaskyla.png",
+      url: "https://www.jyu.fi/en",
       period: "2017–2019",
       detail: "Quantitative finance, economics, financial accounting, and banking.",
       thesisUrl: "https://jyx.jyu.fi/jyx/Record/jyx_123456789_62906",
@@ -174,6 +202,9 @@ export const cv: Cv = {
     {
       degree: "Bachelor's in Economics",
       school: "Athens University of Economics and Business (AUEB)",
+      slug: "aueb",
+      logo: "/about/logos/aueb.png",
+      url: "https://www.aueb.gr/en",
     },
   ],
   skills: [

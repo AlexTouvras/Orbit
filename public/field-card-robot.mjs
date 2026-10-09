@@ -138,11 +138,18 @@ export const FALLBACK_CARDS = [
     accent: "credit",
     lines: [
       "This card is the life of the loan. Act before the loss.",
-      "A score at application is not the loss you hold.",
-      "Name the increase in risk before you book the number.",
-      "Watch the book in production. A launch deck is not that.",
-      "A missed payment is a trigger, not a debate.",
+      "The cutoff is not the system. Watch what is next.",
+      "Still paying is not low risk. A score is not the call.",
+      "Standards fence the decision. They are not the skill.",
+      "A model that ends at deployment is not this system.",
       TUCK,
+    ],
+    sections: [
+      { heading: "Credit risk is for a lifetime. Act early.", line: "This card is the life of the loan. Act before the loss." },
+      { heading: "How I run one account", line: "The cutoff is not the system. Watch what is next." },
+      { heading: "Where judgement stays", line: "Still paying is not low risk. A score is not the call." },
+      { heading: "Inside the fence", line: "Standards fence the decision. They are not the skill." },
+      { heading: "Always on", line: "A model that ends at deployment is not this system." },
     ],
   },
   {
@@ -674,17 +681,19 @@ function removeChrome() {
 }
 
 /**
- * SDLC is hosted on Orbit. Storytelling `field-cards.ts` can still hand
- * release to Delivery. The sheet speaks the lines in FALLBACK_CARDS.
+ * SDLC and Credit are hosted on Orbit. Storytelling `field-cards.ts` can
+ * still describe the older sheet. Those two speak the lines in FALLBACK_CARDS.
  */
+const HOSTED_SPEECH = new Set(["sdlc", "credit"]);
+
 export function cardsForSheet(cardId, parsed) {
   const cards = parsed || FALLBACK_CARDS;
-  if (cardId !== "sdlc") return cards;
-  const local = FALLBACK_CARDS.find((card) => card.id === "sdlc");
+  if (!HOSTED_SPEECH.has(cardId)) return cards;
+  const local = FALLBACK_CARDS.find((card) => card.id === cardId);
   if (!local) return cards;
-  if (!cards.some((card) => card.id === "sdlc")) return [...cards, local];
+  if (!cards.some((card) => card.id === cardId)) return [...cards, local];
   return cards.map((card) =>
-    card.id === "sdlc"
+    card.id === cardId
       ? {
           ...card,
           lines: local.lines,

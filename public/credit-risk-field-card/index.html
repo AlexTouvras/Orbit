@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Credit Risk Field Card — For a lifetime. Act early · Alex Touvras</title>
-  <meta name="description" content="A one-page decision card for loan origination and IFRS 9: originate, monitor, stage, and provision. Models are lanes — not the map." />
+  <meta name="description" content="The cutoff is not the system. Stage 1 holds twelve months. Lifetime capital starts when the account leaves stage 1." />
   <meta name="author" content="Alex Touvras" />
   <link rel="canonical" href="https://alextouvras.com/credit-risk-field-card/" />
   <meta property="og:title" content="Credit Risk Field Card — For a lifetime. Act early" />
-  <meta property="og:description" content="Decide → act early → stage → hold. A score is not a lifetime. Analytics owns how the number is built." />
+  <meta property="og:description" content="Stage 1 holds twelve months. Name the increase, leave stage 1, and only then hold the rest of the life." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alextouvras.com/credit-risk-field-card/" />
   <meta property="og:image" content="https://alextouvras.com/opengraph-image" />
@@ -16,21 +16,21 @@
   <meta name="twitter:image" content="https://alextouvras.com/opengraph-image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #18212b;
-      --ink-soft: #3a4654;
-      --muted: #6b7785;
-      --line: #c9d2dc;
-      --paper: #eef2f6;
-      --card: #f8fafc;
-      --steel: #7a4a28;
-      --steel-deep: #5c371c;
-      --signal: #0f766e;
-      --signal-soft: #d7ebe8;
-      --warn: #9a3412;
-      --warn-soft: #f3e0d6;
+      --ink: #1c1914;
+      --ink-soft: #4a433a;
+      --muted: #8a7d6e;
+      --line: #e4d9c8;
+      --paper: #f3eee6;
+      --card: #faf7f2;
+      --steel: #8c6239;
+      --steel-deep: #5c3d22;
+      --signal: #8c6239;
+      --signal-soft: #f3e6d4;
+      --warn: #9a4e24;
+      --warn-soft: #f6e4d4;
       --layer-rag: #6b3d22;
       --layer-agent: #7a4a28;
       --layer-mcp: #0f766e;
@@ -38,7 +38,7 @@
       --shadow: 0 1px 0 rgba(24, 33, 43, 0.06), 0 12px 32px rgba(24, 33, 43, 0.06);
       --radius: 10px;
       --font-display: "Source Serif 4", Georgia, serif;
-      --font-body: "Outfit", system-ui, sans-serif;
+      --font-body: "Source Sans 3", system-ui, sans-serif;
       --font-mono: "IBM Plex Mono", ui-monospace, monospace;
     }
 
@@ -48,8 +48,7 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(1200px 500px at 10% -10%, rgba(36, 90, 122, 0.09), transparent 60%),
-        radial-gradient(900px 400px at 100% 0%, rgba(15, 118, 110, 0.07), transparent 55%),
+        radial-gradient(900px 420px at 100% -10%, rgba(180, 130, 70, 0.16), transparent 55%),
         var(--paper);
       font-family: var(--font-body);
       font-size: 15px;
@@ -76,7 +75,7 @@
       gap: 0.75rem 1.5rem;
       padding: 1rem 1.35rem;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, #fbfcfd, #f3f6f9);
+      background: transparent;
     }
 
     .eyebrow {
@@ -113,7 +112,7 @@
     .channels button:hover,
     .channels a.btn:hover {
       border-color: var(--steel);
-      background: #f0f6fa;
+      background: #f6f0e6;
     }
 
     .channels button:active,
@@ -122,32 +121,37 @@
     }
 
     header.hero {
-      padding: 1.5rem 1.35rem 1.25rem;
-      display: grid;
-      gap: 1.25rem;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: end;
+      padding: 1.5rem 1.35rem 1.15rem;
       border-bottom: 1px solid var(--line);
     }
 
     h1 {
       margin: 0.35rem 0 0.55rem;
       font-family: var(--font-display);
-      font-size: clamp(1.85rem, 3.4vw, 2.55rem);
-      line-height: 1.12;
+      font-size: clamp(2.15rem, 4.1vw, 3.15rem);
+      line-height: 1.04;
       letter-spacing: -0.02em;
       font-weight: 700;
-      max-width: 16ch;
+      max-width: 18ch;
     }
 
     .lede {
       margin: 0;
       color: var(--ink-soft);
       font-size: 1.02rem;
-      max-width: 42ch;
+      max-width: 62ch;
     }
 
     .lede strong { color: var(--ink); font-weight: 600; }
+
+    .hook {
+      margin: 0 0 0.45rem;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      max-width: 28ch;
+    }
 
     .verbs {
       margin: 0 0 0.45rem;
@@ -157,6 +161,195 @@
       color: var(--steel);
       font-weight: 600;
       max-width: 46ch;
+    }
+
+    header.hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      column-gap: 1.25rem;
+      row-gap: 0.35rem;
+      align-items: center;
+    }
+
+    .lifetime {
+      margin: 0;
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+    }
+
+    .lifetime figcaption {
+      margin: 0.1rem 0 0;
+      text-align: right;
+      padding-right: 0.4rem;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--steel);
+    }
+
+    .lifetime-stage {
+      position: relative;
+      height: 248px;
+    }
+
+    .lifetime-stage .stream,
+    .lifetime-stage canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .lifetime-stage.is-live .stream { visibility: hidden; }
+
+    .stream {
+      display: block;
+    }
+
+    .guide path,
+    .trails path {
+      fill: none;
+      stroke: #9a3412;
+      stroke-width: 1.15;
+      stroke-linecap: round;
+    }
+
+    .guide path { opacity: 0.38; }
+
+    .trails { display: none; }
+
+    .hold-core { fill: #1a120c; }
+    .hold-ring {
+      fill: none;
+      stroke: #c4a574;
+      stroke-width: 1.25;
+      animation: hold-pulse 4.6s ease-in-out infinite;
+    }
+
+    .stream text {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      fill: #7a4a28;
+    }
+
+    @keyframes stream-flow {
+      to { stroke-dashoffset: -80; }
+    }
+
+    @keyframes hold-pulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .path-note {
+      grid-column: 1 / -1;
+      margin: 0.85rem 0 0.35rem;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      max-width: 62ch;
+    }
+
+    .decision-path {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.35rem;
+      list-style: none;
+      margin: 0.15rem 0 0;
+      padding: 0.15rem 0 0;
+      position: relative;
+    }
+
+    .decision-path::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 1.2rem;
+      height: 1px;
+      background: #e7dccb;
+    }
+
+    .decision-path li {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      animation: pip-word 7.2s infinite;
+    }
+
+    .decision-path li:nth-child(1) { animation-delay: 0s; }
+    .decision-path li:nth-child(2) { animation-delay: 1.2s; }
+    .decision-path li:nth-child(3) { animation-delay: 2.4s; }
+    .decision-path li:nth-child(4) { animation-delay: 3.6s; }
+    .decision-path li:nth-child(5) { animation-delay: 4.8s; }
+    .decision-path li:nth-child(6) { animation-delay: 6s; }
+
+    .decision-path .pip {
+      display: grid;
+      place-items: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin: 0 auto 0.4rem;
+      border-radius: 50%;
+      border: 1px solid #e6d9c8;
+      background: #f7f1e7;
+      color: var(--steel-deep);
+      animation: pip 7.2s infinite;
+    }
+
+    .decision-path .pip svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .decision-path li:nth-child(1) .pip { animation-delay: 0s; }
+    .decision-path li:nth-child(2) .pip { animation-delay: 1.2s; }
+    .decision-path li:nth-child(3) .pip { animation-delay: 2.4s; }
+    .decision-path li:nth-child(4) .pip { animation-delay: 3.6s; }
+    .decision-path li:nth-child(5) .pip { animation-delay: 4.8s; }
+    .decision-path li:nth-child(6) .pip { animation-delay: 6s; }
+
+    .decision-path li:hover {
+      animation: none;
+      color: var(--ink);
+    }
+
+    .decision-path li:hover .pip {
+      animation: none;
+      background: var(--warn-soft);
+      border-color: var(--steel);
+      box-shadow: 0 0 0 4px rgba(154, 52, 18, 0.12);
+    }
+
+    @keyframes pip {
+      0%, 18%, 100% {
+        background: #fff;
+        border-color: var(--line);
+        box-shadow: none;
+      }
+      2%, 15% {
+        background: var(--warn-soft);
+        border-color: var(--steel);
+        box-shadow: 0 0 0 4px rgba(154, 52, 18, 0.12);
+      }
+    }
+
+    @keyframes pip-word {
+      0%, 18%, 100% { color: var(--muted); }
+      2%, 15% { color: var(--ink); }
     }
 
     .stack {
@@ -465,7 +658,7 @@
     .foundation {
       padding: 0.85rem 1.35rem 1rem;
       border-bottom: 1px solid var(--line);
-      background: #f3f6f9;
+      background: transparent;
     }
 
     .found-row {
@@ -524,7 +717,7 @@
 
     footer.meta {
       padding: 0.95rem 1.35rem 1.15rem;
-      background: #f3f6f9;
+      background: transparent;
       display: grid;
       gap: 0.55rem;
     }
@@ -581,21 +774,605 @@
       display: none;
     }
 
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .life {
+      padding: 1.15rem 1.35rem 1.25rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .life h2 { margin-bottom: 0.35rem; }
+
+    .life .explain {
+      margin: 0 0 0.85rem;
+      max-width: 68ch;
+      color: var(--ink-soft);
+    }
+
+    .life-board {
+      position: relative;
+      margin: 0;
+      background:
+        radial-gradient(520px 200px at 8% 0%, rgba(196, 154, 90, 0.16), transparent 70%),
+        linear-gradient(180deg, #fbf8f3, #f4eee6);
+      border: 1px solid #eadfD0;
+      border-radius: 12px;
+    }
+
+    .rooms {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.7rem;
+      margin: 0;
+      padding: 2.5rem 0.85rem 4.6rem;
+      list-style: none;
+    }
+
+    .learn {
+      position: absolute;
+      left: 4%;
+      width: 92%;
+      top: 0.15rem;
+      height: 2.8rem;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .learn path {
+      fill: none;
+      stroke: var(--steel);
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: draw-learn 16s linear infinite;
+    }
+
+    .learn-label {
+      position: absolute;
+      top: 0;
+      left: 58%;
+      margin: 0;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--steel);
+      background: #fff;
+      border-radius: 99px;
+      padding: 0.05rem 0.45rem;
+      white-space: nowrap;
+    }
+
+    @keyframes draw-learn {
+      0%, 68% { stroke-dashoffset: 1; }
+      86%, 100% { stroke-dashoffset: 0; }
+    }
+
+    .room {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 0.45rem;
+      align-content: start;
+      min-height: 11.5rem;
+      padding: 0.7rem 0.7rem 0.75rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.42);
+      box-shadow: inset 0 0 0 1px transparent;
+    }
+
+    .room:nth-child(1) { animation: room-1 16s infinite; }
+    .room:nth-child(2) { animation: room-2 16s infinite; }
+    .room:nth-child(3) { animation: room-3 16s infinite; }
+    .room:nth-child(4) { animation: room-4 16s infinite; }
+
+    @keyframes room-1 {
+      0%, 16% { background: #fff; box-shadow: inset 0 0 0 1.5px var(--steel); }
+      22%, 100% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+    }
+    @keyframes room-2 {
+      0%, 22% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+      26%, 42% { background: #fff; box-shadow: inset 0 0 0 1.5px var(--steel); }
+      48%, 100% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+    }
+    @keyframes room-3 {
+      0%, 48% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+      52%, 68% { background: #fff; box-shadow: inset 0 0 0 1.5px var(--steel); }
+      74%, 100% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+    }
+    @keyframes room-4 {
+      0%, 74% { background: rgba(255, 255, 255, 0.42); box-shadow: inset 0 0 0 1px transparent; }
+      78%, 100% { background: #fff; box-shadow: inset 0 0 0 1.5px var(--steel); }
+    }
+
+    .room-kicker {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--steel);
+    }
+
+    .room-line {
+      margin: 0;
+      font-size: 0.86rem;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    .art {
+      height: 4.6rem;
+      display: flex;
+      align-items: flex-end;
+      gap: 0.45rem;
+    }
+
+    .sheetlet {
+      width: 3.1rem;
+      height: 3.8rem;
+      padding: 0.45rem 0.4rem;
+      border-radius: 3px;
+      background: #fff;
+      border: 1px solid #d7c7b6;
+      box-shadow: 2px 2px 0 rgba(92, 55, 28, 0.08);
+      display: grid;
+      align-content: start;
+      gap: 0.28rem;
+    }
+
+    .sheetlet i {
+      display: block;
+      height: 0.28rem;
+      border-radius: 99px;
+      background: #e4d8cc;
+    }
+
+    .sheetlet i:first-child { width: 70%; background: var(--steel); }
+
+    .seal {
+      width: 1.7rem;
+      height: 1.7rem;
+      margin-bottom: 0.35rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #1c1612;
+      color: #f6ead6;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .book {
+      width: 100%;
+      max-width: 8.5rem;
+      display: grid;
+      gap: 0.32rem;
+    }
+
+    .book .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 0.95rem;
+      padding: 0 0.4rem;
+      border-radius: 4px;
+      background: #efe2d0;
+    }
+
+    .book .row.hot {
+      animation: heat 16s infinite;
+    }
+
+    .book .row em {
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      color: var(--signal);
+    }
+
+    @keyframes heat {
+      0%, 22% { background: var(--signal-soft); }
+      30%, 100% { background: var(--warn-soft); }
+    }
+
+    .book .row.hot em { animation: heat-word 16s infinite; }
+
+    @keyframes heat-word {
+      0%, 22% { color: var(--signal); }
+      30%, 100% { color: var(--warn); }
+    }
+
+    .stage-gate {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.35rem;
+      height: 4.2rem;
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+
+    .stage-gate .post {
+      width: 0.22rem;
+      height: 2.7rem;
+      border-radius: 2px;
+      background: #c4a882;
+    }
+
+    .plaque {
+      position: relative;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-bottom: 0.45rem;
+      border-radius: 6px;
+      background: #fff;
+      border: 1.5px solid var(--steel);
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--steel-deep);
+    }
+
+    .plaque b {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    .plaque .n2 { opacity: 0; animation: show-two 16s infinite; }
+    .plaque .n1 { animation: hide-one 16s infinite; }
+
+    @keyframes hide-one {
+      0%, 50% { opacity: 1; }
+      56%, 100% { opacity: 0; }
+    }
+    @keyframes show-two {
+      0%, 50% { opacity: 0; }
+      56%, 100% { opacity: 1; }
+    }
+
+    .holds {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.7rem;
+      height: 4.4rem;
+    }
+
+    .hold {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      width: 2.6rem;
+      height: 100%;
+      gap: 0.25rem;
+    }
+
+    .hold b {
+      display: block;
+      width: 100%;
+      border-radius: 4px 4px 1px 1px;
+      background: linear-gradient(180deg, #e4c48a, #8c6239);
+    }
+
+    .hold-12 b {
+      height: 78%;
+      opacity: 1;
+      animation: release-12 16s infinite;
+    }
+
+    .hold-life b {
+      height: 8%;
+      opacity: 0.28;
+      animation: fill-life 16s infinite;
+    }
+
+    @keyframes release-12 {
+      0%, 54% { height: 78%; opacity: 1; }
+      72%, 100% { height: 26%; opacity: 0.38; }
+    }
+
+    @keyframes fill-life {
+      0%, 54% { height: 8%; opacity: 0.28; }
+      72%, 100% { height: 100%; opacity: 1; }
+    }
+
+    .hold small {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .motion {
+      position: absolute;
+      left: 0.85rem;
+      right: 0.85rem;
+      bottom: 0;
+      height: 4.4rem;
+      pointer-events: none;
+    }
+
+    .track {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 1.85rem;
+      height: 2px;
+      background: #e0d2c4;
+      z-index: 1;
+    }
+
+    .walker,
+    .ghost {
+      position: absolute;
+      z-index: 2;
+      bottom: 1.15rem;
+      width: 1.35rem;
+      height: 1.7rem;
+      margin-left: -0.67rem;
+      border-radius: 2px;
+      background: #faf7f2;
+      border: 1px solid var(--steel);
+      box-shadow: 0 1px 2px rgba(92, 61, 34, 0.16);
+    }
+
+    .walker {
+      left: 12.5%;
+      animation: walk 16s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+    }
+
+    .walker::before,
+    .ghost::before {
+      content: "";
+      position: absolute;
+      top: 0.28rem;
+      left: 0.22rem;
+      right: 0.22rem;
+      height: 2px;
+      background: var(--steel);
+      box-shadow: 0 4px 0 rgba(140, 98, 57, 0.45), 0 8px 0 rgba(140, 98, 57, 0.28);
+    }
+
+    .ghost {
+      left: 37.5%;
+      background: var(--warn-soft);
+      border: 1.5px dashed var(--warn);
+      opacity: 0;
+      animation: ghost-in 16s infinite;
+    }
+
+    .ghost::before { display: none; }
+
+    .ghost-label {
+      position: absolute;
+      z-index: 2;
+      left: 37.5%;
+      bottom: 2.75rem;
+      margin: 0;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.02em;
+      color: var(--ink-soft);
+      white-space: nowrap;
+      background: #fff;
+      border: 1px solid #e0d2c4;
+      border-radius: 99px;
+      padding: 0.05rem 0.35rem;
+      opacity: 0;
+      animation: ghost-in 16s infinite;
+    }
+
+    @keyframes walk {
+      0%, 16% { left: 12.5%; }
+      26%, 42% { left: 37.5%; }
+      52%, 68% { left: 62.5%; }
+      78%, 100% { left: 87.5%; }
+    }
+
+    @keyframes ghost-in {
+      0%, 42% { opacity: 0; }
+      50%, 100% { opacity: 1; }
+    }
+
+    .life figcaption,
+    .refuse p,
+    .sources p {
+      margin: 0.75rem 0 0;
+      max-width: 72ch;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .refuse,
+    .sources {
+      padding: 1rem 1.35rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .principles {
+      margin: 0.7rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+
+    .principles li {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      padding: 0.85rem 0.9rem 0.95rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fffdf9;
+    }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      margin-bottom: 0.65rem;
+      border-radius: 50%;
+      background: #f4eadc;
+      color: var(--steel-deep);
+    }
+
+    .mark svg,
+    .found .mark svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .found .mark {
+      width: 1.85rem;
+      height: 1.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .principles li,
+      .found-row {
+        animation: card-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      .principles li:nth-child(2) { animation-delay: 70ms; }
+      .principles li:nth-child(3) { animation-delay: 140ms; }
+    }
+
+    @keyframes card-in {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .principles strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .sources .explain,
+    .foundation .explain {
+      margin: 0 0 0.75rem;
+      max-width: 62ch;
+      color: var(--ink-soft);
+    }
+
+    .source-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.65rem;
+      margin-top: 0.75rem;
+    }
+
+    .source-row a {
+      display: block;
+      color: var(--steel-deep);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .source-row a:hover { border-bottom-color: var(--steel); }
+
+    .source-row span {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--ink-soft);
+      font-weight: 400;
+      font-size: 0.82rem;
+    }
+
     @media (max-width: 900px) {
       header.hero,
       .tri,
       .behavior,
-      .anti-list {
+      .anti-list,
+      .principles {
         grid-template-columns: 1fr;
       }
+      .lifetime { grid-column: 1; grid-row: auto; }
+      .lifetime-stage { height: 180px; }
+      .lifetime figcaption { text-align: center; padding-right: 0; }
+      .decision-path { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 0.65rem; }
+      .decision-path::before { display: none; }
       .tri > section { border-right: none; border-bottom: 1px solid var(--line); }
       .tri > section:last-child { border-bottom: none; }
       .pick { grid-template-columns: 1fr; gap: 0.2rem; }
       h1 { max-width: none; }
       .found-row { grid-template-columns: 1fr 1fr; }
+      .hook { font-size: 1.35rem; }
+      .lede { font-size: 1.08rem; }
+      .rooms { grid-template-columns: 1fr 1fr; gap: 0.85rem; padding: 0.85rem; }
+      .room { min-height: 0; padding: 0.85rem; }
+      .room-kicker { font-size: 0.78rem; }
+      .room-line { font-size: 1rem; }
+      .art { height: auto; min-height: 3.2rem; }
+      .principles li { font-size: 1.02rem; }
+      .learn, .learn-label { display: none; }
+      .motion { display: none; }
+      .room { animation: none; background: #fff; box-shadow: inset 0 0 0 1px #e4d8cc; }
+      .plaque .n1, .plaque .n2, .book .row.hot, .book .row.hot em, .hold-12 b, .hold-life b { animation: none; }
+      .plaque .n1 { opacity: 0; }
+      .plaque .n2 { opacity: 1; }
+      .book .row.hot { background: var(--warn-soft); }
+      .book .row.hot em { color: var(--warn); }
+      .hold-12 b { height: 26%; opacity: 0.38; }
+      .hold-life b { height: 100%; opacity: 1; }
+      .source-row { grid-template-columns: 1fr 1fr; }
       table.decisions td.problem,
       table.decisions td.reach,
       table.decisions td.example { width: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .room, .walker, .ghost, .ghost-label, .book .row.hot, .book .row.hot em,
+      .plaque .n1, .plaque .n2, .hold-12 b, .hold-life b, .learn path,
+      .trails path, .hold-ring, .decision-path li, .decision-path .pip, .principles li, .found-row { animation: none; }
+      .trails path { opacity: 0; }
+      .guide path { opacity: 0.5; }
+      .decision-path li { color: var(--ink); }
+      .hold-ring { opacity: 1; }
+      .decision-path .pip {
+        background: var(--warn-soft);
+        border-color: var(--steel);
+      }
+      .learn path { stroke-dashoffset: 0; }
+      .room { background: #fff; box-shadow: inset 0 0 0 1px #e4d8cc; }
+      .walker { left: 87.5%; }
+      .ghost, .ghost-label { opacity: 1; }
+      .plaque .n1 { opacity: 0; }
+      .plaque .n2 { opacity: 1; }
+      .book .row.hot { background: var(--warn-soft); }
+      .book .row.hot em { color: var(--warn); }
+      .hold-12 b { height: 26%; opacity: 0.38; }
+      .hold-life b { height: 100%; opacity: 1; }
     }
 
     @media print {
@@ -625,8 +1402,26 @@
       section { padding: 0.55rem 0 0.65rem; }
       footer.meta { padding: 0.45rem 0 0; background: none; }
       .foundation { padding: 0.45rem 0; background: none; }
-      .layer { animation: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .panel, .antis, .foundation { break-inside: avoid; }
+      .layer, .room, .walker, .ghost, .ghost-label, .book .row.hot, .book .row.hot em,
+      .plaque .n1, .plaque .n2, .hold-12 b, .hold-life b, .learn path,
+      .trails path, .hold-ring, .decision-path li, .decision-path .pip, .principles li, .found-row {
+        animation: none !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .trails path { opacity: 0; }
+      .guide path { opacity: 0.55; }
+      .hold-ring { opacity: 1; }
+      .walker { left: 87.5%; }
+      .ghost, .ghost-label { opacity: 1; }
+      .plaque .n1 { opacity: 0; }
+      .plaque .n2 { opacity: 1; }
+      .hold-12 b { height: 26%; opacity: 0.38; }
+      .hold-life b { height: 100%; opacity: 1; }
+      .learn path { stroke-dashoffset: 0; }
+      .book .row.hot { background: var(--warn-soft); }
+      .book .row.hot em { color: var(--warn); }
+      .life-board, .panel, .foundation, .refuse { break-inside: avoid; }
       a { color: inherit; text-decoration: none; border-bottom: none !important; }
     }
   </style>
@@ -644,180 +1439,304 @@
 
     <header class="hero">
       <div>
-        <div class="eyebrow">Loan origination and IFRS 9</div>
+        <div class="eyebrow">Decision system</div>
         <h1>Credit risk is for a lifetime. Act early.</h1>
+        <p class="hook">The cutoff is not the system.</p>
         <p class="verbs">Decide → act early → stage → hold</p>
         <p class="lede">
-          Act early. Originate on creditworthiness, then watch the book before the loss is lifetime.
-          Models are lanes. A score at application is not the loss you hold — name SICR before anyone books the number.
-          How the number is <em>built</em> lives on the Analytics card (grain, truth, consume).
+          A credit decision is originated, watched, and revised for the life of the exposure.
         </p>
       </div>
-      <div class="stack" aria-label="Four-layer stack">
-        <div class="layer"><code>ORIGINATE</code><span>Decision — creditworthiness, policy, engine</span></div>
-        <div class="layer"><code>MONITOR</code><span>Book — arrears, emerging risk, in-production scores</span></div>
-        <div class="layer"><code>STAGE</code><span>IFRS 9 — SICR, stage 1 / 2 / 3</span></div>
-        <div class="layer"><code>PROVISION</code><span>ECL — 12-month or lifetime, PD · LGD · EAD, overlay</span></div>
-      </div>
+      <figure class="lifetime">
+        <div class="lifetime-stage">
+        <svg class="stream" viewBox="0 0 460 150" aria-hidden="true">
+          <defs>
+            <radialGradient id="hold-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#e7c49a" stop-opacity="0.85" />
+              <stop offset="42%" stop-color="#9a3412" stop-opacity="0.28" />
+              <stop offset="100%" stop-color="#9a3412" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <g class="guide">
+            <path d="M8 22 C 130 16, 260 70, 392 74" />
+            <path d="M8 48 C 150 42, 270 72, 392 74" />
+            <path d="M8 76 C 170 92, 280 80, 392 74" />
+            <path d="M8 108 C 150 132, 280 100, 392 74" />
+            <path d="M8 134 C 180 146, 290 108, 392 74" />
+            <path d="M78 8 C 170 28, 290 62, 392 74" />
+          </g>
+          <g class="trails">
+            <path d="M8 22 C 130 16, 260 70, 392 74" />
+            <path d="M8 48 C 150 42, 270 72, 392 74" />
+            <path d="M8 76 C 170 92, 280 80, 392 74" />
+            <path d="M8 108 C 150 132, 280 100, 392 74" />
+            <path d="M8 134 C 180 146, 290 108, 392 74" />
+            <path d="M78 8 C 170 28, 290 62, 392 74" />
+          </g>
+          <circle class="hold-glow" cx="392" cy="74" r="48" fill="url(#hold-glow)" />
+          <circle class="hold-ring" cx="392" cy="74" r="24" />
+          <circle class="hold-core" cx="392" cy="74" r="16" />
+          <text x="392" y="122" text-anchor="middle">for life</text>
+        </svg>
+        <canvas id="lifetime-canvas" aria-hidden="true"></canvas>
+        </div>
+        <figcaption>Watched for life. Stage 1 holds twelve months.</figcaption>
+      </figure>
+      <p class="path-note">A score says where the account sits. The system decides what happens next.</p>
+      <ol class="decision-path" aria-label="From the score to the evidence">
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 16a7 7 0 0 1 14 0"/><path d="M12 16l3.2-4.2"/></svg></span>Score</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h6l4 4v12H8z"/><path d="M14 4v4h4"/><path d="M10.5 13h5M10.5 16h3.5"/></svg></span>Policy</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9 12.4l2 2 4-4.4"/></svg></span>Decision</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3L6 13h5l-1 8 8-12h-5z"/></svg></span>Action</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.2"/></svg></span>Outcome</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 7h10v12H8z"/><path d="M6 5h10"/><path d="M10.5 11.5h5M10.5 14.5h3.5"/></svg></span>Evidence</li>
+      </ol>
     </header>
 
-    <section>
-      <h2>Problem → use → example</h2>
-      <table class="decisions">
-        <thead>
-          <tr>
-            <th>If the real problem is…</th>
-            <th>Use</th>
-            <th>Example case</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="problem">New credit without a named affordability test</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA Guidelines on loan origination and monitoring"><b>Origination standard</b></a></td>
-            <td class="example">B2B partner or consumer loan: creditworthiness, data used, and who can override — not a gut “looks fine”</td>
-          </tr>
-          <tr>
-            <td class="problem">Cut-off set once, never watched</td>
-            <td class="reach"><a class="use-link" href="https://www.bis.org/basel_framework/chapter/CRE/31.htm" target="_blank" rel="noopener noreferrer" title="Basel CRE31: IRB risk differentiation"><b>In-production scorecard</b></a></td>
-            <td class="example">Application PD: cut-off, through-the-door mix, and override rate on a named cadence — a launch deck is not monitoring</td>
-          </tr>
-          <tr>
-            <td class="problem">Each cut-off trial is a full book backtest</td>
-            <td class="reach"><a class="use-link" href="/bayes-field-card/index.html" title="Bayesian optimisation field card"><b>Bayesian opt</b></a></td>
-            <td class="example">Spend the next portfolio run where last week’s surface still moves the decision. Don’t grid forty cut-offs because the engine can.</td>
-          </tr>
-          <tr>
-            <td class="problem">Policy lives in a person, not the engine</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA GL/2020/06 — automated models in origination"><b>Credit engine + owner</b></a></td>
-            <td class="example">Rule or score change in the engine: test, named owner, rollback — chat is not the policy</td>
-          </tr>
-          <tr>
-            <td class="problem">Book looks calm; early arrears are not</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA loan origination and monitoring — ongoing monitoring"><b>Portfolio watch</b></a></td>
-            <td class="example">Segment PD vs observed default; vintage and product — steering is a change, not a slide</td>
-          </tr>
-          <tr>
-            <td class="problem">Everyone is still “performing”</td>
-            <td class="reach"><a class="use-link" href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer" title="IFRS 9 Financial Instruments"><b>SICR / staging</b></a></td>
-            <td class="example">Significant increase since origination → lifetime ECL (stage 2); credit-impaired → stage 3. A missed payment is a trigger, not a debate</td>
-          </tr>
-          <tr>
-            <td class="problem">Allowance is a round number from last year</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/guidelines-credit-risk-management-practices-and-accounting-expected-credit-losses" target="_blank" rel="noopener noreferrer" title="EBA GL/2017/06 — accounting for expected credit losses"><b>ECL methodology</b></a></td>
-            <td class="example">PD × LGD × EAD, 12-month vs lifetime, forward-looking info — a spreadsheet total is not IFRS 9</td>
-          </tr>
-          <tr>
-            <td class="problem">Model is blind to the downturn you can see</td>
-            <td class="reach"><a class="use-link" href="https://www.bis.org/bcbs/publ/d350.htm" target="_blank" rel="noopener noreferrer" title="BCBS: Guidance on credit risk and accounting for expected credit losses"><b>Judgement overlay</b></a></td>
-            <td class="example">Named overlay, size, and exit test; experienced credit judgement is a control, not a plug</td>
-          </tr>
-          <tr>
-            <td class="problem">PD/LGD/EAD don’t match the grain of the book</td>
-            <td class="reach"><a class="use-link" href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer" title="IFRS 9 — expected credit losses"><b>Named risk parameters</b></a></td>
-            <td class="example">Auto-loan lifetime ECL: account grain, remaining term, prepayment — Analytics card owns the gold table; this card owns the stage</td>
-          </tr>
-          <tr>
-            <td class="problem">Override rate is “how we actually decide”</td>
-            <td class="reach"><a class="use-link" href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer" title="EBA origination guidelines — governance of automated models"><b>Override governance</b></a></td>
-            <td class="example">Who can stretch policy, why, and how it is sampled — silent overrides are a second scorecard</td>
-          </tr>
-          <tr>
-            <td class="problem">Capital model and IFRS 9 model never speak</td>
-            <td class="reach"><a class="use-link" href="https://www.bis.org/basel_framework/chapter/CRE/31.htm" target="_blank" rel="noopener noreferrer" title="Basel IRB risk differentiation"><b>Know the two jobs</b></a></td>
-            <td class="example">IRB EL ≠ IFRS 9 ECL. Reconcile the difference; don’t paste one into the other</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="note">Default order: creditworthiness + policy in the engine → watch the book and the score → stage on SICR → hold 12-month or lifetime ECL (overlay named). Analytics owns grain and gold; this card owns the decision and the stage.</p>
+    <section class="life">
+      <h2>How I run one account</h2>
+      <p class="explain">Observed performance changes the next cutoff and the next control.</p>
+      <figure>
+        <p id="life-desc" class="sr">
+          Four moves on one account, then the outcome returns to the watch. Originate: creditworthiness is in the engine and an override has a name.
+          Monitor: the account is still paying and the risk since origination is already up. A faded file stays in stage 1, so the hold stays at twelve months.
+          Stage: that increase is named, so the account leaves stage 1.
+          Provision: the twelve-month hold is the stage 1 capital. The lifetime hold replaces it only in stage 2. The return arc is the next decision: what was observed changes the next cutoff and the next control.
+        </p>
+        <div class="life-board">
+          <svg class="learn" viewBox="0 0 1000 72" preserveAspectRatio="none" aria-hidden="true">
+            <path pathLength="1" d="M 880 66 C 880 10, 420 10, 370 66" />
+          </svg>
+          <p class="learn-label">next decision</p>
+          <ol class="rooms">
+            <li class="room">
+              <p class="room-kicker">Originate</p>
+              <div class="art" aria-hidden="true">
+                <span class="sheetlet"><i></i><i></i><i></i></span>
+                <span class="seal">yes</span>
+              </div>
+              <p class="room-line">Creditworthiness sits in the engine. An override has a name.</p>
+            </li>
+            <li class="room">
+              <p class="room-kicker">Monitor</p>
+              <div class="art" aria-hidden="true">
+                <span class="book">
+                  <span class="row"></span>
+                  <span class="row hot"><em>paid</em></span>
+                  <span class="row"></span>
+                </span>
+              </div>
+              <p class="room-line">Still paying. The risk since we lent is already up.</p>
+            </li>
+            <li class="room">
+              <p class="room-kicker">Stage</p>
+              <div class="art" aria-hidden="true">
+                <span class="stage-gate">
+                  <span class="post"></span>
+                  <span class="plaque"><b class="n1">1</b><b class="n2">2</b></span>
+                  <span class="post"></span>
+                </span>
+              </div>
+              <p class="room-line">Name the increase. The account leaves stage 1.</p>
+            </li>
+            <li class="room">
+              <p class="room-kicker">Provision</p>
+              <div class="art" aria-hidden="true">
+                <span class="holds">
+                  <span class="hold hold-12"><b></b><small>12 mo</small></span>
+                  <span class="hold hold-life"><b></b><small>life</small></span>
+                </span>
+              </div>
+              <p class="room-line">Stage 1 keeps twelve months. Lifetime starts at stage 2.</p>
+            </li>
+          </ol>
+          <div class="motion" aria-hidden="true">
+            <div class="track"></div>
+            <div class="walker"></div>
+            <div class="ghost"></div>
+            <p class="ghost-label">left in stage 1</p>
+          </div>
+        </div>
+        <figcaption>
+          Stage 1 holds twelve months. Lifetime capital replaces it only after the account leaves stage 1. Analytics owns how the number is built.
+        </figcaption>
+      </figure>
     </section>
 
-    <div class="tri">
-      <section>
-        <h2>Tool picker</h2>
-        <div class="picker">
-          <div class="pick"><strong><a href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer">EBA origination GL</a></strong><span>Creditworthiness, monitoring, model governance</span></div>
-          <div class="pick"><strong><a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer">IFRS 9</a></strong><span>Staging, SICR, 12-month vs lifetime ECL</span></div>
-          <div class="pick"><strong><a href="https://www.eba.europa.eu/guidelines-credit-risk-management-practices-and-accounting-expected-credit-losses" target="_blank" rel="noopener noreferrer">EBA ECL GL</a></strong><span>Sound ECL practices next to the Standard</span></div>
-          <div class="pick"><strong><a href="https://www.bis.org/bcbs/publ/d350.htm" target="_blank" rel="noopener noreferrer">BCBS ECL guidance</a></strong><span>Judgement, data, and allowance quality</span></div>
-          <div class="pick"><strong><a href="https://www.bis.org/basel_framework/chapter/CRE/31.htm" target="_blank" rel="noopener noreferrer">IRB differentiation</a></strong><span>PD that actually ranks risk — not a label</span></div>
-          <div class="pick"><strong><a href="https://www.ifrs.org/supporting-implementation/supporting-materials-by-ifrs-standards/ifrs-9/" target="_blank" rel="noopener noreferrer">IFRS 9 support</a></strong><span>Implementation notes, not a vendor deck</span></div>
-          <div class="pick"><strong><a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer">PD · LGD · EAD</a></strong><span>Name the three; freeze the cut you used</span></div>
-        </div>
-      </section>
+    <section class="refuse">
+      <h2>Where judgement stays</h2>
+      <ol class="principles">
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6.5 19c1.1-2.8 3-4.2 5.5-4.2s4.4 1.4 5.5 4.2"/></svg></span><strong>Move it while it is still paying.</strong> If risk has risen since origination, do not wait for a missed installment.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v16M8 19h8"/><path d="M12 7L7 11h3.2M12 7l5 4h-3.2"/><path d="M5.2 11h3.6l-1.8 3.2zM15.2 11h3.6l-1.8 3.2z"/></svg></span><strong>Write the decision, not the score.</strong> Name the cutoff and who may override before anyone calls it decided.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 8H5v4"/><path d="M6 12a6.5 6.5 0 1 0 2.2-5"/></svg></span><strong>Leave a way back.</strong> An extra amount has an owner and a date to come off, or it is not booked.</li>
+      </ol>
+    </section>
 
-      <section>
-        <h2>Decision vs number</h2>
-        <div class="gates">
-          <div class="gate">
-            <strong>Decision · originate</strong>
-            <span>Creditworthiness, policy, engine, override. A score without a cut-off owner is not a decision.</span>
-          </div>
-          <div class="gate">
-            <strong>Number · hold</strong>
-            <span>Stage, then ECL. Analytics can build the table; this card still owns SICR and the overlay.</span>
-          </div>
-          <div class="gate">
-            <strong>Memory check</strong>
-            <span>ORIGINATE = decision. MONITOR = book. STAGE = SICR. PROVISION = the loss you hold.</span>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Ladder + gates</h2>
-        <ol class="ladder">
-          <li>Creditworthiness + policy in the engine</li>
-          <li>Cut-off + override owner</li>
-          <li>In-production monitoring</li>
-          <li>SICR / stage 1–3</li>
-          <li>PD · LGD · EAD at the right grain</li>
-          <li>Overlay named — or no plug</li>
-        </ol>
-        <div class="gate" style="margin-top:0.75rem">
-          <strong>Kill switch</strong>
-          <span>If you can’t name the stage, the parameters, and who owns the overlay, you don’t book the number.</span>
-        </div>
-      </section>
-    </div>
-
-    <section class="antis">
-      <h2>Anti-patterns</h2>
-      <ul class="anti-list">
-        <li>Cutoff as the whole risk system</li>
-        <li>Silent overrides as a second policy</li>
-        <li>Stage 1 forever because “they’re paying”</li>
-        <li>Pasting IRB EL into IFRS 9 ECL</li>
-        <li>Unnamed overlay that never exits</li>
-        <li>Scorecard with no in-production watch</li>
-        <li>Vendor brochure as the methodology</li>
-        <li>Building gold tables and skipping staging</li>
-      </ul>
+    <section class="sources">
+      <h2>Inside the fence</h2>
+      <p class="explain">Regulation is the fence. Judgement connects it to the decision.</p>
+      <div class="source-row">
+        <a href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring" target="_blank" rel="noopener noreferrer">EBA origination
+          <span>What the lending decision must show</span>
+        </a>
+        <a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/" target="_blank" rel="noopener noreferrer">IFRS 9
+          <span>How an increase becomes the loss we hold</span>
+        </a>
+        <a href="https://www.eba.europa.eu/guidelines-credit-risk-management-practices-and-accounting-expected-credit-losses" target="_blank" rel="noopener noreferrer">EBA expected loss
+          <span>How the allowance is built</span>
+        </a>
+        <a href="https://www.bis.org/bcbs/publ/d350.htm" target="_blank" rel="noopener noreferrer">Basel expected loss
+          <span>When judgement may enter, and when it leaves</span>
+        </a>
+      </div>
     </section>
 
     <section class="foundation" aria-label="Always-on foundation">
       <h2>Always on</h2>
+      <p class="explain">Watch the result, then change the next decision.</p>
       <div class="found-row">
-        <div class="found"><strong>Security</strong><span>Who can see PII and flip a policy rule</span></div>
-        <div class="found"><strong>Governance</strong><span>Model, cut-off, and overlay owners</span></div>
-        <div class="found"><strong>Observability</strong><span>Score, arrears, and stage movement</span></div>
-        <div class="found"><strong>Evals</strong><span>Backtest and through-the-door mix</span></div>
-        <div class="found"><strong>Human Approve</strong><span>Policy, SICR, overlay — not auto-booked</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5l7 2.8v5.8c0 4.2-2.8 6.6-7 8.4-4.2-1.8-7-4.2-7-8.4V6.3z"/></svg></span><strong>Security</strong><span>Who can see PII and flip a policy rule</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16M7 19V10M12 19V10M17 19V10M4 10h16L12 4.5z"/></svg></span><strong>Governance</strong><span>Model, cut-off, and overlay owners</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle cx="12" cy="12" r="2.4"/></svg></span><strong>Observability</strong><span>Score, arrears, and stage movement</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9 12.4l2 2 4-4.4"/></svg></span><strong>Evals</strong><span>Backtest and through-the-door mix</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6.5 19c1.1-2.8 3-4.2 5.5-4.2s4.4 1.4 5.5 4.2"/></svg></span><strong>Human Approve</strong><span>Policy, SICR, overlay — not auto-booked</span></div>
       </div>
     </section>
 
     <footer class="meta">
       <div class="version-row">
-        <div class="version" id="version-stamp">v2026.09 · First public card 21 Sep 2026 · Next: October 2026</div>
+        <div class="version" id="version-stamp">Reviewed October 2026 · Next: November 2026</div>
         <div class="credit">
           <span>Alex Touvras</span>
           <a href="https://alextouvras.com">alextouvras.com</a>
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> First public card — ORIGINATE → MONITOR → STAGE → PROVISION</p>
+      <p class="changed"><b>Changed</b> Stage 1 keeps a twelve-month hold. Lifetime capital starts at stage 2.</p>
     </footer>
   </article>
+  <script>
+    (function () {
+      var canvas = document.getElementById("lifetime-canvas");
+      var stage = canvas && canvas.parentElement;
+      if (!canvas || !stage) return;
+      var ctx = canvas.getContext("2d");
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var curves = [
+        [[0.02, 0.16], [0.28, 0.05], [0.55, 0.28], [0.76, 0.44]],
+        [[0.0, 0.32], [0.30, 0.26], [0.52, 0.36], [0.76, 0.44]],
+        [[0.0, 0.50], [0.26, 0.62], [0.54, 0.50], [0.76, 0.44]],
+        [[0.02, 0.68], [0.32, 0.82], [0.56, 0.60], [0.76, 0.44]],
+        [[0.08, 0.86], [0.36, 0.94], [0.58, 0.66], [0.76, 0.44]],
+        [[0.14, 0.06], [0.36, 0.14], [0.56, 0.30], [0.76, 0.44]]
+      ];
+      function point(c, t) {
+        var u = 1 - t;
+        return [
+          u * u * u * c[0][0] + 3 * u * u * t * c[1][0] + 3 * u * t * t * c[2][0] + t * t * t * c[3][0],
+          u * u * u * c[0][1] + 3 * u * u * t * c[1][1] + 3 * u * t * t * c[2][1] + t * t * t * c[3][1]
+        ];
+      }
+      var count = 340;
+      var motes = [];
+      for (var i = 0; i < count; i++) {
+        motes.push({
+          curve: i % curves.length,
+          t: Math.random(),
+          speed: 0.18 + Math.random() * 0.22,
+          size: 0.25 + Math.random() * 1.15,
+          bright: Math.random(),
+          drift: (Math.random() - 0.5) * 0.16
+        });
+      }
+      var sprite = document.createElement("canvas");
+      sprite.width = 48;
+      sprite.height = 48;
+      var sg = sprite.getContext("2d");
+      var glow = sg.createRadialGradient(24, 24, 0, 24, 24, 24);
+      glow.addColorStop(0, "rgba(255, 244, 214, 1)");
+      glow.addColorStop(0.18, "rgba(232, 190, 110, 0.85)");
+      glow.addColorStop(0.45, "rgba(176, 112, 48, 0.28)");
+      glow.addColorStop(1, "rgba(176, 112, 48, 0)");
+      sg.fillStyle = glow;
+      sg.fillRect(0, 0, 48, 48);
+
+      var sized = { w: 0, h: 0, dpr: 1 };
+      function fit() {
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var w = stage.clientWidth;
+        var h = stage.clientHeight;
+        if (w === sized.w && h === sized.h && dpr === sized.dpr) return sized;
+        sized = { w: w, h: h, dpr: dpr };
+        canvas.width = Math.max(1, Math.round(w * dpr));
+        canvas.height = Math.max(1, Math.round(h * dpr));
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        return sized;
+      }
+
+      var last = 0;
+      function draw(now) {
+        var box = fit();
+        var dt = last ? Math.min(0.05, (now - last) / 1000) : 0.016;
+        last = now || 0;
+        var w = box.w;
+        var h = box.h;
+        ctx.clearRect(0, 0, w, h);
+        var fx = w * 0.76;
+        var fy = h * 0.44;
+        motes.forEach(function (m) {
+          if (!reduce) m.t += m.speed * dt;
+          if (m.t > 1) m.t -= 1;
+          var fade = 1;
+          if (m.t < 0.05) fade = m.t / 0.05;
+          if (m.t > 0.88) fade = Math.max(0, (1 - m.t) / 0.12);
+          if (fade <= 0) return;
+          var c = curves[m.curve];
+          var p = point(c, m.t);
+          var ahead = point(c, Math.min(1, m.t + 0.02));
+          var dx = ahead[0] - p[0];
+          var dy = ahead[1] - p[1];
+          var len = Math.hypot(dx, dy) || 1;
+          var spread = m.drift * (1 - m.t) * (1 - m.t);
+          var x = (p[0] + (-dy / len) * spread) * w;
+          var y = (p[1] + (dx / len) * spread) * h;
+          var near = Math.min(1, m.t * 1.15);
+          var size = (3.2 + m.size * 5.2) * (0.45 + near * 0.85);
+          ctx.globalAlpha = fade * (0.28 + m.bright * 0.55) * (0.45 + near * 0.7);
+          ctx.drawImage(sprite, x - size / 2, y - size / 2, size, size);
+        });
+        ctx.globalAlpha = 1;
+        var pulse = reduce ? 1 : 0.85 + Math.sin((now || 0) / 700) * 0.15;
+        var haze = ctx.createRadialGradient(fx, fy, 6, fx, fy, 92 * pulse);
+        haze.addColorStop(0, "rgba(236, 206, 150, 0.72)");
+        haze.addColorStop(0.35, "rgba(176, 112, 48, 0.22)");
+        haze.addColorStop(1, "rgba(176, 112, 48, 0)");
+        ctx.fillStyle = haze;
+        ctx.beginPath();
+        ctx.arc(fx, fy, 92, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(fx, fy, 22, 0, Math.PI * 2);
+        ctx.fillStyle = "#14110e";
+        ctx.fill();
+        ctx.lineWidth = 1.4;
+        ctx.strokeStyle = "rgba(236, 214, 176, 0.9)";
+        ctx.beginPath();
+        ctx.arc(fx, fy, 28, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.font = "600 11px 'IBM Plex Mono', ui-monospace, monospace";
+        ctx.fillStyle = "#8c6239";
+        ctx.textAlign = "center";
+        ctx.fillText("for life", fx, fy + 52);
+        if (!reduce) requestAnimationFrame(draw);
+      }
+      stage.classList.add("is-live");
+      requestAnimationFrame(draw);
+      window.addEventListener("resize", function () {
+        if (reduce) draw(0);
+      });
+    })();
+  </script>
   <script>
     (function () {
       var btn = document.getElementById("copy-link");
