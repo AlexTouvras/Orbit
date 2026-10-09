@@ -10,7 +10,8 @@ Live: `/sdlc-field-card/` (this folder’s `index.html`). Hub competency: **SDLC
 - Hook: `A check that cannot fail is not a gate.`
 - Pillars: Plan & design → Build & verify → Release & deploy → Maintain & improve
 - The opening picture is one change on a pipeline. The change walks the four pillars. Three gates sit on the track: reviewed, can fail, deployed. Those gates are checks. They are not extra pillars.
-- The return is labeled `next change`. It is violet and sits above the forward track. Do not redraw this picture as a loop. The AI card owns “loop”.
+- The return is labeled `next change`. It is a dashed rail under the forward track. The picture is a dark stage with a lime rail. Do not redraw this picture as a loop. The AI card owns “loop”.
+- Each pillar names the handoff: need → a page, page → a change, change → a version, use → the next change.
 - Security is named in design (who can reach the data, how it can be abused). Verify includes those security checks: they have to fail the build, with the tests.
 - A fix goes back through the same four pillars. The first release is not the end. The previous version stays one deploy away.
 - Technology delivery — calendars, proof, and the cutover sequence — stays on the Delivery card. This card still owns release, deploy, maintain, and improve of the software.
@@ -33,9 +34,9 @@ These stay on the sheet, under Where judgement stays, unless that month’s rese
 
 ## Motion
 
-The change walks plan, then build, then release, then maintain. Each gate holds, then opens. At build, the test that fails for the wrong reason is struck through and the check that stops the build stays. At release, the previous version appears and stays while the change moves on. The return stroke then draws back to plan and design.
+The change walks plan, then build, then release, then maintain along the lime rail. Each gate holds, then opens. At build, the test that fails for the wrong reason is struck through and the check that stops the build stays. At release, the previous version appears and stays while the change moves on. The return rail under the pillars then draws back to plan and design.
 
-`prefers-reduced-motion` and print show the end state: the change at maintain, the last version still visible, the bad test struck, the gates open, the return drawn. Under 900px the return and the walking change hide, each pair of pillars is its own row, and under 640px each pillar is its own row. The caption carries the return. The words stay readable with the motion off. No scroll-jack.
+`prefers-reduced-motion` and print show the end state: the change at maintain, the last version still visible, the bad test struck, the gates open, the return rail drawn. Under 900px the pillars stack on a vertical rail, the walking change hides, and the return rail stays under the stack. The words stay readable with the motion off. No scroll-jack.
 
 The robot is already on this sheet. Its six lines live in `public/field-card-robot.mjs` and win over storytelling `field-cards.ts`. A press that moves drags the robot. A short tap tucks it.
 
