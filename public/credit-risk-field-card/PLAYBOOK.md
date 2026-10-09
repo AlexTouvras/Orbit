@@ -27,11 +27,11 @@ Live: `/credit-risk-field-card/` (this folder’s `index.html`). Hub competency:
 
 The file walks originate, then monitor, then stage, then provision. The watched row turns while it still says paid. The plaque turns from 1 to 2. While the plaque says 1, the twelve-month stack is the hold and the lifetime stack stays down. After the plaque says 2, the twelve-month stack releases and the lifetime stack fills. The arc labeled “next decision” draws back toward monitor: observed performance changes the next cutoff and the next control.
 
-Beside the headline, streams of accounts run into one lifetime hold. Under the hook, Score → Policy → Decision → Action → Outcome → Evidence lights in that order, and a hovered step stays lit. The three judgement lines are cards. Always on fades in once, together. Do not hide those words until scroll, and do not scroll-jack.
+Beside the headline, accounts stream toward the life of the book. The caption says stage 1 holds twelve months. Under the hook, Score → Policy → Decision → Action → Outcome → Evidence lights in that order, and a hovered step stays lit. The three judgement lines are cards. Always on fades in once, together. Do not hide those words until scroll, and do not scroll-jack.
 
 `prefers-reduced-motion` and print show the end state: streams drawn, hold lit, every path step lit, the faded file and the arc still visible. The words stay readable with the motion off. On a narrow screen the arc hides and the sentence carries the return. The stream and the path stay.
 
-Storytelling `household` and `grid` pictures stay on their own stories. The robot is the only storytelling piece on this sheet.
+Storytelling `household` and `grid` pictures stay on their own stories. The robot is already on this sheet. Its six lines live in `public/field-card-robot.mjs` and win over storytelling `field-cards.ts`. They say the cutoff, the twelve-month stage 1 hold, that a score is not the call, that standards are the fence, and that the result changes the next decision.
 
 ## Sources
 

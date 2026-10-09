@@ -109,10 +109,10 @@ describe("field card robot copy", () => {
     const credit = cards.find((card) => card.id === "credit");
     assert.ok(credit);
     assert.equal(credit.lines.length, 6);
-    assert.equal(credit.lines[0], "This card is the life of the loan. Act before the loss.");
+    assert.equal(credit.lines[0], "Credit is for a lifetime. The cutoff is not the system.");
     assert.equal(
       sectionLine(credit.sections, "How I run one account"),
-      "The cutoff is not the system. Watch what is next.",
+      "Stage 1 holds twelve months. Lifetime starts at stage 2.",
     );
     for (const words of credit.lines) {
       assert.ok(words.length <= 64);
