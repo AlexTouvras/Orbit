@@ -75,9 +75,38 @@ When keeping previous, decline. Do not try to fix the HTML in this run.
 - **Analytics:** ASK → GRAIN → TRUTH → USE. Not a Fabric/Power BI brochure.
 - **Delivery:** INTENT → WINDOW → PROOF → CUTOVER. Not Scrum/SAFe/Azure DevOps brochure.
 - **SDLC** (Orbit-hosted, monthly): H1 `Build software that stays in use`. Pillars Plan & design → Build & verify → Release & deploy → Maintain & improve. Read `public/sdlc-field-card/PLAYBOOK.md`. Security is named in design (who can reach the data). Verify includes those security checks; they have to fail the build. Job table still judges a written plan, threat-in-design, a verified build, a release people run, and continuous improvement from what you learn in use. A fix goes back through the same four pillars. The first release is not the end. Keep: the plan fits on a page a person will review; a spec file is not shared understanding; a person drops tests that do not fail for the right reason. Calendars, proof, and cutover stay on Delivery. This card owns release, deploy, maintain, and improve of the software. Not a SAFe brochure. Not an AI-native brochure.
-- **Credit risk** (Orbit-hosted, monthly): H1 `Credit risk is for a lifetime. Act early.` Spine ORIGINATE → MONITOR → STAGE → PROVISION. Read `public/credit-risk-field-card/PLAYBOOK.md`. The opening picture is one account (engine, watch while paying, stage the increase, 12-month ECL in stage 1, lifetime ECL from stage 2, including a credit-impaired stage 3). Do not put the job table back in front of that picture. Not a vendor/scorecard brochure. Grain/gold stays on Analytics.
+- **Credit risk** (Orbit-hosted, monthly): H1 `Credit risk is for a lifetime. Act early.` Spine ORIGINATE → MONITOR → STAGE → PROVISION. Read `public/credit-risk-field-card/PLAYBOOK.md`. The opening picture is one account (engine, watch while paying, stage the increase, 12-month ECL in stage 1, lifetime ECL from stage 2, including a credit-impaired stage 3). Do not put the job table back in front of that picture. Not a vendor/scorecard brochure. Grain/gold stays on Analytics. The month judges that picture. See “Scene pattern” and “Monthly hosted cards”.
 - **Data & visual storytelling** (Orbit-hosted, monthly): H1 `Turn evidence into a decision`. Operating chain Question → Evidence → Tension → Narrative → Experience → Decision (Representation as form-choice). Craft inside: DWELL → CLAIM → SKETCH → LEAD → OPEN. Story spec + quality gates + kill criteria. The card’s signal field evolves on scroll. Essays stay prose. Grain stays on Analytics. Cutover stays on Delivery.
 - **Bayesian optimisation** (Orbit-hosted method, not Hub): H1 `Bayesian optimisation is a budget of trials, not a search of space`. BOUND → MODEL → ACQ → STOP. Lede is the scarce-trial loop, not the layers/lanes clone. Inference is MODEL only. Not a BoTorch/Ax/AutoML brochure.
+
+## Scene pattern
+
+Credit is the reference scene. The next agent copies the behavior onto one Hub card at a time. Bayes stays a schematic. A monthly run does not convert a card.
+
+What transferred from the pilot:
+
+- The hire value is one case moving through the locked spine. The sentences on that picture are the job.
+- H1, the verb line, and the boundary with the neighboring card stay. A second opinion may correct a term or add one sentence. It does not add a section, a fifth column, a proof strip, or an unpublished rate.
+- Motion is one loop. `prefers-reduced-motion` and print show the end state. Under 640px each move is its own row. The arc may hide on a phone when a sentence carries the return. No scroll-jack.
+- The robot is already on the Hub sheets. Six lines, last line the tuck line, printable ASCII, each line at most 64 characters. A press that moves drags it; a short tap tucks it. That gesture already lives in `public/field-card-robot.mjs`. The Agentic AI sheet inlines its own script, so an AI scene copies the gesture there. Do not mount a second Rive file as the illustration.
+- The warm sheet and the particle sphere belong to the credit picture. The next card keeps its own accent and draws its own subject.
+
+Where the HTML lives:
+
+- SDLC and Story are edited on Orbit. Credit is already the scene.
+- Agentic AI, Analytics, and Delivery are edited in their source repos. Apply review copies the HTML into Orbit. An edit that exists only under `public/` on Orbit is replaced the next time that repo publishes.
+
+One picture per card:
+
+| Card | Picture | Locked spine | Leave with the neighbor |
+|---|---|---|---|
+| SDLC | One change, from the plan through use, then the learning returns as the next change | Plan & design → Build & verify → Release & deploy → Maintain & improve, plus the three lines in `public/sdlc-field-card/PLAYBOOK.md` | Calendars, proof, and cutover stay on Delivery |
+| Story | One claim, from the question to a decision, with the doubt still visible | Question → Evidence → Tension → Narrative → Experience → Decision. Craft strip DWELL → CLAIM → SKETCH → LEAD → OPEN | Essays stay prose. Grain stays on Analytics |
+| Analytics | One number, from the question to a grain someone can use | ASK → GRAIN → TRUTH → USE | The stage stays on Credit. Cutover stays on Delivery |
+| Delivery | One cutover, from the named outcome through the calendars to the cut | INTENT → WINDOW → PROOF → CUTOVER | Release, deploy, maintain, and improve stay on SDLC |
+| Agentic AI | One job, through the thinnest layer that solves it | H1 `Agentic AI is a loop, not a menu`. RAG → AGENT → MCP → A2A | Stack and grain stay on Analytics |
+
+Order: SDLC, then Story, then one source-repo card at a time. Each conversion is its own change. When a card becomes a scene, rewrite that card’s monthly judgment so the picture is the job. Until that rewrite is on `main`, the month keeps judging the picker and the job table.
 
 ## Backup
 
@@ -90,8 +119,8 @@ Judged on Orbit at 17:00 on the 1st, not via source-repo Apply review.
 Run `.cursor/automations/hosted-field-card-monthly-review.json`. This section is the procedure. If the stored Cursor prompt is shorter, follow this section.
 
 1. SDLC research is required before any SDLC edit or no-change decision. Follow `public/sdlc-field-card/PLAYBOOK.md` section “Monthly research”: open sources on the life cycle, then assess whether the picker or job table should change. A month with no opened URLs is not a finished SDLC judgment.
-2. Credit, Story, and Bayes: read `PLAYBOOK.md` when one exists. Credit’s picture is the job. Do not restore a problem/use/example table ahead of it. Judge the four moves and the source links against ORIGINATE → MONITOR → STAGE → PROVISION. Story: DWELL → CLAIM → SKETCH → LEAD → OPEN. Bayes: BOUND → MODEL → ACQ → STOP. SDLC pillars stay Plan & design → Build & verify → Release & deploy → Maintain & improve. Swap by constraint, not hype. Do not invent docs URLs.
-3. Bump each footer stamp: `Reviewed <Month YYYY> · Next: <next month>`. Changed line stays “Monthly review — picker and jobs unchanged” unless that card’s HTML actually changed.
-4. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. `## Summary` has `Decision: update` or `Decision: no-change` per card. SDLC also lists the URLs opened and one sentence of assessment. Do not touch the three source-repo cards in that run. Do not add a Hub competency tile for Bayesian optimisation.
+2. Credit: read `public/credit-risk-field-card/PLAYBOOK.md` and open the links under Inside the fence. Judge the four moves. Stage 1 is 12-month ECL. Lifetime ECL starts at stage 2, including a credit-impaired stage 3. A dead link, or a sentence that teaches the wrong allowance, is an update. Restoring a problem/use/example table, a picker, or a ladder is not an update. Story and Bayes: read `PLAYBOOK.md` and judge the picker and the jobs against the spine. Story stays Question → Evidence → Tension → Narrative → Experience → Decision, with craft DWELL → CLAIM → SKETCH → LEAD → OPEN. Bayes stays BOUND → MODEL → ACQ → STOP. SDLC pillars stay Plan & design → Build & verify → Release & deploy → Maintain & improve. Do not convert Story, Bayes, SDLC, or a source-repo card into a scene in this run. Swap by constraint, not hype. Do not invent docs URLs.
+3. Bump each footer stamp: `Reviewed <Month YYYY> · Next: <next month>`. Credit’s Changed line is `Monthly review — the account picture unchanged` unless that picture’s HTML changed. On the other hosted cards the Changed line stays `Monthly review — picker and jobs unchanged` unless that card’s HTML actually changed.
+4. Open `chore/monthly-field-cards-YYYY-MM` on Orbit. `## Summary` has `Decision: update` or `Decision: no-change` per card. SDLC also lists the URLs opened and one sentence of assessment. Credit also lists the Inside the fence links that were opened. A credit month that did not open them is not finished. Do not touch the three source-repo cards in that run. Do not add a Hub competency tile for Bayesian optimisation.
 
 Do not stamp these cards from the 18:00 Apply-review agent.
