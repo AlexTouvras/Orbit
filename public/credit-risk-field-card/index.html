@@ -16,21 +16,21 @@
   <meta name="twitter:image" content="https://alextouvras.com/opengraph-image" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #18212b;
-      --ink-soft: #3a4654;
-      --muted: #6b7785;
-      --line: #c9d2dc;
-      --paper: #eef2f6;
-      --card: #f8fafc;
-      --steel: #7a4a28;
-      --steel-deep: #5c371c;
-      --signal: #0f766e;
-      --signal-soft: #d7ebe8;
-      --warn: #9a3412;
-      --warn-soft: #f3e0d6;
+      --ink: #1c1914;
+      --ink-soft: #4a433a;
+      --muted: #8a7d6e;
+      --line: #e4d9c8;
+      --paper: #f3eee6;
+      --card: #faf7f2;
+      --steel: #8c6239;
+      --steel-deep: #5c3d22;
+      --signal: #8c6239;
+      --signal-soft: #f3e6d4;
+      --warn: #9a4e24;
+      --warn-soft: #f6e4d4;
       --layer-rag: #6b3d22;
       --layer-agent: #7a4a28;
       --layer-mcp: #0f766e;
@@ -38,7 +38,7 @@
       --shadow: 0 1px 0 rgba(24, 33, 43, 0.06), 0 12px 32px rgba(24, 33, 43, 0.06);
       --radius: 10px;
       --font-display: "Source Serif 4", Georgia, serif;
-      --font-body: "Outfit", system-ui, sans-serif;
+      --font-body: "Source Sans 3", system-ui, sans-serif;
       --font-mono: "IBM Plex Mono", ui-monospace, monospace;
     }
 
@@ -48,8 +48,7 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(1200px 500px at 10% -10%, rgba(36, 90, 122, 0.09), transparent 60%),
-        radial-gradient(900px 400px at 100% 0%, rgba(15, 118, 110, 0.07), transparent 55%),
+        radial-gradient(900px 420px at 100% -10%, rgba(180, 130, 70, 0.16), transparent 55%),
         var(--paper);
       font-family: var(--font-body);
       font-size: 15px;
@@ -76,7 +75,7 @@
       gap: 0.75rem 1.5rem;
       padding: 1rem 1.35rem;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, #fbfcfd, #f3f6f9);
+      background: transparent;
     }
 
     .eyebrow {
@@ -113,7 +112,7 @@
     .channels button:hover,
     .channels a.btn:hover {
       border-color: var(--steel);
-      background: #f0f6fa;
+      background: #f6f0e6;
     }
 
     .channels button:active,
@@ -129,8 +128,8 @@
     h1 {
       margin: 0.35rem 0 0.55rem;
       font-family: var(--font-display);
-      font-size: clamp(1.85rem, 3.4vw, 2.55rem);
-      line-height: 1.12;
+      font-size: clamp(2.15rem, 4.1vw, 3.15rem);
+      line-height: 1.04;
       letter-spacing: -0.02em;
       font-weight: 700;
       max-width: 18ch;
@@ -166,7 +165,7 @@
 
     header.hero {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
       column-gap: 1.25rem;
       row-gap: 0.35rem;
       align-items: center;
@@ -180,19 +179,33 @@
     }
 
     .lifetime figcaption {
-      margin: 0.15rem 0 0;
-      text-align: center;
+      margin: 0.1rem 0 0;
+      text-align: right;
+      padding-right: 0.4rem;
       font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.04em;
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--steel);
     }
 
+    .lifetime-stage {
+      position: relative;
+      height: 248px;
+    }
+
+    .lifetime-stage .stream,
+    .lifetime-stage canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .lifetime-stage.is-live .stream { visibility: hidden; }
+
     .stream {
       display: block;
-      width: 100%;
-      height: auto;
     }
 
     .guide path,
@@ -203,18 +216,9 @@
       stroke-linecap: round;
     }
 
-    .guide path { opacity: 0.22; }
+    .guide path { opacity: 0.38; }
 
-    .trails path {
-      opacity: 0.55;
-      stroke-dasharray: 1.6 8.4;
-      animation: stream-flow 4.6s linear infinite;
-    }
-
-    .trails path:nth-child(odd) {
-      opacity: 0.28;
-      animation-duration: 5.6s;
-    }
+    .trails { display: none; }
 
     .hold-core { fill: #1a120c; }
     .hold-ring {
@@ -264,9 +268,9 @@
       position: absolute;
       left: 8%;
       right: 8%;
-      top: 0.72rem;
+      top: 1.2rem;
       height: 1px;
-      background: var(--line);
+      background: #e7dccb;
     }
 
     .decision-path li {
@@ -289,14 +293,26 @@
     .decision-path li:nth-child(6) { animation-delay: 6s; }
 
     .decision-path .pip {
-      display: block;
+      display: grid;
+      place-items: center;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin: 0 auto 0.4rem;
+      border-radius: 50%;
+      border: 1px solid #e6d9c8;
+      background: #f7f1e7;
+      color: var(--steel-deep);
+      animation: pip 7.2s infinite;
+    }
+
+    .decision-path .pip svg {
       width: 1.15rem;
       height: 1.15rem;
-      margin: 0 auto 0.35rem;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: #fff;
-      animation: pip 7.2s infinite;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .decision-path li:nth-child(1) .pip { animation-delay: 0s; }
@@ -642,7 +658,7 @@
     .foundation {
       padding: 0.85rem 1.35rem 1rem;
       border-bottom: 1px solid var(--line);
-      background: #f3f6f9;
+      background: transparent;
     }
 
     .found-row {
@@ -701,7 +717,7 @@
 
     footer.meta {
       padding: 0.95rem 1.35rem 1.15rem;
-      background: #f3f6f9;
+      background: transparent;
       display: grid;
       gap: 0.55rem;
     }
@@ -787,9 +803,9 @@
       position: relative;
       margin: 0;
       background:
-        radial-gradient(420px 180px at 12% 0%, rgba(122, 74, 40, 0.08), transparent 70%),
-        linear-gradient(180deg, #fbf7f2, #f3ece3);
-      border: 1px solid #e4d8cc;
+        radial-gradient(520px 200px at 8% 0%, rgba(196, 154, 90, 0.16), transparent 70%),
+        linear-gradient(180deg, #fbf8f3, #f4eee6);
+      border: 1px solid #eadfD0;
       border-radius: 12px;
     }
 
@@ -935,8 +951,8 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: var(--signal);
-      color: #fff;
+      background: #1c1612;
+      color: #f6ead6;
       font-family: var(--font-mono);
       font-size: 0.62rem;
       font-weight: 600;
@@ -954,10 +970,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 0.85rem;
-      padding: 0 0.35rem;
-      border-radius: 3px;
-      background: var(--signal-soft);
+      height: 0.95rem;
+      padding: 0 0.4rem;
+      border-radius: 4px;
+      background: #efe2d0;
     }
 
     .book .row.hot {
@@ -995,10 +1011,10 @@
     }
 
     .stage-gate .post {
-      width: 0.38rem;
-      height: 3.4rem;
+      width: 0.22rem;
+      height: 2.7rem;
       border-radius: 2px;
-      background: var(--steel);
+      background: #c4a882;
     }
 
     .plaque {
@@ -1056,12 +1072,7 @@
       display: block;
       width: 100%;
       border-radius: 4px 4px 1px 1px;
-      background-image: repeating-linear-gradient(
-        to top,
-        var(--signal) 0 6px,
-        rgba(255, 255, 255, 0.55) 6px 8px
-      );
-      background-color: var(--signal);
+      background: linear-gradient(180deg, #e4c48a, #8c6239);
     }
 
     .hold-12 b { height: 32%; opacity: 0.55; }
@@ -1108,11 +1119,13 @@
       position: absolute;
       z-index: 2;
       bottom: 1.15rem;
-      width: 1.15rem;
-      height: 1.45rem;
-      margin-left: -0.57rem;
-      border-radius: 2px 2px 1px 1px;
-      background: var(--steel);
+      width: 1.35rem;
+      height: 1.7rem;
+      margin-left: -0.67rem;
+      border-radius: 2px;
+      background: #faf7f2;
+      border: 1px solid var(--steel);
+      box-shadow: 0 1px 2px rgba(92, 61, 34, 0.16);
     }
 
     .walker {
@@ -1128,8 +1141,8 @@
       left: 0.22rem;
       right: 0.22rem;
       height: 2px;
-      background: rgba(255, 255, 255, 0.75);
-      box-shadow: 0 5px 0 rgba(255, 255, 255, 0.45);
+      background: var(--steel);
+      box-shadow: 0 4px 0 rgba(140, 98, 57, 0.45), 0 8px 0 rgba(140, 98, 57, 0.28);
     }
 
     .ghost {
@@ -1201,10 +1214,38 @@
     .principles li {
       color: var(--ink-soft);
       font-size: 0.95rem;
-      padding: 0.75rem 0.8rem;
+      padding: 0.85rem 0.9rem 0.95rem;
       border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fff;
+      border-radius: 12px;
+      background: #fffdf9;
+    }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      margin-bottom: 0.65rem;
+      border-radius: 50%;
+      background: #f4eadc;
+      color: var(--steel-deep);
+    }
+
+    .mark svg,
+    .found .mark svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .found .mark {
+      width: 1.85rem;
+      height: 1.85rem;
+      margin-bottom: 0.4rem;
     }
 
     @media (prefers-reduced-motion: no-preference) {
@@ -1268,6 +1309,8 @@
         grid-template-columns: 1fr;
       }
       .lifetime { grid-column: 1; grid-row: auto; }
+      .lifetime-stage { height: 180px; }
+      .lifetime figcaption { text-align: center; padding-right: 0; }
       .decision-path { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 0.65rem; }
       .decision-path::before { display: none; }
       .tri > section { border-right: none; border-bottom: 1px solid var(--line); }
@@ -1393,6 +1436,7 @@
         </p>
       </div>
       <figure class="lifetime">
+        <div class="lifetime-stage">
         <svg class="stream" viewBox="0 0 460 150" aria-hidden="true">
           <defs>
             <radialGradient id="hold-glow" cx="50%" cy="50%" r="50%">
@@ -1422,16 +1466,18 @@
           <circle class="hold-core" cx="392" cy="74" r="16" />
           <text x="392" y="122" text-anchor="middle">lifetime</text>
         </svg>
+        <canvas id="lifetime-canvas" aria-hidden="true"></canvas>
+        </div>
         <figcaption>Many accounts, one lifetime hold.</figcaption>
       </figure>
       <p class="path-note">A score says where the account sits. The system decides what happens next.</p>
       <ol class="decision-path" aria-label="From the score to the evidence">
-        <li><span class="pip" aria-hidden="true"></span>Score</li>
-        <li><span class="pip" aria-hidden="true"></span>Policy</li>
-        <li><span class="pip" aria-hidden="true"></span>Decision</li>
-        <li><span class="pip" aria-hidden="true"></span>Action</li>
-        <li><span class="pip" aria-hidden="true"></span>Outcome</li>
-        <li><span class="pip" aria-hidden="true"></span>Evidence</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 16a7 7 0 0 1 14 0"/><path d="M12 16l3.2-4.2"/></svg></span>Score</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h6l4 4v12H8z"/><path d="M14 4v4h4"/><path d="M10.5 13h5M10.5 16h3.5"/></svg></span>Policy</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9 12.4l2 2 4-4.4"/></svg></span>Decision</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 3L6 13h5l-1 8 8-12h-5z"/></svg></span>Action</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.2"/></svg></span>Outcome</li>
+        <li><span class="pip" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 7h10v12H8z"/><path d="M6 5h10"/><path d="M10.5 11.5h5M10.5 14.5h3.5"/></svg></span>Evidence</li>
       </ol>
     </header>
 
@@ -1508,9 +1554,9 @@
     <section class="refuse">
       <h2>Where judgement stays</h2>
       <ol class="principles">
-        <li><strong>Move it while it is still paying.</strong> If risk has risen since origination, do not wait for a missed installment.</li>
-        <li><strong>Write the decision, not the score.</strong> Name the cutoff and who may override before anyone calls it decided.</li>
-        <li><strong>Leave a way back.</strong> An extra amount has an owner and a date to come off, or it is not booked.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6.5 19c1.1-2.8 3-4.2 5.5-4.2s4.4 1.4 5.5 4.2"/></svg></span><strong>Move it while it is still paying.</strong> If risk has risen since origination, do not wait for a missed installment.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v16M8 19h8"/><path d="M12 7L7 11h3.2M12 7l5 4h-3.2"/><path d="M5.2 11h3.6l-1.8 3.2zM15.2 11h3.6l-1.8 3.2z"/></svg></span><strong>Write the decision, not the score.</strong> Name the cutoff and who may override before anyone calls it decided.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 8H5v4"/><path d="M6 12a6.5 6.5 0 1 0 2.2-5"/></svg></span><strong>Leave a way back.</strong> An extra amount has an owner and a date to come off, or it is not booked.</li>
       </ol>
     </section>
 
@@ -1537,11 +1583,11 @@
       <h2>Always on</h2>
       <p class="explain">Watch the result, then change the next decision.</p>
       <div class="found-row">
-        <div class="found"><strong>Security</strong><span>Who can see PII and flip a policy rule</span></div>
-        <div class="found"><strong>Governance</strong><span>Model, cut-off, and overlay owners</span></div>
-        <div class="found"><strong>Observability</strong><span>Score, arrears, and stage movement</span></div>
-        <div class="found"><strong>Evals</strong><span>Backtest and through-the-door mix</span></div>
-        <div class="found"><strong>Human Approve</strong><span>Policy, SICR, overlay — not auto-booked</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3.5l7 2.8v5.8c0 4.2-2.8 6.6-7 8.4-4.2-1.8-7-4.2-7-8.4V6.3z"/></svg></span><strong>Security</strong><span>Who can see PII and flip a policy rule</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16M7 19V10M12 19V10M17 19V10M4 10h16L12 4.5z"/></svg></span><strong>Governance</strong><span>Model, cut-off, and overlay owners</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12s3.5-6 9-6 9 6 9 6-3.5 6-9 6-9-6-9-6z"/><circle cx="12" cy="12" r="2.4"/></svg></span><strong>Observability</strong><span>Score, arrears, and stage movement</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9 12.4l2 2 4-4.4"/></svg></span><strong>Evals</strong><span>Backtest and through-the-door mix</span></div>
+        <div class="found"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M6.5 19c1.1-2.8 3-4.2 5.5-4.2s4.4 1.4 5.5 4.2"/></svg></span><strong>Human Approve</strong><span>Policy, SICR, overlay — not auto-booked</span></div>
       </div>
     </section>
 
@@ -1554,9 +1600,131 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> Accounts converge on the lifetime hold. Score, policy, decision, action, outcome, and evidence light in that order.</p>
+      <p class="changed"><b>Changed</b> The sheet is the warm field card. Accounts are a particle field into the lifetime hold.</p>
     </footer>
   </article>
+  <script>
+    (function () {
+      var canvas = document.getElementById("lifetime-canvas");
+      var stage = canvas && canvas.parentElement;
+      if (!canvas || !stage) return;
+      var ctx = canvas.getContext("2d");
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var curves = [
+        [[0.02, 0.16], [0.28, 0.05], [0.55, 0.28], [0.76, 0.44]],
+        [[0.0, 0.32], [0.30, 0.26], [0.52, 0.36], [0.76, 0.44]],
+        [[0.0, 0.50], [0.26, 0.62], [0.54, 0.50], [0.76, 0.44]],
+        [[0.02, 0.68], [0.32, 0.82], [0.56, 0.60], [0.76, 0.44]],
+        [[0.08, 0.86], [0.36, 0.94], [0.58, 0.66], [0.76, 0.44]],
+        [[0.14, 0.06], [0.36, 0.14], [0.56, 0.30], [0.76, 0.44]]
+      ];
+      function point(c, t) {
+        var u = 1 - t;
+        return [
+          u * u * u * c[0][0] + 3 * u * u * t * c[1][0] + 3 * u * t * t * c[2][0] + t * t * t * c[3][0],
+          u * u * u * c[0][1] + 3 * u * u * t * c[1][1] + 3 * u * t * t * c[2][1] + t * t * t * c[3][1]
+        ];
+      }
+      var count = 340;
+      var motes = [];
+      for (var i = 0; i < count; i++) {
+        motes.push({
+          curve: i % curves.length,
+          t: Math.random(),
+          speed: 0.18 + Math.random() * 0.22,
+          size: 0.25 + Math.random() * 1.15,
+          bright: Math.random(),
+          drift: (Math.random() - 0.5) * 0.16
+        });
+      }
+      var sprite = document.createElement("canvas");
+      sprite.width = 48;
+      sprite.height = 48;
+      var sg = sprite.getContext("2d");
+      var glow = sg.createRadialGradient(24, 24, 0, 24, 24, 24);
+      glow.addColorStop(0, "rgba(255, 244, 214, 1)");
+      glow.addColorStop(0.18, "rgba(232, 190, 110, 0.85)");
+      glow.addColorStop(0.45, "rgba(176, 112, 48, 0.28)");
+      glow.addColorStop(1, "rgba(176, 112, 48, 0)");
+      sg.fillStyle = glow;
+      sg.fillRect(0, 0, 48, 48);
+
+      var sized = { w: 0, h: 0, dpr: 1 };
+      function fit() {
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var w = stage.clientWidth;
+        var h = stage.clientHeight;
+        if (w === sized.w && h === sized.h && dpr === sized.dpr) return sized;
+        sized = { w: w, h: h, dpr: dpr };
+        canvas.width = Math.max(1, Math.round(w * dpr));
+        canvas.height = Math.max(1, Math.round(h * dpr));
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        return sized;
+      }
+
+      var last = 0;
+      function draw(now) {
+        var box = fit();
+        var dt = last ? Math.min(0.05, (now - last) / 1000) : 0.016;
+        last = now || 0;
+        var w = box.w;
+        var h = box.h;
+        ctx.clearRect(0, 0, w, h);
+        var fx = w * 0.76;
+        var fy = h * 0.44;
+        motes.forEach(function (m) {
+          if (!reduce) m.t += m.speed * dt;
+          if (m.t > 1) m.t -= 1;
+          var fade = 1;
+          if (m.t < 0.05) fade = m.t / 0.05;
+          if (m.t > 0.88) fade = Math.max(0, (1 - m.t) / 0.12);
+          if (fade <= 0) return;
+          var c = curves[m.curve];
+          var p = point(c, m.t);
+          var ahead = point(c, Math.min(1, m.t + 0.02));
+          var dx = ahead[0] - p[0];
+          var dy = ahead[1] - p[1];
+          var len = Math.hypot(dx, dy) || 1;
+          var spread = m.drift * (1 - m.t) * (1 - m.t);
+          var x = (p[0] + (-dy / len) * spread) * w;
+          var y = (p[1] + (dx / len) * spread) * h;
+          var near = Math.min(1, m.t * 1.15);
+          var size = (3.2 + m.size * 5.2) * (0.45 + near * 0.85);
+          ctx.globalAlpha = fade * (0.28 + m.bright * 0.55) * (0.45 + near * 0.7);
+          ctx.drawImage(sprite, x - size / 2, y - size / 2, size, size);
+        });
+        ctx.globalAlpha = 1;
+        var pulse = reduce ? 1 : 0.85 + Math.sin((now || 0) / 700) * 0.15;
+        var haze = ctx.createRadialGradient(fx, fy, 6, fx, fy, 92 * pulse);
+        haze.addColorStop(0, "rgba(236, 206, 150, 0.72)");
+        haze.addColorStop(0.35, "rgba(176, 112, 48, 0.22)");
+        haze.addColorStop(1, "rgba(176, 112, 48, 0)");
+        ctx.fillStyle = haze;
+        ctx.beginPath();
+        ctx.arc(fx, fy, 92, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.arc(fx, fy, 22, 0, Math.PI * 2);
+        ctx.fillStyle = "#14110e";
+        ctx.fill();
+        ctx.lineWidth = 1.4;
+        ctx.strokeStyle = "rgba(236, 214, 176, 0.9)";
+        ctx.beginPath();
+        ctx.arc(fx, fy, 28, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.font = "600 11px 'IBM Plex Mono', ui-monospace, monospace";
+        ctx.fillStyle = "#8c6239";
+        ctx.textAlign = "center";
+        ctx.fillText("LIFETIME", fx, fy + 52);
+        if (!reduce) requestAnimationFrame(draw);
+      }
+      stage.classList.add("is-live");
+      requestAnimationFrame(draw);
+      window.addEventListener("resize", function () {
+        if (reduce) draw(0);
+      });
+    })();
+  </script>
   <script>
     (function () {
       var btn = document.getElementById("copy-link");
