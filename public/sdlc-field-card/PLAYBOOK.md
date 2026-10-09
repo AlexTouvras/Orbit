@@ -10,7 +10,7 @@ Live: `/sdlc-field-card/` (this folder’s `index.html`). Hub competency: **SDLC
 - Hook: `A check that cannot fail is not a gate.`
 - Pillars: Plan & design → Build & verify → Release & deploy → Maintain & improve
 - The opening picture is one change on a pipeline. The change walks the four pillars. Three gates sit on the track: reviewed, can fail, deployed. Those gates are checks. They are not extra pillars.
-- The return is labeled `next change`. It is a dashed rail under the forward track. The picture is a dark stage with a lime rail. Do not redraw this picture as a loop. The AI card owns “loop”.
+- The return is labeled `next change`. It is a dashed rail under the forward track. The picture is a dark stage with a lime rail. The sheet around that picture is the same stage. Lime marks the section labels and the judgement marks. The practice names sit in the stage ink. Print keeps the picture dark and sets the surrounding words in ink on white. Do not redraw this picture as a loop. The AI card owns “loop”.
 - Each pillar names the handoff: need → a page, page → a change, change → a version, use → the next change.
 - Security is named in design (who can reach the data, how it can be abused). Verify includes those security checks: they have to fail the build, with the tests.
 - A fix goes back through the same four pillars. The first release is not the end. The previous version stays one deploy away.
