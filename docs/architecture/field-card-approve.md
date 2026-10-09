@@ -6,7 +6,7 @@ The review agent is the gate. Slack is FYI after Apply review.
 
 ## Normal month
 
-1. 1st 17:00 — all six Hub cards plus the Bayesian optimisation method card are judged. Source-repo agents run discover and leave `chore/monthly-refresh-YYYY-MM` open. Hosted SDLC researches the life cycle, then decides update or no-change. Credit Risk is judged on Orbit against the account picture in `field-card-review.md` (the picture is the job). Story and Bayes are judged on Orbit in the same hour against picker and jobs, until a scene rewrite says otherwise. Not stamp-only.
+1. 1st 17:00 — all six Hub cards plus the Bayesian optimisation method card are judged. Source-repo agents run discover and leave `chore/monthly-refresh-YYYY-MM` open. Hosted SDLC researches the life cycle, then judges the pipeline picture in `field-card-review.md` (the picture is the job). Credit Risk is judged on Orbit against the account picture (the picture is the job). Story and Bayes are judged on Orbit in the same hour against picker and jobs, until a scene rewrite says otherwise. Not stamp-only.
 2. 1st 18:00 — **review agent** publishes the three source-repo cards (including stamp-only no-change). Keeps the previous card only when the PR would make the live card worse.
 3. Slack gets **one laconic FYI per source-repo card** (same shape for all three): Review / Considered / Changed / Online + **Check card** button.
 
