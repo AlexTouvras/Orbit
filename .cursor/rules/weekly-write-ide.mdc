@@ -10,7 +10,7 @@ alwaysApply: false
 
 If `data/weekly-write-ide-brief.md` exists (awaiting IDE), or the user asks to draft/notify a weekly Write:
 
-1. Open `docs/essay-voice.md` (shared human bar).
+1. Open `docs/essay-voice.md` (shared human bar, including the hiring-manager story).
 2. Follow the project skill **`weekly-write-essay`** (`.cursor/skills/weekly-write-essay/SKILL.md`).
 3. Notify Slack; do **not** publish MDX yourself — Approve in `#career-ops`.
 

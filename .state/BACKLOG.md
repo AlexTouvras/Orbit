@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Weekly Write hiring-manager story bar — `docs/essay-voice.md`, weekly skill, and draft prompts. Essays stay prose. No evidence card, role badge, or hiring close.
 - [x] Remove private `/studio/daycare` — card, page, file route, and `data/studio-daycare/`
 - [x] Private `/studio/daycare` — Rekola November 2027 shortlist from AlexTouvras PR 2 (Studio card, gated files, not on the public site). Removed 2026-10-07.
 - [x] Which model? live desk — storytelling PR 31 on `/portfolio/live/which-model` (card, reel peek, sitemap). Not under `/stories`.

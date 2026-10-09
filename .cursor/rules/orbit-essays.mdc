@@ -13,7 +13,7 @@ Do **not** improvise a generic blog post. Open the shared voice bar, then the ma
 
 ## Shared bar (always)
 
-1. Read `docs/essay-voice.md` (compelling / human gates, **stranger test / primary reader**, topic balance, **and** thesis voice fingerprint).
+1. Read `docs/essay-voice.md` (compelling / human gates, **stranger test / primary reader**, **hiring-manager story**, topic balance, **and** thesis voice fingerprint).
 2. Open personal skill `anti-ai-slop-writing` before drafting.
 3. Open at least one peer Write under `src/content/writes/` for tone (prefer same category; avoid Power BI peers for non-Power-BI theses).
 4. Apply thesis *reasoning* (false belief → method → counter-case → limit); never thesis *form* (lit review, “this paper examines…”).

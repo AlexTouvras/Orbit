@@ -119,6 +119,7 @@ Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, sa
 ### Tips (from your content vision)
 
 - **One question per post** — put it in the title or an early `## The question` section.
+- **Hiring-manager story** — a stranger in a hiring seat should be able to retell the decision, the rejection, and the limit. Bar: `docs/essay-voice.md`. Essays stay prose.
 - **Document, don't perform** — write what you learned this week, not what you think sounds impressive.
 - **Evergreen > hot takes** — tutorials and lessons age better than trend commentary.
 - **Weekly automation drafts essays, not digests** — one thesis inspired by a Signal (AI, analytics/PBI, delivery), in the same voice as your featured Writes.

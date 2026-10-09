@@ -28,7 +28,7 @@ Before notify, self-check the draft against Quality gates below (same rules as `
 ## Minimum evidence (open before writing)
 
 1. `data/weekly-write-ide-brief.md` **and** `data/weekly-write-ide-brief.json` (thesis + intake)
-2. `docs/essay-voice.md` — compelling checklist, **primary reader / stranger test**, topic balance, **and** "Voice from the theses" (reasoning fingerprint; no academic cosplay)
+2. `docs/essay-voice.md` — compelling checklist, **primary reader / stranger test**, **hiring-manager story**, topic balance, **and** "Voice from the theses" (reasoning fingerprint; no academic cosplay)
 3. Personal skill `anti-ai-slop-writing` + banned-words list
 4. Voice peer (read at least one fully):
    - Prefer a peer in the **chosen category lane**
@@ -50,7 +50,8 @@ Do not cite deleted placeholders (e.g. former `power-bi-monday-dashboard.mdx`).
    - Gloss every project nickname on first use; translate metrics (fitness load not only CTL)
    - Cite the primary Signal with a markdown link
    - Optional: one link to related architecture at `/architecture/{slug}` if the essay is about a featured project
-   - No tool catalogs, no hiring soft-close unless Career + user asked
+   - Pass the hiring-manager story in `docs/essay-voice.md`: decision, what you rejected, what stays unproven, what changes Monday. One chain link leads (business problem → data → intelligent system → delivery → measurable outcome). Prefer the gap between a demo that works and a decision a team can own.
+   - No tool catalogs, no role badge, and no standing "Behind the decision" card. No hiring soft-close unless the piece is Career and the user asked for a role-change angle.
 4. **Build frontmatter + body** into full MDX string (frontmatter then body). SEO (OG image, JSON-LD, sitemap, RSS) is automatic from `title` / `summary` / `date` / `category` / `tags` — do not invent meta tags. First publish: omit `updated`.
 5. **Save** `data/weekly-write-draft.json` (see `reference.md` for shape). Required fields:
    - `status: "pending"`, `source: "ide"`
@@ -75,6 +76,8 @@ If `githubSynced` is false: set `GITHUB_TOKEN` with `repo` scope and re-run noti
 | Template regurgitation | Phrases like "Capability is cheap. **Trust** is expensive" or "steal **one constraint** from the signal" |
 | Insider codenames | Workshop nicknames without plain-language gloss on first use |
 | Stranger fail | Non-technical reader cannot restate the decision rule |
+| Judgment missing | A hiring manager cannot restate the decision, what was rejected, and what stays unproven |
+| Pitch close | Takeaway sells the author, names a target job, or ends on a role badge / evidence card |
 | Topic tunnel | Defaulted to Power BI / Fabric / semantic-model when Delivery, Learning, Career, or general data fit better |
 | AI-slop | Banned words, em-dash overuse, tricolon habit, "It's not X, it's Y" spam |
 
