@@ -535,6 +535,12 @@ function mountChrome() {
       white-space: nowrap;
       border: 0;
     }
+    @media (max-width: 699px) {
+      .field-robot {
+        transform: scale(0.58);
+        transform-origin: right bottom;
+      }
+    }
     @media print {
       .field-robot, .field-robot-hit, .field-robot-presence { display: none !important; }
     }
@@ -578,10 +584,15 @@ function placeHit(hit, robot, where) {
   const x = window.innerWidth - HOST.padRight - w;
   const y = window.innerHeight - HOST.padBottom - h;
   const box = where === "parked" ? HOST.hit.parked : HOST.hit.present;
-  hit.style.left = `${x + (box.cx - box.bw / 2) * w}px`;
-  hit.style.top = `${y + (box.cy - box.bh / 2) * h}px`;
-  hit.style.width = `${box.bw * w}px`;
-  hit.style.height = `${box.bh * h}px`;
+  const shrink = window.innerWidth < 700 ? 0.58 : 1;
+  const originX = window.innerWidth - HOST.padRight;
+  const originY = window.innerHeight - HOST.padBottom;
+  const left = x + (box.cx - box.bw / 2) * w;
+  const top = y + (box.cy - box.bh / 2) * h;
+  hit.style.left = `${originX + (left - originX) * shrink}px`;
+  hit.style.top = `${originY + (top - originY) * shrink}px`;
+  hit.style.width = `${box.bw * w * shrink}px`;
+  hit.style.height = `${box.bh * h * shrink}px`;
 }
 
 function headingOf(el) {
