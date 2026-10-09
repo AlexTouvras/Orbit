@@ -7,6 +7,7 @@ import {
   argb,
   cardSpeech,
   cardsForSheet,
+  clampOffset,
   parseAccents,
   parseFieldCards,
   parseRobotContract,
@@ -112,11 +113,19 @@ describe("field card robot copy", () => {
     assert.equal(credit.lines[0], "Credit is for a lifetime. The cutoff is not the system.");
     assert.equal(
       sectionLine(credit.sections, "How I run one account"),
-      "Stage 1 holds twelve months. Lifetime starts at stage 2.",
+      "Stage 1 is 12-month ECL. Stage 2 is lifetime ECL.",
     );
     for (const words of credit.lines) {
       assert.ok(words.length <= 64);
+      assert.ok([...words].every((ch) => ch.charCodeAt(0) >= 32 && ch.charCodeAt(0) <= 126));
     }
+    const box = { left: 120, top: 240, width: 60, height: 70 };
+    const view = { width: 800, height: 600 };
+    assert.deepEqual(clampOffset({ x: 10, y: -20 }, box, view), { x: 10, y: -20 });
+    assert.deepEqual(clampOffset({ x: -500, y: 900 }, box, view), {
+      x: 8 - box.left,
+      y: view.height - 8 - box.height - box.top,
+    });
     assert.equal(
       cardsForSheet("analytics", remote).find((card) => card.id === "analytics").lines[0],
       remote.find((card) => card.id === "analytics").lines[0],

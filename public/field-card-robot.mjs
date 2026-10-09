@@ -20,6 +20,10 @@
  * band, and a fine pointer speaks the section under the cursor. The words
  * are that section's line from `field-cards.ts`. All six runs show that one
  * line, so the crossfade cannot swap in a different judgement.
+ *
+ * A press that moves drags the robot in screen pixels. The same offset
+ * moves the hit target. A short tap pokes. On a narrow viewport the drag
+ * sits in front of the 0.58 scale.
  */
 
 export const STORY_REPO = "AlexTouvras/storytelling";
@@ -59,11 +63,25 @@ export const HOST = {
   padTop: 80,
   padRight: 16,
   padBottom: 16,
+  dragPx: 5,
+  dragMargin: 8,
   hit: {
     parked: { cx: 0.88, cy: 0.76, bw: 0.2, bh: 0.24 },
     present: { cx: 0.5, cy: 0.55, bw: 0.38, bh: 0.46 },
   },
 };
+
+/** Keep a dragged hit box inside the viewport. Offset is screen pixels. */
+export function clampOffset(offset, box, viewport, margin = HOST.dragMargin) {
+  const minX = margin - box.left;
+  const maxX = viewport.width - margin - box.width - box.left;
+  const minY = margin - box.top;
+  const maxY = viewport.height - margin - box.height - box.top;
+  return {
+    x: maxX < minX ? minX : Math.min(maxX, Math.max(minX, offset.x)),
+    y: maxY < minY ? minY : Math.min(maxY, Math.max(minY, offset.y)),
+  };
+}
 
 const TUCK = "Tap me and I'll wait in the corner.";
 
@@ -138,7 +156,7 @@ export const FALLBACK_CARDS = [
     accent: "credit",
     lines: [
       "Credit is for a lifetime. The cutoff is not the system.",
-      "Stage 1 holds twelve months. Lifetime starts at stage 2.",
+      "Stage 1 is 12-month ECL. Stage 2 is lifetime ECL.",
       "Still paying is not low risk. A score is not the call.",
       "Standards fence the decision. They are not the skill.",
       "Watch the result, then change the next decision.",
@@ -146,7 +164,7 @@ export const FALLBACK_CARDS = [
     ],
     sections: [
       { heading: "Credit risk is for a lifetime. Act early.", line: "Credit is for a lifetime. The cutoff is not the system." },
-      { heading: "How I run one account", line: "Stage 1 holds twelve months. Lifetime starts at stage 2." },
+      { heading: "How I run one account", line: "Stage 1 is 12-month ECL. Stage 2 is lifetime ECL." },
       { heading: "Where judgement stays", line: "Still paying is not low risk. A score is not the call." },
       { heading: "Inside the fence", line: "Standards fence the decision. They are not the skill." },
       { heading: "Always on", line: "Watch the result, then change the next decision." },
@@ -500,10 +518,14 @@ function mountChrome() {
   const style = document.createElement("style");
   style.textContent = `
     .field-robot {
+      --robot-x: 0px;
+      --robot-y: 0px;
       pointer-events: none;
       position: fixed;
       z-index: 20;
       left: 0;
+      transform: translate(var(--robot-x), var(--robot-y));
+      transform-origin: right bottom;
     }
     .field-robot canvas {
       width: 100%;
@@ -514,11 +536,15 @@ function mountChrome() {
     .field-robot-hit {
       position: fixed;
       z-index: 21;
-      cursor: pointer;
+      cursor: grab;
+      touch-action: none;
       border: 0;
       background: transparent;
       padding: 0;
       color: transparent;
+    }
+    .field-robot-hit:active {
+      cursor: grabbing;
     }
     .field-robot-hit:focus-visible {
       outline: 2px solid #245a7a;
@@ -537,8 +563,7 @@ function mountChrome() {
     }
     @media (max-width: 699px) {
       .field-robot {
-        transform: scale(0.58);
-        transform-origin: right bottom;
+        transform: translate(var(--robot-x), var(--robot-y)) scale(0.58);
       }
     }
     @media print {
@@ -575,7 +600,12 @@ function mountChrome() {
   return { layer, canvas, hit, presence };
 }
 
-function placeHit(hit, robot, where) {
+function paintDrag(layer, offset) {
+  layer.style.setProperty("--robot-x", `${offset.x}px`);
+  layer.style.setProperty("--robot-y", `${offset.y}px`);
+}
+
+function placeHit(hit, robot, where, offset) {
   const boxW = window.innerWidth - HOST.padRight;
   const boxH = window.innerHeight - HOST.padTop - HOST.padBottom;
   const scale = Math.min(boxW, boxH) / robot.width;
@@ -589,10 +619,21 @@ function placeHit(hit, robot, where) {
   const originY = window.innerHeight - HOST.padBottom;
   const left = x + (box.cx - box.bw / 2) * w;
   const top = y + (box.cy - box.bh / 2) * h;
-  hit.style.left = `${originX + (left - originX) * shrink}px`;
-  hit.style.top = `${originY + (top - originY) * shrink}px`;
-  hit.style.width = `${box.bw * w * shrink}px`;
-  hit.style.height = `${box.bh * h * shrink}px`;
+  const baseLeft = originX + (left - originX) * shrink;
+  const baseTop = originY + (top - originY) * shrink;
+  const width = box.bw * w * shrink;
+  const height = box.bh * h * shrink;
+  const next = clampOffset(
+    offset,
+    { left: baseLeft, top: baseTop, width, height },
+    { width: window.innerWidth, height: window.innerHeight },
+  );
+  offset.x = next.x;
+  offset.y = next.y;
+  hit.style.left = `${baseLeft + offset.x}px`;
+  hit.style.top = `${baseTop + offset.y}px`;
+  hit.style.width = `${width}px`;
+  hit.style.height = `${height}px`;
 }
 
 function headingOf(el) {
@@ -752,6 +793,9 @@ async function mount(cardId) {
   const { layer, canvas, hit, presence } = mountChrome();
   layer.dataset.storySha = sha;
   layer.dataset.card = cardId;
+  const offset = { x: 0, y: 0 };
+  let gesture = null;
+  let stopDragClick = null;
 
   await new Promise((resolve) => {
     requestAnimationFrame(() => requestAnimationFrame(resolve));
@@ -780,10 +824,60 @@ async function mount(cardId) {
   const sync = () => {
     const where = readPresence();
     presence.textContent = where || "—";
-    placeHit(hit, robot, where);
+    placeHit(hit, robot, where, offset);
+    paintDrag(layer, offset);
     hit.hidden = false;
     hit.setAttribute("aria-label", where === "parked" ? "Bring the robot back" : "Tuck the robot into the corner");
   };
+
+  const clearDragClick = () => {
+    if (!stopDragClick) return;
+    hit.removeEventListener("click", stopDragClick, true);
+    stopDragClick = null;
+  };
+
+  hit.addEventListener("pointerdown", (event) => {
+    if (event.button !== 0) return;
+    clearDragClick();
+    hit.setPointerCapture(event.pointerId);
+    gesture = {
+      id: event.pointerId,
+      sx: event.clientX,
+      sy: event.clientY,
+      ox: offset.x,
+      oy: offset.y,
+      moved: false,
+    };
+  });
+
+  hit.addEventListener("pointermove", (event) => {
+    if (!gesture || event.pointerId !== gesture.id) return;
+    const dx = event.clientX - gesture.sx;
+    const dy = event.clientY - gesture.sy;
+    if (!gesture.moved && Math.hypot(dx, dy) < HOST.dragPx) return;
+    gesture.moved = true;
+    offset.x = gesture.ox + dx;
+    offset.y = gesture.oy + dy;
+    placeHit(hit, robot, readPresence(), offset);
+    paintDrag(layer, offset);
+  });
+
+  const endGesture = (event) => {
+    if (!gesture || event.pointerId !== gesture.id) return;
+    const moved = gesture.moved;
+    gesture = null;
+    if (!moved) return;
+    clearDragClick();
+    stopDragClick = (click) => {
+      click.preventDefault();
+      click.stopPropagation();
+      clearDragClick();
+    };
+    hit.addEventListener("click", stopDragClick, true);
+  };
+
+  hit.addEventListener("pointerup", endGesture);
+  hit.addEventListener("pointercancel", endGesture);
 
   hit.addEventListener("click", () => {
     const trigger = safeVm(instance)?.trigger(robot.props.poke);
