@@ -39,4 +39,10 @@ Keep real standard links under “Inside the fence”. Do not invent docs URLs. 
 
 ## Monthly judgment
 
-Read this file. Judge whether the four moves still match how the book should be run. The picture is the job. Restoring the table is not an update.
+Read this file and the live picture. The month is relevant when it can say whether the four moves still match how the book should be run, and whether the links under Inside the fence still support those moves.
+
+Open those links. A dead URL, or a sentence that teaches the wrong allowance, is an update. Stage 1 stays 12-month ECL. Lifetime ECL starts at stage 2, including a credit-impaired stage 3.
+
+Changed line when the picture’s HTML did not change: `Monthly review — the account picture unchanged`. When it did, the line says what the picture now says.
+
+Restoring a problem/use/example table, a tool picker, or a ladder is not an update. The pattern for the other Hub cards is `docs/architecture/field-card-review.md`, section “Scene pattern”. This file stays the credit contract.

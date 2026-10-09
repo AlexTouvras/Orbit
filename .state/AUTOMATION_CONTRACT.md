@@ -3,7 +3,7 @@
 > Orbit hosts automation JSON backups; some automations bind to other repos.
 > IDE agents use the same `.state/` files plus optional ProjectBrain MCP.
 
-**Last updated:** 2026-10-02
+**Last updated:** 2026-10-09
 
 ## Runtime (this workspace)
 
@@ -19,7 +19,7 @@ Every Hub field card refreshes **monthly**. There is no Friday field-card loop.
 
 | When (EEST) | What | Cards |
 |-------------|------|-------|
-| 1st 17:00 (`0 14 1 * *` UTC) | Discover / judge picker and jobs | All six: Agentic AI, Analytics, Delivery, SDLC, Credit Risk, Story |
+| 1st 17:00 (`0 14 1 * *` UTC) | Discover / judge each card’s playbook. Credit judges the account picture. The others judge picker and jobs until a scene rewrite says the picture is the job | All six: Agentic AI, Analytics, Delivery, SDLC, Credit Risk, Story |
 | 1st 18:00 (`0 15 1 * *` UTC) | Apply review (source-repo publish) | Agentic AI, Analytics, Delivery |
 | First weekday on/after the 2nd | Fleet check | Leftover `chore/monthly-refresh-*` / missing hosted PR |
 
@@ -66,7 +66,7 @@ Do **not** depend on ProjectBrain MCP. Cloud cannot see `~/.cursor/`.
 |------------|--------|
 | Daily ops | Slack `#ops-channel` only when issues; memories update |
 | Source-repo field card (AI / analytics / delivery) | PR `chore/monthly-refresh-YYYY-MM`; stop for 18:00 review. Do not Slack-Approve from 17:00. |
-| Hosted SDLC / Credit Risk | Orbit PR `chore/monthly-field-cards-YYYY-MM`. SDLC Summary lists opened URLs and `Decision: update` or `Decision: no-change`. Do not merge. SDLC pillars stay plan & design, build & verify, release & deploy, maintain & improve. Verify includes the security checks. Improve is continuous improvement from what you learn in use. |
+| Hosted SDLC / Credit Risk / Story / Bayes | Orbit PR `chore/monthly-field-cards-YYYY-MM`. SDLC Summary lists opened URLs and `Decision: update` or `Decision: no-change`. Credit’s Changed line is `Monthly review — the account picture unchanged` unless the picture changed, and the Summary lists the Inside the fence links that were opened. Do not merge. Do not convert a card into a scene in this run. SDLC pillars stay plan & design, build & verify, release & deploy, maintain & improve. Verify includes the security checks. Improve is continuous improvement from what you learn in use. |
 
 ## Out of scope
 
