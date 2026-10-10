@@ -1,7 +1,7 @@
 name: Weekly Write draft
 
-# Primary Monday writer: Cursor Cloud Automation (see .cursor/skills/weekly-write-essay).
-# This workflow is manual-only — use workflow_dispatch to test intake + IDE brief locally.
+# Monday writer is Cursor (see .cursor/skills/weekly-write-essay).
+# This workflow is manual-only — workflow_dispatch builds the IDE brief. Cursor writes the essay.
 
 on:
   workflow_dispatch:
@@ -31,7 +31,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Build intake + IDE brief (Cloud Automation writes the essay)
+      - name: Build intake + IDE brief (Cursor writes the essay)
         env:
           SLACK_ORBIT_WEBHOOK_URL: ${{ secrets.SLACK_ORBIT_WEBHOOK_URL }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -40,7 +40,6 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN || github.token }}
           GITHUB_REPO: ${{ github.repository }}
-          WEEKLY_WRITE_USE_CLOUD_AUTOMATION: "1"
         run: |
           if [ -z "$NEXT_PUBLIC_SITE_URL" ]; then
             echo "Set repo variable NEXT_PUBLIC_SITE_URL (e.g. https://your-domain.com) so Approve links work."
@@ -52,7 +51,7 @@ jobs:
           if [ "${{ inputs.notify }}" = "true" ]; then NOTIFY_FLAG="--notify"; fi
           npx tsx src/scripts/weekly-write.ts --once $FORCE_FLAG $NOTIFY_FLAG | tee /tmp/weekly-write-out.json
           if grep -q '"awaitingIde": true' /tmp/weekly-write-out.json; then
-            echo "IDE brief written — finish essay in Cursor Cloud Automation."
+            echo "IDE brief written — finish the essay in Cursor."
             exit 0
           fi
           exit 0

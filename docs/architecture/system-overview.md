@@ -15,7 +15,7 @@ flowchart TB
   Studio[Studio JSON edits] --> Hub
   Studio --> WeekLog[Studio week log]
   Cron[news fetch cron] --> Feed
-  Weekly[weekly blog draft cron] --> Slack[Slack career-ops approve]
+  Weekly[weekly blog draft] --> Slack[Slack #orbit approve]
   Slack -->|Approve| Blog
   MDX[MDX and Mermaid] --> Blog
   MDX --> Portfolio

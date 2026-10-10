@@ -1,11 +1,10 @@
 /**
  * Weekly Write CLI
  *
- *   npm run weekly:draft              # generate (IDE brief if Gemini fails)
- *   npm run weekly:notify             # generate + Slack (or IDE brief)
+ *   npm run weekly:draft              # intake + IDE brief (Cursor writes the essay)
+ *   npm run weekly:notify             # force a new IDE brief
  *   npm run weekly:notify-draft       # Slack an existing IDE/local draft
- *   npm run weekly:notify -- --force  # replace pending draft
- *   npm run weekly:notify -- --allow-local-fallback  # Ollama/template if Gemini fails
+ *   npm run weekly:draft -- --allow-local-fallback  # Ollama, then OpenAI, then a template
  */
 import {
   notifyExistingWeeklyDraft,

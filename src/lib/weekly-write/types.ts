@@ -43,7 +43,7 @@ export interface WeeklyDraft {
   /** Short preview for Slack (plain text). */
   preview: string;
   intake: WeeklyIntake;
-  source: "template" | "ollama" | "gemini" | "openai" | "ide";
+  source: "template" | "ollama" | "openai" | "ide";
   publishedAt?: string;
   publishedSlug?: string;
   skippedAt?: string;

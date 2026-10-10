@@ -128,9 +128,8 @@ export async function notifyExistingWeeklyDraft(): Promise<RunWeeklyWriteResult>
 }
 
 /**
- * Build intake → draft (or IDE brief) → optional Slack notify.
- * When Gemini is configured but fails, writes a local IDE brief and stops
- * before Slack — finish the essay in Cursor, then `npm run weekly:notify-draft`.
+ * Build intake → IDE brief → Cursor writes the essay → Slack notify.
+ * Finish the essay in Cursor, then `npm run weekly:notify-draft`.
  */
 export async function runWeeklyWritePipeline(options?: {
   force?: boolean;
@@ -167,13 +166,11 @@ export async function runWeeklyWritePipeline(options?: {
       intake: created.intake,
       thesis: created.thesis,
     });
-    const logLine =
-      created.reason === "cloud_automation"
-        ? "Cloud Automation / IDE path — brief ready for essay generation."
-        : "Gemini unavailable — waiting for IDE essay generation before Slack.";
-    appendWeeklyWriteLog(logLine);
+    appendWeeklyWriteLog(
+      "IDE brief ready. Cursor writes the essay before Slack.",
+    );
     console.warn(
-      "[weekly-write] IDE brief written (cloud automation / IDE path):",
+      "[weekly-write] IDE brief written:",
       "data/weekly-write-ide-brief.md",
     );
     return {
