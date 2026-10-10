@@ -7,12 +7,7 @@ import {
   type EssayThesis,
 } from "@/lib/weekly-write/thesis";
 
-export type WeeklyDraftSource =
-  | "ollama"
-  | "gemini"
-  | "openai"
-  | "template"
-  | "ide";
+export type WeeklyDraftSource = "ollama" | "openai" | "template" | "ide";
 
 export type CreateWeeklyDraftResult =
   | { status: "ready"; draft: WeeklyDraft }
@@ -328,56 +323,11 @@ ${body}`,
   };
 }
 
-const FEW_SHOT = `
-CANONICAL ORBIT VOICE (study; do not copy sentences):
-- Titles are specific claims or questions, never "Week of…" or "What I learned this week".
-- Example title: "The Power BI dashboard I actually open every Monday"
-- Example opening: "Can a Monday morning portfolio review fit on one screen without losing the signals that matter for credit risk?"
-- Example takeaway: "The best operational dashboard isn't the prettiest — it's the one people trust on Monday."
-- Example career essay move: contrast what stayed the same vs what changed; end with a transferable principle ("make the system legible").
-- Include at least one concrete "mistake I made / refuse to repeat" or "what I am not doing yet" section when it fits.
-- A hiring manager who does not know the workshop should be able to say what you decided, what you rejected, and what you will not claim.
-- Prefer 700–1000 words of original argument. Cite the inspiration once; do not paraphrase the whole article.
-`;
-
-const SYSTEM_PROMPT = `You are ghostwriting a personal essay for Alex's Orbit portfolio (Writes).
-
-GOAL
-Write ONE focused essay worth publishing — the kind of piece someone would share: a new capability, a meaningful shift in AI, analytics / Power BI / Fabric reporting, data platforms, or delivery practice.
-Signals and projects are INSPIRATION only. Produce an original argument with judgment.
-
-${FEW_SHOT}
-
-VOICE
-- First-person, calm, specific. Document judgment; do not perform expertise.
-- Evergreen > hot take.
-- No emojis. No "As an AI". No "In today's fast-paced world". No motivational filler.
-
-REQUIRED ARC
-1. ## The question — one concrete question
-2. Context / what was broken or what people get wrong
-3. What you take seriously about the inspiration (argument, not article summary)
-4. How it lands for analytics, Power BI/Fabric, AI tooling, or delivery — optional bridge to one real project from intake
-5. Mistakes / what you are not doing yet
-6. ## Takeaway — one sharp conclusion
-
-HIRING-MANAGER STORY
-Put these inside the sections above. Do not add a "Behind the decision" heading, a competency badge, or a closing pitch about being hireable.
-- The decision.
-- The assumption, and the evidence that moved it.
-- What you chose, and what you rejected.
-- What stays unproven.
-- What should change on Monday, and where that move fails.
-One link leads: business problem, data, intelligent system, delivery, or measurable outcome. Prefer the gap between a demo that works and a decision a team can own. If a scene is hypothetical, say so in one clause.
-
-BEFORE PROSE
-- Draft several titles. Return the one that names a real tension and that the essay delivers. Topic labels fail.
-- Lock the decision, the evidence, the rejection, the limit, and the Monday move before sentences. If the claim or the evidence fails, change the thesis. Do not polish lines first.
-
-FORMAT RULES
-- Normal markdown prose with ## headings. NEVER markdown tables.
-- Do NOT reuse stock lines like "Capability is cheap. Trust is expensive" or "Steal one constraint".
-- category: Career | Data | AI | Delivery | Learning
+/** Local fallback only (`--allow-local-fallback`). Cursor is the writer; the bar is docs/essay-voice.md. */
+const SYSTEM_PROMPT = `Draft one personal Orbit Write. First person. One decision a stranger can retell: what was chosen, what was rejected, what stays unproven, what changes Monday.
+Title names a real tension the essay delivers. Open with ## The question. End with ## Takeaway. 700–1000 words. Cite the inspiration once.
+No tables. No "Week of". No "Capability is cheap. Trust is expensive".
+category: Career | Data | AI | Delivery | Learning — match the decision, not the tool.
 `;
 
 function userPromptJson(intake: WeeklyIntake, thesis: EssayThesis): string {
@@ -662,72 +612,6 @@ async function tryOllamaDraft(
   }
 }
 
-async function tryGeminiDraft(
-  intake: WeeklyIntake,
-  thesis: EssayThesis,
-  fallback: BuiltDraft,
-): Promise<BuiltDraft | null> {
-  const key = process.env.GEMINI_API_KEY?.trim();
-  if (!key) return null;
-
-  const model =
-    process.env.GEMINI_WEEKLY_MODEL?.trim() || "gemini-2.0-flash";
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(key)}`;
-  const payload = JSON.stringify({
-    contents: [
-      {
-        role: "user",
-        parts: [{ text: userPromptJson(intake, thesis) }],
-      },
-    ],
-    generationConfig: {
-      temperature: 0.65,
-      responseMimeType: "application/json",
-    },
-  });
-
-  const maxAttempts = 4;
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    try {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: payload,
-        signal: AbortSignal.timeout(120_000),
-      });
-
-      if (res.status === 429 || res.status === 503) {
-        const waitMs = attempt * 20_000;
-        console.warn(
-          `[weekly-write] Gemini ${res.status}, retry in ${waitMs}ms (attempt ${attempt}/${maxAttempts})`,
-        );
-        await new Promise((r) => setTimeout(r, waitMs));
-        continue;
-      }
-
-      if (!res.ok) {
-        console.error("[weekly-write] Gemini failed:", await res.text());
-        return null;
-      }
-
-      const data = (await res.json()) as {
-        candidates?: { content?: { parts?: { text?: string }[] } }[];
-      };
-      const raw = data.candidates?.[0]?.content?.parts
-        ?.map((p) => p.text || "")
-        .join("");
-      if (!raw) return null;
-      return builtFromModelJson(raw, intake, fallback);
-    } catch (err) {
-      console.error("[weekly-write] Gemini error:", err);
-      if (attempt === maxAttempts) return null;
-      await new Promise((r) => setTimeout(r, attempt * 12_000));
-    }
-  }
-
-  return null;
-}
-
 async function tryOpenAiDraft(
   intake: WeeklyIntake,
   thesis: EssayThesis,
@@ -794,59 +678,29 @@ function toWeeklyDraft(
   };
 }
 
-/** Cursor Cloud Automation / IDE is the primary writer (skip Gemini + template). */
-function useCloudAutomationWriter(): boolean {
-  return (
-    process.env.WEEKLY_WRITE_USE_CLOUD_AUTOMATION === "1" ||
-    process.env.WEEKLY_WRITE_SKIP_GEMINI === "1"
-  );
-}
-
 /**
- * Default: Cursor Cloud Automation / IDE writes the essay (Gemini skipped).
- * Legacy: Gemini when configured and cloud mode off.
- * Local fallback: Ollama → OpenAI → template (only when explicitly allowed).
+ * Cursor writes the essay from the IDE brief.
+ * Local fallback (Ollama → OpenAI → template) only when explicitly allowed.
  */
 export async function createWeeklyDraft(
   intake: WeeklyIntake,
   options?: { allowLocalFallback?: boolean },
 ): Promise<CreateWeeklyDraftResult> {
   const thesis = pickEssayThesis(intake);
+  const allowLocal =
+    options?.allowLocalFallback === true ||
+    process.env.WEEKLY_WRITE_ALLOW_LOCAL_FALLBACK === "1";
 
-  if (useCloudAutomationWriter()) {
+  if (!allowLocal) {
     return {
       status: "awaiting_ide",
-      reason: thesis ? "cloud_automation" : "no_thesis",
+      reason: thesis ? "cursor" : "no_thesis",
       intake,
       thesis,
     };
   }
 
   const fallback = buildTemplateMdx(intake);
-  const geminiConfigured = Boolean(process.env.GEMINI_API_KEY?.trim());
-  const allowLocal =
-    options?.allowLocalFallback === true ||
-    process.env.WEEKLY_WRITE_ALLOW_LOCAL_FALLBACK === "1" ||
-    !geminiConfigured;
-
-  if (thesis && geminiConfigured) {
-    const gemini = await tryGeminiDraft(intake, thesis, fallback);
-    if (gemini) {
-      return {
-        status: "ready",
-        draft: toWeeklyDraft(gemini, intake, "gemini"),
-      };
-    }
-
-    if (!allowLocal) {
-      return {
-        status: "awaiting_ide",
-        reason: "gemini_unavailable",
-        intake,
-        thesis,
-      };
-    }
-  }
 
   let built: BuiltDraft | null = null;
   let source: WeeklyDraftSource = "template";

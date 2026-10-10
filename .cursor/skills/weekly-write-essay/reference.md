@@ -29,10 +29,11 @@
 
 | Command | Purpose |
 |---------|---------|
-| `npm run weekly:draft` | Intake + generate (may write IDE brief if Gemini fails) |
-| `npm run weekly:notify` | Generate + Slack (or IDE brief) |
-| `npm run weekly:notify-draft` | Slack an existing pending local draft (persists to GitHub default branch when `GITHUB_TOKEN` is set; Slack includes the full essay body) |
-| `npm run weekly:notify -- --force` | Replace pending draft |
+| `npm run weekly:draft` | Intake + IDE brief. Cursor writes the essay. |
+| `npm run weekly:notify` | Force a new IDE brief. Slack waits for `weekly:notify-draft`. |
+| `npm run weekly:notify-draft` | Slack a pending local draft (persists to the GitHub default branch when `GITHUB_TOKEN` is set; Slack includes the full essay) |
+| `npm run weekly:notify -- --force` | Replace a pending draft |
+| `npm run weekly:draft -- --allow-local-fallback` | Ollama, then OpenAI, then a template. Explicit only. |
 
 ## Essay skeleton (Orbit)
 
@@ -52,11 +53,7 @@
 …
 ```
 
-Adjust section titles to the thesis; keep `## The question` first. Gloss workshop nicknames. Pass the stranger test and the hiring-manager story in `docs/essay-voice.md`.
-
-The hiring-manager story is five answers inside those sections: the decision, the evidence that moved you, what you rejected, what stays unproven, and what changes Monday. One chain link leads. Do not add a standing "Behind the decision" block or a role badge.
-
-Before paragraphs: five headlines, then those five answers as notes. Line edits wait until the claim and the evidence hold. The title has to name a tension the essay delivers.
+Adjust section titles to the thesis. Keep `## The question` first. The bar is `docs/essay-voice.md`.
 
 ## After Approve
 

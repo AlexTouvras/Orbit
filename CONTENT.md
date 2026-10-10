@@ -120,9 +120,9 @@ Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, sa
 
 - **One question per post** — put it in the title or an early `## The question` section.
 - **Hiring-manager story** — a stranger in a hiring seat should be able to retell the decision, the rejection, and the limit. Bar: `docs/essay-voice.md`. Essays stay prose.
-- **Document, don't perform** — write what you learned this week, not what you think sounds impressive.
+- **Document, don't perform** — write the decision, not what sounds impressive. Bar: `docs/essay-voice.md`.
 - **Evergreen > hot takes** — tutorials and lessons age better than trend commentary.
-- **Weekly automation drafts essays, not digests** — one thesis inspired by a Signal (AI, analytics/PBI, delivery), in the same voice as your featured Writes.
+- **Weekly Writes are one essay, not a digest** — one thesis from a Signal, in the same voice as featured Writes.
 - **Agent path** — Cursor uses `.cursor/rules/orbit-essays.mdc` + `docs/essay-voice.md`: weekly → skill `weekly-write-essay`; showcase/rewrite → personal skill `orbit-essay`.
 
 ---
@@ -280,13 +280,10 @@ Links are signed and expire in 7 days. Approve/Skip are confirm-then-POST so Sla
 | `SLACK_BOT_TOKEN` + `SLACK_CHANNEL_ID` (optional) | Attach full essay as `.md` in Slack (`files:write` bot scope — still free) |
 | `CRON_SECRET` / optional `WEEKLY_WRITE_SECRET` | Signs Approve/Skip/Preview links |
 | `GITHUB_TOKEN` | Already required for Studio; used to commit the MDX on Approve |
-| `OPENAI_API_KEY` (optional) | Paid — not needed; prefer Ollama locally or Gemini free |
-| `GEMINI_API_KEY` (optional) | Free at https://aistudio.google.com/apikey — useful on Vercel (no Ollama) |
+| `OPENAI_API_KEY` (optional) | Only for `--allow-local-fallback`, after Ollama |
 | `NEXT_PUBLIC_SITE_URL` | Must be your live HTTPS origin so Slack links work |
 
-Draft order: **Gemini** (when key works) → else **IDE brief** in this repo for Cursor to write the essay → then Slack Approve. Optional local fallback: `--allow-local-fallback` (Ollama/template).
-
-When Gemini fails, open `data/weekly-write-ide-brief.md` and follow the project skill **`weekly-write-essay`** (`.cursor/skills/weekly-write-essay/`), or ask Cursor to generate the weekly Write. Save `data/weekly-write-draft.json`, then:
+Cursor writes the essay from `data/weekly-write-ide-brief.md`, using **`weekly-write-essay`** and `docs/essay-voice.md`. Save `data/weekly-write-draft.json`, then:
 
 ```powershell
 $env:NEXT_PUBLIC_SITE_URL = "https://alextouvras.com"   # required — Slack links must not point at localhost
@@ -300,8 +297,8 @@ Confirm the CLI JSON includes `"slack": true`, `"githubSynced": true`, and that 
 
 ```powershell
 npm run weekly:draft
-# or force + Slack:
-npm run weekly:notify
+# after the essay is in data/weekly-write-draft.json:
+npm run weekly:notify-draft
 ```
 
 Manual cron (production):

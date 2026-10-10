@@ -13,10 +13,9 @@ Do **not** improvise a generic blog post. Open the shared voice bar, then the ma
 
 ## Shared bar (always)
 
-1. Read `docs/essay-voice.md` (compelling / human gates, **stranger test / primary reader**, **title pass**, **hiring-manager story** with argument notes before paragraphs, topic balance, **and** thesis voice fingerprint).
-2. Open personal skill `anti-ai-slop-writing` before drafting.
-3. Open at least one peer Write under `src/content/writes/` for tone (prefer same category; avoid Power BI peers for non-Power-BI theses).
-4. Apply thesis *reasoning* (false belief → method → counter-case → limit); never thesis *form* (lit review, “this paper examines…”).
+1. Read `docs/essay-voice.md` before drafting.
+2. Open personal skill `anti-ai-slop-writing`.
+3. Open one peer Write in `src/content/writes/` (same category when you can; skip a Power BI peer unless the thesis is Power BI).
 
 ## Which skill
 
@@ -29,7 +28,5 @@ If both could apply: weekly brief present → weekly skill. Otherwise → `orbit
 
 ## Hard constraints
 
-- Body starts with `## The question`; ends with a takeaway section.
-- One thesis — not a digest or link roundup.
-- Write for an external stranger: gloss workshop nicknames; no tool catalogs; category matches the decision rule (rotate away from Power BI defaults).
-- No commit / Slack publish / live deploy without explicit user AUTH (weekly path: Slack Approve only).
+- Follow the Pass list in `docs/essay-voice.md`.
+- No commit, Slack publish, or live deploy without an explicit user ask. Weekly path: Slack Approve only.

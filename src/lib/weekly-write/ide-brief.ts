@@ -42,10 +42,10 @@ export function writeIdeBrief(options: {
     instructions: [
       "Open this repo in Cursor.",
       "Read data/weekly-write-ide-brief.md (and the JSON twin).",
-      "Write one Orbit essay in the voice of src/content/writes/*.mdx (especially from-risk-to-delivery.mdx and building-orbit.mdx). Use the weekly-write-essay Cursor skill.",
+      "Write one Orbit essay with the weekly-write-essay skill. The bar is docs/essay-voice.md.",
       "Save the pending draft to data/weekly-write-draft.json (status pending, source ide).",
       "Run: npm run weekly:notify-draft",
-      "Approve/Skip in Slack #career-ops as usual.",
+      "Approve or Skip in Slack #orbit.",
     ],
   };
 
@@ -84,7 +84,7 @@ function renderIdeBriefMarkdown(brief: IdeBrief): string {
 
   return `# Weekly Write — IDE generation needed
 
-${brief.reason === "cloud_automation" ? "Cursor Cloud Automation writes this week's essay (Gemini skipped)." : "Gemini cloud generation failed or was unavailable."} **Generate the essay in Cursor**, then continue the normal Slack approve pipeline.
+Cursor writes this week's essay. Generate it here, then continue the Slack approve pipeline.
 
 ## Why
 
@@ -96,7 +96,7 @@ Week of: ${brief.weekOf}
 ## Your job (in this IDE)
 
 1. Write **one** focused Orbit essay (not a digest) inspired by the thesis below.
-2. Match voice/structure of existing Writes (\`## The question\` … \`## Takeaway\`, 700–1000 words). Pass the hiring-manager story in \`docs/essay-voice.md\`: the reader can name the decision, what you rejected, and what stays unproven. Write five headlines and keep the one the essay delivers. Write the decision, the evidence, the rejection, the limit, and the Monday move as notes before paragraphs. If the claim or the evidence fails, change the thesis before polishing lines.
+2. Follow \`docs/essay-voice.md\` (title, argument notes, then prose; \`## The question\` through \`## Takeaway\`, 700–1000 words).
 3. Save pending draft JSON to \`data/weekly-write-draft.json\` with \`source: "ide"\` and \`status: "pending"\`.
 4. Run:
 
@@ -104,7 +104,7 @@ Week of: ${brief.weekOf}
 npm run weekly:notify-draft
 \`\`\`
 
-5. In Slack \`#career-ops\`, click **Approve & publish** or **Skip**.
+5. In Slack \`#orbit\`, click **Approve & publish** or **Skip**.
 
 ## Thesis
 
