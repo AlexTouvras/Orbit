@@ -56,6 +56,8 @@ Adjust section titles to the thesis; keep `## The question` first. Gloss worksho
 
 The hiring-manager story is five answers inside those sections: the decision, the evidence that moved you, what you rejected, what stays unproven, and what changes Monday. One chain link leads. Do not add a standing "Behind the decision" block or a role badge.
 
+Before paragraphs: five headlines, then those five answers as notes. Line edits wait until the claim and the evidence hold. The title has to name a tension the essay delivers.
+
 ## After Approve
 
 Slack **Approve & publish** → confirm POST → GitHub commit of MDX → Vercel redeploy. Agent does not need to push unless the user asks.

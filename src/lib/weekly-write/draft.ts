@@ -370,6 +370,10 @@ Put these inside the sections above. Do not add a "Behind the decision" heading,
 - What should change on Monday, and where that move fails.
 One link leads: business problem, data, intelligent system, delivery, or measurable outcome. Prefer the gap between a demo that works and a decision a team can own. If a scene is hypothetical, say so in one clause.
 
+BEFORE PROSE
+- Draft several titles. Return the one that names a real tension and that the essay delivers. Topic labels fail.
+- Lock the decision, the evidence, the rejection, the limit, and the Monday move before sentences. If the claim or the evidence fails, change the thesis. Do not polish lines first.
+
 FORMAT RULES
 - Normal markdown prose with ## headings. NEVER markdown tables.
 - Do NOT reuse stock lines like "Capability is cheap. Trust is expensive" or "Steal one constraint".

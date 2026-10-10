@@ -28,7 +28,7 @@ Before notify, self-check the draft against Quality gates below (same rules as `
 ## Minimum evidence (open before writing)
 
 1. `data/weekly-write-ide-brief.md` **and** `data/weekly-write-ide-brief.json` (thesis + intake)
-2. `docs/essay-voice.md` — compelling checklist, **primary reader / stranger test**, **hiring-manager story**, topic balance, **and** "Voice from the theses" (reasoning fingerprint; no academic cosplay)
+2. `docs/essay-voice.md` — compelling checklist, **primary reader / stranger test**, **title pass**, **hiring-manager story** (argument notes before paragraphs), topic balance, **and** "Voice from the theses" (reasoning fingerprint; no academic cosplay)
 3. Personal skill `anti-ai-slop-writing` + banned-words list
 4. Voice peer (read at least one fully):
    - Prefer a peer in the **chosen category lane**
@@ -42,7 +42,9 @@ Do not cite deleted placeholders (e.g. former `power-bi-monday-dashboard.mdx`).
 
 1. **Read the brief.** Use the thesis question + primary Signal. Supporting Signals are adjacent only — not a second thesis. Project bridge only if the brief names one.
 2. **Choose category for the decision rule**, not the stack. Before locking `Data`/`AI` with a Power BI / Fabric angle, ask whether Delivery, Learning, Career, or general data (measurement, contracts, evidence, ops) fits the Signal better. Prefer rotation across a month; do not ship three consecutive Power BI pieces unless the user asks.
-3. **Write one essay**, not a digest:
+3. **Title pass.** Write five headlines. Keep the one that names a real tension the essay delivers. A topic label fails.
+4. **Argument notes.** Write the five hiring-manager answers before any paragraph: the decision, the evidence that moved it, what you rejected, what stays unproven, and what changes Monday, including where that move fails. If the claim or the evidence fails, change the thesis and rebuild the sections. Line edits wait.
+5. **Write one essay**, not a digest:
    - First body heading: `## The question`
    - End with a clear takeaway section (often `## Takeaway`)
    - ~700–1000 words preferred; hard bounds 500–1600
@@ -52,15 +54,15 @@ Do not cite deleted placeholders (e.g. former `power-bi-monday-dashboard.mdx`).
    - Optional: one link to related architecture at `/architecture/{slug}` if the essay is about a featured project
    - Pass the hiring-manager story in `docs/essay-voice.md`: decision, what you rejected, what stays unproven, what changes Monday. One chain link leads (business problem → data → intelligent system → delivery → measurable outcome). Prefer the gap between a demo that works and a decision a team can own.
    - No tool catalogs, no role badge, and no standing "Behind the decision" card. No hiring soft-close unless the piece is Career and the user asked for a role-change angle.
-4. **Build frontmatter + body** into full MDX string (frontmatter then body). SEO (OG image, JSON-LD, sitemap, RSS) is automatic from `title` / `summary` / `date` / `category` / `tags` — do not invent meta tags. First publish: omit `updated`.
-5. **Save** `data/weekly-write-draft.json` (see `reference.md` for shape). Required fields:
+6. **Build frontmatter + body** into full MDX string (frontmatter then body). SEO (OG image, JSON-LD, sitemap, RSS) is automatic from `title` / `summary` / `date` / `category` / `tags` — do not invent meta tags. First publish: omit `updated`.
+7. **Save** `data/weekly-write-draft.json` (see `reference.md` for shape). Required fields:
    - `status: "pending"`, `source: "ide"`
    - `intake` copied from the brief JSON
    - `id` like `ww-{weekOf}-ide` (or keep existing pending id if replacing)
    - Valid `slug` from title (lowercase, hyphens)
-6. **UTF-8:** write the file as UTF-8. Prefer commas/semicolons over em dashes (at most one em dash per ~500 words); never leave mojibake.
-7. **Sync + Notify:** `npm run weekly:notify-draft` with `GITHUB_TOKEN` (and `GITHUB_REPO` if needed) so the pending draft is committed to the **default branch**. Vercel preview/Approve read GitHub default branch — a feature-branch-only commit is not enough. Confirm the CLI JSON includes `"slack": true` and `"githubSynced": true`. Slack posts the **full essay in-channel** (chunked); browser preview is secondary.
-8. **Stop.** User Approves/Skips in Slack. Do not call publish APIs or commit Write MDX unless authorized.
+8. **UTF-8:** write the file as UTF-8. Prefer commas/semicolons over em dashes (at most one em dash per ~500 words); never leave mojibake.
+9. **Sync + Notify:** `npm run weekly:notify-draft` with `GITHUB_TOKEN` (and `GITHUB_REPO` if needed) so the pending draft is committed to the **default branch**. Vercel preview/Approve read GitHub default branch — a feature-branch-only commit is not enough. Confirm the CLI JSON includes `"slack": true` and `"githubSynced": true`. Slack posts the **full essay in-channel** (chunked); browser preview is secondary.
+10. **Stop.** User Approves/Skips in Slack. Do not call publish APIs or commit Write MDX unless authorized.
 
 If `githubSynced` is false: set `GITHUB_TOKEN` with `repo` scope and re-run notify, or PUT `data/weekly-write-draft.json` to the default branch via the GitHub Contents API, then re-notify. Do not claim the Slack post is review-ready when only a feature branch has the draft.
 
@@ -68,6 +70,7 @@ If `githubSynced` is false: set `GITHUB_TOKEN` with `repo` scope and re-run noti
 
 | Gate | Fail if |
 |------|---------|
+| Weak title | Headline is a topic label, or the essay does not deliver the tension the title names |
 | Digest shape | Title like "Week of…", "what I learned this week", weekly roundup; or body is a bullet digest of many links |
 | Missing question | Body does not start with `## The question` |
 | Table outline | ≥4 markdown table rows (`\|`) — not an essay |

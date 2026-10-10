@@ -53,8 +53,13 @@ Valid categories: `Career` | `Data` | `AI` | `Delivery` | `Learning`.
 
 Length: ~600–1200 words typical; weekly path hard bounds 500–1600.
 
+## Title (both paths)
+
+Write five headlines before the draft. Keep the one that names a real tension and that the essay actually delivers. A topic label fails ("Thoughts on AI", "The future of data").
+
 ## Compelling checklist (fail any → rewrite that section)
 
+- [ ] The title names a tension the essay delivers
 - [ ] First screen answers: why should I care *this week*?
 - [ ] Stranger test passes (nicknames glossed; metrics translated; decision rule portable)
 - [ ] At least one sentence a peer would underline (decision, constraint, or number)
@@ -78,7 +83,7 @@ Essays stay MDX prose. The picture, the cast, and the thing a visitor can move s
 1. **The story.** A consequential decision, a false belief, evidence that moves it.
 2. **The judgment.** Enough of the work behind that story that a stranger can see you frame, choose, reject, and limit.
 
-Before the draft is locked, answer these in sentences a stranger could repeat:
+Before any paragraph, write these answers as working notes. If the claim or the evidence does not hold, change the thesis and rebuild the sections. Line edits wait until the answers survive. A stranger should be able to repeat them:
 
 - What decision is this?
 - What did I assume, and which evidence moved me?
