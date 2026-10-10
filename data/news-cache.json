@@ -1,7 +1,97 @@
 {
-  "generatedAt": "2026-10-09T06:46:59.725Z",
+  "generatedAt": "2026-10-10T06:46:54.810Z",
   "count": 263,
   "items": [
+    {
+      "id": "941a7b417da4",
+      "title": "Financing the AI buildout before the risks go off balance sheet",
+      "link": "https://cepr.org/voxeu/columns/financing-ai-buildout-risks-go-balance-sheet",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-09T23:00:00.000Z",
+      "contentSnippet": "The AI boom is usually discussed as a contest over models, chips, and productivity. This column argues that it is also a large physical infrastructure and credit cycle. The policy priority is not to call the peak, but to measure who owns the assets, who owes the debt, and where c…"
+    },
+    {
+      "id": "dfc3cd8af139",
+      "title": "Your debt, my inflation: The role of trust in the ECB",
+      "link": "https://cepr.org/voxeu/columns/your-debt-my-inflation-role-trust-ecb",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-09T23:00:00.000Z",
+      "contentSnippet": "High public debt in several euro-area countries has renewed the debate over a central question: can fiscal pressures in one member state affect inflation expectations elsewhere by constraining the ECB? This column uses a randomised information experiment with German firms to show…"
+    },
+    {
+      "id": "a276e4f9898e",
+      "title": "How California built its Behavioral Health Public County Profile on Databricks",
+      "link": "https://www.databricks.com/blog/how-california-built-its-behavioral-health-public-county-profile-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-09T21:30:00.000Z",
+      "contentSnippet": "The California Department of Health Care Services (DHCS) built the Behavioral Health..."
+    },
+    {
+      "id": "a842dc410cb5",
+      "title": "Investigating unintended model actions in our evaluations and internal use",
+      "link": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-09T16:09:00.000Z",
+      "contentSnippet": "This report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude."
+    },
+    {
+      "id": "9358f1ad531f",
+      "title": "Solving defense supply chain visibility through governed data sharing",
+      "link": "https://www.databricks.com/blog/solving-defense-supply-chain-visibility-through-governed-data-sharing",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-09T14:00:00.000Z",
+      "contentSnippet": "When every tier of the defense supply chain can share governed data with the people who need it..."
+    },
+    {
+      "id": "95fd0fb1a7d9",
+      "title": "A new feature for my blog, built using my voice",
+      "link": "https://simonwillison.net/2026/Oct/9/built-using-my-voice/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-10-09T12:54:06.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "edd58468d564",
+      "title": "Sophos cuts threat investigation time by 96% with OpenAI Daybreak",
+      "link": "https://openai.com/index/sophos",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-09T07:00:00.000Z",
+      "contentSnippet": "Discover how Sophos uses OpenAI’s Daybreak to cut cyber-threat investigation time by 96% and automate 52% of MDR cases while preserving human oversight."
+    },
+    {
+      "id": "90995f7dbc9c",
+      "title": "Asana cuts model costs 76x in browser tests with GPT-6.1 Sol",
+      "link": "https://openai.com/index/asana-browser-agent",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-09T07:00:00.000Z",
+      "contentSnippet": "Using GPT-6 Astra in Codex, Asana made its browser agent 76x cheaper and 5x faster in tests to offer customers more capable models."
+    },
+    {
+      "id": "2ede4eed2ce6",
+      "title": "Agent Mode in the DuckDB CLI",
+      "link": "https://duckdb.org/2026/10/09/agent-mode.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-10-09T00:00:00.000Z",
+      "contentSnippet": "Let's Ask Claude We asked Claude to measure the effect of agent mode. In the experiment, Claude Code answered the 22 TPC-H questions on a scale factor 100 dataset. The questions were phrased in plain English, without any SQL. Each question was answered three times with agent mode…"
+    },
+    {
+      "id": "d31a7e479cb6",
+      "title": "Data Engineering Is the Cache Invalidation Problem ft. Josh Wills",
+      "link": "https://motherduck.com/blog/cache-invalidation-problem-data-engineering-josh-wills",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-09T00:00:00.000Z",
+      "contentSnippet": "Josh Wills, creator of dbt-duckdb and former head of data engineering at Slack, on why the model barely matters, why agents still write ugly and expensive data pipelines, and why data engineering is still the cache invalidation problem."
+    },
     {
       "id": "d3e16e5779e8",
       "title": "Announcing Workday Data Connect federation in Unity Catalog",
@@ -39,6 +129,15 @@
       "contentSnippet": "Persistent deviations from the covered interest parity no-arbitrage condition are viewed as evidence of the new and central role of balance sheet constraints and financial market frictions since the Global Financial Crisis. This column argues that covered interest parity deviatio…"
     },
     {
+      "id": "8042b0bd1a67",
+      "title": "Not Wearing Prada",
+      "link": "https://cepr.org/multimedia/not-wearing-prada",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-08T23:00:00.000Z",
+      "contentSnippet": "Since March 2022, it has been harder to buy an iPhone in Russia, because Apple chose to stop selling there. So did Prada, Renault, Starbucks, Nike and more than 1,000 other firms. These private sanctions added to the official sanctions imposed by 45 countries. Beata Javorcik (EBR…"
+    },
+    {
       "id": "714c79df7b98",
       "title": "Introducing Funke: Native HL7v2 Parsing on Databricks",
       "link": "https://www.databricks.com/blog/introducing-funke-native-hl7v2-parsing-databricks",
@@ -72,7 +171,7 @@
       "source": "Anthropic Research",
       "category": "AI",
       "pubDate": "2026-10-08T20:59:00.000Z",
-      "contentSnippet": "Astronomers have mapped the entire sky in visible light, infrared, radio, X-rays, and gamma rays. No one, however, had created a complete map of the sky in ultraviolet (UV) light. Here, Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, exp…"
+      "contentSnippet": "Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, explains how he worked with Claude Science to produce the first complete map of the sky in UV light."
     },
     {
       "id": "ecaa805484ea",
@@ -237,15 +336,6 @@
       "contentSnippet": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips."
     },
     {
-      "id": "0ca1450969b5",
-      "title": "GPT-6 and Intelligent UI for everyone",
-      "link": "https://openai.com/index/gpt-6-for-everyone",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-07T00:00:00.000Z",
-      "contentSnippet": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly."
-    },
-    {
       "id": "338a2fbf5a99",
       "title": "A DuckDB Database with No Data in It",
       "link": "https://duckdb.org/2026/10/07/view-only-mode.html",
@@ -253,24 +343,6 @@
       "category": "Data",
       "pubDate": "2026-10-07T00:00:00.000Z",
       "contentSnippet": "A DuckDB database file does not have to contain any data. It can store nothing but view definitions that point at files stored somewhere else, such as Parquet on object storage. The file stays a few hundred kilobytes no matter how large the data it describes, and anyone who attac…"
-    },
-    {
-      "id": "b7d8f3f5004d",
-      "title": "Not all geopolitical shocks are inflationary",
-      "link": "https://cepr.org/voxeu/columns/not-all-geopolitical-shocks-are-inflationary",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-06T23:00:00.000Z",
-      "contentSnippet": "Geopolitical tensions are often seen as a source of inflation. But this is only part of the story. This column shows that geopolitical shocks transmitted through energy markets raise prices while depressing economic activity. But geopolitical shocks unrelated to energy markets re…"
-    },
-    {
-      "id": "f3b80adccabb",
-      "title": "Worker-managed firms can curb inequality and protect free markets",
-      "link": "https://cepr.org/voxeu/columns/worker-managed-firms-can-curb-inequality-and-protect-free-markets",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-06T23:00:00.000Z",
-      "contentSnippet": "Rising income inequality in Western high-income countries threatens democratic governance and social cohesion, and AI risks making it worse. Drawing on a forthcoming book, this column argues for worker-managed firms as a durable remedy. With no external owners taking profits, wor…"
     },
     {
       "id": "bd187777a5e2",
@@ -289,33 +361,6 @@
       "category": "AI",
       "pubDate": "2026-10-06T19:57:04.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "d46a23c5bf49",
-      "title": "How to Repoint dbt ETL Pipelines to Databricks",
-      "link": "https://www.databricks.com/blog/how-repoint-dbt-etl-pipelines-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-06T18:53:48.000Z",
-      "contentSnippet": "More teams are running their dbt transformations on Databricks Lakehouse: an open..."
-    },
-    {
-      "id": "497dbb712354",
-      "title": "AI-powered analytics: Building data visualizations with natural language vs. SQL",
-      "link": "https://www.databricks.com/blog/ai-powered-analytics-building-data-visualizations-natural-language-vs-sql",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-06T18:16:25.000Z",
-      "contentSnippet": "Richard Tomlinson, who leads product marketing for Databricks' business intelligence..."
-    },
-    {
-      "id": "60ef2af305e7",
-      "title": "Atlassian and OpenAI expand partnership to turn enterprise knowledge into action",
-      "link": "https://openai.com/index/atlassian-partnership",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-06T16:00:00.000Z",
-      "contentSnippet": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work."
     },
     {
       "id": "0ec0c3cc2f3e",
@@ -361,15 +406,6 @@
       "category": "Credit",
       "pubDate": "2026-10-06T00:00:00.000Z",
       "contentSnippet": "This paper analyses the state-dependent effects of geopolitical risks on gold prices (i.e. the safe-haven role of gold), conditional on financial conditions. Geopolitical risks are often associated with tighter financial conditions. However, recent data reveal a decoupling be twe…"
-    },
-    {
-      "id": "c9abee08b28d",
-      "title": "Venture capital – a global perspective",
-      "link": "https://cepr.org/voxeu/columns/venture-capital-global-perspective",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-05T23:00:00.000Z",
-      "contentSnippet": "Existing views on what venture capital finances and how its markets are structured are primarily shaped by the experience of the US and a few other high-income economies. This column presents evidence covering nearly 270,000 venture capital-backed startups in over 150 economies t…"
     },
     {
       "id": "c3d66983a8dc",
@@ -721,15 +757,6 @@
       "category": "AI",
       "pubDate": "2026-09-29T15:55:13.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "80e4ef842b12",
-      "title": "GLM-5.3 and the spread of advanced cyber capabilities",
-      "link": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-29T15:46:00.000Z",
-      "contentSnippet": "Like Claude Mythos Preview, GLM-5.3 has strong capabilities for autonomously building end-to-end cyber exploits. But GLM-5.3 is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse."
     },
     {
       "id": "166f92c2b1ef",
@@ -1209,15 +1236,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "2ed54a20b866",
-      "title": "OpenAI agents attacked RubyGems back in May",
-      "link": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-09-12T00:42:25.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "ca291efb21c7",
       "title": "Why DuckDB 2.0 is faster",
       "link": "https://motherduck.com/blog/why-duckdb-20-is-faster",
@@ -1380,15 +1398,6 @@
       "contentSnippet": "Let's talk about matrix totals in this episode of The Whiteboard! Special guest: the SQLBI Whiteboard! Learn abstract DAX concepts in a more interactive way with \"The Whiteboard\" series. Read more: https://www.sqlbi.com/blog/marco/2022/07/14/the-whiteboard-video-series-on-sqlbi-y…"
     },
     {
-      "id": "7163d24d0de2",
-      "title": "Try DuckDB v2.0-dev",
-      "link": "https://duckdb.org/2026/09/02/try-duckdb-20-alpha.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-09-02T00:00:00.000Z",
-      "contentSnippet": "Update You can now select the 2.0.0-dev version on the installation page. The State of DuckDB v2.0 A few weeks ago, we published a preview of DuckDB v2.0. Today, we branched off v2.0-cyanoptera from the main development branch in the duckdb/duckdb repository. This marks a feature…"
-    },
-    {
       "id": "0a35ea3a6965",
       "title": "Context, Semantics, and Ontology: A Primer for the Agentic Era",
       "link": "https://motherduck.com/blog/context-layer-vs-semantic-layer-ontology",
@@ -1477,15 +1486,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-27T11:29:59.000Z",
       "contentSnippet": "SQLBI Whiteboard is a free, open-source whiteboard for Windows 11 designed for teaching DAX, SQL, and data modeling, with pen ink, live application capture, and syntax-highlighted code on the same canvas. Pen-first ink — Low-latency, pressure-aware strokes with palm rejection,…"
-    },
-    {
-      "id": "5b4e1eec98bc",
-      "title": "MotherDuck CLI: query, pipelines, and dashboards from your terminal",
-      "link": "https://motherduck.com/blog/motherduck-cli-announcement",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-27T00:00:00.000Z",
-      "contentSnippet": "Meet the MotherDuck CLI: one install to query data, publish Python pipelines, and host dashboards from your terminal, for coding agents and CI alike."
     },
     {
       "id": "8c836a70161f",
@@ -1749,6 +1749,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
+    },
+    {
       "id": "d9adb789161e",
       "title": "How Firms Form Beliefs and the Implications for Inflation",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
@@ -1765,15 +1774,6 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
-    },
-    {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "d834dadfb202",
@@ -1839,13 +1839,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "d817a88ce0e9",
-      "title": "The Last Taxi: LCR Buffers and Bank Liquidity Provision",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026051pap.pdf",
+      "id": "4c8cd6ef9ad3",
+      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
+      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Alexandros Vardoulakis, Matt Darst, Arazi Lubis and Lucia Gurrieri"
+      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
     },
     {
       "id": "ed6bd26c4997",
