@@ -4,6 +4,7 @@ import { OrbitSignature } from "@/components/ui/OrbitSignature";
 import { MissionHero } from "@/components/ui/MissionHero";
 
 interface PortfolioHeroProps {
+  productCount: number;
   workshopCount: number;
   powerBiCount: number;
   liveCount: number;
@@ -11,6 +12,7 @@ interface PortfolioHeroProps {
 }
 
 export function PortfolioHero({
+  productCount,
   workshopCount,
   powerBiCount,
   liveCount,
@@ -42,6 +44,15 @@ export function PortfolioHero({
       ]}
       actions={
         <>
+          {productCount > 0 ? (
+            <a
+              href="#products"
+              className="focus-ring group inline-flex min-h-11 items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white transition-[transform,border-color,color] active:scale-[0.98] hover:border-neon-cyan/50 hover:text-neon-cyan"
+            >
+              Products
+              <ArrowRight className="h-3.5 w-3.5 opacity-60 transition-transform motion-safe:group-hover:translate-x-0.5" />
+            </a>
+          ) : null}
           {workshopCount > 0 ? (
             <a
               href="#workshop"

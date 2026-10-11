@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Portfolio products chapter (`/portfolio#products`) with Delivery Signal — page or command a stranger can open; not a new route and not a workshop card
 - [x] Drop the Gemini weekly-write path; Cursor writes from the IDE brief
 - [x] Essay voice doc tightened to one pass list (title, argument notes, stranger, leave-outs, thesis moves)
 - [x] Essay title pass + argument notes before prose — `docs/essay-voice.md`. No second principles file.

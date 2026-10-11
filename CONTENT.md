@@ -127,12 +127,13 @@ Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, sa
 
 ---
 
-## 2. Portfolio (workshop, GitHub, Power BI & live)
+## 2. Portfolio (products, workshop, GitHub, Power BI & live)
 
 **URL:** `/portfolio`
 
 The portfolio shows **real work only**:
 
+- **Products** (`#products`) — a page or a command a stranger can open. Curated in `src/content/products.ts`. Not a Studio scan, and not a separate `/products` route. The Hub gravity satellite labeled “products” links here. One product stays a single card in the column; two or more use the same reel as workshop.
 - **Workshop** — projects you publish from Studio (scanned from your machine).
 - **GitHub** — live public repos, pulled from your `githubUsername`.
 - **Power BI** — report page screenshots (`#power-bi`), browsable with page arrows and click-to-enlarge.
@@ -488,7 +489,7 @@ npm run news:fetch
 /                 Hub — hero, latest writes, competencies, about teaser
 /writes           Your articles (owned content)
 /writes/[slug]    Single article
-/portfolio        Workshop + GitHub + Power BI (#power-bi) + live teaser (#live)
+/portfolio        Products (#products) + workshop + GitHub + Power BI (#power-bi) + live teaser (#live)
 /portfolio/live   Live dashboard gallery
 /portfolio/live/[slug]  Desk (nordic-equity, power, eu-spot)
 /about            CV & full background

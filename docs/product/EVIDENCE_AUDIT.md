@@ -33,6 +33,7 @@ Do **not** treat this as permission to build the Decision Intelligence Lab. Lab 
 | **ProjectBrain** | Project, AI workflow, Case study | Intelligent system → Delivery (for agents) | Portfolio memory / MCP. Proves agent systems thinking; IDE-only, not a domain decision product. |
 | **Ledger** | Project, Data product, Case study | Data → Analysis → Decision aid | Personal research loop; human still clicks trades. Prototype. |
 | **mealplan** / **fitness-coach** | Project, AI/ops workflow | Delivery → Automation | Personal ops. Non-featured by design. Good craft; wrong audience for archetype proof. |
+| **Delivery Signal** (2026-10-11) | Delivery system | Export → cited brief → decision waiting | Portfolio products chapter. Sample portfolio only; one real weekly pair is still open. Not the flagship. |
 
 ## 2. Live desks
 

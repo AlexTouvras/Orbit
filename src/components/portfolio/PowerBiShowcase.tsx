@@ -166,7 +166,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
           <div className="relative">
             <ChapterMark
               className="[&>p:first-child]:max-w-[calc(100%-6.5rem)]"
-              index="03"
+              index="04"
               eyebrow="Analytics"
               title="Power BI"
               description="Report pages from my Power BI portfolio — browse pages, enlarge for detail."

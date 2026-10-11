@@ -35,7 +35,7 @@ export async function GithubRepos() {
     <section id="github" className="scroll-mt-28">
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <ChapterMark
-          index="04"
+          index="05"
           eyebrow="Open source"
           title="GitHub"
           description="Live from my public repositories, refreshed automatically."

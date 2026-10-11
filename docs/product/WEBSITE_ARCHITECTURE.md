@@ -30,6 +30,7 @@ Public pages consume only information explicitly marked public. Do not automatic
 ## Existing product grammar (do not reinvent in Foundation)
 
 - Hub / Portfolio / live desks: chaptered visual storytelling (see `.cursor/skills/visual-storytelling`)
+- Portfolio products: a chapter on `/portfolio#products` (`src/content/products.ts`). A product is a page or a command a stranger can open. Workshop projects stay the Studio-scanned reel. Do not add a `/products` route for the same job.
 - Writes: MDX prose; stranger-first (`docs/essay-voice.md`); no cast/scenario blocks on essays
 - Studio and `/card`: interior tools — not cinematic chapter restyles
 - JARVIS / ProjectHelm: retired; historical architecture only
