@@ -1,7 +1,43 @@
 {
-  "generatedAt": "2026-10-10T06:46:54.810Z",
+  "generatedAt": "2026-10-11T06:46:57.767Z",
   "count": 263,
   "items": [
+    {
+      "id": "c5fcb1c48fe6",
+      "title": "ApproximateDistinctCount In Power BI Is Sometimes Slower Than DistinctCount",
+      "link": "https://blog.crossjoin.co.uk/2026/10/11/approximatedistinctcount-in-power-bi-is-sometimes-slower-than-distinctcount/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-10-11T06:01:02.000Z",
+      "contentSnippet": "As a follow-on from last week’s post about the new ApproximateDistinctCount function in DAX, I want to share something I found out from my recent testing for this function: ApproximateDistinctCount is sometimes slower than DistinctCount. This sounds counter-intuitive, right? Afte…"
+    },
+    {
+      "id": "81bfdc410e0b",
+      "title": "SAFe Didn't Scale Agile. It Scaled Bureaucracy.",
+      "link": "https://www.scrum.org/resources/blog/safe-didnt-scale-agile-it-scaled-bureaucracy",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-11T06:00:00.000Z",
+      "contentSnippet": "Image Gary Hamel spent decades asking why large organizations become rigid, slow, and hard to work inside. His diagnosis is simple: bureaucracy is not a symptom of poor management. It is a design, and its purpose is control, not the creation of value. I have been watching this de…"
+    },
+    {
+      "id": "67939e1bd693",
+      "title": "Fiscal populism and monetary policy rules",
+      "link": "https://cepr.org/voxeu/columns/fiscal-populism-and-monetary-policy-rules",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-10T23:00:00.000Z",
+      "contentSnippet": "Populism may not only have contemporary but also long-term effects on the macroeconomy. Using data for advanced economies and emerging markets since 1960, this column explores the historical links between populist regimes, fiscal monetisation, and inflation, and how these links a…"
+    },
+    {
+      "id": "32fa280f5a1c",
+      "title": "Ideas and firm dynamics when it takes two to tango",
+      "link": "https://cepr.org/voxeu/columns/ideas-and-firm-dynamics-when-it-takes-two-tango",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-10T23:00:00.000Z",
+      "contentSnippet": "Innovation has increasingly become a team activity, while inventors have become more concentrated in large firms. This column argues that these trends are closely connected. Team production creates genuine scale advantages in innovation, but can also lead the competitive economy…"
+    },
     {
       "id": "941a7b417da4",
       "title": "Financing the AI buildout before the risks go off balance sheet",
@@ -102,6 +138,15 @@
       "contentSnippet": "We're excited to announce the publicly available Beta of the Workday Data Connect federation connector for Unity Catalog..."
     },
     {
+      "id": "8042b0bd1a67",
+      "title": "Not Wearing Prada",
+      "link": "https://cepr.org/multimedia/not-wearing-prada",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-08T23:00:00.000Z",
+      "contentSnippet": "Since March 2022, it has been harder to buy an iPhone in Russia, because Apple chose to stop selling there. So did Prada, Renault, Starbucks, Nike and more than 1,000 other firms. These private sanctions added to the official sanctions imposed by 45 countries. Beata Javorcik (EBR…"
+    },
+    {
       "id": "9934a6d239f3",
       "title": "Protecting indigenous cultural resources from within the IP system",
       "link": "https://cepr.org/voxeu/columns/protecting-indigenous-cultural-resources-within-ip-system",
@@ -127,15 +172,6 @@
       "category": "Economics",
       "pubDate": "2026-10-08T23:00:00.000Z",
       "contentSnippet": "Persistent deviations from the covered interest parity no-arbitrage condition are viewed as evidence of the new and central role of balance sheet constraints and financial market frictions since the Global Financial Crisis. This column argues that covered interest parity deviatio…"
-    },
-    {
-      "id": "8042b0bd1a67",
-      "title": "Not Wearing Prada",
-      "link": "https://cepr.org/multimedia/not-wearing-prada",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-08T23:00:00.000Z",
-      "contentSnippet": "Since March 2022, it has been harder to buy an iPhone in Russia, because Apple chose to stop selling there. So did Prada, Renault, Starbucks, Nike and more than 1,000 other firms. These private sanctions added to the official sanctions imposed by 45 countries. Beata Javorcik (EBR…"
     },
     {
       "id": "714c79df7b98",
@@ -244,24 +280,6 @@
       "category": "Credit",
       "pubDate": "2026-10-08T00:00:00.000Z",
       "contentSnippet": "Artificial intelligence (AI) is becoming an increasingly important factor in the climate transition. AI can improve energy efficiency, optimise resource use, accelerate climate innovation and strengthen climate forecasting, adaptation and risk management. At the same time, the de…"
-    },
-    {
-      "id": "6a86976136d7",
-      "title": "Cultural norms matter for macroeconomic development",
-      "link": "https://cepr.org/voxeu/columns/cultural-norms-matter-macroeconomic-development",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-07T23:00:00.000Z",
-      "contentSnippet": "Interest in the role of cultural norms, institutions, and development has resurfaced in recent years especially post the 2024 Nobel Prize in Economics. This column revisits Bhutan, which has pursued ‘gross national happiness’ rather than GDP since the 1970s. Four decades of data…"
-    },
-    {
-      "id": "d2b51ea2e227",
-      "title": "The adjustment of the Danish labour market to AI has begun",
-      "link": "https://cepr.org/voxeu/columns/adjustment-danish-labour-market-ai-has-begun",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-07T23:00:00.000Z",
-      "contentSnippet": "Policymakers are asking whether generative AI is reshaping labour demand, and the literature has found mixed results so far. This column links Denmark’s official IT-use survey to monthly employer–employee records and compares firms that started using AI in 2023 with those that di…"
     },
     {
       "id": "6dcb3088ac59",
@@ -775,15 +793,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-29T13:43:00.000Z",
       "contentSnippet": "A Sensible Default is a practice that, absent some overriding context, should be used when carrying out a certain kind of task. In software development such sensible defaults might include things like “use version control”, “separate UI logic from domain logic”, “automate deploym…"
-    },
-    {
-      "id": "e4727fbfcdfd",
-      "title": "5 Things the Product Owner Shouldn’t Be Doing",
-      "link": "https://www.scrum.org/resources/blog/5-things-product-owner-shouldnt-be-doing",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-29T13:00:00.000Z",
-      "contentSnippet": "Image Product Owners are accountable for maximizing the value of the product. That means setting direction, establishing the Product Goal, and ordering the Product Backlog around what matters most. But accountability doesn't mean doing everything yourself. Great Product Owners de…"
     },
     {
       "id": "7344bae708cb",
@@ -1713,15 +1722,6 @@
       "contentSnippet": "Federal Reserve Bank of Atlanta Working Papers by Kristopher Gerardi, David Hao Zhang and Franklin Qian"
     },
     {
-      "id": "e70bbfbc4b98",
-      "title": "Analysing Power BI Data Using Copilot In Excel",
-      "link": "https://blog.crossjoin.co.uk/2026/08/02/analysing-power-bi-data-using-copilot-in-excel/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-08-02T17:52:45.000Z",
-      "contentSnippet": "This week there was another big Copilot-related announcement for Power BI – but on the Excel blog. You can now analyse data from Power BI semantic models using Copilot in Excel. Full details on how to enable this are in the docs here, but what does it look like? Using the same se…"
-    },
-    {
       "id": "7401bc123f1d",
       "title": "The transmission of shocks across sectors and the dynamics of sectoral prices",
       "link": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3266~e62e35205b.en.pdf",
@@ -1749,6 +1749,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "07b1c1c9fdb7",
+      "title": "Credit Surfaces and Economic Uncertainty",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
+    },
+    {
       "id": "30c8bc5d5e3c",
       "title": "Structural Estimation with Unstructured Data",
       "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
@@ -1765,15 +1774,6 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
-    },
-    {
-      "id": "07b1c1c9fdb7",
-      "title": "Credit Surfaces and Economic Uncertainty",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
       "id": "d834dadfb202",
