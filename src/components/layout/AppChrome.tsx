@@ -25,6 +25,7 @@ export function AppChrome({
     pathname === "/" ||
     pathname === "/about" ||
     pathname === "/portfolio" ||
+    pathname === "/products" ||
     pathname === "/writes" ||
     pathname === "/contact" ||
     pathname === "/radar" ||

@@ -1,7 +1,7 @@
 import type { ProjectStatus } from "@/lib/project-status";
 
 /**
- * Public products on `/portfolio#products`.
+ * Public products on `/products`.
  * A product is a page or a command a stranger can open.
  * Workshop projects stay in Studio (`data/published-projects.json`).
  *

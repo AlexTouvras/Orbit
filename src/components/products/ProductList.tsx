@@ -1,22 +1,14 @@
 import { ExternalLink, FolderGit2 } from "lucide-react";
-import { products } from "@/content/products";
-import { ChapterMark } from "@/components/story/ChapterMark";
+import { products, type Product } from "@/content/products";
 import { ScrollRail, ScrollRailCard } from "@/components/story/ScrollRail";
 import { Badge } from "@/components/ui/Badge";
-import { StatusBadge } from "./StatusBadge";
+import { StatusBadge } from "@/components/portfolio/StatusBadge";
 
 function pad(n: number) {
   return String(n).padStart(2, "0");
 }
 
-function ProductCard({
-  index,
-}: {
-  index: number;
-}) {
-  const product = products[index];
-  if (!product) return null;
-
+function ProductCard({ product, index }: { product: Product; index: number }) {
   return (
     <article className="relative flex h-full min-h-0 w-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-9">
       <p className="story-index absolute right-4 top-2 select-none" aria-hidden>
@@ -31,9 +23,9 @@ function ProductCard({
             </Badge>
           ))}
         </div>
-        <h3 className="relative mt-4 font-display text-xl font-semibold leading-tight tracking-tight text-white sm:mt-6 sm:text-3xl">
+        <h2 className="relative mt-4 font-display text-xl font-semibold leading-tight tracking-tight text-white sm:mt-6 sm:text-3xl">
           {product.name}
-        </h3>
+        </h2>
       </div>
       <p className="mt-3 min-h-0 shrink text-sm leading-relaxed text-slate-300 sm:mt-4 sm:text-base">
         {product.description}
@@ -62,36 +54,26 @@ function ProductCard({
   );
 }
 
-/** Portfolio chapter for installable products. One product stays in the column; two or more use the workshop reel. */
-export function ProductSection() {
+/** Public product list. One product stays in the column; two or more use a reel. */
+export function ProductList() {
   if (products.length === 0) return null;
-
-  const header = (
-    <ChapterMark
-      index="01"
-      eyebrow="Products"
-      title="Products I ship"
-      description="A page or a command a stranger can open."
-    />
-  );
 
   if (products.length === 1) {
     return (
-      <section id="products" className="scroll-mt-28">
-        {header}
-        <div className="mt-8 w-[min(40rem,100%)]">
-          <ProductCard index={0} />
+      <section id="list" className="scroll-mt-28">
+        <div className="w-[min(40rem,100%)]">
+          <ProductCard product={products[0]} index={0} />
         </div>
       </section>
     );
   }
 
   return (
-    <section id="products" className="scroll-mt-28">
-      <ScrollRail fit length={products.length} header={header}>
+    <section id="list" className="scroll-mt-28">
+      <ScrollRail fit length={products.length}>
         {products.map((product, i) => (
           <ScrollRailCard key={product.id} className="h-full min-h-0">
-            <ProductCard index={i} />
+            <ProductCard product={product} index={i} />
           </ScrollRailCard>
         ))}
       </ScrollRail>
