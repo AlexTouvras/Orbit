@@ -131,7 +131,7 @@ Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, sa
 
 **URL:** `/portfolio`
 
-The portfolio shows **real work only**. A product a stranger can open lives on `/products` (`src/content/products.ts`), not in this reel.
+The portfolio shows **real work only**. A product a stranger can open lives on `/products` (`src/content/products.ts`), not in this reel. Delivery Signal’s page is `/delivery-signal/`, read from that repo’s `main` branch. A push there shows up within a minute. Orbit does not store a copy.
 
 - **Workshop** — projects you publish from Studio (scanned from your machine).
 - **GitHub** — live public repos, pulled from your `githubUsername`.

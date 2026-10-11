@@ -10,6 +10,7 @@
 - About: https://alextouvras.com/about
 - Portfolio: https://alextouvras.com/portfolio
 - Products: https://alextouvras.com/products
+- Delivery Signal (live from the repo main branch): https://alextouvras.com/delivery-signal/
 - Identity card: https://alextouvras.com/card
 
 ## Field cards (one-page decision aids)
