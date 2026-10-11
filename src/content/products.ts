@@ -5,10 +5,10 @@ import type { ProjectStatus } from "@/lib/project-status";
  * A product is a page or a command a stranger can open.
  * Workshop projects stay in Studio (`data/published-projects.json`).
  *
- * `pageUrl` has to be a URL that already opens. Delivery Signal names
- * https://alextouvras.github.io/delivery-signal/ as its address, and that
- * host 404s until GitHub Pages is `main` / `docs`. Until then the page is
- * the preview URL in that repo's README.
+ * Delivery Signal's page is not copied into this repo. `/delivery-signal`
+ * reads `docs/` from `AlexTouvras/delivery-signal` `main` and caches it for
+ * a minute, so a push there is the version on this site. The open URL is
+ * `index.html` so the page's own files resolve next to it.
  */
 export interface Product {
   id: string;
@@ -29,7 +29,6 @@ export const products: Product[] = [
     status: "shipped",
     tags: ["Delivery", "Jira", "Azure DevOps"],
     repoUrl: "https://github.com/AlexTouvras/delivery-signal",
-    pageUrl:
-      "https://htmlpreview.github.io/?https://github.com/AlexTouvras/delivery-signal/blob/main/docs/index.html",
+    pageUrl: "/delivery-signal/index.html",
   },
 ];

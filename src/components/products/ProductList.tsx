@@ -33,8 +33,9 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
       <div className="mt-auto flex shrink-0 flex-wrap items-center gap-x-5 gap-y-2 border-t border-white/8 pt-3 text-sm sm:pt-5">
         <a
           href={product.pageUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...(product.pageUrl.startsWith("/")
+            ? {}
+            : { target: "_blank", rel: "noopener noreferrer" })}
           className="focus-ring inline-flex min-h-11 items-center gap-1.5 font-medium text-neon-cyan sm:min-h-0"
         >
           <ExternalLink className="h-3.5 w-3.5" aria-hidden />
@@ -59,11 +60,20 @@ export function ProductList() {
   if (products.length === 0) return null;
 
   if (products.length === 1) {
+    const product = products[0];
+    const liveHere = product.pageUrl.startsWith("/");
     return (
       <section id="list" className="scroll-mt-28">
         <div className="w-[min(40rem,100%)]">
-          <ProductCard product={products[0]} index={0} />
+          <ProductCard product={product} index={0} />
         </div>
+        {liveHere ? (
+          <iframe
+            title={product.name}
+            src={product.pageUrl}
+            className="mt-8 h-[75vh] w-full rounded-3xl border border-white/10 bg-[#f4f1ea]"
+          />
+        ) : null}
       </section>
     );
   }

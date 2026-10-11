@@ -5,6 +5,7 @@
 ## Now
 
 - [x] Products page (`/products`) with Delivery Signal — separate from Portfolio; a page or command a stranger can open
+- [x] Delivery Signal on that page is the repo `main` branch, refreshed within a minute, not a copied snapshot
 - [x] Drop the Gemini weekly-write path; Cursor writes from the IDE brief
 - [x] Essay voice doc tightened to one pass list (title, argument notes, stranger, leave-outs, thesis moves)
 - [x] Essay title pass + argument notes before prose — `docs/essay-voice.md`. No second principles file.

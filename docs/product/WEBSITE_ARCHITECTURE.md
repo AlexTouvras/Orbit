@@ -30,7 +30,7 @@ Public pages consume only information explicitly marked public. Do not automatic
 ## Existing product grammar (do not reinvent in Foundation)
 
 - Hub / Portfolio / live desks: chaptered visual storytelling (see `.cursor/skills/visual-storytelling`)
-- Products: `/products` (`src/content/products.ts`). A product is a page or a command a stranger can open. The gravity satellite and the nav both go there. Workshop projects stay on `/portfolio`.
+- Products: `/products` (`src/content/products.ts`). A product is a page or a command a stranger can open. The gravity satellite and the nav both go there. Workshop projects stay on `/portfolio`. Delivery Signal is not copied into Orbit: `/delivery-signal/` reads that repo’s `docs/` on `main` and keeps it for a minute.
 - Writes: MDX prose; stranger-first (`docs/essay-voice.md`); no cast/scenario blocks on essays
 - Studio and `/card`: interior tools — not cinematic chapter restyles
 - JARVIS / ProjectHelm: retired; historical architecture only

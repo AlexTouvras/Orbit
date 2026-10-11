@@ -23,6 +23,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Which model? | `data/figures/which-model.v1.json` | Monthly OpenRouter catalog pack. Storytelling refreshes and freezes it; `stories:sync` copies `src/components/model-choice`, `src/lib/model-choice`, and the pack. The live route `/portfolio/live/which-model` stays Orbit-owned. Not listed under `/stories`. |
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Products | `src/content/products.ts` | Public `/products`. A page or command a stranger can open. Not the Studio workshop scan. |
+| Delivery Signal live page | `src/app/delivery-signal/[[...path]]/route.ts` | Proxies `AlexTouvras/delivery-signal` `main` `docs/`. Cache 60s. No copy in this repo. |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
 | Studio roadmap | `data/studio-roadmap.json` (+ `.seed.json`) | `focusNow` (public on `/card` only) + private milestones (`planned`/`active`/`evidence`/`proven`). Persist via `persistDataJson` same as profile. Store: `src/lib/studio-roadmap.ts`. |
@@ -116,6 +117,7 @@ src/components/seo/
 data/published-projects.json
 src/content/products.ts                 # /products; not the Studio workshop scan
 src/app/products/page.tsx
+src/app/delivery-signal/[[...path]]/route.ts  # live main/docs proxy, 60s cache
 src/components/products/ProductList.tsx
 src/content/writes/
 public/field-card/index.html            # Agentic AI Field Card (home AI competency)
@@ -168,7 +170,8 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
-| 2026-10-11 | Products are `/products`, separate from Portfolio | Owner asked for a section of their own. The gravity diagram already names products apart from projects, essays, and signals, and those other three already have pages. Nav and the satellite both link to `/products`. `src/content/products.ts` is the list. Delivery Signal is the first entry. Its page URL is the README preview until `alextouvras.github.io/delivery-signal` stops 404ing. Workshop stays the Studio scan on `/portfolio`. |
+| 2026-10-11 | Products are `/products`, separate from Portfolio | Owner asked for a section of their own. The gravity diagram already names products apart from projects, essays, and signals, and those other three already have pages. Nav and the satellite both link to `/products`. `src/content/products.ts` is the list. Workshop stays the Studio scan on `/portfolio`. |
+| 2026-10-11 | Delivery Signal on `/products` is `main`, not a snapshot | `/delivery-signal/` fetches `docs/` from the public repo on each cache miss (60s). The products page frames that URL. A push to `main` is the version visitors get. Orbit does not vendor the HTML. GitHub Pages for that repo is still off. |
 | 2026-10-10 | Weekly Write no longer calls Gemini | The API draft path never produced the Monday essay. `createWeeklyDraft` writes an IDE brief and Cursor writes the prose. Ollama → OpenAI → template remains behind `--allow-local-fallback`. The essay bar stays in `docs/essay-voice.md`; the skill and the IDE brief point there instead of repeating it. |
 | 2026-10-10 | Essay bar adds a title pass and argument notes before prose | Owner accepted two Pitch Perfect leftovers. Five headlines, then the five hiring-manager answers as notes, then paragraphs. Line edits wait until the claim and the evidence hold. No second principles file, no film structure, no "Behind the decision" card, no 1–5 scores. |
 | 2026-10-09 | Weekly Writes stay prose and gain a hiring-manager story bar | Owner asked to raise weekly Writes from a hiring-demand chat. The bar is in `docs/essay-voice.md`: one decision a stranger can retell, including what was rejected and what stays unproven, on one link of the chain, aimed at the gap between a demo and a decision a team can own. Left out: interactive weekly films (desks and `/stories` already carry the picture), a generated evidence card, role badges, hiring closes, a topic calendar that overrides the Signal, and volume targets. Essays still do not close the Evidence Layer flagship gap. |
