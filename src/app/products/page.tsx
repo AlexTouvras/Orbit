@@ -6,7 +6,7 @@ import { getEditableProfile } from "@/lib/profile-store";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "A page or a command a stranger can open.",
+  description: "What I ship, you can run. Install it, or open it. The source stays in git.",
   alternates: { canonical: "/products" },
 };
 
@@ -19,8 +19,8 @@ export default function ProductsPage() {
         signature={<OrbitSignature variant="cyan" duration="95s" />}
         avatarUrl={profile.avatarUrl}
         title="Products"
-        headline={{ line: "I ship", accent: "a page." }}
-        description="A page or a command a stranger can open."
+        headline={{ line: "What I ship,", accent: "you can run." }}
+        description="Install it, or open it. The source stays in git."
       />
       <ProductList />
     </div>
