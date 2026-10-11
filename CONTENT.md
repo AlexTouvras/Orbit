@@ -131,7 +131,7 @@ Open the `.mdx` file under `src/content/writes/`, change frontmatter or body, sa
 
 **URL:** `/portfolio`
 
-The portfolio shows **real work only**:
+The portfolio shows **real work only**. A product a stranger can open lives on `/products` (`src/content/products.ts`), not in this reel.
 
 - **Workshop** — projects you publish from Studio (scanned from your machine).
 - **GitHub** — live public repos, pulled from your `githubUsername`.
@@ -488,6 +488,7 @@ npm run news:fetch
 /                 Hub — hero, latest writes, competencies, about teaser
 /writes           Your articles (owned content)
 /writes/[slug]    Single article
+/products         Products a stranger can open (page or command). Curated in `src/content/products.ts`.
 /portfolio        Workshop + GitHub + Power BI (#power-bi) + live teaser (#live)
 /portfolio/live   Live dashboard gallery
 /portfolio/live/[slug]  Desk (nordic-equity, power, eu-spot)

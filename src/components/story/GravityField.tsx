@@ -8,7 +8,7 @@ import { useHydrated } from "@/lib/use-hydrated";
 import { usePrefersReducedMotion } from "@/lib/use-prefers-reduced-motion";
 
 const satellites = [
-  { label: "products", href: "/portfolio", slot: "top" },
+  { label: "products", href: "/products", slot: "top" },
   { label: "essays", href: "/writes", slot: "right" },
   { label: "signals", href: "/radar", slot: "bottom" },
   { label: "projects", href: "/#selected-work", slot: "left" },

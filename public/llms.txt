@@ -9,6 +9,7 @@
 - RSS: https://alextouvras.com/feed.xml
 - About: https://alextouvras.com/about
 - Portfolio: https://alextouvras.com/portfolio
+- Products: https://alextouvras.com/products
 - Identity card: https://alextouvras.com/card
 
 ## Field cards (one-page decision aids)

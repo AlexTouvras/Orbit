@@ -2,7 +2,8 @@
 
 ```mermaid
 flowchart TB
-  Hub[Hub] --> Blog[Blog MDX]
+  Hub[Hub] --> Products[Products /products]
+  Hub --> Blog[Blog MDX]
   Hub --> Portfolio[Portfolio]
   Portfolio --> Workshop[Workshop]
   Portfolio --> Github[GitHub repos]
