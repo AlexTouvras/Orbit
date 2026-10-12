@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Storytelling Field Card — Turn evidence into a decision · Alex Touvras</title>
-  <meta name="description" content="An operating system for data stories: question → evidence → tension → narrative → experience → decision. Story is the controlled transformation of evidence into understanding." />
+  <meta name="description" content="One claim moves from the question to a decision. The doubt stays in the picture." />
   <meta name="author" content="Alex Touvras" />
   <link rel="canonical" href="https://alextouvras.com/story-field-card/" />
   <meta property="og:title" content="Storytelling Field Card — Turn evidence into a decision" />
-  <meta property="og:description" content="Question → evidence → tension → narrative → experience → decision. Start with the decision, not the dataset. End on what changes." />
+  <meta property="og:description" content="Question, evidence, tension, narrative, experience, decision. The doubt stays visible." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alextouvras.com/story-field-card/" />
   <meta property="og:image" content="https://alextouvras.com/opengraph-image" />
@@ -19,27 +19,22 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #18212b;
-      --ink-soft: #3a4654;
-      --muted: #6b7785;
-      --line: #c9d2dc;
-      --paper: #eef2f6;
-      --card: #f8fafc;
-      --steel: #3f4f63;
-      --steel-deep: #2c3948;
-      --signal: #0f766e;
-      --signal-soft: #d7ebe8;
-      --warn: #9a3412;
-      --warn-soft: #f3e0d6;
-      --layer-rag: #2c3d52;
-      --layer-agent: #3f4f63;
-      --layer-mcp: #0f766e;
-      --layer-a2a: #445066;
-      --shadow: 0 1px 0 rgba(24, 33, 43, 0.06), 0 12px 32px rgba(24, 33, 43, 0.06);
-      --radius: 10px;
+      --ink: #f3fbfb;
+      --ink-soft: #b7d4d4;
+      --muted: #8eaeae;
+      --line: #1c3336;
+      --paper: #061011;
+      --card: #0c1618;
+      --steel: #00d2d3;
+      --steel-deep: #d5eeee;
+      --cyan: #00d2d3;
+      --stage: #0c1618;
+      --stage-ink: #d5eeee;
+      --warn: #e7a394;
       --font-display: "Source Serif 4", Georgia, serif;
       --font-body: "Outfit", system-ui, sans-serif;
       --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+      --loop: 18s;
     }
 
     * { box-sizing: border-box; }
@@ -48,8 +43,7 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(1200px 500px at 10% -10%, rgba(63, 79, 99, 0.14), transparent 60%),
-        radial-gradient(900px 400px at 100% 0%, rgba(15, 118, 110, 0.07), transparent 55%),
+        radial-gradient(900px 420px at 80% -8%, rgba(0, 210, 211, 0.12), transparent 58%),
         var(--paper);
       font-family: var(--font-body);
       font-size: 15px;
@@ -62,9 +56,9 @@
       width: min(1100px, calc(100% - 2rem));
       margin: 1.5rem auto 2.5rem;
       background: var(--card);
-      border: 1px solid var(--line);
+      border: 1px solid #1e3a3c;
       border-radius: 14px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35);
       overflow: hidden;
     }
 
@@ -76,7 +70,6 @@
       gap: 0.75rem 1.5rem;
       padding: 1rem 1.35rem;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, #fbfcfd, #f3f6f9);
     }
 
     .eyebrow {
@@ -97,9 +90,9 @@
     .channels button,
     .channels a.btn {
       appearance: none;
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--ink);
+      border: 1px solid #2c4e52;
+      background: #102022;
+      color: var(--stage-ink);
       font-family: var(--font-mono);
       font-size: 0.72rem;
       letter-spacing: 0.02em;
@@ -107,26 +100,20 @@
       border-radius: 999px;
       cursor: pointer;
       text-decoration: none;
-      transition: border-color 160ms ease, transform 120ms ease, background 160ms ease;
     }
 
     .channels button:hover,
     .channels a.btn:hover {
-      border-color: var(--steel);
-      background: #f4f2fa;
-    }
-
-    .channels button:active,
-    .channels a.btn:active {
-      transform: scale(0.97);
+      border-color: var(--cyan);
+      background: #143033;
     }
 
     header.hero {
       padding: 1.5rem 1.35rem 1.25rem;
       display: grid;
-      gap: 1.25rem;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: end;
+      gap: 1.1rem 1.25rem;
+      grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
+      align-items: center;
       border-bottom: 1px solid var(--line);
     }
 
@@ -140,71 +127,75 @@
       max-width: 16ch;
     }
 
-    .lede {
+    .hook {
       margin: 0;
-      color: var(--ink-soft);
-      font-size: 1.02rem;
-      max-width: 46ch;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      max-width: 28ch;
     }
 
-    .lede + .lede { margin-top: 0.7rem; }
-    .lede strong { color: var(--ink); font-weight: 600; }
-
     .verbs {
-      margin: 0 0 0.45rem;
+      grid-column: 1 / -1;
+      margin: 0.15rem 0 0;
       font-family: var(--font-mono);
       font-size: 0.78rem;
       letter-spacing: 0.02em;
       color: var(--steel);
       font-weight: 600;
-      max-width: 52ch;
     }
 
-    .stack {
+    .lede {
+      grid-column: 1 / -1;
+      margin: 0;
+      max-width: 68ch;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+    }
+
+    .lede strong { color: var(--ink); font-weight: 600; }
+
+    .glance { margin: 0; }
+    .glance-stage {
       display: grid;
-      gap: 0.45rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.4rem;
+      padding: 0.75rem;
+      border-radius: 12px;
+      background:
+        radial-gradient(220px 80px at 70% 20%, rgba(0, 210, 211, 0.16), transparent 70%),
+        var(--stage);
+      border: 1px solid #1e3a3c;
     }
 
-    .layer {
-      display: grid;
-      grid-template-columns: 5.4rem 1fr;
-      gap: 0.75rem;
-      align-items: center;
-      padding: 0.55rem 0.7rem;
-      border-radius: 8px;
-      border: 1px solid transparent;
-      color: #fff;
-      animation: rise 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    .layer:nth-child(1) { background: var(--layer-rag); animation-delay: 40ms; }
-    .layer:nth-child(2) { background: var(--layer-agent); animation-delay: 110ms; }
-    .layer:nth-child(3) { background: var(--layer-mcp); animation-delay: 180ms; }
-    .layer:nth-child(4) { background: var(--layer-a2a); animation-delay: 250ms; }
-    .layer:nth-child(5) { background: #1c4a52; animation-delay: 320ms; }
-    .layer:nth-child(6) { background: #163a42; animation-delay: 390ms; }
-
-    .layer code {
+    .glance-node {
+      text-align: center;
       font-family: var(--font-mono);
-      font-size: 0.68rem;
+      font-size: 0.62rem;
       font-weight: 600;
       letter-spacing: 0.04em;
-      opacity: 0.92;
+      text-transform: uppercase;
+      color: var(--stage-ink);
+      background: var(--stage);
+      border: 1px solid #2c4e52;
+      border-radius: 999px;
+      padding: 0.32rem 0.35rem;
     }
 
-    .layer span {
-      font-size: 0.84rem;
-      line-height: 1.3;
-      font-weight: 500;
+    .glance-node.on {
+      color: #062022;
+      background: var(--cyan);
+      border-color: var(--cyan);
     }
 
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(8px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .layer { animation: none; }
+    .glance figcaption {
+      margin: 0.35rem 0 0;
+      text-align: right;
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--steel);
     }
 
     section {
@@ -222,183 +213,523 @@
       font-weight: 600;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
+    .pipe h2 { margin-bottom: 0.35rem; }
 
-    th, td {
-      text-align: left;
-      vertical-align: top;
-      padding: 0.55rem 0.45rem;
-      border-bottom: 1px solid #e2e8ef;
-    }
-
-    th {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 500;
-      padding-top: 0;
-    }
-
-    tr:last-child td { border-bottom: none; }
-
-    table.decisions td.problem { color: var(--ink); font-weight: 500; width: 32%; }
-    table.decisions td.reach { color: var(--ink-soft); width: 26%; }
-    table.decisions td.example {
-      color: var(--ink-soft);
-      font-size: 0.84rem;
-      width: 42%;
-    }
-    td.reach b {
-      color: var(--signal);
-      font-weight: 650;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.02em;
-    }
-
-    a.use-link {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(15, 118, 110, 0.35);
-      transition: border-color 140ms ease, color 140ms ease;
-    }
-
-    a.use-link:hover,
-    a.use-link:focus-visible {
-      color: var(--steel-deep);
-      border-bottom-color: var(--steel);
-      outline: none;
-    }
-
-    a.use-link:focus-visible {
-      box-shadow: 0 0 0 3px rgba(36, 90, 122, 0.25);
-      border-radius: 2px;
-    }
-
-    .pick a {
-      color: inherit;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(36, 90, 122, 0.3);
-    }
-
-    .pick a:hover,
-    .pick a:focus-visible {
-      border-bottom-color: var(--steel);
-      outline: none;
-    }
-
-    .tri {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .tri > section {
-      border-bottom: none;
-      border-right: 1px solid var(--line);
-    }
-
-    .tri > section:last-child { border-right: none; }
-
-    .gates {
-      display: grid;
-      gap: 0.55rem;
-    }
-
-    .gate {
-      padding: 0.55rem 0.65rem;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-    }
-
-    .gate strong {
-      display: block;
-      font-size: 0.86rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .gate span {
-      font-size: 0.8rem;
+    .explain {
+      margin: 0 0 0.85rem;
+      max-width: 68ch;
       color: var(--ink-soft);
     }
 
-    .picker {
-      display: grid;
-      gap: 0.55rem;
+    .sr {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
-    .pick {
+    .pipe-board {
+      position: relative;
+      background-color: var(--stage);
+      background-image:
+        linear-gradient(rgba(0, 210, 211, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 210, 211, 0.05) 1px, transparent 1px),
+        radial-gradient(560px 180px at 50% 0%, rgba(0, 210, 211, 0.14), transparent 72%);
+      background-size: 22px 22px, 22px 22px, auto;
+      border: 1px solid #1e3a3c;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .stations {
+      position: relative;
       display: grid;
-      grid-template-columns: 7.5rem 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.65rem;
-      padding: 0.55rem 0;
-      border-bottom: 1px solid #e2e8ef;
+      margin: 0;
+      padding: 0.85rem 0.85rem 3.4rem;
+      list-style: none;
     }
 
-    .pick:last-child { border-bottom: none; }
-
-    .pick strong {
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      letter-spacing: 0.02em;
-      color: var(--steel-deep);
-      font-weight: 600;
-    }
-
-    .pick span {
-      font-size: 0.84rem;
-      color: var(--ink-soft);
-    }
-
-    .ladder {
+    .station {
+      position: relative;
+      z-index: 1;
       display: grid;
       gap: 0.35rem;
-      counter-reset: step;
+      align-content: start;
+      min-height: 11.6rem;
+      padding: 0.6rem 0.7rem 0.75rem;
+      border-radius: 10px;
+      background: rgba(12, 22, 24, 0.55);
+      box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16);
     }
 
-    .ladder li {
-      list-style: none;
-      counter-increment: step;
-      display: grid;
-      grid-template-columns: 1.6rem 1fr;
-      gap: 0.55rem;
-      align-items: start;
-      font-size: 0.86rem;
-      padding: 0.2rem 0;
+    .station::before {
+      content: "";
+      position: absolute;
+      left: -0.4rem;
+      right: -0.4rem;
+      top: 3.35rem;
+      height: 2px;
+      background: var(--cyan);
+      box-shadow: 0 0 10px rgba(0, 210, 211, 0.75);
+      z-index: 2;
     }
 
-    .ladder li::before {
-      content: counter(step);
+    .station:nth-child(1) { animation: lit-1 var(--loop) infinite; }
+    .station:nth-child(2) { animation: lit-2 var(--loop) infinite; }
+    .station:nth-child(3) { animation: lit-3 var(--loop) infinite; }
+    .station:nth-child(4) { animation: lit-4 var(--loop) infinite; }
+    .station:nth-child(5) { animation: lit-5 var(--loop) infinite; }
+    .station:nth-child(6) { animation: lit-6 var(--loop) infinite; }
+
+    @keyframes lit-1 {
+      0%, 15% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
+      17%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+    }
+    @keyframes lit-2 {
+      0%, 15% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      17%, 31% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
+      33%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+    }
+    @keyframes lit-3 {
+      0%, 31% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      33%, 47% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
+      49%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+    }
+    @keyframes lit-4 {
+      0%, 47% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      49%, 63% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
+      65%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+    }
+    @keyframes lit-5 {
+      0%, 63% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      65%, 79% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
+      81%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+    }
+    @keyframes lit-6 {
+      0%, 79% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      81%, 100% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
+    }
+
+    .pip {
+      position: absolute;
+      z-index: 3;
+      left: 50%;
+      top: calc(3.35rem - 0.32rem);
+      width: 0.7rem;
+      height: 0.7rem;
+      margin-left: -0.35rem;
+      border-radius: 50%;
+      background: var(--cyan);
+      border: 2px solid var(--stage);
+      box-shadow: 0 0 10px rgba(0, 210, 211, 0.85);
+      opacity: 0;
+    }
+
+    .station:nth-child(1) .pip { animation: pip-1 var(--loop) infinite; }
+    .station:nth-child(2) .pip { animation: pip-2 var(--loop) infinite; }
+    .station:nth-child(3) .pip { animation: pip-3 var(--loop) infinite; }
+    .station:nth-child(4) .pip { animation: pip-4 var(--loop) infinite; }
+    .station:nth-child(5) .pip { animation: pip-5 var(--loop) infinite; }
+    .station:nth-child(6) .pip { animation: pip-6 var(--loop) infinite; }
+
+    @keyframes pip-1 { 0%, 15% { opacity: 1; } 17%, 100% { opacity: 0; } }
+    @keyframes pip-2 { 0%, 15% { opacity: 0; } 17%, 31% { opacity: 1; } 33%, 100% { opacity: 0; } }
+    @keyframes pip-3 { 0%, 31% { opacity: 0; } 33%, 47% { opacity: 1; } 49%, 100% { opacity: 0; } }
+    @keyframes pip-4 { 0%, 47% { opacity: 0; } 49%, 63% { opacity: 1; } 65%, 100% { opacity: 0; } }
+    @keyframes pip-5 { 0%, 63% { opacity: 0; } 65%, 79% { opacity: 1; } 81%, 100% { opacity: 0; } }
+    @keyframes pip-6 { 0%, 79% { opacity: 0; } 81%, 100% { opacity: 1; } }
+
+    .art {
+      position: relative;
+      z-index: 1;
+      height: 2.6rem;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .station-kicker {
+      position: relative;
+      z-index: 1;
+      margin: 0.85rem 0 0;
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       font-weight: 600;
-      color: var(--steel);
-      background: #e8eef4;
-      border-radius: 4px;
-      width: 1.45rem;
-      height: 1.45rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .station-line {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.35;
+      color: var(--stage-ink);
+    }
+
+    .handoff {
+      position: relative;
+      z-index: 1;
+      margin: 0.15rem 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--cyan);
+    }
+
+    .ask {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.45rem;
+      height: 2.5rem;
+    }
+
+    .ask b {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      line-height: 0.8;
+      color: var(--cyan);
+      animation: ask-mark var(--loop) infinite;
+    }
+
+    .ask .lines {
+      width: 4.4rem;
+      display: grid;
+      gap: 0.28rem;
+      padding-bottom: 0.2rem;
+    }
+
+    .ask .lines i {
+      display: block;
+      height: 0.26rem;
+      border-radius: 99px;
+      background: #2a4548;
+    }
+
+    .ask .lines i:nth-child(1) { animation: ink-a var(--loop) infinite; }
+    .ask .lines i:nth-child(2) { width: 70%; animation: ink-b var(--loop) infinite; }
+
+    @keyframes ask-mark {
+      0% { opacity: 0; transform: translateY(4px); }
+      8%, 14% { opacity: 1; transform: none; }
+      18%, 100% { opacity: 0.4; transform: none; }
+    }
+    @keyframes ink-a {
+      0%, 6% { width: 12%; background: #2a4548; }
+      14%, 100% { width: 100%; background: var(--cyan); }
+    }
+    @keyframes ink-b {
+      0%, 10% { width: 8%; background: #2a4548; }
+      18%, 100% { width: 72%; background: #9ec9c9; }
+    }
+
+    .proof {
+      position: relative;
+      width: 4.6rem;
+      height: 2.5rem;
+    }
+
+    .cap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0.15rem;
+      border-top: 1.5px dashed var(--cyan);
+      opacity: 0;
+      animation: cap-in var(--loop) infinite;
+    }
+
+    .bars {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2rem;
+      display: flex;
+      align-items: flex-end;
+      gap: 0.28rem;
+    }
+
+    .bars i {
+      flex: 1;
+      display: block;
+      border-radius: 2px 2px 0 0;
+      background: var(--cyan);
+      transform-origin: bottom center;
+      transform: scaleY(0.15);
+    }
+
+    .bars i:nth-child(1) { height: 1.15rem; animation: bar-a var(--loop) infinite; }
+    .bars i:nth-child(2) { height: 0.72rem; animation: bar-b var(--loop) infinite; }
+    .bars i:nth-child(3) { height: 1.45rem; animation: bar-c var(--loop) infinite; }
+
+    @keyframes cap-in {
+      0%, 16% { opacity: 0; }
+      24%, 100% { opacity: 1; }
+    }
+    @keyframes bar-a { 0%, 16% { transform: scaleY(0.15); } 28%, 100% { transform: scaleY(1); } }
+    @keyframes bar-b { 0%, 18% { transform: scaleY(0.15); } 30%, 100% { transform: scaleY(1); } }
+    @keyframes bar-c { 0%, 20% { transform: scaleY(0.15); } 32%, 100% { transform: scaleY(1); } }
+
+    .gap {
+      position: relative;
+      width: 5.2rem;
+      height: 2.5rem;
+    }
+
+    .gap i {
+      position: absolute;
+      left: 0;
+      height: 0;
+      border-top: 2px solid var(--cyan);
+    }
+
+    .gap .expect {
+      top: 0.7rem;
+      width: 0;
+      border-top-style: dashed;
+      opacity: 0.85;
+      animation: expect-in var(--loop) infinite;
+    }
+
+    .gap .actual {
+      top: 1.55rem;
+      width: 0;
+      animation: actual-in var(--loop) infinite;
+    }
+
+    @keyframes expect-in { 0%, 32% { width: 0; } 44%, 100% { width: 86%; } }
+    @keyframes actual-in { 0%, 34% { width: 0; } 46%, 100% { width: 52%; } }
+
+    .order {
+      display: flex;
+      align-items: center;
+      gap: 0.32rem;
+      height: 2.5rem;
+    }
+
+    .order i {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: #143033;
+      box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.45);
+    }
+
+    .order i:nth-child(1) { animation: tick-1 var(--loop) infinite; }
+    .order i:nth-child(2) { animation: tick-2 var(--loop) infinite; }
+    .order i:nth-child(3) { animation: tick-3 var(--loop) infinite; }
+    .order i:nth-child(4) { animation: tick-4 var(--loop) infinite; }
+    .order i:nth-child(5) { animation: tick-5 var(--loop) infinite; }
+
+    @keyframes tick-1 { 0%, 48% { background: #143033; } 54%, 100% { background: var(--cyan); } }
+    @keyframes tick-2 { 0%, 52% { background: #143033; } 58%, 100% { background: var(--cyan); } }
+    @keyframes tick-3 { 0%, 56% { background: #143033; } 62%, 100% { background: var(--cyan); } }
+    @keyframes tick-4 { 0%, 60% { background: #143033; } 66%, 100% { background: var(--cyan); } }
+    @keyframes tick-5 { 0%, 64% { background: #143033; } 70%, 100% { background: var(--cyan); } }
+
+    .form {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.5rem;
+      height: 2.5rem;
+    }
+
+    .form .bar {
+      width: 0.72rem;
+      height: 1.7rem;
+      border-radius: 2px 2px 0 0;
+      background: var(--cyan);
+      transform-origin: bottom center;
+      animation: bar-hold var(--loop) infinite;
+    }
+
+    .form .squiggle {
+      width: 1.7rem;
+      height: 1rem;
+      margin-bottom: 0.35rem;
+      border: 1.5px solid var(--cyan);
+      border-radius: 40% 60% 55% 45%;
+      animation: squiggle var(--loop) infinite;
+    }
+
+    @keyframes bar-hold {
+      0%, 64% { transform: scaleY(0.25); }
+      74%, 100% { transform: scaleY(1); }
+    }
+    @keyframes squiggle {
+      0%, 64% { opacity: 0; }
+      72%, 78% { opacity: 0.9; }
+      86%, 100% { opacity: 0.22; }
+    }
+
+    .close {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      height: 2.5rem;
+    }
+
+    .close i {
+      width: 2.5rem;
+      height: 0.32rem;
+      border-radius: 99px;
+      background: var(--cyan);
+      transform-origin: left center;
+      animation: claim-line var(--loop) infinite;
+    }
+
+    .close em {
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      border: 1px dashed var(--cyan);
+      border-radius: 99px;
+      padding: 0.12rem 0.42rem;
+      opacity: 0;
+      animation: doubt-in var(--loop) infinite;
+    }
+
+    @keyframes claim-line {
+      0%, 78% { transform: scaleX(0.2); }
+      88%, 100% { transform: scaleX(1); }
+    }
+    @keyframes doubt-in {
+      0%, 80% { opacity: 0; }
+      90%, 100% { opacity: 1; }
+    }
+
+    .return-rail {
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      bottom: 0.85rem;
+      height: 1.5rem;
+      pointer-events: none;
+    }
+
+    .return-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0.72rem;
+      border-top: 1.5px dashed var(--cyan);
+      transform: scaleX(0);
+      transform-origin: left center;
+      animation: draw-return var(--loop) linear infinite;
+    }
+
+    .return-label {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin: 0;
+      transform: translateX(-50%);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #062022;
+      background: var(--cyan);
+      border-radius: 99px;
+      padding: 0.08rem 0.5rem;
+      white-space: nowrap;
+    }
+
+    @keyframes draw-return {
+      0%, 76% { transform: scaleX(0); }
+      90%, 100% { transform: scaleX(1); }
+    }
+
+    .pipe figcaption,
+    .judgement .kill {
+      margin: 0.75rem 0 0;
+      max-width: 72ch;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .principles {
+      margin: 0.7rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+
+    .principles li {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      padding: 0.85rem 0.9rem 0.95rem;
+      border: 1px solid #234448;
+      border-radius: 12px;
+      background: #102022;
+    }
+
+    .principles strong { color: var(--ink); }
+
+    .mark {
       display: grid;
       place-items: center;
-      margin-top: 0.05rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      margin-bottom: 0.65rem;
+      border-radius: 50%;
+      background: rgba(0, 210, 211, 0.16);
+      color: var(--cyan);
     }
 
-    .antis {
-      background: linear-gradient(180deg, #fcfaf8, #f8f1eb);
+    .mark svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
-    .foundation {
-      padding: 0.85rem 1.35rem 1rem;
-      border-bottom: 1px solid var(--line);
-      background: #f3f6f9;
+    .source-row {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.65rem 0.85rem;
+      margin-top: 0.75rem;
     }
+
+    .source-row a {
+      display: block;
+      color: var(--steel-deep);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .source-row a:hover,
+    .source-row a:focus-visible { border-bottom-color: var(--cyan); outline: none; }
+
+    .source-row span {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--ink-soft);
+      font-weight: 400;
+      font-size: 0.82rem;
+    }
+
+    .foundation { background: transparent; }
 
     .found-row {
       display: grid;
@@ -423,40 +754,8 @@
       line-height: 1.3;
     }
 
-    .anti-list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.45rem 1rem;
-    }
-
-    .anti-list li {
-      font-size: 0.86rem;
-      color: var(--ink);
-      padding-left: 0.9rem;
-      position: relative;
-    }
-
-    .anti-list li::before {
-      content: "\00D7";
-      position: absolute;
-      left: 0;
-      color: var(--warn);
-      font-weight: 700;
-    }
-
-    .note {
-      margin: 0.85rem 0 0;
-      font-size: 0.84rem;
-      color: var(--ink-soft);
-      max-width: 70ch;
-    }
-
     footer.meta {
       padding: 0.95rem 1.35rem 1.15rem;
-      background: #f3f6f9;
       display: grid;
       gap: 0.55rem;
     }
@@ -511,49 +810,123 @@
 
     @media (max-width: 900px) {
       header.hero,
-      .tri,
-      .anti-list {
-        grid-template-columns: 1fr;
-      }
-      .tri > section { border-right: none; border-bottom: 1px solid var(--line); }
-      .tri > section:last-child { border-bottom: none; }
-      .pick { grid-template-columns: 1fr; gap: 0.2rem; }
+      .principles,
+      .stations { grid-template-columns: 1fr; }
+      .glance { grid-column: 1; }
+      .glance figcaption { text-align: left; }
       h1 { max-width: none; }
-      .found-row { grid-template-columns: 1fr 1fr; }
-      table.decisions td.problem,
-      table.decisions td.reach,
-      table.decisions td.example { width: auto; }
+      .found-row,
+      .source-row { grid-template-columns: 1fr 1fr; }
+      .stations {
+        gap: 0.75rem;
+        padding: 0.85rem 0.85rem 3.4rem 1.35rem;
+      }
+      .stations::before {
+        content: "";
+        position: absolute;
+        left: 0.72rem;
+        top: 1.15rem;
+        bottom: 3.2rem;
+        width: 2px;
+        background: var(--cyan);
+        box-shadow: 0 0 10px rgba(0, 210, 211, 0.6);
+      }
+      .station { min-height: 0; animation: none; background: #102022; box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.28); }
+      .station::before,
+      .pip { display: none; }
+      .return-line { transform: scaleX(1); animation: none; }
+      .ask b, .ask .lines i:nth-child(n), .cap, .bars i:nth-child(n), .gap .expect, .gap .actual,
+      .order i:nth-child(n), .form .bar, .form .squiggle, .close i, .close em { animation: none; }
+      .ask b { opacity: 0.4; }
+      .ask .lines i:nth-child(1) { width: 100%; background: var(--cyan); }
+      .ask .lines i:nth-child(2) { width: 72%; background: #9ec9c9; }
+      .cap { opacity: 1; }
+      .bars i { transform: scaleY(1); }
+      .gap .expect { width: 86%; }
+      .gap .actual { width: 52%; }
+      .order i { background: var(--cyan); }
+      .form .bar { transform: scaleY(1); }
+      .form .squiggle { opacity: 0.22; }
+      .close i { transform: scaleX(1); }
+      .close em { opacity: 1; }
+    }
+
+    @media (max-width: 640px) {
+      .sheet { width: min(1100px, calc(100% - 0.75rem)); }
+      .topbar, header.hero, section, footer.meta { padding-left: 0.9rem; padding-right: 0.9rem; }
+      .source-row, .found-row { grid-template-columns: 1fr; }
+      .glance-stage { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .station-line { font-size: 1.02rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .station:nth-child(n) { animation: none; background: #102022; box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.28); }
+      .station:nth-child(-n+5) .pip { animation: none; opacity: 0; }
+      .station:nth-child(6) .pip { animation: none; opacity: 1; }
+      .return-line { transform: scaleX(1); animation: none; }
+      .ask b, .ask .lines i:nth-child(n), .cap, .bars i:nth-child(n), .gap .expect, .gap .actual,
+      .order i:nth-child(n), .form .bar, .form .squiggle, .close i, .close em { animation: none; }
+      .ask b { opacity: 0.4; }
+      .ask .lines i:nth-child(1) { width: 100%; background: var(--cyan); }
+      .ask .lines i:nth-child(2) { width: 72%; background: #9ec9c9; }
+      .cap { opacity: 1; }
+      .bars i { transform: scaleY(1); }
+      .gap .expect { width: 86%; }
+      .gap .actual { width: 52%; }
+      .order i { background: var(--cyan); }
+      .form .bar { transform: scaleY(1); }
+      .form .squiggle { opacity: 0.22; }
+      .close i { transform: scaleX(1); }
+      .close em { opacity: 1; }
     }
 
     @media print {
-      @page {
-        size: A4 landscape;
-        margin: 8mm;
-      }
-
-      body {
-        background: #fff;
-        font-size: 10.5pt;
-      }
-
+      @page { size: A4 landscape; margin: 8mm; }
+      body { background: #fff; color: #18212b; font-size: 10.5pt; }
       .sheet {
         width: 100%;
         margin: 0;
         border: none;
         border-radius: 0;
         box-shadow: none;
+        background: #fff;
+        color: #18212b;
       }
-
+      h1, .hook, .principles strong { color: #18212b; }
+      .lede, .explain, .pipe figcaption, .judgement .kill,
+      .principles li, .found span, .source-row span, .changed, .credit, .version { color: #3a4654; }
+      h2, .eyebrow, .verbs, .found strong, .source-row a, .glance figcaption { color: #0c4a4a; }
+      .principles li { background: #fff; border-color: #c9d2dc; }
+      .mark { background: #e7f6f6; color: #0c4a4a; }
       .channels { display: none !important; }
-
-      .topbar { padding: 0.4rem 0 0.55rem; background: none; }
-      header.hero { padding: 0.55rem 0 0.7rem; gap: 0.85rem; }
+      .topbar { padding: 0.4rem 0 0.55rem; }
+      header.hero { padding: 0.55rem 0 0.7rem; }
       section { padding: 0.55rem 0 0.65rem; }
-      footer.meta { padding: 0.45rem 0 0; background: none; }
-      .foundation { padding: 0.45rem 0; background: none; }
-      .layer { animation: none; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      .antis, .foundation { break-inside: avoid; }
-      a { color: inherit; text-decoration: none; border-bottom: none !important; }
+      footer.meta, .foundation { padding-left: 0; padding-right: 0; background: none; }
+      .station:nth-child(n), .pip, .pipe-board, .glance-stage, .return-label, .return-line {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .station:nth-child(n) { animation: none; background: #102022; box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.28); }
+      .station:nth-child(-n+5) .pip { animation: none; opacity: 0; }
+      .station:nth-child(6) .pip { animation: none; opacity: 1; }
+      .return-line { transform: scaleX(1); animation: none; }
+      .ask b, .ask .lines i:nth-child(n), .cap, .bars i:nth-child(n), .gap .expect, .gap .actual,
+      .order i:nth-child(n), .form .bar, .form .squiggle, .close i, .close em { animation: none; }
+      .ask b { opacity: 0.4; }
+      .ask .lines i:nth-child(1) { width: 100%; background: var(--cyan); }
+      .ask .lines i:nth-child(2) { width: 72%; background: #9ec9c9; }
+      .cap { opacity: 1; }
+      .bars i { transform: scaleY(1); }
+      .gap .expect { width: 86%; }
+      .gap .actual { width: 52%; }
+      .order i { background: var(--cyan); }
+      .form .bar { transform: scaleY(1); }
+      .form .squiggle { opacity: 0.22; }
+      .close i { transform: scaleX(1); }
+      .close em { opacity: 1; }
+      .pipe-board, .principles li, .foundation { break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
     }
   </style>
 </head>
@@ -561,7 +934,7 @@
   <article class="sheet" id="field-card">
     <div class="topbar">
       <div class="eyebrow">Field card · Data &amp; visual storytelling</div>
-      <div class="channels no-print">
+      <div class="channels">
         <button type="button" onclick="window.print()">Print / PDF</button>
         <button type="button" id="copy-link">Copy link</button>
         <a class="btn" href="https://alextouvras.com" rel="noopener">alextouvras.com</a>
@@ -571,160 +944,138 @@
 
     <header class="hero">
       <div>
-        <div class="eyebrow">Field system 03 · Operating system</div>
+        <div class="eyebrow">One claim</div>
         <h1>Turn evidence into a decision</h1>
-        <p class="verbs">Question → evidence → tension → narrative → experience → decision</p>
-        <p class="lede">
-          Story is the <strong>controlled transformation of evidence into understanding</strong>.
-          Start with the decision, not the dataset. Find the tension that makes the next scene necessary.
-          Unfold understanding on purpose. Leave uncertainty visible. End on what changes operationally.
-        </p>
-        <p class="lede">
-          Craft still matters inside every stage: dwell, claim, sketch, lead, open.
-          Chart type is a lane. A bar is honest when “larger” is the whole claim.
-          A custom mark is earned when the conventional form cannot carry the idea.
-          Grain stays on Analytics. Cutover stays on Delivery. Essays stay prose.
-        </p>
-        <p class="lede">
-          <strong>Field test:</strong> Can someone understand what changed, why it matters, and what remains uncertain?
-        </p>
+        <p class="hook">Doubt in a footnote is not an open.</p>
       </div>
-      <div class="stack" aria-label="Operating spine">
-        <div class="layer"><code>QUESTION</code><span>Decision before dataset</span></div>
-        <div class="layer"><code>EVIDENCE</code><span>What the data can legitimately say</span></div>
-        <div class="layer"><code>TENSION</code><span>The unresolved relationship</span></div>
-        <div class="layer"><code>NARRATIVE</code><span>How understanding unfolds</span></div>
-        <div class="layer"><code>EXPERIENCE</code><span>Attention with purpose</span></div>
-        <div class="layer"><code>DECISION</code><span>So what changes?</span></div>
-      </div>
+      <figure class="glance">
+        <div class="glance-stage" aria-hidden="true">
+          <span class="glance-node">Question</span>
+          <span class="glance-node">Evidence</span>
+          <span class="glance-node">Tension</span>
+          <span class="glance-node">Narrative</span>
+          <span class="glance-node">Experience</span>
+          <span class="glance-node on">Decision</span>
+        </div>
+        <figcaption>The doubt stays beside the decision.</figcaption>
+      </figure>
+      <p class="verbs">Question → evidence → tension → narrative → experience → decision</p>
+      <p class="lede">One claim moves through those six moves. What the data cannot say stays in the picture.</p>
     </header>
 
-    <section>
-      <h2>Problem → use → example</h2>
-      <table class="decisions">
-        <thead>
-          <tr>
-            <th>If the real problem is…</th>
-            <th>Use</th>
-            <th>Example case</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="problem">A chart looking for a reason to exist</td>
-            <td class="reach"><b>Start with the question</b></td>
-            <td class="example">Audience, decision, question, context, scope, success — before any mark. No meaningful question → no story</td>
-          </tr>
-          <tr>
-            <td class="problem">The library chose the argument</td>
-            <td class="reach"><a class="use-link" href="https://github.com/Financial-Times/chart-doctor" target="_blank" rel="noopener noreferrer" title="Financial Times Chart Doctor"><b>Interrogate evidence first</b></a></td>
-            <td class="example">Source → structure → signal → limits. Evidence constrains the story; the story never upgrades it into certainty</td>
-          </tr>
-          <tr>
-            <td class="problem">Interesting information, no next scene</td>
-            <td class="reach"><b>Find the tension</b></td>
-            <td class="example">Expectation → reality; aggregate → distribution; signal → mechanism. If nothing creates need, it is analysis, not a story</td>
-          </tr>
-          <tr>
-            <td class="problem">Scenes in random order</td>
-            <td class="reach"><a class="use-link" href="http://vis.stanford.edu/papers/narrative" target="_blank" rel="noopener noreferrer" title="Segel and Heer, Narrative Visualization, 2010"><b>Narrative spine</b></a></td>
-            <td class="example">Orient → question → signal → mechanism → consequence → decision → open. Segel &amp; Heer: who leads, then who wanders</td>
-          </tr>
-          <tr>
-            <td class="problem">A custom mark that hides the comparison</td>
-            <td class="reach"><a class="use-link" href="https://giorgialupi.com/" target="_blank" rel="noopener noreferrer" title="Giorgia Lupi, Data Humanism"><b>Claim → then form</b></a></td>
-            <td class="example">Magnitude → bar; change → slope; uncertainty → band. Break convention only when convention cannot express the idea</td>
-          </tr>
-          <tr>
-            <td class="problem">Animation because we can</td>
-            <td class="reach"><a class="use-link" href="https://www.storytellingwithdata.com/" target="_blank" rel="noopener noreferrer" title="Storytelling with Data"><b>Experience with a job</b></a></td>
-            <td class="example">Static, progressive, scroll, explore, simulate, drill — only if it reduces uncertainty, reveals mechanism, or enables exploration</td>
-          </tr>
-          <tr>
-            <td class="problem">“Now you understand” and stop</td>
-            <td class="reach"><b>Close on decision</b></td>
-            <td class="example">Insight, implication, action, boundary, supporting evidence, and what could change the conclusion</td>
-          </tr>
-          <tr>
-            <td class="problem">Doubt buried in a footnote</td>
-            <td class="reach"><a class="use-link" href="https://info3312.infosci.cornell.edu/notes/great-viz.html" target="_blank" rel="noopener noreferrer" title="Alberto Cairo, five qualities"><b>Open — keep doubt visible</b></a></td>
-            <td class="example">Cairo: truthful before beautiful. The miss and the window you refused belong in the picture</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="note">Craft inside every stage: dwell until someone is in the file → one sentence → a sketch that is not a library screenshot → the eye’s path → the doubt left visible. If the grain is wrong, use Analytics. If the release is the job, use Delivery.</p>
+    <section class="pipe">
+      <h2>How a claim moves</h2>
+      <p class="explain">Grain stays on Analytics. Cutover stays on Delivery. Essays stay prose.</p>
+      <figure>
+        <p id="claim-desc" class="sr">
+          Six moves, then the doubt stays visible.
+          Question: name the decision before any mark. No question, no story.
+          Evidence: say what the data can support. The claim cannot cross that limit.
+          Tension: name the gap that needs the next scene. Otherwise it is analysis.
+          Narrative: order the scenes a person can walk. Who leads, then who wanders.
+          Experience: give the form a job. A bar is honest when larger is the whole claim.
+          Decision: close on what changes. The doubt stays in the picture.
+        </p>
+        <div class="pipe-board">
+          <ol class="stations">
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="ask"><b>?</b><span class="lines"><i></i><i></i></span></span>
+              </div>
+              <span class="pip" aria-hidden="true"></span>
+              <p class="station-kicker">Question</p>
+              <p class="station-line">Name the decision before any mark. No question, no story.</p>
+              <p class="handoff">Decision → a question someone can say</p>
+            </li>
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="proof"><span class="cap"></span><span class="bars"><i></i><i></i><i></i></span></span>
+              </div>
+              <span class="pip" aria-hidden="true"></span>
+              <p class="station-kicker">Evidence</p>
+              <p class="station-line">Say what the data can support. The claim cannot cross that limit.</p>
+              <p class="handoff">Question → a limit the claim cannot cross</p>
+            </li>
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="gap"><i class="expect"></i><i class="actual"></i></span>
+              </div>
+              <span class="pip" aria-hidden="true"></span>
+              <p class="station-kicker">Tension</p>
+              <p class="station-line">Name the gap that needs the next scene. Otherwise it is analysis.</p>
+              <p class="handoff">Limit → a reason for the next scene</p>
+            </li>
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="order"><i></i><i></i><i></i><i></i><i></i></span>
+              </div>
+              <span class="pip" aria-hidden="true"></span>
+              <p class="station-kicker">Narrative</p>
+              <p class="station-line">Order the scenes a person can walk. Who leads, then who wanders.</p>
+              <p class="handoff">Reason → an order someone can walk</p>
+            </li>
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="form"><i class="bar"></i><i class="squiggle"></i></span>
+              </div>
+              <span class="pip" aria-hidden="true"></span>
+              <p class="station-kicker">Experience</p>
+              <p class="station-line">Give the form a job. A bar is honest when larger is the whole claim.</p>
+              <p class="handoff">Order → a form that carries the claim</p>
+            </li>
+            <li class="station">
+              <div class="art" aria-hidden="true">
+                <span class="close"><i></i><em>doubt</em></span>
+              </div>
+              <span class="pip" aria-hidden="true"></span>
+              <p class="station-kicker">Decision</p>
+              <p class="station-line">Close on what changes. The doubt stays in the picture.</p>
+              <p class="handoff">Form → a decision, with the doubt still visible</p>
+            </li>
+          </ol>
+          <div class="return-rail" aria-hidden="true">
+            <span class="return-line"></span>
+            <p class="return-label">doubt stays</p>
+          </div>
+        </div>
+        <figcaption>The doubt stays beside the decision. It is part of the picture, from the first gap to the close.</figcaption>
+      </figure>
     </section>
 
-    <div class="tri">
-      <section>
-        <h2>Representation picker</h2>
-        <div class="picker">
-          <div class="pick"><strong>Magnitude</strong><span>Bar</span></div>
-          <div class="pick"><strong>Change</strong><span>Slope / line</span></div>
-          <div class="pick"><strong>Distribution</strong><span>Histogram / density / strip</span></div>
-          <div class="pick"><strong>Composition</strong><span>Stacked / proportional</span></div>
-          <div class="pick"><strong>Relationship</strong><span>Scatter</span></div>
-          <div class="pick"><strong>Uncertainty</strong><span>Interval / band / distribution</span></div>
-          <div class="pick"><strong>System</strong><span>Simulation / interactive model</span></div>
-          <div class="pick"><strong><a href="https://github.com/Financial-Times/chart-doctor" target="_blank" rel="noopener noreferrer">FT Chart Doctor</a></strong><span>The kinder conventional form</span></div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Story spec (write this down)</h2>
-        <div class="gates">
-          <div class="gate">
-            <strong>Question + claim</strong>
-            <span>Decision-facing question; one sentence the story asserts.</span>
-          </div>
-          <div class="gate">
-            <strong>Evidence + tension</strong>
-            <span>Source, grain, window — and the unresolved relationship.</span>
-          </div>
-          <div class="gate">
-            <strong>Narrative + visual</strong>
-            <span>Scene order from orient to open; form chosen for the claim.</span>
-          </div>
-          <div class="gate">
-            <strong>Interaction + implication</strong>
-            <span>What the reader can change, why; what could change operationally; visible limits.</span>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2>Ladder + gates</h2>
-        <ol class="ladder">
-          <li>State the decision in one sentence</li>
-          <li>Interrogate what the evidence can say</li>
-          <li>Name the tension that needs the next scene</li>
-          <li>Order scenes: orient → open</li>
-          <li>Pick the form for the claim; give interaction a job</li>
-          <li>Close on implication, boundary, and uncertainty</li>
-        </ol>
-        <div class="gate" style="margin-top:0.75rem">
-          <strong>Kill switch</strong>
-          <span>If you cannot name the question, the tension, and what changes, it is a chart — not a story yet.</span>
-        </div>
-      </section>
-    </div>
-
-    <section class="antis">
-      <h2>Kill the story when…</h2>
-      <ul class="anti-list">
-        <li>No question — a visualization looking for a reason</li>
-        <li>No tension — information with no unresolved relationship</li>
-        <li>Chart-first — the library chose the argument</li>
-        <li>Narrative laundering — causality on correlational evidence</li>
-        <li>Decoration as interaction — motion that does not change understanding</li>
-        <li>Certainty theatre — doubt only in a footnote</li>
-        <li>A gallery titled “story” — many charts, no decision</li>
-        <li>Wrong field — grain is Analytics; cutover is Delivery; essays stay prose</li>
-      </ul>
+    <section class="judgement">
+      <h2>Where judgement stays</h2>
+      <p class="explain">Someone still names the question, the limit, and the doubt a reader can see.</p>
+      <ol class="principles">
+        <li>
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M9.5 10a2.5 2.5 0 1 1 3.2 2.4c-.7.3-1.2.8-1.2 1.6"/><path d="M12 17h.01"/></svg></span>
+          <strong>Start with the decision, not the dataset.</strong> Name the audience, the question, and what done means before any mark.
+        </li>
+        <li>
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14"/><path d="M7 18V10M12 18V8M17 18v-5"/></svg></span>
+          <strong>The story never upgrades evidence into certainty.</strong> Source, structure, signal, and the limit. A correlation stays a correlation.
+        </li>
+        <li>
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" stroke-dasharray="3 2"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg></span>
+          <strong>Doubt stays in the picture.</strong> The miss and the window you refused belong on the page, beside the decision.
+        </li>
+      </ol>
+      <p class="kill">If you cannot name the question, the tension, and what changes, it is a chart. The doubt has to stay visible.</p>
     </section>
 
-    <section class="foundation" aria-label="Craft layer — always on">
-      <h2>Craft · inside every stage</h2>
+    <section class="practices">
+      <h2>Named practices</h2>
+      <p class="explain">Five links. The six moves still set the order.</p>
+      <div class="source-row">
+        <a href="https://giorgialupi.com/" target="_blank" rel="noopener noreferrer">Giorgia Lupi<span>Form is earned when the usual chart cannot carry the claim</span></a>
+        <a href="https://info3312.infosci.cornell.edu/notes/great-viz.html" target="_blank" rel="noopener noreferrer">Alberto Cairo<span>Truthful before beautiful. The doubt stays visible</span></a>
+        <a href="http://vis.stanford.edu/papers/narrative" target="_blank" rel="noopener noreferrer">Segel and Heer<span>Who leads, then who wanders</span></a>
+        <a href="https://www.storytellingwithdata.com/" target="_blank" rel="noopener noreferrer">Storytelling with Data<span>Motion needs a job</span></a>
+        <a href="https://github.com/Financial-Times/chart-doctor" target="_blank" rel="noopener noreferrer">FT Chart Doctor<span>The kinder conventional form</span></a>
+      </div>
+    </section>
+
+    <section class="foundation" aria-label="Craft layer, always on">
+      <h2>Always on</h2>
       <div class="found-row">
         <div class="found"><strong>Dwell</strong><span>Understand before interpreting</span></div>
         <div class="found"><strong>Claim</strong><span>One sentence, sayable aloud</span></div>
@@ -736,14 +1087,14 @@
 
     <footer class="meta">
       <div class="version-row">
-        <div class="version" id="version-stamp">v2026.09 · OS message in classic card · 25 Sep 2026 · Next: October 2026</div>
+        <div class="version" id="version-stamp">v2026.10 · Claim picture · 12 Oct 2026 · Next: November 2026</div>
         <div class="credit">
           <span>Alex Touvras</span>
           <a href="https://alextouvras.com">alextouvras.com</a>
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> Same field-card sheet as the siblings. New operating spine and kill criteria; craft (dwell → claim → sketch → lead → open) kept as the always-on strip. Scroll graph removed.</p>
+      <p class="changed"><b>Changed</b> The sheet is the same dark stage as the drawings. One claim walks the question to the decision, and the doubt stays in the picture.</p>
     </footer>
   </article>
   <script>

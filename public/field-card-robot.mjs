@@ -179,6 +179,13 @@ export const FALLBACK_CARDS = [
       "End on what changes, and what is still uncertain.",
       TUCK,
     ],
+    sections: [
+      { heading: "Turn evidence into a decision", line: "This card turns evidence into a decision." },
+      { heading: "How a claim moves", line: "The doubt stays in the picture." },
+      { heading: "Where judgement stays", line: "The story never upgrades evidence into certainty." },
+      { heading: "Named practices", line: "Five links. The six moves still set the order." },
+      { heading: "Always on", line: "End on what changes, and what is still uncertain." },
+    ],
   },
 ];
 
@@ -731,10 +738,11 @@ function removeChrome() {
 }
 
 /**
- * SDLC and Credit are hosted on Orbit. Storytelling `field-cards.ts` can
- * still describe the older sheet. Those two speak the lines in FALLBACK_CARDS.
+ * SDLC, Credit, and Story are hosted scenes on Orbit. Storytelling
+ * `field-cards.ts` can still describe the older sheet. Those three speak
+ * the lines in FALLBACK_CARDS.
  */
-const HOSTED_SPEECH = new Set(["sdlc", "credit"]);
+const HOSTED_SPEECH = new Set(["sdlc", "credit", "story"]);
 
 export function cardsForSheet(cardId, parsed) {
   const cards = parsed || FALLBACK_CARDS;
