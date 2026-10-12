@@ -31,7 +31,7 @@
 |---------|---------|
 | `npm run weekly:draft` | Intake + IDE brief. Cursor writes the essay. |
 | `npm run weekly:notify` | Force a new IDE brief. Slack waits for `weekly:notify-draft`. |
-| `npm run weekly:notify-draft` | Slack a pending local draft (persists to the GitHub default branch when `GITHUB_TOKEN` is set; Slack includes the full essay) |
+| `npm run weekly:notify-draft` | Slack a pending local draft (persists to the GitHub default branch when `GITHUB_TOKEN` is set). The message is a short card; Open preview has the essay. |
 | `npm run weekly:notify -- --force` | Replace a pending draft |
 | `npm run weekly:draft -- --allow-local-fallback` | Ollama, then OpenAI, then a template. Explicit only. |
 

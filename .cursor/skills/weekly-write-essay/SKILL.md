@@ -39,7 +39,7 @@ Do not cite deleted placeholders (for example the former `power-bi-monday-dashbo
 3. **Build the MDX string** (frontmatter, then body). SEO comes from `title`, `summary`, `date`, `category`, and `tags`. A first publish omits `updated`.
 4. **Save** `data/weekly-write-draft.json` (shape in `reference.md`). `status: "pending"`, `source: "ide"`, `intake` copied from the brief JSON, `id` like `ww-{weekOf}-ide`, slug from the title.
 5. **UTF-8.** At most one em dash per ~500 words. No mojibake.
-6. **Notify.** `npm run weekly:notify-draft` with `GITHUB_TOKEN` (and `GITHUB_REPO` if needed) so the draft lands on the **default branch**. Vercel reads that branch. Confirm `"slack": true` and `"githubSynced": true`. Slack posts the full essay.
+6. **Notify.** `npm run weekly:notify-draft` with `GITHUB_TOKEN` (and `GITHUB_REPO` if needed) so the draft lands on the **default branch**. Vercel reads that branch. Confirm `"slack": true` and `"githubSynced": true`. Slack posts a short card. The essay is on Open preview.
 7. **Stop.** The user Approves or Skips in `#orbit`. Do not publish the Write MDX yourself.
 
 If `githubSynced` is false, set `GITHUB_TOKEN` with `repo` scope and notify again, or PUT `data/weekly-write-draft.json` to the default branch, then re-notify.

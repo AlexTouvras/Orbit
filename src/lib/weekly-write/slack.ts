@@ -1,5 +1,4 @@
 import type { WeeklyDraft } from "@/lib/weekly-write/types";
-import { uploadWeeklyDraftMarkdown } from "@/lib/weekly-write/slack-file";
 import { WEEKLY_WRITE_PRODUCTION_ORIGIN } from "@/lib/weekly-write/link-origin";
 import { weeklyActionUrl } from "@/lib/weekly-write/tokens";
 
@@ -14,29 +13,6 @@ export function essayBodyMarkdown(draft: WeeklyDraft): string {
   return body || draft.preview || draft.summary || "";
 }
 
-/** Split long text into Slack-safe chunks (section text limit ≈ 3000). */
-export function splitForSlackSections(
-  text: string,
-  maxChars = 2800,
-): string[] {
-  if (text.length <= maxChars) return [text];
-
-  const parts: string[] = [];
-  let remaining = text;
-  while (remaining.length > 0) {
-    if (remaining.length <= maxChars) {
-      parts.push(remaining);
-      break;
-    }
-    let cut = remaining.lastIndexOf("\n\n", maxChars);
-    if (cut < maxChars * 0.4) cut = remaining.lastIndexOf("\n", maxChars);
-    if (cut < maxChars * 0.4) cut = maxChars;
-    parts.push(remaining.slice(0, cut).trimEnd());
-    remaining = remaining.slice(cut).trimStart();
-  }
-  return parts;
-}
-
 /** Prefer `#orbit` webhook; fall back to legacy CareerOps webhook. */
 function weeklyWriteWebhookUrl(): string | undefined {
   return (
@@ -45,24 +21,16 @@ function weeklyWriteWebhookUrl(): string | undefined {
   );
 }
 
-export async function sendWeeklyDraftSlack(
+/** Slack card for a pending draft: title, summary, and preview. The essay stays on the preview page. */
+export function buildWeeklyDraftSlackMessage(
   draft: WeeklyDraft,
   options?: {
-    /** When false, warn that preview/Approve links may 404 until draft is on default branch. */
+    /** When false, warn that preview will not load until the draft is on the default branch. */
     githubSynced?: boolean;
-    /** Origin embedded in Approve/Preview links (from assertWeeklyWriteSlackLinksReady). */
+    /** Origin embedded in the after-publish path. */
     linkOrigin?: string;
   },
-): Promise<{ ok: true } | { ok: false; reason: string }> {
-  const url = weeklyWriteWebhookUrl();
-  if (!url) {
-    return {
-      ok: false,
-      reason:
-        "SLACK_ORBIT_WEBHOOK_URL (or SLACK_WEBHOOK_URL) not configured",
-    };
-  }
-
+): { text: string; blocks: Record<string, unknown>[] } {
   const approve = weeklyActionUrl(draft.id, "approve");
   const skip = weeklyActionUrl(draft.id, "skip");
   const preview = weeklyActionUrl(draft.id, "preview");
@@ -80,13 +48,9 @@ export async function sendWeeklyDraftSlack(
     draft.intake.signals[0]?.title ||
     "Signals + projects";
 
-  // Prefer attaching the full essay as .md (needs bot token).
-  const fileUpload = await uploadWeeklyDraftMarkdown(draft);
-  const attachedMd = fileUpload.ok;
-
   const text = `Orbit weekly Write ready: ${draft.title}`;
 
-  /** Real Slack buttons (url) — much more tappable than mrkdwn links in a long message. */
+  /** Preview is how the essay is read. Approve and Skip stay on the same row. */
   const actionButtons = (
     blockId: string,
     idSuffix: string,
@@ -129,9 +93,7 @@ export async function sendWeeklyDraftSlack(
       type: "section",
       text: {
         type: "mrkdwn",
-        text: `*${draft.title}*\n${draft.summary}\n\n_Source:_ ${draft.source} · _~${wordCount} words_ · _Week of_ ${draft.weekOf}\n_Inspired by:_ ${inspiration}${
-          attachedMd ? `\n_Also attached as_ \`${draft.slug}.md\`` : ""
-        }`,
+        text: `*${draft.title}*\n${draft.summary}\n\n_Source:_ ${draft.source} · _~${wordCount} words_ · _Week of_ ${draft.weekOf}\n_Inspired by:_ ${inspiration}`,
       },
     },
     actionButtons("weekly_write_actions_top", "top"),
@@ -142,45 +104,43 @@ export async function sendWeeklyDraftSlack(
       type: "section",
       text: {
         type: "mrkdwn",
-        text: ":warning: *Preview/Approve links may fail* — pending draft was not synced to the GitHub default branch. Full essay is still below in this message.",
+        text: ":warning: *Open preview will not load this draft* until it is on the GitHub default branch.",
       },
     });
   }
-
-  // Full essay in-channel (Slack section limit ≈ 3000). Do not rely on
-  // browser preview alone — preview 404s when the pending draft is only on a
-  // feature branch and not yet on the default branch GitHub storage reads.
-  const parts = splitForSlackSections(body, 2800);
-  parts.forEach((part, i) => {
-    const label =
-      parts.length === 1
-        ? "*Full draft*"
-        : `*Full draft (${i + 1}/${parts.length})*`;
-    // Avoid breaking the fence if the essay contains triple backticks.
-    const safe = part.replace(/```/g, "'''");
-    blocks.push({
-      type: "section",
-      text: {
-        type: "mrkdwn",
-        // Code fence keeps markdown readable and avoids mrkdwn eating links.
-        text: `${label}\n\`\`\`${safe}\`\`\``,
-      },
-    });
-  });
-
-  // Repeat buttons after the essay so you don't scroll back to the top on mobile.
-  blocks.push(actionButtons("weekly_write_actions_bottom", "bottom"));
 
   blocks.push({
     type: "context",
     elements: [
       {
         type: "mrkdwn",
-        text: `Full draft is in this message${attachedMd ? " and the attached .md" : ""}. *Approve* opens a confirm page (won't publish on tap alone). Preview has a fixed bottom Approve bar. After publish: \`${site}/writes/${draft.slug}\``,
+        text: `*Open preview* has the essay. *Approve* opens a confirm page (won't publish on tap alone). After publish: \`${site}/writes/${draft.slug}\``,
       },
     ],
   });
 
+  return { text, blocks };
+}
+
+export async function sendWeeklyDraftSlack(
+  draft: WeeklyDraft,
+  options?: {
+    /** When false, warn that preview will not load until the draft is on the default branch. */
+    githubSynced?: boolean;
+    /** Origin embedded in Approve/Preview links (from assertWeeklyWriteSlackLinksReady). */
+    linkOrigin?: string;
+  },
+): Promise<{ ok: true } | { ok: false; reason: string }> {
+  const url = weeklyWriteWebhookUrl();
+  if (!url) {
+    return {
+      ok: false,
+      reason:
+        "SLACK_ORBIT_WEBHOOK_URL (or SLACK_WEBHOOK_URL) not configured",
+    };
+  }
+
+  const { text, blocks } = buildWeeklyDraftSlackMessage(draft, options);
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
