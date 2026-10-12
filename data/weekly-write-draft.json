@@ -1,86 +1,86 @@
 {
-  "id": "ww-2026-10-05-ide",
-  "status": "published",
-  "createdAt": "2026-10-05T09:04:55.440Z",
-  "weekOf": "2026-10-05",
-  "slug": "before-an-agent-writes-back-name-who-is-allowed-to-speak",
-  "title": "Before an agent writes back, name who is allowed to speak",
-  "summary": "Barcelona's Copilot and Power BI updates let a report's definitions leave the report and change stored data. I would name the speaking model, the allowed writes, and who can stop a bad action before I turn that on.",
-  "category": "Delivery",
+  "id": "ww-2026-10-12-ide",
+  "status": "pending",
+  "createdAt": "2026-10-12T09:13:28.932Z",
+  "weekOf": "2026-10-12",
+  "slug": "the-formula-can-rank-it-still-cannot-decide-who-is-in-the-race",
+  "title": "The formula can rank. It still cannot decide who is in the race.",
+  "summary": "Before an assistant writes a customer-ranking measure, I want a written contract for who competes, which filters count, and how ties break, because a formula that calculates is not yet a rank a team can own.",
+  "category": "Data",
   "tags": [
-    "Delivery",
-    "Agents",
+    "Power BI",
+    "DAX",
     "Analytics"
   ],
-  "mdx": "---\ntitle: \"Before an agent writes back, name who is allowed to speak\"\nsummary: \"Barcelona's Copilot and Power BI updates let a report's definitions leave the report and change stored data. I would name the speaking model, the allowed writes, and who can stop a bad action before I turn that on.\"\ndate: \"2026-10-05\"\ncategory: \"Delivery\"\nfeatured: false\ntags: [\"Delivery\", \"Agents\", \"Analytics\"]\n---\n\n## The question\n\nThe easy plan is still sitting on the table. The report is already trusted, so let the assistant use it. In Power BI, Microsoft's reporting product, the semantic model is the layer that holds the measures and how they relate. If a finance meeting already argues from those measures, pointing a chat assistant at the same model looks like a free upgrade.\n\nThat plan misses who the new reader is. [FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents](https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/) is Arun Ulag's write-up of the change. Fabric IQ, Microsoft's shared layer for business context, is generally available inside Copilot Chat and Cowork. Copilot is the assistant people already open in Microsoft 365. A separate preview in Power BI Desktop, due in the coming weeks, lets someone describe an application, generate it from a semantic model, and publish it. Those apps can accept inputs and write data back: they can change stored numbers, not only draw them. They are not another chart page.\n\nThe question I can check is specific. Before I allow that assistant, or that generated app, to act on a model, can I name the model allowed to speak outside the report, the writes already approved, and the person who can stop a bad action?\n\n## A meeting's trust does not travel\n\nUlag states the dependency in plain terms. Organizations need more than models and agents. They need governed data, shared definitions, operational knowledge, and guardrails so the assistant can act reliably. The announcements follow that sentence. Copilot can pull these Fabric insights with no extra AI token charge. The app path starts from a model the post calls trusted, then gives the app a database, sign-in, and security. Power BI Pro and Premium Per User, the ordinary paid licenses, get that preview at no added license cost, capped at 1 GB per app.\n\nTrusted, in that usage, means the definitions already live in a model. It does not mean I checked whether they survive a reader who never sat in the meeting. A steering pack can carry a margin figure because the room knows the adjustment, the close calendar, and what the number leaves out. Copilot does not bring the room along. Someone in another function asks an ordinary question and receives the finance definition as if the company had agreed on one.\n\nI would treat that as a change of speaker. The model that may answer outside the report gets an owner, and a written list of measures allowed to travel. Models that still disagree on revenue stay inside the report. I do not ask the assistant to reconcile them.\n\n## The write is the release\n\nThe same post hides a second decision inside a long feature list. Operations agents, still in preview, are gaining pre-approved actions and root-cause notes, with a person kept in the loop. The data engineering agent, also in preview, is described the same way. A person states the outcome and the guardrails, and the agent works inside them. The generated Power BI app is the case I care about more, because it can write data back and keep shared state for an operational workflow.\n\nA wrong chart wastes a meeting. A wrong write changes the record the next chart reads.\n\nMy baseline is the report that cannot write. The challenger is the app that can. I would let the app win on one path only: the table it may change, and a way to reverse one bad write without a war room. Pre-approved has to stay a short list. If the list is every action someone might want on a Friday, the approval is a catalog, and the agent is guessing again.\n\nI keep a smaller version of that gate on Orbit, the public site where these essays live. A draft can be written each Monday. It stays a draft until I approve it in Slack. The generator does not get the publish action. The allowed change is named before the automation runs. I want that same shape on a write-back app.\n\n## Where I would leave the switch off\n\nMost of this is still preview, and I have not run it against a production model. A launch post is not a postmortem. The 1 GB cap limits size. It does not decide which definition is allowed to speak. Private-by-default access on these apps is a useful default, and it still will not choose which margin figure Copilot should repeat.\n\nThere is a counter-case I want to keep. While I am still finding which question the data can support, a generated app is a sketch. Certifying a speaker is the wrong tool on a sketch. It slows the only part of the work that should stay loose. The failure mode is promotion. A convincing preview, sitting on an ordinary Power BI license at no extra cost, should not quietly become the workflow that updates a shared number. I label the sketch as disposable and leave write-back off it.\n\nThe post closes on a claim I can check. The shift will not be defined by how many agents an organization creates. It will be defined by whether those agents understand the business. I read that as a shared definition with an owner, not a longer list of agents. The announcement is wide. The first change I would make is narrow enough to audit.\n\n## Takeaway\n\nWhen an assistant or a generated app can inherit a report's measures and then write data, I do not start by enabling the feature. I name the model that may speak outside the report, the writes already approved, and the person who can stop a bad action. If I cannot write that down, the model stays a report. Faster app creation would only move an unsettled definition into a place where it can change the record.\n",
-  "preview": "Before an agent writes back, name who is allowed to speak\n\nBarcelona's Copilot and Power BI updates let a report's definitions leave the report and change stored data. I would name the speaking model, the allowed writes, and who can stop a bad action before I turn that on.\n\nInspired by: FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents",
+  "mdx": "---\ntitle: \"The formula can rank. It still cannot decide who is in the race.\"\nsummary: \"Before an assistant writes a customer-ranking measure, I want a written contract for who competes, which filters count, and how ties break, because a formula that calculates is not yet a rank a team can own.\"\ndate: \"2026-10-12\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Power BI\",\"DAX\",\"Analytics\"]\n---\n\n## The question\n\nI still type some version of \"create a measure that ranks customers.\" It feels finished.\n\nAn assistant can hand back DAX, the formula language in Power BI (Microsoft's reporting product), in a single reply. The semantic model under the report, where those measures live, will then calculate a rank, and the rank still will not say who is allowed to compete.\n\nAlberto Ferrari posted [Understanding DAX contracts when using AI](https://www.sqlbi.com/tv/understanding-dax-contracts-when-using-ai/) this week, on a video page that is only a note. I read the [article](https://www.sqlbi.com/articles/understanding-dax-contracts-when-using-ai/) he and Marco Russo published with it on 5 October 2026. I did not watch the video.\n\nTheir opening claim is the one I am keeping. An AI-written model is usable once the contract exists, with the measure written after it. I am dropping their last sentence, the one that finds no drawbacks. A written rule can still name the wrong race. Follow that rule without a second look, and a meeting will treat the wrong race as finished work.\n\n## What has to be true before a rank exists\n\nIn their definition, a contract is text that states how one semantic model is allowed to compute, and several measures can share it. I use a shorter test. Can a colleague argue with the choices that change the number without opening the formula?\n\nTheir demo refuses the obvious prompt. They ask the assistant what has to be settled before any DAX is written. The questions that move a rank are who competes, which filters touch sales and which are ignored, whether the largest amount is rank 1, how a tie breaks, whether a customer with no sales or with negative sales stays in, whether identity is the key or the name on the visual, and what a total shows when the row is not one customer.\n\nThe contract they save is odd on purpose. A customer competes with everyone who bought from the first sale on record through the end of the period shown. First sale on 1 January 2026 and the report on March 2026 means a cohort through 31 March. Miss that window and the customer drops out. A buyer from an earlier month, with no purchase in the month on the report, still takes a place in the order. Other filters still apply, while a filter on the customer table does not. Cumulative sales set the order, highest first, and CustomerKey ascending breaks a tie so the smaller key wins. Names can appear on the matrix, but identity stays on the key. If the context holds more than one customer, including a name that maps to several keys, the measure returns blank.\n\nSay a sales manager hears March and means invoices booked that month. This contract means a running total through 31 March, scored against people who may have bought nothing in March. I would not paste that cohort into a board pack. I would keep it only after the person who owns the target signs the sentence. The model does not negotiate. It ranks the people the text names.\n\nThey request the measure only once the contract has been saved, shown back, and patched. The DAX insists on one customer key, removes customer filters, accumulates sales through the last visible date, and counts how many customers sit ahead. They note that RANK might do the same job faster. In the matrix they publish, Karen Westbrook is first in 2023 and third in 2024 because newer customers bought more than she did. That result is theirs. I have not reproduced it.\n\n## A clean contract can still be the wrong call\n\nThe article already says the measure is imperfect and that checking it sits outside the piece. The conclusion still says that, to their knowledge so far, a contract has no drawbacks. I reject the conclusion. A precise file that describes a bad cohort will be implemented without complaint, and the meeting will treat the number as sourced.\n\nBlank on a repeated name refuses to invent one rank for two keys, and then it goes quiet. Unless someone is assigned to that blank, the collision never surfaces in the review.\n\nOne rewritten example also cannot tell me how often an assistant's contract drifts away from the sentences a person typed. Russo and Ferrari show a clearer rewrite and say the author should read it back. That habit is not proof the drift is usually harmless. Until I do the read-back on a model I maintain, \"the agent cleaned it up\" stays unverified.\n\nOn Orbit, the public site where an essay like this gets published, an assistant may write the draft and a person still has to approve it. I want that split on a ranking measure: the formula may sit in the model, and a file has to remain the copy a colleague can mark up.\n\nOn Monday that file sits beside the model. It names the cohort, the filters the rank ignores, the tie break, and the result when the row is not one customer. I change the file before I ask for new DAX. Then I calculate one customer by hand, using only that file. If I have to open the formula to decide whether a historical buyer with no sales this month belongs, the contract is unfinished. A chat transcript does not count as the file. The next edit will land in the measure, and the written rule will be stale.\n\nWhat stays broken is the review. Someone still has to explain a rank that moved, and they cannot, if the reason was never stored.\n\n## Takeaway\n\nI will not ask for a ranking measure until a contract names who competes, which filters do not count, how a tie breaks, and what a repeated name returns. I change that contract before I change the formula. One customer I can calculate by hand has to match, or the measure stays out of any report a team will use. No file beside the model, no ship.\n",
+  "preview": "The formula can rank. It still cannot decide who is in the race.\n\nBefore an assistant writes a customer-ranking measure, I want a written contract for who competes, which filters count, and how ties break, because a formula that calculates is not yet a rank a team can own.\n\nInspired by: Understanding DAX contracts when using AI",
   "intake": {
-    "weekOf": "2026-10-05",
-    "generatedAt": "2026-10-05T09:02:09.382Z",
+    "weekOf": "2026-10-12",
+    "generatedAt": "2026-10-12T09:03:31.832Z",
     "signals": [
       {
-        "id": "c652d822df81",
-        "title": "The Problem With Approximate Distinct Counts In Power BI – And How To Solve It",
-        "link": "https://blog.crossjoin.co.uk/2026/10/04/the-problem-with-approximate-distinct-counts-in-power-bi-and-how-to-solve-it/",
+        "id": "c5fcb1c48fe6",
+        "title": "ApproximateDistinctCount In Power BI Is Sometimes Slower Than DistinctCount",
+        "link": "https://blog.crossjoin.co.uk/2026/10/11/approximatedistinctcount-in-power-bi-is-sometimes-slower-than-distinctcount/",
         "source": "Chris Webb's BI Blog",
         "category": "Analytics",
-        "snippet": "As you’ve probably seen in the blog post for the September 2026 release of Power BI, Import mode and Direct Lake mode semantic models now support the ApproximateDistinctCount() DAX function. I tested its performance on a Direct Lake semantic model with a 1.4 billion row fact tabl…"
+        "snippet": "As a follow-on from last week’s post about the new ApproximateDistinctCount function in DAX, I want to share something I found out from my recent testing for this function: ApproximateDistinctCount is sometimes slower than DistinctCount. This sounds counter-intuitive, right? Afte…"
       },
       {
-        "id": "a8c0638d220f",
-        "title": "Unlocking Data Portability: Preventing Catalog Lock-in with REGISTER and UNREGISTER APIs",
-        "link": "https://www.databricks.com/blog/unlocking-data-portability-preventing-catalog-lock-register-and-unregister-apis",
-        "source": "Databricks Blog",
-        "category": "Data",
-        "snippet": "As organizations embrace the lakehouse architecture, data is shifting from proprietary..."
-      },
-      {
-        "id": "f6ff5f6917ea",
-        "title": "Fragments: October 4",
-        "link": "https://martinfowler.com/fragments/2026-10-04.html",
-        "source": "Martin Fowler",
-        "category": "Delivery",
-        "snippet": "In response to my last fragments (probably the bit about us worrying if LLMs have consciousness when we when we should be wondering why they don’t have a conscience) “Metalanguage” replied: we shipped the id and forgot the superego. classic software lifecycle. I don’t know what w…"
-      },
-      {
-        "id": "c1cd391cd548",
-        "title": "Bonding through crises with nonbank financial institutions",
-        "link": "https://cepr.org/voxeu/columns/bonding-through-crises-nonbank-financial-institutions",
-        "source": "VoxEU",
-        "category": "Economics",
-        "snippet": "Nonbank financial institutions are often seen as procyclical lenders, cutting credit more sharply than banks during stress, while bond markets can substitute for bank lending when credit supply contracts. This column brings these perspectives together and argues that this cyclica…"
-      },
-      {
-        "id": "0460e0adb0a8",
-        "title": "PRA Regulatory Digest – September 2026",
-        "link": "https://www.bankofengland.co.uk/prudential-regulation/regulatory-digest/2026/september-2026",
-        "source": "Bank of England PRA",
-        "category": "Credit",
-        "snippet": "The PRA Regulatory Digest is for people working in the UK financial services industry and highlights key regulatory news and publications delivered for the month."
-      },
-      {
-        "id": "5a3f1f4a82c5",
-        "title": "We're going to need default hard budget caps on pretty much everything",
-        "link": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
-        "source": "Simon Willison",
-        "category": "AI",
-        "snippet": ""
-      },
-      {
-        "id": "6cf866657b71",
-        "title": "FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents",
-        "link": "https://azure.microsoft.com/en-us/blog/fabcon-and-sqlcon-2026-in-barcelona-building-the-data-foundation-for-microsoft-copilot-and-agents/",
-        "source": "Microsoft Fabric Blog",
-        "category": "Analytics",
-        "snippet": "Microsoft Fabric and SQL innovations announced at FabCon and SQLCon Barcelona 2026 help organizations build trusted data foundations for AI. The post FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents appeared first on Microsoft Fab…"
-      },
-      {
-        "id": "4aa0bee4983e",
-        "title": "Data Engineering Weekly #290",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-290",
+        "id": "1e8ab7e299eb",
+        "title": "Data Engineering Weekly #291",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-291",
         "source": "Data Engineering Weekly",
         "category": "Data",
         "snippet": "The Weekly Data Engineering Newsletter"
+      },
+      {
+        "id": "8031d03ce8de",
+        "title": "Cognitive Trap: Accountability Diffusion",
+        "link": "https://www.scrum.org/resources/blog/cognitive-trap-accountability-diffusion",
+        "source": "Scrum.org",
+        "category": "Delivery",
+        "snippet": "Accountability Diffusion Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, a…"
+      },
+      {
+        "id": "648b5502e50a",
+        "title": "Ratings, debt, and deficits: An exploration",
+        "link": "https://cepr.org/voxeu/columns/ratings-debt-and-deficits-exploration",
+        "source": "VoxEU",
+        "category": "Economics",
+        "snippet": "What matters more for sovereign credit ratings – today’s debt or tomorrow’s deficits? This column explores how ratings weigh the two and finds that ratings place much more emphasis on current debt than on projected fiscal deficits. Compared with the implications of a simple model…"
+      },
+      {
+        "id": "471acfb3b17e",
+        "title": "Artificial intelligence and climate change: balancing innovation and sustainability",
+        "link": "https://www.bis.org/publications/paper-174-artificial-intelligence-and-climate-change-balancing-innovation-and-sustainability",
+        "source": "BIS Financial Stability",
+        "category": "Credit",
+        "snippet": "Artificial intelligence (AI) is becoming an increasingly important factor in the climate transition. AI can improve energy efficiency, optimise resource use, accelerate climate innovation and strengthen climate forecasting, adaptation and risk management. At the same time, the de…"
+      },
+      {
+        "id": "a842dc410cb5",
+        "title": "Investigating unintended model actions in our evaluations and internal use",
+        "link": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+        "source": "Anthropic Research",
+        "category": "AI",
+        "snippet": "This report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude."
+      },
+      {
+        "id": "e4b469e972e8",
+        "title": "Understanding DAX contracts when using AI",
+        "link": "https://www.sqlbi.com/tv/understanding-dax-contracts-when-using-ai/",
+        "source": "SQLBI",
+        "category": "Analytics",
+        "snippet": "Defining the right contract is a key activity for a DAX developer using AI. Here we introduce the concept of a contract through simple examples."
+      },
+      {
+        "id": "a276e4f9898e",
+        "title": "How California built its Behavioral Health Public County Profile on Databricks",
+        "link": "https://www.databricks.com/blog/how-california-built-its-behavioral-health-public-county-profile-databricks",
+        "source": "Databricks Blog",
+        "category": "Data",
+        "snippet": "The California Department of Health Care Services (DHCS) built the Behavioral Health..."
       }
     ],
     "projects": [
@@ -168,7 +168,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-10-05T11:57:54.267Z",
-  "publishedSlug": "before-an-agent-writes-back-name-who-is-allowed-to-speak"
+  "source": "ide"
 }
