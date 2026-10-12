@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-10-12-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-10-12T10:34:39.361Z",
   "weekOf": "2026-10-12",
   "slug": "when-the-tools-build-the-report-write-the-contract-first",
@@ -168,5 +168,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-10-12T10:38:33.415Z",
+  "publishedSlug": "when-the-tools-build-the-report-write-the-contract-first"
 }
