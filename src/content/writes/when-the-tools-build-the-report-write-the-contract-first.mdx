@@ -1,0 +1,36 @@
+---
+title: "When the tools build the report, write the contract first"
+summary: "I build reports with the Power BI MCP and reporting skills, so an assistant can produce the model and the pages. The contract has to state how the analytics are allowed to behave before that build, because the unit is the report, not one measure."
+date: "2026-10-12"
+category: "Learning"
+featured: false
+tags: ["Learning", "Analytics", "Power BI"]
+---
+
+## The question
+
+The reports I need are built by tools. I connect an assistant to the Power BI MCP, a link that lets it work inside Power BI, Microsoft's reporting product, and I give it reporting skills, the standing instructions it follows to author the report. What comes back is a semantic model, the layer where measures and relationships live, plus the pages, and I did not place each visual myself.
+
+[Understanding DAX contracts when using AI](https://www.sqlbi.com/tv/understanding-dax-contracts-when-using-ai/) is Alberto Ferrari's note from this week. I did not watch the video. I read the [article](https://www.sqlbi.com/articles/understanding-dax-contracts-when-using-ai/) he and Marco Russo published beside it on 5 October 2026. They demonstrate a contract on one customer ranking, written in DAX, the formula language, and they get there by asking a series of questions about that measure. I do not run those steps. The claim I keep is the contract itself: a short text that says how a model is allowed to compute, shared by every measure that needs the same rule, in place before anything is generated.
+
+That is a different way of building analytics. The assistant, through the Power BI MCP and those reporting skills, can produce the report I asked for. Speed is the reason I work this way. A missing contract now damages every page at once, where a hand-built report used to hide the same gap inside one formula.
+
+## The issue
+
+The issue is a report that exists before anyone has stated how the analytics are allowed to behave.
+
+I can ask for the report and receive pages, filters, and measures together. With no contract, the assistant has already chosen the grain, the definitions, and what a total means. The file opens and looks finished, while the business rule is only a guess repeated across the report. Fixing one measure does not clear the other pages.
+
+Reports I inherit are the slow version of this failure. Someone could say the rule in the meeting, nobody wrote it down, and the model became the only copy. One person can still read a measure. Everyone else trusts the page. Tool-built reports arrive at that ending on the first pass, because a file that opens feels like a decision the team already made.
+
+## What I write before the tools build
+
+A report I will defend starts with the contract, not with a prompt to build. The contract says how the numbers are allowed to behave and which decision the report is for, in sentences a colleague can challenge without opening the model. One rule is stated once, so a margin on the first page is the same margin on the last, and a filter that must not move a total is named where every skill can see it. The Power BI MCP and the reporting skills build from that text. I check the finished report against the contract, and a page that merely rendered only proves that the tools ran.
+
+Later changes start in the contract: I revise it, then the tools build again. A hand patch to one generated measure, with the old contract left beside it, splits the written analytics from the report, and the issue returns inside a newer file.
+
+Russo and Ferrari close by saying that, to their knowledge so far, a contract has no drawbacks. A wrong contract is still a spec, and these tools will build it. While I am still finding which question the data can support, I mark the contract as a sketch, so a generated report cannot become the standard merely because it opened. Their questions in front of one ranking measure stay in the article. On my builds the gate is the contract for the whole report, and only then the tools.
+
+## Takeaway
+
+I let the Power BI MCP and reporting skills build the report. The contract comes first, and it covers the analytics: how the numbers are allowed to behave, and which decision the report is for. If I cannot check the report against that page, the build does not ship.
