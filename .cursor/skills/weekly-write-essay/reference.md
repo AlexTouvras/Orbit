@@ -31,7 +31,7 @@
 |---------|---------|
 | `npm run weekly:draft` | Intake + IDE brief. Cursor writes the essay. |
 | `npm run weekly:notify` | Force a new IDE brief. Slack waits for `weekly:notify-draft`. |
-| `npm run weekly:notify-draft` | Slack a pending local draft (persists to the GitHub default branch when `GITHUB_TOKEN` is set; Slack includes the full essay) |
+| `npm run weekly:notify-draft` | Slack a pending local draft (persists to the GitHub default branch when `GITHUB_TOKEN` is set). The message is a short card; Open preview has the essay. |
 | `npm run weekly:notify -- --force` | Replace a pending draft |
 | `npm run weekly:draft -- --allow-local-fallback` | Ollama, then OpenAI, then a template. Explicit only. |
 
@@ -41,19 +41,16 @@
 ## The question
 …
 
-## What the signal is really saying
-… (link primary; define jargon once)
+## The issue
+… (one sentence a stranger can repeat; the Signal's claim, with the example in one clause)
 
-## What people get wrong
-…
-
-## … (1–3 more sections: Delivery / Learning / Career / general data / AI as the thesis requires)
+## … (the gate: work you already do on this artifact, so the issue does not repeat)
 
 ## Takeaway
 …
 ```
 
-Adjust section titles to the thesis. Keep `## The question` first. The bar is `docs/essay-voice.md`.
+Name the middle sections for the issue and the gate. A recap of the Signal is not a section. Keep `## The question` first. The bar is `docs/essay-voice.md`.
 
 ## After Approve
 

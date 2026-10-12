@@ -265,8 +265,8 @@ Every Monday a draft Write is built from **Related articles** + **Studio worksho
 ### What you do
 
 1. Open the Slack message in `#orbit`
-2. Prefer **Open preview** (Slack button) to read the full essay on your phone — Approve/Skip sit in a **fixed bottom bar** on that page
-3. Tap **Approve & publish** → confirm page → **Approve & publish** again (or **Skip**). Slack also has the same buttons above and below the in-channel draft.
+2. Tap **Open preview** to read the essay. The Slack message is the title and summary only.
+3. Tap **Approve & publish** → confirm page → **Approve & publish** again (or **Skip**). Approve and Skip are also on the preview page.
 4. After Vercel redeploys, the article is live at `/writes/…`
 
 Links are signed and expire in 7 days. Approve/Skip are confirm-then-POST so Slack link previews cannot publish by accident.
@@ -277,7 +277,6 @@ Links are signed and expire in 7 days. Approve/Skip are confirm-then-POST so Sla
 | --- | --- |
 | `SLACK_ORBIT_WEBHOOK_URL` | `#orbit` Incoming Webhook (Vercel + GitHub Actions; prefer this) |
 | `SLACK_WEBHOOK_URL` | Legacy fallback only |
-| `SLACK_BOT_TOKEN` + `SLACK_CHANNEL_ID` (optional) | Attach full essay as `.md` in Slack (`files:write` bot scope — still free) |
 | `CRON_SECRET` / optional `WEEKLY_WRITE_SECRET` | Signs Approve/Skip/Preview links |
 | `GITHUB_TOKEN` | Already required for Studio; used to commit the MDX on Approve |
 | `OPENAI_API_KEY` (optional) | Only for `--allow-local-fallback`, after Ollama |

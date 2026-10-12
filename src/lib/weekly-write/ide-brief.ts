@@ -42,7 +42,7 @@ export function writeIdeBrief(options: {
     instructions: [
       "Open this repo in Cursor.",
       "Read data/weekly-write-ide-brief.md (and the JSON twin).",
-      "Write one Orbit essay with the weekly-write-essay skill. The bar is docs/essay-voice.md.",
+      "Write one Orbit essay with the weekly-write-essay skill. The bar is docs/essay-voice.md. Notes before prose: claim separate from the example; issue and gate in work you already do on this artifact.",
       "Save the pending draft to data/weekly-write-draft.json (status pending, source ide).",
       "Run: npm run weekly:notify-draft",
       "Approve or Skip in Slack #orbit.",
@@ -96,7 +96,7 @@ Week of: ${brief.weekOf}
 ## Your job (in this IDE)
 
 1. Write **one** focused Orbit essay (not a digest) inspired by the thesis below.
-2. Follow \`docs/essay-voice.md\` (title, argument notes, then prose; \`## The question\` through \`## Takeaway\`, 700–1000 words).
+2. Follow \`docs/essay-voice.md\`. Notes before prose: separate the Signal's claim from its example, and name the issue plus the gate in work you already do on this artifact. Then \`## The question\` through \`## Takeaway\`, 700–1000 words. Do not notify until a stranger could say that issue and that gate from the notes.
 3. Save pending draft JSON to \`data/weekly-write-draft.json\` with \`source: "ide"\` and \`status: "pending"\`.
 4. Run:
 
