@@ -1,7 +1,61 @@
 {
-  "generatedAt": "2026-10-11T06:46:57.767Z",
+  "generatedAt": "2026-10-12T06:46:58.163Z",
   "count": 263,
   "items": [
+    {
+      "id": "8031d03ce8de",
+      "title": "Cognitive Trap: Accountability Diffusion",
+      "link": "https://www.scrum.org/resources/blog/cognitive-trap-accountability-diffusion",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-12T04:00:00.000Z",
+      "contentSnippet": "Accountability Diffusion Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, a…"
+    },
+    {
+      "id": "1e8ab7e299eb",
+      "title": "Data Engineering Weekly #291",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-291",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-10-12T03:18:01.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "648b5502e50a",
+      "title": "Ratings, debt, and deficits: An exploration",
+      "link": "https://cepr.org/voxeu/columns/ratings-debt-and-deficits-exploration",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-11T23:00:00.000Z",
+      "contentSnippet": "What matters more for sovereign credit ratings – today’s debt or tomorrow’s deficits? This column explores how ratings weigh the two and finds that ratings place much more emphasis on current debt than on projected fiscal deficits. Compared with the implications of a simple model…"
+    },
+    {
+      "id": "03a192b55221",
+      "title": "The size and speed of tariff pass through into consumer prices",
+      "link": "https://cepr.org/voxeu/columns/size-and-speed-tariff-pass-through-consumer-prices",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-11T23:00:00.000Z",
+      "contentSnippet": "The 2025-26 US tariffs have renewed the question of how much of a tariff reaches consumers, and how quickly. This column traces tariffs through import, domestic producer, and retail prices for US consumer goods. About a quarter of a tariff increase passes through to consumer pric…"
+    },
+    {
+      "id": "be1fc9b6e0e0",
+      "title": "Financial sanctions and the global payments network",
+      "link": "https://cepr.org/voxeu/columns/financial-sanctions-and-global-payments-network",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-11T23:00:00.000Z",
+      "contentSnippet": "Direct evidence on the effects of financial sanctions remains limited. This column uses correspondent banking data to study how sanctions affect access to global payment networks. The dollar and euro networks offer the most efficient connections to banks in other countries. Furth…"
+    },
+    {
+      "id": "0b0fddc541bc",
+      "title": "To Switch, or Not to Switch the AI Model",
+      "link": "https://www.scrum.org/resources/blog/switch-or-not-switch-ai-model",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-11T14:22:58.000Z",
+      "contentSnippet": "TL;DR: The Hidden Cost of Switching AI Models A new AI model arrives that is cheaper per token, scores better on benchmarks, and seems to require nothing more than a setting change. However, the token bill shows only part of the cost of switching AI models. There is also the effo…"
+    },
     {
       "id": "c5fcb1c48fe6",
       "title": "ApproximateDistinctCount In Power BI Is Sometimes Slower Than DistinctCount",
@@ -145,33 +199,6 @@
       "category": "Economics",
       "pubDate": "2026-10-08T23:00:00.000Z",
       "contentSnippet": "Since March 2022, it has been harder to buy an iPhone in Russia, because Apple chose to stop selling there. So did Prada, Renault, Starbucks, Nike and more than 1,000 other firms. These private sanctions added to the official sanctions imposed by 45 countries. Beata Javorcik (EBR…"
-    },
-    {
-      "id": "9934a6d239f3",
-      "title": "Protecting indigenous cultural resources from within the IP system",
-      "link": "https://cepr.org/voxeu/columns/protecting-indigenous-cultural-resources-within-ip-system",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-08T23:00:00.000Z",
-      "contentSnippet": "Across food, tourism, cosmetics, and luxury goods, indigenous language and heritage increasingly anchor premium market positions, but when it comes to trademarks, few jurisdictions have developed national rules to explicitly protect and preserve traditional knowledge. This column…"
-    },
-    {
-      "id": "a36eb805bfca",
-      "title": "A Mediterranean Community of Human Capital",
-      "link": "https://cepr.org/voxeu/columns/mediterranean-community-human-capital",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-08T23:00:00.000Z",
-      "contentSnippet": "Europe's shrinking workforce is weighing on its productivity and welfare systems. Meanwhile, its southern Mediterranean neighbours currently produce growing numbers of graduates whom domestic labour markets cannot absorb. This column makes the case for a Mediterranean Community o…"
-    },
-    {
-      "id": "d5fccd45a740",
-      "title": "Covered interest parity deviations and financial market frictions: Six decades of evidence",
-      "link": "https://cepr.org/voxeu/columns/covered-interest-parity-deviations-and-financial-market-frictions-six-decades",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-08T23:00:00.000Z",
-      "contentSnippet": "Persistent deviations from the covered interest parity no-arbitrage condition are viewed as evidence of the new and central role of balance sheet constraints and financial market frictions since the Global Financial Crisis. This column argues that covered interest parity deviatio…"
     },
     {
       "id": "714c79df7b98",
@@ -714,15 +741,6 @@
       "contentSnippet": "Image Most Scrum Teams don't miss their Sprint forecast because they estimate badly. They miss it because they plan against hours that never existed. Picture a Sprint Planning I have watched play out, in one form or another, in dozens of organisations. Five Developers. A two-week…"
     },
     {
-      "id": "92f5c3ef8527",
-      "title": "🎉 Published: Scrum Team Magazine - October 2026 - Issue #2",
-      "link": "https://www.scrum.org/resources/blog/published-scrum-team-magazine-october-2026-issue-2",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-30T08:12:00.000Z",
-      "contentSnippet": "Image Click here to read and download the magazine. The first high-quality magazine for the Scrum world is now live. This is the second issue, October 2026. WHY SCRUM TEAM MAGAZINE? Many sectors like jewellery, watches, decoration, film, and fashion already have their own exquisi…"
-    },
-    {
       "id": "e5132c65f5be",
       "title": "Thinking Like a Data Architect",
       "link": "https://www.dataengineeringweekly.com/p/thinking-like-a-data-architect",
@@ -739,15 +757,6 @@
       "category": "Credit",
       "pubDate": "2026-09-30T00:00:00.000Z",
       "contentSnippet": "The Core Principles for Effective Deposit Insurance Systems (core principles) of the International Association of Deposit Insurers are the international standard for the design, implementation and assessment of deposit insurance systems. They provide a benchmark for jurisdictions…"
-    },
-    {
-      "id": "99f68fe68635",
-      "title": "Nobody Owns Whether it Worked.",
-      "link": "https://www.scrum.org/resources/blog/nobody-owns-whether-it-worked",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-29T22:00:00.000Z",
-      "contentSnippet": "Image Release day. The feature goes out, the team channel fills with rocket emoji, the demo lands well, and someone says \"great job, everyone.\" Monday, the next thing starts. Three months later, in some steering meeting, somebody asks the question: did that feature actually chang…"
     },
     {
       "id": "105e76d8cdee",
@@ -1749,6 +1758,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "d9adb789161e",
+      "title": "How Firms Form Beliefs and the Implications for Inflation",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
+    },
+    {
       "id": "07b1c1c9fdb7",
       "title": "Credit Surfaces and Economic Uncertainty",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
@@ -1767,22 +1785,13 @@
       "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
-      "id": "d9adb789161e",
-      "title": "How Firms Form Beliefs and the Implications for Inflation",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
-    },
-    {
-      "id": "d834dadfb202",
-      "title": "PS18/26 – Solvency UK: Post-implementation reporting and disclosure amendments and Own Funds permissions update",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/solvency-uk-policy-statement",
+      "id": "16fe89b83e2e",
+      "title": "LIAF02/26 – Low Impact Amendments Finalisation July 2026",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/july/low-impact-amendments-finalisation-july-2026",
       "source": "Bank of England PRA",
       "category": "Credit",
       "pubDate": "2026-07-29T09:00:00.000Z",
-      "contentSnippet": "Policy statement 18/26"
+      "contentSnippet": "Low Impact Amendments Finalisation July 2026"
     },
     {
       "id": "fb549b859ee4",
@@ -1839,13 +1848,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "4c8cd6ef9ad3",
-      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
-      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
+      "id": "99c54272067a",
+      "title": "Rethinking Central Bank LSAPs: The Power of Market Functioning Purchases",
+      "link": "https://www.kansascityfed.org/research/research-working-papers/rethinking-central-bank-lsaps-the-power-of-market-functioning-purchases/",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
+      "contentSnippet": "Federal Reserve Bank of Kansas City Research Working Papers by Andrew Lee Smith and Victor J. Valcarcel"
     },
     {
       "id": "ed6bd26c4997",
@@ -1936,15 +1945,6 @@
       "category": "Data",
       "pubDate": "2026-07-06T04:58:46.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "38e39f8dbc40",
-      "title": "Announcing leetdata.ai — A Practice Ground for Data Engineers",
-      "link": "https://www.dataengineeringweekly.com/p/announcing-leetdataai-a-practice",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-07-02T08:27:41.000Z",
-      "contentSnippet": "Software engineers got a gym. Data engineers got production. It's time to fix that."
     },
     {
       "id": "f51897079c07",
