@@ -37,7 +37,7 @@ These stay on the sheet, under Where judgement stays, unless that month’s chec
 
 ## Motion
 
-The claim mark walks down the one line: Question, then Evidence, then Tension, then Narrative, then Experience, then Decision. The drawings move on that same loop. At question, the page is written. At evidence, the bars stop under the limit. At tension, the challenging case runs past the expected line. At narrative, the scene marks light in order. At experience, the usual case sits beside a taller hard case. At decision, the doubt chip appears and stays.
+The claim mark walks down the one line: Question, then Evidence, then Tension, then Narrative, then Experience, then Decision. The drawings move on that same loop and stay readable once they have arrived. At question, the decision is written and the chart frame stays empty. At evidence, the bars rise and stop under the limit. At tension, the claim stops at a fence and the challenging case runs past it. At narrative, three pieces of evidence connect in order. At experience, the usual case sits beside a taller hard case. At decision, the doubt chip appears and stays.
 
 `prefers-reduced-motion` and print show the end state: the claim at the decision, the doubt chip visible, the bars under the limit, the challenge drawn, the scene marks lit, both bars of the tail comparison visible. Under 900px the same line stays, the walking mark hides except at the decision, and the sentences stay large. Under 640px the drawing sits above the sentence so the words keep a full measure. The words stay readable with the motion off. No scroll-jack. Do not add a stage picker.
 

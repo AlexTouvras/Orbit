@@ -267,7 +267,7 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 5.6rem minmax(0, 1fr);
+      grid-template-columns: 12.4rem minmax(0, 1fr);
       gap: 0.2rem 1rem;
       align-items: center;
       min-height: 0;
@@ -347,15 +347,16 @@
     .art {
       position: relative;
       z-index: 1;
-      height: 2.6rem;
+      width: 12rem;
+      height: 4.6rem;
       display: flex;
-      align-items: flex-end;
+      align-items: center;
     }
 
     .station-kicker {
       position: relative;
       z-index: 1;
-      margin: 0.85rem 0 0;
+      margin: 0;
       font-family: var(--font-mono);
       font-size: 0.68rem;
       font-weight: 600;
@@ -389,92 +390,291 @@
       color: var(--cyan);
     }
 
+    .ask,
+    .proof,
+    .gap,
+    .order,
+    .form,
+    .close {
+      width: 100%;
+      height: 4.35rem;
+    }
+
     .ask {
       display: flex;
-      align-items: flex-end;
-      gap: 0.45rem;
-      height: 2.5rem;
+      align-items: stretch;
+      gap: 0.5rem;
+    }
+
+    .decide {
+      flex: 1.15;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 0.4rem;
+      align-items: center;
+      padding: 0.4rem 0.5rem;
+      border: 1.5px solid rgba(0, 210, 211, 0.7);
+      border-radius: 8px;
+      background: rgba(0, 210, 211, 0.07);
     }
 
     .ask b {
+      grid-row: 1 / span 2;
       font-family: var(--font-display);
-      font-size: 1.7rem;
-      line-height: 0.8;
+      font-size: 2rem;
+      line-height: 0.85;
       color: var(--cyan);
-      animation: ask-mark var(--loop) infinite;
     }
 
     .ask .lines {
-      width: 4.4rem;
       display: grid;
-      gap: 0.28rem;
-      padding-bottom: 0.2rem;
+      gap: 0.32rem;
     }
 
     .ask .lines i {
       display: block;
-      height: 0.26rem;
+      height: 0.28rem;
       border-radius: 99px;
-      background: #2a4548;
+      background: var(--cyan);
     }
 
-    .ask .lines i:nth-child(1) { animation: ink-a var(--loop) infinite; }
-    .ask .lines i:nth-child(2) { width: 70%; animation: ink-b var(--loop) infinite; }
+    .ask .lines i:nth-child(2) {
+      width: 68%;
+      background: #9ec9c9;
+    }
 
-    @keyframes ask-mark {
-      0% { opacity: 0; transform: translateY(4px); }
-      8%, 14% { opacity: 1; transform: none; }
-      18%, 100% { opacity: 0.4; transform: none; }
+    .blank {
+      flex: 0.85;
+      position: relative;
+      border: 1.5px dashed rgba(0, 210, 211, 0.4);
+      border-radius: 8px;
     }
-    @keyframes ink-a {
-      0%, 6% { width: 12%; background: #2a4548; }
-      14%, 100% { width: 100%; background: var(--cyan); }
+
+    .blank i {
+      position: absolute;
+      background: rgba(0, 210, 211, 0.55);
     }
-    @keyframes ink-b {
-      0%, 10% { width: 8%; background: #2a4548; }
-      18%, 100% { width: 72%; background: #9ec9c9; }
+
+    .blank i:nth-child(1) {
+      left: 0.45rem;
+      top: 0.5rem;
+      bottom: 0.45rem;
+      width: 1.5px;
+    }
+
+    .blank i:nth-child(2) {
+      left: 0.45rem;
+      right: 0.4rem;
+      bottom: 0.45rem;
+      height: 1.5px;
+    }
+
+    .proof,
+    .gap,
+    .form {
+      position: relative;
     }
 
     .proof {
-      position: relative;
-      width: 4.6rem;
-      height: 2.5rem;
+      border-bottom: 1.5px solid rgba(0, 210, 211, 0.45);
     }
 
     .cap {
       position: absolute;
-      left: 0;
-      right: 0;
-      top: 0.15rem;
+      left: 0.15rem;
+      right: 0.15rem;
+      top: 0.45rem;
       border-top: 1.5px dashed var(--cyan);
-      opacity: 0;
-      animation: cap-in var(--loop) infinite;
     }
 
     .bars {
       position: absolute;
-      left: 0;
-      right: 0;
+      left: 0.35rem;
+      right: 0.25rem;
       bottom: 0;
-      height: 2rem;
+      height: 3.15rem;
       display: flex;
       align-items: flex-end;
-      gap: 0.28rem;
+      gap: 0.38rem;
     }
 
     .bars i {
       flex: 1;
       display: block;
-      border-radius: 2px 2px 0 0;
+      border-radius: 3px 3px 0 0;
       background: var(--cyan);
       transform-origin: bottom center;
-      transform: scaleY(0.15);
+      transform: scaleY(1);
     }
 
-    .bars i:nth-child(1) { height: 1.15rem; animation: bar-a var(--loop) infinite; }
-    .bars i:nth-child(2) { height: 0.72rem; animation: bar-b var(--loop) infinite; }
-    .bars i:nth-child(3) { height: 1.45rem; animation: bar-c var(--loop) infinite; }
+    .bars i:nth-child(1) { height: 1.7rem; }
+    .bars i:nth-child(2) { height: 0.85rem; opacity: 0.55; }
+    .bars i:nth-child(3) { height: 2.45rem; }
+    .bars i:nth-child(4) { height: 1.35rem; opacity: 0.8; }
 
+    .gap .fence {
+      position: absolute;
+      left: 54%;
+      top: 0.35rem;
+      bottom: 0.35rem;
+      border-left: 1.5px dashed var(--cyan);
+    }
+
+    .gap .expect,
+    .gap .actual {
+      position: absolute;
+      left: 0.2rem;
+      height: 0.72rem;
+      border-radius: 3px;
+    }
+
+    .gap .expect {
+      top: 0.85rem;
+      width: 42%;
+      border: 1.5px dashed var(--cyan);
+      background: transparent;
+    }
+
+    .gap .actual {
+      bottom: 0.7rem;
+      width: 88%;
+      background: var(--cyan);
+    }
+
+    .order {
+      display: flex;
+      align-items: center;
+    }
+
+    .order .step {
+      width: 2.35rem;
+      height: 3.15rem;
+      flex: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 0.22rem;
+      padding: 0.35rem 0.32rem 0.38rem;
+      border: 1.5px solid rgba(0, 210, 211, 0.55);
+      border-radius: 7px;
+      background: rgba(0, 210, 211, 0.06);
+    }
+
+    .order .step i {
+      display: block;
+      height: 0.36rem;
+      border-radius: 2px;
+      background: var(--cyan);
+    }
+
+    .order .s2 i:nth-child(2) { width: 68%; background: #9ec9c9; }
+    .order .s3 i { height: 1.35rem; width: 58%; }
+
+    .order .join {
+      flex: 1;
+      height: 2px;
+      margin: 0 0.18rem;
+      background: var(--cyan);
+      transform-origin: left center;
+      transform: scaleX(1);
+    }
+
+    .form {
+      display: flex;
+      align-items: flex-end;
+      gap: 1.15rem;
+      padding: 0 0.2rem;
+      border-bottom: 1.5px solid rgba(0, 210, 211, 0.45);
+    }
+
+    .form .usual {
+      position: absolute;
+      left: 0.2rem;
+      width: 3.05rem;
+      bottom: calc(1.7rem - 1.5px);
+      border-top: 1.5px dashed #9ec9c9;
+    }
+
+    .form .bar,
+    .form .squiggle {
+      width: 2.15rem;
+      transform-origin: bottom center;
+      transform: scaleY(1);
+    }
+
+    .form .bar {
+      height: 1.7rem;
+      border-radius: 3px 3px 0 0;
+      background: var(--cyan);
+    }
+
+    .form .squiggle {
+      height: 3.55rem;
+      border: 2px solid var(--cyan);
+      border-bottom: 0;
+      border-radius: 3px 3px 0 0;
+      background: transparent;
+    }
+
+    .close {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .close i {
+      width: 4.4rem;
+      height: 0.42rem;
+      flex: none;
+      border-radius: 99px;
+      background: var(--cyan);
+      transform-origin: left center;
+      transform: scaleX(1);
+    }
+
+    .close em {
+      font-style: normal;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      border: 1.5px dashed var(--cyan);
+      border-radius: 999px;
+      padding: 0.38rem 0.62rem;
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .ask .lines i:nth-child(1) { animation: ink-a var(--loop) infinite; }
+      .ask .lines i:nth-child(2) { animation: ink-b var(--loop) infinite; }
+      .cap { animation: cap-in var(--loop) infinite; }
+      .bars i:nth-child(1) { animation: bar-a var(--loop) infinite; }
+      .bars i:nth-child(2) { animation: bar-b var(--loop) infinite; }
+      .bars i:nth-child(3) { animation: bar-c var(--loop) infinite; }
+      .bars i:nth-child(4) { animation: bar-d var(--loop) infinite; }
+      .gap .expect { animation: expect-in var(--loop) infinite; }
+      .gap .actual { animation: actual-in var(--loop) infinite; }
+      .order .join:nth-child(2) { animation: join-a var(--loop) infinite; }
+      .order .join:nth-child(4) { animation: join-b var(--loop) infinite; }
+      .order .s1 i { animation: step-a var(--loop) infinite; }
+      .order .s2 i:nth-child(n) { animation: step-b var(--loop) infinite; }
+      .order .s3 i { animation: step-c var(--loop) infinite; }
+      .form .bar { animation: bar-hold var(--loop) infinite; }
+      .form .squiggle { animation: squiggle var(--loop) infinite; }
+      .close i { animation: claim-line var(--loop) infinite; }
+      .close em { animation: doubt-in var(--loop) infinite; }
+    }
+
+    @keyframes ink-a {
+      0%, 6% { width: 12%; }
+      14%, 100% { width: 100%; }
+    }
+    @keyframes ink-b {
+      0%, 10% { width: 8%; }
+      18%, 100% { width: 68%; }
+    }
     @keyframes cap-in {
       0%, 16% { opacity: 0; }
       24%, 100% { opacity: 1; }
@@ -482,131 +682,22 @@
     @keyframes bar-a { 0%, 16% { transform: scaleY(0.15); } 28%, 100% { transform: scaleY(1); } }
     @keyframes bar-b { 0%, 18% { transform: scaleY(0.15); } 30%, 100% { transform: scaleY(1); } }
     @keyframes bar-c { 0%, 20% { transform: scaleY(0.15); } 32%, 100% { transform: scaleY(1); } }
-
-    .gap {
-      position: relative;
-      width: 5.2rem;
-      height: 2.5rem;
-    }
-
-    .gap i {
-      position: absolute;
-      left: 0;
-      height: 0;
-      border-top: 2px solid var(--cyan);
-    }
-
-    .gap .expect {
-      top: 0.7rem;
-      width: 0;
-      border-top-style: dashed;
-      opacity: 0.85;
-      animation: expect-in var(--loop) infinite;
-    }
-
-    .gap .actual {
-      top: 1.55rem;
-      width: 0;
-      animation: actual-in var(--loop) infinite;
-    }
-
-    @keyframes expect-in { 0%, 32% { width: 0; } 44%, 100% { width: 58%; } }
-    @keyframes actual-in { 0%, 34% { width: 0; } 46%, 100% { width: 100%; } }
-
-    .order {
-      display: flex;
-      align-items: center;
-      gap: 0.32rem;
-      height: 2.5rem;
-    }
-
-    .order i {
-      width: 0.55rem;
-      height: 0.55rem;
-      border-radius: 50%;
-      background: #143033;
-      box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.45);
-    }
-
-    .order i:nth-child(1) { animation: tick-1 var(--loop) infinite; }
-    .order i:nth-child(2) { animation: tick-2 var(--loop) infinite; }
-    .order i:nth-child(3) { animation: tick-3 var(--loop) infinite; }
-    .order i:nth-child(4) { animation: tick-4 var(--loop) infinite; }
-    .order i:nth-child(5) { animation: tick-5 var(--loop) infinite; }
-
-    @keyframes tick-1 { 0%, 48% { background: #143033; } 54%, 100% { background: var(--cyan); } }
-    @keyframes tick-2 { 0%, 52% { background: #143033; } 58%, 100% { background: var(--cyan); } }
-    @keyframes tick-3 { 0%, 56% { background: #143033; } 62%, 100% { background: var(--cyan); } }
-    @keyframes tick-4 { 0%, 60% { background: #143033; } 66%, 100% { background: var(--cyan); } }
-    @keyframes tick-5 { 0%, 64% { background: #143033; } 70%, 100% { background: var(--cyan); } }
-
-    .form {
-      display: flex;
-      align-items: flex-end;
-      gap: 0.5rem;
-      height: 2.5rem;
-    }
-
-    .form .bar {
-      width: 0.72rem;
-      height: 1.15rem;
-      border-radius: 2px 2px 0 0;
-      background: var(--cyan);
-      transform-origin: bottom center;
-      animation: bar-hold var(--loop) infinite;
-    }
-
-    .form .squiggle {
-      width: 0.72rem;
-      height: 1.9rem;
-      margin-bottom: 0;
-      border: 1.5px solid var(--cyan);
-      border-radius: 2px 2px 0 0;
-      background: transparent;
-      transform-origin: bottom center;
-      animation: squiggle var(--loop) infinite;
-    }
-
+    @keyframes bar-d { 0%, 22% { transform: scaleY(0.15); } 34%, 100% { transform: scaleY(1); } }
+    @keyframes expect-in { 0%, 32% { width: 0; } 44%, 100% { width: 42%; } }
+    @keyframes actual-in { 0%, 36% { width: 0; } 48%, 100% { width: 88%; } }
+    @keyframes step-a { 0%, 46% { opacity: 0.2; } 54%, 100% { opacity: 1; } }
+    @keyframes step-b { 0%, 52% { opacity: 0.2; } 60%, 100% { opacity: 1; } }
+    @keyframes step-c { 0%, 58% { opacity: 0.2; } 66%, 100% { opacity: 1; } }
+    @keyframes join-a { 0%, 50% { transform: scaleX(0); } 58%, 100% { transform: scaleX(1); } }
+    @keyframes join-b { 0%, 56% { transform: scaleX(0); } 64%, 100% { transform: scaleX(1); } }
     @keyframes bar-hold {
       0%, 64% { transform: scaleY(0.25); }
       74%, 100% { transform: scaleY(1); }
     }
     @keyframes squiggle {
-      0%, 64% { opacity: 0; transform: scaleY(0.2); }
+      0%, 66% { opacity: 0; transform: scaleY(0.2); }
       78%, 100% { opacity: 1; transform: scaleY(1); }
     }
-
-    .close {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      height: 2.5rem;
-    }
-
-    .close i {
-      width: 2.5rem;
-      height: 0.32rem;
-      border-radius: 99px;
-      background: var(--cyan);
-      transform-origin: left center;
-      animation: claim-line var(--loop) infinite;
-    }
-
-    .close em {
-      font-style: normal;
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      border: 1px dashed var(--cyan);
-      border-radius: 99px;
-      padding: 0.12rem 0.42rem;
-      opacity: 0;
-      animation: doubt-in var(--loop) infinite;
-    }
-
     @keyframes claim-line {
       0%, 78% { transform: scaleX(0.2); }
       88%, 100% { transform: scaleX(1); }
@@ -861,20 +952,7 @@
       .station { animation: none; background: transparent; box-shadow: none; }
       .station:nth-child(-n+5) .pip { display: none; }
       .station:nth-child(6) .pip { display: block; opacity: 1; animation: none; }
-      .ask b, .ask .lines i:nth-child(n), .cap, .bars i:nth-child(n), .gap .expect, .gap .actual,
-      .order i:nth-child(n), .form .bar, .form .squiggle, .close i, .close em { animation: none; }
-      .ask b { opacity: 0.4; }
-      .ask .lines i:nth-child(1) { width: 100%; background: var(--cyan); }
-      .ask .lines i:nth-child(2) { width: 72%; background: #9ec9c9; }
-      .cap { opacity: 1; }
-      .bars i { transform: scaleY(1); }
-      .gap .expect { width: 58%; }
-      .gap .actual { width: 100%; }
-      .order i { background: var(--cyan); }
-      .form .bar { transform: scaleY(1); }
-      .form .squiggle { opacity: 1; transform: scaleY(1); }
-      .close i { transform: scaleX(1); }
-      .close em { opacity: 1; }
+      .art * { animation: none !important; }
     }
 
     @media (max-width: 640px) {
@@ -887,7 +965,7 @@
         row-gap: 0.4rem;
         padding: 0.85rem 0.45rem 0.95rem 2rem;
       }
-      .art { height: 2.4rem; width: max-content; max-width: 100%; }
+      .art { height: 4.35rem; width: 100%; max-width: 18rem; }
       .station-line { font-size: 1.12rem; }
     }
 
@@ -896,20 +974,7 @@
       .station:nth-child(-n+5) .pip { animation: none; opacity: 0; }
       .station:nth-child(6) .pip { animation: none; opacity: 1; }
       .return-line { transform: scaleX(1); animation: none; }
-      .ask b, .ask .lines i:nth-child(n), .cap, .bars i:nth-child(n), .gap .expect, .gap .actual,
-      .order i:nth-child(n), .form .bar, .form .squiggle, .close i, .close em { animation: none; }
-      .ask b { opacity: 0.4; }
-      .ask .lines i:nth-child(1) { width: 100%; background: var(--cyan); }
-      .ask .lines i:nth-child(2) { width: 72%; background: #9ec9c9; }
-      .cap { opacity: 1; }
-      .bars i { transform: scaleY(1); }
-      .gap .expect { width: 58%; }
-      .gap .actual { width: 100%; }
-      .order i { background: var(--cyan); }
-      .form .bar { transform: scaleY(1); }
-      .form .squiggle { opacity: 1; transform: scaleY(1); }
-      .close i { transform: scaleX(1); }
-      .close em { opacity: 1; }
+      .art * { animation: none !important; }
     }
 
     @media print {
@@ -943,20 +1008,7 @@
       .station:nth-child(-n+5) .pip { animation: none; opacity: 0; }
       .station:nth-child(6) .pip { animation: none; opacity: 1; }
       .return-line { transform: scaleX(1); animation: none; }
-      .ask b, .ask .lines i:nth-child(n), .cap, .bars i:nth-child(n), .gap .expect, .gap .actual,
-      .order i:nth-child(n), .form .bar, .form .squiggle, .close i, .close em { animation: none; }
-      .ask b { opacity: 0.4; }
-      .ask .lines i:nth-child(1) { width: 100%; background: var(--cyan); }
-      .ask .lines i:nth-child(2) { width: 72%; background: #9ec9c9; }
-      .cap { opacity: 1; }
-      .bars i { transform: scaleY(1); }
-      .gap .expect { width: 58%; }
-      .gap .actual { width: 100%; }
-      .order i { background: var(--cyan); }
-      .form .bar { transform: scaleY(1); }
-      .form .squiggle { opacity: 1; transform: scaleY(1); }
-      .close i { transform: scaleX(1); }
-      .close em { opacity: 1; }
+      .art * { animation: none !important; }
       .pipe-board, .principles li, .foundation { break-inside: avoid; }
       a { color: inherit; text-decoration: none; }
     }
@@ -998,7 +1050,10 @@
           <ol class="stations">
             <li class="station">
               <div class="art" aria-hidden="true">
-                <span class="ask"><b>?</b><span class="lines"><i></i><i></i></span></span>
+                <span class="ask">
+                  <span class="decide"><b>?</b><span class="lines"><i></i><i></i></span></span>
+                  <span class="blank"><i></i><i></i></span>
+                </span>
               </div>
               <span class="pip" aria-hidden="true"></span>
               <div class="station-copy">
@@ -1008,7 +1063,7 @@
             </li>
             <li class="station">
               <div class="art" aria-hidden="true">
-                <span class="proof"><span class="cap"></span><span class="bars"><i></i><i></i><i></i></span></span>
+                <span class="proof"><span class="cap"></span><span class="bars"><i></i><i></i><i></i><i></i></span></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
               <div class="station-copy">
@@ -1018,7 +1073,7 @@
             </li>
             <li class="station">
               <div class="art" aria-hidden="true">
-                <span class="gap"><i class="expect"></i><i class="actual"></i></span>
+                <span class="gap"><i class="fence"></i><i class="expect"></i><i class="actual"></i></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
               <div class="station-copy">
@@ -1028,7 +1083,7 @@
             </li>
             <li class="station">
               <div class="art" aria-hidden="true">
-                <span class="order"><i></i><i></i><i></i><i></i><i></i></span>
+                <span class="order"><span class="step s1"><i></i></span><span class="join"></span><span class="step s2"><i></i><i></i></span><span class="join"></span><span class="step s3"><i></i></span></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
               <div class="station-copy">
@@ -1038,7 +1093,7 @@
             </li>
             <li class="station">
               <div class="art" aria-hidden="true">
-                <span class="form"><i class="bar"></i><i class="squiggle"></i></span>
+                <span class="form"><i class="usual"></i><i class="bar"></i><i class="squiggle"></i></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
               <div class="station-copy">
@@ -1124,7 +1179,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> Sentences a reader can follow. The proof is the three published stories. No illustrative numbers.</p>
+      <p class="changed"><b>Changed</b> Each drawing shows the change: an empty chart, bars under a limit, a case that breaks past it, an order, the hard case beside the usual one, and the doubt still visible.</p>
     </footer>
   </article>
   <script>
