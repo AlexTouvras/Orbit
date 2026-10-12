@@ -9,6 +9,7 @@
 - [x] Drop the Gemini weekly-write path; Cursor writes from the IDE brief
 - [x] Essay voice doc tightened to one pass list (title, argument notes, stranger, leave-outs, thesis moves)
 - [x] Essay title pass + argument notes before prose — `docs/essay-voice.md`. No second principles file.
+- [x] Weekly notes catch claim-vs-example, unused source steps, and a borrowed project gate before prose — `docs/essay-voice.md`, weekly skill, IDE brief (2026-10-12)
 - [x] Weekly Write hiring-manager story bar — `docs/essay-voice.md`, weekly skill, and draft prompts. Essays stay prose. No evidence card, role badge, or hiring close.
 - [x] Remove private `/studio/daycare` — card, page, file route, and `data/studio-daycare/`
 - [x] Private `/studio/daycare` — Rekola November 2027 shortlist from AlexTouvras PR 2 (Studio card, gated files, not on the public site). Removed 2026-10-07.

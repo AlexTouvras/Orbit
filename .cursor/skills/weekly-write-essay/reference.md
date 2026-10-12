@@ -41,19 +41,16 @@
 ## The question
 …
 
-## What the signal is really saying
-… (link primary; define jargon once)
+## The issue
+… (one sentence a stranger can repeat; the Signal's claim, with the example in one clause)
 
-## What people get wrong
-…
-
-## … (1–3 more sections: Delivery / Learning / Career / general data / AI as the thesis requires)
+## … (the gate: work you already do on this artifact, so the issue does not repeat)
 
 ## Takeaway
 …
 ```
 
-Adjust section titles to the thesis. Keep `## The question` first. The bar is `docs/essay-voice.md`.
+Name the middle sections for the issue and the gate. A recap of the Signal is not a section. Keep `## The question` first. The bar is `docs/essay-voice.md`.
 
 ## After Approve
 

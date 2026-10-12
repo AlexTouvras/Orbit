@@ -10,10 +10,15 @@ Fingerprint: wrong assumption → measurable method → conditional result → n
 
 ## Before paragraphs
 
-1. Write five headlines. Keep the one that names a real tension the essay delivers. A topic label fails.
-2. Write five notes: the decision, the evidence that moved it, what you rejected, what stays unproven, and what changes Monday, including where that move fails. If the claim or the evidence does not hold, change the thesis. Line edits wait until the notes survive.
+1. Write five headlines. Keep the one that names a real tension the essay delivers. A topic label fails. A headline that names the Signal's example fails when the claim is wider than the example.
+2. Write five notes before any paragraph. If a note fails, change the thesis. Line edits wait until the notes survive.
+   - **Decision.** The rule, at the unit you ship: a report, a release, a habit. When your work is wider than the Signal's demo, the demo's grain fails as the unit.
+   - **Evidence.** The claim in the source you opened, then the example in one clause. If you cannot say the claim without retelling the example, the thesis is still the example.
+   - **Rejected.** What you will not do. Include steps in the source you do not use, and any project that does a different job.
+   - **Unproven.** What you have not checked. Hedge it.
+   - **Monday.** One sentence for the issue. One sentence for the gate that stops a repeat. The gate is work you already do on this artifact. A project in the intake list is not that gate unless the brief names it as the bridge.
 
-Those notes live in the sections. A checklist pasted at the end fails.
+Those notes live in the sections. A checklist pasted at the end fails. Do not start prose until a stranger could say the issue and the gate from the notes alone.
 
 ## Shape
 
@@ -33,6 +38,8 @@ Fail any of these and rewrite the section.
 
 - The title names a tension the essay delivers.
 - A stranger can say the decision, what you rejected, and what you will not claim.
+- A stranger can say the issue in one sentence and the gate that stops a repeat. The gate is work you already do on this artifact.
+- The method in the essay is yours. A source's steps stay in the source when you do not use them. The Signal's example stays a witness when the claim is wider than the demo.
 - Nicknames are glossed on first use. Metrics are translated once (fitness load, not only CTL).
 - It opens on friction or a false belief. Nouns are specific. One sentence is worth underlining (a decision, a constraint, or a number).
 - It names where the move fails, who loses, or what stays broken.
@@ -52,6 +59,8 @@ Fail any of these and rewrite the section.
 | Charts, a film, or a metadata block beside the essay | Desks and `/stories` carry the picture. Writes stay prose. |
 | A volume target | One essay that survives a conversation is the unit. |
 | A market statistic you did not open | Cite the primary Signal. Hedge anything you did not read. |
+| The Signal's worked example as the plot | The claim is the thesis. The example is a witness. |
+| A gate borrowed from a different project | The practice has to be the work this decision is about. |
 
 ## Moves from the theses
 
