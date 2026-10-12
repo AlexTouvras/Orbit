@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Storytelling Field Card — Turn evidence into a decision · Alex Touvras</title>
-  <meta name="description" content="One claim moves from the question to a decision. The doubt stays in the picture." />
+  <meta name="description" content="One decision, six moves. Uncertainty belongs in the decision, not in a footnote." />
   <meta name="author" content="Alex Touvras" />
   <link rel="canonical" href="https://alextouvras.com/story-field-card/" />
   <meta property="og:title" content="Storytelling Field Card — Turn evidence into a decision" />
-  <meta property="og:description" content="Question, evidence, tension, narrative, experience, decision. The doubt stays visible." />
+  <meta property="og:description" content="Question, evidence, tension, narrative, experience, decision. The doubt stays beside the decision." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alextouvras.com/story-field-card/" />
   <meta property="og:image" content="https://alextouvras.com/opengraph-image" />
@@ -46,8 +46,8 @@
         radial-gradient(900px 420px at 80% -8%, rgba(0, 210, 211, 0.12), transparent 58%),
         var(--paper);
       font-family: var(--font-body);
-      font-size: 15px;
-      line-height: 1.45;
+      font-size: 17px;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
@@ -109,48 +109,44 @@
     }
 
     header.hero {
-      padding: 1.5rem 1.35rem 1.25rem;
-      display: grid;
-      gap: 1.1rem 1.25rem;
-      grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
-      align-items: center;
+      padding: 1.85rem 1.5rem 1.45rem;
       border-bottom: 1px solid var(--line);
     }
 
     h1 {
-      margin: 0.35rem 0 0.55rem;
+      margin: 0.4rem 0 0.7rem;
       font-family: var(--font-display);
-      font-size: clamp(1.85rem, 3.4vw, 2.55rem);
-      line-height: 1.12;
+      font-size: clamp(2.2rem, 4.6vw, 3.25rem);
+      line-height: 1.05;
       letter-spacing: -0.02em;
       font-weight: 700;
-      max-width: 16ch;
+      max-width: 14ch;
     }
 
     .hook {
       margin: 0;
       font-family: var(--font-display);
-      font-size: 1.2rem;
+      font-size: 1.45rem;
+      line-height: 1.25;
       font-weight: 600;
-      max-width: 28ch;
+      max-width: 22ch;
     }
 
     .verbs {
-      grid-column: 1 / -1;
-      margin: 0.15rem 0 0;
+      margin: 1.15rem 0 0;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.84rem;
       letter-spacing: 0.02em;
       color: var(--steel);
       font-weight: 600;
     }
 
     .lede {
-      grid-column: 1 / -1;
-      margin: 0;
-      max-width: 68ch;
+      margin: 0.85rem 0 0;
+      max-width: 42ch;
       color: var(--ink-soft);
-      font-size: 1.02rem;
+      font-size: 1.15rem;
+      line-height: 1.45;
     }
 
     .lede strong { color: var(--ink); font-weight: 600; }
@@ -249,37 +245,38 @@
     .stations {
       position: relative;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 0.65rem;
+      grid-template-columns: 1fr;
+      gap: 0;
       margin: 0;
-      padding: 0.85rem 0.85rem 3.4rem;
+      padding: 0.45rem 0.85rem 0.65rem 0;
       list-style: none;
+    }
+
+    .stations::before {
+      content: "";
+      position: absolute;
+      left: 1.2rem;
+      top: 1.7rem;
+      bottom: 1.7rem;
+      width: 2px;
+      background: var(--cyan);
+      box-shadow: 0 0 10px rgba(0, 210, 211, 0.65);
     }
 
     .station {
       position: relative;
       z-index: 1;
       display: grid;
-      gap: 0.35rem;
-      align-content: start;
-      min-height: 11.6rem;
-      padding: 0.6rem 0.7rem 0.75rem;
-      border-radius: 10px;
-      background: rgba(12, 22, 24, 0.55);
-      box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16);
+      grid-template-columns: 5.6rem minmax(0, 1fr);
+      gap: 0.2rem 1rem;
+      align-items: center;
+      min-height: 0;
+      padding: 0.95rem 0.85rem 0.95rem 2.45rem;
+      border-radius: 12px;
+      background: transparent;
     }
 
-    .station::before {
-      content: "";
-      position: absolute;
-      left: -0.4rem;
-      right: -0.4rem;
-      top: 3.35rem;
-      height: 2px;
-      background: var(--cyan);
-      box-shadow: 0 0 10px rgba(0, 210, 211, 0.75);
-      z-index: 2;
-    }
+    .station::before { content: none; }
 
     .station:nth-child(1) { animation: lit-1 var(--loop) infinite; }
     .station:nth-child(2) { animation: lit-2 var(--loop) infinite; }
@@ -289,42 +286,43 @@
     .station:nth-child(6) { animation: lit-6 var(--loop) infinite; }
 
     @keyframes lit-1 {
-      0%, 15% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
-      17%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      0%, 15% { background: rgba(0, 210, 211, 0.08); box-shadow: none; }
+      17%, 100% { background: transparent; box-shadow: none; }
     }
     @keyframes lit-2 {
-      0%, 15% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
-      17%, 31% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
-      33%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      0%, 15% { background: transparent; box-shadow: none; }
+      17%, 31% { background: rgba(0, 210, 211, 0.08); box-shadow: none; }
+      33%, 100% { background: transparent; box-shadow: none; }
     }
     @keyframes lit-3 {
-      0%, 31% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
-      33%, 47% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
-      49%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      0%, 31% { background: transparent; box-shadow: none; }
+      33%, 47% { background: rgba(0, 210, 211, 0.08); box-shadow: none; }
+      49%, 100% { background: transparent; box-shadow: none; }
     }
     @keyframes lit-4 {
-      0%, 47% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
-      49%, 63% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
-      65%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      0%, 47% { background: transparent; box-shadow: none; }
+      49%, 63% { background: rgba(0, 210, 211, 0.08); box-shadow: none; }
+      65%, 100% { background: transparent; box-shadow: none; }
     }
     @keyframes lit-5 {
-      0%, 63% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
-      65%, 79% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
-      81%, 100% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
+      0%, 63% { background: transparent; box-shadow: none; }
+      65%, 79% { background: rgba(0, 210, 211, 0.08); box-shadow: none; }
+      81%, 100% { background: transparent; box-shadow: none; }
     }
     @keyframes lit-6 {
-      0%, 79% { background: rgba(12, 22, 24, 0.55); box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.16); }
-      81%, 100% { background: #123033; box-shadow: inset 0 0 0 1px var(--cyan), 0 0 16px rgba(0, 210, 211, 0.22); }
+      0%, 79% { background: transparent; box-shadow: none; }
+      81%, 100% { background: rgba(0, 210, 211, 0.08); box-shadow: none; }
     }
 
     .pip {
       position: absolute;
       z-index: 3;
-      left: 50%;
-      top: calc(3.35rem - 0.32rem);
+      left: 1.2rem;
+      top: 50%;
       width: 0.7rem;
       height: 0.7rem;
-      margin-left: -0.35rem;
+      margin: 0;
+      transform: translate(-50%, -50%);
       border-radius: 50%;
       background: var(--cyan);
       border: 2px solid var(--stage);
@@ -366,12 +364,18 @@
       color: var(--cyan);
     }
 
+    .station-copy {
+      display: grid;
+      gap: 0.28rem;
+      align-content: center;
+    }
+
     .station-line {
       position: relative;
       z-index: 1;
       margin: 0;
-      font-size: 0.92rem;
-      line-height: 1.35;
+      font-size: 1.12rem;
+      line-height: 1.4;
       color: var(--stage-ink);
     }
 
@@ -506,8 +510,8 @@
       animation: actual-in var(--loop) infinite;
     }
 
-    @keyframes expect-in { 0%, 32% { width: 0; } 44%, 100% { width: 86%; } }
-    @keyframes actual-in { 0%, 34% { width: 0; } 46%, 100% { width: 52%; } }
+    @keyframes expect-in { 0%, 32% { width: 0; } 44%, 100% { width: 58%; } }
+    @keyframes actual-in { 0%, 34% { width: 0; } 46%, 100% { width: 100%; } }
 
     .order {
       display: flex;
@@ -545,7 +549,7 @@
 
     .form .bar {
       width: 0.72rem;
-      height: 1.7rem;
+      height: 1.15rem;
       border-radius: 2px 2px 0 0;
       background: var(--cyan);
       transform-origin: bottom center;
@@ -553,11 +557,13 @@
     }
 
     .form .squiggle {
-      width: 1.7rem;
-      height: 1rem;
-      margin-bottom: 0.35rem;
+      width: 0.72rem;
+      height: 1.9rem;
+      margin-bottom: 0;
       border: 1.5px solid var(--cyan);
-      border-radius: 40% 60% 55% 45%;
+      border-radius: 2px 2px 0 0;
+      background: transparent;
+      transform-origin: bottom center;
       animation: squiggle var(--loop) infinite;
     }
 
@@ -566,9 +572,8 @@
       74%, 100% { transform: scaleY(1); }
     }
     @keyframes squiggle {
-      0%, 64% { opacity: 0; }
-      72%, 78% { opacity: 0.9; }
-      86%, 100% { opacity: 0.22; }
+      0%, 64% { opacity: 0; transform: scaleY(0.2); }
+      78%, 100% { opacity: 1; transform: scaleY(1); }
     }
 
     .close {
@@ -703,12 +708,51 @@
       stroke-linejoin: round;
     }
 
+    .pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .pair article {
+      padding: 1.05rem 1.1rem 1.15rem;
+      border: 1px solid #234448;
+      border-radius: 12px;
+      background: #102022;
+    }
+
+    .pair .tag {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .pair strong {
+      display: block;
+      margin: 0.45rem 0 0.35rem;
+      font-size: 1.2rem;
+      line-height: 1.25;
+      color: var(--ink);
+    }
+
+    .pair p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
     .source-row {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 0.65rem 0.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+      gap: 0.85rem 1.1rem;
       margin-top: 0.75rem;
     }
+
+    .source-row.built { margin-top: 1.15rem; }
 
     .source-row a {
       display: block;
@@ -809,32 +853,14 @@
     .credit a:hover { text-decoration: underline; }
 
     @media (max-width: 900px) {
-      header.hero,
       .principles,
-      .stations { grid-template-columns: 1fr; }
-      .glance { grid-column: 1; }
-      .glance figcaption { text-align: left; }
-      h1 { max-width: none; }
+      .pair { grid-template-columns: 1fr; }
+      h1, .hook { max-width: none; }
       .found-row,
       .source-row { grid-template-columns: 1fr 1fr; }
-      .stations {
-        gap: 0.75rem;
-        padding: 0.85rem 0.85rem 3.4rem 1.35rem;
-      }
-      .stations::before {
-        content: "";
-        position: absolute;
-        left: 0.72rem;
-        top: 1.15rem;
-        bottom: 3.2rem;
-        width: 2px;
-        background: var(--cyan);
-        box-shadow: 0 0 10px rgba(0, 210, 211, 0.6);
-      }
-      .station { min-height: 0; animation: none; background: #102022; box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.28); }
-      .station::before,
-      .pip { display: none; }
-      .return-line { transform: scaleX(1); animation: none; }
+      .station { animation: none; background: transparent; box-shadow: none; }
+      .station:nth-child(-n+5) .pip { display: none; }
+      .station:nth-child(6) .pip { display: block; opacity: 1; animation: none; }
       .ask b, .ask .lines i:nth-child(n), .cap, .bars i:nth-child(n), .gap .expect, .gap .actual,
       .order i:nth-child(n), .form .bar, .form .squiggle, .close i, .close em { animation: none; }
       .ask b { opacity: 0.4; }
@@ -842,11 +868,11 @@
       .ask .lines i:nth-child(2) { width: 72%; background: #9ec9c9; }
       .cap { opacity: 1; }
       .bars i { transform: scaleY(1); }
-      .gap .expect { width: 86%; }
-      .gap .actual { width: 52%; }
+      .gap .expect { width: 58%; }
+      .gap .actual { width: 100%; }
       .order i { background: var(--cyan); }
       .form .bar { transform: scaleY(1); }
-      .form .squiggle { opacity: 0.22; }
+      .form .squiggle { opacity: 1; transform: scaleY(1); }
       .close i { transform: scaleX(1); }
       .close em { opacity: 1; }
     }
@@ -855,12 +881,18 @@
       .sheet { width: min(1100px, calc(100% - 0.75rem)); }
       .topbar, header.hero, section, footer.meta { padding-left: 0.9rem; padding-right: 0.9rem; }
       .source-row, .found-row { grid-template-columns: 1fr; }
-      .glance-stage { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .station-line { font-size: 1.02rem; }
+      .station {
+        grid-template-columns: 1fr;
+        align-items: start;
+        row-gap: 0.4rem;
+        padding: 0.85rem 0.45rem 0.95rem 2rem;
+      }
+      .art { height: 2.4rem; width: max-content; max-width: 100%; }
+      .station-line { font-size: 1.12rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .station:nth-child(n) { animation: none; background: #102022; box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.28); }
+      .station:nth-child(n) { animation: none; background: transparent; box-shadow: none; }
       .station:nth-child(-n+5) .pip { animation: none; opacity: 0; }
       .station:nth-child(6) .pip { animation: none; opacity: 1; }
       .return-line { transform: scaleX(1); animation: none; }
@@ -871,11 +903,11 @@
       .ask .lines i:nth-child(2) { width: 72%; background: #9ec9c9; }
       .cap { opacity: 1; }
       .bars i { transform: scaleY(1); }
-      .gap .expect { width: 86%; }
-      .gap .actual { width: 52%; }
+      .gap .expect { width: 58%; }
+      .gap .actual { width: 100%; }
       .order i { background: var(--cyan); }
       .form .bar { transform: scaleY(1); }
-      .form .squiggle { opacity: 0.22; }
+      .form .squiggle { opacity: 1; transform: scaleY(1); }
       .close i { transform: scaleX(1); }
       .close em { opacity: 1; }
     }
@@ -907,7 +939,7 @@
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
-      .station:nth-child(n) { animation: none; background: #102022; box-shadow: inset 0 0 0 1px rgba(0, 210, 211, 0.28); }
+      .station:nth-child(n) { animation: none; background: transparent; box-shadow: none; }
       .station:nth-child(-n+5) .pip { animation: none; opacity: 0; }
       .station:nth-child(6) .pip { animation: none; opacity: 1; }
       .return-line { transform: scaleX(1); animation: none; }
@@ -918,11 +950,11 @@
       .ask .lines i:nth-child(2) { width: 72%; background: #9ec9c9; }
       .cap { opacity: 1; }
       .bars i { transform: scaleY(1); }
-      .gap .expect { width: 86%; }
-      .gap .actual { width: 52%; }
+      .gap .expect { width: 58%; }
+      .gap .actual { width: 100%; }
       .order i { background: var(--cyan); }
       .form .bar { transform: scaleY(1); }
-      .form .squiggle { opacity: 0.22; }
+      .form .squiggle { opacity: 1; transform: scaleY(1); }
       .close i { transform: scaleX(1); }
       .close em { opacity: 1; }
       .pipe-board, .principles li, .foundation { break-inside: avoid; }
@@ -943,24 +975,11 @@
     </div>
 
     <header class="hero">
-      <div>
-        <div class="eyebrow">One claim</div>
-        <h1>Turn evidence into a decision</h1>
-        <p class="hook">Doubt in a footnote is not an open.</p>
-      </div>
-      <figure class="glance">
-        <div class="glance-stage" aria-hidden="true">
-          <span class="glance-node">Question</span>
-          <span class="glance-node">Evidence</span>
-          <span class="glance-node">Tension</span>
-          <span class="glance-node">Narrative</span>
-          <span class="glance-node">Experience</span>
-          <span class="glance-node on">Decision</span>
-        </div>
-        <figcaption>The doubt stays beside the decision.</figcaption>
-      </figure>
+      <div class="eyebrow">One decision. Six moves.</div>
+      <h1>Turn evidence into a decision</h1>
+      <p class="hook">Uncertainty belongs in the decision, not in a footnote.</p>
       <p class="verbs">Question → evidence → tension → narrative → experience → decision</p>
-      <p class="lede">One claim moves through those six moves. What the data cannot say stays in the picture.</p>
+      <p class="lede">A repeatable method for moving from analysis to a decision. The doubt stays beside the decision.</p>
     </header>
 
     <section class="pipe">
@@ -969,12 +988,12 @@
       <figure>
         <p id="claim-desc" class="sr">
           Six moves, then the doubt stays visible.
-          Question: name the decision before any mark. No question, no story.
-          Evidence: say what the data can support. The claim cannot cross that limit.
-          Tension: name the gap that needs the next scene. Otherwise it is analysis.
-          Narrative: order the scenes a person can walk. Who leads, then who wanders.
-          Experience: give the form a job. A bar is honest when larger is the whole claim.
-          Decision: close on what changes. The doubt stays in the picture.
+          Question: name the decision someone has to make, before any mark.
+          Evidence: the chart can support the claim, and it still stops at a limit.
+          Tension: show the case that challenges the claim.
+          Narrative: put the evidence in an order a person can walk.
+          Experience: set the average beside the slow tail.
+          Decision: close on what changes, and show what the evidence cannot establish.
         </p>
         <div class="pipe-board">
           <ol class="stations">
@@ -983,63 +1002,82 @@
                 <span class="ask"><b>?</b><span class="lines"><i></i><i></i></span></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
-              <p class="station-kicker">Question</p>
-              <p class="station-line">Name the decision before any mark. No question, no story.</p>
-              <p class="handoff">Decision → a question someone can say</p>
+              <div class="station-copy">
+                <p class="station-kicker">Question</p>
+                <p class="station-line">Name the decision someone has to make, before any mark.</p>
+              </div>
             </li>
             <li class="station">
               <div class="art" aria-hidden="true">
                 <span class="proof"><span class="cap"></span><span class="bars"><i></i><i></i><i></i></span></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
-              <p class="station-kicker">Evidence</p>
-              <p class="station-line">Say what the data can support. The claim cannot cross that limit.</p>
-              <p class="handoff">Question → a limit the claim cannot cross</p>
+              <div class="station-copy">
+                <p class="station-kicker">Evidence</p>
+                <p class="station-line">The chart can support the claim. It still stops at a limit.</p>
+              </div>
             </li>
             <li class="station">
               <div class="art" aria-hidden="true">
                 <span class="gap"><i class="expect"></i><i class="actual"></i></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
-              <p class="station-kicker">Tension</p>
-              <p class="station-line">Name the gap that needs the next scene. Otherwise it is analysis.</p>
-              <p class="handoff">Limit → a reason for the next scene</p>
+              <div class="station-copy">
+                <p class="station-kicker">Tension</p>
+                <p class="station-line">Show the case that challenges the claim. If nothing does, it is analysis.</p>
+              </div>
             </li>
             <li class="station">
               <div class="art" aria-hidden="true">
                 <span class="order"><i></i><i></i><i></i><i></i><i></i></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
-              <p class="station-kicker">Narrative</p>
-              <p class="station-line">Order the scenes a person can walk. Who leads, then who wanders.</p>
-              <p class="handoff">Reason → an order someone can walk</p>
+              <div class="station-copy">
+                <p class="station-kicker">Narrative</p>
+                <p class="station-line">Put the evidence in an order a person can walk.</p>
+              </div>
             </li>
             <li class="station">
               <div class="art" aria-hidden="true">
                 <span class="form"><i class="bar"></i><i class="squiggle"></i></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
-              <p class="station-kicker">Experience</p>
-              <p class="station-line">Give the form a job. A bar is honest when larger is the whole claim.</p>
-              <p class="handoff">Order → a form that carries the claim</p>
+              <div class="station-copy">
+                <p class="station-kicker">Experience</p>
+                <p class="station-line">Set the average beside the slow tail. The reader has to see both.</p>
+              </div>
             </li>
             <li class="station">
               <div class="art" aria-hidden="true">
                 <span class="close"><i></i><em>doubt</em></span>
               </div>
               <span class="pip" aria-hidden="true"></span>
-              <p class="station-kicker">Decision</p>
-              <p class="station-line">Close on what changes. The doubt stays in the picture.</p>
-              <p class="handoff">Form → a decision, with the doubt still visible</p>
+              <div class="station-copy">
+                <p class="station-kicker">Decision</p>
+                <p class="station-line">Close on what changes. Show what the evidence cannot establish.</p>
+              </div>
             </li>
           </ol>
-          <div class="return-rail" aria-hidden="true">
-            <span class="return-line"></span>
-            <p class="return-label">doubt stays</p>
-          </div>
         </div>
-        <figcaption>The doubt stays beside the decision. It is part of the picture, from the first gap to the close.</figcaption>
+        <figcaption>The doubt stays beside the decision. The line ends there.</figcaption>
       </figure>
+    </section>
+
+    <section class="example">
+      <h2>The same evidence</h2>
+      <p class="explain">Illustrative. These minutes are made up.</p>
+      <div class="pair">
+        <article>
+          <p class="tag">The chart alone</p>
+          <strong>Average time fell from 12 minutes to 9.</strong>
+          <p>That chart supports one decision: ship it.</p>
+        </article>
+        <article>
+          <p class="tag">Tension visible</p>
+          <strong>The slowest tenth went from 20 minutes to 28.</strong>
+          <p>Same cases. Do not call it done. The doubt stays beside that decision.</p>
+        </article>
+      </div>
     </section>
 
     <section class="judgement">
@@ -1052,11 +1090,11 @@
         </li>
         <li>
           <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14"/><path d="M7 18V10M12 18V8M17 18v-5"/></svg></span>
-          <strong>The story never upgrades evidence into certainty.</strong> Source, structure, signal, and the limit. A correlation stays a correlation.
+          <strong>The narrative can clarify evidence. It cannot make weak evidence stronger.</strong> Source, structure, signal, and the limit. A correlation stays a correlation.
         </li>
         <li>
           <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" stroke-dasharray="3 2"/><path d="M12 8v5"/><path d="M12 16h.01"/></svg></span>
-          <strong>Doubt stays in the picture.</strong> The miss and the window you refused belong on the page, beside the decision.
+          <strong>Show what the evidence cannot establish, alongside what it can.</strong> The miss and the window you refused belong on the page, beside the decision.
         </li>
       </ol>
       <p class="kill">If you cannot name the question, the tension, and what changes, it is a chart. The doubt has to stay visible.</p>
@@ -1064,13 +1102,18 @@
 
     <section class="practices">
       <h2>Named practices</h2>
-      <p class="explain">Five links. The six moves still set the order.</p>
+      <p class="explain">Five links name the practice. The stories below are the work.</p>
       <div class="source-row">
         <a href="https://giorgialupi.com/" target="_blank" rel="noopener noreferrer">Giorgia Lupi<span>Form is earned when the usual chart cannot carry the claim</span></a>
         <a href="https://info3312.infosci.cornell.edu/notes/great-viz.html" target="_blank" rel="noopener noreferrer">Alberto Cairo<span>Truthful before beautiful. The doubt stays visible</span></a>
         <a href="http://vis.stanford.edu/papers/narrative" target="_blank" rel="noopener noreferrer">Segel and Heer<span>Who leads, then who wanders</span></a>
         <a href="https://www.storytellingwithdata.com/" target="_blank" rel="noopener noreferrer">Storytelling with Data<span>Motion needs a job</span></a>
         <a href="https://github.com/Financial-Times/chart-doctor" target="_blank" rel="noopener noreferrer">FT Chart Doctor<span>The kinder conventional form</span></a>
+      </div>
+      <div class="source-row built">
+        <a href="/stories/when-rates-rise">When rates rise<span>The cut is inside the book, not on the rate print.</span></a>
+        <a href="/stories/where-should-the-cutoff-sit">Where the cut-off sits<span>The gate is a volume and bad-rate choice.</span></a>
+        <a href="/stories/how-much-fast-reserve">When the spinning stops<span>How much fast reserve to hold when less mass is spinning.</span></a>
       </div>
     </section>
 
@@ -1094,7 +1137,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> The sheet is the same dark stage as the drawings. One claim walks the question to the decision, and the doubt stays in the picture.</p>
+      <p class="changed"><b>Changed</b> One line runs through the six moves. Larger type. One made-up example: the average improved, and the slow tail got worse.</p>
     </footer>
   </article>
   <script>

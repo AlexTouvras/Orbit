@@ -174,15 +174,15 @@ export const FALLBACK_CARDS = [
     lines: [
       "This card turns evidence into a decision.",
       "Start with the decision, not the dataset.",
-      "The story never upgrades evidence into certainty.",
+      "The narrative cannot make weak evidence stronger.",
       "If nothing creates a next scene, it is analysis.",
       "End on what changes, and what is still uncertain.",
       TUCK,
     ],
     sections: [
       { heading: "Turn evidence into a decision", line: "This card turns evidence into a decision." },
-      { heading: "How a claim moves", line: "The doubt stays in the picture." },
-      { heading: "Where judgement stays", line: "The story never upgrades evidence into certainty." },
+      { heading: "How a claim moves", line: "The doubt stays beside the decision." },
+      { heading: "Where judgement stays", line: "The narrative cannot make weak evidence stronger." },
       { heading: "Named practices", line: "Five links. The six moves still set the order." },
       { heading: "Always on", line: "End on what changes, and what is still uncertain." },
     ],

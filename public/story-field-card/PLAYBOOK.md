@@ -7,44 +7,47 @@ Live: `/story-field-card/` (this folder’s `index.html`). Hub competency: **Sto
 ## Spine (do not break)
 
 - H1: `Turn evidence into a decision`
-- Hook: `Doubt in a footnote is not an open.`
+- Hook: `Uncertainty belongs in the decision, not in a footnote.`
+- Eyebrow: `One decision. Six moves.`
 - Operating chain: Question → Evidence → Tension → Narrative → Experience → Decision
 - Craft, always on: Dwell → Claim → Sketch → Lead → Open
-- The opening picture is one claim. The claim walks the six moves. The doubt stays visible at the decision.
-- The picture is a dark stage with a cyan rail. Cyan is this card’s accent (the same cyan as the storytelling robot on this sheet). The sheet around that picture is the same stage. Print keeps the picture dark and sets the surrounding words in ink on white.
-- Do not redraw this picture as a loop. The AI card owns “loop”. Do not draw a return to the question. The label under the track is `doubt stays`.
+- The opening picture is one decision. One cyan line runs through the six moves and ends at the decision. The doubt chip is that ending.
+- The picture is a dark stage. Cyan is this card’s accent (the same cyan as the storytelling robot on this sheet). The sheet around that picture is the same stage. Print keeps the picture dark and sets the surrounding words in ink on white. Body type stays large enough to read on a phone without zooming.
+- Do not redraw this picture as a loop, and do not put a second rail under the line. The AI card owns “loop”. The signature line is `The doubt stays beside the decision.`
 - Each move names the handoff: decision → a question, question → a limit, limit → a reason for the next scene, reason → an order, order → a form, form → a decision with the doubt still visible.
 - Essays stay prose. Grain stays on Analytics. Cutover stays on Delivery.
 - Not a chart-library brochure. Not a gallery titled “story”.
 
 ## What the picture has to keep saying
 
-- Name the decision before any mark. No question, no story.
-- Say what the data can support. The claim cannot cross that limit.
-- Name the gap that needs the next scene. Otherwise it is analysis.
-- Order the scenes a person can walk. Who leads, then who wanders.
-- Give the form a job. A bar is honest when larger is the whole claim.
-- Close on what changes. The doubt stays in the picture.
+- Name the decision someone has to make, before any mark.
+- The chart can support the claim. It still stops at a limit.
+- Show the case that challenges the claim. If nothing does, it is analysis.
+- Put the evidence in an order a person can walk.
+- Set the average beside the slow tail. The reader has to see both.
+- Close on what changes. Show what the evidence cannot establish.
 
 ## Keep these three lines
 
 These stay on the sheet, under Where judgement stays, unless that month’s check shows one of them is wrong. Do not drop them on a no-change month.
 
 1. **Start with the decision, not the dataset.** Name the audience, the question, and what done means before any mark.
-2. **The story never upgrades evidence into certainty.** Source, structure, signal, and the limit. A correlation stays a correlation.
-3. **Doubt stays in the picture.** The miss and the window you refused belong on the page, beside the decision.
+2. **The narrative can clarify evidence. It cannot make weak evidence stronger.** Source, structure, signal, and the limit. A correlation stays a correlation.
+3. **Show what the evidence cannot establish, alongside what it can.** The miss and the window you refused belong on the page, beside the decision.
 
 ## Motion
 
-The claim mark sits on Question, then Evidence, then Tension, then Narrative, then Experience, then Decision. The drawings move on that same loop. At question, the page is written. At evidence, the bars stop under the limit. At tension, the expected line and the actual line do not meet. At narrative, the scene marks light in order. At experience, the bar holds and the extra mark fades. At decision, the doubt chip appears and stays. The dashed rail labeled `doubt stays` draws under the track.
+The claim mark walks down the one line: Question, then Evidence, then Tension, then Narrative, then Experience, then Decision. The drawings move on that same loop. At question, the page is written. At evidence, the bars stop under the limit. At tension, the challenging case runs past the expected line. At narrative, the scene marks light in order. At experience, the average sits beside a taller slow tail. At decision, the doubt chip appears and stays.
 
-`prefers-reduced-motion` and print show the end state: the claim at the decision, the doubt chip visible, the bars under the limit, the gap drawn, the scene marks lit, the extra mark faded, the `doubt stays` rail drawn. Under 900px the moves stack, the claim mark hides, and the sentence plus the doubt chip carry the close. The words stay readable with the motion off. No scroll-jack.
+`prefers-reduced-motion` and print show the end state: the claim at the decision, the doubt chip visible, the bars under the limit, the challenge drawn, the scene marks lit, both bars of the tail comparison visible. Under 900px the same line stays, the walking mark hides except at the decision, and the sentences stay large. Under 640px the drawing sits above the sentence so the words keep a full measure. The words stay readable with the motion off. No scroll-jack. Do not add a stage picker.
 
 The robot is already on this sheet. Its six lines live in `public/field-card-robot.mjs` and win over storytelling `field-cards.ts`. A press that moves drags the robot. A short tap tucks it.
 
 ## Leave off the card
 
 - A problem / use / example table, a representation picker, or a ladder in front of the picture. Restoring that table is not an update.
+- A second worked example. The one under The same evidence stays, and it stays labelled made up.
+- Scroll-driven stages, or a control that reveals a different essay per move.
 - A fifth column, a proof strip, or a particle field. The warm sheet and the particle sphere belong to the credit picture. Lime belongs to the SDLC picture.
 - Grain, definitions, and gold. Those stay on Analytics.
 - Calendars, proof, and cutover. Those stay on Delivery.

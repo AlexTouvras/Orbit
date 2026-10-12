@@ -153,7 +153,7 @@ describe("field card robot copy", () => {
     const story = cards.find((card) => card.id === "story");
     assert.ok(story);
     assert.equal(story.lines[0], "This card turns evidence into a decision.");
-    assert.equal(sectionLine(story.sections, "How a claim moves"), "The doubt stays in the picture.");
+    assert.equal(sectionLine(story.sections, "How a claim moves"), "The doubt stays beside the decision.");
     assert.equal(sectionLine(story.sections, "Problem → use → example"), null);
     for (const words of story.lines) {
       assert.ok(words.length <= 64);
@@ -161,6 +161,8 @@ describe("field card robot copy", () => {
     }
     const html = readFileSync("public/story-field-card/index.html", "utf8");
     assert.match(html, /How a claim moves/);
+    assert.match(html, /Illustrative\. These minutes are made up\./);
+    assert.match(html, /Uncertainty belongs in the decision, not in a footnote\./);
     assert.match(html, /doubt stays/);
     assert.equal(html.includes("Problem → use"), false);
     assert.equal(html.includes('class="picker"'), false);
