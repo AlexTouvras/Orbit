@@ -174,10 +174,18 @@ export const FALLBACK_CARDS = [
     lines: [
       "This card turns evidence into a decision.",
       "Start with the decision, not the dataset.",
-      "The story never upgrades evidence into certainty.",
-      "If nothing creates a next scene, it is analysis.",
+      "The narrative cannot make weak evidence stronger.",
+      "If nothing challenges the claim, it is not a decision yet.",
       "End on what changes, and what is still uncertain.",
       TUCK,
+    ],
+    sections: [
+      { heading: "Turn evidence into a decision", line: "This card turns evidence into a decision." },
+      { heading: "The six moves", line: "The doubt stays beside the decision." },
+      { heading: "The work", line: "Three published stories. Each one is a decision." },
+      { heading: "Where judgement stays", line: "The narrative cannot make weak evidence stronger." },
+      { heading: "Named practices", line: "The stories are the work. The links name the practice." },
+      { heading: "Always on", line: "End on what changes, and what is still uncertain." },
     ],
   },
 ];
@@ -731,10 +739,11 @@ function removeChrome() {
 }
 
 /**
- * SDLC and Credit are hosted on Orbit. Storytelling `field-cards.ts` can
- * still describe the older sheet. Those two speak the lines in FALLBACK_CARDS.
+ * SDLC, Credit, and Story are hosted scenes on Orbit. Storytelling
+ * `field-cards.ts` can still describe the older sheet. Those three speak
+ * the lines in FALLBACK_CARDS.
  */
-const HOSTED_SPEECH = new Set(["sdlc", "credit"]);
+const HOSTED_SPEECH = new Set(["sdlc", "credit", "story"]);
 
 export function cardsForSheet(cardId, parsed) {
   const cards = parsed || FALLBACK_CARDS;

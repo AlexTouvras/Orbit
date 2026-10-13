@@ -132,6 +132,46 @@ describe("field card robot copy", () => {
     );
   });
 
+  it("speaks the Orbit story scene even when storytelling still has the job table", () => {
+    const remote = FALLBACK_CARDS.map((card) =>
+      card.id === "story"
+        ? {
+            ...card,
+            lines: [
+              "A chart looking for a reason to exist.",
+              "a",
+              "b",
+              "c",
+              "d",
+              TUCK,
+            ],
+            sections: [{ heading: "Problem → use → example", line: "old" }],
+          }
+        : card,
+    );
+    const cards = cardsForSheet("story", remote);
+    const story = cards.find((card) => card.id === "story");
+    assert.ok(story);
+    assert.equal(story.lines[0], "This card turns evidence into a decision.");
+    assert.equal(sectionLine(story.sections, "The six moves"), "The doubt stays beside the decision.");
+    assert.equal(sectionLine(story.sections, "The work"), "Three published stories. Each one is a decision.");
+    assert.equal(sectionLine(story.sections, "Problem → use → example"), null);
+    for (const words of story.lines) {
+      assert.ok(words.length <= 64);
+      assert.ok([...words].every((ch) => ch.charCodeAt(0) >= 32 && ch.charCodeAt(0) <= 126));
+    }
+    const html = readFileSync("public/story-field-card/index.html", "utf8");
+    assert.match(html, /The six moves/);
+    assert.match(html, /Uncertainty belongs in the decision, not in a footnote\./);
+    assert.equal(html.includes("made up"), false);
+    assert.equal(html.includes("12 minutes"), false);
+    assert.match(html, /href="\/stories\/when-rates-rise"/);
+    assert.match(html, /doubt stays/);
+    assert.equal(html.includes("Problem → use"), false);
+    assert.equal(html.includes('class="picker"'), false);
+    assert.equal(html.includes('class="ladder"'), false);
+  });
+
   it("reads the six line slots and the accent from the robot contract", async () => {
     const res = await fetch(
       "https://raw.githubusercontent.com/AlexTouvras/storytelling/main/src/illustrations/robot.ts",
