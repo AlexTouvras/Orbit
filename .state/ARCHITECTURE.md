@@ -171,6 +171,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-13 | A hosted product's button scroll stops below the Orbit bar | The bar is fixed. `scrollIntoView` and in-page links inside the frame align the result with the top of the viewport, so the first lines sit under the bar. `/products` sets `scroll-padding-top` to the bar height plus the same air the page already leaves under it. The product page itself is unchanged. |
 | 2026-10-13 | `/products` shows the hosted page, not a card plus that page | Owner: one product was two boxes. The summary card repeated Delivery Signal. The frame is the product. A product that only links out still uses one card. Two or more still use the reel. |
 | 2026-10-12 | Story field card is a claim scene | The next Hub card after SDLC and credit. One claim walks the six moves on a dark cyan stage. The doubt stays beside the decision. Monthly judgment is that picture. The job table, picker, and ladder stay off. Bayes stays a schematic. Next scene is one source-repo card. |
 | 2026-10-12 | Story card legibility pass | One vertical line is the six moves. Type is larger. No scroll-driven stages. Under 640px the drawing sits above the sentence so the words keep a full measure. |
