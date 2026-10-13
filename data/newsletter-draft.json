@@ -1,6 +1,6 @@
 {
   "id": "newsletter-2026-W42",
-  "status": "pending",
+  "status": "sent",
   "createdAt": "2026-10-13T15:02:58.833Z",
   "weekOf": "2026-10-12",
   "subject": "Orbit weekly — week of 2026-10-12",
@@ -102,5 +102,9 @@
       "date": "2026-10-12",
       "priority": "p2"
     }
-  ]
+  ],
+  "sentAt": "2026-10-13T15:03:01.260Z",
+  "broadcastId": "01a135c9-d0d6-7ebd-aea4-f9e3c3311e89",
+  "sendMode": "test",
+  "sentTo": "a.touvras@gmail.com"
 }
