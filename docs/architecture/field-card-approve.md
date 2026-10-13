@@ -37,5 +37,7 @@ flowchart LR
   Review --> Slack["#orbit FYI · one post per card"]
 ```
 
+A merge to `main` on a source repo also copies that card. The repo's Sync site job posts a `sync` token. Orbit copies `index.html` and `assets/` onto the Orbit path and does not post Slack for that copy. Apply review still merges and copies the same files.
+
 Signing secret must match across content repos + Orbit (`WEEKLY_WRITE_SECRET` / `CRON_SECRET` / `FIELD_CARD_ACTION_SECRET`).
 GitHub token on Orbit must be allowed to read + merge PRs on **all registered** field-card repos (`FIELD_CARD_GITHUB_TOKEN` if the default token is Orbit-only).

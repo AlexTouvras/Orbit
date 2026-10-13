@@ -138,6 +138,53 @@ export async function closeFieldCardPullRequest(repoSlug: string, pr: number) {
   return { alreadyClosed: false as const, title: existing.title, url: existing.html_url };
 }
 
+/** Files directly inside a directory. Missing directory is an empty list. */
+export async function listRepoFiles(
+  repoSlug: string,
+  dir: string,
+  ref: string,
+): Promise<Array<{ name: string; path: string }>> {
+  const token = githubToken();
+  if (!token) throw new Error("GITHUB_TOKEN (or FIELD_CARD_GITHUB_TOKEN) is required");
+  const { owner, repo } = parseRepo(repoSlug || DEFAULT_REPO);
+  const res = await fetch(
+    `https://api.github.com/repos/${owner}/${repo}/contents/${dir}?ref=${encodeURIComponent(ref)}`,
+    { headers: headers(token), cache: "no-store" },
+  );
+  if (res.status === 404) return [];
+  if (!res.ok) {
+    throw new Error(`GitHub contents fetch failed (${res.status}) for ${dir}@${ref}`);
+  }
+  const data = (await res.json()) as Array<{ type?: string; name?: string; path?: string }> | { type?: string };
+  if (!Array.isArray(data)) return [];
+  return data
+    .filter((entry) => entry.type === "file" && entry.name && entry.path)
+    .map((entry) => ({ name: entry.name as string, path: entry.path as string }));
+}
+
+/** Raw file bytes as base64, whitespace stripped. */
+export async function getRepoFileBase64(
+  repoSlug: string,
+  path: string,
+  ref: string,
+): Promise<string> {
+  const token = githubToken();
+  if (!token) throw new Error("GITHUB_TOKEN (or FIELD_CARD_GITHUB_TOKEN) is required");
+  const { owner, repo } = parseRepo(repoSlug || DEFAULT_REPO);
+  const res = await fetch(
+    `https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=${encodeURIComponent(ref)}`,
+    { headers: headers(token), cache: "no-store" },
+  );
+  if (!res.ok) {
+    throw new Error(`GitHub contents fetch failed (${res.status}) for ${path}@${ref}`);
+  }
+  const data = (await res.json()) as { encoding?: string; content?: string };
+  if (data.encoding !== "base64" || typeof data.content !== "string") {
+    throw new Error(`Unexpected contents payload for ${path}`);
+  }
+  return data.content.replace(/\s/g, "");
+}
+
 /** @deprecated Prefer notifyFieldCardUpdateFyi for weekly update posts. */
 export async function notifyFieldCardSlack(text: string, bodyMd: string) {
   const url =

@@ -63,6 +63,15 @@ export async function writeRepoFile(
   content: string,
   message: string,
 ): Promise<void> {
+  await writeRepoFileBase64(filePath, Buffer.from(content, "utf8").toString("base64"), message);
+}
+
+/** Commit bytes that are already base64 (images). Does not re-encode as text. */
+export async function writeRepoFileBase64(
+  filePath: string,
+  base64: string,
+  message: string,
+): Promise<void> {
   const cfg = getRepoConfig();
   if (!cfg) {
     throw new Error("GITHUB_TOKEN is not configured.");
@@ -85,7 +94,7 @@ export async function writeRepoFile(
     },
     body: JSON.stringify({
       message,
-      content: Buffer.from(content, "utf8").toString("base64"),
+      content: base64.replace(/\s/g, ""),
       sha,
     }),
   });
