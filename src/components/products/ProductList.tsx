@@ -55,7 +55,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
   );
 }
 
-/** Public product list. One product stays in the column; two or more use a reel. */
+/** Public product list. A hosted product is the page. A link-only product is one card. Two or more use a reel. */
 export function ProductList() {
   if (products.length === 0) return null;
 
@@ -64,16 +64,17 @@ export function ProductList() {
     const liveHere = product.pageUrl.startsWith("/");
     return (
       <section id="list" className="scroll-mt-28">
-        <div className="w-[min(40rem,100%)]">
-          <ProductCard product={product} index={0} />
-        </div>
         {liveHere ? (
           <iframe
             title={product.name}
             src={product.pageUrl}
-            className="mt-8 h-[75vh] w-full rounded-3xl border border-white/10 bg-[#f4f1ea]"
+            className="h-[75vh] w-full rounded-3xl border border-white/10 bg-[#12141c]"
           />
-        ) : null}
+        ) : (
+          <div className="w-[min(40rem,100%)]">
+            <ProductCard product={product} index={0} />
+          </div>
+        )}
       </section>
     );
   }
