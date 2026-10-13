@@ -1,101 +1,106 @@
 {
-  "id": "newsletter-2026-W41",
-  "status": "sent",
-  "createdAt": "2026-10-06T14:11:35.779Z",
-  "weekOf": "2026-10-05",
-  "subject": "Orbit weekly — week of 2026-10-05",
+  "id": "newsletter-2026-W42",
+  "status": "pending",
+  "createdAt": "2026-10-13T15:02:58.833Z",
+  "weekOf": "2026-10-12",
+  "subject": "Orbit weekly — week of 2026-10-12",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
   "writes": [
     {
-      "slug": "before-an-agent-writes-back-name-who-is-allowed-to-speak",
-      "title": "Before an agent writes back, name who is allowed to speak",
-      "summary": "Barcelona's Copilot and Power BI updates let a report's definitions leave the report and change stored data. I would name the speaking model, the allowed writes, and who can stop a bad action before I turn that on.",
-      "date": "2026-10-05",
-      "href": "https://alextouvras.com/writes/before-an-agent-writes-back-name-who-is-allowed-to-speak"
+      "slug": "when-the-tools-build-the-report-write-the-contract-first",
+      "title": "When the tools build the report, write the contract first",
+      "summary": "I build reports with the Power BI MCP and reporting skills, so an assistant can produce the model and the pages. The contract has to state how the analytics are allowed to behave before that build, because the unit is the report, not one measure.",
+      "date": "2026-10-12",
+      "href": "https://alextouvras.com/writes/when-the-tools-build-the-report-write-the-contract-first"
     }
   ],
   "signals": [
     {
-      "title": "FabCon Europe 2026: 4 announcements that may change how we work with data and AI",
-      "link": "https://data-mozart.com/fabcon-europe-2026-4-announcements-that-may-change-how-we-work-with-data-and-ai/?utm_source=rss&utm_medium=rss&utm_campaign=fabcon-europe-2026-4-announcements-that-may-change-how-we-work-with-data-and-ai",
-      "source": "Data Mozart",
+      "title": "ApproximateDistinctCount In Power BI Is Sometimes Slower Than DistinctCount",
+      "link": "https://blog.crossjoin.co.uk/2026/10/11/approximatedistinctcount-in-power-bi-is-sometimes-slower-than-distinctcount/",
+      "source": "Chris Webb's BI Blog",
       "category": "Analytics",
-      "snippet": "Barcelona is done. Nearly 5,000 people, 130+ sessions, and a very long list of announcements. This is my cut of the one…"
+      "snippet": "As a follow-on from last week’s post about the new ApproximateDistinctCount function in DAX, I want to share something…"
     },
     {
-      "title": "NEAREST BY Join: Scaling Vector Search in Databricks Runtime",
-      "link": "https://www.databricks.com/blog/nearest-join-scaling-vector-search-databricks-runtime",
+      "title": "Brickster Voices: Meet Clara Kurian",
+      "link": "https://www.databricks.com/blog/brickster-voices-meet-clara-kurian",
       "source": "Databricks Blog",
       "category": "Data",
-      "snippet": "Vector search originated as a serving problem. The classical use case is a chatbot..."
+      "snippet": "Brickster Voices is a series that spotlights the people who make our work possible. Through personal career journeys..."
     },
     {
-      "title": "Scrum Day India 2026 Recap: Scrum Teams in the Age of Autonomous Agents",
-      "link": "https://www.scrum.org/resources/blog/scrum-day-india-2026-recap-scrum-teams-age-autonomous-agents",
+      "title": "You Need Tighter WIP Limits With AI",
+      "link": "https://www.scrum.org/resources/blog/you-need-tighter-wip-limits-ai",
       "source": "Scrum.org",
       "category": "Delivery",
-      "snippet": "Image On Saturday, 26 September 2026, Scrum practitioners gathered at To The New in Sector 144, Noida, for Scrum Day In…"
+      "snippet": "In a recent class, we were discussing how teams are using AI and finishing coding faster but still missing Sprint Goals…"
     },
     {
-      "title": "Venture capital – a global perspective",
-      "link": "https://cepr.org/voxeu/columns/venture-capital-global-perspective",
+      "title": "Detecting institutional change as it unfolds: Evidence from 120 years of reporting",
+      "link": "https://cepr.org/voxeu/columns/detecting-institutional-change-it-unfolds-evidence-120-years-reporting",
       "source": "VoxEU",
       "category": "Economics",
-      "snippet": "Existing views on what venture capital finances and how its markets are structured are primarily shaped by the experien…"
+      "snippet": "Explaining comparative economic development requires identifying the causes of institutional change. This column uses A…"
     }
   ],
   "ravens": [
     {
       "kind": "inbox",
       "domain": "ai-agents",
-      "title": "Agent Framework Python 1.20.0 isolates session file access and fail-closes unresolved approvals",
-      "summary": "microsoft/agent-framework python-1.20.0 (published 2 Oct 2026) adds response-stream gates and buffering, session-scoped file-access isolati…",
-      "href": "https://github.com/microsoft/agent-framework/releases/tag/python-1.20.0",
-      "sourceTitle": "microsoft/agent-framework python-1.20.0",
-      "id": "FIND-20261005-002",
-      "date": "2026-10-02"
+      "title": "Agent Framework Python 1.21.0 isolates tool-agent sessions and buffers Purview on streams",
+      "summary": "microsoft/agent-framework python-1.21.0 (published 8 Oct 2026) adds tool-result standing guidance, exposes rewritten variable-expansion arg…",
+      "href": "https://github.com/microsoft/agent-framework/releases/tag/python-1.21.0",
+      "sourceTitle": "microsoft/agent-framework python-1.21.0",
+      "id": "FIND-20261012-002",
+      "date": "2026-10-08"
     },
     {
-      "kind": "signal",
+      "kind": "knowledge",
       "domain": "data-bi",
-      "title": "ApproximateDistinctCount on Import and Direct Lake — keep an exact distinct-count switch",
-      "summary": "Chris Webb’s 4 Oct 2026 post (blog.crossjoin.co.uk) says Import and Direct Lake semantic models now support `ApproximateDistinctCount()`, w…",
-      "id": "SIG-20261005-003",
-      "date": "2026-10-05",
-      "priority": "p2"
+      "title": "Read-only Copilot and Microsoft MCP access to a semantic model is on until a write owner turns it off",
+      "summary": "Users with **write** permission control whether **read-only** users can reach a semantic model through AI. The model setting is: “Allow any…",
+      "href": "https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-semantic-models",
+      "sourceTitle": "Use Copilot with Semantic Models in Power BI — Microsoft Learn",
+      "id": "KNOW-data-bi-copilot-readonly-mcp-default-on",
+      "date": "2026-10-12"
     },
     {
       "kind": "signal",
       "domain": "career",
-      "title": "Lokki banking BI Developer contract, Helsinki or Oulu — apply by 7 Oct 19:00",
-      "summary": "Lokki Henkilöstöpalvelut Oy posted a BI Developer – Transaction Monitoring assignment on 4 Oct 2026 at 18:36 (laura.fi) for an **unnamed ba…",
-      "id": "SIG-20261005-002",
-      "date": "2026-10-05",
+      "title": "UPM Senior Specialist, Global Portfolio, Helsinki — apply by 20 Oct",
+      "summary": "UPM’s own Workday posting **Senior Specialist, Global Portfolio** (requisition **NB6026861**, posted 2026-09-29, Helsinki, full time) asks…",
+      "id": "SIG-20261012-002",
+      "date": "2026-10-12",
       "priority": "p1"
     },
     {
-      "kind": "inbox",
+      "kind": "signal",
       "domain": "finance",
-      "title": "Fortum Elmera offer expired 2 Oct; 91.61% accepted; settlement expected about 23 Oct",
-      "summary": "Fortum’s 2 Oct 2026 stock-exchange release (Cision, 20:00 EEST / 19:00 CET) says the Elmera offer period expired at 16:30 CEST on 2 October…",
-      "href": "https://news.cision.com/fortum/r/fortum-announces-settlement-and-results-of-its-recommended-voluntary-cash-tender-offer-for-elmera-gr,c4404065",
-      "sourceTitle": "Fortum announces settlement and results of its recommended voluntary cash tender offer for Elmera Group ASA — 2 October 2026",
-      "id": "FIND-20261005-008",
-      "date": "2026-10-02"
+      "title": "Sensofusion (SENSO) Main Market trading starts 13 Oct; offer price EUR 16.41",
+      "summary": "Sensofusion’s investor IPO page (result announced 8 Oct 2026) says the company has listed on **Nasdaq Helsinki’s regulated market** and tha…",
+      "id": "SIG-20261012-004",
+      "date": "2026-10-12",
+      "priority": "p2"
     },
     {
       "kind": "knowledge",
       "domain": "parenting",
-      "title": "THL — 0–1 month development is eye contact and moving limbs together; birth weight back by ~2 weeks",
-      "summary": "**0–1 month** (THL *Meille tulee vauva* table, via Terveyskirjasto): occasional involuntary smiles, attentive eye contact, moving arms and…",
-      "href": "https://www.terveyskirjasto.fi/osv00012",
-      "sourceTitle": "Vauvan kasvu ja kehitys — Terveyskirjasto (THL Meille tulee vauva)",
-      "id": "KNOW-parenting-thl-0-1-month-development-growth",
-      "date": "2026-10-05"
+      "title": "Finland — five-in-one (DTaP-IPV-Hib) at 3, 5 and 12 months",
+      "summary": "THL recommends the **five-in-one** (diphtheria, tetanus, pertussis, polio, Hib) at **3, 5 and 12 months**. The programme product is **Infan…",
+      "href": "https://thl.fi/ohjeita-ammattilaisille/viitosrokote-eli-dtap-ipv-hib-rokote",
+      "sourceTitle": "Viitosrokote eli DTaP-IPV-Hib-rokote — THL",
+      "id": "KNOW-parenting-fi-infant-dtap-ipv-hib-3-5-12m",
+      "date": "2026-10-12"
+    },
+    {
+      "kind": "signal",
+      "domain": "security",
+      "title": "Cursor remote control of local agents is on by default outside Enterprise",
+      "summary": "Cursor’s changelog **Remote control for local agents** (6 Oct 2026) lets you see and message local agents from the Cursor iOS app. **Remote…",
+      "id": "SIG-20261012-003",
+      "date": "2026-10-12",
+      "priority": "p2"
     }
-  ],
-  "sentAt": "2026-10-06T14:11:37.429Z",
-  "broadcastId": "01a1118e-3ee1-70f8-bb64-c334c51a1667",
-  "sendMode": "test",
-  "sentTo": "a.touvras@gmail.com"
+  ]
 }
