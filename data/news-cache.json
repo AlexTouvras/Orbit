@@ -1,7 +1,88 @@
 {
-  "generatedAt": "2026-10-12T06:46:58.163Z",
+  "generatedAt": "2026-10-13T06:46:59.627Z",
   "count": 263,
   "items": [
+    {
+      "id": "8b05e0908c1d",
+      "title": "Detecting institutional change as it unfolds: Evidence from 120 years of reporting",
+      "link": "https://cepr.org/voxeu/columns/detecting-institutional-change-it-unfolds-evidence-120-years-reporting",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-12T23:00:00.000Z",
+      "contentSnippet": "Explaining comparative economic development requires identifying the causes of institutional change. This column uses AI to analyse 120 years of newspaper coverage and produce a new index of uncertainty about a country's core institutions. In the countries studied, nearly every m…"
+    },
+    {
+      "id": "970f57c43193",
+      "title": "Why downturns can make innovation greener",
+      "link": "https://cepr.org/voxeu/columns/why-downturns-can-make-innovation-greener",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-12T23:00:00.000Z",
+      "contentSnippet": "Green innovation is central for the transition to a low-carbon economy, but there are concerns that economic downturns may slow technological progress by reducing firms’ incentives and resources to innovate. This column shows that green and non-green innovation respond very diffe…"
+    },
+    {
+      "id": "0b2e29a57373",
+      "title": "At risk or responsive: Rethinking unemployment policy",
+      "link": "https://cepr.org/voxeu/columns/risk-or-responsive-rethinking-unemployment-policy",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-12T23:00:00.000Z",
+      "contentSnippet": "Public services increasingly use predictive algorithms to direct scarce support towards those most at risk. But are these also the people who benefit most from intervention? This column explains how to navigate this trade-off and shows why it matters in practice. Job search couns…"
+    },
+    {
+      "id": "e6bb69f517c6",
+      "title": "AI models may be capable of self-replicating without access to a datacenter",
+      "link": "https://www.anthropic.com/research/self-replicating-ai",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-12T19:30:00.000Z",
+      "contentSnippet": "Our experiments suggest that small AI models may be only months away from being capable enough to self-replicate on commercial IoT devices, like Android TVs and smart ovens."
+    },
+    {
+      "id": "92f57cbc8464",
+      "title": "Hello Python 3.15, goodbye 3.10, and now I can use 3.11",
+      "link": "https://simonwillison.net/2026/Oct/12/python-3-15/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-10-12T18:15:38.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "45d8b31767c6",
+      "title": "Brickster Voices: Meet Clara Kurian",
+      "link": "https://www.databricks.com/blog/brickster-voices-meet-clara-kurian",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-12T16:40:00.000Z",
+      "contentSnippet": "Brickster Voices is a series that spotlights the people who make our work possible. Through personal career journeys..."
+    },
+    {
+      "id": "834448fbd416",
+      "title": "How Flo Health built safer, more useful open models with Databricks AI Runtime",
+      "link": "https://www.databricks.com/blog/how-flo-health-built-safer-more-useful-open-models-databricks-ai-runtime",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-12T15:13:04.000Z",
+      "contentSnippet": "For Flo Health, the bar for generative AI is unusually high. With 81 million monthly..."
+    },
+    {
+      "id": "b407e87d5843",
+      "title": "Strengthening our defenses against distillation attacks",
+      "link": "https://www.anthropic.com/research/distillation-defenses",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-12T09:30:00.000Z",
+      "contentSnippet": "Illicit distillation allows model developers to copy frontier AI capabilities without creating proportionally robust safeguards. Here, we describe how we’ve reduced the rate of distillation by more than 90%."
+    },
+    {
+      "id": "f0cd20cb9cc3",
+      "title": "You Need Tighter WIP Limits With AI",
+      "link": "https://www.scrum.org/resources/blog/you-need-tighter-wip-limits-ai",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-12T07:05:14.000Z",
+      "contentSnippet": "In a recent class, we were discussing how teams are using AI and finishing coding faster but still missing Sprint Goals. How can these things both be true? That question gets to the heart of a shift many Scrum Teams are experiencing right now. AI has changed the bottleneck. Codin…"
+    },
     {
       "id": "8031d03ce8de",
       "title": "Cognitive Trap: Accountability Diffusion",
@@ -19,6 +100,15 @@
       "category": "Data",
       "pubDate": "2026-10-12T03:18:01.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "b21943a36a25",
+      "title": "Transformative AI and demand bottlenecks",
+      "link": "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-12T00:00:00.000Z",
+      "contentSnippet": "Transformative AI promises to accelerate growth through productivity enhancement and automation. Yet automation on such a scale would raise the share of investment in output, potentially starving AI innovation of returns from a shrinking consumer market."
     },
     {
       "id": "648b5502e50a",
@@ -93,24 +183,6 @@
       "contentSnippet": "Innovation has increasingly become a team activity, while inventors have become more concentrated in large firms. This column argues that these trends are closely connected. Team production creates genuine scale advantages in innovation, but can also lead the competitive economy…"
     },
     {
-      "id": "941a7b417da4",
-      "title": "Financing the AI buildout before the risks go off balance sheet",
-      "link": "https://cepr.org/voxeu/columns/financing-ai-buildout-risks-go-balance-sheet",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-09T23:00:00.000Z",
-      "contentSnippet": "The AI boom is usually discussed as a contest over models, chips, and productivity. This column argues that it is also a large physical infrastructure and credit cycle. The policy priority is not to call the peak, but to measure who owns the assets, who owes the debt, and where c…"
-    },
-    {
-      "id": "dfc3cd8af139",
-      "title": "Your debt, my inflation: The role of trust in the ECB",
-      "link": "https://cepr.org/voxeu/columns/your-debt-my-inflation-role-trust-ecb",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-09T23:00:00.000Z",
-      "contentSnippet": "High public debt in several euro-area countries has renewed the debate over a central question: can fiscal pressures in one member state affect inflation expectations elsewhere by constraining the ECB? This column uses a randomised information experiment with German firms to show…"
-    },
-    {
       "id": "a276e4f9898e",
       "title": "How California built its Behavioral Health Public County Profile on Databricks",
       "link": "https://www.databricks.com/blog/how-california-built-its-behavioral-health-public-county-profile-databricks",
@@ -118,6 +190,15 @@
       "category": "Data",
       "pubDate": "2026-10-09T21:30:00.000Z",
       "contentSnippet": "The California Department of Health Care Services (DHCS) built the Behavioral Health..."
+    },
+    {
+      "id": "584edc0f4d08",
+      "title": "From post-training to production: How TinyFish runs its web-native model on Databricks AI Runtime",
+      "link": "https://www.databricks.com/blog/post-training-production-how-tinyfish-runs-its-web-native-model-databricks-ai-runtime",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-09T16:32:01.000Z",
+      "contentSnippet": "TinyFish builds infrastructure for enterprises that need agents to work across the live web. Its Search, Fetch, Browser..."
     },
     {
       "id": "a842dc410cb5",
@@ -192,15 +273,6 @@
       "contentSnippet": "We're excited to announce the publicly available Beta of the Workday Data Connect federation connector for Unity Catalog..."
     },
     {
-      "id": "8042b0bd1a67",
-      "title": "Not Wearing Prada",
-      "link": "https://cepr.org/multimedia/not-wearing-prada",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-08T23:00:00.000Z",
-      "contentSnippet": "Since March 2022, it has been harder to buy an iPhone in Russia, because Apple chose to stop selling there. So did Prada, Renault, Starbucks, Nike and more than 1,000 other firms. These private sanctions added to the official sanctions imposed by 45 countries. Beata Javorcik (EBR…"
-    },
-    {
       "id": "714c79df7b98",
       "title": "Introducing Funke: Native HL7v2 Parsing on Databricks",
       "link": "https://www.databricks.com/blog/introducing-funke-native-hl7v2-parsing-databricks",
@@ -264,15 +336,6 @@
       "contentSnippet": "Across recruiting, engineering, and operations, Oracle turns specialist knowledge into fast, repeatable workflows with ChatGPT Work and Codex."
     },
     {
-      "id": "4e5d15a89e0b",
-      "title": "How to build governed enterprise apps on Databricks with Replit and Lakebase",
-      "link": "https://www.databricks.com/blog/how-build-governed-enterprise-apps-databricks-replit-and-lakebase",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-08T13:00:00.000Z",
-      "contentSnippet": "The combination of Replit & Databricks gives enterprises a complete development-to-deployment platform..."
-    },
-    {
       "id": "ca1ec6c6a1a1",
       "title": "Pollo AI turns creative ideas into campaigns with OpenAI",
       "link": "https://openai.com/index/pollo-ai",
@@ -325,24 +388,6 @@
       "category": "AI",
       "pubDate": "2026-10-07T20:19:57.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "738ed9214713",
-      "title": "Set Budgets and Alerts for Cloud Data Warehouse Costs",
-      "link": "https://www.databricks.com/blog/set-budgets-and-alerts-cloud-data-warehouse-costs",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-07T19:02:06.000Z",
-      "contentSnippet": "Every analytics team has been here: a month-end invoice arrives, and a single SQL..."
-    },
-    {
-      "id": "b9bad5ef7a03",
-      "title": "Now GA: Building permission-aware Databricks Apps with on-behalf-of-user authorization",
-      "link": "https://www.databricks.com/blog/now-ga-building-permission-aware-databricks-apps-behalf-user-authorization",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-07T16:40:00.000Z",
-      "contentSnippet": "Databricks Apps lets developers build and deploy data and AI applications directly on the Databricks platform..."
     },
     {
       "id": "ec2f5293782d",
@@ -687,15 +732,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "fb6067b5bbd7",
-      "title": "What work can robots do?",
-      "link": "https://www.anthropic.com/research/what-work-can-robots-do",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-30T16:01:00.000Z",
-      "contentSnippet": "We built an index of how well today’s robots can perform US job tasks. Robots can already do three-quarters of physical tasks, mostly in limited settings, but are cost-competitive for just 0.3% of them."
-    },
-    {
       "id": "0a622a33b8e3",
       "title": "Introducing SynthID Bio",
       "link": "https://deepmind.google/blog/introducing-synthid-bio/",
@@ -732,15 +768,6 @@
       "contentSnippet": "Letter to chief financial officers of selected PRA-regulated deposit-takers which provides thematic feedback from the PRA’s review of written auditor reports received in 2026 covering IFRS 9 expected credit loss accounting (ECL) and accounting for climate risk."
     },
     {
-      "id": "80daa53e20f4",
-      "title": "Your Sprint Has Fewer Hours Than You Think: Sprint Capacity in the Age of AI Agents",
-      "link": "https://www.scrum.org/resources/blog/your-sprint-has-fewer-hours-you-think-sprint-capacity-age-ai-agents",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-30T08:46:22.000Z",
-      "contentSnippet": "Image Most Scrum Teams don't miss their Sprint forecast because they estimate badly. They miss it because they plan against hours that never existed. Picture a Sprint Planning I have watched play out, in one form or another, in dozens of organisations. Five Developers. A two-week…"
-    },
-    {
       "id": "e5132c65f5be",
       "title": "Thinking Like a Data Architect",
       "link": "https://www.dataengineeringweekly.com/p/thinking-like-a-data-architect",
@@ -766,15 +793,6 @@
       "category": "AI",
       "pubDate": "2026-09-29T18:38:27.000Z",
       "contentSnippet": "Algorithms & Theory"
-    },
-    {
-      "id": "7f9fa97d486b",
-      "title": "What do you want from AI?",
-      "link": "https://www.anthropic.com/research/your-thoughts-on-ai",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-09-29T16:39:00.000Z",
-      "contentSnippet": "We’re launching a new study using Anthropic Interviewer to learn from your experiences with AI."
     },
     {
       "id": "3bd3ec89a48c",
@@ -964,15 +982,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-24T06:56:03.000Z",
       "contentSnippet": "We’ve already covered how AI can build and modify a semantic model using the Power BI Modeling MCP server. But building the semantic model is only half the job, someone still has to build the actual report on top of it. In this episode of Fabric Insider, I sit down with Harleen K…"
-    },
-    {
-      "id": "f87d00160702",
-      "title": "Old workers, young machines: can AI and automation offset population ageing?",
-      "link": "https://www.bis.org/publications/bulletin-135-old-workers-young-machines-can-ai-and-automation-offset-population-ageing",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-24T00:00:00.000Z",
-      "contentSnippet": "Key takeawaysArtificial intelligence (AI) and robots have the potential to offset the macroeconomic consequences of an ageing workforce, but the ability to automate jobs depends on which industries are ageing.AI and robots substitute most readily for jobs in industries with young…"
     },
     {
       "id": "4c4abcff4acd",
@@ -1243,15 +1252,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-13T10:03:39.000Z",
       "contentSnippet": "Here’s a situation I’ve found myself in many times. You’re called to help someone whose Power BI report is suddenly very slow. You ask whether any changes were made to the semantic model around the time performance got worse and the answer is no, absolutely not. You then spend an…"
-    },
-    {
-      "id": "3f37b0a02f79",
-      "title": "Generating running routes with GPT-6 Astra and ChatGPT Work",
-      "link": "https://simonwillison.net/2026/Sep/12/astra-running-routes/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-09-12T23:56:42.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "ca291efb21c7",
@@ -1758,15 +1758,6 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
-      "id": "d9adb789161e",
-      "title": "How Firms Form Beliefs and the Implications for Inflation",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
-    },
-    {
       "id": "07b1c1c9fdb7",
       "title": "Credit Surfaces and Economic Uncertainty",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
@@ -1783,6 +1774,15 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
+    },
+    {
+      "id": "d9adb789161e",
+      "title": "How Firms Form Beliefs and the Implications for Inflation",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
     },
     {
       "id": "16fe89b83e2e",
@@ -1848,13 +1848,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "99c54272067a",
-      "title": "Rethinking Central Bank LSAPs: The Power of Market Functioning Purchases",
-      "link": "https://www.kansascityfed.org/research/research-working-papers/rethinking-central-bank-lsaps-the-power-of-market-functioning-purchases/",
+      "id": "4c8cd6ef9ad3",
+      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
+      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Kansas City Research Working Papers by Andrew Lee Smith and Victor J. Valcarcel"
+      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
     },
     {
       "id": "ed6bd26c4997",
