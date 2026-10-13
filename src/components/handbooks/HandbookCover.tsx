@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { Handbook } from "@/content/handbooks";
-import { SiteLink } from "@/components/handbooks/SiteLink";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { chapterPath } from "@/lib/handbooks";
 
@@ -30,9 +29,9 @@ export function HandbookCover({ handbook }: { handbook: Handbook }) {
         {handbook.reader}
       </p>
       <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300">
-        Extends the{" "}
-        <SiteLink href={handbook.extends.href}>{handbook.extends.label}</SiteLink>
-        . {handbook.extends.line}
+        The cards stay the fields. Where a sentence comes from a card, the
+        chapter names that card. The storytelling card is one of those
+        citations. It is not this handbook.
       </p>
       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">
         A cyan mark on a section says the line is an operating principle, a

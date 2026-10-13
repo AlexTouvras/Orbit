@@ -5,7 +5,7 @@
 ## Now
 
 - [x] Field handbooks edition 1 — `/handbooks`, Building intelligent systems, three chapters (principle, method, Monday). Later titles named, not routed.
-- [x] Handbook continuity — flagship extends the storytelling card and ends on one story. Later titles each name one card. Landing page states card → handbook → story.
+- [x] Handbook continuity — flagship is the chain across the cards. The storytelling card is a citation, not the parent. Later titles may go deep on one card and stay closed.
 - [x] Products frame: a button scroll lands below the Orbit bar, with a little air
 - [x] Field-card `sync` copies `index.html` and `assets/` as original bytes. Approve uses the same copy. Deploy before technology-delivery-field-card PR 8 merges.
 - [x] Products page shows one frame for one hosted product — drop the summary card above Delivery Signal

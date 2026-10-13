@@ -31,13 +31,6 @@ export interface HandbookSection {
   links?: HandbookLink[];
 }
 
-/** A field card this handbook extends, or a story the chapter leads to. */
-export interface HandbookAnchor {
-  href: string;
-  label: string;
-  line: string;
-}
-
 export interface HandbookChapter {
   slug: string;
   index: string;
@@ -49,8 +42,6 @@ export interface HandbookChapter {
   /** Leading link, and the one link that supports it, when the chapter draws the chain. */
   chain?: { lead: ChainLinkId; support?: ChainLinkId };
   sections: HandbookSection[];
-  /** One story. The chapter leads here after the method. */
-  evidence: HandbookAnchor;
 }
 
 export interface Handbook {
@@ -63,8 +54,6 @@ export interface Handbook {
   thesis: string;
   reader: string;
   edition: string;
-  /** The one field card this handbook extends. */
-  extends: HandbookAnchor;
   nonGoals: string[];
   chapters: HandbookChapter[];
 }
@@ -97,7 +86,6 @@ const DELIVERY_CARD = "/delivery-field-card/index.html";
 const SDLC_CARD = "/sdlc-field-card/index.html";
 const CREDIT_CARD = "/credit-risk-field-card/index.html";
 const CUTOFF_STORY = "/stories/where-should-the-cutoff-sit";
-const RATES_STORY = "/stories/when-rates-rise";
 
 export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
   slug: "building-intelligent-systems",
@@ -111,11 +99,6 @@ export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
   reader:
     "Someone who has to ship a data or AI change that a team will still own on Monday. A peer can use the checklist. A stranger should be able to repeat the decision.",
   edition: "Edition 1 · 13 Oct 2026 · three chapters",
-  extends: {
-    href: STORY_CARD,
-    label: "Storytelling field card",
-    line: "Start with the decision, not the dataset. Name who decides, what they are deciding, and what done looks like.",
-  },
   nonGoals: [
     "A second copy of the field card. The card owns the picture. The chapter owns the handoff.",
     "An essay. Those stay on the blog. The proof stays a decision story.",
@@ -248,11 +231,6 @@ export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
           ],
         },
       ],
-      evidence: {
-        href: CUTOFF_STORY,
-        label: "Where Should the Cut-Off Sit?",
-        line: "A published decision: the cut-off is a policy point. Ranking skill and the decision are different objects.",
-      },
     },
     {
       slug: "walk-the-chain",
@@ -393,11 +371,6 @@ export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
           ],
         },
       ],
-      evidence: {
-        href: RATES_STORY,
-        label: "When Rates Rise",
-        line: "A published decision: the policy rate moves, and the cut sits inside the book.",
-      },
     },
     {
       slug: "a-monday-you-can-run",
@@ -523,11 +496,6 @@ export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
           ],
         },
       ],
-      evidence: {
-        href: CUTOFF_STORY,
-        label: "Where Should the Cut-Off Sit?",
-        line: "The inbox page is a drill. This story is a decision you can open, with the limit still on the page.",
-      },
     },
   ],
 };

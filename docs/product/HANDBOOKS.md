@@ -12,26 +12,26 @@ Authorized 2026-10-13 from the owner’s brief: field cards are good enough to g
 | Handbook | How do I approach the problem, and how do I work? | `/handbooks` |
 | Story or essay | What happened when the method met a problem? | `/stories`, `/writes` |
 
-The layers do not repeat each other. A handbook extends one card. It does not paste the card.
+The layers do not repeat each other. A handbook does not paste a card, and it does not become a story.
 
 ## Continuity
 
-Every handbook:
+Edition 1 is the chain, not a field.
 
-1. Extends one existing field card, and names that card at the top.
-2. Uses the public page language already on the site: the shared column, the two-line title, numbered rows.
-3. Ends on one story. The story is the proof. The chapter is the method.
+1. **Building intelligent systems** runs across the cards: business problem, data, intelligent system, delivery, measured outcome. It cites a card where a sentence comes from that card. The storytelling card is one citation. It is not the parent of this handbook.
+2. A later handbook may go deep on one card. Those stay unwritten.
+3. A story stays a published decision. A chapter may link one inside the section that is about that decision.
 
-Edition 1 is the standard. The next handbook copies that shape.
+The public page language stays the shared column, the two-line title, and numbered rows.
 
 ## Series
 
-1. **Building intelligent systems** — published. Extends the storytelling field card. Three chapters: a principle, a method, a worked example. Route: `/handbooks/building-intelligent-systems`. Evidence: Where Should the Cut-Off Sit?, and When Rates Rise on the chain chapter.
-2. Engineering reliable delivery — named, not written. Extends the technology delivery field card.
-3. Data that drives decisions — named, not written. Extends the data analytics field card.
-4. Decision systems under uncertainty — named, not written. Extends the credit risk field card.
+1. **Building intelligent systems** — published. The chain. Three chapters: a principle, a method, a worked example. Route: `/handbooks/building-intelligent-systems`.
+2. Engineering reliable delivery — named, not written. For the technology delivery field card.
+3. Data that drives decisions — named, not written. For the data analytics field card.
+4. Decision systems under uncertainty — named, not written. For the credit risk field card.
 
-The AI card and the SDLC card stay cards until a handbook can extend one of them. Do not open 2–4 until edition 1 has been read and the format still holds.
+The AI card and the SDLC card stay cards. Do not open 2–4 until edition 1 has been read and the format still holds.
 
 ## Chapter standard
 
@@ -65,7 +65,7 @@ Source: `src/content/handbooks.ts`.
 ## Out of scope
 
 - Mixing handbooks into `/writes` or `/stories`.
-- A handbook that does not extend one field card.
+- Treating the chain handbook as an extension of one field card.
 - A PDF, a second interactive platform, or a Hub redesign to advertise the layer.
 - Employer-confidential scenes. Synthetic only, labeled.
 - Publishing the later handbooks as empty routes.

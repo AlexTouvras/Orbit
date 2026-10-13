@@ -12,17 +12,17 @@ const PATH = [
   {
     index: "01",
     title: "Field card",
-    line: "What the field is, in one picture.",
+    line: "One field, in one picture.",
   },
   {
     index: "02",
     title: "Handbook",
-    line: "That card, as a method you can run on Monday.",
+    line: "The chain across those fields.",
   },
   {
     index: "03",
     title: "Story",
-    line: "The same method on a problem you can open.",
+    line: "A published decision. Separate from the handbook.",
   },
 ];
 
@@ -37,9 +37,10 @@ export function HandbookLibrary() {
         accent="behind the cards."
       />
       <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-        A handbook extends one field card. It keeps that card’s rule, writes
-        the method, and ends on a story. Edition 1 publishes one handbook, so
-        the next ones have a standard to follow.
+        The field cards are the fields. This handbook is the chain across
+        them: a business problem, then data, an intelligent system, delivery,
+        and a measured outcome. A story stays a decision you can open. Edition
+        1 is this one handbook.
       </p>
       <ol className="mt-10 max-w-2xl border-t border-white/10">
         {PATH.map((step) => (
@@ -81,9 +82,8 @@ export function HandbookLibrary() {
           {flagship.reader}
         </p>
         <p className="mt-6 text-sm leading-relaxed text-slate-300">
-          Extends the{" "}
-          <SiteLink href={flagship.extends.href}>{flagship.extends.label}</SiteLink>
-          . {flagship.extends.line}
+          The storytelling card is one of the fields. This handbook uses a line
+          from it, then keeps going along the chain.
         </p>
         <ol className="mt-10 border-t border-white/10">
           {flagship.chapters.map((chapter) => (
@@ -114,11 +114,11 @@ export function HandbookLibrary() {
 
       <StoryScene id="later" width="copy">
         <h2 className="font-display text-section font-bold text-white">
-          The same standard, not written yet
+          One field at a time, not written yet
         </h2>
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
-          Each of these extends one card. None of them opens until this
-          handbook has been read. The AI card and the SDLC card stay cards.
+          These would go deep on one card. They stay closed. The AI card and
+          the SDLC card stay cards.
         </p>
         <ol className="mt-8 border-t border-white/10">
           {LATER_HANDBOOKS.map((item) => (
@@ -134,7 +134,7 @@ export function HandbookLibrary() {
                   {item.title}
                 </span>
                 <span className="mt-2 block text-sm leading-relaxed text-slate-400">
-                  Extends the{" "}
+                  For the{" "}
                   <SiteLink href={item.card.href}>{item.card.label}</SiteLink>
                   .
                 </span>

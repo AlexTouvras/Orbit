@@ -48,11 +48,6 @@ export function HandbookChapterView({
       <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
         {chapter.lede}
       </p>
-      <p className="mt-6 max-w-2xl text-sm leading-relaxed text-slate-300">
-        Extends the{" "}
-        <SiteLink href={handbook.extends.href}>{handbook.extends.label}</SiteLink>
-        .
-      </p>
 
       <nav className="mt-10 max-w-2xl" aria-label="On this chapter">
         <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
@@ -134,18 +129,6 @@ export function HandbookChapterView({
           </section>
         ))}
       </div>
-
-      <aside className="mt-16 max-w-2xl border-t border-white/10 pt-8">
-        <h2 className="font-display text-xl font-semibold text-white">
-          The story
-        </h2>
-        <p className="mt-4 text-base leading-relaxed text-slate-300">
-          {chapter.evidence.line}
-        </p>
-        <p className="mt-3 text-sm">
-          <SiteLink href={chapter.evidence.href}>{chapter.evidence.label}</SiteLink>
-        </p>
-      </aside>
 
       <nav
         className="mt-12 grid max-w-2xl gap-4 border-t border-white/10 pt-8 sm:grid-cols-2"
