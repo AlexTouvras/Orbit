@@ -472,13 +472,55 @@
     }
     @media (max-width: 680px) {
       .sheet { width: min(1180px, calc(100% - 0.7rem)); padding: 0.9rem 0.75rem; }
-      .topbar, .hero, .split, .stack, .steps, .gate { grid-template-columns: 1fr; }
+      .topbar, .split, .stack, .steps, .gate { grid-template-columns: 1fr; }
       .stage::after { display: none; }
-      .hero { min-height: 0; display: grid; }
-      .hero-photo { position: relative; height: 220px; grid-row: 2; }
-      .hero::after { display: none; }
+      .hero {
+        min-height: 0;
+        display: block;
+        padding: 0.85rem 0.05rem 0.7rem;
+      }
+      .hero-photo {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        object-position: 74% center;
+      }
+      .hero::after {
+        display: block;
+        background: linear-gradient(100deg, rgba(6, 16, 27, 0.94) 0%, rgba(6, 16, 27, 0.86) 42%, rgba(6, 16, 27, 0.38) 100%);
+      }
+      .hero-copy { max-width: 16.5rem; }
+      .hero h1 { max-width: 11ch; }
       .vert { display: none; }
+      .glyph {
+        position: absolute;
+        top: 0.35rem;
+        right: 0.2rem;
+        height: auto;
+        z-index: 2;
+      }
+      .glyph img { width: 3.15rem; height: 3.15rem; }
       .card { min-height: 0; }
+      .card .idx, .card h3 { padding-right: 3.35rem; }
+      .steps::before { display: none; }
+      .steps li {
+        padding-top: 0;
+        display: grid;
+        grid-template-columns: 2.4rem 1fr;
+        column-gap: 0.5rem;
+        align-items: start;
+      }
+      .steps .orb {
+        position: static;
+        width: 2.3rem;
+        height: 2.3rem;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+      }
+      .steps .orb img { width: 2.3rem; height: 2.3rem; }
+      .steps h3 { grid-column: 2; grid-row: 1; }
+      .steps p { grid-column: 2; grid-row: 2; }
     }
     @media (prefers-reduced-motion: reduce) {
       .hero-art animateMotion { display: none; }
@@ -711,7 +753,7 @@
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> The four building blocks are the same size.</p>
+      <p class="changed"><b>Changed</b> On a phone, the illustrations sit in the card text.</p>
     </footer>
   </article>
   <script>
