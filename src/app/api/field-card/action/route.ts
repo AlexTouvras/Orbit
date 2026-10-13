@@ -2,7 +2,9 @@ import { NextResponse, type NextRequest } from "next/server";
 import {
   closeFieldCardPullRequest,
   getPullRequest,
+  getRepoFileBase64,
   getRepoFileText,
+  listRepoFiles,
   mergeFieldCardPullRequest,
 } from "@/lib/field-card/github";
 import {
@@ -15,7 +17,7 @@ import {
   laconicChangeFromPrBody,
   notifyFieldCardUpdateFyi,
 } from "@/lib/field-card/slack";
-import { hasGithubStorage, writeRepoFile } from "@/lib/github-storage";
+import { hasGithubStorage, writeRepoFile, writeRepoFileBase64 } from "@/lib/github-storage";
 import { getSiteUrl } from "@/lib/site";
 
 export const runtime = "nodejs";
@@ -96,7 +98,7 @@ function confirmPage(
     <p>Repo <code>${escapeHtml(payload.repo)}</code> · PR <a href="${escapeHtml(prUrl)}">#${payload.pr}</a></p>
     <p>${
       approve
-        ? `This will squash-merge the monthly field card PR into <code>main</code>, then sync <code>${escapeHtml(card.orbitPath)}</code> on Orbit (Pages + alextouvras.com).`
+        ? `This will squash-merge the monthly field card PR into <code>main</code>, then sync <code>${escapeHtml(card.orbitPath)}</code> and <code>assets/</code> on Orbit (Pages + alextouvras.com).`
         : "This will close the PR without merging. Next month can open a fresh refresh."
     }</p>
     <div class="actions">
@@ -124,6 +126,26 @@ function resolveChangedLines(
   };
 }
 
+/** Copy index.html and assets/ from the source repo's main onto the Orbit path. */
+async function publishFieldCard(
+  card: ReturnType<typeof requireFieldCardConfig>,
+  message: string,
+): Promise<"committed" | "no_github_storage"> {
+  const html = ensureFieldCardRobot(
+    await getRepoFileText(card.repo, "index.html", "main"),
+    card.robotId,
+  );
+  if (!hasGithubStorage()) return "no_github_storage";
+  await writeRepoFile(card.orbitPath, html, message);
+  const root = card.orbitPath.slice(0, card.orbitPath.lastIndexOf("/"));
+  const files = await listRepoFiles(card.repo, "assets", "main");
+  for (const file of files) {
+    const bytes = await getRepoFileBase64(card.repo, file.path, "main");
+    await writeRepoFileBase64(`${root}/assets/${file.name}`, bytes, message);
+  }
+  return "committed";
+}
+
 async function runAction(payload: FieldCardTokenPayload, note: string) {
   if (payload.action === "preview") {
     return htmlPage(
@@ -135,6 +157,28 @@ async function runAction(payload: FieldCardTokenPayload, note: string) {
 
   const card = requireFieldCardConfig(payload.repo);
   const site = `${getSiteUrl()}${card.sitePath}`;
+
+  if (payload.action === "sync") {
+    let siteSync = "skipped";
+    try {
+      siteSync = await publishFieldCard(
+        card,
+        `chore: sync ${card.id} field card from main`,
+      );
+    } catch (err) {
+      console.error("[field-card/action] site sync failed", err);
+      siteSync = "failed";
+    }
+    const ok = siteSync === "committed";
+    return htmlPage(
+      ok ? `${card.label} synced` : `${card.label} sync failed`,
+      `<p>Site copy: <a href="${escapeHtml(site)}">${escapeHtml(site)}</a></p>
+       <p>${ok ? "Orbit commit queued. index.html and assets/ came from main." : escapeHtml(siteSync)}</p>`,
+      ok,
+      ok ? 200 : 500,
+    );
+  }
+
   const prMeta = await getPullRequest(payload.repo, payload.pr);
   const { changed, considered } = resolveChangedLines(note, prMeta.body);
 
@@ -166,20 +210,10 @@ async function runAction(payload: FieldCardTokenPayload, note: string) {
 
   let siteSync = "skipped";
   try {
-    const html = ensureFieldCardRobot(
-      await getRepoFileText(payload.repo, "index.html", "main"),
-      card.robotId,
+    siteSync = await publishFieldCard(
+      card,
+      `chore: sync ${card.id} field card after approve (#${payload.pr})`,
     );
-    if (hasGithubStorage()) {
-      await writeRepoFile(
-        card.orbitPath,
-        html,
-        `chore: sync ${card.id} field card after approve (#${payload.pr})`,
-      );
-      siteSync = "committed";
-    } else {
-      siteSync = "no_github_storage";
-    }
   } catch (err) {
     console.error("[field-card/action] site sync failed", err);
     siteSync = "failed";
@@ -239,6 +273,14 @@ export async function GET(req: NextRequest) {
 
   if (verified.action === "preview") {
     return htmlPage("Wrong link", `<p>Use Approve or Skip from Slack.</p>`, false);
+  }
+
+  if (verified.action === "sync") {
+    return htmlPage(
+      "Site sync",
+      `<p>This token copies the card from main. The sync job posts it.</p>`,
+      true,
+    );
   }
 
   try {
