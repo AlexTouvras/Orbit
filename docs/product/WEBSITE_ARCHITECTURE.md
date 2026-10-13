@@ -5,7 +5,7 @@
 | Layer | Question | Routes |
 |-------|----------|--------|
 | HUd | WHO | `/card`, `/qr-code` |
-| Hub / evidence | WHAT / HOW HE THINKS | `/`, `/products`, `/portfolio`, `/portfolio/live/*`, `/writes`, `/radar`, `/about`, `/contact`, `/newsletter` |
+| Hub / evidence | WHAT / HOW HE THINKS | `/`, `/products`, `/portfolio`, `/portfolio/live/*`, `/writes`, `/handbooks`, `/radar`, `/about`, `/contact`, `/newsletter` |
 | Studio | WHERE | `/studio`, `/studio/week`, `/studio/projects`, `/studio/roadmap`, `/studio/directives` |
 | Timeline | HOW HE GOT HERE | About experience and education. Titles open each institution’s site. |
 
@@ -32,6 +32,7 @@ Public pages consume only information explicitly marked public. Do not automatic
 - Hub / Portfolio / live desks: chaptered visual storytelling (see `.cursor/skills/visual-storytelling`)
 - Products: `/products` (`src/content/products.ts`). A product is a page or a command a stranger can open. The gravity satellite and the nav both go there. Workshop projects stay on `/portfolio`. Delivery Signal is not copied into Orbit: `/delivery-signal/` reads that repo’s `docs/` on `main` and keeps it for a minute.
 - Writes: MDX prose; stranger-first (`docs/essay-voice.md`); no cast/scenario blocks on essays
+- Handbooks: `/handbooks` (`docs/product/HANDBOOKS.md`). Method, between a field card and a story. Edition 1 is Building intelligent systems. Later titles do not get routes until they are written.
 - Studio and `/card`: interior tools — not cinematic chapter restyles
 - JARVIS / ProjectHelm: retired; historical architecture only
 

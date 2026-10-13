@@ -4,8 +4,25 @@ import {
   appendEssayFeedback,
   getEssayFeedbackEntries,
 } from "@/lib/essay-feedback";
+import { handbookFeedbackPage } from "@/lib/handbooks";
 import { getWriteBySlug } from "@/lib/writes";
 import { notifyEssayFeedback } from "@/lib/weekly-write/slack";
+
+function feedbackTarget(slug: string): {
+  title: string;
+  path: string;
+  sourceLabel: string;
+} | null {
+  const write = getWriteBySlug(slug);
+  if (write) {
+    return { title: write.title, path: `/writes/${slug}`, sourceLabel: "essay" };
+  }
+  const chapter = handbookFeedbackPage(slug);
+  if (chapter) {
+    return { ...chapter, sourceLabel: "handbook chapter" };
+  }
+  return null;
+}
 
 export const runtime = "nodejs";
 
@@ -15,8 +32,11 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "slug is required." }, { status: 400 });
   }
 
-  if (!getWriteBySlug(slug)) {
-    return NextResponse.json({ error: "Essay not found." }, { status: 404 });
+  if (!feedbackTarget(slug)) {
+    return NextResponse.json(
+      { error: slug.startsWith("handbooks/") ? "Chapter not found." : "Essay not found." },
+      { status: 404 },
+    );
   }
 
   const entries = await getEssayFeedbackEntries(slug);
@@ -86,9 +106,12 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const write = getWriteBySlug(slug);
-  if (!write) {
-    return NextResponse.json({ error: "Essay not found." }, { status: 404 });
+  const target = feedbackTarget(slug);
+  if (!target) {
+    return NextResponse.json(
+      { error: slug.startsWith("handbooks/") ? "Chapter not found." : "Essay not found." },
+      { status: 404 },
+    );
   }
 
   const entry = {
@@ -99,7 +122,7 @@ export async function POST(req: NextRequest) {
 
   let result: { viaGithub: boolean; totalForEssay: number };
   try {
-    result = await appendEssayFeedback(slug, write.title, entry);
+    result = await appendEssayFeedback(slug, target.title, entry);
   } catch (err) {
     console.error("[essay-feedback] failed to persist:", err);
     const message =
@@ -109,16 +132,18 @@ export async function POST(req: NextRequest) {
 
   const slack = await notifyEssayFeedback({
     slug,
-    title: write.title,
+    title: target.title,
     rating,
     note: entry.note,
+    path: target.path,
+    sourceLabel: target.sourceLabel,
   });
 
   if (!slack.ok) {
     console.error("[essay-feedback] slack notify failed:", slack.reason);
   }
 
-  revalidatePath(`/writes/${slug}`);
+  revalidatePath(target.path);
 
   return NextResponse.json({
     ok: true,

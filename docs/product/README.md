@@ -10,4 +10,5 @@ Authoritative product layer for Orbit. Start at [`PRODUCT.md`](../../PRODUCT.md)
 | [STUDIO_ROADMAP.md](STUDIO_ROADMAP.md) | Trajectory + milestone states |
 | [EVIDENCE_AUDIT.md](EVIDENCE_AUDIT.md) | Evidence Layer inventory + gap (2026-09-23) |
 | [WEBSITE_ARCHITECTURE.md](WEBSITE_ARCHITECTURE.md) | Layers → routes |
+| [HANDBOOKS.md](HANDBOOKS.md) | Field handbooks: method layer, series, chapter standard |
 | [AGENT_RULES.md](AGENT_RULES.md) | Non-goals, Scope check, preserve-before-replace |

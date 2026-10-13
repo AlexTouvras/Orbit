@@ -24,11 +24,13 @@ const storageKey = (slug: string) => `orbit-essay-feedback:${slug}`;
 interface EssayFeedbackProps {
   slug: string;
   initialEntries?: EssayFeedbackEntry[];
+  notesLabel?: string;
 }
 
 export function EssayFeedback({
   slug,
   initialEntries = [],
+  notesLabel = "Notes on this essay",
 }: EssayFeedbackProps) {
   const [rating, setRating] = useState<Rating | null>(null);
   const [note, setNote] = useState("");
@@ -198,7 +200,7 @@ export function EssayFeedback({
       {entries.length > 0 ? (
         <div className="space-y-4">
           <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500">
-            Notes on this essay
+            {notesLabel}
           </p>
           <ul className="space-y-4">
             {entries.map((entry) => (

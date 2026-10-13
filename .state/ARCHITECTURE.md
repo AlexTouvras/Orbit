@@ -159,7 +159,11 @@ src/components/studio/RoadmapEditor.tsx
 data/studio-roadmap.json
 data/studio-roadmap.seed.json
 PRODUCT.md
-docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, AGENT_RULES
+docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, HANDBOOKS, AGENT_RULES
+src/content/handbooks.ts     # handbook series; edition 1 chapters
+src/lib/handbooks.ts
+src/components/handbooks/
+src/app/handbooks/
 docs/ops/doc-registry.json   # one owner per doc topic; pointers + couplings
 docs/archive/                # retired prose (Archived from `path`)
 scripts/check-doc-registry.mjs
@@ -171,6 +175,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-13 | Field handbooks are a public method layer at `/handbooks` | Owner shared a brief: cards are the overview, handbooks are the method, stories and essays stay the proof. Edition 1 is Building intelligent systems, three chapters, sourced from the public chain and field-card lines. Later titles are named and have no routes. Chapter notes reuse the essay feedback store under a `handbooks/...` key. Product owner: `docs/product/HANDBOOKS.md`. |
 | 2026-10-13 | A hosted product's button scroll stops below the Orbit bar | The bar is fixed. `scrollIntoView` and in-page links inside the frame align the result with the top of the viewport, so the first lines sit under the bar. `/products` sets `scroll-padding-top` to the bar height plus the same air the page already leaves under it. The product page itself is unchanged. |
 | 2026-10-13 | Field-card site copy includes `assets/` | A push to a source repo's `main` posts a `sync` token (`pr` 0) to `POST /api/field-card/action`. Orbit accepts `sync`, does not merge and does not post Slack, and commits `index.html` plus every file in `assets/` onto the registered Orbit path. Image bytes stay base64; they are not decoded as UTF-8. A missing `assets/` directory copies the HTML only. Apply review uses the same copy after it merges. HTTP 200 when the commits are queued, 500 when the copy fails. |
 | 2026-10-13 | `/products` shows the hosted page, not a card plus that page | Owner: one product was two boxes. The summary card repeated Delivery Signal. The frame is the product. A product that only links out still uses one card. Two or more still use the reel. |
