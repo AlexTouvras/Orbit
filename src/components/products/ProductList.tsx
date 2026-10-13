@@ -1,5 +1,6 @@
 import { ExternalLink, FolderGit2 } from "lucide-react";
 import { products, type Product } from "@/content/products";
+import { ProductScrollClearance } from "@/components/products/ProductScrollClearance";
 import { ScrollRail, ScrollRailCard } from "@/components/story/ScrollRail";
 import { Badge } from "@/components/ui/Badge";
 import { StatusBadge } from "@/components/portfolio/StatusBadge";
@@ -65,11 +66,14 @@ export function ProductList() {
     return (
       <section id="list" className="scroll-mt-28">
         {liveHere ? (
-          <iframe
-            title={product.name}
-            src={product.pageUrl}
-            className="h-[75vh] w-full rounded-3xl border border-white/10 bg-[#12141c]"
-          />
+          <>
+            <ProductScrollClearance />
+            <iframe
+              title={product.name}
+              src={product.pageUrl}
+              className="h-[75vh] w-full rounded-3xl border border-white/10 bg-[#12141c]"
+            />
+          </>
         ) : (
           <div className="w-[min(40rem,100%)]">
             <ProductCard product={product} index={0} />

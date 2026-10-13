@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Products frame: a button scroll lands below the Orbit bar, with a little air
 - [x] Field-card `sync` copies `index.html` and `assets/` as original bytes. Approve uses the same copy. Deploy before technology-delivery-field-card PR 8 merges.
 - [x] Products page shows one frame for one hosted product — drop the summary card above Delivery Signal
 - [x] Products page (`/products`) with Delivery Signal — separate from Portfolio; a page or command a stranger can open
