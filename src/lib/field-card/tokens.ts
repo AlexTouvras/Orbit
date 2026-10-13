@@ -1,6 +1,6 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 
-export type FieldCardAction = "approve" | "skip" | "preview";
+export type FieldCardAction = "approve" | "skip" | "preview" | "sync";
 
 export interface FieldCardTokenPayload {
   kind: "field-card";
@@ -66,7 +66,10 @@ export function verifyFieldCardActionToken(
       data.kind !== "field-card" ||
       typeof data.pr !== "number" ||
       !data.repo ||
-      (data.action !== "approve" && data.action !== "skip" && data.action !== "preview")
+      (data.action !== "approve" &&
+        data.action !== "skip" &&
+        data.action !== "preview" &&
+        data.action !== "sync")
     ) {
       return { error: "invalid_payload" };
     }
