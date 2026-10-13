@@ -12,17 +12,26 @@ Authorized 2026-10-13 from the owner’s brief: field cards are good enough to g
 | Handbook | How do I approach the problem, and how do I work? | `/handbooks` |
 | Story or essay | What happened when the method met a problem? | `/stories`, `/writes` |
 
-The layers do not repeat each other. A handbook points at a card. It does not paste the card.
+The layers do not repeat each other. A handbook extends one card. It does not paste the card.
+
+## Continuity
+
+Every handbook:
+
+1. Extends one existing field card, and names that card at the top.
+2. Uses the public page language already on the site: the shared column, the two-line title, numbered rows.
+3. Ends on one story. The story is the proof. The chapter is the method.
+
+Edition 1 is the standard. The next handbook copies that shape.
 
 ## Series
 
-1. **Building intelligent systems** — flagship. Edition 1, three chapters: a principle, a method, a worked example. Route: `/handbooks/building-intelligent-systems`.
-2. Engineering reliable delivery — named, not written. SDLC and technology delivery.
-3. Data that drives decisions — named, not written.
-4. Decision systems under uncertainty — named, not written. Credit and AI.
-5. Leading through systems — named, not written.
+1. **Building intelligent systems** — published. Extends the storytelling field card. Three chapters: a principle, a method, a worked example. Route: `/handbooks/building-intelligent-systems`. Evidence: Where Should the Cut-Off Sit?, and When Rates Rise on the chain chapter.
+2. Engineering reliable delivery — named, not written. Extends the technology delivery field card.
+3. Data that drives decisions — named, not written. Extends the data analytics field card.
+4. Decision systems under uncertainty — named, not written. Extends the credit risk field card.
 
-Do not open 2–5 until edition 1 has been read and the format still holds.
+The AI card and the SDLC card stay cards until a handbook can extend one of them. Do not open 2–4 until edition 1 has been read and the format still holds.
 
 ## Chapter standard
 
@@ -56,7 +65,7 @@ Source: `src/content/handbooks.ts`.
 ## Out of scope
 
 - Mixing handbooks into `/writes` or `/stories`.
-- One handbook per field card.
+- A handbook that does not extend one field card.
 - A PDF, a second interactive platform, or a Hub redesign to advertise the layer.
 - Employer-confidential scenes. Synthetic only, labeled.
 - Publishing the later handbooks as empty routes.

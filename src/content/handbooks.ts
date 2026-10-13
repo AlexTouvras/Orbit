@@ -31,6 +31,13 @@ export interface HandbookSection {
   links?: HandbookLink[];
 }
 
+/** A field card this handbook extends, or a story the chapter leads to. */
+export interface HandbookAnchor {
+  href: string;
+  label: string;
+  line: string;
+}
+
 export interface HandbookChapter {
   slug: string;
   index: string;
@@ -42,7 +49,8 @@ export interface HandbookChapter {
   /** Leading link, and the one link that supports it, when the chapter draws the chain. */
   chain?: { lead: ChainLinkId; support?: ChainLinkId };
   sections: HandbookSection[];
-  related: HandbookLink[];
+  /** One story. The chapter leads here after the method. */
+  evidence: HandbookAnchor;
 }
 
 export interface Handbook {
@@ -55,6 +63,8 @@ export interface Handbook {
   thesis: string;
   reader: string;
   edition: string;
+  /** The one field card this handbook extends. */
+  extends: HandbookAnchor;
   nonGoals: string[];
   chapters: HandbookChapter[];
 }
@@ -62,7 +72,8 @@ export interface Handbook {
 export interface LaterHandbook {
   index: string;
   title: string;
-  scope: string;
+  /** The one field card that handbook will extend. */
+  card: HandbookLink;
 }
 
 export const CHAIN_LINKS: { id: ChainLinkId; label: string }[] = [
@@ -86,6 +97,7 @@ const DELIVERY_CARD = "/delivery-field-card/index.html";
 const SDLC_CARD = "/sdlc-field-card/index.html";
 const CREDIT_CARD = "/credit-risk-field-card/index.html";
 const CUTOFF_STORY = "/stories/where-should-the-cutoff-sit";
+const RATES_STORY = "/stories/when-rates-rise";
 
 export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
   slug: "building-intelligent-systems",
@@ -99,11 +111,16 @@ export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
   reader:
     "Someone who has to ship a data or AI change that a team will still own on Monday. A peer can use the checklist. A stranger should be able to repeat the decision.",
   edition: "Edition 1 · 13 Oct 2026 · three chapters",
+  extends: {
+    href: STORY_CARD,
+    label: "Storytelling field card",
+    line: "Start with the decision, not the dataset. Name who decides, what they are deciding, and what done looks like.",
+  },
   nonGoals: [
-    "A second copy of a field card. The card owns the field. The chapter owns the handoff.",
-    "An essay. Those stay on the blog. A decision story stays on /stories.",
+    "A second copy of the field card. The card owns the picture. The chapter owns the handoff.",
+    "An essay. Those stay on the blog. The proof stays a decision story.",
     "A client write-up. The worked scene is synthetic, and it says so.",
-    "The other four handbooks. They are named below and not written.",
+    "A handbook for every card. The AI card and the SDLC card stay cards until a handbook can extend one of them.",
   ],
   chapters: [
     {
@@ -231,13 +248,11 @@ export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
           ],
         },
       ],
-      related: [
-        { href: STORY_CARD, label: "Storytelling field card" },
-        { href: AI_CARD, label: "Agentic AI field card" },
-        { href: DELIVERY_CARD, label: "Technology delivery field card" },
-        { href: CREDIT_CARD, label: "Credit risk field card" },
-        { href: CUTOFF_STORY, label: "Where Should the Cut-Off Sit?" },
-      ],
+      evidence: {
+        href: CUTOFF_STORY,
+        label: "Where Should the Cut-Off Sit?",
+        line: "A published decision: the cut-off is a policy point. Ranking skill and the decision are different objects.",
+      },
     },
     {
       slug: "walk-the-chain",
@@ -378,13 +393,11 @@ export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
           ],
         },
       ],
-      related: [
-        { href: DATA_CARD, label: "Data analytics field card" },
-        { href: AI_CARD, label: "Agentic AI field card" },
-        { href: DELIVERY_CARD, label: "Technology delivery field card" },
-        { href: SDLC_CARD, label: "SDLC field card" },
-        { href: CREDIT_CARD, label: "Credit risk field card" },
-      ],
+      evidence: {
+        href: RATES_STORY,
+        label: "When Rates Rise",
+        line: "A published decision: the policy rate moves, and the cut sits inside the book.",
+      },
     },
     {
       slug: "a-monday-you-can-run",
@@ -510,11 +523,11 @@ export const BUILDING_INTELLIGENT_SYSTEMS: Handbook = {
           ],
         },
       ],
-      related: [
-        { href: CREDIT_CARD, label: "Credit risk field card" },
-        { href: DELIVERY_CARD, label: "Technology delivery field card" },
-        { href: CUTOFF_STORY, label: "Where Should the Cut-Off Sit?" },
-      ],
+      evidence: {
+        href: CUTOFF_STORY,
+        label: "Where Should the Cut-Off Sit?",
+        line: "The inbox page is a drill. This story is a decision you can open, with the limit still on the page.",
+      },
     },
   ],
 };
@@ -525,21 +538,16 @@ export const LATER_HANDBOOKS: LaterHandbook[] = [
   {
     index: "02",
     title: "Engineering reliable delivery",
-    scope: "SDLC and technology delivery. A roadmap becomes a release a team can own.",
+    card: { href: DELIVERY_CARD, label: "Technology delivery field card" },
   },
   {
     index: "03",
     title: "Data that drives decisions",
-    scope: "Analytics and data. A decision gets a grain, a truth layer, and a consume path.",
+    card: { href: DATA_CARD, label: "Data analytics field card" },
   },
   {
     index: "04",
     title: "Decision systems under uncertainty",
-    scope: "Credit risk and AI. A consequential call gets a policy, a monitor, and a person.",
-  },
-  {
-    index: "05",
-    title: "Leading through systems",
-    scope: "Ownership, decision rights, and feedback, without a bottleneck in one person.",
+    card: { href: CREDIT_CARD, label: "Credit risk field card" },
   },
 ];

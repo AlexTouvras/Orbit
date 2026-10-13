@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Handbook } from "@/content/handbooks";
-import { CLAIM_LABEL } from "@/content/handbooks";
+import { SiteLink } from "@/components/handbooks/SiteLink";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { chapterPath } from "@/lib/handbooks";
 
@@ -29,40 +29,17 @@ export function HandbookCover({ handbook }: { handbook: Handbook }) {
       <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">
         {handbook.reader}
       </p>
+      <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300">
+        Extends the{" "}
+        <SiteLink href={handbook.extends.href}>{handbook.extends.label}</SiteLink>
+        . {handbook.extends.line}
+      </p>
+      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">
+        A cyan mark on a section says the line is an operating principle, a
+        practice I treat as given, or a hypothesis.
+      </p>
 
-      <section className="mt-12 max-w-2xl" aria-labelledby="claim-kinds">
-        <h2 id="claim-kinds" className="font-display text-xl font-semibold text-white">
-          How a sentence is marked
-        </h2>
-        <ul className="mt-4 space-y-3 text-sm leading-relaxed text-slate-300">
-          <li>
-            <span className="text-neon-cyan">{CLAIM_LABEL.principle}.</span> A
-            rule I use on a release and will defend.
-          </li>
-          <li>
-            <span className="text-neon-cyan">{CLAIM_LABEL.practice}.</span>{" "}
-            Ordinary in the work. I am not citing a paper I did not open.
-          </li>
-          <li>
-            <span className="text-neon-cyan">{CLAIM_LABEL.hypothesis}.</span>{" "}
-            Something I would test. The inbox scene is in this bucket, and it
-            is made up.
-          </li>
-        </ul>
-      </section>
-
-      <section className="mt-12 max-w-2xl" aria-labelledby="non-goals">
-        <h2 id="non-goals" className="font-display text-xl font-semibold text-white">
-          What this edition leaves out
-        </h2>
-        <ul className="mt-4 space-y-3 text-sm leading-relaxed text-slate-300">
-          {handbook.nonGoals.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <ol className="mt-14 border-t border-white/10">
+      <ol className="mt-10 border-t border-white/10">
         {handbook.chapters.map((chapter) => (
           <li key={chapter.slug} className="border-b border-white/10">
             <Link
@@ -87,6 +64,17 @@ export function HandbookCover({ handbook }: { handbook: Handbook }) {
           </li>
         ))}
       </ol>
+
+      <section className="mt-12 max-w-2xl" aria-labelledby="non-goals">
+        <h2 id="non-goals" className="font-display text-xl font-semibold text-white">
+          What this edition leaves out
+        </h2>
+        <ul className="mt-4 space-y-3 text-sm leading-relaxed text-slate-300">
+          {handbook.nonGoals.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
     </article>
   );
 }
