@@ -14,12 +14,39 @@ export interface HandbookLink {
 export interface HandbookFigureStep {
   term: string;
   detail: string;
+  /** Icon in the diagram. The words still name the step. */
+  mark?: HandbookMark;
+}
+
+export type HandbookMark =
+  | "code"
+  | "gear"
+  | "check"
+  | "merge"
+  | "pulse"
+  | "refresh"
+  | "alert"
+  | "cross"
+  | "pause"
+  | "search"
+  | "wrench"
+  | "play"
+  | "clock"
+  | "bolt"
+  | "shield"
+  | "flag";
+
+export interface HandbookFigureColumn {
+  term: string;
+  detail: string;
+  points: string[];
 }
 
 export interface HandbookFigure {
-  kind: "flow" | "pyramid";
+  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare";
   caption: string;
   steps: HandbookFigureStep[];
+  columns?: HandbookFigureColumn[];
 }
 
 export interface HandbookSection {
@@ -42,6 +69,8 @@ export interface HandbookPage {
   rule?: string;
   /** Date the claims on this page were last checked against the sources. */
   reviewed: string;
+  /** Opening plate. The horizon is the first page's picture, not a cover route. */
+  plate?: "horizon";
   sections: HandbookSection[];
   sources: HandbookLink[];
 }
@@ -226,6 +255,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
       lede: "Software stays in use when a team can still change it. Continuous integration keeps that change cheap: people merge to main at least daily, a build tests the merge, and a broken main is the team's work.",
       rule: "My operating rule: keep main releasable, make the failure visible immediately, and do not let a red main become normal.",
       reviewed: "14 Oct 2026",
+      plate: "horizon",
       sections: [
         {
           id: "decay",
@@ -254,15 +284,15 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
             "This is the order I use on a full-time team. The pull, the build on the machine that made the change, and the push follow Fowler's walk.",
           ],
           figure: {
-            kind: "flow",
+            kind: "loop",
             caption: "The commit loop. Repair is part of the loop, not a later project.",
             steps: [
-              { term: "Pull", detail: "Take main. If it is red, repair it before a feature." },
-              { term: "Change", detail: "A slice that can merge today." },
-              { term: "Test", detail: "Run the build before anyone else depends on it." },
-              { term: "Integrate", detail: "Pull again, combine, push to main." },
-              { term: "Verify", detail: "The integration machine, not the laptop." },
-              { term: "Repair", detail: "Fix or revert the break before the next feature." },
+              { term: "Pull", detail: "Take main. If it is red, repair it before a feature.", mark: "refresh" },
+              { term: "Change", detail: "A slice that can merge today.", mark: "code" },
+              { term: "Test", detail: "Run the build before anyone else depends on it.", mark: "gear" },
+              { term: "Integrate", detail: "Pull again, combine, push to main.", mark: "merge" },
+              { term: "Verify", detail: "The integration machine, not the laptop.", mark: "pulse" },
+              { term: "Repair", detail: "Fix or revert the break before the next feature.", mark: "wrench" },
             ],
           },
           steps: [
@@ -281,17 +311,35 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
             "A red main is the team's work, not a badge someone notices tomorrow. Fowler's rule, which he takes from Kent Beck, is that nobody has a higher priority than fixing the build. I stop further feature integration. The change that repairs the break, or reverts it, still lands. Normal integration resumes when main is green.",
           ],
           figure: {
-            kind: "flow",
+            kind: "recovery",
             caption: "Feature work waits. The corrective change does not.",
             steps: [
-              { term: "Fails", detail: "The integration build goes red." },
-              { term: "Stop", detail: "No further feature work lands on main." },
-              { term: "Find", detail: "The change that broke it." },
-              { term: "Repair", detail: "Fix that change, or revert it. That change still lands." },
-              { term: "Resume", detail: "Main is green. Feature integration starts again." },
+              { term: "Build fails", detail: "The integration build goes red.", mark: "cross" },
+              { term: "Stop", detail: "No further feature work lands on main.", mark: "pause" },
+              { term: "Find", detail: "The change that broke it.", mark: "search" },
+              { term: "Repair", detail: "Fix that change, or revert it. That change still lands.", mark: "wrench" },
+              { term: "Resume", detail: "Main is green. Feature integration starts again.", mark: "play" },
             ],
           },
           sources: [FOWLER_FIX, { href: SDLC_CARD, label: "SDLC field card" }],
+        },
+        {
+          id: "scenario",
+          title: "An illustrative break",
+          paragraphs: [
+            "This is an illustrative scenario. It is not a record of a team I worked with, and it states no measured result.",
+            "A developer changes a shared interface. The integration build on main fails. The recovery is the one above.",
+          ],
+          figure: {
+            kind: "scene",
+            caption: "The scene walks the recovery above. Nothing in it is a measured result.",
+            steps: [
+              { term: "Event", detail: "A shared interface changes. The integration build fails.", mark: "cross" },
+              { term: "Decision", detail: "Feature integration stops.", mark: "pause" },
+              { term: "Evidence", detail: "The red build names the change.", mark: "search" },
+              { term: "Result", detail: "The revert lands. Main is green. Integration resumes.", mark: "check" },
+            ],
+          },
         },
         {
           id: "tests",
@@ -338,8 +386,22 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           id: "measure",
           title: "How I would know",
           paragraphs: [
-            "I track three times. How often a change reaches main. How long from that push until the integration build returns a result. How long a red main stays red. A faster build only counts if the main you restore is still one you can release. A green badge with rare merges, or a fast loop that leaves main broken, is not the practice.",
+            "I track four signals. I do not have target times. A faster loop only counts if the main you restore is still one you can release. A green badge with rare merges, or a fast loop that leaves main broken, is not the practice.",
           ],
+          figure: {
+            kind: "signals",
+            caption: "Four signals. No target times.",
+            steps: [
+              { term: "Integration frequency", detail: "How often a change reaches main.", mark: "clock" },
+              { term: "Feedback latency", detail: "How long from the push until the integration build returns a result.", mark: "bolt" },
+              { term: "Recovery time", detail: "How long a red main stays red.", mark: "alert" },
+              {
+                term: "Release readiness",
+                detail: "Whether that main can be released. A green commit build is necessary here. It is not, by itself, the production release.",
+                mark: "shield",
+              },
+            ],
+          },
         },
         {
           id: "limits",
@@ -349,6 +411,28 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
             "The practice fails without the skill under it. No self-testing build, and main goes red for reasons nobody can see. No automation, and the integration itself takes too long to do daily. A team that pushes red and walks away trains everyone else to work on a broken trunk. I do not install the daily merge until the commit build exists and someone will stop for it.",
             "Release calendars, blast-radius proof, and the cutover sequence stay on the technology delivery field card. Fowler separates the two decisions. Once main is releasable, whether to put that build in production is a business decision. Keeping main releasable does not pick the window.",
           ],
+          figure: {
+            kind: "compare",
+            caption: "A green commit build is the integration gate. It is not the production release.",
+            steps: [],
+            columns: [
+              {
+                term: "Continuous integration",
+                detail: "Integrate and verify on main.",
+                points: ["Daily merge", "A build that tests it", "A red main stops feature work"],
+              },
+              {
+                term: "Continuous delivery",
+                detail: "Main stays releasable.",
+                points: ["The pipeline's binaries", "Able to deploy", "Shipping is still a decision"],
+              },
+              {
+                term: "Production",
+                detail: "People run a version.",
+                points: ["A business decision", "The delivery card's window", "A green build is not the release"],
+              },
+            ],
+          },
           sources: [
             FOWLER_LIMIT,
             FOWLER_RELEASE,

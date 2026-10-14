@@ -1,10 +1,14 @@
 import Link from "next/link";
-import type { Handbook, HandbookFigure, HandbookPage } from "@/content/handbooks";
+import type { Handbook, HandbookPage } from "@/content/handbooks";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
+import { HandbookBoard } from "@/components/handbooks/HandbookBoard";
+import { HandbookFigureView } from "@/components/handbooks/HandbookFigures";
 import { HandbookPageTurn } from "@/components/handbooks/HandbookPageTurn";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
 import { chapterTitleForPage, pageFeedbackSlug, pagePath } from "@/lib/handbooks";
+
+const BOARD_FIGURES = new Set(["loop", "recovery", "signals", "scene", "compare"]);
 
 export function HandbookPageView({
   handbook,
@@ -20,9 +24,10 @@ export function HandbookPageView({
   const nextPage = handbook.pages.find((item) => item.number === page.number + 1) ?? null;
   const next = nextPage ? pagePath(handbook.slug, nextPage.number) : null;
   const chapter = chapterTitleForPage(handbook, page.number);
+  const board = page.plate === "horizon";
 
   return (
-    <article className="mx-auto flex w-full max-w-2xl flex-col">
+    <article className={board ? "flex w-full flex-col" : "mx-auto flex w-full max-w-3xl flex-col"}>
       <HandbookPageTurn previous={previous} next={next} />
       <header className="flex items-baseline justify-between gap-6 border-b border-white/15 pb-3">
         <p className="min-w-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
@@ -45,20 +50,24 @@ export function HandbookPageView({
         </p>
       </header>
 
-      <div className="py-10 sm:py-14">
-        <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
-          {page.topic}
-          <span className="px-2 text-slate-600">/</span>
-          {chapter}
-        </p>
-        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          {page.title}
-        </h1>
-        <p className="mt-6 text-base leading-relaxed text-slate-200 sm:text-lg">{page.lede}</p>
-        {page.rule ? (
-          <p className="mt-6 border-l border-neon-cyan/60 pl-4 text-base leading-relaxed text-white">
-            {page.rule}
-          </p>
+      <div className="py-8 sm:py-10">
+        {board ? <HandbookBoard handbook={handbook} page={page} /> : <Opening page={page} chapter={chapter} />}
+        <div className={board ? "mx-auto mt-16 w-full max-w-3xl" : undefined}>
+        {board ? (
+          <header className="mb-10">
+            <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
+              {page.topic}
+            </p>
+            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              {page.title}
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-200 sm:text-lg">{page.lede}</p>
+            {page.rule ? (
+              <p className="mt-4 border-l border-neon-cyan/70 pl-4 text-base leading-relaxed text-white">
+                {page.rule}
+              </p>
+            ) : null}
+          </header>
         ) : null}
         <nav className="mt-8" aria-label="On this page">
           <ol className="flex flex-col gap-2">
@@ -76,9 +85,15 @@ export function HandbookPageView({
         </nav>
         {page.sections.map((section) => (
           <section key={section.id} id={section.id} className="mt-14 scroll-mt-28">
-            <h2 className="font-display text-2xl font-semibold tracking-tight text-white">
-              {section.title}
-            </h2>
+            {board ? (
+              <h3 className="font-display text-2xl font-semibold tracking-tight text-white">
+                {section.title}
+              </h3>
+            ) : (
+              <h2 className="font-display text-2xl font-semibold tracking-tight text-white">
+                {section.title}
+              </h2>
+            )}
             {section.paragraphs?.map((paragraph) => (
               <p
                 key={paragraph}
@@ -87,7 +102,9 @@ export function HandbookPageView({
                 {paragraph}
               </p>
             ))}
-            {section.figure ? <HandbookFigureView figure={section.figure} /> : null}
+            {section.figure && !(board && BOARD_FIGURES.has(section.figure.kind)) ? (
+              <HandbookFigureView figure={section.figure} />
+            ) : null}
             {section.steps ? (
               <ol className="mt-4 list-decimal space-y-3 pl-5 text-base leading-relaxed text-slate-300">
                 {section.steps.map((step) => (
@@ -119,11 +136,12 @@ export function HandbookPageView({
             ))}
           </ul>
         </section>
+        </div>
       </div>
 
       <nav
         aria-label="Pages"
-        className="grid grid-cols-2 gap-4 border-t border-white/15 pt-4"
+        className={`grid grid-cols-2 gap-4 border-t border-white/15 pt-4 ${board ? "mx-auto w-full max-w-3xl" : ""}`}
       >
         <Link
           href={previous}
@@ -160,7 +178,7 @@ export function HandbookPageView({
       </nav>
 
       {next ? null : (
-        <div className="mt-16 border-t border-white/10 pt-10">
+        <div className={`mt-16 border-t border-white/10 pt-10 ${board ? "mx-auto w-full max-w-3xl" : ""}`}>
           <EssayFeedback
             slug={pageFeedbackSlug(handbook.slug, page.number)}
             initialEntries={feedbackEntries}
@@ -172,50 +190,24 @@ export function HandbookPageView({
   );
 }
 
-function HandbookFigureView({ figure }: { figure: HandbookFigure }) {
-  if (figure.kind === "pyramid") {
-    return (
-      <figure className="mt-6">
-        <ol className="mx-auto flex max-w-lg flex-col items-center gap-2">
-          {figure.steps.map((step, index) => (
-            <li
-              key={step.term}
-              className="border border-white/15 px-4 py-3 text-center"
-              style={{ width: `${100 - index * 18}%` }}
-            >
-              <span className="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
-                {step.term}
-              </span>
-              <span className="mt-1 block text-sm leading-relaxed text-slate-200">
-                {step.detail}
-              </span>
-            </li>
-          ))}
-        </ol>
-        <figcaption className="mt-3 text-sm leading-relaxed text-slate-400">
-          {figure.caption}
-        </figcaption>
-      </figure>
-    );
-  }
-
-  return (
-    <figure className="mt-6">
-      <ol className="grid gap-2 sm:grid-cols-3">
-        {figure.steps.map((step, index) => (
-          <li key={step.term} className="border border-white/15 px-3 py-3">
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
-              {String(index + 1).padStart(2, "0")} {step.term}
-            </span>
-            <span className="mt-1 block text-sm leading-relaxed text-slate-200">
-              {step.detail}
-            </span>
-          </li>
-        ))}
-      </ol>
-      <figcaption className="mt-3 text-sm leading-relaxed text-slate-400">
-        {figure.caption}
-      </figcaption>
-    </figure>
+function Opening({ page, chapter }: { page: HandbookPage; chapter: string }) {
+  const body = (
+    <>
+      <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
+        {page.topic}
+        <span className="px-2 text-slate-600">/</span>
+        {chapter}
+      </p>
+      <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-5xl">
+        {page.title}
+      </h1>
+      <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg">{page.lede}</p>
+      {page.rule ? (
+        <p className="mt-6 max-w-xl border-l border-neon-cyan/70 pl-4 text-base leading-relaxed text-white">
+          {page.rule}
+        </p>
+      ) : null}
+    </>
   );
+  return body;
 }
