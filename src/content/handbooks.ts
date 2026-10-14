@@ -294,6 +294,24 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           sources: [FOWLER_FIX, { href: SDLC_CARD, label: "SDLC field card" }],
         },
         {
+          id: "scenario",
+          title: "An illustrative break",
+          paragraphs: [
+            "This is an illustrative scenario. It is not a record of a team I worked with, and it states no measured result.",
+            "A developer changes a shared interface. The integration build on main fails. The recovery is the one above.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "The scene walks the recovery above. Nothing in it is a measured result.",
+            steps: [
+              { term: "Event", detail: "A shared interface changes. The integration build fails." },
+              { term: "Decision", detail: "Feature integration stops." },
+              { term: "Evidence", detail: "The red build names the change." },
+              { term: "Result", detail: "The revert lands. Main is green. Integration resumes." },
+            ],
+          },
+        },
+        {
           id: "tests",
           title: "The tests that make the day possible",
           paragraphs: [
@@ -338,7 +356,13 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           id: "measure",
           title: "How I would know",
           paragraphs: [
-            "I track three times. How often a change reaches main. How long from that push until the integration build returns a result. How long a red main stays red. A faster build only counts if the main you restore is still one you can release. A green badge with rare merges, or a fast loop that leaves main broken, is not the practice.",
+            "I track four signals. I do not have target times. A faster loop only counts if the main you restore is still one you can release. A green badge with rare merges, or a fast loop that leaves main broken, is not the practice.",
+          ],
+          steps: [
+            "Integration frequency. How often a change reaches main.",
+            "Feedback latency. How long from the push until the integration build returns a result.",
+            "Recovery time. How long a red main stays red.",
+            "Release readiness. Whether that main can be released. A green commit build is necessary here. It is not, by itself, the production release.",
           ],
         },
         {

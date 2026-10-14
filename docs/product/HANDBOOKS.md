@@ -18,7 +18,7 @@ The layers do not repeat each other. A handbook does not paste a card, and it do
 
 Write the finished book. Do not narrate the draft. No sentence about how much is written, what the next page is waiting on, or that a source list was opened for the draft. A reference belongs next to the claim it supports. A personal rule is labeled as the author's rule. An established practice is attributed to the source.
 
-The library lists books that can be read. A title opens the first page of that book. There is no cover in front of the page.
+The library lists books that can be read. A title opens the first page of that book. Under the title, the row names the field card and the pages in the book. There is no cover in front of the page. A procedure is drawn in the page as text. A concept image is not pasted in.
 
 ## Editorial contract
 
@@ -49,9 +49,9 @@ Calendars, blast-radius proof, and the cutover sequence stay on the delivery car
 
 ## Routes
 
-- `/handbooks` — the library. One row per book a reader can open.
+- `/handbooks` — the library. One row per book a reader can open, with that book's pages listed under the row.
 - `/handbooks/software-that-stays-in-use` — redirects to the first page.
-- `/handbooks/software-that-stays-in-use/1` — Keep main releasable.
+- `/handbooks/software-that-stays-in-use/1` — Keep main releasable. The commit loop and a red main are sequences. An illustrative break is labeled as not a record. Four signals, including whether main can be released, and no target times.
 - `/handbooks/software-that-stays-in-use/2` — Fail for the right reason.
 - `/handbooks/software-that-stays-in-use/3` — The plan fits on a page.
 - `/handbooks/software-that-stays-in-use/4` — Run the version just verified.
@@ -63,6 +63,6 @@ Calendars, blast-radius proof, and the cutover sequence stay on the delivery car
 - A chain handbook that treats every card as one parent.
 - Pasting the SDLC picture.
 - A cover, a status line, or a contents page in front of the book.
-- A PDF, a page-flip animation, or a Hub redesign.
+- A pasted concept board, a page-flip animation, or a Hub redesign.
 - Employer-confidential scenes. Synthetic only, labeled.
 - Publishing an empty route for a book that has no page yet.

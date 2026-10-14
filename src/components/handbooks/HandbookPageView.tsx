@@ -201,17 +201,31 @@ function HandbookFigureView({ figure }: { figure: HandbookFigure }) {
 
   return (
     <figure className="mt-6">
-      <ol className="grid gap-2 sm:grid-cols-3">
-        {figure.steps.map((step, index) => (
-          <li key={step.term} className="border border-white/15 px-3 py-3">
-            <span className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
-              {String(index + 1).padStart(2, "0")} {step.term}
-            </span>
-            <span className="mt-1 block text-sm leading-relaxed text-slate-200">
-              {step.detail}
-            </span>
-          </li>
-        ))}
+      <ol>
+        {figure.steps.map((step, index) => {
+          const last = index === figure.steps.length - 1;
+          return (
+            <li key={step.term} className="relative flex gap-4 pb-5 last:pb-0">
+              {last ? null : (
+                <span
+                  aria-hidden
+                  className="absolute top-6 bottom-0 left-3 w-px -translate-x-1/2 bg-neon-cyan/35"
+                />
+              )}
+              <span className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-neon-cyan/50 bg-void font-mono text-[0.6rem] tabular-nums text-neon-cyan">
+                {index + 1}
+              </span>
+              <span className="min-w-0">
+                <span className="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                  {step.term}
+                </span>
+                <span className="mt-1 block text-sm leading-relaxed text-slate-200">
+                  {step.detail}
+                </span>
+              </span>
+            </li>
+          );
+        })}
       </ol>
       <figcaption className="mt-3 text-sm leading-relaxed text-slate-400">
         {figure.caption}
