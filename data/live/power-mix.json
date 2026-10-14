@@ -1,7 +1,7 @@
 {
-  "asOf": "2026-10-13T19:38:23.575Z",
-  "windowStart": "2026-10-12T19:36:07.908Z",
-  "windowEnd": "2026-10-13T19:36:07.908Z",
+  "asOf": "2026-10-14T17:39:38.487Z",
+  "windowStart": "2026-10-13T17:39:34.292Z",
+  "windowEnd": "2026-10-14T17:39:34.292Z",
   "source": "Energy-Charts public_power (Fraunhofer ISE) · ENTSO-E / TSO underlying",
   "license": "Energy-Charts — attribution required; generation figures from ENTSO-E / TSOs",
   "countries": [
