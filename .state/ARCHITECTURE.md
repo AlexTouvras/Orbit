@@ -175,6 +175,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-14 | Handbook page 2 is the test that fails for the right reason | Page 1 passed. The page uses Beck’s behavioural and structure-insensitive properties, Eagle’s change-detector tests, and Meszaros’s fragile test. An agent-written test stays a draft until a person has seen it fail. A security check stays only when it can fail the build. |
 | 2026-10-14 | Handbook page 1 takes the last review pass | A red main stops feature work, not the repair. The workstation build is a safeguard from Hammant, not the definition of trunk-based development. Section links open the source passage. The page states the three times to track, and a reviewed date. |
 | 2026-10-14 | A handbook title opens the book | The cover and the draft-status sentences are off the public page. `/handbooks/software-that-stays-in-use` redirects to page 1. The page separates Fowler’s practice from the operating rule, and the figures are the commit loop, a red main, and the test shape. The editorial contract lives in `docs/product/HANDBOOKS.md`. |
 | 2026-10-14 | Handbook pages are researched one at a time | The sixteen-page restatement of the SDLC card was rejected. Page 1 is Fowler’s daily merge to a self-testing main, with Hammant, Vocke, and NIST PW.1 opened and named. Microsoft SDL and ASVS were opened and are not on the page. Further pages stay unwritten. |

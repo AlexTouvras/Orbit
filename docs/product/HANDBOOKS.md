@@ -40,7 +40,7 @@ A figure is allowed when it carries the procedure: a loop, a decision, a shape. 
 
 ## Series
 
-1. **Software that stays in use** — extends the SDLC field card. Opens on `/handbooks/software-that-stays-in-use/1`, Keep main releasable. The library title goes there.
+1. **Software that stays in use** — extends the SDLC field card. The library title opens `/handbooks/software-that-stays-in-use/1`, Keep main releasable. Page 2 is Fail for the right reason.
 2. Engineering reliable delivery — not in the library yet. For the technology delivery field card.
 3. Data that drives decisions — not in the library yet. For the data analytics field card.
 4. Decision systems under uncertainty — not in the library yet. For the credit risk field card.
@@ -52,6 +52,7 @@ Calendars, blast-radius proof, and the cutover sequence stay on the delivery car
 - `/handbooks` — the library. One row per book a reader can open.
 - `/handbooks/software-that-stays-in-use` — redirects to the first page.
 - `/handbooks/software-that-stays-in-use/1` — Keep main releasable.
+- `/handbooks/software-that-stays-in-use/2` — Fail for the right reason.
 
 ## Out of scope
 

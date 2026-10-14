@@ -120,6 +120,27 @@ const HAMMANT = source(TRUNK, "Hammant, trunk-based development");
 const VOCKE_PYRAMID = source(`${PYRAMID}#TheTestPyramid`, "Vocke, the test pyramid");
 const VOCKE_BEHAVIOUR = source(`${PYRAMID}#WhatToTest`, "Vocke, test behaviour");
 const NIST_PW1 = source(`${NIST_PDF}#page=20`, "NIST SP 800-218, PW.1");
+const FOWLER_SELF = source(
+  "https://martinfowler.com/bliki/SelfTestingCode.html",
+  "Fowler, self-testing code",
+);
+const FOWLER_TDD = source(
+  "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
+  "Fowler, red, green, refactor",
+);
+const FOWLER_COMMIT = source(`${FOWLER_CI}#commit-build`, "Fowler, the later stage");
+const BECK_TESTS = source(
+  "https://kentbeck.github.io/TestDesiderata/#test-desiderata",
+  "Beck, test desiderata",
+);
+const EAGLE = source(
+  "https://testing.googleblog.com/2015/01/testing-on-toilet-change-detector-tests.html",
+  "Eagle, change-detector tests",
+);
+const MESZAROS = source(
+  "http://xunitpatterns.com/Fragile%20Test.html",
+  "Meszaros, fragile test",
+);
 const FOWLER_REVIEW = source(
   `${FOWLER_CI}#HowDoWeDoPullRequestsAndCodeReviews`,
   "Fowler, code review",
@@ -132,7 +153,10 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
   thesis:
     "Software stays in use when a team can still change it. This book is how I keep that change cheap.",
   card: { href: SDLC_CARD, label: "SDLC field card" },
-  contents: [{ title: "Keep main releasable", page: 1 }],
+  contents: [
+    { title: "Keep main releasable", page: 1 },
+    { title: "Fail for the right reason", page: 2 },
+  ],
   pages: [
     {
       number: 1,
@@ -279,6 +303,120 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
         NIST_PW1,
         { href: SDLC_CARD, label: "SDLC field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
+      ],
+    },
+    {
+      number: 2,
+      topic: "Tests",
+      title: "Fail for the right reason",
+      lede: "A suite keeps a change cheap only when a red test means the behaviour changed. A test that goes red because the structure moved, or that stays green when the behaviour is wrong, trains the team to stop trusting red.",
+      rule: "My operating rule: if the behaviour held, delete the test or rewrite it against the behaviour. An agent-written test stays a draft until a person has seen it fail for a behaviour they can name.",
+      reviewed: "14 Oct 2026",
+      sections: [
+        {
+          id: "cost",
+          title: "Why red stops meaning a fault",
+          paragraphs: [
+            "Fowler's self-testing code is a bug detector you can run in one command. He says you are not doing continuous integration without it. The benefit he names is the confidence to change the system. Without that detector, a fix can create more faults than it removes, and people stop touching the code that needs the change.",
+            "That confidence depends on red meaning a fault. Alex Eagle names the failure mode a change-detector test. It breaks when the production code changes, and it does not check the behaviour of either version. He says these tests provide negative value. They catch no defects, and keeping them slows the work. Rewrite them, or delete them.",
+            "I treat a red that nobody can tie to a behaviour as that detector. People learn to edit the test and move on. The next real fault looks the same, and the suite no longer protects the change.",
+          ],
+          sources: [FOWLER_SELF, EAGLE],
+        },
+        {
+          id: "sensitive",
+          title: "Sensitive to the behaviour",
+          paragraphs: [
+            "Beck names the pair I use. Behavioural: if the behaviour changes, the test result should change. Structure-insensitive: the test should not change its result if the structure of the code changes. The behaviour moved, so the test moved. The structure moved and the behaviour held, so the test stayed green.",
+            "Meszaros, on the xUnit Patterns site, defines a fragile test as one that fails when the system changes in a way that does not affect the part the test is exercising. He separates the case that looks similar and is not fragility. If the functionality the test verifies was modified, that failure is the reason for the regression test. He calls a further case overspecified software: the test says how the software should do the work, not what it should achieve, and it passes only for one implementation.",
+          ],
+          sources: [BECK_TESTS, MESZAROS],
+        },
+        {
+          id: "day",
+          title: "When a test goes red",
+          paragraphs: [
+            "This is the order I use when a test in the commit build goes red, and when someone adds a test.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "A red test stays when it names a behaviour change. Otherwise it goes.",
+            steps: [
+              { term: "Name", detail: "The behaviour, in the words a caller would use." },
+              { term: "Ask", detail: "Did that behaviour change?" },
+              { term: "Keep", detail: "If it changed, fix the code or accept the new behaviour on purpose." },
+              { term: "Drop", detail: "If it held, delete the test or rewrite it against the behaviour." },
+              { term: "Prove", detail: "If you have not seen it fail, break the behaviour and watch the red." },
+            ],
+          },
+          steps: [
+            "Name the behaviour the way a caller or a user would. If the only description is a method name, a private collaborator, or the order of calls, the test is already tied to the structure.",
+            "If that behaviour changed, the red is the point. I fix the code, or I accept the new behaviour and change the assertion on purpose. Meszaros is explicit that a failure of the functionality the test verifies is the regression, not the fragile case.",
+            "If the behaviour held, I do not edit the assertion to match the new structure and call the suite healthy. Eagle's remedy is rewrite or delete. I rewrite the test against the behaviour, or I delete it.",
+            "Fowler's cycle for a new behaviour is red, green, refactor. You write the test before that behaviour exists, so the test starts red, and then you write the code until it passes. An agent that writes the test against code that already works skips that red. I break the behaviour on purpose, watch the test go red, restore the behaviour, and watch it go green. Until a person has done that, the test is a draft, and I do not count it as a gate.",
+            "The security checks stay while I delete change-detectors. The SDLC field card's hook is the line I use: a check that cannot fail is not a gate. A check I rely on still has to fail the build when the requirement is broken. If the requirement still holds and the check went red because a tool's output changed shape, I rewrite it against the requirement or I delete it.",
+          ],
+          sources: [MESZAROS, EAGLE, FOWLER_TDD, { href: SDLC_CARD, label: "SDLC field card" }],
+        },
+        {
+          id: "inspect",
+          title: "What I inspect",
+          paragraphs: [
+            "These are the questions I ask of a suite. They are my check, not a list Beck, Eagle, or Meszaros published.",
+          ],
+          steps: [
+            "When this test last went red, what behaviour changed?",
+            "If I break that behaviour on purpose, does this test go red?",
+            "Does the test name a result someone can observe, or a call order and a private collaborator?",
+            "Which tests did an agent add, and which of those has a person seen fail?",
+            "Which security checks can fail the build, and which cannot?",
+          ],
+        },
+        {
+          id: "measure",
+          title: "How I would know",
+          paragraphs: [
+            "I keep two counts. Among tests that went red, how many failed because the behaviour changed, and how many failed because the structure moved or the setup around the test changed. Among tests an agent added, how many a person has seen go red for a behaviour they can name. The practice is a suite that stays green when the structure moves and goes red when the behaviour changes. A larger suite, or a green badge, is not the count.",
+          ],
+        },
+        {
+          id: "limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "I do not delete a test because the red was inconvenient. If the behaviour it verifies actually changed, that failure is the regression Meszaros says the test is for. I change the assertion only when I am accepting a new behaviour on purpose.",
+            "I do not use the delete rule on a test whose job is to notice behaviour I cannot name yet. When I can name it, I rewrite the test against that name, or I drop the test.",
+            "A test that fails for the right reason and takes too long is a different problem. Fowler puts that check in a later stage of the build, not in the commit build. I do not delete it to buy the ten minutes.",
+            "I do not install the rule where there is no self-testing build. Fowler's detector is a command you can run. A test that never runs cannot fail for any reason.",
+          ],
+          sources: [MESZAROS, FOWLER_COMMIT, FOWLER_SELF],
+        },
+      ],
+      sources: [
+        source(
+          "https://kentbeck.github.io/TestDesiderata/#test-desiderata",
+          "Kent Beck, Test Desiderata",
+        ),
+        source(
+          "https://testing.googleblog.com/2015/01/testing-on-toilet-change-detector-tests.html",
+          "Alex Eagle, Change-Detector Tests Considered Harmful (27 Jan 2015)",
+        ),
+        source(
+          "http://xunitpatterns.com/Fragile%20Test.html",
+          "Gerard Meszaros, Fragile Test (xUnit Patterns)",
+        ),
+        source(
+          "https://martinfowler.com/bliki/SelfTestingCode.html",
+          "Martin Fowler, Self-Testing Code (1 May 2014)",
+        ),
+        source(
+          "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
+          "Martin Fowler, Test-Driven Development (11 Dec 2023)",
+        ),
+        source(
+          `${FOWLER_CI}#commit-build`,
+          "Martin Fowler, Continuous Integration, the commit build (18 Jan 2024)",
+        ),
+        { href: SDLC_CARD, label: "SDLC field card" },
       ],
     },
   ],
