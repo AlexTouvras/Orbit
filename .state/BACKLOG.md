@@ -4,7 +4,7 @@
 
 ## Now
 
-- [x] Field handbooks edition 1 — `/handbooks`, Software that stays in use. Pages 1–4 researched. Later titles named, not routed.
+- [x] Field handbooks edition 1 — `/handbooks`, Software that stays in use. Pages 1–5 researched. Later titles named, not routed.
 - [x] Handbook continuity — the first book extends the SDLC field card. A handbook is pages, not a scrolling chapter. Later titles stay closed.
 - [x] Products frame: a button scroll lands below the Orbit bar, with a little air
 - [x] Field-card `sync` copies `index.html` and `assets/` as original bytes. Approve uses the same copy. Deploy before technology-delivery-field-card PR 8 merges.

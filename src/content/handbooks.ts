@@ -190,6 +190,15 @@ const HUMBLE = source(
   "https://continuousdelivery.com/principles/",
   "Humble, small batches",
 );
+const FOWLER_FREQ = source(
+  "https://martinfowler.com/bliki/FrequencyReducesDifficulty.html",
+  "Fowler, if it hurts",
+);
+const FOWLER_DEBT = source(
+  "https://martinfowler.com/bliki/TechnicalDebt.html",
+  "Fowler, technical debt",
+);
+const NIST_RV = source(`${NIST_PDF}#page=27`, "NIST SP 800-218, RV.2 and RV.3");
 const FOWLER_REVIEW = source(
   `${FOWLER_CI}#HowDoWeDoPullRequestsAndCodeReviews`,
   "Fowler, code review",
@@ -207,6 +216,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
     { title: "Fail for the right reason", page: 2 },
     { title: "The plan fits on a page", page: 3 },
     { title: "Run the version just verified", page: 4 },
+    { title: "Use is the next change", page: 5 },
   ],
   pages: [
     {
@@ -720,6 +730,126 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           "https://martinfowler.com/bliki/ParallelChange.html",
           "Danilo Sato, Parallel Change (13 May 2014)",
         ),
+        { href: SDLC_CARD, label: "SDLC field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+      ],
+    },
+    {
+      number: 5,
+      topic: "Maintain and improve",
+      title: "Use is the next change",
+      lede: "What you learn after people are using the software is the next change. A defect, and a lesson about whether it is useful, both go back through plan, build, release, and maintain.",
+      rule: "My operating rule: the first release is not the end. The lesson walks the same path as any other change. It does not skip the page, the check, or the pipeline.",
+      reviewed: "14 Oct 2026",
+      sections: [
+        {
+          id: "feedback",
+          title: "What use is for",
+          paragraphs: [
+            "Fowler lists user feedback among the principal benefits of continuous delivery. The biggest risk, he writes, is building something that is not useful. The earlier and more frequently working software is in front of real users, the sooner you learn whether it is. He is explicit that this feedback requires continuous deployment. If you do not want the new software in front of every user, you deploy it to a subset.",
+            "Who is in that subset, the proof you require, and the watch after release stay on the technology delivery field card. This page is what happens to the lesson once you have it.",
+          ],
+          sources: [FOWLER_CD, { href: DELIVERY_CARD, label: "Technology delivery field card" }],
+        },
+        {
+          id: "often",
+          title: "Do the painful return more often",
+          paragraphs: [
+            "Fowler's line, from 28 July 2011, is that if an activity hurts, do it more often. People put off integration because it is painful, and the pain grows with the wait. He names the same pressure in testing, refactoring, database migration, conversations with customers, planning, and releasing. A large job gets harder as the amount grows, while small pieces compose: a migration across many tables is error-prone, and a sequence of small migrations is not. Feedback is the second reason, so you can correct course in a complex process. Practice is the third. Doing the thing often is also what shows you how to automate it.",
+            "I treat a production fix on a special path as that postponed integration. The fix stays on the path the team already runs, because that is the path they practice. He describes the pain against the time between integrations as an exponential curve you would see if you plotted it. I do not treat the sketch as a measurement.",
+          ],
+          sources: [FOWLER_FREQ],
+        },
+        {
+          id: "interest",
+          title: "A skipped path adds interest",
+          paragraphs: [
+            "Fowler uses the metaphor Ward Cunningham coined. Cruft is a deficiency in internal quality that makes the software harder to modify than it should be. The extra effort on the next change is the interest on that debt. The metaphor breaks in one place he names: you pay the interest when you work in that part of the code, not because time passed. A mess you never have to change can be left alone. A part people change often cannot, because cruft accumulates where changes land without attention to internal quality. His illustration is a feature that would take four days in a clear structure and six with the cruft. He also says those costs are estimates, and that they are not objectively measurable. The days are his illustration. I do not adopt them as a result.",
+            "A side door is my name for a production change that skips the page, a check that can fail, or the pipeline. It lands in code the next lesson will touch, which is the high-activity area. I treat the skipped check and the unreviewed page as how the interest gets into the next fix. That is my rule, not a claim Fowler made.",
+          ],
+          sources: [FOWLER_DEBT],
+        },
+        {
+          id: "class",
+          title: "Remediate, then change the class",
+          paragraphs: [
+            "NIST SP 800-218, SSDF version 1.1, puts the response to a known vulnerability under Respond to Vulnerabilities. Practice RV.2 says to assess, prioritize, and remediate to reduce the window of opportunity for attackers. You analyze the risk, then plan and implement the response. If a permanent mitigation is not ready, a temporary one goes in the plan until it is. You update the records of design decisions, risk responses, and approved exceptions as needed. Practice RV.3 is how later vulnerabilities become less frequent. You record the root cause, look for the pattern, review the software for the same class and fix that class rather than waiting for external reports, and review the life cycle. RV.3.4 says to update that process, when it is appropriate, so the cause is less likely to recur in an update or in new software.",
+            "NIST's examples separate the notice from the fix. A security advisory tells acquirers what the vulnerability is and how to address it. Delivering the remediation is a different example. A wiki of lessons is an example of recording the analysis. Planning and implementing a change to the life-cycle practices is the other example under RV.3.4. My rule: the wiki note and the advisory are not the fix. The vulnerability ships as a change on this path. When the cause is in how we build, the life cycle changes too, as a check that can fail or as a line on the page.",
+          ],
+          sources: [NIST_RV],
+        },
+        {
+          id: "return",
+          title: "The next change",
+          paragraphs: [
+            "This is the order I use when use produces the next change. The page, the check, and the artifact are the path the earlier pages already set. This one is the rule that a lesson does not get a quieter path.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "A lesson from use walks the same path as any other change.",
+            steps: [
+              { term: "Learn", detail: "A defect, or what use taught you." },
+              { term: "Page", detail: "One page a person reviews." },
+              { term: "Check", detail: "A test or a security check that can fail for this cause." },
+              { term: "Ship", detail: "The pipeline's artifact. The previous version stays returnable." },
+              { term: "Again", detail: "The next lesson takes this path." },
+            ],
+          },
+          steps: [
+            "Write what is wrong, who is affected, and what done means, on one page a person will review. If the failure is who can reach the data, or how that reach is abused, that is on the page.",
+            "Put a check in the pipeline that fails for this behaviour before the fix, and passes for the right reason after it. A security check stays only when it can fail the build.",
+            "Ship the binaries the pipeline produced. A rebuild beside the pipeline is a side door.",
+            "A temporary mitigation may run while the permanent change is on this path. Record it as temporary, and remove it when the change has shipped. It is not a second version with no page behind it.",
+            "Leave the previous artifact one deploy away while people are on this change. Returning is still that deploy, not a repair project.",
+          ],
+          sources: [NIST_RV, { href: SDLC_CARD, label: "SDLC field card" }],
+        },
+        {
+          id: "inspect",
+          title: "What I inspect",
+          paragraphs: [
+            "These are the questions I ask of a lesson from use. They are my check. NIST and Fowler did not publish this list.",
+          ],
+          steps: [
+            "Is there a page a person reviewed for this defect or this lesson?",
+            "Did a check fail for this behaviour before the fix?",
+            "Did the fix reach people as a pipeline artifact, with the previous artifact still one deploy away?",
+            "If this is a vulnerability, is the risk response recorded, and did a practice or a check change so the class is less likely?",
+            "Did any production fix in this period skip the page, the check, or the pipeline?",
+          ],
+        },
+        {
+          id: "measure",
+          title: "How I would know",
+          paragraphs: [
+            "I keep two counts. How many defects or lessons from use became a change on main that used a reviewed page, a check that can fail, and the pipeline's artifact. How many production fixes shipped by a path that skipped one of those. The practice is the first count. A fast side door does not count as the practice. I do not have a target number.",
+          ],
+        },
+        {
+          id: "limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "The watch window, the blast radius, and the cutover sequence stay on the technology delivery field card. This page starts when the lesson is known. It does not run the incident.",
+            "Fowler says a crufty area you do not have to modify can be left alone, because the interest is paid only when you work there. I do not open a cleanup this lesson does not touch.",
+            "Doing the painful thing more often is not a promise that every lesson ships today. Whether this build goes in front of people stays the business decision on the release page. Whenever it does ship, it ships on this path. Contracting an interface while the previous version is the way back stays on that page too. I do not retire the return in order to land the lesson.",
+          ],
+          sources: [FOWLER_DEBT, { href: DELIVERY_CARD, label: "Technology delivery field card" }],
+        },
+      ],
+      sources: [
+        source(
+          "https://martinfowler.com/bliki/ContinuousDelivery.html",
+          "Martin Fowler, Continuous Delivery (30 May 2013; user feedback added 12 Aug 2014)",
+        ),
+        source(
+          "https://martinfowler.com/bliki/FrequencyReducesDifficulty.html",
+          "Martin Fowler, Frequency Reduces Difficulty (28 July 2011)",
+        ),
+        source(
+          "https://martinfowler.com/bliki/TechnicalDebt.html",
+          "Martin Fowler, Technical Debt (21 May 2019)",
+        ),
+        NIST_RV,
         { href: SDLC_CARD, label: "SDLC field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
       ],
