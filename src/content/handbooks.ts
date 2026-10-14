@@ -170,6 +170,26 @@ const MS_THREAT = source(
   "https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling",
   "Microsoft SDL, threat modeling",
 );
+const FOWLER_PIPE = source(
+  "https://martinfowler.com/bliki/DeploymentPipeline.html",
+  "Fowler, deployment pipeline",
+);
+const FOWLER_CD = source(
+  "https://martinfowler.com/bliki/ContinuousDelivery.html",
+  "Fowler, continuous delivery",
+);
+const FOWLER_BLUE = source(
+  "https://martinfowler.com/bliki/BlueGreenDeployment.html",
+  "Fowler, blue-green deployment",
+);
+const SATO = source(
+  "https://martinfowler.com/bliki/ParallelChange.html",
+  "Sato, parallel change",
+);
+const HUMBLE = source(
+  "https://continuousdelivery.com/principles/",
+  "Humble, small batches",
+);
 const FOWLER_REVIEW = source(
   `${FOWLER_CI}#HowDoWeDoPullRequestsAndCodeReviews`,
   "Fowler, code review",
@@ -186,6 +206,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
     { title: "Keep main releasable", page: 1 },
     { title: "Fail for the right reason", page: 2 },
     { title: "The plan fits on a page", page: 3 },
+    { title: "Run the version just verified", page: 4 },
   ],
   pages: [
     {
@@ -578,6 +599,127 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           "Microsoft SDL, threat modeling",
         ),
         NIST_PW1,
+        { href: SDLC_CARD, label: "SDLC field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+      ],
+    },
+    {
+      number: 4,
+      topic: "Release and deploy",
+      title: "Run the version just verified",
+      lede: "People run the version the pipeline just verified. The previous version stays deployable, and returning to it is one deploy, not a repair project.",
+      rule: "My operating rule: do not put a build in front of people unless the pipeline produced it, and do not retire the previous build until one deploy can bring it back.",
+      reviewed: "14 Oct 2026",
+      sections: [
+        {
+          id: "artifact",
+          title: "The version people run",
+          paragraphs: [
+            "Fowler's deployment pipeline breaks the build into stages. The first stage compiles and provides the binaries later stages use. Deploying to production is usually the final stage. The pipeline's job is to detect changes that would cause problems in production, including performance, security, and usability, before that final stage.",
+            "People therefore run those binaries, not a fresh build assembled on release day. A rebuild can compile different code, pick up a different dependency, or skip a test the pipeline already ran. I do not put that rebuild in front of people. The version just verified is the artifact the later stage already holds.",
+          ],
+          sources: [FOWLER_PIPE],
+        },
+        {
+          id: "choice",
+          title: "Able to deploy, and choosing to",
+          paragraphs: [
+            "Fowler separates two decisions. Continuous delivery means you can deploy the current version on demand, and a business sponsor could ask for that without anyone panicking. Continuous deployment means every change goes to production automatically. Delivery is the ability. Deployment on every commit is a choice. His continuous-integration article makes the same cut: once main is releasable, whether to put that build in production is a business decision.",
+            "He names the benefit of the smaller change: less to go wrong, and easier to fix when a problem appears. Humble's principle is the same pressure from the other side. Work in small batches, because a large handoff is what makes a release expensive. The day, the audience, and the proof you require before that choice stay on the technology delivery field card. This page is the version, and the way back.",
+          ],
+          sources: [FOWLER_CD, FOWLER_RELEASE, HUMBLE, { href: DELIVERY_CARD, label: "Technology delivery field card" }],
+        },
+        {
+          id: "return",
+          title: "The way back",
+          paragraphs: [
+            "Fowler's blue-green deployment keeps two production environments, as identical as possible. One is live. You test the new release in the other, then switch the router so requests go to the new one. If something goes wrong, you switch the router back. The previous version is still running. He is explicit about what the switch does not undo: transactions that arrived while the new environment was live. Depending on the design you may feed both environments, or you may have a residue to deal with. The switch is not a time machine.",
+            "The SDLC field card's line is stricter about the mechanism and looser about the shape. The previous version stays one deploy away. I count Fowler's router switch as that return when the old environment is still up. When the old environment is gone, the return is one deploy of the binaries you kept, through the same pipeline stage that deployed the current version. A return that needs a new build, a reconstructed branch, or a repair project means the previous version did not stay.",
+          ],
+          sources: [FOWLER_BLUE, { href: SDLC_CARD, label: "SDLC field card" }],
+        },
+        {
+          id: "day",
+          title: "The release",
+          paragraphs: [
+            "This is the order I use when a version goes in front of people.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "People run the verified artifact. The previous artifact stays returnable.",
+            steps: [
+              { term: "Verify", detail: "The pipeline's binaries, not a new build." },
+              { term: "Deploy", detail: "That same artifact, to the place people will use." },
+              { term: "Run", detail: "People are on the version just verified." },
+              { term: "Keep", detail: "The previous artifact is still deployable." },
+              { term: "Return", detail: "One switch, or one deploy, puts it back." },
+            ],
+          },
+          steps: [
+            "Deploy the binaries the pipeline already tested. If the release process compiles again, stop and make the final stage use the binaries.",
+            "Leave the previous artifact in a place the same stage can deploy. If you use two environments, leave the previous one running until you are willing to lose it as the fast return.",
+            "A flag that hides the new behaviour is not the previous version. The previous version is the previous artifact. Hiding a path does not put people back on the build you already verified.",
+            "Before you deploy, name what happens to transactions that arrive on the new version if you return. Fowler's residue is part of the release, not a surprise after it.",
+          ],
+          sources: [FOWLER_PIPE, FOWLER_BLUE],
+        },
+        {
+          id: "inspect",
+          title: "What I inspect",
+          paragraphs: [
+            "These are the questions I ask of a release. They are my check, not a list Fowler published.",
+          ],
+          steps: [
+            "Is the artifact people are running the one the pipeline's later stage produced?",
+            "Where is the previous artifact, and can the same stage deploy it once?",
+            "Can the previous version start against the data store as it is now?",
+            "What arrived after the new version went live, and what happens to it on a return?",
+            "If the answer to going back is a project, which step retired the previous version?",
+          ],
+        },
+        {
+          id: "measure",
+          title: "How I would know",
+          paragraphs: [
+            "I keep two checks. How long from deciding the version is bad until people are on the previous version. Whether that return used an artifact the pipeline had already produced, or required a new build. The practice is a return in one deploy, or one switch back to an environment that is still running. A green pipeline with no previous artifact is not the practice. I do not have a target time.",
+          ],
+        },
+        {
+          id: "limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "Sato's parallel change, also called expand and contract, is how I keep a return possible when the interface has to change. Expand so the old and the new both work. Migrate callers. Contract only when the previous version no longer has to run. I do not contract while that version is the way back.",
+            "Fowler describes a retailer who deployed first to employees, then to invited customers, then to everyone. Who goes first, the proof you require, and the watch after release stay on the technology delivery field card. This page does not pick the window.",
+            "Blue-green needs two environments as identical as you can make them. Where I cannot keep both, I still keep the previous binaries and a pipeline stage that can deploy them once. I do not describe a diagram of two colours as the return if the old environment is already gone.",
+          ],
+          sources: [SATO, FOWLER_CD, FOWLER_BLUE, { href: DELIVERY_CARD, label: "Technology delivery field card" }],
+        },
+      ],
+      sources: [
+        source(
+          "https://martinfowler.com/bliki/DeploymentPipeline.html",
+          "Martin Fowler, Deployment Pipeline (30 May 2013)",
+        ),
+        source(
+          "https://martinfowler.com/bliki/ContinuousDelivery.html",
+          "Martin Fowler, Continuous Delivery (30 May 2013)",
+        ),
+        source(
+          "https://martinfowler.com/bliki/BlueGreenDeployment.html",
+          "Martin Fowler, Blue Green Deployment (1 Mar 2010)",
+        ),
+        source(
+          `${FOWLER_CI}#ReleaseToProductionIsABusinessDecision`,
+          "Martin Fowler, Continuous Integration, release is a business decision (18 Jan 2024)",
+        ),
+        source(
+          "https://continuousdelivery.com/principles/",
+          "Jez Humble, Principles of Continuous Delivery",
+        ),
+        source(
+          "https://martinfowler.com/bliki/ParallelChange.html",
+          "Danilo Sato, Parallel Change (13 May 2014)",
+        ),
         { href: SDLC_CARD, label: "SDLC field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
       ],
