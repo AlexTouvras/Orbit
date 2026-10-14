@@ -34,9 +34,9 @@ One thesis per page. Headings follow the subject. They are not a fixed list of e
 
 Voice: direct, operational, first person for the author's judgment. Define a term a stranger may not know. No corporate filler. A memorable sentence is rare, and it has to clarify the rule.
 
-Evidence: cite the primary source, with its date or version, and only for a claim that source makes. Link it beside the claim. Do not invent a metric, a client, or a result. A number you did not open does not go on the page.
+Evidence: cite the primary source, with its date or version, and only for a claim that source makes. A short link sits beside the claim and opens the section when the source has one. The page ends with one list of the works. Do not invent a metric, a client, or a result. A number you did not open does not go on the page. Say how you would tell the practice is working. That is a measure to track, not a result you do not have. Put the date you last checked the claims on the page.
 
-A figure is allowed when it carries the procedure: a loop, a decision, a shape. The words still work if the figure does not. No motion required to understand the page.
+A figure is allowed when it carries the procedure: a loop, a decision, a shape. The words still work if the figure does not. No motion required to understand the page. The standard is the contract above. The diagrams, the section count, and the length change with the subject.
 
 ## Series
 

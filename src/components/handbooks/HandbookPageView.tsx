@@ -37,8 +37,11 @@ export function HandbookPageView({
             {handbook.title}
           </Link>
         </p>
-        <p className="shrink-0 whitespace-nowrap font-mono text-sm tabular-nums text-white">
-          {page.number}
+        <p className="shrink-0 text-right font-mono text-sm tabular-nums text-white">
+          <span className="block">{page.number}</span>
+          <span className="mt-1 block text-[0.65rem] font-normal uppercase tracking-[0.14em] text-slate-500">
+            Reviewed {page.reviewed}
+          </span>
         </p>
       </header>
 

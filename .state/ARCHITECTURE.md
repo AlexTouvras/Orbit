@@ -175,6 +175,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-14 | Handbook page 1 takes the last review pass | A red main stops feature work, not the repair. The workstation build is a safeguard from Hammant, not the definition of trunk-based development. Section links open the source passage. The page states the three times to track, and a reviewed date. |
 | 2026-10-14 | A handbook title opens the book | The cover and the draft-status sentences are off the public page. `/handbooks/software-that-stays-in-use` redirects to page 1. The page separates Fowler’s practice from the operating rule, and the figures are the commit loop, a red main, and the test shape. The editorial contract lives in `docs/product/HANDBOOKS.md`. |
 | 2026-10-14 | Handbook pages are researched one at a time | The sixteen-page restatement of the SDLC card was rejected. Page 1 is Fowler’s daily merge to a self-testing main, with Hammant, Vocke, and NIST PW.1 opened and named. Microsoft SDL and ASVS were opened and are not on the page. Further pages stay unwritten. |
 | 2026-10-14 | The first handbook is a book of pages on the SDLC card | Owner: a handbook is a book, so the reading unit is a numbered page, and the first book starts from the SDLC field card. Cover is the contents. `/handbooks/software-that-stays-in-use/1` through `/16`. The chain essay is no longer the flagship. Delivery still owns calendars, proof, and cutover. Notes stay on the last page. |
