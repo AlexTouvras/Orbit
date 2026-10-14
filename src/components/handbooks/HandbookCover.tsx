@@ -5,7 +5,7 @@ import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { pagePath } from "@/lib/handbooks";
 
 export function HandbookCover({ handbook }: { handbook: Handbook }) {
-  const last = handbook.pages[handbook.pages.length - 1]?.number ?? 1;
+  const first = handbook.pages[0];
 
   return (
     <article className="mx-auto max-w-2xl">
@@ -30,16 +30,18 @@ export function HandbookCover({ handbook }: { handbook: Handbook }) {
       </p>
       <p className="mt-4 text-sm leading-relaxed text-slate-400">
         Extends the <SiteLink href={handbook.card.href}>{handbook.card.label}</SiteLink>
-        . {last} pages.
+        . {handbook.rest}
       </p>
-      <p className="mt-10">
-        <Link
-          href={pagePath(handbook.slug, 1)}
-          className="focus-ring inline-flex min-h-11 items-center font-display text-lg font-semibold text-white hover:text-neon-cyan"
-        >
-          Begin
-        </Link>
-      </p>
+      {first ? (
+        <p className="mt-10">
+          <Link
+            href={pagePath(handbook.slug, first.number)}
+            className="focus-ring inline-flex min-h-11 items-center font-display text-lg font-semibold text-white hover:text-neon-cyan"
+          >
+            Read page {first.number}
+          </Link>
+        </p>
+      ) : null}
 
       <h2 className="mt-14 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
         Contents

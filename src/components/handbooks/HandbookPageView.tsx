@@ -58,43 +58,55 @@ export function HandbookPageView({
         <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
           {page.title}
         </h1>
-        {page.paragraphs.map((paragraph) => (
-          <p
-            key={paragraph}
-            className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg"
-          >
-            {paragraph}
-          </p>
-        ))}
-        {page.steps ? (
-          <ol className="mt-6 list-decimal space-y-2 pl-5 text-base leading-relaxed text-slate-300">
-            {page.steps.map((step) => (
-              <li key={step}>{step}</li>
+        <p className="mt-6 text-base leading-relaxed text-slate-200 sm:text-lg">{page.lede}</p>
+        <nav className="mt-8" aria-label="On this page">
+          <ol className="flex flex-col gap-2">
+            {page.sections.map((section) => (
+              <li key={section.id}>
+                <a
+                  href={`#${section.id}`}
+                  className="focus-ring text-sm text-slate-400 hover:text-white"
+                >
+                  {section.title}
+                </a>
+              </li>
             ))}
           </ol>
-        ) : null}
-        {page.lines ? (
-          <dl className="mt-8 border-t border-white/10">
-            {page.lines.map((line) => (
-              <div key={line.term} className="border-b border-white/10 py-3">
-                <dt className="font-mono text-xs uppercase tracking-[0.16em] text-slate-400">
-                  {line.term}
-                </dt>
-                <dd className="mt-1 text-base leading-relaxed text-slate-200">{line.detail}</dd>
-              </div>
+        </nav>
+        {page.sections.map((section) => (
+          <section key={section.id} id={section.id} className="mt-14 scroll-mt-28">
+            <h2 className="font-display text-2xl font-semibold tracking-tight text-white">
+              {section.title}
+            </h2>
+            {section.paragraphs?.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mt-4 text-base leading-relaxed text-slate-300"
+              >
+                {paragraph}
+              </p>
             ))}
-          </dl>
-        ) : null}
-        {page.links && page.links.length > 0 ? (
-          <p className="mt-8 text-sm leading-relaxed text-slate-400">
-            {page.links.map((link, index) => (
-              <span key={link.href}>
-                {index > 0 ? <span className="px-2 text-slate-600">·</span> : null}
-                <SiteLink href={link.href}>{link.label}</SiteLink>
-              </span>
+            {section.steps ? (
+              <ol className="mt-4 list-decimal space-y-3 pl-5 text-base leading-relaxed text-slate-300">
+                {section.steps.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            ) : null}
+          </section>
+        ))}
+        <section className="mt-14 border-t border-white/10 pt-8" aria-labelledby="sources">
+          <h2 id="sources" className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
+            Sources opened for this page
+          </h2>
+          <ul className="mt-4 space-y-2 text-sm leading-relaxed">
+            {page.sources.map((source) => (
+              <li key={source.href}>
+                <SiteLink href={source.href}>{source.label}</SiteLink>
+              </li>
             ))}
-          </p>
-        ) : null}
+          </ul>
+        </section>
       </div>
 
       <nav
@@ -134,7 +146,7 @@ export function HandbookPageView({
           <EssayFeedback
             slug={pageFeedbackSlug(handbook.slug, page.number)}
             initialEntries={feedbackEntries}
-            notesLabel="Notes on this book"
+            notesLabel="Notes on this page"
           />
         </div>
       ) : null}

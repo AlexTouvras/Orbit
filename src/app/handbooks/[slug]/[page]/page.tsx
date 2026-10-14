@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!found) return { title: "Page" };
   return {
     title: `${found.page.title} · ${found.handbook.title}`,
-    description: found.page.paragraphs[0],
+    description: found.page.lede,
     alternates: {
       canonical: pagePath(found.handbook.slug, found.page.number),
     },
