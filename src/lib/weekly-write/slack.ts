@@ -199,6 +199,10 @@ export async function notifyEssayFeedback(input: {
   title: string;
   rating: "yes" | "somewhat" | "no";
   note?: string;
+  /** Public path. Essays default to `/writes/{slug}`. */
+  path?: string;
+  /** Slack label. Essays default to "essay". */
+  sourceLabel?: string;
 }): Promise<{ ok: true } | { ok: false; reason: string }> {
   const url = process.env.SLACK_ORBIT_WEBHOOK_URL?.trim();
   if (!url) {
@@ -206,7 +210,9 @@ export async function notifyEssayFeedback(input: {
   }
 
   const site = siteBaseUrlFallback();
-  const href = `${site}/writes/${input.slug}`;
+  const path = input.path ?? `/writes/${input.slug}`;
+  const sourceLabel = input.sourceLabel ?? "essay";
+  const href = `${site}${path}`;
   const note = input.note?.trim();
   const ratingLabel = FEEDBACK_RATING_LABEL[input.rating] ?? input.rating;
 
@@ -216,7 +222,7 @@ export async function notifyEssayFeedback(input: {
       type: "section",
       text: {
         type: "mrkdwn",
-        text: `*New essay feedback* on <${href}|${input.title}>\n*Rating:* ${ratingLabel}`,
+        text: `*New ${sourceLabel} feedback* on <${href}|${input.title}>\n*Rating:* ${ratingLabel}`,
       },
     },
     ...(note
@@ -235,7 +241,7 @@ export async function notifyEssayFeedback(input: {
       elements: [
         {
           type: "mrkdwn",
-          text: `Essay: \`${input.slug}\``,
+          text: `${sourceLabel}: \`${input.slug}\``,
         },
       ],
     },

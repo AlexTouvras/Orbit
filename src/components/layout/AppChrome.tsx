@@ -30,6 +30,7 @@ export function AppChrome({
     pathname === "/contact" ||
     pathname === "/radar" ||
     pathname === "/newsletter" ||
+    pathname.startsWith("/handbooks") ||
     pathname.startsWith("/portfolio/live");
 
   if (bare || storiesPage) {

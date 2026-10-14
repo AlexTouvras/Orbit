@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+import { HANDBOOKS } from "@/content/handbooks";
+import { pagePath } from "@/lib/handbooks";
 import { listManifestSlugs, loadStoryManifest } from "@/lib/loadStory";
 import { getWriteModifiedDate } from "@/lib/seo/writes";
 import { getSiteUrl } from "@/lib/site";
@@ -16,6 +18,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    {
+      url: `${base}/handbooks`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    ...HANDBOOKS.flatMap((handbook) =>
+      handbook.pages.map((page) => ({
+        url: `${base}${pagePath(handbook.slug, page.number)}`,
+        lastModified: now,
+        changeFrequency: "monthly" as const,
+        priority: 0.75,
+      })),
+    ),
     {
       url: `${base}/products`,
       lastModified: now,

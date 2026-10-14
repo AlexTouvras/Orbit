@@ -15,7 +15,7 @@ It communicates:
 ## Four layers
 
 1. **HUd** (`/card`) — identity compression (WHO)
-2. **Main website** (`/`, Portfolio, Writes, live desks) — evidence (WHAT / HOW HE THINKS)
+2. **Main website** (`/`, Portfolio, Writes, Handbooks, live desks) — evidence (WHAT / HOW HE THINKS). Handbooks are the method. See `HANDBOOKS.md`.
 3. **Studio** (`/studio`) — trajectory (WHERE)
 4. **Career timeline** — history (HOW HE GOT HERE); lives on About. Each employer and school title opens that institution’s site. Not a separate timeline product.
 

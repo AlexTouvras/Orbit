@@ -11,6 +11,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Products", href: "/products" },
   { label: "Blog", href: "/writes" },
+  { label: "Handbooks", href: "/handbooks" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -49,7 +50,7 @@ export function Header() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1 sm:flex">
+        <div className="hidden items-center gap-1 xl:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -76,7 +77,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-300 transition-colors hover:bg-white/10 sm:hidden"
+          className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-300 transition-colors hover:bg-white/10 xl:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
@@ -90,7 +91,7 @@ export function Header() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
-            className="absolute top-20 left-4 right-4 z-50 flex flex-col gap-1 rounded-2xl border border-white/10 bg-void p-3 sm:hidden"
+            className="absolute top-20 left-4 right-4 z-50 flex flex-col gap-1 rounded-2xl border border-white/10 bg-void p-3 xl:hidden"
           >
             {navItems.map((item) => (
               <Link
