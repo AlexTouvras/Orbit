@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HANDBOOKS } from "@/content/handbooks";
+import { HandbookFieldPath } from "@/components/handbooks/HandbookFigures";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { pagePath } from "@/lib/handbooks";
 
@@ -19,6 +20,7 @@ export function HandbookLibrary() {
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-400">
         Each book is an operating rule, the day, the limit, and how I would know.
       </p>
+      <HandbookFieldPath />
       <ol className="mt-12 border-t border-white/10">
         {HANDBOOKS.map((handbook) => {
           const opening = handbook.pages[0];

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import type { Handbook, HandbookFigure, HandbookPage } from "@/content/handbooks";
+import type { Handbook, HandbookPage } from "@/content/handbooks";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
+import { HandbookFigureView, HorizonPlate } from "@/components/handbooks/HandbookFigures";
 import { HandbookPageTurn } from "@/components/handbooks/HandbookPageTurn";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
@@ -22,7 +23,7 @@ export function HandbookPageView({
   const chapter = chapterTitleForPage(handbook, page.number);
 
   return (
-    <article className="mx-auto flex w-full max-w-2xl flex-col">
+    <article className="mx-auto flex w-full max-w-3xl flex-col">
       <HandbookPageTurn previous={previous} next={next} />
       <header className="flex items-baseline justify-between gap-6 border-b border-white/15 pb-3">
         <p className="min-w-0 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
@@ -46,20 +47,7 @@ export function HandbookPageView({
       </header>
 
       <div className="py-10 sm:py-14">
-        <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
-          {page.topic}
-          <span className="px-2 text-slate-600">/</span>
-          {chapter}
-        </p>
-        <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          {page.title}
-        </h1>
-        <p className="mt-6 text-base leading-relaxed text-slate-200 sm:text-lg">{page.lede}</p>
-        {page.rule ? (
-          <p className="mt-6 border-l border-neon-cyan/60 pl-4 text-base leading-relaxed text-white">
-            {page.rule}
-          </p>
-        ) : null}
+        <Opening page={page} chapter={chapter} />
         <nav className="mt-8" aria-label="On this page">
           <ol className="flex flex-col gap-2">
             {page.sections.map((section) => (
@@ -172,64 +160,25 @@ export function HandbookPageView({
   );
 }
 
-function HandbookFigureView({ figure }: { figure: HandbookFigure }) {
-  if (figure.kind === "pyramid") {
-    return (
-      <figure className="mt-6">
-        <ol className="mx-auto flex max-w-lg flex-col items-center gap-2">
-          {figure.steps.map((step, index) => (
-            <li
-              key={step.term}
-              className="border border-white/15 px-4 py-3 text-center"
-              style={{ width: `${100 - index * 18}%` }}
-            >
-              <span className="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
-                {step.term}
-              </span>
-              <span className="mt-1 block text-sm leading-relaxed text-slate-200">
-                {step.detail}
-              </span>
-            </li>
-          ))}
-        </ol>
-        <figcaption className="mt-3 text-sm leading-relaxed text-slate-400">
-          {figure.caption}
-        </figcaption>
-      </figure>
-    );
-  }
-
-  return (
-    <figure className="mt-6">
-      <ol>
-        {figure.steps.map((step, index) => {
-          const last = index === figure.steps.length - 1;
-          return (
-            <li key={step.term} className="relative flex gap-4 pb-5 last:pb-0">
-              {last ? null : (
-                <span
-                  aria-hidden
-                  className="absolute top-6 bottom-0 left-3 w-px -translate-x-1/2 bg-neon-cyan/35"
-                />
-              )}
-              <span className="relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-neon-cyan/50 bg-void font-mono text-[0.6rem] tabular-nums text-neon-cyan">
-                {index + 1}
-              </span>
-              <span className="min-w-0">
-                <span className="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
-                  {step.term}
-                </span>
-                <span className="mt-1 block text-sm leading-relaxed text-slate-200">
-                  {step.detail}
-                </span>
-              </span>
-            </li>
-          );
-        })}
-      </ol>
-      <figcaption className="mt-3 text-sm leading-relaxed text-slate-400">
-        {figure.caption}
-      </figcaption>
-    </figure>
+function Opening({ page, chapter }: { page: HandbookPage; chapter: string }) {
+  const body = (
+    <>
+      <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
+        {page.topic}
+        <span className="px-2 text-slate-600">/</span>
+        {chapter}
+      </p>
+      <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-5xl">
+        {page.title}
+      </h1>
+      <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg">{page.lede}</p>
+      {page.rule ? (
+        <p className="mt-6 max-w-xl border-l border-neon-cyan/70 pl-4 text-base leading-relaxed text-white">
+          {page.rule}
+        </p>
+      ) : null}
+    </>
   );
+  if (page.plate === "horizon") return <HorizonPlate>{body}</HorizonPlate>;
+  return body;
 }

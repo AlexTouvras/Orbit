@@ -18,7 +18,7 @@ The layers do not repeat each other. A handbook does not paste a card, and it do
 
 Write the finished book. Do not narrate the draft. No sentence about how much is written, what the next page is waiting on, or that a source list was opened for the draft. A reference belongs next to the claim it supports. A personal rule is labeled as the author's rule. An established practice is attributed to the source.
 
-The library lists books that can be read. A title opens the first page of that book. Under the title, the row names the field card and the pages in the book. There is no cover in front of the page. A procedure is drawn in the page as text. A concept image is not pasted in.
+The library lists books that can be read. A title opens the first page of that book. Under the title, the row names the field card and the pages in the book. There is no cover route in front of the page. Procedures are drawn in the page: a horizon, a loop, a recovery rail, signal rows, and the path from card to portfolio. A concept image is not pasted in.
 
 ## Editorial contract
 
