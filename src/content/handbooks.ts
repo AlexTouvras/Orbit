@@ -141,6 +141,35 @@ const MESZAROS = source(
   "http://xunitpatterns.com/Fragile%20Test.html",
   "Meszaros, fragile test",
 );
+const JEFFRIES = source(
+  "https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/",
+  "Jeffries, card, conversation, confirmation",
+);
+const FOWLER_STORIES = source(
+  "https://martinfowler.com/bliki/ConversationalStories.html",
+  "Fowler, conversational stories",
+);
+const WAKE = source(
+  "https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/",
+  "Wake, negotiable",
+);
+const MANIFESTO = source("https://agilemanifesto.org/", "Agile manifesto, 2001");
+const MANIFESTO_TALK = source(
+  "https://agilemanifesto.org/principles.html",
+  "Agile manifesto, face-to-face",
+);
+const PATTON = source(
+  "https://www.jpattonassociates.com/wp-content/uploads/2015/03/story_mapping.pdf",
+  "Patton, story mapping",
+);
+const SHOSTACK = source(
+  "https://shostack.org/resources/threat-modeling",
+  "Shostack, four questions",
+);
+const MS_THREAT = source(
+  "https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling",
+  "Microsoft SDL, threat modeling",
+);
 const FOWLER_REVIEW = source(
   `${FOWLER_CI}#HowDoWeDoPullRequestsAndCodeReviews`,
   "Fowler, code review",
@@ -156,6 +185,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
   contents: [
     { title: "Keep main releasable", page: 1 },
     { title: "Fail for the right reason", page: 2 },
+    { title: "The plan fits on a page", page: 3 },
   ],
   pages: [
     {
@@ -417,6 +447,139 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           "Martin Fowler, Continuous Integration, the commit build (18 Jan 2024)",
         ),
         { href: SDLC_CARD, label: "SDLC field card" },
+      ],
+    },
+    {
+      number: 3,
+      topic: "Plan and design",
+      title: "The plan fits on a page",
+      lede: "A change stays reviewable when the plan is a page a person will actually read. The page names the goal, the cost, what done means, who can reach the data, and how that can be abused. The page is not the understanding. Someone has to walk the journey, and a way it fails, before the build.",
+      rule: "My operating rule: if a person will not review the page, it is not the plan. If nobody has walked how the journey fails, the build has not started.",
+      reviewed: "14 Oct 2026",
+      sections: [
+        {
+          id: "page",
+          title: "What has to fit on the page",
+          paragraphs: [
+            "Jeffries's card does not hold the whole requirement. It has just enough text to identify the story and remind people what it is. The card is a token for planning. Notes on it record priority and cost. He has almost never found a multi-page specification ideal, and he says that kind of document is more likely to slow you down.",
+            "Patton's frame, before a story map, is a short brief that constrains what you map. He also asks for the benefit, and for what the user does. I hold that brief to one page. Goal, cost, and what done means. Who can reach the data, and how that can be abused. A file no one will review is not the plan. That limit is mine. Neither of them published a one-page rule.",
+          ],
+          sources: [JEFFRIES, PATTON, { href: SDLC_CARD, label: "SDLC field card" }],
+        },
+        {
+          id: "understanding",
+          title: "The page is not the understanding",
+          paragraphs: [
+            "Jeffries puts the requirement in the conversation, an exchange between the customer and the programmers, not in the card. However much documentation you produce, he says you still cannot be certain enough about what is to be done. Certainty is the third part: the customer says how she will confirm the story, and that confirmation is the acceptance test. The best supplements are examples. The best examples are executable.",
+            "The manifesto puts working software ahead of comprehensive documentation, and it says the documentation still has value. The principle I use from it is face-to-face conversation as the way a team conveys information. Beside that, my rule: the page still has to exist, and a meeting with nothing written down does not make the change safer. The writing is required, and it is not sufficient.",
+            "Fowler calls a story handed to developers to implement a decreed story, and a misunderstanding. The story is refined in conversation. Developers help find the gaps, the cheaper alternative, and the split. Wake's word for that is negotiable. The story is not a contract for features. It captures the essence, and the details are created by the customer and the programmer during the work.",
+          ],
+          sources: [JEFFRIES, MANIFESTO, MANIFESTO_TALK, FOWLER_STORIES, WAKE],
+        },
+        {
+          id: "abuse",
+          title: "Who can reach the data",
+          paragraphs: [
+            "Shostack's site states four questions: what are we working on, what can go wrong, what are we going to do about it, and did we do a good job. I put the first two on the plan page.",
+            "Microsoft's Security Development Lifecycle names threat modeling as a core element, in five steps: security requirements, an application diagram, the threats, the mitigations, and a check that the mitigations happened. The tool's notation draws components, data flows, and security boundaries. I do not treat the tool as the plan. The page still has to name who can reach the data, and how that reach can be abused. NIST SP 800-218 practice PW.1 asks for that identification in design. I write it on this page, where a person will review it.",
+          ],
+          sources: [SHOSTACK, MS_THREAT, NIST_PW1],
+        },
+        {
+          id: "walk",
+          title: "The walk",
+          paragraphs: [
+            "This is the order I use before a change is built.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "The page is the token. The walk is the understanding.",
+            steps: [
+              { term: "Write", detail: "Goal, cost, done, who can reach the data, how it can be abused." },
+              { term: "Cut", detail: "If a person will not review it, it is not the plan yet." },
+              { term: "Walk", detail: "Tell the journey in order, including a way it fails." },
+              { term: "Change", detail: "The conversation splits it, cheapens it, or names an abuse." },
+              { term: "Confirm", detail: "What done means becomes an example someone can run." },
+            ],
+          },
+          steps: [
+            "Write the page first. If it will not fit, the change is more than one change. Split it until a person can review what remains.",
+            "Patton's map runs left to right in the order you would tell the story. Conversation carries the variations. In the explore pass he asks what could go wrong, and what the user does to recover. I do not start the build until someone has walked one of those failures out loud and the page names it.",
+            "Fowler's conversation is allowed to change the page. A cheaper path, a split, or a gap is a result, and it gets written down. When the page reaches the build unchanged, I treat the walk as not done, and I walk it again.",
+            "Jeffries's confirmation is how the customer will know the story is done. I want that as an example someone can run. A confirmation that cannot fail is not a check.",
+          ],
+          sources: [PATTON, FOWLER_STORIES, JEFFRIES, { href: SDLC_CARD, label: "SDLC field card" }],
+        },
+        {
+          id: "inspect",
+          title: "What I inspect",
+          paragraphs: [
+            "These are the questions I ask of a plan. They are my check, not a list Jeffries or Patton published.",
+          ],
+          steps: [
+            "Can a person review this plan in one sitting?",
+            "Does it name the goal, the cost, and what done means?",
+            "Who can reach the data, and how can that be abused?",
+            "Has someone walked the journey, including a failure, and what did that change on the page?",
+            "What example will show the story is done, and can that example fail?",
+          ],
+        },
+        {
+          id: "measure",
+          title: "How I would know",
+          paragraphs: [
+            "I keep two counts. How often the plan is still one page when the build starts. How often the walk changes that page before the build: a split, a cheaper path, or a named abuse. When a plan reaches the build unchanged, I do not count the walk. When it outgrows a review, it has stopped being the plan. I do not have a target number for either count.",
+          ],
+        },
+        {
+          id: "limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "Patton's limit, which I use: if you need the precision of a workflow, a flow chart, or a UML model, a story map is the wrong tool. I use the page to decide the change. I do not use it in place of a design that has to be exact.",
+            "Wake's negotiable story is not a contract. I do not freeze the page against the conversation that is supposed to change it.",
+            "An agent may draft the page. It is not the plan until a person has reviewed it and walked a failure.",
+            "Release calendars, blast-radius proof, and the cutover sequence stay on the technology delivery field card. This page decides the change. It does not pick the window.",
+          ],
+          sources: [
+            PATTON,
+            WAKE,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+          ],
+        },
+      ],
+      sources: [
+        source(
+          "https://ronjeffries.com/xprog/articles/expcardconversationconfirmation/",
+          "Ron Jeffries, Card, Conversation, Confirmation (30 Aug 2001)",
+        ),
+        source(
+          "https://martinfowler.com/bliki/ConversationalStories.html",
+          "Martin Fowler, Conversational Stories (4 Feb 2010)",
+        ),
+        source(
+          "https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/",
+          "Bill Wake, INVEST in Good Stories (17 Aug 2003)",
+        ),
+        source("https://agilemanifesto.org/", "Manifesto for Agile Software Development (2001)"),
+        source(
+          "https://agilemanifesto.org/principles.html",
+          "Principles behind the Agile Manifesto (2001)",
+        ),
+        source(
+          "https://www.jpattonassociates.com/wp-content/uploads/2015/03/story_mapping.pdf",
+          "Jeff Patton, Story Mapping (8 Sep 2013)",
+        ),
+        source(
+          "https://shostack.org/resources/threat-modeling",
+          "Adam Shostack, four-question threat modeling",
+        ),
+        source(
+          "https://www.microsoft.com/en-us/securityengineering/sdl/threatmodeling",
+          "Microsoft SDL, threat modeling",
+        ),
+        NIST_PW1,
+        { href: SDLC_CARD, label: "SDLC field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
       ],
     },
   ],
