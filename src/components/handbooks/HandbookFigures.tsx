@@ -14,100 +14,6 @@ export function HandbookFigureView({ figure }: { figure: HandbookFigure }) {
   return <FlowFigure figure={figure} />;
 }
 
-export function HorizonPlate({ children }: { children: ReactNode }) {
-  return (
-    <div className="relative mt-8 overflow-hidden rounded-2xl border border-cyan-300/25 bg-[#050814] shadow-[0_0_48px_-16px_rgba(34,211,238,0.55)]">
-      <svg
-        aria-hidden
-        viewBox="0 0 800 200"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-36 w-full sm:h-44"
-        preserveAspectRatio="xMidYMax slice"
-      >
-        <defs>
-          <radialGradient id="limb" cx="50%" cy="78%" r="48%">
-            <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="14%" stopColor="#d9f8ff" />
-            <stop offset="32%" stopColor="#22d3ee" stopOpacity="0.95" />
-            <stop offset="58%" stopColor="#0369a1" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="#050814" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        <rect width="800" height="200" fill="url(#limb)" />
-        <ellipse cx="400" cy="248" rx="640" ry="92" fill="#050814" />
-      </svg>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-70"
-        style={{
-          backgroundImage:
-            "radial-gradient(1px 1px at 12% 22%, rgba(255,255,255,0.8), transparent), radial-gradient(1px 1px at 28% 40%, rgba(255,255,255,0.5), transparent), radial-gradient(1.5px 1.5px at 70% 18%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 84% 36%, rgba(255,255,255,0.45), transparent), radial-gradient(1px 1px at 48% 16%, rgba(103,232,249,0.8), transparent)",
-        }}
-      />
-      <div className="relative px-5 pt-6 pb-28 sm:px-8 sm:pt-8 sm:pb-32">{children}</div>
-    </div>
-  );
-}
-
-export function HandbookFieldPath() {
-  const stops = [
-    { href: "/sdlc-field-card/index.html", term: "Field card", detail: "The picture" },
-    { href: "/handbooks/software-that-stays-in-use/1", term: "Handbook", detail: "How you work" },
-    { href: "/stories", term: "Story", detail: "What happened" },
-    { href: "/portfolio", term: "Portfolio", detail: "The work" },
-  ];
-  return (
-    <figure className="relative mt-10 overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#050814]">
-      <svg aria-hidden viewBox="0 0 960 220" className="absolute inset-0 h-full w-full" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="trail" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.15" />
-            <stop offset="40%" stopColor="#67e8f9" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.8" />
-          </linearGradient>
-          <radialGradient id="ground" cx="50%" cy="100%" r="70%">
-            <stop offset="0%" stopColor="#083344" stopOpacity="0.9" />
-            <stop offset="55%" stopColor="#050814" stopOpacity="0" />
-          </radialGradient>
-        </defs>
-        <rect width="960" height="220" fill="url(#ground)" />
-        <path
-          d="M40 150 C 180 150, 220 70, 360 78 S 560 170, 700 92 S 860 60, 930 88"
-          fill="none"
-          stroke="url(#trail)"
-          strokeWidth="3"
-          strokeLinecap="round"
-        />
-        <path
-          d="M40 156 C 180 156, 220 78, 360 86 S 560 178, 700 100 S 860 68, 930 96"
-          fill="none"
-          stroke="#67e8f9"
-          strokeOpacity="0.25"
-          strokeWidth="10"
-          strokeLinecap="round"
-        />
-      </svg>
-      <figcaption className="sr-only">
-        Field card, handbook, story, and portfolio are one path.
-      </figcaption>
-      <ol className="relative grid grid-cols-2 gap-4 px-4 py-8 sm:grid-cols-4 sm:px-6 sm:py-10">
-        {stops.map((stop, index) => (
-          <li key={stop.term} className="text-center">
-            <a href={stop.href} className="focus-ring group inline-flex flex-col items-center rounded-sm">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full border border-cyan-200/70 bg-[#07111c] font-mono text-xs text-cyan-200 shadow-[0_0_18px_rgba(34,211,238,0.45)]">
-                {index + 1}
-              </span>
-              <span className="mt-3 block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-cyan-100 group-hover:text-white">
-                {stop.term}
-              </span>
-              <span className="mt-1 block text-sm text-slate-300">{stop.detail}</span>
-            </a>
-          </li>
-        ))}
-      </ol>
-    </figure>
-  );
-}
-
 function Plate({ children }: { children: ReactNode }) {
   return (
     <div className="relative mt-6 overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#070d18] shadow-[0_0_36px_-18px_rgba(34,211,238,0.65)]">
@@ -136,7 +42,7 @@ function MarkGlyph({ name, tone = "cyan" }: { name?: HandbookMark; tone?: "cyan"
   );
 }
 
-function IconPaths({ name, tone = "cyan" }: { name?: HandbookMark; tone?: "cyan" | "red" }) {
+export function IconPaths({ name, tone = "cyan" }: { name?: HandbookMark; tone?: "cyan" | "red" }) {
   const stroke = tone === "red" ? RED : CYAN;
   const props = {
     fill: "none",

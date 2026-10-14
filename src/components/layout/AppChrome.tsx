@@ -41,7 +41,13 @@ export function AppChrome({
     );
   }
 
-  const mainWidth = deskPage ? "max-w-6xl px-4" : "max-w-5xl px-4";
+ const handbookBoard =
+    pathname === "/handbooks" || /\/handbooks\/[^/]+\/1$/.test(pathname);
+  const mainWidth = handbookBoard
+    ? "max-w-7xl px-4"
+    : deskPage
+      ? "max-w-6xl px-4"
+      : "max-w-5xl px-4";
 
   return (
     <>

@@ -314,7 +314,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
             kind: "recovery",
             caption: "Feature work waits. The corrective change does not.",
             steps: [
-              { term: "Fails", detail: "The integration build goes red.", mark: "cross" },
+              { term: "Build fails", detail: "The integration build goes red.", mark: "cross" },
               { term: "Stop", detail: "No further feature work lands on main.", mark: "pause" },
               { term: "Find", detail: "The change that broke it.", mark: "search" },
               { term: "Repair", detail: "Fix that change, or revert it. That change still lands.", mark: "wrench" },
