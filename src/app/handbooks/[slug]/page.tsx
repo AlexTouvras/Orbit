@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { HANDBOOKS } from "@/content/handbooks";
-import { HandbookCover } from "@/components/handbooks/HandbookCover";
-import { getHandbook, handbookPath } from "@/lib/handbooks";
+import { getHandbook, pagePath } from "@/lib/handbooks";
 
 export function generateStaticParams() {
   return HANDBOOKS.map((handbook) => ({ slug: handbook.slug }));
@@ -16,10 +15,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const handbook = getHandbook(slug);
   if (!handbook) return { title: "Handbook" };
+  const opening = handbook.pages[0];
   return {
     title: handbook.title,
     description: handbook.thesis,
-    alternates: { canonical: handbookPath(handbook.slug) },
+    alternates: opening
+      ? { canonical: pagePath(handbook.slug, opening.number) }
+      : undefined,
   };
 }
 
@@ -30,6 +32,7 @@ export default async function HandbookPage({
 }) {
   const { slug } = await params;
   const handbook = getHandbook(slug);
-  if (!handbook) notFound();
-  return <HandbookCover handbook={handbook} />;
+  const opening = handbook?.pages[0];
+  if (!handbook || !opening) notFound();
+  redirect(pagePath(handbook.slug, opening.number));
 }

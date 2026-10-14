@@ -1,8 +1,7 @@
 /**
  * Field handbooks — the method layer.
  * Product owner: docs/product/HANDBOOKS.md
- * Edition 1 extends the SDLC field card. One page is written.
- * Sources for that page were opened on 2026-10-14. See the page.
+ * Public prose is final-book text. Draft status stays in the product doc.
  */
 
 export type ClaimKind = "principle" | "practice" | "hypothesis";
@@ -12,19 +11,35 @@ export interface HandbookLink {
   label: string;
 }
 
+export interface HandbookFigureStep {
+  term: string;
+  detail: string;
+}
+
+export interface HandbookFigure {
+  kind: "flow" | "pyramid";
+  caption: string;
+  steps: HandbookFigureStep[];
+}
+
 export interface HandbookSection {
   id: string;
   title: string;
   paragraphs?: string[];
   steps?: string[];
+  figure?: HandbookFigure;
+  sources?: HandbookLink[];
 }
 
 export interface HandbookPage {
   /** 1-based, stable. The public URL uses this number. */
   number: number;
+  /** What kind of page this is, in the book's own words. */
+  topic: string;
   title: string;
-  claim?: ClaimKind;
   lede: string;
+  /** The author's rule, stated apart from the sourced practice. */
+  rule?: string;
   sections: HandbookSection[];
   sources: HandbookLink[];
 }
@@ -39,12 +54,7 @@ export interface Handbook {
   slug: string;
   index: string;
   title: string;
-  kicker: string;
-  line: string;
-  accent: string;
   thesis: string;
-  /** Shown on the cover. The unread rest of the book. */
-  rest: string;
   /** The field card this book extends. */
   card: HandbookLink;
   contents: HandbookContentsEntry[];
@@ -75,92 +85,156 @@ const NIST = "https://csrc.nist.gov/projects/ssdf";
 const NIST_PDF =
   "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf";
 
+const FOWLER: HandbookLink = {
+  href: FOWLER_CI,
+  label: "Martin Fowler, Continuous Integration (18 Jan 2024)",
+};
+const HAMMANT: HandbookLink = {
+  href: TRUNK,
+  label: "Paul Hammant, trunk-based development",
+};
+const VOCKE: HandbookLink = {
+  href: PYRAMID,
+  label: "Ham Vocke, The Practical Test Pyramid (26 Feb 2018)",
+};
+
 export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
   slug: "software-that-stays-in-use",
   index: "01",
   title: "Software that stays in use",
-  kicker: "Handbook 01",
-  line: "Keep main",
-  accent: "releasable.",
   thesis:
-    "A codebase stays changeable when everyone merges to main at least daily, and a build tests that merge before anyone builds on it.",
-  rest: "Only this page is written. The next page waits until this one has been read.",
+    "Software stays in use when a team can still change it. This book is how I keep that change cheap.",
   card: { href: SDLC_CARD, label: "SDLC field card" },
   contents: [{ title: "Keep main releasable", page: 1 }],
   pages: [
     {
       number: 1,
+      topic: "Continuous integration",
       title: "Keep main releasable",
-      claim: "practice",
-      lede: "Software stays in use when a team can still change it. This page is the practice that makes the change cheap enough to keep doing.",
+      lede: "Software stays in use when a team can still change it. Continuous integration keeps that change cheap: people merge to main at least daily, a build tests the merge, and a broken main is the team's work.",
+      rule: "My operating rule: keep main releasable, make the failure visible immediately, and do not let a red main become normal.",
       sections: [
-        {
-          id: "job",
-          title: "The job of this page",
-          paragraphs: [
-            "The SDLC field card draws one change moving through four pillars. Under named practices it points at continuous integration, and the line under that link is: a broken trunk is the incident. This page is how I run that practice.",
-            "The procedure below follows Martin Fowler’s Continuous Integration article, revised 18 January 2024, Paul Hammant’s trunk-based development site, and Ham Vocke’s Practical Test Pyramid of 26 February 2018. The links are at the end of the page.",
-          ],
-        },
         {
           id: "decay",
           title: "Why the code stops lasting",
           paragraphs: [
-            "Fowler’s account of decay is the one I am using. A structure that was reasonable at the start is in the way six months later. Improving it means a deep edit. On a long-lived branch that edit collides with everyone else’s work. People remember the week a good change broke the team, and they stop making those changes. The awkward structure stays. New work gets slower.",
-            "The reversal he names is refactoring: small, behaviour-preserving changes to the structure, done often, on top of a build that can tell you the behaviour held. A refactor that sits on a branch for two weeks can improve the code and still be too expensive to merge, because everyone else spent those two weeks building on the old structure. Integrate often enough and the same change is a few hours of adjustment. A clash shows up while the two people can still talk.",
-            "That is the mechanism I mean by software that stays in use. The code lasts because the team can still restructure it. Rare integration is what makes the restructuring too expensive to start.",
+            "Fowler describes the decay as a cost, not a mood. A structure that was reasonable at the start is in the way six months later. Improving it means a deep edit. On a long-lived branch that edit collides with everyone else's work. People remember the week a good change broke the team, and they stop making those changes. The awkward structure stays. New work gets slower.",
+            "The reversal he names is refactoring: small, behaviour-preserving changes to the structure, done often, on a build that can tell you the behaviour held. A refactor that sits on a branch for two weeks can improve the code and still be too expensive to merge, because everyone else spent those two weeks building on the old structure. Integrate often enough and the same change is a few hours of adjustment. A clash shows up while the two people can still talk.",
+            "That is how I use the phrase software that stays in use. The code lasts because the team can still restructure it. Rare integration is what makes the restructuring too expensive to start.",
           ],
+          sources: [FOWLER],
         },
         {
           id: "practice",
-          title: "What the practice is",
+          title: "The practice, and my rule",
           paragraphs: [
-            "Fowler’s definition, which I am treating as the rule: each person merges their work into the shared codebase, together with their colleagues’ changes, at least daily. Each of those merges is verified by an automated build that includes tests, so an integration fault shows up while the change is small.",
-            "A build server that only compiles feature branches is a different practice. He calls it semi-integration. You have pulled main into your branch. You have not combined your work with the other branches still open. The collisions wait until someone finally merges, which is the expensive moment the practice exists to avoid.",
-            "Hammant describes the same constraint as trunk-based development. One trunk. Developers resist long-lived branches. Short-lived branches are for review and for the build check, and they come from a single workstation. The team runs the build, including unit and integration tests, on that machine before the rest of the team can depend on the change. Main stays in a state you can release. Fowler treats the two names as one practice and prefers the older name, continuous integration. I link both. The test I will use is whether the work landed on main today, not what the tool is called.",
+            "Fowler's definition is the established practice. Each person merges their work into the shared codebase, together with their colleagues' changes, at least daily. Each merge is verified by an automated build that includes tests, so a fault shows up while the change is small.",
+            "A build server that only compiles feature branches does not meet that definition. He calls it semi-integration. You have pulled main into your branch. You have not combined your work with the other branches still open. The collisions wait until someone finally merges.",
+            "Hammant describes trunk-based development as the branching constraint beside that: one trunk, resistance to long-lived branches, short-lived branches for review and the build check, a pre-integrate build on the workstation before anyone else depends on the change, and a main you can release. The two practices overlap. They are not the same test. A team can keep one trunk and still miss Fowler's rule, if the merge is rarer than daily or the build does not test it. My rule requires both: the work lands on main today, and the build checks that landing.",
           ],
+          sources: [FOWLER, HAMMANT],
         },
         {
           id: "day",
           title: "The day",
           paragraphs: [
-            "This is the order I want on a full-time team. It follows the walk Fowler gives, without his example.",
+            "This is the order on a full-time team. It follows Fowler's walk.",
           ],
+          figure: {
+            kind: "flow",
+            caption: "The commit loop. Repair is part of the loop, not a later project.",
+            steps: [
+              { term: "Pull", detail: "Take main. If the build is red, stop." },
+              { term: "Change", detail: "A slice that can merge today." },
+              { term: "Test", detail: "Run the build before anyone else depends on it." },
+              { term: "Integrate", detail: "Pull again, combine, push to main." },
+              { term: "Verify", detail: "The integration machine, not the laptop." },
+              { term: "Repair", detail: "A red main is fixed before the next change." },
+            ],
+          },
           steps: [
             "Pull main and run the build before you change anything. If it is red, fix that first. A new edit on a red build hides which change failed.",
-            "Keep the change small enough to merge the same day. If it will not fit, split it. Hammant’s escape for a change that has to last longer is a feature flag or a branch by abstraction, so main still accepts the unfinished work without turning it on.",
+            "Keep the change small enough to merge the same day. If it will not fit, split it. When the behaviour has to stay off while the code lands, Hammant uses a feature flag or a branch by abstraction. Those keep unfinished behaviour off the path a person uses. They do not make an untested change safe to release.",
             "Run the build on your machine before anyone else can depend on the result. Then pull again, combine, and run it again. Then push.",
-            "Wait for the build on the integration machine. A green result on your laptop is not the gate. Fowler’s phrase for the gap is the usual one: works on my machine.",
-            "If the integration build is red, fix it before the next change. That is his rule, and it is the card’s incident. A red main is the team’s work, not a badge someone notices tomorrow.",
-            "A pull request can carry the review when the branch is short-lived and lands the same day. A review that waits for days is a long-lived branch with a different name.",
+            "Wait for the build on the integration machine. A green result on your laptop is not the gate.",
+            "A pull request can carry the review when the branch is short-lived and lands the same day. A review that waits for days is a long-lived branch.",
           ],
+          sources: [FOWLER, HAMMANT],
+        },
+        {
+          id: "broken",
+          title: "A broken main",
+          paragraphs: [
+            "A red main is the team's work, not a badge someone notices tomorrow. Fowler's rule is to fix a broken build immediately. I treat that as the incident.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "Stop integrating new work onto a red main. Restore green, then continue.",
+            steps: [
+              { term: "Fails", detail: "The integration build goes red." },
+              { term: "Stop", detail: "No new work lands on that main." },
+              { term: "Find", detail: "The last change that broke it." },
+              { term: "Repair", detail: "Fix it, or revert it." },
+              { term: "Green", detail: "Main builds again. Then the next change." },
+            ],
+          },
+          sources: [FOWLER, { href: SDLC_CARD, label: "SDLC field card" }],
         },
         {
           id: "tests",
           title: "The tests that make the day possible",
           paragraphs: [
-            "Daily merging dies if the build is too slow to run, or if red has stopped meaning anything. Fowler’s guideline for the commit build, the one that runs on every push to main, is the old extreme-programming limit of about ten minutes. He splits what will not fit. The first stage compiles and runs the localized tests, with slow collaborators replaced by a double. A later stage may hit a real database and take a couple of hours. People treat the first stage as the stop. They still fix the second stage quickly. They do not pretend the slow stage is the one they run before every push.",
-            "Vocke, using Mike Cohn’s pyramid, is the shape I want inside that ten minutes. Many small fast tests. Some coarser tests. Very few that drive the whole application. He calls the inverted suite an ice-cream cone: slow, and miserable to maintain. He also draws the line I will enforce on a single test. Test observable behaviour. A test tied to the internal structure breaks when you refactor, the safety net becomes noise, and people stop refactoring. That is the decay, arriving through the test suite.",
-            "The field card already says a person drops tests that do not fail for the right reason. On this page that means: if the behaviour held and the test went red because a name or a collaborator moved, delete the test or rewrite it against the behaviour. An agent-written test is a draft until a person has done that once.",
-            "Security checks belong in the same build, or they are not a gate. NIST Special Publication 800-218 says practices like the Secure Software Development Framework have to be added into the life cycle you already run, because most life-cycle models do not specify security. Practice PW.1 says you identify the security requirements and the risks during design, threat modeling being one form it names, and PW.1.2 says you keep a record of the requirements, the risks, and the design decisions. I have not written the design page, so I will not invent a threat-model template here. The limit for this page is narrower: a check I cannot name does not go in the build, and a check I can name has to be able to fail it.",
+            "Daily merging dies if the build is too slow to run, or if red has stopped meaning anything. Fowler's ten minutes is a guideline for the commit build, the one that runs on every push to main. It is not a limit on every later stage. He splits what will not fit. The first stage compiles and runs the localized tests, with slow collaborators replaced by a double. A later stage may hit a real database and take a couple of hours. The first stage is the stop. The second stage is still fixed quickly. It is not the build you wait on before every push.",
+            "Vocke, using Mike Cohn's pyramid, is the shape inside those ten minutes. Many small fast tests. Some coarser tests. Very few that drive the whole application. He calls the inverted suite an ice-cream cone: slow, and miserable to maintain. Test observable behaviour. A test tied to the internal structure breaks when you refactor, the safety net becomes noise, and people stop refactoring.",
+            "If the behaviour held and the test went red because a name or a collaborator moved, delete the test or rewrite it against the behaviour. An agent-written test is a draft until a person has done that once.",
+            "A control I rely on to stop a bad merge has to be able to fail the build. A review, a policy call, or a check on another cadence is a different control, and I do not describe it as that gate. NIST SP 800-218 says secure-development practices have to sit inside the life cycle you already run. Practice PW.1 says you identify security requirements and risks in design, threat modeling being one form it names, and you keep a record of the requirements, the risks, and the design decisions. The record tells you which checks are gates.",
+          ],
+          figure: {
+            kind: "pyramid",
+            caption:
+              "Most of the commit build is fast tests of behaviour. The slow end-to-end checks are few, and they are not the ten-minute loop.",
+            steps: [
+              { term: "Fast", detail: "Many tests of observable behaviour, close to the change." },
+              { term: "Coarser", detail: "Fewer tests across a boundary, still in the commit build when they stay fast." },
+              { term: "End to end", detail: "Very few. They can run in a later stage." },
+            ],
+          },
+          sources: [FOWLER, VOCKE, { href: NIST, label: "NIST SSDF, SP 800-218" }],
+        },
+        {
+          id: "inspect",
+          title: "What I inspect",
+          paragraphs: [
+            "These are the questions I ask of a team. They are my check, not a claim that Fowler or Hammant published this list.",
+          ],
+          steps: [
+            "Can a developer get a meaningful result from the commit build while the change is still small?",
+            "How long does a change typically sit before it is on main?",
+            "When main is red, who stops, and who restores it?",
+            "Do the tests fail because the behaviour changed, or because the structure moved?",
+            "Can the team say what would make this change safe to release, separately from the fact that it merged?",
           ],
         },
         {
           id: "limits",
-          title: "Where I will not use it",
+          title: "Where I do not use it",
           paragraphs: [
-            "Fowler’s limit, which I am keeping: a project with one or two part-time maintainers and contributors they do not work beside. Daily integration is not plausible there. The pull-request workflow came from that setting. Raise the frequency you can. Do not describe a build badge as the practice.",
-            "He also says the practice fails without the skill underneath it. No self-testing build, and main goes red for reasons nobody can see. No automation, and the integration itself takes too long to do daily. A team that pushes red and walks away trains everyone else to work on a broken trunk. I would not introduce the daily merge until the commit build exists and someone is willing to stop for it.",
-            "Release calendars, blast-radius proof, and the cutover sequence stay on the technology delivery field card. Fowler separates the two decisions. Once main is releasable, whether to put that build in production is a business decision. This page gets main to that state. It does not pick the window.",
+            "Fowler's limit, which I use: a project with one or two part-time maintainers and contributors they do not work beside. Daily integration is not plausible there. The pull-request workflow came from that setting. Raise the frequency you can. A build badge is not the practice.",
+            "The practice fails without the skill under it. No self-testing build, and main goes red for reasons nobody can see. No automation, and the integration itself takes too long to do daily. A team that pushes red and walks away trains everyone else to work on a broken trunk. I do not install the daily merge until the commit build exists and someone will stop for it.",
+            "Release calendars, blast-radius proof, and the cutover sequence stay on the technology delivery field card. Fowler separates the two decisions. Once main is releasable, whether to put that build in production is a business decision. Keeping main releasable does not pick the window.",
+          ],
+          sources: [
+            FOWLER,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
           ],
         },
       ],
       sources: [
-        { href: FOWLER_CI, label: "Martin Fowler, Continuous Integration (18 Jan 2024)" },
-        { href: TRUNK, label: "Paul Hammant, trunk-based development" },
-        { href: PYRAMID, label: "Ham Vocke, The Practical Test Pyramid (26 Feb 2018)" },
+        FOWLER,
+        HAMMANT,
+        VOCKE,
         { href: NIST, label: "NIST SSDF, SP 800-218" },
-        { href: NIST_PDF, label: "NIST SP 800-218, the PW.1 pages" },
+        { href: NIST_PDF, label: "NIST SP 800-218, practice PW.1" },
         { href: SDLC_CARD, label: "SDLC field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
       ],

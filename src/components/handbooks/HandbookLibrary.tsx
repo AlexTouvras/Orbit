@@ -1,22 +1,9 @@
 import Link from "next/link";
-import { HANDBOOKS, LATER_HANDBOOKS } from "@/content/handbooks";
+import { HANDBOOKS } from "@/content/handbooks";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
-import { handbookPath } from "@/lib/handbooks";
+import { pagePath } from "@/lib/handbooks";
 
 export function HandbookLibrary() {
-  const published = HANDBOOKS.map((handbook) => ({
-    index: handbook.index,
-    title: handbook.title,
-    line: handbook.thesis,
-    href: handbookPath(handbook.slug),
-  }));
-  const later = LATER_HANDBOOKS.map((handbook) => ({
-    index: handbook.index,
-    title: handbook.title,
-    line: "Not written.",
-    href: null as string | null,
-  }));
-
   return (
     <div>
       <StoryHeadline
@@ -26,39 +13,30 @@ export function HandbookLibrary() {
       />
       <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
         A handbook is a book about one field. The field card is the picture.
-        The pages are how you work.
+        The book is how you work.
       </p>
       <ol className="mt-12 border-t border-white/10">
-        {[...published, ...later].map((handbook) => {
-          const body = (
-            <>
-              <span className="font-mono text-sm tabular-nums text-slate-500">
-                {handbook.index}
-              </span>
-              <span>
-                <span className="block font-display text-2xl font-semibold text-white group-hover:text-neon-cyan">
-                  {handbook.title}
-                </span>
-                <span className="mt-2 block max-w-xl text-sm leading-relaxed text-slate-400">
-                  {handbook.line}
-                </span>
-              </span>
-            </>
-          );
+        {HANDBOOKS.map((handbook) => {
+          const opening = handbook.pages[0];
+          if (!opening) return null;
           return (
-            <li key={handbook.index} className="border-b border-white/10">
-              {handbook.href ? (
-                <Link
-                  href={handbook.href}
-                  className="focus-ring group grid gap-2 py-6 sm:grid-cols-[4.5rem_1fr] sm:gap-6"
-                >
-                  {body}
-                </Link>
-              ) : (
-                <div className="grid gap-2 py-6 sm:grid-cols-[4.5rem_1fr] sm:gap-6">
-                  {body}
-                </div>
-              )}
+            <li key={handbook.slug} className="border-b border-white/10">
+              <Link
+                href={pagePath(handbook.slug, opening.number)}
+                className="focus-ring group grid gap-2 py-6 sm:grid-cols-[4.5rem_1fr] sm:gap-6"
+              >
+                <span className="font-mono text-sm tabular-nums text-slate-500">
+                  {handbook.index}
+                </span>
+                <span>
+                  <span className="block font-display text-2xl font-semibold text-white group-hover:text-neon-cyan">
+                    {handbook.title}
+                  </span>
+                  <span className="mt-2 block max-w-xl text-sm leading-relaxed text-slate-400">
+                    {handbook.thesis}
+                  </span>
+                </span>
+              </Link>
             </li>
           );
         })}
