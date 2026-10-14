@@ -1,7 +1,160 @@
 {
-  "generatedAt": "2026-10-13T06:46:59.627Z",
-  "count": 263,
+  "generatedAt": "2026-10-14T06:46:56.927Z",
+  "count": 264,
   "items": [
+    {
+      "id": "e49a398e91e1",
+      "title": "Introducing Private Network Gateway",
+      "link": "https://www.databricks.com/blog/introducing-private-network-gateway",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-14T14:00:00.000Z",
+      "contentSnippet": "Databricks serverless compute is fully managed, intelligent, and versionless, allowing..."
+    },
+    {
+      "id": "58e4191fcfe4",
+      "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
+      "link": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-10-14T02:00:14.000Z",
+      "contentSnippet": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress."
+    },
+    {
+      "id": "258b0b987413",
+      "title": "Connecting payment systems, linking economies",
+      "link": "https://cepr.org/voxeu/columns/connecting-payment-systems-linking-economies",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-13T23:00:00.000Z",
+      "contentSnippet": "Several countries are working to interlink their domestic fast payment systems in order to reduce costs and improve the speed and transparency of cross-border payments. This column presents econometric evidence suggesting that countries with interlinked systems trade with each ot…"
+    },
+    {
+      "id": "7df1cb145cda",
+      "title": "Financing the AI boom: Winners and losers in corporate bond markets",
+      "link": "https://cepr.org/voxeu/columns/financing-ai-boom-winners-and-losers-corporate-bond-markets",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-13T23:00:00.000Z",
+      "contentSnippet": "The expansion of artificial intelligence has triggered a surge of investment and rising equity values at technology firms. The largest firms, known as ‘hyperscalers’, issued over $100 billion of bonds in 2025, around five times the 2023-2024 annual average. This column compares b…"
+    },
+    {
+      "id": "98b69313f8c3",
+      "title": "Scrum: Delivery Method or AI Governance?",
+      "link": "https://www.scrum.org/resources/blog/scrum-delivery-method-or-ai-governance",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-13T22:10:54.000Z",
+      "contentSnippet": "The same Scrum framework sits behind organisations that get real value from AI and those that don't. What separates them is where Scrum is placed in their operating model. For many organisations, Scrum is a delivery method inside a project: the business case fixes scope, budget,…"
+    },
+    {
+      "id": "c2c066a8a7ef",
+      "title": "Your Sprint Review isn't inspection. It's theatre.",
+      "link": "https://www.scrum.org/resources/blog/your-sprint-review-isnt-inspection-its-theatre-0",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-13T22:00:00.000Z",
+      "contentSnippet": "Image The demo works. The feature does exactly what the slide said it would. Someone says \"nice.\" A couple of people do the little typing-clap in the chat. \"Any questions?\" A pause, the good kind, the kind that means we're done. \"Great, thanks everyone.\" And the review is over. N…"
+    },
+    {
+      "id": "471508c04c30",
+      "title": "Developing Gemini 4 Argon responsibly and safely",
+      "link": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-10-13T19:43:07.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "aff2b4e37bdd",
+      "title": "A practical guide to real-time analytics in 2026",
+      "link": "https://www.databricks.com/blog/practical-guide-real-time-analytics-2026",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-13T19:17:26.000Z",
+      "contentSnippet": "Data has always been central to business decision-making, and most analytical workloads..."
+    },
+    {
+      "id": "356f7c036b0e",
+      "title": "What's New in Lakeflow Designer - October 2026 Roundup",
+      "link": "https://www.databricks.com/blog/whats-new-lakeflow-designer-october-2026-roundup",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-13T19:00:00.000Z",
+      "contentSnippet": "We launched Lakeflow Designer to general availability in June, and since then, over..."
+    },
+    {
+      "id": "48b7bb4f0d0e",
+      "title": "Databricks is a Visionary the Gartner® Magic Quadrant™ for Analytics and Business Intelligence Platforms",
+      "link": "https://www.databricks.com/blog/databricks-visionary-gartnerr-magic-quadranttm-analytics-and-business-intelligence-platforms",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-13T18:00:00.000Z",
+      "contentSnippet": "We are incredibly excited to announce that Databricks has made its inaugural appearance..."
+    },
+    {
+      "id": "884ebf3c3978",
+      "title": "Gemini 4 Argon for Robotics",
+      "link": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-10-13T16:01:58.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "f174716114a9",
+      "title": "Gemini 4 Argon: Built to solve your hardest problems",
+      "link": "https://deepmind.google/blog/introducing-gemini-4-argon/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-10-13T16:01:52.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "31a1484f459b",
+      "title": "7 Rules for Agile Teamwork Without Slowing Everyone Down",
+      "link": "https://www.mountaingoatsoftware.com/agile/rules-for-agile-teamwork",
+      "source": "Mountain Goat Software",
+      "category": "Delivery",
+      "pubDate": "2026-10-13T15:00:00.000Z",
+      "contentSnippet": "Seven practical rules for increasing collaboration, shared ownership, and team autonomy without involving everyone in every decision."
+    },
+    {
+      "id": "b9d4e05001a4",
+      "title": "The Craft of Practitioner Voice",
+      "link": "https://martinfowler.com/articles/practitioner-voice.html#TheCraftOfPractitionerVoice",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-10-13T14:06:00.000Z",
+      "contentSnippet": "A couple of months ago Jim Highsmith explained how practitioners writing for each other forms a distinct style of writing. He now adds a section to the article with more detail on the craft of how we write in this style. How the writer shows up in the prose, its four principles,…"
+    },
+    {
+      "id": "56f869f0dea0",
+      "title": "Are Harnesses Worth the Cost?",
+      "link": "https://martinfowler.com/articles/are-harnesses-worth-the-cost.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-10-13T13:35:00.000Z",
+      "contentSnippet": "Naresh Jain compares coding agents building the same API service with and without a behavioral harness. A frontier model, GPT-6 Sol, passed every external evaluation either way. But a cost-optimized model, GPT-6 Luna, succeeded in only 3 of 10 unharnessed runs and all 10 with the…"
+    },
+    {
+      "id": "ffc748cb8d88",
+      "title": "Higgsfield takes AI video from 1 minute to over 10",
+      "link": "https://openai.com/index/higgsfield-longer-videos-voice",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-13T12:00:00.000Z",
+      "contentSnippet": "Higgsfield brings creators longer videos with GPT-6 Astra, precise visuals with GPT-Image-2.5, and a path to voice filmmaking with GPT-Live."
+    },
+    {
+      "id": "01fe7a5ed504",
+      "title": "Are stablecoins and bank deposits substitutes?",
+      "link": "https://www.bis.org/publications/working-paper-1382-are-stablecoins-and-bank-deposits-substitutes",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-13T00:00:00.000Z",
+      "contentSnippet": "We test whether stablecoins and bank deposits act as substitutes by estimating the semi-elasticity of stablecoin market capitalization with respect to deposit rate changes. Using local projections fit to weekly U.S. data from January 2019 to June 2025, we find that deposit rate i…"
+    },
     {
       "id": "8b05e0908c1d",
       "title": "Detecting institutional change as it unfolds: Evidence from 120 years of reporting",
@@ -28,6 +181,15 @@
       "category": "Economics",
       "pubDate": "2026-10-12T23:00:00.000Z",
       "contentSnippet": "Public services increasingly use predictive algorithms to direct scarce support towards those most at risk. But are these also the people who benefit most from intervention? This column explains how to navigate this trade-off and shows why it matters in practice. Job search couns…"
+    },
+    {
+      "id": "59ffb5c913b3",
+      "title": "Les entreprises gérées par leurs salariés peuvent réduire les inégalités et préserver le libre marché",
+      "link": "https://cepr.org/voxeu/columns/les-entreprises-gerees-par-leurs-salaries-peuvent-reduire-les-inegalites-et-preserver",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-12T23:00:00.000Z",
+      "contentSnippet": "L’aggravation des inégalités de revenus dans les pays occidentaux à haut revenu menace la gouvernance démocratique et la cohésion sociale, et l’intelligence artificielle risque d’aggraver encore cette situation. S’appuyant sur un ouvrage à paraître, cet article plaide en faveur d…"
     },
     {
       "id": "e6bb69f517c6",
@@ -129,15 +291,6 @@
       "contentSnippet": "The 2025-26 US tariffs have renewed the question of how much of a tariff reaches consumers, and how quickly. This column traces tariffs through import, domestic producer, and retail prices for US consumer goods. About a quarter of a tariff increase passes through to consumer pric…"
     },
     {
-      "id": "be1fc9b6e0e0",
-      "title": "Financial sanctions and the global payments network",
-      "link": "https://cepr.org/voxeu/columns/financial-sanctions-and-global-payments-network",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-11T23:00:00.000Z",
-      "contentSnippet": "Direct evidence on the effects of financial sanctions remains limited. This column uses correspondent banking data to study how sanctions affect access to global payment networks. The dollar and euro networks offer the most efficient connections to banks in other countries. Furth…"
-    },
-    {
       "id": "0b0fddc541bc",
       "title": "To Switch, or Not to Switch the AI Model",
       "link": "https://www.scrum.org/resources/blog/switch-or-not-switch-ai-model",
@@ -163,24 +316,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-11T06:00:00.000Z",
       "contentSnippet": "Image Gary Hamel spent decades asking why large organizations become rigid, slow, and hard to work inside. His diagnosis is simple: bureaucracy is not a symptom of poor management. It is a design, and its purpose is control, not the creation of value. I have been watching this de…"
-    },
-    {
-      "id": "67939e1bd693",
-      "title": "Fiscal populism and monetary policy rules",
-      "link": "https://cepr.org/voxeu/columns/fiscal-populism-and-monetary-policy-rules",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-10T23:00:00.000Z",
-      "contentSnippet": "Populism may not only have contemporary but also long-term effects on the macroeconomy. Using data for advanced economies and emerging markets since 1960, this column explores the historical links between populist regimes, fiscal monetisation, and inflation, and how these links a…"
-    },
-    {
-      "id": "32fa280f5a1c",
-      "title": "Ideas and firm dynamics when it takes two to tango",
-      "link": "https://cepr.org/voxeu/columns/ideas-and-firm-dynamics-when-it-takes-two-tango",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-10T23:00:00.000Z",
-      "contentSnippet": "Innovation has increasingly become a team activity, while inventors have become more concentrated in large firms. This column argues that these trends are closely connected. Team production creates genuine scale advantages in innovation, but can also lead the competitive economy…"
     },
     {
       "id": "a276e4f9898e",
@@ -273,33 +408,6 @@
       "contentSnippet": "We're excited to announce the publicly available Beta of the Workday Data Connect federation connector for Unity Catalog..."
     },
     {
-      "id": "714c79df7b98",
-      "title": "Introducing Funke: Native HL7v2 Parsing on Databricks",
-      "link": "https://www.databricks.com/blog/introducing-funke-native-hl7v2-parsing-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-08T22:00:00.000Z",
-      "contentSnippet": "The HL7v2 problem in the lakehouseHL7v2 is the messaging standard that quietly runs healthcare..."
-    },
-    {
-      "id": "d953dbc7e61c",
-      "title": "Lakebase and Agentic SDLC: Branching Databases for Coding Agents",
-      "link": "https://www.databricks.com/blog/lakebase-and-agentic-sdlc-branching-databases-coding-agents",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-08T22:00:00.000Z",
-      "contentSnippet": "AI has changed how software gets built. As coding agents take on a growing share..."
-    },
-    {
-      "id": "20268ddf9c0f",
-      "title": "Biomedical Imaging's Real Bottleneck Is the Data, Not the Model",
-      "link": "https://www.databricks.com/blog/biomedical-imagings-real-bottleneck-data-not-model",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-08T21:00:00.000Z",
-      "contentSnippet": "Part I — The problemFour sectors, one bottleneckHospitals and health systems generate..."
-    },
-    {
       "id": "2999c3c463fc",
       "title": "The missing map of the sky",
       "link": "https://www.anthropic.com/research/the-missing-map-of-the-sky",
@@ -316,15 +424,6 @@
       "category": "AI",
       "pubDate": "2026-10-08T19:00:00.000Z",
       "contentSnippet": "We’re making available OSS Scanner, an opt-in vulnerability scanner for the open-source ecosystem that’s informed by our experience using Claude to find vulnerabilities during Project Glasswing."
-    },
-    {
-      "id": "4ef67c426724",
-      "title": "Load terabytes of data in minutes into Lakebase Postgres",
-      "link": "https://www.databricks.com/blog/load-terabytes-data-minutes-lakebase-postgres",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-08T18:49:31.000Z",
-      "contentSnippet": "Operational databases like Postgres are built to reliably execute highly concurrent..."
     },
     {
       "id": "112b5f00879d",
@@ -417,15 +516,6 @@
       "contentSnippet": "Consultation paper 13/26"
     },
     {
-      "id": "04e9dc3828b5",
-      "title": "Radisson Hotel Group brings hotel discovery into ChatGPT",
-      "link": "https://openai.com/index/radisson",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-07T07:00:00.000Z",
-      "contentSnippet": "Radisson partnered with Accenture to build a ChatGPT plugin using OpenAI technology, helping travelers find, compare, and book hotels while planning their trips."
-    },
-    {
       "id": "338a2fbf5a99",
       "title": "A DuckDB Database with No Data in It",
       "link": "https://duckdb.org/2026/10/07/view-only-mode.html",
@@ -495,7 +585,7 @@
       "source": "BIS Financial Stability",
       "category": "Credit",
       "pubDate": "2026-10-06T00:00:00.000Z",
-      "contentSnippet": "This paper analyses the state-dependent effects of geopolitical risks on gold prices (i.e. the safe-haven role of gold), conditional on financial conditions. Geopolitical risks are often associated with tighter financial conditions. However, recent data reveal a decoupling be twe…"
+      "contentSnippet": "This paper analyses the state-dependent effects of geopolitical risks on gold prices (i.e. the safe-haven role of gold), conditional on financial conditions. Geopolitical risks are often associated with tighter financial conditions. However, recent data reveal a decoupling betwee…"
     },
     {
       "id": "c3d66983a8dc",
@@ -723,33 +813,6 @@
       "contentSnippet": "Between 2021 and 2025, 28.7% of artificial intelligence (AI) firms’ investment deals (by deal value) involved a target company that was also an AI firm, while 55.2% of incoming investments in AI firms came from other AI firms."
     },
     {
-      "id": "15e70ee5e4a7",
-      "title": "Gemini 4 Argon: our next era of frontier intelligence",
-      "link": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-30T20:01:45.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "0a622a33b8e3",
-      "title": "Introducing SynthID Bio",
-      "link": "https://deepmind.google/blog/introducing-synthid-bio/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-30T15:03:07.000Z",
-      "contentSnippet": "Proof of concept for watermarking AI-generated proteins while preserving biological function."
-    },
-    {
-      "id": "4bea5e365c61",
-      "title": "The New SDLC From Google Has a Harness. It Doesn't Have a Team.",
-      "link": "https://www.scrum.org/resources/blog/new-sdlc-google-has-harness-it-doesnt-have-team",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-09-30T14:54:22.000Z",
-      "contentSnippet": "Image 85% of professional developers now regularly use AI coding agents. Forty-one percent of new code is AI-generated. Those numbers come from Google's own May 2026 paper, The New SDLC With Vibe Coding, the numbers themselves are interesting but not as interesting as how those p…"
-    },
-    {
       "id": "5c34efbd94af",
       "title": "Principles for effective slides",
       "link": "https://martinfowler.com/articles/never-send-slides/slide-principles.html",
@@ -930,15 +993,6 @@
       "contentSnippet": "Hugging Face is where much of the machine learning community publishes and finds its datasets, while DuckDB is the in-process analytical database that queries files like CSV and Parquet directly, with no server or warehouse to install or run. Did you know that, since DuckDB v0.10…"
     },
     {
-      "id": "34d5ed94e667",
-      "title": "Trusted execution environments for central banks",
-      "link": "https://www.bis.org/publications/paper-173-trusted-execution-environments-central-banks",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-25T00:00:00.000Z",
-      "contentSnippet": "This paper considers what TEEs can responsibly deliver for central banks, the conditions under which they are most effective and how they can be deployed without widening who must be trusted. It takes a balanced view, outlining core assurances and boundaries, highlighting impleme…"
-    },
-    {
       "id": "da79314d1ca0",
       "title": "Automating coherent long-form video generation",
       "link": "https://research.google/blog/coherent-long-form-video-generation/",
@@ -946,15 +1000,6 @@
       "category": "AI",
       "pubDate": "2026-09-24T19:40:00.000Z",
       "contentSnippet": "Generative AI"
-    },
-    {
-      "id": "e7107d9a76d9",
-      "title": "Introducing Gemini 3.8 Live with Live Avatar",
-      "link": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-24T16:20:39.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "1edd9ca3b0b4",
@@ -982,15 +1027,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-24T06:56:03.000Z",
       "contentSnippet": "We’ve already covered how AI can build and modify a semantic model using the Power BI Modeling MCP server. But building the semantic model is only half the job, someone still has to build the actual report on top of it. In this episode of Fabric Insider, I sit down with Harleen K…"
-    },
-    {
-      "id": "4c4abcff4acd",
-      "title": "Advancing Private AI Compute with secure, server-side memory",
-      "link": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-09-23T16:00:57.000Z",
-      "contentSnippet": "Introducing private, server-side memory to Private AI Compute for personal AI."
     },
     {
       "id": "c5a1b694eb86",
@@ -1569,24 +1605,6 @@
       "contentSnippet": "There’s so much going on in the Fabric community that it can be hard to keep up with it all. Semantic Link Labs is a great example: in the six months or so since I last had a proper look at it my colleague Michael Kovalsky has done a whole load of cool things and … Continue readi…"
     },
     {
-      "id": "c0d3ea0920c2",
-      "title": "Citizens Build, Agents Execute, Experts Govern",
-      "link": "https://martinfowler.com/rachels-ramblings/citizens-agents-experts.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-08-19T18:30:00.000Z",
-      "contentSnippet": "TL;DR Why building an app over the weekend isn't the same as building enterprise software I’ve noticed an interesting gap opening up over the last six months. It isn’t really a gap in technology. It’s a gap in what different people think software engineering actually is. The conv…"
-    },
-    {
-      "id": "4f6ea3bc7cf5",
-      "title": "Practitioner Voice: The Writing Category Nobody has Named Yet",
-      "link": "https://martinfowler.com/articles/practitioner-voice.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-08-19T18:15:00.000Z",
-      "contentSnippet": "Jim Highsmith recognizes that effective writing from a practitioner is a style distinct from academic writing or thought-leadership content. It's a style that I advocate, and my contributors mostly follow. Jim decided it was important to give it a name, and identify what makes it…"
-    },
-    {
       "id": "776508c048eb",
       "title": "Data Engineering Weekly #283",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-283",
@@ -2143,15 +2161,6 @@
       "category": "Delivery",
       "pubDate": "2026-05-05T13:00:00.000Z",
       "contentSnippet": "Turn planning pressure into a shared conversation about options and tradeoffs."
-    },
-    {
-      "id": "6f76b0ce92bb",
-      "title": "How the Story Critic AI Skill Helps Teams Write Better Backlog Items",
-      "link": "https://www.mountaingoatsoftware.com/agile/story-critic-skill-better-backlog-items",
-      "source": "Mountain Goat Software",
-      "category": "Delivery",
-      "pubDate": "2026-04-28T13:00:00.000Z",
-      "contentSnippet": "See how AI coaching can help teams write clearer, smaller, more testable backlog items."
     },
     {
       "id": "0b5754265080",
