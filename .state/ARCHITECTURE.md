@@ -160,7 +160,7 @@ data/studio-roadmap.json
 data/studio-roadmap.seed.json
 PRODUCT.md
 docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, HANDBOOKS, AGENT_RULES
-src/content/handbooks.ts     # handbook series; edition 1 chapters
+src/content/handbooks.ts     # handbook series; edition 1 is numbered pages
 src/lib/handbooks.ts
 src/components/handbooks/
 src/app/handbooks/
@@ -175,6 +175,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-14 | The first handbook is a book of pages on the SDLC card | Owner: a handbook is a book, so the reading unit is a numbered page, and the first book starts from the SDLC field card. Cover is the contents. `/handbooks/software-that-stays-in-use/1` through `/16`. The chain essay is no longer the flagship. Delivery still owns calendars, proof, and cutover. Notes stay on the last page. |
 | 2026-10-13 | Building intelligent systems is the chain, not the storytelling card | The flagship was labeled as an extension of the storytelling field card. That card is one field. The handbook cites it where a sentence comes from it, and the library says the cards stay the fields. Later titles may go deep on one card. They stay closed. Chapter endings no longer send the reader out to a credit story as the point of the handbook. |
 | 2026-10-13 | A handbook extends one field card and ends on one story | Owner: continuity with the cards, one small flagship, landing page states the library’s job. Edition 1 extends the storytelling field card. Later titles each name one card and have no routes. The AI card and the SDLC card stay cards. Chapter closes point at one decision story. |
 | 2026-10-13 | Field handbooks are a public method layer at `/handbooks` | Owner shared a brief: cards are the overview, handbooks are the method, stories and essays stay the proof. Edition 1 is Building intelligent systems, three chapters, sourced from the public chain and field-card lines. Later titles are named and have no routes. Chapter notes reuse the essay feedback store under a `handbooks/...` key. Product owner: `docs/product/HANDBOOKS.md`. |

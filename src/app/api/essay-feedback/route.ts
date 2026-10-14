@@ -19,7 +19,7 @@ function feedbackTarget(slug: string): {
   }
   const chapter = handbookFeedbackPage(slug);
   if (chapter) {
-    return { ...chapter, sourceLabel: "handbook chapter" };
+    return { ...chapter, sourceLabel: "handbook page" };
   }
   return null;
 }
@@ -34,7 +34,7 @@ export async function GET(req: NextRequest) {
 
   if (!feedbackTarget(slug)) {
     return NextResponse.json(
-      { error: slug.startsWith("handbooks/") ? "Chapter not found." : "Essay not found." },
+      { error: slug.startsWith("handbooks/") ? "Page not found." : "Essay not found." },
       { status: 404 },
     );
   }
@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
   const target = feedbackTarget(slug);
   if (!target) {
     return NextResponse.json(
-      { error: slug.startsWith("handbooks/") ? "Chapter not found." : "Essay not found." },
+      { error: slug.startsWith("handbooks/") ? "Page not found." : "Essay not found." },
       { status: 404 },
     );
   }

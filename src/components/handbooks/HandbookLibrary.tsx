@@ -25,9 +25,8 @@ export function HandbookLibrary() {
         accent="behind the cards."
       />
       <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
-        The field cards are the fields. A handbook is the chain across them: a
-        business problem, then data, an intelligent system, delivery, and a
-        measured outcome.
+        A handbook is a book about one field. The field card is the picture.
+        The pages are how you work.
       </p>
       <ol className="mt-12 border-t border-white/10">
         {[...published, ...later].map((handbook) => {

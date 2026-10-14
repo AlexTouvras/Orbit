@@ -32,7 +32,7 @@ Public pages consume only information explicitly marked public. Do not automatic
 - Hub / Portfolio / live desks: chaptered visual storytelling (see `.cursor/skills/visual-storytelling`)
 - Products: `/products` (`src/content/products.ts`). A product is a page or a command a stranger can open. The gravity satellite and the nav both go there. Workshop projects stay on `/portfolio`. Delivery Signal is not copied into Orbit: `/delivery-signal/` reads that repo’s `docs/` on `main` and keeps it for a minute.
 - Writes: MDX prose; stranger-first (`docs/essay-voice.md`); no cast/scenario blocks on essays
-- Handbooks: `/handbooks` (`docs/product/HANDBOOKS.md`). Method, between a field card and a story. Edition 1 is Building intelligent systems. Later titles do not get routes until they are written.
+- Handbooks: `/handbooks` (`docs/product/HANDBOOKS.md`). Method, between a field card and a story. Edition 1 is a book of pages that extends the SDLC field card. Later titles do not get routes until they are written.
 - Studio and `/card`: interior tools — not cinematic chapter restyles
 - JARVIS / ProjectHelm: retired; historical architecture only
 

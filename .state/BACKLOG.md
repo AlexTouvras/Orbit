@@ -4,8 +4,8 @@
 
 ## Now
 
-- [x] Field handbooks edition 1 — `/handbooks`, Building intelligent systems, three chapters (principle, method, Monday). Later titles named, not routed.
-- [x] Handbook continuity — flagship is the chain across the cards. The storytelling card is a citation, not the parent. Later titles may go deep on one card and stay closed.
+- [x] Field handbooks edition 1 — `/handbooks`, Software that stays in use, sixteen pages from the SDLC field card. Later titles named, not routed.
+- [x] Handbook continuity — the first book extends the SDLC field card. A handbook is pages, not a scrolling chapter. Later titles stay closed.
 - [x] Products frame: a button scroll lands below the Orbit bar, with a little air
 - [x] Field-card `sync` copies `index.html` and `assets/` as original bytes. Approve uses the same copy. Deploy before technology-delivery-field-card PR 8 merges.
 - [x] Products page shows one frame for one hosted product — drop the summary card above Delivery Signal
@@ -55,7 +55,7 @@
 
 ## Next
 
-- [ ] **Handbooks 02–05** — delivery, data, decisions under uncertainty, leading through systems. No routes until edition 1 has been read. Owner: `docs/product/HANDBOOKS.md`.
+- [ ] **Handbooks 02–04** — delivery, data, decisions under uncertainty. No routes until the SDLC book has been read. Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Orbit 2.0 Foundation** — shipped to `main` (`6892531` / Gate 3). Product docs, AI & Data Systems Lead positioning, Studio `/studio/roadmap`. Card keeps STATEMENT only (no NOW box). Website infra = EVIDENCE; career archetype not PROVEN.
 - [ ] **Orbit 2.0 Evidence Layer** — (1) ~~audit~~ draft in `docs/product/EVIDENCE_AUDIT.md` (owner review), (2) ~~name flagship~~ owner selected **Interactive Decision Storytelling**, (3) ~~publish flagship on Orbit~~ local port + Portfolio teaser (2026-09-24; uncommitted), (4) case study Write + deeper evidence chain, repeat. Decision Intelligence Lab is not the selected flagship.
 - [x] **IDS on Orbit** — `/stories` landing + `/stories/when-rates-rise` + Portfolio `FlagshipTeaser` after title (build green; owner review before commit/push)

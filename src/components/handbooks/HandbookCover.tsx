@@ -1,11 +1,14 @@
 import Link from "next/link";
 import type { Handbook } from "@/content/handbooks";
+import { SiteLink } from "@/components/handbooks/SiteLink";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
-import { chapterPath } from "@/lib/handbooks";
+import { pagePath } from "@/lib/handbooks";
 
 export function HandbookCover({ handbook }: { handbook: Handbook }) {
+  const last = handbook.pages[handbook.pages.length - 1]?.number ?? 1;
+
   return (
-    <article>
+    <article className="mx-auto max-w-2xl">
       <p className="font-mono text-xs uppercase tracking-[0.22em] text-slate-500">
         <Link href="/handbooks" className="focus-ring rounded-sm hover:text-white">
           Handbooks
@@ -19,61 +22,45 @@ export function HandbookCover({ handbook }: { handbook: Handbook }) {
         line={handbook.line}
         accent={handbook.accent}
       />
-      <p className="mt-8 max-w-2xl font-mono text-xs uppercase tracking-[0.18em] text-slate-500">
-        {handbook.edition}
-      </p>
-      <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+      <h1 className="mt-8 font-display text-3xl font-bold text-white sm:text-4xl">
+        {handbook.title}
+      </h1>
+      <p className="mt-6 text-base leading-relaxed text-slate-300 sm:text-lg">
         {handbook.thesis}
       </p>
-      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">
-        {handbook.reader}
+      <p className="mt-4 text-sm leading-relaxed text-slate-400">
+        Extends the <SiteLink href={handbook.card.href}>{handbook.card.label}</SiteLink>
+        . {last} pages.
       </p>
-      <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300">
-        The cards stay the fields. Where a sentence comes from a card, the
-        chapter names that card. The storytelling card is one of those
-        citations. It is not this handbook.
-      </p>
-      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">
-        A cyan mark on a section says the line is an operating principle, a
-        practice I treat as given, or a hypothesis.
+      <p className="mt-10">
+        <Link
+          href={pagePath(handbook.slug, 1)}
+          className="focus-ring inline-flex min-h-11 items-center font-display text-lg font-semibold text-white hover:text-neon-cyan"
+        >
+          Begin
+        </Link>
       </p>
 
-      <ol className="mt-10 border-t border-white/10">
-        {handbook.chapters.map((chapter) => (
-          <li key={chapter.slug} className="border-b border-white/10">
+      <h2 className="mt-14 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
+        Contents
+      </h2>
+      <ol className="mt-3 border-t border-white/10">
+        {handbook.contents.map((entry) => (
+          <li key={entry.title} className="border-b border-white/10">
             <Link
-              href={chapterPath(handbook.slug, chapter.slug)}
-              className="focus-ring group grid gap-2 py-6 sm:grid-cols-[4.5rem_1fr] sm:gap-6"
+              href={pagePath(handbook.slug, entry.page)}
+              className="focus-ring group flex items-baseline justify-between gap-6 py-4"
             >
-              <span className="font-mono text-sm tabular-nums text-slate-500">
-                {chapter.index}
+              <span className="font-display text-xl font-semibold text-white group-hover:text-neon-cyan">
+                {entry.title}
               </span>
-              <span>
-                <span className="block font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
-                  {chapter.roleLabel}
-                </span>
-                <span className="mt-1 block font-display text-2xl font-semibold text-white group-hover:text-neon-cyan">
-                  {chapter.title}
-                </span>
-                <span className="mt-2 block max-w-xl text-sm leading-relaxed text-slate-400">
-                  {chapter.lede}
-                </span>
+              <span className="font-mono text-sm tabular-nums text-slate-500">
+                {entry.page}
               </span>
             </Link>
           </li>
         ))}
       </ol>
-
-      <section className="mt-12 max-w-2xl" aria-labelledby="non-goals">
-        <h2 id="non-goals" className="font-display text-xl font-semibold text-white">
-          What this edition leaves out
-        </h2>
-        <ul className="mt-4 space-y-3 text-sm leading-relaxed text-slate-300">
-          {handbook.nonGoals.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
     </article>
   );
 }
