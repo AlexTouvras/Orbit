@@ -4,8 +4,10 @@ import { IconPaths } from "@/components/handbooks/icon-paths";
 
 const PASS = "#34d399";
 const FAIL = "#fb7185";
-const CARD_W = 220;
-const CARD_H = 108;
+const CARD_W = 176;
+const CARD_H = 132;
+const VIEW_W = 900;
+const KAPPA = 0.5522847498;
 
 type Ink = "pass" | "red" | "cyan" | "ink";
 
@@ -32,7 +34,7 @@ const face: CSSProperties = {
   height: "100%",
   display: "flex",
   gap: 10,
-  alignItems: "flex-start",
+  alignItems: "center",
   borderRadius: 14,
   border: "1px solid rgba(226,232,240,0.16)",
   background: "#0c1420",
@@ -56,137 +58,191 @@ const badge: CSSProperties = {
   lineHeight: 1,
 };
 
+type Seat = {
+  n: number;
+  step: HandbookFigureStep;
+  x: number;
+  y: number;
+  r: number;
+  b: number;
+  cx: number;
+  cy: number;
+};
+
+function seats(steps: HandbookFigureStep[]): Seat[] {
+  const inner = 248;
+  const left = Math.round((VIEW_W - (CARD_W * 2 + inner)) / 2);
+  const right = left + CARD_W + inner;
+  const top = 34;
+  const gapY = 58;
+  const upper = top + CARD_H + gapY;
+  const lower = upper + CARD_H + gapY;
+  const at = [
+    { x: (VIEW_W - CARD_W) / 2, y: top },
+    { x: right, y: upper },
+    { x: right, y: lower },
+    { x: left, y: lower },
+    { x: left, y: upper },
+  ];
+  return steps.map((step, index) => {
+    const seat = at[index] ?? at[0];
+    return {
+      n: index + 1,
+      step,
+      x: seat.x,
+      y: seat.y,
+      r: seat.x + CARD_W,
+      b: seat.y + CARD_H,
+      cx: seat.x + CARD_W / 2,
+      cy: seat.y + CARD_H / 2,
+    };
+  });
+}
+
+function n1(value: number) {
+  return value.toFixed(1);
+}
+
+function topRightArc(pull: Seat, change: Seat) {
+  const radius = Math.min(118, change.y - (pull.y + 28), change.cx - pull.r + 36);
+  const x1 = pull.r;
+  const y1 = change.y - radius;
+  const x2 = pull.r + radius;
+  const y2 = change.y - 2;
+  const k = radius * KAPPA;
+  return `M ${n1(x1)} ${n1(y1)} C ${n1(x1 + k)} ${n1(y1)} ${n1(x2)} ${n1(y2 - k)} ${n1(x2)} ${n1(y2)}`;
+}
+
+function topLeftArc(verify: Seat, pull: Seat) {
+  const radius = Math.min(118, verify.y - (pull.y + 28));
+  const x2 = pull.x - 2;
+  const y2 = verify.y - radius;
+  const x1 = pull.x - radius;
+  const y1 = verify.y;
+  const k = radius * KAPPA;
+  return `M ${n1(x1)} ${n1(y1)} C ${n1(x1)} ${n1(y1 - k)} ${n1(x2 - k)} ${n1(y2)} ${n1(x2)} ${n1(y2)}`;
+}
+
+function rightArc(change: Seat, test: Seat) {
+  const bulge = 74;
+  const y1 = change.cy + 26;
+  const y2 = test.cy - 26;
+  const x = change.r;
+  return `M ${n1(x)} ${n1(y1)} C ${n1(x + bulge)} ${n1(y1)} ${n1(x + bulge)} ${n1(y2)} ${n1(x + 2)} ${n1(y2)}`;
+}
+
+function leftArc(integrate: Seat, verify: Seat) {
+  const bulge = 74;
+  const y1 = integrate.cy - 26;
+  const y2 = verify.cy + 26;
+  const x = integrate.x;
+  return `M ${n1(x)} ${n1(y1)} C ${n1(x - bulge)} ${n1(y1)} ${n1(x - bulge)} ${n1(y2)} ${n1(x - 2)} ${n1(y2)}`;
+}
+
+function bottomArc(test: Seat, integrate: Seat) {
+  const drop = 74;
+  const x1 = test.x + 34;
+  const x2 = integrate.r - 34;
+  const y = test.b;
+  return `M ${n1(x1)} ${n1(y)} C ${n1(x1)} ${n1(y + drop)} ${n1(x2)} ${n1(y + drop)} ${n1(x2)} ${n1(y - 4)}`;
+}
+
+function returnArc(pull: Seat, ringRight: number, repairY: number) {
+  const startX = ringRight - 16;
+  const startY = repairY - 4;
+  const outer = Math.min(VIEW_W - 28, ringRight + 146);
+  const highX = ringRight + 108;
+  const highY = pull.b + 12;
+  const landX = pull.cx + 48;
+  const landY = pull.y - 1;
+  return `M ${n1(startX)} ${n1(startY)} C ${n1(outer + 20)} ${n1(startY + 8)} ${n1(outer + 8)} ${n1(highY + 36)} ${n1(highX)} ${n1(highY)} C ${n1(highX - 38)} ${n1(pull.y + 26)} ${n1(landX)} ${n1(pull.y - 30)} ${n1(landX)} ${n1(landY)}`;
+}
+
 export function LoopPlate({ figure }: { figure: HandbookFigure }) {
   const steps = ringSteps(figure);
   const repair = figure.steps.find((step) => step.mark === "wrench");
   const rawId = useId().replace(/:/g, "");
-  const seats = [
-    { n: 1, x: 278, y: 6 },
-    { n: 2, x: 548, y: 28 },
-    { n: 3, x: 548, y: 220 },
-    { n: 4, x: 246, y: 386 },
-    { n: 5, x: 14, y: 156 },
-  ];
-  const boxes = seats.map((seat) => ({
-    ...seat,
-    step: steps[seat.n - 1],
-    l: seat.x,
-    t: seat.y,
-    r: seat.x + CARD_W,
-    b: seat.y + CARD_H,
-    cx: seat.x + CARD_W / 2,
-    cy: seat.y + CARD_H / 2,
-  }));
+  const boxes = seats(steps);
   const pull = boxes[0];
   const change = boxes[1];
   const test = boxes[2];
   const integrate = boxes[3];
   const verify = boxes[4];
-  const repairY = (integrate?.b ?? 540) + 72;
-  const viewW = 840;
-  const viewH = repairY + 112;
-  const legs = pull && change && test && integrate && verify
-    ? [
-        `M ${pull.r - 2} ${pull.t + 30} Q ${(pull.r + change.l) / 2} ${Math.min(pull.t, change.t) - 6} ${change.l - 12} ${change.t + 34}`,
-        `M ${change.cx} ${change.b + 2} Q ${(change.cx + test.cx) / 2 + 28} ${(change.b + test.t) / 2} ${test.cx} ${test.t - 12}`,
-        `M ${test.l + 8} ${test.b - 8} Q ${(test.l + integrate.r) / 2 - 10} ${(test.b + integrate.t) / 2} ${integrate.r + 12} ${integrate.t + 32}`,
-        `M ${integrate.l + 8} ${integrate.t + 28} Q ${verify.cx - 10} ${(integrate.t + verify.b) / 2} ${verify.cx} ${verify.b + 12}`,
-        `M ${verify.cx + 8} ${verify.t} Q ${(verify.r + pull.l) / 2 - 30} ${verify.t - 78} ${pull.l - 12} ${pull.t + 42}`,
-      ]
-    : [];
-  const labelX = verify && test ? (verify.r + test.l) / 2 : 400;
-  const labelY = change && integrate ? (change.b + integrate.t) / 2 - 8 : 230;
+  const ringLeft = Math.min(...boxes.map((box) => box.x));
+  const ringRight = Math.max(...boxes.map((box) => box.r));
+  const ringBottom = Math.max(...boxes.map((box) => box.b));
+  const ringMidY = ((pull?.y ?? 0) + ringBottom) / 2;
+  const repairGap = 36;
+  const branchW = (ringRight - ringLeft - repairGap) / 2;
+  const repairY = ringBottom + 108;
+  const repairH = 92;
+  const viewH = repairY + repairH + 22;
+  const alertX = ringLeft;
+  const repairX = ringLeft + branchW + repairGap;
+  const alertCx = alertX + branchW / 2;
+  const legs =
+    pull && change && test && integrate && verify
+      ? [
+          topRightArc(pull, change),
+          rightArc(change, test),
+          bottomArc(test, integrate),
+          leftArc(integrate, verify),
+          topLeftArc(verify, pull),
+        ]
+      : [];
 
   return (
     <div data-handbook-plate="loop">
       <ul className="flex list-none flex-col gap-2 sm:hidden">
-        {boxes.map((box) =>
-          box.step ? (
-            <li key={box.step.term}>
-              <Face n={box.n} step={box.step} />
-            </li>
-          ) : null,
-        )}
+        {boxes.map((box) => (
+          <li key={box.step.term}>
+            <LoopCard n={box.n} step={box.step} badge />
+          </li>
+        ))}
       </ul>
-      <svg
-        viewBox={`0 0 ${viewW} ${viewH}`}
-        className="hidden h-auto w-full sm:block"
-      >
+      <svg viewBox={`0 0 ${VIEW_W} ${viewH}`} className="hidden h-auto w-full sm:block" role="img" aria-label={figure.caption || "The daily loop"}>
+        <title>{figure.caption || "The daily loop"}</title>
         <defs>
-          <marker id={`${rawId}-pass`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <marker id={`${rawId}-pass`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
             <path d="M0 0 L10 5 L0 10 Z" fill={PASS} />
           </marker>
-          <marker id={`${rawId}-fail`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <marker id={`${rawId}-fail`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
             <path d="M0 0 L10 5 L0 10 Z" fill={FAIL} />
           </marker>
-          <marker id={`${rawId}-next`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <marker id={`${rawId}-next`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
             <path d="M0 0 L10 5 L0 10 Z" fill="#cbd5e1" />
           </marker>
         </defs>
-        {legs.map((d) => (
-          <path
-            key={d}
-            d={d}
-            fill="none"
-            stroke={PASS}
-            strokeWidth="2.4"
-            strokeLinecap="round"
-            markerEnd={`url(#${rawId}-pass)`}
-          />
+        {legs.map((d, index) => (
+          <path key={index} d={d} fill="none" stroke={PASS} strokeWidth="2.4" strokeLinecap="round" markerEnd={`url(#${rawId}-pass)`} />
         ))}
-        <text
-          x={labelX}
-          y={labelY}
-          textAnchor="middle"
-          fill={PASS}
-          fontSize="13"
-          letterSpacing="3.4"
-          fontFamily="var(--font-mono), ui-monospace, monospace"
-        >
+        <text x={VIEW_W / 2} y={ringMidY - 18} textAnchor="middle" fill={PASS} fontSize="12" letterSpacing="3.2" fontFamily="var(--font-mono), ui-monospace, monospace">
           THE DAILY LOOP
         </text>
-        <text
-          x={labelX}
-          y={labelY + 24}
-          textAnchor="middle"
-          fill="#e2e8f0"
-          fontSize="15"
-          fontFamily="var(--font-sans), ui-sans-serif, system-ui, sans-serif"
-        >
+        <text x={VIEW_W / 2} y={ringMidY + 8} textAnchor="middle" fill="#e2e8f0" fontSize="16" fontFamily="var(--font-sans), ui-sans-serif, system-ui, sans-serif">
           Merge today.
         </text>
-        <text
-          x={labelX}
-          y={labelY + 44}
-          textAnchor="middle"
-          fill="#94a3b8"
-          fontSize="13"
-          fontFamily="var(--font-sans), ui-sans-serif, system-ui, sans-serif"
-        >
+        <text x={VIEW_W / 2} y={ringMidY + 30} textAnchor="middle" fill="#94a3b8" fontSize="13" fontFamily="var(--font-sans), ui-sans-serif, system-ui, sans-serif">
           The integration build counts.
         </text>
-        {integrate ? (
-          <path
-            d={`M 24 ${integrate.b + 28} H ${viewW - 24}`}
-            fill="none"
-            stroke="rgba(226,232,240,0.28)"
-            strokeWidth="1.4"
-            strokeDasharray="5 6"
-          />
-        ) : null}
-        {integrate ? (
-          <path
-            d={`M ${integrate.cx - 16} ${integrate.b + 6} C 220 ${repairY - 36}, 181 ${repairY - 28}, 181 ${repairY - 8}`}
-            fill="none"
-            stroke={FAIL}
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            markerEnd={`url(#${rawId}-fail)`}
-          />
-        ) : null}
+        <path
+          d={`M ${ringLeft} ${ringBottom + 78} H ${ringRight}`}
+          fill="none"
+          stroke="rgba(226,232,240,0.28)"
+          strokeWidth="1.4"
+          strokeDasharray="5 6"
+        />
+        <path
+          d={`M ${VIEW_W / 2} ${ringBottom + 68} C ${VIEW_W / 2} ${repairY - 20}, ${alertCx} ${repairY - 24}, ${alertCx} ${repairY - 2}`}
+          fill="none"
+          stroke={FAIL}
+          strokeWidth="2.2"
+          strokeLinecap="round"
+          markerEnd={`url(#${rawId}-fail)`}
+        />
         {repair ? (
           <path
-            d={`M 352 ${repairY + 50} H 418`}
+            d={`M ${alertX + branchW + 8} ${repairY + repairH / 2} H ${repairX - 12}`}
             fill="none"
             stroke="#cbd5e1"
             strokeWidth="2"
@@ -194,9 +250,9 @@ export function LoopPlate({ figure }: { figure: HandbookFigure }) {
             markerEnd={`url(#${rawId}-next)`}
           />
         ) : null}
-        {change && test ? (
+        {repair ? (
           <path
-            d={`M 748 ${repairY + 18} C 824 ${(repairY + change.cy) / 2}, 824 ${change.cy}, ${change.r + 12} ${change.cy}`}
+            d={pull ? returnArc(pull, ringRight, repairY) : ""}
             fill="none"
             stroke={PASS}
             strokeWidth="2.2"
@@ -204,28 +260,38 @@ export function LoopPlate({ figure }: { figure: HandbookFigure }) {
             markerEnd={`url(#${rawId}-pass)`}
           />
         ) : null}
-        {boxes.map((box) =>
-          box.step ? (
-            <foreignObject key={box.step.term} x={box.x} y={box.y} width={CARD_W} height={CARD_H}>
-              <div style={{ width: CARD_W, height: CARD_H }}>
-                <Face n={box.n} step={box.step} />
-              </div>
-            </foreignObject>
-          ) : null,
-        )}
-        <foreignObject x={16} y={repairY} width={330} height={100}>
-          <div style={{ width: 330, height: 100 }}>
-            <BranchFace
-              tone="fail"
-              mark="alert"
-              title="Main is red?"
-              detail="Stop integration."
-            />
+        {boxes.map((box) => (
+          <foreignObject key={box.step.term} x={box.x} y={box.y} width={CARD_W} height={CARD_H}>
+            <div style={{ width: CARD_W, height: CARD_H }}>
+              <LoopCard n={box.n} step={box.step} badge={false} />
+            </div>
+          </foreignObject>
+        ))}
+        {boxes.map((box) => (
+          <g key={`badge-${box.n}`}>
+            <circle cx={box.x} cy={box.y} r={13} fill={PASS} />
+            <text
+              x={box.x}
+              y={box.y}
+              textAnchor="middle"
+              dominantBaseline="central"
+              fill="#052e16"
+              fontSize="12"
+              fontWeight="700"
+              fontFamily="var(--font-sans), ui-sans-serif, system-ui, sans-serif"
+            >
+              {box.n}
+            </text>
+          </g>
+        ))}
+        <foreignObject x={alertX} y={repairY} width={branchW} height={repairH}>
+          <div style={{ width: branchW, height: repairH }}>
+            <BranchFace tone="fail" mark="alert" title="Main is red?" detail="Stop integration." />
           </div>
         </foreignObject>
         {repair ? (
-          <foreignObject x={430} y={repairY} width={330} height={100}>
-            <div style={{ width: 330, height: 100 }}>
+          <foreignObject x={repairX} y={repairY} width={branchW} height={repairH}>
+            <div style={{ width: branchW, height: repairH }}>
               <BranchFace tone="pass" mark="wrench" title={repair.term} detail={repair.detail} />
             </div>
           </foreignObject>
@@ -241,18 +307,32 @@ export function LoopPlate({ figure }: { figure: HandbookFigure }) {
   );
 }
 
-function Face({ n, step }: { n: number; step: HandbookFigureStep }) {
+function LoopCard({ n, step, badge: showBadge }: { n: number; step: HandbookFigureStep; badge: boolean }) {
   const mark = step.mark === "pulse" ? "check" : step.mark;
   return (
-    <div style={face}>
-      <span style={badge}>{n}</span>
-      <span style={{ minWidth: 0 }}>
-        <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
-          <Glyph name={mark} size={16} />
-          <span style={{ fontSize: 15, fontWeight: 650, lineHeight: 1.2, color: "#f8fafc" }}>{step.term}</span>
-        </span>
-        <span style={{ display: "block", marginTop: 4, fontSize: 12, lineHeight: 1.35, color: "#94a3b8" }}>{step.detail}</span>
-      </span>
+    <div
+      style={{
+        position: "relative",
+        boxSizing: "border-box",
+        height: showBadge ? "auto" : "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        gap: 5,
+        borderRadius: 16,
+        border: "1px solid rgba(226,232,240,0.16)",
+        background: "#0c1420",
+        padding: showBadge ? "20px 16px 14px" : "18px 12px 12px",
+        fontFamily: "var(--font-sans), ui-sans-serif, system-ui, sans-serif",
+        boxShadow: "0 16px 32px -22px rgba(0,0,0,0.9)",
+      }}
+    >
+      {showBadge ? <span style={{ ...badge, position: "absolute", top: 10, left: 10 }}>{n}</span> : null}
+      <Glyph name={mark} size={18} />
+      <span style={{ fontSize: 15, fontWeight: 650, lineHeight: 1.15, color: "#f8fafc" }}>{step.term}</span>
+      <span style={{ maxWidth: "100%", fontSize: 12, lineHeight: 1.35, color: "#94a3b8", textWrap: "balance" }}>{step.detail}</span>
     </div>
   );
 }
