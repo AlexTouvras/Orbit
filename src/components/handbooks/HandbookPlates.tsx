@@ -158,7 +158,7 @@ function returnArc(pull: Seat, ringRight: number, repairY: number) {
   return `M ${n1(startX)} ${n1(startY)} C ${n1(outer + 20)} ${n1(startY + 8)} ${n1(outer + 8)} ${n1(highY + 36)} ${n1(highX)} ${n1(highY)} C ${n1(highX - 38)} ${n1(pull.y + 26)} ${n1(landX)} ${n1(pull.y - 30)} ${n1(landX)} ${n1(landY)}`;
 }
 
-export function LoopPlate({ figure }: { figure: HandbookFigure }) {
+export function LoopPlate({ figure, plate = false }: { figure: HandbookFigure; plate?: boolean }) {
   const steps = ringSteps(figure);
   const repair = figure.steps.find((step) => step.mark === "wrench");
   const rawId = useId().replace(/:/g, "");
@@ -192,15 +192,15 @@ export function LoopPlate({ figure }: { figure: HandbookFigure }) {
       : [];
 
   return (
-    <div data-handbook-plate="loop">
-      <ul className="flex list-none flex-col gap-2 sm:hidden">
+    <div data-handbook-plate="loop" className={plate ? "flex h-full max-h-full w-full items-center justify-center" : undefined}>
+      <ul className={plate ? "hidden" : "flex list-none flex-col gap-2 sm:hidden"}>
         {boxes.map((box) => (
           <li key={box.step.term}>
             <LoopCard n={box.n} step={box.step} badge />
           </li>
         ))}
       </ul>
-      <svg viewBox={`0 0 ${VIEW_W} ${viewH}`} className="hidden h-auto w-full sm:block" role="img" aria-label={figure.caption || "The daily loop"}>
+      <svg viewBox={`0 0 ${VIEW_W} ${viewH}`} className={plate ? "h-full max-h-full w-auto max-w-full" : "hidden h-auto w-full sm:block"} role="img" aria-label={figure.caption || "The daily loop"}>
         <title>{figure.caption || "The daily loop"}</title>
         <defs>
           <marker id={`${rawId}-pass`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
@@ -298,7 +298,7 @@ export function LoopPlate({ figure }: { figure: HandbookFigure }) {
         ) : null}
       </svg>
       {repair ? (
-        <div className="mt-3 flex flex-col gap-2 sm:hidden">
+        <div className={plate ? "hidden" : "mt-3 flex flex-col gap-2 sm:hidden"}>
           <BranchFace tone="fail" mark="alert" title="Main is red?" detail="Stop integration." />
           <BranchFace tone="pass" mark="wrench" title={repair.term} detail={repair.detail} />
         </div>

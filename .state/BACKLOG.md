@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Handbook reads as one frame — left and right turn same-size leaves; the horizon shine sits on the limb (2026-10-15)
 - [x] Handbook page 1 reading pass — opening, three-way practice split, revert rule, renamed-field scene, signal definitions, repair branch, test pyramid (2026-10-15)
 - [x] Handbook page 1 plates — loop cards, recovery stack, renamed-field storyboard, test triangle on the board (2026-10-15)
 - [x] Field handbooks edition 1 — `/handbooks`, Software that stays in use. Pages 1–5 researched. Later titles named, not routed.
