@@ -32,6 +32,7 @@ type PackedLeaf = {
   start: number;
   end: number;
   offset: number;
+  limit: number;
 };
 
 export function HandbookBook({
@@ -193,59 +194,61 @@ export function HandbookBook({
 
   return (
     <div
-      className={`flex h-full min-h-0 flex-1 ${narrow ? "flex-col" : "items-stretch gap-1 sm:gap-2"}`}
+      className="flex h-full min-h-0 flex-1 flex-col lg:flex-row lg:items-stretch lg:gap-2"
       data-handbook-book
       data-leaf={safeIndex}
       data-leaf-count={leafCount}
     >
-      {narrow ? null : (
-        <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)}>
-          <ChevronLeft className="h-6 w-6" />
-        </TurnButton>
-      )}
-      <div className="relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-md border border-cyan-300/25 bg-[#040914] shadow-[0_0_60px_-28px_rgba(34,211,238,0.45)]">
-        {spread ? (
-          <div className={`absolute inset-0 z-10 p-2 sm:p-3 ${narrow ? "" : "pb-8"}`}>
-            <HandbookSpread handbook={handbook} page={page} panels={spread} />
-          </div>
-        ) : null}
-        <div className={`${spread ? "invisible" : ""} flex h-full min-h-0 flex-col ${narrow ? "px-4 pt-3 pb-3" : "px-5 pt-4 pb-8 sm:px-10"}`}>
-          <header className="mb-3 flex h-5 shrink-0 items-baseline justify-between gap-4">
-            <p className="min-w-0 truncate font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
-              <span className="hidden sm:inline">
-                {handbook.title}
-                <span className="px-2 text-slate-600">/</span>
-              </span>
-              <span className="text-slate-300">{sectionTitle ?? page.title}</span>
-            </p>
-            <p className="shrink-0 font-mono text-xs tabular-nums text-slate-400">{page.number}</p>
-          </header>
-          <div ref={slotRef} className="min-h-0 flex-1 overflow-hidden">
-            <div className="relative mx-auto w-full max-w-3xl" style={{ transform: `translateY(-${offset}px)` }}>
-              {blocks.map((block, blockIndex) => {
-                const inLeaf = !proseLeaf || (blockIndex >= proseLeaf.start && blockIndex < proseLeaf.end);
-                return (
-                  <div
-                    key={block.key}
-                    data-leaf-block={blockIndex}
-                    aria-hidden={inLeaf ? undefined : true}
-                    style={inLeaf ? undefined : { visibility: "hidden" }}
-                  >
-                    {block.node}
-                  </div>
-                );
-              })}
+      <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)} className="hidden lg:grid">
+        <ChevronLeft className="h-6 w-6" />
+      </TurnButton>
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden border-y border-cyan-300/25 bg-[#040914] lg:rounded-md lg:border lg:shadow-[0_0_60px_-28px_rgba(34,211,238,0.45)]">
+        <div className="relative min-h-0 flex-1">
+          {spread ? (
+            <div className="absolute inset-0 z-10 p-0 lg:p-3 lg:pb-8">
+              <HandbookSpread handbook={handbook} page={page} panels={spread} />
+            </div>
+          ) : null}
+          <div className={`${spread ? "invisible" : ""} flex h-full min-h-0 flex-col px-4 pt-3 pb-3 sm:px-8 lg:px-10 lg:pt-4 lg:pb-8`}>
+            <header className="mb-3 flex h-5 shrink-0 items-baseline justify-between gap-4">
+              <p className="min-w-0 truncate font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
+                <span className="hidden sm:inline">
+                  {handbook.title}
+                  <span className="px-2 text-slate-600">/</span>
+                </span>
+                <span className="text-slate-300">{sectionTitle ?? page.title}</span>
+              </p>
+              <p className="shrink-0 font-mono text-xs tabular-nums text-slate-400">{page.number}</p>
+            </header>
+            <div ref={slotRef} className="min-h-0 flex-1 overflow-hidden">
+              <div
+                className="relative mx-auto w-full max-w-3xl"
+                style={{
+                  transform: `translateY(-${offset}px)`,
+                  clipPath: proseLeaf ? `inset(${proseLeaf.offset}px 0 calc(100% - ${proseLeaf.limit}px) 0)` : undefined,
+                }}
+              >
+                {blocks.map((block, blockIndex) => {
+                  const inLeaf = !proseLeaf || (blockIndex >= proseLeaf.start && blockIndex < proseLeaf.end);
+                  return (
+                    <div
+                      key={block.key}
+                      data-leaf-block={blockIndex}
+                      aria-hidden={inLeaf ? undefined : true}
+                      style={inLeaf ? undefined : { visibility: "hidden" }}
+                    >
+                      {block.node}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
-        {narrow ? null : (
-          <p className="pointer-events-none absolute inset-x-0 bottom-2 z-20 text-center font-mono text-[0.65rem] tabular-nums tracking-[0.14em] text-slate-500">
+          <p className="pointer-events-none absolute inset-x-0 bottom-2 z-20 hidden text-center font-mono text-[0.65rem] tabular-nums tracking-[0.14em] text-slate-500 lg:block">
             {folio}
           </p>
-        )}
-      </div>
-      {narrow ? (
-        <div className="mt-1 flex h-12 shrink-0 items-center justify-between">
+        </div>
+        <div className="flex h-11 shrink-0 items-center justify-between border-t border-white/10 px-1 lg:hidden">
           <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)} wide>
             <ChevronLeft className="h-6 w-6" />
           </TurnButton>
@@ -254,11 +257,10 @@ export function HandbookBook({
             <ChevronRight className="h-6 w-6" />
           </TurnButton>
         </div>
-      ) : (
-        <TurnButton label="Next page" disabled={!canNext} onClick={() => turn(1)}>
-          <ChevronRight className="h-6 w-6" />
-        </TurnButton>
-      )}
+      </div>
+      <TurnButton label="Next page" disabled={!canNext} onClick={() => turn(1)} className="hidden lg:grid">
+        <ChevronRight className="h-6 w-6" />
+      </TurnButton>
     </div>
   );
 }
@@ -268,12 +270,14 @@ function TurnButton({
   disabled,
   onClick,
   wide = false,
+  className = "",
   children,
 }: {
   label: string;
   disabled: boolean;
   onClick: () => void;
   wide?: boolean;
+  className?: string;
   children: ReactNode;
 }) {
   return (
@@ -282,48 +286,162 @@ function TurnButton({
       aria-label={label}
       disabled={disabled}
       onClick={onClick}
-      className={`focus-ring grid shrink-0 place-items-center rounded-md text-slate-200 hover:bg-white/5 hover:text-white disabled:pointer-events-none disabled:text-slate-700 ${wide ? "h-12 w-14" : "w-10 sm:w-12"}`}
+      className={`focus-ring grid shrink-0 place-items-center rounded-md text-slate-200 hover:bg-white/5 hover:text-white disabled:pointer-events-none disabled:text-slate-700 ${wide ? "h-11 w-12" : "w-10 lg:w-12"} ${className}`}
     >
       {children}
     </button>
   );
 }
 
+type Piece = { index: number; top: number; bottom: number; title: boolean; broken: boolean };
+
 function packBlocks(slot: HTMLElement, blocks: Block[]): PackedLeaf[] {
   const available = slot.clientHeight;
-  const budget = available > 36 ? available - 20 : available;
+  const budget = available > 48 ? available - 16 : available;
+  const column = slot.firstElementChild as HTMLElement | null;
   const nodes = [...slot.querySelectorAll<HTMLElement>("[data-leaf-block]")];
-  const packed: PackedLeaf[] = [];
-  let start = 0;
-  let leafTop = nodes.find((node) => node.offsetHeight > 0)?.offsetTop ?? 0;
-  let seen = 0;
-  const openLeaf = (end: number, nextTop: number) => {
-    if (end <= start) return;
-    packed.push({ start, end, offset: leafTop });
-    start = end;
-    leafTop = nextTop;
-  };
+  if (!column || budget <= 0 || nodes.length === 0) {
+    return [{ start: 0, end: Math.max(blocks.length, 1), offset: 0, limit: 1 }];
+  }
+  const previousTransform = column.style.transform;
+  const previousClip = column.style.clipPath;
+  column.style.transform = "none";
+  column.style.clipPath = "none";
+  try {
+    const origin = column.getBoundingClientRect().top;
+    const pieces = piecesIn(nodes, blocks, origin, budget);
+    if (pieces.length === 0) {
+      return [{ start: 0, end: blocks.length, offset: 0, limit: Math.max(column.scrollHeight, 1) }];
+    }
+    const packed: PackedLeaf[] = [];
+    let cursor = 0;
+    let guard = 0;
+    while (cursor < pieces.length && guard < pieces.length + 8) {
+      guard += 1;
+      const piece = pieces[cursor];
+      const offset = cursor === 0 && piece.top < 2 ? 0 : piece.top;
+      let end = cursor;
+      while (end < pieces.length) {
+        const candidate = pieces[end];
+        if (candidate.bottom - offset > budget) break;
+        const follower = pieces[end + 1];
+        const holdWithNext = candidate.title || (candidate.broken && follower?.index === candidate.index);
+        if (holdWithNext && follower && follower.bottom - offset > budget) break;
+        end += 1;
+      }
+      if (end === cursor) {
+        if (piece.bottom - offset > budget) {
+          const limit = Math.min(piece.bottom, offset + budget);
+          packed.push({ start: piece.index, end: piece.index + 1, offset, limit });
+          if (limit >= piece.bottom - 1) cursor += 1;
+          else piece.top = limit;
+          continue;
+        }
+        const follower = pieces[cursor + 1];
+        packed.push({
+          start: piece.index,
+          end: piece.index + 1,
+          offset,
+          limit: Math.min(follower ? follower.top : piece.bottom, offset + budget),
+        });
+        cursor += 1;
+        continue;
+      }
+      const last = pieces[end - 1];
+      const next = pieces[end];
+      let limit = last.bottom + 1;
+      if (next && next.top > limit && next.top - offset <= budget) limit = next.top;
+      if (limit - offset > budget) limit = last.bottom;
+      packed.push({ start: cursor === 0 ? 0 : piece.index, end: last.index + 1, offset, limit });
+      cursor = end;
+    }
+    return packed.length > 0 ? packed : [{ start: 0, end: blocks.length, offset: 0, limit: 1 }];
+  } finally {
+    column.style.transform = previousTransform;
+    column.style.clipPath = previousClip;
+  }
+}
+
+function piecesIn(nodes: HTMLElement[], blocks: Block[], origin: number, budget: number): Piece[] {
+  const pieces: Piece[] = [];
   nodes.forEach((node, index) => {
-    const height = node.offsetHeight;
-    if (height <= 0) return;
-    seen += 1;
+    const key = blocks[index]?.key ?? "";
+    const title = key.endsWith("-title");
+    const whole = title || key === "notes" || key.endsWith("-figure") || /-step-\d+$/.test(key) || /-flow-\d+$/.test(key);
     const top = node.offsetTop;
-    const overflows = seen > 1 && top + height - leafTop > budget && budget > 0;
-    if (!overflows) return;
-    let end = index;
-    if (blocks[end - 1]?.key.endsWith("-title") && end - 1 > start) end -= 1;
-    if (end > start) openLeaf(end, nodes[end]?.offsetTop ?? top);
-    if (index > start && top + height - leafTop > budget && budget > 0) openLeaf(index, top);
+    const bottom = top + node.offsetHeight;
+    const lines = lineBoxes(node, origin).filter((line) => line.bottom > top + 0.5 && line.top < bottom + 0.5);
+    if (whole && (lines.length === 0 || bottom - top <= budget)) {
+      pieces.push({ index, top, bottom, title, broken: false });
+      return;
+    }
+    if (lines.length === 0) {
+      let y = top;
+      while (y < bottom - 1) {
+        const next = Math.min(bottom, y + budget);
+        pieces.push({ index, top: y, bottom: next, title: false, broken: false });
+        if (next <= y + 0.5) break;
+        y = next;
+      }
+      return;
+    }
+    lines.forEach((line) => pieces.push({ index, top: line.top, bottom: line.bottom, title: false, broken: line.broken }));
   });
-  if (seen > 0) packed.push({ start, end: blocks.length, offset: leafTop });
-  return packed;
+  return pieces;
+}
+
+function lineBoxes(node: HTMLElement, origin: number): { top: number; bottom: number; broken: boolean }[] {
+  const lines: { top: number; bottom: number; broken: boolean }[] = [];
+  const walker = document.createTreeWalker(node, NodeFilter.SHOW_TEXT);
+  const range = document.createRange();
+  let current = walker.nextNode();
+  while (current) {
+    const value = current.textContent ?? "";
+    let cursor = 0;
+    for (const part of value.split(/(\s+)/)) {
+      const start = cursor;
+      cursor += part.length;
+      if (!part.trim()) continue;
+      range.setStart(current, start);
+      range.setEnd(current, cursor);
+      const rects = [...range.getClientRects()].filter((rect) => rect.width >= 1 && rect.height >= 1);
+      rects.forEach((rect, rectIndex) => {
+        const top = rect.top - origin;
+        const bottom = rect.bottom - origin;
+        const mid = (top + bottom) / 2;
+        const broken = rectIndex < rects.length - 1 || part.endsWith("-");
+        const line = lines.find((item) => mid >= item.top && mid <= item.bottom);
+        if (line) {
+          line.top = Math.min(line.top, top);
+          line.bottom = Math.max(line.bottom, bottom);
+          line.broken = line.broken || broken;
+        } else {
+          lines.push({ top, bottom, broken });
+        }
+      });
+    }
+    current = walker.nextNode();
+  }
+  lines.sort((left, right) => left.top - right.top);
+  const merged: { top: number; bottom: number; broken: boolean }[] = [];
+  for (const line of lines) {
+    const previous = merged[merged.length - 1];
+    if (previous && line.top <= previous.bottom + 1) {
+      previous.top = Math.min(previous.top, line.top);
+      previous.bottom = Math.max(previous.bottom, line.bottom);
+      previous.broken = previous.broken || line.broken;
+    } else {
+      merged.push({ top: line.top, bottom: line.bottom, broken: line.broken });
+    }
+  }
+  return merged;
 }
 
 function samePack(left: PackedLeaf[], right: PackedLeaf[]) {
   if (left.length !== right.length) return false;
   return left.every((leaf, index) => {
     const other = right[index];
-    return leaf.start === other?.start && leaf.end === other?.end && leaf.offset === other?.offset;
+    return leaf.start === other?.start && leaf.end === other?.end && leaf.offset === other?.offset && leaf.limit === other?.limit;
   });
 }
 

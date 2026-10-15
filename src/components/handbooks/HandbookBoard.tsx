@@ -12,7 +12,7 @@ import { LoopPlate, PyramidPlate, RecoveryPlate, ScenePlate } from "@/components
 import { IconPaths } from "@/components/handbooks/icon-paths";
 
 const PANEL =
-  "relative flex h-full min-h-0 flex-col overflow-hidden rounded-md border border-cyan-300/30 bg-[#040914] shadow-[0_0_42px_-18px_rgba(34,211,238,0.55)]";
+  "relative flex h-full min-h-0 flex-col overflow-hidden bg-[#040914] max-lg:rounded-none lg:rounded-md lg:border lg:border-cyan-300/30 lg:shadow-[0_0_42px_-18px_rgba(34,211,238,0.55)]";
 
 const PATH_STOPS: Array<{
   href: string;
@@ -193,19 +193,19 @@ function EarthHero({ handbook, page }: { handbook: Handbook; page: HandbookPage 
     <section className={`${PANEL} h-full min-h-0`} data-board-panel="hero" aria-label={handbook.title}>
       <EarthBackdrop />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-[#02040a] via-[#02040a]/75 to-transparent" />
-      <div className="relative z-10 flex h-full min-h-0 flex-1 flex-col px-5 pt-5 pb-5 sm:px-6 sm:pt-6">
+      <div className="relative z-10 flex h-full min-h-0 flex-1 flex-col px-4 pt-4 pb-4 sm:px-6 sm:pt-6 lg:px-6">
         <p className="font-mono text-[10px] tracking-[0.28em] text-cyan-200">
           ORBIT / HANDBOOK {handbook.index}
         </p>
-        <p className="mt-8 font-mono text-[11px] tracking-[0.28em] text-white/85 uppercase">
+        <p className="mt-3 font-mono text-[11px] tracking-[0.28em] text-white/85 uppercase lg:mt-8">
           {page.topic}
         </p>
-        <h1 className="mt-3 max-w-[11ch] font-display text-[2.65rem] font-semibold leading-[0.9] tracking-tight text-white sm:text-[3.15rem]">
+        <h1 className="mt-2 font-display text-[2rem] font-semibold leading-[0.92] tracking-tight text-white sm:text-[2.5rem] lg:mt-3 lg:max-w-[11ch] lg:text-[3.15rem] lg:leading-[0.9]">
           {handbook.title}
         </h1>
-        <p className="mt-4 max-w-[34ch] text-sm leading-relaxed text-slate-300">{handbook.thesis}</p>
+        <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-slate-300 lg:mt-4">{handbook.thesis}</p>
         <ul
-          className="absolute inset-x-5 bottom-[11%] z-10 max-w-[36ch] space-y-1.5 text-sm leading-snug text-white sm:inset-x-6 sm:text-[0.95rem]"
+          className="mt-auto max-w-[36ch] space-y-1.5 pt-4 text-sm leading-snug text-white lg:text-[0.95rem]"
           style={{ textShadow: "0 2px 14px rgba(0,0,0,0.95)" }}
         >
           {lines.map((line) => (
@@ -224,7 +224,7 @@ function DailyLoop({ figure }: { figure: HandbookFigure | undefined }) {
       <PanelHead index="2" kicker="The daily loop" title="Small enough to merge today." />
       {figure?.caption ? <PanelLede>{figure.caption}</PanelLede> : null}
       <FitBox>
-        <div className="relative z-10 flex flex-1 items-center px-2 py-2 sm:px-3">
+        <div className="relative z-10 flex flex-1 items-center px-2 pt-1 pb-2 sm:px-3">
           {figure ? <LoopPlate figure={figure} plate /> : null}
         </div>
       </FitBox>

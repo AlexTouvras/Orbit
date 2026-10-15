@@ -32,12 +32,19 @@ export function Header() {
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const handbookLeaf = /\/handbooks\/[^/]+\/\d+$/.test(pathname);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 flex justify-center px-3 lg:px-4",
+        handbookLeaf ? "pt-1.5 lg:pt-4" : "pt-4",
+      )}
+    >
       <nav
         className={cn(
-          "flex w-full max-w-6xl items-center justify-between rounded-2xl px-4 py-3 transition-[background-color,border-color,box-shadow] duration-300",
+          "flex w-full max-w-6xl items-center justify-between rounded-2xl px-3 transition-[background-color,border-color,box-shadow] duration-300 lg:px-4",
+          handbookLeaf ? "py-1 lg:py-3" : "py-3",
           scrolled
             ? "border border-white/10 bg-void shadow-glow"
             : "border border-transparent bg-transparent",
