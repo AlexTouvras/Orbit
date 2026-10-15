@@ -108,8 +108,9 @@ function FitBox({ children }: { children: ReactNode }) {
       inner.style.transform = "none";
       const available = outer.clientHeight;
       const natural = inner.scrollHeight;
-      const raw = available > 0 && natural > available ? available / natural : 1;
+      const raw = available > 0 && natural > available + 1 ? available / natural : 1;
       const next = Math.round(raw * 1000) / 1000;
+      inner.style.transform = next < 1 ? `scale(${next})` : "";
       setScale((current) => (current === next ? current : next));
     };
     measure();
@@ -119,8 +120,12 @@ function FitBox({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <div ref={outerRef} className="h-full min-h-0 overflow-hidden">
-      <div ref={innerRef} style={{ transform: `scale(${scale})`, transformOrigin: "top center" }}>
+    <div ref={outerRef} className="h-full min-h-0 flex-1 overflow-hidden">
+      <div
+        ref={innerRef}
+        className="flex h-full min-h-full flex-col"
+        style={{ transform: scale < 1 ? `scale(${scale})` : undefined, transformOrigin: "top center" }}
+      >
         {children}
       </div>
     </div>
@@ -218,9 +223,11 @@ function DailyLoop({ figure }: { figure: HandbookFigure | undefined }) {
       <StarWash />
       <PanelHead index="2" kicker="The daily loop" title="Small enough to merge today." />
       {figure?.caption ? <PanelLede>{figure.caption}</PanelLede> : null}
-      <div className="relative z-10 flex min-h-0 flex-1 items-center justify-center px-2 pt-2 pb-3 sm:px-3">
-        {figure ? <LoopPlate figure={figure} plate /> : null}
-      </div>
+      <FitBox>
+        <div className="relative z-10 flex flex-1 items-center px-2 py-2 sm:px-3">
+          {figure ? <LoopPlate figure={figure} plate /> : null}
+        </div>
+      </FitBox>
     </section>
   );
 }
@@ -244,25 +251,25 @@ function SignalTable({ figure }: { figure: HandbookFigure | undefined }) {
       <FitBox>
       <StarWash />
       <PanelHead index="6" kicker="How I would know" title="Four signals. No target times." />
-      <div className="relative z-10 flex flex-1 flex-col px-4 pt-4 pb-4 sm:px-5">
-        <div className="overflow-hidden rounded-md border border-cyan-300/25">
-          <div className="grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)] bg-cyan-400/10 px-3 py-2 font-mono text-[10px] tracking-[0.16em] text-cyan-200 uppercase">
+      <div className="relative z-10 flex flex-1 flex-col px-4 pt-4 pb-4 sm:px-5 lg:flex-none">
+        <div className="flex flex-1 flex-col overflow-hidden rounded-md border border-cyan-300/25 lg:flex-none">
+          <div className="hidden grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)] bg-cyan-400/10 px-3 py-2 font-mono text-[10px] tracking-[0.16em] text-cyan-200 uppercase sm:grid">
             <span>Signal</span>
             <span>What to count</span>
           </div>
-          <ul className="list-none">
+          <ul className="flex flex-1 list-none flex-col lg:block">
             {steps.map((step) => (
               <li
                 key={step.term}
-                className="grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)] items-center gap-2 border-t border-white/10 px-3 py-2.5"
+                className="grid flex-1 grid-cols-1 content-center gap-1 border-t border-white/10 px-3 py-3 first:border-t-0 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)] sm:items-center sm:gap-2 sm:first:border-t lg:flex-none lg:py-2.5"
               >
-                <span className="flex items-center gap-2 text-sm text-white">
+                <span className="flex items-center gap-2 text-sm font-semibold text-white">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-cyan-200/50 bg-[#07111c] shadow-[0_0_12px_rgba(34,211,238,0.45)]">
                     <HtmlIcon name={step.mark} className="h-4 w-4" />
                   </span>
                   <span className="leading-tight">{step.term}</span>
                 </span>
-                <span className="text-sm leading-snug text-slate-300">{step.detail}</span>
+                <span className="pl-10 text-sm leading-snug text-slate-300 sm:pl-0">{step.detail}</span>
               </li>
             ))}
           </ul>
@@ -316,9 +323,9 @@ function Distinctions({ figure }: { figure: HandbookFigure | undefined }) {
       <StarWash />
       <PanelHead index="7" kicker="Key distinctions" title="A green build is not the release." />
       <div className="relative z-10 flex flex-1 flex-col px-4 pt-4 pb-4 sm:px-5">
-        <div className="grid flex-1 grid-cols-1 gap-2 sm:grid-cols-3">
+        <div className="grid flex-1 auto-rows-fr grid-cols-1 gap-2 lg:flex-none lg:auto-rows-auto lg:grid-cols-3">
           {columns.map((column) => (
-            <div key={column.term} className="overflow-hidden rounded-md border border-cyan-300/25 bg-[#030812]/80">
+            <div key={column.term} className="flex flex-col justify-center overflow-hidden rounded-md border border-cyan-300/25 bg-[#030812]/80 lg:block">
               <h3 className="bg-cyan-400/15 px-2 py-2 text-center font-display text-sm leading-tight font-semibold text-white">
                 {column.term}
               </h3>
@@ -349,7 +356,7 @@ function BiggerPicture() {
   return (
     <section className={`${PANEL} h-full`} data-board-panel="path">
       <FitBox>
-      <div className="relative z-10 grid lg:grid-cols-[minmax(0,18rem)_1fr]">
+      <div className="relative z-10 flex min-h-full flex-1 flex-col lg:grid lg:min-h-0 lg:flex-none lg:grid-cols-[minmax(0,18rem)_1fr]">
         <header className="px-5 pt-5 pb-2 lg:py-6">
           <p className="font-mono text-[10px] tracking-[0.22em] text-cyan-300 uppercase">8. The bigger picture</p>
           <p className="mt-2 font-display text-xl font-semibold text-white">Card, book, story, work.</p>
@@ -372,8 +379,8 @@ function NightRoad() {
   const road = smoothPath(ROAD, 0.55);
   const band = roadRibbon(ROAD);
   return (
-    <div className="relative min-h-[260px]">
-      <svg viewBox="0 0 960 380" className="h-auto w-full" role="img" aria-label="Field card, handbook, story, and portfolio on one road.">
+    <div className="relative flex min-h-[260px] flex-1 flex-col">
+      <svg viewBox="0 0 960 380" preserveAspectRatio="xMidYMid meet" className="h-auto w-full flex-1 lg:h-auto lg:flex-none" role="img" aria-label="Field card, handbook, story, and portfolio on one road.">
         <defs>
           <linearGradient id={`${rawId}-sky`} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor="#020617" />

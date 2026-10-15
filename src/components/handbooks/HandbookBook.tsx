@@ -56,8 +56,8 @@ export function HandbookBook({
   const [index, setIndex] = useState(0);
   const [narrow, setNarrow] = useState(false);
   const blocks = useMemo(
-    () => proseBlocks(page, showFeedback, feedbackSlug, feedbackEntries),
-    [page, showFeedback, feedbackSlug, feedbackEntries],
+    () => proseBlocks(page, showFeedback, feedbackSlug, feedbackEntries, narrow),
+    [page, showFeedback, feedbackSlug, feedbackEntries, narrow],
   );
   const spreads = page.plate === "horizon" ? (narrow ? OPENING.flat().map((panel) => [panel]) : OPENING) : [];
   const leafCount = spreads.length + leaves.length;
@@ -189,27 +189,33 @@ export function HandbookBook({
 
   const offset = proseLeaf?.offset ?? 0;
 
+  const folio = leafCount === 0 ? "" : `${safeIndex + 1} / ${leafCount}`;
+
   return (
     <div
-      className="flex h-full min-h-0 flex-1 items-stretch gap-1 sm:gap-2"
+      className={`flex h-full min-h-0 flex-1 ${narrow ? "flex-col" : "items-stretch gap-1 sm:gap-2"}`}
       data-handbook-book
       data-leaf={safeIndex}
       data-leaf-count={leafCount}
     >
-      <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)}>
-        <ChevronLeft className="h-6 w-6" />
-      </TurnButton>
+      {narrow ? null : (
+        <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)}>
+          <ChevronLeft className="h-6 w-6" />
+        </TurnButton>
+      )}
       <div className="relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-md border border-cyan-300/25 bg-[#040914] shadow-[0_0_60px_-28px_rgba(34,211,238,0.45)]">
         {spread ? (
-          <div className="absolute inset-0 z-10 p-2 pb-8 sm:p-3">
+          <div className={`absolute inset-0 z-10 p-2 sm:p-3 ${narrow ? "" : "pb-8"}`}>
             <HandbookSpread handbook={handbook} page={page} panels={spread} />
           </div>
         ) : null}
-        <div className={`${spread ? "invisible" : ""} flex h-full min-h-0 flex-col px-5 pt-4 pb-8 sm:px-10`}>
+        <div className={`${spread ? "invisible" : ""} flex h-full min-h-0 flex-col ${narrow ? "px-4 pt-3 pb-3" : "px-5 pt-4 pb-8 sm:px-10"}`}>
           <header className="mb-3 flex h-5 shrink-0 items-baseline justify-between gap-4">
             <p className="min-w-0 truncate font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
-              {handbook.title}
-              <span className="px-2 text-slate-600">/</span>
+              <span className="hidden sm:inline">
+                {handbook.title}
+                <span className="px-2 text-slate-600">/</span>
+              </span>
               <span className="text-slate-300">{sectionTitle ?? page.title}</span>
             </p>
             <p className="shrink-0 font-mono text-xs tabular-nums text-slate-400">{page.number}</p>
@@ -232,13 +238,27 @@ export function HandbookBook({
             </div>
           </div>
         </div>
-        <p className="pointer-events-none absolute inset-x-0 bottom-2 z-20 text-center font-mono text-[0.65rem] tabular-nums tracking-[0.14em] text-slate-500">
-          {leafCount === 0 ? "" : `${safeIndex + 1} / ${leafCount}`}
-        </p>
+        {narrow ? null : (
+          <p className="pointer-events-none absolute inset-x-0 bottom-2 z-20 text-center font-mono text-[0.65rem] tabular-nums tracking-[0.14em] text-slate-500">
+            {folio}
+          </p>
+        )}
       </div>
-      <TurnButton label="Next page" disabled={!canNext} onClick={() => turn(1)}>
-        <ChevronRight className="h-6 w-6" />
-      </TurnButton>
+      {narrow ? (
+        <div className="mt-1 flex h-12 shrink-0 items-center justify-between">
+          <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)} wide>
+            <ChevronLeft className="h-6 w-6" />
+          </TurnButton>
+          <p className="font-mono text-xs tabular-nums tracking-[0.14em] text-slate-400">{folio}</p>
+          <TurnButton label="Next page" disabled={!canNext} onClick={() => turn(1)} wide>
+            <ChevronRight className="h-6 w-6" />
+          </TurnButton>
+        </div>
+      ) : (
+        <TurnButton label="Next page" disabled={!canNext} onClick={() => turn(1)}>
+          <ChevronRight className="h-6 w-6" />
+        </TurnButton>
+      )}
     </div>
   );
 }
@@ -247,11 +267,13 @@ function TurnButton({
   label,
   disabled,
   onClick,
+  wide = false,
   children,
 }: {
   label: string;
   disabled: boolean;
   onClick: () => void;
+  wide?: boolean;
   children: ReactNode;
 }) {
   return (
@@ -260,7 +282,7 @@ function TurnButton({
       aria-label={label}
       disabled={disabled}
       onClick={onClick}
-      className="focus-ring grid w-10 shrink-0 place-items-center rounded-md text-slate-200 hover:bg-white/5 hover:text-white disabled:pointer-events-none disabled:text-slate-700 sm:w-12"
+      className={`focus-ring grid shrink-0 place-items-center rounded-md text-slate-200 hover:bg-white/5 hover:text-white disabled:pointer-events-none disabled:text-slate-700 ${wide ? "h-12 w-14" : "w-10 sm:w-12"}`}
     >
       {children}
     </button>
@@ -310,6 +332,7 @@ function proseBlocks(
   showFeedback: boolean,
   feedbackSlug: string,
   feedbackEntries: EssayFeedbackEntry[],
+  narrow: boolean,
 ): Block[] {
   const blocks: Block[] = [
     {
@@ -337,7 +360,7 @@ function proseBlocks(
         </h2>
       ),
     });
-    blocks.push(...sectionBlocks(section, page.plate === "horizon"));
+    blocks.push(...sectionBlocks(section, page.plate === "horizon", narrow));
   });
   blocks.push({
     key: "sources",
@@ -369,7 +392,7 @@ function proseBlocks(
   return blocks;
 }
 
-function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean): Block[] {
+function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narrow: boolean): Block[] {
   const blocks: Block[] = [];
   section.paragraphs?.forEach((paragraph, index) => {
     blocks.push({
@@ -380,31 +403,59 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean): Bloc
     });
   });
   if (section.figure && !(hideBoardFigure && BOARD_FIGURES.has(section.figure.kind))) {
+    if (narrow && section.figure.kind === "flow") {
+      section.figure.steps.forEach((step, index) => {
+        blocks.push({
+          key: `${section.id}-flow-${index}`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          node: (
+            <div className="flex gap-3 pb-3">
+              <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-cyan-200/50 font-mono text-xs text-cyan-100">
+                {index + 1}
+              </span>
+              <span className="min-w-0">
+                <span className="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-cyan-200">{step.term}</span>
+                <span className="mt-1 block text-sm leading-relaxed text-slate-200">{step.detail}</span>
+              </span>
+            </div>
+          ),
+        });
+      });
+      if (section.figure.caption) {
+        blocks.push({
+          key: `${section.id}-flow-caption`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          node: <p className="pb-4 text-sm leading-relaxed text-slate-400">{section.figure.caption}</p>,
+        });
+      }
+    } else {
+      blocks.push({
+        key: `${section.id}-figure`,
+        sectionId: section.id,
+        sectionTitle: section.title,
+        node: (
+          <div className="pb-4">
+            <HandbookFigureView figure={section.figure} />
+          </div>
+        ),
+      });
+    }
+  }
+  section.steps?.forEach((step, index) => {
     blocks.push({
-      key: `${section.id}-figure`,
+      key: `${section.id}-step-${index}`,
       sectionId: section.id,
       sectionTitle: section.title,
       node: (
-        <div className="pb-4">
-          <HandbookFigureView figure={section.figure} />
+        <div className="flex gap-3 pb-3 text-base leading-relaxed text-slate-300">
+          <span className="w-5 shrink-0 font-mono text-sm text-cyan-200">{index + 1}</span>
+          <span>{step}</span>
         </div>
       ),
     });
-  }
-  if (section.steps?.length) {
-    blocks.push({
-      key: `${section.id}-steps`,
-      sectionId: section.id,
-      sectionTitle: section.title,
-      node: (
-        <ol className="list-decimal space-y-3 pb-4 pl-5 text-base leading-relaxed text-slate-300">
-          {section.steps.map((step) => (
-            <li key={step}>{step}</li>
-          ))}
-        </ol>
-      ),
-    });
-  }
+  });
   if (section.sources?.length) {
     blocks.push({
       key: `${section.id}-sources`,

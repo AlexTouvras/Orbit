@@ -192,7 +192,16 @@ export function LoopPlate({ figure, plate = false }: { figure: HandbookFigure; p
       : [];
 
   return (
-    <div data-handbook-plate="loop" className={plate ? "flex h-full max-h-full w-full items-center justify-center" : undefined}>
+    <div data-handbook-plate="loop" className={plate ? "flex h-full w-full flex-col lg:items-center lg:justify-center" : undefined}>
+      {plate ? (
+        <div className="flex flex-col gap-2 lg:hidden">
+          {boxes.map((box) => (
+            <CompactStep key={box.step.term} n={box.n} term={box.step.term} detail={box.step.detail} mark={box.step.mark && box.step.mark !== "pulse" ? box.step.mark : "check"} />
+          ))}
+          <CompactStep n="—" term="Main is red?" detail="Stop integration." mark="alert" tone="fail" />
+          {repair ? <CompactStep n="↩" term={repair.term} detail={repair.detail} mark="wrench" tone="pass" /> : null}
+        </div>
+      ) : null}
       <ul className={plate ? "hidden" : "flex list-none flex-col gap-2 sm:hidden"}>
         {boxes.map((box) => (
           <li key={box.step.term}>
@@ -200,7 +209,7 @@ export function LoopPlate({ figure, plate = false }: { figure: HandbookFigure; p
           </li>
         ))}
       </ul>
-      <svg viewBox={`0 0 ${VIEW_W} ${viewH}`} className={plate ? "h-full max-h-full w-auto max-w-full" : "hidden h-auto w-full sm:block"} role="img" aria-label={figure.caption || "The daily loop"}>
+      <svg viewBox={`0 0 ${VIEW_W} ${viewH}`} className={plate ? "hidden h-full max-h-full w-auto max-w-full lg:block" : "hidden h-auto w-full sm:block"} role="img" aria-label={figure.caption || "The daily loop"}>
         <title>{figure.caption || "The daily loop"}</title>
         <defs>
           <marker id={`${rawId}-pass`} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
@@ -303,6 +312,36 @@ export function LoopPlate({ figure, plate = false }: { figure: HandbookFigure; p
           <BranchFace tone="pass" mark="wrench" title={repair.term} detail={repair.detail} />
         </div>
       ) : null}
+    </div>
+  );
+}
+
+function CompactStep({
+  n,
+  term,
+  detail,
+  mark,
+  tone = "pass",
+}: {
+  n: string | number;
+  term: string;
+  detail: string;
+  mark: HandbookMark;
+  tone?: "pass" | "fail";
+}) {
+  const failed = tone === "fail";
+  return (
+    <div
+      className={`flex items-center gap-3 rounded-xl border px-3 py-2 ${failed ? "border-rose-400/80 bg-[#3a121c]" : "border-white/15 bg-[#0c1420]"}`}
+    >
+      <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-full text-xs font-bold ${failed ? "bg-rose-400 text-rose-950" : "bg-emerald-400 text-emerald-950"}`}>
+        {n}
+      </span>
+      <Glyph name={mark} tone={failed ? "red" : "pass"} size={16} />
+      <span className="min-w-0">
+        <span className="block text-sm leading-tight font-semibold text-white">{term}</span>
+        <span className="mt-0.5 block text-xs leading-snug text-slate-400">{detail}</span>
+      </span>
     </div>
   );
 }
@@ -462,7 +501,7 @@ function ReturnNote() {
 export function ScenePlate({ figure, disclaimer }: { figure: HandbookFigure; disclaimer?: string }) {
   return (
     <div data-handbook-plate="scene">
-      <ol className="grid list-none grid-cols-1 gap-3 lg:grid-cols-5 lg:gap-2">
+      <ol className="grid list-none grid-cols-1 gap-2 lg:grid-cols-5 lg:gap-2">
         {figure.steps.map((step, index) => {
           const failed = step.mark === "cross";
           const restored = step.mark === "check";
@@ -474,7 +513,7 @@ export function ScenePlate({ figure, disclaimer }: { figure: HandbookFigure; dis
                 </span>
               ) : null}
               <div
-                className={`relative flex h-full flex-col items-center rounded-[14px] border px-2 pt-5 pb-3 text-center ${
+                className={`flex items-center gap-3 rounded-xl border px-3 py-2.5 text-left lg:relative lg:h-full lg:flex-col lg:items-center lg:rounded-[14px] lg:px-2 lg:pt-5 lg:pb-3 lg:text-center ${
                   failed
                     ? "border-rose-400/85 bg-[#3a121c]"
                     : restored
@@ -483,28 +522,25 @@ export function ScenePlate({ figure, disclaimer }: { figure: HandbookFigure; dis
                 }`}
               >
                 <span
-                  className={`absolute -top-3 left-1/2 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full text-xs font-bold ${
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold lg:absolute lg:-top-3 lg:left-1/2 lg:-translate-x-1/2 ${
                     failed ? "bg-rose-400 text-rose-950" : "bg-emerald-400 text-emerald-950"
                   }`}
                 >
                   {index + 1}
                 </span>
                 <Glyph name={step.mark} tone={failed ? "red" : "pass"} />
-                <span className={`mt-2 block text-[13px] font-semibold ${failed ? "text-rose-50" : "text-white"}`}>{step.term}</span>
-                <span className="mt-1 block text-[11px] leading-snug text-slate-400">{step.detail}</span>
-              </div>
-              {index < figure.steps.length - 1 ? (
-                <span aria-hidden className="mt-1 block text-center text-emerald-300 lg:hidden">
-                  ↓
+                <span className="min-w-0">
+                  <span className={`block text-sm font-semibold lg:mt-2 lg:text-[13px] ${failed ? "text-rose-50" : "text-white"}`}>{step.term}</span>
+                  <span className="mt-0.5 block text-xs leading-snug text-slate-400 lg:text-[11px]">{step.detail}</span>
                 </span>
-              ) : null}
+              </div>
             </li>
           );
         })}
       </ol>
-      <div className="mt-4 rounded-[14px] border border-white/10 bg-black/30 p-3">
+      <div className="mt-3 rounded-[14px] border border-white/10 bg-black/30 p-2.5 sm:mt-4 sm:p-3">
         <p className="font-mono text-[10px] tracking-[0.18em] text-slate-500 uppercase">Example</p>
-        <div className="mt-3 grid items-stretch gap-3 sm:grid-cols-[1fr_auto_1fr]">
+        <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-2 sm:mt-3 sm:gap-3">
           <FieldSample label="The break" field="title" note="Downstream still reads name." tone="fail" />
           <span aria-hidden className="self-center text-center text-lg text-emerald-300">
             →
@@ -540,10 +576,9 @@ function FieldSample({
   return (
     <div className={`rounded-xl border px-3 py-2.5 ${tone === "fail" ? "border-rose-400/40 bg-rose-950/20" : "border-emerald-300/40 bg-emerald-400/5"}`}>
       <p className="font-mono text-[10px] tracking-[0.14em] text-slate-500 uppercase">{label}</p>
-      <pre className="mt-2 font-mono text-[12px] leading-relaxed text-slate-300">
-        {"{\n  "}
+      <pre className="mt-2 font-mono text-[11px] leading-snug text-slate-300 sm:text-[12px] sm:leading-relaxed">
         <span style={{ color: key }}>&quot;{field}&quot;</span>
-        {': "widget"\n}'}
+        {': "widget"'}
       </pre>
       <p className="mt-1 text-[11px] leading-snug text-slate-400">{note}</p>
     </div>
