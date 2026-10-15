@@ -8,7 +8,7 @@ import { SiteLink } from "@/components/handbooks/SiteLink";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
 import { chapterTitleForPage, pageFeedbackSlug, pagePath } from "@/lib/handbooks";
 
-const BOARD_FIGURES = new Set(["loop", "recovery", "signals", "scene", "compare"]);
+const BOARD_FIGURES = new Set(["loop", "recovery", "signals", "scene", "compare", "pyramid"]);
 
 export function HandbookPageView({
   handbook,
