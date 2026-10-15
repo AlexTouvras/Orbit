@@ -13,20 +13,24 @@ import { pagePath } from "@/lib/handbooks";
 
 const BOARD_FIGURES = new Set(["loop", "recovery", "signals", "scene", "compare", "pyramid"]);
 
-const OPENING: SpreadPanel[][] = [
-  ["hero", "loop"],
-  ["recovery", "scene"],
-  ["pyramid"],
-  ["signals", "distinctions"],
-  ["path"],
-];
+const PLATES_AFTER: Record<string, SpreadPanel[]> = {
+  day: ["loop"],
+  broken: ["recovery"],
+  scenario: ["scene"],
+  tests: ["pyramid"],
+  measure: ["signals"],
+  limits: ["distinctions", "path"],
+};
 
 type Block = {
   key: string;
   sectionId?: string;
   sectionTitle?: string;
+  platesAfter?: SpreadPanel[];
   node: ReactNode;
 };
+
+type ShownLeaf = { kind: "plate"; panel: SpreadPanel } | { kind: "prose"; leaf: PackedLeaf };
 
 type PackedLeaf = {
   start: number;
@@ -60,11 +64,15 @@ export function HandbookBook({
     () => proseBlocks(page, showFeedback, feedbackSlug, feedbackEntries, narrow),
     [page, showFeedback, feedbackSlug, feedbackEntries, narrow],
   );
-  const spreads = page.plate === "horizon" ? (narrow ? OPENING.flat().map((panel) => [panel]) : OPENING) : [];
-  const leafCount = spreads.length + leaves.length;
+  const shown = useMemo(
+    () => composeLeaves(leaves, blocks, page.plate === "horizon"),
+    [leaves, blocks, page.plate],
+  );
+  const leafCount = shown.length;
   const safeIndex = Math.min(index, Math.max(leafCount - 1, 0));
-  const spread = safeIndex < spreads.length ? spreads[safeIndex] : null;
-  const proseLeaf = spread ? null : (leaves[safeIndex - spreads.length] ?? null);
+  const current = shown[safeIndex];
+  const spread = current?.kind === "plate" ? [current.panel] : null;
+  const proseLeaf = current?.kind === "prose" ? current.leaf : null;
   const sectionTitle = proseLeaf
     ? blocks.slice(proseLeaf.start, proseLeaf.end).map((block) => block.sectionTitle).find(Boolean)
     : undefined;
@@ -122,27 +130,28 @@ export function HandbookBook({
     };
     if (!pageChanged && !fromEnd) return watch();
     pageStamp.current = page.number;
+    const sequence = composeLeaves(packed, blocks, page.plate === "horizon");
     if (fromEnd) {
       url.searchParams.delete("from");
       window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
       landAtEnd.current = true;
-      setIndex(spreads.length + Math.max(packed.length, 1) - 1);
+      setIndex(Math.max(sequence.length - 1, 0));
     } else if (hash) {
-      const proseIndex = packed.findIndex((leaf) =>
-        blocks.slice(leaf.start, leaf.end).some((block) => block.sectionId === hash),
+      const proseIndex = sequence.findIndex(
+        (item) => item.kind === "prose" && blocks.slice(item.leaf.start, item.leaf.end).some((block) => block.sectionId === hash),
       );
-      setIndex(proseIndex >= 0 ? spreads.length + proseIndex : 0);
+      setIndex(proseIndex >= 0 ? proseIndex : 0);
     } else {
       setIndex(0);
     }
     return watch();
-  }, [blocks, page.number, spreads.length]);
+  }, [blocks, page.number, page.plate]);
 
   useEffect(() => {
-    if (!landAtEnd.current || leaves.length === 0) return;
+    if (!landAtEnd.current || shown.length === 0) return;
     landAtEnd.current = false;
-    setIndex(spreads.length + leaves.length - 1);
-  }, [leaves, spreads.length]);
+    setIndex(shown.length - 1);
+  }, [shown.length]);
 
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
@@ -328,6 +337,9 @@ function packBlocks(slot: HTMLElement, blocks: Block[]): PackedLeaf[] {
         const holdWithNext = candidate.title || (candidate.broken && follower?.index === candidate.index);
         if (holdWithNext && follower && follower.bottom - offset > budget) break;
         end += 1;
+        const taken = pieces[end - 1];
+        const blockContinues = end < pieces.length && pieces[end].index === taken.index;
+        if (!blockContinues && blocks[taken.index]?.platesAfter?.length) break;
       }
       if (end === cursor) {
         if (piece.bottom - offset > budget) {
@@ -437,6 +449,19 @@ function lineBoxes(node: HTMLElement, origin: number): { top: number; bottom: nu
   return merged;
 }
 
+function composeLeaves(packed: PackedLeaf[], blocks: Block[], opening: boolean): ShownLeaf[] {
+  const shown: ShownLeaf[] = opening ? [{ kind: "plate", panel: "hero" }] : [];
+  packed.forEach((leaf, index) => {
+    shown.push({ kind: "prose", leaf });
+    const last = leaf.end - 1;
+    const next = packed[index + 1];
+    const finished = !next || next.start > last;
+    if (!finished) return;
+    for (const panel of blocks[last]?.platesAfter ?? []) shown.push({ kind: "plate", panel });
+  });
+  return shown;
+}
+
 function samePack(left: PackedLeaf[], right: PackedLeaf[]) {
   if (left.length !== right.length) return false;
   return left.every((leaf, index) => {
@@ -468,17 +493,23 @@ function proseBlocks(
     },
   ];
   page.sections.forEach((section) => {
-    blocks.push({
-      key: `${section.id}-title`,
-      sectionId: section.id,
-      sectionTitle: section.title,
-      node: (
-        <h2 id={section.id} className="pt-2 pb-3 font-display text-2xl font-semibold tracking-tight text-white">
-          {section.title}
-        </h2>
-      ),
-    });
-    blocks.push(...sectionBlocks(section, page.plate === "horizon", narrow));
+    const parts: Block[] = [
+      {
+        key: `${section.id}-title`,
+        sectionId: section.id,
+        sectionTitle: section.title,
+        node: (
+          <h2 id={section.id} className="pt-2 pb-3 font-display text-2xl font-semibold tracking-tight text-white">
+            {section.title}
+          </h2>
+        ),
+      },
+      ...sectionBlocks(section, page.plate === "horizon", narrow),
+    ];
+    const plates = page.plate === "horizon" ? PLATES_AFTER[section.id] : undefined;
+    const tail = parts[parts.length - 1];
+    if (plates?.length && tail) tail.platesAfter = plates;
+    blocks.push(...parts);
   });
   blocks.push({
     key: "sources",
