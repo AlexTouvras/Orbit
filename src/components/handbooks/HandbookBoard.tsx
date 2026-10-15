@@ -65,7 +65,7 @@ export function HandbookSpread({
       }`}
     >
       {panels.map((panel) => (
-        <div key={panel} className="h-full min-h-0">
+        <div key={panel} className={panel === "hero" && !wide ? "mx-auto h-full min-h-0 w-full lg:aspect-[2/3] lg:w-auto" : "h-full min-h-0"}>
           <SpreadPanelView panel={panel} handbook={handbook} page={page} />
         </div>
       ))}

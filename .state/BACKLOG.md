@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Handbook pictures follow the section — the earth opens the page, and each card comes after the words it draws (2026-10-15)
 - [x] Handbook text leaves — a paragraph continues on a whole line, a heading stays with the text under it, and a step stays whole (2026-10-15)
 - [x] Handbook phone frame — the leaf fills the width, the header sits close above it, and the turn controls are a bottom row (2026-10-15)
 - [x] Handbook phone leaves — the loop is a column of cards, signals stack, a step continues on the next leaf, and the turn controls sit under the page (2026-10-15)
