@@ -12,6 +12,7 @@ import {
   parseFieldCards,
   parseRobotContract,
   sectionLine,
+  sectionLines,
 } from "../public/field-card-robot.mjs";
 
 const TUCK = "Tap me and I'll wait in the corner.";
@@ -83,6 +84,20 @@ describe("field card robot copy", () => {
     assert.equal(sdlc.lines.length, 6);
     assert.equal(sdlc.lines.some((line) => line.includes("Delivery")), false);
     assert.equal(sectionLine(sdlc.sections, "Build software that stays in use"), sdlc.lines[0]);
+    assert.deepEqual(sectionLines(sdlc.sections, "How a change moves"), [
+      "A check that cannot fail is not a gate.",
+      "Keep main releasable.",
+    ]);
+    assert.deepEqual(sectionLines(sdlc.sections, "Where judgement stays"), [
+      "The plan fits on a page a person will review.",
+      "A spec file is not shared understanding.",
+      "A person drops tests that fail for the wrong reason.",
+    ]);
+    assert.equal(sectionLine(sdlc.sections, "Where judgement stays"), "A person drops tests that fail for the wrong reason.");
+    for (const words of sdlc.sections.flatMap((section) => section.lines || [section.line])) {
+      assert.ok(words.length <= 64);
+      assert.ok([...words].every((ch) => ch.charCodeAt(0) >= 32 && ch.charCodeAt(0) <= 126));
+    }
     assert.equal(
       cardsForSheet("delivery", remote).find((card) => card.id === "delivery").lines[0],
       remote.find((card) => card.id === "delivery").lines[0],

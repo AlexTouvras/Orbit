@@ -17,9 +17,9 @@
  * of the sheet. When this page is that iframe, it stays out of the way.
  *
  * On the sheet itself, scrolling speaks the section crossing the reading
- * band, and a fine pointer speaks the section under the cursor. The words
- * are that section's line from `field-cards.ts`. All six runs show that one
- * line, so the crossfade cannot swap in a different judgement.
+ * band, and a fine pointer speaks the section under the cursor. A section
+ * with several sentences steps through them. All six runs show the current
+ * sentence, so the crossfade cannot swap in a different judgement.
  *
  * A press that moves drags the robot in screen pixels. The same offset
  * moves the hit target. A short tap pokes. On a narrow viewport the drag
@@ -143,8 +143,20 @@ export const FALLBACK_CARDS = [
     ],
     sections: [
       { heading: "Build software that stays in use", line: "This card is how software stays in use." },
-      { heading: "How a change moves", line: "A check that cannot fail is not a gate." },
-      { heading: "Where judgement stays", line: "A person drops tests that fail for the wrong reason." },
+      {
+        heading: "How a change moves",
+        line: "A check that cannot fail is not a gate.",
+        lines: ["A check that cannot fail is not a gate.", "Keep main releasable."],
+      },
+      {
+        heading: "Where judgement stays",
+        line: "A person drops tests that fail for the wrong reason.",
+        lines: [
+          "The plan fits on a page a person will review.",
+          "A spec file is not shared understanding.",
+          "A person drops tests that fail for the wrong reason.",
+        ],
+      },
       { heading: "Named practices", line: "Seven links. The four pillars still set the order." },
       { heading: "Always on", line: "Use sends the next change back through the pillars." },
     ],
@@ -419,6 +431,18 @@ export function sectionLine(sections, heading) {
   return found?.line ?? null;
 }
 
+/** Every sentence for a heading. One line stays one sentence. */
+export function sectionLines(sections, heading) {
+  const key = sectionKey(heading);
+  if (!key) return [];
+  const found = (sections || []).find((section) => sectionKey(section.heading) === key);
+  if (!found) return [];
+  const lines = Array.isArray(found.lines) && found.lines.length ? found.lines : found.line ? [found.line] : [];
+  return lines.filter((line) => typeof line === "string" && line);
+}
+
+const SECTION_STEP_MS = 5000;
+
 /** Accent id → sRGB from `FIELD_CARD_ACCENTS`. */
 export function parseAccents(source) {
   if (typeof source !== "string") return null;
@@ -683,7 +707,8 @@ function writeLines(instance, robot, names, lines) {
 
 /**
  * Scrolling speaks the section at the reading band. A fine pointer speaks
- * the section under the cursor. The same sentence is written to every run.
+ * the section under the cursor. A section with several sentences steps
+ * through them. The same sentence is written to every run.
  */
 function followSections(instance, robot, names, speech, layer) {
   const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -691,18 +716,30 @@ function followSections(instance, robot, names, speech, layer) {
   let sample = "band";
   let scheduled = false;
   let spoken = "";
+  let heading = "";
+  let step = 0;
+  let due = 0;
 
-  const apply = () => {
+  const placeSpeech = () => {
     const usePointer = sample === "pointer" && fine.matches && pointer;
     const x = usePointer ? pointer.x : window.innerWidth / 2;
     const y = usePointer ? pointer.y : window.innerHeight * READING_BAND;
-    const line = sectionLine(speech.sections, headingAt(x, y));
-    const next = line || "";
-    if (next === spoken) return;
-    spoken = next;
+    const where = headingAt(x, y);
+    const lines = sectionLines(speech.sections, where);
+    if (where !== heading) {
+      heading = where;
+      step = 0;
+      due = Date.now() + SECTION_STEP_MS;
+    }
+    const next = lines.length ? lines[step % lines.length] : "";
+    const token = `${where}|${next}`;
+    if (token === spoken) return;
+    spoken = token;
     writeLines(instance, robot, names, next ? names.map(() => next) : speech.lines);
     layer.dataset.speech = next || speech.lines[0] || "";
   };
+
+  const apply = () => placeSpeech();
 
   const place = (next) => {
     sample = next;
@@ -730,6 +767,15 @@ function followSections(instance, robot, names, speech, layer) {
   } else {
     place("band");
   }
+  window.setInterval(() => {
+    if (Date.now() < due) return;
+    const lines = sectionLines(speech.sections, heading);
+    if (lines.length < 2) return;
+    step = (step + 1) % lines.length;
+    due = Date.now() + SECTION_STEP_MS;
+    spoken = "";
+    placeSpeech();
+  }, 250);
 }
 
 function removeChrome() {

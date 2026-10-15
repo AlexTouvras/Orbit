@@ -49,7 +49,7 @@ The change walks plan, then build, then release, then maintain along the lime ra
 
 `prefers-reduced-motion` and print show the end state: the change at maintain, the last version still visible, the bad test struck, the gates open, the return rail drawn. Under 900px the pillars stack on a vertical rail, the walking change hides, and the return rail stays under the stack. The words stay readable with the motion off. No scroll-jack.
 
-The robot is already on this sheet. Its six lines live in `public/field-card-robot.mjs` and win over storytelling `field-cards.ts`. A press that moves drags the robot. A short tap tucks it.
+The robot is already on this sheet. Its six lines live in `public/field-card-robot.mjs` and win over storytelling `field-cards.ts`. On How a change moves it also says `Keep main releasable.` On Where judgement stays it also says the plan fits on a page, and that a spec file is not shared understanding. A section with more than one sentence steps through them. The six runs still show the same sentence. A press that moves drags the robot. A short tap tucks it.
 
 ## Leave off the card
 
