@@ -36,9 +36,11 @@ These stay on the sheet, under Where judgement stays, unless that month’s rese
 
 These lines open the book. A monthly review does not strip the links, and it does not treat them as a change to the picture. Leave the Changed line as written unless the picture itself changes. The seven practice URLs stay. Do not add an eighth.
 
-- Trunk-based and Continuous Integration: `Keep main releasable` opens `/handbooks/software-that-stays-in-use/1`.
-- Build & verify, the test judgement line, and Evals open `/handbooks/software-that-stays-in-use/2`.
-- Plan & design, and the plan judgement line, open `/handbooks/software-that-stays-in-use/3`.
+Each handbook URL appears once. A later line that would open the same place stays text.
+
+- Trunk-based: `Keep main releasable` opens `/handbooks/software-that-stays-in-use/1`. Continuous Integration keeps its practice URL only.
+- Build & verify opens `/handbooks/software-that-stays-in-use/2`. The test judgement line and Evals stay text.
+- Plan & design opens `/handbooks/software-that-stays-in-use/3`. The plan judgement line stays text.
 - `A spec file is not shared understanding` opens `/handbooks/software-that-stays-in-use/3#understanding`.
 - Release & deploy opens `/handbooks/software-that-stays-in-use/4`.
 - Maintain & improve opens `/handbooks/software-that-stays-in-use/5`.

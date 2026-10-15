@@ -52,9 +52,11 @@ Calendars, blast-radius proof, and the cutover sequence stay on the delivery car
 
 The SDLC field card opens the chapter that states the principle. The seven named-practice URLs stay on the card.
 
-- Keep main releasable, under trunk-based and under continuous integration, opens page 1.
-- The build-and-verify station, the judgement line about dropping a test, and Evals open page 2.
-- The plan station and the plan judgement line open page 3.
+Each handbook URL appears once on the card. A later line that would open the same place stays text.
+
+- Keep main releasable, under trunk-based, opens page 1.
+- The build-and-verify station opens page 2.
+- The plan station opens page 3.
 - A spec file is not shared understanding opens page 3 at The page is not the understanding.
 - People run the version just verified opens page 4.
 - A defect, or what you learn in use, comes back as the next change opens page 5.
