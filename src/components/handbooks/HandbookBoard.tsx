@@ -49,7 +49,6 @@ export function HandbookBoard({ handbook, page }: { handbook: Handbook; page: Ha
   const scene = figureOf(page, "scene");
   const compare = figureOf(page, "compare");
   const sceneSection = sectionOf(page, "scene");
-  const measureSection = sectionOf(page, "signals");
 
   return (
     <div
@@ -60,12 +59,8 @@ export function HandbookBoard({ handbook, page }: { handbook: Handbook; page: Ha
         <EarthHero handbook={handbook} page={page} />
         <DailyLoop figure={loop} />
         <BrokenMain figure={recovery} />
-        <SignalTable figure={signals} note={measureSection?.paragraphs?.[0]} />
-        <IllustrativeScene
-          figure={scene}
-          blurb={sceneSection?.paragraphs?.[1]}
-          label={sceneSection?.paragraphs?.[0]}
-        />
+        <SignalTable figure={signals} />
+        <IllustrativeScene figure={scene} label={sceneSection?.paragraphs?.[0]} />
         <Distinctions figure={compare} />
         <div className="lg:col-span-3">
           <BiggerPicture />
@@ -118,17 +113,24 @@ function EarthHero({ handbook, page }: { handbook: Handbook; page: HandbookPage 
 
 function DailyLoop({ figure }: { figure: HandbookFigure | undefined }) {
   const steps = ringSteps(figure);
+  const repair = figure?.steps.find((step) => step.mark === "wrench");
   return (
     <section className={`${PANEL} min-h-[560px]`} data-board-panel="loop">
       <StarWash />
       <PanelHead index="2" kicker="The daily loop" title="Small enough to merge today." />
       <div className="relative z-10 flex flex-1 flex-col px-4 pb-4 sm:px-5">
-        <ol className="mt-4 sm:hidden">
+        <ul className="mt-4 list-none sm:hidden">
           {steps.map((step, index) => (
             <StepRow key={step.term} index={index} step={step} />
           ))}
-        </ol>
+        </ul>
         <LoopRing steps={steps} caption={figure?.caption ?? "The commit loop."} />
+        {repair ? (
+          <p className="relative z-10 mt-3 border-l-2 border-rose-300 pl-3 text-sm leading-snug text-slate-200">
+            <span className="font-mono text-[10px] tracking-[0.16em] text-rose-200 uppercase">Main is red. </span>
+            {repair.detail}
+          </p>
+        ) : null}
         <p className="relative z-10 mt-auto hidden pt-2 text-xs leading-relaxed text-slate-400 sm:block">
           {figure?.caption}
         </p>
@@ -139,38 +141,39 @@ function DailyLoop({ figure }: { figure: HandbookFigure | undefined }) {
 
 function BrokenMain({ figure }: { figure: HandbookFigure | undefined }) {
   const steps = figure?.steps ?? [];
-  const [first, ...rest] = steps;
   return (
     <section className={`${PANEL} min-h-[560px]`} data-board-panel="recovery">
       <StarWash />
       <PanelHead index="3" kicker="A broken main" title="Feature work waits." />
       <div className="relative z-10 flex flex-1 flex-col px-4 pt-4 pb-4 sm:px-5">
-        <ol className="relative flex flex-1 flex-col justify-between gap-3">
+        <ul className="relative flex list-none flex-1 flex-col justify-between gap-3">
           <span
             aria-hidden
-            className="absolute top-8 bottom-5 left-[1.65rem] w-[2px] -translate-x-1/2 bg-gradient-to-b from-rose-400 via-cyan-300 to-cyan-300/20 shadow-[0_0_12px_rgba(34,211,238,0.85)]"
+            className="absolute top-8 bottom-5 left-[1.65rem] w-[2px] -translate-x-1/2 bg-gradient-to-b from-rose-400 via-teal-200 to-teal-200/30 shadow-[0_0_12px_rgba(34,211,238,0.85)]"
           />
-          {first ? (
-            <li className="relative flex items-start gap-3">
-              <GlowDot tone="red" large mark={first.mark ?? "cross"} />
-              <span className="min-w-0 pt-2">
-                <span className="block font-display text-lg font-semibold text-rose-100">{first.term}</span>
-                <span className="mt-1 block text-sm leading-snug text-slate-300">{first.detail}</span>
-              </span>
-            </li>
-          ) : null}
-          {rest.map((step, index) => (
-            <li key={step.term} className="relative flex items-start gap-3">
-              <GlowDot mark={step.mark} />
-              <span className="min-w-0 pt-1">
-                <span className="block font-mono text-[11px] tracking-[0.14em] text-cyan-200 uppercase">
-                  {index + 1}. {step.term}
+          {steps.map((step, index) => {
+            const tone = recoveryTone(step);
+            const label =
+              tone === "red" ? "text-rose-100" : tone === "ok" ? "text-teal-100" : "text-cyan-200";
+            return (
+              <li key={step.term} className="relative flex items-start gap-3">
+                <GlowDot tone={tone} large={index === 0} mark={step.mark} />
+                <span className="min-w-0 pt-1">
+                  <span
+                    className={
+                      index === 0
+                        ? "block font-display text-lg font-semibold text-rose-100"
+                        : `block font-mono text-[11px] tracking-[0.14em] uppercase ${label}`
+                    }
+                  >
+                    {index + 1}. {step.term}
+                  </span>
+                  <span className="mt-1 block text-sm leading-snug text-slate-300">{step.detail}</span>
                 </span>
-                <span className="mt-1 block text-sm leading-snug text-slate-300">{step.detail}</span>
-              </span>
-            </li>
-          ))}
-        </ol>
+              </li>
+            );
+          })}
+        </ul>
         {figure?.caption ? (
           <p className="relative z-10 mt-4 text-xs leading-relaxed text-slate-400">{figure.caption}</p>
         ) : null}
@@ -179,7 +182,7 @@ function BrokenMain({ figure }: { figure: HandbookFigure | undefined }) {
   );
 }
 
-function SignalTable({ figure, note }: { figure: HandbookFigure | undefined; note?: string }) {
+function SignalTable({ figure }: { figure: HandbookFigure | undefined }) {
   const steps = figure?.steps ?? [];
   return (
     <section className={PANEL} data-board-panel="signals">
@@ -189,9 +192,9 @@ function SignalTable({ figure, note }: { figure: HandbookFigure | undefined; not
         <div className="overflow-hidden rounded-md border border-cyan-300/25">
           <div className="grid grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)] bg-cyan-400/10 px-3 py-2 font-mono text-[10px] tracking-[0.16em] text-cyan-200 uppercase">
             <span>Signal</span>
-            <span>What to inspect</span>
+            <span>What to count</span>
           </div>
-          <ol>
+          <ul className="list-none">
             {steps.map((step) => (
               <li
                 key={step.term}
@@ -206,9 +209,11 @@ function SignalTable({ figure, note }: { figure: HandbookFigure | undefined; not
                 <span className="text-sm leading-snug text-slate-300">{step.detail}</span>
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
-        {note ? <p className="mt-3 text-xs leading-relaxed text-slate-400">{note}</p> : null}
+        {figure?.caption ? (
+          <p className="mt-3 text-xs leading-relaxed text-slate-400">{figure.caption}</p>
+        ) : null}
       </div>
     </section>
   );
@@ -216,50 +221,56 @@ function SignalTable({ figure, note }: { figure: HandbookFigure | undefined; not
 
 function IllustrativeScene({
   figure,
-  blurb,
   label,
 }: {
   figure: HandbookFigure | undefined;
-  blurb?: string;
   label?: string;
 }) {
   const steps = figure?.steps ?? [];
   const frames: Array<{ tone: "red" | "green" | "list"; title: string }> = [
-    { tone: "red", title: "The build fails" },
+    { tone: "red", title: "Downstream test fails" },
     { tone: "green", title: "The change is named" },
-    { tone: "list", title: "Main is green" },
+    { tone: "list", title: "The revert restores main" },
   ];
   return (
     <section className={PANEL} data-board-panel="scene">
       <StarWash />
-      <PanelHead index="5" kicker="An illustrative break" title="From a red build to a green main." />
-      {blurb ? <p className="relative z-10 px-4 pt-3 text-sm leading-snug text-slate-300 sm:px-5">{blurb}</p> : null}
+      <PanelHead index="5" kicker="An illustrative break" title="A renamed field, then a revert." />
+      {label ? (
+        <p className="relative z-10 px-4 pt-3 text-xs leading-relaxed text-slate-400 sm:px-5">{label}</p>
+      ) : null}
       <div className="relative z-10 grid flex-1 gap-4 px-4 pt-3 pb-4 sm:px-5 lg:grid-cols-[0.9fr_1.1fr]">
-        <ol>
-          {steps.map((step, index) => (
-            <li key={step.term} className="relative flex gap-3 pb-3 last:pb-0">
-              {index === steps.length - 1 ? null : (
-                <span aria-hidden className="absolute top-8 bottom-0 left-3.5 w-px -translate-x-1/2 bg-cyan-200/40" />
-              )}
-              <span className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-cyan-200/70 bg-[#07111c] font-mono text-[11px] text-cyan-100 shadow-[0_0_12px_rgba(34,211,238,0.45)]">
-                {index + 1}
-              </span>
-              <span>
-                <span className="block font-mono text-[10px] tracking-[0.16em] text-cyan-200 uppercase">{step.term}</span>
-                <span className="mt-0.5 block text-sm leading-snug text-slate-200">{step.detail}</span>
-              </span>
-            </li>
-          ))}
-        </ol>
+        <ul className="list-none">
+          {steps.map((step, index) => {
+            const failed = step.mark === "cross";
+            return (
+              <li key={step.term} className="relative flex gap-3 pb-3 last:pb-0">
+                {index === steps.length - 1 ? null : (
+                  <span aria-hidden className="absolute top-8 bottom-0 left-3.5 w-px -translate-x-1/2 bg-cyan-200/40" />
+                )}
+                <span
+                  className={`relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border bg-[#07111c] font-mono text-[11px] shadow-[0_0_12px_rgba(34,211,238,0.45)] ${failed ? "border-rose-300/80 text-rose-100" : "border-cyan-200/70 text-cyan-100"}`}
+                >
+                  {index + 1}
+                </span>
+                <span>
+                  <span
+                    className={`block font-mono text-[10px] tracking-[0.16em] uppercase ${failed ? "text-rose-200" : "text-cyan-200"}`}
+                  >
+                    {step.term}
+                  </span>
+                  <span className="mt-0.5 block text-sm leading-snug text-slate-200">{step.detail}</span>
+                </span>
+              </li>
+            );
+          })}
+        </ul>
         <div className="flex flex-col justify-center gap-2">
           {frames.map((frame) => (
             <OperatorFrame key={frame.title} tone={frame.tone} title={frame.title} />
           ))}
         </div>
       </div>
-      {label ? (
-        <p className="relative z-10 px-4 pb-4 text-xs leading-relaxed text-slate-400 sm:px-5">{label}</p>
-      ) : null}
     </section>
   );
 }
@@ -277,6 +288,7 @@ function Distinctions({ figure }: { figure: HandbookFigure | undefined }) {
               <h3 className="bg-cyan-400/15 px-2 py-2 text-center font-display text-sm leading-tight font-semibold text-white">
                 {column.term}
               </h3>
+              <p className="px-2 pt-2 text-[12px] leading-snug text-slate-400">{column.detail}</p>
               <ul className="space-y-2 px-2 py-3">
                 {column.points.map((point) => (
                   <li key={point} className="flex items-start gap-1.5 text-[13px] leading-snug text-slate-200">
@@ -540,7 +552,11 @@ function OperatorFrame({ tone, title }: { tone: "red" | "green" | "list"; title:
           </g>
         )}
       </svg>
-      <p className="sr-only">{title}</p>
+      <p
+        className={`border-t px-2 py-1.5 font-mono text-[10px] tracking-[0.12em] uppercase ${tone === "red" ? "border-rose-300/30 text-rose-100" : "border-cyan-200/20 text-teal-100"}`}
+      >
+        {title}
+      </p>
     </div>
   );
 }
@@ -668,9 +684,8 @@ function StarWash() {
 }
 
 function StepRow({ index, step }: { index: number; step: HandbookFigureStep }) {
-  const last = false;
   return (
-    <li className={`relative flex gap-3 pb-4 ${last ? "" : ""}`}>
+    <li className="relative flex gap-3 pb-4">
       <GlowDot mark={step.mark === "pulse" ? "check" : step.mark} />
       <span>
         <span className="block font-mono text-[11px] tracking-[0.14em] text-cyan-200 uppercase">
@@ -682,11 +697,28 @@ function StepRow({ index, step }: { index: number; step: HandbookFigureStep }) {
   );
 }
 
-function GlowDot({ mark, tone = "cyan", large = false }: { mark?: HandbookMark; tone?: "cyan" | "red"; large?: boolean }) {
+function recoveryTone(step: HandbookFigureStep): "cyan" | "red" | "ok" {
+  if (step.mark === "cross") return "red";
+  if (step.mark === "check" || step.mark === "play") return "ok";
+  return "cyan";
+}
+
+function GlowDot({
+  mark,
+  tone = "cyan",
+  large = false,
+}: {
+  mark?: HandbookMark;
+  tone?: "cyan" | "red" | "ok";
+  large?: boolean;
+}) {
+  const size = large ? "h-16 w-16" : "h-11 w-11";
   const ring =
     tone === "red"
-      ? "h-16 w-16 border-rose-300 shadow-[0_0_26px_rgba(251,113,133,0.8),inset_0_0_14px_rgba(251,113,133,0.4)]"
-      : "h-11 w-11 border-cyan-200 shadow-[0_0_16px_rgba(34,211,238,0.7),inset_0_0_10px_rgba(34,211,238,0.28)]";
+      ? `${size} border-rose-300 shadow-[0_0_26px_rgba(251,113,133,0.8),inset_0_0_14px_rgba(251,113,133,0.4)]`
+      : tone === "ok"
+        ? `${size} border-teal-200 shadow-[0_0_16px_rgba(94,234,212,0.75),inset_0_0_10px_rgba(94,234,212,0.28)]`
+        : `${size} border-cyan-200 shadow-[0_0_16px_rgba(34,211,238,0.7),inset_0_0_10px_rgba(34,211,238,0.28)]`;
   return (
     <span className={`relative z-10 flex shrink-0 items-center justify-center rounded-full border bg-[#071018] ${ring}`}>
       <HtmlIcon name={mark} tone={tone} className={large ? "h-7 w-7" : "h-5 w-5"} />
@@ -700,7 +732,7 @@ function HtmlIcon({
   className,
 }: {
   name?: HandbookMark;
-  tone?: "cyan" | "red";
+  tone?: "cyan" | "red" | "ok";
   className: string;
 }) {
   return (

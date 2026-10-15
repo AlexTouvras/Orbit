@@ -34,7 +34,7 @@ function Caption({ children }: { children: ReactNode }) {
   return <figcaption className="mt-4 text-sm leading-relaxed text-slate-400">{children}</figcaption>;
 }
 
-function MarkGlyph({ name, tone = "cyan" }: { name?: HandbookMark; tone?: "cyan" | "red" }) {
+function MarkGlyph({ name, tone = "cyan" }: { name?: HandbookMark; tone?: "cyan" | "red" | "ok" }) {
   return (
     <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden>
       <IconPaths name={name} tone={tone} />
@@ -42,8 +42,8 @@ function MarkGlyph({ name, tone = "cyan" }: { name?: HandbookMark; tone?: "cyan"
   );
 }
 
-export function IconPaths({ name, tone = "cyan" }: { name?: HandbookMark; tone?: "cyan" | "red" }) {
-  const stroke = tone === "red" ? RED : CYAN;
+export function IconPaths({ name, tone = "cyan" }: { name?: HandbookMark; tone?: "cyan" | "red" | "ok" }) {
+  const stroke = tone === "red" ? RED : tone === "ok" ? "#5eead4" : CYAN;
   const props = {
     fill: "none",
     stroke,
@@ -92,9 +92,14 @@ function Node({
 }: {
   index: number;
   mark?: HandbookMark;
-  tone?: "cyan" | "red";
+  tone?: "cyan" | "red" | "ok";
 }) {
-  const ring = tone === "red" ? "border-rose-300/80 shadow-[0_0_18px_rgba(251,113,133,0.55)]" : "border-cyan-200/80 shadow-[0_0_18px_rgba(34,211,238,0.5)]";
+  const ring =
+    tone === "red"
+      ? "border-rose-300/80 shadow-[0_0_18px_rgba(251,113,133,0.55)]"
+      : tone === "ok"
+        ? "border-teal-200/80 shadow-[0_0_18px_rgba(94,234,212,0.45)]"
+        : "border-cyan-200/80 shadow-[0_0_18px_rgba(34,211,238,0.5)]";
   return (
     <span className={`relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border bg-[#07111c] ${ring}`}>
       <MarkGlyph name={mark} tone={tone} />
@@ -125,7 +130,7 @@ function LoopFigure({ figure }: { figure: HandbookFigure }) {
   return (
     <figure>
       <Plate>
-        <ol className="sm:hidden">
+        <ul className="list-none sm:hidden">
           {figure.steps.map((step, index) => {
             const last = index === figure.steps.length - 1;
             return (
@@ -141,7 +146,7 @@ function LoopFigure({ figure }: { figure: HandbookFigure }) {
               </li>
             );
           })}
-        </ol>
+        </ul>
         <svg viewBox="0 0 1000 720" className="hidden h-auto w-full sm:block" role="img" aria-label={figure.caption}>
           <defs>
             <filter id={`${rawId}-glow`} x="-50%" y="-50%" width="200%" height="200%">
@@ -212,21 +217,23 @@ function RecoveryFigure({ figure }: { figure: HandbookFigure }) {
   return (
     <figure>
       <Plate>
-        <ol>
+        <ul className="list-none">
           {figure.steps.map((step, index) => {
-            const failed = index === 0;
+            const tone = figureTone(step);
             const last = index === figure.steps.length - 1;
+            const label = tone === "red" ? "text-rose-300" : tone === "ok" ? "text-teal-200" : "text-cyan-200";
+            const rail = tone === "red" ? "bg-rose-300/70" : "bg-cyan-200/50";
             return (
               <li key={step.term} className="relative flex gap-4 pb-5 last:pb-0">
                 {last ? null : (
                   <span
                     aria-hidden
-                    className={`absolute top-12 bottom-0 left-6 w-px -translate-x-1/2 ${failed ? "bg-rose-300/70" : "bg-cyan-200/50"}`}
+                    className={`absolute top-12 bottom-0 left-6 w-px -translate-x-1/2 ${rail}`}
                   />
                 )}
-                <Node index={index} mark={step.mark} tone={failed ? "red" : "cyan"} />
+                <Node index={index} mark={step.mark} tone={tone} />
                 <span className="min-w-0 pt-1">
-                  <span className={`block font-mono text-[0.65rem] uppercase tracking-[0.16em] ${failed ? "text-rose-300" : "text-cyan-200"}`}>
+                  <span className={`block font-mono text-[0.65rem] uppercase tracking-[0.16em] ${label}`}>
                     {step.term}
                   </span>
                   <span className="mt-1 block text-sm leading-relaxed text-slate-200">{step.detail}</span>
@@ -234,7 +241,7 @@ function RecoveryFigure({ figure }: { figure: HandbookFigure }) {
               </li>
             );
           })}
-        </ol>
+        </ul>
         <Caption>{figure.caption}</Caption>
       </Plate>
     </figure>
@@ -245,7 +252,7 @@ function SignalsFigure({ figure }: { figure: HandbookFigure }) {
   return (
     <figure>
       <Plate>
-        <ol className="divide-y divide-white/10">
+        <ul className="list-none divide-y divide-white/10">
           {figure.steps.map((step) => (
             <li key={step.term} className="flex gap-4 py-3 first:pt-0 last:pb-0">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-cyan-200/50 bg-[#07111c] shadow-[0_0_16px_rgba(34,211,238,0.35)]">
@@ -257,7 +264,7 @@ function SignalsFigure({ figure }: { figure: HandbookFigure }) {
               </span>
             </li>
           ))}
-        </ol>
+        </ul>
         <Caption>{figure.caption}</Caption>
       </Plate>
     </figure>
@@ -266,30 +273,35 @@ function SignalsFigure({ figure }: { figure: HandbookFigure }) {
 
 function SceneFigure({ figure }: { figure: HandbookFigure }) {
   const screens = [
-    { tone: "red" as const, title: "Build fails", lines: ["shared interface", "integration red"] },
-    { tone: "cyan" as const, title: "Change named", lines: ["open the red build", "revert that change"] },
-    { tone: "cyan" as const, title: "Main is green", lines: ["corrective commit", "integration resumes"] },
+    { tone: "red" as const, title: "Downstream test fails", lines: ["renamed field", "consumer still on the old name"] },
+    { tone: "cyan" as const, title: "The change is named", lines: ["red build names it", "revert that change"] },
+    { tone: "cyan" as const, title: "The revert restores main", lines: ["known-good name", "integration resumes"] },
   ];
   return (
     <figure>
       <Plate>
         <div className="grid gap-6 sm:grid-cols-[1.1fr_0.9fr] sm:items-center">
-          <ol>
-            {figure.steps.map((step, index) => (
+          <ul className="list-none">
+            {figure.steps.map((step, index) => {
+              const failed = step.mark === "cross";
+              return (
               <li key={step.term} className="relative flex gap-3 pb-4 last:pb-0">
                 {index === figure.steps.length - 1 ? null : (
                   <span aria-hidden className="absolute top-10 bottom-0 left-5 w-px -translate-x-1/2 bg-cyan-200/40" />
                 )}
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-cyan-200/70 bg-[#07111c] font-mono text-xs text-cyan-100">
+                <span
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border bg-[#07111c] font-mono text-xs ${failed ? "border-rose-300/80 text-rose-100" : "border-cyan-200/70 text-cyan-100"}`}
+                >
                   {index + 1}
                 </span>
                 <span>
-                  <span className="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-cyan-200">{step.term}</span>
+                  <span className={`block font-mono text-[0.65rem] uppercase tracking-[0.16em] ${failed ? "text-rose-200" : "text-cyan-200"}`}>{step.term}</span>
                   <span className="mt-1 block text-sm leading-relaxed text-slate-200">{step.detail}</span>
                 </span>
               </li>
-            ))}
-          </ol>
+            );
+            })}
+          </ul>
           <div className="flex flex-col gap-3" aria-hidden>
             {screens.map((screen) => (
               <div
@@ -346,7 +358,7 @@ function FlowFigure({ figure }: { figure: HandbookFigure }) {
   return (
     <figure>
       <Plate>
-        <ol>
+        <ul className="list-none">
           {figure.steps.map((step, index) => {
             const last = index === figure.steps.length - 1;
             return (
@@ -362,7 +374,7 @@ function FlowFigure({ figure }: { figure: HandbookFigure }) {
               </li>
             );
           })}
-        </ol>
+        </ul>
         <Caption>{figure.caption}</Caption>
       </Plate>
     </figure>
@@ -370,25 +382,47 @@ function FlowFigure({ figure }: { figure: HandbookFigure }) {
 }
 
 function PyramidFigure({ figure }: { figure: HandbookFigure }) {
+  const gates = figure.columns ?? [];
   return (
     <figure>
       <Plate>
-        <ol className="mx-auto flex max-w-lg flex-col items-center gap-2">
-          {figure.steps.map((step, index) => (
-            <li
-              key={step.term}
-              className="border border-cyan-200/30 bg-[#050814]/70 px-4 py-3 text-center shadow-[0_0_18px_-10px_rgba(34,211,238,0.8)]"
-              style={{ width: `${100 - index * 18}%` }}
-            >
-              <span className="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-cyan-200">{step.term}</span>
-              <span className="mt-1 block text-sm leading-relaxed text-slate-200">{step.detail}</span>
-            </li>
-          ))}
-        </ol>
+        <div className={gates.length > 0 ? "grid items-center gap-6 sm:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]" : undefined}>
+          <ul className="mx-auto flex w-full max-w-lg list-none flex-col-reverse items-center gap-2">
+            {figure.steps.map((step, index) => (
+              <li
+                key={step.term}
+                className="border border-cyan-200/30 bg-[#050814]/70 px-4 py-3 text-center shadow-[0_0_18px_-10px_rgba(34,211,238,0.8)]"
+                style={{ width: `${100 - index * 18}%` }}
+              >
+                <span className="block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-cyan-200">{step.term}</span>
+                <span className="mt-1 block text-sm leading-relaxed text-slate-200">{step.detail}</span>
+              </li>
+            ))}
+          </ul>
+          {gates.length > 0 ? (
+            <div className="flex flex-col gap-3">
+              {gates.map((column, index) => (
+                <div
+                  key={column.term}
+                  className={`rounded-xl border bg-[#050814]/80 px-3 py-3 ${index === 0 ? "border-cyan-200/40" : "border-white/15"}`}
+                >
+                  <h3 className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-cyan-200">{column.term}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-200">{column.detail}</p>
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
         <Caption>{figure.caption}</Caption>
       </Plate>
     </figure>
   );
+}
+
+function figureTone(step: HandbookFigure["steps"][number]): "cyan" | "red" | "ok" {
+  if (step.mark === "cross") return "red";
+  if (step.mark === "check" || step.mark === "play") return "ok";
+  return "cyan";
 }
 
 function shorten(

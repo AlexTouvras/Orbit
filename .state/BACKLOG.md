@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Handbook page 1 reading pass — opening, three-way practice split, revert rule, renamed-field scene, signal definitions, repair branch, test pyramid (2026-10-15)
 - [x] Field handbooks edition 1 — `/handbooks`, Software that stays in use. Pages 1–5 researched. Later titles named, not routed.
 - [x] Handbook continuity — the first book extends the SDLC field card. A handbook is pages, not a scrolling chapter. Later titles stay closed.
 - [x] Products frame: a button scroll lands below the Orbit bar, with a little air
