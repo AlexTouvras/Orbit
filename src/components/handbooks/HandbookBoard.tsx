@@ -361,7 +361,7 @@ function BiggerPicture() {
           <p className="font-mono text-[10px] tracking-[0.22em] text-cyan-300 uppercase">8. The bigger picture</p>
           <p className="mt-2 font-display text-xl font-semibold text-white">Card, book, story, work.</p>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-300">
-            The field card is the picture. The book is how you work. A story is what happened. The portfolio is the work you can open.
+            The field card is the picture. The book is how I would operate. A story is how a decision unfolded. The portfolio is what was delivered.
           </p>
           <p className="mt-4 font-mono text-[10px] tracking-[0.14em] text-slate-400 uppercase">
             Field card → Handbook → Story → Portfolio

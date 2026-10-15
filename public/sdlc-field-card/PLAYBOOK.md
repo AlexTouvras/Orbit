@@ -32,13 +32,24 @@ These stay on the sheet, under Where judgement stays, unless that month’s rese
 2. **A spec file is not shared understanding.** Someone has to be able to walk the journey and the ways it can fail before build and verify. Meetings with nothing written down do not make the change safer. The writing is required, and it is not sufficient.
 3. **A person drops tests that do not fail for the right reason.** Feedback in CI stays. Agent-written tests are drafts. Do not add “continuous evals” of tasks that are already in the tree.
 
+## Handbook chapters
+
+These lines open the book. A monthly review does not strip the links, and it does not treat them as a change to the picture. Leave the Changed line as written unless the picture itself changes. The seven practice URLs stay. Do not add an eighth.
+
+- Trunk-based and Continuous Integration: `Keep main releasable` opens `/handbooks/software-that-stays-in-use/1`.
+- Build & verify, the test judgement line, and Evals open `/handbooks/software-that-stays-in-use/2`.
+- Plan & design, and the plan judgement line, open `/handbooks/software-that-stays-in-use/3`.
+- `A spec file is not shared understanding` opens `/handbooks/software-that-stays-in-use/3#understanding`.
+- Release & deploy opens `/handbooks/software-that-stays-in-use/4`.
+- Maintain & improve opens `/handbooks/software-that-stays-in-use/5`.
+
 ## Motion
 
 The change walks plan, then build, then release, then maintain along the lime rail. The drawings move on that same loop. At plan, the page is written and the who seal stamps. At build, the test that fails for the wrong reason is struck through, the change steps back, and the check that stops the build holds until the gate opens. At release, the running version rises and the previous version appears beside it, joined by a short recovery mark, and stays while the change moves on. At maintain, the use line lights, then the return rail under the pillars draws back to plan and design.
 
 `prefers-reduced-motion` and print show the end state: the change at maintain, the last version still visible, the bad test struck, the gates open, the return rail drawn. Under 900px the pillars stack on a vertical rail, the walking change hides, and the return rail stays under the stack. The words stay readable with the motion off. No scroll-jack.
 
-The robot is already on this sheet. Its six lines live in `public/field-card-robot.mjs` and win over storytelling `field-cards.ts`. A press that moves drags the robot. A short tap tucks it.
+The robot is already on this sheet. Its six lines live in `public/field-card-robot.mjs` and win over storytelling `field-cards.ts`. On How a change moves it also says `Keep main releasable.` On Where judgement stays it also says the plan fits on a page, and that a spec file is not shared understanding. A section with more than one sentence steps through them. The six runs still show the same sentence. A press that moves drags the robot. A short tap tucks it.
 
 ## Leave off the card
 
@@ -57,7 +68,7 @@ Required once a month, before any SDLC edit or no-change decision. Reading this 
 1. Read this playbook and `index.html`.
 2. Open the seven named-practice URLs. Check that each one still supports the line under it.
 3. Search for practice changes since the card’s Reviewed month that would change plan and design, build and verify, release and deploy, or maintain and improve, including security in that order. Open every page you cite. Primary sources and named practitioners. Stop around 4–8 opened pages.
-4. Assess the picture. Update HTML only when a station teaches the wrong move, a gate can no longer fail, the previous version disappears, the return is missing, or a docs URL is dead. Leave hype, vendor launches, generated-markdown playbooks, and an eighth link off the card.
+4. Assess the picture. Update HTML only when a station teaches the wrong move, a gate can no longer fail, the previous version disappears, the return is missing, or a docs URL is dead. Leave hype, vendor launches, generated-markdown playbooks, and an eighth link off the card. Do not remove the handbook chapter links above.
 5. In the PR `## Summary`, under SDLC, write:
    - Research: the URLs you opened
    - Assessment: one or two sentences

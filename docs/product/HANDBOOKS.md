@@ -9,10 +9,11 @@ Authorized 2026-10-13. On 2026-10-14 the owner set the first book on the SDLC fi
 | Layer | Question | Where |
 |-------|----------|--------|
 | Field card | What is this field, and what do I believe? | `/field-card/`, `/analytics-field-card/`, `/delivery-field-card/`, `/sdlc-field-card/`, `/credit-risk-field-card/`, `/story-field-card/` |
-| Handbook | How do I approach the problem, and how do I work? | `/handbooks` |
-| Story or essay | What happened when the method met a problem? | `/stories`, `/writes` |
+| Handbook | How would I operate? | `/handbooks` |
+| Story or essay | How did a decision unfold? | `/stories`, `/writes` |
+| Portfolio | What was delivered? | `/portfolio` |
 
-The layers do not repeat each other. A handbook does not paste a card, and it does not become a story.
+The layers do not repeat each other. A handbook does not paste a card, and it does not become a story. A story is linked only when one shows how a decision unfolded. A portfolio piece is linked only when it is work that was delivered. An illustrative scene is named as an illustration. It is not a story and not a record.
 
 ## What the public page may say
 
@@ -46,6 +47,23 @@ A figure is allowed when it carries the procedure: a loop, a decision, a shape. 
 4. Decision systems under uncertainty — not in the library yet. For the credit risk field card.
 
 Calendars, blast-radius proof, and the cutover sequence stay on the delivery card. Do not add an eighth named practice to the SDLC card.
+
+## From the card
+
+The SDLC field card opens the chapter that states the principle. The seven named-practice URLs stay on the card.
+
+- Keep main releasable, under trunk-based and under continuous integration, opens page 1.
+- The build-and-verify station, the judgement line about dropping a test, and Evals open page 2.
+- The plan station and the plan judgement line open page 3.
+- A spec file is not shared understanding opens page 3 at The page is not the understanding.
+- People run the version just verified opens page 4.
+- A defect, or what you learn in use, comes back as the next change opens page 5.
+
+## On a chapter
+
+Every chapter shows the field card, the handbook, and the previous and next chapter by title. Left and right still turn the leaf. The handbook title opens the library, where the book and its chapters are listed.
+
+The line under those links says what the chapter is. It is how I would operate. When the chapter uses an illustration, the line says so. A story link appears only when a story shows the decision unfolding. A portfolio link appears only when that piece is delivered work. When neither exists, the chapter says so.
 
 ## Routes
 

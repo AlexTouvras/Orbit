@@ -14,8 +14,8 @@ export function HandbookLibrary() {
       />
       <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
         A handbook is a book about one field. The field card is the picture.
-        The book is how you work. A story is what happened. The portfolio is
-        the work you can open.
+        The book is how I would operate. A story shows how a decision unfolded.
+        The portfolio is what was delivered. An illustration is not a record.
       </p>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-400">
         Each book is an operating rule, the day, the limit, and how I would know.

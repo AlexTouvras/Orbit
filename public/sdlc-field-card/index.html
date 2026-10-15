@@ -1229,6 +1229,19 @@
 
     .principles strong { color: var(--ink); }
 
+    .principles a,
+    .station-line a,
+    .found a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-color: rgba(198, 241, 53, 0.75);
+      text-underline-offset: 0.15em;
+    }
+
+    .principles a:hover,
+    .station-line a:hover,
+    .found a:hover { color: var(--lime); }
+
     .mark {
       display: grid;
       place-items: center;
@@ -1266,6 +1279,19 @@
     }
 
     .source-row a:hover { border-bottom-color: var(--lime); }
+
+    .source-row .source { display: block; }
+
+    .source-row a.chapter {
+      display: inline-block;
+      margin-top: 0.35rem;
+      color: var(--lime);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(198, 241, 53, 0.75);
+      text-underline-offset: 0.15em;
+    }
 
     .source-row span {
       display: block;
@@ -1364,6 +1390,13 @@
       .pipe figcaption, .judgement p.kill, .principles li,
       .found span, .source-row span, .changed, .credit, .version { color: #3a4654; }
       h2, .eyebrow, .verbs, .found strong, .source-row a, .glance figcaption { color: #243018; }
+      .principles a,
+      .station-line a,
+      .found a,
+      .source-row a.chapter {
+        color: #18212b;
+        text-decoration: underline;
+      }
       .principles li { background: #fff; border-color: #c9d2dc; }
       .mark { background: #eef3e4; color: #243018; }
 
@@ -1453,7 +1486,7 @@
                 <span class="who">who</span>
               </div>
               <p class="station-kicker">Plan &amp; design</p>
-              <p class="station-line">The plan fits on a page a person will review. It names who can reach the data, and how it can be abused.</p>
+              <p class="station-line"><a href="/handbooks/software-that-stays-in-use/3">The plan fits on a page a person will review. It names who can reach the data, and how it can be abused.</a></p>
               <p class="handoff">Need → a page someone reviews</p>
             </li>
             <li class="station">
@@ -1464,7 +1497,7 @@
                 </span>
               </div>
               <p class="station-kicker">Build &amp; verify</p>
-              <p class="station-line">A person drops a test that fails for the wrong reason. The security checks have to fail the build.</p>
+              <p class="station-line"><a href="/handbooks/software-that-stays-in-use/2">A person drops a test that fails for the wrong reason. The security checks have to fail the build.</a></p>
               <p class="handoff">Page → a change the checks can stop</p>
             </li>
             <li class="station">
@@ -1476,7 +1509,7 @@
                 </span>
               </div>
               <p class="station-kicker">Release &amp; deploy</p>
-              <p class="station-line">People run the version just verified. The previous version stays one deploy away.</p>
+              <p class="station-line"><a href="/handbooks/software-that-stays-in-use/4">People run the version just verified. The previous version stays one deploy away.</a></p>
               <p class="handoff">Change → a version people run</p>
             </li>
             <li class="station">
@@ -1484,7 +1517,7 @@
                 <span class="log"><i></i><i class="hot"></i><em>in use</em></span>
               </div>
               <p class="station-kicker">Maintain &amp; improve</p>
-              <p class="station-line">A defect, or what you learn in use, comes back as the next change through these same pillars.</p>
+              <p class="station-line"><a href="/handbooks/software-that-stays-in-use/5">A defect, or what you learn in use, comes back as the next change through these same pillars.</a></p>
               <p class="handoff">Use → the next change</p>
             </li>
           </ol>
@@ -1509,9 +1542,9 @@
       <h2>Where judgement stays</h2>
       <p class="explain">Someone still reviews the page, walks how it can fail, and throws out the bad test.</p>
       <ol class="principles">
-        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h6l4 4v12H8z"/><path d="M14 4v4h4"/><path d="M10.5 13h5M10.5 16h3.5"/></svg></span><strong>The plan fits on a page a person will review.</strong> Goal, cost, and what done means. A file no one will read is not a plan.</li>
-        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14"/><path d="M7 12h10"/><path d="M9 17h6"/><path d="M4 4l16 16"/></svg></span><strong>A spec file is not shared understanding.</strong> Someone has to walk the journey and the ways it can fail before build and verify.</li>
-        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h9"/><path d="M5 12h7"/><path d="M5 16h5"/><path d="M14 14.5l5 5M19 14.5l-5 5"/></svg></span><strong>A person drops tests that do not fail for the right reason.</strong> Agent-written tests are drafts. The security checks stay, and they have to fail the build.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h6l4 4v12H8z"/><path d="M14 4v4h4"/><path d="M10.5 13h5M10.5 16h3.5"/></svg></span><strong><a href="/handbooks/software-that-stays-in-use/3">The plan fits on a page a person will review.</a></strong> Goal, cost, and what done means. A file no one will read is not a plan.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14"/><path d="M7 12h10"/><path d="M9 17h6"/><path d="M4 4l16 16"/></svg></span><strong><a href="/handbooks/software-that-stays-in-use/3#understanding">A spec file is not shared understanding.</a></strong> Someone has to walk the journey and the ways it can fail before build and verify.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h9"/><path d="M5 12h7"/><path d="M5 16h5"/><path d="M14 14.5l5 5M19 14.5l-5 5"/></svg></span><strong><a href="/handbooks/software-that-stays-in-use/2">A person drops tests that do not fail for the right reason.</a></strong> Agent-written tests are drafts. The security checks stay, and they have to fail the build.</li>
       </ol>
       <p class="kill">If you can’t name the plan, the test, the security check, and who reviews, you don’t merge. If you can’t put the last version back, you don’t call it released.</p>
     </section>
@@ -1523,10 +1556,16 @@
         <a href="https://csrc.nist.gov/projects/ssdf" target="_blank" rel="noopener noreferrer">NIST SSDF<span>Secure practices inside the life cycle, not after</span></a>
         <a href="https://www.microsoft.com/en-us/securityengineering/sdl" target="_blank" rel="noopener noreferrer">Microsoft SDL<span>Threat model, supply chain, security tests</span></a>
         <a href="https://owasp.org/projects/asvs" target="_blank" rel="noopener noreferrer">OWASP ASVS<span>What verified means for this app</span></a>
-        <a href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener noreferrer">Trunk-based<span>Small batches; main stays releasable</span></a>
+        <div class="source">
+          <a href="https://trunkbaseddevelopment.com/" target="_blank" rel="noopener noreferrer">Trunk-based<span>Small batches; main stays releasable</span></a>
+          <a class="chapter" href="/handbooks/software-that-stays-in-use/1">Keep main releasable</a>
+        </div>
         <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" target="_blank" rel="noopener noreferrer">Pull requests<span>A person reviews the plan and the test</span></a>
         <a href="https://martinfowler.com/articles/practical-test-pyramid.html" target="_blank" rel="noopener noreferrer">Test pyramid<span>Fast evidence close to the change</span></a>
-        <a href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank" rel="noopener noreferrer">Continuous Integration<span>Broken trunk is the incident</span></a>
+        <div class="source">
+          <a href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank" rel="noopener noreferrer">Continuous Integration<span>Broken trunk is the incident</span></a>
+          <a class="chapter" href="/handbooks/software-that-stays-in-use/1">Keep main releasable</a>
+        </div>
       </div>
     </section>
 
@@ -1536,7 +1575,7 @@
         <div class="found"><strong>Security</strong><span>Threat model, ASVS level, supply chain</span></div>
         <div class="found"><strong>Governance</strong><span>Who owns the plan and the merge</span></div>
         <div class="found"><strong>Observability</strong><span>CI on the change, and which version is running</span></div>
-        <div class="found"><strong>Evals</strong><span>Tests that fail for the right reason; a person drops the rest</span></div>
+        <div class="found"><strong>Evals</strong><span><a href="/handbooks/software-that-stays-in-use/2">Tests that fail for the right reason</a>; a person drops the rest</span></div>
         <div class="found"><strong>Human Approve</strong><span>A person still owns the merge</span></div>
       </div>
     </section>
