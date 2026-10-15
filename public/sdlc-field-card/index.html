@@ -1542,9 +1542,9 @@
       <h2>Where judgement stays</h2>
       <p class="explain">Someone still reviews the page, walks how it can fail, and throws out the bad test.</p>
       <ol class="principles">
-        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h6l4 4v12H8z"/><path d="M14 4v4h4"/><path d="M10.5 13h5M10.5 16h3.5"/></svg></span><strong><a href="/handbooks/software-that-stays-in-use/3">The plan fits on a page a person will review.</a></strong> Goal, cost, and what done means. A file no one will read is not a plan.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4h6l4 4v12H8z"/><path d="M14 4v4h4"/><path d="M10.5 13h5M10.5 16h3.5"/></svg></span><strong>The plan fits on a page a person will review.</strong> Goal, cost, and what done means. A file no one will read is not a plan.</li>
         <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14"/><path d="M7 12h10"/><path d="M9 17h6"/><path d="M4 4l16 16"/></svg></span><strong><a href="/handbooks/software-that-stays-in-use/3#understanding">A spec file is not shared understanding.</a></strong> Someone has to walk the journey and the ways it can fail before build and verify.</li>
-        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h9"/><path d="M5 12h7"/><path d="M5 16h5"/><path d="M14 14.5l5 5M19 14.5l-5 5"/></svg></span><strong><a href="/handbooks/software-that-stays-in-use/2">A person drops tests that do not fail for the right reason.</a></strong> Agent-written tests are drafts. The security checks stay, and they have to fail the build.</li>
+        <li><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h9"/><path d="M5 12h7"/><path d="M5 16h5"/><path d="M14 14.5l5 5M19 14.5l-5 5"/></svg></span><strong>A person drops tests that do not fail for the right reason.</strong> Agent-written tests are drafts. The security checks stay, and they have to fail the build.</li>
       </ol>
       <p class="kill">If you can’t name the plan, the test, the security check, and who reviews, you don’t merge. If you can’t put the last version back, you don’t call it released.</p>
     </section>
@@ -1562,10 +1562,7 @@
         </div>
         <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests" target="_blank" rel="noopener noreferrer">Pull requests<span>A person reviews the plan and the test</span></a>
         <a href="https://martinfowler.com/articles/practical-test-pyramid.html" target="_blank" rel="noopener noreferrer">Test pyramid<span>Fast evidence close to the change</span></a>
-        <div class="source">
-          <a href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank" rel="noopener noreferrer">Continuous Integration<span>Broken trunk is the incident</span></a>
-          <a class="chapter" href="/handbooks/software-that-stays-in-use/1">Keep main releasable</a>
-        </div>
+        <a href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank" rel="noopener noreferrer">Continuous Integration<span>Broken trunk is the incident</span></a>
       </div>
     </section>
 
@@ -1575,7 +1572,7 @@
         <div class="found"><strong>Security</strong><span>Threat model, ASVS level, supply chain</span></div>
         <div class="found"><strong>Governance</strong><span>Who owns the plan and the merge</span></div>
         <div class="found"><strong>Observability</strong><span>CI on the change, and which version is running</span></div>
-        <div class="found"><strong>Evals</strong><span><a href="/handbooks/software-that-stays-in-use/2">Tests that fail for the right reason</a>; a person drops the rest</span></div>
+        <div class="found"><strong>Evals</strong><span>Tests that fail for the right reason; a person drops the rest</span></div>
         <div class="found"><strong>Human Approve</strong><span>A person still owns the merge</span></div>
       </div>
     </section>
