@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Handbook, HandbookPage, HandbookSection } from "@/content/handbooks";
 import { HandbookSpread, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
+import { ChapterRail } from "@/components/handbooks/ChapterRail";
 import { HandbookFigureView } from "@/components/handbooks/HandbookFigures";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
@@ -112,26 +113,33 @@ export function HandbookBook({
       setLeaves((existing) => (samePack(existing, packed) ? existing : packed));
       return packed;
     };
+    if (slot.scrollTop !== 0) slot.scrollTop = 0;
     const packed = pack();
     const url = new URL(window.location.href);
     const fromEnd = url.searchParams.get("from") === "end";
     const hash = url.hash.replace(/^#/, "");
     const pageChanged = pageStamp.current !== page.number;
     const watch = () => {
+      const pin = () => {
+        if (slot.scrollTop !== 0) slot.scrollTop = 0;
+      };
+      pin();
+      slot.addEventListener("scroll", pin);
       const observer = new ResizeObserver(() => pack());
       observer.observe(slot);
       const column = slot.firstElementChild;
       if (column) observer.observe(column);
       const fonts = document.fonts?.ready.then(() => pack());
       return () => {
+        slot.removeEventListener("scroll", pin);
         observer.disconnect();
         void fonts?.then(() => undefined);
       };
     };
-    if (!pageChanged && !fromEnd) return watch();
-    pageStamp.current = page.number;
+    if (!pageChanged && !fromEnd && !hash) return watch();
+    if (pageChanged) pageStamp.current = page.number;
     const sequence = composeLeaves(packed, blocks, page.plate === "horizon");
-    if (fromEnd) {
+    if (fromEnd && pageChanged) {
       url.searchParams.delete("from");
       window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
       landAtEnd.current = true;
@@ -141,7 +149,7 @@ export function HandbookBook({
         (item) => item.kind === "prose" && blocks.slice(item.leaf.start, item.leaf.end).some((block) => block.sectionId === hash),
       );
       setIndex(proseIndex >= 0 ? proseIndex : 0);
-    } else {
+    } else if (pageChanged) {
       setIndex(0);
     }
     return watch();
@@ -212,6 +220,7 @@ export function HandbookBook({
         <ChevronLeft className="h-6 w-6" />
       </TurnButton>
       <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden border-y border-cyan-300/25 bg-[#040914] lg:rounded-md lg:border lg:shadow-[0_0_60px_-28px_rgba(34,211,238,0.45)]">
+        <ChapterRail handbook={handbook} page={page} />
         <div className="relative min-h-0 flex-1">
           {spread ? (
             <div className="absolute inset-0 z-10 p-0 lg:p-3 lg:pb-8">
@@ -229,7 +238,7 @@ export function HandbookBook({
               </p>
               <p className="shrink-0 font-mono text-xs tabular-nums text-slate-400">{page.number}</p>
             </header>
-            <div ref={slotRef} className="min-h-0 flex-1 overflow-hidden">
+            <div ref={slotRef} className="min-h-0 flex-1 overflow-clip">
               <div
                 className="relative mx-auto w-full max-w-3xl"
                 style={{
@@ -499,7 +508,7 @@ function proseBlocks(
         sectionId: section.id,
         sectionTitle: section.title,
         node: (
-          <h2 id={section.id} className="pt-2 pb-3 font-display text-2xl font-semibold tracking-tight text-white">
+          <h2 className="pt-2 pb-3 font-display text-2xl font-semibold tracking-tight text-white">
             {section.title}
           </h2>
         ),

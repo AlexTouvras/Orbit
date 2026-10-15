@@ -69,6 +69,12 @@ export interface HandbookPage {
   rule?: string;
   /** Date the claims on this page were last checked against the sources. */
   reviewed: string;
+  /** An illustration on this chapter. It is not a record of experience. */
+  illustration?: string;
+  /** A story of how a decision unfolded. Only when one exists. */
+  story?: HandbookLink;
+  /** Delivered work. Only when a portfolio piece is that work. */
+  work?: HandbookLink;
   /** Opening plate. The horizon is the first page's picture, not a cover route. */
   plate?: "horizon";
   sections: HandbookSection[];
@@ -254,6 +260,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
       title: "Keep main releasable",
       lede: "Software stays in use when a team can still change it. Continuous integration keeps that change cheap: people merge to main at least daily, a build tests the merge, and a broken main is the team's work.",
       rule: "My operating rule: keep main releasable, make the failure visible immediately, and do not let a red main become normal.",
+      illustration: "The renamed field is an illustration, not a record of a team.",
       reviewed: "14 Oct 2026",
       plate: "horizon",
       sections: [
