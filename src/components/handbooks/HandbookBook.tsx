@@ -193,59 +193,55 @@ export function HandbookBook({
 
   return (
     <div
-      className={`flex h-full min-h-0 flex-1 ${narrow ? "flex-col" : "items-stretch gap-1 sm:gap-2"}`}
+      className="flex h-full min-h-0 flex-1 flex-col lg:flex-row lg:items-stretch lg:gap-2"
       data-handbook-book
       data-leaf={safeIndex}
       data-leaf-count={leafCount}
     >
-      {narrow ? null : (
-        <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)}>
-          <ChevronLeft className="h-6 w-6" />
-        </TurnButton>
-      )}
-      <div className="relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-md border border-cyan-300/25 bg-[#040914] shadow-[0_0_60px_-28px_rgba(34,211,238,0.45)]">
-        {spread ? (
-          <div className={`absolute inset-0 z-10 p-2 sm:p-3 ${narrow ? "" : "pb-8"}`}>
-            <HandbookSpread handbook={handbook} page={page} panels={spread} />
-          </div>
-        ) : null}
-        <div className={`${spread ? "invisible" : ""} flex h-full min-h-0 flex-col ${narrow ? "px-4 pt-3 pb-3" : "px-5 pt-4 pb-8 sm:px-10"}`}>
-          <header className="mb-3 flex h-5 shrink-0 items-baseline justify-between gap-4">
-            <p className="min-w-0 truncate font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
-              <span className="hidden sm:inline">
-                {handbook.title}
-                <span className="px-2 text-slate-600">/</span>
-              </span>
-              <span className="text-slate-300">{sectionTitle ?? page.title}</span>
-            </p>
-            <p className="shrink-0 font-mono text-xs tabular-nums text-slate-400">{page.number}</p>
-          </header>
-          <div ref={slotRef} className="min-h-0 flex-1 overflow-hidden">
-            <div className="relative mx-auto w-full max-w-3xl" style={{ transform: `translateY(-${offset}px)` }}>
-              {blocks.map((block, blockIndex) => {
-                const inLeaf = !proseLeaf || (blockIndex >= proseLeaf.start && blockIndex < proseLeaf.end);
-                return (
-                  <div
-                    key={block.key}
-                    data-leaf-block={blockIndex}
-                    aria-hidden={inLeaf ? undefined : true}
-                    style={inLeaf ? undefined : { visibility: "hidden" }}
-                  >
-                    {block.node}
-                  </div>
-                );
-              })}
+      <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)} className="hidden lg:grid">
+        <ChevronLeft className="h-6 w-6" />
+      </TurnButton>
+      <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden border-y border-cyan-300/25 bg-[#040914] lg:rounded-md lg:border lg:shadow-[0_0_60px_-28px_rgba(34,211,238,0.45)]">
+        <div className="relative min-h-0 flex-1">
+          {spread ? (
+            <div className="absolute inset-0 z-10 p-0 lg:p-3 lg:pb-8">
+              <HandbookSpread handbook={handbook} page={page} panels={spread} />
+            </div>
+          ) : null}
+          <div className={`${spread ? "invisible" : ""} flex h-full min-h-0 flex-col px-4 pt-3 pb-3 sm:px-8 lg:px-10 lg:pt-4 lg:pb-8`}>
+            <header className="mb-3 flex h-5 shrink-0 items-baseline justify-between gap-4">
+              <p className="min-w-0 truncate font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
+                <span className="hidden sm:inline">
+                  {handbook.title}
+                  <span className="px-2 text-slate-600">/</span>
+                </span>
+                <span className="text-slate-300">{sectionTitle ?? page.title}</span>
+              </p>
+              <p className="shrink-0 font-mono text-xs tabular-nums text-slate-400">{page.number}</p>
+            </header>
+            <div ref={slotRef} className="min-h-0 flex-1 overflow-hidden">
+              <div className="relative mx-auto w-full max-w-3xl" style={{ transform: `translateY(-${offset}px)` }}>
+                {blocks.map((block, blockIndex) => {
+                  const inLeaf = !proseLeaf || (blockIndex >= proseLeaf.start && blockIndex < proseLeaf.end);
+                  return (
+                    <div
+                      key={block.key}
+                      data-leaf-block={blockIndex}
+                      aria-hidden={inLeaf ? undefined : true}
+                      style={inLeaf ? undefined : { visibility: "hidden" }}
+                    >
+                      {block.node}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-        </div>
-        {narrow ? null : (
-          <p className="pointer-events-none absolute inset-x-0 bottom-2 z-20 text-center font-mono text-[0.65rem] tabular-nums tracking-[0.14em] text-slate-500">
+          <p className="pointer-events-none absolute inset-x-0 bottom-2 z-20 hidden text-center font-mono text-[0.65rem] tabular-nums tracking-[0.14em] text-slate-500 lg:block">
             {folio}
           </p>
-        )}
-      </div>
-      {narrow ? (
-        <div className="mt-1 flex h-12 shrink-0 items-center justify-between">
+        </div>
+        <div className="flex h-11 shrink-0 items-center justify-between border-t border-white/10 px-1 lg:hidden">
           <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)} wide>
             <ChevronLeft className="h-6 w-6" />
           </TurnButton>
@@ -254,11 +250,10 @@ export function HandbookBook({
             <ChevronRight className="h-6 w-6" />
           </TurnButton>
         </div>
-      ) : (
-        <TurnButton label="Next page" disabled={!canNext} onClick={() => turn(1)}>
-          <ChevronRight className="h-6 w-6" />
-        </TurnButton>
-      )}
+      </div>
+      <TurnButton label="Next page" disabled={!canNext} onClick={() => turn(1)} className="hidden lg:grid">
+        <ChevronRight className="h-6 w-6" />
+      </TurnButton>
     </div>
   );
 }
@@ -268,12 +263,14 @@ function TurnButton({
   disabled,
   onClick,
   wide = false,
+  className = "",
   children,
 }: {
   label: string;
   disabled: boolean;
   onClick: () => void;
   wide?: boolean;
+  className?: string;
   children: ReactNode;
 }) {
   return (
@@ -282,7 +279,7 @@ function TurnButton({
       aria-label={label}
       disabled={disabled}
       onClick={onClick}
-      className={`focus-ring grid shrink-0 place-items-center rounded-md text-slate-200 hover:bg-white/5 hover:text-white disabled:pointer-events-none disabled:text-slate-700 ${wide ? "h-12 w-14" : "w-10 sm:w-12"}`}
+      className={`focus-ring grid shrink-0 place-items-center rounded-md text-slate-200 hover:bg-white/5 hover:text-white disabled:pointer-events-none disabled:text-slate-700 ${wide ? "h-11 w-12" : "w-10 lg:w-12"} ${className}`}
     >
       {children}
     </button>

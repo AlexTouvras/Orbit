@@ -56,7 +56,7 @@ export function AppChrome({
         <Header />
         <main
           id="main-content"
-          className="fixed inset-x-0 top-0 z-10 flex h-dvh min-h-0 flex-col overflow-hidden px-2 pt-24 pb-3 sm:px-4 sm:pt-28"
+          className="fixed inset-x-0 top-0 z-10 flex h-dvh min-h-0 flex-col overflow-hidden px-0 pt-16 pb-0 lg:px-4 lg:pt-28 lg:pb-3"
         >
           {children}
         </main>

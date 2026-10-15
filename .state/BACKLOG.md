@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Handbook phone frame — the leaf fills the width, the header sits close above it, and the turn controls are a bottom row (2026-10-15)
 - [x] Handbook phone leaves — the loop is a column of cards, signals stack, a step continues on the next leaf, and the turn controls sit under the page (2026-10-15)
 - [x] Handbook reads as one frame — left and right turn same-size leaves; the horizon shine sits on the limb (2026-10-15)
 - [x] Handbook page 1 reading pass — opening, three-way practice split, revert rule, renamed-field scene, signal definitions, repair branch, test pyramid (2026-10-15)
