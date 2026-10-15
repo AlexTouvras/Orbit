@@ -30,7 +30,7 @@ export function AppChrome({
     pathname === "/contact" ||
     pathname === "/radar" ||
     pathname === "/newsletter" ||
-    pathname.startsWith("/handbooks") ||
+    (pathname.startsWith("/handbooks") && !/\/handbooks\/[^/]+\/\d+$/.test(pathname)) ||
     pathname.startsWith("/portfolio/live");
 
   if (bare || storiesPage) {
@@ -41,13 +41,28 @@ export function AppChrome({
     );
   }
 
- const handbookBoard =
-    pathname === "/handbooks" || /\/handbooks\/[^/]+\/1$/.test(pathname);
+  const handbookLeaf = /\/handbooks\/[^/]+\/\d+$/.test(pathname);
+  const handbookBoard = pathname === "/handbooks" || handbookLeaf;
   const mainWidth = handbookBoard
     ? "max-w-7xl px-4"
     : deskPage
       ? "max-w-6xl px-4"
       : "max-w-5xl px-4";
+
+  if (handbookLeaf) {
+    return (
+      <>
+        <ParticleBackground />
+        <Header />
+        <main
+          id="main-content"
+          className="fixed inset-x-0 top-0 z-10 flex h-dvh min-h-0 flex-col overflow-hidden px-2 pt-24 pb-3 sm:px-4 sm:pt-28"
+        >
+          {children}
+        </main>
+      </>
+    );
+  }
 
   return (
     <>

@@ -18,7 +18,7 @@ The layers do not repeat each other. A handbook does not paste a card, and it do
 
 Write the finished book. Do not narrate the draft. No sentence about how much is written, what the next page is waiting on, or that a source list was opened for the draft. A reference belongs next to the claim it supports. A personal rule is labeled as the author's rule. An established practice is attributed to the source.
 
-The library lists books that can be read. A title opens the first page of that book. Under the title, the row names the field card and the pages in the book. There is no cover route in front of the page. The first page opens on a board drawn in the page: the book over the limb of the earth, the day as five cards in a loop with a repair branch when main is already red, a red main as a stack from the failed build to a green main, the test shape as a pyramid, the four signals, a labeled illustrative scene of a renamed field, the release distinction, and the road from the field card to the portfolio. The illustrative scene is a renamed field whose downstream test fails. The researched prose follows that picture. A concept image is not pasted in.
+The library lists books that can be read. A title opens the first page of that book. Under the title, the row names the field card and the pages in the book. There is no cover route in front of the page. On screen, each page is one frame under the site header. Every leaf of the book uses that same frame. Left and right, or the arrow keys, turn the leaf. The page does not scroll. Turning is a cut, not an animation. The first page opens on leaves drawn to that frame: the book over the limb of the earth beside the day as five cards in a loop with a repair branch when main is already red, then a red main as a stack from the failed build to a green main beside a labeled illustrative scene of a renamed field, then the test shape as a pyramid, then the four signals beside the release distinction, then the road from the field card to the portfolio. The shine on the earth sits on the limb. On a narrow screen each of those pictures is its own leaf, so the type stays clear of the horizon and the loop stays readable. The illustrative scene is a renamed field whose downstream test fails. The researched prose continues on later leaves of the same size. A concept image is not pasted in.
 
 ## Editorial contract
 
@@ -30,7 +30,7 @@ Every page:
 4. Separates established guidance, the author's rule, and a hypothesis. A synthetic scene says so in its first line.
 5. Adds something the other pages do not already say.
 
-One thesis per page. Headings follow the subject. They are not a fixed list of eight. A page is as long as the argument: a principle can be short, a method needs the day and the limit, a deep dive needs the mechanism. Do not add length to look finished.
+One thesis per page. Headings follow the subject. They are not a fixed list of eight. A page is as long as the argument: a principle can be short, a method needs the day and the limit, a deep dive needs the mechanism. Do not add length to look finished. On screen that argument continues across leaves of one size.
 
 Voice: direct, operational, first person for the author's judgment. Define a term a stranger may not know. No corporate filler. A memorable sentence is rare, and it has to clarify the rule.
 
@@ -51,7 +51,7 @@ Calendars, blast-radius proof, and the cutover sequence stay on the delivery car
 
 - `/handbooks` — the library. One row per book a reader can open, with that book's pages listed under the row.
 - `/handbooks/software-that-stays-in-use` — redirects to the first page.
-- `/handbooks/software-that-stays-in-use/1` — Keep main releasable. The page opens on the board described above. An illustrative break is a renamed field, labeled as not a record. Four signals are defined, including whether the release criteria are met, and there are no target times.
+- `/handbooks/software-that-stays-in-use/1` — Keep main releasable. The page opens on the leaves described above, then the researched prose in the same frame. An illustrative break is a renamed field, labeled as not a record. Four signals are defined, including whether the release criteria are met, and there are no target times.
 - `/handbooks/software-that-stays-in-use/2` — Fail for the right reason.
 - `/handbooks/software-that-stays-in-use/3` — The plan fits on a page.
 - `/handbooks/software-that-stays-in-use/4` — Run the version just verified.

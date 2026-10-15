@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { useId, type ReactNode } from "react";
+import { useId, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import type {
   Handbook,
   HandbookFigure,
@@ -41,6 +43,89 @@ const ROAD: Array<[number, number]> = [
 ];
 
 const STARS = starField(56, 11);
+
+export type SpreadPanel = "hero" | "loop" | "recovery" | "scene" | "pyramid" | "signals" | "distinctions" | "path";
+
+export function HandbookSpread({
+  handbook,
+  page,
+  panels,
+}: {
+  handbook: Handbook;
+  page: HandbookPage;
+  panels: SpreadPanel[];
+}) {
+  const wide = panels.length > 1;
+  const heroLead = panels[0] === "hero";
+  return (
+    <div
+      data-handbook-spread={panels.join("-")}
+      className={`grid h-full min-h-0 gap-2 ${wide ? "grid-cols-1 grid-rows-2 lg:grid-rows-1" : "grid-cols-1"} ${
+        wide ? (heroLead ? "lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]" : "lg:grid-cols-2") : ""
+      }`}
+    >
+      {panels.map((panel) => (
+        <div key={panel} className="h-full min-h-0">
+          <SpreadPanelView panel={panel} handbook={handbook} page={page} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SpreadPanelView({
+  panel,
+  handbook,
+  page,
+}: {
+  panel: SpreadPanel;
+  handbook: Handbook;
+  page: HandbookPage;
+}) {
+  const sceneSection = sectionOf(page, "scene");
+  if (panel === "hero") return <EarthHero handbook={handbook} page={page} />;
+  if (panel === "loop") return <DailyLoop figure={figureOf(page, "loop")} />;
+  if (panel === "recovery") return <BrokenMain figure={figureOf(page, "recovery")} />;
+  if (panel === "scene") {
+    return <IllustrativeScene figure={figureOf(page, "scene")} disclaimer={sceneSection?.paragraphs?.[0]} />;
+  }
+  if (panel === "pyramid") return <TestShape figure={figureOf(page, "pyramid")} />;
+  if (panel === "signals") return <SignalTable figure={figureOf(page, "signals")} />;
+  if (panel === "distinctions") return <Distinctions figure={figureOf(page, "compare")} />;
+  return <BiggerPicture />;
+}
+
+function FitBox({ children }: { children: ReactNode }) {
+  const outerRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useLayoutEffect(() => {
+    const outer = outerRef.current;
+    const inner = innerRef.current;
+    if (!outer || !inner) return;
+    const measure = () => {
+      inner.style.transform = "none";
+      const available = outer.clientHeight;
+      const natural = inner.scrollHeight;
+      const raw = available > 0 && natural > available ? available / natural : 1;
+      const next = Math.round(raw * 1000) / 1000;
+      setScale((current) => (current === next ? current : next));
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(outer);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={outerRef} className="h-full min-h-0 overflow-hidden">
+      <div ref={innerRef} style={{ transform: `scale(${scale})`, transformOrigin: "top center" }}>
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export function HandbookBoard({ handbook, page }: { handbook: Handbook; page: HandbookPage }) {
   const loop = figureOf(page, "loop");
@@ -100,10 +185,10 @@ export function HandbookFieldLandscape() {
 function EarthHero({ handbook, page }: { handbook: Handbook; page: HandbookPage }) {
   const lines = operatingLines(page.rule);
   return (
-    <section className={`${PANEL} h-full min-h-[28rem]`} data-board-panel="hero" aria-label={handbook.title}>
+    <section className={`${PANEL} h-full min-h-0`} data-board-panel="hero" aria-label={handbook.title}>
       <EarthBackdrop />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-44 bg-gradient-to-t from-[#02040a] via-[#02040a]/80 to-transparent" />
-      <div className="relative z-10 flex h-full min-h-[28rem] flex-1 flex-col px-5 pt-5 pb-6 sm:px-6 sm:pt-6">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-[#02040a] via-[#02040a]/75 to-transparent" />
+      <div className="relative z-10 flex h-full min-h-0 flex-1 flex-col px-5 pt-5 pb-5 sm:px-6 sm:pt-6">
         <p className="font-mono text-[10px] tracking-[0.28em] text-cyan-200">
           ORBIT / HANDBOOK {handbook.index}
         </p>
@@ -115,7 +200,7 @@ function EarthHero({ handbook, page }: { handbook: Handbook; page: HandbookPage 
         </h1>
         <p className="mt-4 max-w-[34ch] text-sm leading-relaxed text-slate-300">{handbook.thesis}</p>
         <ul
-          className="mt-auto max-w-[36ch] space-y-1.5 pt-20 text-sm leading-snug text-white sm:text-[0.95rem]"
+          className="absolute inset-x-5 bottom-[11%] z-10 max-w-[36ch] space-y-1.5 text-sm leading-snug text-white sm:inset-x-6 sm:text-[0.95rem]"
           style={{ textShadow: "0 2px 14px rgba(0,0,0,0.95)" }}
         >
           {lines.map((line) => (
@@ -133,7 +218,9 @@ function DailyLoop({ figure }: { figure: HandbookFigure | undefined }) {
       <StarWash />
       <PanelHead index="2" kicker="The daily loop" title="Small enough to merge today." />
       {figure?.caption ? <PanelLede>{figure.caption}</PanelLede> : null}
-      <div className="relative z-10 flex flex-1 flex-col px-3 pt-3 pb-4 sm:px-4">{figure ? <LoopPlate figure={figure} /> : null}</div>
+      <div className="relative z-10 flex min-h-0 flex-1 items-center justify-center px-2 pt-2 pb-3 sm:px-3">
+        {figure ? <LoopPlate figure={figure} plate /> : null}
+      </div>
     </section>
   );
 }
@@ -141,11 +228,11 @@ function DailyLoop({ figure }: { figure: HandbookFigure | undefined }) {
 function BrokenMain({ figure }: { figure: HandbookFigure | undefined }) {
   return (
     <section className={`${PANEL} h-full`} data-board-panel="recovery">
-      <StarWash />
-      <PanelHead index="3" kicker="A broken main" title="Feature work waits." />
-      <div className="relative z-10 flex flex-1 flex-col px-3 pt-3 pb-4 sm:px-4">
-        {figure ? <RecoveryPlate figure={figure} /> : null}
-      </div>
+      <FitBox>
+        <StarWash />
+        <PanelHead index="3" kicker="A broken main" title="Feature work waits." />
+        <div className="relative z-10 px-3 pt-3 pb-4 sm:px-4">{figure ? <RecoveryPlate figure={figure} /> : null}</div>
+      </FitBox>
     </section>
   );
 }
@@ -153,7 +240,8 @@ function BrokenMain({ figure }: { figure: HandbookFigure | undefined }) {
 function SignalTable({ figure }: { figure: HandbookFigure | undefined }) {
   const steps = figure?.steps ?? [];
   return (
-    <section className={PANEL} data-board-panel="signals">
+    <section className={`${PANEL} h-full`} data-board-panel="signals">
+      <FitBox>
       <StarWash />
       <PanelHead index="6" kicker="How I would know" title="Four signals. No target times." />
       <div className="relative z-10 flex flex-1 flex-col px-4 pt-4 pb-4 sm:px-5">
@@ -183,6 +271,7 @@ function SignalTable({ figure }: { figure: HandbookFigure | undefined }) {
           <p className="mt-3 text-xs leading-relaxed text-slate-400">{figure.caption}</p>
         ) : null}
       </div>
+      </FitBox>
     </section>
   );
 }
@@ -196,21 +285,25 @@ function IllustrativeScene({
 }) {
   return (
     <section className={`${PANEL} h-full`} data-board-panel="scene">
-      <StarWash />
-      <PanelHead index="4" kicker="An illustrative break" title="A renamed field, then a revert." />
-      <div className="relative z-10 flex flex-1 flex-col px-3 pt-4 pb-4 sm:px-4">
-        {figure ? <ScenePlate figure={figure} disclaimer={disclaimer} /> : null}
-      </div>
+      <FitBox>
+        <StarWash />
+        <PanelHead index="4" kicker="An illustrative break" title="A renamed field, then a revert." />
+        <div className="relative z-10 px-3 pt-4 pb-4 sm:px-4">
+          {figure ? <ScenePlate figure={figure} disclaimer={disclaimer} /> : null}
+        </div>
+      </FitBox>
     </section>
   );
 }
 
 function TestShape({ figure }: { figure: HandbookFigure | undefined }) {
   return (
-    <section className={PANEL} data-board-panel="pyramid">
-      <StarWash />
-      <PanelHead index="5" kicker="The tests" title="The wide base is the commit build." />
-      <div className="relative z-10 px-3 pt-3 pb-4 sm:px-4">{figure ? <PyramidPlate figure={figure} /> : null}</div>
+    <section className={`${PANEL} h-full`} data-board-panel="pyramid">
+      <FitBox>
+        <StarWash />
+        <PanelHead index="5" kicker="The tests" title="The wide base is the commit build." />
+        <div className="relative z-10 px-3 pt-3 pb-4 sm:px-4">{figure ? <PyramidPlate figure={figure} /> : null}</div>
+      </FitBox>
     </section>
   );
 }
@@ -218,7 +311,8 @@ function TestShape({ figure }: { figure: HandbookFigure | undefined }) {
 function Distinctions({ figure }: { figure: HandbookFigure | undefined }) {
   const columns = figure?.columns ?? [];
   return (
-    <section className={PANEL} data-board-panel="compare">
+    <section className={`${PANEL} h-full`} data-board-panel="compare">
+      <FitBox>
       <StarWash />
       <PanelHead index="7" kicker="Key distinctions" title="A green build is not the release." />
       <div className="relative z-10 flex flex-1 flex-col px-4 pt-4 pb-4 sm:px-5">
@@ -246,13 +340,15 @@ function Distinctions({ figure }: { figure: HandbookFigure | undefined }) {
           </p>
         ) : null}
       </div>
+      </FitBox>
     </section>
   );
 }
 
 function BiggerPicture() {
   return (
-    <section className={PANEL} data-board-panel="path">
+    <section className={`${PANEL} h-full`} data-board-panel="path">
+      <FitBox>
       <div className="relative z-10 grid lg:grid-cols-[minmax(0,18rem)_1fr]">
         <header className="px-5 pt-5 pb-2 lg:py-6">
           <p className="font-mono text-[10px] tracking-[0.22em] text-cyan-300 uppercase">8. The bigger picture</p>
@@ -266,6 +362,7 @@ function BiggerPicture() {
         </header>
         <NightRoad />
       </div>
+      </FitBox>
     </section>
   );
 }
@@ -368,6 +465,10 @@ function NightRoad() {
   );
 }
 
+const LIMB = { cx: 400, cy: 1870, r: 1400 };
+const GLINT = limbPoint(392);
+const HORIZON = horizonPath(LIMB.cx, LIMB.cy, LIMB.r, -30, 510);
+
 function EarthBackdrop() {
   const rawId = useId().replace(/:/g, "");
   return (
@@ -378,54 +479,74 @@ function EarthBackdrop() {
       className="absolute inset-0 h-full w-full"
     >
       <defs>
-        <radialGradient id={`${rawId}-space`} cx="50%" cy="30%" r="75%">
-          <stop offset="0%" stopColor="#07111f" />
+        <radialGradient id={`${rawId}-space`} cx="62%" cy="62%" r="78%">
+          <stop offset="0%" stopColor="#071525" />
           <stop offset="100%" stopColor="#02040a" />
         </radialGradient>
-        <radialGradient id={`${rawId}-ocean`} cx="50%" cy="0%" r="90%">
-          <stop offset="0%" stopColor="#12304d" />
-          <stop offset="28%" stopColor="#0a1c30" />
+        <radialGradient id={`${rawId}-ocean`} gradientUnits="userSpaceOnUse" cx="360" cy="980" r="620">
+          <stop offset="0%" stopColor="#123044" />
+          <stop offset="42%" stopColor="#071422" />
           <stop offset="100%" stopColor="#02040a" />
         </radialGradient>
-        <radialGradient id={`${rawId}-flare`} cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#ffffff" />
-          <stop offset="16%" stopColor="#e0f7ff" />
-          <stop offset="40%" stopColor="#67e8f9" stopOpacity="0.75" />
-          <stop offset="100%" stopColor="#0284c7" stopOpacity="0" />
-        </radialGradient>
-        <linearGradient id={`${rawId}-air`} x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0%" stopColor="#7dd3fc" stopOpacity="0.55" />
-          <stop offset="42%" stopColor="#0369a1" stopOpacity="0.18" />
-          <stop offset="100%" stopColor="#0369a1" stopOpacity="0" />
+        <linearGradient id={`${rawId}-shine`} gradientUnits="userSpaceOnUse" x1="0" y1="530" x2="480" y2="460">
+          <stop offset="0%" stopColor="#0369a1" stopOpacity="0.15" />
+          <stop offset="42%" stopColor="#38bdf8" stopOpacity="0.55" />
+          <stop offset="72%" stopColor="#e0f7ff" />
+          <stop offset="82%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#7dd3fc" stopOpacity="0.25" />
         </linearGradient>
-        <filter id={`${rawId}-bloom`} x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="7" />
+        <radialGradient id={`${rawId}-glint`} gradientUnits="userSpaceOnUse" cx={GLINT.x} cy={GLINT.y} r="78">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="22%" stopColor="#e0f7ff" stopOpacity="0.95" />
+          <stop offset="55%" stopColor="#38bdf8" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
+        </radialGradient>
+        <filter id={`${rawId}-bloom`} x="-40%" y="-120%" width="180%" height="340%">
+          <feGaussianBlur stdDeviation="3.2" />
         </filter>
-        <filter id={`${rawId}-soft`} x="-20%" y="-20%" width="140%" height="140%">
-          <feGaussianBlur stdDeviation="2.4" />
+        <filter id={`${rawId}-soft`} x="-30%" y="-80%" width="160%" height="260%">
+          <feGaussianBlur stdDeviation="1.4" />
         </filter>
         <clipPath id={`${rawId}-disc`}>
-          <circle cx="240" cy="1080" r="638" />
+          <circle cx={LIMB.cx} cy={LIMB.cy} r={LIMB.r - 1} />
         </clipPath>
+        <mask id={`${rawId}-band`}>
+          <rect width="480" height="720" fill="black" />
+          <path d={HORIZON} fill="none" stroke="white" strokeWidth="34" strokeLinecap="round" />
+        </mask>
       </defs>
       <rect width="480" height="720" fill={`url(#${rawId}-space)`} />
       {HERO_STARS.map((star) => (
         <circle key={`${star.x}-${star.y}`} cx={star.x} cy={star.y} r={star.r} fill={star.fill} opacity={star.o} />
       ))}
-      <rect x="0" y="300" width="480" height="150" fill={`url(#${rawId}-air)`} />
-      <circle cx="240" cy="1080" r="676" fill="none" stroke="#0284c7" strokeWidth="70" opacity="0.45" filter={`url(#${rawId}-bloom)`} />
-      <circle cx="240" cy="1080" r="652" fill="none" stroke="#e0f7ff" strokeWidth="14" opacity="0.95" filter={`url(#${rawId}-soft)`} />
-      <circle cx="240" cy="1080" r="640" fill={`url(#${rawId}-ocean)`} />
+      <circle cx={LIMB.cx} cy={LIMB.cy} r={LIMB.r} fill={`url(#${rawId}-ocean)`} />
       <g clipPath={`url(#${rawId}-disc)`}>
         {CITY_LIGHTS.map((light) => (
           <circle key={`${light.x}-${light.y}-${light.r}`} cx={light.x} cy={light.y} r={light.r} fill={light.fill} opacity={light.o} />
         ))}
       </g>
-      <circle cx="240" cy="1080" r="640" fill="none" stroke="#ffffff" strokeWidth="2.4" />
-      <ellipse cx="168" cy="436" rx="90" ry="12" fill={`url(#${rawId}-flare)`} />
-      <ellipse cx="280" cy="444" rx="210" ry="8" fill="#bae6fd" opacity="0.55" />
+      <path d={HORIZON} fill="none" stroke="#38bdf8" strokeWidth="18" strokeLinecap="round" opacity="0.8" filter={`url(#${rawId}-bloom)`} />
+      <circle cx={GLINT.x} cy={GLINT.y} r="78" fill={`url(#${rawId}-glint)`} mask={`url(#${rawId}-band)`} />
+      <path d={HORIZON} fill="none" stroke={`url(#${rawId}-shine)`} strokeWidth="7" strokeLinecap="round" filter={`url(#${rawId}-soft)`} />
+      <path d={HORIZON} fill="none" stroke="#ffffff" strokeWidth="1.7" strokeLinecap="round" />
     </svg>
   );
+}
+
+function limbPoint(x: number) {
+  return { x, y: limbY(x) ?? 0 };
+}
+
+function horizonPath(cx: number, cy: number, r: number, x0: number, x1: number) {
+  const parts: string[] = [];
+  for (let step = 0; step <= 96; step += 1) {
+    const x = x0 + ((x1 - x0) * step) / 96;
+    const rest = r * r - (x - cx) ** 2;
+    if (rest < 0) continue;
+    const y = cy - Math.sqrt(rest);
+    parts.push(`${parts.length === 0 ? "M" : "L"}${x.toFixed(1)} ${y.toFixed(1)}`);
+  }
+  return parts.join(" ");
 }
 
 function PanelHead({ index, kicker, title }: { index: string; kicker: string; title: string }) {
@@ -571,7 +692,7 @@ function starField(count: number, seed: number) {
   return layers.join(",");
 }
 
-const HERO_STARS = scatterStars(70, 3, 480, 430);
+const HERO_STARS = scatterStars(90, 3, 480, 560);
 const NIGHT_STARS = scatterStars(40, 9, 960, 160);
 const CITY_LIGHTS = buildCityLights();
 const TOWN_LIGHTS = buildTownLights();
@@ -591,26 +712,31 @@ function scatterStars(count: number, seed: number, width: number, height: number
   return stars;
 }
 
+function limbY(x: number) {
+  const rest = LIMB.r * LIMB.r - (x - LIMB.cx) ** 2;
+  if (rest <= 0) return null;
+  return LIMB.cy - Math.sqrt(rest);
+}
+
 function buildCityLights() {
   const rand = mulberry32(21);
   const lights: Array<{ x: number; y: number; r: number; fill: string; o: number }> = [];
-  const colors = ["#fff7ed", "#fde68a", "#ffffff", "#fef3c7"];
-  for (let index = 0; index < 2400 && lights.length < 420; index += 1) {
-    const bias = (rand() + rand()) / 2;
-    const angle = -Math.PI / 2 + (bias - 0.5) * 1.15;
-    const depth = rand() * rand();
-    const radius = 636 - depth * 150;
-    const x = 240 + Math.cos(angle) * radius;
-    const y = 1080 + Math.sin(angle) * radius;
-    if (x < 8 || x > 472 || y < 448 || y > 680) continue;
+  const colors = ["#fff7ed", "#fde68a", "#ffffff", "#fef3c7", "#fed7aa"];
+  for (let index = 0; index < 5000 && lights.length < 540; index += 1) {
+    const clustered = rand() > 0.28;
+    const x = clustered ? 250 + rand() * 210 : 8 + rand() * 464;
+    const edge = limbY(x);
+    if (edge == null) continue;
+    const y = edge + 5 + rand() * rand() * 108;
+    if (x < 6 || x > 474 || y > 700) continue;
     const fill = colors[Math.floor(rand() * colors.length)] ?? "#fff";
-    const bright = rand() > 0.94;
+    const bright = rand() > 0.93;
     lights.push({
       x,
       y,
-      r: bright ? 1.7 : 0.45 + rand() * 0.7,
+      r: bright ? 1.8 : 0.4 + rand() * 0.75,
       fill,
-      o: bright ? 0.95 : 0.45 + rand() * 0.5,
+      o: bright ? 0.95 : 0.35 + rand() * 0.5,
     });
   }
   return lights;
