@@ -1062,7 +1062,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "The control is the Green Book's: the GAO's Standards for Internal Control in the Federal Government, May 2025. Appendix II describes a reconciliation as identifying and comparing transactions from two sets of records, determining whether they were recorded properly, have yet to be recorded, or were recorded improperly and require correction, and explaining the differences. The two sets may both be internal, or one may be external, as in a bank reconciliation. Paragraph 10.04 includes comparisons that relate different sets of data so management can analyze the relationship and act, as a control over performance measures, and it includes comparing file totals with control accounts as a control over information processing. Paragraph 16.05 includes comparisons and reconciliations in ongoing monitoring.",
             "Paragraph 10.10 calls a detective control the activity that discovers an unintended result and corrects it, and it says the usefulness of that control depends on the correction being timely. I use that timeliness as the reason the explanation happens before the publish. The standard does not describe a dashboard, and the block is my rule.",
             "The mechanism that stops the next build is narrower, and it is dbt's. A test returns the rows it was written to catch. Unless it is configured otherwise, a nonzero count is an error. On the dbt build command I checked, an upstream test that fails skips the downstream resources. Set the severity to warn, or widen the threshold, and those resources run. A uniqueness test can pass on both reports while the reports still disagree. The test is how a check I have already named can stop the next model. The reconciliation is the comparison of the two statements.",
-            "My operating rule on that practice: name the grain before the two reports are compared, explain the difference or block the publish, and do not publish a number between them. The owner of the definition approves the grain. A green pipeline is not that approval. The analytics field card states the same stop. An unexplained gap stays dark, and a number is not shipped unless the grain, the owner, and the way to stop a bad publish are named. The card draws 4.8%, 6.2%, and 5.1%, and it says those figures are a picture of a disagreement, not a calculated portfolio result. In that picture the published figure is one grain after the difference is explained. It is not the midpoint of the two reports.",
+            "The operating rule at the top of this page is that stop. The owner of the definition approves the grain. A green pipeline is not that approval. The analytics field card states the same stop. Its picture of 4.8%, 6.2%, and 5.1% is a disagreement, not a calculated portfolio result. In that picture the published figure is one grain after the difference is explained. It is not the midpoint of the two reports.",
           ],
           sources: [
             KIMBALL_GRAIN,
@@ -1122,7 +1122,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An illustrative break",
           paragraphs: [
             "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
-            "The decision in the room is whether to extend terms. That decision is the brief on Name the decision, written against an extract titled overdue balance, where a row is an open invoice as of yesterday. A second extract of the same title then arrives. In one, a row is an account at month-end, and charged-off accounts are out of scope. In the other, a row is an invoice as of yesterday, and charged-off accounts are in scope. The record cannot be filled with one grain. The cause is the grain. Until the owner names one grain as the published measure, both extracts stay dark. A figure placed between the two totals would be true to neither grain.",
+            "The decision in the room is whether to extend terms. That decision is the brief on Name the decision, written against an extract titled overdue balance, where a row is an open invoice as of yesterday. A second extract of the same title then arrives. In one, a row is an account at month-end, and charged-off accounts are out of scope. In the other, a row is an invoice as of yesterday, and charged-off accounts are in scope. While the grain field is blank, the record cannot be filled, and both extracts stay dark. A figure placed between the two totals would be true to neither grain.",
+            "The same illustration, once the record is filled. The owner names the grain the terms decision can use: a row is an open invoice as of yesterday, and charged-off accounts are out of scope. The account-at-month-end extract will not sit at that grain, so it is set aside as a different measure. The cause is the grain. The owner accepts the invoice grain in writing. The publish carries that grain. The other extract stays dark. Nothing is placed between them, and no amount is written. The actor named on Name the decision can use this publish for the terms decision.",
           ],
           picture: {
             src: `${DATA_ART}/extracts.jpg`,
@@ -1138,13 +1139,14 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Time open runs from the difference appearing until it is explained or the publish is blocked.",
             "Blocked publishes are the times the gate stopped a number that would otherwise have shipped.",
             "Owned definitions are measures whose grain has a named owner.",
-            "The register is how a meeting records the signals. The row that follows is written for the illustration on this page. It is not a result I collected, and it states no amount.",
+            "The register is how a meeting records the signals. The rows that follow are written for the illustration on this page. One is the block. One is the publish. Neither is a result I collected, and neither states an amount.",
           ],
           lines: [
+            { term: "Blocked", detail: "The record while the grain field is blank." },
             { term: "Measure", detail: "Overdue balance. No amount is written." },
             {
               term: "Owner",
-              detail: "The role that would approve the grain. In the illustration the role is not named, so the field stays blank.",
+              detail: "The role that would approve the grain. While the record is blocked, the role is not named, so the field stays blank.",
             },
             { term: "Baseline", detail: "Nothing is published. Two extracts carry the same title." },
             {
@@ -1154,6 +1156,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             },
             { term: "Action", detail: "Block the publish." },
             { term: "Outcome", detail: "The publish did not happen. Both extracts stay dark." },
+            {
+              term: "Filled",
+              detail:
+                "The same title once the owner has named the grain. Grain: an open invoice as of yesterday, charged-off accounts out of scope. Second statement: the account-at-month-end extract, set aside. Cause: the grain. Resolution: the owner accepts the invoice grain in writing. Action: publish that grain. Outcome: that grain is the publish, and the actor on Name the decision can use it for the terms decision. The other extract stays dark. No amount is written.",
+            },
           ],
           picture: {
             src: `${DATA_ART}/signals.jpg`,
@@ -1164,11 +1171,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "elsewhere",
           title: "Where I do not use it",
           paragraphs: [
-            "An exploration, a monitor, or a search that is not offered as the answer can hold two cuts while the cause is still unknown. That is the opening of this page. This page blocks the publish that is offered as an answer.",
+            "An exploration that is not offered as the answer is the opening of this page. It can hold two cuts. This page blocks the publish that is offered as an answer.",
             "The Green Book's reconciliation compares two sets of records. One statement, with no second set, is a different control. A uniqueness test on that statement can still be an error that skips the next model. That is the dbt mechanism on a single statement.",
             "Kimball says an aggregate is used together with the atomic data it came from, because the aggregate carries less detail. I keep them as two grains. I do not fold them into one cell so a chart has a single figure.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. This page stops the number. It does not choose the window.",
-            "A slow PD or ECL backtest, and the search over that backtest, stay on the Bayesian optimisation card. This page starts when two reports of a measure disagree.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card, and a slow PD or ECL backtest stays on the Bayesian optimisation card. This page stops the number.",
             "The Green Book ties a detective control to a correction that is timely. I place that correction before the number is published. A reconciliation that begins after the decision has already used the number is a review of a figure that shipped.",
             "This page stops a publish whose two statements disagree. It does not operate the pipeline that keeps an agreed definition current.",
           ],
@@ -1236,7 +1242,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "The design order is Kimball's. Select the business process, then declare the grain. Business data governance representatives participate in that design, so the business has agreed to the names and the rules. I treat that participation as the design session. It does not, by itself, name the decision the published number will answer.",
             "The analytics field card states the failure I am writing about: the wrong question, the wrong audience, or an unclear decision. I read the question as the decision, the audience as the person who will act, and an unclear decision as a move that has not been named. The card's reconciliation gate stays on the first page of this book. This page starts earlier. The number may already be true to a grain.",
-            "My operating rule on that practice: name the decision, the person who will act, and what they would do if the number moved, before the grain is declared, and do not publish the measure as the answer to a decision that was not named. A workshop can agree a process and still leave the decision unnamed. A green comparison can agree a grain and still leave the decision unnamed.",
+            "The operating rule at the top of this page is that stop. A workshop can agree a process and still leave the decision unnamed. A green comparison can agree a grain and still leave the decision unnamed.",
           ],
           sources: [KIMBALL_STEPS, KIMBALL_PDF, { href: DATA_CARD, label: "Data analytics field card" }],
         },
@@ -1285,7 +1291,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
             "One extract is titled overdue balance. A row is an open invoice as of yesterday. The grain of that extract is agreed, and there is no second report in the room. Two decisions are. One person will choose which customers to call. Another will decide whether to extend terms on an invoice. The rows can answer the terms decision, because that decision is about an invoice. They are not, by themselves, the call list, because a call is a customer and this row is an invoice. The brief's decision line stays blank until the room names which decision this publish is for, and the extract stays dark.",
-            "If the room names the terms decision, and a second extract of the same title arrives as an account at month-end with charged-off accounts out of scope, that disagreement is the record on Reconcile or block. This page does not choose a number between them.",
+            "The same illustration, once the brief is filled. The decision is whether to extend terms. The actor is the role that extends them. If more invoices sit past terms, that role withholds the extension. If fewer invoices sit past terms, the extension can be offered. The process is the open invoice. The call list is set aside. The chair in the light is that actor. The chair left dark is the call list, which this publish does not answer. The invoice extract can be published as the answer. It states no amount.",
+            "If a second extract of the same title arrives as an account at month-end, with charged-off accounts out of scope, that disagreement is the record on Reconcile or block. This page does not choose a number between them. On that record the filled publish is the invoice grain, and the account extract is set aside.",
           ],
           picture: {
             src: `${DATA_ART}/decision.jpg`,
@@ -1301,9 +1308,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Written moves are measures where the actor has written what changes if the number goes up, and what changes if it goes down.",
             "Parked answers are the times a measure stayed unpublished as an answer because the decision, the actor, or the move was missing.",
             "Single process means the metric comes from one named business process.",
-            "The register is how a meeting records the signals. The row that follows is written for the illustration on this page. It is not a result I collected, and it states no amount.",
+            "The register is how a meeting records the signals. The rows that follow are written for the illustration on this page. One is the blank brief. One is the brief once it is filled. Neither is a result I collected, and neither states an amount.",
           ],
           lines: [
+            { term: "Blocked", detail: "The brief while the decision line is blank." },
             { term: "Measure", detail: "Overdue balance, one extract of open invoices. No amount is written." },
             {
               term: "Decision",
@@ -1315,6 +1323,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             },
             { term: "Action", detail: "Do not publish the extract as an answer." },
             { term: "Outcome", detail: "The extract stayed dark." },
+            {
+              term: "Filled",
+              detail:
+                "The same title once the room has named the decision. Decision: whether to extend terms. Actor: the role that extends them. Move if it rises: withhold the extension. Move if it falls: the extension can be offered. Process: the open invoice. Action: publish the invoice extract as that answer. Outcome: the extract is the answer to the terms decision, and the call list stays dark. No amount is written.",
+            },
           ],
         },
         {
@@ -1323,8 +1336,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "Two reports that disagree stay on Reconcile or block. This page does not choose a number between them, and it does not replace the named owner of a definition.",
             "Kimball encourages an atomic grain because it withstands questions you did not plan, and a summary grain presupposes the questions people already share. A table at the atomic grain of a process may exist before a decision is named. I do not offer that table as the answer to a decision I have not named.",
-            "Exploration, monitoring, and discovery can continue without a named decision, and an investigation that will not be published can look through a process before anyone has one. That is the opening of this page. This page blocks the publish as an answer.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow PD or ECL backtest stays on the Bayesian optimisation card.",
+            "Exploration without a named decision is the opening of this page. An unpublished investigation can look through a process before anyone has one. This page blocks the publish as an answer.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card, and a slow PD or ECL backtest stays on the Bayesian optimisation card, as on Reconcile or block.",
             "The GAO guide assesses an agency performance plan. I am not running its evaluator's checklist against a report. I am using the relation it requires between a measure and the performance that measure is supposed to assess.",
             "This page names the decision a published measure is for. It does not operate the pipeline that keeps an agreed definition current.",
           ],
