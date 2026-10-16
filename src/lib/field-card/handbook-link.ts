@@ -6,7 +6,9 @@
 
 const RECONCILE = "/handbooks/data-that-drives-decisions/1";
 const DECISION = "/handbooks/data-that-drives-decisions/2";
+const KEEP = "/handbooks/data-that-drives-decisions/3";
 const ASK_SENTENCE = "Wrong question, wrong audience, or an unclear decision.";
+const OWNER_SENTENCE = "A named owner approves the definition";
 const ASK_MARK = "data-handbook-chapter=\"decision\"";
 const ASK_GUARD = "data-handbook-ask-guard";
 
@@ -23,6 +25,12 @@ export function ensureAnalyticsHandbookLink(html: string): string {
     const at = next.indexOf(ASK_SENTENCE);
     if (at >= 0 && !anchorIsOpen(next, at)) {
         next = `${next.slice(0, at)}<a href="${DECISION}" ${ASK_MARK}>${ASK_SENTENCE}</a>${next.slice(at + ASK_SENTENCE.length)}`;
+    }
+  }
+  if (!next.includes(KEEP)) {
+    const at = next.indexOf(OWNER_SENTENCE);
+    if (at >= 0 && !anchorIsOpen(next, at)) {
+      next = `${next.slice(0, at)}<a href="${KEEP}">${OWNER_SENTENCE}</a>${next.slice(at + OWNER_SENTENCE.length)}`;
     }
   }
   if (next.includes(DECISION) && !next.includes(ASK_GUARD) && next.includes("</body>")) {

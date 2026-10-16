@@ -443,7 +443,7 @@
     .ladder li:nth-child(4) b { color: #b7f7a0; background: rgba(80, 200, 120, 0.12); }
     .ladder strong { display: block; font-size: 0.88rem; }
     .kill { margin: 0.8rem 0 0; color: var(--soft); max-width: 78ch; }
-    .kill a, .fail a { color: inherit; text-decoration: underline; text-underline-offset: 0.16em; }
+    .kill a, .fail a, .aside a { color: inherit; text-decoration: underline; text-underline-offset: 0.16em; }
     .pointer { margin: 0.7rem 0 0; color: var(--soft); font-size: 0.9rem; }
     .pointer a { color: var(--cyan); }
 
@@ -536,7 +536,7 @@
       .hero-photo { position: relative; height: 42mm; width: 46%; float: right; object-fit: cover; object-position: right center; }
       .hero::after { display: none; }
       h1, h2, h3, .lede, .note, .card p, .fail, .aside span, .steps p, .plates span, .tools span, .traps span, .ladder span, .kill, .pointer, .changed, .credit, .prompt { color: #243140; }
-      .eyebrow, .kicker, .idx, .verbs, .chips, .fail b, .pill, .aside b, .tools a, .pointer a, .credit a, .kill a, .fail a { color: #1a4158; }
+      .eyebrow, .kicker, .idx, .verbs, .chips, .fail b, .pill, .aside b, .tools a, .pointer a, .credit a, .kill a, .fail a, .aside a { color: #1a4158; }
       .card, .panel, .report, .checks, .result, .prompt, .pill { background: #fff; border-color: #c5d0dc; box-shadow: none; color: #18212b; }
       .report strong, .result strong, .published { color: #1a4158; }
       .stage.is-on .card { box-shadow: none; }
@@ -654,7 +654,7 @@
         </div>
         <ul class="aside">
           <li><span class="dot" aria-hidden="true">•</span><span><b>Security</b><span>Who can see and change the number</span></span></li>
-          <li><span class="dot" aria-hidden="true">•</span><span><b>Governance</b><span>A named owner approves the definition</span></span></li>
+          <li><span class="dot" aria-hidden="true">•</span><span><b>Governance</b><span><a href="/handbooks/data-that-drives-decisions/3">A named owner approves the definition</a></span></span></li>
           <li><span class="dot" aria-hidden="true">•</span><span><b>Observability</b><span>Lineage from source to the published measure</span></span></li>
           <li><span class="dot" aria-hidden="true">•</span><span><b>Evals</b><span>Tests on gold before a number ships</span></span></li>
           <li><span class="dot" aria-hidden="true">•</span><span><b>Human Approve</b><span>Unexplained gaps stay dark</span></span></li>
