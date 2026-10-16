@@ -1018,6 +1018,14 @@ const DBT_SEVERITY = source(
   "https://docs.getdbt.com/reference/resource-configs/severity",
   "dbt, test severity",
 );
+const DBT_CONTRACT = source(
+  "https://docs.getdbt.com/docs/collaborate/govern/model-contracts",
+  "dbt, model contracts",
+);
+const DBT_VERSIONS = source(
+  "https://docs.getdbt.com/docs/mesh/govern/model-versions",
+  "dbt, model versions",
+);
 
 export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   slug: "data-that-drives-decisions",
@@ -1029,6 +1037,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   contents: [
     { title: "Reconcile or block", page: 1 },
     { title: "Name the decision", page: 2 },
+    { title: "Keep the definition", page: 3 },
   ],
   pages: [
     {
@@ -1176,7 +1185,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Kimball says an aggregate is used together with the atomic data it came from, because the aggregate carries less detail. I keep them as two grains. I do not fold them into one cell so a chart has a single figure.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card, and a slow PD or ECL backtest stays on the Bayesian optimisation card. This page stops the number.",
             "The Green Book ties a detective control to a correction that is timely. I place that correction before the number is published. A reconciliation that begins after the decision has already used the number is a review of a figure that shipped.",
-            "This page stops a publish whose two statements disagree. It does not operate the pipeline that keeps an agreed definition current.",
+            "This page stops a publish whose two statements disagree. Keeping that definition in force after the publish is Keep the definition.",
           ],
           sources: [
             KIMBALL_GRAIN,
@@ -1339,7 +1348,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Exploration without a named decision is the opening of this page. An unpublished investigation can look through a process before anyone has one. This page blocks the publish as an answer.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card, and a slow PD or ECL backtest stays on the Bayesian optimisation card, as on Reconcile or block.",
             "The GAO guide assesses an agency performance plan. I am not running its evaluator's checklist against a report. I am using the relation it requires between a measure and the performance that measure is supposed to assess.",
-            "This page names the decision a published measure is for. It does not operate the pipeline that keeps an agreed definition current.",
+            "This page names the decision a published measure is for. Keeping that definition in force after the publish is Keep the definition.",
           ],
           sources: [
             KIMBALL_TECHNIQUES,
@@ -1369,6 +1378,140 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
         source(
           "https://www.gao.gov/assets/ggd-10.1.20.pdf",
           "GAO, An Evaluator's Guide to Assessing Agency Annual Performance Plans, GAO/GGD-10.1.20 (April 1998)",
+        ),
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 3,
+      topic: "The change",
+      title: "Keep the definition",
+      lede: "A filled record and a filled brief can still go stale the next time the query changes. This page is what stays after that meeting: the owner of the definition, the shape the publish promises, and the stop when that shape breaks.",
+      rule: "My operating rule: name the owner of the published definition, enforce its shape before the next build, and stop the old publish when that shape breaks.",
+      illustration: "The three sheets are an illustration, not a record.",
+      reviewed: "16 Oct 2026",
+      sections: [
+        {
+          id: "keep",
+          title: "The keep",
+          paragraphs: [
+            "This is what I leave in place after the record and the brief are filled. A blank field means the publish is not kept. The shape is dbt's model contract. The stop, when that shape breaks, is the contract error. The owner is my rule, and it is the approval the analytics field card requires. A change to the grain is not filled on this worksheet. That change goes back to Reconcile or block.",
+          ],
+          lines: [
+            {
+              term: "Owner",
+              detail:
+                "The role that approves a change to the published definition. One person, or one role. A distribution list is not the owner. The field is filled when that role can restate the grain. Otherwise the publish is not kept.",
+            },
+            {
+              term: "Shape",
+              detail:
+                "Every column the publish promises, by name and data type, with the contract enforced. The build checks that the query returns that shape. If it does not, the model does not build. The grain sentence stays on the record. This field is the columns.",
+            },
+            {
+              term: "Break",
+              detail:
+                "A removed column, a changed data type, or a removed or modified constraint on a column the publish already promised. That is a breaking change, and the build raises a contract error. The old publish stops. Adding a column is not a break.",
+            },
+            {
+              term: "Version",
+              detail:
+                "When other people or systems depend on the model, the breaking change is a new version, and the previous version stays for a migration window. When nothing outside this team depends on it, the break can land at once. The field is filled when one of those two is named.",
+            },
+            {
+              term: "Reopen",
+              detail:
+                "A change to the grain or the scope, with the column names and types unchanged, goes back to the record. A change to the decision goes back to the brief. A green contract does not close either of those.",
+            },
+          ],
+          sources: [DBT_CONTRACT, DBT_VERSIONS, { href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "shape",
+          title: "What the shape does not catch",
+          paragraphs: [
+            "dbt's contract is a set of guarantees about the shape of a model that other people and processes query. When it is enforced, the build checks that the query returns every promised column, with the promised data type. The check does not depend on column order. dbt recommends a contract for a public model that reports and other systems rely on. A data test is a different check. It runs on the content after the model has built, and it can be set to warn. The contract fails the build when the shape does not match. I do not use a warn test as a substitute for that failure.",
+            "A breaking change, in that contract, is removing a column, changing its data type, removing or modifying a constraint on it, or removing the contracted model. dbt then presents a contract error. Model versions are how the producer of a model that other teams depend on can introduce that break: a new version, the latest bumped, and a window in which the old version can still be referenced. dbt says forcing every consumer to take the break at once is appropriate while the model is still changing quickly, or where the group that depends on it is small. Versions do not remove the cost of keeping two shapes. They put a boundary on it.",
+            "The contract does not know the grain. Kimball's declaration is what one row means, in business terms. A query can keep every column name and type and still change which rows are in scope. dbt says fixing a bug in a column's calculation is not a breaking change and does not require a new version. That fix can still change the definition. When it does, I send it back to the record. A green contract is not that record.",
+            "The Green Book includes comparisons and reconciliations in ongoing monitoring, and it ties a detective control to a correction that is timely. I use that as the reason a break stops the next publish, rather than waiting for the changed number to be noticed. The standard does not describe a model contract. The stop on a broken shape is the contract's. The owner is my rule.",
+          ],
+          sources: [DBT_CONTRACT, DBT_VERSIONS, KIMBALL_GRAIN, GAO_RECONCILE],
+        },
+        {
+          id: "keep-scene",
+          title: "An illustrative break",
+          paragraphs: [
+            "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
+            "The overdue-balance publish is the invoice grain from the filled record. Charged-off accounts are out of scope. The owner is the role that approved that grain. The contract includes the column that marks that scope. The decision is still whether to extend terms.",
+            "A change removes that column. The shape breaks. The build stops. The lit sheet is the publish that was kept. The cracked sheet is the shape that no longer matches. The sheet in the tray is the next version, and it is not the publish until the owner accepts it. No amount is written.",
+            "A second change leaves every column name and type in place, and starts treating charged-off accounts as in scope. The contract can stay green. That change is a new record on Reconcile or block. This page does not choose a number between the two scopes. If the room changes the decision from extending terms to a call list, that change is the brief on Name the decision.",
+          ],
+          picture: {
+            src: `${DATA_ART}/keep.jpg`,
+            alt: "An illustration. One lit sheet, a cracked sheet, and a sheet waiting in a tray. No amount.",
+          },
+        },
+        {
+          id: "keep-know",
+          title: "How I would know",
+          paragraphs: [
+            "I track four signals. I have no target times, and these definitions are not results I have collected. A green contract that hides a changed grain is not the practice.",
+            "Unowned publishes are published measures whose definition has no named owner.",
+            "Shape breaks are builds that stopped because the contract did not match.",
+            "Quiet grain changes are green contracts whose grain or scope changed, and the record was not reopened.",
+            "Kept versions are breaking changes that still offer the previous version for the migration window.",
+            "The rows that follow are written for the illustration on this page. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            { term: "Shape break", detail: "The column that marked charged-off accounts out of scope is removed." },
+            { term: "Measure", detail: "Overdue balance. No amount is written." },
+            { term: "Owner", detail: "The role that approved the invoice grain." },
+            { term: "Action", detail: "Stop the build." },
+            { term: "Outcome", detail: "The old publish stops. The sheet in the tray is not the publish yet." },
+            {
+              term: "Quiet change",
+              detail:
+                "The same title, with every column name and type left in place, and charged-off accounts moved into scope. Action: reopen the record. Outcome: the contract stayed green, and the new scope was not published. No amount is written.",
+            },
+          ],
+        },
+        {
+          id: "keep-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "A model that is still changing, and an exploration that is not offered as an answer, do not get a contract. dbt says introducing this governance while models are still changing complicates later changes.",
+            "The comparison of two reports stays on Reconcile or block. This page does not publish a number between them.",
+            "The decision, the actor, and the moves stay on Name the decision.",
+            "A contract does not apply to a seed, a snapshot, a source, or a Python model. A data test can still run on those.",
+            "Adding a column is not a breaking change. I do not open a new version for it.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card, and a slow PD or ECL backtest stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            DBT_CONTRACT,
+            DBT_VERSIONS,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+      ],
+      sources: [
+        source(
+          "https://docs.getdbt.com/docs/collaborate/govern/model-contracts",
+          "dbt Developer Hub, model contracts (read 16 Oct 2026)",
+        ),
+        source(
+          "https://docs.getdbt.com/docs/mesh/govern/model-versions",
+          "dbt Developer Hub, model versions (read 16 Oct 2026)",
+        ),
+        source(
+          "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/",
+          "Kimball Group, Grain (read 16 Oct 2026)",
+        ),
+        source(
+          "https://www.gao.gov/assets/gao-25-107721.pdf",
+          "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025)",
         ),
         { href: DATA_CARD, label: "Data analytics field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
