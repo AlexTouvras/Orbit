@@ -1019,7 +1019,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       illustration: "The two extracts are an illustration, not a record.",
       reviewed: "16 Oct 2026",
       cover: {
-        src: `${DATA_ART}/cover.jpg`,
+        src: `${DATA_ART}/gate.jpg`,
         alt: "Two reports meet a shut gate. Nothing is published on the far side.",
       },
       sections: [

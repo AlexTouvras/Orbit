@@ -513,24 +513,29 @@ function PictureLeaf({
   if (role === "cover") {
     const lines = operatingLines(page.rule);
     return (
-      <figure className="relative h-full min-h-0 overflow-hidden" data-handbook-cover>
+      <figure className="relative h-full min-h-0 overflow-hidden bg-[#02040a]" data-handbook-cover>
         <Image
           src={picture.src}
           alt={picture.alt}
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-contain object-center"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#02040a]/80 via-[#02040a]/25 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#02040a] via-[#02040a]/75 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#02040a]/55 via-transparent to-transparent lg:block" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#02040a] via-[#02040a]/80 to-transparent" />
         <figcaption className="relative z-10 flex h-full min-h-0 flex-col px-5 py-5 sm:px-7 sm:py-6">
           <p className="font-mono text-[10px] tracking-[0.28em] text-amber-100">ORBIT / HANDBOOK {handbook.index}</p>
           <p className="mt-5 font-mono text-[11px] tracking-[0.28em] text-white/85 uppercase sm:mt-8">{page.topic}</p>
-          <h1 className="mt-2 max-w-[14ch] font-display text-[2rem] font-semibold leading-[0.92] tracking-tight text-white sm:text-[2.65rem]">
+          <h1
+            className="mt-2 max-w-[14ch] font-display text-[2rem] font-semibold leading-[0.92] tracking-tight text-white sm:text-[2.65rem]"
+            style={{ textShadow: "0 2px 18px rgba(0,0,0,0.9)" }}
+          >
             {handbook.title}
           </h1>
-          <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-slate-200">{handbook.thesis}</p>
+          <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-slate-200" style={{ textShadow: "0 2px 14px rgba(0,0,0,0.9)" }}>
+            {handbook.thesis}
+          </p>
           <ul
             className="mt-auto max-w-[38ch] space-y-1.5 pt-4 text-sm leading-snug text-white"
             style={{ textShadow: "0 2px 14px rgba(0,0,0,0.95)" }}
