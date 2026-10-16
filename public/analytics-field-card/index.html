@@ -585,7 +585,7 @@
             <h3>The business question</h3>
             <p>What do we need to know?</p>
             <p class="chips">Context · Audience · Outcome</p>
-            <p class="fail"><b>Failure mode</b> <a href="/handbooks/data-that-drives-decisions/2">Wrong question, wrong audience, or an unclear decision.</a></p>
+            <p class="fail"><b>Failure mode</b> <a href="/handbooks/data-that-drives-decisions/2" data-handbook-chapter="decision">Wrong question, wrong audience, or an unclear decision.</a></p>
           </span>
         </button>
         <button type="button" class="stage" data-stage="grain" aria-pressed="false">
@@ -801,6 +801,6 @@
     })();
   </script>
   <script type="module" src="/field-card-robot.mjs" data-card="analytics"></script>
-  <script data-handbook-ask>document.querySelectorAll('a[href="/handbooks/data-that-drives-decisions/2"]').forEach(function(a){a.addEventListener("click",function(e){e.stopPropagation();});});</script>
+  <script data-handbook-ask-guard>document.querySelectorAll('[data-handbook-chapter="decision"]').forEach(function(a){a.addEventListener("click",function(e){e.stopPropagation();});});</script>
 </body>
 </html>
