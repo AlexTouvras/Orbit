@@ -49,12 +49,20 @@ export interface HandbookFigure {
   columns?: HandbookFigureColumn[];
 }
 
+/** A photograph that follows a section, or opens the page. It states no amount the prose does not. */
+export interface HandbookPicture {
+  src: string;
+  alt: string;
+}
+
 export interface HandbookSection {
   id: string;
   title: string;
   paragraphs?: string[];
   steps?: string[];
   figure?: HandbookFigure;
+  /** This book's picture of the section. It is its own leaf after the words. */
+  picture?: HandbookPicture;
   sources?: HandbookLink[];
 }
 
@@ -75,8 +83,10 @@ export interface HandbookPage {
   story?: HandbookLink;
   /** Delivered work. Only when a portfolio piece is that work. */
   work?: HandbookLink;
-  /** Opening plate. The horizon is the first page's picture, not a cover route. */
+  /** Opening plate. The horizon is Software that stays in use. It is not a cover route. */
   plate?: "horizon";
+  /** This book's opening picture. It is the first leaf, not a route in front of the page. */
+  cover?: HandbookPicture;
   sections: HandbookSection[];
   sources: HandbookLink[];
 }
@@ -115,6 +125,7 @@ const DELIVERY_CARD = "/delivery-field-card/index.html";
 const DATA_CARD = "/analytics-field-card/index.html";
 const CREDIT_CARD = "/credit-risk-field-card/index.html";
 const BAYES_CARD = "/bayes-field-card/index.html";
+const DATA_ART = "/handbook-art/data-that-drives-decisions";
 
 const FOWLER_CI = "https://martinfowler.com/articles/continuousIntegration.html";
 const TRUNK = "https://trunkbaseddevelopment.com/";
@@ -1007,7 +1018,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       rule: "My operating rule: name the grain before the two reports are compared, explain the difference or block the publish, and do not publish a number between them.",
       illustration: "The two extracts are an illustration, not a record.",
       reviewed: "16 Oct 2026",
-      plate: "horizon",
+      cover: {
+        src: `${DATA_ART}/cover.jpg`,
+        alt: "Two reports meet a shut gate. Nothing is published on the far side.",
+      },
       sections: [
         {
           id: "disagreement",
@@ -1044,15 +1058,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "This is the order I use when a measure is about to be published. The grain is Kimball's. The comparison and the explanation are the Green Book's reconciliation. The skip, when a named check fails, is dbt's error severity, and I use that severity for a check that is supposed to stop the publish. The block, when the cause cannot be named, is my rule. A tolerance counts only when the owner wrote it down before the comparison.",
           ],
-          figure: {
-            kind: "flow",
-            caption: "Name the grain, compare, name the cause, then publish one grain or block.",
-            steps: [
-              { term: "Grain", detail: "What one row represents, in business terms.", mark: "search" },
-              { term: "Compare", detail: "The second statement, at that grain.", mark: "pulse" },
-              { term: "Cause", detail: "Grain, scope, definition, timing, or a defect.", mark: "flag" },
-              { term: "Publish or block", detail: "One grain goes out. An unnamed gap stays dark.", mark: "shield" },
-            ],
+          picture: {
+            src: `${DATA_ART}/day.jpg`,
+            alt: "A grain, the two statements brought together, the crack between them, then one lit sheet or a stopped one.",
           },
           steps: [
             "Grain. State what one row represents, in business terms: the unit, the time, the scope, and the definition. A list of dimensions does not finish this step. Done when a person who will use the number can restate the row.",
@@ -1071,6 +1079,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
             "Two extracts are both titled overdue balance. In one, a row is an account at month-end, and charged-off accounts are out of scope. In the other, a row is an invoice as of yesterday, and charged-off accounts are in scope. The totals differ because the grains differ. Until the owner names one grain as the published measure, both extracts stay dark. A figure placed between the two totals would be true to neither grain.",
           ],
+          picture: {
+            src: `${DATA_ART}/extracts.jpg`,
+            alt: "An illustration. One ledger and a scatter of slips. No amount.",
+          },
         },
         {
           id: "inspect",
@@ -1091,32 +1103,14 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "How I would know",
           paragraphs: [
             "I track four signals. I have no target times, and these definitions are not results I have collected. A green build that leaves two definitions of the same measure in use is not the practice.",
+            "Open disagreements are published measures whose second statement differs, and the difference is not yet named.",
+            "Time open runs from the difference appearing until it is explained or the publish is blocked.",
+            "Blocked publishes are the times the gate stopped a number that would otherwise have shipped.",
+            "Owned definitions are measures whose grain has a named owner.",
           ],
-          figure: {
-            kind: "flow",
-            caption: "Four signals. Definitions, not target times.",
-            steps: [
-              {
-                term: "Open disagreements",
-                detail: "Published measures whose second statement differs, and the difference is not yet named.",
-                mark: "alert",
-              },
-              {
-                term: "Time open",
-                detail: "From the difference appearing until it is explained or the publish is blocked.",
-                mark: "clock",
-              },
-              {
-                term: "Blocked publishes",
-                detail: "Times the gate stopped a number that would otherwise have shipped.",
-                mark: "pause",
-              },
-              {
-                term: "Owned definitions",
-                detail: "Measures whose grain has a named owner.",
-                mark: "shield",
-              },
-            ],
+          picture: {
+            src: `${DATA_ART}/signals.jpg`,
+            alt: "A broken piece, a clock, a closed shutter, and a blank seal. Definitions, not results.",
           },
         },
         {

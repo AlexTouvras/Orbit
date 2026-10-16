@@ -1,10 +1,11 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import type { Handbook, HandbookPage, HandbookSection } from "@/content/handbooks";
-import { HandbookSpread, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
+import type { Handbook, HandbookPage, HandbookPicture, HandbookSection } from "@/content/handbooks";
+import { HandbookSpread, operatingLines, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
 import { ChapterRail } from "@/components/handbooks/ChapterRail";
 import { HandbookFigureView } from "@/components/handbooks/HandbookFigures";
 import { SiteLink } from "@/components/handbooks/SiteLink";
@@ -28,10 +29,14 @@ type Block = {
   sectionId?: string;
   sectionTitle?: string;
   platesAfter?: SpreadPanel[];
+  picturesAfter?: HandbookPicture[];
   node: ReactNode;
 };
 
-type ShownLeaf = { kind: "plate"; panel: SpreadPanel } | { kind: "prose"; leaf: PackedLeaf };
+type ShownLeaf =
+  | { kind: "plate"; panel: SpreadPanel }
+  | { kind: "picture"; picture: HandbookPicture; role: "cover" | "section"; title?: string }
+  | { kind: "prose"; leaf: PackedLeaf };
 
 type PackedLeaf = {
   start: number;
@@ -66,13 +71,14 @@ export function HandbookBook({
     [page, showFeedback, feedbackSlug, feedbackEntries, narrow],
   );
   const shown = useMemo(
-    () => composeLeaves(leaves, blocks, page.plate === "horizon"),
-    [leaves, blocks, page.plate],
+    () => composeLeaves(leaves, blocks, page.plate === "horizon", page.cover),
+    [leaves, blocks, page.plate, page.cover],
   );
   const leafCount = shown.length;
   const safeIndex = Math.min(index, Math.max(leafCount - 1, 0));
   const current = shown[safeIndex];
   const spread = current?.kind === "plate" ? [current.panel] : null;
+  const picture = current?.kind === "picture" ? current : null;
   const proseLeaf = current?.kind === "prose" ? current.leaf : null;
   const sectionTitle = proseLeaf
     ? blocks.slice(proseLeaf.start, proseLeaf.end).map((block) => block.sectionTitle).find(Boolean)
@@ -138,7 +144,7 @@ export function HandbookBook({
     };
     if (!pageChanged && !fromEnd && !hash) return watch();
     if (pageChanged) pageStamp.current = page.number;
-    const sequence = composeLeaves(packed, blocks, page.plate === "horizon");
+    const sequence = composeLeaves(packed, blocks, page.plate === "horizon", page.cover);
     if (fromEnd && pageChanged) {
       url.searchParams.delete("from");
       window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
@@ -153,7 +159,7 @@ export function HandbookBook({
       setIndex(0);
     }
     return watch();
-  }, [blocks, page.number, page.plate]);
+  }, [blocks, page.number, page.plate, page.cover]);
 
   useEffect(() => {
     if (!landAtEnd.current || shown.length === 0) return;
@@ -219,7 +225,13 @@ export function HandbookBook({
       <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)} className="hidden lg:grid">
         <ChevronLeft className="h-6 w-6" />
       </TurnButton>
-      <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden border-y border-cyan-300/25 bg-[#040914] lg:rounded-md lg:border lg:shadow-[0_0_60px_-28px_rgba(34,211,238,0.45)]">
+      <div
+        className={`flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden border-y bg-[#040914] lg:rounded-md lg:border ${
+          page.cover
+            ? "border-amber-200/30 lg:shadow-[0_0_60px_-28px_rgba(251,191,36,0.4)]"
+            : "border-cyan-300/25 lg:shadow-[0_0_60px_-28px_rgba(34,211,238,0.45)]"
+        }`}
+      >
         <ChapterRail handbook={handbook} page={page} />
         <div className="relative min-h-0 flex-1">
           {spread ? (
@@ -227,7 +239,12 @@ export function HandbookBook({
               <HandbookSpread handbook={handbook} page={page} panels={spread} />
             </div>
           ) : null}
-          <div className={`${spread ? "invisible" : ""} flex h-full min-h-0 flex-col px-4 pt-3 pb-3 sm:px-8 lg:px-10 lg:pt-4 lg:pb-8`}>
+          {picture ? (
+            <div className="absolute inset-0 z-10 p-0 lg:p-3 lg:pb-8">
+              <PictureLeaf handbook={handbook} page={page} leaf={picture} />
+            </div>
+          ) : null}
+          <div className={`${spread || picture ? "invisible" : ""} flex h-full min-h-0 flex-col px-4 pt-3 pb-3 sm:px-8 lg:px-10 lg:pt-4 lg:pb-8`}>
             <header className="mb-3 flex h-5 shrink-0 items-baseline justify-between gap-4">
               <p className="min-w-0 truncate font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
                 <span className="hidden sm:inline">
@@ -348,7 +365,8 @@ function packBlocks(slot: HTMLElement, blocks: Block[]): PackedLeaf[] {
         end += 1;
         const taken = pieces[end - 1];
         const blockContinues = end < pieces.length && pieces[end].index === taken.index;
-        if (!blockContinues && blocks[taken.index]?.platesAfter?.length) break;
+        const follow = blocks[taken.index];
+        if (!blockContinues && (follow?.platesAfter?.length || follow?.picturesAfter?.length)) break;
       }
       if (end === cursor) {
         if (piece.bottom - offset > budget) {
@@ -458,17 +476,88 @@ function lineBoxes(node: HTMLElement, origin: number): { top: number; bottom: nu
   return merged;
 }
 
-function composeLeaves(packed: PackedLeaf[], blocks: Block[], opening: boolean): ShownLeaf[] {
-  const shown: ShownLeaf[] = opening ? [{ kind: "plate", panel: "hero" }] : [];
+function composeLeaves(
+  packed: PackedLeaf[],
+  blocks: Block[],
+  opening: boolean,
+  cover?: HandbookPicture,
+): ShownLeaf[] {
+  const shown: ShownLeaf[] = [];
+  if (cover) shown.push({ kind: "picture", picture: cover, role: "cover" });
+  else if (opening) shown.push({ kind: "plate", panel: "hero" });
   packed.forEach((leaf, index) => {
     shown.push({ kind: "prose", leaf });
     const last = leaf.end - 1;
     const next = packed[index + 1];
     const finished = !next || next.start > last;
     if (!finished) return;
-    for (const panel of blocks[last]?.platesAfter ?? []) shown.push({ kind: "plate", panel });
+    const block = blocks[last];
+    for (const panel of block?.platesAfter ?? []) shown.push({ kind: "plate", panel });
+    for (const picture of block?.picturesAfter ?? []) {
+      shown.push({ kind: "picture", picture, role: "section", title: block?.sectionTitle });
+    }
   });
   return shown;
+}
+
+function PictureLeaf({
+  handbook,
+  page,
+  leaf,
+}: {
+  handbook: Handbook;
+  page: HandbookPage;
+  leaf: Extract<ShownLeaf, { kind: "picture" }>;
+}) {
+  const { picture, role, title } = leaf;
+  if (role === "cover") {
+    const lines = operatingLines(page.rule);
+    return (
+      <figure className="relative h-full min-h-0 overflow-hidden" data-handbook-cover>
+        <Image
+          src={picture.src}
+          alt={picture.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#02040a]/80 via-[#02040a]/25 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#02040a] via-[#02040a]/75 to-transparent" />
+        <figcaption className="relative z-10 flex h-full min-h-0 flex-col px-5 py-5 sm:px-7 sm:py-6">
+          <p className="font-mono text-[10px] tracking-[0.28em] text-amber-100">ORBIT / HANDBOOK {handbook.index}</p>
+          <p className="mt-5 font-mono text-[11px] tracking-[0.28em] text-white/85 uppercase sm:mt-8">{page.topic}</p>
+          <h1 className="mt-2 max-w-[14ch] font-display text-[2rem] font-semibold leading-[0.92] tracking-tight text-white sm:text-[2.65rem]">
+            {handbook.title}
+          </h1>
+          <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-slate-200">{handbook.thesis}</p>
+          <ul
+            className="mt-auto max-w-[38ch] space-y-1.5 pt-4 text-sm leading-snug text-white"
+            style={{ textShadow: "0 2px 14px rgba(0,0,0,0.95)" }}
+          >
+            {lines.map((line) => (
+              <li key={line}>{line}</li>
+            ))}
+          </ul>
+        </figcaption>
+      </figure>
+    );
+  }
+  return (
+    <figure className="flex h-full min-h-0 flex-col overflow-hidden bg-[#040914]" data-handbook-picture>
+      <div className="relative min-h-0 flex-1">
+        <Image src={picture.src} alt={picture.alt} fill sizes="100vw" className="object-contain" />
+      </div>
+      <figcaption className="shrink-0 border-t border-white/10 px-4 py-3 sm:px-6">
+        {title ? (
+          <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-amber-100/80">{title}</p>
+        ) : null}
+        <p className="mt-1 text-sm leading-relaxed text-slate-300" aria-hidden="true">
+          {picture.alt}
+        </p>
+      </figcaption>
+    </figure>
+  );
 }
 
 function samePack(left: PackedLeaf[], right: PackedLeaf[]) {
@@ -495,7 +584,13 @@ function proseBlocks(
           <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">{page.title}</h1>
           <p className="mt-4 text-base leading-relaxed text-slate-200 sm:text-lg">{page.lede}</p>
           {page.rule ? (
-            <p className="mt-4 border-l border-cyan-300/70 pl-4 text-base leading-relaxed text-white">{page.rule}</p>
+            <p
+              className={`mt-4 border-l pl-4 text-base leading-relaxed text-white ${
+                page.cover ? "border-amber-200/80" : "border-cyan-300/70"
+              }`}
+            >
+              {page.rule}
+            </p>
           ) : null}
           <p className="mt-4 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
             Checked {page.reviewed}
@@ -516,11 +611,12 @@ function proseBlocks(
           </h2>
         ),
       },
-      ...sectionBlocks(section, page.plate === "horizon", narrow),
+      ...sectionBlocks(section, page.plate === "horizon", narrow, Boolean(page.cover)),
     ];
     const plates = page.plate === "horizon" ? PLATES_AFTER[section.id] : undefined;
     const tail = parts[parts.length - 1];
     if (plates?.length && tail) tail.platesAfter = plates;
+    if (section.picture && tail) tail.picturesAfter = [section.picture];
     blocks.push(...parts);
   });
   blocks.push({
@@ -553,7 +649,7 @@ function proseBlocks(
   return blocks;
 }
 
-function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narrow: boolean): Block[] {
+function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narrow: boolean, warm: boolean): Block[] {
   const blocks: Block[] = [];
   section.paragraphs?.forEach((paragraph, index) => {
     blocks.push({
@@ -611,7 +707,7 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
       sectionTitle: section.title,
       node: (
         <div className="flex gap-3 pb-3 text-base leading-relaxed text-slate-300">
-          <span className="w-5 shrink-0 font-mono text-sm text-cyan-200">{index + 1}</span>
+          <span className={`w-5 shrink-0 font-mono text-sm ${warm ? "text-amber-200" : "text-cyan-200"}`}>{index + 1}</span>
           <span>{step}</span>
         </div>
       ),
