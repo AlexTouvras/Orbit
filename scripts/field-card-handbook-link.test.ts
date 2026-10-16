@@ -2,18 +2,20 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { ensureAnalyticsHandbookLink } from "../src/lib/field-card/handbook-link";
 
-const PAGE = "/handbooks/data-that-drives-decisions/1";
+const RECONCILE = "/handbooks/data-that-drives-decisions/1";
+const DECISION = "/handbooks/data-that-drives-decisions/2";
+const ASK = "Wrong question, wrong audience, or an unclear decision.";
 
 describe("analytics handbook link", () => {
   it("wraps the kill line once", () => {
     const html = '<article><p class="kill">Do not ship the number.</p></article>';
     const next = ensureAnalyticsHandbookLink(html);
-    assert.match(next, new RegExp(`<a href="${PAGE}">Do not ship the number.</a>`));
+    assert.match(next, new RegExp(`<a href="${RECONCILE}">Do not ship the number.</a>`));
     assert.equal(ensureAnalyticsHandbookLink(next), next);
   });
 
   it("leaves a sheet that already links the chapter", () => {
-    const html = `<p class="kill"><a href="${PAGE}">Already linked.</a></p>`;
+    const html = `<p class="kill"><a href="${RECONCILE}">Already linked.</a></p>`;
     assert.equal(ensureAnalyticsHandbookLink(html), html);
   });
 
@@ -25,5 +27,25 @@ describe("analytics handbook link", () => {
   it("leaves a sheet with no kill line", () => {
     const html = "<article><p>No kill line.</p></article>";
     assert.equal(ensureAnalyticsHandbookLink(html), html);
+  });
+
+  it("links the ask failure once, even when the kill line is already linked", () => {
+    const html = `<p class="kill"><a href="${RECONCILE}">Do not ship.</a></p><p class="fail"><b>Failure mode</b> ${ASK}</p>`;
+    const next = ensureAnalyticsHandbookLink(html);
+    assert.match(next, new RegExp(`<a href="${DECISION}">${ASK}</a>`));
+    assert.equal(next.match(new RegExp(DECISION, "g"))?.length, 1);
+    assert.equal(ensureAnalyticsHandbookLink(next), next);
+  });
+
+  it("does not nest a link when the ask sentence is already anchored", () => {
+    const html = `<p class="fail"><a href="/elsewhere">${ASK}</a></p>`;
+    assert.equal(ensureAnalyticsHandbookLink(html), html);
+  });
+
+  it("adds one click guard when the ask chapter is linked inside a document", () => {
+    const html = `<body><p class="fail"><b>Failure mode</b> ${ASK}</p></body>`;
+    const next = ensureAnalyticsHandbookLink(html);
+    assert.match(next, /data-handbook-ask/);
+    assert.equal(ensureAnalyticsHandbookLink(next), next);
   });
 });

@@ -988,6 +988,22 @@ const KIMBALL_TECHNIQUES = source(
   "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/",
   "Kimball Group, grain",
 );
+const KIMBALL_STEPS = source(
+  "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/four-4-step-design-process/",
+  "Kimball Group, four-step design",
+);
+const KIMBALL_PROCESS = source(
+  "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/business-process/",
+  "Kimball Group, business process",
+);
+const KIMBALL_PDF = source(
+  "https://www.kimballgroup.com/wp-content/uploads/2013/08/2013.09-Kimball-Dimensional-Modeling-Techniques11.pdf",
+  "Kimball Group techniques PDF",
+);
+const GAO_RESULTS = source(
+  "https://www.gao.gov/assets/ggd-10.1.20.pdf",
+  "GAO Results Act guide, April 1998",
+);
 const GAO_RECONCILE = source(
   "https://www.gao.gov/assets/gao-25-107721.pdf",
   "GAO Green Book, May 2025",
@@ -1008,7 +1024,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   thesis:
     "A number can drive a decision when its grain, its owner, and the way to stop a bad publish are named. This book is how I keep that publish honest.",
   card: { href: DATA_CARD, label: "Data analytics field card" },
-  contents: [{ title: "Reconcile or block", page: 1 }],
+  contents: [
+    { title: "Reconcile or block", page: 1 },
+    { title: "Name the decision", page: 2 },
+  ],
   pages: [
     {
       number: 1,
@@ -1157,6 +1176,132 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
         source(
           "https://docs.getdbt.com/reference/resource-configs/severity",
           "dbt Developer Hub, test severity (read 16 Oct 2026)",
+        ),
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 2,
+      topic: "The question",
+      title: "Name the decision",
+      lede: "A measure can reconcile and still be the wrong answer. Publishing it before the decision is named gives that decision a figure it was not built for.",
+      rule: "My operating rule: name the decision, the person who will act, and what they would do if the number moved, before the grain is declared, and do not publish the measure as the answer to a decision that was not named.",
+      illustration: "The two chairs are an illustration, not a record.",
+      reviewed: "16 Oct 2026",
+      sections: [
+        {
+          id: "wrong-answer",
+          title: "Why a reconciled number still misleads",
+          paragraphs: [
+            "The comparison has already passed. The short path is to read the number out as the answer to whatever question is in the room. The number was produced by a process. The question in the room may be a different decision. A figure that is true to its grain can still be unrelated to the decision someone is about to make.",
+            "Kimball's order puts the business before the grain. Before a dimensional model is designed, the team uncovers what the business needs in sessions with business representatives, to understand their objectives from their indicators, their issues, their decision-making processes, and the analysis they need, and at the same time uncovers what the source data can support. The four design decisions then begin by selecting the business process. A business process is an operational activity, such as taking an order, processing a claim, or snapshotting every account each month. Events of that process generate the metrics that become facts. Most fact tables focus on the results of a single process. Choosing the process defines the design target, and it is what allows the grain, the dimensions, and the facts to be declared. The answers come from the needs of the business and from the source data. A report title is not that process.",
+            "The relation I use between a measure and a goal is the GAO's, from the evaluator's guide to annual performance plans under the Results Act, April 1998. The guide is about an agency plan. It does not describe a dashboard. Criterion 1.1 says the measures in the plan should adequately indicate progress toward the performance goals. When a goal is not self-measuring, the measures translate it into concrete, observable conditions that determine what data to collect, so the agency can assess what happened, make decisions, and assign accountability. To do that, the measures have to clearly represent, or be related to, the performance they are trying to assess. The guide's example is the shape of the failure: average processing time for tax returns does not represent, and is not clearly related to, the goal of increasing the accuracy of tax return processing. The time can be collected carefully and still be the wrong number for that goal.",
+          ],
+          sources: [KIMBALL_STEPS, KIMBALL_PROCESS, KIMBALL_PDF, GAO_RESULTS],
+        },
+        {
+          id: "question-rule",
+          title: "The practice, and my rule",
+          paragraphs: [
+            "The design order is Kimball's. Select the business process, then declare the grain. Business data governance representatives participate in that design, so the business has agreed to the names and the rules. I treat that participation as the design session. It does not, by itself, name the decision the published number will answer.",
+            "The analytics field card states the failure I am writing about: the wrong question, the wrong audience, or an unclear decision. I read the question as the decision, the audience as the person who will act, and an unclear decision as a move that has not been named. The card's reconciliation gate stays on the first page of this book. This page starts earlier. The number may already be true to a grain.",
+            "My operating rule on that practice: name the decision, the person who will act, and what they would do if the number moved, before the grain is declared, and do not publish the measure as the answer to a decision that was not named. A workshop can agree a process and still leave the decision unnamed. A green comparison can agree a grain and still leave the decision unnamed.",
+          ],
+          sources: [KIMBALL_STEPS, KIMBALL_PDF, { href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "question-day",
+          title: "The day",
+          paragraphs: [
+            "This is the order I use before I declare a grain for a measure that is about to be offered as an answer. The process is Kimball's. The relation between the measure and the goal is the shape of the GAO criterion. The stop, when the decision cannot be named, is my rule. Reconcile or block still owns a disagreement between two reports.",
+          ],
+          steps: [
+            "Decision. State the decision in the words of the person who will act. A report title does not finish this step. Done when someone who was not in the room can restate what is being decided.",
+            "Actor. Name who will act. A distribution list is not the actor. Done when one person, or one role, is the one whose action changes.",
+            "Move. State what that person would do if the number went up, and what they would do if it went down. If neither changes an action, this measure is not the answer to that decision. Done when both moves are written, or the measure has been set aside for this decision.",
+            "Process. Select the one operational activity that generates the metric. If the decision needs the results of two activities, they are two measures. Done when one process is named, or the decision has been split.",
+            "Grain. Only then declare what one row represents, in business terms. A disagreement between two reports goes to Reconcile or block. This page does not publish a number between them. Done when the grain is declared for the one process, or the measure has been set aside.",
+            "Stop. If the decision, the actor, or the move cannot be named, do not publish the measure as that decision's answer. The table may stay. It is not the answer. Done when the publish names the decision, or the publish as an answer did not happen.",
+          ],
+          sources: [KIMBALL_PROCESS, KIMBALL_STEPS, GAO_RESULTS],
+        },
+        {
+          id: "question-scene",
+          title: "An illustrative break",
+          paragraphs: [
+            "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
+            "One extract is an open invoice as of yesterday. The grain is agreed, and there is no second report in the room. Two decisions are. One person will choose which customers to call. Another will decide whether to extend terms on an invoice. The rows can be true to the grain. They can answer the terms decision, because that decision is about an invoice. They are not, by themselves, the call list, because a call is a customer and this row is an invoice. Until the room names which decision this publish is for, the extract stays dark.",
+          ],
+          picture: {
+            src: `${DATA_ART}/decision.jpg`,
+            alt: "An illustration. One sheet of light, one chair in that light, and one chair left dark. No amount.",
+          },
+        },
+        {
+          id: "question-inspect",
+          title: "What I inspect",
+          paragraphs: [
+            "These are the questions I ask. They are my check, not a list Kimball or the GAO published.",
+          ],
+          steps: [
+            "Can the person who will act restate the decision, before anyone declares the grain?",
+            "Is the actor a person or a role? A distribution list is not the answer.",
+            "Are both moves written: what changes if the number goes up, and what changes if it goes down?",
+            "Does the metric come from one business process? If a second process is required, has the decision been split into two measures?",
+            "When the decision, the actor, or the move is missing, does the publish as an answer stop? The table may still exist.",
+          ],
+        },
+        {
+          id: "question-know",
+          title: "How I would know",
+          paragraphs: [
+            "I track four signals. I have no target times, and these definitions are not results I have collected. A reconciled grain whose decision cannot be restated is not the practice.",
+            "Unnamed decisions are published measures whose actor cannot restate the decision.",
+            "Written moves are measures where the actor has written what changes if the number goes up, and what changes if it goes down.",
+            "Parked answers are the times a measure stayed unpublished as an answer because the decision, the actor, or the move was missing.",
+            "Single process means the metric comes from one named business process.",
+          ],
+        },
+        {
+          id: "question-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "Two reports that disagree stay on Reconcile or block. This page does not choose a number between them, and it does not replace the named owner of a definition.",
+            "Kimball encourages an atomic grain because it withstands questions you did not plan, and a summary grain presupposes the questions people already share. A table at the atomic grain of a process may exist before a decision is named. I do not offer that table as the answer to a decision I have not named.",
+            "An investigation that will not be published can look through a process before anyone has a decision. This page blocks the publish as an answer.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow PD or ECL backtest stays on the Bayesian optimisation card.",
+            "The GAO guide assesses an agency performance plan. I am not running its evaluator's checklist against a report. I am using the relation it requires between a measure and the performance that measure is supposed to assess.",
+          ],
+          sources: [
+            KIMBALL_TECHNIQUES,
+            GAO_RESULTS,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+      ],
+      sources: [
+        source(
+          "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/four-4-step-design-process/",
+          "Kimball Group, Four-Step Dimensional Design Process (read 16 Oct 2026)",
+        ),
+        source(
+          "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/business-process/",
+          "Kimball Group, Business Processes (read 16 Oct 2026)",
+        ),
+        source(
+          "https://www.kimballgroup.com/wp-content/uploads/2013/08/2013.09-Kimball-Dimensional-Modeling-Techniques11.pdf",
+          "Kimball Group, Dimensional Modeling Techniques PDF (Sep 2013)",
+        ),
+        source(
+          "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/",
+          "Kimball Group, Grain (read 16 Oct 2026)",
+        ),
+        source(
+          "https://www.gao.gov/assets/ggd-10.1.20.pdf",
+          "GAO, An Evaluator's Guide to Assessing Agency Annual Performance Plans, GAO/GGD-10.1.20 (April 1998)",
         ),
         { href: DATA_CARD, label: "Data analytics field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
