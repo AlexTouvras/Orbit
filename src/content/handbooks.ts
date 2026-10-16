@@ -1018,6 +1018,14 @@ const DBT_SEVERITY = source(
   "https://docs.getdbt.com/reference/resource-configs/severity",
   "dbt, test severity",
 );
+const DBT_CONTRACT = source(
+  "https://docs.getdbt.com/docs/collaborate/govern/model-contracts",
+  "dbt, model contracts",
+);
+const DBT_VERSIONS = source(
+  "https://docs.getdbt.com/docs/mesh/govern/model-versions",
+  "dbt, model versions",
+);
 
 export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   slug: "data-that-drives-decisions",
@@ -1029,6 +1037,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   contents: [
     { title: "Reconcile or block", page: 1 },
     { title: "Name the decision", page: 2 },
+    { title: "Keep the definition", page: 3 },
   ],
   pages: [
     {
@@ -1062,7 +1071,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "The control is the Green Book's: the GAO's Standards for Internal Control in the Federal Government, May 2025. Appendix II describes a reconciliation as identifying and comparing transactions from two sets of records, determining whether they were recorded properly, have yet to be recorded, or were recorded improperly and require correction, and explaining the differences. The two sets may both be internal, or one may be external, as in a bank reconciliation. Paragraph 10.04 includes comparisons that relate different sets of data so management can analyze the relationship and act, as a control over performance measures, and it includes comparing file totals with control accounts as a control over information processing. Paragraph 16.05 includes comparisons and reconciliations in ongoing monitoring.",
             "Paragraph 10.10 calls a detective control the activity that discovers an unintended result and corrects it, and it says the usefulness of that control depends on the correction being timely. I use that timeliness as the reason the explanation happens before the publish. The standard does not describe a dashboard, and the block is my rule.",
             "The mechanism that stops the next build is narrower, and it is dbt's. A test returns the rows it was written to catch. Unless it is configured otherwise, a nonzero count is an error. On the dbt build command I checked, an upstream test that fails skips the downstream resources. Set the severity to warn, or widen the threshold, and those resources run. A uniqueness test can pass on both reports while the reports still disagree. The test is how a check I have already named can stop the next model. The reconciliation is the comparison of the two statements.",
-            "My operating rule on that practice: name the grain before the two reports are compared, explain the difference or block the publish, and do not publish a number between them. The owner of the definition approves the grain. A green pipeline is not that approval. The analytics field card states the same stop. An unexplained gap stays dark, and a number is not shipped unless the grain, the owner, and the way to stop a bad publish are named. The card draws 4.8%, 6.2%, and 5.1%, and it says those figures are a picture of a disagreement, not a calculated portfolio result. In that picture the published figure is one grain after the difference is explained. It is not the midpoint of the two reports.",
+            "The operating rule at the top of this page is that stop. The owner of the definition approves the grain. A green pipeline is not that approval. The analytics field card states the same stop. Its picture of 4.8%, 6.2%, and 5.1% is a disagreement, not a calculated portfolio result. In that picture the published figure is one grain after the difference is explained. It is not the midpoint of the two reports.",
           ],
           sources: [
             KIMBALL_GRAIN,
@@ -1122,7 +1131,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An illustrative break",
           paragraphs: [
             "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
-            "The decision in the room is whether to extend terms. That decision is the brief on Name the decision, written against an extract titled overdue balance, where a row is an open invoice as of yesterday. A second extract of the same title then arrives. In one, a row is an account at month-end, and charged-off accounts are out of scope. In the other, a row is an invoice as of yesterday, and charged-off accounts are in scope. The record cannot be filled with one grain. The cause is the grain. Until the owner names one grain as the published measure, both extracts stay dark. A figure placed between the two totals would be true to neither grain.",
+            "The decision in the room is whether to extend terms. That decision is the brief on Name the decision, written against an extract titled overdue balance, where a row is an open invoice as of yesterday. A second extract of the same title then arrives. In one, a row is an account at month-end, and charged-off accounts are out of scope. In the other, a row is an invoice as of yesterday, and charged-off accounts are in scope. While the grain field is blank, the record cannot be filled, and both extracts stay dark. A figure placed between the two totals would be true to neither grain.",
+            "The same illustration, once the record is filled. The owner names the grain the terms decision can use: a row is an open invoice as of yesterday, and charged-off accounts are out of scope. The account-at-month-end extract will not sit at that grain, so it is set aside as a different measure. The cause is the grain. The owner accepts the invoice grain in writing. The publish carries that grain. The other extract stays dark. Nothing is placed between them, and no amount is written. The actor named on Name the decision can use this publish for the terms decision.",
           ],
           picture: {
             src: `${DATA_ART}/extracts.jpg`,
@@ -1138,13 +1148,14 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Time open runs from the difference appearing until it is explained or the publish is blocked.",
             "Blocked publishes are the times the gate stopped a number that would otherwise have shipped.",
             "Owned definitions are measures whose grain has a named owner.",
-            "The register is how a meeting records the signals. The row that follows is written for the illustration on this page. It is not a result I collected, and it states no amount.",
+            "The register is how a meeting records the signals. The rows that follow are written for the illustration on this page. One is the block. One is the publish. Neither is a result I collected, and neither states an amount.",
           ],
           lines: [
+            { term: "Blocked", detail: "The record while the grain field is blank." },
             { term: "Measure", detail: "Overdue balance. No amount is written." },
             {
               term: "Owner",
-              detail: "The role that would approve the grain. In the illustration the role is not named, so the field stays blank.",
+              detail: "The role that would approve the grain. While the record is blocked, the role is not named, so the field stays blank.",
             },
             { term: "Baseline", detail: "Nothing is published. Two extracts carry the same title." },
             {
@@ -1154,6 +1165,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             },
             { term: "Action", detail: "Block the publish." },
             { term: "Outcome", detail: "The publish did not happen. Both extracts stay dark." },
+            {
+              term: "Filled",
+              detail:
+                "The same title once the owner has named the grain. Grain: an open invoice as of yesterday, charged-off accounts out of scope. Second statement: the account-at-month-end extract, set aside. Cause: the grain. Resolution: the owner accepts the invoice grain in writing. Action: publish that grain. Outcome: that grain is the publish, and the actor on Name the decision can use it for the terms decision. The other extract stays dark. No amount is written.",
+            },
           ],
           picture: {
             src: `${DATA_ART}/signals.jpg`,
@@ -1164,13 +1180,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "elsewhere",
           title: "Where I do not use it",
           paragraphs: [
-            "An exploration, a monitor, or a search that is not offered as the answer can hold two cuts while the cause is still unknown. That is the opening of this page. This page blocks the publish that is offered as an answer.",
+            "An exploration that is not offered as the answer is the opening of this page. It can hold two cuts. This page blocks the publish that is offered as an answer.",
             "The Green Book's reconciliation compares two sets of records. One statement, with no second set, is a different control. A uniqueness test on that statement can still be an error that skips the next model. That is the dbt mechanism on a single statement.",
             "Kimball says an aggregate is used together with the atomic data it came from, because the aggregate carries less detail. I keep them as two grains. I do not fold them into one cell so a chart has a single figure.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. This page stops the number. It does not choose the window.",
-            "A slow PD or ECL backtest, and the search over that backtest, stay on the Bayesian optimisation card. This page starts when two reports of a measure disagree.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card, and a slow PD or ECL backtest stays on the Bayesian optimisation card. This page stops the number.",
             "The Green Book ties a detective control to a correction that is timely. I place that correction before the number is published. A reconciliation that begins after the decision has already used the number is a review of a figure that shipped.",
-            "This page stops a publish whose two statements disagree. It does not operate the pipeline that keeps an agreed definition current.",
+            "This page stops a publish whose two statements disagree. Keeping that definition in force after the publish is Keep the definition.",
           ],
           sources: [
             KIMBALL_GRAIN,
@@ -1236,7 +1251,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "The design order is Kimball's. Select the business process, then declare the grain. Business data governance representatives participate in that design, so the business has agreed to the names and the rules. I treat that participation as the design session. It does not, by itself, name the decision the published number will answer.",
             "The analytics field card states the failure I am writing about: the wrong question, the wrong audience, or an unclear decision. I read the question as the decision, the audience as the person who will act, and an unclear decision as a move that has not been named. The card's reconciliation gate stays on the first page of this book. This page starts earlier. The number may already be true to a grain.",
-            "My operating rule on that practice: name the decision, the person who will act, and what they would do if the number moved, before the grain is declared, and do not publish the measure as the answer to a decision that was not named. A workshop can agree a process and still leave the decision unnamed. A green comparison can agree a grain and still leave the decision unnamed.",
+            "The operating rule at the top of this page is that stop. A workshop can agree a process and still leave the decision unnamed. A green comparison can agree a grain and still leave the decision unnamed.",
           ],
           sources: [KIMBALL_STEPS, KIMBALL_PDF, { href: DATA_CARD, label: "Data analytics field card" }],
         },
@@ -1285,7 +1300,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
             "One extract is titled overdue balance. A row is an open invoice as of yesterday. The grain of that extract is agreed, and there is no second report in the room. Two decisions are. One person will choose which customers to call. Another will decide whether to extend terms on an invoice. The rows can answer the terms decision, because that decision is about an invoice. They are not, by themselves, the call list, because a call is a customer and this row is an invoice. The brief's decision line stays blank until the room names which decision this publish is for, and the extract stays dark.",
-            "If the room names the terms decision, and a second extract of the same title arrives as an account at month-end with charged-off accounts out of scope, that disagreement is the record on Reconcile or block. This page does not choose a number between them.",
+            "The same illustration, once the brief is filled. The decision is whether to extend terms. The actor is the role that extends them. If more invoices sit past terms, that role withholds the extension. If fewer invoices sit past terms, the extension can be offered. The process is the open invoice. The call list is set aside. The chair in the light is that actor. The chair left dark is the call list, which this publish does not answer. The invoice extract can be published as the answer. It states no amount.",
+            "If a second extract of the same title arrives as an account at month-end, with charged-off accounts out of scope, that disagreement is the record on Reconcile or block. This page does not choose a number between them. On that record the filled publish is the invoice grain, and the account extract is set aside.",
           ],
           picture: {
             src: `${DATA_ART}/decision.jpg`,
@@ -1301,9 +1317,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Written moves are measures where the actor has written what changes if the number goes up, and what changes if it goes down.",
             "Parked answers are the times a measure stayed unpublished as an answer because the decision, the actor, or the move was missing.",
             "Single process means the metric comes from one named business process.",
-            "The register is how a meeting records the signals. The row that follows is written for the illustration on this page. It is not a result I collected, and it states no amount.",
+            "The register is how a meeting records the signals. The rows that follow are written for the illustration on this page. One is the blank brief. One is the brief once it is filled. Neither is a result I collected, and neither states an amount.",
           ],
           lines: [
+            { term: "Blocked", detail: "The brief while the decision line is blank." },
             { term: "Measure", detail: "Overdue balance, one extract of open invoices. No amount is written." },
             {
               term: "Decision",
@@ -1315,6 +1332,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             },
             { term: "Action", detail: "Do not publish the extract as an answer." },
             { term: "Outcome", detail: "The extract stayed dark." },
+            {
+              term: "Filled",
+              detail:
+                "The same title once the room has named the decision. Decision: whether to extend terms. Actor: the role that extends them. Move if it rises: withhold the extension. Move if it falls: the extension can be offered. Process: the open invoice. Action: publish the invoice extract as that answer. Outcome: the extract is the answer to the terms decision, and the call list stays dark. No amount is written.",
+            },
           ],
         },
         {
@@ -1323,10 +1345,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "Two reports that disagree stay on Reconcile or block. This page does not choose a number between them, and it does not replace the named owner of a definition.",
             "Kimball encourages an atomic grain because it withstands questions you did not plan, and a summary grain presupposes the questions people already share. A table at the atomic grain of a process may exist before a decision is named. I do not offer that table as the answer to a decision I have not named.",
-            "Exploration, monitoring, and discovery can continue without a named decision, and an investigation that will not be published can look through a process before anyone has one. That is the opening of this page. This page blocks the publish as an answer.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow PD or ECL backtest stays on the Bayesian optimisation card.",
+            "Exploration without a named decision is the opening of this page. An unpublished investigation can look through a process before anyone has one. This page blocks the publish as an answer.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card, and a slow PD or ECL backtest stays on the Bayesian optimisation card, as on Reconcile or block.",
             "The GAO guide assesses an agency performance plan. I am not running its evaluator's checklist against a report. I am using the relation it requires between a measure and the performance that measure is supposed to assess.",
-            "This page names the decision a published measure is for. It does not operate the pipeline that keeps an agreed definition current.",
+            "This page names the decision a published measure is for. Keeping that definition in force after the publish is Keep the definition.",
           ],
           sources: [
             KIMBALL_TECHNIQUES,
@@ -1356,6 +1378,140 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
         source(
           "https://www.gao.gov/assets/ggd-10.1.20.pdf",
           "GAO, An Evaluator's Guide to Assessing Agency Annual Performance Plans, GAO/GGD-10.1.20 (April 1998)",
+        ),
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 3,
+      topic: "The change",
+      title: "Keep the definition",
+      lede: "A filled record and a filled brief can still go stale the next time the query changes. This page is what stays after that meeting: the owner of the definition, the shape the publish promises, and the stop when that shape breaks.",
+      rule: "My operating rule: name the owner of the published definition, enforce its shape before the next build, and stop the old publish when that shape breaks.",
+      illustration: "The three sheets are an illustration, not a record.",
+      reviewed: "16 Oct 2026",
+      sections: [
+        {
+          id: "keep",
+          title: "The keep",
+          paragraphs: [
+            "This is what I leave in place after the record and the brief are filled. A blank field means the publish is not kept. The shape is dbt's model contract. The stop, when that shape breaks, is the contract error. The owner is my rule, and it is the approval the analytics field card requires. A change to the grain is not filled on this worksheet. That change goes back to Reconcile or block.",
+          ],
+          lines: [
+            {
+              term: "Owner",
+              detail:
+                "The role that approves a change to the published definition. One person, or one role. A distribution list is not the owner. The field is filled when that role can restate the grain. Otherwise the publish is not kept.",
+            },
+            {
+              term: "Shape",
+              detail:
+                "Every column the publish promises, by name and data type, with the contract enforced. The build checks that the query returns that shape. If it does not, the model does not build. The grain sentence stays on the record. This field is the columns.",
+            },
+            {
+              term: "Break",
+              detail:
+                "A removed column, a changed data type, or a removed or modified constraint on a column the publish already promised. That is a breaking change, and the build raises a contract error. The old publish stops. Adding a column is not a break.",
+            },
+            {
+              term: "Version",
+              detail:
+                "When other people or systems depend on the model, the breaking change is a new version, and the previous version stays for a migration window. When nothing outside this team depends on it, the break can land at once. The field is filled when one of those two is named.",
+            },
+            {
+              term: "Reopen",
+              detail:
+                "A change to the grain or the scope, with the column names and types unchanged, goes back to the record. A change to the decision goes back to the brief. A green contract does not close either of those.",
+            },
+          ],
+          sources: [DBT_CONTRACT, DBT_VERSIONS, { href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "shape",
+          title: "What the shape does not catch",
+          paragraphs: [
+            "dbt's contract is a set of guarantees about the shape of a model that other people and processes query. When it is enforced, the build checks that the query returns every promised column, with the promised data type. The check does not depend on column order. dbt recommends a contract for a public model that reports and other systems rely on. A data test is a different check. It runs on the content after the model has built, and it can be set to warn. The contract fails the build when the shape does not match. I do not use a warn test as a substitute for that failure.",
+            "A breaking change, in that contract, is removing a column, changing its data type, removing or modifying a constraint on it, or removing the contracted model. dbt then presents a contract error. Model versions are how the producer of a model that other teams depend on can introduce that break: a new version, the latest bumped, and a window in which the old version can still be referenced. dbt says forcing every consumer to take the break at once is appropriate while the model is still changing quickly, or where the group that depends on it is small. Versions do not remove the cost of keeping two shapes. They put a boundary on it.",
+            "The contract does not know the grain. Kimball's declaration is what one row means, in business terms. A query can keep every column name and type and still change which rows are in scope. dbt says fixing a bug in a column's calculation is not a breaking change and does not require a new version. That fix can still change the definition. When it does, I send it back to the record. A green contract is not that record.",
+            "The Green Book includes comparisons and reconciliations in ongoing monitoring, and it ties a detective control to a correction that is timely. I use that as the reason a break stops the next publish, rather than waiting for the changed number to be noticed. The standard does not describe a model contract. The stop on a broken shape is the contract's. The owner is my rule.",
+          ],
+          sources: [DBT_CONTRACT, DBT_VERSIONS, KIMBALL_GRAIN, GAO_RECONCILE],
+        },
+        {
+          id: "keep-scene",
+          title: "An illustrative break",
+          paragraphs: [
+            "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
+            "The overdue-balance publish is the invoice grain from the filled record. Charged-off accounts are out of scope. The owner is the role that approved that grain. The contract includes the column that marks that scope. The decision is still whether to extend terms.",
+            "A change removes that column. The shape breaks. The build stops. The lit sheet is the publish that was kept. The cracked sheet is the shape that no longer matches. The sheet in the tray is the next version, and it is not the publish until the owner accepts it. No amount is written.",
+            "A second change leaves every column name and type in place, and starts treating charged-off accounts as in scope. The contract can stay green. That change is a new record on Reconcile or block. This page does not choose a number between the two scopes. If the room changes the decision from extending terms to a call list, that change is the brief on Name the decision.",
+          ],
+          picture: {
+            src: `${DATA_ART}/keep.jpg`,
+            alt: "An illustration. One lit sheet, a cracked sheet, and a sheet waiting in a tray. No amount.",
+          },
+        },
+        {
+          id: "keep-know",
+          title: "How I would know",
+          paragraphs: [
+            "I track four signals. I have no target times, and these definitions are not results I have collected. A green contract that hides a changed grain is not the practice.",
+            "Unowned publishes are published measures whose definition has no named owner.",
+            "Shape breaks are builds that stopped because the contract did not match.",
+            "Quiet grain changes are green contracts whose grain or scope changed, and the record was not reopened.",
+            "Kept versions are breaking changes that still offer the previous version for the migration window.",
+            "The rows that follow are written for the illustration on this page. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            { term: "Shape break", detail: "The column that marked charged-off accounts out of scope is removed." },
+            { term: "Measure", detail: "Overdue balance. No amount is written." },
+            { term: "Owner", detail: "The role that approved the invoice grain." },
+            { term: "Action", detail: "Stop the build." },
+            { term: "Outcome", detail: "The old publish stops. The sheet in the tray is not the publish yet." },
+            {
+              term: "Quiet change",
+              detail:
+                "The same title, with every column name and type left in place, and charged-off accounts moved into scope. Action: reopen the record. Outcome: the contract stayed green, and the new scope was not published. No amount is written.",
+            },
+          ],
+        },
+        {
+          id: "keep-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "A model that is still changing, and an exploration that is not offered as an answer, do not get a contract. dbt says introducing this governance while models are still changing complicates later changes.",
+            "The comparison of two reports stays on Reconcile or block. This page does not publish a number between them.",
+            "The decision, the actor, and the moves stay on Name the decision.",
+            "A contract does not apply to a seed, a snapshot, a source, or a Python model. A data test can still run on those.",
+            "Adding a column is not a breaking change. I do not open a new version for it.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card, and a slow PD or ECL backtest stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            DBT_CONTRACT,
+            DBT_VERSIONS,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+      ],
+      sources: [
+        source(
+          "https://docs.getdbt.com/docs/collaborate/govern/model-contracts",
+          "dbt Developer Hub, model contracts (read 16 Oct 2026)",
+        ),
+        source(
+          "https://docs.getdbt.com/docs/mesh/govern/model-versions",
+          "dbt Developer Hub, model versions (read 16 Oct 2026)",
+        ),
+        source(
+          "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/",
+          "Kimball Group, Grain (read 16 Oct 2026)",
+        ),
+        source(
+          "https://www.gao.gov/assets/gao-25-107721.pdf",
+          "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025)",
         ),
         { href: DATA_CARD, label: "Data analytics field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
