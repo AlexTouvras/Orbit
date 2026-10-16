@@ -160,7 +160,8 @@ data/studio-roadmap.json
 data/studio-roadmap.seed.json
 PRODUCT.md
 docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, HANDBOOKS, AGENT_RULES
-src/content/handbooks.ts     # handbook series; edition 1 is numbered pages
+src/content/handbooks.ts     # handbook series; SDLC book and analytics page 1
+src/lib/field-card/handbook-link.ts  # re-insert the analytics chapter link on Approve sync
 src/lib/handbooks.ts
 src/components/handbooks/
 src/app/handbooks/
@@ -175,6 +176,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-16 | Handbook 03 page 1 is the publish you can explain | Data that drives decisions opens on Reconcile or block. The analytics kill line is the one link, and Approve re-inserts it when the source repo's HTML does not carry it. Two reports at two grains are not averaged into a third figure. The earth opens the book. The day's flow stays in the prose. The SDLC plates stay on the SDLC book. Each page shows its `reviewed` date under the rule, as Checked. Sources checked 16 Oct 2026: Kimball, Declaring the Grain (1 Mar 2003); Kimball Group grain techniques (Sep 2013); GAO-25-107721 (May 2025); dbt build and test severity. |
 | 2026-10-15 | A handbook URL appears once on the SDLC card | The four stations open their chapters. Trunk-based opens Keep main releasable. The spec line opens the understanding section. The plan judgement line, the test judgement line, Evals, and Continuous Integration stay text, because those destinations are already linked above. |
 | 2026-10-15 | The SDLC robot says the other judgements | The six lines stay six. On How a change moves the bubble also says keep main releasable. On Where judgement stays it also says the plan fits on a page, and that a spec file is not shared understanding. Every run shows the same sentence, and the bubble steps to the next one after a few seconds. |
 | 2026-10-15 | A handbook chapter names its card, its book, and its evidence | Each chapter links the SDLC field card, the handbook, and the previous and next chapter. The field card opens those chapters from the principle: keep main releasable opens page 1, tests that fail for the right reason open page 2, the plan and the spec line open page 3, the version people run opens page 4, and use as the next change opens page 5. A story link appears only when a story shows the decision. A portfolio link appears only when the piece is delivered work. The renamed field on page 1 is labeled an illustration. No story or delivered work is linked, because none of the public stories or products is that evidence. |

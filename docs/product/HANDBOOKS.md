@@ -43,7 +43,7 @@ A figure is allowed when it carries the procedure: a loop, a decision, a shape. 
 
 1. **Software that stays in use** — extends the SDLC field card. The library title opens `/handbooks/software-that-stays-in-use/1`, Keep main releasable. Page 2 is Fail for the right reason. Page 3 is The plan fits on a page. Page 4 is Run the version just verified. Page 5 is Use is the next change.
 2. Engineering reliable delivery — not in the library yet. For the technology delivery field card.
-3. Data that drives decisions — not in the library yet. For the data analytics field card.
+3. **Data that drives decisions** — extends the data analytics field card. The library title opens `/handbooks/data-that-drives-decisions/1`, Reconcile or block. Later pages stay unwritten.
 4. Decision systems under uncertainty — not in the library yet. For the credit risk field card.
 
 Calendars, blast-radius proof, and the cutover sequence stay on the delivery card. Do not add an eighth named practice to the SDLC card.
@@ -61,6 +61,8 @@ Each handbook URL appears once on the card. A later line that would open the sam
 - People run the version just verified opens page 4.
 - A defect, or what you learn in use, comes back as the next change opens page 5.
 
+The analytics field card opens Reconcile or block from the line that says you do not ship a number unless you can name the grain, the owner, and how to stop a bad publish. The reconciliation picture stays on the card. Approve copies the analytics sheet from its source repo and re-inserts that one link on the Orbit copy when the source HTML does not carry it.
+
 ## On a chapter
 
 Every chapter shows the field card, the handbook, and the previous and next chapter by title. Left and right still turn the leaf. The handbook title opens the library, where the book and its chapters are listed.
@@ -76,6 +78,10 @@ The line under those links says what the chapter is. It is how I would operate. 
 - `/handbooks/software-that-stays-in-use/3` — The plan fits on a page.
 - `/handbooks/software-that-stays-in-use/4` — Run the version just verified.
 - `/handbooks/software-that-stays-in-use/5` — Use is the next change. The first release is not the end. A lesson from use walks the same path. Calendars, blast-radius proof, and cutover stay on the delivery card.
+- `/handbooks/data-that-drives-decisions` — redirects to the first page.
+- `/handbooks/data-that-drives-decisions/1` — Reconcile or block. The page opens on the earth, then the researched prose. The day is a flow after that section. An illustrative break is two extracts of one title at two grains, labeled as not a record. Four signals are defined, and there are no target times. The published figure is one grain after the difference is explained. It is not the midpoint of the two reports. Calendars, blast-radius proof, and cutover stay on the delivery card. A slow PD or ECL backtest stays on the Bayesian optimisation card.
+
+A later book's first page opens on the earth, then the prose, and a picture follows the section it draws. The picture is that book's. The daily loop, the red main, the renamed field, the pyramid, and the release distinction stay on the SDLC book.
 
 ## Out of scope
 

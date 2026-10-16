@@ -497,6 +497,9 @@ function proseBlocks(
           {page.rule ? (
             <p className="mt-4 border-l border-cyan-300/70 pl-4 text-base leading-relaxed text-white">{page.rule}</p>
           ) : null}
+          <p className="mt-4 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
+            Checked {page.reviewed}
+          </p>
         </div>
       ),
     },

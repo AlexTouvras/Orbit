@@ -12,6 +12,7 @@ import {
   type FieldCardTokenPayload,
 } from "@/lib/field-card/tokens";
 import { requireFieldCardConfig } from "@/lib/field-card/registry";
+import { ensureAnalyticsHandbookLink } from "@/lib/field-card/handbook-link";
 import { ensureFieldCardRobot } from "@/lib/field-card/robot-tag";
 import {
   laconicChangeFromPrBody,
@@ -131,10 +132,11 @@ async function publishFieldCard(
   card: ReturnType<typeof requireFieldCardConfig>,
   message: string,
 ): Promise<"committed" | "no_github_storage"> {
-  const html = ensureFieldCardRobot(
+  const copied = ensureFieldCardRobot(
     await getRepoFileText(card.repo, "index.html", "main"),
     card.robotId,
   );
+  const html = card.id === "data-analytics" ? ensureAnalyticsHandbookLink(copied) : copied;
   if (!hasGithubStorage()) return "no_github_storage";
   await writeRepoFile(card.orbitPath, html, message);
   const root = card.orbitPath.slice(0, card.orbitPath.lastIndexOf("/"));
