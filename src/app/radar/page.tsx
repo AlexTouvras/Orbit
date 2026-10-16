@@ -9,12 +9,14 @@ import { readNewsCacheRemote } from "@/lib/news/cache-remote";
 import { relativeTime } from "@/lib/utils";
 import type { NewsCategory } from "@/lib/types";
 import { getEditableProfile } from "@/lib/profile-store";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 export const metadata: Metadata = {
   title: "Related articles",
   description:
     "Curated reading across AI, data, analytics, delivery, economics, and credit risk — aggregated from RSS and served from cache.",
   alternates: { canonical: "/radar" },
+  openGraph: pageOpenGraph("/radar"),
 };
 
 export const dynamic = "force-dynamic";

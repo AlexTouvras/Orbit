@@ -41,18 +41,15 @@ export async function generateMetadata(): Promise<Metadata> {
         ],
       },
     },
+    // Title, description, and url are filled from each page. Pinning them
+    // here makes every page that does not replace openGraph share as the homepage.
     openGraph: {
-      title: `${profile.name} — ${profile.role}`,
-      description: profile.tagline,
       type: "website",
-      url: siteUrl,
       siteName: "Orbit",
       locale: "en_US",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${profile.name} — ${profile.role}`,
-      description: profile.tagline,
     },
   };
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cv } from "@/content/cv";
+import { pageOpenGraph } from "@/lib/seo/share";
 import { getEditableProfile } from "@/lib/profile-store";
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactSection } from "@/components/contact/ContactSection";
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "A role in delivery, data, or AI automation. Or a system that produces results nobody has checked.",
   alternates: { canonical: "/contact" },
+  openGraph: pageOpenGraph("/contact"),
 };
 
 export default function ContactPage() {

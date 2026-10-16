@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { cv } from "@/content/cv";
+import { pageOpenGraph } from "@/lib/seo/share";
 import { profile as profileDefaults } from "@/content/profile";
 import { getEditableProfile } from "@/lib/profile-store";
 import { AboutHero } from "@/components/about/AboutHero";
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   title: "About",
   description: profileDefaults.aboutSummary,
   alternates: { canonical: "/about" },
+  openGraph: pageOpenGraph("/about"),
 };
 
 export default function AboutPage() {
