@@ -11,7 +11,8 @@
 - Portfolio: https://alextouvras.com/portfolio
 - Products: https://alextouvras.com/products
 - Handbooks: https://alextouvras.com/handbooks
-- Building intelligent systems (edition 1): https://alextouvras.com/handbooks/building-intelligent-systems
+- Software that stays in use: https://alextouvras.com/handbooks/software-that-stays-in-use/1
+- Data that drives decisions: https://alextouvras.com/handbooks/data-that-drives-decisions/1
 - Delivery Signal (live from the repo main branch): https://alextouvras.com/delivery-signal/
 - Identity card: https://alextouvras.com/card
 

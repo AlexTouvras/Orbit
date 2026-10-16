@@ -19,7 +19,7 @@ The layers do not repeat each other. A handbook does not paste a card, and it do
 
 Write the finished book. Do not narrate the draft. No sentence about how much is written, what the next page is waiting on, or that a source list was opened for the draft. A reference belongs next to the claim it supports. A personal rule is labeled as the author's rule. An established practice is attributed to the source.
 
-The library lists books that can be read. A title opens the first page of that book. Under the title, the row names the field card and the pages in the book. There is no cover route in front of the page. On screen, each page is one frame under the site header. Every leaf of the book uses that same frame. Left and right, or the arrow keys, turn the leaf. The page does not scroll. Turning is a cut, not an animation. The first page opens on the book over the limb of the earth. The shine sits on the limb. The words come next. Each picture follows the section it draws: the daily loop after the day, a red main after that section, the renamed-field scene after the illustrative break, the test pyramid after the tests, the four signals after how you would know, then the release distinction and the road from the field card to the portfolio after the limit. Each picture is its own leaf, and the leaf fills the width under the header. The loop is a column of cards, the signals and the release distinction stack, and the turn controls sit on the bottom edge of the page. A paragraph continues on the next leaf at a whole line, and that line sits inside the frame. A word is not split across leaves. A heading stays with the text under it, and a procedure continues one step at a time. The illustrative scene is a renamed field whose downstream test fails. The researched prose continues on later leaves of the same size. A concept image is not pasted in.
+The library lists books that can be read. A title opens the first page of that book. Under the title, the row names the field card and the pages in the book. There is no cover route in front of the page. On screen, each page is one frame under the site header. Every leaf of the book uses that same frame. Left and right, or the arrow keys, turn the leaf. The page does not scroll. Turning is a cut, not an animation. The words come after the opening leaf. That leaf is the book's own picture, and there is still no cover route in front of the page. Software that stays in use opens on the book over the limb of the earth, and the shine sits on the limb. Data that drives decisions opens on two reports stopped at a shut gate. Each picture follows the section it draws. On Software that stays in use those pictures are the daily loop after the day, a red main after that section, the renamed-field scene after the illustrative break, the test pyramid after the tests, the four signals after how you would know, then the release distinction and the road from the field card to the portfolio after the limit. On Data that drives decisions they are the day's sequence after the day, the two extracts after the illustrative break, and the four signals after how you would know. A picture states no amount the prose does not. Each picture is its own leaf, and the leaf fills the width under the header. The loop is a column of cards, the signals and the release distinction stack, and the turn controls sit on the bottom edge of the page. A paragraph continues on the next leaf at a whole line, and that line sits inside the frame. A word is not split across leaves. A heading stays with the text under it, and a procedure continues one step at a time. The illustrative scene on Software that stays in use is a renamed field whose downstream test fails. On Data that drives decisions it is two extracts of one title at two grains, and it states no amount. The researched prose continues on later leaves of the same size. A concept board is not pasted in.
 
 ## Editorial contract
 
@@ -37,13 +37,13 @@ Voice: direct, operational, first person for the author's judgment. Define a ter
 
 Evidence: cite the primary source, with its date or version, and only for a claim that source makes. A short link sits beside the claim and opens the section when the source has one. The page ends with one list of the works. Do not invent a metric, a client, or a result. A number you did not open does not go on the page. Say how you would tell the practice is working. That is a measure to track, not a result you do not have. Put the date you last checked the claims on the page.
 
-A figure is allowed when it carries the procedure: a loop, a decision, a shape. The words still work if the figure does not. No motion required to understand the page. The standard is the contract above. The diagrams, the section count, and the length change with the subject.
+A figure is allowed when it carries the procedure: a loop, a decision, a shape. A photograph is allowed when it draws that section and states no amount the prose does not. It belongs to that book. The words still work if the figure or the photograph does not. No motion required to understand the page. The standard is the contract above. The diagrams, the section count, and the length change with the subject.
 
 ## Series
 
 1. **Software that stays in use** — extends the SDLC field card. The library title opens `/handbooks/software-that-stays-in-use/1`, Keep main releasable. Page 2 is Fail for the right reason. Page 3 is The plan fits on a page. Page 4 is Run the version just verified. Page 5 is Use is the next change.
 2. Engineering reliable delivery — not in the library yet. For the technology delivery field card.
-3. Data that drives decisions — not in the library yet. For the data analytics field card.
+3. **Data that drives decisions** — extends the data analytics field card. The library title opens `/handbooks/data-that-drives-decisions/1`, Reconcile or block. Later pages stay unwritten.
 4. Decision systems under uncertainty — not in the library yet. For the credit risk field card.
 
 Calendars, blast-radius proof, and the cutover sequence stay on the delivery card. Do not add an eighth named practice to the SDLC card.
@@ -61,6 +61,8 @@ Each handbook URL appears once on the card. A later line that would open the sam
 - People run the version just verified opens page 4.
 - A defect, or what you learn in use, comes back as the next change opens page 5.
 
+The analytics field card opens Reconcile or block from the line that says you do not ship a number unless you can name the grain, the owner, and how to stop a bad publish. The reconciliation picture stays on the card. Approve copies the analytics sheet from its source repo and re-inserts that one link on the Orbit copy when the source HTML does not carry it.
+
 ## On a chapter
 
 Every chapter shows the field card, the handbook, and the previous and next chapter by title. Left and right still turn the leaf. The handbook title opens the library, where the book and its chapters are listed.
@@ -76,13 +78,17 @@ The line under those links says what the chapter is. It is how I would operate. 
 - `/handbooks/software-that-stays-in-use/3` — The plan fits on a page.
 - `/handbooks/software-that-stays-in-use/4` — Run the version just verified.
 - `/handbooks/software-that-stays-in-use/5` — Use is the next change. The first release is not the end. A lesson from use walks the same path. Calendars, blast-radius proof, and cutover stay on the delivery card.
+- `/handbooks/data-that-drives-decisions` — redirects to the first page.
+- `/handbooks/data-that-drives-decisions/1` — Reconcile or block. The page opens on two reports stopped at a shut gate, then the researched prose. The day's sequence follows that section. An illustrative break is two extracts of one title at two grains, labeled as not a record, and its picture states no amount. Four signals are defined, and there are no target times. The published figure is one grain after the difference is explained. It is not the midpoint of the two reports. Calendars, blast-radius proof, and cutover stay on the delivery card. A slow PD or ECL backtest stays on the Bayesian optimisation card.
+
+A later book's first page opens on that book's picture, then the prose, and a picture follows the section it draws. The earth, the daily loop, the red main, the renamed field, the pyramid, and the release distinction stay on Software that stays in use. The shut gate, the glass sequence, the two extracts, and the four-signal still life stay on Data that drives decisions.
 
 ## Out of scope
 
 - Mixing handbooks into `/writes` or `/stories`.
 - A chain handbook that treats every card as one parent.
 - Pasting the SDLC picture.
-- A cover, a status line, or a contents page in front of the book.
+- A separate cover route, a status line, or a contents page in front of the book.
 - A pasted concept board, a page-flip animation, or a Hub redesign.
 - Employer-confidential scenes. Synthetic only, labeled.
 - Publishing an empty route for a book that has no page yet.

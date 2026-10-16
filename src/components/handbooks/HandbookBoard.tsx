@@ -634,7 +634,7 @@ function sectionOf(page: HandbookPage, kind: HandbookFigure["kind"]) {
   return page.sections.find((section) => section.figure?.kind === kind);
 }
 
-function operatingLines(rule: string | undefined) {
+export function operatingLines(rule: string | undefined) {
   if (!rule) return [];
   const body = rule.replace(/^My operating rule:\s*/i, "").replace(/\.$/, "");
   return body.split(/,\s*/).map((part) => {

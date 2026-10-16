@@ -49,12 +49,20 @@ export interface HandbookFigure {
   columns?: HandbookFigureColumn[];
 }
 
+/** A photograph that follows a section, or opens the page. It states no amount the prose does not. */
+export interface HandbookPicture {
+  src: string;
+  alt: string;
+}
+
 export interface HandbookSection {
   id: string;
   title: string;
   paragraphs?: string[];
   steps?: string[];
   figure?: HandbookFigure;
+  /** This book's picture of the section. It is its own leaf after the words. */
+  picture?: HandbookPicture;
   sources?: HandbookLink[];
 }
 
@@ -75,8 +83,10 @@ export interface HandbookPage {
   story?: HandbookLink;
   /** Delivered work. Only when a portfolio piece is that work. */
   work?: HandbookLink;
-  /** Opening plate. The horizon is the first page's picture, not a cover route. */
+  /** Opening plate. The horizon is Software that stays in use. It is not a cover route. */
   plate?: "horizon";
+  /** This book's opening picture. It is the first leaf, not a route in front of the page. */
+  cover?: HandbookPicture;
   sections: HandbookSection[];
   sources: HandbookLink[];
 }
@@ -114,6 +124,8 @@ const SDLC_CARD = "/sdlc-field-card/index.html";
 const DELIVERY_CARD = "/delivery-field-card/index.html";
 const DATA_CARD = "/analytics-field-card/index.html";
 const CREDIT_CARD = "/credit-risk-field-card/index.html";
+const BAYES_CARD = "/bayes-field-card/index.html";
+const DATA_ART = "/handbook-art/data-that-drives-decisions";
 
 const FOWLER_CI = "https://martinfowler.com/articles/continuousIntegration.html";
 const TRUNK = "https://trunkbaseddevelopment.com/";
@@ -968,18 +980,199 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
   ],
 };
 
-export const HANDBOOKS: Handbook[] = [SOFTWARE_THAT_STAYS_IN_USE];
+const KIMBALL_GRAIN = source(
+  "https://www.kimballgroup.com/2003/03/declaring-the-grain/",
+  "Kimball, declaring the grain",
+);
+const KIMBALL_TECHNIQUES = source(
+  "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/",
+  "Kimball Group, grain",
+);
+const GAO_RECONCILE = source(
+  "https://www.gao.gov/assets/gao-25-107721.pdf",
+  "GAO Green Book, May 2025",
+);
+const DBT_BUILD = source(
+  "https://docs.getdbt.com/reference/commands/build",
+  "dbt, build skips downstream",
+);
+const DBT_SEVERITY = source(
+  "https://docs.getdbt.com/reference/resource-configs/severity",
+  "dbt, test severity",
+);
+
+export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
+  slug: "data-that-drives-decisions",
+  index: "03",
+  title: "Data that drives decisions",
+  thesis:
+    "A number can drive a decision when its grain, its owner, and the way to stop a bad publish are named. This book is how I keep that publish honest.",
+  card: { href: DATA_CARD, label: "Data analytics field card" },
+  contents: [{ title: "Reconcile or block", page: 1 }],
+  pages: [
+    {
+      number: 1,
+      topic: "Reconciliation",
+      title: "Reconcile or block",
+      lede: "Two reports can carry the same name and still disagree. Publishing one of them, or a third number between them, before the difference has a cause, gives a decision a figure it cannot defend.",
+      rule: "My operating rule: name the grain before the two reports are compared, explain the difference or block the publish, and do not publish a number between them.",
+      illustration: "The two extracts are an illustration, not a record.",
+      reviewed: "16 Oct 2026",
+      cover: {
+        src: `${DATA_ART}/gate.jpg`,
+        alt: "Two reports meet a shut gate. Nothing is published on the far side.",
+      },
+      sections: [
+        {
+          id: "disagreement",
+          title: "Why the number gets published",
+          paragraphs: [
+            "The decision needs a measure today. Two systems already show it, and the two figures differ. The short path is to read out the figure a person recognizes, or to place a third figure between them so the room has one number. That third figure becomes the baseline the next report is judged against. The difference leaves the room under a published name, still unexplained.",
+            "Kimball names the design error under that path. If the grain is not declared at the start, the design rests on quicksand, and rogue facts that introduce application errors sneak in. A fact has to be true to the grain. In his doctor-bill example, a year-to-date amount on a line-item row is not true to that grain. When a report combines the rows, the result is nonsense, and it is dangerous because it invites the reader to trust it. He says to omit that fact and calculate the aggregate in the application.",
+            "The techniques note states the constraint. Different grains must not be mixed in the same fact table. Each grain is its own table. I treat two reports at two grains as two contracts. One published figure that treats them as the same contract is the mistake that constraint is there to stop.",
+          ],
+          sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES],
+        },
+        {
+          id: "practice",
+          title: "The practice, and my rule",
+          paragraphs: [
+            "The principle is Kimball's. In the 2003 article, declaring the grain means saying what one record represents, in business terms. Listing the dimensions and treating that list as the declaration is the mistake he names in his students' designs. He calls the declaration a contract. The 2013 techniques note calls it a binding contract, and it says the grain is declared before the dimensions and the facts.",
+            "The control is the Green Book's: the GAO's Standards for Internal Control in the Federal Government, May 2025. Appendix II describes a reconciliation as identifying and comparing transactions from two sets of records, determining whether they were recorded properly, have yet to be recorded, or were recorded improperly and require correction, and explaining the differences. The two sets may both be internal, or one may be external, as in a bank reconciliation. Paragraph 10.04 includes comparisons that relate different sets of data so management can analyze the relationship and act, as a control over performance measures, and it includes comparing file totals with control accounts as a control over information processing. Paragraph 16.05 includes comparisons and reconciliations in ongoing monitoring.",
+            "Paragraph 10.10 calls a detective control the activity that discovers an unintended result and corrects it, and it says the usefulness of that control depends on the correction being timely. I use that timeliness as the reason the explanation happens before the publish. The standard does not describe a dashboard, and the block is my rule.",
+            "The mechanism that stops the next build is narrower, and it is dbt's. A test returns the rows it was written to catch. Unless it is configured otherwise, a nonzero count is an error. On the dbt build command I checked, an upstream test that fails skips the downstream resources. Set the severity to warn, or widen the threshold, and those resources run. A uniqueness test can pass on both reports while the reports still disagree. The test is how a check I have already named can stop the next model. The reconciliation is the comparison of the two statements.",
+            "My operating rule on that practice: name the grain before the two reports are compared, explain the difference or block the publish, and do not publish a number between them. The owner of the definition approves the grain. A green pipeline is not that approval. The analytics field card states the same stop. An unexplained gap stays dark, and a number is not shipped unless the grain, the owner, and the way to stop a bad publish are named. The card draws 4.8%, 6.2%, and 5.1%, and it says those figures are a picture of a disagreement, not a calculated portfolio result. In that picture the published figure is one grain after the difference is explained. It is not the midpoint of the two reports.",
+          ],
+          sources: [
+            KIMBALL_GRAIN,
+            KIMBALL_TECHNIQUES,
+            GAO_RECONCILE,
+            DBT_BUILD,
+            DBT_SEVERITY,
+            { href: DATA_CARD, label: "Data analytics field card" },
+          ],
+        },
+        {
+          id: "gate",
+          title: "The day",
+          paragraphs: [
+            "This is the order I use when a measure is about to be published. The grain is Kimball's. The comparison and the explanation are the Green Book's reconciliation. The skip, when a named check fails, is dbt's error severity, and I use that severity for a check that is supposed to stop the publish. The block, when the cause cannot be named, is my rule. A tolerance counts only when the owner wrote it down before the comparison.",
+          ],
+          picture: {
+            src: `${DATA_ART}/day.jpg`,
+            alt: "A grain, the two statements brought together, the crack between them, then one lit sheet or a stopped one.",
+          },
+          steps: [
+            "Grain. State what one row represents, in business terms: the unit, the time, the scope, and the definition. A list of dimensions does not finish this step. Done when a person who will use the number can restate the row.",
+            "Second statement. Bring the other report to that grain. If it will not sit there, keep it as a different measure. Different grains are different tables. Done when the second statement is at the declared grain, or it has been set aside.",
+            "Compare. List the differences between the two sets of records. For each one, ask whether it was recorded properly, not yet recorded, or recorded improperly. Done when every difference sits inside the tolerance the owner already wrote down, or is on the list.",
+            "Cause. Name each listed difference: grain, scope, definition, timing, a missing record, or a defect. The explanation is part of the reconciliation. Done when each difference has a cause, or it is the difference that blocks the publish.",
+            "Resolve. Fix the cause, or have the owner accept it in writing against the declared grain. A number placed between the two reports is not a resolution. A fact the grain does not support invites the reader to trust it. Done when one grain is the candidate to publish, and the other statement is explained or out of scope.",
+            "Publish or block. If a cause cannot be named, do not publish. The previous published figure stays, or the measure stays dark. When the check that encodes this gate is a dbt test, I set it to error so the downstream resource skips. Warn lets that resource run, so I do not use warn for this gate. Done when the publish carries the one approved grain, or the publish did not happen.",
+          ],
+          sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES, GAO_RECONCILE, DBT_BUILD, DBT_SEVERITY],
+        },
+        {
+          id: "illustration",
+          title: "An illustrative break",
+          paragraphs: [
+            "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
+            "Two extracts are both titled overdue balance. In one, a row is an account at month-end, and charged-off accounts are out of scope. In the other, a row is an invoice as of yesterday, and charged-off accounts are in scope. The totals differ because the grains differ. Until the owner names one grain as the published measure, both extracts stay dark. A figure placed between the two totals would be true to neither grain.",
+          ],
+          picture: {
+            src: `${DATA_ART}/extracts.jpg`,
+            alt: "An illustration. One ledger and a scatter of slips. No amount.",
+          },
+        },
+        {
+          id: "inspect",
+          title: "What I inspect",
+          paragraphs: [
+            "These are the questions I ask. They are my check, not a list Kimball or the GAO published.",
+          ],
+          steps: [
+            "Can a person who will use the number say what one row represents, in business terms, before the comparison? Look at that sentence. A list of dimensions is not the answer.",
+            "Does the second statement sit at that grain? If it does not, the page is holding two measures.",
+            "Is every difference either inside a tolerance the owner wrote down before seeing the gap, or listed with a cause?",
+            "When a cause cannot be named, does the publish stop? Look at the run that was supposed to publish, and at whether the next step was skipped or the measure stayed dark.",
+            "Who approved the definition? A passing test is not that name.",
+          ],
+        },
+        {
+          id: "know",
+          title: "How I would know",
+          paragraphs: [
+            "I track four signals. I have no target times, and these definitions are not results I have collected. A green build that leaves two definitions of the same measure in use is not the practice.",
+            "Open disagreements are published measures whose second statement differs, and the difference is not yet named.",
+            "Time open runs from the difference appearing until it is explained or the publish is blocked.",
+            "Blocked publishes are the times the gate stopped a number that would otherwise have shipped.",
+            "Owned definitions are measures whose grain has a named owner.",
+          ],
+          picture: {
+            src: `${DATA_ART}/signals.jpg`,
+            alt: "A broken piece, a clock, a closed shutter, and a blank seal. Definitions, not results.",
+          },
+        },
+        {
+          id: "elsewhere",
+          title: "Where I do not use it",
+          paragraphs: [
+            "An investigation that will not be published can hold two cuts while the cause is still unknown. This page blocks the publish.",
+            "The Green Book's reconciliation compares two sets of records. One statement, with no second set, is a different control. A uniqueness test on that statement can still be an error that skips the next model. That is the dbt mechanism on a single statement.",
+            "Kimball says an aggregate is used together with the atomic data it came from, because the aggregate carries less detail. I keep them as two grains. I do not fold them into one cell so a chart has a single figure.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. This page stops the number. It does not choose the window.",
+            "A slow PD or ECL backtest, and the search over that backtest, stay on the Bayesian optimisation card. This page starts when two reports of a measure disagree.",
+            "The Green Book ties a detective control to a correction that is timely. I place that correction before the number is published. A reconciliation that begins after the decision has already used the number is a review of a figure that shipped.",
+          ],
+          sources: [
+            KIMBALL_GRAIN,
+            GAO_RECONCILE,
+            DBT_BUILD,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+      ],
+      sources: [
+        source(
+          "https://www.kimballgroup.com/2003/03/declaring-the-grain/",
+          "Ralph Kimball, Declaring the Grain (1 Mar 2003)",
+        ),
+        source(
+          "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/",
+          "Kimball Group, Grain, Dimensional Modeling Techniques (Sep 2013)",
+        ),
+        source(
+          "https://www.kimballgroup.com/wp-content/uploads/2013/08/2013.09-Kimball-Dimensional-Modeling-Techniques11.pdf",
+          "Kimball Group, Dimensional Modeling Techniques PDF (Sep 2013)",
+        ),
+        source(
+          "https://www.gao.gov/assets/gao-25-107721.pdf",
+          "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025)",
+        ),
+        source(
+          "https://docs.getdbt.com/reference/commands/build",
+          "dbt Developer Hub, dbt build, skipping on failures (read 16 Oct 2026)",
+        ),
+        source(
+          "https://docs.getdbt.com/reference/resource-configs/severity",
+          "dbt Developer Hub, test severity (read 16 Oct 2026)",
+        ),
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+  ],
+};
+
+export const HANDBOOKS: Handbook[] = [SOFTWARE_THAT_STAYS_IN_USE, DATA_THAT_DRIVES_DECISIONS];
 
 export const LATER_HANDBOOKS: LaterHandbook[] = [
   {
     index: "02",
     title: "Engineering reliable delivery",
     card: { href: DELIVERY_CARD, label: "Technology delivery field card" },
-  },
-  {
-    index: "03",
-    title: "Data that drives decisions",
-    card: { href: DATA_CARD, label: "Data analytics field card" },
   },
   {
     index: "04",
