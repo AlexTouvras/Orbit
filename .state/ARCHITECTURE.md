@@ -160,7 +160,7 @@ data/studio-roadmap.json
 data/studio-roadmap.seed.json
 PRODUCT.md
 docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, HANDBOOKS, AGENT_RULES
-src/content/handbooks.ts     # handbook series; SDLC book and analytics page 1
+src/content/handbooks.ts     # handbook series; SDLC book and analytics pages 1–2
 public/handbook-art/data-that-drives-decisions/  # this book's cover and section pictures
 src/lib/field-card/handbook-link.ts  # re-insert the analytics chapter link on Approve sync
 src/lib/handbooks.ts
@@ -177,6 +177,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-16 | Handbook 03 pages 1 and 2 are a record and a brief | Reconcile or block is the meeting record for a publish offered as an answer. A blank field stops the publish. Name the decision is the brief that names the decision, the actor, both moves, and the one process before the grain. The same overdue-balance illustration runs through both pages and states no amount. An exploration that is not offered as an answer stays off the publish. The glass sequence follows the record. The two chairs follow the scene. Amber labels and the amber frame follow every page of a book that opens on its own cover. The numbered day on these two pages is retired. The words still read if a picture is missing. |
 | 2026-10-16 | Handbook 03 page 1 is the publish you can explain | Data that drives decisions opens on Reconcile or block. The analytics kill line is the one link, and Approve re-inserts it when the source repo's HTML does not carry it. Two reports at two grains are not averaged into a third figure. Each page shows its `reviewed` date under the rule, as Checked. Sources checked 16 Oct 2026: Kimball, Declaring the Grain (1 Mar 2003); Kimball Group grain techniques (Sep 2013); GAO-25-107721 (May 2025); dbt build and test severity. |
 | 2026-10-16 | Handbook 03 page 2 names the decision before the grain | Name the decision is the second page. Kimball's four-step design selects the business process before the grain. The GAO Results Act guide, GAO/GGD-10.1.20 (April 1998), requires a measure to represent the performance it assesses. The author's rule names the decision, the actor, and the move, and does not publish the measure as an answer until those are named. The Ask failure on the analytics card is the one link to that page, and Approve re-inserts it. The picture is one lit sheet and two chairs. Reconcile or block still owns a disagreement between two reports. |
 | 2026-10-16 | Handbook 03 has its own pictures | The earth and the cyan plates stay on Software that stays in use. Data that drives decisions opens on a shut gate. The day's glass sequence, the two extracts, and the four signals are photographs after those sections, under `public/handbook-art/data-that-drives-decisions/`. They carry no metric. A concept board is not pasted in. The numbered day stays in the prose, so the page still reads if a picture is missing. |

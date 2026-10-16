@@ -66,9 +66,10 @@ export function HandbookBook({
   const [leaves, setLeaves] = useState<PackedLeaf[]>([]);
   const [index, setIndex] = useState(0);
   const [narrow, setNarrow] = useState(false);
+  const warm = handbook.pages.some((item) => item.cover);
   const blocks = useMemo(
-    () => proseBlocks(page, showFeedback, feedbackSlug, feedbackEntries, narrow),
-    [page, showFeedback, feedbackSlug, feedbackEntries, narrow],
+    () => proseBlocks(page, showFeedback, feedbackSlug, feedbackEntries, narrow, warm),
+    [page, showFeedback, feedbackSlug, feedbackEntries, narrow, warm],
   );
   const shown = useMemo(
     () => composeLeaves(leaves, blocks, page.plate === "horizon", page.cover),
@@ -227,7 +228,7 @@ export function HandbookBook({
       </TurnButton>
       <div
         className={`flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden border-y bg-[#040914] lg:rounded-md lg:border ${
-          page.cover
+          warm
             ? "border-amber-200/30 lg:shadow-[0_0_60px_-28px_rgba(251,191,36,0.4)]"
             : "border-cyan-300/25 lg:shadow-[0_0_60px_-28px_rgba(34,211,238,0.45)]"
         }`}
@@ -406,7 +407,13 @@ function piecesIn(nodes: HTMLElement[], blocks: Block[], origin: number, budget:
   nodes.forEach((node, index) => {
     const key = blocks[index]?.key ?? "";
     const title = key.endsWith("-title");
-    const whole = title || key === "notes" || key.endsWith("-figure") || /-step-\d+$/.test(key) || /-flow-\d+$/.test(key);
+    const whole =
+      title ||
+      key === "notes" ||
+      key.endsWith("-figure") ||
+      /-step-\d+$/.test(key) ||
+      /-line-\d+$/.test(key) ||
+      /-flow-\d+$/.test(key);
     const top = node.offsetTop;
     const bottom = top + node.offsetHeight;
     const lines = lineBoxes(node, origin).filter((line) => line.bottom > top + 0.5 && line.top < bottom + 0.5);
@@ -579,6 +586,7 @@ function proseBlocks(
   feedbackSlug: string,
   feedbackEntries: EssayFeedbackEntry[],
   narrow: boolean,
+  warm: boolean,
 ): Block[] {
   const blocks: Block[] = [
     {
@@ -591,7 +599,7 @@ function proseBlocks(
           {page.rule ? (
             <p
               className={`mt-4 border-l pl-4 text-base leading-relaxed text-white ${
-                page.cover ? "border-amber-200/80" : "border-cyan-300/70"
+                warm ? "border-amber-200/80" : "border-cyan-300/70"
               }`}
             >
               {page.rule}
@@ -616,7 +624,7 @@ function proseBlocks(
           </h2>
         ),
       },
-      ...sectionBlocks(section, page.plate === "horizon", narrow, Boolean(page.cover)),
+      ...sectionBlocks(section, page.plate === "horizon", narrow, warm),
     ];
     const plates = page.plate === "horizon" ? PLATES_AFTER[section.id] : undefined;
     const tail = parts[parts.length - 1];
@@ -662,6 +670,24 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
       sectionId: section.id,
       sectionTitle: section.title,
       node: <p className="pb-4 text-base leading-relaxed text-slate-300">{paragraph}</p>,
+    });
+  });
+  section.lines?.forEach((line, index) => {
+    const tone = warm ? "text-amber-200" : "text-cyan-200";
+    const rule = warm ? "border-amber-200/50" : "border-cyan-300/40";
+    blocks.push({
+      key: `${section.id}-line-${index}-title`,
+      sectionId: section.id,
+      sectionTitle: section.title,
+      node: (
+        <p className={`pt-1 font-mono text-[0.65rem] uppercase tracking-[0.16em] ${tone}`}>{line.term}</p>
+      ),
+    });
+    blocks.push({
+      key: `${section.id}-line-${index}`,
+      sectionId: section.id,
+      sectionTitle: section.title,
+      node: <p className={`border-l pb-4 pl-4 text-base leading-relaxed text-slate-300 ${rule}`}>{line.detail}</p>,
     });
   });
   if (section.figure && !(hideBoardFigure && BOARD_FIGURES.has(section.figure.kind))) {

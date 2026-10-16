@@ -60,6 +60,8 @@ export interface HandbookSection {
   title: string;
   paragraphs?: string[];
   steps?: string[];
+  /** A meeting worksheet. Each line is one field. A blank field is the check. */
+  lines?: { term: string; detail: string }[];
   figure?: HandbookFigure;
   /** This book's picture of the section. It is its own leaf after the words. */
   picture?: HandbookPicture;
@@ -1033,7 +1035,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 1,
       topic: "Reconciliation",
       title: "Reconcile or block",
-      lede: "Two reports can carry the same name and still disagree. Publishing one of them, or a third number between them, before the difference has a cause, gives a decision a figure it cannot defend.",
+      lede: "This page is a publish offered as an answer. Two reports can carry the same name and still disagree. Publishing one of them, or a third number between them, before the difference has a cause, gives that decision a figure it cannot defend. An exploration, a monitor, or a search that is not offered as the answer can keep both cuts. This page starts when the decision is already named on Name the decision, or when two reports are already being offered as the answer and the figures disagree.",
       rule: "My operating rule: name the grain before the two reports are compared, explain the difference or block the publish, and do not publish a number between them.",
       illustration: "The two extracts are an illustration, not a record.",
       reviewed: "16 Oct 2026",
@@ -1072,23 +1074,47 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           ],
         },
         {
-          id: "gate",
-          title: "The day",
+          id: "record",
+          title: "The record",
           paragraphs: [
-            "This is the order I use when a measure is about to be published. The grain is Kimball's. The comparison and the explanation are the Green Book's reconciliation. The skip, when a named check fails, is dbt's error severity, and I use that severity for a check that is supposed to stop the publish. The block, when the cause cannot be named, is my rule. A tolerance counts only when the owner wrote it down before the comparison.",
+            "This is the worksheet I take into the meeting when a measure is about to be published as an answer. A blank field stops the publish. The grain is Kimball's. The comparison and the explanation are the Green Book's reconciliation. The skip, when a named check fails, is dbt's error severity, and I use that severity for a check that is supposed to stop the publish. The block, when the cause cannot be named, is my rule. A tolerance counts only when the owner wrote it down before the comparison.",
+          ],
+          lines: [
+            {
+              term: "Grain",
+              detail:
+                "What one row represents, in business terms: the unit, the time, the scope, and the definition. A list of dimensions does not finish the field. It is filled when a person who will use the number can restate the row. Otherwise it stays blank, and the publish stops.",
+            },
+            {
+              term: "Second statement",
+              detail:
+                "The other report, brought to that grain. If it will not sit there, set it aside as a different measure. Different grains are different tables. The field is filled when the second statement is at the declared grain, or it has been set aside.",
+            },
+            {
+              term: "Differences",
+              detail:
+                "Each difference between the two sets of records: recorded properly, not yet recorded, or recorded improperly. It sits inside a tolerance the owner wrote down before the comparison, or it is on the list. A blank list with a visible gap is not filled.",
+            },
+            {
+              term: "Cause",
+              detail:
+                "For each listed difference: grain, scope, definition, timing, a missing record, or a defect. The explanation is part of the reconciliation. A difference without a cause is the one that blocks the publish.",
+            },
+            {
+              term: "Resolution",
+              detail:
+                "The cause fixed, or accepted in writing by the owner against the declared grain. A number placed between the two reports is not a resolution. A fact the grain does not support invites the reader to trust it. One grain is the candidate, and the other statement is explained or out of scope.",
+            },
+            {
+              term: "Publish or block",
+              detail:
+                "If a cause cannot be named, do not publish. The previous published figure stays, or the measure stays dark. When the check that encodes this gate is a dbt test, set it to error so the downstream resource skips. Warn lets that resource run, so I do not use warn for this gate. The publish carries the one approved grain, or it did not happen.",
+            },
           ],
           picture: {
             src: `${DATA_ART}/day.jpg`,
             alt: "A grain, the two statements brought together, the crack between them, then one lit sheet or a stopped one.",
           },
-          steps: [
-            "Grain. State what one row represents, in business terms: the unit, the time, the scope, and the definition. A list of dimensions does not finish this step. Done when a person who will use the number can restate the row.",
-            "Second statement. Bring the other report to that grain. If it will not sit there, keep it as a different measure. Different grains are different tables. Done when the second statement is at the declared grain, or it has been set aside.",
-            "Compare. List the differences between the two sets of records. For each one, ask whether it was recorded properly, not yet recorded, or recorded improperly. Done when every difference sits inside the tolerance the owner already wrote down, or is on the list.",
-            "Cause. Name each listed difference: grain, scope, definition, timing, a missing record, or a defect. The explanation is part of the reconciliation. Done when each difference has a cause, or it is the difference that blocks the publish.",
-            "Resolve. Fix the cause, or have the owner accept it in writing against the declared grain. A number placed between the two reports is not a resolution. A fact the grain does not support invites the reader to trust it. Done when one grain is the candidate to publish, and the other statement is explained or out of scope.",
-            "Publish or block. If a cause cannot be named, do not publish. The previous published figure stays, or the measure stays dark. When the check that encodes this gate is a dbt test, I set it to error so the downstream resource skips. Warn lets that resource run, so I do not use warn for this gate. Done when the publish carries the one approved grain, or the publish did not happen.",
-          ],
           sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES, GAO_RECONCILE, DBT_BUILD, DBT_SEVERITY],
         },
         {
@@ -1096,26 +1122,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An illustrative break",
           paragraphs: [
             "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
-            "Two extracts are both titled overdue balance. In one, a row is an account at month-end, and charged-off accounts are out of scope. In the other, a row is an invoice as of yesterday, and charged-off accounts are in scope. The totals differ because the grains differ. Until the owner names one grain as the published measure, both extracts stay dark. A figure placed between the two totals would be true to neither grain.",
+            "The decision in the room is whether to extend terms. That decision is the brief on Name the decision, written against an extract titled overdue balance, where a row is an open invoice as of yesterday. A second extract of the same title then arrives. In one, a row is an account at month-end, and charged-off accounts are out of scope. In the other, a row is an invoice as of yesterday, and charged-off accounts are in scope. The record cannot be filled with one grain. The cause is the grain. Until the owner names one grain as the published measure, both extracts stay dark. A figure placed between the two totals would be true to neither grain.",
           ],
           picture: {
             src: `${DATA_ART}/extracts.jpg`,
             alt: "An illustration. One ledger and a scatter of slips. No amount.",
           },
-        },
-        {
-          id: "inspect",
-          title: "What I inspect",
-          paragraphs: [
-            "These are the questions I ask. They are my check, not a list Kimball or the GAO published.",
-          ],
-          steps: [
-            "Can a person who will use the number say what one row represents, in business terms, before the comparison? Look at that sentence. A list of dimensions is not the answer.",
-            "Does the second statement sit at that grain? If it does not, the page is holding two measures.",
-            "Is every difference either inside a tolerance the owner wrote down before seeing the gap, or listed with a cause?",
-            "When a cause cannot be named, does the publish stop? Look at the run that was supposed to publish, and at whether the next step was skipped or the measure stayed dark.",
-            "Who approved the definition? A passing test is not that name.",
-          ],
         },
         {
           id: "know",
@@ -1126,6 +1138,22 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Time open runs from the difference appearing until it is explained or the publish is blocked.",
             "Blocked publishes are the times the gate stopped a number that would otherwise have shipped.",
             "Owned definitions are measures whose grain has a named owner.",
+            "The register is how a meeting records the signals. The row that follows is written for the illustration on this page. It is not a result I collected, and it states no amount.",
+          ],
+          lines: [
+            { term: "Measure", detail: "Overdue balance. No amount is written." },
+            {
+              term: "Owner",
+              detail: "The role that would approve the grain. In the illustration the role is not named, so the field stays blank.",
+            },
+            { term: "Baseline", detail: "Nothing is published. Two extracts carry the same title." },
+            {
+              term: "Unresolved",
+              detail:
+                "The grains differ. One row is an account at month-end, and charged-off accounts are out of scope. The other is an invoice as of yesterday, and charged-off accounts are in scope.",
+            },
+            { term: "Action", detail: "Block the publish." },
+            { term: "Outcome", detail: "The publish did not happen. Both extracts stay dark." },
           ],
           picture: {
             src: `${DATA_ART}/signals.jpg`,
@@ -1136,12 +1164,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "elsewhere",
           title: "Where I do not use it",
           paragraphs: [
-            "An investigation that will not be published can hold two cuts while the cause is still unknown. This page blocks the publish.",
+            "An exploration, a monitor, or a search that is not offered as the answer can hold two cuts while the cause is still unknown. That is the opening of this page. This page blocks the publish that is offered as an answer.",
             "The Green Book's reconciliation compares two sets of records. One statement, with no second set, is a different control. A uniqueness test on that statement can still be an error that skips the next model. That is the dbt mechanism on a single statement.",
             "Kimball says an aggregate is used together with the atomic data it came from, because the aggregate carries less detail. I keep them as two grains. I do not fold them into one cell so a chart has a single figure.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. This page stops the number. It does not choose the window.",
             "A slow PD or ECL backtest, and the search over that backtest, stay on the Bayesian optimisation card. This page starts when two reports of a measure disagree.",
             "The Green Book ties a detective control to a correction that is timely. I place that correction before the number is published. A reconciliation that begins after the decision has already used the number is a review of a figure that shipped.",
+            "This page stops a publish whose two statements disagree. It does not operate the pipeline that keeps an agreed definition current.",
           ],
           sources: [
             KIMBALL_GRAIN,
@@ -1186,7 +1215,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 2,
       topic: "The question",
       title: "Name the decision",
-      lede: "A measure can reconcile and still be the wrong answer. Publishing it before the decision is named gives that decision a figure it was not built for.",
+      lede: "This page is a measure offered as the answer to a decision. A measure can reconcile and still be the wrong answer. Publishing it before the decision is named gives that decision a figure it was not built for. Exploration, monitoring, and discovery can continue without a named decision. They are not this publish. When two reports of a measure already offered as an answer disagree, that difference is the record on Reconcile or block.",
       rule: "My operating rule: name the decision, the person who will act, and what they would do if the number moved, before the grain is declared, and do not publish the measure as the answer to a decision that was not named.",
       illustration: "The two chairs are an illustration, not a record.",
       reviewed: "16 Oct 2026",
@@ -1212,18 +1241,41 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           sources: [KIMBALL_STEPS, KIMBALL_PDF, { href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
-          id: "question-day",
-          title: "The day",
+          id: "brief",
+          title: "The brief",
           paragraphs: [
-            "This is the order I use before I declare a grain for a measure that is about to be offered as an answer. The process is Kimball's. The relation between the measure and the goal is the shape of the GAO criterion. The stop, when the decision cannot be named, is my rule. Reconcile or block still owns a disagreement between two reports.",
+            "This is the worksheet I take into the meeting before I declare a grain for a measure that will be offered as an answer. A blank line means the measure is not published as that answer. The process is Kimball's. The relation between the measure and the goal is the shape of the GAO criterion. The stop, when the decision cannot be named, is my rule. The grain is declared only after these lines are filled. A disagreement between two reports is filled on Reconcile or block, not on this brief.",
           ],
-          steps: [
-            "Decision. State the decision in the words of the person who will act. A report title does not finish this step. Done when someone who was not in the room can restate what is being decided.",
-            "Actor. Name who will act. A distribution list is not the actor. Done when one person, or one role, is the one whose action changes.",
-            "Move. State what that person would do if the number went up, and what they would do if it went down. If neither changes an action, this measure is not the answer to that decision. Done when both moves are written, or the measure has been set aside for this decision.",
-            "Process. Select the one operational activity that generates the metric. If the decision needs the results of two activities, they are two measures. Done when one process is named, or the decision has been split.",
-            "Grain. Only then declare what one row represents, in business terms. A disagreement between two reports goes to Reconcile or block. This page does not publish a number between them. Done when the grain is declared for the one process, or the measure has been set aside.",
-            "Stop. If the decision, the actor, or the move cannot be named, do not publish the measure as that decision's answer. The table may stay. It is not the answer. Done when the publish names the decision, or the publish as an answer did not happen.",
+          lines: [
+            {
+              term: "Decision",
+              detail:
+                "The decision, in the words of the person who will act. A report title does not finish the line. It is filled when someone who was not in the room can restate what is being decided. Otherwise it stays blank.",
+            },
+            {
+              term: "Actor",
+              detail: "Who will act. One person, or one role, whose action changes. A distribution list is not the actor.",
+            },
+            {
+              term: "Move if it rises",
+              detail:
+                "What that person would do if the number went up. If the action does not change, this measure is not the answer to that decision.",
+            },
+            {
+              term: "Move if it falls",
+              detail:
+                "What that person would do if the number went down. Both moves are written, or the measure is set aside for this decision.",
+            },
+            {
+              term: "Process",
+              detail:
+                "The one operational activity that generates the metric. If the decision needs the results of two activities, they are two measures. The line is filled when one process is named, or the decision has been split.",
+            },
+            {
+              term: "Publish as an answer",
+              detail:
+                "Only when the lines above are filled. If the decision, the actor, or a move is blank, the table may stay, and it is not the answer. This brief does not publish a number between two reports.",
+            },
           ],
           sources: [KIMBALL_PROCESS, KIMBALL_STEPS, GAO_RESULTS],
         },
@@ -1232,26 +1284,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An illustrative break",
           paragraphs: [
             "This is an illustrative scenario. It is not a record of a portfolio I measured, and it states no amount.",
-            "One extract is an open invoice as of yesterday. The grain is agreed, and there is no second report in the room. Two decisions are. One person will choose which customers to call. Another will decide whether to extend terms on an invoice. The rows can be true to the grain. They can answer the terms decision, because that decision is about an invoice. They are not, by themselves, the call list, because a call is a customer and this row is an invoice. Until the room names which decision this publish is for, the extract stays dark.",
+            "One extract is titled overdue balance. A row is an open invoice as of yesterday. The grain of that extract is agreed, and there is no second report in the room. Two decisions are. One person will choose which customers to call. Another will decide whether to extend terms on an invoice. The rows can answer the terms decision, because that decision is about an invoice. They are not, by themselves, the call list, because a call is a customer and this row is an invoice. The brief's decision line stays blank until the room names which decision this publish is for, and the extract stays dark.",
+            "If the room names the terms decision, and a second extract of the same title arrives as an account at month-end with charged-off accounts out of scope, that disagreement is the record on Reconcile or block. This page does not choose a number between them.",
           ],
           picture: {
             src: `${DATA_ART}/decision.jpg`,
             alt: "An illustration. One sheet of light, one chair in that light, and one chair left dark. No amount.",
           },
-        },
-        {
-          id: "question-inspect",
-          title: "What I inspect",
-          paragraphs: [
-            "These are the questions I ask. They are my check, not a list Kimball or the GAO published.",
-          ],
-          steps: [
-            "Can the person who will act restate the decision, before anyone declares the grain?",
-            "Is the actor a person or a role? A distribution list is not the answer.",
-            "Are both moves written: what changes if the number goes up, and what changes if it goes down?",
-            "Does the metric come from one business process? If a second process is required, has the decision been split into two measures?",
-            "When the decision, the actor, or the move is missing, does the publish as an answer stop? The table may still exist.",
-          ],
         },
         {
           id: "question-know",
@@ -1262,6 +1301,20 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Written moves are measures where the actor has written what changes if the number goes up, and what changes if it goes down.",
             "Parked answers are the times a measure stayed unpublished as an answer because the decision, the actor, or the move was missing.",
             "Single process means the metric comes from one named business process.",
+            "The register is how a meeting records the signals. The row that follows is written for the illustration on this page. It is not a result I collected, and it states no amount.",
+          ],
+          lines: [
+            { term: "Measure", detail: "Overdue balance, one extract of open invoices. No amount is written." },
+            {
+              term: "Decision",
+              detail: "Blank. The room has not named whether this publish is the call list or the terms decision.",
+            },
+            {
+              term: "Actor",
+              detail: "Two roles are in the room. Neither is written as the actor for this publish.",
+            },
+            { term: "Action", detail: "Do not publish the extract as an answer." },
+            { term: "Outcome", detail: "The extract stayed dark." },
           ],
         },
         {
@@ -1270,9 +1323,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "Two reports that disagree stay on Reconcile or block. This page does not choose a number between them, and it does not replace the named owner of a definition.",
             "Kimball encourages an atomic grain because it withstands questions you did not plan, and a summary grain presupposes the questions people already share. A table at the atomic grain of a process may exist before a decision is named. I do not offer that table as the answer to a decision I have not named.",
-            "An investigation that will not be published can look through a process before anyone has a decision. This page blocks the publish as an answer.",
+            "Exploration, monitoring, and discovery can continue without a named decision, and an investigation that will not be published can look through a process before anyone has one. That is the opening of this page. This page blocks the publish as an answer.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow PD or ECL backtest stays on the Bayesian optimisation card.",
             "The GAO guide assesses an agency performance plan. I am not running its evaluator's checklist against a report. I am using the relation it requires between a measure and the performance that measure is supposed to assess.",
+            "This page names the decision a published measure is for. It does not operate the pipeline that keeps an agreed definition current.",
           ],
           sources: [
             KIMBALL_TECHNIQUES,
