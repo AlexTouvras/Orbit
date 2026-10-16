@@ -32,7 +32,7 @@ describe("analytics handbook link", () => {
   it("links the ask failure once, even when the kill line is already linked", () => {
     const html = `<p class="kill"><a href="${RECONCILE}">Do not ship.</a></p><p class="fail"><b>Failure mode</b> ${ASK}</p>`;
     const next = ensureAnalyticsHandbookLink(html);
-    assert.match(next, new RegExp(`<a href="${DECISION}">${ASK}</a>`));
+    assert.match(next, new RegExp(`<a href="${DECISION}" data-handbook-chapter="decision">${ASK}</a>`));
     assert.equal(next.match(new RegExp(DECISION, "g"))?.length, 1);
     assert.equal(ensureAnalyticsHandbookLink(next), next);
   });
@@ -45,7 +45,7 @@ describe("analytics handbook link", () => {
   it("adds one click guard when the ask chapter is linked inside a document", () => {
     const html = `<body><p class="fail"><b>Failure mode</b> ${ASK}</p></body>`;
     const next = ensureAnalyticsHandbookLink(html);
-    assert.match(next, /data-handbook-ask/);
+    assert.match(next, /data-handbook-ask-guard/);
     assert.equal(ensureAnalyticsHandbookLink(next), next);
   });
 });
