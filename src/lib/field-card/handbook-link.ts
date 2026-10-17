@@ -4,10 +4,12 @@
  * link once unless the sheet already carries it.
  */
 
-const DECISION = "/handbooks/data-that-drives-decisions/1";
-const GRAIN = "/handbooks/data-that-drives-decisions/2";
-const RECONCILE = "/handbooks/data-that-drives-decisions/3";
-const KEEP = "/handbooks/data-that-drives-decisions/4";
+const PATH = "/handbooks/data-that-drives-decisions/1";
+const DECISION = "/handbooks/data-that-drives-decisions/2";
+const GRAIN = "/handbooks/data-that-drives-decisions/3";
+const RECONCILE = "/handbooks/data-that-drives-decisions/4";
+const KEEP = "/handbooks/data-that-drives-decisions/5";
+const PATH_HEADING = "From question to decision";
 const ASK_SENTENCE = "Wrong question, wrong audience, or an unclear decision.";
 const GRAIN_SENTENCE = "Mismatched grain, inconsistent definitions, incomplete scope.";
 const OWNER_SENTENCE = "A named owner approves the definition";
@@ -19,6 +21,12 @@ const GUARD_BODY =
 
 export function ensureAnalyticsHandbookLink(html: string): string {
   let next = html;
+  if (!next.includes(PATH)) {
+    const at = next.indexOf(PATH_HEADING);
+    if (at >= 0 && !anchorIsOpen(next, at)) {
+      next = `${next.slice(0, at)}<a href="${PATH}">${PATH_HEADING}</a>${next.slice(at + PATH_HEADING.length)}`;
+    }
+  }
   if (!next.includes(RECONCILE)) {
     const pattern = /<p class="kill">([\s\S]*?)<\/p>/;
     const match = pattern.exec(next);

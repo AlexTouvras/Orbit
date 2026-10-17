@@ -72,7 +72,8 @@
 - [x] **Handbook 03 reading order** — the book opens on Name the decision. When two reports don't match is page 2. The three written pages are in ordinary words (2026-10-17).
 - [x] **Handbook 03, Say what one row means** — page 2. The thing, the time, what is included, and what is left out. The grain failure opens it (2026-10-17).
 - [x] **Handbook 03 shape** — Ask, Grain, Truth, Use, opening on the capability rather than a failure. Existing pages are mapped. Lineage, freshness, and Use have no source yet (2026-10-17). Owner: `docs/product/HANDBOOKS.md`.
-- [ ] **Handbook 03 opening** — what good looks like, before any failure. No route until that page is the one being written. Do not write Hand the number over, and do not append another practice page, until this opening exists.
+- [x] **Handbook 03 opening** — What good looks like, `/handbooks/data-that-drives-decisions/1` (2026-10-17). The four earlier pages moved down. Owner: `docs/product/HANDBOOKS.md`.
+- [ ] **Handbook 03, Name the decision** — revise the first paragraphs so the failure comes after the question is named. Do not write Hand the number over before that.
 - [x] **Orbit 2.0 Foundation** — shipped to `main` (`6892531` / Gate 3). Product docs, AI & Data Systems Lead positioning, Studio `/studio/roadmap`. Card keeps STATEMENT only (no NOW box). Website infra = EVIDENCE; career archetype not PROVEN.
 - [ ] **Orbit 2.0 Evidence Layer** — (1) ~~audit~~ draft in `docs/product/EVIDENCE_AUDIT.md` (owner review), (2) ~~name flagship~~ owner selected **Interactive Decision Storytelling**, (3) ~~publish flagship on Orbit~~ local port + Portfolio teaser (2026-09-24; uncommitted), (4) case study Write + deeper evidence chain, repeat. Decision Intelligence Lab is not the selected flagship.
 - [x] **IDS on Orbit** — `/stories` landing + `/stories/when-rates-rise` + Portfolio `FlagshipTeaser` after title (build green; owner review before commit/push)
