@@ -73,6 +73,7 @@
 - [x] **Handbook 03, Say what one row means** — page 2. The thing, the time, what is included, and what is left out. The grain failure opens it (2026-10-17).
 - [x] **Handbook 03 shape** — Ask, Grain, Truth, Use, opening on the capability rather than a failure. Existing pages are mapped. Lineage, freshness, and Use have no source yet (2026-10-17). Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Handbook 03 opening** — What good looks like, `/handbooks/data-that-drives-decisions/1` (2026-10-17). The four earlier pages moved down. Owner: `docs/product/HANDBOOKS.md`.
+- [x] **One name for the four analytics steps** — Ask, Grain, Truth, Use on the card, the hub line, and What good looks like (2026-10-17). Owner: `docs/product/HANDBOOKS.md`.
 - [ ] **Handbook 03, Name the decision** — revise the first paragraphs so the failure comes after the question is named. Do not write Hand the number over before that.
 - [x] **Orbit 2.0 Foundation** — shipped to `main` (`6892531` / Gate 3). Product docs, AI & Data Systems Lead positioning, Studio `/studio/roadmap`. Card keeps STATEMENT only (no NOW box). Website infra = EVIDENCE; career archetype not PROVEN.
 - [ ] **Orbit 2.0 Evidence Layer** — (1) ~~audit~~ draft in `docs/product/EVIDENCE_AUDIT.md` (owner review), (2) ~~name flagship~~ owner selected **Interactive Decision Storytelling**, (3) ~~publish flagship on Orbit~~ local port + Portfolio teaser (2026-09-24; uncommitted), (4) case study Write + deeper evidence chain, repeat. Decision Intelligence Lab is not the selected flagship.

@@ -1032,7 +1032,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   index: "03",
   title: "Data that drives decisions",
   thesis:
-    "A number is ready when you can say the question, the row, why you trust it, and the move.",
+    "A number is ready when you can say Ask, Grain, Truth, and Use.",
   card: { href: DATA_CARD, label: "Data analytics field card" },
   contents: [
     { title: "What good looks like", page: 1 },
@@ -1046,8 +1046,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 1,
       topic: "The path",
       title: "What good looks like",
-      lede: "This page is the path a number walks when a person can act on it. There is a question. There is one clear row. There is evidence that person can trust. There is a move they can make. I want all four of those to be sayable in one sitting, in ordinary words.",
-      rule: "My operating rule: before a number goes out as the answer, I can say the question, the row, why the evidence can be trusted, and the move, in that order.",
+      lede: "This page is the path a number walks when a person can act on it. The four steps are Ask, Grain, Truth, and Use. I want all four of those to be sayable in one sitting, in ordinary words.",
+      rule: "My operating rule: before a number goes out as the answer, I can say Ask, Grain, Truth, and Use, in that order.",
       illustration: "The four sheets are an illustration, not a record.",
       reviewed: "17 Oct 2026",
       cover: {
@@ -1059,8 +1059,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path",
           title: "The four things",
           paragraphs: [
-            "The question is the decision a person is about to make, and who that person is. The row is what one line of the number means: the thing, the time, what is included, and what is left out. The evidence is why that person can trust the number. They know who stands behind the meaning, and they know what stops a bad number. The move is what they will do once they have it.",
-            "The analytics field card names this path Ask, Grain, Truth, and Use. Ask is the question. Grain is the row. Truth is the evidence. Use is whether we can explain the number and act on it. The card is the frame I use. This page is what that frame looks like when the four things can be said.",
+            "Ask is the decision a person is about to make, and who that person is. Grain is what one line of the number means: the thing, the time, what is included, and what is left out. Truth is why that person can trust the number. They know who stands behind the meaning, and they know what stops a bad number. Use is whether they can explain the number and act on it.",
+            "Those four names are the analytics field card. This page is what they look like when all four can be said.",
             "The link I use between a measure and a decision comes from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. It says that when a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A number on this path exists so a person can see and decide.",
           ],
           sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
@@ -1069,25 +1069,25 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-walk",
           title: "How I walk it",
           paragraphs: [
-            "I fill four lines, in this order. A line is filled when a person who missed the meeting can say it back. The question and the move are written on Name the decision. The row is written on Say what one row means. Who stands behind the meaning, and what stops a bad number, are written on When two reports don't match and on Keep the definition. This page holds those pages in one order.",
+            "I fill four lines, in this order. A line is filled when a person who missed the meeting can say it back. Ask is written on Name the decision. Grain is written on Say what one row means. Truth is written on When two reports don't match and on Keep the definition: who stands behind the meaning, and what stops a bad number. This page holds those pages in one order.",
           ],
           lines: [
             {
-              term: "Question",
+              term: "Ask",
               detail: "The decision, and the person who will act. A report title does not finish the line.",
             },
             {
-              term: "Row",
+              term: "Grain",
               detail: "What one line means. The thing, the time, what is included, and what is left out.",
             },
             {
-              term: "Evidence",
+              term: "Truth",
               detail: "Who stands behind that meaning, and what stops a bad number before it goes out.",
             },
             {
-              term: "Move",
+              term: "Use",
               detail:
-                "What the person will do. If the number would not change what they do, it is not the answer to this question.",
+                "Whether they can explain the number and act on it. If the number would not change what they do, it is not the answer to this Ask.",
             },
           ],
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
@@ -1097,7 +1097,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An example",
           paragraphs: [
             "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "Someone can give an invoice more time to pay. The question is whether to give more time. The person is the role that can do that. The row is an open invoice as of yesterday, and accounts already written off are left out. The evidence is that this person can say that row, that someone owns the meaning, and that a bad number would be stopped. The move is theirs. If more invoices are past their date, they do not extend the terms. If fewer are past their date, the extension can be offered. The four sheets are lit because those four lines are filled. One chair faces them. That chair is the person who can make the move. No amount is written.",
+            "Someone can give an invoice more time to pay. Ask is whether to give more time. The person is the role that can do that. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, that someone owns the meaning, and that a bad number would be stopped. Use is what they do with it. If more invoices are past their date, they do not give more time. If fewer are past their date, the extension can be offered. The four sheets are lit because those four lines are filled. One chair faces them. That chair is the person who can act. No amount is written.",
           ],
           picture: {
             src: `${DATA_ART}/path.jpg`,
@@ -1109,17 +1109,17 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "How I would know",
           paragraphs: [
             "I watch four things. I have no target times, and these definitions are not results I have collected.",
-            "A repeatable question means a person who missed the meeting can say what is being decided, and who will act.",
-            "A repeatable row means that person can say what one line means.",
-            "A named trust means they can say who owns the meaning, and what stops a bad number.",
-            "A written move means they can say what they will do.",
+            "A repeatable Ask means a person who missed the meeting can say what is being decided, and who will act.",
+            "A repeatable Grain means that person can say what one line means.",
+            "A named Truth means they can say who owns the meaning, and what stops a bad number.",
+            "A written Use means they can say what they will do, and how they would explain the number.",
             "The line below is the illustration on this page, once the path is filled. It is not a result I collected, and it states no amount.",
           ],
           lines: [
             {
               term: "Filled",
               detail:
-                "Question: whether to give more time to pay. The person is the role that can do that. Row: an open invoice as of yesterday, written-off accounts left out. Evidence: that row can be said back, someone owns the meaning, and a bad number would be stopped. Move: if more invoices are past their date, do not extend. If fewer are, the extension can be offered. No amount is written.",
+                "Ask: whether to give more time to pay. The person is the role that can do that. Grain: an open invoice as of yesterday, written-off accounts left out. Truth: that grain can be said back, someone owns the meaning, and a bad number would be stopped. Use: if more invoices are past their date, do not give more time. If fewer are, the extension can be offered. No amount is written.",
             },
           ],
         },
@@ -1127,8 +1127,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page is the path. The question is written on Name the decision. The row is written on Say what one row means. A comparison of two reports is written on When two reports don't match. The columns that stay in force are written on Keep the definition.",
-            "The card asks whether we can explain the number and act on it. This page names the move. It does not teach how to explain a number when you are unsure of it.",
+            "This page is the path. Ask is written on Name the decision. Grain is written on Say what one row means. A comparison of two reports is written on When two reports don't match. The columns that stay in force are written on Keep the definition.",
+            "Use asks whether we can explain the number and act on it. This page names the action. It does not teach how to explain a number when you are unsure of it.",
             "The GAO guide assesses an agency plan. I am not running its checklist. I am using the link it requires between a measure and a decision a person can make.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
