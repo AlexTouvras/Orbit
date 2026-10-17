@@ -1036,8 +1036,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   card: { href: DATA_CARD, label: "Data analytics field card" },
   contents: [
     { title: "Name the decision", page: 1 },
-    { title: "When two reports don't match", page: 2 },
-    { title: "Keep the definition", page: 3 },
+    { title: "Say what one row means", page: 2 },
+    { title: "When two reports don't match", page: 3 },
+    { title: "Keep the definition", page: 4 },
   ],
   pages: [
     {
@@ -1077,7 +1078,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "brief",
           title: "The brief",
           paragraphs: [
-            "This is the sheet I fill in before I say what one row means, when the number will be given to someone as the answer. A blank line means the number is not that answer. The activity is Kimball's. The link between the measure and the goal follows the GAO guide. The stop, when the decision cannot be named, is my rule. What one row means is written only after these lines are filled. Two reports that disagree are handled on When two reports don't match, not here.",
+            "This is the sheet I fill in before I say what one row means, when the number will be given to someone as the answer. A blank line means the number is not that answer. The activity is Kimball's. The link between the measure and the goal follows the GAO guide. The stop, when the decision cannot be named, is my rule. What one row means is written on Say what one row means, and only after these lines are filled. Two reports that disagree are handled on When two reports don't match, not here.",
           ],
           lines: [
             {
@@ -1161,15 +1162,14 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "Two reports that disagree stay on When two reports don't match. This page does not pick a number between them, and it does not name the owner of a definition.",
-            "Kimball prefers a detailed row because it can answer questions you did not plan. A summary row assumes the questions people already share. A detailed table for an activity can exist before a decision is named. I do not offer that table as the answer to a decision I have not named.",
+            "Two reports that disagree stay on When two reports don't match. This page does not pick a number between them, and it does not say what one row means. That sentence is Say what one row means.",
+            "A detailed table for an activity can exist before a decision is named. I do not offer that table as the answer to a decision I have not named.",
             "Looking through the data without a named decision is allowed. An unpublished search can inspect an activity before anyone has a decision. This page stops the number from going out as an answer.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
             "The GAO guide assesses an agency plan. I am not running its checklist against a report. I am using the link it requires between a measure and the thing that measure is supposed to show.",
             "This page names the decision a published number is for. Keeping that meaning in force after the number goes out is Keep the definition.",
           ],
           sources: [
-            KIMBALL_TECHNIQUES,
             GAO_RESULTS,
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
@@ -1190,10 +1190,6 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           "Kimball Group, Dimensional Modeling Techniques PDF (Sep 2013)",
         ),
         source(
-          "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/",
-          "Kimball Group, Grain (read 16 Oct 2026)",
-        ),
-        source(
           "https://www.gao.gov/assets/ggd-10.1.20.pdf",
           "GAO, An Evaluator's Guide to Assessing Agency Annual Performance Plans, GAO/GGD-10.1.20 (April 1998)",
         ),
@@ -1204,9 +1200,143 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 2,
+      topic: "The row",
+      title: "Say what one row means",
+      lede: "This page comes after the decision is named. It says what one row of the number means, before anyone compares two reports. Kimball calls that the grain: exactly what one record represents, in business words. A report title is not that sentence. A list of columns is not that sentence.",
+      rule: "My operating rule: name the thing, the time, what is included, and what is left out, and do not publish the number until the person who will use it can say that row back.",
+      illustration: "The one list is an illustration, not a record.",
+      reviewed: "17 Oct 2026",
+      sections: [
+        {
+          id: "row-why",
+          title: "Why a column list is not enough",
+          paragraphs: [
+            "The short path is to name the columns and call that the definition. Kimball says that is the most common mistake in his students' designs. The grain ends up the same thing as the primary key, and it is still a mistake to list the dimensions and treat that list as the declaration. He says to anchor the grain first to a clear business object and a set of business rules. The dimensions that carry it then become obvious.",
+            "If the grain is not clearly defined at the start, he says the whole design rests on quicksand. Talk about which dimensions to include goes in circles, and facts that do not belong on that row sneak in. A fact has to be true to the grain. In his doctor-bill example, a row is one line on a bill. The amount of that line belongs there. The amount billed to that patient for the whole year does not. Add the lines up and that year-to-date figure becomes nonsense. It is dangerous because it looks trustworthy. He says to leave it off the row and calculate the total in the application.",
+            "The 2013 techniques note calls the grain declaration a binding contract. It has to be declared before the dimensions and the facts are chosen, because every candidate has to fit it. Different grains must not be mixed in the same fact table. Each grain is its own table.",
+          ],
+          sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES],
+        },
+        {
+          id: "row-rule",
+          title: "What I follow",
+          paragraphs: [
+            "The declaration is Kimball's. He also says to start with the most detailed row the activity captures, because that row can answer questions you did not plan. A summary assumes the questions people already share. A summary can be useful. It is a different row.",
+            "The analytics field card names the failure this page is about: mismatched grain, inconsistent definitions, or incomplete scope. I read a mismatched grain as two meanings of a row treated as one. I read an inconsistent definition as a sentence two people would not say the same way. I read an incomplete scope as a missing line for what is included, or for what is left out.",
+            "The operating rule at the top of this page is the stop. A design meeting can list the columns and still leave the row unsaid. The decision can be named on Name the decision, and the row can still be blank.",
+          ],
+          sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES, { href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "row-sheet",
+          title: "The row",
+          paragraphs: [
+            "This is the sheet I fill in after Name the decision, and before I compare two reports. A blank line means the number does not go out. The declaration is Kimball's. The stop, when the person who will use the number cannot say the row back, is my rule. Two reports that disagree are handled on When two reports don't match, not here.",
+          ],
+          lines: [
+            {
+              term: "Thing",
+              detail:
+                "What one row is, in business words. An invoice, an account, a customer, or a line on a bill. A report title does not finish the line.",
+            },
+            {
+              term: "Time",
+              detail:
+                "When the row is counted. As of a day, or at month-end. The word current, with no moment named, does not finish the line.",
+            },
+            {
+              term: "In",
+              detail: "What is included.",
+            },
+            {
+              term: "Out",
+              detail:
+                "What is left out. If nothing is left out, write that. A blank line is not the same as everything.",
+            },
+            {
+              term: "Say it back",
+              detail:
+                "Filled when the person who will use the number can say the four lines above without the sheet in front of them. Otherwise the number does not go out.",
+            },
+            {
+              term: "One sentence",
+              detail:
+                "The four lines in one sentence. Kimball calls this the grain. Later pages copy this sentence. They do not write a new one.",
+            },
+          ],
+          sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES],
+        },
+        {
+          id: "row-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "The decision, from Name the decision, is whether to give an invoice more time to pay. The list is titled overdue balance. The title is not the row. While the thing, the time, what is included, or what is left out is blank, the list stays dark.",
+            "Once the sheet is filled, a row is an open invoice. The time is as of yesterday. Open invoices are included. Accounts already written off are left out. The person who can give more time can say that sentence back. That sentence is what one row means. No amount is written. There is no second report on this page.",
+            "If a second list with the same title arrives, and a row on that list is an account at month-end, that disagreement is When two reports don't match. This page does not pick a number between them.",
+          ],
+        },
+        {
+          id: "row-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch four things. I have no target times, and these definitions are not results I have collected. A column list offered as the definition is not the practice.",
+            "An unstated row is a published number whose user cannot say what one row is.",
+            "A column list is a published number whose definition is only the names of the columns.",
+            "A mixed row is a published total that adds a fact the row does not support. A year-to-date amount sitting on a single line is the shape of that failure. This is the definition of the signal. It is not a case I am reporting.",
+            "A parked row is a time the number stayed unpublished because the thing, the time, what is included, or what is left out was blank.",
+            "The rows below are written for the illustration on this page. One is the blank sheet. One is the sheet once it is filled. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            { term: "Blocked", detail: "The sheet while the thing is blank. The title is not the row." },
+            { term: "Measure", detail: "Overdue balance. No amount is written." },
+            { term: "Thing", detail: "Blank." },
+            { term: "Action", detail: "Do not send the list out." },
+            { term: "Outcome", detail: "The list stayed dark." },
+            {
+              term: "Filled",
+              detail:
+                "The same title once the row is said. Thing: an open invoice. Time: as of yesterday. In: open invoices. Out: accounts already written off. Say it back: the role that can give more time. Action: keep that sentence as the row. Outcome: that sentence is what one row means. No second report. No amount is written.",
+            },
+          ],
+        },
+        {
+          id: "row-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "The decision, the person who will act, and the moves stay on Name the decision.",
+            "Two reports that disagree stay on When two reports don't match. This page does not pick a number between them.",
+            "Kimball says to start with the most detailed row the activity captures, because it can answer questions you did not plan. A summary assumes the questions people already share. A summary can exist. It is a different row, and it gets its own table. I do not treat it as the detailed row.",
+            "A search that is not being offered as the answer can look at the rows before this sentence is written. This page stops the number that is being given to someone as the answer.",
+            "The columns, the owner, and the stop when a column breaks stay on Keep the definition.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            KIMBALL_TECHNIQUES,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+      ],
+      sources: [
+        source(
+          "https://www.kimballgroup.com/2003/03/declaring-the-grain/",
+          "Ralph Kimball, Declaring the Grain (1 Mar 2003, read 17 Oct 2026)",
+        ),
+        source(
+          "https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/kimball-techniques/dimensional-modeling-techniques/grain/",
+          "Kimball Group, Grain (read 17 Oct 2026)",
+        ),
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 3,
       topic: "Two reports",
       title: "When two reports don't match",
-      lede: "This page is for a number you are about to give someone as the answer, when two reports disagree. They can share a title and still not match. Sending one of them out, or a third number in between, before the difference has a cause, gives that person a figure you cannot defend. A search that is not being offered as the answer can keep both versions.",
+      lede: "This page is for a number you are about to give someone as the answer, when two reports disagree. What one row means is already written on Say what one row means. The two reports can share a title and still not match. Sending one of them out, or a third number in between, before the difference has a cause, gives that person a figure you cannot defend. A search that is not being offered as the answer can keep both versions.",
       rule: "My operating rule: say what one row means before the two reports are compared, explain the difference or block the publish, and do not publish a number between them.",
       illustration: "The two extracts are an illustration, not a record.",
       reviewed: "16 Oct 2026",
@@ -1216,8 +1346,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "Why the middle number gets published",
           paragraphs: [
             "The decision needs a number today. Two systems already show it, and the two figures differ. The short path is to read out the figure someone recognizes, or to place a third figure between them so the meeting has one number. That third figure becomes the baseline the next report is judged against. The difference goes out under a published name, and it is still unexplained.",
-            "Kimball names the design error under that path. If you do not say what one row means at the start, the design rests on quicksand, and facts that do not belong on that row sneak in. He calls what one row means the grain, and a fact has to be true to it. In his doctor-bill example, a year-to-date amount sitting on a single line is not true to that row. Add the lines up and the result is nonsense. It is dangerous because it looks trustworthy. He says to leave that fact off the row and calculate the total in the application.",
-            "The techniques note states the limit. Different grains must not be mixed in the same fact table. Each grain gets its own table. I treat two reports at two grains as two separate agreements. One published figure that treats them as the same agreement is the mistake that limit is there to stop.",
+            "What one row means was named on Say what one row means. Kimball calls that the grain, and a fact has to be true to it. Different grains are different tables. If the second report will not sit on the named row, it is a different measure. A number placed between the two reports is not that row.",
           ],
           picture: {
             src: `${DATA_ART}/gate.jpg`,
@@ -1229,15 +1358,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "practice",
           title: "What I follow",
           paragraphs: [
-            "The principle is Kimball's. In the 2003 article, declaring the grain means saying what one record represents, in business words. Listing the dimensions and calling that list the declaration is the mistake he saw in his students' designs. He calls the declaration a contract. The 2013 note calls it a binding contract, and it says the grain is declared before choosing the dimensions and the facts.",
             "The control is the Green Book, the GAO's standards for internal control, May 2025. A reconciliation there means taking transactions from two sets of records and comparing them. You work out which were recorded properly, which are not recorded yet, and which were recorded wrong and need a correction, and you explain the differences. The two sets can both be inside the organization, or one can be outside, as when you reconcile to the bank. Paragraph 10.04 includes comparing different sets of data so management can see the relationship and act, and comparing file totals with control accounts. Paragraph 16.05 includes comparisons and reconciliations in ongoing monitoring.",
             "Paragraph 10.10 says a detective control finds an unintended result and corrects it, and that the control is useful only if the correction is timely. I use that as the reason the explanation happens before the number goes out. The standard does not describe a dashboard. The block is my rule.",
             "The tool that can stop the next build is narrower. It is dbt, the tool that builds the tables. A test returns the rows it was written to catch. Unless you set it otherwise, any rows mean an error. On the build command I checked, a test that fails skips the models that come after it. Set the test to warn, and the later models still run. A uniqueness test can pass on both reports while the reports still disagree. The test is how a check I have already named can stop the next model. The reconciliation is the comparison of the two reports.",
             "The operating rule at the top of this page is that stop. The owner of the definition approves the grain. A green pipeline is not that approval. The analytics field card draws the same stop. Its picture of 4.8%, 6.2%, and 5.1% is a picture of a disagreement, not a result. The published figure in that picture is one grain after the difference is explained. It is not the middle of the two reports.",
           ],
           sources: [
-            KIMBALL_GRAIN,
-            KIMBALL_TECHNIQUES,
             GAO_RECONCILE,
             DBT_BUILD,
             DBT_SEVERITY,
@@ -1248,13 +1374,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "record",
           title: "The record",
           paragraphs: [
-            "This is the sheet I fill in when a number is about to go out as an answer and two reports disagree. A blank field stops it. What one row means is Kimball's grain. The comparison and the explanation are the Green Book's reconciliation. When a named check should stop the build, I set that dbt test to error so the later model is skipped. Warn lets it run, so I do not use warn for this stop. The block, when the cause cannot be named, is my rule. A tolerance counts only when the owner wrote it down before the comparison.",
+            "This is the sheet I fill in when a number is about to go out as an answer and two reports disagree. A blank field stops it. What one row means is the sentence from Say what one row means. The comparison and the explanation are the Green Book's reconciliation. When a named check should stop the build, I set that dbt test to error so the later model is skipped. Warn lets it run, so I do not use warn for this stop. The block, when the cause cannot be named, is my rule. A tolerance counts only when the owner wrote it down before the comparison.",
           ],
           lines: [
             {
               term: "One row",
               detail:
-                "What one row means, in business words: the thing being counted, the time, what is included, and what is left out. Kimball calls this the grain. A list of column names does not finish the field. It is filled when the person who will use the number can say it back. Otherwise it stays blank, and the number does not go out.",
+                "The sentence from Say what one row means: the thing, the time, what is included, and what is left out. If that sentence is blank, stop and fill that page. This field is filled when the sentence is here, and the person who will use the number can still say it back.",
             },
             {
               term: "Other report",
@@ -1293,8 +1419,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An example",
           paragraphs: [
             "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "The decision, from Name the decision, is whether to give an invoice more time to pay. The list is titled overdue balance. On the list that decision can use, a row is an open invoice as of yesterday. A second list with the same title then arrives. On one, a row is an account at month-end, and accounts already written off are left out. On the other, a row is an invoice as of yesterday, and written-off accounts are included. While the row line is blank, the sheet cannot be filled, and both lists stay dark. A figure placed between the two totals would be true to neither.",
-            "Once the sheet is filled, the owner names the row the decision can use: an open invoice as of yesterday, and written-off accounts are left out. The account-at-month-end list will not sit on that row, so it is set aside as a different measure. The cause is the grain. The owner accepts the invoice row in writing. The number that goes out is that row. The other list stays dark. Nothing is placed between them, and no amount is written. The person named on Name the decision can use this number for the decision about more time.",
+            "The decision, from Name the decision, is whether to give an invoice more time to pay. The row, from Say what one row means, is an open invoice as of yesterday, and accounts already written off are left out. A second list with the same title then arrives. On that list, a row is an account at month-end. While the cause of the difference is blank, the sheet cannot be filled, and both lists stay dark. A figure placed between the two totals would be true to neither row.",
+            "Once the sheet is filled, the account-at-month-end list will not sit on the named row, so it is set aside as a different measure. The cause is the grain. The owner accepts the invoice row in writing. The number that goes out is that row. The other list stays dark. Nothing is placed between them, and no amount is written. The person named on Name the decision can use this number for the decision about more time.",
           ],
           picture: {
             src: `${DATA_ART}/extracts.jpg`,
@@ -1313,7 +1439,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "The rows below are written for the illustration on this page. One is the block. One is the number that went out. Neither is a result I collected, and neither states an amount.",
           ],
           lines: [
-            { term: "Blocked", detail: "The sheet while the row line is blank." },
+            { term: "Blocked", detail: "The sheet while the cause is blank. The row was already named." },
             { term: "Measure", detail: "Overdue balance. No amount is written." },
             {
               term: "Owner",
@@ -1330,7 +1456,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "Filled",
               detail:
-                "The same title once the owner has named the row. One row: an open invoice as of yesterday, written-off accounts left out. Other report: the account-at-month-end list, set aside. Cause: the grain. What we do: the owner accepts the invoice row in writing. Action: send that row out. Outcome: that row is the number, and the person on Name the decision can use it. The other list stays dark. No amount is written.",
+                "The same title once the cause is named. One row: an open invoice as of yesterday, written-off accounts left out. That sentence came from Say what one row means. Other report: the account-at-month-end list, set aside. Cause: the grain. What we do: the owner accepts the invoice row in writing. Action: send that row out. Outcome: that row is the number, and the person on Name the decision can use it. The other list stays dark. No amount is written.",
             },
           ],
           picture: {
@@ -1344,7 +1470,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "A search that is not being offered as the answer can hold two versions. This page blocks the number that is being given to someone as the answer.",
             "The Green Book's reconciliation compares two sets of records. One report, with no second set, is a different check. A uniqueness test on that one report can still be an error that skips the next model. That is the dbt check on a single report.",
-            "Kimball says a summary is used together with the detailed rows it came from, because the summary carries less detail. I keep them as two grains. I do not fold them into one cell so a chart has a single figure.",
+            "A summary and the detailed rows it came from are two grains. Say what one row means keeps them in separate tables. This page does not fold them into one cell so a chart has a single figure.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card. This page stops the number.",
             "The Green Book ties a detective control to a correction that happens in time. I place that correction before the number is published. A comparison that starts after someone has already acted on the number is a review of a figure that already went out.",
             "This page stops a number whose two reports disagree. Keeping that meaning in force after it goes out is Keep the definition.",
@@ -1389,7 +1515,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       ],
     },
     {
-      number: 3,
+      number: 4,
       topic: "The change",
       title: "Keep the definition",
       lede: "A filled decision and a filled comparison can still go stale the next time the query changes. This page is what I leave in place: who owns the definition, the columns the number promises, and the stop when those columns break.",
@@ -1401,7 +1527,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "keep",
           title: "What I leave in place",
           paragraphs: [
-            "This is the sheet I leave after Name the decision and When two reports don't match are filled. A blank field means the number is not being kept. The columns are dbt's model contract: the list of columns the published table promises, each with a name and a data type. dbt is the tool that builds the tables. When that list breaks, the build raises a contract error, and that error is the stop. The owner is my rule, and it is the approval the analytics field card requires. A change to what one row means is not filled on this sheet. That change goes back to When two reports don't match.",
+            "This is the sheet I leave after Name the decision and When two reports don't match are filled. A blank field means the number is not being kept. The columns are dbt's model contract: the list of columns the published table promises, each with a name and a data type. dbt is the tool that builds the tables. When that list breaks, the build raises a contract error, and that error is the stop. The owner is my rule, and it is the approval the analytics field card requires. A change to the sentence of what one row means goes back to Say what one row means. A second report that will not sit on that row goes back to When two reports don't match.",
           ],
           lines: [
             {
@@ -1427,7 +1553,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "Reopen",
               detail:
-                "A change to what a row means, or to what is included, with the column names and types left alone, goes back to When two reports don't match. A change to the decision goes back to Name the decision. A green contract does not close either of those.",
+                "A change to the sentence of what one row means goes back to Say what one row means. A second report that will not sit on that row, with the column names and types left alone, goes back to When two reports don't match. A change to the decision goes back to Name the decision. A green contract does not close any of those.",
             },
           ],
           sources: [DBT_CONTRACT, DBT_VERSIONS, { href: DATA_CARD, label: "Data analytics field card" }],
@@ -1438,7 +1564,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "dbt's contract is a promise about the shape of a table that other people and processes query. When it is turned on, the build checks that the query returns every promised column, with the promised data type. The check does not care about column order. dbt recommends a contract for a public table that reports and other systems rely on. A data test is a different check. It runs on the rows after the table has built, and it can be set to warn. The contract fails the build when the shape does not match. I do not use a warning as a substitute for that failure.",
             "A breaking change, in that contract, is removing a column, changing its data type, removing or changing a constraint on it, or removing the contracted table. dbt then shows a contract error. Versions are how the person who owns a table that other teams use can introduce that break: a new version, the latest pointer moved, and a window in which the old version can still be used. dbt says making every consumer take the break at once is reasonable while the table is still changing quickly, or when the group that depends on it is small. Versions do not remove the cost of keeping two shapes. They put a limit on it.",
-            "The contract does not know the grain. Kimball's declaration is what one row means, in business words. A query can keep every column name and type and still change which rows are included. dbt says fixing a bug in how a column is calculated is not a breaking change, and it does not need a new version. That fix can still change the definition. When it does, I send it back to When two reports don't match. A green contract is not that sheet.",
+            "The contract does not know the grain. Kimball's declaration is what one row means, in business words. A query can keep every column name and type and still change which rows are included. dbt says fixing a bug in how a column is calculated is not a breaking change, and it does not need a new version. That fix can still change the definition. When it does, I send it back to Say what one row means. If a second report then disagrees, that comparison is When two reports don't match. A green contract is not that sheet.",
             "The Green Book includes comparisons and reconciliations in ongoing monitoring, and it ties a detective control to a correction that happens in time. I use that as the reason a break stops the next number, rather than waiting for someone to notice that the figure changed. The standard does not describe a model contract. The stop on a broken shape is the contract's. The owner is my rule.",
           ],
           sources: [DBT_CONTRACT, DBT_VERSIONS, KIMBALL_GRAIN, GAO_RECONCILE],

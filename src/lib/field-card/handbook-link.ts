@@ -5,12 +5,17 @@
  */
 
 const DECISION = "/handbooks/data-that-drives-decisions/1";
-const RECONCILE = "/handbooks/data-that-drives-decisions/2";
-const KEEP = "/handbooks/data-that-drives-decisions/3";
+const GRAIN = "/handbooks/data-that-drives-decisions/2";
+const RECONCILE = "/handbooks/data-that-drives-decisions/3";
+const KEEP = "/handbooks/data-that-drives-decisions/4";
 const ASK_SENTENCE = "Wrong question, wrong audience, or an unclear decision.";
+const GRAIN_SENTENCE = "Mismatched grain, inconsistent definitions, incomplete scope.";
 const OWNER_SENTENCE = "A named owner approves the definition";
 const ASK_MARK = "data-handbook-chapter=\"decision\"";
+const GRAIN_MARK = "data-handbook-chapter=\"grain\"";
 const ASK_GUARD = "data-handbook-ask-guard";
+const GUARD_BODY =
+  "document.querySelectorAll('[data-handbook-chapter]').forEach(function(a){a.addEventListener(\"click\",function(e){e.stopPropagation();});});";
 
 export function ensureAnalyticsHandbookLink(html: string): string {
   let next = html;
@@ -24,7 +29,13 @@ export function ensureAnalyticsHandbookLink(html: string): string {
   if (!next.includes(DECISION)) {
     const at = next.indexOf(ASK_SENTENCE);
     if (at >= 0 && !anchorIsOpen(next, at)) {
-        next = `${next.slice(0, at)}<a href="${DECISION}" ${ASK_MARK}>${ASK_SENTENCE}</a>${next.slice(at + ASK_SENTENCE.length)}`;
+      next = `${next.slice(0, at)}<a href="${DECISION}" ${ASK_MARK}>${ASK_SENTENCE}</a>${next.slice(at + ASK_SENTENCE.length)}`;
+    }
+  }
+  if (!next.includes(GRAIN)) {
+    const at = next.indexOf(GRAIN_SENTENCE);
+    if (at >= 0 && !anchorIsOpen(next, at)) {
+      next = `${next.slice(0, at)}<a href="${GRAIN}" ${GRAIN_MARK}>${GRAIN_SENTENCE}</a>${next.slice(at + GRAIN_SENTENCE.length)}`;
     }
   }
   if (!next.includes(KEEP)) {
@@ -33,9 +44,13 @@ export function ensureAnalyticsHandbookLink(html: string): string {
       next = `${next.slice(0, at)}<a href="${KEEP}">${OWNER_SENTENCE}</a>${next.slice(at + OWNER_SENTENCE.length)}`;
     }
   }
-  if (next.includes(DECISION) && !next.includes(ASK_GUARD) && next.includes("</body>")) {
-    const guard = `<script ${ASK_GUARD}>document.querySelectorAll('[data-handbook-chapter="decision"]').forEach(function(a){a.addEventListener("click",function(e){e.stopPropagation();});});</script>`;
-    next = next.replace("</body>", `${guard}</body>`);
+  if ((next.includes(DECISION) || next.includes(GRAIN)) && next.includes("</body>")) {
+    const guard = `<script ${ASK_GUARD}>${GUARD_BODY}</script>`;
+    if (!next.includes(ASK_GUARD)) {
+      next = next.replace("</body>", `${guard}</body>`);
+    } else if (!next.includes("querySelectorAll('[data-handbook-chapter]')")) {
+      next = next.replace(/<script data-handbook-ask-guard>[\s\S]*?<\/script>/, guard);
+    }
   }
   return next;
 }
