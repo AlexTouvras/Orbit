@@ -1155,7 +1155,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       topic: "The question",
       title: "Name the decision",
       lede: "This page is the brief I fill before a number goes out as the answer. The brief names the decision, the outcome that decision is for, the person who will act, the constraint they have to respect, the one activity, and a hypothesis for a rise and a hypothesis for a fall. A blank line means the number is not that answer.",
-      rule: "My operating rule: I can say the decision, the outcome, the person, the constraint, and the hypothesis for a rise and a fall, and I do not publish the number as the answer until those are named. Each hypothesis is a proposal to check against the outcome.",
+      rule: "My operating rule: I can say the decision, the outcome, the person, the constraint, a hypothesis for a rise, and a hypothesis for a fall, and I do not publish the number as the answer until those are named. Each hypothesis is a proposal to check against the outcome.",
       illustration: "The two chairs are an illustration, not a record.",
       reviewed: "16 Oct 2026",
       cover: {
