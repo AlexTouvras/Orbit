@@ -160,7 +160,7 @@ data/studio-roadmap.json
 data/studio-roadmap.seed.json
 PRODUCT.md
 docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, HANDBOOKS, AGENT_RULES
-src/content/handbooks.ts     # handbook series; SDLC book and analytics pages 1–2
+src/content/handbooks.ts     # handbook series; SDLC book and analytics pages 1–3
 public/handbook-art/data-that-drives-decisions/  # this book's cover and section pictures
 src/lib/field-card/handbook-link.ts  # re-insert the analytics chapter link on Approve sync
 src/lib/handbooks.ts
@@ -177,6 +177,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-17 | Handbook 03 opens on the decision | The book no longer opens on two reports that disagree. Page 1 is Name the decision. Page 2 is When two reports don't match. Page 3 is Keep the definition. The Ask failure opens page 1. The line about grain, owner, and stopping a bad publish opens page 2. The governance line opens page 3. The reading order still to write, with no route, is Say what one row means (insert as page 2, do not append) and then Hand the number over. Prose on the three written pages is in ordinary words. Sources were already checked 16 Oct 2026. |
 | 2026-10-16 | Handbook 03 page 3 keeps the definition | Keep the definition is the third page. A dbt model contract enforces the shape of a published model, and a breaking change stops that build. Model versions hold the previous shape for a migration window when other people depend on it. The contract does not know the grain. A green contract with a changed scope goes back to Reconcile or block. The governance line on the analytics card is the one link, and Approve re-inserts it. Sources read 16 Oct 2026: dbt model contracts and model versions. |
 | 2026-10-16 | Handbook 03 shows the block and the filled publish | The overdue-balance illustration on both pages keeps the blocked moment and adds the moment the worksheet is filled. The filled record publishes the invoice grain and sets the account extract aside. The filled brief names the terms decision and leaves the call list dark. Neither moment states an amount. The operating rule stays at the top of the page. A production pipeline for an agreed definition is still outside these two pages. |
 | 2026-10-16 | Handbook 03 pages 1 and 2 are a record and a brief | Reconcile or block is the meeting record for a publish offered as an answer. A blank field stops the publish. Name the decision is the brief that names the decision, the actor, both moves, and the one process before the grain. The same overdue-balance illustration runs through both pages and states no amount. An exploration that is not offered as an answer stays off the publish. The glass sequence follows the record. The two chairs follow the scene. Amber labels and the amber frame follow every page of a book that opens on its own cover. The numbered day on these two pages is retired. The words still read if a picture is missing. |
