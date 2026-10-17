@@ -4,6 +4,7 @@ import { HANDBOOKS } from "@/content/handbooks";
 import { HandbookPageView } from "@/components/handbooks/HandbookPageView";
 import { getEssayFeedbackEntries } from "@/lib/essay-feedback";
 import { getPage, pageFeedbackSlug, pagePath } from "@/lib/handbooks";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 export function generateStaticParams() {
   return HANDBOOKS.flatMap((handbook) =>
@@ -22,12 +23,12 @@ export async function generateMetadata({
   const { slug, page: pageParam } = await params;
   const found = getPage(slug, pageParam);
   if (!found) return { title: "Page" };
+  const path = pagePath(found.handbook.slug, found.page.number);
   return {
     title: `${found.page.title} · ${found.handbook.title}`,
     description: found.page.lede,
-    alternates: {
-      canonical: pagePath(found.handbook.slug, found.page.number),
-    },
+    alternates: { canonical: path },
+    openGraph: pageOpenGraph(path),
   };
 }
 

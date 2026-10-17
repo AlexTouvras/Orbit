@@ -1,6 +1,7 @@
 import crypto from "node:crypto";
 import Parser from "rss-parser";
 import type { NewsCache, NewsItem } from "@/lib/types";
+import { collapseReadingTwins } from "./collapse";
 import { FEED_SOURCES, type FeedSource } from "./sources";
 import { readNewsCache, writeNewsCache } from "./cache";
 
@@ -57,14 +58,11 @@ async function fetchFeed(source: FeedSource): Promise<NewsItem[]> {
   const limit = source.maxItems ?? MAX_ITEMS_PER_FEED;
   // Some mirrors (Anthropic research) list oldest first. Cap after sorting
   // so maxItems keeps the latest papers, not the archive.
-  const items = [...(feed.items ?? [])]
-    .sort(
-      (a, b) =>
-        itemTime(b.isoDate, b.pubDate) - itemTime(a.isoDate, a.pubDate),
-    )
-    .slice(0, limit);
+  const items = [...(feed.items ?? [])].sort(
+    (a, b) => itemTime(b.isoDate, b.pubDate) - itemTime(a.isoDate, a.pubDate),
+  );
 
-  return items
+  const mapped = items
     .filter((item) => item.link && item.title)
     .filter((item) => isEnglishTitle((item.title as string).trim()))
     .map((item) => {
@@ -80,6 +78,9 @@ async function fetchFeed(source: FeedSource): Promise<NewsItem[]> {
         contentSnippet: cleanSnippet(item.contentSnippet ?? item.content),
       } satisfies NewsItem;
     });
+
+  // Collapse before the cap so a video twin does not take an article's slot.
+  return collapseReadingTwins(mapped).slice(0, limit);
 }
 
 /**

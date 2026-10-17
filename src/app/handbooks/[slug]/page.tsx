@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { HANDBOOKS } from "@/content/handbooks";
 import { getHandbook, pagePath } from "@/lib/handbooks";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 export function generateStaticParams() {
   return HANDBOOKS.map((handbook) => ({ slug: handbook.slug }));
@@ -16,12 +17,12 @@ export async function generateMetadata({
   const handbook = getHandbook(slug);
   if (!handbook) return { title: "Handbook" };
   const opening = handbook.pages[0];
+  const path = opening ? pagePath(handbook.slug, opening.number) : `/handbooks/${handbook.slug}`;
   return {
     title: handbook.title,
     description: handbook.thesis,
-    alternates: opening
-      ? { canonical: pagePath(handbook.slug, opening.number) }
-      : undefined,
+    alternates: { canonical: path },
+    openGraph: pageOpenGraph(path),
   };
 }
 

@@ -117,6 +117,7 @@ export const FEED_SOURCES: FeedSource[] = [
     category: "Analytics",
   },
   {
+    // Each piece is also posted under /tv/. collapseReadingTwins keeps /articles/.
     name: "SQLBI",
     url: "https://www.sqlbi.com/feed/",
     category: "Analytics",
