@@ -40,7 +40,8 @@ needed). They refresh **daily at 06:00 UTC** via **Vercel Cron** →
 2. Commits `data/news-cache.json` to GitHub (`GITHUB_TOKEN` required)
 3. Related articles pick up the new cache on the next page load
 4. `ignoreCommand` (`scripts/vercel-ignore.mjs`) skips the Vercel rebuild for
-   that commit so Hobby Deployment Storage does not grow every morning
+   that commit so Hobby Deployment Storage does not grow every morning.
+   A merge is compared with its first parent. If git cannot see a parent, the build runs.
 
 Requires env: `CRON_SECRET`, `GITHUB_TOKEN`, `GITHUB_REPO` (same as Studio).
 
