@@ -1,7 +1,142 @@
 {
-  "generatedAt": "2026-10-16T06:46:54.975Z",
+  "generatedAt": "2026-10-17T06:46:52.717Z",
   "count": 263,
   "items": [
+    {
+      "id": "e9b7cb0e86d2",
+      "title": "Fiscal consolidation: Temporary costs versus lasting scars",
+      "link": "https://cepr.org/voxeu/columns/fiscal-consolidation-temporary-costs-versus-lasting-scars",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-16T23:00:00.000Z",
+      "contentSnippet": "Public debt is at or near record highs across the OECD, increasing the pressure on governments to restore fiscal sustainability over time. This column draws on new cross-country evidence showing that the output costs of fiscal consolidation are modest and short-lived on average,…"
+    },
+    {
+      "id": "00359916503d",
+      "title": "Never let a good crisis go to waste: Term limits and banking reforms",
+      "link": "https://cepr.org/voxeu/columns/never-let-good-crisis-go-waste-term-limits-and-banking-reforms",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-16T23:00:00.000Z",
+      "contentSnippet": "Financial crises routinely trigger sweeping overhauls of financial regulation, but whose interests do these reforms serve? Using data on financial policies in 88 democracies between 1973 and 2015, this column shows that leaders facing a binding term limit roll back financial libe…"
+    },
+    {
+      "id": "e0bd1667988f",
+      "title": "Transactions are Generally Available, advancing warehousing on the Lakehouse",
+      "link": "https://www.databricks.com/blog/transactions-are-generally-available-advancing-warehousing-lakehouse",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-16T21:00:00.000Z",
+      "contentSnippet": "Multi-Statement Transactions are Generally Available, enabling organizations to run..."
+    },
+    {
+      "id": "65442e708214",
+      "title": "How Itaú is building generative AI for its entire customer base",
+      "link": "https://openai.com/index/itau-generative-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-16T19:00:00.000Z",
+      "contentSnippet": "With ia.i, a conversational interface, and the IARA governance platform, Itaú is applying its AI First strategy to customers and employees — in one of Brazil’s most regulated sectors."
+    },
+    {
+      "id": "83945f3b589d",
+      "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+      "link": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-10-16T18:11:34.000Z",
+      "contentSnippet": "General Science"
+    },
+    {
+      "id": "04b7640931c7",
+      "title": "Designing more efficient quantum circuits with Claude",
+      "link": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-16T17:29:00.000Z",
+      "contentSnippet": "We gave Claude plain-language specifications for eight quantum circuits, along with an automated evaluator to check and score its designs. Working largely on its own, Claude improved on the best published circuits, in some cases by an order of magnitude or more, which could bring…"
+    },
+    {
+      "id": "7a6a342eb958",
+      "title": "Claude reveals ECDSA curve origins",
+      "link": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-16T17:02:00.000Z",
+      "contentSnippet": "The decades-old mystery of the origins of one of the most popular cryptographic standards has been explained."
+    },
+    {
+      "id": "ce6de6f9e4f4",
+      "title": "The AI expectations gap",
+      "link": "https://www.anthropic.com/research/ai-expectations-gap",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-16T16:45:00.000Z",
+      "contentSnippet": "How will AI reshape the economy in the years ahead? What is the core source of disagreement about AI's future impact on the economy? This note presents new survey evidence on these questions."
+    },
+    {
+      "id": "f1073754b8e0",
+      "title": "How employment is changing at Anthropic",
+      "link": "https://www.anthropic.com/research/employment-at-anthropic",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-16T16:26:00.000Z",
+      "contentSnippet": "How has AI restructured work and employment at Anthropic? As a company at the frontier of AI adoption, Anthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy."
+    },
+    {
+      "id": "ab1e0ebf1e34",
+      "title": "Working at the frontier shapes expectations for the future",
+      "link": "https://www.anthropic.com/research/expectations-for-the-future",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-16T16:21:00.000Z",
+      "contentSnippet": "We’re sharing two reports: the first covers how AI is changing employment inside Anthropic, and the second looks at the gap between how the public and Anthropic employees expect AI to affect work and the economy."
+    },
+    {
+      "id": "2552bec412d6",
+      "title": "Closing the Binary Blind Spot: Domain-Knowledge Injection for LLM Malware Triage in npm Packages",
+      "link": "https://www.databricks.com/blog/closing-binary-blind-spot-domain-knowledge-injection-llm-malware-triage-npm-packages",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-16T15:37:00.000Z",
+      "contentSnippet": "IntroductionSupply chain attacks on package registries have grown in volume and sophistication [1]..."
+    },
+    {
+      "id": "67d254fd46bf",
+      "title": "Stop Guessing, Start Forecasting: Why Scrum Teams Should Embrace Monte Carlo",
+      "link": "https://www.scrum.org/resources/blog/stop-guessing-start-forecasting-why-scrum-teams-should-embrace-monte-carlo",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-16T11:49:45.000Z",
+      "contentSnippet": "Image How confident are you when someone asks, \"When will it be done?\" If you've worked with a Scrum Team for any length of time, you'll know this question well. And you'll probably recognise the uncomfortable silence that sometimes follows. We estimate. We plan. We look at veloc…"
+    },
+    {
+      "id": "9db4940a53f8",
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "link": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-16T00:00:00.000Z",
+      "contentSnippet": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation."
+    },
+    {
+      "id": "4a2f3ca18eb9",
+      "title": "Benefit Street Partners answers questions faster with Codex",
+      "link": "https://openai.com/index/benefit-street-partners",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-16T00:00:00.000Z",
+      "contentSnippet": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups."
+    },
+    {
+      "id": "c77032d2ea07",
+      "title": "From JSON Strings to Typed Columns",
+      "link": "https://duckdb.org/2026/10/16/json-to-typed-columns.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-10-16T00:00:00.000Z",
+      "contentSnippet": "DuckDB's read_json turns JSON files into tables. It reads through part of the data to work out a schema, then gives you typed columns. However, a lot of JSON does not come as files. It comes as a text column: event payloads in a Postgres table, API responses stored by an ingestio…"
+    },
     {
       "id": "d93d55bcef8a",
       "title": "Benchmarking DuckDB v2.0-dev on NVIDIA Vera",
@@ -10,6 +145,24 @@
       "category": "Data",
       "pubDate": "2026-10-16T00:00:00.000Z",
       "contentSnippet": "We love running benchmarks on all sorts of new hardware. This often includes somewhat exotic hardware – where we sometimes need to compile a new DuckDB binary. This time, in collaboration with the NVIDIA team, we got our hands on their new Vera chip, aimed at agentic workloads. N…"
+    },
+    {
+      "id": "0682186248aa",
+      "title": "prompt_jev() now works on images",
+      "link": "https://motherduck.com/blog/motherduck-announce-jev-image",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-16T00:00:00.000Z",
+      "contentSnippet": "prompt_jev() now takes images: store them as BLOBs in MotherDuck, ask closed questions in SQL, and get typed answers with a confidence score you can join with the rest of your data."
+    },
+    {
+      "id": "028c8790a21e",
+      "title": "Offshore forwards and exchange rate transmission in emerging markets",
+      "link": "https://www.bis.org/publications/working-paper-1383-offshore-forwards-and-exchange-rate-transmission-emerging-markets",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-16T00:00:00.000Z",
+      "contentSnippet": "We study how offshore non-deliverable forward (NDF) markets transmit exchange-rate pressures to domestic currency markets. Using unique transaction-level data on the universe of centrally cleared NDFs for ten emerging-market currencies over 2013–2025, we show that offshore NDF or…"
     },
     {
       "id": "89016aba30db",
@@ -30,6 +183,15 @@
       "contentSnippet": "Mortality is one of the most salient consequences of climate change. Existing estimates have largely focused on the direct effects of local heat exposure. This column argues that this perspective can miss an important part of the overall health burden. New evidence based on fluct…"
     },
     {
+      "id": "d5eeee9204fa",
+      "title": "Life after Divorce",
+      "link": "https://cepr.org/multimedia/life-after-divorce",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-15T23:00:00.000Z",
+      "contentSnippet": "Who gets the kids? Courts aim to decide custody in the child's best interests, but nobody has had the data to test how well those decisions work. Gordon Dahl (UC San Diego, CEPR), Costas Meghir (Yale, CEPR) and seven co-authors built the data themselves. They collected more than…"
+    },
+    {
       "id": "eb6210d05e81",
       "title": "How our AI Research team uses AI Runtime",
       "link": "https://www.databricks.com/blog/how-our-ai-research-team-uses-ai-runtime",
@@ -37,6 +199,15 @@
       "category": "Data",
       "pubDate": "2026-10-15T21:37:44.000Z",
       "contentSnippet": "At Databricks, we continuously develop and evaluate new AI research techniques to..."
+    },
+    {
+      "id": "31741ef5470d",
+      "title": "Stripe Data Pipeline now syncs real-time Stripe data to Lakebase Postgres",
+      "link": "https://www.databricks.com/blog/stripe-data-pipeline-now-syncs-real-time-stripe-data-lakebase-postgres",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-15T21:08:14.000Z",
+      "contentSnippet": "If your business runs on Stripe, your application needs access to Stripe data at..."
     },
     {
       "id": "977f193b8949",
@@ -129,6 +300,24 @@
       "contentSnippet": "In collaboration with OpenAI, Sullivan & Cromwell developed Agreement Analyzer, an AI tool for identifying issues in a draft agreement."
     },
     {
+      "id": "0fd6a0b2bc60",
+      "title": "MotherDuck is coming to Azure",
+      "link": "https://motherduck.com/blog/azure-waitlist",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-15T00:00:00.000Z",
+      "contentSnippet": "MotherDuck is coming to Azure. Pick your region on the waitlist; regions open in order of demand. Your Copilot agents can connect to MotherDuck today."
+    },
+    {
+      "id": "2359bb1f5e88",
+      "title": "A Chief of Staff's Guide to Context Layers",
+      "link": "https://motherduck.com/blog/chief-of-staff-guide-ai-agents-metrics",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-15T00:00:00.000Z",
+      "contentSnippet": "Kaitlyn, MotherDuck’s Chief of Staff, on why self-serve analytics with AI agents fragments your metrics, and how non-technical leaders can get everyone on one definition of metrics."
+    },
+    {
       "id": "969daf547f38",
       "title": "Chokepoint disruptions and their macroeconomic consequences",
       "link": "https://www.bis.org/publications/bulletin-138-chokepoint-disruptions-and-their-macroeconomic-consequences",
@@ -172,15 +361,6 @@
       "category": "Economics",
       "pubDate": "2026-10-14T23:00:00.000Z",
       "contentSnippet": "In response to digital dependence, Europe has decided to think bigger. This includes AI gigafactories, tripling data centre capacity, and searching for domestic champions. However, this column argues that the destination for 2050 should be different. For the first time since the…"
-    },
-    {
-      "id": "3be93b13b8fc",
-      "title": "The Swiss–Japanese immigration puzzle",
-      "link": "https://cepr.org/voxeu/columns/swiss-japanese-immigration-puzzle",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-14T23:00:00.000Z",
-      "contentSnippet": "Anti-migration politics are advancing across the rich world at very different levels of foreign population. Japan has a foreign-resident share just above 3%, while Switzerland’s foreign-born share is near 30%. Yet both have recently experienced a surge in nationalist politics cen…"
     },
     {
       "id": "b3a0405976db",
@@ -246,15 +426,6 @@
       "contentSnippet": "Building a slide template starts with three foundational choices — colours, fonts and layouts. Sumeet Gayathri Moghe covers the basics of color theory and how to build a reusable palette, the essentials of typography, including serif, sans-serif, handwritten and monospace fonts,…"
     },
     {
-      "id": "e49a398e91e1",
-      "title": "Introducing Private Network Gateway",
-      "link": "https://www.databricks.com/blog/introducing-private-network-gateway",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-14T14:00:00.000Z",
-      "contentSnippet": "Databricks serverless compute is fully managed, intelligent, and versionless, allowing..."
-    },
-    {
       "id": "a0e0fec2c2b5",
       "title": "Amp puts AI agents to work beyond code with OpenAI models",
       "link": "https://openai.com/index/amp-beyond-coding",
@@ -271,15 +442,6 @@
       "category": "AI",
       "pubDate": "2026-10-14T12:00:00.000Z",
       "contentSnippet": "With OpenAI Daybreak, SentinelOne cuts weeks of malware analysis to hours, creating capacity to investigate more threats."
-    },
-    {
-      "id": "1c3ae698f334",
-      "title": "Reducing Qwen training time by 6x on AI Runtime",
-      "link": "https://www.databricks.com/blog/reducing-qwen-training-time-6x-ai-runtime",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-14T11:30:00.000Z",
-      "contentSnippet": "Training or finetuning a multi-billion parameter foundation model requires significant compute..."
     },
     {
       "id": "e8a69c4dba58",
@@ -309,24 +471,6 @@
       "contentSnippet": "PRA policy statement 19/26 | FCA policy statement 26/20"
     },
     {
-      "id": "e181547094b0",
-      "title": "How Third Moment Research runs 10,000 agents for 36+ hours",
-      "link": "https://openai.com/index/third-moment-research",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-14T07:00:00.000Z",
-      "contentSnippet": "With GPT-6 Astra and GPT-6.1 Sol, Codex, and Daybreak for cybersecurity, this AI lab builds agents that focus for days and improve with use."
-    },
-    {
-      "id": "7d10f0ddfecf",
-      "title": "How Block is building AI-powered security with OpenAI technology",
-      "link": "https://openai.com/index/block-ai-powered-security",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-14T07:00:00.000Z",
-      "contentSnippet": "Block is building AI-powered security with OpenAI. Its security team investigates threats faster and proposes patches in minutes."
-    },
-    {
       "id": "58e4191fcfe4",
       "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection",
       "link": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
@@ -336,15 +480,6 @@
       "contentSnippet": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress."
     },
     {
-      "id": "2f3282e48314",
-      "title": "The EU’s next chapter in AI is agentic",
-      "link": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-14T00:00:00.000Z",
-      "contentSnippet": "New analysis shows how agentic AI adoption is growing across EU enterprises and small businesses—and where deeper use could unlock more value."
-    },
-    {
       "id": "ded3d57606c8",
       "title": "Money and the architecture of trust",
       "link": "https://www.bis.org/publications/paper-175-money-and-architecture-trust",
@@ -352,24 +487,6 @@
       "category": "Credit",
       "pubDate": "2026-10-14T00:00:00.000Z",
       "contentSnippet": "Money is one of the most consequential social institutions humanity has built. Starting from the most elementary monetary act, a payment, this paper provides an account of how money works, grounded in the tradition of credit theories of money."
-    },
-    {
-      "id": "258b0b987413",
-      "title": "Connecting payment systems, linking economies",
-      "link": "https://cepr.org/voxeu/columns/connecting-payment-systems-linking-economies",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-13T23:00:00.000Z",
-      "contentSnippet": "Several countries are working to interlink their domestic fast payment systems in order to reduce costs and improve the speed and transparency of cross-border payments. This column presents econometric evidence suggesting that countries with interlinked systems trade with each ot…"
-    },
-    {
-      "id": "7df1cb145cda",
-      "title": "Financing the AI boom: Winners and losers in corporate bond markets",
-      "link": "https://cepr.org/voxeu/columns/financing-ai-boom-winners-and-losers-corporate-bond-markets",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-13T23:00:00.000Z",
-      "contentSnippet": "The expansion of artificial intelligence has triggered a surge of investment and rising equity values at technology firms. The largest firms, known as ‘hyperscalers’, issued over $100 billion of bonds in 2025, around five times the 2023-2024 annual average. This column compares b…"
     },
     {
       "id": "98b69313f8c3",
@@ -397,15 +514,6 @@
       "category": "AI",
       "pubDate": "2026-10-13T19:43:07.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "aff2b4e37bdd",
-      "title": "A practical guide to real-time analytics in 2026",
-      "link": "https://www.databricks.com/blog/practical-guide-real-time-analytics-2026",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-13T19:17:26.000Z",
-      "contentSnippet": "Data has always been central to business decision-making, and most analytical workloads..."
     },
     {
       "id": "884ebf3c3978",
@@ -489,15 +597,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "b407e87d5843",
-      "title": "Strengthening our defenses against distillation attacks",
-      "link": "https://www.anthropic.com/research/distillation-defenses",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-12T09:30:00.000Z",
-      "contentSnippet": "Illicit distillation allows model developers to copy frontier AI capabilities without creating proportionally robust safeguards. Here, we describe how we’ve reduced the rate of distillation by more than 90%."
-    },
-    {
       "id": "f0cd20cb9cc3",
       "title": "You Need Tighter WIP Limits With AI",
       "link": "https://www.scrum.org/resources/blog/you-need-tighter-wip-limits-ai",
@@ -561,15 +660,6 @@
       "contentSnippet": "Image Gary Hamel spent decades asking why large organizations become rigid, slow, and hard to work inside. His diagnosis is simple: bureaucracy is not a symptom of poor management. It is a design, and its purpose is control, not the creation of value. I have been watching this de…"
     },
     {
-      "id": "a842dc410cb5",
-      "title": "Investigating unintended model actions in our evaluations and internal use",
-      "link": "https://www.anthropic.com/research/investigating-unintended-model-actions",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-09T16:09:00.000Z",
-      "contentSnippet": "This report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude."
-    },
-    {
       "id": "95fd0fb1a7d9",
       "title": "A new feature for my blog, built using my voice",
       "link": "https://simonwillison.net/2026/Oct/9/built-using-my-voice/",
@@ -595,24 +685,6 @@
       "category": "Data",
       "pubDate": "2026-10-09T00:00:00.000Z",
       "contentSnippet": "Josh Wills, creator of dbt-duckdb and former head of data engineering at Slack, on why the model barely matters, why agents still write ugly and expensive data pipelines, and why data engineering is still the cache invalidation problem."
-    },
-    {
-      "id": "2999c3c463fc",
-      "title": "The missing map of the sky",
-      "link": "https://www.anthropic.com/research/the-missing-map-of-the-sky",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-08T20:59:00.000Z",
-      "contentSnippet": "Brice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, explains how he worked with Claude Science to produce the first complete map of the sky in UV light."
-    },
-    {
-      "id": "ecaa805484ea",
-      "title": "Launching an opt-in vulnerability-finding service for open-source software",
-      "link": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-08T19:00:00.000Z",
-      "contentSnippet": "We’re making available OSS Scanner, an opt-in vulnerability scanner for the open-source ecosystem that’s informed by our experience using Claude to find vulnerabilities during Project Glasswing."
     },
     {
       "id": "471acfb3b17e",
@@ -721,15 +793,6 @@
       "category": "Credit",
       "pubDate": "2026-10-06T00:00:00.000Z",
       "contentSnippet": "This paper analyses the state-dependent effects of geopolitical risks on gold prices (i.e. the safe-haven role of gold), conditional on financial conditions. Geopolitical risks are often associated with tighter financial conditions. However, recent data reveal a decoupling betwee…"
-    },
-    {
-      "id": "c3d66983a8dc",
-      "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
-      "link": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-10-05T21:08:00.000Z",
-      "contentSnippet": "Generative AI"
     },
     {
       "id": "b3f03a1d6ca5",
@@ -849,15 +912,6 @@
       "contentSnippet": "Appointing one person accountable for AI is a sound first step. In an organisation moving to a product operating model, or already running one, the same role puts a dependency and a handoff between product teams and the decisions the model gives them. Most organisations adopted A…"
     },
     {
-      "id": "fb8b899b1641",
-      "title": "O Dojo de Product Ownership: Gestão Avançada de Produtos na Era da Inteligência Artificial",
-      "link": "https://www.scrum.org/resources/blog/o-dojo-de-product-ownership-gestao-avancada-de-produtos-na-era-da-inteligencia-artificial",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-02T11:34:32.000Z",
-      "contentSnippet": "A maioria das organizações ainda encara a gestão de produtos como uma linha de montagem: escrever histórias de usuário, alimentar o backlog, acompanhar a velocidade das sprints e torcer para que a funcionalidade entregue gere algum resultado. Essa postura é o teto de vidro do \"PO…"
-    },
-    {
       "id": "97db45500e1a",
       "title": "Faster String Aggregations with Dimension Tables",
       "link": "https://duckdb.org/2026/10/02/dimension-tables.html",
@@ -865,15 +919,6 @@
       "category": "Data",
       "pubDate": "2026-10-02T00:00:00.000Z",
       "contentSnippet": "Analytical workloads are full of repeated strings: product names, country names, station names, user agents, category labels. Take DuckDB's public train services dataset, which has one row for every stop a Dutch railway train makes. The data comes from the open datasets published…"
-    },
-    {
-      "id": "1eadfb1cd5ee",
-      "title": "Claude-shaped science",
-      "link": "https://www.anthropic.com/research/claude-shaped-science",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-01T14:02:00.000Z",
-      "contentSnippet": "Guest author Prof. Matthew Schwartz describes what happened when he stopped fighting Claude and allowed Claude to find “Claude-shaped” problems: ones best suited to the capabilities of the current generation of LLM tools. This led him to build BootLoops, a toolkit for exact calcu…"
     },
     {
       "id": "0460e0adb0a8",
@@ -928,15 +973,6 @@
       "category": "Data",
       "pubDate": "2026-09-30T04:17:33.000Z",
       "contentSnippet": "A Field guide for data leaders"
-    },
-    {
-      "id": "b8b7e5a337cd",
-      "title": "Core Principles for Effective Deposit Insurance Systems – Executive Summary",
-      "link": "https://www.bis.org/publications/core-principles-effective-deposit-insurance-systems-executive-summary",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-09-30T00:00:00.000Z",
-      "contentSnippet": "The Core Principles for Effective Deposit Insurance Systems (core principles) of the International Association of Deposit Insurers are the international standard for the design, implementation and assessment of deposit insurance systems. They provide a benchmark for jurisdictions…"
     },
     {
       "id": "3bd3ec89a48c",
@@ -1135,15 +1171,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-22T08:30:38.000Z",
       "contentSnippet": "The time has come: in 2026, using AI to write DAX has started to be effective. Let me recap what has changed between 2023 and 2026, and what we are doing with our three new courses to best assist you…"
-    },
-    {
-      "id": "ba9acd5cf52a",
-      "title": "DuckDB Now Ships inside dbt v2",
-      "link": "https://duckdb.org/2026/09/22/dbt-fusion.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-09-22T00:00:00.000Z",
-      "contentSnippet": "dbt is the tool many data teams use to manage their SQL transformations: you write each model as a SELECT statement, and dbt works out the order to run them in from the references between models, builds the resulting tables and views in your database, and can test them along the…"
     },
     {
       "id": "c0e73749e2be",
@@ -1488,24 +1515,6 @@
       "contentSnippet": "Let's talk about matrix totals in this episode of The Whiteboard! Special guest: the SQLBI Whiteboard! Learn abstract DAX concepts in a more interactive way with \"The Whiteboard\" series. Read more: https://www.sqlbi.com/blog/marco/2022/07/14/the-whiteboard-video-series-on-sqlbi-y…"
     },
     {
-      "id": "0a35ea3a6965",
-      "title": "Context, Semantics, and Ontology: A Primer for the Agentic Era",
-      "link": "https://motherduck.com/blog/context-layer-vs-semantic-layer-ontology",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-09-02T00:00:00.000Z",
-      "contentSnippet": "A primer on the context layer, semantic layer, and ontology: what each term means, how they fit together, and why AI agents still need a human to decide what's true."
-    },
-    {
-      "id": "a84f87603a32",
-      "title": "Agents Don’t Query Like Humans Do",
-      "link": "https://motherduck.com/blog/agents-dont-query-like-humans-do",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-09-02T00:00:00.000Z",
-      "contentSnippet": "We analyzed a slice of MotherDuck query history and found agents ran 29 times more queries than humans last month, a gap that has roughly doubled every month. The average organization now has twice as many agents as human users. Agents are the dominant consumers of the data platf…"
-    },
-    {
       "id": "ce78c56fbdad",
       "title": "Fragments: September 1",
       "link": "https://martinfowler.com/fragments/2026-09-01.html",
@@ -1549,15 +1558,6 @@
       "category": "Analytics",
       "pubDate": "2026-08-28T15:34:35.000Z",
       "contentSnippet": "I have written and recorded about Rayfin before, what it is, how the Data App template works, and the cost story that makes it genuinely significant. But this conversation goes much deeper. I sat down with Sachin Patney, who leads Fabric App Development at Microsoft, and by exten…"
-    },
-    {
-      "id": "00c39e9700a3",
-      "title": "Agentic SQL for Free with Qwen3.8 27B and DuckDB",
-      "link": "https://motherduck.com/blog/Agentic-SQL-for-Free-with-Qwen3.8-27B-and-DuckDB",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-08-28T00:00:00.000Z",
-      "contentSnippet": "If your laptop has 16GB of RAM, your agent can write SQL locally for free with Qwen3.8 27B. On the DABstep SQL benchmark, Qwen beat GPT 5.6 Luna and cost under 50 cents in electricity, over 17x less. Add DuckDB and you have a data analyst that runs on your own machine. This post…"
     },
     {
       "id": "1f24f2fac291",
@@ -1785,6 +1785,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
+    },
+    {
       "id": "d9adb789161e",
       "title": "How Firms Form Beliefs and the Implications for Inflation",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
@@ -1801,15 +1810,6 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
-    },
-    {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "fb549b859ee4",
@@ -1866,13 +1866,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "99c54272067a",
-      "title": "Rethinking Central Bank LSAPs: The Power of Market Functioning Purchases",
-      "link": "https://www.kansascityfed.org/research/research-working-papers/rethinking-central-bank-lsaps-the-power-of-market-functioning-purchases/",
+      "id": "370e7bd96562",
+      "title": "Transmission Growth-at-Risk: How Foreign Financial Vulnerabilities Shape U.S. Growth Prospects",
+      "link": "https://www.federalreserve.gov/econres/ifdp/files/ifdp1442.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Kansas City Research Working Papers by Andrew Lee Smith and Victor J. Valcarcel"
+      "contentSnippet": "Board of Governors of the Federal Reserve System International Financial Discussion Papers by Viktors Stebunovs, Judit Temesvary and Sai Ma"
     },
     {
       "id": "ed6bd26c4997",
