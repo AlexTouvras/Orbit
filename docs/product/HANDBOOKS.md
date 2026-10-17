@@ -43,20 +43,46 @@ A figure is allowed when it carries the procedure: a loop, a decision, a shape. 
 
 1. **Software that stays in use** — extends the SDLC field card. The library title opens `/handbooks/software-that-stays-in-use/1`, Keep main releasable. Page 2 is Fail for the right reason. Page 3 is The plan fits on a page. Page 4 is Run the version just verified. Page 5 is Use is the next change.
 2. Engineering reliable delivery — not in the library yet. For the technology delivery field card.
-3. **Data that drives decisions** — extends the data analytics field card. The library title opens `/handbooks/data-that-drives-decisions/1`, Name the decision. Page 2 is Say what one row means. Page 3 is When two reports don't match. Page 4 is Keep the definition.
+3. **Data that drives decisions** — extends the data analytics field card. The library title opens `/handbooks/data-that-drives-decisions/1`, Name the decision. Page 2 is Say what one row means. Page 3 is When two reports don't match. Page 4 is Keep the definition. That is the published order. The shape below is what the book is being rebuilt toward. Do not treat the published order as the finished progression.
 4. Decision systems under uncertainty — not in the library yet. For the credit risk field card.
 
-### Reading order for Data that drives decisions
+### Shape of Data that drives decisions
 
-The library lists only the pages that exist. A row with no route is not published.
+The field card is the framework: Ask, then Grain, then Truth, then Use. The handbook teaches a reader how to do that work. It does not invent a second framework, and it does not become a list of separate practices.
 
-- **Name the decision** — written, `/1`. What are we deciding, who will act, and what would they do if the number moved.
-- **Say what one row means** — written, `/2`. The thing being counted, the time, what is included, and what is left out.
-- **When two reports don't match** — written, `/3`. Explain the difference, or do not send the number out. Do not invent a number in between.
-- **Keep the definition** — written, `/4`. Who owns the meaning, which columns the number promises, and what stops the old number when that promise breaks.
-- **Hand the number over** — not written. No route. The person who acts can see the number, explain it, and make the move named on the first page. It comes after Keep the definition. Do not insert it earlier.
+The book opens on the capability: a question, a measure, evidence someone can trust, and a decision a person can make. It does not open on a failure, on two reports that disagree, or on a troubleshooting step. Those appear later, inside the journey, to show why a practice matters.
 
-Lineage, and the tests that run before a number ships, stay on the analytics field card until a page is needed. They are not the next page.
+One illustration runs through the book: whether to give an invoice more time to pay. It states no amount. Two overdue-balance lists that disagree are a scene inside Truth, not the opening.
+
+The four published pages are material mapped onto this shape. They are not the finished progression. Do not add Hand the number over as the next page. Do not rewrite the four pages until the next writing starts at the opening below. A row with no route is not published.
+
+**Ask — Frame the decision.** The business question, the outcome, the person who will act, and the evidence that would change what they do.
+
+- Mapped: Name the decision, `/1`. The brief names the decision, the actor, both moves, and the one activity.
+- That page still begins with a number that can be checked and still be the wrong answer. The failure belongs later in the chapter. The opening of the book is the desired state, and that opening is not written. No route until the page exists.
+- Kimball's four-step design supports choosing the business activity before the grain. That is a modeling order, not a decision method. The GAO Results Act guide, April 1998, supports a measure that represents the goal it is supposed to assess. The guide is about an agency plan.
+- The author's rule, not a cited method: name the decision, the person, and both moves before the number goes out as the answer.
+- Gap: no source read for this book establishes a method for the outcome and the evidence as their own steps. Do not stretch Kimball to cover them.
+
+**Grain — Define the measure.** The activity, what one row means, the time, what is included, what is left out, the dimensions that implement that row, and how the number is calculated.
+
+- Mapped: Say what one row means, `/2`. The thing, the time, what is included, what is left out, and a sentence the user can say back. A list of columns is not that sentence.
+- Not yet a section: the dimensions after that sentence, and the calculation. Kimball's four-step design already places dimensions and facts after the grain. That is the source when those sections are written. No route for them yet.
+- Kimball, Declaring the Grain (1 Mar 2003), and the Kimball Group grain note support this layer. Kimball is a dimensional-modeling method. It supports how a measure is designed. It is not the authority for the decision, the reconciliation, or the action.
+
+**Truth — Trustworthy evidence.** Quality, a comparison when two reports disagree, lineage, an owner, a test that can stop a bad number, and the control that keeps the definition.
+
+- Mapped: When two reports don't match, `/3`. Compare, explain, or do not publish. Do not publish a number between the two reports. The GAO Green Book, May 2025, supports the comparison and a correction that happens in time. dbt's build and test severity support a failed test skipping what comes next, and a warning letting it run. The block, and the refusal to publish a midpoint, are the author's rule. The Green Book does not describe a dashboard.
+- Mapped: Keep the definition, `/4`. The owner, the columns the number promises, and the stop when those columns break. dbt's model contracts and model versions support the column check and the breaking change. The owner is the author's rule. A green contract does not know what one row means.
+- These two pages are supporting chapters inside Truth. They are not the whole layer, and they are not the opening of the book.
+- Gap: lineage and freshness. The card names them. No handbook source has been read for them. OpenLineage is named on the card and is not yet a citation.
+
+**Use — Turn evidence into action.** Explain the number, say what is uncertain, name the trade-off, recommend the move, and look at what happened after.
+
+- Not written. No route. Hand the number over was a thinner name for this layer. Do not write that page under that title.
+- The GAO guide supports a measure that helps someone decide and assign accountability. It does not teach how to explain uncertainty, or how to judge the outcome afterward. Choose a source for those claims before the chapter is written.
+
+The next writing starts with the opening: what good looks like, in ordinary words, with no failure in the first paragraphs. The four published pages are then revised so they sit in this progression.
 
 Calendars, blast-radius proof, and the cutover sequence stay on the delivery card. Do not add an eighth named practice to the SDLC card.
 
