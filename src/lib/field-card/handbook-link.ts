@@ -2,7 +2,25 @@
  * The analytics field card is copied from its source repo on Approve.
  * That HTML does not know this site's handbook. Re-insert each chapter
  * link once unless the sheet already carries it.
+ *
+ * The four steps have one name: Ask, Grain, Truth, Use. A copied sheet
+ * that still says name → define → consume, or Question and Decision,
+ * is rewritten to that set.
  */
+
+const STEP_NAMES: Array<[string, string]> = [
+  ["Ask → name → define → consume", "Ask → Grain → Truth → Use"],
+  ["<h3>01 Question</h3>", "<h3>01 Ask</h3>"],
+  ["<h3>04 Decision</h3>", "<h3>04 Use</h3>"],
+];
+
+function useOneStepName(html: string): string {
+  let next = html;
+  for (const [from, to] of STEP_NAMES) {
+    if (next.includes(from)) next = next.replaceAll(from, to);
+  }
+  return next;
+}
 
 const PATH = "/handbooks/data-that-drives-decisions/1";
 const DECISION = "/handbooks/data-that-drives-decisions/2";
@@ -20,7 +38,7 @@ const GUARD_BODY =
   "document.querySelectorAll('[data-handbook-chapter]').forEach(function(a){a.addEventListener(\"click\",function(e){e.stopPropagation();});});";
 
 export function ensureAnalyticsHandbookLink(html: string): string {
-  let next = html;
+  let next = useOneStepName(html);
   if (!next.includes(PATH)) {
     const at = next.indexOf(PATH_HEADING);
     if (at >= 0 && !anchorIsOpen(next, at)) {

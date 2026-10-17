@@ -1032,7 +1032,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   index: "03",
   title: "Data that drives decisions",
   thesis:
-    "A number is ready when you can say the question, the row, why you trust it, and the move.",
+    "A number is ready when you can say Ask, Grain, Truth, and Use.",
   card: { href: DATA_CARD, label: "Data analytics field card" },
   contents: [
     { title: "What good looks like", page: 1 },
@@ -1046,8 +1046,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 1,
       topic: "The path",
       title: "What good looks like",
-      lede: "This page is the path a number walks when a person can act on it. There is a question. There is one clear row. There is evidence that person can trust. There is a move they can make. I want all four of those to be sayable in one sitting, in ordinary words.",
-      rule: "My operating rule: before a number goes out as the answer, I can say the question, the row, why the evidence can be trusted, and the move, in that order.",
+      lede: "This page is the path a number walks when a person can act on it. The four steps are Ask, Grain, Truth, and Use. I want all four of those to be sayable in one sitting, in ordinary words.",
+      rule: "My operating rule: before a number goes out as the answer, I can say Ask, Grain, Truth, and Use, in that order.",
       illustration: "The four sheets are an illustration, not a record.",
       reviewed: "17 Oct 2026",
       cover: {
@@ -1059,8 +1059,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path",
           title: "The four things",
           paragraphs: [
-            "The question is the decision a person is about to make, and who that person is. The row is what one line of the number means: the thing, the time, what is included, and what is left out. The evidence is why that person can trust the number. They know who stands behind the meaning, and they know what stops a bad number. The move is what they will do once they have it.",
-            "The analytics field card names this path Ask, Grain, Truth, and Use. Ask is the question. Grain is the row. Truth is the evidence. Use is whether we can explain the number and act on it. The card is the frame I use. This page is what that frame looks like when the four things can be said.",
+            "Ask is the decision a person is about to make, and who that person is. Grain is what one line of the number means: the thing, the time, what is included, and what is left out. Truth is why that person can trust the number. They know who stands behind the meaning, and they know what stops a bad number. Use is whether they can explain the number and act on it.",
+            "Those four names are the analytics field card. This page is what they look like when all four can be said.",
             "The link I use between a measure and a decision comes from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. It says that when a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A number on this path exists so a person can see and decide.",
           ],
           sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
@@ -1069,25 +1069,25 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-walk",
           title: "How I walk it",
           paragraphs: [
-            "I fill four lines, in this order. A line is filled when a person who missed the meeting can say it back. The question and the move are written on Name the decision. The row is written on Say what one row means. Who stands behind the meaning, and what stops a bad number, are written on When two reports don't match and on Keep the definition. This page holds those pages in one order.",
+            "I fill four lines, in this order. A line is filled when a person who missed the meeting can say it back. Ask is written on Name the decision. Grain is written on Say what one row means. Truth is written on When two reports don't match and on Keep the definition: who stands behind the meaning, and what stops a bad number. This page holds those pages in one order.",
           ],
           lines: [
             {
-              term: "Question",
+              term: "Ask",
               detail: "The decision, and the person who will act. A report title does not finish the line.",
             },
             {
-              term: "Row",
+              term: "Grain",
               detail: "What one line means. The thing, the time, what is included, and what is left out.",
             },
             {
-              term: "Evidence",
+              term: "Truth",
               detail: "Who stands behind that meaning, and what stops a bad number before it goes out.",
             },
             {
-              term: "Move",
+              term: "Use",
               detail:
-                "What the person will do. If the number would not change what they do, it is not the answer to this question.",
+                "Whether they can explain the number and act on it. The response they write is a hypothesis to check. If the number would not change what they do, it is not the answer to this Ask.",
             },
           ],
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
@@ -1097,7 +1097,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An example",
           paragraphs: [
             "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "Someone can give an invoice more time to pay. The question is whether to give more time. The person is the role that can do that. The row is an open invoice as of yesterday, and accounts already written off are left out. The evidence is that this person can say that row, that someone owns the meaning, and that a bad number would be stopped. The move is theirs. If more invoices are past their date, they do not extend the terms. If fewer are past their date, the extension can be offered. The four sheets are lit because those four lines are filled. One chair faces them. That chair is the person who can make the move. No amount is written.",
+            "Someone can give an invoice more time to pay. Ask is whether to give more time. The person is the role that can do that. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, that someone owns the meaning, and that a bad number would be stopped. Use is the response they propose to check. If more invoices are past their date, they propose not to give more time. If fewer are past their date, they propose that the extension can be offered. Name the decision writes that proposal. The four sheets are lit because those four lines are filled. One chair faces them. That chair is the person who can act. No amount is written.",
           ],
           picture: {
             src: `${DATA_ART}/path.jpg`,
@@ -1109,17 +1109,17 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "How I would know",
           paragraphs: [
             "I watch four things. I have no target times, and these definitions are not results I have collected.",
-            "A repeatable question means a person who missed the meeting can say what is being decided, and who will act.",
-            "A repeatable row means that person can say what one line means.",
-            "A named trust means they can say who owns the meaning, and what stops a bad number.",
-            "A written move means they can say what they will do.",
+            "A repeatable Ask means a person who missed the meeting can say what is being decided, and who will act.",
+            "A repeatable Grain means that person can say what one line means.",
+            "A named Truth means they can say who owns the meaning, and what stops a bad number.",
+            "A written Use means they can say the response they propose to check, and how they would explain the number.",
             "The line below is the illustration on this page, once the path is filled. It is not a result I collected, and it states no amount.",
           ],
           lines: [
             {
               term: "Filled",
               detail:
-                "Question: whether to give more time to pay. The person is the role that can do that. Row: an open invoice as of yesterday, written-off accounts left out. Evidence: that row can be said back, someone owns the meaning, and a bad number would be stopped. Move: if more invoices are past their date, do not extend. If fewer are, the extension can be offered. No amount is written.",
+                "Ask: whether to give more time to pay. The person is the role that can do that. Grain: an open invoice as of yesterday, written-off accounts left out. Truth: that grain can be said back, someone owns the meaning, and a bad number would be stopped. Use: a hypothesis if more invoices are past their date, and a hypothesis if fewer are. Name the decision writes those proposals. No amount is written.",
             },
           ],
         },
@@ -1127,8 +1127,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page is the path. The question is written on Name the decision. The row is written on Say what one row means. A comparison of two reports is written on When two reports don't match. The columns that stay in force are written on Keep the definition.",
-            "The card asks whether we can explain the number and act on it. This page names the move. It does not teach how to explain a number when you are unsure of it.",
+            "This page is the path. Ask is written on Name the decision. Grain is written on Say what one row means. A comparison of two reports is written on When two reports don't match. The columns that stay in force are written on Keep the definition.",
+            "Use asks whether we can explain the number and act on it. The response is a hypothesis, written on Name the decision. This page does not teach how to explain a number when you are unsure of it.",
             "The GAO guide assesses an agency plan. I am not running its checklist. I am using the link it requires between a measure and a decision a person can make.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
@@ -1154,8 +1154,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 2,
       topic: "The question",
       title: "Name the decision",
-      lede: "This page is for a number you are about to give someone as the answer. A number can be checked and still be the wrong answer. Looking through the data, watching a measure, or searching for a pattern can continue without a named decision. That work is not this answer. If two reports with the same title already disagree, that problem is When two reports don't match.",
-      rule: "My operating rule: name the decision, name the person who will act, name what they would do if the number moved, and do not publish the number as the answer until those are named.",
+      lede: "This page is the brief I fill before a number goes out as the answer. The brief names the decision, the outcome that decision is for, the person who will act, the constraint they have to respect, the one activity, and a hypothesis for a rise and a hypothesis for a fall. A blank line means the number is not that answer.",
+      rule: "My operating rule: I can say the decision, the outcome, the person, the constraint, a hypothesis for a rise, and a hypothesis for a fall, and I do not publish the number as the answer until those are named. Each hypothesis is a proposal to check against the outcome.",
       illustration: "The two chairs are an illustration, not a record.",
       reviewed: "16 Oct 2026",
       cover: {
@@ -1164,72 +1164,73 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       },
       sections: [
         {
-          id: "wrong-answer",
-          title: "Why the right number can still be wrong",
-          paragraphs: [
-            "The check can already have passed. The easy move is to read the number out as the answer to whatever question is in the meeting. The number came from one activity. The meeting may be deciding something else. A figure that counts the right thing can still have nothing to do with the decision someone is about to make.",
-            "Kimball's design order puts the business first. Before the model is designed, the team sits with the people who use the numbers. They learn the goals, the problems, how decisions get made, the analysis those people need, and what the source data can support. The four design steps then start by choosing the business process. That process is a real activity, such as taking an order, handling a claim, or recording every account at month-end. The events of that activity produce the measures. Most fact tables cover one activity. Choosing it is what lets you say what one row means. A report title is not that activity.",
-            "The link I use between a measure and a goal comes from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. It says the measures should show progress toward the goals. When a goal does not measure itself, the measures turn it into something you can observe, so the agency can see what happened, decide, and say who is accountable. A measure has to represent the performance it is supposed to assess, or be clearly related to it. The guide's example is the failure: the average time to process a tax return does not represent the goal of making tax-return processing more accurate. The time can be collected carefully and still be the wrong number for that goal.",
-          ],
-          sources: [KIMBALL_STEPS, KIMBALL_PROCESS, KIMBALL_PDF, GAO_RESULTS],
-        },
-        {
-          id: "question-rule",
-          title: "What I follow",
-          paragraphs: [
-            "The design order is Kimball's. Choose the business process, then say what one row means. People from the business take part so the names and the rules are agreed. I treat that meeting as the design session. Sitting in it does not, by itself, name the decision the published number will answer.",
-            "The analytics field card names the failure this page is about: the wrong question, the wrong audience, or an unclear decision. I read the question as the decision, the audience as the person who will act, and an unclear decision as a move that has not been written down.",
-            "The operating rule at the top of this page is the stop. A workshop can agree an activity and still leave the decision unnamed. A clean comparison can agree what a row means and still leave the decision unnamed.",
-          ],
-          sources: [KIMBALL_STEPS, KIMBALL_PDF, { href: DATA_CARD, label: "Data analytics field card" }],
-        },
-        {
           id: "brief",
           title: "The brief",
           paragraphs: [
-            "This is the sheet I fill in before I say what one row means, when the number will be given to someone as the answer. A blank line means the number is not that answer. The activity is Kimball's. The link between the measure and the goal follows the GAO guide. The stop, when the decision cannot be named, is my rule. What one row means is written on Say what one row means, and only after these lines are filled. Two reports that disagree are handled on When two reports don't match, not here.",
+            "This is the sheet I fill when the number will be given to someone as the answer. A blank line means it is not that answer. The Activity line is Kimball's business process. The Outcome line is the goal I write down, so the measure has something to represent. The GAO guide requires that link. The decision, the person, the constraint, the two hypotheses, and the stop are my rule. The field card names the outcome beside the question and the audience. What one row means comes after this sheet. Two reports that disagree are handled on When two reports don't match.",
           ],
           lines: [
             {
               term: "Decision",
               detail:
-                "The decision, in the words of the person who will act. A report title does not finish the line. It is filled when someone who missed the meeting can say what is being decided. Otherwise it stays blank.",
+                "The decision, in the words of the person who will act. A report title does not finish the line. It is filled when someone who missed the meeting can say what is being decided.",
+            },
+            {
+              term: "Outcome",
+              detail:
+                "The business result that decision is for. What should be true if the decision works. If the outcome is only to see the number, this number is not an answer yet.",
             },
             {
               term: "Actor",
               detail: "Who will act. One person, or one role. A mailing list is not the actor.",
             },
             {
-              term: "Move if it rises",
+              term: "Constraint",
               detail:
-                "What that person would do if the number went up. If they would do nothing different, this number is not the answer to that decision.",
+                "The limit the decision has to respect. What they will not do, or what has to stay true. If there is no limit, write that. A blank line is not the same as no limit.",
             },
             {
-              term: "Move if it falls",
+              term: "If it rises",
               detail:
-                "What that person would do if the number went down. Write both moves, or set this number aside for this decision.",
+                "A hypothesis to check, not an order. The response they propose to try if the number goes up. Afterward they compare it with the outcome. If they would do nothing different, this number is not the answer to this decision.",
+            },
+            {
+              term: "If it falls",
+              detail:
+                "A hypothesis to check, not an order. The response they propose to try if the number goes down. Write both, or set this number aside. Neither one fires by itself.",
             },
             {
               term: "Activity",
               detail:
-                "The one activity that produces the number. If the decision needs two activities, they are two numbers. The line is filled when one activity is named, or the decision has been split.",
+                "The one activity that produces the number. If the decision needs two activities, they are two numbers.",
             },
             {
               term: "Send it",
               detail:
-                "Only when the lines above are filled. If the decision, the actor, or a move is blank, the table can stay, and it is not the answer. This sheet does not pick a number between two reports.",
+                "Only when the lines above are filled. A blank line means the table can stay, and it is not the answer. Sending it does not make a hypothesis true. This sheet does not pick a number between two reports.",
             },
           ],
-          sources: [KIMBALL_PROCESS, KIMBALL_STEPS, GAO_RESULTS],
+          sources: [KIMBALL_PROCESS, KIMBALL_STEPS, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "why-lines",
+          title: "Why the lines are separate",
+          paragraphs: [
+            "Kimball's four-step design puts the business first. Before the model is drawn, the team sits with the people who use the numbers. They learn the goals, the problems, how decisions get made, the analysis those people need, and what the source data can support. The design then starts by choosing the business process. That process is a real activity, such as taking an order, handling a claim, or recording every account at month-end. Most fact tables cover one activity. Choosing it is what lets you say what one row means. People from the business take part so the names and the rules are agreed. That meeting learns how decisions get made. It does not fill this brief. A report title is not the activity.",
+            "The GAO guide for agency performance plans, April 1998, is about a plan, not a dashboard. It says the measures should show progress toward the goals. When a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A measure has to represent the performance it is supposed to assess, or be clearly related to it. The guide's example is a measure that misses its goal: the average time to process a tax return does not represent the goal of making tax-return processing more accurate. The time can be collected carefully and still be the wrong number. I am not running the guide's checklist. I use that link, and I write the goal on the Outcome line. The guide does not give the constraint, and it does not turn a response into an order.",
+            "A check can already have passed, and the number can still be the wrong answer. The number came from one activity. The meeting may be deciding something else. The field card names that failure: the wrong question, the wrong audience, or an unclear decision. I read the question as the Decision line, the audience as the Actor, and an unclear decision as a hypothesis that has not been written.",
+          ],
+          sources: [KIMBALL_STEPS, KIMBALL_PROCESS, KIMBALL_PDF, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
           id: "question-scene",
           title: "An example",
           paragraphs: [
             "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "One list is titled overdue balance. A row is an open invoice as of yesterday. Everyone agrees what a row is, and there is no second report. There are two decisions. One person will choose which customers to call. Another will decide whether to give an invoice more time to pay. The rows can answer the second decision, because that decision is about an invoice. They are not the call list, because a call is about a customer and this row is an invoice. Until the meeting names which decision this number is for, the list stays dark.",
-            "Once the sheet is filled, the decision is whether to give more time to pay. The actor is the role that can do that. If more invoices are past their date, that role does not extend them. If fewer are past their date, the extension can be offered. The activity is the open invoice. The call list is set aside. The chair in the light is the person who can extend the terms. The dark chair is the call list, which this number does not answer. The invoice list can go out as the answer. No amount is written.",
-            "If a second list with the same title arrives, and a row on that list is an account at month-end, that disagreement is When two reports don't match. This page does not pick a number between them.",
+            "One list is titled overdue balance. A row is an open invoice as of yesterday. Everyone agrees what a row is, and there is no second report. Two decisions are in the room. One person will choose which customers to call. Another will decide whether to give an invoice more time to pay. The rows can answer the second decision, because that decision is about an invoice. They are not the call list, because a call is about a customer. Until the brief names which decision this number is for, the list stays dark.",
+            "Once the sheet is filled, the decision is whether to give an invoice more time to pay. The outcome is that the account stays current, and the invoice is not written off to get there. The actor is the role that can offer more time. The constraint is that more time may be offered, and the amount owed is not forgiven. The activity is the open invoice. The call list is a second activity, so it is not this number.",
+            "If it rises, the hypothesis is to propose no more time. If it falls, the hypothesis is to propose that the extension can be offered. Neither line is an order. After the number moves, the team writes whether they did what they proposed, and whether the account stayed current without a write-off. This illustration stops at the proposal. It does not report that check.",
+            "The chair in the light is the role that can offer more time. The dark chair is the call list, which this number does not answer. The invoice list can go out as the answer to the filled brief. No amount is written. If a second list arrives and a row on it is an account at month-end, that disagreement is When two reports don't match.",
           ],
           picture: {
             src: `${DATA_ART}/decision.jpg`,
@@ -1240,30 +1241,21 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-know",
           title: "How I would know",
           paragraphs: [
-            "I watch four things. I have no target times, and these definitions are not results I have collected. A checked number whose decision cannot be repeated back is not the practice.",
-            "An unnamed decision is a published number whose actor cannot say what was being decided.",
-            "A written move means the actor has written what changes if the number goes up, and what changes if it goes down.",
-            "A parked answer is a time the number stayed unpublished because the decision, the actor, or the move was missing.",
-            "One activity means the number comes from one named business process.",
-            "The rows below are written for the illustration on this page. One is the blank sheet. One is the sheet once it is filled. Neither is a result I collected, and neither states an amount.",
+            "I watch four things. I have no target times, and these definitions are not results I have collected. They are the notes a team writes so the next brief can use the last one. A filled sheet that nobody looks back at does not show that the decisions are getting better.",
+            "A said-back brief means a person who missed the meeting can say the decision, the outcome, the constraint, and who will act. If they cannot, the practice is not in use yet. This check comes before any result.",
+            "A checked hypothesis means that after they acted, they wrote whether they did what the hypothesis proposed, and whether the outcome moved as they expected. A match is not proof the hypothesis was right. A miss is the note the next brief starts from. That comparison is how the team learns which responses are worth proposing again.",
+            "A retired hypothesis means they stopped proposing a response because the outcome did not follow. The retired line is the sign the practice is getting more precise. I am defining the signal. I am not reporting a response I have retired.",
+            "A parked answer means the number stayed unpublished because a line on the brief was blank. The stop is working. A parked answer is not a quality score.",
+            "The rows below are the illustration on this page. One is the blank sheet. One is the sheet once it is filled. Neither is a result I collected, and neither states an amount.",
           ],
           lines: [
-            { term: "Blocked", detail: "The sheet while the decision line is blank." },
+            { term: "Blocked", detail: "The sheet while the decision line is blank. The list stayed dark." },
             { term: "Measure", detail: "Overdue balance. One list of open invoices. No amount is written." },
-            {
-              term: "Decision",
-              detail: "Blank. The meeting has not said whether this number is the call list or the decision to give more time.",
-            },
-            {
-              term: "Actor",
-              detail: "Two roles are in the meeting. Neither is written as the person who will act on this number.",
-            },
             { term: "Action", detail: "Do not send the list out as an answer." },
-            { term: "Outcome", detail: "The list stayed dark." },
             {
               term: "Filled",
               detail:
-                "The same title once the decision is named. Decision: whether to give more time to pay. Actor: the role that can do that. Move if it rises: do not extend. Move if it falls: the extension can be offered. Activity: the open invoice. Action: send the invoice list out as that answer. Outcome: the list answers the terms decision, and the call list stays dark. No amount is written.",
+                "Decision: whether to give an invoice more time to pay. Outcome: the account stays current, and the invoice is not written off to get there. Actor: the role that can offer more time. Constraint: more time may be offered, and the amount owed is not forgiven. If it rises: propose no more time, then check the outcome. If it falls: propose that the extension can be offered, then check the outcome. Activity: the open invoice. Action: send the invoice list as that answer. The call list stays dark. No amount is written.",
             },
           ],
         },
@@ -1271,15 +1263,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "Two reports that disagree stay on When two reports don't match. This page does not pick a number between them, and it does not say what one row means. That sentence is Say what one row means.",
-            "A detailed table for an activity can exist before a decision is named. I do not offer that table as the answer to a decision I have not named.",
-            "Looking through the data without a named decision is allowed. An unpublished search can inspect an activity before anyone has a decision. This page stops the number from going out as an answer.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
-            "The GAO guide assesses an agency plan. I am not running its checklist against a report. I am using the link it requires between a measure and the thing that measure is supposed to show.",
-            "This page names the decision a published number is for. Keeping that meaning in force after the number goes out is Keep the definition.",
+            "What one row means is the next page. This page does not say it. Two reports that disagree stay on When two reports don't match. This page does not pick a number between them.",
+            "A search that is not being given to someone as the answer can continue with no brief. This page stops the number that is being given as the answer.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card. Keeping the meaning in force after the number goes out is Keep the definition.",
           ],
           sources: [
-            GAO_RESULTS,
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],

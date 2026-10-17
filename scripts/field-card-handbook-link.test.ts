@@ -12,6 +12,17 @@ const GRAIN_SENTENCE = "Mismatched grain, inconsistent definitions, incomplete s
 const OWNER = "A named owner approves the definition";
 
 describe("analytics handbook link", () => {
+  it("renames the four steps to Ask, Grain, Truth, and Use once", () => {
+    const html =
+      '<p class="verbs">Ask → name → define → consume</p><h3>01 Question</h3><h3>02 Grain</h3><h3>04 Decision</h3>';
+    const next = ensureAnalyticsHandbookLink(html);
+    assert.match(next, /Ask → Grain → Truth → Use/);
+    assert.match(next, /<h3>01 Ask<\/h3>/);
+    assert.match(next, /<h3>04 Use<\/h3>/);
+    assert.doesNotMatch(next, /name → define → consume/);
+    assert.equal(ensureAnalyticsHandbookLink(next), next);
+  });
+
   it("wraps the kill line once", () => {
     const html = '<article><p class="kill">Do not ship the number.</p></article>';
     const next = ensureAnalyticsHandbookLink(html);

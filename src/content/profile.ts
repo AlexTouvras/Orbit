@@ -127,9 +127,9 @@ export const competencies: Competency[] = [
     description:
       "Python, SQL, and Power BI / Fabric — gold tables, semantic models, and page paths that survive a cold Monday open.",
     hudTitle: "Analytics is a stack, not a dashboard",
-    hudVerbs: "Ask → name → define → consume",
+    hudVerbs: "Ask → Grain → Truth → Use",
     hudDescription:
-      "Question, grain, truth layer, consume path: those are the layers. Tools are lanes.",
+      "Ask, Grain, Truth, and Use. Tools are lanes.",
     accent: "blue",
     icon: LineChart,
     href: "/analytics-field-card/index.html",
