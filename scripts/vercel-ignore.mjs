@@ -36,16 +36,34 @@ export function shouldSkipBuild(changedFiles) {
   );
 }
 
+/**
+ * Production deploys are merge commits. Plain `git diff-tree HEAD` prints no
+ * names for those, so the skip decision has to use the first parent (the
+ * previous main tree). A shallow clone with no parent still returns nothing;
+ * an empty list builds.
+ */
+export const HEAD_DIFF_ARGS = [
+  "diff-tree",
+  "--no-commit-id",
+  "--name-only",
+  "-r",
+  "-m",
+  "--first-parent",
+  "HEAD",
+];
+
 function listHeadFiles() {
   try {
-    const out = execSync("git diff-tree --no-commit-id --name-only -r HEAD", {
+    const out = execSync(`git ${HEAD_DIFF_ARGS.join(" ")}`, {
       encoding: "utf8",
       stdio: ["ignore", "pipe", "pipe"],
     });
-    return out
-      .split(/\r?\n/)
-      .map((line) => line.trim())
-      .filter(Boolean);
+    return [...new Set(
+      out
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter(Boolean),
+    )];
   } catch (err) {
     const detail = err instanceof Error ? err.message : String(err);
     console.log(`vercel-ignore: git failed (${detail}); building to be safe`);
@@ -107,6 +125,8 @@ function runSelfTest() {
   assert.equal(shouldSkipBuild([]), false);
   assert.equal(shouldSkipBuild(null), false);
   assert.equal(shouldSkipBuild(["data\\news-cache.json"]), true);
+  assert.ok(HEAD_DIFF_ARGS.includes("--first-parent"));
+  assert.ok(HEAD_DIFF_ARGS.includes("-m"));
   console.log("vercel-ignore self-test ok");
 }
 
