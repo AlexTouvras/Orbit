@@ -1032,17 +1032,126 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   index: "03",
   title: "Data that drives decisions",
   thesis:
-    "A number can drive a decision when you can say what it counts, who owns it, and how a bad one is stopped.",
+    "A number is ready when you can say the question, the row, why you trust it, and the move.",
   card: { href: DATA_CARD, label: "Data analytics field card" },
   contents: [
-    { title: "Name the decision", page: 1 },
-    { title: "Say what one row means", page: 2 },
-    { title: "When two reports don't match", page: 3 },
-    { title: "Keep the definition", page: 4 },
+    { title: "What good looks like", page: 1 },
+    { title: "Name the decision", page: 2 },
+    { title: "Say what one row means", page: 3 },
+    { title: "When two reports don't match", page: 4 },
+    { title: "Keep the definition", page: 5 },
   ],
   pages: [
     {
       number: 1,
+      topic: "The path",
+      title: "What good looks like",
+      lede: "This page is the path a number walks when a person can act on it. There is a question. There is one clear row. There is evidence that person can trust. There is a move they can make. I want all four of those to be sayable in one sitting, in ordinary words.",
+      rule: "My operating rule: before a number goes out as the answer, I can say the question, the row, why the evidence can be trusted, and the move, in that order.",
+      illustration: "The four sheets are an illustration, not a record.",
+      reviewed: "17 Oct 2026",
+      cover: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "Four lit sheets in a row, and one chair facing them. No amount.",
+      },
+      sections: [
+        {
+          id: "path",
+          title: "The four things",
+          paragraphs: [
+            "The question is the decision a person is about to make, and who that person is. The row is what one line of the number means: the thing, the time, what is included, and what is left out. The evidence is why that person can trust the number. They know who stands behind the meaning, and they know what stops a bad number. The move is what they will do once they have it.",
+            "The analytics field card names this path Ask, Grain, Truth, and Use. Ask is the question. Grain is the row. Truth is the evidence. Use is whether we can explain the number and act on it. The card is the frame I use. This page is what that frame looks like when the four things can be said.",
+            "The link I use between a measure and a decision comes from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. It says that when a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A number on this path exists so a person can see and decide.",
+          ],
+          sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "path-walk",
+          title: "How I walk it",
+          paragraphs: [
+            "I fill four lines, in this order. A line is filled when a person who missed the meeting can say it back. The question and the move are written on Name the decision. The row is written on Say what one row means. Who stands behind the meaning, and what stops a bad number, are written on When two reports don't match and on Keep the definition. This page holds those pages in one order.",
+          ],
+          lines: [
+            {
+              term: "Question",
+              detail: "The decision, and the person who will act. A report title does not finish the line.",
+            },
+            {
+              term: "Row",
+              detail: "What one line means. The thing, the time, what is included, and what is left out.",
+            },
+            {
+              term: "Evidence",
+              detail: "Who stands behind that meaning, and what stops a bad number before it goes out.",
+            },
+            {
+              term: "Move",
+              detail:
+                "What the person will do. If the number would not change what they do, it is not the answer to this question.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "path-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "Someone can give an invoice more time to pay. The question is whether to give more time. The person is the role that can do that. The row is an open invoice as of yesterday, and accounts already written off are left out. The evidence is that this person can say that row, that someone owns the meaning, and that a bad number would be stopped. The move is theirs. If more invoices are past their date, they do not extend the terms. If fewer are past their date, the extension can be offered. The four sheets are lit because those four lines are filled. One chair faces them. That chair is the person who can make the move. No amount is written.",
+          ],
+          picture: {
+            src: `${DATA_ART}/path.jpg`,
+            alt: "An illustration. Four lit sheets in a row, and one chair facing them. No amount.",
+          },
+        },
+        {
+          id: "path-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch four things. I have no target times, and these definitions are not results I have collected.",
+            "A repeatable question means a person who missed the meeting can say what is being decided, and who will act.",
+            "A repeatable row means that person can say what one line means.",
+            "A named trust means they can say who owns the meaning, and what stops a bad number.",
+            "A written move means they can say what they will do.",
+            "The line below is the illustration on this page, once the path is filled. It is not a result I collected, and it states no amount.",
+          ],
+          lines: [
+            {
+              term: "Filled",
+              detail:
+                "Question: whether to give more time to pay. The person is the role that can do that. Row: an open invoice as of yesterday, written-off accounts left out. Evidence: that row can be said back, someone owns the meaning, and a bad number would be stopped. Move: if more invoices are past their date, do not extend. If fewer are, the extension can be offered. No amount is written.",
+            },
+          ],
+        },
+        {
+          id: "path-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "This page is the path. The question is written on Name the decision. The row is written on Say what one row means. A comparison of two reports is written on When two reports don't match. The columns that stay in force are written on Keep the definition.",
+            "The card asks whether we can explain the number and act on it. This page names the move. It does not teach how to explain a number when you are unsure of it.",
+            "The GAO guide assesses an agency plan. I am not running its checklist. I am using the link it requires between a measure and a decision a person can make.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            GAO_RESULTS,
+            { href: DATA_CARD, label: "Data analytics field card" },
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+      ],
+      sources: [
+        source(
+          "https://www.gao.gov/assets/ggd-10.1.20.pdf",
+          "GAO, An Evaluator's Guide to Assessing Agency Annual Performance Plans, GAO/GGD-10.1.20 (April 1998)",
+        ),
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 2,
       topic: "The question",
       title: "Name the decision",
       lede: "This page is for a number you are about to give someone as the answer. A number can be checked and still be the wrong answer. Looking through the data, watching a measure, or searching for a pattern can continue without a named decision. That work is not this answer. If two reports with the same title already disagree, that problem is When two reports don't match.",
@@ -1199,7 +1308,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       ],
     },
     {
-      number: 2,
+      number: 3,
       topic: "The row",
       title: "Say what one row means",
       lede: "This page comes after the decision is named. It says what one row of the number means, before anyone compares two reports. Kimball calls that the grain: exactly what one record represents, in business words. A report title is not that sentence. A list of columns is not that sentence.",
@@ -1333,7 +1442,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       ],
     },
     {
-      number: 3,
+      number: 4,
       topic: "Two reports",
       title: "When two reports don't match",
       lede: "This page is for a number you are about to give someone as the answer, when two reports disagree. What one row means is already written on Say what one row means. The two reports can share a title and still not match. Sending one of them out, or a third number in between, before the difference has a cause, gives that person a figure you cannot defend. A search that is not being offered as the answer can keep both versions.",
@@ -1515,7 +1624,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       ],
     },
     {
-      number: 4,
+      number: 5,
       topic: "The change",
       title: "Keep the definition",
       lede: "A filled decision and a filled comparison can still go stale the next time the query changes. This page is what I leave in place: who owns the definition, the columns the number promises, and the stop when those columns break.",

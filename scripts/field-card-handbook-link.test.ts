@@ -2,10 +2,11 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { ensureAnalyticsHandbookLink } from "../src/lib/field-card/handbook-link";
 
-const DECISION = "/handbooks/data-that-drives-decisions/1";
-const GRAIN = "/handbooks/data-that-drives-decisions/2";
-const RECONCILE = "/handbooks/data-that-drives-decisions/3";
-const KEEP = "/handbooks/data-that-drives-decisions/4";
+const PATH = "/handbooks/data-that-drives-decisions/1";
+const DECISION = "/handbooks/data-that-drives-decisions/2";
+const GRAIN = "/handbooks/data-that-drives-decisions/3";
+const RECONCILE = "/handbooks/data-that-drives-decisions/4";
+const KEEP = "/handbooks/data-that-drives-decisions/5";
 const ASK = "Wrong question, wrong audience, or an unclear decision.";
 const GRAIN_SENTENCE = "Mismatched grain, inconsistent definitions, incomplete scope.";
 const OWNER = "A named owner approves the definition";
@@ -78,6 +79,18 @@ describe("analytics handbook link", () => {
   it("does not nest a link when the grain sentence is already anchored", () => {
     const html = `<p class="fail"><a href="/elsewhere">${GRAIN_SENTENCE}</a></p>`;
     assert.equal(ensureAnalyticsHandbookLink(html), html);
+  });
+
+  it("links the path heading once, and the later chapters stay on their own pages", () => {
+    const html = `<h2>From question to decision</h2><p class="kill">Do not ship.</p><p class="fail"><b>Failure mode</b> ${ASK}</p><p class="fail"><b>Failure mode</b> ${GRAIN_SENTENCE}</p><span>${OWNER}</span>`;
+    const next = ensureAnalyticsHandbookLink(html);
+    assert.match(next, new RegExp(`<a href="${PATH}">From question to decision</a>`));
+    assert.match(next, new RegExp(`<a href="${DECISION}" data-handbook-chapter="decision">${ASK}</a>`));
+    assert.match(next, new RegExp(`<a href="${GRAIN}" data-handbook-chapter="grain">${GRAIN_SENTENCE}</a>`));
+    assert.match(next, new RegExp(`<a href="${RECONCILE}">Do not ship.</a>`));
+    assert.match(next, new RegExp(`<a href="${KEEP}">${OWNER}</a>`));
+    assert.equal(next.match(new RegExp(`${PATH}"`, "g"))?.length, 1);
+    assert.equal(ensureAnalyticsHandbookLink(next), next);
   });
 
   it("widens a guard that only stopped the decision link", () => {
