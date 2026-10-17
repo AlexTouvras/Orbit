@@ -2,8 +2,8 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { ensureAnalyticsHandbookLink } from "../src/lib/field-card/handbook-link";
 
-const RECONCILE = "/handbooks/data-that-drives-decisions/1";
-const DECISION = "/handbooks/data-that-drives-decisions/2";
+const DECISION = "/handbooks/data-that-drives-decisions/1";
+const RECONCILE = "/handbooks/data-that-drives-decisions/2";
 const KEEP = "/handbooks/data-that-drives-decisions/3";
 const ASK = "Wrong question, wrong audience, or an unclear decision.";
 const OWNER = "A named owner approves the definition";

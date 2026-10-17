@@ -4,8 +4,8 @@
  * link once unless the sheet already carries it.
  */
 
-const RECONCILE = "/handbooks/data-that-drives-decisions/1";
-const DECISION = "/handbooks/data-that-drives-decisions/2";
+const DECISION = "/handbooks/data-that-drives-decisions/1";
+const RECONCILE = "/handbooks/data-that-drives-decisions/2";
 const KEEP = "/handbooks/data-that-drives-decisions/3";
 const ASK_SENTENCE = "Wrong question, wrong audience, or an unclear decision.";
 const OWNER_SENTENCE = "A named owner approves the definition";
