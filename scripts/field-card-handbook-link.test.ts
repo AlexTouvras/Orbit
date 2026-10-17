@@ -3,9 +3,11 @@ import { describe, it } from "node:test";
 import { ensureAnalyticsHandbookLink } from "../src/lib/field-card/handbook-link";
 
 const DECISION = "/handbooks/data-that-drives-decisions/1";
-const RECONCILE = "/handbooks/data-that-drives-decisions/2";
-const KEEP = "/handbooks/data-that-drives-decisions/3";
+const GRAIN = "/handbooks/data-that-drives-decisions/2";
+const RECONCILE = "/handbooks/data-that-drives-decisions/3";
+const KEEP = "/handbooks/data-that-drives-decisions/4";
 const ASK = "Wrong question, wrong audience, or an unclear decision.";
+const GRAIN_SENTENCE = "Mismatched grain, inconsistent definitions, incomplete scope.";
 const OWNER = "A named owner approves the definition";
 
 describe("analytics handbook link", () => {
@@ -61,6 +63,28 @@ describe("analytics handbook link", () => {
     const html = `<body><p class="fail"><b>Failure mode</b> ${ASK}</p></body>`;
     const next = ensureAnalyticsHandbookLink(html);
     assert.match(next, /data-handbook-ask-guard/);
+    assert.match(next, /querySelectorAll\('\[data-handbook-chapter\]'\)/);
+    assert.equal(ensureAnalyticsHandbookLink(next), next);
+  });
+
+  it("links the grain sentence once, even when the other chapters are already linked", () => {
+    const html = `<p class="kill"><a href="${RECONCILE}">Do not ship.</a></p><p class="fail"><a href="${DECISION}">${ASK}</a></p><p class="fail"><b>Failure mode</b> ${GRAIN_SENTENCE}</p><span><a href="${KEEP}">${OWNER}</a></span>`;
+    const next = ensureAnalyticsHandbookLink(html);
+    assert.match(next, new RegExp(`<a href="${GRAIN}" data-handbook-chapter="grain">${GRAIN_SENTENCE}</a>`));
+    assert.equal(next.match(new RegExp(GRAIN, "g"))?.length, 1);
+    assert.equal(ensureAnalyticsHandbookLink(next), next);
+  });
+
+  it("does not nest a link when the grain sentence is already anchored", () => {
+    const html = `<p class="fail"><a href="/elsewhere">${GRAIN_SENTENCE}</a></p>`;
+    assert.equal(ensureAnalyticsHandbookLink(html), html);
+  });
+
+  it("widens a guard that only stopped the decision link", () => {
+    const html = `<body><a href="${GRAIN}" data-handbook-chapter="grain">${GRAIN_SENTENCE}</a><script data-handbook-ask-guard>document.querySelectorAll('[data-handbook-chapter="decision"]').forEach(function(a){a.addEventListener("click",function(e){e.stopPropagation();});});</script></body>`;
+    const next = ensureAnalyticsHandbookLink(html);
+    assert.match(next, /querySelectorAll\('\[data-handbook-chapter\]'\)/);
+    assert.equal(next.match(/data-handbook-ask-guard/g)?.length, 1);
     assert.equal(ensureAnalyticsHandbookLink(next), next);
   });
 });

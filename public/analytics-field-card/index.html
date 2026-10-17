@@ -595,7 +595,7 @@
             <h3>The right level of detail</h3>
             <p>What is the unit, time, scope and definition of the data?</p>
             <p class="chips">Granularity · Scope · Definitions</p>
-            <p class="fail"><b>Failure mode</b> Mismatched grain, inconsistent definitions, incomplete scope.</p>
+            <p class="fail"><b>Failure mode</b> <a href="/handbooks/data-that-drives-decisions/2" data-handbook-chapter="grain">Mismatched grain, inconsistent definitions, incomplete scope.</a></p>
           </span>
         </button>
         <button type="button" class="stage" data-stage="truth" aria-pressed="false">
@@ -654,7 +654,7 @@
         </div>
         <ul class="aside">
           <li><span class="dot" aria-hidden="true">•</span><span><b>Security</b><span>Who can see and change the number</span></span></li>
-          <li><span class="dot" aria-hidden="true">•</span><span><b>Governance</b><span><a href="/handbooks/data-that-drives-decisions/3">A named owner approves the definition</a></span></span></li>
+          <li><span class="dot" aria-hidden="true">•</span><span><b>Governance</b><span><a href="/handbooks/data-that-drives-decisions/4">A named owner approves the definition</a></span></span></li>
           <li><span class="dot" aria-hidden="true">•</span><span><b>Observability</b><span>Lineage from source to the published measure</span></span></li>
           <li><span class="dot" aria-hidden="true">•</span><span><b>Evals</b><span>Tests on gold before a number ships</span></span></li>
           <li><span class="dot" aria-hidden="true">•</span><span><b>Human Approve</b><span>Unexplained gaps stay dark</span></span></li>
@@ -742,7 +742,7 @@
           </ol>
         </div>
       </div>
-      <p class="kill"><a href="/handbooks/data-that-drives-decisions/2">If you can’t name the grain, the owner, and how to stop a bad publish, you don’t ship the number.</a></p>
+      <p class="kill"><a href="/handbooks/data-that-drives-decisions/3">If you can’t name the grain, the owner, and how to stop a bad publish, you don’t ship the number.</a></p>
     </section>
 
     <footer class="meta">
@@ -801,6 +801,6 @@
     })();
   </script>
   <script type="module" src="/field-card-robot.mjs" data-card="analytics"></script>
-  <script data-handbook-ask-guard>document.querySelectorAll('[data-handbook-chapter="decision"]').forEach(function(a){a.addEventListener("click",function(e){e.stopPropagation();});});</script>
+  <script data-handbook-ask-guard>document.querySelectorAll('[data-handbook-chapter]').forEach(function(a){a.addEventListener("click",function(e){e.stopPropagation();});});</script>
 </body>
 </html>
