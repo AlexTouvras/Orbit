@@ -277,7 +277,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
       lede: "Software stays in use when a team can still change it. Continuous integration keeps that change cheap: people merge to main at least daily, a build tests the merge, and a broken main is the team's work.",
       rule: "My operating rule: keep main releasable, make the failure visible immediately, and do not let a red main become normal.",
       illustration: "The renamed field is an illustration, not a record of a team.",
-      reviewed: "14 Oct 2026",
+      reviewed: "18 Oct 2026",
       plate: "horizon",
       sections: [
         {
@@ -313,7 +313,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
             caption: "The commit loop. A red main leaves the loop for repair, then comes back to pull.",
             steps: [
               { term: "Pull", detail: "Take main. If it is red, repair before a feature.", mark: "refresh" },
-              { term: "Change", detail: "A slice that can merge today.", mark: "code" },
+              { term: "Change", detail: "A slice a person can read and merge today.", mark: "code" },
               { term: "Test", detail: "Local build. Not the gate.", mark: "gear" },
               { term: "Integrate", detail: "Pull again, combine, push.", mark: "merge" },
               { term: "Verify", detail: "The integration machine.", mark: "pulse" },
@@ -322,7 +322,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           },
           steps: [
             "Pull. Take main and run the build before you change anything. If main is red, repair it before a feature. A new edit on a red build hides which change failed. Done when that build is green, or the red build is the work in front of you.",
-            "Change. Keep the slice small enough to merge the same day. If it will not fit, split it. When the behaviour has to stay off while the code lands, Hammant uses a feature flag or a branch by abstraction. Those keep unfinished behaviour off the path a person uses. They do not make an untested change safe to release. Done when the slice can land today.",
+            "Change. Keep the slice small enough that a person can read the diff and merge it the same day. If it will not fit, split it. An agent may draft the slice. The read is a person's. When the behaviour has to stay off while the code lands, Hammant uses a feature flag or a branch by abstraction. Those keep unfinished behaviour off the path a person uses. They do not make an untested change safe to release. Done when a person can read the diff and the slice can land today.",
             "Test. Run the build on your machine before anyone else can depend on the result. That result is not the gate. Done when the local build is green.",
             "Integrate. Pull again, combine with what landed while you were working, run the build again, and push. Done when the change is on main.",
             "Verify. Wait for the build on the integration machine. A green result on the laptop is not that result. Done when the shared pipeline has finished the required checks on the integrated change.",
@@ -415,7 +415,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           ],
           steps: [
             "Can a developer get a meaningful result from the commit build while the change is still small? Look at how long that build takes, and whether people are waiting on it.",
-            "How long does a change typically sit before it is on main? Look at the merge history.",
+            "How long does a change typically sit before it is on main, and can a person read the diff? Look at the merge history.",
             "When main is red, who stops, and who restores it? Look at the build log for that red main.",
             "Do the tests fail because the behaviour changed, or because the structure moved? Look at a red test and the diff that turned it.",
             "Can the team say what would make this change safe to release, separately from the fact that it merged? Look at the release criteria, not the green badge.",
@@ -482,6 +482,13 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
           ],
         },
+        {
+          id: "draft",
+          title: "A faster first draft",
+          paragraphs: [
+            "An agent can draft more change than a team can merge in a day. The cost on this page is the collision between people, and a red main is the team's work. I keep the slice small enough that a person can read the diff and land it today, because that is what keeps the collision cheap. A later drafting tool leaves that cost where it is.",
+          ],
+        },
       ],
       sources: [
         source(FOWLER_CI, "Martin Fowler, Continuous Integration (18 Jan 2024)"),
@@ -499,7 +506,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
       title: "Fail for the right reason",
       lede: "A suite keeps a change cheap only when a red test means the behaviour changed. A test that goes red because the structure moved, or that stays green when the behaviour is wrong, trains the team to stop trusting red.",
       rule: "My operating rule: if the behaviour held, delete the test or rewrite it against the behaviour. An agent-written test stays a draft until a person has seen it fail for a behaviour they can name.",
-      reviewed: "14 Oct 2026",
+      reviewed: "18 Oct 2026",
       sections: [
         {
           id: "cost",
@@ -578,6 +585,13 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           ],
           sources: [MESZAROS, FOWLER_COMMIT, FOWLER_SELF],
         },
+        {
+          id: "arrives",
+          title: "Tests that arrive green",
+          paragraphs: [
+            "Beck's pair holds for a test a person typed and for a test an agent typed. More of them will arrive already green. The count I trust is how many a person has seen fail for a behaviour they can name.",
+          ],
+        },
       ],
       sources: [
         source(
@@ -613,7 +627,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
       title: "The plan fits on a page",
       lede: "A change stays reviewable when the plan is a page a person will actually read. The page names the goal, the cost, what done means, who can reach the data, and how that can be abused. The page is not the understanding. Someone has to walk the journey, and a way it fails, before the build.",
       rule: "My operating rule: if a person will not review the page, it is not the plan. If nobody has walked how the journey fails, the build has not started.",
-      reviewed: "14 Oct 2026",
+      reviewed: "18 Oct 2026",
       sections: [
         {
           id: "page",
@@ -639,7 +653,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           title: "Who can reach the data",
           paragraphs: [
             "Shostack's site states four questions: what are we working on, what can go wrong, what are we going to do about it, and did we do a good job. I put the first two on the plan page.",
-            "Microsoft's Security Development Lifecycle names threat modeling as a core element, in five steps: security requirements, an application diagram, the threats, the mitigations, and a check that the mitigations happened. The tool's notation draws components, data flows, and security boundaries. I do not treat the tool as the plan. The page still has to name who can reach the data, and how that reach can be abused. NIST SP 800-218 practice PW.1 asks for that identification in design. I write it on this page, where a person will review it.",
+            "Microsoft's Security Development Lifecycle names threat modeling as a core element, in five steps: security requirements, an application diagram, the threats, the mitigations, and a check that the mitigations happened. The tool's notation draws components, data flows, and security boundaries. I do not treat the tool as the plan. The page still has to name who can reach the data, and how that reach can be abused. When a model can call a tool that reads the data, that model is one of the callers. NIST SP 800-218 practice PW.1 asks for that identification in design. I write it on this page, where a person will review it.",
           ],
           sources: [SHOSTACK, MS_THREAT, NIST_PW1],
         },
@@ -704,6 +718,13 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
           ],
         },
+        {
+          id: "unread",
+          title: "A page that looks finished",
+          paragraphs: [
+            "A draft can sound as if someone already walked the failure. The walk is a person telling that failure and writing down what it changed on the page. I keep the page short enough to review because a fluent draft is easier to leave unread. A smoother draft leaves the walk with that person.",
+          ],
+        },
       ],
       sources: [
         source(
@@ -746,14 +767,14 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
       title: "Run the version just verified",
       lede: "People run the version the pipeline just verified. The previous version stays deployable, and returning to it is one deploy, not a repair project.",
       rule: "My operating rule: do not put a build in front of people unless the pipeline produced it, and do not retire the previous build until one deploy can bring it back.",
-      reviewed: "14 Oct 2026",
+      reviewed: "18 Oct 2026",
       sections: [
         {
           id: "artifact",
           title: "The version people run",
           paragraphs: [
             "Fowler's deployment pipeline breaks the build into stages. The first stage compiles and provides the binaries later stages use. Deploying to production is usually the final stage. The pipeline's job is to detect changes that would cause problems in production, including performance, security, and usability, before that final stage.",
-            "People therefore run those binaries, not a fresh build assembled on release day. A rebuild can compile different code, pick up a different dependency, or skip a test the pipeline already ran. I do not put that rebuild in front of people. The version just verified is the artifact the later stage already holds.",
+            "People therefore run those binaries, not a fresh build assembled on release day. A rebuild can compile different code, pick up a different dependency, or skip a test the pipeline already ran. An agent that generates a fresh build on release day is that rebuild. I do not put that rebuild in front of people. The version just verified is the artifact the later stage already holds.",
           ],
           sources: [FOWLER_PIPE],
         },
@@ -831,6 +852,13 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           ],
           sources: [SATO, FOWLER_CD, FOWLER_BLUE, { href: DELIVERY_CARD, label: "Technology delivery field card" }],
         },
+        {
+          id: "fresh",
+          title: "A fresh build on release day",
+          paragraphs: [
+            "People run the binaries the pipeline already holds. A fresh build on release day is a different version. The previous artifact stays one deploy away. The next patch is a new change on this path. The way back is the artifact you kept, including when the patch was cheap to ask for.",
+          ],
+        },
       ],
       sources: [
         source(
@@ -867,7 +895,7 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
       title: "Use is the next change",
       lede: "What you learn after people are using the software is the next change. A defect, and a lesson about whether it is useful, both go back through plan, build, release, and maintain.",
       rule: "My operating rule: the first release is not the end. The lesson walks the same path as any other change. It does not skip the page, the check, or the pipeline.",
-      reviewed: "14 Oct 2026",
+      reviewed: "18 Oct 2026",
       sections: [
         {
           id: "feedback",
@@ -968,6 +996,13 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
           ],
           sources: [FOWLER_DEBT, { href: DELIVERY_CARD, label: "Technology delivery field card" }],
         },
+        {
+          id: "ask",
+          title: "A cheaper ask",
+          paragraphs: [
+            "Asking for a fix got cheaper. The curve is the wait between integrations, and that wait is the same. A lesson goes through the page, the check, and the pipeline, whoever typed the draft. I keep that path because a fast draft makes a side door tempting, and the side door is the interest on the next change.",
+          ],
+        },
       ],
       sources: [
         source(
@@ -1057,7 +1092,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "This page is the path a number walks when a person can act on it. The four steps are Ask, Grain, Truth, and Use. I want all four of those to be sayable in one sitting, in ordinary words.",
       rule: "My operating rule: before a number goes out as the answer, I can say Ask, Grain, Truth, and Use, in that order.",
       illustration: "The four sheets are an illustration, not a record.",
-      reviewed: "17 Oct 2026",
+      reviewed: "18 Oct 2026",
       cover: {
         src: `${DATA_ART}/path.jpg`,
         alt: "Four lit sheets in a row, and one chair facing them. No amount.",
@@ -1147,6 +1182,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
+        {
+          id: "early",
+          title: "A number offered early",
+          paragraphs: [
+            "A model can offer a number before anyone has named the decision. The path is Ask, then Grain, then Truth, then Use, because a person has to be able to act. A filled-looking sheet is the four lines a person can say.",
+          ],
+        },
       ],
       sources: [
         source(
@@ -1165,7 +1207,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "This page is the brief I fill before a number goes out as the answer. The brief names the decision, the outcome that decision is for, the person who will act, the constraint they have to respect, the one activity, and a hypothesis for a rise and a hypothesis for a fall. A blank line means the number is not that answer.",
       rule: "My operating rule: I can say the decision, the outcome, the person, the constraint, a hypothesis for a rise, and a hypothesis for a fall, and I do not publish the number as the answer until those are named. Each hypothesis is a proposal to check against the outcome.",
       illustration: "The two chairs are an illustration, not a record.",
-      reviewed: "16 Oct 2026",
+      reviewed: "18 Oct 2026",
       cover: {
         src: `${DATA_ART}/decision.jpg`,
         alt: "One sheet of light, one chair in that light, and one chair left dark. No amount.",
@@ -1280,6 +1322,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
+        {
+          id: "filled",
+          title: "A brief that looks filled",
+          paragraphs: [
+            "A model can write every line. The brief is filled when the person who will act can say the decision, the outcome, the constraint, and both hypotheses. That person is the role that can act. I keep the stop because a complete-looking brief is easier to send.",
+          ],
+        },
       ],
       sources: [
         source(
@@ -1310,7 +1359,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "This page comes after the decision is named. It says what one row of the number means, before anyone compares two reports. Kimball calls that the grain: exactly what one record represents, in business words. A report title is not that sentence. A list of columns is not that sentence.",
       rule: "My operating rule: name the thing, the time, what is included, and what is left out, and do not publish the number until the person who will use it can say that row back.",
       illustration: "The one list is an illustration, not a record.",
-      reviewed: "17 Oct 2026",
+      reviewed: "18 Oct 2026",
       sections: [
         {
           id: "row-why",
@@ -1422,6 +1471,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
+        {
+          id: "fields",
+          title: "A list of fields",
+          paragraphs: [
+            "A generated list of columns is a list of columns. The row is the sentence a person can say back: the thing, the time, what is included, and what is left out. I keep that sentence because a draft can name every field and leave the row unsaid.",
+          ],
+        },
       ],
       sources: [
         source(
@@ -1444,7 +1500,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "This page is for a number you are about to give someone as the answer, when two reports disagree. What one row means is already written on Say what one row means. The two reports can share a title and still not match. Sending one of them out, or a third number in between, before the difference has a cause, gives that person a figure you cannot defend. A search that is not being offered as the answer can keep both versions.",
       rule: "My operating rule: say what one row means before the two reports are compared, explain the difference or block the publish, and do not publish a number between them.",
       illustration: "The two extracts are an illustration, not a record.",
-      reviewed: "16 Oct 2026",
+      reviewed: "18 Oct 2026",
       sections: [
         {
           id: "disagreement",
@@ -1588,6 +1644,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
+        {
+          id: "between",
+          title: "A number between the reports",
+          paragraphs: [
+            "A model can offer a figure between two reports that disagree. This page blocks that figure until the cause is named. I keep the block because a confident draft makes the middle number easier to send. A blank cause remains the stop.",
+          ],
+        },
       ],
       sources: [
         source(
@@ -1626,7 +1689,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "A filled decision and a filled comparison can still go stale the next time the query changes. This page is what I leave in place: who owns the definition, the columns the number promises, and the stop when those columns break.",
       rule: "My operating rule: name the owner of the published definition, check its columns before the next build, and stop the old number when those columns break.",
       illustration: "The three sheets are an illustration, not a record.",
-      reviewed: "16 Oct 2026",
+      reviewed: "18 Oct 2026",
       sections: [
         {
           id: "keep",
@@ -1728,6 +1791,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             DBT_VERSIONS,
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "quiet-edit",
+          title: "An edit that leaves the columns",
+          paragraphs: [
+            "A generated change can keep every column name and still change what a row means. The contract stays green. The meaning goes back to Say what one row means. I keep that return because a quiet edit is easier to ask for than it is to see.",
           ],
         },
       ],
