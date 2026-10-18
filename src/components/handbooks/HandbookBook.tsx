@@ -11,7 +11,7 @@ import { HandbookFigureView } from "@/components/handbooks/HandbookFigures";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
-import { pagePath } from "@/lib/handbooks";
+import { adjacentPages, pagePath } from "@/lib/handbooks";
 
 const BOARD_FIGURES = new Set(["loop", "recovery", "signals", "scene", "compare", "pyramid"]);
 
@@ -85,8 +85,8 @@ export function HandbookBook({
     ? blocks.slice(proseLeaf.start, proseLeaf.end).map((block) => block.sectionTitle).find(Boolean)
     : undefined;
 
-  const previousHref = page.number <= 1 ? "/handbooks" : pagePath(handbook.slug, page.number - 1);
-  const nextPage = handbook.pages.find((item) => item.number === page.number + 1) ?? null;
+  const { previous: previousPage, next: nextPage } = adjacentPages(handbook, page.number);
+  const previousHref = previousPage ? pagePath(handbook.slug, previousPage.number) : "/handbooks";
   const nextHref = nextPage ? pagePath(handbook.slug, nextPage.number) : null;
   const canPrev = safeIndex > 0 || previousHref !== null;
   const canNext = safeIndex < leafCount - 1 || (leaves.length > 0 && nextHref !== null);
