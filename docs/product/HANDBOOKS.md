@@ -31,6 +31,8 @@ Every page:
 4. Separates established guidance, the author's rule, and a hypothesis. A synthetic scene says so in its first line.
 5. Adds something the other pages do not already say.
 
+The last section of a written chapter is the author's check against a cheap draft. It says why this chapter's practice applies now, and why a faster draft does not retire it. The reason belongs to that chapter. A claim that fails the check is rewritten where it lives. The check is not a survey of tools.
+
 One thesis per page. Headings follow the subject. They are not a fixed list of eight. A page is as long as the argument: a principle can be short, a method needs the day and the limit, a deep dive needs the mechanism. Do not add length to look finished. On screen that argument continues across leaves of one size.
 
 Voice: direct, operational, first person for the author's judgment. Define a term a stranger may not know. No corporate filler. A memorable sentence is rare, and it has to clarify the rule.
@@ -45,6 +47,8 @@ A figure is allowed when it carries the procedure: a loop, a decision, a shape. 
 2. Engineering reliable delivery — not in the library yet. For the technology delivery field card.
 3. **Data that drives decisions** — extends the data analytics field card. The library title opens `/handbooks/data-that-drives-decisions/1`, What good looks like. Page 2 is Name the decision. Page 3 is Say what one row means. Page 4 is When two reports don't match. Page 5 is Keep the definition.
 4. Decision systems under uncertainty — not in the library yet. For the credit risk field card.
+
+Checked 18 Oct 2026 against a cheap draft. On Software that stays in use, a same-day slice has to be readable, a model that can reach the data is a caller, and a generated release build is the rebuild the page already refuses. On Data that drives decisions, a generated number still needs the decision, the row a person can say, a named cause, and the meaning behind a green contract. Each chapter ends on why its own practice applies. The same sentence is not pasted from one chapter onto the next.
 
 ### Shape of Data that drives decisions
 
@@ -115,7 +119,7 @@ The line under those links says what the chapter is. It is how I would operate. 
 - `/handbooks/software-that-stays-in-use/2` — Fail for the right reason.
 - `/handbooks/software-that-stays-in-use/3` — The plan fits on a page.
 - `/handbooks/software-that-stays-in-use/4` — Run the version just verified.
-- `/handbooks/software-that-stays-in-use/5` — Use is the next change. The first release is not the end. A lesson from use walks the same path. Calendars, blast-radius proof, and cutover stay on the delivery card.
+- `/handbooks/software-that-stays-in-use/5` — Use is the next change. The first release is not the end. A lesson from use walks the same path. The sketch of pain against the time between integrations follows that paragraph. It states no amount. Calendars, blast-radius proof, and cutover stay on the delivery card.
 - `/handbooks/data-that-drives-decisions` — redirects to the first page.
 - `/handbooks/data-that-drives-decisions/1` — What good looks like. The page opens on four lit sheets and one chair, then the prose. The path is Ask, Grain, Truth, and Use. Ask is written on Name the decision. Grain is written on Say what one row means. Truth is written on When two reports don't match and on Keep the definition: who stands behind the meaning, and what stops a bad number. An example is whether to give an invoice more time to pay, labeled as not a record, and it states no amount. The four sheets are lit because those four lines are filled. Four signals are defined, with one illustrative register for the filled path, and no amount. The response in Use is a hypothesis written on Name the decision. This page does not teach how to explain a number when you are unsure of it.
 - `/handbooks/data-that-drives-decisions/2` — Name the decision. The page opens on the brief, then the prose. The picture is one sheet of light and two chairs, and it follows the example. The brief names the decision, the outcome, the person who will act, the constraint, a hypothesis if the number rises, a hypothesis if it falls, and the one activity. A hypothesis is a proposal to check against the outcome. A blank line means the number is not that answer. Kimball supplies the activity. The GAO guide supplies the link from the measure to the goal, written as the outcome. The constraint, the hypotheses, and the stop are the author's rule. An example is the overdue-balance list, labeled as not a record, and it states no amount. While the decision line is blank, the list stays dark. Once the brief is filled, the invoice list can go out as that answer and the call list stays dark. The illustration stops at the proposal. It does not report the later check. If a second list arrives at another grain, that disagreement is When two reports don't match. Four signals are defined, with an illustrative register for the blank brief and the filled brief, and no amount. The signals are notes for the next brief. They are not collected results.

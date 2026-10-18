@@ -13,6 +13,7 @@ export function HandbookFigureView({ figure }: { figure: HandbookFigure }) {
   if (figure.kind === "scene") return <Framed figure={figure}><ScenePlate figure={figure} /></Framed>;
   if (figure.kind === "signals") return <SignalsFigure figure={figure} />;
   if (figure.kind === "compare") return <CompareFigure figure={figure} />;
+  if (figure.kind === "curve") return <CurveFigure figure={figure} />;
   return <FlowFigure figure={figure} />;
 }
 
@@ -99,6 +100,53 @@ function SignalsFigure({ figure }: { figure: HandbookFigure }) {
         </ul>
         <Caption>{figure.caption}</Caption>
       </Plate>
+    </figure>
+  );
+}
+
+/** Fowler's shape: pain stays low, then rises. No ticks and no amounts. */
+const PAIN_CURVE = (() => {
+  const left = 34;
+  const right = 276;
+  const top = 16;
+  const bottom = 96;
+  const k = 3.15;
+  const steps = 40;
+  const span = Math.exp(k) - 1;
+  let d = "";
+  for (let i = 0; i <= steps; i += 1) {
+    const t = i / steps;
+    const x = left + (right - left) * t;
+    const y = bottom - ((Math.exp(k * t) - 1) / span) * (bottom - top);
+    d += `${i === 0 ? "M" : "L"}${x.toFixed(1)} ${y.toFixed(1)}`;
+  }
+  return d;
+})();
+
+function CurveFigure({ figure }: { figure: HandbookFigure }) {
+  const yLabel = figure.axes?.y ?? "Pain";
+  const xLabel = figure.axes?.x ?? "Time between integrations";
+  return (
+    <figure>
+      <div className="mt-1 overflow-hidden rounded-2xl border border-cyan-300/20 bg-[#070d18]">
+        <div className="px-3 pt-2 pb-3">
+          <div className="relative">
+            <p className="absolute top-0 left-7 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-cyan-200">{yLabel}</p>
+            <svg viewBox="0 0 320 118" className="mx-auto block h-auto w-full max-w-md" aria-hidden>
+              <defs>
+                <marker id="pain-axis-arrow" viewBox="0 0 10 10" markerWidth="7" markerHeight="7" refX="8" refY="5" orient="auto">
+                  <path d="M0 0 L10 5 L0 10 Z" fill="#a5f3fc" />
+                </marker>
+              </defs>
+              <line x1="16" y1="104" x2="16" y2="8" stroke="#a5f3fc" strokeOpacity="0.8" strokeWidth="1.5" markerEnd="url(#pain-axis-arrow)" />
+              <line x1="16" y1="104" x2="304" y2="104" stroke="#a5f3fc" strokeOpacity="0.8" strokeWidth="1.5" markerEnd="url(#pain-axis-arrow)" />
+              <path d={PAIN_CURVE} fill="none" stroke="#e2e8f0" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </div>
+          <p className="mt-1 text-center font-mono text-[0.65rem] uppercase tracking-[0.16em] text-cyan-200">{xLabel}</p>
+          <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption>
+        </div>
+      </div>
     </figure>
   );
 }
