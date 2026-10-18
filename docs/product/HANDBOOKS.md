@@ -35,7 +35,7 @@ One thesis per page. Headings follow the subject. They are not a fixed list of e
 
 Voice: plain professional English, one practitioner teaching another. First person is for the author's recommendation. Define a term a stranger may not know. No corporate filler. State the operating rule once. Each section has a distinct job. A paragraph explains a concept, justifies a practice, shows how to apply it, or helps the reader verify the result. A source supports a specific decision: say what the literature establishes and what is the author's recommendation. An example makes the method concrete and stays in proportion to the point. Each chapter builds on the previous one and does not re-explain the others.
 
-Name the decision is the test of this voice. What good looks like and the later pages keep their current prose until the owner accepts the test and each page is revised. Do not start that revision, and do not add a chapter, before then.
+Name the decision is the test of this voice. Use it for every later chapter. The live pages keep their current prose until the owner accepts the proposed shape. Do not rewrite them, and do not add a chapter, before that acceptance.
 
 Evidence: cite the primary source, with its date or version, and only for a claim that source makes. A short link sits beside the claim and opens the section when the source has one. The page ends with one list of the works. Do not invent a metric, a client, or a result. A number you did not open does not go on the page. Say how you would tell the practice is working. That is a measure to track, not a result you do not have. Put the date you last checked the claims on the page.
 
@@ -50,7 +50,7 @@ A figure is allowed when it carries the procedure: a loop, a decision, a shape. 
 
 ### Shape of Data that drives decisions
 
-The field card is the framework: Ask, then Grain, then Truth, then Use. The handbook teaches a reader how to do that work. It does not invent a second framework, and it does not become a list of separate practices.
+The field card is the framework: Ask, then Grain, then Truth, then Use. The handbook teaches a reader how to operate that card. It does not invent a second framework, and it does not become a list of separate practices. A wider shape is proposed below. It is not in force.
 
 The book opens on the capability: Ask, Grain, Truth, and Use. It does not open on a failure, on two reports that disagree, or on a troubleshooting step. Those appear later, inside the journey, to show why a practice matters.
 
@@ -84,7 +84,38 @@ What good looks like is written, `/1`. It is Ask, Grain, Truth, and Use. The fou
 - Not written. No route. Hand the number over was a thinner name for this layer. Do not write that page under that title.
 - The GAO guide supports a measure that helps someone decide and assign accountability. It does not teach how to explain uncertainty, or how to judge the outcome afterward. Choose a source for those claims before the chapter is written.
 
-Name the decision is the test of the writing standard in the editorial contract. Say what one row means, When two reports don't match, and Keep the definition keep their current prose until the owner accepts that test. Do not add Hand the number over. Use, lineage, and freshness stay unwritten until a source is read.
+Name the decision is the test of the writing standard in the editorial contract. The five live pages keep their current prose. Do not rewrite them, merge them, or add a page until the owner accepts the proposed shape below. Do not add Hand the number over.
+
+### Proposed shape, 18 Oct 2026
+
+Awaiting the owner. The five live pages stay published as they are. Do not add a route from this proposal.
+
+Ask, Grain, Truth, and Use remain how one number becomes something a person can act on. They are not the outline of the capability. The card also carries the architecture plates, the tool lanes, the trust strip, the anti-patterns, and the maturity ladder. The book has to teach a practitioner or an analytics leader how to run that capability across its life: what to build, what not to build, how a number is made fit to use, which stack can carry it, how trust stays in force, and whether the investment should continue.
+
+Six chapters. Not one chapter per card bullet. Each chapter, once accepted and written, does five jobs: what good looks like, how to do it, the trade-off, the evidence to keep, and when to stop. The editorial contract above is the voice.
+
+The order is a sequence with a return. Choose the work before spending the stack. Make the number fit, and choose the stack once the workload is known. Trust and the value review run while a product is in use. A value review can stop the investment or send the work back to the first decision. The chapters constrain each other. A project does not have to finish one chapter before anyone may think about the next.
+
+1. **What good looks like.** The reader can place a piece of work on this path. Current `/1` teaches only the number path. After acceptance, rewrite it as the map of the practice. Ask, Grain, Truth, and Use stay the test for one number.
+2. **Choose the work.** Outcome: a short case to build, or a written reason not to. This is upstream of Ask. Trade-off: a one-off answer against a product that must be maintained. Evidence: the decision, the person who would act, the cost of not building, and the cost of keeping it. Stop when nobody will act, or when a query already answers the question. The card's matching anti-pattern is a dashboard with no decision. The maturity ladder warns against starting at optimized. No source has been read for a prioritisation method. Do not stretch Kimball or the GAO guide to cover it.
+3. **Make the number fit to use.** Outcome: a number given to someone as the answer, or a number held back. One chapter. In order: the decision brief, what one row means, a disagreement between two reports, the owner and the columns the number promises, and whether the person can explain the number and act. Trade-off: detail against a summary, publish against hold, one grain against forcing two reports together. Evidence: the brief, the row sentence, the comparison, and the column contract. Stop when a required line is blank, two reports are unexplained, or there is no path to action. Use is a section of this chapter. Hand the number over is not a title. Dimensions, the calculation, lineage, and freshness stay gaps inside this work. They do not each become a chapter.
+4. **Choose the stack.** Outcome: the plates and the tool lanes for this workload, including what was refused. The plates are consumption, the semantic layer, processing, and sources. Tools are lanes. Orchestration schedules the path and does not define the number. Trade-off: a platform change against the stack already running, logic in a semantic layer against logic buried in a report, a batch number against a search that belongs on the Bayesian optimisation card. Evidence: the workload constraint, the plates to use, and the lanes refused. Stop when the tool choice is standing in for an undefined number, or the current stack can carry the work. Calendars, blast radius, and cutover stay on the delivery card. No source has been read for a selection method beyond the card.
+5. **Keep trust in force.** Outcome: the controls that stay on for the numbers that share a system. The card names security, governance, observability, evals, and human approve. One number's owner and contract are decided in Make the number fit to use. This chapter is the system around many numbers. Trade-off: a warning against a test that blocks, a lineage programme against a trace for this measure, a committee against a named approver. Evidence: who can change a number, which test blocks a publish, a trace from source to the published measure, and who approves an unexplained gap. Stop when those cannot be named. Lineage, freshness, and security have no handbook source yet.
+6. **Run the product and judge the value.** Outcome: a product that is maintained, and a review that continues it, changes it, or stops the investment. A one-off answer does not have to become a product. Trade-off: keep a product nobody uses against retiring it, a faster cadence against a number people can still trust, more scope against stopping. Evidence: the hypothesis review from the brief, who uses the product, what it costs to run, and whether the outcome named at the start moved. Stop when that outcome did not move and people do not rely on the product. The maturity ladder runs from ad hoc to optimized. Optimized is not the default. No source has been read for judging the investment. The GAO guide does not supply that review.
+
+Where the live pages go after acceptance:
+
+| Live page | Proposed home |
+|-----------|----------------|
+| What good looks like, `/1` | Rewrite as the map of the six chapters |
+| Name the decision, `/2` | Section of Make the number fit to use |
+| Say what one row means, `/3` | Section of the same chapter |
+| When two reports don't match, `/4` | Section of the same chapter |
+| Keep the definition, `/5` | Section of the same chapter, for one number |
+
+Merging those pages changes public URLs and the links on the analytics card. That change waits for acceptance. The invoice example remains available where a chapter needs a concrete case. It does not have to carry a stack decision or a portfolio review.
+
+After acceptance, the first writing is the revised opening. Then consolidate the number pages. Then draft one missing chapter at a time, and only after a source is chosen where this proposal says none has been read.
 
 Calendars, blast-radius proof, and the cutover sequence stay on the delivery card. Do not add an eighth named practice to the SDLC card.
 
