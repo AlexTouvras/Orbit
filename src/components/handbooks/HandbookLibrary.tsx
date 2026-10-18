@@ -52,19 +52,42 @@ export function HandbookLibrary() {
                   {handbook.card.label}
                 </a>
                 <ol className="mt-4 max-w-xl border-t border-white/10 pt-3">
-                  {handbook.contents.map((entry) => (
-                    <li key={entry.page}>
-                      <Link
-                        href={pagePath(handbook.slug, entry.page)}
-                        className="focus-ring flex gap-3 rounded-sm py-1.5 text-sm text-slate-300 hover:text-white"
-                      >
-                        <span className="w-4 shrink-0 font-mono text-xs tabular-nums text-slate-500">
-                          {entry.page}
-                        </span>
-                        <span>{entry.title}</span>
-                      </Link>
-                    </li>
-                  ))}
+                  {handbook.contents.map((entry) =>
+                    entry.sections?.length ? (
+                      <li key={entry.title} className="py-1.5">
+                        <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
+                          {entry.title}
+                        </p>
+                        <ol>
+                          {entry.sections.map((section) => (
+                            <li key={section.page}>
+                              <Link
+                                href={pagePath(handbook.slug, section.page)}
+                                className="focus-ring flex gap-3 rounded-sm py-1.5 text-sm text-slate-300 hover:text-white"
+                              >
+                                <span className="w-4 shrink-0 font-mono text-xs tabular-nums text-slate-500">
+                                  {section.page}
+                                </span>
+                                <span>{section.title}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ol>
+                      </li>
+                    ) : (
+                      <li key={entry.page}>
+                        <Link
+                          href={pagePath(handbook.slug, entry.page)}
+                          className="focus-ring flex gap-3 rounded-sm py-1.5 text-sm text-slate-300 hover:text-white"
+                        >
+                          <span className="w-4 shrink-0 font-mono text-xs tabular-nums text-slate-500">
+                            {entry.page}
+                          </span>
+                          <span>{entry.title}</span>
+                        </Link>
+                      </li>
+                    ),
+                  )}
                 </ol>
               </div>
             </li>
