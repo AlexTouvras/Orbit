@@ -1,6 +1,7 @@
 import {
   HANDBOOKS,
   type Handbook,
+  type HandbookContentsEntry,
   type HandbookPage,
 } from "@/content/handbooks";
 
@@ -21,12 +22,20 @@ export function getHandbook(slug: string): Handbook | null {
   return HANDBOOKS.find((handbook) => handbook.slug === slug) ?? null;
 }
 
-export function chapterTitleForPage(handbook: Handbook, pageNumber: number): string {
-  let title = handbook.contents[0]?.title ?? "";
+export function chapterForPage(handbook: Handbook, pageNumber: number): HandbookContentsEntry | null {
   for (const entry of handbook.contents) {
-    if (entry.page <= pageNumber) title = entry.title;
+    if (entry.page === pageNumber) return entry;
+    if (entry.sections?.some((section) => section.page === pageNumber)) return entry;
   }
-  return title;
+  let found: HandbookContentsEntry | null = handbook.contents[0] ?? null;
+  for (const entry of handbook.contents) {
+    if (entry.page <= pageNumber) found = entry;
+  }
+  return found;
+}
+
+export function chapterTitleForPage(handbook: Handbook, pageNumber: number): string {
+  return chapterForPage(handbook, pageNumber)?.title ?? "";
 }
 
 export function getPage(

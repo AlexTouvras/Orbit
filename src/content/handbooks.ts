@@ -89,14 +89,23 @@ export interface HandbookPage {
   plate?: "horizon";
   /** This book's opening picture. It is the first leaf, not a route in front of the page. */
   cover?: HandbookPicture;
+  /** A design picture behind the words. It does not name a step, and the words stay readable. */
+  ground?: HandbookPicture;
   sections: HandbookSection[];
   sources: HandbookLink[];
 }
 
-/** A contents entry. It opens on `page`. */
+/** A section inside a chapter. It opens on `page`. */
+export interface HandbookContentsSection {
+  title: string;
+  page: number;
+}
+
+/** A contents entry. It opens on `page`. Sections are the pages already written inside that chapter. */
 export interface HandbookContentsEntry {
   title: string;
   page: number;
+  sections?: HandbookContentsSection[];
 }
 
 export interface Handbook {
@@ -1036,90 +1045,162 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   card: { href: DATA_CARD, label: "Data analytics field card" },
   contents: [
     { title: "What good looks like", page: 1 },
-    { title: "Name the decision", page: 2 },
-    { title: "Say what one row means", page: 3 },
-    { title: "When two reports don't match", page: 4 },
-    { title: "Keep the definition", page: 5 },
+    {
+      title: "Make the number fit to use",
+      page: 2,
+      sections: [
+        { title: "Name the decision", page: 2 },
+        { title: "Say what one row means", page: 3 },
+        { title: "When two reports don't match", page: 4 },
+        { title: "Keep the definition", page: 5 },
+      ],
+    },
   ],
   pages: [
     {
       number: 1,
-      topic: "The path",
+      topic: "The practice",
       title: "What good looks like",
-      lede: "This page is the path a number walks when a person can act on it. The four steps are Ask, Grain, Truth, and Use. I want all four of those to be sayable in one sitting, in ordinary words.",
-      rule: "My operating rule: before a number goes out as the answer, I can say Ask, Grain, Truth, and Use, in that order.",
-      illustration: "The four sheets are an illustration, not a record.",
-      reviewed: "17 Oct 2026",
-      cover: {
+      lede: "This page is how the practice runs. One number is ready when Ask, Grain, Truth, and Use can be said. The work around that number follows the same path.",
+      rule: "My operating rule: I place the work on this path before I build it. A number goes out as the answer only when Ask, Grain, Truth, and Use are filled.",
+      illustration: "The invoice path is an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
         src: `${DATA_ART}/path.jpg`,
-        alt: "Four lit sheets in a row, and one chair facing them. No amount.",
+        alt: "",
       },
       sections: [
         {
           id: "path",
-          title: "The four things",
+          title: "The path",
           paragraphs: [
-            "Ask is the decision a person is about to make, and who that person is. Grain is what one line of the number means: the thing, the time, what is included, and what is left out. Truth is why that person can trust the number. They know who stands behind the meaning, and they know what stops a bad number. Use is whether they can explain the number and act on it.",
-            "Those four names are the analytics field card. This page is what they look like when all four can be said.",
-            "The link I use between a measure and a decision comes from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. It says that when a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A number on this path exists so a person can see and decide.",
+            "The analytics field card carries the four steps for a number, the architecture plates, the tool lanes, the trust strip, and the maturity ladder. The order below is how I run that card.",
           ],
-          sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
+          lines: [
+            {
+              term: "Place the work",
+              detail: "Say which part of the path the work is on, and which rung the organization is on. This page is that placement.",
+            },
+            {
+              term: "Choose the work",
+              detail: "A case to build, or a written reason not to. The case names the decision, the person who would act, and the rung the work needs.",
+            },
+            {
+              term: "Make the number fit",
+              detail:
+                "The brief, what one row means, a disagreement between two reports, the owner and the columns the number promises, and whether the person can explain the number and act. Name the decision, Say what one row means, When two reports don't match, and Keep the definition are this part.",
+            },
+            {
+              term: "Choose the stack",
+              detail:
+                "The plates and the tool lanes for the workload, including what was refused. The plates are consumption, the semantic layer, processing, and sources.",
+            },
+            {
+              term: "Keep trust in force",
+              detail: "Security, governance, observability, evals, and human approve, for the numbers that share a system.",
+            },
+            {
+              term: "Judge the value",
+              detail: "A product that is maintained, and a review that continues it, changes it, or stops the investment.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
-          id: "path-walk",
-          title: "How I walk it",
+          id: "path-number",
+          title: "One number",
           paragraphs: [
-            "I fill four lines, in this order. A line is filled when a person who missed the meeting can say it back. Ask is written on Name the decision. Grain is written on Say what one row means. Truth is written on When two reports don't match and on Keep the definition: who stands behind the meaning, and what stops a bad number. This page holds those pages in one order.",
+            "Ask, Grain, Truth, and Use are the test for one number. They are not the outline of the practice. A line is filled when a person who missed the meeting can say it back.",
+            "The link I use between a measure and a decision comes from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. It says that when a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A number on this path exists so a person can see and decide.",
           ],
           lines: [
             {
               term: "Ask",
-              detail: "The decision, and the person who will act. A report title does not finish the line.",
+              detail: "The decision, and the person who will act. Name the decision writes it. A report title does not finish the line.",
             },
             {
               term: "Grain",
-              detail: "What one line means. The thing, the time, what is included, and what is left out.",
+              detail: "What one line means. The thing, the time, what is included, and what is left out. Say what one row means writes it.",
             },
             {
               term: "Truth",
-              detail: "Who stands behind that meaning, and what stops a bad number before it goes out.",
+              detail:
+                "Who stands behind that meaning, and what stops a bad number. When two reports don't match and Keep the definition write it.",
             },
             {
               term: "Use",
               detail:
-                "Whether they can explain the number and act on it. The response they write is a hypothesis to check. If the number would not change what they do, it is not the answer to this Ask.",
+                "Whether they can explain the number and act on it. The response they write is a hypothesis to check. Name the decision writes that proposal. If the number would not change what they do, it is not the answer to this Ask.",
             },
           ],
-          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+          sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
           id: "path-scene",
           title: "An example",
           paragraphs: [
             "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "Someone can give an invoice more time to pay. Ask is whether to give more time. The person is the role that can do that. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, that someone owns the meaning, and that a bad number would be stopped. Use is the response they propose to check. If more invoices are past their date, they propose not to give more time. If fewer are past their date, they propose that the extension can be offered. Name the decision writes that proposal. The four sheets are lit because those four lines are filled. One chair faces them. That chair is the person who can act. No amount is written.",
+            "Someone can give an invoice more time to pay. Ask is whether to give more time. The person is the role that can do that. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, that someone owns the meaning, and that a bad number would be stopped. Use is the response they propose to check. If more invoices are past their date, they propose not to give more time. If fewer are past their date, they propose that the extension can be offered. Name the decision writes that proposal. No amount is written.",
           ],
-          picture: {
-            src: `${DATA_ART}/path.jpg`,
-            alt: "An illustration. Four lit sheets in a row, and one chair facing them. No amount.",
+          figure: {
+            kind: "flow",
+            caption: "The same illustration, in order. It states no amount.",
+            steps: [
+              {
+                term: "Ask",
+                detail: "Whether to give an invoice more time to pay. The person is the role that can do that.",
+              },
+              {
+                term: "Grain",
+                detail: "An open invoice as of yesterday. Accounts already written off are left out.",
+              },
+              {
+                term: "Truth",
+                detail: "That grain can be said back. Someone owns the meaning, and a bad number would be stopped.",
+              },
+              {
+                term: "Use",
+                detail:
+                  "If more invoices are past their date, offer no more time. If fewer are, the extension can be offered. Both are hypotheses to check.",
+              },
+            ],
           },
+        },
+        {
+          id: "path-rung",
+          title: "The organization",
+          paragraphs: [
+            "The card's ladder is how the organization runs the practice. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. A prescriptive recommendation still walks Ask, Grain, Truth, and Use. I take work the current rung can keep.",
+          ],
+          lines: [
+            { term: "Ad hoc", detail: "Manual, inconsistent, low trust." },
+            { term: "Defined", detail: "Standards and basic governance." },
+            { term: "Managed", detail: "Automated, monitored, reconciled." },
+            {
+              term: "Optimized",
+              detail: "Predictive use, real-time, and self-service. This rung is not the destination.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
           id: "path-know",
           title: "How I would know",
           paragraphs: [
-            "I watch four things. I have no target times, and these definitions are not results I have collected.",
-            "A repeatable Ask means a person who missed the meeting can say what is being decided, and who will act.",
-            "A repeatable Grain means that person can say what one line means.",
-            "A named Truth means they can say who owns the meaning, and what stops a bad number.",
-            "A written Use means they can say the response they propose to check, and how they would explain the number.",
-            "The line below is the illustration on this page, once the path is filled. It is not a result I collected, and it states no amount.",
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
           ],
           lines: [
             {
-              term: "Filled",
-              detail:
-                "Ask: whether to give more time to pay. The person is the role that can do that. Grain: an open invoice as of yesterday, written-off accounts left out. Truth: that grain can be said back, someone owns the meaning, and a bad number would be stopped. Use: a hypothesis if more invoices are past their date, and a hypothesis if fewer are. Name the decision writes those proposals. No amount is written.",
+              term: "Placed",
+              detail: "The work has a part of the path. A dashboard with no decision has not been placed.",
+            },
+            {
+              term: "Rung",
+              detail: "The rung the organization is on is named, and the work needs no higher rung.",
+            },
+            {
+              term: "Number",
+              detail: "A person who missed the meeting can say Ask, Grain, Truth, and Use.",
             },
           ],
         },
@@ -1127,8 +1208,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page is the path. Ask is written on Name the decision. Grain is written on Say what one row means. A comparison of two reports is written on When two reports don't match. The columns that stay in force are written on Keep the definition.",
-            "Use asks whether we can explain the number and act on it. The response is a hypothesis, written on Name the decision. This page does not teach how to explain a number when you are unsure of it.",
+            "This page places the work. Choosing a platform is Choose the stack. Whether a product should continue is the value review. Make the number fit is Name the decision, Say what one row means, When two reports don't match, and Keep the definition.",
             "The GAO guide assesses an agency plan. I am not running its checklist. I am using the link it requires between a measure and a decision a person can make.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
@@ -1137,6 +1217,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { href: DATA_CARD, label: "Data analytics field card" },
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "path-draft",
+          title: "When AI drafts the work",
+          paragraphs: [
+            "This practice holds today, and I expect it to hold, because the test is a person who can place the work and say Ask, Grain, Truth, and Use. AI can draft the case, the path, and a sentence for each step. A fluent draft is not that person saying it, and a tool does not move the organization up a rung.",
           ],
         },
       ],
@@ -1152,7 +1239,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 2,
-      topic: "The question",
+      topic: "Make the number fit",
       title: "Name the decision",
       lede: "This page is the brief I fill before a number goes out as the answer. The brief names the decision, the outcome that decision is for, the person who will act, the constraint they have to respect, the one activity, and a hypothesis for a rise and a hypothesis for a fall. A blank line means the number is not that answer.",
       rule: "My operating rule: I can say the decision, the outcome, the person, the constraint, a hypothesis for a rise, and a hypothesis for a fall, and I do not publish the number as the answer until those are named. Each hypothesis is a proposal to check against the outcome.",
@@ -1297,7 +1384,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 3,
-      topic: "The row",
+      topic: "Make the number fit",
       title: "Say what one row means",
       lede: "This page comes after the decision is named. It says what one row of the number means, before anyone compares two reports. Kimball calls that the grain: exactly what one record represents, in business words. A report title is not that sentence. A list of columns is not that sentence.",
       rule: "My operating rule: name the thing, the time, what is included, and what is left out, and do not publish the number until the person who will use it can say that row back.",
@@ -1431,7 +1518,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 4,
-      topic: "Two reports",
+      topic: "Make the number fit",
       title: "When two reports don't match",
       lede: "This page is for a number you are about to give someone as the answer, when two reports disagree. What one row means is already written on Say what one row means. The two reports can share a title and still not match. Sending one of them out, or a third number in between, before the difference has a cause, gives that person a figure you cannot defend. A search that is not being offered as the answer can keep both versions.",
       rule: "My operating rule: say what one row means before the two reports are compared, explain the difference or block the publish, and do not publish a number between them.",
@@ -1613,7 +1700,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 5,
-      topic: "The change",
+      topic: "Make the number fit",
       title: "Keep the definition",
       lede: "A filled decision and a filled comparison can still go stale the next time the query changes. This page is what I leave in place: who owns the definition, the columns the number promises, and the stop when those columns break.",
       rule: "My operating rule: name the owner of the published definition, check its columns before the next build, and stop the old number when those columns break.",
@@ -1720,6 +1807,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             DBT_VERSIONS,
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "keep-draft",
+          title: "When AI drafts the number",
+          paragraphs: [
+            "The brief, the row, the cause, and the owner hold today, and I expect them to hold, because the person who will act has to be able to say them. AI can draft the brief, the row sentence, an explanation of two reports, and the columns. A generated explanation is not a cause until that person accepts it.",
           ],
         },
       ],

@@ -235,6 +235,18 @@ export function HandbookBook({
       >
         <ChapterRail handbook={handbook} page={page} />
         <div className="relative min-h-0 flex-1">
+          {page.ground && !spread && !picture ? (
+            <div className="pointer-events-none absolute inset-0" aria-hidden="true" data-handbook-ground>
+              <Image
+                src={page.ground.src}
+                alt=""
+                fill
+                sizes="100vw"
+                className="object-cover object-center opacity-80"
+              />
+              <div className="absolute inset-0 bg-[#040914]/88 lg:bg-[#040914]/25" />
+            </div>
+          ) : null}
           {spread ? (
             <div className="absolute inset-0 z-10 p-0 lg:p-3 lg:pb-8">
               <HandbookSpread handbook={handbook} page={page} panels={spread} />
@@ -245,8 +257,14 @@ export function HandbookBook({
               <PictureLeaf handbook={handbook} page={page} leaf={picture} />
             </div>
           ) : null}
-          <div className={`${spread || picture ? "invisible" : ""} flex h-full min-h-0 flex-col px-4 pt-3 pb-3 sm:px-8 lg:px-10 lg:pt-4 lg:pb-8`}>
-            <header className="mb-3 flex h-5 shrink-0 items-baseline justify-between gap-4">
+          <div className={`relative z-10 ${spread || picture ? "invisible" : ""} flex h-full min-h-0 flex-col px-4 pt-3 pb-3 sm:px-8 lg:px-10 lg:pt-4 lg:pb-8`}>
+            {page.ground ? (
+              <div
+                className="pointer-events-none absolute inset-y-0 left-1/2 z-0 w-[min(64rem,100%)] -translate-x-1/2 bg-[#040914]"
+                aria-hidden="true"
+              />
+            ) : null}
+            <header className="relative z-10 mb-3 flex h-5 shrink-0 items-baseline justify-between gap-4">
               <p className="min-w-0 truncate font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
                 <span className="hidden sm:inline">
                   {handbook.title}
@@ -256,7 +274,7 @@ export function HandbookBook({
               </p>
               <p className="shrink-0 font-mono text-xs tabular-nums text-slate-400">{page.number}</p>
             </header>
-            <div ref={slotRef} className="min-h-0 flex-1 overflow-clip">
+            <div ref={slotRef} className="relative z-10 min-h-0 flex-1 overflow-clip">
               <div
                 className="relative mx-auto w-full max-w-3xl"
                 style={{
