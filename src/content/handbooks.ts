@@ -43,10 +43,12 @@ export interface HandbookFigureColumn {
 }
 
 export interface HandbookFigure {
-  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare";
+  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve";
   caption: string;
   steps: HandbookFigureStep[];
   columns?: HandbookFigureColumn[];
+  /** Axis names for a sketch. The figure states no amount. */
+  axes?: { y: string; x: string };
 }
 
 /** A photograph that follows a section, or opens the page. It states no amount the prose does not. */
@@ -883,6 +885,12 @@ export const SOFTWARE_THAT_STAYS_IN_USE: Handbook = {
             "Fowler's line, from 28 July 2011, is that if an activity hurts, do it more often. People put off integration because it is painful, and the pain grows with the wait. He names the same pressure in testing, refactoring, database migration, conversations with customers, planning, and releasing. A large job gets harder as the amount grows, while small pieces compose: a migration across many tables is error-prone, and a sequence of small migrations is not. Feedback is the second reason, so you can correct course in a complex process. Practice is the third. Doing the thing often is also what shows you how to automate it.",
             "I treat a production fix on a special path as that postponed integration. The fix stays on the path the team already runs, because that is the path they practice. He describes the pain against the time between integrations as an exponential curve you would see if you plotted it. I do not treat the sketch as a measurement.",
           ],
+          figure: {
+            kind: "curve",
+            caption: "Pain rises with the wait between integrations. The curve is a sketch, not a measurement.",
+            axes: { y: "Pain", x: "Time between integrations" },
+            steps: [],
+          },
           sources: [FOWLER_FREQ],
         },
         {

@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Handbook 01 page 5 — Fowler's frequency sketch follows the paragraph. Pain against the time between integrations, no scale and no amount (2026-10-18)
 - [x] SDLC robot — the bubble also says keep main releasable, the plan fits on a page, and a spec file is not shared understanding (2026-10-15)
 - [x] Handbook chapters — the field card opens the matching chapter, and each chapter names the card, the book, the neighbouring chapters, and whether a story or delivered work exists (2026-10-15)
 - [x] Handbook pictures follow the section — the earth opens the page, and each card comes after the words it draws (2026-10-15)
