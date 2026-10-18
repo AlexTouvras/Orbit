@@ -1045,6 +1045,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   card: { href: DATA_CARD, label: "Data analytics field card" },
   contents: [
     { title: "What good looks like", page: 1 },
+    { title: "Choose the work", page: 6 },
     {
       title: "Make the number fit to use",
       page: 2,
@@ -1232,6 +1233,138 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           "https://www.gao.gov/assets/ggd-10.1.20.pdf",
           "GAO, An Evaluator's Guide to Assessing Agency Annual Performance Plans, GAO/GGD-10.1.20 (April 1998)",
         ),
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 6,
+      topic: "Choose the work",
+      title: "Choose the work",
+      lede: "This page is the case I take, or the written reason I do not. The case names the decision, the person who would act, and the rung the work needs. A written reason is a finished page.",
+      rule: "My operating rule: I start the work only when the decision, the person, and a rung the organization can keep are named. Otherwise I write the reason not to, and I do not start.",
+      illustration: "The invoice case is an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "",
+      },
+      sections: [
+        {
+          id: "case",
+          title: "The case",
+          paragraphs: [
+            "The opening page places the work. This page is the choice to build, or the written reason not to.",
+            "The organization sits on the card's ladder: ad hoc, defined, managed, optimized. Ad hoc is manual, inconsistent, and low trust. Defined is standards and basic governance. Managed is automated, monitored, and reconciled. Optimized is predictive use, real-time, and self-service. The card names the trap this page is for: dashboard-only thinking with no decision. The card also says Spark is for when the volume requires it.",
+            "I take a case the current rung can keep. I move up only when the rung below is in force. I refuse the scale the decision does not need. The plates and the tools are Choose the stack. The sheet is my rule. Each case is taken or refused on its own. When the organization can keep only one, that limit is written in the reason not to.",
+          ],
+          lines: [
+            {
+              term: "Decision",
+              detail:
+                "The decision, in the words of the person who would act. A report title does not finish the line.",
+            },
+            {
+              term: "Actor",
+              detail: "Who would act. One person, or one role. A mailing list is not the actor.",
+            },
+            {
+              term: "Organization",
+              detail: "The rung in force now. Ad hoc, defined, managed, or optimized.",
+            },
+            {
+              term: "Need",
+              detail:
+                "The rung this case needs. When it is higher than the organization, write a smaller case the current rung can keep, or write the reason not to.",
+            },
+            {
+              term: "Scale",
+              detail:
+                "How much data the decision needs, how many people use the number at once, and how new it has to be. Refuse what the decision does not need.",
+            },
+            {
+              term: "Build or stop",
+              detail:
+                "Start when the decision, the actor, and a rung the organization can keep are named, and the scale is one the decision needs. Otherwise the written reason is the outcome. A blank line is not a reason.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "case-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "Someone asks for two things. One is a screen that refreshes through the day for every person who collects, and a prediction that chooses whom to call. The other is whether one role can give an invoice more time to pay.",
+            "On this illustration the organization is Defined. The live screen is for every collector, and the number moves through the day. Choosing the calls for them is predictive use. That work needs the optimized rung. The reason not to is written: the rung is higher than the one in force, and the decision does not need a number that moves through the day.",
+            "The case that is taken is the second request. The decision is whether to give an invoice more time to pay. The actor is the role that can do that. The rung it needs is Defined. The number is as of yesterday. The call list is a different decision, so it is not this case. No amount is written.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "The same illustration. One case is refused, and one is taken. It states no amount.",
+            steps: [
+              {
+                term: "Refused",
+                detail:
+                  "A live screen for every collector, and a prediction that chooses the calls. The organization is Defined. That work needs Optimized. The decision does not need a number that moves through the day.",
+              },
+              {
+                term: "Taken",
+                detail:
+                  "Whether one role gives an invoice more time to pay. The rung it needs is Defined. The number is as of yesterday.",
+              },
+            ],
+          },
+        },
+        {
+          id: "case-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "A taken case names the decision, the person, and a rung the organization can keep.",
+            "A refusal is a written reason that names the rung or the scale that was turned down.",
+            "A blank start is work that began with no case and no written reason.",
+            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            {
+              term: "Refused",
+              detail:
+                "A live screen for every collector, and a prediction that chooses the calls. Organization: Defined. Need: Optimized. Reason: the rung is higher, and the decision does not need a number that moves through the day.",
+            },
+            {
+              term: "Taken",
+              detail:
+                "Whether to give an invoice more time to pay. Actor: the role that can do that. Organization: Defined. Need: Defined. The number is as of yesterday. Action: take the case. No amount is written.",
+            },
+          ],
+        },
+        {
+          id: "case-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "Name the decision fills the brief after the case is taken. This page does not write the outcome, the constraint, or the two hypotheses.",
+            "Choose the stack names the plates and the tools, including a tool that was refused. This page refuses the scale the decision does not need. It does not pick the platform.",
+            "A product that is already running is judged later: continue it, change it, or stop the investment.",
+            "Ask, Grain, Truth, and Use are the test for the number, after this page.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "case-draft",
+          title: "When AI drafts the case",
+          paragraphs: [
+            "This page holds today, and I expect it to hold, because the person who would act has to be named, and the case has to be a rung the organization can keep. AI can draft the case and a reason not to build. A draft does not name that person, and it does not put the organization on a higher rung.",
+          ],
+        },
+      ],
+      sources: [
         { href: DATA_CARD, label: "Data analytics field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
         { href: BAYES_CARD, label: "Bayesian optimisation field card" },

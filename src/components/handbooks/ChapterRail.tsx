@@ -1,12 +1,10 @@
 import Link from "next/link";
 import type { Handbook, HandbookPage } from "@/content/handbooks";
 import { SiteLink } from "@/components/handbooks/SiteLink";
-import { chapterForPage, pagePath } from "@/lib/handbooks";
+import { adjacentPages, chapterForPage, pagePath } from "@/lib/handbooks";
 
 export function ChapterRail({ handbook, page }: { handbook: Handbook; page: HandbookPage }) {
-  const index = handbook.pages.findIndex((item) => item.number === page.number);
-  const previous = index > 0 ? handbook.pages[index - 1] : null;
-  const next = index >= 0 && index < handbook.pages.length - 1 ? handbook.pages[index + 1] : null;
+  const { index, previous, next } = adjacentPages(handbook, page.number);
   const chapter = chapterForPage(handbook, page.number);
   const chapterName = chapter && chapter.title !== page.title ? chapter.title : null;
 
@@ -18,7 +16,7 @@ export function ChapterRail({ handbook, page }: { handbook: Handbook; page: Hand
           {handbook.title}
         </Link>
         <span className="text-slate-600">
-          {page.number} / {handbook.pages.length}
+          {index + 1} / {handbook.pages.length}
         </span>
       </div>
       {chapterName ? <p className="mt-1 text-sm text-slate-200">{chapterName}</p> : null}
