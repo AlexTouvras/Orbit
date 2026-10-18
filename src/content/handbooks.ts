@@ -1152,11 +1152,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 2,
-      topic: "The question",
+      topic: "The brief",
       title: "Name the decision",
-      lede: "This page is the brief I fill before a number goes out as the answer. The brief names the decision, the outcome that decision is for, the person who will act, the constraint they have to respect, the one activity, and a hypothesis for a rise and a hypothesis for a fall. A blank line means the number is not that answer.",
-      rule: "My operating rule: I can say the decision, the outcome, the person, the constraint, a hypothesis for a rise, and a hypothesis for a fall, and I do not publish the number as the answer until those are named. Each hypothesis is a proposal to check against the outcome.",
-      illustration: "The two chairs are an illustration, not a record.",
+      lede: "Ask, on the previous page, is the decision a number is for. Good looks like a brief someone who missed the meeting can repeat.",
+      rule: "My operating rule: when I am about to give a number to someone as the answer, I complete the brief below first. An exploration I am not offering as an answer does not need it. The response to a rise, and the response to a fall, are hypotheses to test against the outcome, not actions the number triggers by itself.",
+      illustration: "The picture is an illustration, not a measured result.",
       reviewed: "16 Oct 2026",
       cover: {
         src: `${DATA_ART}/decision.jpg`,
@@ -1166,71 +1166,71 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
         {
           id: "brief",
           title: "The brief",
-          paragraphs: [
-            "This is the sheet I fill when the number will be given to someone as the answer. A blank line means it is not that answer. The Activity line is Kimball's business process. The Outcome line is the goal I write down, so the measure has something to represent. The GAO guide requires that link. The decision, the person, the constraint, the two hypotheses, and the stop are my rule. The field card names the outcome beside the question and the audience. What one row means comes after this sheet. Two reports that disagree are handled on When two reports don't match.",
-          ],
           lines: [
             {
               term: "Decision",
               detail:
-                "The decision, in the words of the person who will act. A report title does not finish the line. It is filled when someone who missed the meeting can say what is being decided.",
+                "What is being decided, in the words of the person who will act. A report title is not enough. Someone who missed the meeting should be able to restate it.",
             },
             {
               term: "Outcome",
               detail:
-                "The business result that decision is for. What should be true if the decision works. If the outcome is only to see the number, this number is not an answer yet.",
+                "The business result the decision is supposed to produce. Seeing the number is not an outcome.",
             },
             {
               term: "Actor",
-              detail: "Who will act. One person, or one role. A mailing list is not the actor.",
+              detail: "The person or role who will act. A distribution list is not an actor.",
             },
             {
               term: "Constraint",
               detail:
-                "The limit the decision has to respect. What they will not do, or what has to stay true. If there is no limit, write that. A blank line is not the same as no limit.",
+                "The limit on the decision: what they will not do, or what must stay true. If there is no limit, write none. A blank line means the limit is still unknown, so the brief is not finished.",
             },
             {
               term: "If it rises",
               detail:
-                "A hypothesis to check, not an order. The response they propose to try if the number goes up. Afterward they compare it with the outcome. If they would do nothing different, this number is not the answer to this decision.",
+                "The response you propose to try if the number goes up. Test it later against the outcome. It is not an automatic action.",
             },
             {
               term: "If it falls",
-              detail:
-                "A hypothesis to check, not an order. The response they propose to try if the number goes down. Write both, or set this number aside. Neither one fires by itself.",
+              detail: "The response you propose to try if the number goes down. Test it the same way.",
             },
             {
               term: "Activity",
               detail:
-                "The one activity that produces the number. If the decision needs two activities, they are two numbers.",
+                "The one business activity that produces the number. If the decision needs two activities, make two numbers.",
             },
             {
               term: "Send it",
               detail:
-                "Only when the lines above are filled. A blank line means the table can stay, and it is not the answer. Sending it does not make a hypothesis true. This sheet does not pick a number between two reports.",
+                "Give the number to the actor as the answer to this decision only when every line above is filled. Giving it out does not confirm the hypothesis.",
             },
           ],
-          sources: [KIMBALL_PROCESS, KIMBALL_STEPS, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
           id: "why-lines",
-          title: "Why the lines are separate",
+          title: "Where the lines come from",
           paragraphs: [
-            "Kimball's four-step design puts the business first. Before the model is drawn, the team sits with the people who use the numbers. They learn the goals, the problems, how decisions get made, the analysis those people need, and what the source data can support. The design then starts by choosing the business process. That process is a real activity, such as taking an order, handling a claim, or recording every account at month-end. Most fact tables cover one activity. Choosing it is what lets you say what one row means. People from the business take part so the names and the rules are agreed. That meeting learns how decisions get made. It does not fill this brief. A report title is not the activity.",
-            "The GAO guide for agency performance plans, April 1998, is about a plan, not a dashboard. It says the measures should show progress toward the goals. When a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A measure has to represent the performance it is supposed to assess, or be clearly related to it. The guide's example is a measure that misses its goal: the average time to process a tax return does not represent the goal of making tax-return processing more accurate. The time can be collected carefully and still be the wrong number. I am not running the guide's checklist. I use that link, and I write the goal on the Outcome line. The guide does not give the constraint, and it does not turn a response into an order.",
-            "A check can already have passed, and the number can still be the wrong answer. The number came from one activity. The meeting may be deciding something else. The field card names that failure: the wrong question, the wrong audience, or an unclear decision. I read the question as the Decision line, the audience as the Actor, and an unclear decision as a hypothesis that has not been written.",
+            "Activity is Kimball's business process, the first step of his four-step dimensional design. It is a real activity, such as taking an order or handling a claim. Most fact tables cover one activity. Naming it is what lets the next page say what one row means. Before the design, Kimball has the team meet the people who use the numbers and learn their goals, how decisions get made, and what the data can support. That meeting informs this brief. It does not complete the Decision line.",
+            "Outcome is the goal the measure has to represent. The GAO guide for agency performance plans, April 1998, requires that link: a measure has to represent the performance it is supposed to assess, or be clearly related to it. In the guide's example, the average time to process a tax return does not represent a goal of more accurate processing. The figure can be correct and still be the wrong number for that goal. The guide is written for an agency plan, and I am using only this requirement.",
+            "Decision, Actor, Constraint, and the two hypotheses are my recommendation. They are not part of Kimball's design steps or of the GAO guide. The analytics field card names the matching failure as the wrong question, the wrong audience, or an unclear decision. I record those here as the Decision, the Actor, and a written hypothesis.",
           ],
-          sources: [KIMBALL_STEPS, KIMBALL_PROCESS, KIMBALL_PDF, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
+          sources: [
+            KIMBALL_STEPS,
+            KIMBALL_PROCESS,
+            KIMBALL_PDF,
+            GAO_RESULTS,
+            { href: DATA_CARD, label: "Data analytics field card" },
+          ],
         },
         {
           id: "question-scene",
           title: "An example",
           paragraphs: [
-            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "One list is titled overdue balance. A row is an open invoice as of yesterday. Everyone agrees what a row is, and there is no second report. Two decisions are in the room. One person will choose which customers to call. Another will decide whether to give an invoice more time to pay. The rows can answer the second decision, because that decision is about an invoice. They are not the call list, because a call is about a customer. Until the brief names which decision this number is for, the list stays dark.",
-            "Once the sheet is filled, the decision is whether to give an invoice more time to pay. The outcome is that the account stays current, and the invoice is not written off to get there. The actor is the role that can offer more time. The constraint is that more time may be offered, and the amount owed is not forgiven. The activity is the open invoice. The call list is a second activity, so it is not this number.",
-            "If it rises, the hypothesis is to propose no more time. If it falls, the hypothesis is to propose that the extension can be offered. Neither line is an order. After the number moves, the team writes whether they did what they proposed, and whether the account stayed current without a write-off. This illustration stops at the proposal. It does not report that check.",
-            "The chair in the light is the role that can offer more time. The dark chair is the call list, which this number does not answer. The invoice list can go out as the answer to the filled brief. No amount is written. If a second list arrives and a row on it is an account at month-end, that disagreement is When two reports don't match.",
+            "This is an illustration, not a result I measured. It states no amount.",
+            "A list of overdue invoices can be brought to two decisions: which customers to call, or whether to give an invoice more time to pay. A row is an open invoice, so the list can inform the second decision. It cannot choose who to call, because a call is about a customer.",
+            "For the payment decision, the brief reads like this. The decision is whether to give an invoice more time to pay. The outcome is that the account stays current without writing the invoice off. The actor is the role allowed to offer more time. The constraint is that more time may be offered and the amount owed is not forgiven. The activity is open invoices.",
+            "If more invoices are past their date, the hypothesis is to offer no more time. If fewer are, the hypothesis is to offer it. Afterward the team compares what they did with whether the accounts stayed current. This illustration does not include that comparison.",
           ],
           picture: {
             src: `${DATA_ART}/decision.jpg`,
@@ -1241,35 +1241,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-know",
           title: "How I would know",
           paragraphs: [
-            "I watch four things. I have no target times, and these definitions are not results I have collected. They are the notes a team writes so the next brief can use the last one. A filled sheet that nobody looks back at does not show that the decisions are getting better.",
-            "A said-back brief means a person who missed the meeting can say the decision, the outcome, the constraint, and who will act. If they cannot, the practice is not in use yet. This check comes before any result.",
-            "A checked hypothesis means that after they acted, they wrote whether they did what the hypothesis proposed, and whether the outcome moved as they expected. A match is not proof the hypothesis was right. A miss is the note the next brief starts from. That comparison is how the team learns which responses are worth proposing again.",
-            "A retired hypothesis means they stopped proposing a response because the outcome did not follow. The retired line is the sign the practice is getting more precise. I am defining the signal. I am not reporting a response I have retired.",
-            "A parked answer means the number stayed unpublished because a line on the brief was blank. The stop is working. A parked answer is not a quality score.",
-            "The rows below are the illustration on this page. One is the blank sheet. One is the sheet once it is filled. Neither is a result I collected, and neither states an amount.",
-          ],
-          lines: [
-            { term: "Blocked", detail: "The sheet while the decision line is blank. The list stayed dark." },
-            { term: "Measure", detail: "Overdue balance. One list of open invoices. No amount is written." },
-            { term: "Action", detail: "Do not send the list out as an answer." },
-            {
-              term: "Filled",
-              detail:
-                "Decision: whether to give an invoice more time to pay. Outcome: the account stays current, and the invoice is not written off to get there. Actor: the role that can offer more time. Constraint: more time may be offered, and the amount owed is not forgiven. If it rises: propose no more time, then check the outcome. If it falls: propose that the extension can be offered, then check the outcome. Activity: the open invoice. Action: send the invoice list as that answer. The call list stays dark. No amount is written.",
-            },
-          ],
-        },
-        {
-          id: "question-limits",
-          title: "Where I do not use it",
-          paragraphs: [
-            "What one row means is the next page. This page does not say it. Two reports that disagree stay on When two reports don't match. This page does not pick a number between them.",
-            "A search that is not being given to someone as the answer can continue with no brief. This page stops the number that is being given as the answer.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card. Keeping the meaning in force after the number goes out is Keep the definition.",
-          ],
-          sources: [
-            { href: DELIVERY_CARD, label: "Technology delivery field card" },
-            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+            "These checks show whether the brief is changing decisions, not only whether a form was completed. They are definitions. I have no target, and I have not collected results against them.",
+            "A shared brief means a person who missed the meeting can state the decision, the outcome, the constraint, and who will act.",
+            "A reviewed hypothesis means that after the team acts, they record whether they did what they proposed and whether the outcome moved as they expected. A match is not proof. A difference is what the next brief should take into account.",
+            "A retired hypothesis means they stop proposing a response because the outcome did not follow. That is a sign the practice is getting more precise.",
+            "A held number means they did not give the number out as an answer because a line on the brief was empty.",
           ],
         },
       ],
@@ -1291,8 +1267,6 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           "GAO, An Evaluator's Guide to Assessing Agency Annual Performance Plans, GAO/GGD-10.1.20 (April 1998)",
         ),
         { href: DATA_CARD, label: "Data analytics field card" },
-        { href: DELIVERY_CARD, label: "Technology delivery field card" },
-        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
       ],
     },
     {
