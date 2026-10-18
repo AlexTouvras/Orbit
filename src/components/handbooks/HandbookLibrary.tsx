@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HANDBOOKS } from "@/content/handbooks";
 import { HandbookFieldLandscape } from "@/components/handbooks/HandbookBoard";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
-import { pagePath } from "@/lib/handbooks";
+import { pagePath, placeInBook } from "@/lib/handbooks";
 
 export function HandbookLibrary() {
   return (
@@ -66,7 +66,7 @@ export function HandbookLibrary() {
                                 className="focus-ring flex gap-3 rounded-sm py-1.5 text-sm text-slate-300 hover:text-white"
                               >
                                 <span className="w-4 shrink-0 font-mono text-xs tabular-nums text-slate-500">
-                                  {section.page}
+                                  {placeInBook(handbook, section.page)}
                                 </span>
                                 <span>{section.title}</span>
                               </Link>
@@ -81,7 +81,7 @@ export function HandbookLibrary() {
                           className="focus-ring flex gap-3 rounded-sm py-1.5 text-sm text-slate-300 hover:text-white"
                         >
                           <span className="w-4 shrink-0 font-mono text-xs tabular-nums text-slate-500">
-                            {entry.page}
+                            {placeInBook(handbook, entry.page)}
                           </span>
                           <span>{entry.title}</span>
                         </Link>
