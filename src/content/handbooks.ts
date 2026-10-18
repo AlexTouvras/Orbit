@@ -1057,6 +1057,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       ],
     },
     { title: "Choose the stack", page: 7 },
+    { title: "Keep trust in force", page: 8 },
+    { title: "Run the product and judge the value", page: 9 },
   ],
   pages: [
     {
@@ -1210,7 +1212,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page places the work. Choosing a platform is Choose the stack. Whether a product should continue is the value review. Make the number fit is Name the decision, Say what one row means, When two reports don't match, and Keep the definition.",
+            "This page places the work. Choosing a platform is Choose the stack. Whether a product should continue is Run the product and judge the value. Make the number fit is Name the decision, Say what one row means, When two reports don't match, and Keep the definition.",
             "The GAO guide assesses an agency plan. I am not running its checklist. I am using the link it requires between a measure and a decision a person can make.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
@@ -1347,7 +1349,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "Name the decision fills the brief after the case is taken. This page does not write the outcome, the constraint, or the two hypotheses.",
             "Choose the stack names the plates and the tools, including a tool that was refused. This page refuses the scale the decision does not need. It does not pick the platform.",
-            "A product that is already running is judged later: continue it, change it, or stop the investment.",
+            "A product that is already running is Run the product and judge the value: continue it, change it, or stop the investment.",
             "Ask, Grain, Truth, and Use are the test for the number, after this page.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
@@ -2104,7 +2106,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Choose the work decides whether to build. This page does not reopen that choice. It refuses a tool the decision does not need.",
             "The brief, the row, the disagreement, and the contract stay on Make the number fit. A semantic layer does not replace the row sentence. A green contract does not choose the platform.",
             "Keep trust in force is security, governance, observability, evals, and human approve for the numbers that share a system. This page names the monitoring lane. It does not write the lineage method.",
-            "A product that is already running is judged later: continue it, change it, or stop the investment.",
+            "A product that is already running is Run the product and judge the value: continue it, change it, or stop the investment.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
@@ -2118,6 +2120,305 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "When AI drafts the stack",
           paragraphs: [
             "This page holds today, and I expect it to hold, because the workload has to be the case that was taken, and a tool that was not taken has to be written down. AI can draft a full lane of tools. A full lane is not a choice, and a draft does not make the warehouse the constraint.",
+          ],
+        },
+      ],
+      sources: [
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 8,
+      topic: "Keep trust in force",
+      title: "Keep trust in force",
+      lede: "This page is what stays true for the numbers that share a system. One number is still Ask, Grain, Truth, and Use. These lines are the trust around it.",
+      rule: "My operating rule: I name who can see the number, who can change it, the source and the published measure, the freshness, and a test that can fail before it ships. An unexplained gap stays dark. A blank line means the number is not being kept.",
+      illustration: "The invoice trust lines are an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "",
+      },
+      sections: [
+        {
+          id: "trust",
+          title: "The lines",
+          paragraphs: [
+            "Make the number fit keeps one number. Choose the stack names the tools. This page is what stays true the next time that number is used, and for the next number on the same system.",
+            "The card's lines are security, governance, observability, evals, and human approve. Security is who can see and change the number. Governance is a named owner who approves the definition. Observability is lineage from the source to the published measure. Evals are tests on gold before a number ships. Human approve means an unexplained gap stays dark. The card's gate traces lineage, and a disagreement is resolved or blocked before the number reaches the decision.",
+            "I read gold as the table that is about to go out. Freshness is the freshness already named on Choose the stack. The sheet is my rule for how a line is filled. The five names are the card's.",
+          ],
+          lines: [
+            {
+              term: "See",
+              detail: "Who can see the number. One role. A mailing list is not the role.",
+            },
+            {
+              term: "Change",
+              detail:
+                "Who can change the number or the definition. One role. This is the owner on Keep the definition. The same person may see it and change it. Both lines are still filled.",
+            },
+            {
+              term: "Lineage",
+              detail:
+                "The source and the published measure, in one sentence a person can say. The card calls that lineage from the source to the published measure. OpenLineage is the card's tool for where the number came from. This line is the sentence.",
+            },
+            {
+              term: "Fresh",
+              detail:
+                "How new the number has to be, from Choose the stack. If the number is older than that, it is not the answer.",
+            },
+            {
+              term: "Test",
+              detail:
+                "A test that can fail before the number ships. The card calls that a test on gold. I read gold as the table about to go out. The stop when the columns break stays on Keep the definition.",
+            },
+            {
+              term: "Dark",
+              detail:
+                "An unexplained gap stays dark. The cause is written on When two reports don't match, or the number does not stay up.",
+            },
+            {
+              term: "Again",
+              detail:
+                "The lines above are still true the next time the number is used. The Green Book includes comparisons and reconciliations in ongoing monitoring, and it ties a detective control to a correction that happens in time. I use that as the reason these lines are checked again.",
+            },
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            GAO_RECONCILE,
+          ],
+        },
+        {
+          id: "trust-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "The number, from the earlier pages, is whether one role gives an invoice more time to pay. The list is as of yesterday. The source is the invoice ledger. Accounts already written off are left out.",
+            "The role that can offer more time can see the list. The role that approved the row can change it. The lineage sentence is the invoice ledger to that list. If the list is older than yesterday, it does not go out as that answer. The test is the one on Keep the definition: if the column that marks written-off accounts breaks, the build stops. If a second list arrives and the cause is blank, the number stays dark. The call list was not taken, so it is not on this system. No amount is written.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "The same illustration. Who can see it, where it came from, and the gap that stays dark. It states no amount.",
+            steps: [
+              {
+                term: "See",
+                detail:
+                  "The role that can offer more time can see the list. The role that approved the row can change it.",
+              },
+              {
+                term: "Lineage",
+                detail: "The invoice ledger to that list, as of yesterday. Written-off accounts stay out.",
+              },
+              {
+                term: "Dark",
+                detail: "A second list with no cause stays dark. The call list is not on this system.",
+              },
+            ],
+          },
+        },
+        {
+          id: "trust-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "A said line means a person who missed the meeting can say who sees the number, who changes it, and the source and the measure.",
+            "A stale number went out older than the freshness that was named.",
+            "A lit gap is a published number whose second report differs, and the cause is blank.",
+            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            {
+              term: "Kept",
+              detail:
+                "See: the role that can offer more time. Change: the role that approved the row. Lineage: the invoice ledger to the list, as of yesterday. A list older than yesterday stays dark. No amount is written.",
+            },
+            {
+              term: "Dark",
+              detail:
+                "A second list arrives and the cause is blank. Action: the number stays dark. The call list is not on this system.",
+            },
+          ],
+        },
+        {
+          id: "trust-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "The brief, the row, the disagreement, and the contract stay on Make the number fit. This page does not fill them again.",
+            "Choose the stack picks the tools. OpenLineage is the card's name for where the number came from. This page keeps the sentence. It does not install the tool.",
+            "This page names the role that can see the number and the role that can change it. It does not choose a login product.",
+            "Completeness, validity, and timeliness are not lines on this sheet.",
+            "A number someone has already acted on is a review of a figure that already went out. That review is When two reports don't match.",
+            "Continue the product, change it, or stop the investment is Run the product and judge the value.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            GAO_RECONCILE,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "trust-draft",
+          title: "When AI drafts the lines",
+          paragraphs: [
+            "This page holds today, and I expect it to hold, because a person has to be able to say who can see the number, who can change it, and the source and the measure. AI can draft those sentences and a diagram of the path. A draft is not that person, and a diagram is not the lineage until they can say it. An unexplained gap still stays dark.",
+          ],
+        },
+      ],
+      sources: [
+        { href: DATA_CARD, label: "Data analytics field card" },
+        source(
+          "https://www.gao.gov/assets/gao-25-107721.pdf",
+          "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025)",
+        ),
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 9,
+      topic: "Run the product and judge the value",
+      title: "Run the product and judge the value",
+      lede: "This page is a product that is already running. I continue it, change it, or stop the investment. The case was already taken.",
+      rule: "My operating rule: I continue only when the person still uses the number for the decision that was taken, and the number still arrives inside the time that decision needs. Otherwise I change the line that failed, or I stop. A blank call is not a continue.",
+      illustration: "The invoice review is an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "",
+      },
+      sections: [
+        {
+          id: "value",
+          title: "The review",
+          paragraphs: [
+            "Keep trust keeps the lines true the next time the number is used. This page is whether the product should still be kept.",
+            "The product is the case that was taken. The decision and the person are the ones on that case. If the decision has changed, that is a new case on Choose the work. This page does not take it.",
+            "Scale is whether the number still arrives, for the people who use it, inside the time the decision needs. Choose the work refused the scale the decision did not need. Choose the stack built what remained. If that scale has stopped, the call is change or stop.",
+            "The sheet is my rule for the call.",
+          ],
+          lines: [
+            {
+              term: "Product",
+              detail:
+                "The case that was taken. The decision, and the person who would act. A report title does not finish the line.",
+            },
+            {
+              term: "Used",
+              detail:
+                "The person still uses the number for that decision. If they do not, the product is not in use.",
+            },
+            {
+              term: "Arrives",
+              detail:
+                "The number still arrives, for the people who use it, inside the time the decision needs. If it does not, the scale has stopped.",
+            },
+            {
+              term: "Answer",
+              detail:
+                "Ask, Grain, Truth, and Use can still be said. A blank line is not a score. It goes back to the page that owns it.",
+            },
+            {
+              term: "Kept",
+              detail:
+                "The people and the tools still kept for this product. The tools are the ones taken on Choose the stack. A tool that was refused is not on this line. If nothing is still kept, write that. A blank line is not the same as nothing.",
+            },
+            {
+              term: "Call",
+              detail:
+                "Continue, change, or stop, with the reason. Continue when the person still uses it, it still arrives, and the four steps can still be said, and what is kept is still needed for that decision. Change when the decision is the same and one line has failed. Name the page that owns the failed line. Stop when the person no longer acts, or what is kept is no longer needed, or the rung in force cannot keep the scale. A blank call is not a continue.",
+            },
+          ],
+        },
+        {
+          id: "value-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "The product, from the earlier pages, is whether one role gives an invoice more time to pay. The organization is Defined. The list is as of yesterday. What is kept is that role's refresh of the list, one report, dbt, DuckDB, and the invoice ledger.",
+            "On one review, the role still uses the list for that decision. The list still arrives as of yesterday. Ask, Grain, Truth, and Use can still be said. What is kept is still what that decision needs. The call is continue. No amount is written.",
+            "On the next review, the same role needs the list before the day starts. Yesterday is too old. The decision has not changed. The freshness has. The call is change, and the change is the freshness on Choose the stack. This page does not pick a new platform.",
+            "On the last review, the role no longer decides more time from this list. The list is still refreshing. The call is stop. The reason is that the person no longer acts. The call list was never this product. No amount is written.",
+          ],
+          figure: {
+            kind: "flow",
+            caption:
+              "The same illustration. One review continues, one changes the freshness, and one stops. It states no amount.",
+            steps: [
+              {
+                term: "Continue",
+                detail:
+                  "The role still uses the list. It arrives as of yesterday. What is kept is still what that decision needs.",
+              },
+              {
+                term: "Change",
+                detail:
+                  "The same decision. The list is needed before the day starts. The change is the freshness on Choose the stack.",
+              },
+              {
+                term: "Stop",
+                detail:
+                  "The role no longer decides more time from this list. The list is still refreshing. The call list was never this product.",
+              },
+            ],
+          },
+        },
+        {
+          id: "value-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "A said use means a person who missed the meeting can say who still uses the number, and for which decision.",
+            "A stopped scale is a number that went out older than the time the decision needs, or to people the case did not name, while the call was still continue.",
+            "A silent product is still running, and nobody has written continue, change, or stop.",
+            "The rows below are the illustration on this page. None is a result I collected, and none states an amount.",
+          ],
+          lines: [
+            {
+              term: "Continued",
+              detail:
+                "The role that can offer more time still uses the list. It arrives as of yesterday. What is kept is that role's refresh, one report, dbt, DuckDB, and the invoice ledger. Call: continue. No amount is written.",
+            },
+            {
+              term: "Changed",
+              detail:
+                "The same decision. The list is needed before the day starts. Call: change the freshness on Choose the stack. No platform is named. No amount is written.",
+            },
+            {
+              term: "Stopped",
+              detail:
+                "The role no longer decides more time from this list. The list is still refreshing. Call: stop. The call list was never this product.",
+            },
+          ],
+        },
+        {
+          id: "value-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "Choose the work decides whether to start. This page is a product that is already running.",
+            "The brief, the row, the disagreement, and the contract stay on Make the number fit. A blank line there goes back to that page. It is not a score.",
+            "Choose the stack names the tools. A freshness that no longer fits goes back there. This page does not pick a platform.",
+            "Keep trust names who can see the number and who can change it. This page does not rewrite those lines.",
+            "A number someone has already acted on, when two reports disagree, is When two reports don't match.",
+            "Whether they did what the hypothesis proposed, and whether the outcome moved, is the note on Name the decision. This page does not report that check.",
+            "The card's ladder is the rung already named on Choose the work. I do not continue a product so the organization can climb it.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "value-draft",
+          title: "When AI drafts the review",
+          paragraphs: [
+            "This page holds today, and I expect it to hold, because a person has to say whether the number is still used for the decision that was taken, and the call has to be continue, change, or stop. AI can draft the review and a recommendation to continue. A draft does not name that person, and a recommendation is not the call until they accept it.",
           ],
         },
       ],
