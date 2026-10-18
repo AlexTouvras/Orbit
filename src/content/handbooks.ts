@@ -2298,7 +2298,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "Keep trust keeps the lines true the next time the number is used. This page is whether the product should still be kept.",
             "The product is the case that was taken. The decision and the person are the ones on that case. If the decision has changed, that is a new case on Choose the work. This page does not take it.",
-            "Scale is whether the number still arrives, for the people who use it, inside the time the decision needs. Choose the work refused the scale the decision did not need. Choose the stack built what remained. If that scale has stopped, I do not mark the product continue.",
+            "Scale is whether the number still arrives, for the people who use it, inside the time the decision needs. Choose the work refused the scale the decision did not need. Choose the stack built what remained. If that scale has stopped, the call is change or stop.",
             "The sheet is my rule for the call.",
           ],
           lines: [
