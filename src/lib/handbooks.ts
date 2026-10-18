@@ -38,7 +38,6 @@ export function chapterTitleForPage(handbook: Handbook, pageNumber: number): str
   return chapterForPage(handbook, pageNumber)?.title ?? "";
 }
 
-/** The pages array is the reading order. The page number is the address. */
 export function adjacentPages(
   handbook: Handbook,
   pageNumber: number,
