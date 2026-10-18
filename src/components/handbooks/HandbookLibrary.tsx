@@ -63,20 +63,6 @@ export function HandbookLibrary() {
                         </span>
                         <span>{entry.title}</span>
                       </Link>
-                      {entry.sections?.length ? (
-                        <ul className="mb-1 ml-7">
-                          {entry.sections.map((section) => (
-                            <li key={section.page}>
-                              <Link
-                                href={pagePath(handbook.slug, section.page)}
-                                className="focus-ring block rounded-sm py-1.5 text-sm text-slate-400 hover:text-white"
-                              >
-                                {section.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      ) : null}
                     </li>
                   ))}
                 </ol>
