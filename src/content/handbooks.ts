@@ -1057,6 +1057,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       ],
     },
     { title: "Choose the stack", page: 7 },
+    { title: "Keep trust in force", page: 8 },
   ],
   pages: [
     {
@@ -2123,6 +2124,156 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       ],
       sources: [
         { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 8,
+      topic: "Keep trust in force",
+      title: "Keep trust in force",
+      lede: "This page is what stays true for the numbers that share a system. One number is still Ask, Grain, Truth, and Use. These lines are the trust around it.",
+      rule: "My operating rule: I name who can see the number, who can change it, the source and the published measure, the freshness, and a test that can fail before it ships. An unexplained gap stays dark. A blank line means the number is not being kept.",
+      illustration: "The invoice trust lines are an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "",
+      },
+      sections: [
+        {
+          id: "trust",
+          title: "The lines",
+          paragraphs: [
+            "Make the number fit keeps one number. Choose the stack names the tools. This page is what stays true the next time that number is used, and for the next number on the same system.",
+            "The card's lines are security, governance, observability, evals, and human approve. Security is who can see and change the number. Governance is a named owner who approves the definition. Observability is lineage from the source to the published measure. Evals are tests on gold before a number ships. Human approve means an unexplained gap stays dark. The card's gate traces lineage, and a disagreement is resolved or blocked before the number reaches the decision.",
+            "I read gold as the table that is about to go out. Freshness is the freshness already named on Choose the stack. The sheet is my rule for how a line is filled. The five names are the card's.",
+          ],
+          lines: [
+            {
+              term: "See",
+              detail: "Who can see the number. One role. A mailing list is not the role.",
+            },
+            {
+              term: "Change",
+              detail:
+                "Who can change the number or the definition. One role. This is the owner on Keep the definition. The same person may see it and change it. Both lines are still filled.",
+            },
+            {
+              term: "Lineage",
+              detail:
+                "The source and the published measure, in one sentence a person can say. The card calls that lineage from the source to the published measure. OpenLineage is the card's tool for where the number came from. This line is the sentence.",
+            },
+            {
+              term: "Fresh",
+              detail:
+                "How new the number has to be, from Choose the stack. If the number is older than that, it is not the answer.",
+            },
+            {
+              term: "Test",
+              detail:
+                "A test that can fail before the number ships. The card calls that a test on gold. I read gold as the table about to go out. The stop when the columns break stays on Keep the definition.",
+            },
+            {
+              term: "Dark",
+              detail:
+                "An unexplained gap stays dark. The cause is written on When two reports don't match, or the number does not stay up.",
+            },
+            {
+              term: "Again",
+              detail:
+                "The lines above are still true the next time the number is used. The Green Book includes comparisons and reconciliations in ongoing monitoring, and it ties a detective control to a correction that happens in time. I use that as the reason these lines are checked again.",
+            },
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            GAO_RECONCILE,
+          ],
+        },
+        {
+          id: "trust-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "The number, from the earlier pages, is whether one role gives an invoice more time to pay. The list is as of yesterday. The source is the invoice ledger. Accounts already written off are left out.",
+            "The role that can offer more time can see the list. The role that approved the row can change it. The lineage sentence is the invoice ledger to that list. If the list is older than yesterday, it does not go out as that answer. The test is the one on Keep the definition: if the column that marks written-off accounts breaks, the build stops. If a second list arrives and the cause is blank, the number stays dark. The call list was not taken, so it is not on this system. No amount is written.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "The same illustration. Who can see it, where it came from, and the gap that stays dark. It states no amount.",
+            steps: [
+              {
+                term: "See",
+                detail:
+                  "The role that can offer more time can see the list. The role that approved the row can change it.",
+              },
+              {
+                term: "Lineage",
+                detail: "The invoice ledger to that list, as of yesterday. Written-off accounts stay out.",
+              },
+              {
+                term: "Dark",
+                detail: "A second list with no cause stays dark. The call list is not on this system.",
+              },
+            ],
+          },
+        },
+        {
+          id: "trust-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "A said line means a person who missed the meeting can say who sees the number, who changes it, and the source and the measure.",
+            "A stale number went out older than the freshness that was named.",
+            "A lit gap is a published number whose second report differs, and the cause is blank.",
+            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            {
+              term: "Kept",
+              detail:
+                "See: the role that can offer more time. Change: the role that approved the row. Lineage: the invoice ledger to the list, as of yesterday. A list older than yesterday stays dark. No amount is written.",
+            },
+            {
+              term: "Dark",
+              detail:
+                "A second list arrives and the cause is blank. Action: the number stays dark. The call list is not on this system.",
+            },
+          ],
+        },
+        {
+          id: "trust-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "The brief, the row, the disagreement, and the contract stay on Make the number fit. This page does not fill them again.",
+            "Choose the stack picks the tools. OpenLineage is the card's name for where the number came from. This page keeps the sentence. It does not install the tool.",
+            "This page names the role that can see the number and the role that can change it. It does not choose a login product.",
+            "Completeness, validity, and timeliness are not lines on this sheet.",
+            "A number someone has already acted on is a review of a figure that already went out. That review is When two reports don't match.",
+            "Continue the product, change it, or stop the investment is the value review.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            GAO_RECONCILE,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "trust-draft",
+          title: "When AI drafts the lines",
+          paragraphs: [
+            "This page holds today, and I expect it to hold, because a person has to be able to say who can see the number, who can change it, and the source and the measure. AI can draft those sentences and a diagram of the path. A draft is not that person, and a diagram is not the lineage until they can say it. An unexplained gap still stays dark.",
+          ],
+        },
+      ],
+      sources: [
+        { href: DATA_CARD, label: "Data analytics field card" },
+        source(
+          "https://www.gao.gov/assets/gao-25-107721.pdf",
+          "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025)",
+        ),
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
         { href: BAYES_CARD, label: "Bayesian optimisation field card" },
       ],
