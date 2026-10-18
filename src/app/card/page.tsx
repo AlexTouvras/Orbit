@@ -3,6 +3,7 @@ import { IdentityCardFlip } from "@/components/card/IdentityCardFlip";
 import { cv } from "@/content/cv";
 import { competencies, profile as profileDefaults } from "@/content/profile";
 import { getEditableProfile } from "@/lib/profile-store";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 const HUD_DOMAINS = [
   "Data & Analytics",
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
   description:
     "Compact identity card — AI & Data Systems Lead; then into the rest of the site.",
   alternates: { canonical: "/card" },
+  openGraph: pageOpenGraph("/card"),
 };
 
 export default async function CardPage({

@@ -13,6 +13,7 @@ import { readEuSpotSnapshot, toEuSpotView } from "@/lib/live/eu-spot";
 import { readHousingSnapshot, toHousingView } from "@/lib/live/housing";
 import { readPowerMixSnapshot, toPowerMixView } from "@/lib/live/power-mix";
 import { readEconomySnapshot, toEconomyView } from "@/lib/live/economy";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 export function generateStaticParams() {
   return liveDeskSlugs().map((slug) => ({ slug }));
@@ -31,7 +32,10 @@ export async function generateMetadata({
     title: desk.title,
     description: desk.question,
     alternates: { canonical: path },
-    openGraph: { title: desk.title, description: desk.question, url: path },
+    openGraph: pageOpenGraph(path, {
+      title: desk.title,
+      description: desk.question,
+    }),
   };
 }
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { StoryLayout } from "@/components/storytelling/StoryLayout";
 import { listManifestSlugs, loadStoryManifest } from "@/lib/loadStory";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -17,9 +18,12 @@ export async function generateMetadata({
   const { slug } = await params;
   try {
     const manifest = loadStoryManifest(slug);
+    const path = `/stories/${slug}`;
     return {
       title: manifest.meta.title,
       description: manifest.meta.summary,
+      alternates: { canonical: path },
+      openGraph: pageOpenGraph(path),
     };
   } catch {
     return { title: "Story not found" };

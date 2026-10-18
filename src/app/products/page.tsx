@@ -3,11 +3,13 @@ import { ProductList } from "@/components/products/ProductList";
 import { MissionHero } from "@/components/ui/MissionHero";
 import { OrbitSignature } from "@/components/ui/OrbitSignature";
 import { getEditableProfile } from "@/lib/profile-store";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 export const metadata: Metadata = {
   title: "Products",
   description: "What I ship, you can run. Install it, or open it. The source stays in git.",
   alternates: { canonical: "/products" },
+  openGraph: pageOpenGraph("/products"),
 };
 
 export default function ProductsPage() {

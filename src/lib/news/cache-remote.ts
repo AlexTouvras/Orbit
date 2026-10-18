@@ -1,6 +1,9 @@
 import "server-only";
 import { hasGithubStorage, readRepoFile } from "@/lib/github-storage";
-import { readNewsCache as readNewsCacheFs } from "@/lib/news/cache";
+import {
+  presentNewsCache,
+  readNewsCache as readNewsCacheFs,
+} from "@/lib/news/cache";
 import type { NewsCache } from "@/lib/types";
 
 export const NEWS_CACHE_RELATIVE_PATH = "data/news-cache.json";
@@ -21,7 +24,7 @@ export async function readNewsCacheRemote(): Promise<NewsCache> {
     const remote = await readRepoFile(NEWS_CACHE_RELATIVE_PATH);
     if (remote) {
       const parsed = parseNewsCacheJson(remote);
-      if (parsed) return parsed;
+      if (parsed) return presentNewsCache(parsed);
     }
   }
   return readNewsCacheFs();

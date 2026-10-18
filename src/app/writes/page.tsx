@@ -8,12 +8,14 @@ import { WritesHero } from "@/components/writes/WritesHero";
 import { getAllWrites } from "@/lib/writes";
 import { getEditableProfile } from "@/lib/profile-store";
 import { isNewsletterTestMode } from "@/lib/newsletter/config";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 export const metadata: Metadata = {
   title: "Blog",
   description:
     "One question per article: what should get built, and how I would know it worked.",
   alternates: { canonical: "/writes" },
+  openGraph: pageOpenGraph("/writes"),
 };
 
 export default function WritesPage() {

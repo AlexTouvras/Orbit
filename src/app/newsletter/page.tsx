@@ -6,12 +6,14 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { NewsletterForm } from "@/components/newsletter/NewsletterForm";
 import { NewsletterHero } from "@/components/newsletter/NewsletterHero";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 export const metadata: Metadata = {
   title: "Newsletter",
   description:
     "Orbit weekly digest: this week's Write, a few Related articles, and one highlight from each Ravens beat.",
   alternates: { canonical: "/newsletter" },
+  openGraph: pageOpenGraph("/newsletter"),
 };
 
 export default function NewsletterPage() {

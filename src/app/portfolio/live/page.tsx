@@ -4,12 +4,14 @@ import { liveDesks } from "@/content/live-desks";
 import { DeskCast } from "@/components/story/DeskCast";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
 import { StoryStat } from "@/components/story/StoryStat";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 export const metadata: Metadata = {
   title: "Live dashboards",
   description:
     "One-page desks on Orbit: Nordic equity, EU Spot, Helsinki housing, Europe power mix, and which model fits a job.",
   alternates: { canonical: "/portfolio/live" },
+  openGraph: pageOpenGraph("/portfolio/live"),
 };
 
 export default function LiveDesksPage() {

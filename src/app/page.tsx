@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { competencies, profile as profileDefaults } from "@/content/profile";
+import { pageOpenGraph } from "@/lib/seo/share";
 import { getEditableProfile } from "@/lib/profile-store";
 import { getFeaturedWrites, getShowcaseWrites } from "@/lib/writes";
 import { liveDesks } from "@/content/live-desks";
@@ -10,6 +12,10 @@ import { LiveQuestions } from "@/components/hub/LiveQuestions";
 import { SignalList } from "@/components/hub/SignalList";
 import { StoryClose } from "@/components/hub/StoryClose";
 import { StoryScene } from "@/components/story/StoryScene";
+
+export const metadata: Metadata = {
+  openGraph: pageOpenGraph("/"),
+};
 
 export default function HomePage() {
   const profile = getEditableProfile();

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { listManifestSlugs, loadStoryManifest } from "@/lib/loadStory";
 import { FlagshipLanding } from "@/components/storytelling/FlagshipLanding";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 /** Stories shown on the flagship index. Add slugs here when a story is ready to list. */
 const LISTED_SLUGS = new Set<string>([
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   description:
     "A system for turning complex data, AI, analytics, and business problems into interactive experiences that help people understand and decide.",
   alternates: { canonical: "/stories" },
+  openGraph: pageOpenGraph("/stories"),
 };
 
 export default function StoriesIndexPage() {

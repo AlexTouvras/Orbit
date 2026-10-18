@@ -9,12 +9,14 @@ import { liveDesks } from "@/content/live-desks";
 import { powerBiReports } from "@/content/power-bi-reports";
 import { getPublicProjects } from "@/lib/projects-local";
 import { getEditableProfile } from "@/lib/profile-store";
+import { pageOpenGraph } from "@/lib/seo/share";
 
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "The projects I decided were worth building, with the requirement still attached.",
   alternates: { canonical: "/portfolio" },
+  openGraph: pageOpenGraph("/portfolio"),
 };
 
 export default function PortfolioPage() {
