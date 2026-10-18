@@ -1152,7 +1152,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 2,
-      topic: "The brief",
+      topic: "Ask",
       title: "Name the decision",
       lede: "Ask, on the previous page, is the decision a number is for. Good looks like a brief someone who missed the meeting can repeat.",
       rule: "My operating rule: when I am about to give a number to someone as the answer, I complete the brief below first. An exploration I am not offering as an answer does not need it. The response to a rise, and the response to a fall, are hypotheses to test against the outcome, not actions the number triggers by itself.",
