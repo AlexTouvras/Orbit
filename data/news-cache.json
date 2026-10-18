@@ -1,7 +1,25 @@
 {
-  "generatedAt": "2026-10-17T06:46:52.717Z",
+  "generatedAt": "2026-10-18T06:46:52.050Z",
   "count": 263,
   "items": [
+    {
+      "id": "e87f8ff310a6",
+      "title": "Strategy Thinks in Bets. Tactics Execute Them.",
+      "link": "https://www.scrum.org/resources/blog/strategy-thinks-bets-tactics-execute-them",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-18T06:00:00.000Z",
+      "contentSnippet": "Image Something has been spreading through the product teams I work with since around 2022, and it has the same shape as every good idea that becomes a religion. Teams are describing everything as a bet. The instinct behind it is a sound one. Outcomes, the real measure of product…"
+    },
+    {
+      "id": "2d79d8428bd0",
+      "title": "Letting AI agents write econometric code",
+      "link": "https://cepr.org/voxeu/columns/letting-ai-agents-write-econometric-code",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-17T23:00:00.000Z",
+      "contentSnippet": "Large language models increasingly write the code behind empirical research. This column reports a benchmark of 40 econometric tasks in Stata, R, and Python. For each task, two leading models write a script, as a chatbot that never runs it and as an agent that runs and revises it…"
+    },
     {
       "id": "e9b7cb0e86d2",
       "title": "Fiscal consolidation: Temporary costs versus lasting scars",
@@ -111,15 +129,6 @@
       "contentSnippet": "Image How confident are you when someone asks, \"When will it be done?\" If you've worked with a Scrum Team for any length of time, you'll know this question well. And you'll probably recognise the uncomfortable silence that sometimes follows. We estimate. We plan. We look at veloc…"
     },
     {
-      "id": "9db4940a53f8",
-      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
-      "link": "https://openai.com/index/stack-overflow-chatgpt-plugin",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-16T00:00:00.000Z",
-      "contentSnippet": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation."
-    },
-    {
       "id": "4a2f3ca18eb9",
       "title": "Benefit Street Partners answers questions faster with Codex",
       "link": "https://openai.com/index/benefit-street-partners",
@@ -127,6 +136,15 @@
       "category": "AI",
       "pubDate": "2026-10-16T00:00:00.000Z",
       "contentSnippet": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups."
+    },
+    {
+      "id": "9db4940a53f8",
+      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+      "link": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-16T00:00:00.000Z",
+      "contentSnippet": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation."
     },
     {
       "id": "c77032d2ea07",
@@ -165,6 +183,15 @@
       "contentSnippet": "We study how offshore non-deliverable forward (NDF) markets transmit exchange-rate pressures to domestic currency markets. Using unique transaction-level data on the universe of centrally cleared NDFs for ten emerging-market currencies over 2013–2025, we show that offshore NDF or…"
     },
     {
+      "id": "d5eeee9204fa",
+      "title": "Life after Divorce",
+      "link": "https://cepr.org/multimedia/life-after-divorce",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-15T23:00:00.000Z",
+      "contentSnippet": "Who gets the kids? Courts aim to decide custody in the child's best interests, but nobody has had the data to test how well those decisions work. Gordon Dahl (UC San Diego, CEPR), Costas Meghir (Yale, CEPR) and seven co-authors built the data themselves. They collected more than…"
+    },
+    {
       "id": "89016aba30db",
       "title": "The cost of job loss in carbon-intensive sectors: Evidence from Germany",
       "link": "https://cepr.org/voxeu/columns/cost-job-loss-carbon-intensive-sectors-evidence-germany",
@@ -181,15 +208,6 @@
       "category": "Economics",
       "pubDate": "2026-10-15T23:00:00.000Z",
       "contentSnippet": "Mortality is one of the most salient consequences of climate change. Existing estimates have largely focused on the direct effects of local heat exposure. This column argues that this perspective can miss an important part of the overall health burden. New evidence based on fluct…"
-    },
-    {
-      "id": "d5eeee9204fa",
-      "title": "Life after Divorce",
-      "link": "https://cepr.org/multimedia/life-after-divorce",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-15T23:00:00.000Z",
-      "contentSnippet": "Who gets the kids? Courts aim to decide custody in the child's best interests, but nobody has had the data to test how well those decisions work. Gordon Dahl (UC San Diego, CEPR), Costas Meghir (Yale, CEPR) and seven co-authors built the data themselves. They collected more than…"
     },
     {
       "id": "eb6210d05e81",
@@ -354,15 +372,6 @@
       "contentSnippet": "Tokenised finance has moved from the margins of crypto markets to the centre of the policy agenda. Central banks, regulators, and market participants are debating how far it could reshape the issuance, trading, and settlement of securities, including what this would mean for fina…"
     },
     {
-      "id": "a072a3060fce",
-      "title": "Small is beautiful 2050: Europe’s digital economy as a mesh, not a hub",
-      "link": "https://cepr.org/voxeu/columns/small-beautiful-2050-europes-digital-economy-mesh-not-hub",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-14T23:00:00.000Z",
-      "contentSnippet": "In response to digital dependence, Europe has decided to think bigger. This includes AI gigafactories, tripling data centre capacity, and searching for domestic champions. However, this column argues that the destination for 2050 should be different. For the first time since the…"
-    },
-    {
       "id": "b3a0405976db",
       "title": "How FactSet cut model training and deployment from days to hours with Databricks AI Runtime",
       "link": "https://www.databricks.com/blog/how-factset-cut-model-training-and-deployment-days-hours-databricks-ai-runtime",
@@ -453,15 +462,6 @@
       "contentSnippet": "When agents answer the questions, they can maintain the data model. Here is what that demands from the orchestration engine."
     },
     {
-      "id": "b4475d723aaa",
-      "title": "SS2/26 – High loan to income lending",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-supervisory-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-10-14T09:00:00.000Z",
-      "contentSnippet": "Supervisory statement 2/26"
-    },
-    {
       "id": "af30f4bb19fc",
       "title": "PS19/26 – High loan to income lending",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-policy-statement",
@@ -469,6 +469,15 @@
       "category": "Credit",
       "pubDate": "2026-10-14T09:00:00.000Z",
       "contentSnippet": "PRA policy statement 19/26 | FCA policy statement 26/20"
+    },
+    {
+      "id": "b4475d723aaa",
+      "title": "SS2/26 – High loan to income lending",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-supervisory-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-10-14T09:00:00.000Z",
+      "contentSnippet": "Supervisory statement 2/26"
     },
     {
       "id": "58e4191fcfe4",
@@ -901,15 +910,6 @@
       "category": "AI",
       "pubDate": "2026-10-03T23:34:02.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "25c5bfb96a91",
-      "title": "Does Your Organisation Need an AI Product Owner?",
-      "link": "https://www.scrum.org/resources/blog/does-your-organisation-need-ai-product-owner",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-02T21:56:17.000Z",
-      "contentSnippet": "Appointing one person accountable for AI is a sound first step. In an organisation moving to a product operating model, or already running one, the same role puts a dependency and a handoff between product teams and the decisions the model gives them. Most organisations adopted A…"
     },
     {
       "id": "97db45500e1a",
@@ -1785,6 +1785,15 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
+      "id": "07b1c1c9fdb7",
+      "title": "Credit Surfaces and Economic Uncertainty",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
+    },
+    {
       "id": "30c8bc5d5e3c",
       "title": "Structural Estimation with Unstructured Data",
       "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
@@ -1801,15 +1810,6 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
-    },
-    {
-      "id": "07b1c1c9fdb7",
-      "title": "Credit Surfaces and Economic Uncertainty",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
       "id": "fb549b859ee4",
@@ -1866,13 +1866,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "370e7bd96562",
-      "title": "Transmission Growth-at-Risk: How Foreign Financial Vulnerabilities Shape U.S. Growth Prospects",
-      "link": "https://www.federalreserve.gov/econres/ifdp/files/ifdp1442.pdf",
+      "id": "4c8cd6ef9ad3",
+      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
+      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System International Financial Discussion Papers by Viktors Stebunovs, Judit Temesvary and Sai Ma"
+      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
     },
     {
       "id": "ed6bd26c4997",
