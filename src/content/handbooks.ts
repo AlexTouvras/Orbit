@@ -1056,6 +1056,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
         { title: "Keep the definition", page: 5 },
       ],
     },
+    { title: "Choose the stack", page: 7 },
   ],
   pages: [
     {
@@ -1967,6 +1968,160 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           "https://www.gao.gov/assets/gao-25-107721.pdf",
           "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025)",
         ),
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 7,
+      topic: "Choose the stack",
+      title: "Choose the stack",
+      lede: "This page names the plates and the tools for a case that was taken, including what was refused. The workload is that case, and the scale it still needs.",
+      rule: "My operating rule: I name the workload before I name a tool. A choice with no refusal is not finished. I do not add a plate the decision does not need.",
+      illustration: "The invoice stack is an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "",
+      },
+      sections: [
+        {
+          id: "stack",
+          title: "The workload",
+          paragraphs: [
+            "Choose the work has already taken the case, or written the reason not to. This page is the stack for a case that was taken.",
+            "Scale is whether the number still arrives, for the people who use it, inside the time the decision needs. I name how much data, how many people use the number at once, and how new it has to be. Choose the work refused the scale the decision does not need. I build only what remains.",
+            "The plates, the tool names, and the conditions are on the analytics field card. They are the lines below. The sheet is my rule. The refusal is mine.",
+          ],
+          lines: [
+            {
+              term: "Workload",
+              detail:
+                "The case that was taken, with how much data, how many people at once, and how new the number has to be. A report title does not finish the line.",
+            },
+            {
+              term: "Consumption",
+              detail:
+                "One report, dashboard, or app. Power BI, Looker, or Tableau when that is already the room's tool. A second consume tool is a refusal.",
+            },
+            {
+              term: "Semantic",
+              detail:
+                "Where the sentence of what one row means is kept. That sentence stays on Say what one row means. This line does not write a new one.",
+            },
+            {
+              term: "Processing",
+              detail:
+                "dbt, Python, or Jupyter for transform, enrich, and validate. Spark when the volume requires it. When it does not, Spark is the refusal.",
+            },
+            {
+              term: "Sources",
+              detail:
+                "The internal or external source for this activity. A source that does not feed the decision is the refusal.",
+            },
+            {
+              term: "Platform",
+              detail:
+                "Databricks, DuckDB, or MotherDuck. Snowflake when the warehouse is the constraint. When the warehouse is not the constraint, write that refusal.",
+            },
+            {
+              term: "Schedule",
+              detail:
+                "Airflow or Fabric, and only when the path has to run again without the person. It does not define the number. When a person can refresh the list, the scheduler is the refusal.",
+            },
+            {
+              term: "Watching",
+              detail:
+                "Great Expectations for the tests. OpenLineage for where the number came from.",
+            },
+            {
+              term: "Refused",
+              detail:
+                "Each tool not taken, with the workload reason. A blank refusal means the choice is not finished.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "stack-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "The case, from Choose the work, is whether one role gives an invoice more time to pay. The organization is Defined. The number is as of yesterday. One person reads one list. The warehouse is not the constraint.",
+            "Spark is refused, because the volume does not require it. A screen for every collector, and a number that moves through the day, stay refused. Snowflake is refused, because the warehouse is not the constraint. A second dashboard is refused. A scheduler is refused, because that role can refresh yesterday's list.",
+            "What I take is one report, the one that role already opens. I do not name the brand. This is not a record of a room. The semantic layer carries the sentence from Say what one row means: an open invoice as of yesterday, and accounts already written off are left out. dbt builds the table that publishes. I use DuckDB for this illustration, because the list is one machine's work. The source is the invoice ledger. The tests sit on that table. No amount is written.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "The same illustration. The workload, what is taken, and what is refused. It states no amount.",
+            steps: [
+              {
+                term: "Workload",
+                detail:
+                  "One role. An open invoice as of yesterday. One list. The warehouse is not the constraint.",
+              },
+              {
+                term: "Taken",
+                detail:
+                  "One report that role already opens. The row sentence. dbt for the table. DuckDB for the list. The invoice ledger.",
+              },
+              {
+                term: "Refused",
+                detail:
+                  "Spark, a live screen, Snowflake, a second dashboard, and a scheduler.",
+              },
+            ],
+          },
+        },
+        {
+          id: "stack-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "A named workload has the volume, the people, and the freshness, and they match the case that was taken.",
+            "A refusal names a tool that was not taken, and the workload reason.",
+            "A pasted lane is a list of tools with no workload and no refusal.",
+            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            {
+              term: "Refused",
+              detail:
+                "Spark, a live screen, Snowflake, a second dashboard, and a scheduler. The list is one role, as of yesterday, and the warehouse is not the constraint.",
+            },
+            {
+              term: "Taken",
+              detail:
+                "One report, the row sentence, dbt, DuckDB, and the invoice ledger. Action: build that stack. No amount is written. No consume brand is named.",
+            },
+          ],
+        },
+        {
+          id: "stack-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "Choose the work decides whether to build. This page does not reopen that choice. It refuses a tool the decision does not need.",
+            "The brief, the row, the disagreement, and the contract stay on Make the number fit. A semantic layer does not replace the row sentence. A green contract does not choose the platform.",
+            "Keep trust in force is security, governance, observability, evals, and human approve for the numbers that share a system. This page names the monitoring lane. It does not write the lineage method.",
+            "A product that is already running is judged later: continue it, change it, or stop the investment.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "stack-draft",
+          title: "When AI drafts the stack",
+          paragraphs: [
+            "This page holds today, and I expect it to hold, because the workload has to be the case that was taken, and a tool that was not taken has to be written down. AI can draft a full lane of tools. A full lane is not a choice, and a draft does not make the warehouse the constraint.",
+          ],
+        },
+      ],
+      sources: [
         { href: DATA_CARD, label: "Data analytics field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
         { href: BAYES_CARD, label: "Bayesian optimisation field card" },
