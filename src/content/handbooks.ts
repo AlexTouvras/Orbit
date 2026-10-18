@@ -89,6 +89,8 @@ export interface HandbookPage {
   plate?: "horizon";
   /** This book's opening picture. It is the first leaf, not a route in front of the page. */
   cover?: HandbookPicture;
+  /** A design picture behind the words. It does not name a step, and the words stay readable. */
+  ground?: HandbookPicture;
   sections: HandbookSection[];
   sources: HandbookLink[];
 }
@@ -1048,11 +1050,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       title: "What good looks like",
       lede: "This page is the path a number walks when a person can act on it. The four steps are Ask, Grain, Truth, and Use. I want all four of those to be sayable in one sitting, in ordinary words.",
       rule: "My operating rule: before a number goes out as the answer, I can say Ask, Grain, Truth, and Use, in that order.",
-      illustration: "The four sheets are an illustration, not a record.",
-      reviewed: "17 Oct 2026",
-      cover: {
+      illustration: "The invoice path is an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
         src: `${DATA_ART}/path.jpg`,
-        alt: "Four lit sheets in a row, and one chair facing them. No amount.",
+        alt: "",
       },
       sections: [
         {
@@ -1097,11 +1099,30 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An example",
           paragraphs: [
             "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "Someone can give an invoice more time to pay. Ask is whether to give more time. The person is the role that can do that. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, that someone owns the meaning, and that a bad number would be stopped. Use is the response they propose to check. If more invoices are past their date, they propose not to give more time. If fewer are past their date, they propose that the extension can be offered. Name the decision writes that proposal. The four sheets are lit because those four lines are filled. One chair faces them. That chair is the person who can act. No amount is written.",
+            "Someone can give an invoice more time to pay. Ask is whether to give more time. The person is the role that can do that. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, that someone owns the meaning, and that a bad number would be stopped. Use is the response they propose to check. If more invoices are past their date, they propose not to give more time. If fewer are past their date, they propose that the extension can be offered. Name the decision writes that proposal. No amount is written.",
           ],
-          picture: {
-            src: `${DATA_ART}/path.jpg`,
-            alt: "An illustration. Four lit sheets in a row, and one chair facing them. No amount.",
+          figure: {
+            kind: "flow",
+            caption: "The same illustration, in order. It states no amount.",
+            steps: [
+              {
+                term: "Ask",
+                detail: "Whether to give an invoice more time to pay. The person is the role that can do that.",
+              },
+              {
+                term: "Grain",
+                detail: "An open invoice as of yesterday. Accounts already written off are left out.",
+              },
+              {
+                term: "Truth",
+                detail: "That grain can be said back. Someone owns the meaning, and a bad number would be stopped.",
+              },
+              {
+                term: "Use",
+                detail:
+                  "If more invoices are past their date, offer no more time. If fewer are, the extension can be offered. Both are hypotheses to check.",
+              },
+            ],
           },
         },
         {

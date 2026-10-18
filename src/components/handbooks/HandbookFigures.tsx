@@ -72,10 +72,12 @@ function Node({
         : "border-cyan-200/80 shadow-[0_0_18px_rgba(34,211,238,0.5)]";
   return (
     <span className={`relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full border bg-[#07111c] ${ring}`}>
-      <MarkGlyph name={mark} tone={tone} />
-      <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border border-white/20 bg-[#050814] font-mono text-[0.6rem] text-white">
-        {index + 1}
-      </span>
+      {mark ? <MarkGlyph name={mark} tone={tone} /> : <span className="font-mono text-sm text-white">{index + 1}</span>}
+      {mark ? (
+        <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full border border-white/20 bg-[#050814] font-mono text-[0.6rem] text-white">
+          {index + 1}
+        </span>
+      ) : null}
     </span>
   );
 }
