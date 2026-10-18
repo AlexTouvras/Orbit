@@ -38,11 +38,6 @@ export function chapterTitleForPage(handbook: Handbook, pageNumber: number): str
   return chapterForPage(handbook, pageNumber)?.title ?? "";
 }
 
-/** The pages array is the reading order. The page number is the address. */
-export function placeInBook(handbook: Handbook, pageNumber: number): number {
-  const index = handbook.pages.findIndex((item) => item.number === pageNumber);
-  return index >= 0 ? index + 1 : pageNumber;
-}
 export function adjacentPages(
   handbook: Handbook,
   pageNumber: number,

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HANDBOOKS } from "@/content/handbooks";
 import { HandbookFieldLandscape } from "@/components/handbooks/HandbookBoard";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
-import { pagePath, placeInBook } from "@/lib/handbooks";
+import { pagePath } from "@/lib/handbooks";
 
 export function HandbookLibrary() {
   return (
@@ -52,42 +52,33 @@ export function HandbookLibrary() {
                   {handbook.card.label}
                 </a>
                 <ol className="mt-4 max-w-xl border-t border-white/10 pt-3">
-                  {handbook.contents.map((entry) =>
-                    entry.sections?.length ? (
-                      <li key={entry.title} className="py-1.5">
-                        <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500">
-                          {entry.title}
-                        </p>
-                        <ol>
+                  {handbook.contents.map((entry, index) => (
+                    <li key={entry.title}>
+                      <Link
+                        href={pagePath(handbook.slug, entry.page)}
+                        className="focus-ring flex gap-3 rounded-sm py-1.5 text-sm text-slate-300 hover:text-white"
+                      >
+                        <span className="w-4 shrink-0 font-mono text-xs tabular-nums text-slate-500">
+                          {index + 1}
+                        </span>
+                        <span>{entry.title}</span>
+                      </Link>
+                      {entry.sections?.length ? (
+                        <ul className="mb-1 ml-7">
                           {entry.sections.map((section) => (
                             <li key={section.page}>
                               <Link
                                 href={pagePath(handbook.slug, section.page)}
-                                className="focus-ring flex gap-3 rounded-sm py-1.5 text-sm text-slate-300 hover:text-white"
+                                className="focus-ring block rounded-sm py-1.5 text-sm text-slate-400 hover:text-white"
                               >
-                                <span className="w-4 shrink-0 font-mono text-xs tabular-nums text-slate-500">
-                                  {placeInBook(handbook, section.page)}
-                                </span>
-                                <span>{section.title}</span>
+                                {section.title}
                               </Link>
                             </li>
                           ))}
-                        </ol>
-                      </li>
-                    ) : (
-                      <li key={entry.page}>
-                        <Link
-                          href={pagePath(handbook.slug, entry.page)}
-                          className="focus-ring flex gap-3 rounded-sm py-1.5 text-sm text-slate-300 hover:text-white"
-                        >
-                          <span className="w-4 shrink-0 font-mono text-xs tabular-nums text-slate-500">
-                            {placeInBook(handbook, entry.page)}
-                          </span>
-                          <span>{entry.title}</span>
-                        </Link>
-                      </li>
-                    ),
-                  )}
+                        </ul>
+                      ) : null}
+                    </li>
+                  ))}
                 </ol>
               </div>
             </li>
