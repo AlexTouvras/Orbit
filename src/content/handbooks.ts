@@ -91,14 +91,23 @@ export interface HandbookPage {
   plate?: "horizon";
   /** This book's opening picture. It is the first leaf, not a route in front of the page. */
   cover?: HandbookPicture;
+  /** A design picture behind the words. It does not name a step, and the words stay readable. */
+  ground?: HandbookPicture;
   sections: HandbookSection[];
   sources: HandbookLink[];
 }
 
-/** A contents entry. It opens on `page`. */
+/** A section inside a chapter. It opens on `page`. */
+export interface HandbookContentsSection {
+  title: string;
+  page: number;
+}
+
+/** A contents entry. It opens on `page`. Sections are the pages already written inside that chapter. */
 export interface HandbookContentsEntry {
   title: string;
   page: number;
+  sections?: HandbookContentsSection[];
 }
 
 export interface Handbook {
@@ -1079,90 +1088,166 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   card: { href: DATA_CARD, label: "Data analytics field card" },
   contents: [
     { title: "What good looks like", page: 1 },
-    { title: "Name the decision", page: 2 },
-    { title: "Say what one row means", page: 3 },
-    { title: "When two reports don't match", page: 4 },
-    { title: "Keep the definition", page: 5 },
+    { title: "Choose the work", page: 6 },
+    {
+      title: "Make the number fit to use",
+      page: 2,
+      sections: [
+        { title: "Name the decision", page: 2 },
+        { title: "Say what one row means", page: 3 },
+        { title: "When two reports don't match", page: 4 },
+        { title: "Keep the definition", page: 5 },
+      ],
+    },
+    { title: "Choose the stack", page: 7 },
+    { title: "Keep trust in force", page: 8 },
+    { title: "Run the product and judge the value", page: 9 },
   ],
   pages: [
     {
       number: 1,
-      topic: "The path",
+      topic: "The practice",
       title: "What good looks like",
-      lede: "This page is the path a number walks when a person can act on it. The four steps are Ask, Grain, Truth, and Use. I want all four of those to be sayable in one sitting, in ordinary words.",
-      rule: "My operating rule: before a number goes out as the answer, I can say Ask, Grain, Truth, and Use, in that order.",
-      illustration: "The four sheets are an illustration, not a record.",
+      lede: "This page is how the practice runs. One number is ready when Ask, Grain, Truth, and Use can be said. The work around that number follows the same path.",
+      rule: "My operating rule: I place the work on this path before I build it. A number goes out as the answer only when Ask, Grain, Truth, and Use are filled.",
+      illustration: "The invoice path is an illustration, not a record.",
       reviewed: "18 Oct 2026",
-      cover: {
+      ground: {
         src: `${DATA_ART}/path.jpg`,
-        alt: "Four lit sheets in a row, and one chair facing them. No amount.",
+        alt: "",
       },
       sections: [
         {
           id: "path",
-          title: "The four things",
+          title: "The path",
           paragraphs: [
-            "Ask is the decision a person is about to make, and who that person is. Grain is what one line of the number means: the thing, the time, what is included, and what is left out. Truth is why that person can trust the number. They know who stands behind the meaning, and they know what stops a bad number. Use is whether they can explain the number and act on it.",
-            "Those four names are the analytics field card. This page is what they look like when all four can be said.",
-            "The link I use between a measure and a decision comes from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. It says that when a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A number on this path exists so a person can see and decide.",
+            "The analytics field card carries the four steps for a number, the architecture plates, the tool lanes, the trust strip, and the maturity ladder. The order below is how I run that card.",
           ],
-          sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
+          lines: [
+            {
+              term: "Place the work",
+              detail: "Say which part of the path the work is on, and which rung the organization is on. This page is that placement.",
+            },
+            {
+              term: "Choose the work",
+              detail: "A case to build, or a written reason not to. The case names the decision, the person who would act, and the rung the work needs.",
+            },
+            {
+              term: "Make the number fit",
+              detail:
+                "The brief, what one row means, a disagreement between two reports, the owner and the columns the number promises, and whether the person can explain the number and act. Name the decision, Say what one row means, When two reports don't match, and Keep the definition are this part.",
+            },
+            {
+              term: "Choose the stack",
+              detail:
+                "The plates and the tool lanes for the workload, including what was refused. The plates are consumption, the semantic layer, processing, and sources.",
+            },
+            {
+              term: "Keep trust in force",
+              detail: "Security, governance, observability, evals, and human approve, for the numbers that share a system.",
+            },
+            {
+              term: "Judge the value",
+              detail: "A product that is maintained, and a review that continues it, changes it, or stops the investment.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
-          id: "path-walk",
-          title: "How I walk it",
+          id: "path-number",
+          title: "One number",
           paragraphs: [
-            "I fill four lines, in this order. A line is filled when a person who missed the meeting can say it back. Ask is written on Name the decision. Grain is written on Say what one row means. Truth is written on When two reports don't match and on Keep the definition: who stands behind the meaning, and what stops a bad number. This page holds those pages in one order.",
+            "Ask, Grain, Truth, and Use are the test for one number. They are not the outline of the practice. A line is filled when a person who missed the meeting can say it back.",
+            "The link I use between a measure and a decision comes from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. It says that when a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A number on this path exists so a person can see and decide.",
           ],
           lines: [
             {
               term: "Ask",
-              detail: "The decision, and the person who will act. A report title does not finish the line.",
+              detail: "The decision, and the person who will act. Name the decision writes it. A report title does not finish the line.",
             },
             {
               term: "Grain",
-              detail: "What one line means. The thing, the time, what is included, and what is left out.",
+              detail: "What one line means. The thing, the time, what is included, and what is left out. Say what one row means writes it.",
             },
             {
               term: "Truth",
-              detail: "Who stands behind that meaning, and what stops a bad number before it goes out.",
+              detail:
+                "Who stands behind that meaning, and what stops a bad number. When two reports don't match and Keep the definition write it.",
             },
             {
               term: "Use",
               detail:
-                "Whether they can explain the number and act on it. The response they write is a hypothesis to check. If the number would not change what they do, it is not the answer to this Ask.",
+                "Whether they can explain the number and act on it. The response they write is a hypothesis to check. Name the decision writes that proposal. If the number would not change what they do, it is not the answer to this Ask.",
             },
           ],
-          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+          sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
           id: "path-scene",
           title: "An example",
           paragraphs: [
             "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "Someone can give an invoice more time to pay. Ask is whether to give more time. The person is the role that can do that. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, that someone owns the meaning, and that a bad number would be stopped. Use is the response they propose to check. If more invoices are past their date, they propose not to give more time. If fewer are past their date, they propose that the extension can be offered. Name the decision writes that proposal. The four sheets are lit because those four lines are filled. One chair faces them. That chair is the person who can act. No amount is written.",
+            "Someone can give an invoice more time to pay. Ask is whether to give more time. The person is the role that can do that. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, that someone owns the meaning, and that a bad number would be stopped. Use is the response they propose to check. If more invoices are past their date, they propose not to give more time. If fewer are past their date, they propose that the extension can be offered. Name the decision writes that proposal. No amount is written.",
           ],
-          picture: {
-            src: `${DATA_ART}/path.jpg`,
-            alt: "An illustration. Four lit sheets in a row, and one chair facing them. No amount.",
+          figure: {
+            kind: "flow",
+            caption: "The same illustration, in order. It states no amount.",
+            steps: [
+              {
+                term: "Ask",
+                detail: "Whether to give an invoice more time to pay. The person is the role that can do that.",
+              },
+              {
+                term: "Grain",
+                detail: "An open invoice as of yesterday. Accounts already written off are left out.",
+              },
+              {
+                term: "Truth",
+                detail: "That grain can be said back. Someone owns the meaning, and a bad number would be stopped.",
+              },
+              {
+                term: "Use",
+                detail:
+                  "If more invoices are past their date, offer no more time. If fewer are, the extension can be offered. Both are hypotheses to check.",
+              },
+            ],
           },
+        },
+        {
+          id: "path-rung",
+          title: "The organization",
+          paragraphs: [
+            "The card's ladder is how the organization runs the practice. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. A prescriptive recommendation still walks Ask, Grain, Truth, and Use. I take work the current rung can keep.",
+          ],
+          lines: [
+            { term: "Ad hoc", detail: "Manual, inconsistent, low trust." },
+            { term: "Defined", detail: "Standards and basic governance." },
+            { term: "Managed", detail: "Automated, monitored, reconciled." },
+            {
+              term: "Optimized",
+              detail: "Predictive use, real-time, and self-service. This rung is not the destination.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
           id: "path-know",
           title: "How I would know",
           paragraphs: [
-            "I watch four things. I have no target times, and these definitions are not results I have collected.",
-            "A repeatable Ask means a person who missed the meeting can say what is being decided, and who will act.",
-            "A repeatable Grain means that person can say what one line means.",
-            "A named Truth means they can say who owns the meaning, and what stops a bad number.",
-            "A written Use means they can say the response they propose to check, and how they would explain the number.",
-            "The line below is the illustration on this page, once the path is filled. It is not a result I collected, and it states no amount.",
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
           ],
           lines: [
             {
-              term: "Filled",
-              detail:
-                "Ask: whether to give more time to pay. The person is the role that can do that. Grain: an open invoice as of yesterday, written-off accounts left out. Truth: that grain can be said back, someone owns the meaning, and a bad number would be stopped. Use: a hypothesis if more invoices are past their date, and a hypothesis if fewer are. Name the decision writes those proposals. No amount is written.",
+              term: "Placed",
+              detail: "The work has a part of the path. A dashboard with no decision has not been placed.",
+            },
+            {
+              term: "Rung",
+              detail: "The rung the organization is on is named, and the work needs no higher rung.",
+            },
+            {
+              term: "Number",
+              detail: "A person who missed the meeting can say Ask, Grain, Truth, and Use.",
             },
           ],
         },
@@ -1170,8 +1255,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page is the path. Ask is written on Name the decision. Grain is written on Say what one row means. A comparison of two reports is written on When two reports don't match. The columns that stay in force are written on Keep the definition.",
-            "Use asks whether we can explain the number and act on it. The response is a hypothesis, written on Name the decision. This page does not teach how to explain a number when you are unsure of it.",
+            "This page places the work. Choosing a platform is Choose the stack. Whether a product should continue is Run the product and judge the value. Make the number fit is Name the decision, Say what one row means, When two reports don't match, and Keep the definition.",
             "The GAO guide assesses an agency plan. I am not running its checklist. I am using the link it requires between a measure and a decision a person can make.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
@@ -1183,10 +1267,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           ],
         },
         {
-          id: "early",
-          title: "A number offered early",
+          id: "path-draft",
+          title: "When AI drafts the work",
           paragraphs: [
-            "A model can offer a number before anyone has named the decision. The path is Ask, then Grain, then Truth, then Use, because a person has to be able to act. A filled-looking sheet is the four lines a person can say.",
+            "This practice holds today, and I expect it to hold, because the test is a person who can place the work and say Ask, Grain, Truth, and Use. AI can draft the case, the path, and a sentence for each step. A fluent draft is not that person saying it, and a tool does not move the organization up a rung.",
           ],
         },
       ],
@@ -1201,8 +1285,140 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       ],
     },
     {
+      number: 6,
+      topic: "Choose the work",
+      title: "Choose the work",
+      lede: "This page is the case I take, or the written reason I do not. The case names the decision, the person who would act, and the rung the work needs. A written reason is a finished page.",
+      rule: "My operating rule: I start the work only when the decision, the person, and a rung the organization can keep are named. Otherwise I write the reason not to, and I do not start.",
+      illustration: "The invoice case is an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "",
+      },
+      sections: [
+        {
+          id: "case",
+          title: "The case",
+          paragraphs: [
+            "The opening page places the work. This page is the choice to build, or the written reason not to.",
+            "The organization sits on the card's ladder: ad hoc, defined, managed, optimized. Ad hoc is manual, inconsistent, and low trust. Defined is standards and basic governance. Managed is automated, monitored, and reconciled. Optimized is predictive use, real-time, and self-service. The card names the trap this page is for: dashboard-only thinking with no decision. The card also says Spark is for when the volume requires it.",
+            "I take a case the current rung can keep. I move up only when the rung below is in force. I refuse the scale the decision does not need. The plates and the tools are Choose the stack. The sheet is my rule. Each case is taken or refused on its own. When the organization can keep only one, that limit is written in the reason not to.",
+          ],
+          lines: [
+            {
+              term: "Decision",
+              detail:
+                "The decision, in the words of the person who would act. A report title does not finish the line.",
+            },
+            {
+              term: "Actor",
+              detail: "Who would act. One person, or one role. A mailing list is not the actor.",
+            },
+            {
+              term: "Organization",
+              detail: "The rung in force now. Ad hoc, defined, managed, or optimized.",
+            },
+            {
+              term: "Need",
+              detail:
+                "The rung this case needs. When it is higher than the organization, write a smaller case the current rung can keep, or write the reason not to.",
+            },
+            {
+              term: "Scale",
+              detail:
+                "How much data the decision needs, how many people use the number at once, and how new it has to be. Refuse what the decision does not need.",
+            },
+            {
+              term: "Build or stop",
+              detail:
+                "Start when the decision, the actor, and a rung the organization can keep are named, and the scale is one the decision needs. Otherwise the written reason is the outcome. A blank line is not a reason.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "case-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "Someone asks for two things. One is a screen that refreshes through the day for every person who collects, and a prediction that chooses whom to call. The other is whether one role can give an invoice more time to pay.",
+            "On this illustration the organization is Defined. The live screen is for every collector, and the number moves through the day. Choosing the calls for them is predictive use. That work needs the optimized rung. The reason not to is written: the rung is higher than the one in force, and the decision does not need a number that moves through the day.",
+            "The case that is taken is the second request. The decision is whether to give an invoice more time to pay. The actor is the role that can do that. The rung it needs is Defined. The number is as of yesterday. The call list is a different decision, so it is not this case. No amount is written.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "The same illustration. One case is refused, and one is taken. It states no amount.",
+            steps: [
+              {
+                term: "Refused",
+                detail:
+                  "A live screen for every collector, and a prediction that chooses the calls. The organization is Defined. That work needs Optimized. The decision does not need a number that moves through the day.",
+              },
+              {
+                term: "Taken",
+                detail:
+                  "Whether one role gives an invoice more time to pay. The rung it needs is Defined. The number is as of yesterday.",
+              },
+            ],
+          },
+        },
+        {
+          id: "case-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "A taken case names the decision, the person, and a rung the organization can keep.",
+            "A refusal is a written reason that names the rung or the scale that was turned down.",
+            "A blank start is work that began with no case and no written reason.",
+            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            {
+              term: "Refused",
+              detail:
+                "A live screen for every collector, and a prediction that chooses the calls. Organization: Defined. Need: Optimized. Reason: the rung is higher, and the decision does not need a number that moves through the day.",
+            },
+            {
+              term: "Taken",
+              detail:
+                "Whether to give an invoice more time to pay. Actor: the role that can do that. Organization: Defined. Need: Defined. The number is as of yesterday. Action: take the case. No amount is written.",
+            },
+          ],
+        },
+        {
+          id: "case-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "Name the decision fills the brief after the case is taken. This page does not write the outcome, the constraint, or the two hypotheses.",
+            "Choose the stack names the plates and the tools, including a tool that was refused. This page refuses the scale the decision does not need. It does not pick the platform.",
+            "A product that is already running is Run the product and judge the value: continue it, change it, or stop the investment.",
+            "Ask, Grain, Truth, and Use are the test for the number, after this page.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "case-draft",
+          title: "When AI drafts the case",
+          paragraphs: [
+            "This page holds today, and I expect it to hold, because the person who would act has to be named, and the case has to be a rung the organization can keep. AI can draft the case and a reason not to build. A draft does not name that person, and it does not put the organization on a higher rung.",
+          ],
+        },
+      ],
+      sources: [
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
       number: 2,
-      topic: "The question",
+      topic: "Make the number fit",
       title: "Name the decision",
       lede: "This page is the brief I fill before a number goes out as the answer. The brief names the decision, the outcome that decision is for, the person who will act, the constraint they have to respect, the one activity, and a hypothesis for a rise and a hypothesis for a fall. A blank line means the number is not that answer.",
       rule: "My operating rule: I can say the decision, the outcome, the person, the constraint, a hypothesis for a rise, and a hypothesis for a fall, and I do not publish the number as the answer until those are named. Each hypothesis is a proposal to check against the outcome.",
@@ -1322,13 +1538,6 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
-        {
-          id: "filled",
-          title: "A brief that looks filled",
-          paragraphs: [
-            "A model can write every line. The brief is filled when the person who will act can say the decision, the outcome, the constraint, and both hypotheses. That person is the role that can act. I keep the stop because a complete-looking brief is easier to send.",
-          ],
-        },
       ],
       sources: [
         source(
@@ -1354,7 +1563,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 3,
-      topic: "The row",
+      topic: "Make the number fit",
       title: "Say what one row means",
       lede: "This page comes after the decision is named. It says what one row of the number means, before anyone compares two reports. Kimball calls that the grain: exactly what one record represents, in business words. A report title is not that sentence. A list of columns is not that sentence.",
       rule: "My operating rule: name the thing, the time, what is included, and what is left out, and do not publish the number until the person who will use it can say that row back.",
@@ -1471,13 +1680,6 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
-        {
-          id: "fields",
-          title: "A list of fields",
-          paragraphs: [
-            "A generated list of columns is a list of columns. The row is the sentence a person can say back: the thing, the time, what is included, and what is left out. I keep that sentence because a draft can name every field and leave the row unsaid.",
-          ],
-        },
       ],
       sources: [
         source(
@@ -1495,7 +1697,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 4,
-      topic: "Two reports",
+      topic: "Make the number fit",
       title: "When two reports don't match",
       lede: "This page is for a number you are about to give someone as the answer, when two reports disagree. What one row means is already written on Say what one row means. The two reports can share a title and still not match. Sending one of them out, or a third number in between, before the difference has a cause, gives that person a figure you cannot defend. A search that is not being offered as the answer can keep both versions.",
       rule: "My operating rule: say what one row means before the two reports are compared, explain the difference or block the publish, and do not publish a number between them.",
@@ -1644,13 +1846,6 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
-        {
-          id: "between",
-          title: "A number between the reports",
-          paragraphs: [
-            "A model can offer a figure between two reports that disagree. This page blocks that figure until the cause is named. I keep the block because a confident draft makes the middle number easier to send. A blank cause remains the stop.",
-          ],
-        },
       ],
       sources: [
         source(
@@ -1684,7 +1879,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
     },
     {
       number: 5,
-      topic: "The change",
+      topic: "Make the number fit",
       title: "Keep the definition",
       lede: "A filled decision and a filled comparison can still go stale the next time the query changes. This page is what I leave in place: who owns the definition, the columns the number promises, and the stop when those columns break.",
       rule: "My operating rule: name the owner of the published definition, check its columns before the next build, and stop the old number when those columns break.",
@@ -1794,10 +1989,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           ],
         },
         {
-          id: "quiet-edit",
-          title: "An edit that leaves the columns",
+          id: "keep-draft",
+          title: "When AI drafts the number",
           paragraphs: [
-            "A generated change can keep every column name and still change what a row means. The contract stays green. The meaning goes back to Say what one row means. I keep that return because a quiet edit is easier to ask for than it is to see.",
+            "The brief, the row, the cause, and the owner hold today, and I expect them to hold, because the person who will act has to be able to say them. AI can draft the brief, the row sentence, an explanation of two reports, and the columns. A generated explanation is not a cause until that person accepts it.",
           ],
         },
       ],
@@ -1818,6 +2013,459 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           "https://www.gao.gov/assets/gao-25-107721.pdf",
           "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025)",
         ),
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 7,
+      topic: "Choose the stack",
+      title: "Choose the stack",
+      lede: "This page names the plates and the tools for a case that was taken, including what was refused. The workload is that case, and the scale it still needs.",
+      rule: "My operating rule: I name the workload before I name a tool. A choice with no refusal is not finished. I do not add a plate the decision does not need.",
+      illustration: "The invoice stack is an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "",
+      },
+      sections: [
+        {
+          id: "stack",
+          title: "The workload",
+          paragraphs: [
+            "Choose the work has already taken the case, or written the reason not to. This page is the stack for a case that was taken.",
+            "Scale is whether the number still arrives, for the people who use it, inside the time the decision needs. I name how much data, how many people use the number at once, and how new it has to be. Choose the work refused the scale the decision does not need. I build only what remains.",
+            "The plates, the tool names, and the conditions are on the analytics field card. They are the lines below. The sheet is my rule. The refusal is mine.",
+          ],
+          lines: [
+            {
+              term: "Workload",
+              detail:
+                "The case that was taken, with how much data, how many people at once, and how new the number has to be. A report title does not finish the line.",
+            },
+            {
+              term: "Consumption",
+              detail:
+                "One report, dashboard, or app. Power BI, Looker, or Tableau when that is already the room's tool. A second consume tool is a refusal.",
+            },
+            {
+              term: "Semantic",
+              detail:
+                "Where the sentence of what one row means is kept. That sentence stays on Say what one row means. This line does not write a new one.",
+            },
+            {
+              term: "Processing",
+              detail:
+                "dbt, Python, or Jupyter for transform, enrich, and validate. Spark when the volume requires it. When it does not, Spark is the refusal.",
+            },
+            {
+              term: "Sources",
+              detail:
+                "The internal or external source for this activity. A source that does not feed the decision is the refusal.",
+            },
+            {
+              term: "Platform",
+              detail:
+                "Databricks, DuckDB, or MotherDuck. Snowflake when the warehouse is the constraint. When the warehouse is not the constraint, write that refusal.",
+            },
+            {
+              term: "Schedule",
+              detail:
+                "Airflow or Fabric, and only when the path has to run again without the person. It does not define the number. When a person can refresh the list, the scheduler is the refusal.",
+            },
+            {
+              term: "Watching",
+              detail:
+                "Great Expectations for the tests. OpenLineage for where the number came from.",
+            },
+            {
+              term: "Refused",
+              detail:
+                "Each tool not taken, with the workload reason. A blank refusal means the choice is not finished.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "stack-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "The case, from Choose the work, is whether one role gives an invoice more time to pay. The organization is Defined. The number is as of yesterday. One person reads one list. The warehouse is not the constraint.",
+            "Spark is refused, because the volume does not require it. A screen for every collector, and a number that moves through the day, stay refused. Snowflake is refused, because the warehouse is not the constraint. A second dashboard is refused. A scheduler is refused, because that role can refresh yesterday's list.",
+            "What I take is one report, the one that role already opens. I do not name the brand. This is not a record of a room. The semantic layer carries the sentence from Say what one row means: an open invoice as of yesterday, and accounts already written off are left out. dbt builds the table that publishes. I use DuckDB for this illustration, because the list is one machine's work. The source is the invoice ledger. The tests sit on that table. No amount is written.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "The same illustration. The workload, what is taken, and what is refused. It states no amount.",
+            steps: [
+              {
+                term: "Workload",
+                detail:
+                  "One role. An open invoice as of yesterday. One list. The warehouse is not the constraint.",
+              },
+              {
+                term: "Taken",
+                detail:
+                  "One report that role already opens. The row sentence. dbt for the table. DuckDB for the list. The invoice ledger.",
+              },
+              {
+                term: "Refused",
+                detail:
+                  "Spark, a live screen, Snowflake, a second dashboard, and a scheduler.",
+              },
+            ],
+          },
+        },
+        {
+          id: "stack-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "A named workload has the volume, the people, and the freshness, and they match the case that was taken.",
+            "A refusal names a tool that was not taken, and the workload reason.",
+            "A pasted lane is a list of tools with no workload and no refusal.",
+            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            {
+              term: "Refused",
+              detail:
+                "Spark, a live screen, Snowflake, a second dashboard, and a scheduler. The list is one role, as of yesterday, and the warehouse is not the constraint.",
+            },
+            {
+              term: "Taken",
+              detail:
+                "One report, the row sentence, dbt, DuckDB, and the invoice ledger. Action: build that stack. No amount is written. No consume brand is named.",
+            },
+          ],
+        },
+        {
+          id: "stack-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "Choose the work decides whether to build. This page does not reopen that choice. It refuses a tool the decision does not need.",
+            "The brief, the row, the disagreement, and the contract stay on Make the number fit. A semantic layer does not replace the row sentence. A green contract does not choose the platform.",
+            "Keep trust in force is security, governance, observability, evals, and human approve for the numbers that share a system. This page names the monitoring lane. It does not write the lineage method.",
+            "A product that is already running is Run the product and judge the value: continue it, change it, or stop the investment.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "stack-draft",
+          title: "When AI drafts the stack",
+          paragraphs: [
+            "This page holds today, and I expect it to hold, because the workload has to be the case that was taken, and a tool that was not taken has to be written down. AI can draft a full lane of tools. A full lane is not a choice, and a draft does not make the warehouse the constraint.",
+          ],
+        },
+      ],
+      sources: [
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 8,
+      topic: "Keep trust in force",
+      title: "Keep trust in force",
+      lede: "This page is what stays true for the numbers that share a system. One number is still Ask, Grain, Truth, and Use. These lines are the trust around it.",
+      rule: "My operating rule: I name who can see the number, who can change it, the source and the published measure, the freshness, and a test that can fail before it ships. An unexplained gap stays dark. A blank line means the number is not being kept.",
+      illustration: "The invoice trust lines are an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "",
+      },
+      sections: [
+        {
+          id: "trust",
+          title: "The lines",
+          paragraphs: [
+            "Make the number fit keeps one number. Choose the stack names the tools. This page is what stays true the next time that number is used, and for the next number on the same system.",
+            "The card's lines are security, governance, observability, evals, and human approve. Security is who can see and change the number. Governance is a named owner who approves the definition. Observability is lineage from the source to the published measure. Evals are tests on gold before a number ships. Human approve means an unexplained gap stays dark. The card's gate traces lineage, and a disagreement is resolved or blocked before the number reaches the decision.",
+            "I read gold as the table that is about to go out. Freshness is the freshness already named on Choose the stack. The sheet is my rule for how a line is filled. The five names are the card's.",
+          ],
+          lines: [
+            {
+              term: "See",
+              detail: "Who can see the number. One role. A mailing list is not the role.",
+            },
+            {
+              term: "Change",
+              detail:
+                "Who can change the number or the definition. One role. This is the owner on Keep the definition. The same person may see it and change it. Both lines are still filled.",
+            },
+            {
+              term: "Lineage",
+              detail:
+                "The source and the published measure, in one sentence a person can say. The card calls that lineage from the source to the published measure. OpenLineage is the card's tool for where the number came from. This line is the sentence.",
+            },
+            {
+              term: "Fresh",
+              detail:
+                "How new the number has to be, from Choose the stack. If the number is older than that, it is not the answer.",
+            },
+            {
+              term: "Test",
+              detail:
+                "A test that can fail before the number ships. The card calls that a test on gold. I read gold as the table about to go out. The stop when the columns break stays on Keep the definition.",
+            },
+            {
+              term: "Dark",
+              detail:
+                "An unexplained gap stays dark. The cause is written on When two reports don't match, or the number does not stay up.",
+            },
+            {
+              term: "Again",
+              detail:
+                "The lines above are still true the next time the number is used. The Green Book includes comparisons and reconciliations in ongoing monitoring, and it ties a detective control to a correction that happens in time. I use that as the reason these lines are checked again.",
+            },
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            GAO_RECONCILE,
+          ],
+        },
+        {
+          id: "trust-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "The number, from the earlier pages, is whether one role gives an invoice more time to pay. The list is as of yesterday. The source is the invoice ledger. Accounts already written off are left out.",
+            "The role that can offer more time can see the list. The role that approved the row can change it. The lineage sentence is the invoice ledger to that list. If the list is older than yesterday, it does not go out as that answer. The test is the one on Keep the definition: if the column that marks written-off accounts breaks, the build stops. If a second list arrives and the cause is blank, the number stays dark. The call list was not taken, so it is not on this system. No amount is written.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "The same illustration. Who can see it, where it came from, and the gap that stays dark. It states no amount.",
+            steps: [
+              {
+                term: "See",
+                detail:
+                  "The role that can offer more time can see the list. The role that approved the row can change it.",
+              },
+              {
+                term: "Lineage",
+                detail: "The invoice ledger to that list, as of yesterday. Written-off accounts stay out.",
+              },
+              {
+                term: "Dark",
+                detail: "A second list with no cause stays dark. The call list is not on this system.",
+              },
+            ],
+          },
+        },
+        {
+          id: "trust-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "A said line means a person who missed the meeting can say who sees the number, who changes it, and the source and the measure.",
+            "A stale number went out older than the freshness that was named.",
+            "A lit gap is a published number whose second report differs, and the cause is blank.",
+            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+          ],
+          lines: [
+            {
+              term: "Kept",
+              detail:
+                "See: the role that can offer more time. Change: the role that approved the row. Lineage: the invoice ledger to the list, as of yesterday. A list older than yesterday stays dark. No amount is written.",
+            },
+            {
+              term: "Dark",
+              detail:
+                "A second list arrives and the cause is blank. Action: the number stays dark. The call list is not on this system.",
+            },
+          ],
+        },
+        {
+          id: "trust-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "The brief, the row, the disagreement, and the contract stay on Make the number fit. This page does not fill them again.",
+            "Choose the stack picks the tools. OpenLineage is the card's name for where the number came from. This page keeps the sentence. It does not install the tool.",
+            "This page names the role that can see the number and the role that can change it. It does not choose a login product.",
+            "Completeness, validity, and timeliness are not lines on this sheet.",
+            "A number someone has already acted on is a review of a figure that already went out. That review is When two reports don't match.",
+            "Continue the product, change it, or stop the investment is Run the product and judge the value.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            GAO_RECONCILE,
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "trust-draft",
+          title: "When AI drafts the lines",
+          paragraphs: [
+            "This page holds today, and I expect it to hold, because a person has to be able to say who can see the number, who can change it, and the source and the measure. AI can draft those sentences and a diagram of the path. A draft is not that person, and a diagram is not the lineage until they can say it. An unexplained gap still stays dark.",
+          ],
+        },
+      ],
+      sources: [
+        { href: DATA_CARD, label: "Data analytics field card" },
+        source(
+          "https://www.gao.gov/assets/gao-25-107721.pdf",
+          "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025)",
+        ),
+        { href: DELIVERY_CARD, label: "Technology delivery field card" },
+        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+      ],
+    },
+    {
+      number: 9,
+      topic: "Run the product and judge the value",
+      title: "Run the product and judge the value",
+      lede: "This page is a product that is already running. I continue it, change it, or stop the investment. The case was already taken.",
+      rule: "My operating rule: I continue only when the person still uses the number for the decision that was taken, and the number still arrives inside the time that decision needs. Otherwise I change the line that failed, or I stop. A blank call is not a continue.",
+      illustration: "The invoice review is an illustration, not a record.",
+      reviewed: "18 Oct 2026",
+      ground: {
+        src: `${DATA_ART}/path.jpg`,
+        alt: "",
+      },
+      sections: [
+        {
+          id: "value",
+          title: "The review",
+          paragraphs: [
+            "Keep trust keeps the lines true the next time the number is used. This page is whether the product should still be kept.",
+            "The product is the case that was taken. The decision and the person are the ones on that case. If the decision has changed, that is a new case on Choose the work. This page does not take it.",
+            "Scale is whether the number still arrives, for the people who use it, inside the time the decision needs. Choose the work refused the scale the decision did not need. Choose the stack built what remained. If that scale has stopped, the call is change or stop.",
+            "The sheet is my rule for the call.",
+          ],
+          lines: [
+            {
+              term: "Product",
+              detail:
+                "The case that was taken. The decision, and the person who would act. A report title does not finish the line.",
+            },
+            {
+              term: "Used",
+              detail:
+                "The person still uses the number for that decision. If they do not, the product is not in use.",
+            },
+            {
+              term: "Arrives",
+              detail:
+                "The number still arrives, for the people who use it, inside the time the decision needs. If it does not, the scale has stopped.",
+            },
+            {
+              term: "Answer",
+              detail:
+                "Ask, Grain, Truth, and Use can still be said. A blank line is not a score. It goes back to the page that owns it.",
+            },
+            {
+              term: "Kept",
+              detail:
+                "The people and the tools still kept for this product. The tools are the ones taken on Choose the stack. A tool that was refused is not on this line. If nothing is still kept, write that. A blank line is not the same as nothing.",
+            },
+            {
+              term: "Call",
+              detail:
+                "Continue, change, or stop, with the reason. Continue when the person still uses it, it still arrives, and the four steps can still be said, and what is kept is still needed for that decision. Change when the decision is the same and one line has failed. Name the page that owns the failed line. Stop when the person no longer acts, or what is kept is no longer needed, or the rung in force cannot keep the scale. A blank call is not a continue.",
+            },
+          ],
+        },
+        {
+          id: "value-scene",
+          title: "An example",
+          paragraphs: [
+            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "The product, from the earlier pages, is whether one role gives an invoice more time to pay. The organization is Defined. The list is as of yesterday. What is kept is that role's refresh of the list, one report, dbt, DuckDB, and the invoice ledger.",
+            "On one review, the role still uses the list for that decision. The list still arrives as of yesterday. Ask, Grain, Truth, and Use can still be said. What is kept is still what that decision needs. The call is continue. No amount is written.",
+            "On the next review, the same role needs the list before the day starts. Yesterday is too old. The decision has not changed. The freshness has. The call is change, and the change is the freshness on Choose the stack. This page does not pick a new platform.",
+            "On the last review, the role no longer decides more time from this list. The list is still refreshing. The call is stop. The reason is that the person no longer acts. The call list was never this product. No amount is written.",
+          ],
+          figure: {
+            kind: "flow",
+            caption:
+              "The same illustration. One review continues, one changes the freshness, and one stops. It states no amount.",
+            steps: [
+              {
+                term: "Continue",
+                detail:
+                  "The role still uses the list. It arrives as of yesterday. What is kept is still what that decision needs.",
+              },
+              {
+                term: "Change",
+                detail:
+                  "The same decision. The list is needed before the day starts. The change is the freshness on Choose the stack.",
+              },
+              {
+                term: "Stop",
+                detail:
+                  "The role no longer decides more time from this list. The list is still refreshing. The call list was never this product.",
+              },
+            ],
+          },
+        },
+        {
+          id: "value-know",
+          title: "How I would know",
+          paragraphs: [
+            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "A said use means a person who missed the meeting can say who still uses the number, and for which decision.",
+            "A stopped scale is a number that went out older than the time the decision needs, or to people the case did not name, while the call was still continue.",
+            "A silent product is still running, and nobody has written continue, change, or stop.",
+            "The rows below are the illustration on this page. None is a result I collected, and none states an amount.",
+          ],
+          lines: [
+            {
+              term: "Continued",
+              detail:
+                "The role that can offer more time still uses the list. It arrives as of yesterday. What is kept is that role's refresh, one report, dbt, DuckDB, and the invoice ledger. Call: continue. No amount is written.",
+            },
+            {
+              term: "Changed",
+              detail:
+                "The same decision. The list is needed before the day starts. Call: change the freshness on Choose the stack. No platform is named. No amount is written.",
+            },
+            {
+              term: "Stopped",
+              detail:
+                "The role no longer decides more time from this list. The list is still refreshing. Call: stop. The call list was never this product.",
+            },
+          ],
+        },
+        {
+          id: "value-limits",
+          title: "Where I do not use it",
+          paragraphs: [
+            "Choose the work decides whether to start. This page is a product that is already running.",
+            "The brief, the row, the disagreement, and the contract stay on Make the number fit. A blank line there goes back to that page. It is not a score.",
+            "Choose the stack names the tools. A freshness that no longer fits goes back there. This page does not pick a platform.",
+            "Keep trust names who can see the number and who can change it. This page does not rewrite those lines.",
+            "A number someone has already acted on, when two reports disagree, is When two reports don't match.",
+            "Whether they did what the hypothesis proposed, and whether the outcome moved, is the note on Name the decision. This page does not report that check.",
+            "The card's ladder is the rung already named on Choose the work. I do not continue a product so the organization can climb it.",
+            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+          ],
+          sources: [
+            { href: DATA_CARD, label: "Data analytics field card" },
+            { href: DELIVERY_CARD, label: "Technology delivery field card" },
+            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "value-draft",
+          title: "When AI drafts the review",
+          paragraphs: [
+            "This page holds today, and I expect it to hold, because a person has to say whether the number is still used for the decision that was taken, and the call has to be continue, change, or stop. AI can draft the review and a recommendation to continue. A draft does not name that person, and a recommendation is not the call until they accept it.",
+          ],
+        },
+      ],
+      sources: [
         { href: DATA_CARD, label: "Data analytics field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
         { href: BAYES_CARD, label: "Bayesian optimisation field card" },
