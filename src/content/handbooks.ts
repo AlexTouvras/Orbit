@@ -1219,6 +1219,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
+        {
+          id: "path-draft",
+          title: "When AI drafts the work",
+          paragraphs: [
+            "This practice holds today, and I expect it to hold, because the test is a person who can place the work and say Ask, Grain, Truth, and Use. AI can draft the case, the path, and a sentence for each step. A fluent draft is not that person saying it, and a tool does not move the organization up a rung.",
+          ],
+        },
       ],
       sources: [
         source(
@@ -1800,6 +1807,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             DBT_VERSIONS,
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          ],
+        },
+        {
+          id: "keep-draft",
+          title: "When AI drafts the number",
+          paragraphs: [
+            "The brief, the row, the cause, and the owner hold today, and I expect them to hold, because the person who will act has to be able to say them. AI can draft the brief, the row sentence, an explanation of two reports, and the columns. A generated explanation is not a cause until that person accepts it.",
           ],
         },
       ],
