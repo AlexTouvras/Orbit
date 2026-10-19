@@ -1122,7 +1122,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "The capability",
           paragraphs: [
             "Good analytics connects a business question to a decision a named person will make. The number has to be one that person can trust. Someone has to be able to run the work after it is built. Later, I look at whether the decision got better. A report, a model, or a platform is not that capability. Technology supports the practice. It does not define it.",
-            "The analytics field card is the map I drew for this book. It is my companion, not an independent source. Ask, Grain, Truth, and Use are the path one number walks. Ask names the decision and the person. Grain says what one row means. Truth is the check that the number can be trusted, including an explanation when two reports disagree. Use is the action, and a later look at what happened. Those four steps are not the lifecycle of the capability. The lifecycle is choosing what to build, choosing the tools, setting the controls, naming an owner, watching the work, and improving it or stopping it.",
+            "The analytics field card is the map I drew for this book. It is my companion, not an independent source. Ask, Grain, Truth, and Use are the path one number walks. Ask names the decision and the person. Grain says what one row means. Truth is the check that the number can be trusted, including an explanation when two reports disagree. Use is the action, and a later look at what happened.",
+            "Those four steps are not the lifecycle of the capability. The lifecycle is choosing what to build, choosing the tools, setting the controls, naming an owner, watching the work, and improving it or stopping it.",
             "This operating model is my synthesis. From the GAO guide for agency performance plans, April 1998, I take one link. When a goal does not measure itself, the measures are how you see what happened, decide, and say who is accountable. The guide is about a plan. I use that link. I do not apply the rest of the guide, and the guide does not establish this model.",
           ],
           figure: {
@@ -1160,7 +1161,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "The population is open invoices, as of yesterday. Invoices already written off are left out. Yesterday is fresh enough because the offer is made before write-off, not while the customer is on the phone. A partial payment, an open dispute, or a write-off after that snapshot changes what the row includes. Those rules belong in the sentence on Say what one row means.",
             "A second report, one row per customer at month-end, can disagree without either total being miscalculated. The cause can be the grain, the date, what is included, the status rules, how the rows are added, or how the amount is calculated. I do not publish a number between the two. When two reports don't match is where that difference is explained, or the number stays unpublished.",
             "For this decision I would build yesterday's list for that one controller. A live screen for every collector answers whom to call now. That is a different decision, and keeping it means a number that moves all day. A simpler build is not automatically better. This offer does not improve because the number is newer than yesterday. A calling prediction waits until the list is in use.",
-            "The tools follow that choice. This illustration takes one report, dbt, DuckDB, and the invoice ledger. Snowflake is refused because the warehouse is not the constraint. A live refresh and a scheduler are refused because the controller can refresh yesterday's list. Once the list is published, the controller can see it, the owner can change the row, and a list older than yesterday does not go out.",
+            "The tools follow that choice. This illustration takes one report, dbt, DuckDB, and the invoice ledger. Snowflake is refused because the warehouse is not the constraint. A live refresh and a scheduler are refused because the controller can refresh yesterday's list.",
+            "Once the list is published, the controller can see it, the owner can change the row, and a list older than yesterday does not go out.",
           ],
         },
         {
@@ -1266,7 +1268,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-draft",
           title: "When AI drafts the work",
           paragraphs: [
-            "This still holds when a model drafts the page. The draft has to describe the decision the controller will make, and what it costs to offer more time or to refuse it. Naming Ask, Grain, Truth, and Use is not that description.",
+            "This still holds when a model drafts the page. The draft has to name that decision and its cost.",
           ],
         },
       ],
