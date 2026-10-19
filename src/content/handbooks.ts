@@ -87,10 +87,8 @@ export interface HandbookPage {
   story?: HandbookLink;
   /** Delivered work. Only when a portfolio piece is that work. */
   work?: HandbookLink;
-  /** Opening plate. The horizon is Software that stays in use. It is not a cover route. */
-  plate?: "horizon";
-  /** This book's opening picture. It is the first leaf, not a route in front of the page. */
-  cover?: HandbookPicture;
+  /** Opening plate. The first leaf of the book, not a route in front of the page. */
+  plate?: "horizon" | "ledger";
   /** A design picture behind the words. It does not name a step, and the words stay readable. */
   ground?: HandbookPicture;
   sections: HandbookSection[];
@@ -1109,9 +1107,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       topic: "The practice",
       title: "What good looks like",
       lede: "Asking for a screen is not yet a piece of work. Good analytics is a capability the organization can run: a named decision, a number that can be trusted, technology it can keep, and a later check on whether the decision got better.",
-      rule: "My operating rule: I name the decision and the person who will act. I decide whether the work is worth the cost of keeping it. I define the number so it answers that decision. I choose technology I can operate. I later ask whether the decision got better. If it did not, I change the work or I stop it.",
+      rule: "My operating rule: name the decision and the person who will act, decide whether the work is worth the cost of keeping it, define the number so it answers that decision, choose technology I can operate, later ask whether the decision got better, and change the work or stop it when it did not.",
       illustration: "The invoice path is an illustration, not a record.",
       reviewed: "19 Oct 2026",
+      plate: "ledger",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
@@ -1436,10 +1435,6 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       rule: "My operating rule: when a number is offered as the answer, I name the decision, the outcome, the person who will act, the constraint, and the one activity. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. I do not present the number as that answer until those are named.",
       illustration: "The two chairs are an illustration, not a record.",
       reviewed: "19 Oct 2026",
-      cover: {
-        src: `${DATA_ART}/decision.jpg`,
-        alt: "One sheet of light, one chair in that light, and one chair left dark. No amount.",
-      },
       sections: [
         {
           id: "brief",
