@@ -1,7 +1,61 @@
 {
-  "generatedAt": "2026-10-18T06:46:52.050Z",
+  "generatedAt": "2026-10-19T06:46:55.426Z",
   "count": 263,
   "items": [
+    {
+      "id": "901ec763c828",
+      "title": "Data Engineering Weekly #292",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-292",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-10-19T03:58:54.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "ac3191448706",
+      "title": "Here, there, and everywhere: Remote work and the employment of disabled and older workers in the UK",
+      "link": "https://cepr.org/voxeu/columns/here-there-and-everywhere-remote-work-and-employment-disabled-and-older-workers-uk",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-18T23:00:00.000Z",
+      "contentSnippet": "Disabled and older adults have lower employment rates than other workers. Policymakers increasingly point to remote work as a way to keep these groups attached to the labour market. This column uses the pandemic-driven rise in working from home in the UK as a quasi-experiment to…"
+    },
+    {
+      "id": "27a1b7416640",
+      "title": "Forward guidance and the limits of public information",
+      "link": "https://cepr.org/voxeu/columns/forward-guidance-and-limits-public-information",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-18T23:00:00.000Z",
+      "contentSnippet": "When nominal interest rates hit the effective lower bound, central banks turned to unconventional measures, with forward guidance emerging as a cornerstone of monetary policy. Drawing on economic literature and data on interest rate forecasts, this column assesses the impact of f…"
+    },
+    {
+      "id": "46bccd42ef44",
+      "title": "AI-Assisted Product Discovery: When Code Is Cheap, Judgment Is the Job",
+      "link": "https://www.scrum.org/resources/blog/ai-assisted-product-discovery-when-code-cheap-judgment-job",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-18T14:54:47.000Z",
+      "contentSnippet": "TL; DR: Deciding What to Build Is the New Job, Now that Code Is No Longer a Constraint Agentic coding has removed the cost gate that used to stop product teams from chasing every idea at once, and the constraint has moved to product judgment: the ability to tell what is worth bui…"
+    },
+    {
+      "id": "8562faa4b0a9",
+      "title": "Monitoring The Impact Of Full-Text Indexing On Semantic Model Refresh In Power BI",
+      "link": "https://blog.crossjoin.co.uk/2026/10/18/monitoring-the-impact-of-full-text-indexing-on-semantic-model-refresh-in-power-bi/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-10-18T13:29:24.000Z",
+      "contentSnippet": "The September release of Power BI saw the introduction of a powerful new feature: full text indexing, which makes searching and filtering on text columns much faster and enables the use of the new TextContains() and TextSimilarity() DAX functions. You need to enable it on a per-c…"
+    },
+    {
+      "id": "ac73af570ed9",
+      "title": "AGI and the Product Owner's Accountability",
+      "link": "https://www.scrum.org/resources/blog/agi-and-product-owners-accountability",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-18T09:12:17.000Z",
+      "contentSnippet": "Image It's Monday morning. Over the weekend, an AI system read every support ticket from the last quarter, every sales-call transcript and every competitor's release notes. It rewrote sixty Product Backlog items, re-ordered the top twenty and drafted a Product Goal, with a short…"
+    },
     {
       "id": "e87f8ff310a6",
       "title": "Strategy Thinks in Bets. Tactics Execute Them.",
@@ -354,24 +408,6 @@
       "contentSnippet": "Data teams all get asked the same questions: \"what will sales be next quarter?,\"..."
     },
     {
-      "id": "e4965f0f5f3b",
-      "title": "Accounting for cross-country income differences: Two decades of progress",
-      "link": "https://cepr.org/voxeu/columns/accounting-cross-country-income-differences-two-decades-progress",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-14T23:00:00.000Z",
-      "contentSnippet": "Development accounting is a simple tool with potentially powerful insights. It asks whether the measured differences in inputs between developing and developed countries can account for the gap in GDP per worker. Twenty years ago, Francesco Caselli famously argued that the best e…"
-    },
-    {
-      "id": "6ab1fa712efa",
-      "title": "Tokenised finance: Towards better markets?",
-      "link": "https://cepr.org/voxeu/columns/tokenised-finance-towards-better-markets",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-14T23:00:00.000Z",
-      "contentSnippet": "Tokenised finance has moved from the margins of crypto markets to the centre of the policy agenda. Central banks, regulators, and market participants are debating how far it could reshape the issuance, trading, and settlement of securities, including what this would mean for fina…"
-    },
-    {
       "id": "b3a0405976db",
       "title": "How FactSet cut model training and deployment from days to hours with Databricks AI Runtime",
       "link": "https://www.databricks.com/blog/how-factset-cut-model-training-and-deployment-days-hours-databricks-ai-runtime",
@@ -462,15 +498,6 @@
       "contentSnippet": "When agents answer the questions, they can maintain the data model. Here is what that demands from the orchestration engine."
     },
     {
-      "id": "af30f4bb19fc",
-      "title": "PS19/26 – High loan to income lending",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-10-14T09:00:00.000Z",
-      "contentSnippet": "PRA policy statement 19/26 | FCA policy statement 26/20"
-    },
-    {
       "id": "b4475d723aaa",
       "title": "SS2/26 – High loan to income lending",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-supervisory-statement",
@@ -478,6 +505,15 @@
       "category": "Credit",
       "pubDate": "2026-10-14T09:00:00.000Z",
       "contentSnippet": "Supervisory statement 2/26"
+    },
+    {
+      "id": "af30f4bb19fc",
+      "title": "PS19/26 – High loan to income lending",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-10-14T09:00:00.000Z",
+      "contentSnippet": "PRA policy statement 19/26 | FCA policy statement 26/20"
     },
     {
       "id": "58e4191fcfe4",
@@ -883,24 +919,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-04T13:00:00.000Z",
       "contentSnippet": "Image I love being a Scrum Master. What I love about it is helping a team accomplish something and honestly just making Developers' work lives as hassle-free as possible. I love working with smart people and seeing them accomplish amazing things. As a Scrum Master, most of us wan…"
-    },
-    {
-      "id": "abfa4005e148",
-      "title": "Outcome-Based Leadership in Project Management: Measuring What Really Matters",
-      "link": "https://www.scrum.org/resources/blog/outcome-based-leadership-project-management-measuring-what-really-matters",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-04T11:35:53.000Z",
-      "contentSnippet": "Image The Context I once led a software development program with more than 100 developers and several project managers. The projects were strategically important for the company, and expectations from upper leadership were high. Officially, the organization was working with Scrum…"
-    },
-    {
-      "id": "16f06ffd347c",
-      "title": "Not All Complexity Can Be Processed Away. Fred Brooks Proved This in 1986.",
-      "link": "https://www.scrum.org/resources/blog/not-all-complexity-can-be-processed-away-fred-brooks-proved-1986",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-04T06:00:00.000Z",
-      "contentSnippet": "Image Every struggling product organization I sit with arrives at the same prescription: add more process, a pre-sprint refinement session, a mid-sprint review, more documents, more sign-offs, better status visibility. I have watched this pattern since 2010, and it almost never w…"
     },
     {
       "id": "5a3f1f4a82c5",
@@ -1695,15 +1713,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "eb19341e893a",
-      "title": "Using Detail Rows Expressions To Drill To A Different Fact Table In Power BI",
-      "link": "https://blog.crossjoin.co.uk/2026/08/09/using-detail-rows-expressions-to-drill-to-a-different-fact-table-in-power-bi/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-08-09T21:26:19.000Z",
-      "contentSnippet": "If you have a DirectQuery fact table in Power BI you can use user-defined aggregations to improve query performance; querying a smaller, summarised copy of your data in an Import mode aggregation table is always going to be faster than querying a large fact table containing all y…"
-    },
-    {
       "id": "2aff593adf2a",
       "title": "On Benchmarking",
       "link": "https://www.dataengineeringweekly.com/p/on-benchmarking",
@@ -1785,15 +1794,6 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
-      "id": "07b1c1c9fdb7",
-      "title": "Credit Surfaces and Economic Uncertainty",
-      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
-    },
-    {
       "id": "30c8bc5d5e3c",
       "title": "Structural Estimation with Unstructured Data",
       "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
@@ -1810,6 +1810,15 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Robert Minton and Hugo Monnery"
+    },
+    {
+      "id": "07b1c1c9fdb7",
+      "title": "Credit Surfaces and Economic Uncertainty",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026052pap.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
       "id": "fb549b859ee4",
@@ -1918,15 +1927,6 @@
       "category": "Data",
       "pubDate": "2026-07-13T00:00:00.000Z",
       "contentSnippet": "A letter from Nick Schrock, founder and creator of Dagster"
-    },
-    {
-      "id": "ec95d625f397",
-      "title": "Beyond Redaction: Anatomy of a Privacy-Safe Data Platform",
-      "link": "https://www.dataengineeringweekly.com/p/beyond-redaction-anatomy-of-a-privacy",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-07-10T10:20:21.000Z",
-      "contentSnippet": "Why privacy engineering is about governing data in use—not simply hiding it."
     },
     {
       "id": "94fe64bbfa0c",
