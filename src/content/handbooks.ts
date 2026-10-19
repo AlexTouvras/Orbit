@@ -1508,7 +1508,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "This is an illustration. I have not measured it, and it states no amount.",
             "The list is titled overdue balance. The same invoices could feed two decisions. The controller will decide whether to offer an open invoice more time before write-off. Someone else will choose which customers to call. The controller needs the invoice, what is still unpaid, an open dispute, and the policy. A call is about the customer. Until the brief names the controller's decision, the list stays dark.",
-            "Before a rise is read as a problem, overdue has to mean the same thing as last time, the same invoices have to be included, and recent payments have to be in. A higher count can be more invoices issued, slower payment, or a change in the count. The number marks a pattern. It does not name the cause, and it does not order the offer.",
+            "Before a rise is read as a problem, the comparison has to be fair.",
+            "Overdue means the same thing.",
+            "The same invoices are included. Recent payments are in.",
+            "A higher count can be more invoices issued, slower payment, or a change in the count. The number marks a pattern. It does not name the cause, and it does not order the offer.",
             "The chair in the light is the controller. The dark chair is the call list. Once the brief is filled, the invoice list can go out as that answer. This illustration stops at the proposal.",
           ],
           picture: {
