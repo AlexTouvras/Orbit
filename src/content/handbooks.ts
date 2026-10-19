@@ -1108,8 +1108,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 1,
       topic: "The practice",
       title: "What good looks like",
-      lede: "Asking for a screen is not yet a piece of work. This page follows one decision through the practice, and says how each part depends on the one before it.",
-      rule: "My operating rule: I name the decision and the person who will act, decide whether the work is worth keeping, make the number answer that decision, keep only the tools and the care it needs, and later ask whether the decision got better. If it did not, I change the work or I stop it.",
+      lede: "Asking for a screen is not yet a piece of work. Good analytics is a capability the organization can run: a named decision, a number that can be trusted, technology it can keep, and a later check on whether the decision got better.",
+      rule: "My operating rule: I name the decision and the person who will act. I decide whether the work is worth the cost of keeping it. I define the number so it answers that decision. I choose technology I can operate. I later ask whether the decision got better. If it did not, I change the work or I stop it.",
       illustration: "The invoice path is an illustration, not a record.",
       reviewed: "19 Oct 2026",
       ground: {
@@ -1119,98 +1119,107 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       sections: [
         {
           id: "path",
-          title: "The path",
+          title: "The capability",
           paragraphs: [
-            "The analytics field card is the map. It shows four steps for one number, the parts of a stack, the tools, the trust lines, and a ladder with four rungs: Ad hoc, Defined, Managed, and Optimized. The ladder is guidance for how much operating burden an organization can keep. It does not sort every technique onto a rung. Here is that map used on one example. I have not measured this example, and it states no amount.",
-            "A credit controller can offer an open invoice more time to pay, or refuse that time, before the account is written off. An overdue invoice can mean three different things. The customer may already be paying on agreed terms. The invoice may be a billing error. Or the customer may not pay. In this example there is a written standard for an open invoice, and one person owns the list. Nobody is monitoring it yet. On the card, that is Defined: standards and basic governance.",
-          ],
-          lines: [
-            {
-              term: "Place the work",
-              detail:
-                "The request arrives as a screen of overdue invoices. The need is the offer of time, made by one controller, before a write-off. The row, the tools, the owner, and the later review have nothing to serve until that decision and that person are named.",
-            },
-            {
-              term: "Choose the work",
-              detail:
-                "Once the decision is named, the question is whether to build. A live screen for every collector would serve a different need, choosing whom to call, and it would add a daily cost this decision does not use. A list from yesterday can serve the offer. Choose the work compares the outcome, the simplest way to reach it, the cost of keeping it, and what would make us stop.",
-            },
-            {
-              term: "Make the number fit",
-              detail:
-                "The list helps only if one row matches the decision. Here, one row is one open invoice as of yesterday, and invoices already written off are left out. A second list, with one row per customer at month-end, is a question about the data. I do not publish a figure halfway between the two. Name the decision, Say what one row means, When two reports don't match, and Keep the definition teach those steps.",
-            },
-            {
-              term: "Choose the stack",
-              detail:
-                "The tools follow the work, and so does the cost of running them. One person, one list, as of yesterday, from the invoice ledger, does not need a warehouse, a live refresh, or a scheduler. Those would add operating cost the offer does not use. Choose the stack is where the parts and the refusals are written.",
-            },
-            {
-              term: "Keep trust in force",
-              detail:
-                "After the list is published, it has to stay the list that was agreed. The controller can see it. The person who approved a row can change it. A list older than yesterday does not go out, because the offer uses yesterday's open invoices. A second list that nobody can explain does not go out. Without those rules, the decision the list was built for becomes a different one. Keep trust in force is where the rules stay.",
-            },
-            {
-              term: "Judge the value",
-              detail:
-                "Building the list is not the result. Run the product and judge the value asks whether to keep it, change it, or stop paying for it. The controller may have stopped using it, or yesterday may no longer be fresh enough. Separately, I would look at what followed an offer: the account stayed current, or the invoice was written off. I set no target, and I have not collected that. Stopping is part of the practice.",
-            },
+            "Good analytics connects a business question to a decision a named person will make. The number has to be one that person can trust. Someone has to be able to run the work after it is built. Later, I look at whether the decision got better. A report, a model, or a platform is not that capability. Technology supports the practice. It does not define it.",
+            "The analytics field card is the map I drew for this book. It is my companion, not an independent source. Ask, Grain, Truth, and Use are the path one number walks. Ask names the decision and the person. Grain says what one row means. Truth is the check that the number can be trusted, including an explanation when two reports disagree. Use is the action, and a later look at what happened. Those four steps are not the lifecycle of the capability. The lifecycle is choosing what to build, choosing the tools, setting the controls, naming an owner, watching the work, and improving it or stopping it.",
+            "This operating model is my synthesis. From the GAO guide for agency performance plans, April 1998, I take one link. When a goal does not measure itself, the measures are how you see what happened, decide, and say who is accountable. The guide is about a plan. I use that link. I do not apply the rest of the guide, and the guide does not establish this model.",
           ],
           figure: {
             kind: "flow",
-            caption: "The same example. The point is what the offer costs. No amount is shown.",
+            caption:
+              "The operating model. The decision, the path a number walks, the work of running it, and the later check. Technology supports the practice.",
             steps: [
               {
                 term: "Decision",
-                detail: "Offer more time, or refuse it. One controller. A screen for every collector is a different decision.",
+                detail: "A named person and a named choice. A requested screen is not yet that choice.",
               },
               {
-                term: "Row",
-                detail: "One open invoice, as of yesterday. Invoices already written off are left out.",
+                term: "Path",
+                detail: "Ask, Grain, Truth, and Use. One number, defined and checked before anyone acts on it.",
               },
               {
-                term: "Stop",
-                detail: "A second list, one row per customer at month-end, stays unpublished until someone can explain the difference.",
+                term: "Practice",
+                detail: "What to build, the tools, the controls, and an owner. Watch the work. Improve it, or stop it.",
               },
               {
-                term: "Trade-off",
+                term: "Check",
                 detail:
-                  "A higher count can mean the customer is on agreed terms, the invoice is wrong, or the debt will not be paid. Refusing time to a customer who is paying on agreed terms can lose the account. Offering time on a debt that will not be paid leads to a write-off.",
+                  "Whether people use it, whether it can still be kept, and what happened in the business. An outcome does not, by itself, prove the cause.",
               },
             ],
           },
-          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+          sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "path-case",
+          title: "One decision",
+          paragraphs: [
+            "The invoice path is an illustration. I have not measured it, and it states no amount. A credit controller decides whether to offer an open invoice more time to pay, or to refuse that time, before the account is written off. The list supports that choice inside an agreed credit policy. It does not replace the policy, and it does not replace the controller.",
+            "An overdue invoice can mean the customer is paying on agreed terms, the invoice is a billing error, or the debt is unlikely to be paid. The list should show what distinguishes those cases: the agreed terms, whether the invoice has been disputed, and what has already been paid. I do not write the policy that says which case gets more time. Refusing time to a customer who is paying on agreed terms can lose the account. Offering time on a debt that will not be paid leads to a write-off.",
+            "The population is open invoices, as of yesterday. Invoices already written off are left out. Yesterday is fresh enough because the offer is made before write-off, not while the customer is on the phone. A partial payment, an open dispute, or a write-off after that snapshot changes what the row includes. Those rules belong in the sentence on Say what one row means.",
+            "A second report, one row per customer at month-end, can disagree without either total being miscalculated. The cause can be the grain, the date, what is included, the status rules, how the rows are added, or how the amount is calculated. I do not publish a number between the two. When two reports don't match is where that difference is explained, or the number stays unpublished.",
+            "For this decision I would build yesterday's list for that one controller. A live screen for every collector answers whom to call now. That is a different decision, and keeping it means a number that moves all day. A simpler build is not automatically better. This offer does not improve because the number is newer than yesterday. A calling prediction waits until the list is in use.",
+            "The tools follow that choice. This illustration takes one report, dbt, DuckDB, and the invoice ledger. Snowflake is refused because the warehouse is not the constraint. A live refresh and a scheduler are refused because the controller can refresh yesterday's list. Once the list is published, the controller can see it, the owner can change the row, and a list older than yesterday does not go out.",
+          ],
         },
         {
           id: "path-number",
           title: "One number",
           paragraphs: [
-            "Ask, Grain, Truth, and Use test one number. They sit inside the practice above. They do not replace it. Ask is whether this controller offers more time. Grain is one open invoice, as of yesterday. Truth is that one person owns the row, and a second list with no explanation does not go out.",
-            "Use is the offer, checked later by what happened. The check is whether the account stayed current, or the invoice was written off.",
-            "I take the link between the measure and the decision from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. When a goal does not measure itself, the measures are how you see what happened, decide, and say who is accountable. I use that link. I do not apply the rest of the guide.",
+            "The same decision, read as the four steps. Each line is the test for the number.",
           ],
-          sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
+          lines: [
+            {
+              term: "Ask",
+              detail:
+                "Will this controller offer more time, inside the agreed policy, before write-off? The person is the controller.",
+            },
+            {
+              term: "Grain",
+              detail:
+                "One open invoice as of yesterday. Written-off invoices are out. A partial payment, a dispute, and a later write-off belong in that sentence.",
+            },
+            {
+              term: "Truth",
+              detail:
+                "One person owns the row. A second report stays unpublished until the difference is explained. The grain is one cause. The date, the scope, the status rules, the aggregation, and the calculation are others.",
+            },
+            {
+              term: "Use",
+              detail:
+                "The controller uses the list to offer time or to refuse it. What happens to the account afterwards is a separate question.",
+            },
+          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
           id: "path-rung",
           title: "The organization",
           paragraphs: [
-            "The ladder says how much operating burden the organization can keep. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. They do not name the rung, and a prediction is not automatically the top rung. A model can be kept where someone already watches the number and can explain a disagreement. What this example cannot keep is a live screen for every collector, moving through the day, with a model choosing the calls. That is a heavier burden. It is not the next phase of one owned list.",
+            "The card names four rungs: Ad hoc, Defined, Managed, and Optimized. I use them as guidance for how much of this practice the organization already keeps. I do not use them to rank a technique by its name. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. A prediction is not the top rung merely because that is what it is called.",
+            "Maturity, as I use the word, means the work is owned, repeatable, checked for quality, governed, monitored, used, and able to show its value. Prediction, a number that changes through the day, and self-service are capabilities. The card's words for Optimized are predictive, real-time, and self-service. Those words do not define a mature practice. An organization can have all three and still decide badly, carry more operating cost than the decision needs, or have no one accountable.",
           ],
           lines: [
             {
               term: "Ad hoc",
-              detail: "People do the work by hand, and not in the same way twice. The number is hard to trust.",
+              detail:
+                "The card says manual, inconsistent, and low trust. People do the work by hand, and not in the same way twice.",
             },
-            { term: "Defined", detail: "There is a written standard, and someone owns it." },
+            {
+              term: "Defined",
+              detail:
+                "The card says standards and basic governance. There is a written standard, and someone owns it. The invoice list in this illustration sits here: one owner, and nobody monitoring it yet.",
+            },
             {
               term: "Managed",
-              detail: "The work runs without someone starting it each time. Someone watches it, and a disagreement gets an explanation.",
+              detail:
+                "The card says automated, monitored, and reconciled. The work runs without someone starting it each time. Someone watches it, and a disagreement gets an explanation.",
             },
             {
               term: "Optimized",
               detail:
-                "The organization can use a prediction, a number that changes through the day, and let people get the number themselves. I do not aim at this rung for every decision.",
+                "I add a prediction, a live number, or self-service only when this decision needs them and someone can keep them. I do not add them in order to move up the ladder. A model can be kept where someone already watches the number and can explain a disagreement.",
             },
           ],
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
@@ -1219,32 +1228,33 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-know",
           title: "How I would know",
           paragraphs: [
-            "I ask two different questions. One is whether we followed the practice. The other is whether the decision got better. I have no target times, and I have not collected a result for either.",
+            "A decision written down before anyone builds shows that the practice was followed. It does not show that anyone used the result, and it does not show that the business got better. If the controller cannot say what one row means, the list does not go out. That checks the number. It is not a business result.",
+            "After the list is in use, I separate three questions. I have not collected an answer to any of them, and I set no target. Adoption is whether the controller uses the list for the offer. Operating performance is whether yesterday's list still arrives in time, and whether keeping it still takes only the effort we accepted. Business impact is what happens to the account after an offer, in the period until it is current or written off. That outcome does not, by itself, prove the offer caused it. The customer's circumstances, the terms, and which invoices were selected can all change the result.",
+            "Run the product and judge the value decides whether to continue, change, or stop, from whether the list is still used, whether it is still fresh enough, and what is still kept. It does not score a return. Name the decision is where a hypothesis is written so it can be checked. The method for separating the offer's effect from everything else is not on this page.",
           ],
           lines: [
             {
-              term: "Before building",
-              detail:
-                "The decision is written down before anyone builds a screen. We have agreed to build, or we have written why not. That shows the practice was followed. It does not show that the decision got better.",
+              term: "Adoption",
+              detail: "Does the controller use the list when deciding whether to offer time?",
             },
             {
-              term: "The number",
+              term: "Operations",
               detail:
-                "The controller can explain what one row is. If that explanation cannot be given, the list does not go out. This checks the number. It is not a business result.",
+                "Does the list still arrive in time for an offer made before write-off, and is the effort to keep it still the one person's time we accepted?",
             },
             {
-              term: "After use",
+              term: "Impact",
               detail:
-                "I would look at three things, and I have not collected them. Does the controller use the list when offering time? After an offer, did the account stay current, or was the invoice written off? Is keeping the list still only that person's time? I set no target.",
+                "After the offer, did the account become current, or was the invoice written off? That is what I would look at. It is not a cause.",
             },
           ],
         },
         {
           id: "path-limits",
-          title: "Where I do not use it",
+          title: "The rest of the book",
           paragraphs: [
-            "This page shows how the parts depend on one another. The later pages teach each part: the comparison, the brief, what one row means, a disagreement between two reports, the owner, the tools, and the review.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+            "Choose the work compares the investment: the outcome, a way that is sufficient, the cost of keeping it, and what to defer. Make the number fit to use is Name the decision, Say what one row means, When two reports don't match, and Keep the definition. Choose the stack names the tools. Keep trust in force keeps the rules. Run the product and judge the value is continue, change, or stop.",
+            "Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
             { href: DATA_CARD, label: "Data analytics field card" },
@@ -1256,7 +1266,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-draft",
           title: "When AI drafts the work",
           paragraphs: [
-            "This still holds when a model drafts the page. The controller has to accept the cost of the choice: refusing time to a customer who is paying on agreed terms, or offering time on a debt that will not be paid. A draft that names Ask, Grain, Truth, and Use, and never says what that choice costs, has not described the work.",
+            "This still holds when a model drafts the page. The draft has to describe the decision the controller will make, and what it costs to offer more time or to refuse it. Naming Ask, Grain, Truth, and Use is not that description.",
           ],
         },
       ],
