@@ -38,6 +38,14 @@ export function chapterTitleForPage(handbook: Handbook, pageNumber: number): str
   return chapterForPage(handbook, pageNumber)?.title ?? "";
 }
 
+/** The library's chapter count. The page number stays the address. */
+export function chapterPlace(handbook: Handbook, pageNumber: number): { place: number; count: number } {
+  const index = handbook.contents.findIndex(
+    (entry) => entry.page === pageNumber || entry.sections?.some((section) => section.page === pageNumber),
+  );
+  return { place: index >= 0 ? index + 1 : 1, count: handbook.contents.length };
+}
+
 export function adjacentPages(
   handbook: Handbook,
   pageNumber: number,
