@@ -1108,8 +1108,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 1,
       topic: "The practice",
       title: "What good looks like",
-      lede: "A request for a number is not yet a piece of work. This page is how I place it before anyone builds.",
-      rule: "My operating rule: I place the work on the path before I build it. A number goes out as the answer only when the person who will act can say Ask, Grain, Truth, and Use.",
+      lede: "A request for a screen is not a piece of work. This page walks one decision from the problem to the review, and names the page that teaches each part.",
+      rule: "My operating rule: I name the decision and the person who will act, choose whether to build, make the number fit that decision, keep only the tools it needs, and later ask whether the decision got better.",
       illustration: "The invoice path is an illustration, not a record.",
       reviewed: "19 Oct 2026",
       ground: {
@@ -1121,109 +1121,80 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path",
           title: "The path",
           paragraphs: [
-            "The analytics field card carries the four steps for a number, the architecture plates, the tool lanes, the trust strip, and the maturity ladder. The order below is how I run that card. Each part leaves something the next part can use. If that thing cannot be said, the next part does not start.",
+            "The analytics field card is the map: four steps for a number, the plates, the tools, the trust lines, and the maturity ladder. Below is how I run that map on one illustration. It is not a portfolio I measured, and it states no amount.",
+            "A credit controller can offer an open invoice more time to pay, or refuse it, before the account is written off. Overdue is not one situation. The customer may be paying on agreed terms. The invoice may be a billing error. Or the debt may not be paid. On this illustration the organization is Defined: a written standard for an open invoice, and one role owns the list. The number is not yet a monitored product.",
           ],
           lines: [
             {
               term: "Place the work",
               detail:
-                "Name the decision this work is for, and the rung the organization is actually on. A request for a screen, with neither of those, is not a piece of work yet.",
+                "The request was a screen of overdue invoices. The decision is whether this controller offers more time on an open invoice before it is written off. Until that sentence exists, I do not start.",
             },
             {
               term: "Choose the work",
               detail:
-                "Take the case, or write why you will not build. The case names the decision, the person who would act, what gets better, what it costs to keep, and a rung this organization can already keep. If a smaller way would do, or the rung is too high, write the reason not to.",
+                "A live screen for every collector, refreshed through the day, with a prediction of whom to call, is a different decision and needs a higher rung. I refuse it. I take one list, as of yesterday, for the role that can offer time. Choose the work is where that comparison is written.",
             },
             {
               term: "Make the number fit",
               detail:
-                "Say the decision, what one row represents, what you do when two reports disagree, and who owns the meaning. The person who will act has to be able to say those back. Until they can, the number is not the answer.",
+                "One row is an open invoice as of yesterday. Written-off accounts are out. A second list, whose row is a customer at month-end, does not get a number published between them. Name the decision, Say what one row means, When two reports don't match, and Keep the definition teach those steps.",
             },
             {
               term: "Choose the stack",
               detail:
-                "Match the plates and the tools to the workload: how much data, how many people at once, and how fresh the number has to be. Name what you will not run. A tool list with nothing refused is not a choice.",
+                "The workload is one list, one role, as of yesterday, from the invoice ledger. Snowflake, a live screen, and a scheduler are refused: the warehouse is not the constraint, and the role can refresh yesterday's list. Choose the stack is where the plates and those refusals are written.",
             },
             {
               term: "Keep trust in force",
               detail:
-                "For the numbers that share a system, keep who can see a number, who can change it, where it came from, how fresh it is, and which test can stop it. Those lines stay after the first publish.",
+                "The controller can see the list. The person who approved the row can change it. A list older than yesterday does not go out. A second list with no cause does not go out. Keep trust in force is where those lines stay after the first publish.",
             },
             {
               term: "Judge the value",
               detail:
-                "On a review, continue the product, change it, or stop paying for it. The question is whether the decision still needs the number. A report that people open is not that answer by itself.",
+                "A finished list is not a result. Run the product and judge the value asks whether to continue, change, or stop: the controller still decides from the list, and the list still arrives as of yesterday. What followed the offer, an account that stayed current or a write-off, is the outcome. I set no target.",
             },
           ],
+          figure: {
+            kind: "flow",
+            caption: "The same illustration. The cost of the offer is the point. It states no amount.",
+            steps: [
+              {
+                term: "Decision",
+                detail: "Offer more time, or refuse it. One controller. The screen for every collector is a different decision.",
+              },
+              {
+                term: "Row",
+                detail: "An open invoice as of yesterday. Written-off accounts are out.",
+              },
+              {
+                term: "Stop",
+                detail: "A second list, a customer at month-end, does not go out until the difference has a cause.",
+              },
+              {
+                term: "Trade-off",
+                detail:
+                  "Agreed terms, a billing error, or a debt that will not be paid can all raise the count. Refusing time to a customer on agreed terms costs the account. Offering time that will not be paid costs a write-off.",
+              },
+            ],
+          },
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
           id: "path-number",
           title: "One number",
           paragraphs: [
-            "Ask, Grain, Truth, and Use are the test for one number. They are not the outline of the practice. A line is filled when a person who missed the meeting can say it back.",
-            "The link I use between a measure and a decision comes from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. It says that when a goal does not measure itself, the measures turn the goal into something you can observe, so the agency can see what happened, decide, and say who is accountable. A number on this path exists so a person can see and decide.",
-          ],
-          lines: [
-            {
-              term: "Ask",
-              detail:
-                "The decision, and the person who will act. A report title is not a decision. If the number would not change what that person does, it is not the answer to this question.",
-            },
-            {
-              term: "Grain",
-              detail:
-                "What one row is. The thing, the time, what is included, and what is left out. A list of columns is not that sentence.",
-            },
-            {
-              term: "Truth",
-              detail:
-                "Who owns the meaning, and what stops a bad number from going out. A green build is not that stop. When two reports disagree, do not publish a figure between them until the difference has a cause.",
-            },
-            {
-              term: "Use",
-              detail:
-                "What that person proposes to do if the number rises, and if it falls. Each proposal is a hypothesis to check against the outcome. A change in the number does not say what caused it.",
-            },
+            "On this illustration the test has four names. Ask is whether this controller offers more time. Grain is an open invoice as of yesterday. Truth is that one role owns the row, and a second list with no cause does not go out. Use is the offer, checked later against an account that stayed current or a write-off. Those names are the test inside the path. They are not a second path.",
+            "The link between the measure and the decision is the one I take from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. When a goal does not measure itself, the measures are how you see what happened, decide, and say who is accountable. I use that link. I am not running the guide's checklist.",
           ],
           sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
-        },
-        {
-          id: "path-scene",
-          title: "An example",
-          paragraphs: [
-            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "Someone can give an invoice more time to pay. Ask is whether to give that time. The person is the role that can offer it. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, someone owns the meaning, and a number that fails the check does not go out. A rise in overdue invoices is not yet a reason to refuse more time. It can be customers paying later, a billing error, a change in what counts as overdue, or the season. If the number rises, the proposal is to offer no more time, then check whether accounts stay current. If it falls, the proposal is that the extension can be offered, then check the same outcome. The number does not establish the cause. No amount is written.",
-          ],
-          figure: {
-            kind: "flow",
-            caption: "The same illustration, in order. It states no amount.",
-            steps: [
-              {
-                term: "Ask",
-                detail: "Whether to give an invoice more time to pay. The person is the role that can do that.",
-              },
-              {
-                term: "Grain",
-                detail: "An open invoice as of yesterday. Accounts already written off are left out.",
-              },
-              {
-                term: "Truth",
-                detail: "That grain can be said back. Someone owns the meaning, and a bad number would be stopped.",
-              },
-              {
-                term: "Use",
-                detail:
-                  "If the number rises, propose no more time and check whether accounts stay current. If it falls, propose that the extension can be offered and check the same outcome. A rise is not the cause.",
-              },
-            ],
-          },
         },
         {
           id: "path-rung",
           title: "The organization",
           paragraphs: [
-            "The card's ladder is how far the organization can keep a practice, not how advanced the question sounds. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. A prescriptive recommendation still has to pass Ask, Grain, Truth, and Use. I take work the current rung can keep. If the organization is still ad hoc, I do not start a monitored, reconciled product and call the gap a later phase.",
+            "The card's ladder is how far the organization can keep a practice. Descriptive, diagnostic, predictive, and prescriptive name the kind of question, not the rung. On this illustration Defined can keep one owned list. It cannot keep a live screen and a model that chooses the calls. I do not call that gap a later phase.",
           ],
           lines: [
             { term: "Ad hoc", detail: "Manual, inconsistent, low trust." },
@@ -1231,7 +1202,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             { term: "Managed", detail: "Automated, monitored, reconciled." },
             {
               term: "Optimized",
-              detail: "Predictive use, real-time, and self-service. This rung is not the destination.",
+              detail: "Predictive, real-time, and self-service. This rung is not the destination.",
             },
           ],
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
@@ -1240,20 +1211,23 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-know",
           title: "How I would know",
           paragraphs: [
-            "I watch three things. They tell me the work was placed. They do not tell me the decision got better. That question is the last part of the path, when the product is reviewed. I have no target times, and these definitions are not results I have collected.",
+            "Two questions. I do not mix them. I have no target times, and neither is a result I have collected.",
           ],
           lines: [
             {
-              term: "Placed",
-              detail: "The work has a part of the path. A dashboard with no decision has not been placed.",
+              term: "Before building",
+              detail:
+                "The decision is named before a screen is built. The case is taken, or the reason not to is written. That is the discipline. It is not the value.",
             },
             {
-              term: "Rung",
-              detail: "The rung the organization is on is named, and the work needs no higher rung.",
+              term: "The number",
+              detail:
+                "The controller can say what one row is. A list that fails the check does not go out. That is the discipline of the number.",
             },
             {
-              term: "Number",
-              detail: "A person who missed the meeting can say Ask, Grain, Truth, and Use.",
+              term: "After use",
+              detail:
+                "The controller uses the list when offering time. An offer can be followed to an account that stayed current, or to a write-off. Keeping the list is still one role's time. That is the outcome. This page does not score it.",
             },
           ],
         },
@@ -1261,12 +1235,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page places the work. It does not choose the platform, fill in what one row means, or decide whether a product should continue. Those are later parts of the same path.",
-            "The GAO guide assesses an agency plan. I am not running its checklist. I am using the link it requires between a measure and a decision a person can make.",
+            "This page walks one decision through the path and names the page for each part. It does not fill the case, the brief, the row, the disagreement, the owner, the plates, or the review.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
-            GAO_RESULTS,
             { href: DATA_CARD, label: "Data analytics field card" },
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
@@ -1276,7 +1248,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-draft",
           title: "When AI drafts the work",
           paragraphs: [
-            "This practice holds today, and I expect it to hold, because a person still has to place the work and say Ask, Grain, Truth, and Use. A model can draft the case and a sentence for each step. A fluent draft is not that person, and a tool does not move the organization up a rung.",
+            "This holds when a model drafts the page, because the controller still has to accept the trade-off: refusing time to a customer on agreed terms, or offering time that will not be paid. A draft that names Ask, Grain, Truth, and Use, and skips that cost, has not placed the work.",
           ],
         },
       ],
@@ -1294,8 +1266,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 6,
       topic: "Choose the work",
       title: "Choose the work",
-      lede: "This page is the case I take, or the written reason I do not. The case names the decision, the person who would act, what gets better, what it costs to keep, what else could be done, and a rung the organization can already keep. A written reason is a finished page.",
-      rule: "My operating rule: I start the work only when those are named, the rung is one the organization can keep, and the alternative is not enough. Otherwise I write the reason not to, and I do not start.",
+      lede: "This page is the comparison for the same illustration: one credit controller, one list as of yesterday, and a live screen refused. The sheet is that comparison written down.",
+      rule: "My operating rule: I start only when the benefit, the cost, and an alternative are written, the rung is one the organization can keep, and the alternative is not enough. Otherwise I write the line that failed, and I do not start.",
       illustration: "The invoice case is an illustration, not a record.",
       reviewed: "19 Oct 2026",
       ground: {
@@ -1305,105 +1277,101 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       sections: [
         {
           id: "case",
-          title: "The case",
+          title: "The comparison",
           paragraphs: [
-            "The opening page places the work. This page is the choice to build, or the written reason not to.",
-            "The organization sits on the card's ladder: ad hoc, defined, managed, optimized. Ad hoc is manual, inconsistent, and low trust. Defined is standards and basic governance. Managed is automated, monitored, and reconciled. Optimized is predictive use, real-time, and self-service. The card names the trap this page is for: dashboard-only thinking with no decision. The card also says Spark is for when the volume requires it.",
-            "I take a case the current rung can keep. I also name what gets better, what it costs to keep, and what else could answer the decision. A screen with no decision fails the first of those. A case that needs a higher rung, or a number fresher than the decision needs, fails the next. If a smaller case, a number that already exists, or not building would do, I write that and I do not start. The platform comes after the case is taken. The sheet is my rule. Each case is taken or refused on its own.",
-          ],
-          lines: [
-            {
-              term: "Decision",
-              detail:
-                "The decision, in the words of the person who would act. A report title does not finish the line.",
-            },
-            {
-              term: "Actor",
-              detail: "Who would act. One person, or one role. A mailing list is not the actor.",
-            },
-            {
-              term: "Organization",
-              detail: "The rung in force now. Ad hoc, defined, managed, or optimized.",
-            },
-            {
-              term: "Need",
-              detail:
-                "The rung this case needs. When it is higher than the organization, write a smaller case the current rung can keep, or write the reason not to.",
-            },
-            {
-              term: "Scale",
-              detail:
-                "How much data the decision needs, how many people use the number at once, and how new it has to be. Refuse what the decision does not need.",
-            },
-            {
-              term: "Benefit",
-              detail:
-                "What gets better in the decision. If the only gain is a new screen, the line is not filled.",
-            },
-            {
-              term: "Cost",
-              detail:
-                "Whose time it takes to build, and whose time it takes to keep. Name what that time cannot also do. This line does not need a currency amount.",
-            },
-            {
-              term: "Alternative",
-              detail:
-                "Another way to answer the decision: a smaller case, a number that already exists, or not building. If that way is enough, write the reason not to.",
-            },
-            {
-              term: "Build or stop",
-              detail:
-                "Start when the decision, the actor, the benefit, the cost, and an alternative are named, the rung is one the organization can keep, and the scale is one the decision needs. Otherwise the written reason is the outcome. A blank line is not a reason.",
-            },
-          ],
-          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
-        },
-        {
-          id: "case-scene",
-          title: "An example",
-          paragraphs: [
-            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "Someone asks for two things. One is a screen that refreshes through the day for every person who collects, and a prediction that chooses whom to call. The other is whether one role can give an invoice more time to pay.",
-            "On this illustration the organization is Defined. The live screen is for every collector, and the number moves through the day. Choosing the calls for them is predictive use. That work needs the optimized rung. The benefit is a different decision, whom to call. The cost is someone's time to keep a number that moves all day. The invoice question can be answered by a list as of yesterday. The reason not to is written: the rung is higher than the one in force, the decision does not need a number that moves through the day, and the smaller list is enough.",
-            "The case that is taken is the second request. The decision is whether to give an invoice more time to pay. The actor is the role that can do that. The benefit is that this role can decide before an account is written off. The cost is that role's time to keep one list as of yesterday. The alternative, the live screen, was considered and refused. The rung it needs is Defined. The call list is a different decision, so it is not this case. No amount is written.",
+            "The opening page placed the work. This page decides to build, or writes why not. It is an illustration. It is not a portfolio I measured, and it states no amount.",
+            "The organization is Defined: standards and basic governance. One role owns a written standard for an open invoice. That is not a monitored product, and it is not a model that chooses the calls. The card names the trap this page is for: dashboard-only thinking with no decision.",
+            "Someone asks for a screen that refreshes through the day for every collector, and a prediction of whom to call. The benefit of that screen is a different decision. The cost is daily time, for people who are not this controller, to keep a number that moves all day. The rung it needs is Optimized.",
+            "The invoice decision is answered by a list as of yesterday. The reason not to build the screen is written: the decision is different, the rung is higher than the one in force, and the smaller list is enough.",
+            "The case I take is the list. The decision is whether this controller offers more time on an open invoice before it is written off. Overdue can be agreed terms, a billing error, or a debt that will not be paid. The benefit is that the controller can tell those apart before the write-off. The cost is that role's time to keep one list, and that time does not also keep the live screen. Reading the ledger one invoice at a time does not put the open invoices together. The scale is one role, and the list is one day old. The rung it needs is Defined, which is the rung in force.",
           ],
           figure: {
             kind: "flow",
-            caption: "The same illustration. One case is refused, and one is taken. It states no amount.",
+            caption: "The same illustration. One request is refused, and one is taken. It states no amount.",
             steps: [
               {
                 term: "Refused",
                 detail:
-                  "A live screen for every collector, and a prediction that chooses the calls. The organization is Defined. That work needs Optimized. The benefit is a different decision. A list as of yesterday is enough for the invoice question.",
+                  "A live screen for every collector, and a prediction of whom to call. The benefit is a different decision. The need is Optimized. Yesterday's list is enough for the invoice.",
               },
               {
                 term: "Taken",
                 detail:
-                  "Whether one role gives an invoice more time to pay. The benefit is deciding before an account is written off. The cost is that role's time to keep one list as of yesterday. The live screen was the alternative, and it was refused. The rung it needs is Defined.",
+                  "One list, as of yesterday, for the controller who can offer time. The benefit is telling the overdue cases apart before a write-off. The cost is that role's time. The need is Defined.",
               },
             ],
           },
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "case-sheet",
+          title: "The case",
+          paragraphs: [
+            "These lines are that comparison, filled in. What would count is named now, before anyone builds. It is not a result I have collected.",
+          ],
+          lines: [
+            {
+              term: "Decision",
+              detail: "Whether this controller offers more time on an open invoice before it is written off.",
+            },
+            {
+              term: "Actor",
+              detail: "The credit controller who can offer that time. Not every collector.",
+            },
+            {
+              term: "Organization",
+              detail: "Defined. A written standard for an open invoice, and one role owns the list.",
+            },
+            {
+              term: "Need",
+              detail: "Defined for the list. The live screen and the call prediction need Optimized, so they are not this case.",
+            },
+            {
+              term: "Scale",
+              detail: "One role. One list. As of yesterday. Not every collector, and not through the day.",
+            },
+            {
+              term: "Benefit",
+              detail:
+                "The controller can tell agreed terms, a billing error, and a debt that will not be paid apart, before a write-off. A new screen is not the benefit.",
+            },
+            {
+              term: "Cost",
+              detail: "That role's time to keep the list. That time does not also keep a live screen. No currency amount.",
+            },
+            {
+              term: "Alternative",
+              detail:
+                "The live screen answers whom to call, and Defined cannot keep it. Reading the ledger one invoice at a time does not put the open invoices in one list. The list is taken because neither is enough for this decision.",
+            },
+            {
+              term: "What would count",
+              detail:
+                "The controller uses the list when offering time. An offer can be followed to an account that stayed current, or to a write-off. Keeping the list is still that role's time. No target. This page does not score it.",
+            },
+            {
+              term: "Build or stop",
+              detail:
+                "The list is taken. The live screen is a written no: a different decision, a higher rung, and yesterday's list is enough for the invoice.",
+            },
+          ],
         },
         {
           id: "case-know",
           title: "How I would know",
           paragraphs: [
-            "I watch three things. I have no target times, and these definitions are not results I have collected.",
-            "A taken case names the decision, the person, the benefit, the cost, the alternative, and a rung the organization can keep.",
-            "A refusal is a written reason that names what failed: the rung, the scale, a benefit that is only a screen, a cost the organization cannot keep, or an alternative that was enough.",
-            "A blank start is work that began with no case and no written reason.",
-            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+            "Two questions. I do not mix them. I have no target times, and neither is a result I have collected.",
           ],
           lines: [
             {
-              term: "Refused",
+              term: "On the day",
               detail:
-                "Live screen for every collector. Benefit: a different decision. Alternative: a list as of yesterday, and it is enough. Need: Optimized. Not taken.",
+                "Every line on the case is filled, or the written reason names the line that failed. A blank start is work that began with neither. That is the discipline.",
             },
             {
-              term: "Taken",
+              term: "Later",
               detail:
-                "More time on one invoice. Benefit: decide before a write-off. Cost: one list as of yesterday. Alternative: the live screen, refused. Need: Defined. Taken. No amount is written.",
+                "What would count, on the case. Use of the list, what followed the offer, and whether the cost stayed one role's time. That is the outcome. This page records it. It does not score it.",
             },
           ],
         },
@@ -1411,10 +1379,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page decides whether to start. After a case is taken, the brief names the outcome, the constraint, and the hypotheses. This page does not.",
-            "This page refuses scale the decision does not need. It does not choose the platform.",
-            "A product that is already running is a later review: continue it, change it, or stop paying for it.",
-            "Ask, Grain, Truth, and Use are the test for the number, after this page.",
+            "This page decides whether to start. Name the decision fills the brief after the case is taken. Choose the stack names the plates. Run the product and judge the value is the later call to continue, change, or stop.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
@@ -1427,7 +1392,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-draft",
           title: "When AI drafts the case",
           paragraphs: [
-            "This page holds today, and I expect it to hold, because a person still has to name the benefit, the cost, and what else could be done, and the case still has to be a rung the organization can keep. A model can draft a case that looks finished. A draft that names a tool and skips the person, the cost, or the alternative is not a decision to build.",
+            "This holds when a model drafts the case, because the controller still has to accept the cost of the offer: refusing time to a customer on agreed terms, or offering time that will not be paid. A draft that names a tool, and skips the alternative or what would count later, is not a decision to build.",
           ],
         },
       ],
