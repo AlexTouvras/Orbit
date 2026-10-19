@@ -15,7 +15,7 @@ Fingerprint: wrong assumption → measurable method → conditional result → n
    - **Decision.** The rule, at the unit you ship: a report, a release, a habit. When your work is wider than the Signal's demo, the demo's grain fails as the unit.
    - **Evidence.** The claim in the source you opened, then the example in one clause. If you cannot say the claim without retelling the example, the thesis is still the example.
    - **Rejected.** What you will not do. Include steps in the source you do not use, and any project that does a different job.
-   - **Unproven.** What you have not checked. Hedge it.
+   - **Unproven.** What you have not checked in your own work. Hedge that. An unread book, paper, or article stays out of the notes.
    - **Monday.** One sentence for the issue. One sentence for the gate that stops a repeat. The gate is work you already do on this artifact. A project in the intake list is not that gate unless the brief names it as the bridge.
 
 Those notes live in the sections. A checklist pasted at the end fails. Do not start prose until a stranger could say the issue and the gate from the notes alone.
@@ -43,7 +43,7 @@ Fail any of these and rewrite the section.
 - Nicknames are glossed on first use. Metrics are translated once (fitness load, not only CTL).
 - It opens on friction or a false belief. Nouns are specific. One sentence is worth underlining (a decision, a constraint, or a number).
 - It names where the move fails, who loses, or what stays broken.
-- Claims trace to a source you opened, or they are hedged. A hypothetical scene says so in one clause. No invented numbers, quotations, or project outcomes.
+- Claims trace to a source you opened. An unread book, paper, or article stays unnamed. Hedge a claim about your own work that you have not checked. A hypothetical scene says so in one clause. No invented numbers, quotations, or project outcomes.
 - One thesis. Not a digest, a tool catalog, an architecture dump, or a literature review.
 - The takeaway is a rule you will keep. It does not sell the author, name a target job, or end on a role badge.
 - Cadence: at most one em dash per ~500 words; no three sentences of similar length in a row; no default list of three; "It's not X, it's Y" at most once. Banned words from `anti-ai-slop-writing` (delve, landscape, tapestry, seamless, robust, leverage as a verb, unlock, foster, pivotal).
@@ -58,7 +58,7 @@ Fail any of these and rewrite the section.
 | A hypothetical company as the default subject | Open on the Signal, or on work you can say in public. |
 | Charts, a film, or a metadata block beside the essay | Desks and `/stories` carry the picture. Writes stay prose. |
 | A volume target | One essay that survives a conversation is the unit. |
-| A market statistic you did not open | Cite the primary Signal. Hedge anything you did not read. |
+| A source or statistic you did not open | Leave it unnamed. Cite the primary Signal for the claim that Signal makes. |
 | The Signal's worked example as the plot | The claim is the thesis. The example is a witness. |
 | A Power BI or Fabric feature as the weekly plot, when another Signal is in the intake | That lane stays in Related articles. The owner asked for other topics. |
 | A gate borrowed from a different project | The practice has to be the work this decision is about. |

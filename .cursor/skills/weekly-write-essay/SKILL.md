@@ -35,7 +35,7 @@ Do not cite deleted placeholders (for example the former `power-bi-monday-dashbo
 ## Procedure
 
 1. **Read the brief.** Thesis question plus the primary Signal. If that primary is a Power BI or Fabric feature and the intake has another lane, write from the strongest Signal in another lane. Supporting Signals stay adjacent. Use a project bridge only when the brief names one. The intake project list is not a named bridge.
-2. **Draft from `docs/essay-voice.md`.** Five headlines, then the five argument notes, then the prose. The notes separate the Signal's claim from its example, and they name the issue plus the gate in work you already do on this artifact. Do not write paragraphs until a stranger could say that issue and that gate from the notes alone. `## The question` first, `## Takeaway` last, about 700–1000 words (hard bounds 500–1600). Cite the primary Signal. Optional: one `/architecture/{slug}` link when the essay is about a featured project.
+2. **Draft from `docs/essay-voice.md`.** Five headlines, then the five argument notes, then the prose. The notes separate the Signal's claim from its example, and they name the issue plus the gate in work you already do on this artifact. Do not write paragraphs until a stranger could say that issue and that gate from the notes alone. `## The question` first, `## Takeaway` last, about 700–1000 words (hard bounds 500–1600). Cite the primary Signal. Leave an unread book, paper, or article unnamed. Do not mention it and then say you have not read it. Optional: one `/architecture/{slug}` link when the essay is about a featured project.
 3. **Build the MDX string** (frontmatter, then body). SEO comes from `title`, `summary`, `date`, `category`, and `tags`. A first publish omits `updated`.
 4. **Save** `data/weekly-write-draft.json` (shape in `reference.md`). `status: "pending"`, `source: "ide"`, `intake` copied from the brief JSON, `id` like `ww-{weekOf}-ide`, slug from the title.
 5. **UTF-8.** At most one em dash per ~500 words. No mojibake.
@@ -65,6 +65,7 @@ These match `failsEssayQuality` in `src/lib/weekly-write/draft.ts`. The voice ba
 - Writing the week's essay about a Power BI or Fabric feature when the intake has another lane
 - Forcing a project bridge the brief does not name
 - Notifying while the notes still walk the Signal's example, copy steps you do not use, or borrow a project that does a different job
+- Naming a book, paper, or article and then saying you have not read it. Leave that source out and keep the primary Signal's claim.
 - Treating an `/architecture/` page as the essay
 - Notifying from a feature branch without syncing the draft JSON to the default branch
 
