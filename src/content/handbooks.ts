@@ -1431,8 +1431,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 2,
       topic: "Make the number fit",
       title: "Name the decision",
-      lede: "Choose the work has already taken the list. This page writes the brief that list is allowed to answer. A report title is not the decision. A blank line means the number is not that answer.",
-      rule: "My operating rule: I name the decision, the outcome, the person who will act, the constraint, the one activity, and a hypothesis if the number rises and if it falls. I do not publish the number as the answer until those are named. A hypothesis is a proposal to check. It is not an order, and it is not a cause.",
+      lede: "Choose the work has already taken the list. This page writes the brief for a number that will be offered as the answer. A chart used to look can go out before the brief is filled. The answer cannot. A report title is not the decision.",
+      rule: "My operating rule: when a number is offered as the answer, I name the decision, the outcome, the person who will act, the constraint, and the one activity. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. I do not present the number as that answer until those are named.",
       illustration: "The two chairs are an illustration, not a record.",
       reviewed: "19 Oct 2026",
       sections: [
@@ -1440,9 +1440,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "brief",
           title: "The brief",
           paragraphs: [
-            "The case is already taken. This sheet does not decide whether to build. It names what the number is allowed to answer, before anyone treats it as that answer.",
-            "The Activity line is Kimball's business process: the real activity the rows come from. The Outcome line is the goal the measure has to represent. I take that link from the GAO guide for agency performance plans, April 1998. The decision, the person, the constraint, the two hypotheses, and the stop are my rule. Kimball's design meeting does not fill this brief, and the guide does not supply those lines.",
-            "What one row means is the next page. A second report that disagrees is When two reports don't match. This page does not write the row, and it does not pick a number between two reports.",
+            "The case is already taken. This sheet is not the decision to build. It is the brief for a number offered as the answer. Looking at a chart is not that offer.",
+            "The Activity line is Kimball's business process. The Outcome line is the goal the measure has to represent. I take that link from the GAO guide, April 1998. The decision, the person, the constraint, the two hypotheses, and the stop are my rule.",
+            "A metric can raise a question. It cannot establish a cause, or dictate the action, without the context. The row, a disagreement between two reports, and the owner are the next leaves of this chapter.",
           ],
           lines: [
             {
@@ -1467,12 +1467,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "If it rises",
               detail:
-                "A hypothesis to check, not an order. More open invoices does not by itself mean refuse time. The proposal is that the controller looks at the new invoices under the policy: agreed terms, a billing error, or a debt unlikely to be paid. If a higher count would not change what they do, this number is not the answer.",
+                "A hypothesis to check. A higher count can be more invoices issued, slower payment, or a change in what is counted. It is not an order to refuse time, and it is not a reason to treat every new invoice the same way. If a higher count would not change what they do, this number is not the answer.",
             },
             {
               term: "If it falls",
               detail:
-                "A hypothesis to check, not an order. Fewer open invoices does not by itself mean offer time. The proposal is that fewer invoices still need that look. Neither line fires by itself. A later match with the outcome is not proof the proposal caused it.",
+                "A hypothesis to check. A lower count can be fewer invoices issued, faster payment, or a change in the count. It is not an order to offer time. Neither line fires by itself. A later match with the outcome is not proof the proposal caused it.",
             },
             {
               term: "Activity",
@@ -1482,7 +1482,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "Send it",
               detail:
-                "Only when the lines above are filled. A blank line means the table can stay, and it is not the answer. Sending it does not make a hypothesis true. This sheet does not pick a number between two reports.",
+                "Filled when the number is offered as the answer and the lines above are filled. A blank line means people can still look, and the number is not that answer. Sending it does not make a hypothesis true.",
             },
           ],
           sources: [KIMBALL_PROCESS, KIMBALL_STEPS, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
@@ -1492,8 +1492,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "Why the lines are separate",
           paragraphs: [
             "Kimball's four-step design puts the business first. Before the model is drawn, the team sits with the people who use the numbers. They learn the goals, the problems, how decisions get made, the analysis those people need, and what the source data can support. The design then starts by choosing the business process. That process is a real activity, such as taking an order, handling a claim, or recording every account at month-end. Most fact tables cover one activity. Choosing it is what lets you say what one row means. People from the business take part so the names and the rules are agreed. That meeting learns how decisions get made. It does not fill this brief. A report title is not the activity.",
-            "The GAO guide is about a plan, not a dashboard. Measures should show progress toward the goals. When a goal does not measure itself, the measures are how you see what happened, decide, and say who is accountable. A measure has to represent the performance it is supposed to assess, or be clearly related to it. The guide's own example is a measure that misses its goal: the average time to process a tax return does not represent the goal of making that processing more accurate. The time can be collected carefully and still be the wrong number. I use that link, and I write the goal on the Outcome line. I am not running the rest of the guide. It does not give the constraint, and it does not turn a response into an order.",
-            "A check can already have passed, and the number can still be the wrong answer, because the meeting may be deciding something else. The field card names that failure: the wrong question, the wrong audience, or an unclear decision. I read the question as the Decision line, the audience as the Actor, and an unclear decision as a hypothesis that has not been written.",
+            "The GAO guide is about a plan, not a dashboard. A measure has to represent the performance it is supposed to assess, or be clearly related to it. The guide's own example is the average time to process a tax return, set against a goal of more accurate processing. The time can be collected carefully and still be the wrong number. It can be a trustworthy measure of speed, and unfit as the answer to a question about accuracy. I write the goal on the Outcome line. I am not running the rest of the guide. It does not give the constraint, and it does not turn a response into an order.",
+            "The field card names the same failure: the wrong question, the wrong audience, or an unclear decision. I read the question as the Decision line, the audience as the Actor, and an unclear decision as a hypothesis that has not been written.",
           ],
           sources: [KIMBALL_STEPS, KIMBALL_PROCESS, KIMBALL_PDF, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
         },
@@ -1502,11 +1502,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An example",
           paragraphs: [
             "This is an illustration. I have not measured it, and it states no amount.",
-            "The list is titled overdue balance. Two decisions are in the room. One person will choose which customers to call. The controller will decide whether to offer an open invoice more time before write-off. The rows can answer the controller, because that decision is about an invoice.",
-            "They are not the call list. A call is about a customer. Until the brief names which decision this number is for, the list stays dark.",
-            "Once the sheet is filled, the decision is whether this controller offers more time. The outcome is that the offer is made under the agreed policy, and we can later see whether the account became current or the invoice was written off. The actor is the controller. The constraint is that the list does not replace the policy, more time may be offered, and the amount owed is not forgiven. The activity is the open invoice. The call list is a second activity, so it is not this number.",
-            "If the count of open invoices rises, the hypothesis is that the controller looks at the new invoices under the policy. A higher count is not an order to refuse time. If the count falls, the hypothesis is that fewer invoices still need that look. A lower count is not an order to offer time. This illustration stops at the proposal. It does not report the later check, and a later match would not by itself prove the proposal caused it.",
-            "The chair in the light is the controller. The dark chair is the call list, which this number does not answer. The invoice list can go out as the answer to the filled brief. If a second list arrives and a row on it is a customer at month-end, that disagreement is When two reports don't match.",
+            "The list is titled overdue balance. The same invoices could feed two decisions. The controller will decide whether to offer an open invoice more time before write-off. Someone else will choose which customers to call. The controller needs the invoice, what is still unpaid, an open dispute, and the policy. A call is about the customer. Until the brief names the controller's decision, the list stays dark.",
+            "Before a rise is read as a problem, the comparison has to be fair.",
+            "Overdue means the same thing.",
+            "The same invoices are included. Recent payments are in.",
+            "A higher count can be more invoices issued, slower payment, or a change in the count. The number marks a pattern. It does not name the cause, and it does not order the offer.",
+            "The chair in the light is the controller. The dark chair is the call list. Once the brief is filled, the invoice list can go out as that answer. This illustration stops at the proposal.",
           ],
           picture: {
             src: `${DATA_ART}/decision.jpg`,
@@ -1517,28 +1518,28 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-know",
           title: "How I would know",
           paragraphs: [
-            "I would look at four things. I have not collected them, and I set no target. A filled sheet that nobody looks back at does not show that the decision got better.",
+            "I would look at four things. I have not collected them, and I set no target. Opening the list is use. It is not proof the decision got better.",
           ],
           lines: [
             {
               term: "Said back",
               detail:
-                "Can a person who missed the meeting say the decision, the outcome, the constraint, and who will act? If they cannot, the brief is not in use. This check comes before any result.",
+                "Can a person who missed the meeting say the decision, the limit, and who will act? If they cannot, the brief is not in use.",
             },
             {
-              term: "Checked",
+              term: "Used",
               detail:
-                "After they acted, did they write whether they did what the hypothesis proposed, and whether the account became current or the invoice was written off? A match is not proof the proposal caused it. A miss is the note the next brief starts from.",
+                "Did the list change which invoices they reviewed, under the policy, without becoming the order?",
             },
             {
-              term: "Retired",
+              term: "Later",
               detail:
-                "Did they stop proposing a response because the outcome did not follow? I am defining that note. I am not reporting a response I have retired.",
+                "After they acted, what happened to the account? A match is not proof the list caused it. A miss is the note the next brief starts from.",
             },
             {
               term: "Parked",
               detail:
-                "Did a blank line keep the list unpublished? That shows the stop is in force. It is not a quality score.",
+                "Did a blank line keep the number from being offered as the answer? Looking could continue. The answer did not go out.",
             },
           ],
         },
@@ -1546,7 +1547,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "A search that is not being given to someone as the answer can continue with no brief. This page stops the number that is being given as the answer.",
+            "A chart used to look, before the action is known, can go out without this brief. This page stops a number that is being offered as the answer.",
+            "The row, the comparison, and the owner are the next leaves. Whether the decision got better is Run the product and judge the value. This page does not score that.",
             "Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
@@ -1582,7 +1584,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       topic: "Make the number fit",
       title: "Say what one row means",
       lede: "The brief is already filled. This page says what one row of that number means, before anyone compares two reports. Kimball calls that the grain: exactly what one record represents, in business words. A report title is not that sentence. A list of columns is not that sentence.",
-      rule: "My operating rule: name the thing, the time, what is included, and what is left out, including a partial payment, a dispute, and a write-off. I do not publish the number until the person who will use it can say that row back.",
+      rule: "My operating rule: name the thing, the time, what is included, and what is left out, including a partial payment, a dispute, and a write-off. I do not offer the number as the answer until the person who will use it can say that row back.",
       illustration: "The one list is an illustration, not a record.",
       reviewed: "19 Oct 2026",
       sections: [
@@ -1605,6 +1607,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "The analytics field card names the failure this page is about: mismatched grain, inconsistent definitions, or incomplete scope. I read a mismatched grain as two meanings of a row treated as one. I read an inconsistent definition as a sentence two people would not say the same way. I read an incomplete scope as a missing line for what is included, or for what is left out.",
             "The operating rule at the top of this page is the stop. A design meeting can list the columns and still leave the row unsaid. The decision can be named, and the row can still be blank.",
             "The opening page left three rules for this sentence. Say how a partial payment is treated. Say whether an open dispute stays on the row. A write-off after the snapshot is not this row. A blank on any of those is an incomplete scope.",
+            "A rise is not read until this sentence is the same in both periods. If overdue means something new, or the invoices included have changed, or recent payments are missing, the count is not the same count.",
           ],
           sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES, { href: DATA_CARD, label: "Data analytics field card" }],
         },
