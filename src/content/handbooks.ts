@@ -1108,10 +1108,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 1,
       topic: "The practice",
       title: "What good looks like",
-      lede: "This page is how the practice runs. One number is ready when Ask, Grain, Truth, and Use can be said. The work around that number follows the same path.",
-      rule: "My operating rule: I place the work on this path before I build it. A number goes out as the answer only when Ask, Grain, Truth, and Use are filled.",
+      lede: "A request for a number is not yet a piece of work. This page is how I place it before anyone builds.",
+      rule: "My operating rule: I place the work on the path before I build it. A number goes out as the answer only when the person who will act can say Ask, Grain, Truth, and Use.",
       illustration: "The invoice path is an illustration, not a record.",
-      reviewed: "18 Oct 2026",
+      reviewed: "19 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
@@ -1121,34 +1121,38 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path",
           title: "The path",
           paragraphs: [
-            "The analytics field card carries the four steps for a number, the architecture plates, the tool lanes, the trust strip, and the maturity ladder. The order below is how I run that card.",
+            "The analytics field card carries the four steps for a number, the architecture plates, the tool lanes, the trust strip, and the maturity ladder. The order below is how I run that card. Each part leaves something the next part can use. If that thing cannot be said, the next part does not start.",
           ],
           lines: [
             {
               term: "Place the work",
-              detail: "Say which part of the path the work is on, and which rung the organization is on. This page is that placement.",
+              detail:
+                "Name the decision this work is for, and the rung the organization is actually on. A request for a screen, with neither of those, is not a piece of work yet.",
             },
             {
               term: "Choose the work",
-              detail: "A case to build, or a written reason not to. The case names the decision, the person who would act, and the rung the work needs.",
+              detail:
+                "Take the case, or write why you will not build. The case names the decision, the person who would act, and a rung this organization can already keep. If the work needs a higher rung, write a smaller case or a written no.",
             },
             {
               term: "Make the number fit",
               detail:
-                "The brief, what one row means, a disagreement between two reports, the owner and the columns the number promises, and whether the person can explain the number and act. Name the decision, Say what one row means, When two reports don't match, and Keep the definition are this part.",
+                "Say the decision, what one row represents, what you do when two reports disagree, and who owns the meaning. The person who will act has to be able to say those back. Until they can, the number is not the answer.",
             },
             {
               term: "Choose the stack",
               detail:
-                "The plates and the tool lanes for the workload, including what was refused. The plates are consumption, the semantic layer, processing, and sources.",
+                "Match the plates and the tools to the workload: how much data, how many people at once, and how fresh the number has to be. Name what you will not run. A tool list with nothing refused is not a choice.",
             },
             {
               term: "Keep trust in force",
-              detail: "Security, governance, observability, evals, and human approve, for the numbers that share a system.",
+              detail:
+                "For the numbers that share a system, keep who can see a number, who can change it, where it came from, how fresh it is, and which test can stop it. Those lines stay after the first publish.",
             },
             {
               term: "Judge the value",
-              detail: "A product that is maintained, and a review that continues it, changes it, or stops the investment.",
+              detail:
+                "On a review, continue the product, change it, or stop paying for it. The question is whether the decision still needs the number. A report that people open is not that answer by itself.",
             },
           ],
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
@@ -1163,21 +1167,23 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           lines: [
             {
               term: "Ask",
-              detail: "The decision, and the person who will act. Name the decision writes it. A report title does not finish the line.",
+              detail:
+                "The decision, and the person who will act. A report title is not a decision. If the number would not change what that person does, it is not the answer to this question.",
             },
             {
               term: "Grain",
-              detail: "What one line means. The thing, the time, what is included, and what is left out. Say what one row means writes it.",
+              detail:
+                "What one row is. The thing, the time, what is included, and what is left out. A list of columns is not that sentence.",
             },
             {
               term: "Truth",
               detail:
-                "Who stands behind that meaning, and what stops a bad number. When two reports don't match and Keep the definition write it.",
+                "Who owns the meaning, and what stops a bad number from going out. A green build is not that stop. When two reports disagree, do not publish a figure between them until the difference has a cause.",
             },
             {
               term: "Use",
               detail:
-                "Whether they can explain the number and act on it. The response they write is a hypothesis to check. Name the decision writes that proposal. If the number would not change what they do, it is not the answer to this Ask.",
+                "What that person proposes to do if the number rises, and if it falls. Each proposal is a hypothesis to check against the outcome. A change in the number does not say what caused it.",
             },
           ],
           sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
@@ -1187,7 +1193,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An example",
           paragraphs: [
             "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "Someone can give an invoice more time to pay. Ask is whether to give more time. The person is the role that can do that. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, that someone owns the meaning, and that a bad number would be stopped. Use is the response they propose to check. If more invoices are past their date, they propose not to give more time. If fewer are past their date, they propose that the extension can be offered. Name the decision writes that proposal. No amount is written.",
+            "Someone can give an invoice more time to pay. Ask is whether to give that time. The person is the role that can offer it. Grain is an open invoice as of yesterday, and accounts already written off are left out. Truth is that this person can say that grain, someone owns the meaning, and a number that fails the check does not go out. A rise in overdue invoices is not yet a reason to refuse more time. It can be customers paying later, a billing error, a change in what counts as overdue, or the season. If the number rises, the proposal is to offer no more time, then check whether accounts stay current. If it falls, the proposal is that the extension can be offered, then check the same outcome. The number does not establish the cause. No amount is written.",
           ],
           figure: {
             kind: "flow",
@@ -1208,7 +1214,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               {
                 term: "Use",
                 detail:
-                  "If more invoices are past their date, offer no more time. If fewer are, the extension can be offered. Both are hypotheses to check.",
+                  "If the number rises, propose no more time and check whether accounts stay current. If it falls, propose that the extension can be offered and check the same outcome. A rise is not the cause.",
               },
             ],
           },
@@ -1217,7 +1223,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-rung",
           title: "The organization",
           paragraphs: [
-            "The card's ladder is how the organization runs the practice. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. A prescriptive recommendation still walks Ask, Grain, Truth, and Use. I take work the current rung can keep.",
+            "The card's ladder is how far the organization can keep a practice, not how advanced the question sounds. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. A prescriptive recommendation still has to pass Ask, Grain, Truth, and Use. I take work the current rung can keep. If the organization is still ad hoc, I do not start a monitored, reconciled product and call the gap a later phase.",
           ],
           lines: [
             { term: "Ad hoc", detail: "Manual, inconsistent, low trust." },
@@ -1234,7 +1240,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-know",
           title: "How I would know",
           paragraphs: [
-            "I watch three things. I have no target times, and these definitions are not results I have collected.",
+            "I watch three things. They tell me the work was placed. They do not tell me the decision got better. That question is the last part of the path, when the product is reviewed. I have no target times, and these definitions are not results I have collected.",
           ],
           lines: [
             {
@@ -1255,7 +1261,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page places the work. Choosing a platform is Choose the stack. Whether a product should continue is Run the product and judge the value. Make the number fit is Name the decision, Say what one row means, When two reports don't match, and Keep the definition.",
+            "This page places the work. It does not choose the platform, fill in what one row means, or decide whether a product should continue. Those are later parts of the same path.",
             "The GAO guide assesses an agency plan. I am not running its checklist. I am using the link it requires between a measure and a decision a person can make.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
@@ -1270,7 +1276,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-draft",
           title: "When AI drafts the work",
           paragraphs: [
-            "This practice holds today, and I expect it to hold, because the test is a person who can place the work and say Ask, Grain, Truth, and Use. AI can draft the case, the path, and a sentence for each step. A fluent draft is not that person saying it, and a tool does not move the organization up a rung.",
+            "This practice holds today, and I expect it to hold, because a person still has to place the work and say Ask, Grain, Truth, and Use. A model can draft the case and a sentence for each step. A fluent draft is not that person, and a tool does not move the organization up a rung.",
           ],
         },
       ],
