@@ -1442,7 +1442,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "The case is already taken. This sheet is not the decision to build. It is the brief for a number offered as the answer. Looking at a chart is not that offer.",
             "The Activity line is Kimball's business process. The Outcome line is the goal the measure has to represent. I take that link from the GAO guide, April 1998. The decision, the person, the constraint, the two hypotheses, and the stop are my rule.",
-            "A metric can raise a question. It cannot establish a cause, or dictate the action, without the context. The row, a disagreement between two reports, and the owner are the next leaves of this chapter.",
+            "The row, a disagreement between two reports, and the owner are the next leaves of this chapter.",
           ],
           lines: [
             {
@@ -1467,12 +1467,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "If it rises",
               detail:
-                "A hypothesis to check. A higher count can be more invoices issued, slower payment, or a change in what is counted. It is not an order to refuse time, and it is not a reason to treat every new invoice the same way. If a higher count would not change what they do, this number is not the answer.",
+                "A hypothesis to check. A higher count can be more invoices issued, slower payment, or a change in what is counted. If a higher count would not change what they do, this number is not the answer.",
             },
             {
               term: "If it falls",
               detail:
-                "A hypothesis to check. A lower count can be fewer invoices issued, faster payment, or a change in the count. It is not an order to offer time. Neither line fires by itself. A later match with the outcome is not proof the proposal caused it.",
+                "A hypothesis to check. A lower count can be fewer invoices issued, faster payment, or a change in the count. Neither line fires by itself.",
             },
             {
               term: "Activity",
@@ -1501,12 +1501,16 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-scene",
           title: "An example",
           paragraphs: [
-            "This is an illustration. I have not measured it, and it states no amount.",
+            "This is an illustration. I have not measured it. The two percentages below are hypothetical, so the reasoning can be walked.",
             "The list is titled overdue balance. The same invoices could feed two decisions. The controller will decide whether to offer an open invoice more time before write-off. Someone else will choose which customers to call. The controller needs the invoice, what is still unpaid, an open dispute, and the policy. A call is about the customer. Until the brief names the controller's decision, the list stays dark.",
             "Before a rise is read as a problem, the comparison has to be fair.",
             "Overdue means the same thing.",
             "The same invoices are included. Recent payments are in.",
-            "A higher count can be more invoices issued, slower payment, or a change in the count. The number marks a pattern. It does not name the cause, and it does not order the offer.",
+            "Suppose the overdue count is 12 percent higher, and the count of invoices issued is 20 percent higher.",
+            "If both are counts of invoices, the overdue share did not rise. More invoices were issued.",
+            "What is still unpaid, in money, has not been read. Neither has whether older invoices, or open disputes, are piling up.",
+            "Under the existing policy, the question is whether this change would change the offer. The cutoff stays the policy's.",
+            "The count alone does not show that collections got worse. Look further before recommending a response.",
             "The chair in the light is the controller. The dark chair is the call list. Once the brief is filled, the invoice list can go out as that answer. This illustration stops at the proposal.",
           ],
           picture: {
@@ -1518,7 +1522,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-know",
           title: "How I would know",
           paragraphs: [
-            "I would look at four things. I have not collected them, and I set no target. Opening the list is use. It is not proof the decision got better.",
+            "I would look at four things. I have not collected them, and I set no target.",
+            "Did the decision improve the outcome that mattered, compared with what would otherwise have happened?",
+            "Answering that needs a baseline, a period to watch, and room for other explanations. An improvement afterward is not proof the list caused it.",
           ],
           lines: [
             {
@@ -1528,13 +1534,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             },
             {
               term: "Used",
-              detail:
-                "Did the list change which invoices they reviewed, under the policy, without becoming the order?",
+              detail: "Did the list change which invoices they reviewed under the policy?",
             },
             {
               term: "Later",
-              detail:
-                "After they acted, what happened to the account? A match is not proof the list caused it. A miss is the note the next brief starts from.",
+              detail: "After they acted, what happened to the account? A miss is the note the next brief starts from.",
             },
             {
               term: "Parked",
@@ -1547,8 +1551,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "A chart used to look, before the action is known, can go out without this brief. This page stops a number that is being offered as the answer.",
-            "The row, the comparison, and the owner are the next leaves. Whether the decision got better is Run the product and judge the value. This page does not score that.",
+            "The brief is a tool for a number offered as an answer. Good analytics is the evidence and the limit, fitted to the use.",
+            "A chart used to look can go out before the sheet is filled. A monthly count that is only watched, a forecast, and a number used in a regulated decision do not all need this same brief.",
+            "Each still needs evidence, and a limit the reader can say. How far the brief goes follows the cost of being wrong.",
+            "This page stops a number offered as the answer while a line is still blank.",
+            "The row, the comparison, and the owner are the next leaves. Continue, change, or stop stays on Run the product and judge the value. This page does not score a return.",
             "Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [

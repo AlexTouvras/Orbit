@@ -349,6 +349,21 @@ function TurnButton({
 
 type Piece = { index: number; top: number; bottom: number; title: boolean; broken: boolean };
 
+function blockEnd(pieces: Piece[], start: number): Piece {
+  let last = pieces[start];
+  for (let index = start; index < pieces.length && pieces[index].index === last.index; index += 1) last = pieces[index];
+  return last;
+}
+
+function blockFitsFresh(pieces: Piece[], start: number, budget: number): boolean {
+  const last = blockEnd(pieces, start);
+  return last.bottom - pieces[start].top <= budget;
+}
+
+function blockFitsHere(pieces: Piece[], start: number, offset: number, budget: number): boolean {
+  return blockEnd(pieces, start).bottom - offset <= budget;
+}
+
 function packBlocks(slot: HTMLElement, blocks: Block[]): PackedLeaf[] {
   const available = slot.clientHeight;
   const budget = available > 48 ? available - 16 : available;
@@ -377,10 +392,16 @@ function packBlocks(slot: HTMLElement, blocks: Block[]): PackedLeaf[] {
       let end = cursor;
       while (end < pieces.length) {
         const candidate = pieces[end];
+        const started = end > cursor && pieces[end - 1].index === candidate.index;
+        // Keep a paragraph that fits on a fresh leaf in one piece, so a leaf does not open mid-sentence.
+        if (!started && blockFitsFresh(pieces, end, budget) && !blockFitsHere(pieces, end, offset, budget)) break;
         if (candidate.bottom - offset > budget) break;
         const follower = pieces[end + 1];
         const holdWithNext = candidate.title || (candidate.broken && follower?.index === candidate.index);
         if (holdWithNext && follower && follower.bottom - offset > budget) break;
+        if (candidate.title && follower && blockFitsFresh(pieces, end + 1, budget) && !blockFitsHere(pieces, end + 1, offset, budget)) {
+          break;
+        }
         end += 1;
         const taken = pieces[end - 1];
         const blockContinues = end < pieces.length && pieces[end].index === taken.index;
