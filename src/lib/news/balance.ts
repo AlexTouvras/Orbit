@@ -55,3 +55,17 @@ export const INTAKE_CATEGORY_ORDER: NewsCategory[] = [
   "Credit",
   "AI",
 ];
+
+/**
+ * Weekly Write fills eight slots. Analytics is the Power BI / Fabric lane and
+ * stays last, so a feature post is not half the brief. The newsletter keeps
+ * INTAKE_CATEGORY_ORDER.
+ */
+export const WEEKLY_WRITE_CATEGORY_ORDER: NewsCategory[] = [
+  "Delivery",
+  "Economics",
+  "Credit",
+  "Data",
+  "AI",
+  "Analytics",
+];

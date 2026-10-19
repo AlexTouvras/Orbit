@@ -30,7 +30,7 @@ About 600–1200 words. Weekly hard bounds: 500–1600.
 
 One link of the chain leads: business problem → data → intelligent system → delivery → measurable outcome. A second link may support it. Prefer the gap between a demo that works and a decision a team can own. A Signal about a tool still has to land on that gap.
 
-Category matches the decision, not the stack: `Career` | `Data` | `AI` | `Delivery` | `Learning`. Institutional memory → Delivery. Habit → Learning. Role change → Career. Measurement → Data. Do not default to Power BI / Fabric. Before locking Data or AI, ask whether Delivery or Learning fits the same Signal. Avoid three Power BI pieces in a row unless the user asks.
+Category matches the decision, not the stack: `Career` | `Data` | `AI` | `Delivery` | `Learning`. Institutional memory → Delivery. Habit → Learning. Role change → Career. Measurement → Data. Do not default to Power BI / Fabric. A weekly thesis is not a Power BI or Fabric feature while the intake has a Signal from another lane. The reports stay on the portfolio. Before locking Data or AI, ask whether Delivery or Learning fits the same Signal.
 
 ## Pass
 
@@ -60,6 +60,7 @@ Fail any of these and rewrite the section.
 | A volume target | One essay that survives a conversation is the unit. |
 | A market statistic you did not open | Cite the primary Signal. Hedge anything you did not read. |
 | The Signal's worked example as the plot | The claim is the thesis. The example is a witness. |
+| A Power BI or Fabric feature as the weekly plot, when another Signal is in the intake | That lane stays in Related articles. The owner asked for other topics. |
 | A gate borrowed from a different project | The practice has to be the work this decision is about. |
 
 ## Moves from the theses

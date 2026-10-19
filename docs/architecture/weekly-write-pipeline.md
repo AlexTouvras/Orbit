@@ -18,3 +18,5 @@ flowchart LR
 **Slack access:** the notify payload is a short card (title, summary, Open preview, Approve, Skip). The essay is on the preview page, not in the channel. Preview and Approve need `data/weekly-write-draft.json` on the **default branch** (`GITHUB_TOKEN` via `persistWeeklyDraftCli`). A feature-branch-only commit is not enough — Vercel reads the default branch.
 
 The pipeline writes `data/weekly-write-ide-brief.md` and waits. Generate the essay in Cursor (`docs/essay-voice.md`), then `npm run weekly:notify-draft`. Confirm `"githubSynced": true` in the CLI output. `--allow-local-fallback` can draft with Ollama, OpenAI, or a template. That flag is explicit.
+
+The ranked thesis skips a Power BI or Fabric feature when the intake has a Signal from another lane. Analytics in Related articles is that lane.
