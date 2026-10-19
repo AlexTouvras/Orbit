@@ -44,7 +44,7 @@ const ROAD: Array<[number, number]> = [
 
 const STARS = starField(56, 11);
 
-export type SpreadPanel = "hero" | "loop" | "recovery" | "scene" | "pyramid" | "signals" | "distinctions" | "path";
+export type SpreadPanel = "hero" | "ledger" | "loop" | "recovery" | "scene" | "pyramid" | "signals" | "distinctions" | "path";
 
 export function HandbookSpread({
   handbook,
@@ -65,7 +65,14 @@ export function HandbookSpread({
       }`}
     >
       {panels.map((panel) => (
-        <div key={panel} className={panel === "hero" && !wide ? "mx-auto h-full min-h-0 w-full lg:aspect-[2/3] lg:w-auto" : "h-full min-h-0"}>
+        <div
+          key={panel}
+          className={
+            !wide && (panel === "hero" || panel === "ledger")
+              ? "mx-auto h-full min-h-0 w-full lg:aspect-[2/3] lg:w-auto"
+              : "h-full min-h-0"
+          }
+        >
           <SpreadPanelView panel={panel} handbook={handbook} page={page} />
         </div>
       ))}
@@ -84,6 +91,7 @@ function SpreadPanelView({
 }) {
   const sceneSection = sectionOf(page, "scene");
   if (panel === "hero") return <EarthHero handbook={handbook} page={page} />;
+  if (panel === "ledger") return <LedgerHero handbook={handbook} page={page} />;
   if (panel === "loop") return <DailyLoop figure={figureOf(page, "loop")} />;
   if (panel === "recovery") return <BrokenMain figure={figureOf(page, "recovery")} />;
   if (panel === "scene") {
@@ -216,6 +224,115 @@ function EarthHero({ handbook, page }: { handbook: Handbook; page: HandbookPage 
     </section>
   );
 }
+
+function LedgerHero({ handbook, page }: { handbook: Handbook; page: HandbookPage }) {
+  const lines = operatingLines(page.rule);
+  return (
+    <section
+      className="relative flex h-full min-h-0 flex-col overflow-hidden bg-[#040914] max-lg:rounded-none lg:rounded-md lg:border lg:border-amber-200/30 lg:shadow-[0_0_42px_-18px_rgba(251,191,36,0.4)]"
+      data-board-panel="ledger"
+      data-handbook-cover
+      aria-label={handbook.title}
+    >
+      <LedgerBackdrop />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-36 bg-gradient-to-t from-[#02040a] via-[#02040a]/88 to-transparent" />
+      <div className="relative z-10 flex h-full min-h-0 flex-1 flex-col px-4 pt-4 pb-4 sm:px-6 sm:pt-6 lg:px-6">
+        <p className="font-mono text-[10px] tracking-[0.28em] text-amber-100">ORBIT / HANDBOOK {handbook.index}</p>
+        <p className="mt-3 font-mono text-[11px] tracking-[0.28em] text-white/85 uppercase lg:mt-8">{page.topic}</p>
+        <h1 className="mt-2 font-display text-[2rem] font-semibold leading-[0.92] tracking-tight text-white sm:text-[2.5rem] lg:mt-3 lg:max-w-[11ch] lg:text-[3.15rem] lg:leading-[0.9]">
+          {handbook.title}
+        </h1>
+        <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-slate-300 lg:mt-4">{handbook.thesis}</p>
+        <ul
+          className="mt-auto max-w-[36ch] space-y-1.5 pt-4 text-sm leading-snug text-white lg:text-[0.95rem]"
+          style={{ textShadow: "0 2px 14px rgba(0,0,0,0.95)" }}
+        >
+          {lines.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function LedgerBackdrop() {
+  const rawId = useId().replace(/:/g, "");
+  const lit = "M 8 418 L 318 378 L 360 760 L -20 760 Z";
+  const edge = "M 8 418 L 318 378";
+  return (
+    <svg aria-hidden viewBox="0 0 480 720" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full">
+      <defs>
+        <radialGradient id={`${rawId}-room`} cx="38%" cy="58%" r="72%">
+          <stop offset="0%" stopColor="#1a1208" />
+          <stop offset="46%" stopColor="#07060a" />
+          <stop offset="100%" stopColor="#02040a" />
+        </radialGradient>
+        <linearGradient id={`${rawId}-paper`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#2a2116" />
+          <stop offset="18%" stopColor="#100e0c" />
+          <stop offset="100%" stopColor="#050403" />
+        </linearGradient>
+        <linearGradient id={`${rawId}-edge`} x1="8" y1="418" x2="318" y2="378" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.15" />
+          <stop offset="55%" stopColor="#fde68a" />
+          <stop offset="78%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.35" />
+        </linearGradient>
+        <radialGradient id={`${rawId}-glint`} gradientUnits="userSpaceOnUse" cx="250" cy="388" r="78">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="28%" stopColor="#fde68a" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="#f59e0b" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id={`${rawId}-pool`} gradientUnits="userSpaceOnUse" cx="168" cy="560" r="180">
+          <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.38" />
+          <stop offset="55%" stopColor="#b45309" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="#b45309" stopOpacity="0" />
+        </radialGradient>
+        <filter id={`${rawId}-bloom`} x="-40%" y="-80%" width="180%" height="260%">
+          <feGaussianBlur stdDeviation="3.4" />
+        </filter>
+        <filter id={`${rawId}-soft`} x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="10" />
+        </filter>
+        <mask id={`${rawId}-band`}>
+          <rect width="480" height="720" fill="black" />
+          <path d={edge} fill="none" stroke="white" strokeWidth="28" strokeLinecap="round" />
+        </mask>
+      </defs>
+      <rect width="480" height="720" fill={`url(#${rawId}-room)`} />
+      {LEDGER_STARS.map((star) => (
+        <circle key={`${star.x}-${star.y}`} cx={star.x} cy={star.y} r={star.r} fill={star.fill} opacity={star.o} />
+      ))}
+      <path d="M -40 560 L 520 500 L 520 760 L -40 760 Z" fill="#0c0a08" />
+      <ellipse cx="170" cy="440" rx="210" ry="40" fill={`url(#${rawId}-pool)`} filter={`url(#${rawId}-soft)`} />
+      <path d="M 340 292 L 462 274 L 488 412 L 358 438 Z" fill="#100e0c" stroke="#3a3228" strokeWidth="1.1" />
+      <path d="M 340 292 L 462 274" fill="none" stroke="#6b5a45" strokeWidth="1.2" opacity="0.75" />
+      <path d={lit} fill={`url(#${rawId}-paper)`} />
+      <path d="M 48 458 L 250 430" fill="none" stroke="#f6d7a2" strokeWidth="1.1" opacity="0.2" />
+      <path d="M 58 488 L 268 456" fill="none" stroke="#f6d7a2" strokeWidth="1.1" opacity="0.1" />
+      <path d={edge} fill="none" stroke="#fbbf24" strokeWidth="18" strokeLinecap="round" opacity="0.5" filter={`url(#${rawId}-bloom)`} />
+      <circle cx="250" cy="388" r="78" fill={`url(#${rawId}-glint)`} mask={`url(#${rawId}-band)`} />
+      <path d={edge} fill="none" stroke={`url(#${rawId}-edge)`} strokeWidth="6" strokeLinecap="round" />
+      <path d={edge} fill="none" stroke="#fffaf0" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+const LEDGER_STARS: Array<{ x: number; y: number; r: number; o: number; fill: string }> = [
+  { x: 40, y: 48, r: 1.1, o: 0.7, fill: "#fff" },
+  { x: 92, y: 86, r: 0.8, o: 0.45, fill: "#fde68a" },
+  { x: 150, y: 36, r: 1.2, o: 0.55, fill: "#fff" },
+  { x: 210, y: 78, r: 0.7, o: 0.4, fill: "#fff" },
+  { x: 268, y: 42, r: 1, o: 0.5, fill: "#fde68a" },
+  { x: 330, y: 96, r: 0.8, o: 0.35, fill: "#fff" },
+  { x: 390, y: 54, r: 1.3, o: 0.6, fill: "#fff" },
+  { x: 438, y: 120, r: 0.7, o: 0.4, fill: "#fde68a" },
+  { x: 64, y: 160, r: 0.6, o: 0.3, fill: "#fff" },
+  { x: 420, y: 180, r: 0.8, o: 0.28, fill: "#fff" },
+  { x: 180, y: 140, r: 0.5, o: 0.35, fill: "#fff" },
+  { x: 300, y: 168, r: 0.6, o: 0.25, fill: "#fde68a" },
+];
 
 function DailyLoop({ figure }: { figure: HandbookFigure | undefined }) {
   return (

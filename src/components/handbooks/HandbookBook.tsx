@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import type { Handbook, HandbookPage, HandbookPicture, HandbookSection } from "@/content/handbooks";
-import { HandbookSpread, operatingLines, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
+import { HandbookSpread, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
 import { ChapterRail } from "@/components/handbooks/ChapterRail";
 import { HandbookFigureView } from "@/components/handbooks/HandbookFigures";
 import { SiteLink } from "@/components/handbooks/SiteLink";
@@ -35,7 +35,7 @@ type Block = {
 
 type ShownLeaf =
   | { kind: "plate"; panel: SpreadPanel }
-  | { kind: "picture"; picture: HandbookPicture; role: "cover" | "section"; title?: string }
+  | { kind: "picture"; picture: HandbookPicture; role: "section"; title?: string }
   | { kind: "prose"; leaf: PackedLeaf };
 
 type PackedLeaf = {
@@ -66,14 +66,14 @@ export function HandbookBook({
   const [leaves, setLeaves] = useState<PackedLeaf[]>([]);
   const [index, setIndex] = useState(0);
   const [narrow, setNarrow] = useState(false);
-  const warm = handbook.pages.some((item) => item.cover);
+  const warm = handbook.slug === "data-that-drives-decisions";
   const blocks = useMemo(
     () => proseBlocks(page, showFeedback, feedbackSlug, feedbackEntries, narrow, warm),
     [page, showFeedback, feedbackSlug, feedbackEntries, narrow, warm],
   );
   const shown = useMemo(
-    () => composeLeaves(leaves, blocks, page.plate === "horizon", page.cover),
-    [leaves, blocks, page.plate, page.cover],
+    () => composeLeaves(leaves, blocks, page.plate),
+    [leaves, blocks, page.plate],
   );
   const leafCount = shown.length;
   const safeIndex = Math.min(index, Math.max(leafCount - 1, 0));
@@ -145,7 +145,7 @@ export function HandbookBook({
     };
     if (!pageChanged && !fromEnd && !hash) return watch();
     if (pageChanged) pageStamp.current = page.number;
-    const sequence = composeLeaves(packed, blocks, page.plate === "horizon", page.cover);
+    const sequence = composeLeaves(packed, blocks, page.plate);
     if (fromEnd && pageChanged) {
       url.searchParams.delete("from");
       window.history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
@@ -160,7 +160,7 @@ export function HandbookBook({
       setIndex(0);
     }
     return watch();
-  }, [blocks, page.number, page.plate, page.cover]);
+  }, [blocks, page.number, page.plate]);
 
   useEffect(() => {
     if (!landAtEnd.current || shown.length === 0) return;
@@ -254,7 +254,7 @@ export function HandbookBook({
           ) : null}
           {picture ? (
             <div className="absolute inset-0 z-10 p-0 lg:p-3 lg:pb-8">
-              <PictureLeaf handbook={handbook} page={page} leaf={picture} />
+              <PictureLeaf leaf={picture} />
             </div>
           ) : null}
           <div className={`relative z-10 ${spread || picture ? "invisible" : ""} flex h-full min-h-0 flex-col px-4 pt-3 pb-3 sm:px-8 lg:px-10 lg:pt-4 lg:pb-8`}>
@@ -501,15 +501,10 @@ function lineBoxes(node: HTMLElement, origin: number): { top: number; bottom: nu
   return merged;
 }
 
-function composeLeaves(
-  packed: PackedLeaf[],
-  blocks: Block[],
-  opening: boolean,
-  cover?: HandbookPicture,
-): ShownLeaf[] {
+function composeLeaves(packed: PackedLeaf[], blocks: Block[], plate?: HandbookPage["plate"]): ShownLeaf[] {
   const shown: ShownLeaf[] = [];
-  if (cover) shown.push({ kind: "picture", picture: cover, role: "cover" });
-  else if (opening) shown.push({ kind: "plate", panel: "hero" });
+  if (plate === "horizon") shown.push({ kind: "plate", panel: "hero" });
+  if (plate === "ledger") shown.push({ kind: "plate", panel: "ledger" });
   packed.forEach((leaf, index) => {
     shown.push({ kind: "prose", leaf });
     const last = leaf.end - 1;
@@ -525,54 +520,8 @@ function composeLeaves(
   return shown;
 }
 
-function PictureLeaf({
-  handbook,
-  page,
-  leaf,
-}: {
-  handbook: Handbook;
-  page: HandbookPage;
-  leaf: Extract<ShownLeaf, { kind: "picture" }>;
-}) {
-  const { picture, role, title } = leaf;
-  if (role === "cover") {
-    const lines = operatingLines(page.rule);
-    return (
-      <figure className="relative h-full min-h-0 overflow-hidden bg-[#02040a]" data-handbook-cover>
-        <Image
-          src={picture.src}
-          alt={picture.alt}
-          fill
-          priority
-          sizes="100vw"
-          className="object-contain object-center"
-        />
-        <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-[#02040a]/55 via-transparent to-transparent lg:block" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#02040a] via-[#02040a]/80 to-transparent" />
-        <figcaption className="relative z-10 flex h-full min-h-0 flex-col px-5 py-5 sm:px-7 sm:py-6">
-          <p className="font-mono text-[10px] tracking-[0.28em] text-amber-100">ORBIT / HANDBOOK {handbook.index}</p>
-          <p className="mt-5 font-mono text-[11px] tracking-[0.28em] text-white/85 uppercase sm:mt-8">{page.topic}</p>
-          <h1
-            className="mt-2 max-w-[14ch] font-display text-[2rem] font-semibold leading-[0.92] tracking-tight text-white sm:text-[2.65rem]"
-            style={{ textShadow: "0 2px 18px rgba(0,0,0,0.9)" }}
-          >
-            {handbook.title}
-          </h1>
-          <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-slate-200" style={{ textShadow: "0 2px 14px rgba(0,0,0,0.9)" }}>
-            {handbook.thesis}
-          </p>
-          <ul
-            className="mt-auto max-w-[38ch] space-y-1.5 pt-4 text-sm leading-snug text-white"
-            style={{ textShadow: "0 2px 14px rgba(0,0,0,0.95)" }}
-          >
-            {lines.map((line) => (
-              <li key={line}>{line}</li>
-            ))}
-          </ul>
-        </figcaption>
-      </figure>
-    );
-  }
+function PictureLeaf({ leaf }: { leaf: Extract<ShownLeaf, { kind: "picture" }> }) {
+  const { picture, title } = leaf;
   return (
     <figure className="flex h-full min-h-0 flex-col overflow-hidden bg-[#040914]" data-handbook-picture>
       <div className="relative min-h-0 flex-1">
