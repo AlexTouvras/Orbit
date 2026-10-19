@@ -1108,8 +1108,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 1,
       topic: "The practice",
       title: "What good looks like",
-      lede: "Asking for a screen is not yet a piece of work. This page follows one decision from the question to the later review, and says which page teaches each part.",
-      rule: "My operating rule: I name the decision and the person who will act, decide whether to build, make the number answer that decision, keep only the tools that decision needs, and later ask whether the decision got better.",
+      lede: "Asking for a screen is not yet a piece of work. This page follows one decision through the practice, and says how each part depends on the one before it.",
+      rule: "My operating rule: I name the decision and the person who will act, decide whether the work is worth keeping, make the number answer that decision, keep only the tools and the care it needs, and later ask whether the decision got better. If it did not, I change the work or I stop it.",
       illustration: "The invoice path is an illustration, not a record.",
       reviewed: "19 Oct 2026",
       ground: {
@@ -1121,39 +1121,39 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path",
           title: "The path",
           paragraphs: [
-            "The analytics field card is the map. It shows four steps for a number, the parts of a stack, the tools, the trust lines, and a ladder with four rungs: Ad hoc, Defined, Managed, and Optimized. Here is that map used on one example. I have not measured this example, and it states no amount.",
-            "A credit controller can offer an open invoice more time to pay, or refuse that time, before the account is written off. An overdue invoice can mean three different things. The customer may already be paying on agreed terms. The invoice may be a billing error. Or the customer may not pay. In this example the organization is on the Defined rung: there is a written standard for an open invoice, and one person owns the list. Nobody is monitoring that list automatically.",
+            "The analytics field card is the map. It shows four steps for one number, the parts of a stack, the tools, the trust lines, and a ladder with four rungs: Ad hoc, Defined, Managed, and Optimized. The ladder is guidance for how much operating burden an organization can keep. It does not sort every technique onto a rung. Here is that map used on one example. I have not measured this example, and it states no amount.",
+            "A credit controller can offer an open invoice more time to pay, or refuse that time, before the account is written off. An overdue invoice can mean three different things. The customer may already be paying on agreed terms. The invoice may be a billing error. Or the customer may not pay. In this example there is a written standard for an open invoice, and one person owns the list. Nobody is monitoring it yet. On the card, that is Defined: standards and basic governance.",
           ],
           lines: [
             {
               term: "Place the work",
               detail:
-                "The request was a screen of overdue invoices. The decision is whether this controller offers more time on one open invoice before it is written off. I do not start until that sentence is written down.",
+                "The request arrives as a screen of overdue invoices. The need is the offer of time, made by one controller, before a write-off. The row, the tools, the owner, and the later review have nothing to serve until that decision and that person are named.",
             },
             {
               term: "Choose the work",
               detail:
-                "A live screen for every collector, refreshed through the day, plus a prediction of whom to call, answers a different question. This organization cannot keep it. I say no, and I take one list from yesterday for the person who can offer time. Choose the work is the page where that yes and that no are written out.",
+                "Once the decision is named, the question is whether to build. A live screen for every collector would serve a different need, choosing whom to call, and it would add a daily cost this decision does not use. A list from yesterday can serve the offer. Choose the work compares the outcome, the simplest way to reach it, the cost of keeping it, and what would make us stop.",
             },
             {
               term: "Make the number fit",
               detail:
-                "One row is one open invoice, as of yesterday. Invoices already written off are left out. If a second list arrives and its row is a customer at month-end, I do not publish a figure halfway between the two lists. Name the decision, Say what one row means, When two reports don't match, and Keep the definition are the pages for those steps.",
+                "The list helps only if one row matches the decision. Here, one row is one open invoice as of yesterday, and invoices already written off are left out. A second list, with one row per customer at month-end, is a question about the data. I do not publish a figure halfway between the two. Name the decision, Say what one row means, When two reports don't match, and Keep the definition teach those steps.",
             },
             {
               term: "Choose the stack",
               detail:
-                "The work is one list, for one person, as of yesterday, taken from the invoice ledger. I leave out Snowflake, a live screen, and a scheduler. The warehouse is not what limits this decision, and the controller can refresh yesterday's list. Choose the stack is the page where those choices are written.",
+                "The tools follow the work, and so does the cost of running them. One person, one list, as of yesterday, from the invoice ledger, does not need a warehouse, a live refresh, or a scheduler. Those would add operating cost the offer does not use. Choose the stack is where the parts and the refusals are written.",
             },
             {
               term: "Keep trust in force",
               detail:
-                "The controller can see the list. The person who approved a row can change it. A list older than yesterday does not go out. A second list that nobody can explain does not go out. Keep trust in force is the page that keeps those rules after the list is first published.",
+                "After the list is published, it has to stay the list that was agreed. The controller can see it. The person who approved a row can change it. A list older than yesterday does not go out, because the offer uses yesterday's open invoices. A second list that nobody can explain does not go out. Without those rules, the decision the list was built for becomes a different one. Keep trust in force is where the rules stay.",
             },
             {
               term: "Judge the value",
               detail:
-                "A finished list is not a business result. Run the product and judge the value asks whether to keep the list, change it, or stop it: does the controller still decide from it, and does it still show yesterday's invoices? The result I would look for is what happened after the offer. The account stayed current, or the invoice was written off. I set no target for that.",
+                "Building the list is not the result. Run the product and judge the value asks whether to keep it, change it, or stop paying for it. The controller may have stopped using it, or yesterday may no longer be fresh enough. Separately, I would look at what followed an offer: the account stayed current, or the invoice was written off. I set no target, and I have not collected that. Stopping is part of the practice.",
             },
           ],
           figure: {
@@ -1185,7 +1185,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-number",
           title: "One number",
           paragraphs: [
-            "The same example can be named in four words from the field card. Ask is the question: will this controller offer more time? Grain is the row: one open invoice, as of yesterday. Truth is the safeguard: one person owns that row, and a second list with no explanation does not go out. Use is the offer, checked later by what happened. The account stayed current, or the invoice was written off. These four words describe this example. They are not a separate method.",
+            "Ask, Grain, Truth, and Use test one number. They sit inside the practice above. They do not replace it. Ask is whether this controller offers more time. Grain is one open invoice, as of yesterday. Truth is that one person owns the row, and a second list with no explanation does not go out.",
+            "Use is the offer, checked later by what happened. The check is whether the account stayed current, or the invoice was written off.",
             "I take the link between the measure and the decision from the GAO guide for agency performance plans, April 1998. The guide is about a plan, not a dashboard. When a goal does not measure itself, the measures are how you see what happened, decide, and say who is accountable. I use that link. I do not apply the rest of the guide.",
           ],
           sources: [GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
@@ -1194,7 +1195,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-rung",
           title: "The organization",
           paragraphs: [
-            "The ladder says how much of a practice the organization can keep. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. They do not name the rung. In this example, Defined is enough for one list with an owner. It is not enough for a live screen and a model that chooses whom to call. That screen is a different piece of work. I do not treat it as the next phase of this list.",
+            "The ladder says how much operating burden the organization can keep. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. They do not name the rung, and a prediction is not automatically the top rung. A model can be kept where someone already watches the number and can explain a disagreement. What this example cannot keep is a live screen for every collector, moving through the day, with a model choosing the calls. That is a heavier burden. It is not the next phase of one owned list.",
           ],
           lines: [
             {
@@ -1242,7 +1243,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page shows the whole path on one decision, and names the page for each part. The later pages write the comparison, the brief, what one row means, a disagreement between two reports, the owner, the tools, and the review.",
+            "This page shows how the parts depend on one another. The later pages teach each part: the comparison, the brief, what one row means, a disagreement between two reports, the owner, the tools, and the review.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
@@ -1273,8 +1274,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 6,
       topic: "Choose the work",
       title: "Choose the work",
-      lede: "This page makes the choice for the same example: one credit controller, one list as of yesterday, and a live screen I will not build. The lines below are that choice written out.",
-      rule: "My operating rule: I start only when the benefit, the cost, and another way to answer the question are written down, the organization can keep the work, and the other way is not enough. If one of those is missing, I write down which one, and I do not start.",
+      lede: "The first page named the decision. This page decides whether to build, by comparing the outcome, the simplest way to reach it, the cost of keeping it, and what the organization can actually run.",
+      rule: "My operating rule: I start when the outcome is named, a simpler way has been considered, and the people and the ongoing cost are ones the organization can keep. The field card's ladder guides that judgment. It does not classify a technique by its name. If one of those is missing, I write down which one, and I do not start.",
       illustration: "The invoice case is an illustration, not a record.",
       reviewed: "19 Oct 2026",
       ground: {
@@ -1286,26 +1287,29 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case",
           title: "The comparison",
           paragraphs: [
-            "The first page named the decision. This page decides whether to build. This is an example. I have not measured it, and it states no amount.",
-            "On the field card, Defined means standards and basic governance. Here, one person owns a written standard for an open invoice. It is not a monitored system, and it is not a model that chooses whom to call. The card warns against a dashboard with no decision.",
-            "Someone asks for a screen that refreshes through the day for every collector, and for a prediction of whom to call. The benefit would be choosing whom to call. That is a different decision from offering time on one invoice.",
-            "The cost would be someone's time, every day, to keep a number that changes all day, for people who are not this controller. That work needs Optimized: predictive, real-time, and self-service.",
-            "The invoice question can be answered with a list as of yesterday. I write down why I will not build the screen. It answers a different question, it needs a higher rung than the one already in place, and the smaller list is enough.",
-            "What I will build is the list. The decision is whether this controller offers more time on an open invoice before it is written off. The invoice may be overdue because the customer is on agreed terms, because of a billing error, or because it will not be paid. The benefit is that the controller can tell those three reasons apart before a write-off. The cost is that person's time to keep one list, so that time is not also spent on a live screen. Reading the ledger one invoice at a time does not show the open invoices together. One person uses the list, and the list is one day old. The rung it needs is Defined, which is the rung already in place.",
+            "This is the same example as the first page. I have not measured it, and it states no amount. The decision is whether one credit controller offers more time on an open invoice before it is written off. The invoice may be overdue because the customer is on agreed terms, because of a billing error, or because it will not be paid. The card warns against a dashboard with no decision behind it.",
+            "The outcome this work could improve is that offer. The controller needs the open invoices together, with written-off accounts left out, in time to tell those three reasons apart.",
+            "The live screen is a different outcome.",
+            "A live screen for every collector, refreshed through the day, plus a prediction of whom to call, would help choose which customer to call now. I have not measured whether that screen would change the calls. I do not have that result, so I do not use it as a reason to build the screen or as a reason to refuse the list.",
+            "The simplest thing that could serve the offer is a list of open invoices as of yesterday, for that one controller. Reading the ledger one invoice at a time does not show them together. A number that changes through the day is not required, because the offer is made before a write-off, not while a customer is on the phone. A simpler list is not automatically the better investment. This decision does not get better from a fresher number, and the organization would still pay to keep that number moving.",
+            "The reason to start is that the write-off is already being decided, and the open invoices are not together for the person who can offer time. That is a reason to build the list. It is not evidence that the list will pay for itself.",
+            "Keeping the list takes the invoice ledger, the controller's time to refresh yesterday's list, whatever publishes that one list, and the written standard one person already owns. The ongoing cost is that person's time. The live screen would add daily time from people who are not this controller, a watch on a number that moves all day, and the care of a model. On the card, predictive, real-time, and self-service sit on Optimized. I use that as guidance. A model can be kept where someone already watches the number and can explain it. This organization has a written standard and one owner. It is not watching a product. I would not add the model in order to climb the ladder. A calling prediction would be a new case, after this list is in use and the controller can say what followed the offers.",
+            "For this case I build the list. I defer the calling prediction. I do not build the live screen.",
+            "I would reconsider if the controller stopped using the list. I would also reconsider if yesterday were no longer fresh enough, or if the cost of the list grew into the live system. That reconsideration is Run the product and judge the value. This page names it. It does not make the call.",
           ],
           figure: {
             kind: "flow",
-            caption: "The same example. One request is turned down, and one is accepted. No amount is shown.",
+            caption: "The same example. The live screen is a different outcome. The list matches this one. No amount is shown.",
             steps: [
               {
-                term: "Refused",
+                term: "Not this case",
                 detail:
-                  "A live screen for every collector, and a prediction of whom to call. Its benefit is a different decision. It needs Optimized. Yesterday's list is enough for the invoice.",
+                  "A live screen for every collector, and a prediction of whom to call. The outcome is a different decision. The cost is a number that moves all day. Deferred until the list is in use, or refused for this offer.",
               },
               {
-                term: "Taken",
+                term: "This case",
                 detail:
-                  "One list, as of yesterday, for the controller who can offer time. The benefit is telling the three reasons apart before a write-off. The cost is that person's time. It needs Defined.",
+                  "One list, as of yesterday, for the controller who can offer time. Fresh enough for an offer made before write-off. The cost is that person's time.",
               },
             ],
           },
@@ -1315,7 +1319,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-sheet",
           title: "The case",
           paragraphs: [
-            "The lines below are that same choice, written so each part can be read on its own. Before anyone builds, I also write what I would look at later. That is not a result I have already collected.",
+            "The lines are the record of the comparison above. The reasoning stays in that comparison. Before anyone builds, I also write what I would look at later. I have not collected it.",
           ],
           lines: [
             {
@@ -1328,15 +1332,16 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             },
             {
               term: "Organization",
-              detail: "Defined. One person owns a written standard for an open invoice.",
+              detail:
+                "A written standard and one owner. On the card, that is Defined. The ladder guides the burden we can keep. It does not ban a model by its name.",
             },
             {
               term: "Need",
-              detail: "Defined for the list. The live screen needs Optimized, and it is a different piece of work.",
+              detail: "The open invoices together, as of yesterday. Not a live number for every collector.",
             },
             {
               term: "Scale",
-              detail: "One person. One list. As of yesterday.",
+              detail: "One person. Fresh enough for an offer made before write-off, not for choosing a call in the moment.",
             },
             {
               term: "Benefit",
@@ -1344,21 +1349,23 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             },
             {
               term: "Cost",
-              detail: "That person's time to keep the list. No currency amount.",
+              detail:
+                "That person's time to keep the list. The live screen would add daily time, a moving number, and a model. No currency amount.",
             },
             {
               term: "Alternative",
               detail:
-                "The live screen answers whom to call. Reading the ledger one invoice at a time does not show the open invoices together.",
+                "Reading the ledger one invoice at a time does not show them together. The live screen answers whom to call, which is a different outcome.",
             },
             {
               term: "What would count",
               detail:
-                "Whether the controller uses the list, what happened after an offer, and whether keeping it is still one person's time. No target. None of this has been collected.",
+                "The controller uses the list. An offer can be followed to an account that stayed current, or to a write-off. Keeping it is still one person's time. No target. None of this has been collected.",
             },
             {
               term: "Build or stop",
-              detail: "Build the list. Do not build the live screen.",
+              detail:
+                "Build the list. Defer the calling prediction until the list is in use. Do not build the live screen for this decision.",
             },
           ],
         },
@@ -1372,12 +1379,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "On the day",
               detail:
-                "Every line above is filled in, or the written reason says which line was missing. Starting with none of that written down is the failure. This checks the practice.",
+                "The outcome, the simpler way, the cost of keeping it, and what we defer or reject are written down. If one is missing, the written reason says which. Starting with none of that is the failure. This checks the practice.",
             },
             {
               term: "Later",
               detail:
-                "I look at What would count, on the lines above. That is how I would tell whether the decision got better. This page does not report that it has.",
+                "What would count, on the lines above, is how I would tell whether the decision got better. If the controller stops using the list, if yesterday is no longer fresh enough, or if the cost grows into the screen we refused, that is a reason to reconsider. This page does not report that any of it has happened.",
             },
           ],
         },
@@ -1399,7 +1406,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-draft",
           title: "When AI drafts the case",
           paragraphs: [
-            "This still holds when a model drafts the case. The controller has to accept the cost of the offer: refusing time to a customer on agreed terms, or offering time on a debt that will not be paid. A draft that names a tool, and skips the other ways to answer the question or what I would look at later, is not a decision to build.",
+            "This still holds when a model drafts the case. The controller has to accept the cost of the offer: refusing time to a customer on agreed terms, or offering time on a debt that will not be paid. A draft that names a tool, treats the top rung as the aim, and skips the outcome or the cost of keeping the work, is not a decision to build.",
           ],
         },
       ],
