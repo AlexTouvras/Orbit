@@ -20,7 +20,7 @@
 }
 ```
 
-- `category`: one of `Career` | `Data` | `AI` | `Delivery` | `Learning`. Match the **decision rule**, not the tool stack. Prefer rotation; do not default to `Data`/`AI` Power BI.
+- `category`: one of `Career` | `Data` | `AI` | `Delivery` | `Learning`. Match the **decision rule**, not the tool stack. Prefer rotation; do not default to `Data`/`AI` Power BI. A Power BI or Fabric feature is not the thesis while another lane is in the intake.
 - `intake`: copy verbatim from `data/weekly-write-ide-brief.json`.
 - `mdx.date`: usually `weekOf`.
 - Prefer `featured: false` for weekly drafts (hub featured is curated separately).

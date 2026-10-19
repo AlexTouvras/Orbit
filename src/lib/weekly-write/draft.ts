@@ -328,6 +328,7 @@ const SYSTEM_PROMPT = `Draft one personal Orbit Write. First person. One decisio
 Title names a real tension the essay delivers. Open with ## The question. End with ## Takeaway. 700–1000 words. Cite the inspiration once.
 No tables. No "Week of". No "Capability is cheap. Trust is expensive".
 category: Career | Data | AI | Delivery | Learning — match the decision, not the tool.
+Do not take a Power BI or Fabric feature as the thesis when another Signal is in the intake.
 `;
 
 function userPromptJson(intake: WeeklyIntake, thesis: EssayThesis): string {

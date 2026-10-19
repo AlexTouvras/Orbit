@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import {
-  INTAKE_CATEGORY_ORDER,
+  WEEKLY_WRITE_CATEGORY_ORDER,
   interleaveByCategory,
 } from "@/lib/news/balance";
 import { readNewsCache } from "@/lib/news/cache";
@@ -58,9 +58,9 @@ export function buildWeeklyIntake(options?: {
   // Round-robin so weekly essays are not AI-only. Economics and Credit sit ahead of AI.
   const recent = interleaveByCategory(
     cache.items.filter((item) => daysAgo(item.pubDate, maxAgeDays)),
-    INTAKE_CATEGORY_ORDER,
+    WEEKLY_WRITE_CATEGORY_ORDER,
   );
-  const fallback = interleaveByCategory(cache.items, INTAKE_CATEGORY_ORDER);
+  const fallback = interleaveByCategory(cache.items, WEEKLY_WRITE_CATEGORY_ORDER);
   const pool = recent.length > 0 ? recent : fallback;
   const resolvedSignals = pool
     .slice(0, signalLimit)

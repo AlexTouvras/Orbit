@@ -17,8 +17,17 @@ export interface EssayThesis {
   whyInteresting: string;
 }
 
+/** Analytics feeds are the Power BI / Fabric lane. A feature post is that lane even if the category is wrong. */
+const REPORTING_PRODUCT =
+  /\bpower\s*bi\b|\bpbir\b|\bfabric\b|\bdax\b|\bdirect\s*lake\b|\bsemantic model\b/i;
+
+export function isReportingProductSignal(signal: WeeklyIntakeSignal): boolean {
+  if (signal.category === "Analytics") return true;
+  return REPORTING_PRODUCT.test(`${signal.title} ${signal.source}`);
+}
+
 const INTEREST_PATTERNS: { re: RegExp; weight: number; tag?: string }[] = [
-  { re: /\bpower\s*bi\b|\bpbir\b|\bfabric\b|\bdax\b|\bsemantic model\b/i, weight: 12, tag: "Power BI" },
+  { re: REPORTING_PRODUCT, weight: 1, tag: "Power BI" },
   { re: /\banalytics\b|\bdashboard\b|\breport(ing)?\b|\bkpi\b/i, weight: 8, tag: "Analytics" },
   { re: /\bagentic\b|\bagent(s)?\b|\bmulti-?agent\b/i, weight: 10, tag: "Agents" },
   { re: /\bllm\b|\bgpt\b|\bclaude\b|\bgemini\b|\bmodel\b|\bai\b/i, weight: 7, tag: "AI" },
@@ -131,10 +140,13 @@ export function pickEssayThesis(intake: WeeklyIntake): EssayThesis | null {
     .map((s) => ({ s, score: scoreSignal(s) }))
     .sort((a, b) => b.score - a.score);
 
-  const primary = ranked[0]!.s;
-  const supporting = ranked
+  const others = ranked.filter((r) => !isReportingProductSignal(r.s));
+  const pool = others.length > 0 ? others : ranked;
+
+  const primary = pool[0]!.s;
+  const supporting = pool
     .slice(1)
-    .filter((r) => r.score >= ranked[0]!.score * 0.45)
+    .filter((r) => r.score >= pool[0]!.score * 0.45)
     .slice(0, 2)
     .map((r) => r.s);
 

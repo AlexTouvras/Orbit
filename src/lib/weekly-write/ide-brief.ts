@@ -42,7 +42,7 @@ export function writeIdeBrief(options: {
     instructions: [
       "Open this repo in Cursor.",
       "Read data/weekly-write-ide-brief.md (and the JSON twin).",
-      "Write one Orbit essay with the weekly-write-essay skill. The bar is docs/essay-voice.md. Notes before prose: claim separate from the example; issue and gate in work you already do on this artifact.",
+      "Write one Orbit essay with the weekly-write-essay skill. The bar is docs/essay-voice.md. Notes before prose: claim separate from the example; issue and gate in work you already do on this artifact. If the ranked primary is a Power BI or Fabric feature and another lane is in the intake, write from that other lane.",
       "Save the pending draft to data/weekly-write-draft.json (status pending, source ide).",
       "Run: npm run weekly:notify-draft",
       "Approve or Skip in Slack #orbit.",

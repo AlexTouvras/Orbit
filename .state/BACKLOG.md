@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Weekly Write topic — a Power BI or Fabric feature is not the thesis while another Signal is in the intake. The 19 Oct pending draft moved off full-text indexing (2026-10-19)
 - [x] Handbook chapters — each written chapter ends on why its practice still applies when a draft is cheap. A same-day slice has to be readable, a model that can reach the data is a caller, and a generated release build is the rebuild already refused (2026-10-18)
 - [x] Handbook 01 page 5 — Fowler's frequency sketch follows the paragraph. Pain against the time between integrations, no scale and no amount (2026-10-18)
 - [x] SDLC robot — the bubble also says keep main releasable, the plan fits on a page, and a spec file is not shared understanding (2026-10-15)
