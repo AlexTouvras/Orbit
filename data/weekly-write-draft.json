@@ -1,23 +1,71 @@
 {
-  "id": "ww-2026-10-12-ide",
-  "status": "published",
-  "createdAt": "2026-10-12T10:34:39.361Z",
-  "weekOf": "2026-10-12",
-  "slug": "when-the-tools-build-the-report-write-the-contract-first",
-  "title": "When the tools build the report, write the contract first",
-  "summary": "I build reports with the Power BI MCP and reporting skills, so an assistant can produce the model and the pages. The contract has to state how the analytics are allowed to behave before that build, because the unit is the report, not one measure.",
-  "category": "Learning",
+  "id": "ww-2026-10-19-ide",
+  "status": "pending",
+  "createdAt": "2026-10-19T09:09:34.717Z",
+  "weekOf": "2026-10-19",
+  "slug": "when-text-search-gets-faster-the-refresh-still-has-to-fit",
+  "title": "When text search gets faster, the refresh still has to fit",
+  "summary": "Full-text indexing can speed a text search in Power BI, and I leave it off on a model I refresh until that same refresh, with the index on, still finishes in the time the model already takes.",
+  "category": "Data",
   "tags": [
-    "Learning",
-    "Analytics",
-    "Power BI"
+    "Data",
+    "Power BI",
+    "Analytics"
   ],
-  "mdx": "---\ntitle: \"When the tools build the report, write the contract first\"\nsummary: \"I build reports with the Power BI MCP and reporting skills, so an assistant can produce the model and the pages. The contract has to state how the analytics are allowed to behave before that build, because the unit is the report, not one measure.\"\ndate: \"2026-10-12\"\ncategory: \"Learning\"\nfeatured: false\ntags: [\"Learning\", \"Analytics\", \"Power BI\"]\n---\n\n## The question\n\nThe reports I need are built by tools. I connect an assistant to the Power BI MCP, a link that lets it work inside Power BI, Microsoft's reporting product, and I give it reporting skills, the standing instructions it follows to author the report. What comes back is a semantic model, the layer where measures and relationships live, plus the pages, and I did not place each visual myself.\n\n[Understanding DAX contracts when using AI](https://www.sqlbi.com/tv/understanding-dax-contracts-when-using-ai/) is Alberto Ferrari's note from this week. I did not watch the video. I read the [article](https://www.sqlbi.com/articles/understanding-dax-contracts-when-using-ai/) he and Marco Russo published beside it on 5 October 2026. They demonstrate a contract on one customer ranking, written in DAX, the formula language, and they get there by asking a series of questions about that measure. I do not run those steps. The claim I keep is the contract itself: a short text that says how a model is allowed to compute, shared by every measure that needs the same rule, in place before anything is generated.\n\nThat is a different way of building analytics. The assistant, through the Power BI MCP and those reporting skills, can produce the report I asked for. Speed is the reason I work this way. A missing contract now damages every page at once, where a hand-built report used to hide the same gap inside one formula.\n\n## The issue\n\nThe issue is a report that exists before anyone has stated how the analytics are allowed to behave.\n\nI can ask for the report and receive pages, filters, and measures together. With no contract, the assistant has already chosen the grain, the definitions, and what a total means. The file opens and looks finished, while the business rule is only a guess repeated across the report. Fixing one measure does not clear the other pages.\n\nReports I inherit are the slow version of this failure. Someone could say the rule in the meeting, nobody wrote it down, and the model became the only copy. One person can still read a measure. Everyone else trusts the page. Tool-built reports arrive at that ending on the first pass, because a file that opens feels like a decision the team already made.\n\n## What I write before the tools build\n\nA report I will defend starts with the contract, not with a prompt to build. The contract says how the numbers are allowed to behave and which decision the report is for, in sentences a colleague can challenge without opening the model. One rule is stated once, so a margin on the first page is the same margin on the last, and a filter that must not move a total is named where every skill can see it. The Power BI MCP and the reporting skills build from that text. I check the finished report against the contract, and a page that merely rendered only proves that the tools ran.\n\nLater changes start in the contract: I revise it, then the tools build again. A hand patch to one generated measure, with the old contract left beside it, splits the written analytics from the report, and the issue returns inside a newer file.\n\nRusso and Ferrari close by saying that, to their knowledge so far, a contract has no drawbacks. A wrong contract is still a spec, and these tools will build it. While I am still finding which question the data can support, I mark the contract as a sketch, so a generated report cannot become the standard merely because it opened. Their questions in front of one ranking measure stay in the article. On my builds the gate is the contract for the whole report, and only then the tools.\n\n## Takeaway\n\nI let the Power BI MCP and reporting skills build the report. The contract comes first, and it covers the analytics: how the numbers are allowed to behave, and which decision the report is for. If I cannot check the report against that page, the build does not ship.\n",
-  "preview": "When the tools build the report, write the contract first\n\nI build reports with the Power BI MCP and reporting skills, so an assistant can produce the model and the pages. The contract has to state how the analytics are allowed to behave before that build, because the unit is the report, not one measure.\n\nInspired by: Understanding DAX contracts when using AI",
+  "mdx": "---\ntitle: \"When text search gets faster, the refresh still has to fit\"\nsummary: \"Full-text indexing can speed a text search in Power BI, and I leave it off on a model I refresh until that same refresh, with the index on, still finishes in the time the model already takes.\"\ndate: \"2026-10-19\"\ncategory: \"Data\"\nfeatured: false\ntags: [\"Data\",\"Power BI\",\"Analytics\"]\n---\n\n## The question\n\nA faster text search looks like a free upgrade. The filter feels quicker and the report looks finished, while the reload that every page depends on stays out of the conversation. That reload is where the story breaks.\n\nPower BI, Microsoft's reporting product, added full-text indexing in the September release, and you enable it on one text column at a time. Searches and filters on that text get faster, and two calculations become available, TextContains and TextSimilarity, written in DAX, the formula language. You also choose when the search index is rebuilt: during a full refresh, or during a refresh of the type Indexes, the reload whose job is the indexes. A refresh reloads the semantic model, the tables and calculations behind the report, so the pages show current data. Asking for the index makes that build part of the reload.\n\nChris Webb timed one of those builds this week in [Monitoring The Impact Of Full-Text Indexing On Semantic Model Refresh In Power BI](https://blog.crossjoin.co.uk/2026/10/18/monitoring-the-impact-of-full-text-indexing-on-semantic-model-refresh-in-power-bi/). His claim is the part I can use on a model that is not his: you have to test how long the index takes, because it depends on the column, and the docs warn that indexes on too many text columns can make the refresh significantly slower. The example stays a witness. On UK Land Registry Price Paid data he indexed a Street column of short names, 73,206 distinct values in a table of 160,257 rows. That index built in 1,392 milliseconds, about a second and a half, and used 484 milliseconds of processor time. I did not run his test, and I do not have his file, so that second and a half on short strings is the friendly case he measured.\n\nThe timing has to be the refresh I already run, on the model I reload for other people.\n\n## The issue\n\nThe issue is a text column that gets a search index before anyone has timed what that index does to the refresh the report already depends on.\n\nThe person who typed a word and waited is the one a slow search annoys. Everyone who opened the page gets yesterday's numbers when the refresh runs long, and that is the failure I will be asked to explain. Webb's street names were short, and he still says a column of longer text, with more distinct values, could take a significant amount of time. He points at the docs for a sharper warning. Too many indexed text columns can slow the refresh by a lot, which is a claim about the set of columns, not the single street he timed. I have not read those docs or timed a long-text column, so his 1,392 milliseconds stays his measurement.\n\nWebb also says Power BI reports cannot use these indexes yet. The questions he has in mind need another front end, one that can send whatever DAX query it wants. He pictures a hotel-booking model and a count of refunds for guests who complained about the air conditioning, answered with TextSimilarity. That picture is his hypothesis, and I have not built the front end. An index I turn on this week adds a refresh cost for a search my pages cannot run.\n\nThe person who loses is the one waiting on the morning reload, with a report that is already late and a new column that looks clever.\n\n## The refresh I already run\n\nImport models I ship store the data inside the model, which is what import mode means, so a page is current only after the reload finishes. I already wait for that reload before I treat the page as the one I will stand behind. A full-text index has to pass that same wait before it stays on.\n\nI run that refresh twice: once with the column indexed, and once with the column left as ordinary text. The index stays only when the slower run still finishes in the time that model already takes. If either run is missing, the column stays ordinary text.\n\nI have not enabled this feature on a model I publish, so I have no duration of my own to put next to his. A free-text comment carries a different cost, and his post already says that cost can move. Using the Land Registry figure in place of a refresh I have actually watched is how a one-column demo becomes my standard.\n\nI already run a full refresh. A separate Indexes job would be a new schedule, another clock that can slip, and I am not adding one so the feature can hide where nobody is watching.\n\nThe comparison has to be the model I ship. A timing on a sample, or on a model that is not the one people open, approves a cost the real table never paid. Indexing several text columns and timing only the first one skips the case the docs warning is about. The refresh feels the whole set.\n\nHis trace stays in his post. He used Profiler, a recording of what the engine did during the refresh, and the 1,392 milliseconds comes from that recording. I do not run it. The duration I use is the length of the reload I already wait on, with the index and without it.\n\n## Takeaway\n\nA text column on a model I refresh gets a full-text index only after that same refresh, with the index on, still finishes in the time the model already takes. If I have not timed both runs, the index stays off. My reports cannot run that search yet, so an index turned on this week would add a cost and give the page nothing to use.\n",
+  "preview": "When text search gets faster, the refresh still has to fit\n\nFull-text indexing can speed a text search in Power BI, and I leave it off on a model I refresh until that same refresh, with the index on, still finishes in the time the model already takes.\n\nInspired by: Monitoring The Impact Of Full-Text Indexing On Semantic Model Refresh In Power BI",
   "intake": {
-    "weekOf": "2026-10-12",
-    "generatedAt": "2026-10-12T09:03:31.832Z",
+    "weekOf": "2026-10-19",
+    "generatedAt": "2026-10-19T09:01:43.178Z",
     "signals": [
+      {
+        "id": "8562faa4b0a9",
+        "title": "Monitoring The Impact Of Full-Text Indexing On Semantic Model Refresh In Power BI",
+        "link": "https://blog.crossjoin.co.uk/2026/10/18/monitoring-the-impact-of-full-text-indexing-on-semantic-model-refresh-in-power-bi/",
+        "source": "Chris Webb's BI Blog",
+        "category": "Analytics",
+        "snippet": "The September release of Power BI saw the introduction of a powerful new feature: full text indexing, which makes searching and filtering on text columns much faster and enables the use of the new TextContains() and TextSimilarity() DAX functions. You need to enable it on a per-c…"
+      },
+      {
+        "id": "901ec763c828",
+        "title": "Data Engineering Weekly #292",
+        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-292",
+        "source": "Data Engineering Weekly",
+        "category": "Data",
+        "snippet": "The Weekly Data Engineering Newsletter"
+      },
+      {
+        "id": "46bccd42ef44",
+        "title": "AI-Assisted Product Discovery: When Code Is Cheap, Judgment Is the Job",
+        "link": "https://www.scrum.org/resources/blog/ai-assisted-product-discovery-when-code-cheap-judgment-job",
+        "source": "Scrum.org",
+        "category": "Delivery",
+        "snippet": "TL; DR: Deciding What to Build Is the New Job, Now that Code Is No Longer a Constraint Agentic coding has removed the cost gate that used to stop product teams from chasing every idea at once, and the constraint has moved to product judgment: the ability to tell what is worth bui…"
+      },
+      {
+        "id": "ac3191448706",
+        "title": "Here, there, and everywhere: Remote work and the employment of disabled and older workers in the UK",
+        "link": "https://cepr.org/voxeu/columns/here-there-and-everywhere-remote-work-and-employment-disabled-and-older-workers-uk",
+        "source": "VoxEU",
+        "category": "Economics",
+        "snippet": "Disabled and older adults have lower employment rates than other workers. Policymakers increasingly point to remote work as a way to keep these groups attached to the labour market. This column uses the pandemic-driven rise in working from home in the UK as a quasi-experiment to…"
+      },
+      {
+        "id": "028c8790a21e",
+        "title": "Offshore forwards and exchange rate transmission in emerging markets",
+        "link": "https://www.bis.org/publications/working-paper-1383-offshore-forwards-and-exchange-rate-transmission-emerging-markets",
+        "source": "BIS Financial Stability",
+        "category": "Credit",
+        "snippet": "We study how offshore non-deliverable forward (NDF) markets transmit exchange-rate pressures to domestic currency markets. Using unique transaction-level data on the universe of centrally cleared NDFs for ten emerging-market currencies over 2013–2025, we show that offshore NDF or…"
+      },
+      {
+        "id": "65442e708214",
+        "title": "How Itaú is building generative AI for its entire customer base",
+        "link": "https://openai.com/index/itau-generative-ai",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "With ia.i, a conversational interface, and the IARA governance platform, Itaú is applying its AI First strategy to customers and employees — in one of Brazil’s most regulated sectors."
+      },
       {
         "id": "c5fcb1c48fe6",
         "title": "ApproximateDistinctCount In Power BI Is Sometimes Slower Than DistinctCount",
@@ -27,60 +75,12 @@
         "snippet": "As a follow-on from last week’s post about the new ApproximateDistinctCount function in DAX, I want to share something I found out from my recent testing for this function: ApproximateDistinctCount is sometimes slower than DistinctCount. This sounds counter-intuitive, right? Afte…"
       },
       {
-        "id": "1e8ab7e299eb",
-        "title": "Data Engineering Weekly #291",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-291",
-        "source": "Data Engineering Weekly",
-        "category": "Data",
-        "snippet": "The Weekly Data Engineering Newsletter"
-      },
-      {
-        "id": "8031d03ce8de",
-        "title": "Cognitive Trap: Accountability Diffusion",
-        "link": "https://www.scrum.org/resources/blog/cognitive-trap-accountability-diffusion",
-        "source": "Scrum.org",
-        "category": "Delivery",
-        "snippet": "Accountability Diffusion Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, a…"
-      },
-      {
-        "id": "648b5502e50a",
-        "title": "Ratings, debt, and deficits: An exploration",
-        "link": "https://cepr.org/voxeu/columns/ratings-debt-and-deficits-exploration",
-        "source": "VoxEU",
-        "category": "Economics",
-        "snippet": "What matters more for sovereign credit ratings – today’s debt or tomorrow’s deficits? This column explores how ratings weigh the two and finds that ratings place much more emphasis on current debt than on projected fiscal deficits. Compared with the implications of a simple model…"
-      },
-      {
-        "id": "471acfb3b17e",
-        "title": "Artificial intelligence and climate change: balancing innovation and sustainability",
-        "link": "https://www.bis.org/publications/paper-174-artificial-intelligence-and-climate-change-balancing-innovation-and-sustainability",
-        "source": "BIS Financial Stability",
-        "category": "Credit",
-        "snippet": "Artificial intelligence (AI) is becoming an increasingly important factor in the climate transition. AI can improve energy efficiency, optimise resource use, accelerate climate innovation and strengthen climate forecasting, adaptation and risk management. At the same time, the de…"
-      },
-      {
-        "id": "a842dc410cb5",
-        "title": "Investigating unintended model actions in our evaluations and internal use",
-        "link": "https://www.anthropic.com/research/investigating-unintended-model-actions",
-        "source": "Anthropic Research",
-        "category": "AI",
-        "snippet": "This report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude."
-      },
-      {
-        "id": "e4b469e972e8",
-        "title": "Understanding DAX contracts when using AI",
-        "link": "https://www.sqlbi.com/tv/understanding-dax-contracts-when-using-ai/",
-        "source": "SQLBI",
-        "category": "Analytics",
-        "snippet": "Defining the right contract is a key activity for a DAX developer using AI. Here we introduce the concept of a contract through simple examples."
-      },
-      {
-        "id": "a276e4f9898e",
-        "title": "How California built its Behavioral Health Public County Profile on Databricks",
-        "link": "https://www.databricks.com/blog/how-california-built-its-behavioral-health-public-county-profile-databricks",
+        "id": "e0bd1667988f",
+        "title": "Transactions are Generally Available, advancing warehousing on the Lakehouse",
+        "link": "https://www.databricks.com/blog/transactions-are-generally-available-advancing-warehousing-lakehouse",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "The California Department of Health Care Services (DHCS) built the Behavioral Health..."
+        "snippet": "Multi-Statement Transactions are Generally Available, enabling organizations to run..."
       }
     ],
     "projects": [
@@ -168,7 +168,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-10-12T10:38:33.415Z",
-  "publishedSlug": "when-the-tools-build-the-report-write-the-contract-first"
+  "source": "ide"
 }
