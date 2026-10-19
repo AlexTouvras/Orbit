@@ -1132,7 +1132,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "Choose the work",
               detail:
-                "Take the case, or write why you will not build. The case names the decision, the person who would act, and a rung this organization can already keep. If the work needs a higher rung, write a smaller case or a written no.",
+                "Take the case, or write why you will not build. The case names the decision, the person who would act, what gets better, what it costs to keep, and a rung this organization can already keep. If a smaller way would do, or the rung is too high, write the reason not to.",
             },
             {
               term: "Make the number fit",
@@ -1294,10 +1294,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 6,
       topic: "Choose the work",
       title: "Choose the work",
-      lede: "This page is the case I take, or the written reason I do not. The case names the decision, the person who would act, and the rung the work needs. A written reason is a finished page.",
-      rule: "My operating rule: I start the work only when the decision, the person, and a rung the organization can keep are named. Otherwise I write the reason not to, and I do not start.",
+      lede: "This page is the case I take, or the written reason I do not. The case names the decision, the person who would act, what gets better, what it costs to keep, what else could be done, and a rung the organization can already keep. A written reason is a finished page.",
+      rule: "My operating rule: I start the work only when those are named, the rung is one the organization can keep, and the alternative is not enough. Otherwise I write the reason not to, and I do not start.",
       illustration: "The invoice case is an illustration, not a record.",
-      reviewed: "18 Oct 2026",
+      reviewed: "19 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
@@ -1309,7 +1309,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "The opening page places the work. This page is the choice to build, or the written reason not to.",
             "The organization sits on the card's ladder: ad hoc, defined, managed, optimized. Ad hoc is manual, inconsistent, and low trust. Defined is standards and basic governance. Managed is automated, monitored, and reconciled. Optimized is predictive use, real-time, and self-service. The card names the trap this page is for: dashboard-only thinking with no decision. The card also says Spark is for when the volume requires it.",
-            "I take a case the current rung can keep. I move up only when the rung below is in force. I refuse the scale the decision does not need. The plates and the tools are Choose the stack. The sheet is my rule. Each case is taken or refused on its own. When the organization can keep only one, that limit is written in the reason not to.",
+            "I take a case the current rung can keep. I also name what gets better, what it costs to keep, and what else could answer the decision. A screen with no decision fails the first of those. A case that needs a higher rung, or a number fresher than the decision needs, fails the next. If a smaller case, a number that already exists, or not building would do, I write that and I do not start. The platform comes after the case is taken. The sheet is my rule. Each case is taken or refused on its own.",
           ],
           lines: [
             {
@@ -1336,9 +1336,24 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
                 "How much data the decision needs, how many people use the number at once, and how new it has to be. Refuse what the decision does not need.",
             },
             {
+              term: "Benefit",
+              detail:
+                "What gets better in the decision. If the only gain is a new screen, the line is not filled.",
+            },
+            {
+              term: "Cost",
+              detail:
+                "Whose time it takes to build, and whose time it takes to keep. Name what that time cannot also do. This line does not need a currency amount.",
+            },
+            {
+              term: "Alternative",
+              detail:
+                "Another way to answer the decision: a smaller case, a number that already exists, or not building. If that way is enough, write the reason not to.",
+            },
+            {
               term: "Build or stop",
               detail:
-                "Start when the decision, the actor, and a rung the organization can keep are named, and the scale is one the decision needs. Otherwise the written reason is the outcome. A blank line is not a reason.",
+                "Start when the decision, the actor, the benefit, the cost, and an alternative are named, the rung is one the organization can keep, and the scale is one the decision needs. Otherwise the written reason is the outcome. A blank line is not a reason.",
             },
           ],
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
@@ -1349,8 +1364,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "This is an illustration. It is not a portfolio I measured, and it states no amount.",
             "Someone asks for two things. One is a screen that refreshes through the day for every person who collects, and a prediction that chooses whom to call. The other is whether one role can give an invoice more time to pay.",
-            "On this illustration the organization is Defined. The live screen is for every collector, and the number moves through the day. Choosing the calls for them is predictive use. That work needs the optimized rung. The reason not to is written: the rung is higher than the one in force, and the decision does not need a number that moves through the day.",
-            "The case that is taken is the second request. The decision is whether to give an invoice more time to pay. The actor is the role that can do that. The rung it needs is Defined. The number is as of yesterday. The call list is a different decision, so it is not this case. No amount is written.",
+            "On this illustration the organization is Defined. The live screen is for every collector, and the number moves through the day. Choosing the calls for them is predictive use. That work needs the optimized rung. The benefit is a different decision, whom to call. The cost is someone's time to keep a number that moves all day. The invoice question can be answered by a list as of yesterday. The reason not to is written: the rung is higher than the one in force, the decision does not need a number that moves through the day, and the smaller list is enough.",
+            "The case that is taken is the second request. The decision is whether to give an invoice more time to pay. The actor is the role that can do that. The benefit is that this role can decide before an account is written off. The cost is that role's time to keep one list as of yesterday. The alternative, the live screen, was considered and refused. The rung it needs is Defined. The call list is a different decision, so it is not this case. No amount is written.",
           ],
           figure: {
             kind: "flow",
@@ -1359,12 +1374,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               {
                 term: "Refused",
                 detail:
-                  "A live screen for every collector, and a prediction that chooses the calls. The organization is Defined. That work needs Optimized. The decision does not need a number that moves through the day.",
+                  "A live screen for every collector, and a prediction that chooses the calls. The organization is Defined. That work needs Optimized. The benefit is a different decision. A list as of yesterday is enough for the invoice question.",
               },
               {
                 term: "Taken",
                 detail:
-                  "Whether one role gives an invoice more time to pay. The rung it needs is Defined. The number is as of yesterday.",
+                  "Whether one role gives an invoice more time to pay. The benefit is deciding before an account is written off. The cost is that role's time to keep one list as of yesterday. The live screen was the alternative, and it was refused. The rung it needs is Defined.",
               },
             ],
           },
@@ -1374,8 +1389,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "How I would know",
           paragraphs: [
             "I watch three things. I have no target times, and these definitions are not results I have collected.",
-            "A taken case names the decision, the person, and a rung the organization can keep.",
-            "A refusal is a written reason that names the rung or the scale that was turned down.",
+            "A taken case names the decision, the person, the benefit, the cost, the alternative, and a rung the organization can keep.",
+            "A refusal is a written reason that names what failed: the rung, the scale, a benefit that is only a screen, a cost the organization cannot keep, or an alternative that was enough.",
             "A blank start is work that began with no case and no written reason.",
             "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
           ],
@@ -1383,12 +1398,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "Refused",
               detail:
-                "A live screen for every collector, and a prediction that chooses the calls. Organization: Defined. Need: Optimized. Reason: the rung is higher, and the decision does not need a number that moves through the day.",
+                "Live screen for every collector. Benefit: a different decision. Alternative: a list as of yesterday, and it is enough. Need: Optimized. Not taken.",
             },
             {
               term: "Taken",
               detail:
-                "Whether to give an invoice more time to pay. Actor: the role that can do that. Organization: Defined. Need: Defined. The number is as of yesterday. Action: take the case. No amount is written.",
+                "More time on one invoice. Benefit: decide before a write-off. Cost: one list as of yesterday. Alternative: the live screen, refused. Need: Defined. Taken. No amount is written.",
             },
           ],
         },
@@ -1396,9 +1411,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "Name the decision fills the brief after the case is taken. This page does not write the outcome, the constraint, or the two hypotheses.",
-            "Choose the stack names the plates and the tools, including a tool that was refused. This page refuses the scale the decision does not need. It does not pick the platform.",
-            "A product that is already running is Run the product and judge the value: continue it, change it, or stop the investment.",
+            "This page decides whether to start. After a case is taken, the brief names the outcome, the constraint, and the hypotheses. This page does not.",
+            "This page refuses scale the decision does not need. It does not choose the platform.",
+            "A product that is already running is a later review: continue it, change it, or stop paying for it.",
             "Ask, Grain, Truth, and Use are the test for the number, after this page.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
@@ -1412,7 +1427,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-draft",
           title: "When AI drafts the case",
           paragraphs: [
-            "This page holds today, and I expect it to hold, because the person who would act has to be named, and the case has to be a rung the organization can keep. AI can draft the case and a reason not to build. A draft does not name that person, and it does not put the organization on a higher rung.",
+            "This page holds today, and I expect it to hold, because a person still has to name the benefit, the cost, and what else could be done, and the case still has to be a rung the organization can keep. A model can draft a case that looks finished. A draft that names a tool and skips the person, the cost, or the alternative is not a decision to build.",
           ],
         },
       ],

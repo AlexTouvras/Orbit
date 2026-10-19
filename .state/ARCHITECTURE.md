@@ -177,6 +177,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-19 | Choose the work names the benefit, the cost, and an alternative | The rung and the scale stay. A case also says what gets better, whose time it costs to keep, and what else could answer the decision. Those three lines are the author's practice. No prioritisation method has been read, and Kimball and the GAO guide are not that method. The invoice illustration still states no amount. |
 | 2026-10-19 | What good looks like teaches the path, and the rail counts chapters | Each part of the path says what you do and what the next part needs. The page does not name the later pages. A rise in the invoice example is a hypothesis to check, not a cause. The count beside the book title is the chapter in the library, so Make the number fit to use is 3 / 6 on each of its leaves. The corner of the leaf stays the address. |
 | 2026-10-18 | The library names the chapter and stops there | Make the number fit to use is chapter 3. Name the decision, Say what one row means, When two reports don't match, and Keep the definition are not listed under it. The chapter opens on `/2`. Those four addresses stay, because the analytics card already opens them. Turning the leaf still walks the pages. |
 | 2026-10-18 | The library numbers chapters, and Make the number fit to use is one of them | Superseded the same day. The four page titles were still shown under the chapter. |
