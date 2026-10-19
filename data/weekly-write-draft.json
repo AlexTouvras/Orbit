@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-10-19-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-10-19T09:47:46.715Z",
   "weekOf": "2026-10-19",
   "slug": "the-agent-can-finish-it-that-is-not-the-decision",
@@ -168,5 +168,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-10-19T17:31:25.590Z",
+  "publishedSlug": "the-agent-can-finish-it-that-is-not-the-decision"
 }
