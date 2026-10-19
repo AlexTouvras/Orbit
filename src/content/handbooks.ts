@@ -1507,7 +1507,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An example",
           paragraphs: [
             "This is an illustration. I have not measured it, and it states no amount.",
-            "The list is titled overdue balance. Two decisions are in the room. One person will choose which customers to call. The controller will decide whether to offer an open invoice more time before write-off. The rows can answer the controller, because that decision is about an invoice. They are not the call list, because a call is about a customer. Until the brief names which decision this number is for, the list stays dark.",
+            "The list is titled overdue balance. Two decisions are in the room. One person will choose which customers to call. The controller will decide whether to offer an open invoice more time before write-off. The rows can answer the controller, because that decision is about an invoice.",
+            "They are not the call list. A call is about a customer. Until the brief names which decision this number is for, the list stays dark.",
             "Once the sheet is filled, the decision is whether this controller offers more time. The outcome is that the offer is made under the agreed policy, and we can later see whether the account became current or the invoice was written off. The actor is the controller. The constraint is that the list does not replace the policy, more time may be offered, and the amount owed is not forgiven. The activity is the open invoice. The call list is a second activity, so it is not this number.",
             "If the count of open invoices rises, the hypothesis is that the controller looks at the new invoices under the policy. A higher count is not an order to refuse time. If the count falls, the hypothesis is that fewer invoices still need that look. A lower count is not an order to offer time. This illustration stops at the proposal. It does not report the later check, and a later match would not by itself prove the proposal caused it.",
             "The chair in the light is the controller. The dark chair is the call list, which this number does not answer. The invoice list can go out as the answer to the filled brief. If a second list arrives and a row on it is a customer at month-end, that disagreement is When two reports don't match.",
@@ -1595,7 +1596,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "Why a column list is not enough",
           paragraphs: [
             "The short path is to name the columns and call that the definition. Kimball says that is the most common mistake in his students' designs. The grain ends up the same thing as the primary key, and it is still a mistake to list the dimensions and treat that list as the declaration. He says to anchor the grain first to a clear business object and a set of business rules. The dimensions that carry it then become obvious.",
-            "If the grain is not clearly defined at the start, he says the whole design rests on quicksand. Talk about which dimensions to include goes in circles, and facts that do not belong on that row sneak in. A fact has to be true to the grain. In his doctor-bill example, a row is one line on a bill. The amount of that line belongs there. The amount billed to that patient for the whole year does not. Add the lines up and that year-to-date figure becomes nonsense. It is dangerous because it looks trustworthy. He says to leave it off the row and calculate the total in the application.",
+            "If the grain is not clearly defined at the start, he says the whole design rests on quicksand. Talk about which dimensions to include goes in circles, and facts that do not belong on that row sneak in. A fact has to be true to the grain. In his doctor-bill example, a row is one line on a bill.",
+            "The amount of that line belongs there. The amount billed to that patient for the whole year does not. Add the lines up and that year-to-date figure becomes nonsense. It is dangerous because it looks trustworthy. He says to leave it off the row and calculate the total in the application.",
             "The 2013 techniques note calls the grain declaration a binding contract. It has to be declared before the dimensions and the facts are chosen, because every candidate has to fit it. Different grains must not be mixed in the same fact table. Each grain is its own table.",
           ],
           sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES],
@@ -1606,7 +1608,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "The declaration is Kimball's. He also says to start with the most detailed row the activity captures, because that row can answer questions you did not plan. A summary assumes the questions people already share. A summary can be useful. It is a different row.",
             "The analytics field card names the failure this page is about: mismatched grain, inconsistent definitions, or incomplete scope. I read a mismatched grain as two meanings of a row treated as one. I read an inconsistent definition as a sentence two people would not say the same way. I read an incomplete scope as a missing line for what is included, or for what is left out.",
-            "The operating rule at the top of this page is the stop. A design meeting can list the columns and still leave the row unsaid. The decision can be named, and the row can still be blank. The opening page left the invoice rules for this sentence: how a partial payment is treated, whether an open dispute stays on the row, and that a write-off after the snapshot is not this row. A blank on any of those is an incomplete scope.",
+            "The operating rule at the top of this page is the stop. A design meeting can list the columns and still leave the row unsaid. The decision can be named, and the row can still be blank.",
+            "The opening page left three rules for this sentence. Say how a partial payment is treated. Say whether an open dispute stays on the row. A write-off after the snapshot is not this row. A blank on any of those is an incomplete scope.",
           ],
           sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES, { href: DATA_CARD, label: "Data analytics field card" }],
         },
@@ -1655,7 +1658,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "An example",
           paragraphs: [
             "This is an illustration. I have not measured it, and it states no amount.",
-            "The decision, from the brief, is whether the controller offers more time on an open invoice before write-off. The list is titled overdue balance. The title is not the row. While the thing, the time, what is included, or what is left out is blank, the list stays dark.",
+            "The decision, from the brief, is whether the controller offers more time on an open invoice before write-off. The list is titled overdue balance. The title is not the row.",
+            "While any of those four lines is blank, the list stays dark.",
             "Once the sheet is filled, a row is one open invoice as of yesterday. A partial payment stays, for the amount still unpaid. An open dispute stays, so the controller can see it. Invoices already written off are left out. A write-off after yesterday is a later row, not this one. The controller can say that sentence back. That sentence is what one row means. There is no second report on this page.",
             "If a second list with the same title arrives, and a row on it is a customer at month-end, that disagreement is When two reports don't match. This page does not pick a number between them.",
           ],
@@ -1730,7 +1734,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "Why the middle number gets published",
           paragraphs: [
             "The decision needs a number today. Two systems already show it, and the two figures differ. The short path is to read out the figure someone recognizes, or to place a third figure between them so the meeting has one number. That third figure becomes the baseline the next report is judged against. The difference goes out under a published name, and it is still unexplained.",
-            "The row sentence is already written. Kimball calls that the grain, and a fact has to be true to it. Different grains are different tables. Grain is one cause of a disagreement. The date, what is included, the status rules, how the rows are added, and how the amount is calculated are others. A missing record, or a record that is wrong, is a cause as well. If the second report will not sit on the named row, it is a different measure. A number placed between the two reports is not that row.",
+            "The row sentence is already written. Kimball calls that the grain, and a fact has to be true to it. Different grains are different tables. Grain is one cause of a disagreement.",
+            "The date, what is included, the status rules, how the rows are added, and how the amount is calculated are other causes. A missing record is a cause. A record that is wrong is a cause. If the second report will not sit on the named row, it is a different measure. A number placed between the two reports is not that row.",
           ],
           picture: {
             src: `${DATA_ART}/gate.jpg`,
@@ -1745,7 +1750,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "The control is the Green Book, the GAO's standards for internal control, May 2025. A reconciliation there means taking transactions from two sets of records and comparing them. You work out which were recorded properly, which are not recorded yet, and which were recorded wrong and need a correction, and you explain the differences. The two sets can both be inside the organization, or one can be outside, as when you reconcile to the bank. Paragraph 10.04 includes comparing different sets of data so management can see the relationship and act, and comparing file totals with control accounts. Paragraph 16.05 includes comparisons and reconciliations in ongoing monitoring.",
             "Paragraph 10.10 says a detective control finds an unintended result and corrects it, and that the control is useful only if the correction is timely. I use that as the reason the explanation happens before the number goes out. The standard does not describe a dashboard. The block is my rule.",
             "The tool that can stop the next build is narrower. It is dbt, the tool that builds the tables. A test returns the rows it was written to catch. Unless you set it otherwise, any rows mean an error. On the build command I checked, a test that fails skips the models that come after it. Set the test to warn, and the later models still run. A uniqueness test can pass on both reports while the reports still disagree. The test is how a check I have already named can stop the next model. The reconciliation is the comparison of the two reports.",
-            "The operating rule at the top of this page is that stop. The owner of the definition approves the grain. A green pipeline is not that approval. The analytics field card draws the same stop. Its picture of 4.8%, 6.2%, and 5.1% is a picture of a disagreement, not a result. The published figure in that picture is one grain after the difference is explained. It is not the middle of the two reports.",
+            "The operating rule at the top of this page is that stop. The owner of the definition approves the grain. A green pipeline is not that approval. The analytics field card draws the same stop. Its picture of 4.8%, 6.2%, and 5.1% is a picture of a disagreement, not a result.",
+            "The published figure in that picture is one explained grain. It is not the middle of the two reports.",
           ],
           sources: [
             GAO_RECONCILE,
@@ -1853,13 +1859,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "The Green Book ties a detective control to a correction that happens in time. I place that correction before the number is published. A comparison that starts after someone has already acted on the number is a review of a figure that already went out.",
             "This page stops a number whose two reports disagree. Keeping that meaning in force after it goes out is Keep the definition.",
           ],
-          sources: [
-            KIMBALL_GRAIN,
-            GAO_RECONCILE,
-            DBT_BUILD,
-            { href: DELIVERY_CARD, label: "Technology delivery field card" },
-            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
-          ],
+          sources: [KIMBALL_GRAIN, GAO_RECONCILE, DBT_BUILD],
         },
       ],
       sources: [
@@ -1953,7 +1953,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "This is an illustration. I have not measured it, and it states no amount.",
             "The number is the invoice row from the filled comparison: one open invoice as of yesterday, with a partial payment and an open dispute still on the row, and invoices already written off left out. The owner is the role that approved that sentence. The contract includes the column that marks written-off invoices. The decision is still the offer of time.",
-            "A change removes that column. The shape breaks. The build stops. The lit sheet is the number that was kept. The cracked sheet is the shape that no longer matches. The sheet in the tray is the next version, and it is not the number until the owner accepts it.",
+            "A change removes that column. The shape breaks. The build stops. The lit sheet is the number that was kept. The cracked sheet is the shape that no longer matches.",
+            "The sheet in the tray is the next version. It is not the number until the owner accepts it.",
             "A second change leaves every column name and type in place, and starts treating written-off invoices as included. The contract can stay green. That change goes back to When two reports don't match. This page does not pick a number between the two meanings. If the meeting changes the decision from the offer of time to a call list, that change goes back to the brief.",
           ],
           picture: {
@@ -1993,7 +1994,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "Where I do not use it",
           paragraphs: [
             "A table that is still changing, and a search that is not being offered as an answer, do not get a contract. dbt says turning this on while tables are still changing makes later changes harder.",
-            "Comparing two reports stays on When two reports don't match. This page does not publish a number between them.",
+            "Comparing two reports stays on When two reports don't match.",
+            "This page does not publish a midpoint.",
             "The decision, the person who will act, and the moves stay on Name the decision.",
             "A contract does not apply to a seed, a snapshot, a source, or a Python model. A data test can still run on those.",
             "Adding a column is not a breaking change. I do not open a new version for it.",
