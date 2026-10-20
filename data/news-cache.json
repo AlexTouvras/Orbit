@@ -1,7 +1,88 @@
 {
-  "generatedAt": "2026-10-19T06:46:55.426Z",
+  "generatedAt": "2026-10-20T06:46:59.316Z",
   "count": 263,
   "items": [
+    {
+      "id": "428aebc8c802",
+      "title": "How HP Is Building an AI-Ready CDP with Databricks CustomerLake",
+      "link": "https://www.databricks.com/blog/hp-ai-ready-cdp-databricks-customerlake",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-20T00:01:41.000Z",
+      "contentSnippet": "At Data + AI Summit 2026, Luis Alonso, Global Head of Data Strategy & Engineering..."
+    },
+    {
+      "id": "05bcf9892373",
+      "title": "What happens to innovation after Big Tech buys a startup",
+      "link": "https://cepr.org/voxeu/columns/what-happens-innovation-after-big-tech-buys-startup",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-19T23:00:00.000Z",
+      "contentSnippet": "Concerns abound that ‘killer acquisitions’ by tech giants could deter startup entry and stifle innovation. This column analyses patent data before and after 1,200 acquisitions by eight technology giants between 1995 and 2020. On average, the ‘Big Eight’ firms appear to invest in…"
+    },
+    {
+      "id": "7c667f1497d9",
+      "title": "Taming original sin redux: The role of benchmark-driven flows",
+      "link": "https://cepr.org/voxeu/columns/taming-original-sin-redux-role-benchmark-driven-flows",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-19T23:00:00.000Z",
+      "contentSnippet": "Emerging market capital flows remain highly sensitive to global shocks. This column analyses foreign investors in emerging market local-currency sovereign bonds depending on whether they are benchmarked to J.P. Morgan’s main local-currency government bond index or not. Benchmarke…"
+    },
+    {
+      "id": "30b65735f971",
+      "title": "Your Transformation is Suboptimal Because You keep your Dependencies",
+      "link": "https://www.scrum.org/resources/blog/your-transformation-suboptimal-because-you-keep-your-dependencies",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-19T22:00:00.000Z",
+      "contentSnippet": "Your Transformation is suboptimal Because You keep your Dependencies You trained the teams. You renamed the roles. AI tools, sprints, backlogs, planning events, all in place. Teams got a lot faster but end-to-end delivery not so. Why? Well, likely you changed how people work but…"
+    },
+    {
+      "id": "3245e854a36b",
+      "title": "What makes a catalog open? Unity Catalog Advances the Open Lakehouse",
+      "link": "https://www.databricks.com/blog/what-makes-catalog-open-unity-catalog-advances-open-lakehouse",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-19T21:20:00.000Z",
+      "contentSnippet": "While almost every platform now supports open formats, what makes a catalog truly..."
+    },
+    {
+      "id": "c76e7ee2f644",
+      "title": "How to get the most out of running dbt on Databricks",
+      "link": "https://www.databricks.com/blog/how-get-most-out-running-dbt-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-19T19:45:59.000Z",
+      "contentSnippet": "Tens of thousands of organizations rely on dbt for data transformation. Where you..."
+    },
+    {
+      "id": "0eba3393317f",
+      "title": "Databricks Is Doubling Down On New York City As A Premier AI Talent Hub",
+      "link": "https://www.databricks.com/blog/databricks-doubling-down-new-york-city-premier-ai-talent-hub",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-19T14:00:50.000Z",
+      "contentSnippet": "When Databricks opened its New York R&D hub at 5 Bryant Park earlier this year, we..."
+    },
+    {
+      "id": "7a364f356aab",
+      "title": "Advancing coding in low‑resource programming languages",
+      "link": "https://openai.com/index/low-resource-programming-languages",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-19T12:00:00.000Z",
+      "contentSnippet": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration."
+    },
+    {
+      "id": "9720d645de5a",
+      "title": "How To Create A Team Wall For Your Scrum Team",
+      "link": "https://www.scrum.org/resources/blog/how-create-team-wall-your-scrum-team",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-19T08:01:16.000Z",
+      "contentSnippet": "Image Transparency is the backbone of empiricism, which is the foundation of Scrum. Without transparency, inspection and adaptation are pointless. The higher the transparency you have in your team, the better. Bear in mind that all Scrum Team members are responsible for keeping t…"
+    },
     {
       "id": "901ec763c828",
       "title": "Data Engineering Weekly #292",
@@ -10,6 +91,42 @@
       "category": "Data",
       "pubDate": "2026-10-19T03:58:54.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "d270e9c25e78",
+      "title": "Inflation after the Iran war",
+      "link": "https://www.bis.org/publications/working-paper-1384-inflation-after-iran-war",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "An unexpected increase in energy costs raises inflation directly through flexibly-set prices. Whether that shock amplifies to a larger and persistent rise in inflation depends on its transmission through the economy."
+    },
+    {
+      "id": "2dd79f84431a",
+      "title": "Competing rails for crossborder payments: banks, fintechs, and stablecoins",
+      "link": "https://www.bis.org/publications/working-paper-1385-competing-rails-crossborder-payments-banks-fintechs-and-stablecoins",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "Cross-border payments remain slow and expensive despite significant improvements in digital financial infrastructure over the past several decades."
+    },
+    {
+      "id": "ecff4ccfa2b9",
+      "title": "Geoeconomic pressure",
+      "link": "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "The increasing use of geoeconomic pressure is reshaping the global economy."
+    },
+    {
+      "id": "332af531db90",
+      "title": "Central banks and macro financial stability in a fragmented global economy",
+      "link": "https://www.bis.org/publications/paper-176-central-banks-and-macro-financial-stability-fragmented-global-economy",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "The 25th BIS Annual Conference took place in Basel, Switzerland on 26 June 2026. The event brought together a distinguished group of central bank Governors, leading academics and former public officials to exchange views on the theme “Central banks and macro-financial stability i…"
     },
     {
       "id": "ac3191448706",
@@ -48,9 +165,9 @@
       "contentSnippet": "The September release of Power BI saw the introduction of a powerful new feature: full text indexing, which makes searching and filtering on text columns much faster and enables the use of the new TextContains() and TextSimilarity() DAX functions. You need to enable it on a per-c…"
     },
     {
-      "id": "ac73af570ed9",
-      "title": "AGI and the Product Owner's Accountability",
-      "link": "https://www.scrum.org/resources/blog/agi-and-product-owners-accountability",
+      "id": "821683492941",
+      "title": "AI and the Product Owner's Accountability",
+      "link": "https://www.scrum.org/resources/blog/ai-and-product-owners-accountability",
       "source": "Scrum.org",
       "category": "Delivery",
       "pubDate": "2026-10-18T09:12:17.000Z",
@@ -64,6 +181,15 @@
       "category": "Delivery",
       "pubDate": "2026-10-18T06:00:00.000Z",
       "contentSnippet": "Image Something has been spreading through the product teams I work with since around 2022, and it has the same shape as every good idea that becomes a religion. Teams are describing everything as a bet. The instinct behind it is a sound one. Outcomes, the real measure of product…"
+    },
+    {
+      "id": "22608bcc58d1",
+      "title": "DuckDB Ecosystem Newsletter : October 2026",
+      "link": "https://motherduck.com/blog/duckdb-ecosystem-newsletter-october-2026",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-18T00:00:00.000Z",
+      "contentSnippet": "The October 2026 DuckDB Ecosystem Newsletter: Jev typed AI answers in DuckDB and MotherDuck SQL, DuckDB 2.0's PEG parser and async S3 reads, DuckLake maintenance, analysis-ready OpenStreetMap, OneLake in the browser, a native Mac app, plus a community spotlight on Mark Litwintsch…"
     },
     {
       "id": "2d79d8428bd0",
@@ -246,24 +372,6 @@
       "contentSnippet": "Who gets the kids? Courts aim to decide custody in the child's best interests, but nobody has had the data to test how well those decisions work. Gordon Dahl (UC San Diego, CEPR), Costas Meghir (Yale, CEPR) and seven co-authors built the data themselves. They collected more than…"
     },
     {
-      "id": "89016aba30db",
-      "title": "The cost of job loss in carbon-intensive sectors: Evidence from Germany",
-      "link": "https://cepr.org/voxeu/columns/cost-job-loss-carbon-intensive-sectors-evidence-germany",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-15T23:00:00.000Z",
-      "contentSnippet": "In a green transition, workers will have to move from polluting, carbon-intensive sectors to other sectors and firms. To shed light on adjustment costs for workers in the green transition, this column uses German administrative data to estimate the cost of involuntary job displac…"
-    },
-    {
-      "id": "92f433e6c34f",
-      "title": "The mortality costs of climate change",
-      "link": "https://cepr.org/voxeu/columns/mortality-costs-climate-change",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-15T23:00:00.000Z",
-      "contentSnippet": "Mortality is one of the most salient consequences of climate change. Existing estimates have largely focused on the direct effects of local heat exposure. This column argues that this perspective can miss an important part of the overall health burden. New evidence based on fluct…"
-    },
-    {
       "id": "eb6210d05e81",
       "title": "How our AI Research team uses AI Runtime",
       "link": "https://www.databricks.com/blog/how-our-ai-research-team-uses-ai-runtime",
@@ -354,15 +462,6 @@
       "contentSnippet": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning."
     },
     {
-      "id": "22e0c664486b",
-      "title": "Sizing Lakebase Search: lessons from a real app and 4 million passages",
-      "link": "https://www.databricks.com/blog/sizing-lakebase-search-lessons-real-app-and-4-million-passages",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-15T00:06:48.000Z",
-      "contentSnippet": "Slide Hub is an internal Databricks app. Field engineers use it to find and reuse..."
-    },
-    {
       "id": "dd00c04c9b95",
       "title": "Sullivan & Cromwell brings legal expertise into agreement review",
       "link": "https://openai.com/index/sullivan-cromwell",
@@ -397,33 +496,6 @@
       "category": "Credit",
       "pubDate": "2026-10-15T00:00:00.000Z",
       "contentSnippet": "Rising geopolitical tensions, including trade restrictions and conflicts, are increasingly disrupting global supply chains, posing significant risks at critical chokepoints. Strong substitution effects and the use of inventories have helped to mitigate adverse output effects of c…"
-    },
-    {
-      "id": "44c7eb822981",
-      "title": "Unlock powerful insights and forecasts with Predictive AI Functions",
-      "link": "https://www.databricks.com/blog/unlock-powerful-insights-and-forecasts-predictive-ai-functions",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-14T23:30:00.000Z",
-      "contentSnippet": "Data teams all get asked the same questions: \"what will sales be next quarter?,\"..."
-    },
-    {
-      "id": "b3a0405976db",
-      "title": "How FactSet cut model training and deployment from days to hours with Databricks AI Runtime",
-      "link": "https://www.databricks.com/blog/how-factset-cut-model-training-and-deployment-days-hours-databricks-ai-runtime",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-14T22:55:41.000Z",
-      "contentSnippet": "FactSet’s Text-to-Formula (TTF) system has a deceptively difficult job: take a natural-language..."
-    },
-    {
-      "id": "7db4ea8a8ec5",
-      "title": "Power real-time applications and agents with Document Intelligence",
-      "link": "https://www.databricks.com/blog/power-real-time-applications-and-agents-document-intelligence",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-14T20:00:00.000Z",
-      "contentSnippet": "At Databricks, our enterprise customers receive millions of documents every single..."
     },
     {
       "id": "93dc9e9d57ba",
@@ -478,15 +550,6 @@
       "category": "AI",
       "pubDate": "2026-10-14T12:00:00.000Z",
       "contentSnippet": "See how Amp pushes the frontier of what agents can do with GPT-6 Astra, Ultrafast, GPT-Live-1, and Sign in with ChatGPT."
-    },
-    {
-      "id": "24cc989c02db",
-      "title": "SentinelOne cuts malware analysis from weeks to hours",
-      "link": "https://openai.com/index/sentinelone",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-14T12:00:00.000Z",
-      "contentSnippet": "With OpenAI Daybreak, SentinelOne cuts weeks of malware analysis to hours, creating capacity to investigate more threats."
     },
     {
       "id": "e8a69c4dba58",
@@ -669,15 +732,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "b21943a36a25",
-      "title": "Transformative AI and demand bottlenecks",
-      "link": "https://www.bis.org/publications/working-paper-1381-transformative-ai-and-demand-bottlenecks",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-12T00:00:00.000Z",
-      "contentSnippet": "Transformative AI promises to accelerate growth through productivity enhancement and automation. Yet automation on such a scale would raise the share of investment in output, potentially starving AI innovation of returns from a shrinking consumer market."
-    },
-    {
       "id": "0b0fddc541bc",
       "title": "To Switch, or Not to Switch the AI Model",
       "link": "https://www.scrum.org/resources/blog/switch-or-not-switch-ai-model",
@@ -730,15 +784,6 @@
       "category": "Data",
       "pubDate": "2026-10-09T00:00:00.000Z",
       "contentSnippet": "Josh Wills, creator of dbt-duckdb and former head of data engineering at Slack, on why the model barely matters, why agents still write ugly and expensive data pipelines, and why data engineering is still the cache invalidation problem."
-    },
-    {
-      "id": "471acfb3b17e",
-      "title": "Artificial intelligence and climate change: balancing innovation and sustainability",
-      "link": "https://www.bis.org/publications/paper-174-artificial-intelligence-and-climate-change-balancing-innovation-and-sustainability",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-08T00:00:00.000Z",
-      "contentSnippet": "Artificial intelligence (AI) is becoming an increasingly important factor in the climate transition. AI can improve energy efficiency, optimise resource use, accelerate climate innovation and strengthen climate forecasting, adaptation and risk management. At the same time, the de…"
     },
     {
       "id": "6dcb3088ac59",
@@ -831,15 +876,6 @@
       "contentSnippet": "Five prompt_jev() use cases on real data, with SQL you can rerun: AI agent traces, Hacker News sentiment, sales calls, cloud job postings and a regex replacement."
     },
     {
-      "id": "446217aa6de1",
-      "title": "Chasing El Dorado: gold under shifting geopolitical and financial conditions",
-      "link": "https://www.bis.org/publications/working-paper-1380-chasing-el-dorado-gold-under-shifting-geopolitical-and-financial-condition",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-06T00:00:00.000Z",
-      "contentSnippet": "This paper analyses the state-dependent effects of geopolitical risks on gold prices (i.e. the safe-haven role of gold), conditional on financial conditions. Geopolitical risks are often associated with tighter financial conditions. However, recent data reveal a decoupling betwee…"
-    },
-    {
       "id": "b3f03a1d6ca5",
       "title": "Understanding DAX contracts when using AI",
       "link": "https://www.sqlbi.com/articles/understanding-dax-contracts-when-using-ai/",
@@ -856,15 +892,6 @@
       "category": "Analytics",
       "pubDate": "2026-10-05T14:17:32.000Z",
       "contentSnippet": "Barcelona is done. Nearly 5,000 people, 130+ sessions, and a very long list of announcements. This is my cut of the ones that matter, why they matter, and what you should do about them. TL;DR Everything you build in Fabric now reaches Microsoft Copilot and agents directly. Fabric…"
-    },
-    {
-      "id": "98600d3a924c",
-      "title": "Scrum Day India 2026 Recap: Scrum Teams in the Age of Autonomous Agents",
-      "link": "https://www.scrum.org/resources/blog/scrum-day-india-2026-recap-scrum-teams-age-autonomous-agents",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-05T09:29:36.000Z",
-      "contentSnippet": "Image On Saturday, 26 September 2026, Scrum practitioners gathered at To The New in Sector 144, Noida, for Scrum Day India 2026. The theme was Scrum Teams in the Age of Autonomous Agents. For the last two years, most conversations about AI in Scrum have been about assistance: a b…"
     },
     {
       "id": "f6ff5f6917ea",
@@ -912,15 +939,6 @@
       "contentSnippet": "As you’ve probably seen in the blog post for the September 2026 release of Power BI, Import mode and Direct Lake mode semantic models now support the ApproximateDistinctCount() DAX function. I tested its performance on a Direct Lake semantic model with a 1.4 billion row fact tabl…"
     },
     {
-      "id": "518438b7e164",
-      "title": "5 Things the Scrum Master Shouldn’t Be Doing",
-      "link": "https://www.scrum.org/resources/blog/5-things-scrum-master-shouldnt-be-doing",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-04T13:00:00.000Z",
-      "contentSnippet": "Image I love being a Scrum Master. What I love about it is helping a team accomplish something and honestly just making Developers' work lives as hassle-free as possible. I love working with smart people and seeing them accomplish amazing things. As a Scrum Master, most of us wan…"
-    },
-    {
       "id": "5a3f1f4a82c5",
       "title": "We're going to need default hard budget caps on pretty much everything",
       "link": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
@@ -955,15 +973,6 @@
       "category": "Data",
       "pubDate": "2026-10-01T00:00:00.000Z",
       "contentSnippet": "Data Outpost is an AI and data conference in San Francisco. Its main day, November 5, 2026, has 13 talks and panels from teams at Canva, Stripe, DoorDash, Posit, dbt and more. Here's what each session covers, from agents that write back to context layers, SQL harnesses, and AI fo…"
-    },
-    {
-      "id": "1d20657e6835",
-      "title": "Circular relationships among AI firms",
-      "link": "https://www.bis.org/publications/bulletin-137-circular-relationships-among-ai-firms",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-01T00:00:00.000Z",
-      "contentSnippet": "Between 2021 and 2025, 28.7% of artificial intelligence (AI) firms’ investment deals (by deal value) involved a target company that was also an AI firm, while 55.2% of incoming investments in AI firms came from other AI firms."
     },
     {
       "id": "5c34efbd94af",
@@ -1369,15 +1378,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-13T10:03:39.000Z",
       "contentSnippet": "Here’s a situation I’ve found myself in many times. You’re called to help someone whose Power BI report is suddenly very slow. You ask whether any changes were made to the semantic model around the time performance got worse and the answer is no, absolutely not. You then spend an…"
-    },
-    {
-      "id": "ca291efb21c7",
-      "title": "Why DuckDB 2.0 is faster",
-      "link": "https://motherduck.com/blog/why-duckdb-20-is-faster",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-09-10T00:00:00.000Z",
-      "contentSnippet": "DuckDB 2.0 alpha vs 1.5.5 on one laptop: recursive CTEs up to 90x, VARIANT 6x faster than JSON text, async I/O 2.4x on S3. What changes, and how to model data to get the speedup."
     },
     {
       "id": "42b432deee76",
@@ -1794,15 +1794,6 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
-    },
-    {
       "id": "d9adb789161e",
       "title": "How Firms Form Beliefs and the Implications for Inflation",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
@@ -1819,6 +1810,15 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
+    },
+    {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "fb549b859ee4",
@@ -1875,13 +1875,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "4c8cd6ef9ad3",
-      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
-      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
+      "id": "99c54272067a",
+      "title": "Rethinking Central Bank LSAPs: The Power of Market Functioning Purchases",
+      "link": "https://www.kansascityfed.org/research/research-working-papers/rethinking-central-bank-lsaps-the-power-of-market-functioning-purchases/",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
+      "contentSnippet": "Federal Reserve Bank of Kansas City Research Working Papers by Andrew Lee Smith and Victor J. Valcarcel"
     },
     {
       "id": "ed6bd26c4997",
