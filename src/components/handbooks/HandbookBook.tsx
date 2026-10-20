@@ -7,7 +7,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode }
 import type { Handbook, HandbookPage, HandbookPicture, HandbookSection } from "@/content/handbooks";
 import { HandbookSpread, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
 import { ChapterRail } from "@/components/handbooks/ChapterRail";
-import { HandbookFigureView, SheetRow, UseRow } from "@/components/handbooks/HandbookFigures";
+import { HandbookFigureView, SheetGate, SheetRow, UseRow } from "@/components/handbooks/HandbookFigures";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
@@ -678,20 +678,42 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
       node: <p className={`border-l pb-4 pl-4 text-base leading-relaxed text-slate-300 ${rule}`}>{line.detail}</p>,
     });
   });
-  if (section.figure?.kind === "sheet") {
-    section.figure.steps.forEach((step, index) => {
+  if (section.figure?.kind === "sheet" && !narrow) {
+    blocks.push({
+      key: `${section.id}-figure`,
+      sectionId: section.id,
+      sectionTitle: section.title,
+      node: (
+        <div className="pb-2">
+          <HandbookFigureView figure={section.figure} warm={warm} />
+        </div>
+      ),
+    });
+  } else if (section.figure?.kind === "sheet") {
+    let field = 0;
+    section.figure.steps.forEach((step) => {
+      if (step.gate) {
+        blocks.push({
+          key: `${section.id}-line-${field}`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          node: <SheetGate term={step.term} detail={step.detail} warm={warm} />,
+        });
+        return;
+      }
       blocks.push({
-        key: `${section.id}-line-${index}`,
+        key: `${section.id}-line-${field}`,
         sectionId: section.id,
         sectionTitle: section.title,
-        node: <SheetRow term={step.term} detail={step.detail} warm={warm} first={index === 0} />,
+        node: <SheetRow term={step.term} detail={step.detail} warm={warm} first={field === 0} />,
       });
+      field += 1;
     });
     blocks.push({
       key: `${section.id}-line-note`,
       sectionId: section.id,
       sectionTitle: section.title,
-      node: <p className="pt-2 pb-4 text-sm leading-relaxed text-slate-400">{section.figure.caption}</p>,
+      node: <p className="pt-2 pb-2 text-sm leading-relaxed text-slate-400">{section.figure.caption}</p>,
     });
   } else if (section.figure?.kind === "uses" && narrow) {
     const head = section.figure.head ?? [];
