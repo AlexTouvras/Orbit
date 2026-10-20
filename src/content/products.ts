@@ -7,8 +7,10 @@ import type { ProjectStatus } from "@/lib/project-status";
  *
  * Delivery Signal's page is not copied into this repo. `/delivery-signal`
  * reads `docs/` from `AlexTouvras/delivery-signal` `main` and caches it for
- * a minute, so a push there is the version on this site. The open URL is
- * `index.html` so the page's own files resolve next to it.
+ * a minute, so a push there is the version on this site. The checker
+ * `engine/pipeline.py` is `src/delivery-signal/pipeline.py` in this repo,
+ * so the brief opens with the week. The open URL is `index.html` so the
+ * page's own files resolve next to it.
  */
 export interface Product {
   id: string;

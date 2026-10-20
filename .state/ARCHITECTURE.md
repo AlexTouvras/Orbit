@@ -23,7 +23,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Which model? | `data/figures/which-model.v1.json` | Monthly OpenRouter catalog pack. Storytelling refreshes and freezes it; `stories:sync` copies `src/components/model-choice`, `src/lib/model-choice`, and the pack. The live route `/portfolio/live/which-model` stays Orbit-owned. Not listed under `/stories`. |
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Products | `src/content/products.ts` | Public `/products`. A page or command a stranger can open. Not the Studio workshop scan. |
-| Delivery Signal live page | `src/app/delivery-signal/[[...path]]/route.ts` | Proxies `AlexTouvras/delivery-signal` `main` `docs/`. Cache 60s. No copy in this repo. |
+| Delivery Signal live page | `src/app/delivery-signal/[[...path]]/route.ts` | Proxies `AlexTouvras/delivery-signal` `main` `docs/`. Cache 60s. `engine/pipeline.py` is served from `src/delivery-signal/pipeline.py` so the brief opens with the week. |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
 | Studio roadmap | `data/studio-roadmap.json` (+ `.seed.json`) | `focusNow` (public on `/card` only) + private milestones (`planned`/`active`/`evidence`/`proven`). Persist via `persistDataJson` same as profile. Store: `src/lib/studio-roadmap.ts`. |
@@ -117,7 +117,8 @@ src/components/seo/
 data/published-projects.json
 src/content/products.ts                 # /products; not the Studio workshop scan
 src/app/products/page.tsx
-src/app/delivery-signal/[[...path]]/route.ts  # live main/docs proxy, 60s cache
+src/app/delivery-signal/[[...path]]/route.ts  # live main/docs proxy, 60s cache; checker is src/delivery-signal/pipeline.py
+src/delivery-signal/pipeline.py              # week reading; result id still f1fb4eaa03
 src/components/products/ProductList.tsx
 src/content/writes/
 public/field-card/index.html            # Agentic AI Field Card (home AI competency)
@@ -177,6 +178,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-20 | The Delivery Signal brief opens with the week | Owner: the sample report listed statuses and field diffs and did not say what moved, what is dated next week, what is highest this week, or which rows can delay a date. `src/delivery-signal/pipeline.py` adds that reading. A due date is the date in the file. The result id stays `f1fb4eaa03` because the reading is not in the hash. This agent cannot push `AlexTouvras/delivery-signal`, so Orbit serves that checker and still reads the page and the sample from `main`. |
 | 2026-10-19 | A handbook leaf keeps a short paragraph whole | If a paragraph fits on a fresh leaf and not in the space left, it starts the next leaf. A paragraph taller than the leaf can still break. The rule keeps the hypothetical rise on Name the decision from opening mid-sentence. |
 | 2026-10-19 | Name the decision walks a hypothetical rise | The example supposes an overdue count 12 percent higher and invoices issued 20 percent higher, and labels both as hypothetical. The overdue share did not rise. Money still unpaid, and whether older or disputed invoices are accumulating, stay unread. The count alone does not show that collections got worse. The brief is a tool for an answer. A look, a watched monthly count, a forecast, and a regulated number do not all need that same sheet. How I would know asks whether the decision improved the outcome against what would otherwise have happened. That needs a baseline, a period, and other explanations. It is not collected. Other pages still state no amount. |
 | 2026-10-19 | A weekly essay does not name a source it has not opened | The 19 Oct draft cited Goldratt and a 2026 paper, then said they were unread. The topic stays. Those citations come out. `docs/essay-voice.md` leaves an unread source unnamed. |
