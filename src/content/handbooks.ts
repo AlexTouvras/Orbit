@@ -1527,16 +1527,16 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "If it rises",
               detail:
-                "A larger open-invoice population, slower payment, or a change in what is counted. Compare count, share, and unpaid amount on the same population before changing the offer.",
+                "More invoices issued in the month, slower payment within 30 days, or a change in what is counted. Compare the count, the share of that month's issues, and the unpaid amount on those overdue invoices before changing the offer.",
             },
             {
               term: "If it falls",
               detail:
-                "A smaller population, faster payment, or a change in what is counted. Check which before treating the fall as a better result.",
+                "Fewer invoices issued in the month, faster payment within 30 days, or a change in what is counted. Check which before treating the fall as a better result.",
             },
             {
               term: "Activity",
-              detail: "Open invoices, as of the reporting date.",
+              detail: "Invoices issued, counted 30 days after issue.",
             },
             {
               term: "Status",
@@ -1553,23 +1553,21 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-choices",
           title: "Why these words",
           paragraphs: [
-            "The decision names the offer, so someone who missed the meeting can repeat it. Overdue balance is the title of the list. That title would also fit the call list, so it is not the decision. The owner is the controller who can offer time. The constraint keeps the cutoff in the policy.",
-            "The outcome is that offer, and a later look at the account. A lower overdue count would be a different outcome, because the count can fall when the population shrinks. The rise hypothesis tells you the next analytical step: before anyone changes the offer, compare the overdue count, the share of the same open-invoice population, and the unpaid amount. The figures that follow are hypothetical. They do not establish that any account became current or was written off. If overdue meant something different on the two dates, that question belongs with row-level meaning, and these figures are not yet a rise.",
+            "Overdue balance would also fit the call list, so the decision names the offer. The rise line is the instruction for the figures: compare that month's issues at the same age before changing the offer. If overdue meant something different in the two months, that question belongs with row-level meaning, and these figures are not yet a rise.",
           ],
         },
         {
           id: "question-figures",
           title: "Count, share, and exposure",
           paragraphs: [
-            "These figures are hypothetical. I have not measured them. They do not establish a business result.",
-            "The reporting dates are the mornings of 31 March and 30 April. On each date the population is open invoices, with written-off invoices excluded. Overdue means past due under the agreed policy. The overdue share is the overdue count divided by that open-invoice population, on the same date. Both dates use those rules. Invoices issued during the month are not this population.",
-            "On 31 March: 100 overdue invoices out of 500 open, and €1.0 million still unpaid on the overdue invoices. On 30 April: 112 overdue invoices out of 600 open, and €1.4 million still unpaid on the overdue invoices.",
-            "The overdue count is 12 percent higher. On its own, that looks like more overdue work.",
-            "The open-invoice population is 20 percent larger, 500 to 600. That 20 percent is growth in the snapshot population. It is not a growth rate for invoices issued. The overdue share was 20 percent, 100 of 500. It is 18.7 percent to one decimal place, 112 of 600. The ratio is valid because both dates divide overdue invoices by open invoices on that morning. The fall describes that ratio. It does not show that collections improved. The extra open invoices may not be due yet.",
-            "Invoices issued during the month are a second growth rate, even when that rate is also 20 percent. An invoice issued in April may not be due by 30 April. An overdue invoice on 30 April may have been issued months earlier. The issued-invoice rate and the overdue-count rate do not establish this share, and they do not establish better collections.",
-            "Monetary exposure is the amount still unpaid on the overdue invoices. It rose from €1.0 million to €1.4 million, which is 40 percent. Exposure grew faster than the count. The extra €0.4 million is a different description from either growth rate.",
-            "The brief sends you here before the offer changes. Next I would ask whether a few invoices account for most of that extra €0.4 million, whether those invoices are older than the overdue invoices on 31 March, and whether disputed amounts are a larger part of the €1.4 million. The policy cutoff stays where it is.",
-            "I cannot yet conclude that customers are paying more slowly, that collections got better or worse, or that more time should be refused. The lower share only says the overdue count grew more slowly than this open-invoice population. The higher exposure fits a few larger balances, or balances that have stayed open longer. The figures do not say which, and they do not say why any one invoice is unpaid.",
+            "These figures are hypothetical. I have not measured them, and they do not establish what happened to any account.",
+            "The eligible population is the invoices issued in one calendar month. March is one population. April is the next. Each invoice is counted 30 days after its issue date, and both months use that rule. Overdue means still open and past due on that day, under the agreed policy. The overdue share is the overdue count divided by the invoices issued in that same month. An invoice issued in an earlier month is not in the count. Monetary exposure is the amount still unpaid on the overdue invoices in that same month, on that same day.",
+            "March: 500 invoices issued, 100 overdue at day 30, and €1.0 million still unpaid on those 100. April: 600 invoices issued, 112 overdue at day 30, and €1.4 million still unpaid on those 112.",
+            "The overdue count is 12 percent higher. On its own, that looks like more overdue work. Invoices issued are 20 percent higher. The overdue share was 20 percent, 100 of 500. It is 18.7 percent to one decimal place, 112 of 600. Each overdue invoice was issued in that month, so the share compares the same kind of population at the same age. The fall describes that ratio. It does not show that collections improved.",
+            "A count of every invoice overdue on 30 April, divided by the invoices issued in April, would not be this share. That count includes invoices issued in earlier months.",
+            "Exposure rose from €1.0 million to €1.4 million, which is 40 percent. Both amounts are the unpaid balance on the overdue invoices of that month's issues, at day 30. Exposure grew faster than the count. The extra €0.4 million is not explained by 12 percent more overdue invoices.",
+            "Next I would ask whether a few of those overdue invoices account for most of the extra €0.4 million, whether they were past due earlier in the 30 days than the March group, and whether disputed amounts are a larger part of the €1.4 million. The policy cutoff stays where it is.",
+            "I cannot yet conclude that customers are paying more slowly, that collections got better or worse, or that more time should be refused. The lower share only says the overdue count grew more slowly than that month's issues. The higher exposure fits a few larger balances, or balances that stayed open longer within the 30 days. The figures do not say which, and they do not say why any one invoice is unpaid.",
           ],
         },
         {
