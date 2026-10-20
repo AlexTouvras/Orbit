@@ -16,6 +16,8 @@ export interface HandbookFigureStep {
   detail: string;
   /** Icon in the diagram. The words still name the step. */
   mark?: HandbookMark;
+  /** Drawn apart from the other lines, as the stop. */
+  gate?: boolean;
 }
 
 export type HandbookMark =
@@ -1453,36 +1455,35 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "brief",
           title: "The brief",
           paragraphs: [
-            "The previous chapter chose the list. This brief is filled for one use of it: whether this credit controller offers an open invoice more time before write-off. Overdue balance would also fit a call list, so that list would be a second brief. This is an illustration. I have not measured it, and it establishes no business result.",
-            "The owner is one person, or one role, who uses the number. A mailing list is not the owner, and the person who owns the definition is a different role. The constraint is the agreed policy. If there is no limit, write that. A blank constraint is not the same as no limit. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. Marking the brief ready does not make a hypothesis true.",
+            "The previous chapter chose the list. This sheet is filled for the controller's offer of more time. A call list would be a second brief. The figures are an illustration, not a measured result.",
           ],
           figure: {
             kind: "sheet",
-            caption: "Filled for the controller's offer. Each line is this case.",
+            caption: "Seven lines for this case. Status is the gate. Filling it does not make a hypothesis true.",
             steps: [
               {
                 term: "Decision",
-                detail: "Whether this credit controller offers more time on an open invoice before write-off, inside the agreed policy.",
+                detail: "Whether this credit controller offers more time before write-off.",
               },
               {
                 term: "Outcome",
-                detail: "The offer can be made before write-off. Later, look at whether the account became current or the invoice was written off.",
+                detail: "The offer is made in time. Later: current, or written off.",
               },
               {
                 term: "Owner",
-                detail: "The credit controller who can offer the time.",
+                detail: "The credit controller who uses the number. Not a mailing list, and not the definition owner.",
               },
               {
                 term: "Constraint",
-                detail: "The agreed policy sets the cutoff. The list does not set a new one, and it does not replace the controller.",
+                detail: "The agreed policy sets the cutoff. If there is no limit, write that. A blank line is not the same as no limit. The list does not replace the controller.",
               },
               {
                 term: "If it rises",
-                detail: "More invoices issued that month, slower payment within 30 days, or a change in what is counted.",
+                detail: "More issues that month, slower payment within 30 days, or a changed count.",
               },
               {
                 term: "If it falls",
-                detail: "Fewer invoices issued that month, faster payment within 30 days, or a change in what is counted.",
+                detail: "Fewer issues that month, faster payment within 30 days, or a changed count.",
               },
               {
                 term: "Activity",
@@ -1490,7 +1491,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               },
               {
                 term: "Status",
-                detail: "Ready for this decision. The call list is out of scope. The figures test the hypothesis.",
+                detail: "Filled for this decision. These figures are not evidence to change the offer.",
+                gate: true,
               },
             ],
           },
@@ -1509,14 +1511,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-figures",
           title: "Count, share, and exposure",
           paragraphs: [
-            "These figures are hypothetical. I have not measured them, and they do not establish what happened to any account.",
-            "The eligible population is the invoices issued in one calendar month. March is one population. April is the next. Each invoice is counted 30 days after its issue date, and both months use that rule. Overdue means still open and past due on that day, under the agreed policy. The overdue share is the overdue count divided by the invoices issued in that same month. An invoice issued in an earlier month is not in the count. Monetary exposure is the amount still unpaid on the overdue invoices in that same month, on that same day.",
-            "The rise line on the brief is this comparison. If overdue meant something different in the two months, that question belongs with row-level meaning, and these figures are not yet a rise.",
+            "These figures are hypothetical. I have not measured them, and they do not establish what happened to any account. The eligible population is the invoices issued in one calendar month. March is one population. April is the next. Each invoice is counted 30 days after its issue date. Overdue means still open and past due on that day, under the agreed policy. The share is that overdue count divided by the invoices issued in that same month. An invoice issued in an earlier month is not in the count. Exposure is the amount still unpaid on those same overdue invoices, on that same day. The rise line on the brief is this comparison. If overdue meant something different in the two months, that question belongs with row-level meaning.",
           ],
           figure: {
             kind: "reading",
-            note: "March: 500 issued, 100 overdue at day 30. April: 600 issued, 112 overdue at day 30. That month's issues only. The share is to one decimal place. Hypothetical.",
-            caption: "The count rose, the share fell, and exposure increased substantially. The figures alone do not establish why.",
+            caption:
+              "Day 30, that month's issues only: 100 of 500, then 112 of 600. Issues rose 20 percent, so the share fell from 20 percent to 18.7 percent while the count rose 12 percent and exposure rose 40 percent. Hypothetical. The figures do not establish a cause, and the lower share does not show that collections improved.",
             steps: [],
             head: ["Comparison", "March", "April", "Change"],
             rows: [
@@ -1526,40 +1526,24 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             ],
           },
           closing: [
-            "A count of every invoice overdue on 30 April, divided by the invoices issued in April, would not be this share. That count includes invoices issued in earlier months.",
-            "Invoices issued rose from 500 to 600, which is 20 percent, so the overdue count rose more slowly than the invoices issued. The fall in share does not show that collections improved. The extra €0.4 million of exposure is not explained by 12 percent more overdue invoices.",
-            "Next I would ask whether a few of those overdue invoices account for most of the extra €0.4 million, whether they were past due earlier in the 30 days than the March group, and whether disputed amounts are a larger part of the €1.4 million. The policy cutoff stays where it is.",
-            "I cannot yet conclude that customers are paying more slowly, that collections got better or worse, or that more time should be refused. The higher exposure fits a few larger balances, or balances that stayed open longer within the 30 days. The figures do not say which, and they do not say why any one invoice is unpaid.",
+            "A snapshot of every invoice overdue on one date, divided by that month's issues, is not this share. It includes invoices issued in earlier months.",
+            "Next I would ask whether a few invoices account for most of the extra €0.4 million, whether they were past due earlier in the 30 days than the March group, and whether disputed amounts are a larger part of the €1.4 million. The policy cutoff stays where it is. The higher exposure fits a few larger balances, or balances that stayed open longer within the 30 days. I cannot yet conclude slower payment, better or worse collections, or that more time should be refused. The figures do not say which, and they do not say why any one invoice is unpaid.",
           ],
         },
         {
           id: "question-order",
           title: "The order",
-          paragraphs: [
-            "This is the sequence around the rule at the top. How far the brief goes follows the cost of being wrong.",
-          ],
           figure: {
             kind: "flow",
             plain: true,
-            caption: "A number offered as the answer walks all five steps. A lighter use can stop earlier.",
+            caption:
+              "A number offered as the answer walks all five steps. Exploration and monitoring can stop earlier. How far the brief goes follows the cost of being wrong.",
             steps: [
-              { term: "Intended use", detail: "Still looking, a watch, a forecast, or a choice the number will answer." },
-              {
-                term: "Definitions and comparability",
-                detail: "One population, one window, and the same meaning in both periods.",
-              },
-              {
-                term: "Interpretation of evidence",
-                detail: "What the figures can support, and what they leave open.",
-              },
-              {
-                term: "Decision within policy",
-                detail: "The choice stays inside the constraint. The number does not set a new one.",
-              },
-              {
-                term: "Outcome evaluation",
-                detail: "For a choice, what happened afterward. A lighter use has nothing to score.",
-              },
+              { term: "Intended use", detail: "The use." },
+              { term: "Comparability", detail: "One population, one window." },
+              { term: "Interpretation", detail: "What the figures leave open." },
+              { term: "Decision", detail: "Inside the policy." },
+              { term: "Outcome evaluation", detail: "What happened afterward." },
             ],
           },
         },
