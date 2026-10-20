@@ -7,7 +7,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode }
 import type { Handbook, HandbookPage, HandbookPicture, HandbookSection } from "@/content/handbooks";
 import { HandbookSpread, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
 import { ChapterRail } from "@/components/handbooks/ChapterRail";
-import { HandbookFigureView } from "@/components/handbooks/HandbookFigures";
+import { HandbookFigureView, SheetRow, UseRow } from "@/components/handbooks/HandbookFigures";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
@@ -678,8 +678,40 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
       node: <p className={`border-l pb-4 pl-4 text-base leading-relaxed text-slate-300 ${rule}`}>{line.detail}</p>,
     });
   });
-  if (section.figure && !(hideBoardFigure && BOARD_FIGURES.has(section.figure.kind))) {
-    if (narrow && section.figure.kind === "flow") {
+  if (section.figure?.kind === "sheet") {
+    section.figure.steps.forEach((step, index) => {
+      blocks.push({
+        key: `${section.id}-line-${index}`,
+        sectionId: section.id,
+        sectionTitle: section.title,
+        node: <SheetRow term={step.term} detail={step.detail} warm={warm} first={index === 0} />,
+      });
+    });
+    blocks.push({
+      key: `${section.id}-line-note`,
+      sectionId: section.id,
+      sectionTitle: section.title,
+      node: <p className="pt-2 pb-4 text-sm leading-relaxed text-slate-400">{section.figure.caption}</p>,
+    });
+  } else if (section.figure?.kind === "uses" && narrow) {
+    const head = section.figure.head ?? [];
+    const rows = section.figure.rows ?? [];
+    rows.forEach((row, index) => {
+      blocks.push({
+        key: `${section.id}-line-${index}`,
+        sectionId: section.id,
+        sectionTitle: section.title,
+        node: <UseRow label={row.label} cells={row.cells} head={head} warm={warm} first={index === 0} />,
+      });
+    });
+    blocks.push({
+      key: `${section.id}-line-note`,
+      sectionId: section.id,
+      sectionTitle: section.title,
+      node: <p className="pt-2 pb-4 text-sm leading-relaxed text-slate-400">{section.figure.caption}</p>,
+    });
+  } else if (section.figure && !(hideBoardFigure && BOARD_FIGURES.has(section.figure.kind))) {
+    if (narrow && section.figure.kind === "flow" && !section.figure.plain) {
       section.figure.steps.forEach((step, index) => {
         blocks.push({
           key: `${section.id}-flow-${index}`,
@@ -713,7 +745,7 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
         sectionTitle: section.title,
         node: (
           <div className="pb-4">
-            <HandbookFigureView figure={section.figure} />
+            <HandbookFigureView figure={section.figure} warm={warm} />
           </div>
         ),
       });
@@ -730,6 +762,14 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
           <span>{step}</span>
         </div>
       ),
+    });
+  });
+  section.closing?.forEach((paragraph, index) => {
+    blocks.push({
+      key: `${section.id}-close-${index}`,
+      sectionId: section.id,
+      sectionTitle: section.title,
+      node: <p className="pb-4 text-base leading-relaxed text-slate-300">{paragraph}</p>,
     });
   });
   if (section.sources?.length) {
