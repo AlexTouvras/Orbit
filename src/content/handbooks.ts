@@ -1431,7 +1431,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 2,
       topic: "Make the number fit",
       title: "Name the decision",
-      lede: "Choose the work has already taken the list. This page writes the brief for a number that will be offered as the answer. A chart you are still exploring can go out before the brief is filled. The answer cannot. A report title is not the decision.",
+      lede: "The previous chapter established which problem is worth solving. This chapter explains what a metric must establish before it can support a decision. A chart you are still exploring can go out before the brief is filled. A number offered as the answer cannot. A report title is not the decision.",
       rule: "My operating rule: when a number is offered as the answer, I name the decision, the outcome, the person the number is for, the constraint, and the one activity. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. I do not present the number as that answer until those are named.",
       illustration: "The two chairs are an illustration, not a record.",
       reviewed: "20 Oct 2026",
@@ -1440,9 +1440,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "brief",
           title: "The brief",
           paragraphs: [
-            "The case is already taken. This sheet is the brief for the number. It is separate from the decision to build the list.",
-            "Fill it when you are about to give someone the number as the answer. A chart you are still exploring can go out while a line is blank. Exploration, monitoring, and support for a decision are different uses. Fit the brief to the use. A number can be worth having when nobody acts on it today.",
-            "What one row means is the next page. This brief does not settle it.",
+            "The previous chapter chose the list. This sheet is what the metric has to establish before someone relies on it.",
+            "Exploration, monitoring, forecasting, and a consequential decision are different uses. Exploration is still looking. Monitoring watches a figure over time. A forecast says what might happen next. A consequential decision offers the number as the answer to a choice. Fit the brief to that use. A number can be worth having when nobody acts on it today.",
+            "Row-level meaning, comparisons between reports, and ownership follow. This chapter does not settle them.",
           ],
           lines: [
             {
@@ -1456,8 +1456,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
                 "The goal the number is supposed to represent. For a decision, name the choice and what you would look at afterward. For a watch or an exploration, name what the number is supposed to show. The GAO guide, April 1998, is this link: the measure has to represent that goal.",
             },
             {
-              term: "Actor",
-              detail: "Who the number is for. One person, or one role. A mailing list is not the actor.",
+              term: "Owner",
+              detail:
+                "The decision owner. One person, or one role. A mailing list is not the owner. This is the person who uses the number, not the person who owns the definition.",
             },
             {
               term: "Constraint",
@@ -1467,12 +1468,12 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "If it rises",
               detail:
-                "A hypothesis to check against the use you named. A higher count can be more invoices issued, slower payment, or a change in what is counted. On a decision, ask whether the rise would change the offer. On a watch, the rise can be the thing being watched. The test is whether the number is relevant to that use.",
+                "A hypothesis to check against the use you named. A higher count can be a larger population, slower payment, or a change in what is counted. On a consequential decision, ask whether the rise would change the choice. On a watch or a forecast, the rise can be the thing you are following. The test is whether the number is relevant to that use.",
             },
             {
               term: "If it falls",
               detail:
-                "A hypothesis to check. A lower count can be fewer invoices issued, faster payment, or a change in the count. A fall needs the same check. It does not, by itself, show that the policy worked.",
+                "A hypothesis to check. A lower count can be a smaller population, faster payment, or a change in what is counted. A fall needs the same check. It does not, by itself, show that the policy worked.",
             },
             {
               term: "Activity",
@@ -1480,9 +1481,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
                 "The one business process that produces the number. Kimball starts the design on this line. If the use needs two processes, they are two numbers.",
             },
             {
-              term: "Send it",
+              term: "Status",
               detail:
-                "Filled when the number is offered as the answer and the lines above are filled. While a line is blank, people can still explore or monitor. The number is not yet the answer. Sending it does not make a hypothesis true.",
+                "Whether the number is ready to be offered as the answer. Mark it ready only when the lines above are filled. While a line is blank, people can still explore, monitor, or forecast. The number is not yet the answer to a consequential decision. Marking it ready does not make a hypothesis true.",
             },
           ],
           sources: [KIMBALL_PROCESS, KIMBALL_STEPS, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
@@ -1491,9 +1492,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "why-lines",
           title: "Why the lines are separate",
           paragraphs: [
-            "Kimball's four-step design puts the business first. Before the model is drawn, the team sits with the people who use the numbers. They learn the goals, the problems, how decisions get made, the analysis those people need, and what the source data can support. The design then starts by choosing the business process. That process is a real activity, such as taking an order, handling a claim, or recording every account at month-end. Most fact tables cover one activity. Choosing it is what lets you say what one row means. People from the business take part so the names and the rules are agreed. That meeting learns how decisions get made. It does not fill this brief. A report title is not the activity.",
-            "The GAO guide is about a plan, not a dashboard. A measure has to represent the performance it is supposed to assess, or be clearly related to it. The guide's own example is the average time to process a tax return, set against a goal of more accurate processing. The time can be collected carefully and still be the wrong number. It can be a trustworthy measure of speed, and unfit as the answer to a question about accuracy. I use the guide for that link, and I write the goal on Outcome. The constraint is my practice. So is treating a rise as a hypothesis rather than an order.",
-            "The analytics field card names this failure as the wrong question, the wrong audience, or an unclear decision. Put the question on Decision and the audience on Actor. If you cannot say what a move in the number would mean for the use you named, the hypothesis is still blank.",
+            "Kimball's four-step design puts the business first. Before the model is drawn, the team sits with the people who use the numbers. They learn the goals, the problems, how decisions get made, the analysis those people need, and what the source data can support. The design then starts by choosing the business process. That process is a real activity, such as taking an order, handling a claim, or recording every account at month-end. Most fact tables cover one activity. Choosing it is what lets you say what one row means. People from the business take part so the names and the rules are agreed. That meeting is where you learn how decisions get made. The brief is the sheet you fill for the metric. A report title is not the activity.",
+            "The GAO guide is about a plan, not a dashboard. A measure has to represent the performance it is supposed to assess, or be clearly related to it. The guide's own example is the average time to process a tax return, set against a goal of more accurate processing. The time can be collected carefully and still be the wrong number. It can be a trustworthy measure of speed, and unfit as the answer to a question about accuracy. Use that link for the outcome. The guide does not set the credit-policy limit, and it does not turn a rise into an order.",
+            "The usual failure is the wrong question, the wrong person, or a decision nobody can repeat. Write the question on Decision and the person on Owner. If you cannot say what a move in the number would mean for the use you named, the hypothesis is still blank.",
           ],
           sources: [KIMBALL_STEPS, KIMBALL_PROCESS, KIMBALL_PDF, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
         },
@@ -1501,7 +1502,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-scene",
           title: "An example",
           paragraphs: [
-            "This is an illustration. I have not measured it. The list is titled overdue balance. The same invoices could serve the controller, who decides whether to offer an open invoice more time before write-off, or someone who chooses which customers to call. The brief below is the controller's. The call list is a different number. In the picture, the chair in the light is the controller. The dark chair is the call list.",
+            "This is an illustration. I have not measured it, and it establishes no business result. The list is titled overdue balance. The same invoices could serve the controller, who decides whether to offer an open invoice more time before write-off, or someone who chooses which customers to call. The brief below is filled for the controller. The call list would be a second brief. In the picture, the chair in the light is the controller. The dark chair is the call list.",
           ],
           lines: [
             {
@@ -1512,34 +1513,35 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             {
               term: "Outcome",
               detail:
-                "The controller can make that offer before write-off. Afterward, the account is current or the invoice is written off.",
+                "The controller can make that offer before write-off. Later, look at whether the account became current or the invoice was written off.",
             },
             {
-              term: "Actor",
+              term: "Owner",
               detail: "The credit controller who can offer the time.",
             },
             {
               term: "Constraint",
               detail:
-                "The agreed credit policy sets the cutoff. The list does not replace the policy or the controller.",
+                "The agreed credit policy sets the cutoff. The list does not set a new one, and it does not replace the controller.",
             },
             {
               term: "If it rises",
               detail:
-                "More invoices issued, slower payment, or a change in what is counted. Check which before the offer changes.",
+                "A larger open-invoice population, slower payment, or a change in what is counted. Compare count, share, and unpaid amount on the same population before changing the offer.",
             },
             {
               term: "If it falls",
               detail:
-                "Fewer invoices issued, faster payment, or a change in what is counted. Check which before treating the fall as a better result.",
+                "A smaller population, faster payment, or a change in what is counted. Check which before treating the fall as a better result.",
             },
             {
               term: "Activity",
-              detail: "Open invoices.",
+              detail: "Open invoices, as of the reporting date.",
             },
             {
-              term: "Send it",
-              detail: "The invoice list can go out as the answer to this brief. The call list does not.",
+              term: "Status",
+              detail:
+                "Ready for this decision. The call list is out of scope. The figures below test the rise hypothesis. They are not a measured outcome.",
             },
           ],
           picture: {
@@ -1551,52 +1553,52 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-choices",
           title: "Why these words",
           paragraphs: [
-            "The decision names the offer, so someone who missed the meeting can repeat it. The list's title, overdue balance, would also fit the call list, so the title stays off this line.",
-            "The outcome names the offer under the policy, and what to look at afterward: the account current, or the invoice written off. Bringing the overdue count down would be a different outcome. The count can fall because fewer invoices were issued. A later result is what to look at. It does not, by itself, show that the offer caused it.",
-            "The person is the controller who can offer time. The people who choose whom to call would be a second brief. The constraint keeps the cutoff with the policy. A higher count is a reason to look. It is not a new rule.",
-            "The two hypotheses are the checks to run before recommending a change to the offer. The figures in the next section are hypothetical, so those checks can be walked. They assume overdue means the same thing in both periods. If that sentence changed, the comparison belongs on the next page, and these figures are not yet a rise.",
+            "The decision names the offer, so someone who missed the meeting can repeat it. Overdue balance is the title of the list. That title would also fit the call list, so it is not the decision. The owner is the controller who can offer time. The constraint keeps the cutoff in the policy.",
+            "The outcome is that offer, and a later look at the account. A lower overdue count would be a different outcome, because the count can fall when the population shrinks. The rise hypothesis tells you the next analytical step: before anyone changes the offer, compare the overdue count, the share of the same open-invoice population, and the unpaid amount. The figures that follow are hypothetical. They do not establish that any account became current or was written off. If overdue meant something different on the two dates, that question belongs with row-level meaning, and these figures are not yet a rise.",
           ],
         },
         {
           id: "question-figures",
           title: "Count, share, and exposure",
           paragraphs: [
-            "These figures are hypothetical. I have not measured them.",
-            "Last period: 100 overdue invoices out of 500 issued, and €1.0 million still unpaid on the overdue invoices. This period: 112 overdue invoices out of 600 issued, and €1.4 million still unpaid.",
+            "These figures are hypothetical. I have not measured them. They do not establish a business result.",
+            "The reporting dates are the mornings of 31 March and 30 April. On each date the population is open invoices, with written-off invoices excluded. Overdue means past due under the agreed policy. The overdue share is the overdue count divided by that open-invoice population, on the same date. Both dates use those rules. Invoices issued during the month are not this population.",
+            "On 31 March: 100 overdue invoices out of 500 open, and €1.0 million still unpaid on the overdue invoices. On 30 April: 112 overdue invoices out of 600 open, and €1.4 million still unpaid on the overdue invoices.",
             "The overdue count is 12 percent higher. On its own, that looks like more overdue work.",
-            "The overdue share was 20 percent, 100 of 500. It is now 18.7 percent to one decimal place, 112 of 600. Invoices issued rose 20 percent, and the share fell. The count and the share tell different stories: more overdue invoices, and a smaller share of the invoices issued.",
-            "Monetary exposure is the amount still unpaid on those overdue invoices. It rose from €1.0 million to €1.4 million, which is 40 percent. Exposure grew faster than the count. The extra €0.4 million is a different story from 12 percent more overdue invoices.",
-            "Next I would ask whether a few invoices account for most of that extra €0.4 million, whether those invoices are older than the overdue invoices last period, and whether disputed amounts are a larger part of the €1.4 million. Those questions sit inside the controller's review. The cutoff stays the policy's.",
-            "I cannot yet conclude that customers are paying more slowly, that collections got worse, or that more time should be refused. The lower share fits a rise in invoices issued. The higher exposure fits a few larger balances, or balances that have been open longer. The three figures do not say which, and they do not say why any one invoice is unpaid.",
+            "The open-invoice population is 20 percent larger, 500 to 600. That 20 percent is growth in the snapshot population. It is not a growth rate for invoices issued. The overdue share was 20 percent, 100 of 500. It is 18.7 percent to one decimal place, 112 of 600. The ratio is valid because both dates divide overdue invoices by open invoices on that morning. The fall describes that ratio. It does not show that collections improved. The extra open invoices may not be due yet.",
+            "Invoices issued during the month are a second growth rate, even when that rate is also 20 percent. An invoice issued in April may not be due by 30 April. An overdue invoice on 30 April may have been issued months earlier. The issued-invoice rate and the overdue-count rate do not establish this share, and they do not establish better collections.",
+            "Monetary exposure is the amount still unpaid on the overdue invoices. It rose from €1.0 million to €1.4 million, which is 40 percent. Exposure grew faster than the count. The extra €0.4 million is a different description from either growth rate.",
+            "The brief sends you here before the offer changes. Next I would ask whether a few invoices account for most of that extra €0.4 million, whether those invoices are older than the overdue invoices on 31 March, and whether disputed amounts are a larger part of the €1.4 million. The policy cutoff stays where it is.",
+            "I cannot yet conclude that customers are paying more slowly, that collections got better or worse, or that more time should be refused. The lower share only says the overdue count grew more slowly than this open-invoice population. The higher exposure fits a few larger balances, or balances that have stayed open longer. The figures do not say which, and they do not say why any one invoice is unpaid.",
           ],
         },
         {
           id: "question-know",
           title: "How I would know",
           paragraphs: [
-            "I would look at four things. I have not collected them, and I set no target.",
-            "For a decision, did the outcome improve compared with what would otherwise have happened? Answering that needs a baseline, a period to watch, and room for other explanations. An improvement afterward does not, by itself, show that the list caused it. A watch asks a different question: whether the count stayed comparable.",
+            "I would look at four things. I have not collected them, and I set no target. The hypothetical figures above are not these results.",
+            "For a consequential decision, did the outcome improve compared with what would otherwise have happened? That needs a baseline, a period to watch, and room for other explanations. An improvement afterward does not, by itself, show that the list caused it.",
           ],
           lines: [
             {
               term: "Said back",
               detail:
-                "Can a person who missed the meeting say the decision, the limit, and who the number is for? If they cannot, the brief is not in use.",
+                "Can a person who missed the meeting say the decision, the limit, and the decision owner? If they cannot, the brief is not in use.",
             },
             {
               term: "Used",
               detail:
-                "Did the number serve the use on the brief? For this decision, that is whether the controller reviewed different invoices under the policy. For a watch, it is whether someone looked when the count moved, and whether the count stayed comparable.",
+                "Did the number serve the use on the brief? For this decision, that is whether the controller reviewed different invoices under the policy. For monitoring or a forecast, it is whether the figure stayed comparable and someone looked when it moved.",
             },
             {
               term: "Later",
               detail:
-                "After a decision, what happened to the account? A miss is the note the next brief starts from. When the use was to look or to watch, there is no action to score.",
+                "After a consequential decision, what happened to the account? A miss is where the next brief starts. Exploration, monitoring, and forecasting have no action to score.",
             },
             {
               term: "Parked",
               detail:
-                "Did a blank line keep the number from being offered as the answer? Exploration and monitoring could continue. The answer did not go out.",
+                "Did a blank line keep the number from being offered as the answer? Exploration, monitoring, and forecasting could continue.",
             },
           ],
         },
@@ -1604,10 +1606,9 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "question-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "Exploration is still looking at the chart. Monitoring is watching a figure over time. Decision support is offering the number as the answer to a choice. Those uses ask for different evidence. A chart for exploration can go out before the sheet is filled. A monthly count that is watched, a forecast, and a number in a regulated decision do not all need this same brief.",
-            "Each still needs evidence the reader can tie to that use, and a limit the reader can say. How far the brief goes follows the cost of being wrong. Relevance to the use matters more than whether someone acts today.",
-            "While a line is blank, I do not offer the number as the answer.",
-            "What one row means, a disagreement between two reports, and the owner follow this page. Continue, change, or stop is a later review. I do not score a return here.",
+            "A chart for exploration can go out before the sheet is filled. A monitored count, a forecast, and a number used in a regulated decision do not all need every line. Each still needs evidence tied to that use, and a limit the reader can say. How far the brief goes follows the cost of being wrong.",
+            "For a consequential decision, keep the number back while a line is blank.",
+            "Row-level meaning, comparisons between reports, and ownership follow. Whether to continue, change, or stop the work is a later review. There is no return to score here.",
             "Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
