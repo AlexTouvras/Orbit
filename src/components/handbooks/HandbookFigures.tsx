@@ -218,16 +218,7 @@ export function UseRow({
   );
 }
 
-export function SheetGate({ term, detail, warm }: { term: string; detail: string; warm: boolean }) {
-  return (
-    <div className={`mt-2 border-y-2 py-2 ${warm ? "border-amber-200/55" : "border-white/25"}`}>
-      <p className={`font-mono text-[0.65rem] uppercase tracking-[0.14em] ${toneOf(warm)}`}>{term}</p>
-      <p className="mt-1 text-sm leading-snug text-white">{detail}</p>
-    </div>
-  );
-}
-
-export function SheetRow({
+export function SheetLine({
   term,
   detail,
   warm,
@@ -239,63 +230,75 @@ export function SheetRow({
   first: boolean;
 }) {
   return (
-    <div
-      className={`grid gap-0.5 border-b py-1.5 sm:grid-cols-[10.5rem_1fr] sm:items-baseline sm:gap-4 ${ruleOf(warm)} ${first ? "border-t" : ""}`}
-    >
-      <p className={`font-mono text-[0.65rem] uppercase tracking-[0.14em] ${toneOf(warm)}`}>{term}</p>
+    <div className={`grid grid-cols-[6.75rem_1fr] gap-3 border-b py-1 ${ruleOf(warm)} ${first ? "border-t" : ""}`}>
+      <p className={`font-mono text-[0.65rem] uppercase tracking-[0.12em] ${toneOf(warm)}`}>{term}</p>
       <p className="text-sm leading-snug text-slate-200">{detail}</p>
     </div>
   );
 }
 
+export function SheetGate({ term, detail, warm }: { term: string; detail: string; warm: boolean }) {
+  return (
+    <div className={`mt-1 border-y-2 py-1.5 ${warm ? "border-amber-200/55" : "border-white/25"}`}>
+      <p className={`font-mono text-[0.65rem] uppercase tracking-[0.14em] ${toneOf(warm)}`}>{term}</p>
+      <p className="mt-1 text-sm leading-snug text-white">{detail}</p>
+    </div>
+  );
+}
+
 function SheetFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
-  let field = 0;
+  const rule = ruleOf(warm);
+  const tone = toneOf(warm);
+  const fields = figure.steps.filter((step) => !step.gate);
+  const gate = figure.steps.find((step) => step.gate);
   return (
     <figure>
-      {figure.steps.map((step) => {
-        if (step.gate) return <SheetGate key={step.term} term={step.term} detail={step.detail} warm={warm} />;
-        const first = field === 0;
-        field += 1;
-        return <SheetRow key={step.term} term={step.term} detail={step.detail} warm={warm} first={first} />;
-      })}
+      <table className="w-full border-collapse text-sm">
+        <tbody>
+          {fields.map((step, index) => (
+            <tr key={step.term} className={`border-b ${rule} ${index === 0 ? "border-t" : ""}`}>
+              <th
+                scope="row"
+                className={`w-[6.75rem] py-1 pr-3 align-baseline text-left font-mono text-[0.65rem] uppercase tracking-[0.12em] sm:w-40 sm:py-1.5 ${tone}`}
+              >
+                {step.term}
+              </th>
+              <td className="py-1 align-baseline leading-snug text-slate-200 sm:py-1.5">{step.detail}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {gate ? <SheetGate term={gate.term} detail={gate.detail} warm={warm} /> : null}
       <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption>
     </figure>
   );
 }
 
 function PathFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
-  const rule = ruleOf(warm);
   const tone = toneOf(warm);
+  const edge = warm ? "border-amber-200/40" : "border-white/20";
   return (
     <figure>
-      <ol className={`list-none border-y sm:hidden ${rule}`}>
-        {figure.steps.map((step, index) => (
-          <li key={step.term} className={`grid grid-cols-[1.25rem_1fr] gap-3 border-b py-2 last:border-b-0 ${rule}`}>
-            <span className={`font-mono text-sm tabular-nums ${tone}`}>{index + 1}</span>
-            <span className="min-w-0">
-              <span className={`block font-mono text-[0.65rem] uppercase tracking-[0.12em] ${tone}`}>{step.term}</span>
-              {step.detail ? <span className="mt-1 block text-sm leading-snug text-slate-200">{step.detail}</span> : null}
-            </span>
-          </li>
-        ))}
-      </ol>
-      <ol className={`hidden list-none flex-wrap items-start gap-x-3 gap-y-3 border-y py-3 sm:flex ${rule}`}>
-        {figure.steps.map((step, index) => (
-          <li key={step.term} className="flex items-start gap-3">
-            <span className="min-w-0">
-              <span className={`block font-mono text-[0.65rem] uppercase tracking-[0.12em] ${tone}`}>
-                <span className="mr-2 tabular-nums">{index + 1}</span>
-                {step.term}
-              </span>
-              {step.detail ? <span className="mt-1 block text-sm leading-snug text-slate-200">{step.detail}</span> : null}
-            </span>
-            {index < figure.steps.length - 1 ? (
-              <span className={`font-mono text-sm ${tone}`} aria-hidden="true">
-                →
-              </span>
-            ) : null}
-          </li>
-        ))}
+      <ol className="flex list-none flex-col sm:flex-row sm:items-stretch">
+        {figure.steps.map((step, index) => {
+          const last = index === figure.steps.length - 1;
+          return (
+            <li key={step.term} className="flex min-w-0 flex-1 flex-col sm:flex-row sm:items-stretch">
+              <div className={`flex flex-1 items-center border px-2 py-2 ${edge}`}>
+                <p className={`font-mono text-[0.62rem] uppercase leading-snug tracking-[0.06em] ${tone}`}>
+                  <span className="mr-1.5 tabular-nums">{index + 1}</span>
+                  {step.term}
+                </p>
+              </div>
+              {last ? null : (
+                <span className={`grid place-items-center py-0.5 font-mono text-sm sm:px-1 sm:py-0 ${tone}`} aria-hidden="true">
+                  <span className="sm:hidden">↓</span>
+                  <span className="hidden sm:inline">→</span>
+                </span>
+              )}
+            </li>
+          );
+        })}
       </ol>
       <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption>
     </figure>
@@ -354,22 +357,7 @@ function UsesFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean })
   const rows = figure.rows ?? [];
   return (
     <figure>
-      <div className="sm:hidden">
-        <ul className={`list-none divide-y border-y ${rule}`}>
-          {rows.map((row) => (
-            <li key={row.label} className="py-2">
-              <p className={`font-mono text-[0.65rem] uppercase tracking-[0.14em] ${tone}`}>{row.label}</p>
-              {row.cells.map((cell, index) => (
-                <p key={`${row.label}-${index}`} className="mt-1 text-sm leading-snug text-slate-200">
-                  <span className="text-slate-500">{head[index + 1]}. </span>
-                  {cell}
-                </p>
-              ))}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <table className="hidden w-full border-collapse text-left text-sm sm:table">
+      <table className="w-full border-collapse text-left text-sm">
         <thead>
           <tr className={`border-b ${rule}`}>
             {head.map((cell) => (
