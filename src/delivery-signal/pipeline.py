@@ -589,12 +589,6 @@ def _moved(before: str, after: str) -> str:
     return f"{before or 'blank'} → {after or 'blank'}"
 
 
-def _owner_phrase(item: WorkItem) -> str:
-    if item.assignee:
-        return f"assignee {item.assignee}"
-    return "no assignee"
-
-
 def _build_reading(
     data: dict,
     names: dict[str, str],
@@ -609,330 +603,435 @@ def _build_reading(
     next_start, next_end = as_of + timedelta(days=7), as_of + timedelta(days=13)
     horizon = as_of + timedelta(days=13)
     by_key: dict[str, WorkItem] = data["by_key"]
-    labels = {
-        "on_track": "On track",
-        "needs_attention": "Needs attention",
-        "blocked": "Blocked",
-        "unchecked": "Not checked",
-    }
 
-    progress_lines: list[dict] = []
+    by_change = {change["key"]: change for change in changes}
     closed = []
     for change in changes:
         status = _change_fields(change).get("status")
         if status and not _is_done(status["before"]) and _is_done(status["after"]):
             closed.append(change)
+
+    def day(value: date | None) -> str:
+        if value is None:
+            return "no date"
+        if value.year == as_of.year:
+            return f"{value.day} {value.strftime('%b')}"
+        return _fmt_date(value)
+
+    progress_lines: list[dict] = []
     if not data["previous"]:
-        progress_lines.append(
-            _line(
-                "progress:no-previous",
-                "No previous export was attached, so this brief cannot say what closed.",
-                [],
-            )
-        )
+        progress_lines.append(_line("progress:no-previous", "No previous export, so a close cannot be named.", []))
     elif not closed:
-        progress_lines.append(
-            _line(
-                "progress:none-closed",
-                "No work item moved to Done since the previous export.",
-                [],
-            )
-        )
+        progress_lines.append(_line("progress:none-closed", "Nothing moved to Done.", []))
     else:
+        evidence = []
+        points = 0.0
+        counted = False
+        keys = []
         for change in closed:
             item = by_key[change["key"]]
-            status = _change_fields(change)["status"]
-            points = ""
-            evidence = [_item_evidence(item, "status")]
+            keys.append(item.key)
+            evidence.append(_item_evidence(item, "status"))
             if item.story_points is not None:
-                points = f" It carries {_fmt_num(item.story_points)} story points."
+                points += item.story_points
+                counted = True
                 evidence.append(_item_evidence(item, "story_points"))
-            progress_lines.append(
-                _line(
-                    f"progress:closed:{item.key}",
-                    (
-                        f"{item.key} ({item.summary}) closed since the last update: "
-                        f"status {_moved(status['before'], status['after'])}.{points}"
-                    ),
-                    evidence,
-                )
-            )
-    if projects:
-        bits = []
-        for row in projects:
-            record = next((item for item in progress if item["id"] == row["id"] and item["kind"] == "project"), None)
-            done = ""
-            if record and record.get("text"):
-                done = " " + record["text"].split(". ")[0].rstrip(".") + "."
-            bits.append(f"{row['name']}: {labels[row['state']]}.{done}")
-        on_track = [row["name"] for row in projects if row["state"] == "on_track"]
-        verb = "is" if len(on_track) == 1 else "are"
-        where = f" ({', '.join(on_track)})" if on_track else ""
-        progress_lines.append(
-            _line(
-                "progress:pulse",
-                f"{len(on_track)} of {len(projects)} projects {verb} on track{where}. " + " ".join(bits),
-                [],
-            )
-        )
+        if len(closed) == 1:
+            item = by_key[closed[0]["key"]]
+            point_bit = f", {_fmt_num(item.story_points)} points" if item.story_points is not None else ""
+            text = f"Closed {item.summary} ({item.key}{point_bit})."
+        else:
+            point_bit = f", {_fmt_num(points)} points" if counted else ""
+            text = f"Closed {len(closed)} items{point_bit}: {_and(keys)}."
+        progress_lines.append(_line("progress:closed", text, evidence))
+
+    def _fragment(change: dict) -> tuple[int, str, str, list[Evidence]] | None:
+        fields = _change_fields(change)
+        item = by_key.get(change["key"])
+        if "key" in fields and fields["key"]["after"] == "removed":
+            return 0, "scope", f"{change['key']} dropped out", []
+        if item is None:
+            return None
+        if "key" in fields and fields["key"]["after"] == "added":
+            return 0, "scope", f"{item.key} is new", [_item_evidence(item, "status")]
+        status = fields.get("status")
+        if status and not _is_done(status["before"]) and _is_done(status["after"]):
+            return None
+        bits: list[str] = []
+        evidence: list[Evidence] = []
+        rank = 5
+        if "assignee" in fields:
+            before, after = fields["assignee"]["before"], fields["assignee"]["after"]
+            if after == "blank" and before != "blank":
+                bits.append(f"{item.summary} ({item.key}) lost {before}")
+                rank = min(rank, 0)
+            else:
+                bits.append(f"owner {_moved(before, after)}")
+                rank = min(rank, 3)
+            evidence.append(_item_evidence(item, "assignee"))
+        if "story_points" in fields:
+            bits.append(f"estimate {_moved(fields['story_points']['before'], fields['story_points']['after'])}")
+            rank = min(rank, 2)
+            evidence.append(_item_evidence(item, "story_points"))
+        if "remaining" in fields:
+            before_n = _parse_number(fields["remaining"]["before"], "before", [])
+            after_n = _parse_number(fields["remaining"]["after"], "after", [])
+            grew = before_n is not None and after_n is not None and after_n > before_n
+            bits.append(f"remaining {_moved(fields['remaining']['before'], fields['remaining']['after'])}")
+            rank = min(rank, 1 if grew else 4)
+            evidence.append(_item_evidence(item, "remaining"))
+        if "due" in fields:
+            bits.append(f"due {_moved(fields['due']['before'], fields['due']['after'])}")
+            rank = min(rank, 3)
+            evidence.append(_item_evidence(item, "due"))
+        if "blocked_by" in fields:
+            bits.append(f"blocker {_moved(fields['blocked_by']['before'], fields['blocked_by']['after'])}")
+            rank = min(rank, 1)
+            evidence.append(_item_evidence(item, "blocked_by"))
+        if "priority" in fields:
+            bits.append(f"priority {_moved(fields['priority']['before'], fields['priority']['after'])}")
+            rank = min(rank, 3)
+            evidence.append(_item_evidence(item, "priority"))
+        if "percent_complete" in fields:
+            bits.append(f"percent {_moved(fields['percent_complete']['before'], fields['percent_complete']['after'])}")
+            rank = min(rank, 4)
+            evidence.append(_item_evidence(item, "percent_complete"))
+        if status:
+            bits.append(_moved(status["before"], status["after"]))
+            rank = min(rank, 4)
+            evidence.append(_item_evidence(item, "status"))
+        if not bits:
+            return None
+        named = bits[0].startswith(f"{item.summary} ({item.key})")
+        text = ", ".join(bits) if named else f"{item.key} " + ", ".join(bits)
+        return rank, "drift", text, evidence
 
     changed: list[dict] = []
     if not data["previous"]:
-        changed.append(_line("change:no-previous", "No previous export was attached.", []))
+        changed.append(_line("change:no-previous", "No previous export.", []))
     elif not changes:
-        changed.append(_line("change:same", "Every compared field matches the previous export.", []))
+        changed.append(_line("change:same", "No compared field moved.", []))
     else:
+        pieces = []
         for change in changes:
-            fields = _change_fields(change)
-            item = by_key.get(change["key"])
-            sentences: list[str] = []
-            evidence: list[Evidence] = []
-            if "key" in fields and fields["key"]["after"] == "added" and item is not None:
-                sentences.append(f"{item.key} ({item.summary}) is in this export and was not in the previous one.")
-                evidence.append(_item_evidence(item, "status"))
-            elif "key" in fields and fields["key"]["after"] == "removed":
-                sentences.append(
-                    f"{change['key']} ({change['summary']}) was in the previous export and is not in this one."
-                )
-            elif item is not None:
-                if "status" in fields:
-                    sentences.append(
-                        f"Status {_moved(fields['status']['before'], fields['status']['after'])}."
-                    )
-                    evidence.append(_item_evidence(item, "status"))
-                if "percent_complete" in fields:
-                    sentences.append(
-                        f"Percent complete {_moved(fields['percent_complete']['before'], fields['percent_complete']['after'])}."
-                    )
-                    evidence.append(_item_evidence(item, "percent_complete"))
-                if "assignee" in fields:
-                    before = fields["assignee"]["before"]
-                    after = fields["assignee"]["after"]
-                    if after == "blank":
-                        sentences.append(
-                            f"The assignee cell is now blank. The previous export named {before}."
-                        )
-                    else:
-                        sentences.append(f"Assignee {_moved(before, after)}.")
-                    evidence.append(_item_evidence(item, "assignee"))
-                if "story_points" in fields:
-                    sentences.append(
-                        "Story points "
-                        f"{_moved(fields['story_points']['before'], fields['story_points']['after'])}. "
-                        "That changes the estimate. It is not points completed."
-                    )
-                    evidence.append(_item_evidence(item, "story_points"))
-                if "remaining" in fields:
-                    sentences.append(
-                        f"Remaining {_moved(fields['remaining']['before'], fields['remaining']['after'])}."
-                    )
-                    evidence.append(_item_evidence(item, "remaining"))
-                for name in ("priority", "due", "blocked_by"):
-                    if name in fields:
-                        sentences.append(f"{name} {_moved(fields[name]['before'], fields[name]['after'])}.")
-                        evidence.append(_item_evidence(item, name))
-            if sentences:
-                if item is not None and not sentences[0].startswith(item.key):
-                    sentences[0] = f"{item.key} ({item.summary}): {sentences[0]}"
-                changed.append(_line(f"change:{change['key']}", " ".join(sentences), evidence))
+            got = _fragment(change)
+            if got is not None:
+                pieces.append(got)
+        if not pieces:
+            changed.append(_line("change:only-closed", "The only movement is the close above.", []))
+        else:
+            pieces.sort(key=lambda row: (row[0], row[2]))
+            scope = [text for _rank, kind, text, _evidence in pieces if kind == "scope"]
+            drift = [text for _rank, kind, text, _evidence in pieces if kind == "drift"]
+            evidence = [piece for _rank, _kind, _text, group in pieces for piece in group]
+            sentences = []
+            if scope:
+                sentences.append(_and(scope) + ".")
+            if drift:
+                sentences.append("Not finished work: " + "; ".join(drift) + ".")
+            changed.append(_line("change:drift", " ".join(sentences), evidence))
 
-    def dated_line(ident: str, label: str, due: date | None, status: str, owner: str, extra: str, evidence: list[Evidence]) -> dict:
-        when = _fmt_date(due)
-        tail = f" {extra}" if extra else ""
-        return _line(
-            ident,
-            f"{label} is dated {when}, status {status}, {owner}.{tail}",
-            evidence,
-        )
+    def _remaining_pressure(item: WorkItem) -> tuple[str, str] | None:
+        change = by_change.get(item.key)
+        remaining = _change_fields(change).get("remaining") if change else None
+        if remaining is not None:
+            before_n = _parse_number(remaining["before"], "before", [])
+            after_n = _parse_number(remaining["after"], "after", [])
+            if before_n is not None and after_n is not None and after_n > before_n:
+                return "grew", _moved(remaining["before"], remaining["after"])
+        if (
+            item.remaining is not None
+            and item.original_estimate is not None
+            and item.remaining > item.original_estimate
+        ):
+            return "above", f"{_fmt_num(item.remaining)} vs {_fmt_num(item.original_estimate)}"
+        return None
 
-    coming: list[dict] = []
-    coming_rows: list[tuple[date, str, dict]] = []
-    for item in data["items"]:
-        if _is_done(item.status) or item.type.strip().lower() in ROLLUP_TYPES or item.due is None:
-            continue
-        if next_start <= item.due <= next_end:
-            extra = ""
-            evidence = [_item_evidence(item, "due"), _item_evidence(item, "status"), _item_evidence(item, "assignee")]
-            if item.blocked_by:
-                extra = f"It is blocked by {item.blocked_by}. A due date on a blocked item is not a reason to expect it to land."
-                evidence.append(_item_evidence(item, "blocked_by"))
-            elif not item.assignee:
-                extra = "A due date on an unassigned item is not a reason to expect it to land."
-            coming_rows.append(
-                (
-                    item.due,
-                    item.key,
-                    dated_line(
-                        f"coming:{item.key}",
-                        f"{item.key} ({item.summary})",
-                        item.due,
-                        item.status,
-                        _owner_phrase(item),
-                        extra,
-                        evidence,
-                    ),
-                )
-            )
-    for milestone in data["milestones"]:
-        due = milestone["due"]
-        if due is None or _milestone_done(milestone) or not (next_start <= due <= next_end):
-            continue
-        project = names.get(milestone["project"], milestone["project"])
-        coming_rows.append(
-            (
-                due,
-                milestone["id"],
-                _line(
-                    f"coming:{milestone['id']}",
-                    (
-                        f"{milestone['name']} ({milestone['id']}, {project}) is dated {_fmt_date(due)}, "
-                        f"status {milestone['status']}. A milestone date is the date in the file, not a forecast."
-                    ),
-                    [
-                        _ev("milestones", milestone["id"], "due", milestone["due"]),
-                        _ev("milestones", milestone["id"], "status", milestone["status"]),
-                    ],
-                ),
-            )
-        )
-    if coming_rows:
-        coming.extend(row for _, _, row in sorted(coming_rows))
-    else:
-        coming.append(
-            _line(
-                "coming:none",
-                f"Nothing in the export is dated {_span(next_start, next_end)}.",
-                [],
-            )
-        )
-
-    priorities: list[dict] = []
-    highest = [
+    clear_bits: list[str] = []
+    grew_bits: list[str] = []
+    above_bits: list[str] = []
+    blocked_bits: list[str] = []
+    unowned_bits: list[str] = []
+    coming_evidence: list[Evidence] = []
+    next_items = [
         item
         for item in data["items"]
         if not _is_done(item.status)
-        and _priority(item) == "highest"
-        and (_overdue(item, as_of) or (item.due is not None and this_start <= item.due <= this_end))
+        and item.type.strip().lower() not in ROLLUP_TYPES
+        and item.due is not None
+        and next_start <= item.due <= next_end
     ]
-    highest.sort(key=lambda item: (item.due or date.min, item.key))
-    for item in highest:
-        extra_bits = []
-        if _overdue(item, as_of):
-            extra_bits.append("It is already due before this report.")
-        successors = [
-            dep["successor"] for dep in data["dependencies"] if dep["predecessor"] == item.key
-        ]
-        evidence = [
-            _item_evidence(item, "priority"),
-            _item_evidence(item, "status"),
-            _item_evidence(item, "due"),
-            _item_evidence(item, "assignee"),
-        ]
-        if successors:
-            extra_bits.append(f"Recorded successor: {_and(successors)}.")
-            for dep in data["dependencies"]:
-                if dep["predecessor"] == item.key:
-                    evidence.append(_ev("dependencies", dep["id"], "successor", dep["successor"]))
-        priorities.append(
-            _line(
-                f"priority:{item.key}",
-                (
-                    f"{item.key} ({item.summary}) is Highest, {item.status}, {_owner_phrase(item)}, "
-                    f"due {_fmt_date(item.due)}. " + " ".join(extra_bits)
-                ).strip(),
-                evidence,
-            )
+    next_items.sort(key=lambda item: (item.due or date.max, item.key))
+    for item in next_items:
+        evidence = [_item_evidence(item, "due"), _item_evidence(item, "status"), _item_evidence(item, "assignee")]
+        pressure = _remaining_pressure(item)
+        if pressure:
+            evidence.extend([_item_evidence(item, "remaining"), _item_evidence(item, "original_estimate")])
+        if item.blocked_by:
+            evidence.append(_item_evidence(item, "blocked_by"))
+            blocked_bits.append(f"{item.key} by {item.blocked_by}")
+        elif not item.assignee:
+            unowned_bits.append(f"{item.key} ({day(item.due)})")
+        elif pressure:
+            kind, label = pressure
+            (grew_bits if kind == "grew" else above_bits).append(f"{item.key} ({label})")
+        else:
+            clear_bits.append(f"{item.key} ({day(item.due)}, {item.assignee})")
+        coming_evidence.extend(evidence)
+    milestone_bits: list[str] = []
+    for milestone in sorted(data["milestones"], key=lambda row: (row["due"] or date.max, row["id"])):
+        due = milestone["due"]
+        if due is None or _milestone_done(milestone) or not (next_start <= due <= next_end):
+            continue
+        milestone_bits.append(f"{milestone['name']} ({day(due)})")
+        coming_evidence.extend(
+            [
+                _ev("milestones", milestone["id"], "due", milestone["due"]),
+                _ev("milestones", milestone["id"], "status", milestone["status"]),
+            ]
         )
+    coming_sentences: list[str] = []
+    if not next_items and not milestone_bits:
+        coming_sentences.append(f"Nothing dated {_span(next_start, next_end)}.")
+    else:
+        if clear_bits:
+            coming_sentences.append(f"Owned and inside the estimate: {_and(clear_bits)}.")
+        else:
+            coming_sentences.append("Nothing dated next week is both owned and inside its estimate.")
+        if grew_bits and above_bits:
+            coming_sentences.append(
+                f"Remaining grew on {_and(grew_bits)} and already exceeds the original on {_and(above_bits)}."
+            )
+        elif grew_bits:
+            coming_sentences.append(f"Remaining grew on {_and(grew_bits)}.")
+        elif above_bits:
+            coming_sentences.append(f"Remaining is already above the original on {_and(above_bits)}.")
+        if blocked_bits:
+            coming_sentences.append(f"Blocked: {_and(blocked_bits)}.")
+        if milestone_bits:
+            verb = "is" if len(milestone_bits) == 1 else "are"
+            coming_sentences.append(f"{_and(milestone_bits)} {verb} only a milestone.")
+        if unowned_bits:
+            verb = "has" if len(unowned_bits) == 1 else "have"
+            coming_sentences.append(f"{_and(unowned_bits)} {verb} no owner.")
+    coming = [_line("coming:read", " ".join(coming_sentences), coming_evidence)]
+
+    forward: dict[str, list[str]] = {}
+    for dep in data["dependencies"]:
+        forward.setdefault(dep["predecessor"], []).append(dep["successor"])
+
+    def _open_id(ident: str) -> bool:
+        item = by_key.get(ident)
+        if item is not None:
+            return not _is_done(item.status)
+        milestone = data["milestone_by_id"].get(ident)
+        return milestone is not None and not _milestone_done(milestone)
+
+    def _in_play(ident: str) -> bool:
+        item = by_key.get(ident)
+        if item is not None:
+            if _is_done(item.status):
+                return False
+            return item.due is None or item.due <= horizon or _overdue(item, as_of)
+        milestone = data["milestone_by_id"].get(ident)
+        if milestone is None or _milestone_done(milestone):
+            return False
+        due = milestone["due"]
+        return due is not None and due <= horizon
+
+    held_by_open: set[str] = set()
+    for pred, succs in forward.items():
+        if not _open_id(pred):
+            continue
+        for succ in succs:
+            if _open_id(succ):
+                held_by_open.add(succ)
+
+    def _walk(ident: str, seen: set[str]) -> list:
+        if ident in seen or not _in_play(ident):
+            return []
+        seen.add(ident)
+        item = by_key.get(ident)
+        nodes: list = [item] if item is not None else [data["milestone_by_id"][ident]]
+        for succ in forward.get(ident, []):
+            nodes.extend(_walk(succ, seen))
+        return nodes
+
+    def _chain_sentence(nodes: list) -> str:
+        work = [node for node in nodes if not isinstance(node, dict)]
+        milestones = [node for node in nodes if isinstance(node, dict)]
+        unowned = [item for item in work if not item.assignee]
+        mark_each = len(unowned) != len(work)
+
+        def work_bit(item: WorkItem, lead: bool) -> str:
+            facts = []
+            if not lead:
+                facts.append(item.summary)
+            if item.due is not None:
+                facts.append(f"due {day(item.due)}")
+            if mark_each and not item.assignee:
+                facts.append("no owner")
+            inner = ", ".join(facts)
+            if lead:
+                return f"{item.summary} ({item.key}{', ' + inner if inner else ''})"
+            return f"{item.key} ({inner})" if inner else item.key
+
+        labels = [work_bit(item, index == 0) for index, item in enumerate(work)]
+        milestone_labels = [
+            f"{row['name']} on {day(row['due'])}" if row["due"] else row["name"] for row in milestones
+        ]
+        if len(labels) >= 2:
+            text = f"{labels[0]} blocks {_and(labels[1:] + milestone_labels)}"
+        elif labels and milestone_labels:
+            text = f"{labels[0]} blocks {_and(milestone_labels)}"
+        elif len(labels) == 1:
+            item = work[0]
+            why = []
+            if _overdue(item, as_of):
+                why.append("overdue")
+            if not item.assignee:
+                why.append("no owner")
+            if item.blocked_by:
+                why.append(f"blocked by {item.blocked_by}")
+            tail = ", " + ", ".join(why) if why else ""
+            text = f"{item.summary} ({item.key}, due {day(item.due)}{tail}) is Highest"
+        else:
+            text = _and(milestone_labels)
+        if len(work) > 1 and unowned and len(unowned) == len(work):
+            text += "; neither has an owner" if len(work) == 2 else "; none has an owner"
+        return text
+
+    def _chain_evidence(nodes: list) -> list[Evidence]:
+        evidence: list[Evidence] = []
+        ids: set[str] = set()
+        for node in nodes:
+            if isinstance(node, dict):
+                ids.add(node["id"])
+                evidence.extend(
+                    [
+                        _ev("milestones", node["id"], "due", node["due"]),
+                        _ev("milestones", node["id"], "status", node["status"]),
+                    ]
+                )
+            else:
+                ids.add(node.key)
+                evidence.extend(
+                    [
+                        _item_evidence(node, "summary"),
+                        _item_evidence(node, "due"),
+                        _item_evidence(node, "status"),
+                        _item_evidence(node, "assignee"),
+                        _item_evidence(node, "priority"),
+                    ]
+                )
+                if node.blocked_by:
+                    evidence.append(_item_evidence(node, "blocked_by"))
+        for dep in data["dependencies"]:
+            if dep["predecessor"] in ids and dep["successor"] in ids:
+                evidence.extend(
+                    [
+                        _ev("dependencies", dep["id"], "predecessor", dep["predecessor"]),
+                        _ev("dependencies", dep["id"], "successor", dep["successor"]),
+                    ]
+                )
+        return evidence
+
+    def _this_window(item: WorkItem) -> bool:
+        return _overdue(item, as_of) or (item.due is not None and this_start <= item.due <= this_end)
+
+    roots = []
+    for item in data["items"]:
+        if _is_done(item.status) or item.key in held_by_open or not _this_window(item):
+            continue
+        blocks = any(_in_play(succ) for succ in forward.get(item.key, []))
+        if _priority(item) == "highest" or item.blocked_by or blocks:
+            roots.append(item)
+    roots.sort(key=lambda item: (item.due or date.min, item.key))
+    chains = []
+    chained: set[str] = set()
+    for root in roots:
+        if root.key in chained:
+            continue
+        nodes = _walk(root.key, set())
+        if not nodes:
+            continue
+        worth = any(
+            isinstance(node, dict) or _priority(node) == "highest" or node.blocked_by or _overdue(node, as_of)
+            for node in nodes
+        )
+        if not worth:
+            continue
+        for node in nodes:
+            chained.add(node["id"] if isinstance(node, dict) else node.key)
+        chains.append(nodes)
+
+    priorities: list[dict] = []
+    if chains:
+        count = {2: "Two", 3: "Three", 4: "Four"}.get(len(chains), str(len(chains)))
+        opener = f"{count} chains are already late. " if len(chains) > 1 else ""
+        text = opener + " ".join(f"{_chain_sentence(nodes)}." for nodes in chains)
+        evidence = [piece for nodes in chains for piece in _chain_evidence(nodes)]
+        priorities.append(_line("priority:chains", text, evidence))
     later = [
         item
         for item in data["items"]
-        if not _is_done(item.status) and _priority(item) == "highest" and item not in highest
+        if not _is_done(item.status) and _priority(item) == "highest" and item.key not in chained
     ]
     later.sort(key=lambda item: (item.due or date.max, item.key))
     if later:
-        bits = []
-        evidence = []
+        grouped: dict[date | None, list[WorkItem]] = {}
         for item in later:
-            who = item.assignee or "no assignee"
-            bits.append(f"{item.key} ({item.summary}, due {_fmt_date(item.due)}, {who})")
-            evidence.extend(
-                [
-                    _item_evidence(item, "priority"),
-                    _item_evidence(item, "due"),
-                    _item_evidence(item, "assignee"),
-                ]
-            )
-        priorities.append(
-            _line(
-                "priority:later",
-                "Still open at Highest after this week: " + "; ".join(bits) + ".",
-                evidence,
-            )
-        )
-    dated_rows: list[tuple[date, str, dict]] = []
-    listed = {item.key for item in highest}
-    for item in data["items"]:
-        if item.key in listed or _is_done(item.status) or item.type.strip().lower() in ROLLUP_TYPES:
-            continue
-        if item.due is None or not (this_start <= item.due <= this_end):
-            continue
-        extra = ""
-        evidence = [_item_evidence(item, "due"), _item_evidence(item, "status"), _item_evidence(item, "priority")]
-        if item.blocked_by:
-            extra = f"Blocked by {item.blocked_by}."
-            evidence.append(_item_evidence(item, "blocked_by"))
-        elif not item.assignee:
-            extra = "No assignee."
-            evidence.append(_item_evidence(item, "assignee"))
-        dated_rows.append(
-            (
-                item.due,
-                item.key,
-                _line(
-                    f"dated:{item.key}",
-                    (
-                        f"{item.key} ({item.summary}) is dated {_fmt_date(item.due)}, "
-                        f"{item.priority or 'unprioritised'}, {item.status}, {_owner_phrase(item)}. {extra}"
-                    ).strip(),
-                    evidence,
-                ),
-            )
-        )
-    for milestone in data["milestones"]:
-        due = milestone["due"]
-        if due is None or _milestone_done(milestone) or not (this_start <= due <= this_end):
-            continue
-        dated_rows.append(
-            (
-                due,
-                milestone["id"],
-                _line(
-                    f"dated:{milestone['id']}",
-                    (
-                        f"{milestone['name']} ({milestone['id']}) is dated {_fmt_date(due)}, "
-                        f"status {milestone['status']}."
-                    ),
+            grouped.setdefault(item.due, []).append(item)
+        parts = []
+        evidence = []
+        for due in sorted(grouped, key=lambda value: value or date.max):
+            group = grouped[due]
+            when = day(due) if due else "no date"
+            if len(group) == 1:
+                item = group[0]
+                extra = []
+                if not item.assignee:
+                    extra.append("no owner")
+                if item.story_points is None:
+                    extra.append("no estimate")
+                tail = ", " + ", ".join(extra) if extra else ""
+                parts.append(f"{item.key} ({when}{tail})")
+            else:
+                extra = []
+                if all(not item.assignee for item in group):
+                    extra.append("no owner")
+                elif any(not item.assignee for item in group):
+                    extra.append(_and([item.key for item in group if not item.assignee]) + " no owner")
+                if all(item.story_points is None for item in group):
+                    extra.append("no estimate")
+                elif any(item.story_points is None for item in group):
+                    extra.append(_and([item.key for item in group if item.story_points is None]) + " no estimate")
+                tail = ", " + ", ".join(extra) if extra else ""
+                parts.append(f"{', '.join(item.key for item in group)} ({when}{tail})")
+            for item in group:
+                evidence.extend(
                     [
-                        _ev("milestones", milestone["id"], "due", milestone["due"]),
-                        _ev("milestones", milestone["id"], "status", milestone["status"]),
-                    ],
-                ),
-            )
-        )
-    priorities.extend(row for _, _, row in sorted(dated_rows))
+                        _item_evidence(item, "priority"),
+                        _item_evidence(item, "due"),
+                        _item_evidence(item, "assignee"),
+                        _item_evidence(item, "story_points"),
+                    ]
+                )
+        priorities.append(_line("priority:later", "Still Highest after this week: " + "; ".join(parts) + ".", evidence))
     if not priorities:
         priorities.append(
             _line(
                 "priority:none",
-                f"No open Highest item is overdue or dated {_span(this_start, this_end)}, and nothing else is dated this week.",
+                f"Nothing Highest is already late, and nothing dated {_span(this_start, this_end)} blocks a later date.",
                 [],
             )
         )
+    mentioned_milestones = {node["id"] for nodes in chains for node in nodes if isinstance(node, dict)}
 
     delay: list[dict] = []
     for milestone in sorted(data["milestones"], key=lambda row: (row["due"] or date.max, row["id"])):
         due = milestone["due"]
-        if due is None or _milestone_done(milestone) or due > horizon:
+        if due is None or _milestone_done(milestone) or due > horizon or milestone["id"] in mentioned_milestones:
             continue
         for dep in data["dependencies"]:
             if dep["successor"] != milestone["id"]:
@@ -951,139 +1050,66 @@ def _build_reading(
                 continue
             evidence = [
                 _ev("milestones", milestone["id"], "due", milestone["due"]),
-                _ev("milestones", milestone["id"], "status", milestone["status"]),
                 _ev("dependencies", dep["id"], "predecessor", dep["predecessor"]),
                 _ev("dependencies", dep["id"], "successor", dep["successor"]),
                 _item_evidence(pred, "status"),
+                _item_evidence(pred, "due"),
             ]
-            chain = f"{dep['id']} says {pred.key} precedes {milestone['name']} ({milestone['id']}). {pred.key} is {pred.status}"
-            if pred.blocked_by:
-                chain += f", blocked by {pred.blocked_by}"
-                evidence.append(_item_evidence(pred, "blocked_by"))
-            chain += f", {_owner_phrase(pred)}, due {_fmt_date(pred.due)}."
-            evidence.extend([_item_evidence(pred, "assignee"), _item_evidence(pred, "due")])
-            if blocker is not None:
-                chain += (
-                    f" {blocker.key} is {blocker.status}, {_owner_phrase(blocker)}, due {_fmt_date(blocker.due)}."
+            if blocker is None:
+                who = "" if pred.assignee else ", no owner"
+                text = (
+                    f"{milestone['name']} ({_fmt_date(due)}) sits behind {pred.key}, "
+                    f"which is {pred.status}{who}, due {_fmt_date(pred.due)}."
                 )
+            else:
                 evidence.extend(
                     [
+                        _item_evidence(pred, "blocked_by"),
                         _item_evidence(blocker, "status"),
                         _item_evidence(blocker, "assignee"),
                         _item_evidence(blocker, "due"),
                     ]
                 )
-            chain += " That is a delay factor in the export. It is not a forecast that the milestone date will be missed."
-            delay.append(_line(f"delay:milestone:{milestone['id']}", chain, evidence))
-    naked = [
-        item
-        for item in data["items"]
-        if not _is_done(item.status)
-        and _priority(item) == "highest"
-        and not item.assignee
-        and _overdue(item, as_of)
-        and item.type.strip().lower() != "decision"
-    ]
-    if naked:
-        bits = [f"{item.key} ({item.summary}, due {_fmt_date(item.due)})" for item in sorted(naked, key=lambda item: item.key)]
-        evidence = []
-        for item in naked:
-            evidence.extend(
-                [
-                    _item_evidence(item, "priority"),
-                    _item_evidence(item, "assignee"),
-                    _item_evidence(item, "due"),
-                    _item_evidence(item, "status"),
-                ]
-            )
-        delay.append(
-            _line(
-                "delay:unassigned-highest",
-                (
-                    f"{len(naked)} Highest {'item is' if len(naked) == 1 else 'items are'} overdue and unassigned: "
-                    + "; ".join(bits)
-                    + ". An empty assignee on overdue Highest work is a delay factor. It does not say which date will be missed."
-                ),
-                evidence,
-            )
-        )
-    for item in data["items"]:
-        if item.type.strip().lower() != "decision" or _is_done(item.status) or not _overdue(item, as_of):
-            continue
-        successors = [dep["successor"] for dep in data["dependencies"] if dep["predecessor"] == item.key]
-        if not successors:
-            continue
-        evidence = [_item_evidence(item, "status"), _item_evidence(item, "due"), _item_evidence(item, "assignee")]
-        for dep in data["dependencies"]:
-            if dep["predecessor"] == item.key:
-                evidence.append(_ev("dependencies", dep["id"], "successor", dep["successor"]))
-        delay.append(
-            _line(
-                f"delay:decision:{item.key}",
-                (
-                    f"{item.key} ({item.summary}) is {item.status}, due {_fmt_date(item.due)}, {_owner_phrase(item)}. "
-                    f"Recorded successor: {_and(successors)}. The decision is already late in the export."
-                ),
-                evidence,
-            )
-        )
+                who = "" if blocker.assignee else ", no owner"
+                text = (
+                    f"{milestone['name']} ({_fmt_date(due)}) sits behind {pred.key}, "
+                    f"blocked by {blocker.key} (due {_fmt_date(blocker.due)}{who})."
+                )
+            delay.append(_line(f"delay:milestone:{milestone['id']}", text, evidence))
     for finding in findings:
         if finding.kind == "note_conflict":
+            overdue = [
+                item
+                for item in data["items"]
+                if item.project == finding.project and _overdue(item, as_of) and item.type.strip().lower() != "epic"
+            ]
+            newest = max((item.updated for item in overdue if item.updated), default=None)
+            keys = _and([item.key for item in sorted(overdue, key=lambda item: item.key)[:4]])
+            note = next((piece for piece in finding.evidence if piece.source == "notes"), None)
+            note_id = note.id if note else "A note"
+            full_name = names.get(finding.project, finding.project)
+            short_name = full_name.split(" — ")[0].split(" - ")[0]
+            gap = (as_of - newest).days if newest is not None else None
+            age = f" ({gap} days)" if gap is not None else ""
             delay.append(
                 _line(
                     f"delay:{finding.id}",
-                    finding.summary + " The note and the export disagree, so the green wording is not a progress signal.",
+                    (
+                        f"{note_id} calls {short_name} on track. "
+                        f"{keys} are overdue; newest update {day(newest)}{age}."
+                    ),
                     list(finding.evidence),
                 )
             )
         elif finding.kind == "misleading_completion":
-            delay.append(
-                _line(
-                    f"delay:{finding.id}",
-                    finding.summary + " The reported completion and the story points disagree, so the percent is not a progress signal.",
-                    list(finding.evidence),
-                )
-            )
-        elif finding.kind == "remaining_above_original":
-            item = by_key.get(finding.id.split(":", 1)[-1])
-            if item is None or _is_done(item.status) or item.due is None or item.due > horizon:
-                continue
-            if any(row["id"] == f"delay:remaining:{item.key}" for row in delay):
-                continue
-            delay.append(
-                _line(
-                    f"delay:{finding.id}",
-                    finding.summary + f" It is dated {_fmt_date(item.due)}. Remaining above the original estimate is more work left than the row first recorded.",
-                    list(finding.evidence) + [_item_evidence(item, "due")],
-                )
-            )
-    for change in changes:
-        remaining = _change_fields(change).get("remaining")
-        item = by_key.get(change["key"])
-        if remaining is None or item is None or item.due is None or item.due > horizon:
-            continue
-        before = _parse_number(remaining["before"], "before", [])
-        after = _parse_number(remaining["after"], "after", [])
-        if before is None or after is None or after <= before:
-            continue
-        delay.append(
-            _line(
-                f"delay:remaining:{item.key}",
-                (
-                    f"{item.key} ({item.summary}) remaining {_moved(remaining['before'], remaining['after'])}. "
-                    f"It is dated {_fmt_date(item.due)}. A larger remaining figure is more work left, not progress."
-                ),
-                [_item_evidence(item, "remaining"), _item_evidence(item, "due")],
-            )
-        )
+            note = next((piece for piece in finding.evidence if piece.source == "notes" and ONLY_OPEN.search(piece.value)), None)
+            full_name = names.get(finding.project, finding.project)
+            short_name = full_name.split(" — ")[0].split(" - ")[0]
+            title = finding.title.replace(full_name, short_name, 1) if full_name else finding.title
+            extra = f" {note.id} calls a single item open." if note else ""
+            delay.append(_line(f"delay:{finding.id}", title + extra, list(finding.evidence)))
     if not delay:
-        delay.append(
-            _line(
-                "delay:none",
-                "The export does not show an overdue unassigned Highest item, a blocked predecessor in front of a dated milestone, a note that disagrees with the rows, a completion figure that disagrees with story points, or a remaining figure that grew on work dated in the next two weeks.",
-                [],
-            )
-        )
+        delay.append(_line("delay:none", "No note or completion figure disagrees with the rows.", []))
 
     return {
         "this_week": [this_start.isoformat(), this_end.isoformat()],
@@ -1875,30 +1901,26 @@ def _fmt_iso(value: str | None) -> str:
 
 
 _READING_SECTIONS = (
-    (
-        "progress",
-        "Weekly progress",
-        "Items that moved to Done since the previous export, then each project state. Story points on a closed item are the points on that row. The project line uses the same Done count as the pulse.",
-    ),
+    ("progress", "Weekly progress", "What reached Done since the previous export."),
     (
         "changed",
         "What changed since the last update",
-        "Each line is a field that differs from the previous export. A story-point change is an estimate change, not work completed. Field changes below is the same diff, one field at a time.",
+        "What the diff means. The field list below is every cell.",
     ),
     (
         "coming",
         "Expected next week",
-        "Open items and milestones whose due date falls in the seven days after this week. A due date is the date in the file. Blocked and unassigned rows are not a reason to expect the work to land.",
+        "Dates in the seven days after this week, and whether those rows are owned and inside the estimate.",
     ),
     (
         "priorities",
         "Highest priorities this week",
-        "Open Highest items that are overdue or dated this week, including decisions. Then the other open items and milestones dated this week.",
+        "The chain that is already late, then Highest work after this week.",
     ),
     (
         "delay_risks",
         "Delay risks in the export",
-        "Overdue unassigned Highest work, a blocked predecessor in front of a dated milestone, a note that disagrees with the rows, a completion figure that disagrees with story points, and a remaining figure that grew on work dated in the next two weeks. None of these forecasts that a date will be missed.",
+        "Where a note or a completion percent disagrees with the rows.",
     ),
 )
 
@@ -1909,9 +1931,8 @@ def _reading_md(brief: dict) -> list[str]:
         return []
     lines = [
         "",
-        f"This week is {_span(date.fromisoformat(reading['this_week'][0]), date.fromisoformat(reading['this_week'][1]))}. "
-        f"Next week is {_span(date.fromisoformat(reading['next_week'][0]), date.fromisoformat(reading['next_week'][1]))}. "
-        "Dates below are the dates in the export.",
+        f"This week {_span(date.fromisoformat(reading['this_week'][0]), date.fromisoformat(reading['this_week'][1]))}. "
+        f"Next week {_span(date.fromisoformat(reading['next_week'][0]), date.fromisoformat(reading['next_week'][1]))}.",
         "",
     ]
     for key, title, _note in _READING_SECTIONS:
@@ -1922,8 +1943,8 @@ def _reading_md(brief: dict) -> list[str]:
             lines.append("")
             continue
         for row in rows:
-            lines.append(f"- {row['text']}")
-        lines.append("")
+            lines.append(row["text"])
+            lines.append("")
     return lines
 
 
@@ -2095,20 +2116,19 @@ def _reading_html(brief: dict) -> str:
     if not reading:
         return ""
     blocks = [
-        "<p class=\"meta\">This week is {}. Next week is {}. Dates below are the dates in the export.</p>".format(
+        "<p class=\"meta\">This week {}. Next week {}.</p>".format(
             html.escape(_span(date.fromisoformat(reading["this_week"][0]), date.fromisoformat(reading["this_week"][1]))),
             html.escape(_span(date.fromisoformat(reading["next_week"][0]), date.fromisoformat(reading["next_week"][1]))),
         )
     ]
     for key, title, note in _READING_SECTIONS:
-        items = []
+        parts = []
         for row in reading.get(key) or []:
-            body = f"<p>{html.escape(row['text'])}</p>"
+            parts.append(f"<p>{html.escape(row['text'])}</p>")
             if row.get("evidence"):
                 count = len(row["evidence"])
-                body += f"<details><summary>Evidence, {count} fields</summary>{_evidence_html(row)}</details>"
-            items.append(f"<li>{body}</li>")
-        blocks.append(_section(title, note) + '<ul class="reading">' + "".join(items) + "</ul>")
+                parts.append(f"<details><summary>Evidence, {count} fields</summary>{_evidence_html(row)}</details>")
+        blocks.append(_section(title, note) + '<div class="reading">' + "".join(parts) + "</div>")
     return "".join(blocks)
 
 
@@ -2274,9 +2294,8 @@ def render_html(brief: dict) -> str:
     h3 {{ font-size: 1rem; margin: 0 0 0.35rem; }}
     .meta {{ margin: 0; color: #9aa0b0; }}
     .lede {{ font-size: 1.02rem; }}
-    .reading {{ list-style: none; padding: 0; margin: 0; }}
-    .reading li {{ margin: 0.55rem 0; }}
-    .reading p {{ margin: 0; }}
+    .reading p {{ margin: 0.2rem 0 0.15rem; }}
+    .reading details {{ margin: 0 0 0.35rem; }}
     .pulse {{ list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 0.45rem; }}
     .card {{ background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 0.7rem 0.8rem; }}
     .pulse .card {{ display: flex; flex-direction: column; gap: 0.2rem; min-height: 3.2rem; }}
@@ -2312,7 +2331,7 @@ def render_html(brief: dict) -> str:
     {quality_html}
     {_section("Delivery pulse", "Each card is one project: On track, Needs attention, Blocked, or Not checked. The bar is story points marked Done, among items that have a story point or effort. An epic, feature, or initiative is listed on that card and counted from its direct children. Remaining and the original estimate are sums of rows where both cells are numbers.")}
     <ul class="pulse">{pulse}</ul>
-    {_section("Field changes", "The same diff as the week reading, one field at a time: status, assignee, priority, due date, blocker, percent complete, story points, and remaining. Items that appeared or left the export are listed here too.")}
+    {_section("Field changes", "Every compared cell: status, assignee, priority, due date, blocker, percent complete, story points, and remaining. The week reading is the conclusion. This list is the audit.")}
     <ul>{changes}</ul>
     {_section("Decisions needed", "Open items whose type is Decision, or whose status is Waiting. The owner and the due date come from those cells.")}
     <ul>{''.join(decisions) or '<li>None.</li>'}</ul>
