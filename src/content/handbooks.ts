@@ -1459,7 +1459,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           ],
           figure: {
             kind: "sheet",
-            caption: "Status means the brief is complete. It is not sufficient evidence for the decision.",
+            caption: "",
             steps: [
               {
                 term: "Decision",
@@ -1491,7 +1491,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               },
               {
                 term: "Status",
-                detail: "Brief complete. Not sufficient evidence to change the offer.",
+                detail: "Filled for this decision. These figures are not evidence to change the offer.",
                 gate: true,
               },
             ],
@@ -1537,13 +1537,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             kind: "flow",
             plain: true,
             caption:
-              "A number offered as the answer walks all five steps. Exploration and monitoring can stop earlier.",
+              "Exploration and monitoring can stop earlier. A consequential decision needs more evidence.",
             steps: [
-              { term: "Intended use", detail: "" },
-              { term: "Definitions and comparability", detail: "" },
-              { term: "Interpretation", detail: "" },
-              { term: "Decision within policy", detail: "" },
-              { term: "Outcome evaluation", detail: "" },
+              { term: "Intended use", detail: "The use the number is for." },
+              { term: "Comparability", detail: "One population, one window." },
+              { term: "Interpretation", detail: "What the figures leave open." },
+              { term: "Decision within policy", detail: "Inside the constraint." },
+              { term: "Outcome evaluation", detail: "What happened afterward." },
             ],
           },
         },
@@ -1585,12 +1585,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           },
           closing: [
             "For a consequential decision I would also ask whether the outcome improved compared with what would otherwise have happened. That needs a baseline, a period to watch, and room for other explanations. An improvement afterward does not, by itself, show that the list caused it. I have not collected that comparison.",
-            "Row-level meaning, comparisons between reports, and ownership follow. Whether to continue, change, or stop the work is a later review. There is no return to score here.",
-            "Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
-          ],
-          sources: [
-            { href: DELIVERY_CARD, label: "Technology delivery field card" },
-            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+            "Row-level meaning, comparisons between reports, and ownership follow. Whether to continue, change, or stop is a later review.",
           ],
         },
       ],
@@ -1612,8 +1607,6 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           "GAO, An Evaluator's Guide to Assessing Agency Annual Performance Plans, GAO/GGD-10.1.20 (April 1998)",
         ),
         { href: DATA_CARD, label: "Data analytics field card" },
-        { href: DELIVERY_CARD, label: "Technology delivery field card" },
-        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
       ],
     },
     {

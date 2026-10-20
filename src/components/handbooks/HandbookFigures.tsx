@@ -192,51 +192,6 @@ function ruleOf(warm: boolean) {
   return warm ? "border-amber-200/25" : "border-white/10";
 }
 
-export function UseRow({
-  label,
-  cells,
-  head,
-  warm,
-  first,
-}: {
-  label: string;
-  cells: string[];
-  head: string[];
-  warm: boolean;
-  first: boolean;
-}) {
-  return (
-    <div className={`border-b py-2 ${ruleOf(warm)} ${first ? "border-t" : ""}`}>
-      <p className={`font-mono text-[0.65rem] uppercase tracking-[0.14em] ${toneOf(warm)}`}>{label}</p>
-      {cells.map((cell, index) => (
-        <p key={`${label}-${index}`} className="mt-1 text-sm leading-snug text-slate-200">
-          <span className="text-slate-500">{head[index + 1]}. </span>
-          {cell}
-        </p>
-      ))}
-    </div>
-  );
-}
-
-export function SheetLine({
-  term,
-  detail,
-  warm,
-  first,
-}: {
-  term: string;
-  detail: string;
-  warm: boolean;
-  first: boolean;
-}) {
-  return (
-    <div className={`grid grid-cols-[6.75rem_1fr] gap-3 border-b py-1 ${ruleOf(warm)} ${first ? "border-t" : ""}`}>
-      <p className={`font-mono text-[0.65rem] uppercase tracking-[0.12em] ${toneOf(warm)}`}>{term}</p>
-      <p className="text-sm leading-snug text-slate-200">{detail}</p>
-    </div>
-  );
-}
-
 export function SheetGate({ term, detail, warm }: { term: string; detail: string; warm: boolean }) {
   return (
     <div className={`mt-1 border-y-2 py-1.5 ${warm ? "border-amber-200/55" : "border-white/25"}`}>
@@ -269,7 +224,7 @@ function SheetFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }
         </tbody>
       </table>
       {gate ? <SheetGate term={gate.term} detail={gate.detail} warm={warm} /> : null}
-      <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption>
+      {figure.caption ? <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption> : null}
     </figure>
   );
 }
@@ -284,11 +239,12 @@ function PathFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean })
           const last = index === figure.steps.length - 1;
           return (
             <li key={step.term} className="flex min-w-0 flex-1 flex-col sm:flex-row sm:items-stretch">
-              <div className={`flex flex-1 items-center border px-2 py-2 ${edge}`}>
+              <div className={`flex min-w-0 flex-1 flex-col justify-center border px-2 py-1.5 ${edge}`}>
                 <p className={`font-mono text-[0.62rem] uppercase leading-snug tracking-[0.06em] ${tone}`}>
                   <span className="mr-1.5 tabular-nums">{index + 1}</span>
                   {step.term}
                 </p>
+                {step.detail ? <p className="mt-1 text-sm leading-snug text-slate-200">{step.detail}</p> : null}
               </div>
               {last ? null : (
                 <span className={`grid place-items-center py-0.5 font-mono text-sm sm:px-1 sm:py-0 ${tone}`} aria-hidden="true">
@@ -350,39 +306,81 @@ function ReadingFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean
   );
 }
 
-function UsesFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
-  const tone = toneOf(warm);
-  const rule = ruleOf(warm);
+const usesTable = "m-0 w-full table-fixed border-collapse text-left text-sm";
+
+function UsesColumns() {
+  return (
+    <colgroup>
+      <col style={{ width: "7.25rem" }} />
+      <col />
+      <col />
+    </colgroup>
+  );
+}
+
+function usesHeadClass(warm: boolean) {
+  return `py-1.5 pr-2 text-left align-bottom font-mono text-[0.56rem] uppercase leading-snug tracking-[0.03em] whitespace-nowrap sm:whitespace-normal sm:py-2 sm:pr-3 sm:text-[0.65rem] sm:tracking-[0.12em] ${toneOf(warm)}`;
+}
+
+function usesLabelClass(warm: boolean) {
+  return `py-1.5 pr-2 text-left align-top font-mono text-[0.62rem] uppercase leading-snug tracking-[0.08em] sm:py-2 sm:pr-3 sm:text-[0.65rem] sm:tracking-[0.12em] ${toneOf(warm)}`;
+}
+
+const usesCellClass = "py-1.5 pr-2 align-top text-sm leading-snug text-slate-200 sm:py-2 sm:pr-3";
+
+export function UsesHead({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
   const head = figure.head ?? [];
+  return (
+    <table className={usesTable}>
+      <UsesColumns />
+      <thead>
+        <tr className={`border-b ${ruleOf(warm)}`}>
+          {head.map((cell) => (
+            <th key={cell} scope="col" className={usesHeadClass(warm)}>
+              {cell}
+            </th>
+          ))}
+        </tr>
+      </thead>
+    </table>
+  );
+}
+
+export function UsesRow({
+  row,
+  warm,
+}: {
+  row: { label: string; cells: string[] };
+  warm: boolean;
+}) {
+  return (
+    <table className={usesTable}>
+      <UsesColumns />
+      <tbody>
+        <tr className={`border-b ${ruleOf(warm)}`}>
+          <th scope="row" className={usesLabelClass(warm)}>
+            {row.label}
+          </th>
+          {row.cells.map((cell, index) => (
+            <td key={`${row.label}-${index}`} className={usesCellClass}>
+              {cell}
+            </td>
+          ))}
+        </tr>
+      </tbody>
+    </table>
+  );
+}
+
+function UsesFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
   const rows = figure.rows ?? [];
   return (
     <figure>
-      <table className="w-full border-collapse text-left text-sm">
-        <thead>
-          <tr className={`border-b ${rule}`}>
-            {head.map((cell) => (
-              <th key={cell} scope="col" className={`py-2 pr-3 align-bottom font-mono text-[0.65rem] uppercase tracking-[0.14em] ${tone}`}>
-                {cell}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.label} className={`border-b ${rule}`}>
-              <th scope="row" className={`py-2 pr-3 align-top font-mono text-[0.65rem] uppercase tracking-[0.14em] ${tone}`}>
-                {row.label}
-              </th>
-              {row.cells.map((cell, index) => (
-                <td key={`${row.label}-${index}`} className="py-2 pr-3 align-top text-sm leading-snug text-slate-200">
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption>
+      <UsesHead figure={figure} warm={warm} />
+      {rows.map((row) => (
+        <UsesRow key={row.label} row={row} warm={warm} />
+      ))}
+      {figure.caption ? <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption> : null}
     </figure>
   );
 }
