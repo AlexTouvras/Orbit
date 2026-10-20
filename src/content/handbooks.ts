@@ -1446,14 +1446,14 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       title: "Name the decision",
       lede: "The previous chapter established which problem is worth solving. This chapter explains what a metric must establish before it can support a decision. A chart you are still exploring can go out before the brief is filled. A number offered as the answer cannot. A report title is not the decision.",
       rule: "My operating rule: when a number is offered as the answer, I name the decision, the outcome, the person the number is for, the constraint, and the one activity. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. I do not present the number as that answer until those are named.",
-      illustration: "The two chairs are an illustration, not a record.",
+      illustration: "The invoice case is an illustration, not a record.",
       reviewed: "20 Oct 2026",
       sections: [
         {
           id: "brief",
           title: "The brief",
           paragraphs: [
-            "The previous chapter chose the list. This brief is filled for one use of it: whether this credit controller offers an open invoice more time before write-off. Overdue balance would also fit a call list, so that list would be a second brief. In the picture, the chair in the light is the controller. The dark chair is the call list. This is an illustration. I have not measured it, and it establishes no business result.",
+            "The previous chapter chose the list. This brief is filled for one use of it: whether this credit controller offers an open invoice more time before write-off. Overdue balance would also fit a call list, so that list would be a second brief. This is an illustration. I have not measured it, and it establishes no business result.",
             "The owner is one person, or one role, who uses the number. A mailing list is not the owner, and the person who owns the definition is a different role. The constraint is the agreed policy. If there is no limit, write that. A blank constraint is not the same as no limit. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. Marking the brief ready does not make a hypothesis true.",
           ],
           figure: {
@@ -1493,10 +1493,6 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
                 detail: "Ready for this decision. The call list is out of scope. The figures test the hypothesis.",
               },
             ],
-          },
-          picture: {
-            src: `${DATA_ART}/decision.jpg`,
-            alt: "An illustration. One sheet of light, one chair in that light, and one chair left dark. No amount.",
           },
         },
         {
