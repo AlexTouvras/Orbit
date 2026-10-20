@@ -1459,7 +1459,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           ],
           figure: {
             kind: "sheet",
-            caption: "Seven lines for this case. Status is the gate. Filling it does not make a hypothesis true.",
+            caption: "Status means the brief is complete. It is not sufficient evidence for the decision.",
             steps: [
               {
                 term: "Decision",
@@ -1491,7 +1491,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               },
               {
                 term: "Status",
-                detail: "Filled for this decision. These figures are not evidence to change the offer.",
+                detail: "Brief complete. Not sufficient evidence to change the offer.",
                 gate: true,
               },
             ],
@@ -1537,13 +1537,13 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             kind: "flow",
             plain: true,
             caption:
-              "A number offered as the answer walks all five steps. Exploration and monitoring can stop earlier. How far the brief goes follows the cost of being wrong.",
+              "A number offered as the answer walks all five steps. Exploration and monitoring can stop earlier.",
             steps: [
-              { term: "Intended use", detail: "The use." },
-              { term: "Comparability", detail: "One population, one window." },
-              { term: "Interpretation", detail: "What the figures leave open." },
-              { term: "Decision", detail: "Inside the policy." },
-              { term: "Outcome evaluation", detail: "What happened afterward." },
+              { term: "Intended use", detail: "" },
+              { term: "Definitions and comparability", detail: "" },
+              { term: "Interpretation", detail: "" },
+              { term: "Decision within policy", detail: "" },
+              { term: "Outcome evaluation", detail: "" },
             ],
           },
         },
