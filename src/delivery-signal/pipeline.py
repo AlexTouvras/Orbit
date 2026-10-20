@@ -611,6 +611,9 @@ def _build_reading(
         if status and not _is_done(status["before"]) and _is_done(status["after"]):
             closed.append(change)
 
+    def tight(before: str, after: str) -> str:
+        return f"{before}→{after}"
+
     def day(value: date | None) -> str:
         if value is None:
             return "no date"
@@ -620,9 +623,9 @@ def _build_reading(
 
     progress_lines: list[dict] = []
     if not data["previous"]:
-        progress_lines.append(_line("progress:no-previous", "No previous export, so a close cannot be named.", []))
+        progress_lines.append(_line("progress:no-previous", "No previous export.", []))
     elif not closed:
-        progress_lines.append(_line("progress:none-closed", "Nothing moved to Done.", []))
+        progress_lines.append(_line("progress:none-closed", "Nothing.", []))
     else:
         evidence = []
         points = 0.0
@@ -638,11 +641,12 @@ def _build_reading(
                 evidence.append(_item_evidence(item, "story_points"))
         if len(closed) == 1:
             item = by_key[closed[0]["key"]]
-            point_bit = f", {_fmt_num(item.story_points)} points" if item.story_points is not None else ""
-            text = f"Closed {item.summary} ({item.key}{point_bit})."
+            text = f"{item.key}, {_fmt_num(item.story_points)} points." if item.story_points is not None else f"{item.key}."
         else:
             point_bit = f", {_fmt_num(points)} points" if counted else ""
-            text = f"Closed {len(closed)} items{point_bit}: {_and(keys)}."
+            shown = ", ".join(keys[:3])
+            more = f" +{len(keys) - 3}" if len(keys) > 3 else ""
+            text = f"{len(closed)}{point_bit}: {shown}{more}."
         progress_lines.append(_line("progress:closed", text, evidence))
 
     def _fragment(change: dict) -> tuple[int, str, str, list[Evidence]] | None:
@@ -663,54 +667,52 @@ def _build_reading(
         if "assignee" in fields:
             before, after = fields["assignee"]["before"], fields["assignee"]["after"]
             if after == "blank" and before != "blank":
-                bits.append(f"{item.summary} ({item.key}) lost {before}")
+                bits.append(f"lost {before}")
                 rank = min(rank, 0)
             else:
-                bits.append(f"owner {_moved(before, after)}")
+                bits.append(f"owner {tight(before, after)}")
                 rank = min(rank, 3)
             evidence.append(_item_evidence(item, "assignee"))
         if "story_points" in fields:
-            bits.append(f"estimate {_moved(fields['story_points']['before'], fields['story_points']['after'])}")
+            bits.append(f"estimate {tight(fields['story_points']['before'], fields['story_points']['after'])}")
             rank = min(rank, 2)
             evidence.append(_item_evidence(item, "story_points"))
         if "remaining" in fields:
             before_n = _parse_number(fields["remaining"]["before"], "before", [])
             after_n = _parse_number(fields["remaining"]["after"], "after", [])
             grew = before_n is not None and after_n is not None and after_n > before_n
-            bits.append(f"remaining {_moved(fields['remaining']['before'], fields['remaining']['after'])}")
+            bits.append(f"remaining {tight(fields['remaining']['before'], fields['remaining']['after'])}")
             rank = min(rank, 1 if grew else 4)
             evidence.append(_item_evidence(item, "remaining"))
         if "due" in fields:
-            bits.append(f"due {_moved(fields['due']['before'], fields['due']['after'])}")
+            bits.append(f"due {tight(fields['due']['before'], fields['due']['after'])}")
             rank = min(rank, 3)
             evidence.append(_item_evidence(item, "due"))
         if "blocked_by" in fields:
-            bits.append(f"blocker {_moved(fields['blocked_by']['before'], fields['blocked_by']['after'])}")
+            bits.append(f"blocker {tight(fields['blocked_by']['before'], fields['blocked_by']['after'])}")
             rank = min(rank, 1)
             evidence.append(_item_evidence(item, "blocked_by"))
         if "priority" in fields:
-            bits.append(f"priority {_moved(fields['priority']['before'], fields['priority']['after'])}")
+            bits.append(f"priority {tight(fields['priority']['before'], fields['priority']['after'])}")
             rank = min(rank, 3)
             evidence.append(_item_evidence(item, "priority"))
         if "percent_complete" in fields:
-            bits.append(f"percent {_moved(fields['percent_complete']['before'], fields['percent_complete']['after'])}")
+            bits.append(f"percent {tight(fields['percent_complete']['before'], fields['percent_complete']['after'])}")
             rank = min(rank, 4)
             evidence.append(_item_evidence(item, "percent_complete"))
         if status:
-            bits.append(_moved(status["before"], status["after"]))
+            bits.append(tight(status["before"], status["after"]))
             rank = min(rank, 4)
             evidence.append(_item_evidence(item, "status"))
         if not bits:
             return None
-        named = bits[0].startswith(f"{item.summary} ({item.key})")
-        text = ", ".join(bits) if named else f"{item.key} " + ", ".join(bits)
-        return rank, "drift", text, evidence
+        return rank, "drift", f"{item.key} " + ", ".join(bits), evidence
 
     changed: list[dict] = []
     if not data["previous"]:
         changed.append(_line("change:no-previous", "No previous export.", []))
     elif not changes:
-        changed.append(_line("change:same", "No compared field moved.", []))
+        changed.append(_line("change:same", "No change.", []))
     else:
         pieces = []
         for change in changes:
@@ -718,18 +720,18 @@ def _build_reading(
             if got is not None:
                 pieces.append(got)
         if not pieces:
-            changed.append(_line("change:only-closed", "The only movement is the close above.", []))
+            changed.append(_line("change:only-closed", "Only the close.", []))
         else:
             pieces.sort(key=lambda row: (row[0], row[2]))
             scope = [text for _rank, kind, text, _evidence in pieces if kind == "scope"]
             drift = [text for _rank, kind, text, _evidence in pieces if kind == "drift"]
             evidence = [piece for _rank, _kind, _text, group in pieces for piece in group]
-            sentences = []
+            parts = []
             if scope:
-                sentences.append(_and(scope) + ".")
+                parts.append(". ".join(scope))
             if drift:
-                sentences.append("Not finished work: " + "; ".join(drift) + ".")
-            changed.append(_line("change:drift", " ".join(sentences), evidence))
+                parts.append(". ".join(drift))
+            changed.append(_line("change:drift", ". ".join(parts) + ".", evidence))
 
     def _remaining_pressure(item: WorkItem) -> tuple[str, str] | None:
         change = by_change.get(item.key)
@@ -738,7 +740,7 @@ def _build_reading(
             before_n = _parse_number(remaining["before"], "before", [])
             after_n = _parse_number(remaining["after"], "after", [])
             if before_n is not None and after_n is not None and after_n > before_n:
-                return "grew", _moved(remaining["before"], remaining["after"])
+                return "grew", tight(remaining["before"], remaining["after"])
         if (
             item.remaining is not None
             and item.original_estimate is not None
@@ -771,50 +773,42 @@ def _build_reading(
             evidence.append(_item_evidence(item, "blocked_by"))
             blocked_bits.append(f"{item.key} by {item.blocked_by}")
         elif not item.assignee:
-            unowned_bits.append(f"{item.key} ({day(item.due)})")
+            unowned_bits.append(f"{item.key} {day(item.due)}")
         elif pressure:
             kind, label = pressure
-            (grew_bits if kind == "grew" else above_bits).append(f"{item.key} ({label})")
+            (grew_bits if kind == "grew" else above_bits).append(f"{item.key} {label}")
         else:
-            clear_bits.append(f"{item.key} ({day(item.due)}, {item.assignee})")
+            clear_bits.append(f"{item.key} {item.assignee}")
         coming_evidence.extend(evidence)
     milestone_bits: list[str] = []
     for milestone in sorted(data["milestones"], key=lambda row: (row["due"] or date.max, row["id"])):
         due = milestone["due"]
         if due is None or _milestone_done(milestone) or not (next_start <= due <= next_end):
             continue
-        milestone_bits.append(f"{milestone['name']} ({day(due)})")
+        milestone_bits.append(f"{milestone['name']} {day(due)}")
         coming_evidence.extend(
             [
                 _ev("milestones", milestone["id"], "due", milestone["due"]),
                 _ev("milestones", milestone["id"], "status", milestone["status"]),
             ]
         )
-    coming_sentences: list[str] = []
+    coming_bits: list[str] = []
     if not next_items and not milestone_bits:
-        coming_sentences.append(f"Nothing dated {_span(next_start, next_end)}.")
+        coming_bits.append("Nothing dated")
     else:
         if clear_bits:
-            coming_sentences.append(f"Owned and inside the estimate: {_and(clear_bits)}.")
-        else:
-            coming_sentences.append("Nothing dated next week is both owned and inside its estimate.")
-        if grew_bits and above_bits:
-            coming_sentences.append(
-                f"Remaining grew on {_and(grew_bits)} and already exceeds the original on {_and(above_bits)}."
-            )
-        elif grew_bits:
-            coming_sentences.append(f"Remaining grew on {_and(grew_bits)}.")
-        elif above_bits:
-            coming_sentences.append(f"Remaining is already above the original on {_and(above_bits)}.")
+            coming_bits.append("Ready " + ", ".join(clear_bits))
+        if grew_bits:
+            coming_bits.append("Remaining up " + ", ".join(grew_bits))
+        if above_bits:
+            coming_bits.append("Over estimate " + ", ".join(above_bits))
         if blocked_bits:
-            coming_sentences.append(f"Blocked: {_and(blocked_bits)}.")
+            coming_bits.append("Blocked " + ", ".join(blocked_bits))
         if milestone_bits:
-            verb = "is" if len(milestone_bits) == 1 else "are"
-            coming_sentences.append(f"{_and(milestone_bits)} {verb} only a milestone.")
+            coming_bits.append(", ".join(milestone_bits) + ", milestone")
         if unowned_bits:
-            verb = "has" if len(unowned_bits) == 1 else "have"
-            coming_sentences.append(f"{_and(unowned_bits)} {verb} no owner.")
-    coming = [_line("coming:read", " ".join(coming_sentences), coming_evidence)]
+            coming_bits.append(", ".join(unowned_bits) + ", no owner")
+    coming = [_line("coming:read", ". ".join(coming_bits) + ".", coming_evidence)]
 
     forward: dict[str, list[str]] = {}
     for dep in data["dependencies"]:
@@ -857,48 +851,31 @@ def _build_reading(
             nodes.extend(_walk(succ, seen))
         return nodes
 
-    def _chain_sentence(nodes: list) -> str:
+    def _chain_phrase(nodes: list) -> str:
         work = [node for node in nodes if not isinstance(node, dict)]
         milestones = [node for node in nodes if isinstance(node, dict)]
         unowned = [item for item in work if not item.assignee]
         mark_each = len(unowned) != len(work)
 
-        def work_bit(item: WorkItem, lead: bool) -> str:
-            facts = []
-            if not lead:
-                facts.append(item.summary)
-            if item.due is not None:
-                facts.append(f"due {day(item.due)}")
+        def work_bit(item: WorkItem) -> str:
             if mark_each and not item.assignee:
-                facts.append("no owner")
-            inner = ", ".join(facts)
-            if lead:
-                return f"{item.summary} ({item.key}{', ' + inner if inner else ''})"
-            return f"{item.key} ({inner})" if inner else item.key
+                return f"{item.key} (no owner)"
+            return item.key
 
-        labels = [work_bit(item, index == 0) for index, item in enumerate(work)]
-        milestone_labels = [
-            f"{row['name']} on {day(row['due'])}" if row["due"] else row["name"] for row in milestones
-        ]
-        if len(labels) >= 2:
-            text = f"{labels[0]} blocks {_and(labels[1:] + milestone_labels)}"
-        elif labels and milestone_labels:
-            text = f"{labels[0]} blocks {_and(milestone_labels)}"
-        elif len(labels) == 1:
+        if len(work) == 1 and not milestones:
             item = work[0]
             why = []
-            if _overdue(item, as_of):
-                why.append("overdue")
             if not item.assignee:
                 why.append("no owner")
             if item.blocked_by:
                 why.append(f"blocked by {item.blocked_by}")
-            tail = ", " + ", ".join(why) if why else ""
-            text = f"{item.summary} ({item.key}, due {day(item.due)}{tail}) is Highest"
-        else:
-            text = _and(milestone_labels)
+            return item.key + (", " + ", ".join(why) if why else "")
+        parts = [work_bit(item) for item in work]
+        for row in milestones:
+            parts.append(f"{row['name']} {day(row['due'])}" if row["due"] else row["name"])
+        text = " → ".join(parts)
         if len(work) > 1 and unowned and len(unowned) == len(work):
-            text += "; neither has an owner" if len(work) == 2 else "; none has an owner"
+            text += ", no owners"
         return text
 
     def _chain_evidence(nodes: list) -> list[Evidence]:
@@ -966,12 +943,8 @@ def _build_reading(
         chains.append(nodes)
 
     priorities: list[dict] = []
-    if chains:
-        count = {2: "Two", 3: "Three", 4: "Four"}.get(len(chains), str(len(chains)))
-        opener = f"{count} chains are already late. " if len(chains) > 1 else ""
-        text = opener + " ".join(f"{_chain_sentence(nodes)}." for nodes in chains)
-        evidence = [piece for nodes in chains for piece in _chain_evidence(nodes)]
-        priorities.append(_line("priority:chains", text, evidence))
+    phrases = [_chain_phrase(nodes) for nodes in chains]
+    priority_evidence = [piece for nodes in chains for piece in _chain_evidence(nodes)]
     later = [
         item
         for item in data["items"]
@@ -994,20 +967,20 @@ def _build_reading(
                     extra.append("no owner")
                 if item.story_points is None:
                     extra.append("no estimate")
-                tail = ", " + ", ".join(extra) if extra else ""
-                parts.append(f"{item.key} ({when}{tail})")
+                tail = " " + " ".join(extra) if extra else ""
+                parts.append(f"{item.key}{tail} {when}")
             else:
                 extra = []
                 if all(not item.assignee for item in group):
                     extra.append("no owner")
                 elif any(not item.assignee for item in group):
-                    extra.append(_and([item.key for item in group if not item.assignee]) + " no owner")
+                    extra.append(", ".join(item.key for item in group if not item.assignee) + " no owner")
                 if all(item.story_points is None for item in group):
                     extra.append("no estimate")
                 elif any(item.story_points is None for item in group):
-                    extra.append(_and([item.key for item in group if item.story_points is None]) + " no estimate")
-                tail = ", " + ", ".join(extra) if extra else ""
-                parts.append(f"{', '.join(item.key for item in group)} ({when}{tail})")
+                    extra.append(", ".join(item.key for item in group if item.story_points is None) + " no estimate")
+                tail = " " + " ".join(extra) if extra else ""
+                parts.append(f"{', '.join(item.key for item in group)}{tail} {when}")
             for item in group:
                 evidence.extend(
                     [
@@ -1017,15 +990,12 @@ def _build_reading(
                         _item_evidence(item, "story_points"),
                     ]
                 )
-        priorities.append(_line("priority:later", "Still Highest after this week: " + "; ".join(parts) + ".", evidence))
-    if not priorities:
-        priorities.append(
-            _line(
-                "priority:none",
-                f"Nothing Highest is already late, and nothing dated {_span(this_start, this_end)} blocks a later date.",
-                [],
-            )
-        )
+        phrases.append(("Later: " if phrases else "") + "; ".join(parts))
+        priority_evidence.extend(evidence)
+    if phrases:
+        priorities.append(_line("priority:late", ". ".join(phrases) + ".", priority_evidence))
+    else:
+        priorities.append(_line("priority:none", "None.", []))
     mentioned_milestones = {node["id"] for nodes in chains for node in nodes if isinstance(node, dict)}
 
     delay: list[dict] = []
@@ -1056,11 +1026,8 @@ def _build_reading(
                 _item_evidence(pred, "due"),
             ]
             if blocker is None:
-                who = "" if pred.assignee else ", no owner"
-                text = (
-                    f"{milestone['name']} ({_fmt_date(due)}) sits behind {pred.key}, "
-                    f"which is {pred.status}{who}, due {_fmt_date(pred.due)}."
-                )
+                who = "" if pred.assignee else " no owner"
+                text = f"{milestone['name']} {day(due)} behind {pred.key}{who}"
             else:
                 evidence.extend(
                     [
@@ -1070,11 +1037,8 @@ def _build_reading(
                         _item_evidence(blocker, "due"),
                     ]
                 )
-                who = "" if blocker.assignee else ", no owner"
-                text = (
-                    f"{milestone['name']} ({_fmt_date(due)}) sits behind {pred.key}, "
-                    f"blocked by {blocker.key} (due {_fmt_date(blocker.due)}{who})."
-                )
+                who = "" if blocker.assignee else " no owner"
+                text = f"{milestone['name']} {day(due)} behind {blocker.key}{who}"
             delay.append(_line(f"delay:milestone:{milestone['id']}", text, evidence))
     for finding in findings:
         if finding.kind == "note_conflict":
@@ -1087,29 +1051,28 @@ def _build_reading(
             keys = _and([item.key for item in sorted(overdue, key=lambda item: item.key)[:4]])
             note = next((piece for piece in finding.evidence if piece.source == "notes"), None)
             note_id = note.id if note else "A note"
-            full_name = names.get(finding.project, finding.project)
-            short_name = full_name.split(" — ")[0].split(" - ")[0]
             gap = (as_of - newest).days if newest is not None else None
-            age = f" ({gap} days)" if gap is not None else ""
-            delay.append(
-                _line(
-                    f"delay:{finding.id}",
-                    (
-                        f"{note_id} calls {short_name} on track. "
-                        f"{keys} are overdue; newest update {day(newest)}{age}."
-                    ),
-                    list(finding.evidence),
-                )
-            )
+            age = f", {gap}d" if gap is not None else ""
+            delay.append(_line(f"delay:{finding.id}", f"{note_id} vs {keys}{age}", list(finding.evidence)))
         elif finding.kind == "misleading_completion":
             note = next((piece for piece in finding.evidence if piece.source == "notes" and ONLY_OPEN.search(piece.value)), None)
-            full_name = names.get(finding.project, finding.project)
-            short_name = full_name.split(" — ")[0].split(" - ")[0]
-            title = finding.title.replace(full_name, short_name, 1) if full_name else finding.title
-            extra = f" {note.id} calls a single item open." if note else ""
-            delay.append(_line(f"delay:{finding.id}", title + extra, list(finding.evidence)))
+            match = re.search(r"(\d+(?:\.\d+)?)% complete; (\S+) of (\S+) story points", finding.title)
+            text = f"{match.group(1)}% is {match.group(2)}/{match.group(3)}" if match else finding.title
+            if note:
+                text += f". {note.id}: one item"
+            delay.append(_line(f"delay:{finding.id}", text, list(finding.evidence)))
     if not delay:
-        delay.append(_line("delay:none", "No note or completion figure disagrees with the rows.", []))
+        delay.append(_line("delay:none", "None.", []))
+    elif len(delay) > 1:
+        delay = [
+            {
+                "id": "delay:read",
+                "text": ". ".join(row["text"].rstrip(".") for row in delay) + ".",
+                "evidence": [piece for row in delay for piece in row["evidence"]],
+            }
+        ]
+    elif not delay[0]["text"].endswith("."):
+        delay[0]["text"] += "."
 
     return {
         "this_week": [this_start.isoformat(), this_end.isoformat()],
@@ -1901,50 +1864,27 @@ def _fmt_iso(value: str | None) -> str:
 
 
 _READING_SECTIONS = (
-    ("progress", "Weekly progress", "What reached Done since the previous export."),
-    (
-        "changed",
-        "What changed since the last update",
-        "What the diff means. The field list below is every cell.",
-    ),
-    (
-        "coming",
-        "Expected next week",
-        "Dates in the seven days after this week, and whether those rows are owned and inside the estimate.",
-    ),
-    (
-        "priorities",
-        "Highest priorities this week",
-        "The chain that is already late, then Highest work after this week.",
-    ),
-    (
-        "delay_risks",
-        "Delay risks in the export",
-        "Where a note or a completion percent disagrees with the rows.",
-    ),
+    ("progress", "Closed", "What reached Done."),
+    ("changed", "Moved", "Field movement other than the close."),
+    ("coming", "Next week", "Dates in the seven days after this week."),
+    ("priorities", "Late", "Chains already late, then Highest work after that."),
+    ("delay_risks", "Disagrees", "A note or a completion percent the rows contradict."),
 )
+_WEEK_NOTE = "Five lines from the export. A due date is the date in the file. Evidence is the cells. The field list below is every change."
 
 
 def _reading_md(brief: dict) -> list[str]:
     reading = brief.get("reading") or {}
     if not reading:
         return []
-    lines = [
-        "",
-        f"This week {_span(date.fromisoformat(reading['this_week'][0]), date.fromisoformat(reading['this_week'][1]))}. "
-        f"Next week {_span(date.fromisoformat(reading['next_week'][0]), date.fromisoformat(reading['next_week'][1]))}.",
-        "",
-    ]
+    this_week = re.sub(r"\s+\d{4}$", "", _span(date.fromisoformat(reading["this_week"][0]), date.fromisoformat(reading["this_week"][1])))
+    next_week = re.sub(r"\s+\d{4}$", "", _span(date.fromisoformat(reading["next_week"][0]), date.fromisoformat(reading["next_week"][1])))
+    lines = ["", f"{this_week} · next {next_week}", ""]
     for key, title, _note in _READING_SECTIONS:
-        lines.extend([f"## {title}", ""])
         rows = reading.get(key) or []
-        if not rows:
-            lines.append("None.")
-            lines.append("")
-            continue
-        for row in rows:
-            lines.append(row["text"])
-            lines.append("")
+        text = " ".join(row["text"] for row in rows) if rows else "None."
+        lines.append(f"**{title}.** {text}")
+    lines.append("")
     return lines
 
 
@@ -2115,21 +2055,32 @@ def _reading_html(brief: dict) -> str:
     reading = brief.get("reading") or {}
     if not reading:
         return ""
-    blocks = [
-        "<p class=\"meta\">This week {}. Next week {}.</p>".format(
-            html.escape(_span(date.fromisoformat(reading["this_week"][0]), date.fromisoformat(reading["this_week"][1]))),
-            html.escape(_span(date.fromisoformat(reading["next_week"][0]), date.fromisoformat(reading["next_week"][1]))),
-        )
-    ]
-    for key, title, note in _READING_SECTIONS:
-        parts = []
-        for row in reading.get(key) or []:
-            parts.append(f"<p>{html.escape(row['text'])}</p>")
-            if row.get("evidence"):
-                count = len(row["evidence"])
-                parts.append(f"<details><summary>Evidence, {count} fields</summary>{_evidence_html(row)}</details>")
-        blocks.append(_section(title, note) + '<div class="reading">' + "".join(parts) + "</div>")
-    return "".join(blocks)
+    this_week = re.sub(
+        r"\s+\d{4}$",
+        "",
+        _span(date.fromisoformat(reading["this_week"][0]), date.fromisoformat(reading["this_week"][1])),
+    )
+    next_week = re.sub(
+        r"\s+\d{4}$",
+        "",
+        _span(date.fromisoformat(reading["next_week"][0]), date.fromisoformat(reading["next_week"][1])),
+    )
+    rows = []
+    for key, title, _note in _READING_SECTIONS:
+        items = reading.get(key) or []
+        text = " ".join(row["text"] for row in items) if items else "None."
+        evidence = [piece for row in items for piece in row.get("evidence") or []]
+        fold = ""
+        if evidence:
+            fold = "<details><summary>Evidence</summary>{}</details>".format(
+                _evidence_html({"evidence": evidence})
+            )
+        rows.append(f"<div><dt>{html.escape(title)}</dt><dd>{html.escape(text)}{fold}</dd></div>")
+    head = (
+        '<div class="section-head"><p class="meta">{}</p><details class="info">'
+        '<summary aria-label="About this week">i</summary><p>{}</p></details></div>'
+    ).format(html.escape(f"{this_week} · next {next_week}"), html.escape(_WEEK_NOTE))
+    return head + '<dl class="reading">' + "".join(rows) + "</dl>"
 
 
 def _section(title: str, note: str) -> str:
@@ -2294,8 +2245,12 @@ def render_html(brief: dict) -> str:
     h3 {{ font-size: 1rem; margin: 0 0 0.35rem; }}
     .meta {{ margin: 0; color: #9aa0b0; }}
     .lede {{ font-size: 1.02rem; }}
-    .reading p {{ margin: 0.2rem 0 0.15rem; }}
-    .reading details {{ margin: 0 0 0.35rem; }}
+    .reading {{ margin: 0.35rem 0 0.2rem; }}
+    .reading div {{ display: grid; grid-template-columns: 6.2rem 1fr; gap: 0.1rem 0.8rem; margin: 0.45rem 0; }}
+    .reading dt {{ margin: 0; color: #9aa0b0; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }}
+    .reading dd {{ margin: 0; }}
+    .reading details {{ margin: 0.1rem 0 0; }}
+    .reading summary {{ font-size: 0.75rem; color: #9aa0b0; }}
     .pulse {{ list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 0.45rem; }}
     .card {{ background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 0.7rem 0.8rem; }}
     .pulse .card {{ display: flex; flex-direction: column; gap: 0.2rem; min-height: 3.2rem; }}
@@ -2315,6 +2270,7 @@ def render_html(brief: dict) -> str:
     @media (max-width: 640px) {{
       h1 {{ font-size: 1.45rem; }}
       .pulse {{ grid-template-columns: 1fr; }}
+      .reading div {{ grid-template-columns: 1fr; gap: 0.05rem; }}
     }}
   </style>
 </head>
