@@ -17,7 +17,11 @@ const nextConfig = {
   // The route reads this checker with fs. The path is computed, so the file
   // has to be named here or the deployed function will not contain it.
   outputFileTracingIncludes: {
-    "/delivery-signal/[[...path]]": ["./src/delivery-signal/pipeline.py"],
+    "/delivery-signal/[[...path]]": [
+      "./src/delivery-signal/pipeline.py",
+      "./src/delivery-signal/sample/work_items.csv",
+      "./src/delivery-signal/sample/previous_work_items.csv",
+    ],
   },
   // public/field-card/index.html is not auto-served at /field-card (App Router 404).
   // Soft URLs rewrite to the static file; competency card links to index.html directly.
