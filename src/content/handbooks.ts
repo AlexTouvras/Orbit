@@ -1105,6 +1105,42 @@ const AWS_SHARED = source(
   "https://aws.amazon.com/compliance/shared-responsibility-model/",
   "AWS, shared responsibility",
 );
+const GAO_P3 = source(
+  "https://guides.gaoinnovations.gov/greenbook/2025/principle-3-establish-structure-responsibility-and-authority/",
+  "GAO Green Book, principle 3",
+);
+const GAO_P6 = source(
+  "https://guides.gaoinnovations.gov/greenbook/2025/principle-6-define-objectives-and-risk-tolerances/",
+  "GAO Green Book, principle 6",
+);
+const GAO_P10 = source(
+  "https://guides.gaoinnovations.gov/greenbook/2025/principle-10-design-control-activities/",
+  "GAO Green Book, principle 10",
+);
+const GAO_P16 = source(
+  "https://guides.gaoinnovations.gov/greenbook/2025/principle-16-perform-monitoring-activities/",
+  "GAO Green Book, principle 16",
+);
+const GAO_P17 = source(
+  "https://guides.gaoinnovations.gov/greenbook/2025/principle-17-evaluate-issues-and-remediate-deficiencies/",
+  "GAO Green Book, principle 17",
+);
+const GAO_APP2 = source(
+  "https://guides.gaoinnovations.gov/greenbook/2025/appendix-ii-examples-of-preventive-and-detective-control-activities-and-sources-of-data/",
+  "GAO Green Book, appendix II",
+);
+const DQ_DIMENSIONS = source(
+  "https://www.gov.uk/government/news/meet-the-data-quality-dimensions",
+  "Government Data Quality Hub, dimensions",
+);
+const DQ_FRAMEWORK = source(
+  "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework",
+  "Government Data Quality Framework",
+);
+const OPENLINEAGE_MODEL = source(
+  "https://openlineage.io/docs/spec/object-model",
+  "OpenLineage, object model",
+);
 
 export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   slug: "data-that-drives-decisions",
@@ -1283,7 +1319,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "The rest of the book",
           paragraphs: [
-            "Choose the work compares the investment: the outcome, a way that is sufficient, the cost of keeping it, and what to defer. Make the number fit to use is Name the decision, Say what one row means, When two reports don't match, and Keep the definition. Choose the stack names the tools. Keep trust in force keeps the rules. Run the product and judge the value is continue, change, or stop.",
+            "Choose the work compares the investment: the outcome, a way that is sufficient, the cost of keeping it, and what to defer. Make the number fit to use is Name the decision, Say what one row means, When two reports don't match, and Keep the definition. Choose the stack names the tools. Keep trust in force keeps the number fit to use. Run the product and judge the value is continue, change, or stop.",
             "Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
@@ -2321,89 +2357,207 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 8,
       topic: "Keep trust in force",
       title: "Keep trust in force",
-      lede: "This page is what stays true for the numbers that share a system. One number is still Ask, Grain, Truth, and Use. These lines are the trust around it.",
-      rule: "My operating rule: I name who can see the number, who can change it, the source and the published measure, the freshness, and a test that can fail before it ships. An unexplained gap stays dark. A blank line means the number is not being kept.",
-      illustration: "The invoice trust lines are an illustration, not a record.",
-      reviewed: "18 Oct 2026",
+      lede: "This page is how a published measure stays fit to use. On the analytics field card the path is Ask, Grain, Truth, and Use. This page keeps Truth in force, so the decision that depends on it can still be made.",
+      rule: "My operating rule: name who answers for the meaning and who answers for the pipeline, keep a path a person can explain, show whether the freshness the decision needs was met, run the checks that match the failure that would matter, and decide what a failure does. A correct calculation can still be unfit to use.",
+      illustration: "The invoice list is a hypothetical illustration, not a record.",
+      reviewed: "21 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
       },
       sections: [
         {
-          id: "trust",
-          title: "The lines",
+          id: "trust-state",
+          title: "What trustworthy use looks like",
           paragraphs: [
-            "Make the number fit keeps one number. Choose the stack names the tools. This page is what stays true the next time that number is used, and for the next number on the same system.",
-            "The card's lines are security, governance, observability, evals, and human approve. Security is who can see and change the number. Governance is a named owner who approves the definition. Observability is lineage from the source to the published measure. Evals are tests on gold before a number ships. Human approve means an unexplained gap stays dark. The card's gate traces lineage, and a disagreement is resolved or blocked before the number reaches the decision.",
-            "I read gold as the table that is about to go out. Freshness is the freshness already named on Choose the stack. The sheet is my rule for how a line is filled. The five names are the card's.",
+            "Make the number fit to use has named the decision, the row, what to do when two reports disagree, and the owner of the definition. Choose the stack has selected the design. This page is what has to remain true while people use the result. On the analytics field card, Ask is why the measure exists, Grain is what one row means, Truth is whether the evidence is still reliable, and Use is the decision that evidence supports. The cycle on this page keeps Truth. It does not replace Ask, Grain, Truth, and Use.",
+            "A number can be calculated correctly and still be unsafe to use. It may be older than the decision can bear, drawn from a source the definition did not name, visible to the wrong people, or published after a check that mattered had failed. Trust has to be maintained after the measure is defined and after it is released, through explicit responsibility, evidence a person can follow, controls in proportion to the harm, and a response when something changes or fails.",
+            "The state I want is an operating outcome. A business owner is accountable for the meaning and the permitted use. A technical owner is accountable for the pipeline and its operation. Access fits the decision and the sensitivity of the data. Someone can explain the path from the source data to the published measure. The freshness the decision needs is written down, and a person can see whether the latest successful update met it. Automated checks catch the failures that would matter before users rely on the result. A failed check or unreliable evidence has an owner and a response. A review keeps these arrangements current. A small team may give more than one of these to the same person. A larger one may split them. Each responsibility is explicit, and it matches the risk. This is not a required set of tools, and it is not a committee for every metric.",
+            "The card also names security, governance, observability, evals, and human approve. Security is who may see the number and who may change it. Governance is a named owner who approves the definition. Observability is lineage from the source to the published measure. On this page that path includes whether the data is still fresh. Evals are tests on gold. The card uses gold for the dataset about to be published. Human approve, on the card, means an unexplained gap stays dark. On this page a publication hold is one response to that doubt. A warning, a qualification, or a labelled provisional result can also be the decision. Explaining the discrepancy stays on When two reports don't match.",
           ],
-          lines: [
-            {
-              term: "See",
-              detail: "Who can see the number. One role. A mailing list is not the role.",
-            },
-            {
-              term: "Change",
-              detail:
-                "Who can change the number or the definition. One role. This is the owner on Keep the definition. The same person may see it and change it. Both lines are still filled.",
-            },
-            {
-              term: "Lineage",
-              detail:
-                "The source and the published measure, in one sentence a person can say. The card calls that lineage from the source to the published measure. OpenLineage is the card's tool for where the number came from. This line is the sentence.",
-            },
-            {
-              term: "Fresh",
-              detail:
-                "How new the number has to be, from Choose the stack. If the number is older than that, it is not the answer.",
-            },
-            {
-              term: "Test",
-              detail:
-                "A test that can fail before the number ships. The card calls that a test on gold. I read gold as the table about to go out. The stop when the columns break stays on Keep the definition.",
-            },
-            {
-              term: "Dark",
-              detail:
-                "An unexplained gap stays dark. The cause is written on When two reports don't match, or the number does not stay up.",
-            },
-            {
-              term: "Again",
-              detail:
-                "The lines above are still true the next time the number is used. The Green Book includes comparisons and reconciliations in ongoing monitoring, and it ties a detective control to a correction that happens in time. I use that as the reason these lines are checked again.",
-            },
-          ],
-          sources: [
-            { href: DATA_CARD, label: "Data analytics field card" },
-            GAO_RECONCILE,
-          ],
+          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
-          id: "trust-scene",
-          title: "An example",
+          id: "trust-model",
+          title: "The operating model",
           paragraphs: [
-            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "The number, from the earlier pages, is whether one role gives an invoice more time to pay. The list is as of yesterday. The source is the invoice ledger. Accounts already written off are left out.",
-            "The role that can offer more time can see the list. The role that approved the row can change it. The lineage sentence is the invoice ledger to that list. If the list is older than yesterday, it does not go out as that answer. The test is the one on Keep the definition: if the column that marks written-off accounts breaks, the build stops. If a second list arrives and the cause is blank, the number stays dark. The call list was not taken, so it is not on this system. No amount is written.",
+            "Five responsibilities keep a measure trustworthy, and a review sends the work around again. Accountability names who answers for it. Traceability shows where it came from. Freshness shows whether that evidence is still fit. Checks and monitoring detect failure. The response decides what happens next. Release is a point in the cycle, not the end of it.",
           ],
           figure: {
             kind: "flow",
-            caption: "The same illustration. Who can see it, where it came from, and the gap that stays dark. It states no amount.",
+            caption:
+              "The work continues after release. A review returns the product to the owners when the source, the definition, the use, or a failure gives a reason to look again.",
             steps: [
               {
-                term: "See",
-                detail:
-                  "The role that can offer more time can see the list. The role that approved the row can change it.",
+                term: "Accountability",
+                detail: "A business owner for the meaning and the use. A technical owner for the pipeline. Access and approval named.",
+                mark: "shield",
               },
               {
-                term: "Lineage",
-                detail: "The invoice ledger to that list, as of yesterday. Written-off accounts stay out.",
+                term: "Traceability",
+                detail: "Source, transformation, defined measure, published output, and the decision that output supports.",
+                mark: "search",
               },
               {
-                term: "Dark",
-                detail: "A second list with no cause stays dark. The call list is not on this system.",
+                term: "Freshness",
+                detail: "The expectation the decision needs, and a visible comparison with the last successful update.",
+                mark: "clock",
               },
+              {
+                term: "Checks",
+                detail: "The failures worth detecting, run before users rely on the result, with an owner for each critical one.",
+                mark: "check",
+              },
+              {
+                term: "Response",
+                detail: "Hold, qualify, warn, or investigate. The choice is explicit and matched to the harm.",
+                mark: "alert",
+              },
+              {
+                term: "Review",
+                detail: "After a material change or a failure, and on a rhythm that matches the risk. Then the owners look again.",
+                mark: "refresh",
+              },
+            ],
+          },
+          closing: [
+            "These arrangements make a harmful failure more likely to be seen and answered. They do not guarantee that a published number is correct, remove the risk, or by themselves establish compliance. An exploratory chart that nobody will act on can carry less of the cycle than a measure used to commit the organization.",
+          ],
+        },
+        {
+          id: "trust-owners",
+          title: "Who owns the number",
+          paragraphs: [
+            "Business ownership is accountability for the meaning, the definition, the permitted use, and the business consequence of the measure. Technical ownership is accountability for the pipeline, the implementation, the testing, the monitoring, and the technical response when a run fails. Access authorization decides which roles may see or use the data, and which may change it. Approval authority decides who may authorize a material change to the definition, an exception, or a release after a material check has failed.",
+            "The same person can hold more than one of these. On the individual design in Choose the stack, one person refreshes the list and the credit controller uses it. The two accountabilities are still named, because the question each answers is different. Seeing the list is a different authority from changing the definition. Using the list for the offer is a different authority from approving an exception.",
+            "The Green Book is the GAO standard for internal control in the federal government, May 2025. I use the principles it states. I do not treat it as this organization's compliance manual. Principle 3 requires management to assign responsibility and delegate authority to achieve the entity's objectives. Paragraph 3.07 says a person who assigns the work further down still keeps the overall responsibility. Principle 10 separates incompatible duties where that is practical, and where it is not, it calls for another control for the risk. The same principle's categories limit access to resources and records to authorized people, and they limit authorization to people acting within their authority. The four responsibilities on this page are my practice for an analytical measure. The standard is the reason the responsibility is explicit, including when one person holds more than one of them.",
+          ],
+          sources: [GAO_P3, GAO_P10],
+        },
+        {
+          id: "trust-lineage",
+          title: "Where the number came from",
+          paragraphs: [
+            "For a measure that can affect a decision, someone should be able to explain the path in language a business user understands. The minimum useful lineage is the source, the transformations that change the meaning, the defined measure, the published output, and the decision or workflow that output is for.",
+            "Three records answer three different questions. Documentation describes the path that was intended. Technical lineage records the path that ran. A reconciliation or a test checks whether the result is right. A lineage record can help an investigation. It is not the investigation. When two reports don't match owns that procedure.",
+            "OpenLineage is one way to record the path that ran. Its object model describes a job, a run of that job, and the datasets the run consumed or produced. A run event is an observation of an execution, and it can name the inputs and outputs. A job event or a dataset event recorded at design time is metadata about the design, and it is not associated with a run. A facet can store a schema, or the result of a data test. The stored result is a record of that test. It is not the test, and neither the graph nor the facet decides whether the measure is fit to publish. On a small design, the sentence a person can say may be enough. Choose the stack already asks when a second lineage catalogue is justified.",
+          ],
+          sources: [OPENLINEAGE_MODEL],
+        },
+        {
+          id: "trust-fresh",
+          title: "Whether the evidence is still fit",
+          paragraphs: [
+            "The freshness expectation follows the decision. The Government Data Quality Hub, in its note of 24 June 2021, says timeliness means different things for different uses: a hospital bed-allocation system needs the most up-to-date data, while previous quarterly figures may still be acceptable for forecasting care needs. I use the same judgment. An operational queue may need current or intraday data. A weekly management report may be fit with a weekly refresh. A monthly strategic note may remain useful when the underlying data is several weeks old. Those three are examples of how to set an expectation. They are not measurements from this book.",
+            "The expected update and the last success are different facts. The expectation is the service level the decision needs, including when a refresh should have finished. The last success is when processing actually completed. A schedule that says daily does not mean the latest run succeeded. OpenLineage can record the time a run was scheduled for, and that time can differ from the time the run happened. Those two times can show that a run did not happen when it was scheduled. The business expectation is still the one written for the decision.",
+            "I document four things. The expected freshness. How actual freshness is measured, which is the last successful update judged against that expectation. What happens when the expectation is missed. How users are told when the data is late or unfit. A missed refresh does not automatically withdraw every product. The response depends on the decision, on the harm of acting on stale evidence, and on whether a clearly labelled provisional result is safe. The Government Data Quality Framework, published 3 December 2020, says data is timely when the lag between collection and availability is appropriate for the intended use. It also says that putting timeliness first may come at the expense of completeness, and that the trade-off is communicated to the users. The framework focuses on the quality of input data rather than the quality assurance of analytical outputs. It is not this operating method. I use it for the lag and the trade-off.",
+            "For the invoice list, Choose the stack already set the expectation: open invoices as of yesterday. This page keeps that expectation and compares it with the last successful refresh. A miss is handled by the response on this page. It does not, by itself, call for a new platform.",
+          ],
+          sources: [DQ_DIMENSIONS, DQ_FRAMEWORK, OPENLINEAGE_MODEL],
+        },
+        {
+          id: "trust-checks",
+          title: "How failure is detected",
+          paragraphs: [
+            "A check has a job. I choose the jobs from the way this result can fail, from the harm if it does, and from the cost of detecting the failure or of missing it. A product does not need every kind.",
+            "Structural checks ask whether the expected fields, the schema, and the types are present. Quality checks ask about properties of the data. The same Data Quality Hub note, following DAMA UK, treats completeness as the data a particular use requires being present, rather than every field being filled, and validity as a value conforming to the expected format, type, and range. A valid value can still be the wrong fact. Uniqueness asks whether the same thing was recorded more than once. Business-rule checks ask whether the output obeys the rules of this use, including the row sentence on Say what one row means. Reconciliation checks ask whether related sources or outputs agree within an understood tolerance, where they should. An unexpected discrepancy follows When two reports don't match. Freshness checks ask whether the expected data arrived and processing finished. Operational checks ask whether the pipeline and its dependencies ran as intended.",
+            "Paragraph 10.18 of the Green Book uses completeness, accuracy, and validity as objectives for processing transactions. Completeness there means the events that occurred were recorded. Validity means a recorded event occurred, relates to the entity, and was executed under the prescribed procedure. Paragraph 10.19 says those objectives can apply to a decision that uses data other than a financial transaction. That validity is a business rule. It is a different check from a format and range test. I keep the two meanings apart.",
+            "Paragraph 10.10 says a detective control discovers an unintended result and corrects it in time, and that its effectiveness depends on the correction being timely. The check is the detection. It is a control when someone is accountable for the response: what failure looks like, whether it blocks publication, warns, or starts an investigation, who is alerted, and who owns the next action. For each critical check I write those four facts. A check that is not critical does not need the full record. When the check is a dbt test, error and warn are the severities already described on When two reports don't match. Which failures are critical for this use is decided from the harm, not from the tool's default. A count of checks is not evidence that the result is trustworthy.",
+          ],
+          sources: [DQ_DIMENSIONS, GAO_P10],
+        },
+        {
+          id: "trust-response",
+          title: "When trust is challenged",
+          paragraphs: [
+            "The rows are examples of how a failure can be met. The action for a real product depends on the materiality and the use. A publication hold is available. It is not the automatic answer to every warning. The numbered sequence is how I reach that decision. The person with approval authority makes the call to hold, qualify, warn, or restore.",
+          ],
+          figure: {
+            kind: "uses",
+            caption:
+              "Examples, not a response code. A critical unexplained error can stop publication. A low-impact deviation can be a warning, a documented qualification, or a labelled provisional result.",
+            steps: [],
+            head: ["Failure", "Detection", "Typical response"],
+            rows: [
+              {
+                label: "Missing field",
+                cells: [
+                  "Structural or quality check",
+                  "Investigate. Block publication if the field is critical to the use.",
+                ],
+              },
+              {
+                label: "Stale data",
+                cells: [
+                  "Freshness monitoring",
+                  "Warn, qualify, or withhold, according to the decision and the harm.",
+                ],
+              },
+              {
+                label: "Rule fails",
+                cells: [
+                  "Business-rule validation",
+                  "Assess the impact. Correct the result before the affected use.",
+                ],
+              },
+              {
+                label: "Discrepancy",
+                cells: [
+                  "Reconciliation check",
+                  "Follow When two reports don't match.",
+                ],
+              },
+              {
+                label: "Unauthorized change",
+                cells: [
+                  "Access control or an audit record",
+                  "Contain it, investigate, and follow that system's security procedure.",
+                ],
+              },
+            ],
+          },
+          steps: [
+            "Detect the failure or the changed condition.",
+            "Assess the effect on the decision.",
+            "Contain the risk in proportion to that effect. A hold, a tighter access restriction, or a visible qualification are the usual containments.",
+            "Name an owner and investigate.",
+            "Correct the underlying problem, or document a limitation the approval authority can defend.",
+            "Tell the people whose use is affected, including when a provisional result is still available.",
+            "Verify the fix. Restore ordinary use only when the relevant checks support it.",
+            "Review the control when the failure exposed a weakness, such as a check that did not run or an alert that reached nobody.",
+          ],
+        },
+        {
+          id: "trust-risk",
+          title: "Proportionate to the harm",
+          paragraphs: [
+            "The strength of the control follows the harm of an incorrect or misleading result. I look at how important the decision is and whether it can be reversed, how many people or processes depend on the result, how sensitive the underlying data is, what an error or a delay would cause, how fast an error could spread, and what it costs to detect the problem before use. I write that reasoning down. I do not score it.",
+            "Paragraph 10.02 says the nature and extent of a control depend, at least in part, on the risk tolerance management has set. Paragraph 10.03 includes, among the reasons one organization will not copy another's controls, the objective, managerial judgment, the size and complexity of the organization, and the sensitivity and value of the data. Paragraph 10.11 says management weighs the likelihood of an unintended result and the size of its impact, and that a higher risk of that result calls for a stronger control. Paragraph 6.09 distinguishes the variation allowed for an operational objective, the precision a user needs from a nonfinancial report, and materiality in financial reporting. A report used for an informal exploration does not need the release controls of a metric used for an automated eligibility decision, for financial reporting, or for a regulatory process. When a measure moves from one of those uses to another, the controls are reconsidered.",
+            "Principle 17 requires management to evaluate an internal-control issue, determine a corrective action, assign someone to complete it, and finish that action in time. Paragraph 17.08, for a finding from an audit or another evaluation, says the remediation is complete only after the deficiency is corrected, an improvement is produced, or the finding is shown not to warrant management action. I use that third ending as a reason a documented decision to warn, rather than to change the product, can close the matter. The standard does not define a publication hold. The hold, the qualification, and the labelled provisional result are my rule, and the approval authority makes them explicit.",
+            "I review the controls after a material change, an incident, a change of source, a change of definition, or a repeated failure, and on a periodic look matched to the product's risk. Those occasions are my list for an analytical product. Paragraph 16.06 ties the scope and frequency of a separate evaluation to the risks, to new deficiencies, and to the rate of change, and it allows a more frequent evaluation when a program is new or has substantially changed. Appendix II separates a control activity, such as a reconciliation that identifies and resolves discrepancies, from the monitoring that inspects whether that control was performed and what the discrepancies are starting to show. Whether the product is still worth its cost stays on Run the product and judge the value.",
+          ],
+          sources: [GAO_P6, GAO_P10, GAO_P16, GAO_P17, GAO_APP2],
+        },
+        {
+          id: "trust-scene",
+          title: "The invoice list",
+          paragraphs: [
+            "This illustration is hypothetical. It is not a record. It states no amount and no duration. The decision, from the earlier pages, is whether the credit controller offers an open invoice more time before write-off. The list is open invoices as of yesterday. The row sentence stays on Say what one row means. The design is the individual one on Choose the stack.",
+            "In ordinary operation a business owner is accountable for what the list means and for the offer it may support. A technical owner is accountable for the refresh and the checks. The controller's role can see the list. The role that approved the row can change the definition. The path a person can say runs from the invoice ledger, through the transformations that apply the row sentence, to the published list and the offer. The list shows the date of the last successful refresh, and that date meets the expectation of yesterday. The checks that matter for this use pass: the promised columns are present, written-off invoices are absent, and the refresh finished inside the expectation. The controller can use the list for the offer.",
+            "Suppose the last successful refresh is older than yesterday. The freshness check records the miss and notifies the technical owner. The offer depends on which invoices are still open, so a list from an earlier day could be used for an invoice that has since been paid or written off. The list is withheld as that answer. If it remains visible, it carries its actual date, so it cannot be mistaken for yesterday's list.",
+            "The business owner names the decision in front of them, which is the offer. The call list was never this product. The technical owner investigates why the refresh did not finish. While that cause is unknown, the hold stays. The responsible person either corrects the refresh or writes a limitation, and the approval authority accepts that limitation if the list is to be used with it. Ordinary use resumes after a later refresh completes and the relevant checks pass, including freshness. If users could see the stale list and nobody was told, the freshness check is reviewed. An unexpected second report is not investigated here. It goes to When two reports don't match.",
+          ],
+          figure: {
+            kind: "flow",
+            caption:
+              "Hypothetical. The list is held for the offer while it is older than yesterday. No amount and no duration are stated. Ordinary use waits on a later refresh whose checks pass.",
+            steps: [
+              { term: "Detect", detail: "The freshness check records that the last success is older than yesterday and tells the technical owner.", mark: "alert" },
+              { term: "Contain", detail: "The list is withheld as the answer for the offer, or labelled with the date it actually has.", mark: "pause" },
+              { term: "Investigate", detail: "The business owner names the offer as the decision affected. The technical owner looks for the failed refresh.", mark: "search" },
+              { term: "Correct", detail: "The refresh is repaired, or a limitation is written and the approval authority accepts it.", mark: "wrench" },
+              { term: "Verify", detail: "A later refresh completes. Freshness and the other checks for this use pass.", mark: "check" },
+              { term: "Restore", detail: "The controller can use the list for the offer again. A missed alert is a reason to review the check.", mark: "play" },
             ],
           },
         },
@@ -2411,22 +2565,28 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "trust-know",
           title: "How I would know",
           paragraphs: [
-            "I watch three things. I have no target times, and these definitions are not results I have collected.",
-            "A said line means a person who missed the meeting can say who sees the number, who changes it, and the source and the measure.",
-            "A stale number went out older than the freshness that was named.",
-            "A lit gap is a published number whose second report differs, and the cause is blank.",
-            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+            "These are proposed operational indicators. They ask whether the controls are operating. A control that exists only as a document has not yet operated. They are not a judgment that the product is worth its cost. That question stays on Run the product and judge the value. I have not collected these figures, and this page sets no target. A high share of passing checks is compatible with weak checks, and with checks that do not run when they are needed.",
           ],
           lines: [
             {
-              term: "Kept",
+              term: "Named owners",
               detail:
-                "See: the role that can offer more time. Change: the role that approved the row. Lineage: the invoice ledger to the list, as of yesterday. A list older than yesterday stays dark. No amount is written.",
+                "Of the measures marked critical on the review date, the share that have both a named business owner and a named technical owner. The denominator is that critical set. A blank name counts as not met. A measure with no critical mark is outside the denominator and is listed as unclassified, so the exclusion stays visible. The window is the review date.",
             },
             {
-              term: "Dark",
+              term: "Freshness met",
               detail:
-                "A second list arrives and the cause is blank. Action: the number stays dark. The call list is not on this system.",
+                "Of the critical products that have an agreed freshness expectation, the share whose latest successful update meets that expectation at the review. A product with no recorded successful update counts as not met. A critical product with no agreed expectation is outside this denominator and is counted beside it, so a missing expectation cannot look like a pass.",
+            },
+            {
+              term: "Checks that ran",
+              detail:
+                "Over the interval named on the review, of the critical checks scheduled to run, the share that have a run record, and separately the share whose record says they passed. Both shares use the scheduled checks as the denominator. A check with no run record is not a pass. If the review names no interval, this indicator is not computed. The shares do not say whether a check was a strong one.",
+            },
+            {
+              term: "Open exceptions",
+              detail:
+                "The count of material exceptions still open on the review date, and the age of the oldest, from its recorded detection time to that date. Material means the approval authority has marked the exception as material to a decision. An open exception with no detection time is counted, and its age is unknown rather than zero. Failures nobody has marked stay in a separate unmarked count. This is a count, not a rate.",
             },
           ],
         },
@@ -2434,26 +2594,19 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "trust-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "The brief, the row, the disagreement, and the contract stay on Make the number fit. This page does not fill them again.",
-            "Choose the stack picks the tools. OpenLineage is the card's name for where the number came from. This page keeps the sentence. It does not install the tool.",
-            "This page names the role that can see the number and the role that can change it. It does not choose a login product.",
-            "Completeness, validity, and timeliness are not lines on this sheet.",
-            "A number someone has already acted on is a review of a figure that already went out. That review is When two reports don't match.",
-            "Continue the product, change it, or stop the investment is Run the product and judge the value.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+            "The brief, the row, and the owner of the definition stay on Make the number fit to use. An unexpected discrepancy, including how far two reports may differ and whether anything is published between them, stays on When two reports don't match. Choose the stack names the architecture and the freshness the workload needs. Continue, change, or stop stays on Run the product and judge the value. Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
             { href: DATA_CARD, label: "Data analytics field card" },
-            GAO_RECONCILE,
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
         {
           id: "trust-draft",
-          title: "When AI drafts the lines",
+          title: "When AI drafts the controls",
           paragraphs: [
-            "This page holds today, and I expect it to hold, because a person has to be able to say who can see the number, who can change it, and the source and the measure. AI can draft those sentences and a diagram of the path. A draft is not that person, and a diagram is not the lineage until they can say it. An unexplained gap still stays dark.",
+            "A model may draft the owners, a diagram of the path, a freshness sentence, and a set of checks. The draft is not the business owner. A diagram of the intended path is not the record of the run. A sentence that the checks passed is not a run record. The person with approval authority still decides whether a failure holds publication, qualifies the result, or is a warning. A generated decision is not that acceptance.",
           ],
         },
       ],
@@ -2461,12 +2614,49 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
         { href: DATA_CARD, label: "Data analytics field card" },
         source(
           "https://www.gao.gov/assets/gao-25-107721.pdf",
-          "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025)",
+          "GAO, Standards for Internal Control in the Federal Government, GAO-25-107721 (May 2025, read 21 Oct 2026)",
+        ),
+        source(
+          "https://guides.gaoinnovations.gov/greenbook/2025/principle-3-establish-structure-responsibility-and-authority/",
+          "GAO Green Book, principle 3 (read 21 Oct 2026)",
+        ),
+        source(
+          "https://guides.gaoinnovations.gov/greenbook/2025/principle-6-define-objectives-and-risk-tolerances/",
+          "GAO Green Book, principle 6 (read 21 Oct 2026)",
+        ),
+        source(
+          "https://guides.gaoinnovations.gov/greenbook/2025/principle-10-design-control-activities/",
+          "GAO Green Book, principle 10 (read 21 Oct 2026)",
+        ),
+        source(
+          "https://guides.gaoinnovations.gov/greenbook/2025/principle-16-perform-monitoring-activities/",
+          "GAO Green Book, principle 16 (read 21 Oct 2026)",
+        ),
+        source(
+          "https://guides.gaoinnovations.gov/greenbook/2025/principle-17-evaluate-issues-and-remediate-deficiencies/",
+          "GAO Green Book, principle 17 (read 21 Oct 2026)",
+        ),
+        source(
+          "https://guides.gaoinnovations.gov/greenbook/2025/appendix-ii-examples-of-preventive-and-detective-control-activities-and-sources-of-data/",
+          "GAO Green Book, appendix II (read 21 Oct 2026)",
+        ),
+        source(
+          "https://www.gov.uk/government/news/meet-the-data-quality-dimensions",
+          "Government Data Quality Hub, Meet the data quality dimensions (24 June 2021, read 21 Oct 2026)",
+        ),
+        source(
+          "https://www.gov.uk/government/publications/the-government-data-quality-framework/the-government-data-quality-framework",
+          "UK Government Data Quality Framework (3 December 2020, read 21 Oct 2026)",
+        ),
+        source(
+          "https://openlineage.io/docs/spec/object-model",
+          "OpenLineage, object model (read 21 Oct 2026)",
         ),
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
         { href: BAYES_CARD, label: "Bayesian optimisation field card" },
       ],
     },
+
     {
       number: 9,
       topic: "Run the product and judge the value",
@@ -2484,7 +2674,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "value",
           title: "The review",
           paragraphs: [
-            "Keep trust keeps the lines true the next time the number is used. This page is whether the product should still be kept.",
+            "Keep trust keeps the number fit to use the next time it is needed. This page is whether the product should still be kept.",
             "The product is the case that was taken. The decision and the person are the ones on that case. If the decision has changed, that is a new case on Choose the work. This page does not take it.",
             "Scale is whether the number still arrives, for the people who use it, inside the time the decision needs. Choose the work refused the scale the decision did not need. Choose the stack built what remained. If that scale has stopped, the call is change or stop.",
             "The sheet is my rule for the call.",
@@ -2590,7 +2780,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "Choose the work decides whether to start. This page is a product that is already running.",
             "The brief, the row, the disagreement, and the contract stay on Make the number fit. A blank line there goes back to that page. It is not a score.",
             "Choose the stack names the tools. A freshness that no longer fits goes back there. This page does not pick a platform.",
-            "Keep trust names who can see the number and who can change it. This page does not rewrite those lines.",
+            "Keep trust names the owners, the checks, and the response. This page does not rewrite them.",
             "A number someone has already acted on, when two reports disagree, is When two reports don't match.",
             "Whether they did what the hypothesis proposed, and whether the outcome moved, is the note on Name the decision. This page does not report that check.",
             "The card's ladder is the rung already named on Choose the work. I do not continue a product so the organization can climb it.",
