@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
-import type { HandbookFigure, HandbookFigureColumn, HandbookMark } from "@/content/handbooks";
+import type { HandbookFigure, HandbookFigureColumn, HandbookFigureStep, HandbookMark } from "@/content/handbooks";
 import { LoopPlate, PyramidPlate, RecoveryPlate, ScenePlate } from "@/components/handbooks/HandbookPlates";
 import { IconPaths } from "@/components/handbooks/icon-paths";
+import { SiteLink } from "@/components/handbooks/SiteLink";
 
 export { IconPaths } from "@/components/handbooks/icon-paths";
 
@@ -17,6 +18,7 @@ export function HandbookFigureView({ figure, warm = false }: { figure: HandbookF
   if (figure.kind === "reading") return <ReadingFigure figure={figure} warm={warm} />;
   if (figure.kind === "uses") return <UsesFigure figure={figure} warm={warm} />;
   if (figure.kind === "sheet") return <SheetFigure figure={figure} warm={warm} />;
+  if (figure.kind === "tree") return <TreeFigure figure={figure} warm={warm} />;
   if (figure.plain) return <PathFigure figure={figure} warm={warm} />;
   return <FlowFigure figure={figure} />;
 }
@@ -372,7 +374,7 @@ export function UsesRow({
   row,
   warm,
 }: {
-  row: { label: string; cells: string[] };
+  row: { label: string; cells: string[]; href?: string };
   warm: boolean;
 }) {
   return (
@@ -381,7 +383,7 @@ export function UsesRow({
       <tbody>
         <tr className={`border-b ${ruleOf(warm)}`}>
           <th scope="row" className={usesLabelClass(warm)}>
-            {row.label}
+            {row.href ? <SiteLink href={row.href}>{row.label}</SiteLink> : row.label}
           </th>
           {row.cells.map((cell, index) => (
             <td key={`${row.label}-${index}`} className={usesCellClass}>
@@ -402,6 +404,60 @@ function UsesFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean })
       {rows.map((row) => (
         <UsesRow key={row.label} row={row} warm={warm} />
       ))}
+      {figure.caption ? <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption> : null}
+    </figure>
+  );
+}
+
+export function TreeStage({
+  step,
+  index,
+  last,
+  warm,
+}: {
+  step: HandbookFigureStep;
+  index: number;
+  last: boolean;
+  warm: boolean;
+}) {
+  const tone = toneOf(warm);
+  const rule = warm ? "border-amber-200/40" : "border-cyan-200/40";
+  return (
+    <div className={`border-l-2 pl-3 ${last ? "pb-1" : "pb-4"} ${rule}`}>
+      <p className={`font-mono text-[0.65rem] uppercase tracking-[0.14em] ${tone}`}>
+        <span className="mr-2 tabular-nums">{index + 1}</span>
+        {step.term}
+      </p>
+      <p className="mt-1 text-sm leading-snug text-white">{step.detail}</p>
+      {step.branches?.length ? (
+        <ul className="mt-2 space-y-1.5">
+          {step.branches.map((branch) => (
+            <li key={branch.term} className="grid grid-cols-[6.75rem_minmax(0,1fr)] gap-2 text-sm leading-snug sm:grid-cols-[7.5rem_minmax(0,1fr)]">
+              <span className={`font-mono text-[0.62rem] uppercase tracking-[0.12em] ${tone}`}>{branch.term}</span>
+              <span className="text-slate-300">{branch.detail}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+      {step.spine ? <p className={`mt-2 font-mono text-[0.62rem] uppercase tracking-[0.12em] ${tone}`}>{step.spine}</p> : null}
+    </div>
+  );
+}
+
+function TreeFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
+  return (
+    <figure>
+      <div className={`border py-1 ${warm ? "border-amber-200/25" : "border-white/15"}`}>
+        {figure.steps.map((step, index) => (
+          <TreeStage
+            key={step.term}
+            step={step}
+            index={index}
+            last={index === figure.steps.length - 1}
+            warm={warm}
+          />
+        ))}
+      </div>
       {figure.caption ? <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption> : null}
     </figure>
   );
