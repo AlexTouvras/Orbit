@@ -713,14 +713,15 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
   });
   if (section.figure && !(hideBoardFigure && BOARD_FIGURES.has(section.figure.kind))) {
     if (section.figure.kind === "uses") {
-      const rows = section.figure.rows ?? [];
+      const figure = section.figure;
+      const rows = figure.rows ?? [];
       const group = `${section.id}-uses`;
       blocks.push({
         key: `${section.id}-uses-title`,
         sectionId: section.id,
         sectionTitle: section.title,
         group,
-        node: <UsesHead figure={section.figure} warm={warm} />,
+        node: <UsesHead figure={figure} warm={warm} />,
       });
       rows.forEach((row, index) => {
         blocks.push({
@@ -728,17 +729,17 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
           sectionId: section.id,
           sectionTitle: section.title,
           group,
-          lead: <UsesHead figure={section.figure} warm={warm} />,
+          lead: <UsesHead figure={figure} warm={warm} />,
           node: <UsesRow row={row} warm={warm} />,
         });
       });
-      if (section.figure.caption) {
+      if (figure.caption) {
         blocks.push({
           key: `${section.id}-line-${rows.length}`,
           sectionId: section.id,
           sectionTitle: section.title,
           group,
-          node: <p className="mt-2 pb-4 text-sm leading-relaxed text-slate-400">{section.figure.caption}</p>,
+          node: <p className="mt-2 pb-4 text-sm leading-relaxed text-slate-400">{figure.caption}</p>,
         });
       }
     } else if (narrow && section.figure.kind === "flow" && !section.figure.plain) {
