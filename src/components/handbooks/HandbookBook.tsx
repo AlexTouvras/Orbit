@@ -752,21 +752,32 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
       const figure = section.figure;
       const rows = figure.rows ?? [];
       const group = `${section.id}-uses`;
-      blocks.push({
-        key: `${section.id}-uses-title`,
-        sectionId: section.id,
-        sectionTitle: section.title,
-        group,
-        node: <UsesHead figure={figure} warm={warm} />,
-      });
+      // A long column name is clipped when the repeated heading is mounted after the leaf is measured.
+      const headInRow = narrow && (figure.head ?? []).some((cell) => cell.length > 24);
+      if (!headInRow) {
+        blocks.push({
+          key: `${section.id}-uses-title`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          group,
+          node: <UsesHead figure={figure} warm={warm} />,
+        });
+      }
       rows.forEach((row, index) => {
         blocks.push({
           key: `${section.id}-line-${index}`,
           sectionId: section.id,
           sectionTitle: section.title,
           group,
-          lead: <UsesHead figure={figure} warm={warm} />,
-          node: <UsesRow row={row} warm={warm} />,
+          lead: headInRow ? undefined : <UsesHead figure={figure} warm={warm} />,
+          node: headInRow ? (
+            <div>
+              <UsesHead figure={figure} warm={warm} />
+              <UsesRow row={row} warm={warm} />
+            </div>
+          ) : (
+            <UsesRow row={row} warm={warm} />
+          ),
         });
       });
       if (figure.caption) {

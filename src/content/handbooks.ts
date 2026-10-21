@@ -2084,7 +2084,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 7,
       topic: "Choose the stack",
       title: "Choose the stack",
-      lede: "Choose the work settled the offer: this credit controller decides whether to offer an open invoice more time before write-off, from a list as of yesterday. The brief, the row, the disagreement, and the owner of the definition are already written. This page chooses the architecture that can run that work.",
+      lede: "The previous chapters established the business decision, the workload, the definition of one row, and who owns that definition. This chapter decides which architecture should deliver the result.",
       rule: "My operating rule: I name the workload before I name a tool. A choice is unfinished until the alternatives, and the reasons they lost, are written down. The simplest design is the least complex one that meets the requirements in front of me.",
       illustration: "The three architectures are hypothetical. They are not a record of delivered work.",
       reviewed: "21 Oct 2026",
@@ -2168,8 +2168,61 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "responsibilities",
           title: "The responsibilities",
           paragraphs: [
-            "These responsibilities can share one platform: sources, storage and compute, transformation, semantic definitions, consumption, orchestration, quality, lineage, security, and operations. Keep that platform when data arrives on time, the query finishes, the result is transformed and checked, and access is limited as the sheet requires. Add a component when it misses a line the sheet names: arrival on time, a query that finishes in time, one definition across reports, a system that must receive the result, or a failure that cannot be seen or restored.",
-            "Automated execution is justified when a person cannot meet the freshness, or when the steps need an order, a retry, and a record. A schedule, or a miss the same person can repair, does not by itself require it. An orchestrator is another system to operate. A semantic model can drift from the row sentence on Say what one row means. A quality tool is justified when it catches a failure the platform misses. A second lineage catalogue is justified when the platform's own path does not show where the number came from.",
+            "One platform can carry several of these. I keep it when it answers the question on the row. A dedicated component is for a row it misses.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "",
+            steps: [],
+            head: ["Responsibility", "Question to answer", "When a dedicated component is justified"],
+            rows: [
+              {
+                label: "Sources and ingestion",
+                cells: ["Does the data arrive on time?", "When the platform misses that arrival."],
+              },
+              {
+                label: "Storage and compute",
+                cells: ["Does the query finish in time?", "When the platform misses a query that finishes in time."],
+              },
+              {
+                label: "Transformation",
+                cells: ["Is the result transformed?", "When the platform does not transform the result."],
+              },
+              {
+                label: "Business definitions",
+                cells: [
+                  "Is there one definition across the reports?",
+                  "When that definition would diverge. A semantic model can drift from the row sentence on Say what one row means.",
+                ],
+              },
+              {
+                label: "Consumption",
+                cells: ["Who reads or receives the result?", "When a system must receive the result."],
+              },
+              {
+                label: "Orchestration",
+                cells: [
+                  "Can a person meet the freshness?",
+                  "When a person cannot, or the steps need an order, a retry, and a record. A schedule, or a miss the same person can repair, does not by itself require it. An orchestrator is another system to operate.",
+                ],
+              },
+              {
+                label: "Quality and lineage",
+                cells: [
+                  "Can a failure be seen, and where did the number come from?",
+                  "A quality tool, when it catches a failure the platform misses. A second lineage catalogue, when the platform's own path does not show where the number came from.",
+                ],
+              },
+              {
+                label: "Security and operations",
+                cells: [
+                  "Is access limited as the sheet requires, and can a failure be restored?",
+                  "When access is not limited as the sheet requires, or a failure cannot be restored.",
+                ],
+              },
+            ],
+          },
+          closing: [
             "The field card maps example tools onto the lanes. I add a tool only for a line the sheet names. On the individual design, DuckDB is the in-process analytical database and dbt is the column contract. The limit of that contract stays on Keep the definition. Spark 4.2.0 processes at large scale and also runs on one machine, so volume alone does not select it. Airflow runs the path when it is triggered or on a schedule, and a schedule is not required. A scheduler does not define the number.",
           ],
           sources: [DUCKDB_HOME, SPARK_OVERVIEW, AIRFLOW_RUN, DBT_CONTRACT, { href: DATA_CARD, label: "Data analytics field card" }],
@@ -2196,12 +2249,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "The decision record",
           paragraphs: [
             "The record lets a later reader see why this architecture was chosen, what was refused, and what would reopen the choice. Nygard, on 15 November 2011, gives the shape: context, decision, a status of proposed, accepted, or superseded, and consequences, including those that are not benefits. A superseded record stays and points at its replacement. I reopen the record when that context changes.",
-            "The sheet is a blank copy of that record. It names the workload, the choice, the refusals, the assumptions, the expected cost and the owners, the evidence required before production, and the change that would reopen the choice. Completing the sheet does not prove that a system works. The record stays proposed until that evidence exists. A new tool does not, by itself, reopen the choice.",
+            "Completing the sheet does not prove that a system works. The record stays proposed until that evidence exists. A new tool does not, by itself, reopen the choice.",
           ],
           figure: {
             kind: "sheet",
-            caption:
-              "A blank record for the next decision. Nygard's context, decision, status, and consequences. A completed record is a proposal, not a running system.",
+            caption: "",
             steps: [
               { term: "Workload", detail: "The specification and the constraints, including failure, security, and what the team can keep." },
               { term: "Selected", detail: "The pattern, each significant component, and the requirement it meets." },
