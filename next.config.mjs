@@ -14,6 +14,11 @@ const nextConfig = {
   },
   // Keep these out of the server component bundle; only used in scripts / route handlers.
   serverExternalPackages: ["rss-parser", "node-cron"],
+  // The route reads this checker with fs. The path is computed, so the file
+  // has to be named here or the deployed function will not contain it.
+  outputFileTracingIncludes: {
+    "/delivery-signal/[[...path]]": ["./src/delivery-signal/pipeline.py"],
+  },
   // public/field-card/index.html is not auto-served at /field-card (App Router 404).
   // Soft URLs rewrite to the static file; competency card links to index.html directly.
   async rewrites() {

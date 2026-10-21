@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { NextResponse } from "next/server";
 
 const UPSTREAM =
@@ -31,19 +33,34 @@ function fileFromPath(path: string[] | undefined): string | null {
   return path.join("/");
 }
 
+const CHECKER = path.join(process.cwd(), "src/delivery-signal/pipeline.py");
+
 /**
  * Live Delivery Signal from the public repo's main branch.
  * A push there shows up here on the next request after the short cache.
- * Orbit does not keep a copy of the page.
+ * The checker (`engine/pipeline.py`) is the copy in this repo: it builds the
+ * week reading. The page, the sample, and extract.py still come from main.
  */
-async function proxy(request: Request, path: string[] | undefined) {
+async function proxy(request: Request, pathSegments: string[] | undefined) {
   const url = new URL(request.url);
-  if (!path?.length) {
+  if (!pathSegments?.length) {
     return NextResponse.redirect(new URL("/delivery-signal/index.html", url), 308);
   }
 
-  const file = fileFromPath(path);
+  const file = fileFromPath(pathSegments);
   if (!file) return new NextResponse("Not found", { status: 404 });
+
+  if (file === "engine/pipeline.py") {
+    const body = await readFile(CHECKER);
+    return new NextResponse(body, {
+      status: 200,
+      headers: {
+        "Content-Type": contentType(file),
+        "Cache-Control": "public, max-age=60, s-maxage=60, stale-while-revalidate=300",
+        "X-Delivery-Signal-Ref": "orbit-checker",
+      },
+    });
+  }
 
   let upstream: Response;
   try {
