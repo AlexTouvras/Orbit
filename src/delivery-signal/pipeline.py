@@ -265,6 +265,8 @@ def load_portfolio(directory: Path) -> dict:
                     "story_points": "" if item.story_points is None else _fmt_num(item.story_points),
                     "remaining": "" if item.remaining is None else _fmt_num(item.remaining),
                     "type": item.type,
+                    "created": item.created.isoformat() if item.created else "",
+                    "updated": item.updated.isoformat() if item.updated else "",
                 }
             )
 
@@ -1200,6 +1202,251 @@ def _build_flow(data: dict, names: dict[str, str]) -> dict:
     }
 
 
+def _iso_day(value: object) -> date | None:
+    if not value:
+        return None
+    try:
+        return date.fromisoformat(str(value)[:10])
+    except ValueError:
+        return None
+
+
+def _week_index(as_of: date, day: date | None) -> int | None:
+    if day is None or day > as_of:
+        return None
+    index = FLOW_WEEKS - 1 - (as_of - day).days // 7
+    return index if index >= 0 else None
+
+
+def _p85_days(cycles: list[int]) -> int | None:
+    if not cycles:
+        return None
+    ordered = sorted(cycles)
+    return ordered[_percentile_rank(len(ordered), 85) - 1]
+
+
+def _judge(delta: int | None, better: str | None) -> str:
+    if delta is None or delta == 0 or not better:
+        return "same"
+    improved = (better == "up" and delta > 0) or (better == "down" and delta < 0)
+    return "better" if improved else "worse"
+
+
+def _build_metrics(data: dict, names: dict[str, str]) -> dict:
+    """KPI rows a team filter can swap. Targets are dates already in the file."""
+    as_of: date = data["as_of"]
+    ends = [as_of - timedelta(days=7 * (FLOW_WEEKS - 1 - index)) for index in range(FLOW_WEEKS)]
+    leaves = [item for item in data["items"] if _flow_leaf(item.type)]
+    previous = data["previous"] or []
+    previous_by_key = {row.get("key"): row for row in previous}
+
+    def previous_rows(project: str | None) -> list[dict] | None:
+        if not previous:
+            return None
+        rows = previous if project is None else [row for row in previous if row.get("project") == project]
+        return [row for row in rows if _flow_leaf(str(row.get("type", "")))]
+
+    def was_done(item: WorkItem) -> bool:
+        prior = previous_by_key.get(item.key)
+        return prior is not None and _is_done(str(prior.get("status", "")))
+
+    def pack(project: str | None, items: list[WorkItem]) -> list[dict]:
+        weekly_done = [0] * FLOW_WEEKS
+        weekly_due = [0] * FLOW_WEEKS
+        weekly_due_done = [0] * FLOW_WEEKS
+        weekly_wip = [0] * FLOW_WEEKS
+        for item in items:
+            if _is_done(item.status):
+                done_index = _week_index(as_of, item.updated)
+                if done_index is not None:
+                    weekly_done[done_index] += 1
+            if item.due is not None:
+                due_index = _week_index(as_of, item.due)
+                if due_index is not None:
+                    weekly_due[due_index] += 1
+                    if _is_done(item.status):
+                        weekly_due_done[due_index] += 1
+        for end_index, end in enumerate(ends):
+            for item in items:
+                if item.created is not None and item.created > end:
+                    continue
+                if _is_done(item.status) and item.updated is not None and item.updated <= end:
+                    continue
+                if item.created is None and _is_done(item.status):
+                    continue
+                weekly_wip[end_index] += 1
+        weekly_p85: list[int | None] = []
+        for end in ends:
+            cycles = [
+                (item.updated - item.created).days
+                for item in items
+                if _is_done(item.status)
+                and item.created is not None
+                and item.updated is not None
+                and item.created <= item.updated <= end
+            ]
+            weekly_p85.append(_p85_days(cycles))
+        prior = previous_rows(project)
+        since = [item for item in items if _is_done(item.status) and not was_done(item)] if prior is not None else []
+        open_items = [item for item in items if not _is_done(item.status)]
+        dated = [item for item in items if item.due is not None and item.due <= as_of]
+        dated_done = [item for item in dated if _is_done(item.status)]
+        blocked = [
+            item
+            for item in open_items
+            if item.status.strip().lower() == "blocked" or bool(item.blocked_by)
+        ]
+        unassigned = [item for item in open_items if not item.assignee.strip()]
+        wip_previous = None
+        blocked_previous = None
+        unassigned_previous = None
+        p85_previous = None
+        still_previous = None
+        if prior is not None:
+            wip_previous = sum(1 for row in prior if not _is_done(str(row.get("status", ""))))
+            blocked_previous = sum(
+                1
+                for row in prior
+                if not _is_done(str(row.get("status", "")))
+                and (str(row.get("status", "")).strip().lower() == "blocked" or bool(row.get("blocked_by")))
+            )
+            unassigned_previous = sum(
+                1
+                for row in prior
+                if not _is_done(str(row.get("status", ""))) and not str(row.get("assignee", "")).strip()
+            )
+            prior_cycles = []
+            for row in prior:
+                if not _is_done(str(row.get("status", ""))):
+                    continue
+                created = _iso_day(row.get("created"))
+                updated = _iso_day(row.get("updated"))
+                if created is None or updated is None or updated < created:
+                    continue
+                prior_cycles.append((updated - created).days)
+            p85_previous = _p85_days(prior_cycles)
+            still_previous = sum(1 for item in dated if not was_done(item))
+        cycles_now = [
+            (item.updated - item.created).days
+            for item in items
+            if _is_done(item.status)
+            and item.created is not None
+            and item.updated is not None
+            and item.updated >= item.created
+        ]
+        p85_now = _p85_days(cycles_now)
+        since_points = [item.story_points for item in since if item.story_points is not None]
+        latest = weekly_done[-1]
+        prior_week = weekly_done[-2] if len(weekly_done) > 1 else 0
+        return [
+            {
+                "id": "closed",
+                "name": "Since last export",
+                "actual": len(since) if prior is not None else None,
+                "actual_note": f"{_fmt_num(sum(since_points))} pts" if since_points else "",
+                "target": None,
+                "gap": None,
+                "delta": None,
+                "better": None,
+                "weekly": weekly_done,
+                "target_weekly": None,
+            },
+            {
+                "id": "throughput",
+                "name": "Marked Done",
+                "actual": latest,
+                "actual_note": "latest week",
+                "target": weekly_due[-1],
+                "gap": weekly_due[-1] - latest,
+                "delta": latest - prior_week,
+                "better": "up",
+                "weekly": weekly_done,
+                "target_weekly": weekly_due,
+            },
+            {
+                "id": "dates",
+                "name": "Dates reached",
+                "actual": len(dated_done),
+                "actual_note": "",
+                "target": len(dated),
+                "gap": len(dated) - len(dated_done),
+                "delta": None if still_previous is None else len(dated_done) - (len(dated) - still_previous),
+                "better": "up",
+                "weekly": weekly_due_done,
+                "target_weekly": weekly_due,
+            },
+            {
+                "id": "wip",
+                "name": "WIP",
+                "actual": len(open_items),
+                "actual_note": "",
+                "target": None,
+                "gap": None,
+                "delta": None if wip_previous is None else len(open_items) - wip_previous,
+                "better": "down",
+                "weekly": weekly_wip,
+                "target_weekly": None,
+            },
+            {
+                "id": "cycle",
+                "name": "Cycle p85",
+                "actual": p85_now,
+                "actual_note": f"{len(cycles_now)} finished" if cycles_now else "",
+                "target": None,
+                "gap": None,
+                "delta": None if p85_now is None or p85_previous is None else p85_now - p85_previous,
+                "better": "down",
+                "weekly": weekly_p85,
+                "target_weekly": None,
+            },
+            {
+                "id": "blocked",
+                "name": "Blocked",
+                "actual": len(blocked),
+                "actual_note": "",
+                "target": None,
+                "gap": None,
+                "delta": None if blocked_previous is None else len(blocked) - blocked_previous,
+                "better": "down",
+                "weekly": None,
+                "target_weekly": None,
+            },
+            {
+                "id": "unassigned",
+                "name": "Unassigned",
+                "actual": len(unassigned),
+                "actual_note": "",
+                "target": None,
+                "gap": None,
+                "delta": None if unassigned_previous is None else len(unassigned) - unassigned_previous,
+                "better": "down",
+                "weekly": None,
+                "target_weekly": None,
+            },
+        ]
+
+    scopes = [{"id": "all", "name": "All", "kpis": pack(None, leaves)}]
+    for project in sorted(names):
+        scopes.append(
+            {
+                "id": project,
+                "name": names[project].split(" — ")[0].split(" - ")[0],
+                "kpis": pack(project, [item for item in leaves if item.project == project]),
+            }
+        )
+    scales: dict[str, int] = {}
+    for scope in scopes:
+        for kpi in scope["kpis"]:
+            values = [value for value in (kpi["weekly"] or []) if isinstance(value, int)]
+            values.extend(value for value in (kpi["target_weekly"] or []) if isinstance(value, int))
+            scales[kpi["id"]] = max(scales.get(kpi["id"], 0), max(values, default=0))
+    for scope in scopes:
+        for kpi in scope["kpis"]:
+            kpi["scale"] = max(scales.get(kpi["id"], 0), 1)
+            kpi["judge"] = _judge(kpi["delta"], kpi["better"])
+    return {"week_ends": [day.isoformat() for day in ends], "scopes": scopes}
+
+
 def _file_limits(items: list[WorkItem]) -> list[str]:
     open_items = [item for item in items if not _is_done(item.status)]
     if not open_items:
@@ -1909,6 +2156,7 @@ def analyse(data: dict) -> dict:
 
     reading = _build_reading(data, names, projects, progress, changes, findings)
     flow = _build_flow(data, names)
+    metrics = _build_metrics(data, names)
 
     traceable = dropped == 0 and all(finding.evidence for finding in findings + set_aside)
     identity = {
@@ -1939,6 +2187,7 @@ def analyse(data: dict) -> dict:
         "lead": lead,
         "reading": reading,
         "flow": flow,
+        "metrics": metrics,
         "limits": limits,
         "pulse": projects,
         "progress": progress,
@@ -2067,33 +2316,81 @@ def _flow_p85_text(row: dict) -> str:
     return f"{row['p85_days']}d · {row['p85_n']}"
 
 
+def _metric_actual_text(kpi: dict) -> str:
+    if kpi["actual"] is None:
+        return "—"
+    text = f"{kpi['actual']}d" if kpi["id"] == "cycle" else str(kpi["actual"])
+    if kpi.get("actual_note"):
+        text += f" · {kpi['actual_note']}"
+    return text
+
+
+def _metric_change_text(kpi: dict) -> str:
+    delta = kpi["delta"]
+    if delta is None:
+        return "—"
+    if delta == 0 or kpi["judge"] == "same":
+        return "same"
+    mark = "▲" if delta > 0 else "▼"
+    word = "better" if kpi["judge"] == "better" else "worse"
+    return f"{mark} {abs(delta)} {word}"
+
+
 def _flow_md(brief: dict) -> list[str]:
+    metrics = brief.get("metrics") or {}
+    scopes = metrics.get("scopes") or []
     flow = brief.get("flow") or {}
     rows = flow.get("rows") or []
-    if not rows:
+    if not scopes:
         return []
-    ends = _week_labels(flow)
+    ends = _week_labels(metrics or flow)
     lines = [
         "",
-        "## Flow",
+        "## Metrics",
         "",
-        _flow_claim(rows[0]["weekly"]),
-        "",
-        "Stories, bugs, and tasks. An arrow is how many more or fewer items are open than in the previous export. Same means that count did not change. Weekly columns are Done items in the week of their newest update. Cycle p85 is days from created to that update on Done items, and the count beside it is how many finished items set it.",
-        "",
-        "| Project | Closed | WIP | Cycle p85 | Per week |",
-        "| --- | --- | --- | --- | --- |",
     ]
-    for row in rows:
-        lines.append(
-            f"| {row['name']} | {_flow_closed_text(row)} | {_flow_wip_text(row)} | {_flow_p85_text(row)} | {' '.join(str(value) for value in row['weekly'])} |"
-        )
-    lines.extend(["", "### Weekly counts", ""])
-    lines.append("| Project | " + " | ".join(ends) + " |")
-    lines.append("| --- | " + " | ".join("---" for _ in ends) + " |")
-    for row in rows:
-        lines.append("| " + row["name"] + " | " + " | ".join(str(value) for value in row["weekly"]) + " |")
-    lines.append("")
+    if rows:
+        lines.extend([_flow_claim(rows[0]["weekly"]), ""])
+    lines.extend(
+        [
+            "Stories, bugs, and tasks. All is the total. A target is a count of due dates in the file. The gap on Marked Done is items dated that week minus items marked Done that week. The gap on Dates reached is items still open after a date that has arrived. A triangle points the way the number moved. Better means more finished work, or fewer open, blocked, unassigned, or days.",
+            "",
+        ]
+    )
+    for scope in scopes:
+        lines.extend([f"### {scope['name']}", "", "| KPI | Actual | Target | Gap | Change | Trendline |", "| --- | --- | --- | --- | --- | --- |"])
+        for kpi in scope["kpis"]:
+            target = "—" if kpi["target"] is None else str(kpi["target"])
+            gap = "—" if kpi["gap"] is None else str(kpi["gap"])
+            weekly = kpi["weekly"] or []
+            trend = " ".join("—" if value is None else str(value) for value in weekly) if weekly else "—"
+            lines.append(
+                f"| {kpi['name']} | {_metric_actual_text(kpi)} | {target} | {gap} | {_metric_change_text(kpi)} | {trend} |"
+            )
+        lines.append("")
+    if ends:
+        lines.extend(["### Weekly counts", "", "Marked Done, then items dated that week.", ""])
+        lines.append("| Team | Series | " + " | ".join(ends) + " |")
+        lines.append("| --- | --- | " + " | ".join("---" for _ in ends) + " |")
+        for scope in scopes:
+            for kpi in scope["kpis"]:
+                if kpi["id"] != "throughput":
+                    continue
+                lines.append(
+                    "| "
+                    + scope["name"]
+                    + " | Marked Done | "
+                    + " | ".join(str(value) for value in kpi["weekly"])
+                    + " |"
+                )
+                lines.append(
+                    "| "
+                    + scope["name"]
+                    + " | Dated | "
+                    + " | ".join(str(value) for value in kpi["target_weekly"])
+                    + " |"
+                )
+        lines.append("")
     return lines
 
 
@@ -2129,8 +2426,12 @@ def render_markdown(brief: dict) -> str:
         "**Approval: pending.** A person still has to check this brief before it goes to a customer.",
         "",
         brief["lead"],
+        "",
+        "## Summary",
         *_reading_md(brief),
         *_flow_md(brief),
+        "## Progress",
+        "",
         "## Delivery pulse",
         "",
         "| Project | State |",
@@ -2157,7 +2458,7 @@ def render_markdown(brief: dict) -> str:
         for row in children:
             lines.append(f"- {row['id']} {row['name']}: {row['text']}")
         lines.append("")
-    lines.extend(["", "## Top risks", ""])
+    lines.extend(["", "## Risks", "", "## Top risks", ""])
     if not brief["top_risks"]:
         lines.append("No risk cleared the evidence rules.")
         lines.append("")
@@ -2223,7 +2524,7 @@ def render_markdown(brief: dict) -> str:
             "- Stale and overdue items are raised without a notes file. A note that says the work is on track is still compared with the export.",
             "- Optimistic notes are an inference. The dates and statuses they are compared with are facts.",
             "- This week is the report date and the six days after it. Next week is the seven days after that. A due date in either window is the date in the file.",
-            "- Flow counts stories, bugs, and tasks. The opening sentence is the portfolio's weekly closes. Closed is what moved to Done since the previous export. An arrow is how many more or fewer items are open than in that export. Same means that count did not change. The bars place Done items in the week of their newest update, eight weeks ending on the report date, on one scale. Cycle p85 is the 85th percentile of days from created to that update on Done items, with the count of those items. It describes finished items.",
+            "- Metrics count stories, bugs, and tasks. The opening sentence is the portfolio's weekly closes. Since last export is what moved to Done. Marked Done is the latest week, and its target is how many items are dated in that week. Dates reached counts items whose due date is on or before the report date, and how many of those are Done. The gap is the ones still open. Cycle p85 is the 85th percentile of days from created to the newest update on Done items, with the count of those items. A triangle points the way the number moved. Better means more finished work, or fewer open, blocked, unassigned, or days. None of these is a forecast.",
             "- These thresholds are operating rules for the sample, not a validated predictor of delay.",
             "",
         ]
@@ -2262,129 +2563,204 @@ def _profile_label(profile: str) -> str:
     )
 
 
-def _spark_svg(values: list[int], scale: int) -> str:
-    width, height, gap = 104, 32, 3
-    count = len(values) or 1
-    bar = (width - gap * (count - 1)) / count
-    rects = []
-    for index, value in enumerate(values):
-        bar_height = 1.5 if scale <= 0 or value == 0 else max(3, round(value / scale * (height - 2)))
-        x = index * (bar + gap)
-        rects.append(
-            f'<rect x="{x:.1f}" y="{height - bar_height:.1f}" width="{bar:.1f}" height="{bar_height:.1f}"></rect>'
-        )
-    label = "Weekly closes " + ", ".join(str(value) for value in values)
+def _line_svg(actual: list, target: list | None, scale: int) -> str:
+    width, height = 128, 36
+    count = max(len(actual), 1)
+    span = max(count - 1, 1)
+
+    def point(index: int, value: int) -> tuple[float, float]:
+        x = 3 + index * (width - 6) / span
+        y = height - 3 - (value / scale) * (height - 8) if scale else height - 3
+        return x, y
+
+    def path(series: list, dashed: bool) -> str:
+        commands = []
+        pen = "M"
+        for index, value in enumerate(series):
+            if value is None:
+                pen = "M"
+                continue
+            x, y = point(index, int(value))
+            commands.append(f"{pen}{x:.1f},{y:.1f}")
+            pen = "L"
+        if not commands:
+            return ""
+        klass = "target-line" if dashed else "actual-line"
+        return f'<path d="{" ".join(commands)}" class="{klass}"></path>'
+
+    dots = []
+    for index, value in enumerate(actual):
+        if value is None:
+            continue
+        x, y = point(index, int(value))
+        dots.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="1.8" class="actual-line"></circle>')
+    actual_label = ", ".join("—" if value is None else str(value) for value in actual)
+    target_label = ""
+    if target:
+        target_label = ". Dated " + ", ".join(str(value) for value in target)
     return (
-        f'<svg class="spark" viewBox="0 0 {width} {height}" role="img" aria-label="{html.escape(label)}">'
-        + "".join(rects)
+        f'<svg class="spark" viewBox="0 0 {width} {height}" role="img" '
+        f'aria-label="{html.escape("Trend " + actual_label + target_label)}">'
+        + path(actual, False)
+        + (path(target, True) if target else "")
+        + "".join(dots)
         + "</svg>"
     )
 
 
-def _flow_cell_closed(row: dict) -> str:
-    if row["closed"] is None:
+def _change_html(kpi: dict) -> str:
+    delta = kpi["delta"]
+    if delta is None:
         return "—"
-    text = str(row["closed"])
-    if row["closed_points"] is not None:
-        text += f' <span class="quiet">· {html.escape(_fmt_num(row["closed_points"]))} pts</span>'
-    return text
-
-
-def _flow_cell_wip(row: dict) -> str:
-    mark = _delta_mark(row["wip"], row["wip_previous"])
-    if not mark:
-        return str(row["wip"])
-    return f'{row["wip"]} <span class="quiet">{html.escape(mark)}</span>'
-
-
-def _flow_cell_p85(row: dict) -> str:
-    if row["p85_days"] is None:
-        return "—"
-    return f'{row["p85_days"]}d <span class="quiet">· {row["p85_n"]}</span>'
-
-
-def _flow_cast(row: dict) -> str:
-    closed = "—" if row["closed"] is None else str(row["closed"])
-    points = ""
-    if row["closed_points"] is not None:
-        points = f'<p class="quiet">{html.escape(_fmt_num(row["closed_points"]))} pts</p>'
-    mark = _delta_mark(row["wip"], row["wip_previous"])
-    wip_note = f'<p class="quiet">{html.escape(mark)}</p>' if mark else ""
-    if row["p85_days"] is None:
-        cycle = "—"
-        cycle_note = '<p class="quiet">no finished items</p>'
-    else:
-        cycle = f'{row["p85_days"]}<span class="unit">d</span>'
-        cycle_note = f'<p class="quiet">{row["p85_n"]} finished</p>'
+    if delta == 0 or kpi["judge"] == "same":
+        return '<span class="same">same</span>'
+    direction = "up" if delta > 0 else "down"
+    word = "better" if kpi["judge"] == "better" else "worse"
     return (
-        '<div class="cast">'
-        f'<div><p class="kicker">Closed</p><p class="figure">{closed}</p>{points}</div>'
-        f'<div><p class="kicker">WIP</p><p class="figure">{row["wip"]}</p>{wip_note}</div>'
-        f'<div><p class="kicker">Cycle p85</p><p class="figure">{cycle}</p>{cycle_note}</div>'
-        "</div>"
+        f'<span class="chg {kpi["judge"]}"><i class="tri {direction}" aria-hidden="true"></i> '
+        f"{abs(delta)} {word}</span>"
     )
 
 
-def _flow_html(brief: dict) -> str:
+def _kpi_figure(kpi: dict | None, label: str) -> str:
+    if kpi is None or kpi["actual"] is None:
+        value, note = "—", ""
+    elif kpi["id"] == "cycle":
+        value, note = f'{kpi["actual"]}<span class="unit">d</span>', kpi.get("actual_note") or ""
+    else:
+        value, note = str(kpi["actual"]), kpi.get("actual_note") or ""
+    change = ""
+    if kpi is not None and kpi["delta"] is not None:
+        change = _change_html(kpi)
+    note_html = f'<p class="quiet">{html.escape(note)}</p>' if note else ""
+    if change:
+        note_html += f'<p class="quiet">{change}</p>'
+    return f'<div><p class="kicker">{html.escape(label)}</p><p class="figure">{value}</p>{note_html}</div>'
+
+
+def _summary_cast(brief: dict) -> str:
+    scopes = (brief.get("metrics") or {}).get("scopes") or []
+    if not scopes:
+        return ""
+    by_id = {kpi["id"]: kpi for kpi in scopes[0]["kpis"]}
+    return (
+        '<div class="cast">'
+        + _kpi_figure(by_id.get("closed"), "Closed")
+        + _kpi_figure(by_id.get("wip"), "WIP")
+        + _kpi_figure(by_id.get("dates"), "Dates reached")
+        + _kpi_figure(by_id.get("cycle"), "Cycle p85")
+        + "</div>"
+    )
+
+
+def _metric_cell(value: object) -> str:
+    if value is None:
+        return "—"
+    return html.escape(str(value))
+
+
+def _metrics_html(brief: dict) -> str:
+    metrics = brief.get("metrics") or {}
+    scopes = metrics.get("scopes") or []
     flow = brief.get("flow") or {}
     rows = flow.get("rows") or []
-    if not rows:
+    if not scopes:
         return ""
-    ends = _week_labels(flow)
-    scale = int(flow.get("scale") or 0)
-    body = []
-    for row in rows:
-        klass = ' class="all"' if row["id"] == "all" else ""
-        body.append(
-            f"<tr{klass}><td>{html.escape(row['name'])}</td>"
-            f'<td class="num">{_flow_cell_closed(row)}</td>'
-            f'<td class="num">{_flow_cell_wip(row)}</td>'
-            f'<td class="num">{_flow_cell_p85(row)}</td>'
-            f'<td class="trend">{_spark_svg(row["weekly"], scale)}</td></tr>'
-        )
-    week_head = "".join(f"<th>{html.escape(label)}</th>" for label in ends)
-    week_rows = []
-    for row in rows:
-        cells = "".join(f"<td>{value}</td>" for value in row["weekly"])
-        week_rows.append(f"<tr><td>{html.escape(row['name'])}</td>{cells}</tr>")
-    evidence = rows[0].get("evidence") or []
+    ends = _week_labels(metrics)
+    axis = f"{ends[0]}–{ends[-1]}" if ends else ""
+    inputs = []
+    labels = []
+    bodies = []
+    for scope in scopes:
+        ident = "team-" + re.sub(r"[^A-Za-z0-9_-]", "", scope["id"]) or "team"
+        checked = " checked" if scope["id"] == "all" else ""
+        inputs.append(f'<input class="team-input" type="radio" name="team" id="{ident}"{checked}>')
+        labels.append(f'<label for="{ident}">{html.escape(scope["name"])}</label>')
+        kpi_rows = []
+        for kpi in scope["kpis"]:
+            actual = _metric_actual_text(kpi)
+            trend = "—"
+            if kpi["weekly"]:
+                trend = _line_svg(kpi["weekly"], kpi["target_weekly"], int(kpi["scale"] or 1))
+            kpi_rows.append(
+                "<tr>"
+                f"<td>{html.escape(kpi['name'])}</td>"
+                f'<td class="num">{html.escape(actual)}</td>'
+                f'<td class="num">{_metric_cell(kpi["target"])}</td>'
+                f'<td class="num">{_metric_cell(kpi["gap"])}</td>'
+                f'<td class="num">{_change_html(kpi)}</td>'
+                f'<td class="trend">{trend}</td>'
+                "</tr>"
+            )
+        bodies.append(f'<tbody class="scope scope-{ident}">{"".join(kpi_rows)}</tbody>')
+    evidence = (rows[0].get("evidence") if rows else None) or []
     fold = ""
     if evidence:
         fold = f"<details><summary>Evidence</summary>{_evidence_html({'evidence': evidence})}</details>"
-    axis = ""
-    if ends:
-        axis = f'<span class="axis">{html.escape(ends[0])}–{html.escape(ends[-1])}</span>'
+    week_head = "".join(f"<th>{html.escape(label)}</th>" for label in ends)
+    week_rows = []
+    for scope in scopes:
+        for kpi in scope["kpis"]:
+            if kpi["id"] != "throughput":
+                continue
+            done = "".join(f"<td>{value}</td>" for value in kpi["weekly"])
+            dated = "".join(f"<td>{value}</td>" for value in kpi["target_weekly"])
+            week_rows.append(f"<tr><td>{html.escape(scope['name'])}</td><td>Marked Done</td>{done}</tr>")
+            week_rows.append(f"<tr><td>{html.escape(scope['name'])}</td><td>Dated</td>{dated}</tr>")
     note = (
-        "Stories, bugs, and tasks. The sentence is the portfolio's weekly closes. "
-        "Closed is what moved to Done since the previous export. "
-        "An arrow is how many more or fewer items are open than in that export. Same means that count did not change. "
-        "Each row of bars is that project's Done items, in the week of their newest update. "
-        "The weeks end on the report date and share one scale. "
-        "Cycle p85 is the 85th percentile of days from created to that update, on items already Done. "
-        "The count beside it is how many finished items set that percentile."
+        "Stories, bugs, and tasks. All is the total. "
+        "A target is filled only from a due date in the file. "
+        "Marked Done compares items marked Done that week with items dated that week. They are not the same items. "
+        "Dates reached counts items whose due date is on or before the report date, and how many of those are Done. "
+        "The gap there is items still open. "
+        "The solid line is the actual. The dashed line is items dated that week. Every team uses the portfolio scale for that row. "
+        "A triangle points the way the number moved. Better means more finished work, or fewer open, blocked, unassigned, or days. "
+        "Cycle p85 describes items already Done. This is not a forecast."
     )
-    claim = html.escape(_flow_claim(rows[0]["weekly"]))
-    head = (
-        '<div class="section-head flow-head"><div><p class="kicker">Flow</p>'
-        f"<h2>{claim}</h2></div><details class=\"info\">"
-        f'<summary aria-label="About Flow">i</summary><p>{html.escape(note)}</p></details></div>'
-    )
+    rules = []
+    for scope in scopes:
+        ident = "team-" + re.sub(r"[^A-Za-z0-9_-]", "", scope["id"]) or "team"
+        rules.append(
+            f"#{ident}:checked ~ .flow-wrap .scope-{ident} {{ display: table-row-group; }}"
+            f'#{ident}:checked ~ .team-bar label[for="{ident}"] {{ color: #e7e9f0; border-color: #22d3ee; }}'
+        )
     return (
-        head
-        + _flow_cast(rows[0])
+        "<style>" + "".join(rules) + "</style>"
+        + '<div class="section-head"><div><p class="kicker">Metrics</p>'
+        f'<h2>Total, until a team is chosen</h2></div><details class="info">'
+        f'<summary aria-label="About Metrics">i</summary><p>{html.escape(note)}</p></details></div>'
+        + '<div class="metrics">'
+        + "".join(inputs)
+        + f'<div class="team-bar" role="radiogroup" aria-label="Team">{"".join(labels)}</div>'
         + '<div class="flow-wrap"><table class="flow"><thead><tr>'
-        + '<th>Project</th><th class="num">Closed</th><th class="num">WIP</th>'
-        + f'<th class="num">Cycle p85</th><th class="num">Per week{axis}</th>'
-        + "</tr></thead><tbody>"
-        + "".join(body)
-        + "</tbody></table></div>"
+        + "<th>KPI</th><th class=\"num\">Actual</th><th class=\"num\">Target</th>"
+        + "<th class=\"num\">Gap</th><th class=\"num\">Change</th>"
+        + f'<th class="num">Trendline<span class="axis">{html.escape(axis)}</span></th>'
+        + "</tr></thead>"
+        + "".join(bodies)
+        + "</table></div></div>"
         + '<details class="sheet"><summary>Weekly counts</summary>'
-        + '<div class="flow-wrap"><table class="flow weeks"><thead><tr><th>Project</th>'
+        + '<div class="flow-wrap"><table class="flow weeks"><thead><tr><th>Team</th><th>Series</th>'
         + week_head
         + "</tr></thead><tbody>"
         + "".join(week_rows)
         + "</tbody></table></div></details>"
         + fold
+    )
+
+
+def _summary_head(brief: dict) -> str:
+    flow = brief.get("flow") or {}
+    rows = flow.get("rows") or []
+    claim = _flow_claim(rows[0]["weekly"]) if rows else "Flow"
+    note = (
+        "The sentence is how many stories, bugs, and tasks were marked Done in each of the last eight weeks. "
+        "The figures under it are the portfolio total."
+    )
+    return (
+        '<div class="section-head flow-head"><div><p class="kicker">Flow</p>'
+        f"<h2>{html.escape(claim)}</h2></div><details class=\"info\">"
+        f'<summary aria-label="About this shape">i</summary><p>{html.escape(note)}</p></details></div>'
     )
 
 
@@ -2589,7 +2965,7 @@ def render_html(brief: dict) -> str:
     .reading details {{ margin: 0.1rem 0 0; }}
     .reading summary {{ font-size: 0.75rem; color: #9aa0b0; }}
     .flow-head h2 {{ font-size: 1.28rem; line-height: 1.25; font-weight: 650; max-width: 38rem; }}
-    .cast {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin: 0.15rem 0 0.85rem; padding: 0.65rem 0; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }}
+    .cast {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.75rem; margin: 0.15rem 0 0.85rem; padding: 0.65rem 0; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }}
     .cast .figure {{ margin: 0.12rem 0 0; font-size: 1.85rem; line-height: 1; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }}
     .cast .unit {{ font-size: 0.95rem; font-weight: 500; color: #9aa0b0; }}
     .cast .quiet {{ margin: 0.2rem 0 0; }}
@@ -2603,8 +2979,26 @@ def render_html(brief: dict) -> str:
     table.flow tr.all td {{ font-weight: 650; }}
     table.weeks td, table.weeks th {{ text-align: right; }}
     table.weeks td:first-child, table.weeks th:first-child {{ text-align: left; }}
-    .spark {{ width: 6.6rem; height: 2rem; display: block; margin-left: auto; }}
-    .spark rect {{ fill: #22d3ee; }}
+    .spark {{ width: 8rem; height: 2.25rem; display: block; margin-left: auto; }}
+    .spark path.actual-line {{ stroke: #22d3ee; fill: none; stroke-width: 1.7; }}
+    .spark path.target-line {{ stroke: #9aa0b0; fill: none; stroke-width: 1.4; stroke-dasharray: 3 2; }}
+    .spark circle.actual-line {{ fill: #22d3ee; stroke: none; }}
+    .sheet-input, .team-input {{ position: absolute; opacity: 0; pointer-events: none; }}
+    .pages {{ display: flex; gap: 0.15rem; margin: 0.9rem 0 0.2rem; border-bottom: 1px solid rgba(255,255,255,0.12); }}
+    .pages label {{ cursor: pointer; padding: 0.35rem 0.55rem 0.5rem; color: #9aa0b0; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }}
+    .page {{ display: none; }}
+    #page-summary:checked ~ #summary, #page-progress:checked ~ #progress, #page-metrics:checked ~ #metrics, #page-risks:checked ~ #risks {{ display: block; }}
+    #page-summary:checked ~ .pages label[for="page-summary"], #page-progress:checked ~ .pages label[for="page-progress"], #page-metrics:checked ~ .pages label[for="page-metrics"], #page-risks:checked ~ .pages label[for="page-risks"] {{ color: #e7e9f0; box-shadow: inset 0 -2px 0 #22d3ee; }}
+    .team-bar {{ display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.15rem 0 0.7rem; }}
+    .team-bar label {{ border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 0.12rem 0.6rem; font-size: 0.78rem; cursor: pointer; color: #9aa0b0; }}
+    .metrics .scope {{ display: none; }}
+    .chg {{ white-space: nowrap; font-size: 0.82rem; }}
+    .chg.better {{ color: #34d399; }}
+    .chg.worse {{ color: #f87171; }}
+    .tri {{ display: inline-block; width: 0; height: 0; border-left: 0.28rem solid transparent; border-right: 0.28rem solid transparent; margin-right: 0.15rem; vertical-align: 0.05rem; }}
+    .tri.up {{ border-bottom: 0.42rem solid currentColor; }}
+    .tri.down {{ border-top: 0.42rem solid currentColor; }}
+    .same {{ color: #9aa0b0; }}
     .quiet {{ color: #9aa0b0; font-weight: 400; }}
     .sheet {{ margin: 0.35rem 0 0.6rem; }}
     .pulse {{ list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 0.45rem; }}
@@ -2628,7 +3022,9 @@ def render_html(brief: dict) -> str:
       .pulse {{ grid-template-columns: 1fr; }}
       .reading div {{ grid-template-columns: 1fr; gap: 0.05rem; }}
       .flow-head h2 {{ font-size: 1.12rem; }}
+      .cast {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
       .cast .figure {{ font-size: 1.45rem; }}
+      .pages {{ overflow-x: auto; }}
     }}
   </style>
 </head>
@@ -2639,21 +3035,40 @@ def render_html(brief: dict) -> str:
       <h1>{html.escape(brief['portfolio'])}</h1>
       <p class="meta">{html.escape(brief['as_of'])} · {html.escape(brief['audience'])} · {html.escape(profile)} · {brief.get('item_count', 0)} work items · rules {html.escape(str(brief.get('rules_version', '')))} · result {html.escape(str(brief.get('result_id', '')))}</p>
     </header>
+    <input class="sheet-input" type="radio" name="page" id="page-summary" checked>
+    <input class="sheet-input" type="radio" name="page" id="page-progress">
+    <input class="sheet-input" type="radio" name="page" id="page-metrics">
+    <input class="sheet-input" type="radio" name="page" id="page-risks">
+    <nav class="pages" aria-label="Report pages">
+      <label for="page-summary">Summary</label>
+      <label for="page-progress">Progress</label>
+      <label for="page-metrics">Metrics</label>
+      <label for="page-risks">Risks</label>
+    </nav>
+    <section class="page" id="summary">
     <p class="lede">{html.escape(brief['lead'])}</p>
     {_reading_html(brief)}
-    {_flow_html(brief)}
+    {_summary_head(brief)}
+    {_summary_cast(brief)}
+    {_section("Ask in the review", "Questions drawn from the top risks and from open decisions. Nothing is sent until a person approves the brief.")}
+    <ul>{questions or '<li>None.</li>'}</ul>
     {limits_html}
     {quality_html}
+    </section>
+    <section class="page" id="progress">
     {_section("Delivery pulse", "Each card is one project: On track, Needs attention, Blocked, or Not checked. The bar is story points marked Done, among items that have a story point or effort. An epic, feature, or initiative is listed on that card and counted from its direct children. Remaining and the original estimate are sums of rows where both cells are numbers.")}
     <ul class="pulse">{pulse}</ul>
     {_section("Field changes", "Every compared cell: status, assignee, priority, due date, blocker, percent complete, story points, and remaining. The week reading is the conclusion. This list is the audit.")}
     <ul>{changes}</ul>
-    {_section("Decisions needed", "Open items whose type is Decision, or whose status is Waiting. The owner and the due date come from those cells.")}
-    <ul>{''.join(decisions) or '<li>None.</li>'}</ul>
-    {_section("Ask in the review", "Questions drawn from the top risks and from open decisions. Nothing is sent until a person approves the brief.")}
-    <ul>{questions or '<li>None.</li>'}</ul>
+    </section>
+    <section class="page" id="metrics">
+    {_metrics_html(brief)}
+    </section>
+    <section class="page" id="risks">
     {_section("Top risks", "The highest-severity findings that cite a row in the export. Evidence stays folded under each one.")}
     {''.join(risks) or '<p>No risk cleared the evidence rules.</p>'}
+    {_section("Decisions needed", "Open items whose type is Decision, or whose status is Waiting. The owner and the due date come from those cells.")}
+    <ul>{''.join(decisions) or '<li>None.</li>'}</ul>
     {_section("Checked and set aside", "A signal the rules looked at and did not promote. An overdue predecessor is set aside when its successor is already Done.")}
     <details>
       <summary>{html.escape(aside_label)}</summary>
@@ -2661,6 +3076,7 @@ def render_html(brief: dict) -> str:
     </details>
     {_section("Also noted", "Findings that cleared the severity threshold and did not fit at the top of the brief.")}
     <ul>{noted}</ul>
+    </section>
     <footer>
       <p>Send this file. The recipient does not need an account or the original export. Evidence is under each risk. Nothing on this page has been sent to a project tool.</p>
       <p>A person approves the brief before a customer sees it. The result id changes when the findings change, so two copies can be compared.</p>
