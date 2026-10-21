@@ -46,7 +46,7 @@ A page is a sequence of **chapters**, not a stack of sections.
 
 | Beat | Job | Orbit example |
 |------|-----|----------------|
-| Open | One thesis in huge type; identity is supporting; live product-as-atmosphere under the thesis | Hub: “Prove what works.” + name as kicker + `LiveProofStream` |
+| Open | One thesis in huge type; identity is supporting; live product-as-atmosphere under the thesis | Hub: “What I build, / how I decide.” + name as kicker + `LiveProofStream` |
 | Metaphor | Make the brand visible | Gravity field: center + satellites |
 | Craft | Numbered process (how the work actually happens) | Delivery → Data → AI with `hudVerbs` |
 | Proof | Horizontal reel of evidence | Showcase writes |

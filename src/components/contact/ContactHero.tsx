@@ -20,7 +20,7 @@ export function ContactHero({ email, avatarUrl }: ContactHeroProps) {
       }
       avatarUrl={avatarUrl}
       title="Contact"
-      headline={{ line: "Send the decision", accent: "you can't automate." }}
+      headline={{ line: "For a role", accent: "or a system." }}
       description="A role in delivery, data, or AI automation. Or a system that produces results nobody has checked."
       meta={
         <a

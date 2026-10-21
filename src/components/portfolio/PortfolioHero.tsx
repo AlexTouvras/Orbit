@@ -21,7 +21,7 @@ export function PortfolioHero({
       signature={<OrbitSignature variant="violet" duration="110s" />}
       avatarUrl={avatarUrl}
       title="Portfolio"
-      headline={{ line: "What survived", accent: "the cut." }}
+      headline={{ line: "What I kept", accent: "still does the job." }}
       description="The projects I decided were worth building, with the requirement still attached and a way to check they still do the job."
       stats={[
         {

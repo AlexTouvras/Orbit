@@ -57,8 +57,8 @@ export const profile = {
   role: "AI & Data Systems Lead",
   location: "Vantaa, Finland",
   /** Big home line. Second line takes the gradient. */
-  headlineLine: "Drafts take seconds.",
-  headlineAccent: "The call does not.",
+  headlineLine: "What I build,",
+  headlineAccent: "how I decide.",
   tagline:
     "Building and leading data & AI systems that solve complex business problems.",
   /** About hero. Same two-line shape as the other public pages. */
