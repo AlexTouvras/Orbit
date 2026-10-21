@@ -11,6 +11,11 @@ export interface HandbookLink {
   label: string;
 }
 
+export interface HandbookFigureBranch {
+  term: string;
+  detail: string;
+}
+
 export interface HandbookFigureStep {
   term: string;
   detail: string;
@@ -18,6 +23,10 @@ export interface HandbookFigureStep {
   mark?: HandbookMark;
   /** Drawn apart from the other lines, as the stop. */
   gate?: boolean;
+  /** Exits from this stage of a decision tree. */
+  branches?: HandbookFigureBranch[];
+  /** The condition that continues to the next stage. */
+  spine?: string;
 }
 
 export type HandbookMark =
@@ -47,10 +56,12 @@ export interface HandbookFigureColumn {
 export interface HandbookFigureRow {
   label: string;
   cells: string[];
+  /** Opens the chapter that owns this row. */
+  href?: string;
 }
 
 export interface HandbookFigure {
-  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve" | "sheet" | "reading" | "uses";
+  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve" | "sheet" | "reading" | "uses" | "tree";
   caption: string;
   steps: HandbookFigureStep[];
   columns?: HandbookFigureColumn[];
@@ -152,6 +163,10 @@ const DATA_CARD = "/analytics-field-card/index.html";
 const CREDIT_CARD = "/credit-risk-field-card/index.html";
 const BAYES_CARD = "/bayes-field-card/index.html";
 const DATA_ART = "/handbook-art/data-that-drives-decisions";
+
+function dataChapter(page: number, label: string): HandbookLink {
+  return { href: `/handbooks/data-that-drives-decisions/${page}`, label };
+}
 
 const FOWLER_CI = "https://martinfowler.com/articles/continuousIntegration.html";
 const TRUNK = "https://trunkbaseddevelopment.com/";
@@ -1292,7 +1307,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "A decision written down before anyone builds shows that the practice was followed. It does not show that anyone used the result, and it does not show that the business got better. If the controller cannot say what one row means, the list does not go out. That checks the number. It is not a business result.",
             "After the list is in use, I separate three questions. I have not collected an answer to any of them, and I set no target. Adoption is whether the controller uses the list for the offer. Operating performance is whether yesterday's list still arrives in time, and whether keeping it still takes only the effort we accepted. Business impact is what happens to the account after an offer, in the period until it is current or written off. That outcome does not, by itself, prove the offer caused it. The customer's circumstances, the terms, and which invoices were selected can all change the result.",
-            "Run the product and judge the value decides whether to continue, change, or stop, from whether the list is still used, whether it is still fresh enough, and what is still kept. It does not score a return. Name the decision is where a hypothesis is written so it can be checked. The method for separating the offer's effect from everything else is not on this page.",
+            "Run the product and judge the value decides whether to continue, change, or stop. The decision has to remain necessary, the product has to stay fit for that use, and the cost of keeping it has to stay justified. Missing evidence is an investigation. It does not score a return. Name the decision is where a hypothesis is written so it can be checked. The method for separating the offer's effect from everything else is not on this page.",
           ],
           lines: [
             {
@@ -2609,132 +2624,516 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 9,
       topic: "Run the product and judge the value",
       title: "Run the product and judge the value",
-      lede: "This page is a product that is already running. I continue it, change it, or stop the investment. The case was already taken.",
-      rule: "My operating rule: I continue only when the person still uses the number for the decision that was taken, and the number still arrives inside the time that decision needs. Otherwise I change the line that failed, or I stop. A blank call is not a continue.",
+      lede: "Does this analytics product still justify what it consumes, by supporting a real decision with evidence that is trustworthy enough and in time? This page is how I make the call.",
+      rule: "My operating rule: I continue only when the decision is still necessary, the product is fit for that use, and the evidence supports the cost of keeping it. I change it when the decision remains and a diagnosed problem can be fixed. I stop it when the decision has ended, the product no longer serves a necessary purpose, or the cost is no longer justified. If the owner, the evidence, or a material risk is missing, the call is investigate.",
       illustration: "The invoice review is an illustration, not a record.",
-      reviewed: "18 Oct 2026",
+      reviewed: "21 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
       },
       sections: [
         {
-          id: "value",
-          title: "The review",
+          id: "value-why",
+          title: "Why the review recurs",
           paragraphs: [
-            "Keep trust keeps the number fit to use the next time it is needed. This page is whether the product should still be kept.",
-            "The product is the case that was taken. The decision and the person are the ones on that case. If the decision has changed, that is a new case on Choose the work. This page does not take it.",
-            "Scale is whether the number still arrives, for the people who use it, inside the time the decision needs. Choose the work refused the scale the decision did not need. Choose the stack built what remained. If that scale has stopped, the call is change or stop.",
-            "The sheet is my rule for the call.",
+            "Keep trust in force watches whether a published number is fit to use the next time someone needs it. This page asks a later question: should the product still be kept.",
+            "A job can keep succeeding after the decision has ended, the deadline has moved, or the cost has grown. A scheduled value review is how I catch that. It is separate from operational monitoring. A serious failure is handled when it happens. The review date does not delay that response.",
           ],
-          lines: [
-            {
-              term: "Product",
-              detail:
-                "The case that was taken. The decision, and the person who would act. A report title does not finish the line.",
-            },
-            {
-              term: "Used",
-              detail:
-                "The person still uses the number for that decision. If they do not, the product is not in use.",
-            },
-            {
-              term: "Arrives",
-              detail:
-                "The number still arrives, for the people who use it, inside the time the decision needs. If it does not, the scale has stopped.",
-            },
-            {
-              term: "Answer",
-              detail:
-                "Ask, Grain, Truth, and Use can still be said. A blank line is not a score. It goes back to the page that owns it.",
-            },
-            {
-              term: "Kept",
-              detail:
-                "The people and the tools still kept for this product. The tools are the ones taken on Choose the stack. A tool that was refused is not on this line. If nothing is still kept, write that. A blank line is not the same as nothing.",
-            },
-            {
-              term: "Call",
-              detail:
-                "Continue, change, or stop, with the reason. Continue when the person still uses it, it still arrives, and the four steps can still be said, and what is kept is still needed for that decision. Change when the decision is the same and one line has failed. Name the page that owns the failed line. Stop when the person no longer acts, or what is kept is no longer needed, or the rung in force cannot keep the scale. A blank call is not a continue.",
-            },
-          ],
+          sources: [dataChapter(8, "Keep trust in force")],
         },
         {
-          id: "value-scene",
-          title: "An example",
+          id: "value-stages",
+          title: "The four stages",
           paragraphs: [
-            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "The product, from the earlier pages, is whether one role gives an invoice more time to pay. The organization is Defined. The list is as of yesterday. What is kept is that role's refresh of the list, one report, dbt, DuckDB, and the invoice ledger.",
-            "On one review, the role still uses the list for that decision. The list still arrives as of yesterday. Ask, Grain, Truth, and Use can still be said. What is kept is still what that decision needs. The call is continue. No amount is written.",
-            "On the next review, the same role needs the list before the day starts. Yesterday is too old. The decision has not changed. The freshness has. The call is change, and the change is the freshness on Choose the stack. This page does not pick a new platform.",
-            "On the last review, the role no longer decides more time from this list. The list is still refreshing. The call is stop. The reason is that the person no longer acts. The call list was never this product. No amount is written.",
+            "I answer the question in four stages. A failed stage is not yet the call. I diagnose the cause, then I continue, change, or stop. When the owner, the evidence, or a material risk is missing, the interim state is investigate. That is not a fourth resting state for the product. I do not fill the gap by writing continue.",
+            "A report title, or a stakeholder named on a slide, does not show that the decision is still made. I look for the person who acts, and for the product inside that workflow. Fitness covers the data, the grain and the definitions, freshness against the decision deadline, reliability and failure handling, access, and whether a person can use the product in the decision. The method for a failed requirement stays on the chapter that owns it.",
           ],
           figure: {
-            kind: "flow",
+            kind: "tree",
             caption:
-              "The same illustration. One review continues, one changes the freshness, and one stops. It states no amount.",
+              "The yes path is the only route to continue. Change and stop require a diagnosed cause. Investigate means the record is not yet sufficient.",
             steps: [
               {
-                term: "Continue",
+                term: "A · Decision",
                 detail:
-                  "The role still uses the list. It arrives as of yesterday. What is kept is still what that decision needs.",
+                  "Is the original decision still made, by a named owner, with this product inside the actual workflow?",
+                spine: "Yes → Fitness",
+                branches: [
+                  {
+                    term: "Stop",
+                    detail: "The decision has ended. Nothing necessary remains for this product to support.",
+                  },
+                  {
+                    term: "Change",
+                    detail: "The decision remains, and the product is outside the workflow for a reason that can be fixed.",
+                  },
+                  {
+                    term: "Investigate",
+                    detail: "There is no owner, or the only evidence is a title or a name.",
+                  },
+                ],
               },
               {
-                term: "Change",
+                term: "B · Fitness",
                 detail:
-                  "The same decision. The list is needed before the day starts. The change is the freshness on Choose the stack.",
+                  "Is it fit for that use: correct, at the right grain, in time for the deadline, reliable, controlled, and usable?",
+                spine: "Yes → Value",
+                branches: [
+                  {
+                    term: "Change",
+                    detail: "The decision remains, and the cause can be fixed on the chapter that owns it.",
+                  },
+                  {
+                    term: "Stop",
+                    detail: "It cannot be made to serve the decision.",
+                  },
+                  {
+                    term: "Investigate",
+                    detail: "The fitness evidence is missing, or a material risk is still open.",
+                  },
+                ],
               },
               {
-                term: "Stop",
+                term: "C · Value",
                 detail:
-                  "The role no longer decides more time from this list. The list is still refreshing. The call list was never this product.",
+                  "Is there evidence of decision influence, or of a control the decision needs, at a strength that matches the cost?",
+                spine: "Yes → Investment",
+                branches: [
+                  {
+                    term: "Change",
+                    detail: "The decision remains, and a fixable gap blocks the value.",
+                  },
+                  {
+                    term: "Stop",
+                    detail: "No necessary action remains for this product to support.",
+                  },
+                  {
+                    term: "Investigate",
+                    detail: "The evidence is missing, or availability, usage, influence, and outcome are being treated as one fact.",
+                  },
+                ],
+              },
+              {
+                term: "D · Investment",
+                detail:
+                  "Do the benefits still justify the ongoing cost and risk? A mandatory control can be worth keeping without a calculated return.",
+                branches: [
+                  {
+                    term: "Continue",
+                    detail: "The decision remains, the product is fit, and the evidence supports the cost.",
+                  },
+                  {
+                    term: "Change",
+                    detail: "The decision remains, and a simpler or corrected form would justify the cost.",
+                  },
+                  {
+                    term: "Stop",
+                    detail: "The ongoing cost or risk is no longer justified.",
+                  },
+                  {
+                    term: "Investigate",
+                    detail: "A material cost or risk is unknown. Unknown is not zero.",
+                  },
+                ],
               },
             ],
           },
         },
         {
-          id: "value-know",
-          title: "How I would know",
+          id: "value-levels",
+          title: "Value and cost",
           paragraphs: [
-            "I watch three things. I have no target times, and these definitions are not results I have collected.",
-            "A said use means a person who missed the meeting can say who still uses the number, and for which decision.",
-            "A stopped scale is a number that went out older than the time the decision needs, or to people the case did not name, while the call was still continue.",
-            "A silent product is still running, and nobody has written continue, change, or stop.",
-            "The rows below are the illustration on this page. None is a result I collected, and none states an amount.",
+            "Stage C separates four levels of evidence. They answer different questions. The strength of the evidence has to match the cost and the importance of the decision.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "Each row answers its own question. Usage is adoption. It is not influence, and an outcome still needs other explanations.",
+            steps: [],
+            head: ["Level", "It establishes", "It leaves open"],
+            rows: [
+              {
+                label: "Availability",
+                cells: ["The product runs and can be opened.", "Whether the intended people use it."],
+              },
+              {
+                label: "Adoption",
+                cells: ["Those people use it in the work.", "Whether an action changed."],
+              },
+              {
+                label: "Influence",
+                cells: [
+                  "It changed or supported the action.",
+                  "Whether the business result improved, and whether the product caused that result.",
+                ],
+              },
+              {
+                label: "Outcome",
+                cells: [
+                  "The action is followed by a business result.",
+                  "Other explanations. The result is attributed to the product only after those are considered.",
+                ],
+              },
+            ],
+          },
+          closing: [
+            "The result I would look for depends on the decision. It may be a faster decision, less manual effort, fewer errors, lower risk, or a better service. An improved result still needs a baseline, a period, and room for other explanations before I attribute it to the product.",
+            "Stage D sets that evidence beside the ongoing cost and risk. Where they apply, I include engineering maintenance, data-platform and compute costs, support, incident response, upstream dependencies, security, compliance, and the opportunity cost: the other work the same people and budget could keep. I do not require a calculated return for every product. A mandatory control, or a reduction in risk that is hard to price, can still be worth keeping. A material cost or risk with no record is investigate. I do not treat the blank as zero.",
+          ],
+        },
+        {
+          id: "value-invoice",
+          title: "The invoice list",
+          paragraphs: [
+            "This illustration continues the invoice list from the earlier pages. I have not measured it, and it states no amount. The business decision is which overdue invoices need attention, and which customers can be given more time to pay. The decision owner is the credit controller. The workflow is the offer made before write-off.",
+            "The product is yesterday's list: one report, refreshed by one person from the invoice ledger. It shows which invoices are still open, the agreed terms, whether an invoice is disputed, and what has already been paid. The controller uses it to offer more time or to refuse it, inside the agreed policy. The list supports that policy. It does not replace the controller. A daily list of whom to call is a different decision, and it is not this product.",
+          ],
+          figure: {
+            kind: "flow",
+            plain: true,
+            caption: "Illustrative. The list is the input to the offer. What happens to the account afterwards is a separate question.",
+            steps: [
+              {
+                term: "Data",
+                detail: "The invoice ledger: open invoices, agreed terms, disputes, and amounts already paid.",
+              },
+              {
+                term: "Product",
+                detail: "Yesterday's list. One report, for this controller.",
+              },
+              {
+                term: "Decision owner",
+                detail: "The credit controller, in the offer made before write-off.",
+              },
+              {
+                term: "Action",
+                detail: "Offer more time, or refuse it, inside the agreed policy.",
+              },
+              {
+                term: "Outcome",
+                detail: "The account becomes current, or the invoice is written off.",
+              },
+            ],
+          },
+          closing: [
+            "Fitness, for this list, would be a row sentence that still holds, a refresh as of yesterday that is in time for the offer, a failure someone can see, and access limited to the controller's role. Influence would be offers the controller can point to as having used the list, including an offer that changed because of it. A successful refresh establishes availability. A login establishes adoption. The costs and risks that matter are the time to refresh the list, dependence on the ledger, access to customer invoice data, and the harm of an offer made from a stale or wrong list.",
+          ],
+        },
+        {
+          id: "value-outcomes",
+          title: "Three reviews",
+          paragraphs: [
+            "The same list can leave the review in three ways. The call names the cause.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "Illustrative. Each call follows from the cause beside it.",
+            steps: [],
+            head: ["Review", "What is true", "The call"],
+            rows: [
+              {
+                label: "Continue",
+                cells: [
+                  "The decision is still made before write-off. The list matches the row and arrives as of yesterday. The controller uses it for the offer. The time to refresh it is still the cost that was accepted.",
+                  "Continue. The next review is the date on the record.",
+                ],
+              },
+              {
+                label: "Change",
+                cells: [
+                  "The decision is still made. The offer now happens before the working day starts, and the list arrives after that.",
+                  "Change. Correct the delivery, then verify that the list is in time for the offer. A changed freshness requirement goes to Choose the stack. A failed run goes to Keep trust in force. This page does not choose a platform.",
+                ],
+              },
+              {
+                label: "Stop",
+                cells: [
+                  "Collections no longer offers more time from this list. A different process handles the account.",
+                  "Stop. Confirm dependencies, retention, and any replacement before the list is turned off.",
+                ],
+              },
+            ],
+          },
+          sources: [dataChapter(7, "Choose the stack"), dataChapter(8, "Keep trust in force")],
+        },
+        {
+          id: "value-routine",
+          title: "Before, during, and after",
+          paragraphs: [
+            "Critical products need operational monitoring while they run. That monitoring is Keep trust in force. A value review is less frequent, and the period matches the product: a control used every day is reviewed sooner than a periodic report. The period is written on the record. A serious operational failure is not held for that date.",
           ],
           lines: [
             {
-              term: "Continued",
+              term: "Before",
               detail:
-                "The role that can offer more time still uses the list. It arrives as of yesterday. What is kept is that role's refresh, one report, dbt, DuckDB, and the invoice ledger. Call: continue. No amount is written.",
+                "Collect the original decision, the owner, who acts, usage, quality and freshness against the deadline, incidents, costs, and the success measures already agreed.",
             },
             {
-              term: "Changed",
+              term: "During",
               detail:
-                "The same decision. The list is needed before the day starts. Call: change the freshness on Choose the stack. No platform is named. No amount is written.",
+                "Confirm that the decision is still made, that the product is in the workflow, that it is fit, what action it changed, what it costs, and what has changed since the last review.",
             },
             {
-              term: "Stopped",
+              term: "After",
               detail:
-                "The role no longer decides more time from this list. The list is still refreshing. Call: stop. The call list was never this product.",
+                "Write continue, change, stop, or investigate. Name the accountable person, the action, the due date, and the trigger for the next review. If this review cannot name the owner or close a material risk, escalate to the person who can. An empty call is investigate.",
             },
+          ],
+          sources: [dataChapter(8, "Keep trust in force")],
+        },
+        {
+          id: "value-evidence",
+          title: "Five kinds of evidence",
+          paragraphs: [
+            "I inspect five categories. I do not add them into one score. A critical control failure stays visible beside a product that is otherwise healthy. Missing ownership, missing evidence, or an unresolved material risk is investigate.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "The inspection for a review. The five rows are not a score.",
+            steps: [],
+            head: ["Evidence", "What counts", "Does not count"],
+            rows: [
+              {
+                label: "Ownership",
+                cells: [
+                  "Who owns the decision, who acts on it, and proof the product is in that workflow. Usage records, and confirmation from the owner.",
+                  "A report title. A stakeholder named on a slide. A login with no decision attached.",
+                ],
+              },
+              {
+                label: "Fitness",
+                cells: [
+                  "Quality, grain, freshness against the deadline, failures, access, and use inside the decision. Freshness and failure logs, and the checks on Keep trust in force.",
+                  "A green refresh. A check that did not run. A schedule with no record of the last success.",
+                ],
+              },
+              {
+                label: "Influence",
+                cells: [
+                  "The product changed or supported an action. Where the decision warrants it, what happened in the business, with a baseline and other explanations. Decision logs, the owner's confirmation, and outcome measures.",
+                  "Usage offered as value. An improved result offered as proof the product caused it.",
+                ],
+              },
+              {
+                label: "Cost and risk",
+                cells: [
+                  "Maintenance, platform and compute, support, incidents, upstream dependencies, security, compliance, and opportunity cost. Cost records where they exist.",
+                  "A calculated return demanded for every product. A missing cost treated as zero.",
+                ],
+              },
+              {
+                label: "The record",
+                cells: [
+                  "The call, the rationale, the evidence, the uncertainty, the action owner, and the next review. Escalation when this review cannot close a gap.",
+                  "A meeting with nothing written down. One score across the five categories. A passing score beside a failed control.",
+                ],
+              },
+            ],
+          },
+          sources: [dataChapter(8, "Keep trust in force")],
+        },
+        {
+          id: "value-record",
+          title: "The review record",
+          paragraphs: [
+            "This is the continue review of the invoice list, written as the record. Change and stop use the same fields. A change names the fix, who will do it, and when it is due, and the next review checks that the requirement is now met. A stop names the retirement checks. An empty call is investigate.",
+          ],
+          figure: {
+            kind: "sheet",
+            caption: "Illustrative continue for the invoice list.",
+            steps: [
+              {
+                term: "Decision",
+                detail:
+                  "Which overdue invoices need attention, and which customers can have more time. The credit controller still makes that offer before write-off.",
+              },
+              {
+                term: "Evidence",
+                detail:
+                  "The controller uses the list for the offer. It arrives as of yesterday, and the row sentence holds. No material exception is open. The controller can name offers the list changed.",
+              },
+              {
+                term: "Uncertainty",
+                detail:
+                  "No baseline has been kept for what the accounts would have done without the list. This call does not claim a business result.",
+              },
+              {
+                term: "Costs, risks",
+                detail:
+                  "One person's time to refresh the list, dependence on the invoice ledger, access to customer invoice data, and the harm of an offer made from a stale or wrong list.",
+              },
+              {
+                term: "Call",
+                detail:
+                  "Continue. The decision remains, the list is fit for the offer, and the cost of the refresh is still justified.",
+              },
+              {
+                term: "Owner",
+                detail: "The credit controller is accountable for this call.",
+              },
+              {
+                term: "Next action",
+                detail: "Keep the list on the current design. The person who refreshes it remains the technical owner.",
+              },
+              {
+                term: "Next review",
+                detail:
+                  "The date named for this product, or sooner if the workflow, the deadline, or the cost changes. A failed refresh is handled when it happens.",
+              },
+            ],
+          },
+        },
+        {
+          id: "value-diagnose",
+          title: "What the symptom means",
+          paragraphs: [
+            "The same symptom can come from more than one cause. I choose the remedy for the cause. Low usage, a late list, or a high cost does not by itself select continue, change, or stop.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "Diagnose, then send the fix to the chapter that owns the cause.",
+            steps: [],
+            head: ["Symptom", "Possible cause", "Remedy"],
+            rows: [
+              {
+                label: "Low usage",
+                cells: [
+                  "Hard to find. Missing from the workflow. Or the decision has ended.",
+                  "A discovery or workflow problem is a change, when the decision remains. An ended decision is a stop.",
+                ],
+              },
+              {
+                label: "Corrections",
+                cells: [
+                  "The data is wrong, or people do not share one definition.",
+                  "Quality and the response stay on Keep trust in force. The row is Say what one row means. An unexplained second report is When two reports don't match.",
+                ],
+              },
+              {
+                label: "Late delivery",
+                cells: [
+                  "The deadline moved, or an upstream step is late.",
+                  "A changed freshness requirement goes to Choose the stack. A failed or late run goes to Keep trust in force.",
+                ],
+              },
+              {
+                label: "Use, no change",
+                cells: [
+                  "People open it, and the action stays the same.",
+                  "Confirm whether a decision remains. Change the product so that action uses it, or stop it when there is nothing left to support.",
+                ],
+              },
+              {
+                label: "High cost",
+                cells: [
+                  "More machinery than the decision needs, or several products doing one job.",
+                  "Simplify, consolidate, or retire. The cost is not a reason to add a platform.",
+                ],
+              },
+              {
+                label: "Decision ended",
+                cells: [
+                  "The workflow moved on. The job can still succeed.",
+                  "Stop, after the retirement checks. Remaining use is a reason to look for another decision, not a reason to keep this product.",
+                ],
+              },
+            ],
+          },
+          sources: [
+            dataChapter(3, "Say what one row means"),
+            dataChapter(4, "When two reports don't match"),
+            dataChapter(7, "Choose the stack"),
+            dataChapter(8, "Keep trust in force"),
+          ],
+        },
+        {
+          id: "value-retire",
+          title: "Retiring the product",
+          paragraphs: [
+            "Stop ends the investment. Turning the job off comes after the dependencies and the obligations are known. These checks are the retirement. They are not a technology change-management manual.",
+          ],
+          steps: [
+            "Confirm the decision has ended, or that a replacement is ready and fit for the use that remains.",
+            "Identify the reports, models, applications, workflows, and people that still depend on the product.",
+            "Check what retention, audit, contract, or regulation requires you to keep.",
+            "Tell the users the product is going, and name the alternative where there is one.",
+            "Turn off the jobs, the access, and the infrastructure in an order that leaves a kept dependency working.",
+            "Check that the cost and the dependencies you meant to remove are gone.",
+            "Keep the record: the call, the reason, the evidence, and who approved the retirement.",
           ],
         },
         {
           id: "value-limits",
-          title: "Where I do not use it",
+          title: "The neighbouring chapters",
           paragraphs: [
-            "Choose the work decides whether to start. This page is a product that is already running.",
-            "The brief, the row, the disagreement, and the contract stay on Make the number fit. A blank line there goes back to that page. It is not a score.",
-            "Choose the stack names the tools. A freshness that no longer fits goes back there. This page does not pick a platform.",
-            "Keep trust names the owners, the checks, and the response. This page does not rewrite them.",
-            "A number someone has already acted on, when two reports disagree, is When two reports don't match.",
-            "Whether they did what the hypothesis proposed, and whether the outcome moved, is the note on Name the decision. This page does not report that check.",
-            "The card's ladder is the rung already named on Choose the work. I do not continue a product so the organization can climb it.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+            "Each chapter owns one decision. This page owns the review of a product that is already running. When the review finds a problem another chapter owns, go there. This page does not repeat that method.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "The chapter name opens that page.",
+            steps: [],
+            head: ["Chapter", "It decides", "Open it when"],
+            rows: [
+              {
+                label: "Choose the work",
+                href: "/handbooks/data-that-drives-decisions/6",
+                cells: [
+                  "Whether to start the investment.",
+                  "The decision is new. This page does not open that case.",
+                ],
+              },
+              {
+                label: "Name the decision",
+                href: "/handbooks/data-that-drives-decisions/2",
+                cells: [
+                  "The decision and the intended outcome.",
+                  "The question, the person, or the outcome on the brief no longer matches the use. Whether a hypothesis was right stays there.",
+                ],
+              },
+              {
+                label: "Make the number fit to use",
+                href: "/handbooks/data-that-drives-decisions/2",
+                cells: [
+                  "The information the decision needs, and the contract that keeps it.",
+                  "The row, an unresolved disagreement, or the definition. Those pages are Say what one row means, When two reports don't match, and Keep the definition.",
+                ],
+              },
+              {
+                label: "Choose the stack",
+                href: "/handbooks/data-that-drives-decisions/7",
+                cells: [
+                  "The technology that delivers the result.",
+                  "The design no longer meets the workload, including how fresh the result has to be. This page does not choose a platform.",
+                ],
+              },
+              {
+                label: "Keep trust in force",
+                href: "/handbooks/data-that-drives-decisions/8",
+                cells: [
+                  "Quality, access, and the controls that keep the number fit to use.",
+                  "A failed check, access, an operational freshness miss, or an incident. This page does not rewrite those controls.",
+                ],
+              },
+              {
+                label: "This page",
+                cells: [
+                  "Whether to continue, change, or stop.",
+                  "The product is already running. Operational monitoring stays on Keep trust in force.",
+                ],
+              },
+            ],
+          },
+          closing: [
+            "I do not continue a product so the organization can climb the ladder on the analytics field card. Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation field card.",
           ],
           sources: [
+            dataChapter(2, "Name the decision"),
+            dataChapter(3, "Say what one row means"),
+            dataChapter(4, "When two reports don't match"),
+            dataChapter(5, "Keep the definition"),
+            dataChapter(6, "Choose the work"),
+            dataChapter(7, "Choose the stack"),
+            dataChapter(8, "Keep trust in force"),
             { href: DATA_CARD, label: "Data analytics field card" },
             { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
@@ -2744,7 +3143,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "value-draft",
           title: "When AI drafts the review",
           paragraphs: [
-            "This page holds today, and I expect it to hold, because a person has to say whether the number is still used for the decision that was taken, and the call has to be continue, change, or stop. AI can draft the review and a recommendation to continue. A draft does not name that person, and a recommendation is not the call until they accept it.",
+            "A model may prepare the review. It may summarize evidence from sources the owner has approved, point out anomalies, missing information, and changes since the last review, and draft a recommendation that states the reasoning and the uncertainty. It must not invent usage, savings, outcomes, or supporting evidence.",
+            "The accountable owner checks those sources and approves the call. A generated continue is not that approval. An automated change or retirement still has to follow the access, change, and approval controls that already apply. This holds when a draft is cheap. A complete-looking review with no owner and no evidence stays investigate, until a person accepts continue, change, or stop.",
           ],
         },
       ],
