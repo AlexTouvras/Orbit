@@ -278,6 +278,44 @@ export const powerBiReports: PowerBiReport[] = [
     ],
   },
   {
+    id: "fpa-controllership",
+    title: "Controllership",
+    summary: "Nordic Boardroom **FP&A / budget vs actual** report: live Landing thesis, Budget→Actual OP bridge, CoA statement, variance drivers, illustrative scenarios.",
+    repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
+    pages: [
+      {
+        id: "landing",
+        label: "Landing",
+        caption: "Poster · live DAX conclusion · OP gap KPIs",
+        src: "/portfolio/power-bi/fpa-controllership/landing.png",
+      },
+      {
+        id: "p-l-pulse",
+        label: "P&L Pulse",
+        caption: "OP bridge · KPI sparklines · track · CoA · exception queue (drillthrough)",
+        src: "/portfolio/power-bi/fpa-controllership/p-l-pulse.png",
+      },
+      {
+        id: "variance-drivers",
+        label: "Variance Drivers",
+        caption: "Entity Actual/Budget · monthly gap slope · heat",
+        src: "/portfolio/power-bi/fpa-controllership/variance-drivers.png",
+      },
+      {
+        id: "scenarios",
+        label: "Scenarios",
+        caption: "Base · Revenue +5% · FX -3% OP bands + deltas",
+        src: "/portfolio/power-bi/fpa-controllership/scenarios.png",
+      },
+      {
+        id: "context",
+        label: "Context",
+        caption: "Seed conventions · signed-variance · bridge / drill notes",
+        src: "/portfolio/power-bi/fpa-controllership/context.png",
+      },
+    ],
+  },
+  {
     id: "credit-risk",
     title: "Credit Risk Pulse",
     summary: "Nordic Boardroom **PD scorecard + cut-off strategy + monitoring + steering** report for consumer credit — domain flagship.",
@@ -362,6 +400,38 @@ export const powerBiReports: PowerBiReport[] = [
         label: "Notes",
         caption: "Methodology · not advice · refresh path",
         src: "/portfolio/power-bi/investing-desk/notes.png",
+      },
+    ],
+  },
+  {
+    id: "learning-duration",
+    title: "Study Duration",
+    summary: "Time to withdrawal on Open University modules. Argument page quotes an **approved** duration fit via Deneb (KM · forest · β(t)).",
+    repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
+    pages: [
+      {
+        id: "landing",
+        label: "Landing",
+        caption: "What we analyse: OULAD module withdrawal timing (CCC vs FFF)",
+        src: "/portfolio/power-bi/learning-duration/landing.png",
+      },
+      {
+        id: "pulse",
+        label: "Pulse",
+        caption: "Counts, withdrawal share by module, days kept",
+        src: "/portfolio/power-bi/learning-duration/pulse.png",
+      },
+      {
+        id: "argument",
+        label: "Argument",
+        caption: "Stay-enrolled curves + Cox risk vs FFF (approved fit)",
+        src: "/portfolio/power-bi/learning-duration/argument.png",
+      },
+      {
+        id: "context",
+        label: "Context",
+        caption: "Unit of analysis, clock, licence, fit hash",
+        src: "/portfolio/power-bi/learning-duration/context.png",
       },
     ],
   },
