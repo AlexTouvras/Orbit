@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Delivery Signal flow sheet — the weekly shape as the title, Closed / WIP with an arrow / cycle p85 with the finished count, then one shared small multiple (2026-10-21)
 - [x] Delivery Signal flow table — closed, WIP, cycle p85, and a shared sparkline of weekly closes, with the counts on a second sheet (2026-10-21)
 - [x] Weekly Write — do not name a source and then say it was unread. The 19 Oct draft keeps the judgment topic and drops Goldratt and the unread paper (2026-10-19)
 - [x] Weekly Write topic — a Power BI or Fabric feature is not the thesis while another Signal is in the intake. The 19 Oct pending draft moved off full-text indexing (2026-10-19)

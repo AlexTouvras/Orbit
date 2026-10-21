@@ -2005,36 +2005,88 @@ def _reading_md(brief: dict) -> list[str]:
     return lines
 
 
+def _week_labels(flow: dict) -> list[str]:
+    labels = []
+    for value in flow.get("week_ends") or []:
+        parsed = date.fromisoformat(value)
+        labels.append(f"{parsed.day} {parsed.strftime('%b')}")
+    return labels
+
+
+def _flow_claim(weekly: list[int]) -> str:
+    """One sentence a reader can repeat. Counts only, from the portfolio row."""
+    weeks = len(weekly)
+    noun = "week" if weeks == 1 else "weeks"
+    if weeks == 0 or not any(weekly):
+        return f"Nothing closed in these {weeks} {noun}."
+    quiet = 0
+    while quiet < weeks and weekly[quiet] == 0:
+        quiet += 1
+    active = weekly[quiet:]
+    if quiet >= 3 and 1 <= len(active) <= 4:
+        quiet_noun = "week" if quiet == 1 else "weeks"
+        if len(active) == 1:
+            tail = str(active[0])
+        else:
+            tail = ", ".join(str(value) for value in active[:-1]) + f", and {active[-1]}"
+        return f"{quiet} {quiet_noun} closed nothing. Then {tail}."
+    total = sum(weekly)
+    return f"{total} closed in these {weeks} weeks. The latest week closed {weekly[-1]}."
+
+
+def _delta_mark(current: int, previous: int | None) -> str:
+    if previous is None:
+        return ""
+    delta = current - previous
+    if delta == 0:
+        return "same"
+    if delta > 0:
+        return f"▲ {delta}"
+    return f"▼ {abs(delta)}"
+
+
+def _flow_closed_text(row: dict) -> str:
+    if row["closed"] is None:
+        return "—"
+    text = str(row["closed"])
+    if row["closed_points"] is not None:
+        text += f" · {_fmt_num(row['closed_points'])} pts"
+    return text
+
+
+def _flow_wip_text(row: dict) -> str:
+    mark = _delta_mark(row["wip"], row["wip_previous"])
+    if not mark:
+        return str(row["wip"])
+    return f"{row['wip']} {mark}"
+
+
+def _flow_p85_text(row: dict) -> str:
+    if row["p85_days"] is None:
+        return "—"
+    return f"{row['p85_days']}d · {row['p85_n']}"
+
+
 def _flow_md(brief: dict) -> list[str]:
     flow = brief.get("flow") or {}
     rows = flow.get("rows") or []
     if not rows:
         return []
-    ends = []
-    for value in flow.get("week_ends") or []:
-        parsed = date.fromisoformat(value)
-        ends.append(f"{parsed.day} {parsed.strftime('%b')}")
+    ends = _week_labels(flow)
     lines = [
         "",
         "## Flow",
         "",
-        "Stories, bugs, and tasks. Closed moved to Done since the previous export. Weekly columns are Done items in the week of their newest update. Cycle p85 is days from created to that update on Done items.",
+        _flow_claim(rows[0]["weekly"]),
+        "",
+        "Stories, bugs, and tasks. An arrow is how many more or fewer items are open than in the previous export. Same means that count did not change. Weekly columns are Done items in the week of their newest update. Cycle p85 is days from created to that update on Done items, and the count beside it is how many finished items set it.",
         "",
         "| Project | Closed | WIP | Cycle p85 | Per week |",
         "| --- | --- | --- | --- | --- |",
     ]
     for row in rows:
-        closed = "—"
-        if row["closed"] is not None:
-            closed = str(row["closed"])
-            if row["closed_points"] is not None:
-                closed += f" · {_fmt_num(row['closed_points'])} pts"
-        wip = str(row["wip"])
-        if row["wip_previous"] is not None:
-            wip += f" · was {row['wip_previous']}"
-        p85 = "—" if row["p85_days"] is None else f"{row['p85_days']}d"
         lines.append(
-            f"| {row['name']} | {closed} | {wip} | {p85} | {' '.join(str(value) for value in row['weekly'])} |"
+            f"| {row['name']} | {_flow_closed_text(row)} | {_flow_wip_text(row)} | {_flow_p85_text(row)} | {' '.join(str(value) for value in row['weekly'])} |"
         )
     lines.extend(["", "### Weekly counts", ""])
     lines.append("| Project | " + " | ".join(ends) + " |")
@@ -2171,7 +2223,7 @@ def render_markdown(brief: dict) -> str:
             "- Stale and overdue items are raised without a notes file. A note that says the work is on track is still compared with the export.",
             "- Optimistic notes are an inference. The dates and statuses they are compared with are facts.",
             "- This week is the report date and the six days after it. Next week is the seven days after that. A due date in either window is the date in the file.",
-            "- Flow counts stories, bugs, and tasks. Closed is what moved to Done since the previous export. The bars place Done items in the week of their newest update, eight weeks ending on the report date. Cycle p85 is the 85th percentile of days from created to that update on Done items. It describes finished items.",
+            "- Flow counts stories, bugs, and tasks. The opening sentence is the portfolio's weekly closes. Closed is what moved to Done since the previous export. An arrow is how many more or fewer items are open than in that export. Same means that count did not change. The bars place Done items in the week of their newest update, eight weeks ending on the report date, on one scale. Cycle p85 is the 85th percentile of days from created to that update on Done items, with the count of those items. It describes finished items.",
             "- These thresholds are operating rules for the sample, not a validated predictor of delay.",
             "",
         ]
@@ -2211,12 +2263,12 @@ def _profile_label(profile: str) -> str:
 
 
 def _spark_svg(values: list[int], scale: int) -> str:
-    width, height, gap = 88, 22, 2
+    width, height, gap = 104, 32, 3
     count = len(values) or 1
     bar = (width - gap * (count - 1)) / count
     rects = []
     for index, value in enumerate(values):
-        bar_height = 1 if scale <= 0 or value == 0 else max(2, round(value / scale * (height - 1)))
+        bar_height = 1.5 if scale <= 0 or value == 0 else max(3, round(value / scale * (height - 2)))
         x = index * (bar + gap)
         rects.append(
             f'<rect x="{x:.1f}" y="{height - bar_height:.1f}" width="{bar:.1f}" height="{bar_height:.1f}"></rect>'
@@ -2239,10 +2291,38 @@ def _flow_cell_closed(row: dict) -> str:
 
 
 def _flow_cell_wip(row: dict) -> str:
-    text = str(row["wip"])
-    if row["wip_previous"] is not None:
-        text += f' <span class="quiet">· was {row["wip_previous"]}</span>'
-    return text
+    mark = _delta_mark(row["wip"], row["wip_previous"])
+    if not mark:
+        return str(row["wip"])
+    return f'{row["wip"]} <span class="quiet">{html.escape(mark)}</span>'
+
+
+def _flow_cell_p85(row: dict) -> str:
+    if row["p85_days"] is None:
+        return "—"
+    return f'{row["p85_days"]}d <span class="quiet">· {row["p85_n"]}</span>'
+
+
+def _flow_cast(row: dict) -> str:
+    closed = "—" if row["closed"] is None else str(row["closed"])
+    points = ""
+    if row["closed_points"] is not None:
+        points = f'<p class="quiet">{html.escape(_fmt_num(row["closed_points"]))} pts</p>'
+    mark = _delta_mark(row["wip"], row["wip_previous"])
+    wip_note = f'<p class="quiet">{html.escape(mark)}</p>' if mark else ""
+    if row["p85_days"] is None:
+        cycle = "—"
+        cycle_note = '<p class="quiet">no finished items</p>'
+    else:
+        cycle = f'{row["p85_days"]}<span class="unit">d</span>'
+        cycle_note = f'<p class="quiet">{row["p85_n"]} finished</p>'
+    return (
+        '<div class="cast">'
+        f'<div><p class="kicker">Closed</p><p class="figure">{closed}</p>{points}</div>'
+        f'<div><p class="kicker">WIP</p><p class="figure">{row["wip"]}</p>{wip_note}</div>'
+        f'<div><p class="kicker">Cycle p85</p><p class="figure">{cycle}</p>{cycle_note}</div>'
+        "</div>"
+    )
 
 
 def _flow_html(brief: dict) -> str:
@@ -2250,22 +2330,16 @@ def _flow_html(brief: dict) -> str:
     rows = flow.get("rows") or []
     if not rows:
         return ""
-    ends = []
-    for value in flow.get("week_ends") or []:
-        parsed = date.fromisoformat(value)
-        ends.append(f"{parsed.day} {parsed.strftime('%b')}")
+    ends = _week_labels(flow)
     scale = int(flow.get("scale") or 0)
     body = []
     for row in rows:
-        p85 = "—"
-        if row["p85_days"] is not None:
-            p85 = f'{row["p85_days"]}d'
         klass = ' class="all"' if row["id"] == "all" else ""
         body.append(
             f"<tr{klass}><td>{html.escape(row['name'])}</td>"
             f'<td class="num">{_flow_cell_closed(row)}</td>'
             f'<td class="num">{_flow_cell_wip(row)}</td>'
-            f'<td class="num">{p85}</td>'
+            f'<td class="num">{_flow_cell_p85(row)}</td>'
             f'<td class="trend">{_spark_svg(row["weekly"], scale)}</td></tr>'
         )
     week_head = "".join(f"<th>{html.escape(label)}</th>" for label in ends)
@@ -2277,17 +2351,30 @@ def _flow_html(brief: dict) -> str:
     fold = ""
     if evidence:
         fold = f"<details><summary>Evidence</summary>{_evidence_html({'evidence': evidence})}</details>"
+    axis = ""
+    if ends:
+        axis = f'<span class="axis">{html.escape(ends[0])}–{html.escape(ends[-1])}</span>'
     note = (
-        "Stories, bugs, and tasks. Closed is what moved to Done since the previous export. "
+        "Stories, bugs, and tasks. The sentence is the portfolio's weekly closes. "
+        "Closed is what moved to Done since the previous export. "
+        "An arrow is how many more or fewer items are open than in that export. Same means that count did not change. "
         "Each row of bars is that project's Done items, in the week of their newest update. "
-        "The eight weeks end on the report date and share one scale. "
-        "Cycle p85 is the 85th percentile of days from created to that update, on items already Done."
+        "The weeks end on the report date and share one scale. "
+        "Cycle p85 is the 85th percentile of days from created to that update, on items already Done. "
+        "The count beside it is how many finished items set that percentile."
+    )
+    claim = html.escape(_flow_claim(rows[0]["weekly"]))
+    head = (
+        '<div class="section-head flow-head"><div><p class="kicker">Flow</p>'
+        f"<h2>{claim}</h2></div><details class=\"info\">"
+        f'<summary aria-label="About Flow">i</summary><p>{html.escape(note)}</p></details></div>'
     )
     return (
-        _section("Flow", note)
+        head
+        + _flow_cast(rows[0])
         + '<div class="flow-wrap"><table class="flow"><thead><tr>'
         + '<th>Project</th><th class="num">Closed</th><th class="num">WIP</th>'
-        + '<th class="num">Cycle p85</th><th class="num">Per week</th>'
+        + f'<th class="num">Cycle p85</th><th class="num">Per week{axis}</th>'
         + "</tr></thead><tbody>"
         + "".join(body)
         + "</tbody></table></div>"
@@ -2501,16 +2588,22 @@ def render_html(brief: dict) -> str:
     .reading dd {{ margin: 0; }}
     .reading details {{ margin: 0.1rem 0 0; }}
     .reading summary {{ font-size: 0.75rem; color: #9aa0b0; }}
+    .flow-head h2 {{ font-size: 1.28rem; line-height: 1.25; font-weight: 650; max-width: 38rem; }}
+    .cast {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; margin: 0.15rem 0 0.85rem; padding: 0.65rem 0; border-top: 1px solid rgba(255,255,255,0.12); border-bottom: 1px solid rgba(255,255,255,0.12); }}
+    .cast .figure {{ margin: 0.12rem 0 0; font-size: 1.85rem; line-height: 1; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }}
+    .cast .unit {{ font-size: 0.95rem; font-weight: 500; color: #9aa0b0; }}
+    .cast .quiet {{ margin: 0.2rem 0 0; }}
     .flow-wrap {{ overflow-x: auto; }}
     table.flow {{ width: 100%; border-collapse: collapse; }}
     table.flow th {{ text-align: left; color: #9aa0b0; font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; padding: 0.35rem 0.45rem; border-bottom: 1px solid rgba(255,255,255,0.12); }}
     table.flow td {{ padding: 0.4rem 0.45rem; border-bottom: 1px solid rgba(255,255,255,0.06); vertical-align: middle; }}
     table.flow .num {{ text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }}
-    table.flow .trend {{ width: 6.2rem; }}
+    table.flow .trend {{ width: 7.2rem; }}
+    table.flow .axis {{ display: block; margin-top: 0.15rem; font-weight: 500; letter-spacing: 0; text-transform: none; }}
     table.flow tr.all td {{ font-weight: 650; }}
     table.weeks td, table.weeks th {{ text-align: right; }}
     table.weeks td:first-child, table.weeks th:first-child {{ text-align: left; }}
-    .spark {{ width: 5.6rem; height: 1.35rem; display: block; margin-left: auto; }}
+    .spark {{ width: 6.6rem; height: 2rem; display: block; margin-left: auto; }}
     .spark rect {{ fill: #22d3ee; }}
     .quiet {{ color: #9aa0b0; font-weight: 400; }}
     .sheet {{ margin: 0.35rem 0 0.6rem; }}
@@ -2534,6 +2627,8 @@ def render_html(brief: dict) -> str:
       h1 {{ font-size: 1.45rem; }}
       .pulse {{ grid-template-columns: 1fr; }}
       .reading div {{ grid-template-columns: 1fr; gap: 0.05rem; }}
+      .flow-head h2 {{ font-size: 1.12rem; }}
+      .cast .figure {{ font-size: 1.45rem; }}
     }}
   </style>
 </head>
