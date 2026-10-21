@@ -207,28 +207,44 @@ export function SheetGate({ term, detail, warm }: { term: string; detail: string
   );
 }
 
+const sheetLabelClass = (warm: boolean) =>
+  `w-[6.75rem] py-1 pr-3 align-baseline text-left font-mono text-[0.65rem] uppercase tracking-[0.12em] sm:w-40 sm:py-1.5 ${toneOf(warm)}`;
+
+const sheetDetailClass = "py-1 align-baseline leading-snug text-slate-200 sm:py-1.5";
+
+export function SheetRow({
+  term,
+  detail,
+  warm,
+  first = false,
+}: {
+  term: string;
+  detail: string;
+  warm: boolean;
+  first?: boolean;
+}) {
+  return (
+    <table className="m-0 w-full border-collapse text-sm">
+      <tbody>
+        <tr className={`border-b ${ruleOf(warm)} ${first ? "border-t" : ""}`}>
+          <th scope="row" className={sheetLabelClass(warm)}>
+            {term}
+          </th>
+          <td className={sheetDetailClass}>{detail}</td>
+        </tr>
+      </tbody>
+    </table>
+  );
+}
+
 function SheetFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
-  const rule = ruleOf(warm);
-  const tone = toneOf(warm);
   const fields = figure.steps.filter((step) => !step.gate);
   const gate = figure.steps.find((step) => step.gate);
   return (
     <figure>
-      <table className="w-full border-collapse text-sm">
-        <tbody>
-          {fields.map((step, index) => (
-            <tr key={step.term} className={`border-b ${rule} ${index === 0 ? "border-t" : ""}`}>
-              <th
-                scope="row"
-                className={`w-[6.75rem] py-1 pr-3 align-baseline text-left font-mono text-[0.65rem] uppercase tracking-[0.12em] sm:w-40 sm:py-1.5 ${tone}`}
-              >
-                {step.term}
-              </th>
-              <td className="py-1 align-baseline leading-snug text-slate-200 sm:py-1.5">{step.detail}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {fields.map((step, index) => (
+        <SheetRow key={step.term} term={step.term} detail={step.detail} warm={warm} first={index === 0} />
+      ))}
       {gate ? <SheetGate term={gate.term} detail={gate.detail} warm={warm} /> : null}
       {figure.caption ? <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption> : null}
     </figure>
