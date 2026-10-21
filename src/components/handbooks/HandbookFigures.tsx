@@ -206,21 +206,34 @@ function SheetFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }
   const tone = toneOf(warm);
   const fields = figure.steps.filter((step) => !step.gate);
   const gate = figure.steps.find((step) => step.gate);
+  const label = `w-[6.75rem] py-1 pr-3 align-baseline text-left font-mono text-[0.65rem] uppercase tracking-[0.12em] sm:w-40 sm:py-1.5 ${tone}`;
   return (
     <figure>
       <table className="w-full border-collapse text-sm">
         <tbody>
-          {fields.map((step, index) => (
-            <tr key={step.term} className={`border-b ${rule} ${index === 0 ? "border-t" : ""}`}>
-              <th
-                scope="row"
-                className={`w-[6.75rem] py-1 pr-3 align-baseline text-left font-mono text-[0.65rem] uppercase tracking-[0.12em] sm:w-40 sm:py-1.5 ${tone}`}
-              >
-                {step.term}
-              </th>
-              <td className="py-1 align-baseline leading-snug text-slate-200 sm:py-1.5">{step.detail}</td>
-            </tr>
-          ))}
+          {fields.map((step, index) => {
+            const next = fields[index + 1];
+            const previous = fields[index - 1];
+            const pairStart = Boolean(step.pair && next?.pair);
+            const pairEnd = Boolean(step.pair && previous?.pair);
+            const edge = step.emphasis
+              ? `border-y-2 ${warm ? "border-amber-200/55" : "border-white/30"}`
+              : pairStart
+                ? `border-t-2 border-b ${warm ? "border-t-amber-200/45 border-b-white/10" : "border-t-white/30 border-b-white/10"}`
+                : pairEnd
+                  ? `border-b-2 ${warm ? "border-amber-200/45" : "border-white/30"}`
+                  : `border-b ${rule} ${index === 0 ? "border-t" : ""}`;
+            return (
+              <tr key={step.term} className={edge}>
+                <th scope="row" className={label}>
+                  {step.term}
+                </th>
+                <td className={`py-1 align-baseline leading-snug sm:py-1.5 ${step.emphasis ? "text-white" : "text-slate-200"}`}>
+                  {step.detail}
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
       {gate ? <SheetGate term={gate.term} detail={gate.detail} warm={warm} /> : null}
@@ -231,27 +244,29 @@ function SheetFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }
 
 function PathFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
   const tone = toneOf(warm);
-  const edge = warm ? "border-amber-200/40" : "border-white/20";
+  const line = warm ? "bg-amber-200/50" : "bg-white/30";
+  const node = warm ? "border-amber-200 bg-amber-200" : "border-white/70 bg-white/70";
   return (
     <figure>
-      <ol className="flex list-none flex-col sm:flex-row sm:items-stretch">
+      <ol className="m-0 list-none lg:grid lg:grid-cols-5">
         {figure.steps.map((step, index) => {
           const last = index === figure.steps.length - 1;
           return (
-            <li key={step.term} className="flex min-w-0 flex-1 flex-col sm:flex-row sm:items-stretch">
-              <div className={`flex min-w-0 flex-1 flex-col justify-center border px-2 py-1.5 ${edge}`}>
-                <p className={`font-mono text-[0.62rem] uppercase leading-snug tracking-[0.06em] ${tone}`}>
-                  <span className="mr-1.5 tabular-nums">{index + 1}</span>
+            <li key={step.term} className="relative flex gap-3 pb-3 last:pb-0 lg:block lg:pr-3 lg:pb-0 lg:last:pr-0">
+              <span className="flex w-3 shrink-0 flex-col items-center lg:hidden" aria-hidden="true">
+                <span className={`mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full ${node}`} />
+                {last ? null : <span className={`mt-1 w-px flex-1 ${line}`} />}
+              </span>
+              <span className="relative mb-2 hidden h-2 w-full items-center lg:flex" aria-hidden="true">
+                <span className={`relative z-10 h-1.5 w-1.5 shrink-0 rounded-full ${node}`} />
+                {last ? null : <span className={`absolute top-1 left-1.5 -right-3 h-px ${line}`} />}
+              </span>
+              <div className="min-w-0 lg:pr-2">
+                <p className={`font-mono text-[0.65rem] uppercase leading-snug tracking-[0.08em] lg:text-[0.6rem] lg:tracking-[0.05em] ${tone}`}>
                   {step.term}
                 </p>
                 {step.detail ? <p className="mt-1 text-sm leading-snug text-slate-200">{step.detail}</p> : null}
               </div>
-              {last ? null : (
-                <span className={`grid place-items-center py-0.5 font-mono text-sm sm:px-1 sm:py-0 ${tone}`} aria-hidden="true">
-                  <span className="sm:hidden">↓</span>
-                  <span className="hidden sm:inline">→</span>
-                </span>
-              )}
             </li>
           );
         })}
