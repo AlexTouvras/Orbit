@@ -34,12 +34,14 @@ function fileFromPath(path: string[] | undefined): string | null {
 }
 
 const CHECKER = path.join(process.cwd(), "src/delivery-signal/pipeline.py");
+const SAMPLE = path.join(process.cwd(), "src/delivery-signal/sample");
 
 /**
  * Live Delivery Signal from the public repo's main branch.
  * A push there shows up here on the next request after the short cache.
  * The checker (`engine/pipeline.py`) is the copy in this repo: it builds the
- * week reading. The page, the sample, and extract.py still come from main.
+ * week reading. Sample files in `src/delivery-signal/sample/` replace the
+ * same names from main. The page and extract.py still come from main.
  */
 async function proxy(request: Request, pathSegments: string[] | undefined) {
   const url = new URL(request.url);
@@ -60,6 +62,23 @@ async function proxy(request: Request, pathSegments: string[] | undefined) {
         "X-Delivery-Signal-Ref": "orbit-checker",
       },
     });
+  }
+
+  if (file.startsWith("sample/")) {
+    const name = file.slice("sample/".length);
+    try {
+      const body = await readFile(path.join(SAMPLE, name));
+      return new NextResponse(body, {
+        status: 200,
+        headers: {
+          "Content-Type": contentType(file),
+          "Cache-Control": "public, max-age=60, s-maxage=60, stale-while-revalidate=300",
+          "X-Delivery-Signal-Ref": "orbit-sample",
+        },
+      });
+    } catch {
+      // The rest of the sample still comes from main.
+    }
   }
 
   let upstream: Response;
