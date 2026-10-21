@@ -23,7 +23,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Which model? | `data/figures/which-model.v1.json` | Monthly OpenRouter catalog pack. Storytelling refreshes and freezes it; `stories:sync` copies `src/components/model-choice`, `src/lib/model-choice`, and the pack. The live route `/portfolio/live/which-model` stays Orbit-owned. Not listed under `/stories`. |
 | Published workshop projects | `data/published-projects.json` (+ `.seed.json`) | `liveUrl` = demo; `caseStudyUrl` = `/writes/...` |
 | Products | `src/content/products.ts` | Public `/products`. A page or command a stranger can open. Not the Studio workshop scan. |
-| Delivery Signal live page | `src/app/delivery-signal/[[...path]]/route.ts` | Proxies `AlexTouvras/delivery-signal` `main` `docs/`. Cache 60s. `engine/pipeline.py` is served from `src/delivery-signal/pipeline.py` so the brief opens with the week as five short lines. |
+| Delivery Signal live page | `src/app/delivery-signal/[[...path]]/route.ts` | Proxies `AlexTouvras/delivery-signal` `main` `docs/`. Cache 60s. `engine/pipeline.py` is served from `src/delivery-signal/pipeline.py` so the brief opens with five short lines, then a flow table. Weekly counts are a second sheet. Cycle p85 describes finished items. |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
 | Studio roadmap | `data/studio-roadmap.json` (+ `.seed.json`) | `focusNow` (public on `/card` only) + private milestones (`planned`/`active`/`evidence`/`proven`). Persist via `persistDataJson` same as profile. Store: `src/lib/studio-roadmap.ts`. |
@@ -118,7 +118,7 @@ data/published-projects.json
 src/content/products.ts                 # /products; not the Studio workshop scan
 src/app/products/page.tsx
 src/app/delivery-signal/[[...path]]/route.ts  # live main/docs proxy, 60s cache; checker is src/delivery-signal/pipeline.py
-src/delivery-signal/pipeline.py              # week reading, five short lines; result id still f1fb4eaa03
+src/delivery-signal/pipeline.py              # five short lines, then flow table; result id still f1fb4eaa03
 src/components/products/ProductList.tsx
 src/content/writes/
 public/field-card/index.html            # Agentic AI Field Card (home AI competency)
@@ -178,6 +178,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-21 | The brief adds a flow table under the week | Closed, WIP, and cycle p85 sit in one table. The sparkline is Done stories, bugs, and tasks in the week of their newest update, eight weeks ending on the report date, one scale. Weekly counts are a second sheet. Cycle p85 is the 85th percentile of days from created to that update on items already Done. It describes finished items. The result id stays `f1fb4eaa03`. |
 | 2026-10-20 | Name the decision uses one brief, one flow, and one uses table | The brief is one table. Status is filled for this decision, and the figures are not evidence to change the offer. The order is one flow: intended use, comparability, interpretation, decision within policy, outcome evaluation. Exploration and monitoring can stop earlier. Four uses are one table. When the table fits a leaf, it stays together. A narrow leaf continues it on the next row, with the column headings repeated, not through a cell. The day-30 comparison stays. Delivery and Bayesian links are off this page. |
 | 2026-10-20 | Name the decision keeps the brief and the sequence as single figures | The seven fields are one table. Status is a gate under it: the brief can be complete without the hypothetical figures being sufficient evidence to change the offer. The sequence is one flow: intended use, definitions and comparability, interpretation, decision within policy, outcome evaluation. Lighter uses can stop earlier. Four uses stay one table. The day-30 comparison, its assumptions, and the next questions stay. |
 | 2026-10-20 | Name the decision teaches from the figures | Seven fields and their example values are one sheet. Status is a gate after them, and a filled brief is not evidence to change the offer. Count, share, and exposure stay one comparison; the caption carries the day-30 assumptions and why the figures do not establish a cause. The sequence is one diagram: intended use, comparability, interpretation, decision, outcome evaluation. The day-30 definition, the snapshot warning, the policy cutoff, Kimball, and the GAO tax-return example stay. |
