@@ -1,110 +1,99 @@
 {
-  "id": "newsletter-2026-W42",
+  "id": "newsletter-2026-W43",
   "status": "sent",
-  "createdAt": "2026-10-13T15:02:58.833Z",
-  "weekOf": "2026-10-12",
-  "subject": "Orbit weekly — week of 2026-10-12",
+  "createdAt": "2026-10-20T12:43:07.588Z",
+  "weekOf": "2026-10-19",
+  "subject": "Orbit weekly — week of 2026-10-19",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
   "writes": [
     {
-      "slug": "when-the-tools-build-the-report-write-the-contract-first",
-      "title": "When the tools build the report, write the contract first",
-      "summary": "I build reports with the Power BI MCP and reporting skills, so an assistant can produce the model and the pages. The contract has to state how the analytics are allowed to behave before that build, because the unit is the report, not one measure.",
-      "date": "2026-10-12",
-      "href": "https://alextouvras.com/writes/when-the-tools-build-the-report-write-the-contract-first"
+      "slug": "the-agent-can-finish-it-that-is-not-the-decision",
+      "title": "The agent can finish it. That is not the decision.",
+      "summary": "Agentic coding removed the cost that used to kill a weak idea before anyone built it. I keep a refusal that can win, and an assistant does not move a finished draft onto the list of things I will stand behind.",
+      "date": "2026-10-19",
+      "href": "https://alextouvras.com/writes/the-agent-can-finish-it-that-is-not-the-decision"
     }
   ],
   "signals": [
     {
-      "title": "ApproximateDistinctCount In Power BI Is Sometimes Slower Than DistinctCount",
-      "link": "https://blog.crossjoin.co.uk/2026/10/11/approximatedistinctcount-in-power-bi-is-sometimes-slower-than-distinctcount/",
+      "title": "Monitoring The Impact Of Full-Text Indexing On Semantic Model Refresh In Power BI",
+      "link": "https://blog.crossjoin.co.uk/2026/10/18/monitoring-the-impact-of-full-text-indexing-on-semantic-model-refresh-in-power-bi/",
       "source": "Chris Webb's BI Blog",
       "category": "Analytics",
-      "snippet": "As a follow-on from last week’s post about the new ApproximateDistinctCount function in DAX, I want to share something…"
+      "snippet": "The September release of Power BI saw the introduction of a powerful new feature: full text indexing, which makes searc…"
     },
     {
-      "title": "Brickster Voices: Meet Clara Kurian",
-      "link": "https://www.databricks.com/blog/brickster-voices-meet-clara-kurian",
+      "title": "How HP Is Building an AI-Ready CDP with Databricks CustomerLake",
+      "link": "https://www.databricks.com/blog/hp-ai-ready-cdp-databricks-customerlake",
       "source": "Databricks Blog",
       "category": "Data",
-      "snippet": "Brickster Voices is a series that spotlights the people who make our work possible. Through personal career journeys..."
+      "snippet": "At Data + AI Summit 2026, Luis Alonso, Global Head of Data Strategy & Engineering..."
     },
     {
-      "title": "You Need Tighter WIP Limits With AI",
-      "link": "https://www.scrum.org/resources/blog/you-need-tighter-wip-limits-ai",
+      "title": "Your Transformation is Suboptimal Because You keep your Dependencies",
+      "link": "https://www.scrum.org/resources/blog/your-transformation-suboptimal-because-you-keep-your-dependencies",
       "source": "Scrum.org",
       "category": "Delivery",
-      "snippet": "In a recent class, we were discussing how teams are using AI and finishing coding faster but still missing Sprint Goals…"
+      "snippet": "Your Transformation is suboptimal Because You keep your Dependencies You trained the teams. You renamed the roles. AI t…"
     },
     {
-      "title": "Detecting institutional change as it unfolds: Evidence from 120 years of reporting",
-      "link": "https://cepr.org/voxeu/columns/detecting-institutional-change-it-unfolds-evidence-120-years-reporting",
+      "title": "What happens to innovation after Big Tech buys a startup",
+      "link": "https://cepr.org/voxeu/columns/what-happens-innovation-after-big-tech-buys-startup",
       "source": "VoxEU",
       "category": "Economics",
-      "snippet": "Explaining comparative economic development requires identifying the causes of institutional change. This column uses A…"
+      "snippet": "Concerns abound that ‘killer acquisitions’ by tech giants could deter startup entry and stifle innovation. This column…"
     }
   ],
   "ravens": [
     {
       "kind": "inbox",
       "domain": "ai-agents",
-      "title": "Agent Framework Python 1.21.0 isolates tool-agent sessions and buffers Purview on streams",
-      "summary": "microsoft/agent-framework python-1.21.0 (published 8 Oct 2026) adds tool-result standing guidance, exposes rewritten variable-expansion arg…",
-      "href": "https://github.com/microsoft/agent-framework/releases/tag/python-1.21.0",
-      "sourceTitle": "microsoft/agent-framework python-1.21.0",
-      "id": "FIND-20261012-002",
-      "date": "2026-10-08"
+      "title": "Agent Framework Python 1.22.0 writes persisted content that pre-1.22 workers cannot read",
+      "summary": "microsoft/agent-framework python-1.22.0 (published 15 Oct 2026) warns that persisted artifacts containing serialized Content or streamed re…",
+      "href": "https://github.com/microsoft/agent-framework/releases/tag/python-1.22.0",
+      "sourceTitle": "microsoft/agent-framework python-1.22.0",
+      "id": "FIND-20261019-002",
+      "date": "2026-10-15"
     },
     {
-      "kind": "knowledge",
+      "kind": "signal",
       "domain": "data-bi",
-      "title": "Read-only Copilot and Microsoft MCP access to a semantic model is on until a write owner turns it off",
-      "summary": "Users with **write** permission control whether **read-only** users can reach a semantic model through AI. The model setting is: “Allow any…",
-      "href": "https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-semantic-models",
-      "sourceTitle": "Use Copilot with Semantic Models in Power BI — Microsoft Learn",
-      "id": "KNOW-data-bi-copilot-readonly-mcp-default-on",
-      "date": "2026-10-12"
+      "title": "Power BI Gantt visual is in preview — 1,000-row cap; blank End is a milestone",
+      "summary": "Microsoft Learn’s Gantt visual page (ms.date 2026-09-11, `updated_at` 2026-10-16) says the Gantt visual is in preview and shows task durati…",
+      "id": "SIG-20261019-002",
+      "date": "2026-10-19",
+      "priority": "p2"
     },
     {
       "kind": "signal",
       "domain": "career",
-      "title": "UPM Senior Specialist, Global Portfolio, Helsinki — apply by 20 Oct",
-      "summary": "UPM’s own Workday posting **Senior Specialist, Global Portfolio** (requisition **NB6026861**, posted 2026-09-29, Helsinki, full time) asks…",
-      "id": "SIG-20261012-002",
-      "date": "2026-10-12",
+      "title": "DigiHelsinki Senior Data and Reporting Specialist, Helsinki — apply by 1 Nov",
+      "summary": "MPS Consulting’s posting for DigiHelsinki Oy, **Senior Data- ja raportointiasiantuntija** (published 19 Oct 2026, Helsinki, permanent, hybr…",
+      "id": "SIG-20261019-003",
+      "date": "2026-10-19",
       "priority": "p1"
     },
     {
       "kind": "signal",
       "domain": "finance",
-      "title": "Sensofusion (SENSO) Main Market trading starts 13 Oct; offer price EUR 16.41",
-      "summary": "Sensofusion’s investor IPO page (result announced 8 Oct 2026) says the company has listed on **Nasdaq Helsinki’s regulated market** and tha…",
-      "id": "SIG-20261012-004",
-      "date": "2026-10-12",
+      "title": "Digitalist cuts 2026 EBITDA guidance — turnover and EBITDA both expected to fall",
+      "summary": "Digitalist Group Plc’s inside-information release of 15 Oct 2026 (GlobeNewswire, source Digitalist Group Oyj, distributed to Nasdaq Helsink…",
+      "id": "SIG-20261019-005",
+      "date": "2026-10-19",
       "priority": "p2"
-    },
-    {
-      "kind": "knowledge",
-      "domain": "parenting",
-      "title": "Finland — five-in-one (DTaP-IPV-Hib) at 3, 5 and 12 months",
-      "summary": "THL recommends the **five-in-one** (diphtheria, tetanus, pertussis, polio, Hib) at **3, 5 and 12 months**. The programme product is **Infan…",
-      "href": "https://thl.fi/ohjeita-ammattilaisille/viitosrokote-eli-dtap-ipv-hib-rokote",
-      "sourceTitle": "Viitosrokote eli DTaP-IPV-Hib-rokote — THL",
-      "id": "KNOW-parenting-fi-infant-dtap-ipv-hib-3-5-12m",
-      "date": "2026-10-12"
     },
     {
       "kind": "signal",
-      "domain": "security",
-      "title": "Cursor remote control of local agents is on by default outside Enterprise",
-      "summary": "Cursor’s changelog **Remote control for local agents** (6 Oct 2026) lets you see and message local agents from the Cursor iOS app. **Remote…",
-      "id": "SIG-20261012-003",
-      "date": "2026-10-12",
+      "domain": "parenting",
+      "title": "LUVN — close contacts of someone especially susceptible to severe influenza book December",
+      "summary": "LUVN’s notice of 12 Oct 2026 says influenza-vaccine deliveries are delayed, so some bookable appointments move later, and that some influen…",
+      "id": "SIG-20261019-004",
+      "date": "2026-10-19",
       "priority": "p2"
     }
   ],
-  "sentAt": "2026-10-13T15:03:01.260Z",
-  "broadcastId": "01a135c9-d0d6-7ebd-aea4-f9e3c3311e89",
+  "sentAt": "2026-10-20T12:43:09.376Z",
+  "broadcastId": "01a15956-4870-75b4-90c9-572ee83e51d8",
   "sendMode": "test",
   "sentTo": "a.touvras@gmail.com"
 }

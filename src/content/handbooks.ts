@@ -16,6 +16,8 @@ export interface HandbookFigureStep {
   detail: string;
   /** Icon in the diagram. The words still name the step. */
   mark?: HandbookMark;
+  /** Drawn apart from the other lines, as the stop. */
+  gate?: boolean;
 }
 
 export type HandbookMark =
@@ -42,13 +44,24 @@ export interface HandbookFigureColumn {
   points: string[];
 }
 
+export interface HandbookFigureRow {
+  label: string;
+  cells: string[];
+}
+
 export interface HandbookFigure {
-  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve";
+  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve" | "sheet" | "reading" | "uses";
   caption: string;
   steps: HandbookFigureStep[];
   columns?: HandbookFigureColumn[];
   /** Axis names for a sketch. The figure states no amount. */
   axes?: { y: string; x: string };
+  /** Worksheet sequence, without the plate. */
+  plain?: boolean;
+  /** Assumptions that stay on the figure. */
+  note?: string;
+  head?: string[];
+  rows?: HandbookFigureRow[];
 }
 
 /** A photograph that follows a section, or opens the page. It states no amount the prose does not. */
@@ -65,6 +78,8 @@ export interface HandbookSection {
   /** A meeting worksheet. Each line is one field. A blank field is the check. */
   lines?: { term: string; detail: string }[];
   figure?: HandbookFigure;
+  /** Prose that follows the figure. The paragraphs above it stay first. */
+  closing?: string[];
   /** This book's picture of the section. It is its own leaf after the words. */
   picture?: HandbookPicture;
   sources?: HandbookLink[];
@@ -1431,136 +1446,146 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 2,
       topic: "Make the number fit",
       title: "Name the decision",
-      lede: "Choose the work has already taken the list. This page writes the brief for a number that will be offered as the answer. A chart used to look can go out before the brief is filled. The answer cannot. A report title is not the decision.",
-      rule: "My operating rule: when a number is offered as the answer, I name the decision, the outcome, the person who will act, the constraint, and the one activity. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. I do not present the number as that answer until those are named.",
-      illustration: "The two chairs are an illustration, not a record.",
-      reviewed: "19 Oct 2026",
+      lede: "The previous chapter established which problem is worth solving. This chapter explains what a metric must establish before it can support a decision. A chart you are still exploring can go out before the brief is filled. A number offered as the answer cannot. A report title is not the decision.",
+      rule: "My operating rule: when a number is offered as the answer, I name the decision, the outcome, the person the number is for, the constraint, and the one activity. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. I do not present the number as that answer until those are named.",
+      illustration: "The invoice case is an illustration, not a record.",
+      reviewed: "20 Oct 2026",
       sections: [
         {
           id: "brief",
           title: "The brief",
           paragraphs: [
-            "The case is already taken. This sheet is not the decision to build. It is the brief for a number offered as the answer. Looking at a chart is not that offer.",
-            "The Activity line is Kimball's business process. The Outcome line is the goal the measure has to represent. I take that link from the GAO guide, April 1998. The decision, the person, the constraint, the two hypotheses, and the stop are my rule.",
-            "The row, a disagreement between two reports, and the owner are the next leaves of this chapter.",
+            "The previous chapter chose the list. This sheet is filled for the controller's offer of more time. A call list would be a second brief. The figures are an illustration, not a measured result.",
           ],
-          lines: [
-            {
-              term: "Decision",
-              detail:
-                "The decision, in the words of the person who will act. A report title does not finish the line. It is filled when someone who missed the meeting can say what is being decided.",
-            },
-            {
-              term: "Outcome",
-              detail:
-                "What should be true if the decision works. Here, the controller can make the offer under the agreed policy before write-off, and we can later see whether the account became current or the invoice was written off. If the only aim is to see the number, this is not an answer yet.",
-            },
-            {
-              term: "Actor",
-              detail: "Who will act. One person, or one role. A mailing list is not the actor.",
-            },
-            {
-              term: "Constraint",
-              detail:
-                "The limit the decision has to respect. The list supports an agreed credit policy. It does not replace the policy or the controller. If there is no limit, write that. A blank line is not the same as no limit.",
-            },
-            {
-              term: "If it rises",
-              detail:
-                "A hypothesis to check. A higher count can be more invoices issued, slower payment, or a change in what is counted. If a higher count would not change what they do, this number is not the answer.",
-            },
-            {
-              term: "If it falls",
-              detail:
-                "A hypothesis to check. A lower count can be fewer invoices issued, faster payment, or a change in the count. Neither line fires by itself.",
-            },
-            {
-              term: "Activity",
-              detail:
-                "The one activity that produces the number. If the decision needs two activities, they are two numbers.",
-            },
-            {
-              term: "Send it",
-              detail:
-                "Filled when the number is offered as the answer and the lines above are filled. A blank line means people can still look, and the number is not that answer. Sending it does not make a hypothesis true.",
-            },
-          ],
-          sources: [KIMBALL_PROCESS, KIMBALL_STEPS, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
+          figure: {
+            kind: "sheet",
+            caption: "",
+            steps: [
+              {
+                term: "Decision",
+                detail: "Whether this credit controller offers more time before write-off.",
+              },
+              {
+                term: "Outcome",
+                detail: "The offer is made in time. Later: current, or written off.",
+              },
+              {
+                term: "Owner",
+                detail: "The credit controller who uses the number. Not a mailing list, and not the definition owner.",
+              },
+              {
+                term: "Constraint",
+                detail: "The agreed policy sets the cutoff. If there is no limit, write that. A blank line is not the same as no limit. The list does not replace the controller.",
+              },
+              {
+                term: "If it rises",
+                detail: "More issues that month, slower payment within 30 days, or a changed count.",
+              },
+              {
+                term: "If it falls",
+                detail: "Fewer issues that month, faster payment within 30 days, or a changed count.",
+              },
+              {
+                term: "Activity",
+                detail: "Invoices issued, counted 30 days after issue.",
+              },
+              {
+                term: "Status",
+                detail: "Filled for this decision. These figures are not evidence to change the offer.",
+                gate: true,
+              },
+            ],
+          },
         },
         {
           id: "why-lines",
           title: "Why the lines are separate",
           paragraphs: [
-            "Kimball's four-step design puts the business first. Before the model is drawn, the team sits with the people who use the numbers. They learn the goals, the problems, how decisions get made, the analysis those people need, and what the source data can support. The design then starts by choosing the business process. That process is a real activity, such as taking an order, handling a claim, or recording every account at month-end. Most fact tables cover one activity. Choosing it is what lets you say what one row means. People from the business take part so the names and the rules are agreed. That meeting learns how decisions get made. It does not fill this brief. A report title is not the activity.",
-            "The GAO guide is about a plan, not a dashboard. A measure has to represent the performance it is supposed to assess, or be clearly related to it. The guide's own example is the average time to process a tax return, set against a goal of more accurate processing. The time can be collected carefully and still be the wrong number. It can be a trustworthy measure of speed, and unfit as the answer to a question about accuracy. I write the goal on the Outcome line. I am not running the rest of the guide. It does not give the constraint, and it does not turn a response into an order.",
-            "The field card names the same failure: the wrong question, the wrong audience, or an unclear decision. I read the question as the Decision line, the audience as the Actor, and an unclear decision as a hypothesis that has not been written.",
+            "Kimball's four-step design puts the business first. Before the model is drawn, the team sits with the people who use the numbers and learns their goals, the problems, how decisions get made, the analysis they need, and what the source data can support. The design starts on the business process: a real activity, such as taking an order, handling a claim, or recording every account at month-end. Most fact tables cover one activity. Choosing it is what lets you say what one row means. The people from the business agree the names and the rules. The brief is the sheet for that metric. A report title is not the activity. My rule: if the use needs two processes, they are two numbers.",
+            "The GAO guide is about a plan, not a dashboard. A measure has to represent the performance it is supposed to assess, or be clearly related to it. The guide's own example is the average time to process a tax return, set against a goal of more accurate processing. The time can be collected carefully and still be the wrong number. It can be a trustworthy measure of speed, and unfit as the answer to a question about accuracy. Use that link for the outcome. The guide does not set the credit-policy limit, and it does not turn a rise into an order.",
+            "The usual failure is the wrong question, the wrong person, or a decision nobody can repeat. If you cannot say what a move in the number would mean for the use you named, the hypothesis is still blank.",
           ],
           sources: [KIMBALL_STEPS, KIMBALL_PROCESS, KIMBALL_PDF, GAO_RESULTS, { href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
-          id: "question-scene",
-          title: "An example",
+          id: "question-figures",
+          title: "Count, share, and exposure",
           paragraphs: [
-            "This is an illustration. I have not measured it. The two percentages below are hypothetical, so the reasoning can be walked.",
-            "The list is titled overdue balance. The same invoices could feed two decisions. The controller will decide whether to offer an open invoice more time before write-off. Someone else will choose which customers to call. The controller needs the invoice, what is still unpaid, an open dispute, and the policy. A call is about the customer. Until the brief names the controller's decision, the list stays dark.",
-            "Before a rise is read as a problem, the comparison has to be fair.",
-            "Overdue means the same thing.",
-            "The same invoices are included. Recent payments are in.",
-            "Suppose the overdue count is 12 percent higher, and the count of invoices issued is 20 percent higher.",
-            "If both are counts of invoices, the overdue share did not rise. More invoices were issued.",
-            "What is still unpaid, in money, has not been read. Neither has whether older invoices, or open disputes, are piling up.",
-            "Under the existing policy, the question is whether this change would change the offer. The cutoff stays the policy's.",
-            "The count alone does not show that collections got worse. Look further before recommending a response.",
-            "The chair in the light is the controller. The dark chair is the call list. Once the brief is filled, the invoice list can go out as that answer. This illustration stops at the proposal.",
+            "These figures are hypothetical. I have not measured them, and they do not establish what happened to any account. The eligible population is the invoices issued in one calendar month. March is one population. April is the next. Each invoice is counted 30 days after its issue date. Overdue means still open and past due on that day, under the agreed policy. The share is that overdue count divided by the invoices issued in that same month. An invoice issued in an earlier month is not in the count. Exposure is the amount still unpaid on those same overdue invoices, on that same day. The rise line on the brief is this comparison. If overdue meant something different in the two months, that question belongs with row-level meaning.",
           ],
-          picture: {
-            src: `${DATA_ART}/decision.jpg`,
-            alt: "An illustration. One sheet of light, one chair in that light, and one chair left dark. No amount.",
+          figure: {
+            kind: "reading",
+            caption:
+              "Day 30, that month's issues only: 100 of 500, then 112 of 600. Issues rose 20 percent, so the share fell from 20 percent to 18.7 percent while the count rose 12 percent and exposure rose 40 percent. Hypothetical. The figures do not establish a cause, and the lower share does not show that collections improved.",
+            steps: [],
+            head: ["Comparison", "March", "April", "Change"],
+            rows: [
+              { label: "Overdue count", cells: ["100", "112", "+12%"] },
+              { label: "Overdue share", cells: ["20%", "18.7%", "fell"] },
+              { label: "Unpaid exposure", cells: ["€1.0m", "€1.4m", "+40%"] },
+            ],
+          },
+          closing: [
+            "A snapshot of every invoice overdue on one date, divided by that month's issues, is not this share. It includes invoices issued in earlier months.",
+            "Next I would ask whether a few invoices account for most of the extra €0.4 million, whether they were past due earlier in the 30 days than the March group, and whether disputed amounts are a larger part of the €1.4 million. The policy cutoff stays where it is. The higher exposure fits a few larger balances, or balances that stayed open longer within the 30 days. I cannot yet conclude slower payment, better or worse collections, or that more time should be refused. The figures do not say which, and they do not say why any one invoice is unpaid.",
+          ],
+        },
+        {
+          id: "question-order",
+          title: "The order",
+          figure: {
+            kind: "flow",
+            plain: true,
+            caption:
+              "Exploration and monitoring can stop earlier. A consequential decision needs more evidence.",
+            steps: [
+              { term: "Intended use", detail: "The use the number is for." },
+              { term: "Comparability", detail: "One population, one window." },
+              { term: "Interpretation", detail: "What the figures leave open." },
+              { term: "Decision within policy", detail: "Inside the constraint." },
+              { term: "Outcome evaluation", detail: "What happened afterward." },
+            ],
           },
         },
         {
-          id: "question-know",
-          title: "How I would know",
+          id: "question-uses",
+          title: "Four uses",
           paragraphs: [
-            "I would look at four things. I have not collected them, and I set no target.",
-            "Did the decision improve the outcome that mattered, compared with what would otherwise have happened?",
-            "Answering that needs a baseline, a period to watch, and room for other explanations. An improvement afterward is not proof the list caused it.",
+            "The checks are questions. I have not collected them, and the hypothetical figures are not these results.",
           ],
-          lines: [
-            {
-              term: "Said back",
-              detail:
-                "Can a person who missed the meeting say the decision, the limit, and who will act? If they cannot, the brief is not in use.",
-            },
-            {
-              term: "Used",
-              detail: "Did the list change which invoices they reviewed under the policy?",
-            },
-            {
-              term: "Later",
-              detail: "After they acted, what happened to the account? A miss is the note the next brief starts from.",
-            },
-            {
-              term: "Parked",
-              detail:
-                "Did a blank line keep the number from being offered as the answer? Looking could continue. The answer did not go out.",
-            },
-          ],
-        },
-        {
-          id: "question-limits",
-          title: "Where I do not use it",
-          paragraphs: [
-            "The brief is a tool for a number offered as an answer. Good analytics is the evidence and the limit, fitted to the use.",
-            "A chart used to look can go out before the sheet is filled. A monthly count that is only watched, a forecast, and a number used in a regulated decision do not all need this same brief.",
-            "Each still needs evidence, and a limit the reader can say. How far the brief goes follows the cost of being wrong.",
-            "This page stops a number offered as the answer while a line is still blank.",
-            "The row, the comparison, and the owner are the next leaves. Continue, change, or stop stays on Run the product and judge the value. This page does not score a return.",
-            "Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
-          ],
-          sources: [
-            { href: DELIVERY_CARD, label: "Technology delivery field card" },
-            { href: BAYES_CARD, label: "Bayesian optimisation field card" },
+          figure: {
+            kind: "uses",
+            caption: "Fit the brief to the use. Relevance to that use matters more than an action taken today.",
+            steps: [],
+            head: ["Use", "When it can go out", "What I would check"],
+            rows: [
+              {
+                label: "Exploration",
+                cells: ["Before the brief is filled. The work is still looking.", "No action to score."],
+              },
+              {
+                label: "Monitoring",
+                cells: [
+                  "With a lighter brief. The figure is watched over time.",
+                  "It stayed comparable, and someone looked when it moved.",
+                ],
+              },
+              {
+                label: "Forecasting",
+                cells: ["With a lighter brief. It says what might happen next.", "It stayed tied to that use. No action to score."],
+              },
+              {
+                label: "Consequential decision",
+                cells: [
+                  "Only when the brief is filled, including a regulated decision. It is offered as the answer.",
+                  "Someone who missed the meeting can say the decision, the limit, and the owner. The controller used it under the policy. A blank line keeps the number back.",
+                ],
+              },
+            ],
+          },
+          closing: [
+            "For a consequential decision I would also ask whether the outcome improved compared with what would otherwise have happened. That needs a baseline, a period to watch, and room for other explanations. An improvement afterward does not, by itself, show that the list caused it. I have not collected that comparison.",
+            "Row-level meaning, comparisons between reports, and ownership follow. Whether to continue, change, or stop is a later review.",
           ],
         },
       ],
@@ -1582,8 +1607,6 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           "GAO, An Evaluator's Guide to Assessing Agency Annual Performance Plans, GAO/GGD-10.1.20 (April 1998)",
         ),
         { href: DATA_CARD, label: "Data analytics field card" },
-        { href: DELIVERY_CARD, label: "Technology delivery field card" },
-        { href: BAYES_CARD, label: "Bayesian optimisation field card" },
       ],
     },
     {

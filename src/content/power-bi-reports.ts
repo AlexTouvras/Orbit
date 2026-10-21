@@ -172,31 +172,31 @@ export const powerBiReports: PowerBiReport[] = [
   {
     id: "bank",
     title: "Bank Value & Engagement",
-    summary: "Nordic Boardroom retail-bank report: dual-flow KPIs, RFM/k-means segments, geocoded city footprint, and a dormancy / cross-sell relationship book with drillthrough.",
+    summary: "Nordic Boardroom retail-bank report: the active book spends down, balances are spread evenly, and the cross-sell queue holds more money than dormancy.",
     repoUrl: "https://github.com/AlexTouvras/powerbi-portfolio",
     pages: [
       {
         id: "landing",
         label: "Landing",
-        caption: "Artistic cover · thesis · audience · page map (opens first)",
+        caption: "Cover · live net-flow thesis · page map (opens first)",
         src: "/portfolio/power-bi/bank/landing.png",
       },
       {
         id: "franchise-pulse",
         label: "Franchise Pulse",
-        caption: "Credit / debit / net flow · waterfall bridge · monthly volume",
+        caption: "Segment net-flow waterfall · monthly net flow · Champions + Loyal",
         src: "/portfolio/power-bi/bank/franchise-pulse.png",
       },
       {
         id: "segments-markets",
         label: "Segments & Markets",
-        caption: "Value segment mix · F×M scatter · Icon Map (OpenTopoMap)",
+        caption: "Headcount share vs balance share · frequency scatter · Icon Map",
         src: "/portfolio/power-bi/bank/segments-markets.png",
       },
       {
         id: "relationship-book",
         label: "Relationship Book",
-        caption: "Dormant + single-product queue · engagement funnel · drillthrough",
+        caption: "Single-product balances vs dormant balances · queue by balance",
         src: "/portfolio/power-bi/bank/relationship-book.png",
       },
     ],

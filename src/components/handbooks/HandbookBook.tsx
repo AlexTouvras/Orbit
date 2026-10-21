@@ -7,7 +7,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode }
 import type { Handbook, HandbookPage, HandbookPicture, HandbookSection } from "@/content/handbooks";
 import { HandbookSpread, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
 import { ChapterRail } from "@/components/handbooks/ChapterRail";
-import { HandbookFigureView } from "@/components/handbooks/HandbookFigures";
+import { HandbookFigureView, UsesHead, UsesRow } from "@/components/handbooks/HandbookFigures";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
@@ -28,8 +28,12 @@ type Block = {
   key: string;
   sectionId?: string;
   sectionTitle?: string;
+  /** Blocks that stay one figure when the group fits a leaf, and otherwise break between blocks. */
+  group?: string;
   platesAfter?: SpreadPanel[];
   picturesAfter?: HandbookPicture[];
+  /** Shown only when this block opens a leaf. */
+  lead?: ReactNode;
   node: ReactNode;
 };
 
@@ -291,6 +295,7 @@ export function HandbookBook({
                       aria-hidden={inLeaf ? undefined : true}
                       style={inLeaf ? undefined : { visibility: "hidden" }}
                     >
+                      {proseLeaf && blockIndex === proseLeaf.start ? block.lead : null}
                       {block.node}
                     </div>
                   );
@@ -364,6 +369,30 @@ function blockFitsHere(pieces: Piece[], start: number, offset: number, budget: n
   return blockEnd(pieces, start).bottom - offset <= budget;
 }
 
+function groupBounds(pieces: Piece[], blocks: Block[], blockIndex: number): { top: number; bottom: number } | null {
+  const group = blocks[blockIndex]?.group;
+  if (!group || (blockIndex > 0 && blocks[blockIndex - 1]?.group === group)) return null;
+  let last = blockIndex;
+  while (last + 1 < blocks.length && blocks[last + 1]?.group === group) last += 1;
+  const first = pieces.find((piece) => piece.index === blockIndex);
+  let end = first;
+  for (const piece of pieces) {
+    if (piece.index === last) end = piece;
+  }
+  if (!first || !end) return null;
+  return { top: first.top, bottom: end.bottom };
+}
+
+function groupFitsFresh(pieces: Piece[], blocks: Block[], blockIndex: number, budget: number): boolean {
+  const bounds = groupBounds(pieces, blocks, blockIndex);
+  return Boolean(bounds && bounds.bottom - bounds.top <= budget);
+}
+
+function groupFitsHere(pieces: Piece[], blocks: Block[], blockIndex: number, offset: number, budget: number): boolean {
+  const bounds = groupBounds(pieces, blocks, blockIndex);
+  return Boolean(bounds && bounds.bottom - offset <= budget);
+}
+
 function packBlocks(slot: HTMLElement, blocks: Block[]): PackedLeaf[] {
   const available = slot.clientHeight;
   const budget = available > 48 ? available - 16 : available;
@@ -393,6 +422,10 @@ function packBlocks(slot: HTMLElement, blocks: Block[]): PackedLeaf[] {
       while (end < pieces.length) {
         const candidate = pieces[end];
         const started = end > cursor && pieces[end - 1].index === candidate.index;
+        // Keep a figure together when it fits a fresh leaf. A figure taller than the leaf breaks between its blocks.
+        if (!started && groupFitsFresh(pieces, blocks, candidate.index, budget) && !groupFitsHere(pieces, blocks, candidate.index, offset, budget)) {
+          break;
+        }
         // Keep a paragraph that fits on a fresh leaf in one piece, so a leaf does not open mid-sentence.
         if (!started && blockFitsFresh(pieces, end, budget) && !blockFitsHere(pieces, end, offset, budget)) break;
         if (candidate.bottom - offset > budget) break;
@@ -679,7 +712,37 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
     });
   });
   if (section.figure && !(hideBoardFigure && BOARD_FIGURES.has(section.figure.kind))) {
-    if (narrow && section.figure.kind === "flow") {
+    if (section.figure.kind === "uses") {
+      const figure = section.figure;
+      const rows = figure.rows ?? [];
+      const group = `${section.id}-uses`;
+      blocks.push({
+        key: `${section.id}-uses-title`,
+        sectionId: section.id,
+        sectionTitle: section.title,
+        group,
+        node: <UsesHead figure={figure} warm={warm} />,
+      });
+      rows.forEach((row, index) => {
+        blocks.push({
+          key: `${section.id}-line-${index}`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          group,
+          lead: <UsesHead figure={figure} warm={warm} />,
+          node: <UsesRow row={row} warm={warm} />,
+        });
+      });
+      if (figure.caption) {
+        blocks.push({
+          key: `${section.id}-line-${rows.length}`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          group,
+          node: <p className="mt-2 pb-4 text-sm leading-relaxed text-slate-400">{figure.caption}</p>,
+        });
+      }
+    } else if (narrow && section.figure.kind === "flow" && !section.figure.plain) {
       section.figure.steps.forEach((step, index) => {
         blocks.push({
           key: `${section.id}-flow-${index}`,
@@ -713,7 +776,7 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
         sectionTitle: section.title,
         node: (
           <div className="pb-4">
-            <HandbookFigureView figure={section.figure} />
+            <HandbookFigureView figure={section.figure} warm={warm} />
           </div>
         ),
       });
@@ -730,6 +793,14 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
           <span>{step}</span>
         </div>
       ),
+    });
+  });
+  section.closing?.forEach((paragraph, index) => {
+    blocks.push({
+      key: `${section.id}-close-${index}`,
+      sectionId: section.id,
+      sectionTitle: section.title,
+      node: <p className="pb-4 text-base leading-relaxed text-slate-300">{paragraph}</p>,
     });
   });
   if (section.sources?.length) {

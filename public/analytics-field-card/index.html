@@ -336,6 +336,18 @@
       font-size: 0.62rem;
       letter-spacing: 0.04em;
     }
+    .worked {
+      margin-top: 0.85rem;
+      display: grid;
+      grid-template-columns: minmax(240px, 1.15fr) minmax(240px, 0.85fr);
+      gap: 1rem 1.4rem;
+      align-items: start;
+    }
+    .worked .note { margin: 0; max-width: none; }
+    .brief { margin: 0; display: grid; gap: 0.4rem; }
+    .brief div { display: grid; grid-template-columns: 5.6rem 1fr; gap: 0.4rem; align-items: baseline; }
+    .brief dt { margin: 0; color: var(--cyan); font-family: var(--mono); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+    .brief dd { margin: 0; color: var(--soft); font-size: 0.78rem; }
     .steps {
       list-style: none;
       margin: 0.4rem 0 0;
@@ -443,7 +455,6 @@
     .ladder li:nth-child(4) b { color: #b7f7a0; background: rgba(80, 200, 120, 0.12); }
     .ladder strong { display: block; font-size: 0.88rem; }
     .kill { margin: 0.8rem 0 0; color: var(--soft); max-width: 78ch; }
-    .kill a, .fail a, .aside a { color: inherit; text-decoration: underline; text-underline-offset: 0.16em; }
     .pointer { margin: 0.7rem 0 0; color: var(--soft); font-size: 0.9rem; }
     .pointer a { color: var(--cyan); }
 
@@ -462,8 +473,8 @@
     .changed b { color: var(--muted); font-size: 0.66rem; margin-right: 0.35rem; }
 
     @media (max-width: 980px) {
-      .hero, .split, .trust, .case, .quad, .stack, .steps, .gate { grid-template-columns: 1fr 1fr; }
-      .trust, .case, .quad { grid-template-columns: 1fr; }
+      .hero, .split, .trust, .case, .quad, .stack, .steps, .gate, .worked { grid-template-columns: 1fr 1fr; }
+      .trust, .case, .quad, .worked { grid-template-columns: 1fr; }
       .gate { grid-template-columns: 1fr 1fr; }
       .flow { display: none; }
       .checks, .result { grid-column: 1 / -1; }
@@ -535,8 +546,8 @@
       .hero { min-height: 0; display: block; }
       .hero-photo { position: relative; height: 42mm; width: 46%; float: right; object-fit: cover; object-position: right center; }
       .hero::after { display: none; }
-      h1, h2, h3, .lede, .note, .card p, .fail, .aside span, .steps p, .plates span, .tools span, .traps span, .ladder span, .kill, .pointer, .changed, .credit, .prompt { color: #243140; }
-      .eyebrow, .kicker, .idx, .verbs, .chips, .fail b, .pill, .aside b, .tools a, .pointer a, .credit a, .kill a, .fail a, .aside a { color: #1a4158; }
+      h1, h2, h3, .lede, .note, .card p, .fail, .aside span, .steps p, .plates span, .tools span, .traps span, .ladder span, .kill, .pointer, .changed, .credit, .prompt, .brief dd { color: #243140; }
+      .eyebrow, .kicker, .idx, .verbs, .chips, .fail b, .pill, .aside b, .tools a, .pointer a, .credit a, .brief dt { color: #1a4158; }
       .card, .panel, .report, .checks, .result, .prompt, .pill { background: #fff; border-color: #c5d0dc; box-shadow: none; color: #18212b; }
       .report strong, .result strong, .published { color: #1a4158; }
       .stage.is-on .card { box-shadow: none; }
@@ -585,6 +596,7 @@
             <h3>The business question</h3>
             <p>What do we need to know?</p>
             <p class="chips">Context · Audience · Outcome</p>
+            <p>A chart you look at, or a count you only watch, can go out first. The answer names the decision.</p>
             <p class="fail"><b>Failure mode</b> <a href="/handbooks/data-that-drives-decisions/2" data-handbook-chapter="decision">Wrong question, wrong audience, or an unclear decision.</a></p>
           </span>
         </button>
@@ -615,7 +627,7 @@
             <h3>Actionable insight</h3>
             <p>Can we explain it and act on it?</p>
             <p class="chips">Visualization · Explainability · Impact</p>
-            <p class="fail"><b>Failure mode</b> Unclear narrative, low trust, or no path to action.</p>
+            <p class="fail"><b>Failure mode</b> Unclear narrative, low trust, or a number that is not relevant to its use.</p>
           </span>
         </button>
       </div>
@@ -668,14 +680,14 @@
         <div>
           <p class="kicker">Real-world example</p>
           <h2>Credit risk analytics</h2>
-          <p class="prompt">Which customer segments are driving the increase in expected credit losses?</p>
-          <p class="tag">Illustrative scenario, not a claim about observed results.</p>
+          <p class="prompt">Whether to offer an open invoice more time before write-off.</p>
+          <p class="tag">Illustrative. These figures are supposed, not measured.</p>
         </div>
         <ol class="steps">
           <li data-stage="ask">
             <span class="orb" aria-hidden="true"><img src="https://alextouvras.github.io/data-analytics-field-card/assets/icon-ask.png" alt="" /></span>
             <h3>01 Ask</h3>
-            <p>Which customer segments are driving the increase in expected credit losses?</p>
+            <p>Whether to offer an open invoice more time before write-off. What one row means comes next.</p>
           </li>
           <li data-stage="grain">
             <span class="orb" aria-hidden="true"><img src="https://alextouvras.github.io/data-analytics-field-card/assets/icon-grain.png" alt="" /></span>
@@ -693,6 +705,16 @@
             <p>Expose the validated segment-level drivers in a scorecard that supports investigation and action.</p>
           </li>
         </ol>
+      </div>
+      <div class="worked">
+        <p class="note">Last month, 100 of 500 issued invoices were overdue. The unpaid amount was 200,000. This month, 112 of 600. The count is 12 percent higher, invoices issued are 20 percent higher, the share is smaller, and the unpaid amount is 280,000. The count, the share, and the money do not agree. Look next at whether a few invoices carry the extra money. That is not yet a conclusion that collections got worse.</p>
+        <dl class="brief">
+          <div><dt>Decision</dt><dd>Offer more time before write-off. Whom to call is a different use.</dd></div>
+          <div><dt>Outcome</dt><dd>The controller can make the offer under the policy. A lower count is not that outcome.</dd></div>
+          <div><dt>Actor</dt><dd>The credit controller.</dd></div>
+          <div><dt>If it rises</dt><dd>Check the count, the share, and the unpaid amount. Not an order to refuse time.</dd></div>
+          <div><dt>Send it</dt><dd>The list can go out as that answer. Looking and watching do not need this line.</dd></div>
+        </dl>
       </div>
       <p class="pointer">When each trial is a slow PD or ECL backtest, that search lives on the <a href="https://alextouvras.com/bayes-field-card/index.html">Bayesian optimisation</a> card. Grid the cheap notebook. Model the expensive pack.</p>
     </section>
@@ -747,14 +769,14 @@
 
     <footer class="meta">
       <div class="version-row">
-        <div class="version" id="version-stamp">v2026.42 · Reviewed 13 Oct 2026 · Next: November 2026</div>
+        <div class="version" id="version-stamp">v2026.43 · Reviewed 20 Oct 2026 · Next: week of 27 Oct</div>
         <div class="credit">
           <span>Alex Touvras</span>
           <a href="https://alextouvras.com">alextouvras.com</a>
           <span>Delivery · Data · AI automation</span>
         </div>
       </div>
-      <p class="changed"><b>Changed</b> The four steps are Ask, Grain, Truth, and Use.</p>
+      <p class="changed"><b>Changed</b> Ask names the decision, then one supposed overdue count, share, and unpaid amount.</p>
     </footer>
   </article>
   <script>
@@ -801,6 +823,5 @@
     })();
   </script>
   <script type="module" src="/field-card-robot.mjs" data-card="analytics"></script>
-  <script data-handbook-ask-guard>document.querySelectorAll('[data-handbook-chapter]').forEach(function(a){a.addEventListener("click",function(e){e.stopPropagation();});});</script>
-</body>
+<script data-handbook-ask-guard>document.querySelectorAll('[data-handbook-chapter]').forEach(function(a){a.addEventListener("click",function(e){e.stopPropagation();});});</script></body>
 </html>
