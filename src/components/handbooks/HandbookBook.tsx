@@ -7,7 +7,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode }
 import type { Handbook, HandbookPage, HandbookPicture, HandbookSection } from "@/content/handbooks";
 import { HandbookSpread, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
 import { ChapterRail } from "@/components/handbooks/ChapterRail";
-import { HandbookFigureView, UsesHead, UsesRow } from "@/components/handbooks/HandbookFigures";
+import { CompareCard, HandbookFigureView, UsesHead, UsesRow } from "@/components/handbooks/HandbookFigures";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
@@ -485,7 +485,8 @@ function piecesIn(nodes: HTMLElement[], blocks: Block[], origin: number, budget:
       key.endsWith("-figure") ||
       /-step-\d+$/.test(key) ||
       /-line-\d+$/.test(key) ||
-      /-flow-\d+$/.test(key);
+      /-flow-\d+$/.test(key) ||
+      /-compare-\d+$/.test(key);
     const top = node.offsetTop;
     const bottom = top + node.offsetHeight;
     const lines = lineBoxes(node, origin).filter((line) => line.bottom > top + 0.5 && line.top < bottom + 0.5);
@@ -740,6 +741,28 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
           sectionTitle: section.title,
           group,
           node: <p className="mt-2 pb-4 text-sm leading-relaxed text-slate-400">{figure.caption}</p>,
+        });
+      }
+    } else if (narrow && section.figure.kind === "compare") {
+      const columns = section.figure.columns ?? [];
+      columns.forEach((column, index) => {
+        blocks.push({
+          key: `${section.id}-compare-${index}`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          node: (
+            <div className="pb-3">
+              <CompareCard column={column} />
+            </div>
+          ),
+        });
+      });
+      if (section.figure.caption) {
+        blocks.push({
+          key: `${section.id}-compare-caption`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          node: <p className="pb-4 text-sm leading-relaxed text-slate-400">{section.figure.caption}</p>,
         });
       }
     } else if (narrow && section.figure.kind === "flow" && !section.figure.plain) {
