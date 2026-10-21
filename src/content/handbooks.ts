@@ -2470,7 +2470,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "trust-response",
           title: "When trust is challenged",
           paragraphs: [
-            "The rows are examples of how a failure can be met. The action for a real product depends on the materiality and the use. A publication hold is available. It is not the automatic answer to every warning. The sequence after the table is how I reach that decision. The person with approval authority makes the call to hold, qualify, warn, or restore.",
+            "The rows are examples of how a failure can be met. The action for a real product depends on the materiality and the use. A publication hold is available. It is not the automatic answer to every warning. The numbered sequence is how I reach that decision. The person with approval authority makes the call to hold, qualify, warn, or restore.",
           ],
           figure: {
             kind: "uses",
