@@ -18,6 +18,10 @@ export interface HandbookFigureStep {
   mark?: HandbookMark;
   /** Drawn apart from the other lines, as the stop. */
   gate?: boolean;
+  /** A field the sheet should read before the others. */
+  emphasis?: boolean;
+  /** Joined with the neighbouring paired field. */
+  pair?: boolean;
 }
 
 export type HandbookMark =
@@ -1449,7 +1453,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "The previous chapter established which problem is worth solving. This chapter explains what a metric must establish before it can support a decision. A chart you are still exploring can go out before the brief is filled. A number offered as the answer cannot. A report title is not the decision.",
       rule: "My operating rule: when a number is offered as the answer, I name the decision, the outcome, the person the number is for, the constraint, and the one activity. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. I do not present the number as that answer until those are named.",
       illustration: "The invoice case is an illustration, not a record.",
-      reviewed: "20 Oct 2026",
+      reviewed: "21 Oct 2026",
       sections: [
         {
           id: "brief",
@@ -1464,6 +1468,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               {
                 term: "Decision",
                 detail: "Whether this credit controller offers more time before write-off.",
+                emphasis: true,
               },
               {
                 term: "Outcome",
@@ -1476,14 +1481,17 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               {
                 term: "Constraint",
                 detail: "The agreed policy sets the cutoff. If there is no limit, write that. A blank line is not the same as no limit. The list does not replace the controller.",
+                emphasis: true,
               },
               {
                 term: "If it rises",
                 detail: "More issues that month, slower payment within 30 days, or a changed count.",
+                pair: true,
               },
               {
                 term: "If it falls",
                 detail: "Fewer issues that month, faster payment within 30 days, or a changed count.",
+                pair: true,
               },
               {
                 term: "Activity",
@@ -1491,7 +1499,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               },
               {
                 term: "Status",
-                detail: "Filled for this decision. These figures are not evidence to change the offer.",
+                detail: "Brief complete. Not sufficient evidence to change the offer.",
                 gate: true,
               },
             ],
@@ -1540,7 +1548,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               "Exploration and monitoring can stop earlier. A consequential decision needs more evidence.",
             steps: [
               { term: "Intended use", detail: "The use the number is for." },
-              { term: "Comparability", detail: "One population, one window." },
+              { term: "Definitions and comparability", detail: "Same definitions, one window." },
               { term: "Interpretation", detail: "What the figures leave open." },
               { term: "Decision within policy", detail: "Inside the constraint." },
               { term: "Outcome evaluation", detail: "What happened afterward." },
