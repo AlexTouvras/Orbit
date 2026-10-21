@@ -2727,7 +2727,7 @@ def _metrics_html(brief: dict) -> str:
     return (
         "<style>" + "".join(rules) + "</style>"
         + '<div class="section-head"><div><p class="kicker">Metrics</p>'
-        f'<h2>Total, until a team is chosen</h2></div><details class="info">'
+        f'<h2>One team, or the total</h2></div><details class="info">'
         f'<summary aria-label="About Metrics">i</summary><p>{html.escape(note)}</p></details></div>'
         + '<div class="metrics">'
         + "".join(inputs)
