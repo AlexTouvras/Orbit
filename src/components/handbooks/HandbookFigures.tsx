@@ -341,7 +341,7 @@ function UsesColumns() {
 }
 
 function usesHeadClass(warm: boolean) {
-  return `py-1.5 pr-2 text-left align-bottom font-mono text-[0.56rem] uppercase leading-snug tracking-[0.03em] whitespace-nowrap sm:whitespace-normal sm:py-2 sm:pr-3 sm:text-[0.65rem] sm:tracking-[0.12em] ${toneOf(warm)}`;
+  return `py-1.5 pr-2 text-left align-bottom font-mono text-[0.56rem] uppercase leading-snug tracking-[0.03em] sm:py-2 sm:pr-3 sm:text-[0.65rem] sm:tracking-[0.12em] ${toneOf(warm)}`;
 }
 
 function usesLabelClass(warm: boolean) {
