@@ -50,7 +50,7 @@ Agent-first product page. Hero is **the product running**: a live job-feed ticke
 
 | Inspiration | Orbit chapter |
 |-------------|----------------|
-| Full-viewport open | `story-open` — “Prove what works.” |
+| Full-viewport open | `story-open` — “What I build, / how I decide.” |
 | Live product-as-atmosphere | `story-open` — `LiveProofStream` (desk questions / system pulse under the thesis) |
 | Brand made visible | `story-gravity` — `GravityField` |
 | 01–05 process | `story-craft` — Delivery / Data / AI + `hudVerbs` |

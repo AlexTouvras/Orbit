@@ -38,7 +38,7 @@ export function WritesHero({
       }
       avatarUrl={avatarUrl}
       title="Blog"
-      headline={{ line: "The call,", accent: "in writing." }}
+      headline={{ line: "What I write", accent: "after the check." }}
       description="One question per article: what should get built, and how I would know it worked."
       stats={stats}
       actions={

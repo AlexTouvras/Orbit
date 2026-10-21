@@ -19,7 +19,7 @@ export function NewsletterHero({ avatarUrl }: NewsletterHeroProps) {
       }
       avatarUrl={avatarUrl}
       title="Weekly digest"
-      headline={{ line: "One article.", accent: "A few links." }}
+      headline={{ line: "One essay,", accent: "then the links." }}
       description="Tuesday mail: this week's Write, a few pieces I actually read, and one note per area that moved."
     />
   );

@@ -19,13 +19,12 @@ export default function LiveDesksPage() {
     <div className="space-y-16">
       <StoryHeadline
         kicker="Live desks"
-        line="Ask it"
-        accent="in plain words."
+        line="One question,"
+        accent="then the picture."
       />
       <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
         Electricity, Helsinki flats, Nordic stocks, the euro area, and which
-        model fits a job. One question on the card. The picture stays on the
-        desk.
+        model fits a job.
       </p>
 
       <DeskCast className="lg:grid-cols-3">
