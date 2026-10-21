@@ -1091,6 +1091,20 @@ const DBT_VERSIONS = source(
   "https://docs.getdbt.com/docs/mesh/govern/model-versions",
   "dbt, model versions",
 );
+const NYGARD_ADR = source(
+  "https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+  "Nygard, architecture decision records",
+);
+const DUCKDB_HOME = source("https://duckdb.org/", "DuckDB, in-process analytical database");
+const SPARK_OVERVIEW = source("https://spark.apache.org/docs/latest/", "Spark 4.2.0 overview");
+const AIRFLOW_RUN = source(
+  "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html#running-dags",
+  "Airflow, running Dags",
+);
+const AWS_SHARED = source(
+  "https://aws.amazon.com/compliance/shared-responsibility-model/",
+  "AWS, shared responsibility",
+);
 
 export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   slug: "data-that-drives-decisions",
@@ -1175,7 +1189,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "The population is open invoices, as of yesterday. Invoices already written off are left out. Yesterday is fresh enough because the offer is made before write-off, not while the customer is on the phone. A partial payment, an open dispute, or a write-off after that snapshot changes what the row includes. Those rules belong in the sentence on Say what one row means.",
             "A second report, one row per customer at month-end, can disagree without either total being miscalculated. The cause can be the grain, the date, what is included, the status rules, how the rows are added, or how the amount is calculated. I do not publish a number between the two. When two reports don't match is where that difference is explained, or the number stays unpublished.",
             "For this decision I would build yesterday's list for that one controller. A live screen for every collector answers whom to call now. That is a different decision, and keeping it means a number that moves all day. A simpler build is not automatically better. This offer does not improve because the number is newer than yesterday. A calling prediction waits until the list is in use.",
-            "The tools follow that choice. This illustration takes one report, dbt, DuckDB, and the invoice ledger. Snowflake is refused because the warehouse is not the constraint. A live refresh and a scheduler are refused because the controller can refresh yesterday's list.",
+            "The tools follow that choice. This illustration takes one report, dbt, DuckDB, and the invoice ledger. One person refreshes yesterday's list. Choose the stack places that design beside a shared daily queue and an operational feed, each under an assumption written down there.",
             "Once the list is published, the controller can see it, the owner can change the row, and a list older than yesterday does not go out.",
           ],
         },
@@ -2070,10 +2084,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 7,
       topic: "Choose the stack",
       title: "Choose the stack",
-      lede: "This page names the plates and the tools for a case that was taken, including what was refused. The workload is that case, and the scale it still needs.",
-      rule: "My operating rule: I name the workload before I name a tool. A choice with no refusal is not finished. I do not add a plate the decision does not need.",
-      illustration: "The invoice stack is an illustration, not a record.",
-      reviewed: "18 Oct 2026",
+      lede: "Choose the work has taken the case. This page turns the remaining workload into a design the organization can keep, and records the alternatives that lost.",
+      rule: "My operating rule: I name the workload before I name a tool. A choice is unfinished until the alternatives, and the reasons they lost, are written down. The simplest design is the least complex one that meets the requirements in front of me.",
+      illustration: "The three invoice designs are an illustration, not a record.",
+      reviewed: "21 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
@@ -2083,86 +2097,173 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "stack",
           title: "The workload",
           paragraphs: [
-            "Choose the work has already taken the case, or written the reason not to. This page is the stack for a case that was taken.",
-            "Scale is whether the number still arrives, for the people who use it, inside the time the decision needs. I name how much data, how many people use the number at once, and how new it has to be. Choose the work refused the scale the decision does not need. I build only what remains.",
-            "The plates, the tool names, and the conditions are on the analytics field card. They are the lines below. The sheet is my rule. The refusal is mine.",
-          ],
-          lines: [
-            {
-              term: "Workload",
-              detail:
-                "The case that was taken, with how much data, how many people at once, and how new the number has to be. A report title does not finish the line.",
-            },
-            {
-              term: "Consumption",
-              detail:
-                "One report, dashboard, or app. Power BI, Looker, or Tableau when that is already the room's tool. A second consume tool is a refusal.",
-            },
-            {
-              term: "Semantic",
-              detail:
-                "Where the sentence of what one row means is kept. That sentence stays on Say what one row means. This line does not write a new one.",
-            },
-            {
-              term: "Processing",
-              detail:
-                "dbt, Python, or Jupyter for transform, enrich, and validate. Spark when the volume requires it. When it does not, Spark is the refusal.",
-            },
-            {
-              term: "Sources",
-              detail:
-                "The internal or external source for this activity. A source that does not feed the decision is the refusal.",
-            },
-            {
-              term: "Platform",
-              detail:
-                "Databricks, DuckDB, or MotherDuck. Snowflake when the warehouse is the constraint. When the warehouse is not the constraint, write that refusal.",
-            },
-            {
-              term: "Schedule",
-              detail:
-                "Airflow or Fabric, and only when the path has to run again without the person. It does not define the number. When a person can refresh the list, the scheduler is the refusal.",
-            },
-            {
-              term: "Watching",
-              detail:
-                "Great Expectations for the tests. OpenLineage for where the number came from.",
-            },
-            {
-              term: "Refused",
-              detail:
-                "Each tool not taken, with the workload reason. A blank refusal means the choice is not finished.",
-            },
-          ],
-          sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
-        },
-        {
-          id: "stack-scene",
-          title: "An example",
-          paragraphs: [
-            "This is an illustration. It is not a portfolio I measured, and it states no amount.",
-            "The case, from Choose the work, is whether one role gives an invoice more time to pay. The organization is Defined. The number is as of yesterday. One person reads one list. The warehouse is not the constraint.",
-            "Spark is refused, because the volume does not require it. A screen for every collector, and a number that moves through the day, stay refused. Snowflake is refused, because the warehouse is not the constraint. A second dashboard is refused. A scheduler is refused, because that role can refresh yesterday's list.",
-            "What I take is one report, the one that role already opens. I do not name the brand. This is not a record of a room. The semantic layer carries the sentence from Say what one row means: an open invoice as of yesterday, and accounts already written off are left out. dbt builds the table that publishes. I use DuckDB for this illustration, because the list is one machine's work. The source is the invoice ledger. The tests sit on that table. No amount is written.",
+            "The sheet is the workload. A blank line is a guess. A hoped-for volume stays an assumption.",
           ],
           figure: {
-            kind: "flow",
-            caption: "The same illustration. The workload, what is taken, and what is refused. It states no amount.",
+            kind: "sheet",
+            caption: "Fill this before naming a tool. A future volume is an assumption, not a row.",
             steps: [
+              { term: "Decision", detail: "The choice, and the people who will use the result." },
+              { term: "Sources", detail: "Where the data comes from, how much there is, how it grows, and how tangled it is." },
+              { term: "Freshness", detail: "How new the result must be, and how often it is produced." },
+              { term: "Consumers", detail: "How many people or systems use it, and what they do with it." },
+              { term: "Service", detail: "The performance, availability, and recovery this use needs." },
+              { term: "Constraints", detail: "Security, privacy, regulation, and the rules of the organization." },
+              { term: "Capacity", detail: "Budget, platforms already in place, skills, and the time to operate it." },
+            ],
+          },
+        },
+        {
+          id: "patterns",
+          title: "Three patterns",
+          paragraphs: [
+            "I place the specification in one of three patterns. They are alternatives. More data does not, by itself, select the next one.",
+            "A personal analysis is one person who can catch their own error. A shared design is one validated number for a team, with an owner and a freshness check. A product serves a workflow or another system, with a stated availability and a recovery.",
+            "Personal stops fitting when other people act on the result, or it must come out the same way each time. Shared stops fitting when another system consumes the result, or a missed run changes an operation. Anything beyond the product has to meet a requirement the product still misses.",
+          ],
+          figure: {
+            kind: "compare",
+            caption: "Three alternatives. The amount of data does not select the next pattern.",
+            steps: [],
+            columns: [
               {
-                term: "Workload",
-                detail:
-                  "One role. An open invoice as of yesterday. One list. The warehouse is not the constraint.",
+                term: "Personal",
+                detail: "One person, occasional. They can catch their own error.",
+                points: ["Source and a query they can rerun", "Which data, as of when", "Other users call for a shared design"],
               },
               {
-                term: "Taken",
-                detail:
-                  "One report that role already opens. The row sentence. dbt for the table. DuckDB for the list. The invoice ledger.",
+                term: "Shared",
+                detail: "A team, one validated number, on a known rhythm.",
+                points: ["Shared storage and a rerunnable transform", "An owner, freshness, and fitting access", "A dependent system calls for a product"],
               },
               {
-                term: "Refused",
-                detail:
-                  "Spark, a live screen, Snowflake, a second dashboard, and a scheduler.",
+                term: "Product",
+                detail: "A workflow or another system depends on the result.",
+                points: ["An interface and a stated availability", "Recovery, and a person on the failure", "More complexity needs a new requirement"],
+              },
+            ],
+          },
+        },
+        {
+          id: "jobs",
+          title: "The jobs",
+          paragraphs: [
+            "A component earns its place by doing a job. One platform can hold several. The analytics field card names example tools. Those names are a map. The table says when the platform already in the design is enough.",
+            "DuckDB describes itself as an analytical SQL database that can run in-process. Spark 4.2.0 calls itself a unified engine for large-scale data processing, and the same overview says it is easy to run locally on one machine. Airflow runs a workflow when a person or an API triggers it, or on a schedule, and a schedule is not required. The specification decides which of those facts matters. A person can still refresh the list.",
+            "Where a published table needs a column contract, this book uses dbt, and the limit of that contract stays on Keep the definition. A semantic model shares the row sentence across reports. The sentence stays on Say what one row means.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "A new product has to earn the row. One platform may cover several jobs.",
+            steps: [],
+            head: ["Job", "Enough when", "Add a product when"],
+            rows: [
+              {
+                label: "Sources",
+                cells: ["A person can bring the extract in inside the freshness.", "The data has to arrive without that person."],
+              },
+              {
+                label: "Storage",
+                cells: ["The current place can hold and query what consumers read.", "Consumers need a shared query, or the work cannot finish in the decision's time."],
+              },
+              {
+                label: "Transform",
+                cells: ["A script the owner can rerun, explain, and check.", "The published table needs a contract, or this step misses the time allowed."],
+              },
+              {
+                label: "Meaning",
+                cells: ["The row sentence is already written.", "Several reports must share it. The model does not write a new sentence."],
+              },
+              {
+                label: "Delivery",
+                cells: ["A person reads one report in the tool the team uses.", "A system consumes the result."],
+              },
+              {
+                label: "Run again",
+                cells: ["A person can refresh it, and the specification allows that.", "The steps need an order, a retry, a trigger, or a record of the run."],
+              },
+              {
+                label: "Quality",
+                cells: ["The platform's check can fail the publish, and the path from source to result can be said.", "A failure the platform cannot see would still mislead a user."],
+              },
+              {
+                label: "Protection",
+                cells: ["The owner's care matches a small consequence.", "The failure needs an alert, an access rule, or a recovery a second person can carry out."],
+              },
+            ],
+          },
+          sources: [DUCKDB_HOME, SPARK_OVERVIEW, AIRFLOW_RUN, DBT_CONTRACT, { href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "compare",
+          title: "The comparison",
+          paragraphs: [
+            "I compare two or three designs that could meet the specification. Reusing a platform already running, a managed service, and a product I would buy sit beside a build when they are real options. For a managed service I read that provider's split. On Amazon Web Services, for an abstracted service such as S3, AWS operates the infrastructure, and the customer still manages the data, including encryption, classifies the assets, and sets who may use them. Another provider's split is on that provider's page.",
+            "I compare fit and the performance the use needs, the cost to license, compute, build, and maintain, whether a failure can be seen and repaired, the security and regulation in the specification, the skills and platforms already committed, and the cost of leaving. A need in the specification is a requirement. A larger future is an assumption.",
+          ],
+          sources: [AWS_SHARED],
+        },
+        {
+          id: "operate",
+          title: "What has to be run",
+          paragraphs: [
+            "The design names a technical owner and a business owner, the quality and freshness checks, who acts on a failed check, who can see sensitive data, and, where a missed run must be repaired, the retry, recovery, and backfill. It names how a change is rolled back, and where the next person reads how to run it. An occasional analysis needs a rerun and a note of the extract. A pipeline that other work depends on needs those controls written for a second person. Match the machinery to the consequence. Keep trust in force uses the freshness named here. Calendars, blast radius, and cutover stay on the technology delivery field card.",
+          ],
+          sources: [{ href: DELIVERY_CARD, label: "Technology delivery field card" }],
+        },
+        {
+          id: "record",
+          title: "The record",
+          paragraphs: [
+            "Nygard’s record of November 2011 is a short note for a later reader. The context states the forces. The decision states the response. The status is proposed, accepted, or superseded, and a superseded record stays, pointing at its replacement. The consequences include the results that are not benefits. A change in the context is what makes the old decision worth opening.",
+            "I use that shape. The sheet adds the lines this choice needs. A new product becoming fashionable is not a reason to reopen it. Status stays proposed until the evidence line is met. Accepted means the accountable people agreed the record. It does not show that a system has run.",
+          ],
+          figure: {
+            kind: "sheet",
+            caption: "Nygard’s context, decision, status, and consequences, with the lines this choice adds. Proposed is not a deployment.",
+            steps: [
+              { term: "Workload", detail: "The specification, including the constraints." },
+              { term: "Chosen", detail: "The pattern, the components, and the job of each." },
+              { term: "Rejected", detail: "Each alternative, and why it lost. A blank line leaves the choice unfinished." },
+              { term: "Assumptions", detail: "What was taken as true, the risks, and the limits. A future volume goes here." },
+              { term: "Owners", detail: "The technical owner, the business owner, and the expected cost to run." },
+              { term: "Evidence", detail: "What must be shown before this is called production." },
+              { term: "Revisit", detail: "The workload change that reopens the record. A newly fashionable tool does not." },
+              {
+                term: "Status",
+                detail: "Proposed until the evidence is met. Accepted is agreement, not a running system. Superseded names the replacement.",
+                gate: true,
+              },
+            ],
+          },
+          sources: [NYGARD_ADR],
+        },
+        {
+          id: "assumptions",
+          title: "Three assumptions",
+          paragraphs: [
+            "This is an illustration. I have not measured it, and it states no amount. The decision and the row are unchanged: the controller's offer of more time on one open invoice as of yesterday. None of these designs was deployed, and no cost is stated.",
+            "The occasional design is the one the opening page took. The daily queue adds a shared validated list because a team needs it before the day, and a miss has to be visible. The operational service adds an interface and recovery because the collections workflow must receive the list. Growth I have not been given does not choose among them.",
+          ],
+          figure: {
+            kind: "compare",
+            caption: "Three assumed workloads for one offer. Each rejection is tied to that assumption. Nothing here was deployed, and no cost is stated.",
+            steps: [],
+            columns: [
+              {
+                term: "Occasional",
+                detail: "Assumed: one analyst, now and then. Yesterday is enough. No other user.",
+                points: ["Extract, a local query, the open report", "No shared warehouse, scheduler, or API", "The design the opening page took"],
+              },
+              {
+                term: "Daily queue",
+                detail: "Assumed: a team, one list before the day. A missed morning is visible.",
+                points: ["Shared table, tested transform, one existing report", "No live screen, and no feed into collections", "Added for a shared number on a deadline"],
+              },
+              {
+                term: "Operational",
+                detail: "Assumed: the workflow must receive the list. A miss changes the day.",
+                points: ["Interface, availability, retry, a person on failure", "The daily report does not deliver the list", "Added because a system depends on it"],
               },
             ],
           },
@@ -2171,38 +2272,26 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "stack-know",
           title: "How I would know",
           paragraphs: [
-            "I watch three things. I have no target times, and these definitions are not results I have collected.",
-            "A named workload has the volume, the people, and the freshness, and they match the case that was taken.",
-            "A refusal names a tool that was not taken, and the workload reason.",
-            "A pasted lane is a list of tools with no workload and no refusal.",
-            "The rows below are the illustration on this page. Neither is a result I collected, and neither states an amount.",
+            "These are the acceptance criteria for the decision. I have not collected them. A record that meets them is a proposal I can defend. A deployment is a run that met the evidence line, not the existence of the record.",
           ],
           lines: [
-            {
-              term: "Refused",
-              detail:
-                "Spark, a live screen, Snowflake, a second dashboard, and a scheduler. The list is one role, as of yesterday, and the warehouse is not the constraint.",
-            },
-            {
-              term: "Taken",
-              detail:
-                "One report, the row sentence, dbt, DuckDB, and the invoice ledger. Action: build that stack. No amount is written. No consume brand is named.",
-            },
+            { term: "Workload", detail: "The specification is filled, and the constraints are ones this decision has." },
+            { term: "Components", detail: "Every significant component names the job it does." },
+            { term: "Alternatives", detail: "The designs that lost are written down with reasons. Reuse, a managed service, or a purchase is there when it was a real option." },
+            { term: "Cost", detail: "Licenses, compute, engineering, and maintenance are written as expectations. An unmeasured saving is not entered." },
+            { term: "Control", detail: "Owners are named. The checks, the alert, the access, and the recovery match the consequence of a failure." },
+            { term: "Revisit", detail: "The assumptions are labeled, and the workload change that reopens the design is named." },
+            { term: "Running", detail: "Production evidence is a run that met the evidence line." },
           ],
         },
         {
           id: "stack-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "Choose the work decides whether to build. This page does not reopen that choice. It refuses a tool the decision does not need.",
-            "The brief, the row, the disagreement, and the contract stay on Make the number fit. A semantic layer does not replace the row sentence. A green contract does not choose the platform.",
-            "Keep trust in force is security, governance, observability, evals, and human approve for the numbers that share a system. This page names the monitoring lane. It does not write the lineage method.",
-            "A product that is already running is Run the product and judge the value: continue it, change it, or stop the investment.",
-            "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
+            "Choose the work decides whether to build. The brief, the row, a disagreement, and the owner of the definition stay on Make the number fit to use. Continue, change, or stop stays on Run the product and judge the value. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
             { href: DATA_CARD, label: "Data analytics field card" },
-            { href: DELIVERY_CARD, label: "Technology delivery field card" },
             { href: BAYES_CARD, label: "Bayesian optimisation field card" },
           ],
         },
@@ -2210,11 +2299,32 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "stack-draft",
           title: "When AI drafts the stack",
           paragraphs: [
-            "This page holds today, and I expect it to hold, because the workload has to be the case that was taken, and a tool that was not taken has to be written down. AI can draft a full lane of tools. A full lane is not a choice, and a draft does not make the warehouse the constraint.",
+            "A model may draft the designs, the comparison, and the record. The accountable person still checks the workload, the actual costs, the product capabilities, the security split, the integrations, the failure path, and whether this organization can run the design. A polished tool list is not a decision. Approval counts when the reasoning and the evidence can be inspected. A draft marked accepted stays proposed until the evidence line is met.",
           ],
         },
       ],
       sources: [
+        source(
+          "https://www.cognitect.com/blog/2011/11/15/documenting-architecture-decisions",
+          "Michael Nygard, Documenting Architecture Decisions (15 Nov 2011, read 21 Oct 2026)",
+        ),
+        source("https://duckdb.org/", "DuckDB, in-process analytical database (read 21 Oct 2026)"),
+        source(
+          "https://spark.apache.org/docs/latest/",
+          "Apache Spark 4.2.0 overview (read 21 Oct 2026)",
+        ),
+        source(
+          "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html#running-dags",
+          "Apache Airflow, Running Dags (read 21 Oct 2026)",
+        ),
+        source(
+          "https://aws.amazon.com/compliance/shared-responsibility-model/",
+          "Amazon Web Services, Shared Responsibility Model (read 21 Oct 2026)",
+        ),
+        source(
+          "https://docs.getdbt.com/docs/collaborate/govern/model-contracts",
+          "dbt Developer Hub, model contracts (read 16 Oct 2026)",
+        ),
         { href: DATA_CARD, label: "Data analytics field card" },
         { href: DELIVERY_CARD, label: "Technology delivery field card" },
         { href: BAYES_CARD, label: "Bayesian optimisation field card" },

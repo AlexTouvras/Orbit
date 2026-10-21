@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { HandbookFigure, HandbookMark } from "@/content/handbooks";
+import type { HandbookFigure, HandbookFigureColumn, HandbookMark } from "@/content/handbooks";
 import { LoopPlate, PyramidPlate, RecoveryPlate, ScenePlate } from "@/components/handbooks/HandbookPlates";
 import { IconPaths } from "@/components/handbooks/icon-paths";
 
@@ -157,6 +157,23 @@ function CurveFigure({ figure }: { figure: HandbookFigure }) {
   );
 }
 
+export function CompareCard({ column }: { column: HandbookFigureColumn }) {
+  return (
+    <div className="rounded-xl border border-cyan-200/25 bg-[#050814]/80 p-3">
+      <h3 className="font-display text-base font-semibold text-white">{column.term}</h3>
+      <p className="mt-1 text-sm leading-relaxed text-slate-300">{column.detail}</p>
+      <ul className="mt-3 space-y-2">
+        {column.points.map((point) => (
+          <li key={point} className="flex gap-2 text-sm text-slate-200">
+            <MarkGlyph name="check" />
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function CompareFigure({ figure }: { figure: HandbookFigure }) {
   const columns = figure.columns ?? [];
   return (
@@ -164,18 +181,7 @@ function CompareFigure({ figure }: { figure: HandbookFigure }) {
       <Plate>
         <div className="grid gap-3 sm:grid-cols-3">
           {columns.map((column) => (
-            <div key={column.term} className="rounded-xl border border-cyan-200/25 bg-[#050814]/80 p-3">
-              <h3 className="font-display text-base font-semibold text-white">{column.term}</h3>
-              <p className="mt-1 text-sm leading-relaxed text-slate-300">{column.detail}</p>
-              <ul className="mt-3 space-y-2">
-                {column.points.map((point) => (
-                  <li key={point} className="flex gap-2 text-sm text-slate-200">
-                    <MarkGlyph name="check" />
-                    <span>{point}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <CompareCard key={column.term} column={column} />
           ))}
         </div>
         <Caption>{figure.caption}</Caption>
