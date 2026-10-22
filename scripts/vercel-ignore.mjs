@@ -15,6 +15,7 @@ import assert from "node:assert/strict";
 export const RUNTIME_DATA_FILES = new Set([
   "data/news-cache.json",
   "data/essay-feedback.json",
+  "data/appointments.json",
   "data/newsletter-draft.json",
   "data/weekly-write-draft.json",
   "data/weekly-write-ide-brief.json",
@@ -95,6 +96,7 @@ function runIgnoreCommand() {
 function runSelfTest() {
   assert.equal(shouldSkipBuild(["data/news-cache.json"]), true);
   assert.equal(shouldSkipBuild(["data/essay-feedback.json"]), true);
+  assert.equal(shouldSkipBuild(["data/appointments.json"]), true);
   assert.equal(
     shouldSkipBuild(["data/newsletter-draft.json", "data/weekly-write-draft.json"]),
     true,

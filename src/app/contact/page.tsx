@@ -4,6 +4,8 @@ import { getEditableProfile } from "@/lib/profile-store";
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactSection } from "@/components/contact/ContactSection";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Contact",
   description:

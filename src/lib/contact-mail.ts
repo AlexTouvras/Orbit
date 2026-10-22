@@ -1,5 +1,6 @@
 import "server-only";
 import { getEditableProfile } from "@/lib/profile-store";
+import { resolveVerifiedFrom } from "@/lib/mail-from";
 
 export interface ContactPayload {
   name: string;
@@ -21,59 +22,36 @@ function normalizeSecret(value: string | undefined): string {
     .replace(/\s+/g, "");
 }
 
-/** Web3Forms — free, works on Vercel with one access key (web3forms.com). */
-async function sendViaWeb3Forms(payload: ContactPayload): Promise<SendResult> {
-  const accessKey = normalizeSecret(process.env.WEB3FORMS_ACCESS_KEY);
-  if (!accessKey) {
-    return { ok: false, reason: "not_configured" };
-  }
-
-  const res = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
-      access_key: accessKey,
-      from_name: payload.name,
-      email: payload.email,
-      subject: payload.subject,
-      message: payload.company
-        ? `Company: ${payload.company}\n\n${payload.message}`
-        : payload.message,
-    }),
-  });
-
-  const data = (await res.json().catch(() => ({}))) as {
-    success?: boolean;
-    message?: string;
-  };
-
-  if (data.success) return { ok: true };
-
-  console.error("Web3Forms contact failed:", data);
-  return {
-    ok: false,
-    reason: "send_failed",
-    detail: data.message ?? "Web3Forms could not send the message.",
-  };
+function verifiedFrom(): string {
+  return resolveVerifiedFrom(
+    process.env.CONTACT_FROM_EMAIL,
+    process.env.RESEND_NEWSLETTER_FROM,
+  );
 }
 
-async function sendViaResend(payload: ContactPayload): Promise<SendResult> {
+/** Inbox that receives contact messages and appointment notices. */
+export function ownerInbox(): string {
+  return normalizeSecret(process.env.CONTACT_TO_EMAIL) || getEditableProfile().email;
+}
+
+const FROM_MISSING =
+  "Set RESEND_NEWSLETTER_FROM or CONTACT_FROM_EMAIL to an address on alextouvras.com. onboarding@resend.dev is refused because inboxes file it as spam.";
+
+async function postResend(body: Record<string, unknown>): Promise<SendResult> {
   const apiKey = normalizeSecret(process.env.RESEND_API_KEY);
-  if (!apiKey) {
-    return { ok: false, reason: "not_configured" };
-  }
+  if (!apiKey) return { ok: false, reason: "not_configured" };
   if (!apiKey.startsWith("re_")) {
     return {
       ok: false,
       reason: "invalid_key",
-      detail:
-        "RESEND_API_KEY should start with re_ — or use WEB3FORMS_ACCESS_KEY instead.",
+      detail: "RESEND_API_KEY should start with re_.",
     };
   }
 
-  const to = normalizeSecret(process.env.CONTACT_TO_EMAIL) || getEditableProfile().email;
-  const from = normalizeSecret(process.env.CONTACT_FROM_EMAIL) || "onboarding@resend.dev";
-  const companyLine = payload.company ? `\nCompany: ${payload.company}` : "";
+  const from = verifiedFrom();
+  if (!from) {
+    return { ok: false, reason: "not_configured", detail: FROM_MISSING };
+  }
 
   const res = await fetch("https://api.resend.com/emails", {
     method: "POST",
@@ -81,18 +59,12 @@ async function sendViaResend(payload: ContactPayload): Promise<SendResult> {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      from,
-      to: [to],
-      reply_to: payload.email,
-      subject: `[Orbit] ${payload.subject}`,
-      text: `From: ${payload.name} <${payload.email}>${companyLine}\n\n${payload.message}`,
-    }),
+    body: JSON.stringify({ ...body, from }),
   });
 
   if (!res.ok) {
     const errText = await res.text();
-    console.error("Resend contact email failed:", errText);
+    console.error("Resend email failed:", errText);
     let detail: string | undefined;
     try {
       const parsed = JSON.parse(errText) as { message?: string };
@@ -106,10 +78,40 @@ async function sendViaResend(payload: ContactPayload): Promise<SendResult> {
   return { ok: true };
 }
 
-export async function sendContactEmail(payload: ContactPayload): Promise<SendResult> {
-  // Web3Forms is simpler on Vercel — use it when configured.
-  if (normalizeSecret(process.env.WEB3FORMS_ACCESS_KEY)) {
-    return sendViaWeb3Forms(payload);
+export async function sendPlainEmail(input: {
+  to: string;
+  replyTo?: string;
+  subject: string;
+  text: string;
+}): Promise<SendResult> {
+  const body: Record<string, unknown> = {
+    to: [input.to],
+    subject: input.subject,
+    text: input.text,
+  };
+  if (input.replyTo) body.reply_to = input.replyTo;
+  return postResend(body);
+}
+
+async function sendViaResend(payload: ContactPayload): Promise<SendResult> {
+  const to = ownerInbox();
+  if (!to) {
+    return {
+      ok: false,
+      reason: "not_configured",
+      detail: "Set CONTACT_TO_EMAIL or a profile email.",
+    };
   }
+
+  const companyLine = payload.company ? `\nCompany: ${payload.company}` : "";
+  return sendPlainEmail({
+    to,
+    replyTo: payload.email,
+    subject: `[Orbit] ${payload.subject}`,
+    text: `From: ${payload.name} <${payload.email}>${companyLine}\n\n${payload.message}`,
+  });
+}
+
+export async function sendContactEmail(payload: ContactPayload): Promise<SendResult> {
   return sendViaResend(payload);
 }

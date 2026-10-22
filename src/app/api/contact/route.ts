@@ -85,7 +85,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(
         {
           error:
-            "Contact form is not configured yet (set WEB3FORMS_ACCESS_KEY or RESEND_API_KEY on Vercel).",
+            result.detail ??
+            "Contact form is not configured yet. It needs RESEND_API_KEY and a From address on alextouvras.com.",
         },
         { status: 503 },
       );
@@ -100,7 +101,7 @@ export async function POST(req: NextRequest) {
       {
         error:
           result.detail ??
-          "Could not send your message. On Resend's free test mode, mail only goes to your Resend account email — set CONTACT_TO_EMAIL to that address.",
+          "Could not send your message. Try again or use the direct email.",
       },
       { status: 502 },
     );
