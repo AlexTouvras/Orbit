@@ -26,6 +26,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Delivery Signal live page | `src/app/delivery-signal/[[...path]]/route.ts` | Proxies `AlexTouvras/delivery-signal` `main` `docs/`. Cache 60s. `engine/pipeline.py` is served from `src/delivery-signal/pipeline.py` so the brief opens with five short lines on Summary, then Progress, Metrics, and Risks. Metrics shows the total until a team is chosen. A target counts due dates in the file. Cycle p85 describes finished items. |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
 | Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
+| Appointments | `data/appointments.json` | Owner window (`timezone`, weekday numbers, `start`/`end` `HH:MM`, `slotMinutes`, `horizonDays`) plus `bookings[]`. Public `/contact` lists open slots. Studio edits the window and cancels. Read from GitHub at request time when a token exists, so a booking commit is in `RUNTIME_DATA_FILES` and does not rebuild. The window does not see Google Calendar. Mail uses the verified From address, never `onboarding@resend.dev`. |
 | Studio roadmap | `data/studio-roadmap.json` (+ `.seed.json`) | `focusNow` (public on `/card` only) + private milestones (`planned`/`active`/`evidence`/`proven`). Persist via `persistDataJson` same as profile. Store: `src/lib/studio-roadmap.ts`. |
 | Directive archive | `data/directive-archive.json` | Read-only snapshot of `AlexTouvras/AlexTouvras` `governance/`. Private `/studio/directives`. Not a second editor. Do not add this file to `RUNTIME_DATA_FILES` — the page reads the deployment copy, not GitHub at request time. |
 | Newsletter digest draft | `data/newsletter-draft.json` | Titles/links only. Gitignored locally; persist send status via GitHub |
@@ -150,6 +151,12 @@ src/app/newsletter/page.tsx
 src/app/api/cron/newsletter/
 src/lib/week-log/            # Studio /studio/week loaders + Heimdall matcher
 src/lib/studio-roadmap.ts    # focusNow + milestones; persistDataJson like profile
+src/lib/mail-from.ts         # verified From; refuses onboarding@resend.dev
+src/lib/appointments/slots.ts
+src/lib/appointments/store.ts
+src/app/api/appointments/route.ts
+src/app/api/studio/appointments/route.ts
+data/appointments.json
 src/lib/directives.ts        # read data/directive-archive.json (server-only)
 src/lib/directive-types.ts
 src/app/studio/directives/   # private read-only archive browser
@@ -179,6 +186,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-22 | Contact mail sends from the verified domain, and appointments are a daily window on `/contact` | `onboarding@resend.dev` is refused. From is `CONTACT_FROM_EMAIL` when that is not the shared test sender, otherwise `RESEND_NEWSLETTER_FROM` (`Orbit <hello@alextouvras.com>`). Reply-To stays the visitor. Studio sets the hours; anyone books an open slot. Slots inside the next 2 hours are hidden. The list does not read Google Calendar. |
 | 2026-10-22 | The value review says usage and causation once | On `/9`, the four levels own the distinction: usage does not prove decision influence, and a business outcome does not by itself prove the product caused it. Stage C asks the question and does not repeat that table. The record names the decision owner and the technical owner on separate lines, states that no corrective action is required in the continue example, and keeps the missing baseline. The Bayesian optimisation card is not a boundary on this page. `/2` through `/8` stay. |
 | 2026-10-21 | The value review says each part once | The page at `/9` keeps the four-stage call. The tree is the method. The invoice workflow starts from the decision, and continue, change, and stop are that one comparison. The four levels sit with the evidence and are not a score. The routine is the meeting. The record is one illustrative continue. Retirement is one checklist. The method is the author's practice. No source was read for judging the investment. `/2` through `/8` stay. |
 | 2026-10-21 | Run the product and judge the value is a four-stage review | The page at `/9` asks whether a running analytics product still justifies what it consumes. Continue needs a live decision, a product fit for that use, and evidence that supports the cost. Change needs the decision and a diagnosed problem that can be fixed. Stop is an ended decision, a product that no longer serves a necessary purpose, or a cost that is no longer justified. Missing owner, missing evidence, or an open material risk is investigate, an interim state, not a continue and not a fourth resting state. Availability, adoption, influence, and outcome stay separate. The invoice example is illustrative and states no amount once. The figures are the decision tree, the invoice workflow, and one review record. Retirement checks dependencies, retention, and that the cost actually stopped. The method is the author's practice. No source was read for judging the investment. Kimball and the GAO guide are not the method. `/2` through `/8` stay. |

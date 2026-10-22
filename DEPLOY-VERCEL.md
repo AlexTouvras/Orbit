@@ -15,9 +15,10 @@ Push to `main` → Vercel builds and deploys automatically.
 | `STUDIO_PASSWORD` | strong password |
 | `STUDIO_SESSION_SECRET` | `openssl rand -hex 32` |
 | `CRON_SECRET` | `openssl rand -hex 32` |
-| `RESEND_API_KEY` | contact form — from [resend.com](https://resend.com) |
-| `CONTACT_TO_EMAIL` | must match your **Resend account email** until you verify a domain |
-| `CONTACT_FROM_EMAIL` | `onboarding@resend.dev` (Resend test sender) |
+| `RESEND_API_KEY` | contact form, appointment mail, newsletter — from [resend.com](https://resend.com) |
+| `CONTACT_TO_EMAIL` | inbox for contact messages and appointment notices. Falls back to the profile email |
+| `CONTACT_FROM_EMAIL` | optional. A verified address such as `Orbit <hello@alextouvras.com>`. If this is empty or still `onboarding@resend.dev`, mail uses `RESEND_NEWSLETTER_FROM` |
+| `RESEND_NEWSLETTER_FROM` | verified sender, `Orbit <hello@alextouvras.com>`. Contact mail uses this when `CONTACT_FROM_EMAIL` is not a verified address |
 | `GITHUB_TOKEN` | **required for Studio save** — fine-grained PAT, repo **Contents: Read and write** |
 | `GITHUB_REPO` | `AlexTouvras/Orbit` (optional; default) |
 
@@ -57,29 +58,23 @@ curl -H "Authorization: Bearer $CRON_SECRET" "https://YOUR_SITE/api/cron/news"
 
 Optional external ping: [cron-job.org](https://cron-job.org) with the same URL.
 
-## Contact form (Resend)
+## Contact form and appointments (Resend)
 
-1. Sign up at [resend.com](https://resend.com) (Gmail is fine).
+Contact messages and appointment notices send From a verified address on `alextouvras.com`. `onboarding@resend.dev` is refused: inboxes file that shared test sender as spam. The domain already has Resend DKIM (`resend._domainkey`) and SPF on `send.alextouvras.com`.
+
+1. Sign up at [resend.com](https://resend.com) and verify `alextouvras.com`.
 2. **API Keys** → **Create API Key** → copy `re_...`.
-3. Add to Vercel (Production):
+3. On Vercel (Production), set `RESEND_API_KEY` and `RESEND_NEWSLETTER_FROM` to `Orbit <hello@alextouvras.com>`.
+4. Optional: `CONTACT_FROM_EMAIL` with that same sender, and `CONTACT_TO_EMAIL` for the inbox that should receive messages. If `CONTACT_TO_EMAIL` is empty, mail goes to the profile email.
+5. Add a DNS TXT record at `_dmarc.alextouvras.com`:
 
-```bash
-npx vercel env add RESEND_API_KEY production --value "re_YOUR_KEY" --yes
+```text
+v=DMARC1; p=none; rua=mailto:hello@alextouvras.com
 ```
 
-4. Set on Vercel:
+6. **Redeploy** after the env change. A booking only updates `data/appointments.json` and does not need a rebuild.
 
-```bash
-npx vercel env add RESEND_API_KEY production --value "re_YOUR_KEY" --yes
-npx vercel env add CONTACT_TO_EMAIL production --value "YOUR_RESEND_SIGNUP_EMAIL" --yes
-npx vercel env add CONTACT_FROM_EMAIL production --value "onboarding@resend.dev" --yes
-```
-
-5. **Redeploy**.
-
-**Important:** On Resend's free/test mode, email is only delivered to the address
-you used to sign up for Resend. `CONTACT_TO_EMAIL` must be that address (not
-necessarily the address shown on your site).
+The public contact page lists open slots inside the window saved in Studio. That window does not see Google Calendar.
 
 ## Weekly digest (newsletter)
 

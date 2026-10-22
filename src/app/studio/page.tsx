@@ -1,9 +1,12 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { CalendarDays, FolderGit2, Library, Map, ArrowRight } from "lucide-react";
+import { formatWhen } from "@/lib/appointments/slots";
+import { loadAppointments } from "@/lib/appointments/store";
 import { isStudioAccessible } from "@/lib/auth";
 import { getEditableProfile } from "@/lib/profile-store";
 import { getPublishedProjects } from "@/lib/projects-local";
+import { AppointmentWindowEditor } from "@/components/studio/AppointmentWindowEditor";
 import { ProfileEditor } from "@/components/studio/ProfileEditor";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -14,6 +17,24 @@ export default async function StudioPage() {
 
   const profile = getEditableProfile();
   const publishedCount = getPublishedProjects().length;
+  const appointments = await loadAppointments();
+  const nowMs = new Date().getTime();
+  const upcoming =
+    appointments.ok
+      ? appointments.store.bookings
+          .filter((booking) => Date.parse(booking.start) >= nowMs - 60 * 60 * 1000)
+          .sort((a, b) => Date.parse(a.start) - Date.parse(b.start))
+          .map((booking) => {
+            const when = formatWhen(booking.start, appointments.store.window);
+            return {
+              id: booking.id,
+              label: `${when.date}, ${when.range}`,
+              name: booking.name,
+              email: booking.email,
+              note: booking.note,
+            };
+          })
+      : [];
 
   return (
     <div>
@@ -86,7 +107,17 @@ export default async function StudioPage() {
         </Link>
       </div>
 
-      <div className="mt-10">
+      <div className="mt-10 space-y-10">
+        {appointments.ok ? (
+          <AppointmentWindowEditor
+            initialWindow={appointments.store.window}
+            upcoming={upcoming}
+          />
+        ) : (
+          <p className="text-sm text-red-400">
+            The appointment window could not be loaded.
+          </p>
+        )}
         <ProfileEditor initial={profile} />
       </div>
     </div>
