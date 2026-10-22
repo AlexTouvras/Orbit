@@ -173,7 +173,7 @@ export function VolumeReader({
                 <ol className="mt-4 space-y-3 text-[1.02rem] leading-relaxed">
                   {references.map((item) => (
                     <li id={`ref-${item.n}`} key={item.n} className="grid scroll-mt-48 grid-cols-[1.75rem_minmax(0,1fr)] gap-2 lg:scroll-mt-20">
-                      <ReferenceItem item={item} tone="paper" />
+                      <ReferenceItem item={item} />
                     </li>
                   ))}
                 </ol>
@@ -275,7 +275,7 @@ function SectionBlock({
           {section.paragraphs.map((paragraph, index) => (
             <p key={`${section.id}-p-${index}`}>
               {paragraph}
-              {citesOnParagraphs && index === lastParagraph ? <CiteMarks marks={marks} tone="paper" /> : null}
+              {citesOnParagraphs && index === lastParagraph ? <CiteMarks marks={marks} /> : null}
             </p>
           ))}
         </div>
@@ -300,7 +300,7 @@ function SectionBlock({
           {section.closing.map((paragraph, index) => (
             <p key={`${section.id}-c-${index}`}>
               {paragraph}
-              {citesOnClosing && index === lastClosing ? <CiteMarks marks={marks} tone="paper" /> : null}
+              {citesOnClosing && index === lastClosing ? <CiteMarks marks={marks} /> : null}
             </p>
           ))}
         </div>
@@ -308,7 +308,7 @@ function SectionBlock({
       {section.picture && photo ? <VolumePicture picture={section.picture} n={photo} /> : null}
       {marks.length > 0 && lastParagraph < 0 && lastClosing < 0 ? (
         <p className="book-measure mt-4 text-[1.125rem] leading-[1.75]">
-          <CiteMarks marks={marks} tone="paper" />
+          <CiteMarks marks={marks} />
         </p>
       ) : null}
       {links.length ? (

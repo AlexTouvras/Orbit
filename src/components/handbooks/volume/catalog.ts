@@ -8,6 +8,8 @@ export const VOLUME_FIGURE_KINDS = [
   "panels",
   "tree",
   "compare",
+  "pyramid",
+  "curve",
 ] as const;
 
 export const VOLUME_PICTURE_SIZE: Record<string, { w: number; h: number }> = {

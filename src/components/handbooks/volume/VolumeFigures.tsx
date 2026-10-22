@@ -138,10 +138,55 @@ function FigureBody({ figure }: { figure: HandbookFigure }) {
   if (figure.kind === "panels") return <PanelsFigure figure={figure} />;
   if (figure.kind === "tree") return <TreeFigure figure={figure} />;
   if (figure.kind === "compare") return <CompareFigure figure={figure} />;
+  if (figure.kind === "pyramid") return <PyramidFigure figure={figure} />;
+  if (figure.kind === "curve") return <CurveSketch figure={figure} />;
   if (figure.kind === "flow" || figure.steps.length > 0) return <FlowFigure figure={figure} />;
   if (figure.columns?.length) return <CompareFigure figure={figure} />;
   if (figure.rows?.length) return <UsesFigure figure={figure} />;
   return null;
+}
+
+/** Wide base, narrow top. The first step is the base and stays first for reading. */
+function PyramidFigure({ figure }: { figure: HandbookFigure }) {
+  const span = figure.steps.length > 1 ? 56 / (figure.steps.length - 1) : 0;
+  return (
+    <div>
+      <ol className="mx-auto flex max-w-[40rem] flex-col-reverse">
+        {figure.steps.map((step, index) => (
+          <li
+            key={step.term}
+            className="mx-auto border-x border-b border-[var(--book-ink)] px-4 py-3 last:border-t"
+            style={{ width: `${100 - index * span}%` }}
+          >
+            <p className="font-medium">{step.term}</p>
+            <p className="mt-1 leading-relaxed">{step.detail}</p>
+          </li>
+        ))}
+      </ol>
+      {figure.columns?.length ? (
+        <div className="mt-8">
+          <CompareFigure figure={figure} />
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/** A sketch. It states no amount. */
+function CurveSketch({ figure }: { figure: HandbookFigure }) {
+  const yLabel = figure.axes?.y ?? "Pain";
+  const xLabel = figure.axes?.x ?? "Time between integrations";
+  return (
+    <div>
+      <p className="book-kicker">{yLabel}</p>
+      <svg viewBox="0 0 320 128" className="mt-2 h-auto w-full max-w-[28rem]" role="img" aria-label={`${yLabel} against ${xLabel}. A sketch, not a measurement.`}>
+        <line x1="28" y1="108" x2="28" y2="12" stroke="#1b1814" strokeWidth="1.5" />
+        <line x1="28" y1="108" x2="304" y2="108" stroke="#1b1814" strokeWidth="1.5" />
+        <path d="M28 100 C 90 98, 150 90, 190 68 S 250 22, 292 16" fill="none" stroke="#7c3822" strokeWidth="2.25" strokeLinecap="round" />
+      </svg>
+      <p className="book-kicker mt-2">{xLabel}</p>
+    </div>
+  );
 }
 
 function SheetFigure({ figure }: { figure: HandbookFigure }) {

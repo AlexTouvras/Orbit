@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Handbook view — both published books use the paper reader. The dark leaf is not a screen (2026-10-22)
 - [x] Handbook contents — the number beside a chapter is its place. The address is not printed on the right (2026-10-22)
 - [x] Handbook contents — chapter 3 is one line. Its four pages are not listed under it (2026-10-22)
 - [x] Handbook references — a small number in the section opens that work in the reference list, on both published books (2026-10-22)

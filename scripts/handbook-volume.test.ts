@@ -2,18 +2,18 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { HANDBOOKS } from "../src/content/handbooks";
 import { VOLUME_FIGURE_KINDS, VOLUME_PICTURE_SIZE } from "../src/components/handbooks/volume/catalog";
-import { VOLUME_READER_SLUGS, isVolumeReaderPath, isVolumeReaderSlug } from "../src/lib/handbook-reader";
+import { isVolumeReaderPath } from "../src/lib/handbook-reader";
 import { adjacentPages, chapterPlace, pagePath } from "../src/lib/handbooks";
 
 describe("handbook volume reader", () => {
-  it("opts in only the books whose slug the chrome already knows", () => {
+  it("opens every published chapter in the handbook view", () => {
     for (const handbook of HANDBOOKS) {
-      assert.equal(handbook.reader === "volume", isVolumeReaderSlug(handbook.slug));
+      for (const page of handbook.pages) {
+        assert.equal(isVolumeReaderPath(pagePath(handbook.slug, page.number)), true);
+      }
     }
-    assert.deepEqual(
-      HANDBOOKS.filter((handbook) => handbook.reader === "volume").map((handbook) => handbook.slug),
-      [...VOLUME_READER_SLUGS],
-    );
+    assert.equal(isVolumeReaderPath("/handbooks"), false);
+    assert.equal(isVolumeReaderPath("/handbooks/software-that-stays-in-use"), false);
   });
 
   it("keeps Data that drives decisions on its addresses, in reading order", () => {
@@ -66,11 +66,25 @@ describe("handbook volume reader", () => {
     assert.ok(kinds.has("tree"));
   });
 
-  it("recognises the volume routes and leaves the other book on the leaf", () => {
-    assert.equal(isVolumeReaderPath("/handbooks/data-that-drives-decisions/1"), true);
-    assert.equal(isVolumeReaderPath("/handbooks/data-that-drives-decisions/9"), true);
-    assert.equal(isVolumeReaderPath("/handbooks/data-that-drives-decisions"), false);
-    assert.equal(isVolumeReaderPath("/handbooks/software-that-stays-in-use/1"), false);
-    assert.equal(isVolumeReaderPath("/handbooks"), false);
+  it("draws a figure for every kind either book uses", () => {
+    const kinds = new Set<string>();
+    for (const handbook of HANDBOOKS) {
+      for (const page of handbook.pages) {
+        for (const section of page.sections) {
+          const figure = section.figure;
+          if (!figure) continue;
+          kinds.add(figure.kind);
+          const drawn =
+            (VOLUME_FIGURE_KINDS as readonly string[]).includes(figure.kind) ||
+            figure.steps.length > 0 ||
+            (figure.columns?.length ?? 0) > 0 ||
+            (figure.rows?.length ?? 0) > 0;
+          assert.equal(drawn, true, `${handbook.slug} ${figure.kind}`);
+        }
+      }
+    }
+    assert.ok(kinds.has("pyramid"));
+    assert.ok(kinds.has("curve"));
+    assert.ok(kinds.has("loop"));
   });
 });

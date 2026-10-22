@@ -43,8 +43,7 @@ export function AppChrome({
   }
 
   const volume = isVolumeReaderPath(pathname);
-  const handbookLeaf = /\/handbooks\/[^/]+\/\d+$/.test(pathname) && !volume;
-  const handbookBoard = pathname === "/handbooks" || handbookLeaf;
+  const handbookBoard = pathname === "/handbooks";
 
   if (volume) {
     return (
@@ -61,21 +60,6 @@ export function AppChrome({
     : deskPage
       ? "max-w-6xl px-4"
       : "max-w-5xl px-4";
-
-  if (handbookLeaf) {
-    return (
-      <>
-        <ParticleBackground />
-        <Header />
-        <main
-          id="main-content"
-          className="fixed inset-x-0 top-0 z-10 flex h-dvh min-h-0 flex-col overflow-hidden px-0 pt-16 pb-0 lg:px-4 lg:pt-28 lg:pb-3"
-        >
-          {children}
-        </main>
-      </>
-    );
-  }
 
   return (
     <>
