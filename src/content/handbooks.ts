@@ -127,7 +127,7 @@ export interface HandbookContentsSection {
   page: number;
 }
 
-/** A contents entry. It opens on `page`. Sections are the pages already written inside that chapter. */
+/** A contents entry. It opens on `page`. Sections keep chapter place for pages inside it. The contents list does not draw them. */
 export interface HandbookContentsEntry {
   title: string;
   page: number;
