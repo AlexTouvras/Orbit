@@ -53,6 +53,26 @@ assert.equal(
   false,
 );
 
+const friday = days.find((day) => day.key === "2026-10-23");
+assert.ok(friday);
+const ten = friday.slots.find((slot) => slot.timeLabel === "10:00");
+const tenThirty = friday.slots.find((slot) => slot.timeLabel === "10:30");
+assert.ok(ten && tenThirty);
+const meetingStart = Date.parse(ten.start);
+const meetingEnd = Date.parse(tenThirty.start);
+const hidden = listOpenDays(DEFAULT_WINDOW, [], now, [
+  { startMs: meetingStart, endMs: meetingEnd },
+]);
+const fridayHidden = hidden.find((day) => day.key === "2026-10-23");
+assert.equal(
+  fridayHidden?.slots.some((slot) => slot.start === ten.start),
+  false,
+);
+assert.equal(
+  fridayHidden?.slots.some((slot) => slot.start === tenThirty.start),
+  true,
+);
+
 assert.equal(
   resolveVerifiedFrom("onboarding@resend.dev", "Orbit <hello@alextouvras.com>"),
   "Orbit <hello@alextouvras.com>",

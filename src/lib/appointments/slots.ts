@@ -32,6 +32,12 @@ export interface SlotDay {
   slots: OpenSlot[];
 }
 
+/** A busy block from the owner's calendar. End is exclusive. */
+export interface BusyInterval {
+  startMs: number;
+  endMs: number;
+}
+
 export const LEAD_MS = 2 * 60 * 60 * 1000;
 
 export const DEFAULT_WINDOW: AppointmentWindow = {
@@ -222,10 +228,15 @@ export function formatWhen(
   return { date, range: `${timeFmt.format(start)}–${timeFmt.format(end)}` };
 }
 
+function overlapsBusy(startMs: number, endMs: number, busy: BusyInterval[]): boolean {
+  return busy.some((block) => startMs < block.endMs && endMs > block.startMs);
+}
+
 export function listOpenDays(
   window: AppointmentWindow,
   bookings: AppointmentBooking[],
   now: Date,
+  busy: BusyInterval[] = [],
 ): SlotDay[] {
   if (validateWindow(window)) return [];
   const startHm = parseHm(window.start);
@@ -261,6 +272,9 @@ export function listOpenDays(
         window.timezone,
       );
       if (instant.getTime() < lead) continue;
+      const startMs = instant.getTime();
+      const endMs = startMs + window.slotMinutes * 60_000;
+      if (overlapsBusy(startMs, endMs, busy)) continue;
       const start = instant.toISOString();
       if (taken.has(start)) continue;
       const label = new Intl.DateTimeFormat("en-GB", {

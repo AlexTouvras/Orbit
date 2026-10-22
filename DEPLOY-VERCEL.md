@@ -19,6 +19,7 @@ Push to `main` → Vercel builds and deploys automatically.
 | `CONTACT_TO_EMAIL` | inbox for contact messages and appointment notices. Falls back to the profile email |
 | `CONTACT_FROM_EMAIL` | optional. A verified address such as `Orbit <hello@alextouvras.com>`. If this is empty or still `onboarding@resend.dev`, mail uses `RESEND_NEWSLETTER_FROM` |
 | `RESEND_NEWSLETTER_FROM` | verified sender, `Orbit <hello@alextouvras.com>`. Contact mail uses this when `CONTACT_FROM_EMAIL` is not a verified address |
+| `APPOINTMENT_CALENDAR_ICS_URL` | optional secret iCal addresses, separated by a space. Hides slots that overlap a meeting on any of them. Google: Settings → the calendar → Integrate calendar → Secret address in iCal format. Work Outlook: Settings → Calendar → Shared calendars → Publish a calendar → Can view when I'm busy → ICS link. Do not commit them |
 | `GITHUB_TOKEN` | **required for Studio save** — fine-grained PAT, repo **Contents: Read and write** |
 | `GITHUB_REPO` | `AlexTouvras/Orbit` (optional; default) |
 
@@ -74,7 +75,7 @@ v=DMARC1; p=none; rua=mailto:hello@alextouvras.com
 
 6. **Redeploy** after the env change. A booking only updates `data/appointments.json` and does not need a rebuild.
 
-The public contact page lists open slots inside the window saved in Studio. That window does not see Google Calendar.
+The public contact page lists open slots inside the window saved in Studio. Bookings made on the site are hidden. When `APPOINTMENT_CALENDAR_ICS_URL` is set, a slot that overlaps a meeting on any listed calendar is hidden too. A work Outlook calendar is the published ICS link. The addresses stay in the environment, never in `data/appointments.json`. If a feed does not load, meetings on that calendar may still show, and Studio says so.
 
 ## Weekly digest (newsletter)
 

@@ -3,9 +3,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { persistDataJson } from "@/lib/data-persist";
 import { hasGithubStorage, readRepoFile } from "@/lib/github-storage";
+import { listBookableDays } from "@/lib/appointments/calendar";
 import {
   DEFAULT_WINDOW,
-  listOpenDays,
   validateWindow,
   type AppointmentBooking,
   type AppointmentWindow,
@@ -160,7 +160,11 @@ export async function bookAppointment(input: {
   if (!loaded.ok) {
     return { ok: false, error: "Booking is unavailable right now.", status: 503 };
   }
-  const open = listOpenDays(loaded.store.window, loaded.store.bookings, new Date());
+  const { days: open } = await listBookableDays(
+    loaded.store.window,
+    loaded.store.bookings,
+    new Date(),
+  );
   const stillOpen = open.some((day) => day.slots.some((slot) => slot.start === input.start));
   if (!stillOpen) {
     return { ok: false, error: "That time was just taken. Pick another.", status: 409 };

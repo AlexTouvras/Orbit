@@ -1,5 +1,5 @@
 import { cv } from "@/content/cv";
-import { describeWindow, listOpenDays } from "@/lib/appointments/slots";
+import { listBookableDays } from "@/lib/appointments/calendar";
 import { loadAppointments } from "@/lib/appointments/store";
 import { getEditableProfile, getResolvedSocials } from "@/lib/profile-store";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -14,9 +14,11 @@ export async function ContactSection() {
   const location = profile.location || cv.location;
   const socials = getResolvedSocials();
   const loaded = await loadAppointments();
-  const days = loaded.ok
-    ? listOpenDays(loaded.store.window, loaded.store.bookings, new Date())
-    : [];
+  const now = new Date();
+  const opened = loaded.ok
+    ? await listBookableDays(loaded.store.window, loaded.store.bookings, now)
+    : null;
+  const days = opened?.days ?? [];
 
   return (
     <section aria-labelledby="contact-heading" className="space-y-10">
@@ -33,11 +35,7 @@ export async function ContactSection() {
       </Reveal>
       <Reveal>
         <GlassCard className="p-6 sm:p-8">
-          <AppointmentBooker
-            available={loaded.ok}
-            summary={loaded.ok ? describeWindow(loaded.store.window) : ""}
-            days={days}
-          />
+          <AppointmentBooker available={loaded.ok} days={days} />
         </GlassCard>
       </Reveal>
     </section>

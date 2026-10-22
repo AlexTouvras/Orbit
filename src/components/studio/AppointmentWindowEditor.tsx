@@ -30,11 +30,13 @@ export interface UpcomingBooking {
 interface AppointmentWindowEditorProps {
   initialWindow: AppointmentWindow;
   upcoming: UpcomingBooking[];
+  calendarNote: string;
 }
 
 export function AppointmentWindowEditor({
   initialWindow,
   upcoming,
+  calendarNote,
 }: AppointmentWindowEditorProps) {
   const router = useRouter();
   const [form, setForm] = useState<AppointmentWindow>(initialWindow);
@@ -110,9 +112,7 @@ export function AppointmentWindowEditor({
         Appointment window
       </h2>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-400">
-        People book these hours on the contact page. The list does not check
-        Google Calendar, so leave the hours free of other meetings. Times that
-        start within 2 hours stay hidden.
+        People book these hours on the contact page. {calendarNote}
       </p>
 
       <div className="mt-6 flex flex-wrap gap-2">

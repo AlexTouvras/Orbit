@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { CalendarDays, FolderGit2, Library, Map, ArrowRight } from "lucide-react";
+import { calendarStatus, readCalendarBusy } from "@/lib/appointments/calendar";
 import { formatWhen } from "@/lib/appointments/slots";
 import { loadAppointments } from "@/lib/appointments/store";
 import { isStudioAccessible } from "@/lib/auth";
@@ -19,6 +20,9 @@ export default async function StudioPage() {
   const publishedCount = getPublishedProjects().length;
   const appointments = await loadAppointments();
   const nowMs = new Date().getTime();
+  const calendar = appointments.ok
+    ? await readCalendarBusy(appointments.store.window, new Date(nowMs))
+    : { connected: false as const };
   const upcoming =
     appointments.ok
       ? appointments.store.bookings
@@ -112,6 +116,7 @@ export default async function StudioPage() {
           <AppointmentWindowEditor
             initialWindow={appointments.store.window}
             upcoming={upcoming}
+            calendarNote={calendarStatus(calendar)}
           />
         ) : (
           <p className="text-sm text-red-400">

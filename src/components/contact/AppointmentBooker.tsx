@@ -10,18 +10,95 @@ const inputClass =
 const labelClass =
   "font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400";
 
+const choiceClass = (pressed: boolean) =>
+  `focus-ring rounded-xl border text-sm font-medium transition-colors ${
+    pressed
+      ? "border-neon-cyan/60 bg-neon-cyan/15 text-white"
+      : "border-white/10 bg-white/5 text-slate-200 hover:border-white/25 hover:text-white"
+  }`;
+
+function shortDate(label: string): { weekday: string; day: string } {
+  const [weekday = "", day = ""] = label.split(" ");
+  return { weekday: weekday.slice(0, 3), day };
+}
+
+function DateAndTime({
+  days,
+  dayKey,
+  selected,
+  onDay,
+  onTime,
+}: {
+  days: SlotDay[];
+  dayKey: string | null;
+  selected: string | null;
+  onDay: (key: string) => void;
+  onTime: (start: string) => void;
+}) {
+  const active = days.find((day) => day.key === dayKey) ?? null;
+
+  return (
+    <div className="mt-6 space-y-6">
+      <fieldset className="min-w-0 border-0 p-0" aria-label="Date">
+        <div className="flex flex-wrap gap-2">
+          {days.map((day) => {
+            const pressed = day.key === active?.key;
+            const { weekday, day: dayNum } = shortDate(day.label);
+            return (
+              <button
+                key={day.key}
+                type="button"
+                aria-pressed={pressed}
+                aria-label={day.label}
+                onClick={() => onDay(day.key)}
+                className={`${choiceClass(pressed)} min-h-14 min-w-14 px-3 py-1.5`}
+              >
+                <span
+                  className={`block font-mono text-[0.6rem] uppercase tracking-[0.14em] ${
+                    pressed ? "text-slate-200" : "text-slate-400"
+                  }`}
+                >
+                  {weekday}
+                </span>
+                <span className="block text-sm">{dayNum}</span>
+              </button>
+            );
+          })}
+        </div>
+      </fieldset>
+
+      {active ? (
+        <fieldset className="min-w-0 border-0 p-0" aria-label="Time">
+          <div className="flex flex-wrap gap-2">
+            {active.slots.map((slot) => {
+              const pressed = selected === slot.start;
+              return (
+                <button
+                  key={slot.start}
+                  type="button"
+                  aria-pressed={pressed}
+                  onClick={() => onTime(slot.start)}
+                  className={`${choiceClass(pressed)} min-h-11 min-w-16 px-3`}
+                >
+                  {slot.timeLabel}
+                </button>
+              );
+            })}
+          </div>
+        </fieldset>
+      ) : null}
+    </div>
+  );
+}
+
 interface AppointmentBookerProps {
   available: boolean;
-  summary: string;
   days: SlotDay[];
 }
 
-export function AppointmentBooker({
-  available,
-  summary,
-  days,
-}: AppointmentBookerProps) {
+export function AppointmentBooker({ available, days }: AppointmentBookerProps) {
   const [openDays, setOpenDays] = useState(days);
+  const [dayKey, setDayKey] = useState<string | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -32,6 +109,13 @@ export function AppointmentBooker({
   const [booked, setBooked] = useState<string | null>(null);
   const [mailSent, setMailSent] = useState(true);
   const nameRef = useRef<HTMLInputElement>(null);
+
+  function chooseDay(key: string) {
+    setDayKey(key);
+    setSelected(null);
+    setError(null);
+    setBooked(null);
+  }
 
   function choose(start: string) {
     setSelected(start);
@@ -123,10 +207,6 @@ export function AppointmentBooker({
       <h2 className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-slate-400">
         Book a time
       </h2>
-      <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-300">{summary}</p>
-      <p className="mt-2 max-w-xl text-sm leading-relaxed text-slate-500">
-        A meeting already on my calendar still shows as open here.
-      </p>
 
       {booked && (
         <div className="mt-6 flex items-start gap-3" role="status">
@@ -143,33 +223,13 @@ export function AppointmentBooker({
       {openDays.length === 0 ? (
         <p className="mt-6 text-sm text-slate-300">Nothing open in this window.</p>
       ) : (
-        <div className="mt-8 space-y-8">
-          {openDays.map((day) => (
-            <div key={day.key}>
-              <h3 className="text-sm font-medium text-white">{day.label}</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {day.slots.map((slot) => {
-                  const pressed = selected === slot.start;
-                  return (
-                    <button
-                      key={slot.start}
-                      type="button"
-                      aria-pressed={pressed}
-                      onClick={() => choose(slot.start)}
-                      className={`focus-ring min-h-11 min-w-16 rounded-xl border px-3 text-sm font-medium transition-colors ${
-                        pressed
-                          ? "border-neon-cyan/60 bg-neon-cyan/15 text-white"
-                          : "border-white/10 bg-white/5 text-slate-200 hover:border-white/25 hover:text-white"
-                      }`}
-                    >
-                      {slot.timeLabel}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
+        <DateAndTime
+          days={openDays}
+          dayKey={dayKey}
+          selected={selected}
+          onDay={chooseDay}
+          onTime={choose}
+        />
       )}
 
       {selected && (
