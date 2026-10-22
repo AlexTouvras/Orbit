@@ -1,9 +1,12 @@
 import Link from "next/link";
 import type { Handbook, HandbookPage, HandbookSection } from "@/content/handbooks";
+import type { PageReference } from "@/lib/handbook-citations";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
 import { adjacentPages, chapterForPage, chapterPlace, pagePath } from "@/lib/handbooks";
+import { CiteMarks, ReferenceItem } from "@/components/handbooks/Citations";
 import { BookLink } from "@/components/handbooks/volume/BookLink";
+import { chapterLinks, citationMarks, pageReferences } from "@/lib/handbook-citations";
 import { ChapterKeys } from "@/components/handbooks/volume/ChapterKeys";
 import { ContentsList } from "@/components/handbooks/volume/ContentsList";
 import { CoverSheets, VolumeFigure, VolumeLines, VolumePicture } from "@/components/handbooks/volume/VolumeFigures";
@@ -30,6 +33,8 @@ export function VolumeReader({
   const chapter = chapterForPage(handbook, page.number);
   const { place, count } = chapterPlace(handbook, page.number);
   const chapterName = chapter && chapter.title !== page.title ? chapter.title : null;
+
+  const references = pageReferences(page);
 
   let figureNumber = 0;
   const sections = page.sections.map((section) => {
@@ -156,21 +161,24 @@ export function VolumeReader({
                 lines={lines}
                 diagram={diagram}
                 photo={photo}
+                references={references}
               />
             ))}
 
-            <section className="book-measure mt-16 scroll-mt-48 border-t border-[var(--book-rule)] pt-8 lg:scroll-mt-20" aria-labelledby="references-heading">
-              <h2 id="references-heading" className="font-display text-[1.6rem] leading-tight font-semibold">
-                References
-              </h2>
-              <ul className="mt-4 space-y-2 text-[1.02rem] leading-relaxed">
-                {page.sources.map((source) => (
-                  <li key={source.href}>
-                    <BookLink href={source.href}>{source.label}</BookLink>
-                  </li>
-                ))}
-              </ul>
-            </section>
+            {references.length ? (
+              <section className="book-measure mt-16 scroll-mt-48 border-t border-[var(--book-rule)] pt-8 lg:scroll-mt-20" aria-labelledby="references-heading">
+                <h2 id="references-heading" className="font-display text-[1.6rem] leading-tight font-semibold">
+                  References
+                </h2>
+                <ol className="mt-4 space-y-3 text-[1.02rem] leading-relaxed">
+                  {references.map((item) => (
+                    <li id={`ref-${item.n}`} key={item.n} className="grid scroll-mt-48 grid-cols-[1.75rem_minmax(0,1fr)] gap-2 lg:scroll-mt-20">
+                      <ReferenceItem item={item} />
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            ) : null}
 
             {showFeedback ? (
               <div className="book-measure mt-12">
@@ -243,12 +251,20 @@ function SectionBlock({
   lines,
   diagram,
   photo,
+  references,
 }: {
   section: HandbookSection;
   lines: number;
   diagram: number;
   photo: number;
+  references: PageReference[];
 }) {
+  const marks = citationMarks(references, section.sources);
+  const links = chapterLinks(section.sources);
+  const lastParagraph = (section.paragraphs?.length ?? 0) - 1;
+  const lastClosing = (section.closing?.length ?? 0) - 1;
+  const citesOnParagraphs = marks.length > 0 && lastClosing < 0 && lastParagraph >= 0;
+  const citesOnClosing = marks.length > 0 && lastClosing >= 0;
   return (
     <section id={section.id} className="mt-14 scroll-mt-48 border-t border-[var(--book-rule)] pt-8 lg:scroll-mt-20" aria-labelledby={`${section.id}-title`}>
       <h2 id={`${section.id}-title`} className="book-measure font-display text-[1.7rem] leading-tight font-semibold">
@@ -257,7 +273,10 @@ function SectionBlock({
       {section.paragraphs?.length ? (
         <div className="book-measure mt-4 space-y-4 text-[1.125rem] leading-[1.75]">
           {section.paragraphs.map((paragraph, index) => (
-            <p key={`${section.id}-p-${index}`}>{paragraph}</p>
+            <p key={`${section.id}-p-${index}`}>
+              {paragraph}
+              {citesOnParagraphs && index === lastParagraph ? <CiteMarks marks={marks} /> : null}
+            </p>
           ))}
         </div>
       ) : null}
@@ -279,14 +298,22 @@ function SectionBlock({
       {section.closing?.length ? (
         <div className="book-measure mt-4 space-y-4 text-[1.125rem] leading-[1.75]">
           {section.closing.map((paragraph, index) => (
-            <p key={`${section.id}-c-${index}`}>{paragraph}</p>
+            <p key={`${section.id}-c-${index}`}>
+              {paragraph}
+              {citesOnClosing && index === lastClosing ? <CiteMarks marks={marks} /> : null}
+            </p>
           ))}
         </div>
       ) : null}
       {section.picture && photo ? <VolumePicture picture={section.picture} n={photo} /> : null}
-      {section.sources?.length ? (
+      {marks.length > 0 && lastParagraph < 0 && lastClosing < 0 ? (
+        <p className="book-measure mt-4 text-[1.125rem] leading-[1.75]">
+          <CiteMarks marks={marks} />
+        </p>
+      ) : null}
+      {links.length ? (
         <p className="book-measure mt-4 text-[1rem] leading-relaxed">
-          {section.sources.map((source, index) => (
+          {links.map((source, index) => (
             <span key={`${source.href}-${index}`}>
               {index > 0 ? (
                 <span className="px-2 text-[var(--book-muted)]" aria-hidden="true">
