@@ -61,7 +61,7 @@ export interface HandbookFigureRow {
 }
 
 export interface HandbookFigure {
-  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve" | "sheet" | "reading" | "uses" | "tree";
+  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve" | "sheet" | "reading" | "uses" | "matrix" | "panels" | "tree";
   caption: string;
   steps: HandbookFigureStep[];
   columns?: HandbookFigureColumn[];
@@ -1185,7 +1185,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "Asking for a screen is not yet a piece of work. Good analytics is a capability the organization can run: a named decision, a number that can be trusted, technology it can keep, and a later check on whether the decision got better.",
       rule: "My operating rule: name the decision and the person who will act, decide whether the work is worth the cost of keeping it, define the number so it answers that decision, choose technology I can operate, later ask whether the decision got better, and change the work or stop it when it did not.",
       illustration: "The invoice path is an illustration, not a record.",
-      reviewed: "19 Oct 2026",
+      reviewed: "22 Oct 2026",
       plate: "ledger",
       ground: {
         src: `${DATA_ART}/path.jpg`,
@@ -1204,24 +1204,28 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           figure: {
             kind: "flow",
             caption:
-              "The operating model. The decision, the path a number walks, the work of running it, and the later check. Technology supports the practice.",
+              "The operating model. Ask, Grain, Truth, and Use sit inside the definition. Technology supports the practice. The later review is a separate question.",
             steps: [
               {
                 term: "Decision",
                 detail: "A named person and a named choice. A requested screen is not yet that choice.",
               },
               {
-                term: "Path",
-                detail: "Ask, Grain, Truth, and Use. One number, defined and checked before anyone acts on it.",
+                term: "Definition",
+                detail: "Ask, Grain, Truth, and Use. One number, defined before anyone acts on it.",
               },
               {
-                term: "Practice",
-                detail: "What to build, the tools, the controls, and an owner. Watch the work. Improve it, or stop it.",
+                term: "Technology",
+                detail: "The tools and the controls the organization can keep.",
               },
               {
-                term: "Check",
+                term: "Use",
+                detail: "The number reaches that person, in time for the decision.",
+              },
+              {
+                term: "Review",
                 detail:
-                  "Whether people use it, whether it can still be kept, and what happened in the business. An outcome does not, by itself, prove the cause.",
+                  "Continue, change, or stop. An outcome does not, by itself, prove the cause.",
               },
             ],
           },
@@ -1233,11 +1237,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           paragraphs: [
             "The invoice path is an illustration. I have not measured it, and it states no amount. A credit controller decides whether to offer an open invoice more time to pay, or to refuse that time, before the account is written off. The list supports that choice inside an agreed credit policy. It does not replace the policy, and it does not replace the controller.",
             "An overdue invoice can mean the customer is paying on agreed terms, the invoice is a billing error, or the debt is unlikely to be paid. The list should show what distinguishes those cases: the agreed terms, whether the invoice has been disputed, and what has already been paid. I do not write the policy that says which case gets more time. Refusing time to a customer who is paying on agreed terms can lose the account. Offering time on a debt that will not be paid leads to a write-off.",
-            "The population is open invoices, as of yesterday. Invoices already written off are left out. Yesterday is fresh enough because the offer is made before write-off, not while the customer is on the phone. A partial payment, an open dispute, or a write-off after that snapshot changes what the row includes. Those rules belong in the sentence on Say what one row means.",
-            "A second report, one row per customer at month-end, can disagree without either total being miscalculated. The cause can be the grain, the date, what is included, the status rules, how the rows are added, or how the amount is calculated. I do not publish a number between the two. When two reports don't match is where that difference is explained, or the number stays unpublished.",
-            "For this decision I would build yesterday's list for that one controller. A live screen for every collector answers whom to call now. That is a different decision, and keeping it means a number that moves all day. A simpler build is not automatically better. This offer does not improve because the number is newer than yesterday. A calling prediction waits until the list is in use.",
-            "The tools follow that choice. This illustration takes one report, dbt, DuckDB, and the invoice ledger. One person refreshes yesterday's list. Choose the stack places that design beside a shared daily workflow and an operational service. Each one is hypothetical, and the reason is written down there.",
-            "Once the list is published, the controller can see it, the owner can change the row, and a list older than yesterday does not go out.",
+            "The population is open invoices as of yesterday, with written-off invoices left out. What a partial payment, a dispute, or a later write-off does to the row is Say what one row means. A second report can disagree without either total being wrong. When two reports don't match names the cause, or does not publish.",
+            "Choose the work is where this offer is taken and a live screen is set aside. Choose the stack names the tools. Keep trust in force is what has to stay true after the list is published.",
           ],
         },
         {
@@ -1275,7 +1276,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "The organization",
           paragraphs: [
             "The card names four rungs: Ad hoc, Defined, Managed, and Optimized. I use them as guidance for how much of this practice the organization already keeps. I do not use them to rank a technique by its name. Descriptive, diagnostic, predictive, and prescriptive name the kind of question. A prediction is not the top rung merely because that is what it is called.",
-            "Maturity, as I use the word, means the work is owned, repeatable, checked for quality, governed, monitored, used, and able to show its value. Prediction, a number that changes through the day, and self-service are capabilities. The card's words for Optimized are predictive, real-time, and self-service. Those words do not define a mature practice. An organization can have all three and still decide badly, carry more operating cost than the decision needs, or have no one accountable.",
+            "Maturity, as I use the word, means the work is owned, repeatable, checked, governed, watched, used, and able to show its value. Prediction, a live number, and self-service are capabilities. They are not what makes the practice mature.",
           ],
           lines: [
             {
@@ -1330,7 +1331,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "path-limits",
           title: "The rest of the book",
           paragraphs: [
-            "Choose the work compares the investment: the outcome, a way that is sufficient, the cost of keeping it, and what to defer. Make the number fit to use is Name the decision, Say what one row means, When two reports don't match, and Keep the definition. Choose the stack names the tools. Keep trust in force keeps the number fit to use. Run the product and judge the value is continue, change, or stop.",
+            "After this book I can choose whether the work is worth keeping, make a number fit the decision, choose a stack the organization can run, keep that number fit to use, and decide whether to continue, change, or stop.",
+            "Choose the work compares the investment. Make the number fit to use is Name the decision, Say what one row means, When two reports don't match, and Keep the definition. Choose the stack names the tools. Keep trust in force keeps the number fit to use. Run the product and judge the value is continue, change, or stop.",
             "Calendars, blast radius, and cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
           sources: [
@@ -1361,10 +1363,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 6,
       topic: "Choose the work",
       title: "Choose the work",
-      lede: "The first page named the decision. This page decides whether to build, by comparing the outcome, the simplest way to reach it, the cost of keeping it, and what the organization can actually run.",
-      rule: "My operating rule: I start when the outcome is named, a simpler way has been considered, and the people and the ongoing cost are ones the organization can keep. The field card's ladder guides that judgment. It does not classify a technique by its name. If one of those is missing, I write down which one, and I do not start.",
+      lede: "What good looks like named the capability. This page decides whether to start, and how far. A first look is not a product the organization has to keep.",
+      rule: "My operating rule: a first look can start when the question is named. A product the organization must keep starts when the outcome, a sufficient way, and the cost of keeping it are written, and the people can run it. If one of those is missing, I write which one, and that product does not start. I do not invent a return to justify either start, and I do not refuse the look because the return is not yet known.",
       illustration: "The invoice case is an illustration, not a record.",
-      reviewed: "19 Oct 2026",
+      reviewed: "22 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
@@ -1372,106 +1374,117 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       sections: [
         {
           id: "case",
-          title: "The comparison",
+          title: "What is enough to start",
           paragraphs: [
-            "This is the same example as the first page. I have not measured it, and it states no amount. The decision is whether one credit controller offers more time on an open invoice before it is written off. The invoice may be overdue because the customer is on agreed terms, because of a billing error, or because it will not be paid. The card warns against a dashboard with no decision behind it.",
-            "The outcome this work could improve is that offer. The controller needs the open invoices together, with written-off accounts left out, in time to tell those three reasons apart.",
-            "The live screen is a different outcome.",
-            "A live screen for every collector, refreshed through the day, plus a prediction of whom to call, would help choose which customer to call now. I have not measured whether that screen would change the calls. I do not have that result, so I do not use it as a reason to build the screen or as a reason to refuse the list.",
-            "The simplest thing that could serve the offer is a list of open invoices as of yesterday, for that one controller. Reading the ledger one invoice at a time does not show them together. A number that changes through the day is not required, because the offer is made before a write-off, not while a customer is on the phone. A simpler list is not automatically the better investment. This decision does not get better from a fresher number, and the organization would still pay to keep that number moving.",
-            "The reason to start is that the write-off is already being decided, and the open invoices are not together for the person who can offer time. That is a reason to build the list. It is not evidence that the list will pay for itself.",
-            "Keeping the list takes the invoice ledger, the controller's time to refresh yesterday's list, whatever publishes that one list, and the written standard one person already owns. The ongoing cost is that person's time. The live screen would add daily time from people who are not this controller, a watch on a number that moves all day, and the care of a model. On the card, predictive, real-time, and self-service sit on Optimized. I use that as guidance. A model can be kept where someone already watches the number and can explain it. This organization has a written standard and one owner. It is not watching a product. I would not add the model in order to climb the ladder. A calling prediction would be a new case, after this list is in use and the controller can say what followed the offers.",
-            "For this case I build the list. I defer the calling prediction. I do not build the live screen.",
-            "I would reconsider if the controller stopped using the list. I would also reconsider if yesterday were no longer fresh enough, or if the cost of the list grew into the live system. That reconsideration is Run the product and judge the value. This page names it. It does not make the call.",
+            "A first look and a product are different starts. A first look is work to learn whether the question is real. Someone will use what is found. The invoice offer is not that kind of start.",
+            "The offer is a product the organization would have to keep. The rule at the top is what has to be written before it starts.",
+            "Name the decision is when a number can go out. This page is whether to build the thing that produces it. A chart used to look can go out before the brief is filled. That does not, by itself, justify a product the organization has to keep.",
+            "A simpler build is not automatically the better investment. A heavier one is not better because its name sits higher on the field card. The ladder says how much of the practice this organization can keep. It does not ban a technique by its name. Predictive, real-time, and self-service are capabilities, used when the decision needs them.",
+            "These comparisons are my practice. I have not read a prioritisation method for them. The card supplies the ladder, and the warning against a dashboard with no decision. Kimball and the GAO guide are not this method.",
           ],
-          figure: {
-            kind: "flow",
-            caption: "The same example. The live screen is a different outcome. The list matches this one. No amount is shown.",
-            steps: [
-              {
-                term: "Not this case",
-                detail:
-                  "A live screen for every collector, and a prediction of whom to call. The outcome is a different decision. The cost is a number that moves all day. Deferred until the list is in use, or refused for this offer.",
-              },
-              {
-                term: "This case",
-                detail:
-                  "One list, as of yesterday, for the controller who can offer time. Fresh enough for an offer made before write-off. The cost is that person's time.",
-              },
-            ],
-          },
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
-          id: "case-sheet",
-          title: "The case",
+          id: "case-matrix",
+          title: "Three ways",
           paragraphs: [
-            "The lines are the record of the comparison above. The reasoning stays in that comparison. Before anyone builds, I also write what I would look at later. I have not collected it.",
+            "The invoice case is the same illustration as the first page. I have not measured it, and it states no amount. The offer is whether one credit controller gives an open invoice more time before it is written off. The invoice may be overdue because the customer is on agreed terms, because of a billing error, or because it will not be paid.",
+            "Reading the ledger is the process already there. Yesterday's list is one product for that offer. A live service, with a prediction of whom to call, is a heavier product for a different decision. The tools that would run any of them stay on Choose the stack.",
           ],
-          lines: [
-            {
-              term: "Decision",
-              detail: "Will this controller offer more time on one open invoice before it is written off?",
-            },
-            {
-              term: "Actor",
-              detail: "The credit controller who can offer that time.",
-            },
-            {
-              term: "Organization",
-              detail:
-                "A written standard and one owner. On the card, that is Defined. The ladder guides the burden we can keep. It does not ban a model by its name.",
-            },
-            {
-              term: "Need",
-              detail: "The open invoices together, as of yesterday. Not a live number for every collector.",
-            },
-            {
-              term: "Scale",
-              detail: "One person. Fresh enough for an offer made before write-off, not for choosing a call in the moment.",
-            },
-            {
-              term: "Benefit",
-              detail: "The controller can tell why the invoice is overdue before a write-off.",
-            },
-            {
-              term: "Cost",
-              detail:
-                "That person's time to keep the list. The live screen would add daily time, a moving number, and a model. No currency amount.",
-            },
-            {
-              term: "Alternative",
-              detail:
-                "Reading the ledger one invoice at a time does not show them together. The live screen answers whom to call, which is a different outcome.",
-            },
-            {
-              term: "What would count",
-              detail:
-                "The controller uses the list. An offer can be followed to an account that stayed current, or to a write-off. Keeping it is still one person's time. No target. None of this has been collected.",
-            },
-            {
-              term: "Build or stop",
-              detail:
-                "Build the list. Defer the calling prediction until the list is in use. Do not build the live screen for this decision.",
-            },
+          figure: {
+            kind: "matrix",
+            caption:
+              "The same illustration. Three ways, one offer. No amount is shown. Yesterday's list is the build.",
+            steps: [],
+            head: ["", "Read the ledger", "Yesterday's list", "Live service"],
+            rows: [
+              {
+                label: "Decision",
+                cells: [
+                  "The invoices are not together.",
+                  "Whether this controller offers more time before write-off.",
+                  "Whom to call now. A different decision.",
+                ],
+              },
+              {
+                label: "Benefit",
+                cells: [
+                  "Nothing new is built. The three reasons stay scattered.",
+                  "The open invoices are together, written-off accounts left out, in time to tell those reasons apart.",
+                  "A collector could choose the next call. I have not measured whether the calls would change.",
+                ],
+              },
+              {
+                label: "Effort",
+                cells: [
+                  "None. The ledger is already the work.",
+                  "One list, for one controller, from the ledger.",
+                  "A screen for every collector, a number that moves all day, and a model.",
+                ],
+              },
+              {
+                label: "Cost to keep",
+                cells: [
+                  "The time already spent reading one invoice at a time.",
+                  "That person's time to refresh yesterday's list. No currency amount.",
+                  "Daily time from other people, a watch on a moving number, and the care of a model.",
+                ],
+              },
+              {
+                label: "Risk",
+                cells: [
+                  "The offer is made without the invoices together.",
+                  "The list can be wrong, late, or unused. The cost stays one person's time.",
+                  "The organization would keep a moving number for a decision this offer does not make.",
+                ],
+              },
+              {
+                label: "Evidence",
+                cells: [
+                  "Already in use. No new evidence.",
+                  "The write-off is already being decided, and the invoices are not together. That is a reason to build. It is not evidence the list will pay for itself.",
+                  "Not from a guess. After the list is in use, look at what followed the offers. That evidence is not collected here.",
+                ],
+              },
+              {
+                label: "Call",
+                cells: [
+                  "Not enough for this offer. It stays the fallback.",
+                  "Build. Yesterday is fresh enough because the offer is made before write-off. Simpler is not the reason.",
+                  "Do not build for this offer. Defer the calling prediction until the list is in use.",
+                ],
+              },
+            ],
+          },
+          closing: [
+            "For this offer I build yesterday's list. I do not build the live service. The calling prediction waits until the list is in use. Reading the ledger stays the fallback, because it does not put the invoices together.",
+          ],
+        },
+        {
+          id: "case-unknown",
+          title: "What can stay unknown",
+          paragraphs: [
+            "A currency return, and proof that the offers will change the accounts, can stay unknown. I do not invent either one in order to start the list.",
+            "The size of the ledger, and how often the controller will open the list, can stay assumptions. Further volume is an assumption until the decision needs it. That assumption is not a reason to build the live service.",
+            "Before any heavier build I would test whether the controller uses yesterday's list, and whether an offer can be followed to an account that stayed current or to a write-off. I have not collected that. If the controller stops using the list, if yesterday is no longer fresh enough, or if the cost of the list grows into the service this page refused, that is a reason to reconsider. The reconsideration is Run the product and judge the value. This page names it. It does not make the call.",
           ],
         },
         {
           id: "case-know",
           title: "How I would know",
           paragraphs: [
-            "I ask two different questions. One is whether the case was written properly on the day. The other is whether the decision got better later. I have no target times, and I have not collected a result for either.",
+            "I ask two different questions. One is whether the case was written on the day. The other is whether the decision got better later. I have no target, and I have not collected a result for either.",
           ],
           lines: [
             {
               term: "On the day",
               detail:
-                "The outcome, the simpler way, the cost of keeping it, and what we defer or reject are written down. If one is missing, the written reason says which. Starting with none of that is the failure. This checks the practice.",
+                "The outcome, the ways compared, the cost of keeping the chosen one, and what we defer or reject are written. A first look is not failed for lacking a return. A product that starts with one of those lines missing is the failure. This checks the practice.",
             },
             {
               term: "Later",
               detail:
-                "What would count, on the lines above, is how I would tell whether the decision got better. If the controller stops using the list, if yesterday is no longer fresh enough, or if the cost grows into the screen we refused, that is a reason to reconsider. This page does not report that any of it has happened.",
+                "Whether the controller uses the list, and whether an offer can be followed. If use stops, if yesterday is no longer fresh enough, or if the cost grows into the service this page refused, that is a reason to reconsider. None of this has been collected.",
             },
           ],
         },
@@ -1479,7 +1492,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page only decides whether to start. After that, Name the decision fills in the brief.",
+            "This page only decides whether to start, and how far. Name the decision fills the brief after the list is taken.",
             "Choose the stack names the tools. Run the product and judge the value later decides whether to continue, change, or stop.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
@@ -1493,7 +1506,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-draft",
           title: "When AI drafts the case",
           paragraphs: [
-            "This still holds when a model drafts the case. The controller has to accept the cost of the offer: refusing time to a customer on agreed terms, or offering time on a debt that will not be paid. A draft that names a tool, treats the top rung as the aim, and skips the outcome or the cost of keeping the work, is not a decision to build.",
+            "This still holds when a model drafts the case. The controller has to accept the cost of the offer: refusing time to a customer on agreed terms, or offering time on a debt that will not be paid. A draft that names a tool, treats the top rung as the aim, skips the outcome or the cost of keeping the work, or invents a return, is not a decision to build.",
           ],
         },
       ],
@@ -1507,10 +1520,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 2,
       topic: "Make the number fit",
       title: "Name the decision",
-      lede: "The previous chapter established which problem is worth solving. This chapter explains what a metric must establish before it can support a decision. A chart you are still exploring can go out before the brief is filled. A number offered as the answer cannot. A report title is not the decision.",
+      lede: "The previous chapter established which problem is worth solving. This chapter makes the number fit that decision: the brief, the row, a disagreement, and the owner. This page is the brief. A chart you are still exploring can go out before it is filled. A number offered as the answer cannot.",
       rule: "My operating rule: when a number is offered as the answer, I name the decision, the outcome, the person the number is for, the constraint, and the one activity. A rise and a fall are hypotheses to check. They are not orders, and they are not causes. I do not present the number as that answer until those are named.",
       illustration: "The invoice case is an illustration, not a record.",
-      reviewed: "20 Oct 2026",
+      reviewed: "22 Oct 2026",
       sections: [
         {
           id: "brief",
@@ -1588,8 +1601,25 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           },
           closing: [
             "A snapshot of every invoice overdue on one date, divided by that month's issues, is not this share. It includes invoices issued in earlier months.",
-            "Next I would ask whether a few invoices account for most of the extra €0.4 million, whether they were past due earlier in the 30 days than the March group, and whether disputed amounts are a larger part of the €1.4 million. The policy cutoff stays where it is. The higher exposure fits a few larger balances, or balances that stayed open longer within the 30 days. I cannot yet conclude slower payment, better or worse collections, or that more time should be refused. The figures do not say which, and they do not say why any one invoice is unpaid.",
+            "Next I would ask whether a few invoices account for most of the extra €0.4 million, whether they were past due earlier in the 30 days than the March group, and whether disputed amounts are a larger part of the €1.4 million. The policy cutoff stays where it is. The figures do not say which, and they do not say why any one invoice is unpaid.",
           ],
+        },
+        {
+          id: "question-panels",
+          title: "The same months, drawn",
+          paragraphs: [
+            "The table is the comparison. These three panels draw that same hypothetical pair of months. The count and the exposure rise. The share falls. The directions are not a cause, and they are not an order to refuse time.",
+          ],
+          figure: {
+            kind: "panels",
+            caption:
+              "Hypothetical. March, then April, for that month's issues only. 100 of 500, then 112 of 600. The lower share does not show that collections improved.",
+            steps: [
+              { term: "Overdue count", detail: "100, then 112. The count rose.", spine: "100,112" },
+              { term: "Overdue share", detail: "20 percent, then 18.7 percent. The share fell.", spine: "20,18.7" },
+              { term: "Unpaid exposure", detail: "€1.0 million, then €1.4 million. The exposure rose.", spine: "1,1.4" },
+            ],
+          },
         },
         {
           id: "question-order",
@@ -1674,10 +1704,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 3,
       topic: "Make the number fit",
       title: "Say what one row means",
-      lede: "The brief is already filled. This page says what one row of that number means, before anyone compares two reports. Kimball calls that the grain: exactly what one record represents, in business words. A report title is not that sentence. A list of columns is not that sentence.",
+      lede: "The brief is already filled. This page, the second of Make the number fit to use, says what one row means before anyone compares two reports. Kimball calls that the grain. A report title is not that sentence. A list of columns is not that sentence.",
       rule: "My operating rule: name the thing, the time, what is included, and what is left out, including a partial payment, a dispute, and a write-off. I do not offer the number as the answer until the person who will use it can say that row back.",
       illustration: "The one list is an illustration, not a record.",
-      reviewed: "19 Oct 2026",
+      reviewed: "22 Oct 2026",
       sections: [
         {
           id: "row-why",
@@ -1746,12 +1776,44 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "row-scene",
           title: "An example",
           paragraphs: [
-            "This is an illustration. I have not measured it, and it states no amount.",
-            "The decision, from the brief, is whether the controller offers more time on an open invoice before write-off. The list is titled overdue balance. The title is not the row.",
-            "While any of those four lines is blank, the list stays dark.",
-            "Once the sheet is filled, a row is one open invoice as of yesterday. A partial payment stays, for the amount still unpaid. An open dispute stays, so the controller can see it. Invoices already written off are left out. A write-off after yesterday is a later row, not this one. The controller can say that sentence back. That sentence is what one row means. There is no second report on this page.",
-            "If a second list with the same title arrives, and a row on it is a customer at month-end, that disagreement is When two reports don't match. This page does not pick a number between them.",
+            "This is an illustration. I have not measured it, and it states no amount. The list is titled overdue balance. The title is not the row. While any line on the sheet is blank, the list stays dark.",
+            "Once the sheet is filled, a row is one open invoice as of yesterday. A customer at month-end is a different row. The two totals are not the same population. This page does not pick a number between them. That comparison, if both lists are offered as the answer, is When two reports don't match.",
           ],
+          figure: {
+            kind: "matrix",
+            caption:
+              "Hypothetical. No amount. One invoice and one customer answer different questions. Their totals are not interchangeable.",
+            steps: [],
+            head: ["", "One open invoice", "One customer"],
+            rows: [
+              {
+                label: "Thing",
+                cells: ["One open invoice.", "One customer."],
+              },
+              {
+                label: "Time",
+                cells: ["As of yesterday.", "At month-end."],
+              },
+              {
+                label: "In",
+                cells: [
+                  "Still open. A partial payment stays for the amount unpaid. An open dispute stays.",
+                  "Whatever that customer total includes. It is a different sentence.",
+                ],
+              },
+              {
+                label: "Out",
+                cells: [
+                  "Invoices already written off.",
+                  "Not this list's rule. The customer row can include invoices this list leaves out.",
+                ],
+              },
+              {
+                label: "Question",
+                cells: ["Whether to offer this invoice more time.", "How that customer stood at month-end."],
+              },
+            ],
+          },
         },
         {
           id: "row-know",
@@ -1816,7 +1878,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "The row sentence is already written. This page is what I do when a second report disagrees with it. The two reports can share a title and still not match. Sending one of them out, or a third number in between, before the difference has a cause, gives the controller a figure they cannot defend.",
       rule: "My operating rule: compare the second report to the row sentence, name the cause or do not publish, and do not publish a number between the two. The cause can be the grain, the date, the scope, the status rules, how the rows are added, or how the amount is calculated.",
       illustration: "The two extracts are an illustration, not a record.",
-      reviewed: "19 Oct 2026",
+      reviewed: "22 Oct 2026",
       sections: [
         {
           id: "disagreement",
@@ -1831,6 +1893,26 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             alt: "Two reports meet a shut gate. Nothing is published on the far side.",
           },
           sources: [KIMBALL_GRAIN, KIMBALL_TECHNIQUES],
+        },
+        {
+          id: "investigation",
+          title: "The investigation",
+          paragraphs: [
+            "Two figures can both be valid. Reconciliation does not mean forcing them to agree. It means saying whether they are the same measure, and what the difference is, before a consequential number goes out.",
+          ],
+          figure: {
+            kind: "flow",
+            plain: true,
+            caption:
+              "A consequential number waits until the last step. A different measure can stay in use under its own name.",
+            steps: [
+              { term: "Same meaning", detail: "Do both figures claim the row sentence?" },
+              { term: "Compare", detail: "Grain, time, population, status rules, and the calculation." },
+              { term: "Explain", detail: "Name the difference, or say they are different measures." },
+              { term: "Correct or separate", detail: "Fix the error, or keep both under their own names." },
+              { term: "Release", detail: "The owner accepts the row that goes out. An unresolved consequential difference stays dark." },
+            ],
+          },
         },
         {
           id: "practice",
@@ -1988,7 +2070,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "The brief, the row, and the comparison can be filled, and the next query can still change what the number means. This page is what I leave in place: who owns the definition, the columns the number promises, and the stop when those columns break.",
       rule: "My operating rule: name the owner of the published definition, check its columns before the next build, and stop the old number when those columns break. A green contract is not the row sentence.",
       illustration: "The three sheets are an illustration, not a record.",
-      reviewed: "19 Oct 2026",
+      reviewed: "22 Oct 2026",
       sections: [
         {
           id: "keep",
@@ -2028,6 +2110,32 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
         {
           id: "shape",
           title: "What the columns do not catch",
+          figure: {
+            kind: "compare",
+            caption:
+              "A green structural contract does not know the row. A new version is for a break that other people must be protected from, not for every change of business meaning.",
+            steps: [],
+            columns: [
+              {
+                term: "Structural contract",
+                detail: "The shape the published table promises. dbt's model contract is one way to check it.",
+                points: [
+                  "Column names, types, and required fields",
+                  "A removed column or a changed type stops the old number",
+                  "Adding a column is not a break",
+                ],
+              },
+              {
+                term: "Semantic contract",
+                detail: "What the row means. The owner can say it. The structural check cannot.",
+                points: [
+                  "Population, grain, and the business rules",
+                  "A quiet change of meaning goes back to the row",
+                  "A new version is not required for every rule change",
+                ],
+              },
+            ],
+          },
           paragraphs: [
             "dbt's contract is a promise about the shape of a table that other people and processes query. When it is turned on, the build checks that the query returns every promised column, with the promised data type. The check does not care about column order. dbt recommends a contract for a public table that reports and other systems rely on. A data test is a different check. It runs on the rows after the table has built, and it can be set to warn. The contract fails the build when the shape does not match. I do not use a warning as a substitute for that failure.",
             "A breaking change, in that contract, is removing a column, changing its data type, removing or changing a constraint on it, or removing the contracted table. dbt then shows a contract error. Versions are how the person who owns a table that other teams use can introduce that break: a new version, the latest pointer moved, and a window in which the old version can still be used. dbt says making every consumer take the break at once is reasonable while the table is still changing quickly, or when the group that depends on it is small. Versions do not remove the cost of keeping two shapes. They put a limit on it.",
@@ -2134,7 +2242,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "The previous chapters established the business decision, the workload, the definition of one row, and who owns that definition. This chapter decides which architecture should deliver the result.",
       rule: "My operating rule: I name the workload before I name a tool. A choice is unfinished until the alternatives, and the reasons they lost, are written down. The simplest design is the least complex one that meets the requirements in front of me.",
       illustration: "The three architectures are hypothetical. They are not a record of delivered work.",
-      reviewed: "21 Oct 2026",
+      reviewed: "22 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
@@ -2169,7 +2277,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "patterns",
           title: "Three patterns",
           paragraphs: [
-            "The three patterns are alternatives. A larger volume does not select the next one. The card's maturity rungs guide how much practice the organization can keep. A pattern is not a rung.",
+            "The question is the least complex architecture that meets this workload and that the organization can operate. The three patterns are alternatives, not a ladder. A larger volume does not select the next one. The card's maturity rungs guide how much practice can be kept. A pattern is not a rung.",
             "A personal or exploratory analysis fits when one person can produce, rerun, and check the list, and the credit controller can come back to that person. This book's illustration is that pattern. A second user does not, by itself, require a shared platform. Share one definition when several people must act on the same meaning and their copies would diverge, or when the list must appear without the person who built it.",
             "Shared, governed analytics is that arrangement: one validated list on a known rhythm, an owner, and a freshness check. A missed scheduled run does not, by itself, justify a production data product. That product is justified when an application, or the collections workflow, must receive the list and a failure changes that work the same day. It then needs an integration, a stated availability, a recovery path, and a person who acts on the failure. Anything further needs a requirement this pattern still misses.",
             "The figure is one business question under three hypothetical architectures: whether this credit controller offers an open invoice more time before write-off. Nothing here was measured or deployed, and no amount is stated. This book uses the individual design because the requirement is smaller, not because it costs less to start.",
@@ -2210,6 +2318,26 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             ],
           },
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
+        },
+        {
+          id: "jobs",
+          title: "Where the work sits",
+          paragraphs: [
+            "Whatever pattern is chosen, the jobs are the same. One platform can carry several. A dedicated component is for a job that platform misses.",
+          ],
+          figure: {
+            kind: "flow",
+            plain: true,
+            caption: "The jobs. Not a list of tools.",
+            steps: [
+              { term: "Sources", detail: "Where the rows come from." },
+              { term: "Transform", detail: "How they become the result." },
+              { term: "Definitions", detail: "The row sentence, kept." },
+              { term: "Consumption", detail: "Who reads or receives it." },
+              { term: "Orchestration", detail: "The order, the retry, and the record, when a person cannot." },
+              { term: "Monitoring", detail: "The failure a person can see." },
+            ],
+          },
         },
         {
           id: "responsibilities",
@@ -2371,7 +2499,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "This page is how a published measure stays fit to use. On the analytics field card the path is Ask, Grain, Truth, and Use. This page keeps Truth in force, so the decision that depends on it can still be made.",
       rule: "My operating rule: name who answers for the meaning and who answers for the pipeline, keep a path a person can explain, show whether the freshness the decision needs was met, run the checks that match the failure that would matter, and decide what a failure does. A correct calculation can still be unfit to use.",
       illustration: "The invoice list is a hypothetical illustration, not a record.",
-      reviewed: "21 Oct 2026",
+      reviewed: "22 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
@@ -2436,6 +2564,56 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           ],
         },
         {
+          id: "trust-kinds",
+          title: "Five kinds",
+          paragraphs: [
+            "The operating model is how the work is kept. These five are what that work is about. A pass on one leaves the others open.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "Data quality is not fitness for the decision. A fresh pipeline can still publish the wrong meaning.",
+            steps: [],
+            head: ["Kind", "It asks", "It leaves open"],
+            rows: [
+              {
+                label: "Data quality",
+                cells: [
+                  "Are the rows complete, valid, and unique for this use?",
+                  "Whether the pipeline ran, and whether the decision should use the result.",
+                ],
+              },
+              {
+                label: "Reliability",
+                cells: [
+                  "Did the refresh finish in the time the decision needs?",
+                  "Whether the rows mean what the definition says.",
+                ],
+              },
+              {
+                label: "Access",
+                cells: [
+                  "Who may see the result, and who may change it?",
+                  "Whether the number is right.",
+                ],
+              },
+              {
+                label: "Lineage",
+                cells: [
+                  "Can a person explain the path from the source to the published measure?",
+                  "Whether that path is fit to use. A run record is not fitness.",
+                ],
+              },
+              {
+                label: "Fitness",
+                cells: [
+                  "Can this decision be made from this result, now?",
+                  "A green check on the other four, taken alone.",
+                ],
+              },
+            ],
+          },
+        },
+        {
           id: "trust-owners",
           title: "Who owns the number",
           paragraphs: [
@@ -2452,7 +2630,22 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             "For a measure that can affect a decision, someone should be able to explain the source, the transformations that change the meaning, the defined measure, the published output, and the decision or workflow that output is for.",
             "Documentation describes the path that was intended. Technical lineage records the path that ran. A test checks whether the result is right. A lineage record can help an investigation. The investigation of an unresolved discrepancy stays on When two reports don't match.",
             "OpenLineage is one way to record the path that ran. Its object model describes a job, a run of that job, and the datasets the run consumed or produced. A run event is an observation of an execution. A design-time record of a job or a dataset is not a run. A facet can store a schema, or the result of a data test. The stored result is a record of that test. It is not the test, and it does not decide whether the measure is fit to publish. On a small design, the sentence a person can say may be enough.",
+            "The business owner answers for the meaning at publication and at use. The technical owner answers for the path, the checks, and the repair. What a failure does is the next judgment.",
           ],
+          figure: {
+            kind: "flow",
+            plain: true,
+            caption:
+              "The path a published measure has to survive. A run record is not fitness for the decision.",
+            steps: [
+              { term: "Source", detail: "The records the definition named." },
+              { term: "Transformation", detail: "The steps that change the meaning." },
+              { term: "Validation", detail: "The checks that match the failure that would matter." },
+              { term: "Publication", detail: "What a person can use, or a hold." },
+              { term: "Use", detail: "The decision the output is for." },
+              { term: "Monitoring", detail: "Whether the last success still meets that decision." },
+            ],
+          },
           sources: [OPENLINEAGE_MODEL],
         },
         {
@@ -2468,7 +2661,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "trust-checks",
           title: "How failure is detected",
           paragraphs: [
-            "I choose checks from the way this result can fail, from the harm if it does, and from the cost of detecting the failure or of missing it. A product does not need every kind. Structural checks ask whether the expected fields, the schema, and the types are present. Quality checks use the Data Quality Hub dimensions. Completeness is the data this use requires, not every field filled in. Validity is the expected format, type, and range, and a valid value can still be the wrong fact. Uniqueness asks whether the same thing was recorded more than once. Business-rule checks ask whether the output obeys this use, including the row sentence on Say what one row means. Reconciliation checks ask whether related results agree within an understood tolerance, where they should. An unexpected discrepancy is investigated on When two reports don't match. Freshness checks ask whether the expected data arrived and processing finished. Operational checks ask whether the pipeline and its dependencies ran.",
+            "I choose checks from the way this result can fail, from the harm if it does, and from the cost of detecting the failure or of missing it. The five kinds name what the check is about. A product does not need every kind. Structural checks ask whether the expected fields, the schema, and the types are present. Quality checks use the Data Quality Hub dimensions. Completeness is the data this use requires, not every field filled in. Validity is the expected format, type, and range, and a valid value can still be the wrong fact. Uniqueness asks whether the same thing was recorded more than once. Business-rule checks ask whether the output obeys this use, including the row sentence on Say what one row means. Reconciliation checks ask whether related results agree within an understood tolerance, where they should. An unexpected discrepancy is investigated on When two reports don't match. Freshness checks ask whether the expected data arrived and processing finished. Operational checks ask whether the pipeline and its dependencies ran.",
             "Paragraph 10.18 of the Green Book uses a second meaning of validity: a recorded event occurred, relates to the entity, and was executed under the prescribed procedure. Paragraph 10.19 says those processing objectives can apply to a decision that uses data other than a financial transaction. I keep that business rule apart from a format test. Paragraph 10.10 says a detective control discovers an unintended result and corrects it in time, and that its effectiveness depends on the correction being timely. The check is the detection. It is a control when someone owns the response. For each critical check I write what it tests, what failure looks like, whether it leads to a publication hold, a warning, or an investigation, who is alerted, and who owns the next action. A count of checks is not evidence the result is trustworthy. A check that never ran is not a pass. When the check is a dbt test, error and warn are the severities already described on When two reports don't match.",
           ],
           sources: [DQ_DIMENSIONS, GAO_P10],
@@ -2648,6 +2841,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           title: "The four stages",
           paragraphs: [
             "I walk four stages. A failed stage is not the call until the cause is diagnosed. Investigate is interim, while the record is not sufficient. It is not a permanent outcome.",
+            "The tree is the method. The record, the evidence tables, and the retirement checklist are how that call is written.",
           ],
           figure: {
             kind: "tree",

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { HandbookFigure, HandbookFigureColumn, HandbookFigureStep, HandbookMark } from "@/content/handbooks";
+import type { HandbookFigure, HandbookFigureColumn, HandbookFigureRow, HandbookFigureStep, HandbookMark } from "@/content/handbooks";
 import { LoopPlate, PyramidPlate, RecoveryPlate, ScenePlate } from "@/components/handbooks/HandbookPlates";
 import { IconPaths } from "@/components/handbooks/icon-paths";
 import { SiteLink } from "@/components/handbooks/SiteLink";
@@ -17,6 +17,8 @@ export function HandbookFigureView({ figure, warm = false }: { figure: HandbookF
   if (figure.kind === "curve") return <CurveFigure figure={figure} />;
   if (figure.kind === "reading") return <ReadingFigure figure={figure} warm={warm} />;
   if (figure.kind === "uses") return <UsesFigure figure={figure} warm={warm} />;
+  if (figure.kind === "matrix") return <MatrixFigure figure={figure} warm={warm} />;
+  if (figure.kind === "panels") return <PanelsFigure figure={figure} warm={warm} />;
   if (figure.kind === "sheet") return <SheetFigure figure={figure} warm={warm} />;
   if (figure.kind === "tree") return <TreeFigure figure={figure} warm={warm} />;
   if (figure.plain) return <PathFigure figure={figure} warm={warm} />;
@@ -393,6 +395,78 @@ export function UsesRow({
         </tr>
       </tbody>
     </table>
+  );
+}
+
+export function MatrixRow({
+  row,
+  options,
+  warm,
+  first = false,
+}: {
+  row: HandbookFigureRow;
+  options: string[];
+  warm: boolean;
+  first?: boolean;
+}) {
+  return (
+    <div className={`border-b py-3 ${first ? "border-t" : ""} ${ruleOf(warm)}`}>
+      <p className={`font-mono text-[0.65rem] uppercase tracking-[0.14em] ${toneOf(warm)}`}>{row.label}</p>
+      <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-3">
+        {row.cells.map((cell, index) => (
+          <div key={`${row.label}-${options[index] ?? index}`} className="min-w-0">
+            <p className={`font-mono text-[0.62rem] uppercase tracking-[0.12em] ${toneOf(warm)}`}>{options[index]}</p>
+            <p className="mt-1 text-sm leading-snug text-slate-200">{cell}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function PanelCard({ step, warm }: { step: HandbookFigureStep; warm: boolean }) {
+  const parts = (step.spine ?? "").split(",").map((part) => Number(part.trim()));
+  const left = Number.isFinite(parts[0]) && parts[0] > 0 ? parts[0] : 1;
+  const right = Number.isFinite(parts[1]) && parts[1] > 0 ? parts[1] : 1;
+  const max = Math.max(left, right);
+  const height = (value: number) => Math.max(12, Math.round((value / max) * 64));
+  const fill = warm ? "bg-amber-200/85" : "bg-cyan-200/85";
+  return (
+    <div className={`border px-3 py-3 ${warm ? "border-amber-200/30" : "border-white/15"}`}>
+      <p className={`font-mono text-[0.65rem] uppercase tracking-[0.14em] ${toneOf(warm)}`}>{step.term}</p>
+      <p className="mt-1 font-mono text-[0.62rem] uppercase tracking-[0.12em] text-slate-500">March, then April</p>
+      <div className="mt-2 flex h-16 items-end gap-3" aria-hidden="true">
+        <span className={`w-7 ${fill}`} style={{ height: height(left) }} />
+        <span className={`w-7 ${fill} opacity-60`} style={{ height: height(right) }} />
+      </div>
+      <p className="mt-2 text-sm leading-snug text-slate-200">{step.detail}</p>
+    </div>
+  );
+}
+
+function PanelsFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
+  return (
+    <figure>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        {figure.steps.map((step) => (
+          <PanelCard key={step.term} step={step} warm={warm} />
+        ))}
+      </div>
+      {figure.caption ? <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption> : null}
+    </figure>
+  );
+}
+
+function MatrixFigure({ figure, warm }: { figure: HandbookFigure; warm: boolean }) {
+  const options = (figure.head ?? []).slice(1);
+  const rows = figure.rows ?? [];
+  return (
+    <figure>
+      {rows.map((row, index) => (
+        <MatrixRow key={row.label} row={row} options={options} warm={warm} first={index === 0} />
+      ))}
+      {figure.caption ? <figcaption className="mt-2 text-sm leading-relaxed text-slate-400">{figure.caption}</figcaption> : null}
+    </figure>
   );
 }
 

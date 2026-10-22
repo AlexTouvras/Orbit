@@ -7,7 +7,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode }
 import type { Handbook, HandbookPage, HandbookPicture, HandbookSection } from "@/content/handbooks";
 import { HandbookSpread, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
 import { ChapterRail } from "@/components/handbooks/ChapterRail";
-import { CompareCard, HandbookFigureView, SheetGate, SheetRow, TreeStage, UsesHead, UsesRow } from "@/components/handbooks/HandbookFigures";
+import { CompareCard, HandbookFigureView, MatrixRow, PanelCard, SheetGate, SheetRow, TreeStage, UsesHead, UsesRow } from "@/components/handbooks/HandbookFigures";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
@@ -488,6 +488,10 @@ function piecesIn(nodes: HTMLElement[], blocks: Block[], origin: number, budget:
       /-flow-\d+$/.test(key) ||
       /-compare-\d+$/.test(key) ||
       /-sheet-\d+$/.test(key) ||
+      /-matrix-\d+$/.test(key) ||
+      key.endsWith("-matrix-caption") ||
+      /-panel-\d+$/.test(key) ||
+      key.endsWith("-panel-caption") ||
       /-tree-\d+$/.test(key) ||
       key.endsWith("-sheet-gate") ||
       key.endsWith("-sheet-caption") ||
@@ -769,6 +773,54 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
       if (figure.caption) {
         blocks.push({
           key: `${section.id}-tree-caption`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          group,
+          node: <p className="mt-2 pb-4 text-sm leading-relaxed text-slate-400">{figure.caption}</p>,
+        });
+      }
+    } else if (section.figure.kind === "panels") {
+      const figure = section.figure;
+      const group = `${section.id}-panels`;
+      figure.steps.forEach((step, index) => {
+        blocks.push({
+          key: `${section.id}-panel-${index}`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          group,
+          node: (
+            <div className={index === 0 ? "pt-1" : "pt-3"}>
+              <PanelCard step={step} warm={warm} />
+            </div>
+          ),
+        });
+      });
+      if (figure.caption) {
+        blocks.push({
+          key: `${section.id}-panel-caption`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          group,
+          node: <p className="mt-2 pb-4 text-sm leading-relaxed text-slate-400">{figure.caption}</p>,
+        });
+      }
+    } else if (section.figure.kind === "matrix") {
+      const figure = section.figure;
+      const rows = figure.rows ?? [];
+      const options = (figure.head ?? []).slice(1);
+      const group = `${section.id}-matrix`;
+      rows.forEach((row, index) => {
+        blocks.push({
+          key: `${section.id}-matrix-${index}`,
+          sectionId: section.id,
+          sectionTitle: section.title,
+          group,
+          node: <MatrixRow row={row} options={options} warm={warm} first={index === 0} />,
+        });
+      });
+      if (figure.caption) {
+        blocks.push({
+          key: `${section.id}-matrix-caption`,
           sectionId: section.id,
           sectionTitle: section.title,
           group,
