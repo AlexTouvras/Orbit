@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Hexagon } from "lucide-react";
+import { isVolumeReaderPath } from "@/lib/handbook-reader";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -21,7 +22,8 @@ const navItems = [
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [menuPath, setMenuPath] = useState<string | null>(null);
+  const open = menuPath === pathname;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -30,9 +32,62 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") setMenuPath(null);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
-  const handbookLeaf = /\/handbooks\/[^/]+\/\d+$/.test(pathname);
+  const volume = isVolumeReaderPath(pathname);
+  const handbookLeaf = /\/handbooks\/[^/]+\/\d+$/.test(pathname) && !volume;
+
+  if (volume) {
+    return (
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#c9bdae] bg-[#f4efe6] text-[#1b1814]">
+        <div className="mx-auto flex h-14 w-full max-w-[90rem] items-center justify-between px-4 sm:px-6">
+          <Link
+            href="/"
+            className="rounded-sm font-mono text-xs font-semibold tracking-[0.18em] outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#7c3822]"
+          >
+            ORBIT
+          </Link>
+          <button
+            type="button"
+            onClick={() => setMenuPath((current) => (current === pathname ? null : pathname))}
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm px-2 text-sm font-medium outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#7c3822]"
+            aria-label="Site menu"
+            aria-expanded={open}
+            aria-controls="site-menu"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
+        {open ? (
+          <nav
+            id="site-menu"
+            className="max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-t border-[#c9bdae] bg-[#f4efe6] px-4 py-2 sm:px-6"
+          >
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuPath(null)}
+                className="block rounded-sm px-2 py-3 text-base outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#7c3822]"
+                aria-current={isActive(item.href) ? "page" : undefined}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        ) : null}
+      </header>
+    );
+  }
 
   return (
     <header
@@ -83,7 +138,7 @@ export function Header() {
 
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() => setMenuPath((current) => (current === pathname ? null : pathname))}
           className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-slate-300 transition-colors hover:bg-white/10 xl:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
@@ -104,7 +159,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={() => setMenuPath(null)}
                 className={cn(
                   "focus-ring rounded-lg px-4 py-3 text-sm font-medium transition-colors",
                   isActive(item.href)
