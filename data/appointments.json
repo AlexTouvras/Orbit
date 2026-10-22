@@ -13,5 +13,14 @@
     "slotMinutes": 30,
     "horizonDays": 14
   },
-  "bookings": []
+  "bookings": [
+    {
+      "id": "4f970e93-8f73-42f3-8e10-829edaf895ce",
+      "start": "2026-10-22T10:00:00.000Z",
+      "name": "Alex",
+      "email": "a.touvras@gmail.com",
+      "createdAt": "2026-10-22T07:39:13.046Z",
+      "note": "Testing"
+    }
+  ]
 }
