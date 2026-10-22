@@ -420,6 +420,32 @@
   color: var(--book-accent);
 }
 
+.handbook-volume .book-cite,
+.leaf-cite {
+  display: inline-block;
+  margin-left: 0.2em;
+  padding: 0 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: super;
+  text-decoration: none;
+}
+
+.handbook-volume .book-cite {
+  color: var(--book-link);
+}
+
+.handbook-volume .book-cite:hover,
+.leaf-cite:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.leaf-cite {
+  color: #22d3ee;
+}
+
 .handbook-volume summary.book-summary {
   display: inline-flex;
   align-items: center;

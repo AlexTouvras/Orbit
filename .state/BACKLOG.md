@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Handbook references — a small number in the section opens that work in the reference list, on both published books (2026-10-22)
 - [x] Handbook volume reader — Data that drives decisions scrolls as a book. The other handbook keeps the leaf. Addresses stay (2026-10-22)
 - [x] Contact booking is a date choice, then the times for that date (2026-10-22)
 - [x] Appointment slots can hide a work calendar as well as a personal one: several iCal addresses, and Outlook busy-only blocks (2026-10-22)

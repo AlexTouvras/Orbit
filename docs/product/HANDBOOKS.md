@@ -37,7 +37,7 @@ One thesis per page. Headings follow the subject. They are not a fixed list of e
 
 Voice: direct, operational, first person for the author's judgment. Define a term a stranger may not know. No corporate filler. A memorable sentence is rare, and it has to clarify the rule.
 
-Evidence: cite the primary source, with its date or version, and only for a claim that source makes. A short link sits beside the claim and opens the section when the source has one. The page ends with one list of the works. Do not invent a metric, a client, or a result. A number you did not open does not go on the page. Say how you would tell the practice is working. That is a measure to track, not a result you do not have. Put the date you last checked the claims on the page.
+Evidence: cite the primary source, with its date or version, and only for a claim that source makes. A small number sits at the end of the section that uses the work, and opens that work in the reference list. The list opens the source. A link to another chapter stays the chapter's name. The page ends with one numbered list of the works. On the leaf, the number opens the leaf that holds that work. Do not invent a metric, a client, or a result. A number you did not open does not go on the page. Say how you would tell the practice is working. That is a measure to track, not a result you do not have. Put the date you last checked the claims on the page.
 
 A figure is allowed when it carries the procedure: a loop, a decision, a shape. A photograph is allowed when it draws that section and states no amount the prose does not. It belongs to that book. The words still work if the figure or the photograph does not. No motion required to understand the page. The standard is the contract above. The diagrams, the section count, and the length change with the subject.
 
@@ -150,7 +150,7 @@ The page scrolls on a paper ground. The site menu stays, and it is not the readi
 
 Page 1 opens on the cover: the collection, the volume, the title, the thesis, the two sheets, the field card, and the contents. Start reading moves to the chapter on that same page. The bright edge is still the sheet that can go out. The room is not painted behind the type.
 
-A chapter opens with its place, such as chapter 3 of 6, the title, the lede, and the operating rule. A figure stays with the section that owns it. Sheets, comparisons, the decision tree, the panels, and the narrative pictures keep their captions. A photograph states no amount the prose does not. No new evidence is drawn. The ground photograph is not used, because it does not name a step.
+A chapter opens with its place, such as chapter 3 of 6, the title, the lede, and the operating rule. A small number at the end of a section opens that work in the reference list. A figure stays with the section that owns it. Sheets, comparisons, the decision tree, the panels, and the narrative pictures keep their captions. A photograph states no amount the prose does not. No new evidence is drawn. The ground photograph is not used, because it does not name a step.
 
 Figures and tables stay inside the column on a phone. A wide figure may run past the text measure on a large screen. Body type does not shrink to fit a desktop line. `prefers-reduced-motion` leaves the page still.
 

@@ -8,9 +8,11 @@ import type { Handbook, HandbookPage, HandbookPicture, HandbookSection } from "@
 import { HandbookSpread, type SpreadPanel } from "@/components/handbooks/HandbookBoard";
 import { ChapterRail } from "@/components/handbooks/ChapterRail";
 import { CompareCard, HandbookFigureView, MatrixRow, PanelCard, SheetGate, SheetRow, TreeStage, UsesHead, UsesRow } from "@/components/handbooks/HandbookFigures";
+import { CiteMarks, ReferenceItem } from "@/components/handbooks/Citations";
 import { SiteLink } from "@/components/handbooks/SiteLink";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
+import { chapterLinks, citationMarks, pageReferences, type PageReference } from "@/lib/handbook-citations";
 import { adjacentPages, pagePath } from "@/lib/handbooks";
 
 const BOARD_FIGURES = new Set(["loop", "recovery", "signals", "scene", "compare", "pyramid"]);
@@ -226,6 +228,7 @@ export function HandbookBook({
       data-handbook-book
       data-leaf={safeIndex}
       data-leaf-count={leafCount}
+      onClick={(event) => openReference(event, shown, blocks, setIndex)}
     >
       <TurnButton label="Previous page" disabled={!canPrev} onClick={() => turn(-1)} className="hidden lg:grid">
         <ChevronLeft className="h-6 w-6" />
@@ -643,6 +646,7 @@ function proseBlocks(
       ),
     },
   ];
+  const references = pageReferences(page);
   page.sections.forEach((section) => {
     const parts: Block[] = [
       {
@@ -655,7 +659,7 @@ function proseBlocks(
           </h2>
         ),
       },
-      ...sectionBlocks(section, page.plate === "horizon", narrow, warm),
+      ...sectionBlocks(section, page.plate === "horizon", narrow, warm, references),
     ];
     const plates = page.plate === "horizon" ? PLATES_AFTER[section.id] : undefined;
     const tail = parts[parts.length - 1];
@@ -663,22 +667,30 @@ function proseBlocks(
     if (section.picture && tail) tail.picturesAfter = [section.picture];
     blocks.push(...parts);
   });
-  blocks.push({
-    key: "sources",
-    sectionTitle: "References",
-    node: (
-      <div className="border-t border-white/10 pt-5 pb-4">
-        <h2 className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">References</h2>
-        <ul className="mt-3 space-y-2 text-sm leading-relaxed">
-          {page.sources.map((source) => (
-            <li key={source.href}>
-              <SiteLink href={source.href}>{source.label}</SiteLink>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ),
-  });
+  if (references.length) {
+    blocks.push({
+      key: "references",
+      sectionId: "references",
+      sectionTitle: "References",
+      node: (
+        <h2 className="border-t border-white/10 pt-5 pb-3 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-slate-500">
+          References
+        </h2>
+      ),
+    });
+    for (const item of references) {
+      blocks.push({
+        key: `ref-${item.n}`,
+        sectionId: `ref-${item.n}`,
+        sectionTitle: "References",
+        node: (
+          <p id={`ref-${item.n}`} className="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-2 pb-3 text-sm leading-relaxed">
+            <ReferenceItem item={item} tone="leaf" />
+          </p>
+        ),
+      });
+    }
+  }
   if (showFeedback) {
     blocks.push({
       key: "notes",
@@ -693,14 +705,29 @@ function proseBlocks(
   return blocks;
 }
 
-function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narrow: boolean, warm: boolean): Block[] {
+function sectionBlocks(
+  section: HandbookSection,
+  hideBoardFigure: boolean,
+  narrow: boolean,
+  warm: boolean,
+  references: PageReference[],
+): Block[] {
+  const marks = citationMarks(references, section.sources);
+  const links = chapterLinks(section.sources);
+  const lastParagraph = (section.paragraphs?.length ?? 0) - 1;
+  const lastClosing = (section.closing?.length ?? 0) - 1;
   const blocks: Block[] = [];
   section.paragraphs?.forEach((paragraph, index) => {
     blocks.push({
       key: `${section.id}-p-${index}`,
       sectionId: section.id,
       sectionTitle: section.title,
-      node: <p className="pb-4 text-base leading-relaxed text-slate-300">{paragraph}</p>,
+      node: (
+        <p className="pb-4 text-base leading-relaxed text-slate-300">
+          {paragraph}
+          {marks.length > 0 && lastClosing < 0 && index === lastParagraph ? <CiteMarks marks={marks} tone="leaf" /> : null}
+        </p>
+      ),
     });
   });
   section.lines?.forEach((line, index) => {
@@ -944,17 +971,34 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
       key: `${section.id}-close-${index}`,
       sectionId: section.id,
       sectionTitle: section.title,
-      node: <p className="pb-4 text-base leading-relaxed text-slate-300">{paragraph}</p>,
+      node: (
+        <p className="pb-4 text-base leading-relaxed text-slate-300">
+          {paragraph}
+          {marks.length > 0 && index === lastClosing ? <CiteMarks marks={marks} tone="leaf" /> : null}
+        </p>
+      ),
     });
   });
-  if (section.sources?.length) {
+  if (marks.length > 0 && lastParagraph < 0 && lastClosing < 0) {
     blocks.push({
-      key: `${section.id}-sources`,
+      key: `${section.id}-cites`,
+      sectionId: section.id,
+      sectionTitle: section.title,
+      node: (
+        <p className="pb-4 text-base leading-relaxed text-slate-300">
+          <CiteMarks marks={marks} tone="leaf" />
+        </p>
+      ),
+    });
+  }
+  if (links.length) {
+    blocks.push({
+      key: `${section.id}-chapters`,
       sectionId: section.id,
       sectionTitle: section.title,
       node: (
         <p className="pb-5 text-sm leading-relaxed text-slate-400">
-          {section.sources.map((source, index) => (
+          {links.map((source, index) => (
             <span key={source.href}>
               {index > 0 ? <span className="px-2 text-slate-600">·</span> : null}
               <SiteLink href={source.href}>{source.label}</SiteLink>
@@ -965,4 +1009,24 @@ function sectionBlocks(section: HandbookSection, hideBoardFigure: boolean, narro
     });
   }
   return blocks;
+}
+
+function openReference(
+  event: { target: EventTarget | null; preventDefault: () => void },
+  shown: ShownLeaf[],
+  blocks: Block[],
+  setIndex: (index: number) => void,
+) {
+  const target = event.target;
+  if (!(target instanceof Element)) return;
+  const link = target.closest("a[href^='#ref-']");
+  if (!(link instanceof HTMLAnchorElement)) return;
+  const hash = link.getAttribute("href")?.slice(1) ?? "";
+  const proseIndex = shown.findIndex(
+    (item) => item.kind === "prose" && blocks.slice(item.leaf.start, item.leaf.end).some((block) => block.sectionId === hash),
+  );
+  if (proseIndex < 0) return;
+  event.preventDefault();
+  setIndex(proseIndex);
+  window.history.replaceState(null, "", `#${hash}`);
 }
