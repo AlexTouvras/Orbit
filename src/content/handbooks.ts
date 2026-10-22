@@ -2627,7 +2627,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       lede: "Does this analytics product still justify what it consumes, by supporting a real decision with evidence that is trustworthy enough and in time? This page is how I make the call.",
       rule: "My operating rule: I continue only when the decision is still necessary, the product is fit for that use, and the evidence supports the cost of keeping it. I change it when the decision remains and a diagnosed problem can be fixed. I stop it when the decision has ended, the product no longer serves a necessary purpose, or the cost is no longer justified. If the decision owner, the evidence, or a material risk is missing, the call is investigate.",
       illustration: "The invoice review is an illustration, not a record.",
-      reviewed: "21 Oct 2026",
+      reviewed: "22 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
@@ -2706,7 +2706,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
                   },
                   {
                     term: "Investigate",
-                    detail: "Evidence of decision influence is missing.",
+                    detail: "Neither decision influence nor a needed control is shown.",
                   },
                 ],
               },
@@ -2716,7 +2716,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
                 branches: [
                   {
                     term: "Continue",
-                    detail: "The decision, the fitness, the influence, and the cost still justify keeping it.",
+                    detail: "The decision, the fitness, and the cost still justify keeping it.",
                   },
                   {
                     term: "Change",
@@ -2739,17 +2739,17 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "value-invoice",
           title: "The controller's offer",
           paragraphs: [
-            "This illustration continues the invoice list from the earlier pages. I have not measured it, and it states no amount. The credit controller is the decision owner and makes the offer before write-off.",
-            "The list supports the agreed policy. It does not replace the controller. A daily list of whom to call is a different decision, and it is not this product.",
+            "This illustration continues the invoice list from the earlier pages. I have not measured it, and it states no amount. The credit controller is the decision owner.",
+            "Before an invoice is written off, the controller decides whether to offer more time to pay, or to refuse it, inside the agreed policy. Yesterday's list supplies the terms, any dispute, and what has been paid, in time for that offer. It does not replace the controller. A list of whom to call, and the write-off itself, are different decisions.",
           ],
           figure: {
             kind: "flow",
             plain: true,
-            caption: "Illustrative. The offer is the decision. The list is the information for that offer.",
+            caption: "Illustrative. The offer of more time is the decision. The list is the information for that offer.",
             steps: [
               {
                 term: "Decision",
-                detail: "Which overdue invoices need attention, and which customers can have more time.",
+                detail: "Whether to offer an open invoice more time to pay, or to refuse it, before write-off.",
               },
               {
                 term: "Information",
@@ -2785,8 +2785,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               {
                 label: "Continue",
                 cells: [
-                  "The offer, yesterday's list, and the cost of the refresh still hold.",
-                  "Keep the current design.",
+                  "The offer of more time, yesterday's list, and the cost of the refresh still hold.",
+                  "No corrective action is required. The technical owner keeps the refresh until the next review.",
                 ],
               },
               {
@@ -2799,7 +2799,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               {
                 label: "Stop",
                 cells: [
-                  "Collections no longer makes this offer from the list.",
+                  "The controller no longer makes this offer from the list.",
                   "Run the retirement checks, then turn it off.",
                 ],
               },
@@ -2814,7 +2814,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           ],
           figure: {
             kind: "uses",
-            caption: "Usage does not prove decision influence. A business outcome does not, by itself, prove the product caused it.",
+            caption: "Usage does not prove decision influence. A business outcome does not, by itself, prove the product caused it. A measured outcome is not required for every product.",
             steps: [],
             head: ["Level", "It establishes", "It leaves open"],
             rows: [
@@ -2869,8 +2869,8 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               {
                 label: "Influence",
                 cells: [
-                  "What shows decision influence or a business outcome? A decision log, the decision owner's confirmation, and an outcome measure with a baseline.",
-                  "Missing evidence: investigate.",
+                  "What shows decision influence, or that this is a control the decision needs? The decision owner's confirmation or a decision log. Add an outcome measure, with a baseline, only when the decision needs one.",
+                  "Missing evidence: investigate. Usage alone does not pass.",
                 ],
               },
               {
@@ -2897,16 +2897,15 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           lines: [
             {
               term: "Before",
-              detail:
-                "Collect the original decision, the decision owner, who acts, usage, quality and freshness against the deadline, incidents, costs, and the success measures already agreed.",
+              detail: "Collect the evidence the five categories name, and note what has changed since the last review.",
             },
             {
               term: "During",
-              detail: "Walk the four stages with that evidence. Note what has changed since the last review.",
+              detail: "Walk the four stages with that evidence.",
             },
             {
               term: "After",
-              detail: "Write the record. Escalate if this review cannot name the decision owner or close a material risk.",
+              detail: "Write the review record. If it cannot be completed, the call is investigate.",
             },
           ],
         },
@@ -2922,11 +2921,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
             steps: [
               {
                 term: "Product",
-                detail: "Yesterday's list for the offer before write-off. One report, refreshed from the invoice ledger.",
+                detail: "Yesterday's list for the offer of more time. One report, refreshed from the invoice ledger.",
               },
               {
                 term: "Decision",
-                detail: "Which overdue invoices need attention, and which customers can have more time. The offer is still made before write-off.",
+                detail: "Whether to offer an open invoice more time to pay, or to refuse it. The offer is still made before write-off.",
               },
               {
                 term: "Decision owner",
@@ -2952,8 +2951,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
               },
               {
                 term: "Action",
-                detail:
-                  "No corrective action is required.",
+                detail: "No corrective action is required. The technical owner keeps the refresh.",
               },
               {
                 term: "Next review",
