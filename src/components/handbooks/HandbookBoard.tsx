@@ -10,6 +10,7 @@ import type {
 } from "@/content/handbooks";
 import { LoopPlate, PyramidPlate, RecoveryPlate, ScenePlate } from "@/components/handbooks/HandbookPlates";
 import { IconPaths } from "@/components/handbooks/icon-paths";
+import { pagePath } from "@/lib/handbooks";
 
 const PANEL =
   "relative flex h-full min-h-0 flex-col overflow-hidden bg-[#040914] max-lg:rounded-none lg:rounded-md lg:border lg:border-cyan-300/30 lg:shadow-[0_0_42px_-18px_rgba(34,211,238,0.55)]";
@@ -192,6 +193,71 @@ export function HandbookFieldLandscape() {
         Field card, handbook, story, and portfolio sit on one road.
       </figcaption>
     </figure>
+  );
+}
+
+/** The book's dark cover, on the library shelf. The title and the chapters open the book. */
+export function HandbookCover({ handbook }: { handbook: Handbook }) {
+  const page = handbook.pages[0];
+  if (!page) return null;
+  const ledger = page.plate === "ledger";
+  const ink = ledger ? "text-amber-100" : "text-cyan-200";
+  const bookHref = pagePath(handbook.slug, page.number);
+  return (
+    <article
+      data-handbook-book={handbook.slug}
+      data-handbook-cover={ledger ? "ledger" : "horizon"}
+      className="flex w-full min-w-0 items-stretch drop-shadow-[10px_18px_28px_rgba(0,0,0,0.45)]"
+    >
+      <div
+        aria-hidden="true"
+        className="flex w-10 shrink-0 items-center justify-center rounded-l-sm border border-white/10 border-r-0 bg-[#070b14] shadow-[inset_-10px_0_16px_rgba(0,0,0,0.55)]"
+      >
+        <p className={`font-mono text-[11px] tracking-[0.28em] [writing-mode:vertical-rl] ${ink}`}>{handbook.index}</p>
+      </div>
+      <div className="relative grid w-full min-w-0 flex-1">
+        <div aria-hidden="true" className="col-start-1 row-start-1 w-full min-h-[40rem] pb-[150%]" />
+        <div className="relative col-start-1 row-start-1 overflow-hidden rounded-r-sm border border-white/15 border-l-0 bg-[#040914]">
+        {ledger ? <LedgerBackdrop /> : <EarthBackdrop />}
+        <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#02040a] via-[#02040a]/88 via-42% to-transparent" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-1.5 right-0 z-20 w-[7px] bg-[linear-gradient(90deg,#14110e_0_1px,#d9d0c2_1px_2px,#14110e_2px_3px,#efe8dc_3px_5px,#14110e_5px)]"
+        />
+        <div className="relative z-10 flex h-full min-h-full flex-col px-5 pt-5 pb-4 sm:px-6 sm:pt-6">
+          <p className={`font-mono text-[10px] tracking-[0.28em] uppercase ${ink}`}>
+            Orbit / Handbook {handbook.index}
+          </p>
+          <h2 className="mt-3 max-w-[12ch] font-display text-[2.15rem] leading-[0.92] font-semibold tracking-tight text-white sm:text-[2.6rem]">
+            <Link href={bookHref} className="focus-ring rounded-sm hover:text-neon-cyan">
+              {handbook.title}
+            </Link>
+          </h2>
+          <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-slate-200">{handbook.thesis}</p>
+          <a
+            href={handbook.card.href}
+            className="focus-ring mt-4 inline-block w-fit rounded-sm font-mono text-[0.65rem] tracking-[0.16em] text-slate-300 uppercase hover:text-white"
+          >
+            {handbook.card.label}
+          </a>
+          <ol className="mt-auto border-t border-white/15 pt-3">
+            {handbook.contents.map((entry, index) => (
+              <li key={entry.title}>
+                <Link
+                  href={pagePath(handbook.slug, entry.page)}
+                  className="focus-ring flex min-h-11 items-center gap-3 rounded-sm py-1 text-sm leading-snug text-white hover:text-neon-cyan"
+                  style={{ textShadow: "0 2px 12px rgba(0,0,0,0.95)" }}
+                >
+                  <span className={`w-4 shrink-0 font-mono text-xs tabular-nums ${ink}`}>{index + 1}</span>
+                  <span>{entry.title}</span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+        </div>
+        </div>
+      </div>
+    </article>
   );
 }
 
