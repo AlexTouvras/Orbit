@@ -87,4 +87,23 @@ describe("handbook volume reader", () => {
     assert.ok(kinds.has("curve"));
     assert.ok(kinds.has("loop"));
   });
+
+  it("gives each published book a dark cover and one line per chapter", () => {
+    const plates = HANDBOOKS.map((handbook) => handbook.pages[0]?.plate);
+    assert.deepEqual(plates, ["horizon", "ledger"]);
+    const data = HANDBOOKS.find((item) => item.slug === "data-that-drives-decisions");
+    assert.ok(data);
+    assert.deepEqual(
+      data.contents.map((entry) => entry.title),
+      [
+        "What good looks like",
+        "Choose the work",
+        "Make the number fit to use",
+        "Choose the stack",
+        "Keep trust in force",
+        "Run the product and judge the value",
+      ],
+    );
+    assert.equal(data.contents[2]?.sections?.length, 4);
+  });
 });
