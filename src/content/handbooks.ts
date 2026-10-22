@@ -61,7 +61,7 @@ export interface HandbookFigureRow {
 }
 
 export interface HandbookFigure {
-  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve" | "sheet" | "reading" | "uses" | "tree";
+  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve" | "sheet" | "reading" | "uses" | "matrix" | "tree";
   caption: string;
   steps: HandbookFigureStep[];
   columns?: HandbookFigureColumn[];
@@ -1361,10 +1361,10 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       number: 6,
       topic: "Choose the work",
       title: "Choose the work",
-      lede: "The first page named the decision. This page decides whether to build, by comparing the outcome, the simplest way to reach it, the cost of keeping it, and what the organization can actually run.",
-      rule: "My operating rule: I start when the outcome is named, a simpler way has been considered, and the people and the ongoing cost are ones the organization can keep. The field card's ladder guides that judgment. It does not classify a technique by its name. If one of those is missing, I write down which one, and I do not start.",
+      lede: "What good looks like named the capability. This page decides whether to start, and how far. A first look is not a product the organization has to keep.",
+      rule: "My operating rule: a first look can start when the question is named. A product the organization must keep starts when the outcome, a sufficient way, and the cost of keeping it are written, and the people can run it. If one of those is missing, I write which one, and that product does not start. I do not invent a return to justify either start, and I do not refuse the look because the return is not yet known.",
       illustration: "The invoice case is an illustration, not a record.",
-      reviewed: "19 Oct 2026",
+      reviewed: "22 Oct 2026",
       ground: {
         src: `${DATA_ART}/path.jpg`,
         alt: "",
@@ -1372,106 +1372,117 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
       sections: [
         {
           id: "case",
-          title: "The comparison",
+          title: "What is enough to start",
           paragraphs: [
-            "This is the same example as the first page. I have not measured it, and it states no amount. The decision is whether one credit controller offers more time on an open invoice before it is written off. The invoice may be overdue because the customer is on agreed terms, because of a billing error, or because it will not be paid. The card warns against a dashboard with no decision behind it.",
-            "The outcome this work could improve is that offer. The controller needs the open invoices together, with written-off accounts left out, in time to tell those three reasons apart.",
-            "The live screen is a different outcome.",
-            "A live screen for every collector, refreshed through the day, plus a prediction of whom to call, would help choose which customer to call now. I have not measured whether that screen would change the calls. I do not have that result, so I do not use it as a reason to build the screen or as a reason to refuse the list.",
-            "The simplest thing that could serve the offer is a list of open invoices as of yesterday, for that one controller. Reading the ledger one invoice at a time does not show them together. A number that changes through the day is not required, because the offer is made before a write-off, not while a customer is on the phone. A simpler list is not automatically the better investment. This decision does not get better from a fresher number, and the organization would still pay to keep that number moving.",
-            "The reason to start is that the write-off is already being decided, and the open invoices are not together for the person who can offer time. That is a reason to build the list. It is not evidence that the list will pay for itself.",
-            "Keeping the list takes the invoice ledger, the controller's time to refresh yesterday's list, whatever publishes that one list, and the written standard one person already owns. The ongoing cost is that person's time. The live screen would add daily time from people who are not this controller, a watch on a number that moves all day, and the care of a model. On the card, predictive, real-time, and self-service sit on Optimized. I use that as guidance. A model can be kept where someone already watches the number and can explain it. This organization has a written standard and one owner. It is not watching a product. I would not add the model in order to climb the ladder. A calling prediction would be a new case, after this list is in use and the controller can say what followed the offers.",
-            "For this case I build the list. I defer the calling prediction. I do not build the live screen.",
-            "I would reconsider if the controller stopped using the list. I would also reconsider if yesterday were no longer fresh enough, or if the cost of the list grew into the live system. That reconsideration is Run the product and judge the value. This page names it. It does not make the call.",
+            "A first look and a product are different starts. A first look is work to learn whether the question is real. Someone will use what is found. The invoice offer is not that kind of start.",
+            "The offer is a product the organization would have to keep. The rule at the top is what has to be written before it starts.",
+            "Name the decision is when a number can go out. This page is whether to build the thing that produces it. A chart used to look can go out before the brief is filled. That does not, by itself, justify a product the organization has to keep.",
+            "A simpler build is not automatically the better investment. A heavier one is not better because its name sits higher on the field card. The ladder says how much of the practice this organization can keep. It does not ban a technique by its name. Predictive, real-time, and self-service are capabilities, used when the decision needs them.",
+            "These comparisons are my practice. I have not read a prioritisation method for them. The card supplies the ladder, and the warning against a dashboard with no decision. Kimball and the GAO guide are not this method.",
           ],
-          figure: {
-            kind: "flow",
-            caption: "The same example. The live screen is a different outcome. The list matches this one. No amount is shown.",
-            steps: [
-              {
-                term: "Not this case",
-                detail:
-                  "A live screen for every collector, and a prediction of whom to call. The outcome is a different decision. The cost is a number that moves all day. Deferred until the list is in use, or refused for this offer.",
-              },
-              {
-                term: "This case",
-                detail:
-                  "One list, as of yesterday, for the controller who can offer time. Fresh enough for an offer made before write-off. The cost is that person's time.",
-              },
-            ],
-          },
           sources: [{ href: DATA_CARD, label: "Data analytics field card" }],
         },
         {
-          id: "case-sheet",
-          title: "The case",
+          id: "case-matrix",
+          title: "Three ways",
           paragraphs: [
-            "The lines are the record of the comparison above. The reasoning stays in that comparison. Before anyone builds, I also write what I would look at later. I have not collected it.",
+            "The invoice case is the same illustration as the first page. I have not measured it, and it states no amount. The offer is whether one credit controller gives an open invoice more time before it is written off. The invoice may be overdue because the customer is on agreed terms, because of a billing error, or because it will not be paid.",
+            "Reading the ledger is the process already there. Yesterday's list is one product for that offer. A live service, with a prediction of whom to call, is a heavier product for a different decision. The tools that would run any of them stay on Choose the stack.",
           ],
-          lines: [
-            {
-              term: "Decision",
-              detail: "Will this controller offer more time on one open invoice before it is written off?",
-            },
-            {
-              term: "Actor",
-              detail: "The credit controller who can offer that time.",
-            },
-            {
-              term: "Organization",
-              detail:
-                "A written standard and one owner. On the card, that is Defined. The ladder guides the burden we can keep. It does not ban a model by its name.",
-            },
-            {
-              term: "Need",
-              detail: "The open invoices together, as of yesterday. Not a live number for every collector.",
-            },
-            {
-              term: "Scale",
-              detail: "One person. Fresh enough for an offer made before write-off, not for choosing a call in the moment.",
-            },
-            {
-              term: "Benefit",
-              detail: "The controller can tell why the invoice is overdue before a write-off.",
-            },
-            {
-              term: "Cost",
-              detail:
-                "That person's time to keep the list. The live screen would add daily time, a moving number, and a model. No currency amount.",
-            },
-            {
-              term: "Alternative",
-              detail:
-                "Reading the ledger one invoice at a time does not show them together. The live screen answers whom to call, which is a different outcome.",
-            },
-            {
-              term: "What would count",
-              detail:
-                "The controller uses the list. An offer can be followed to an account that stayed current, or to a write-off. Keeping it is still one person's time. No target. None of this has been collected.",
-            },
-            {
-              term: "Build or stop",
-              detail:
-                "Build the list. Defer the calling prediction until the list is in use. Do not build the live screen for this decision.",
-            },
+          figure: {
+            kind: "matrix",
+            caption:
+              "The same illustration. Three ways, one offer. No amount is shown. Yesterday's list is the build.",
+            steps: [],
+            head: ["", "Read the ledger", "Yesterday's list", "Live service"],
+            rows: [
+              {
+                label: "Decision",
+                cells: [
+                  "The invoices are not together.",
+                  "Whether this controller offers more time before write-off.",
+                  "Whom to call now. A different decision.",
+                ],
+              },
+              {
+                label: "Benefit",
+                cells: [
+                  "Nothing new is built. The three reasons stay scattered.",
+                  "The open invoices are together, written-off accounts left out, in time to tell those reasons apart.",
+                  "A collector could choose the next call. I have not measured whether the calls would change.",
+                ],
+              },
+              {
+                label: "Effort",
+                cells: [
+                  "None. The ledger is already the work.",
+                  "One list, for one controller, from the ledger.",
+                  "A screen for every collector, a number that moves all day, and a model.",
+                ],
+              },
+              {
+                label: "Cost to keep",
+                cells: [
+                  "The time already spent reading one invoice at a time.",
+                  "That person's time to refresh yesterday's list. No currency amount.",
+                  "Daily time from other people, a watch on a moving number, and the care of a model.",
+                ],
+              },
+              {
+                label: "Risk",
+                cells: [
+                  "The offer is made without the invoices together.",
+                  "The list can be wrong, late, or unused. The cost stays one person's time.",
+                  "The organization would keep a moving number for a decision this offer does not make.",
+                ],
+              },
+              {
+                label: "Evidence",
+                cells: [
+                  "Already in use. No new evidence.",
+                  "The write-off is already being decided, and the invoices are not together. That is a reason to build. It is not evidence the list will pay for itself.",
+                  "Not from a guess. After the list is in use, look at what followed the offers. That evidence is not collected here.",
+                ],
+              },
+              {
+                label: "Call",
+                cells: [
+                  "Not enough for this offer. It stays the fallback.",
+                  "Build. Yesterday is fresh enough because the offer is made before write-off. Simpler is not the reason.",
+                  "Do not build for this offer. Defer the calling prediction until the list is in use.",
+                ],
+              },
+            ],
+          },
+          closing: [
+            "For this offer I build yesterday's list. I do not build the live service. The calling prediction waits until the list is in use. Reading the ledger stays the fallback, because it does not put the invoices together.",
+          ],
+        },
+        {
+          id: "case-unknown",
+          title: "What can stay unknown",
+          paragraphs: [
+            "A currency return, and proof that the offers will change the accounts, can stay unknown. I do not invent either one in order to start the list.",
+            "The size of the ledger, and how often the controller will open the list, can stay assumptions. Further volume is an assumption until the decision needs it. That assumption is not a reason to build the live service.",
+            "Before any heavier build I would test whether the controller uses yesterday's list, and whether an offer can be followed to an account that stayed current or to a write-off. I have not collected that. If the controller stops using the list, if yesterday is no longer fresh enough, or if the cost of the list grows into the service this page refused, that is a reason to reconsider. The reconsideration is Run the product and judge the value. This page names it. It does not make the call.",
           ],
         },
         {
           id: "case-know",
           title: "How I would know",
           paragraphs: [
-            "I ask two different questions. One is whether the case was written properly on the day. The other is whether the decision got better later. I have no target times, and I have not collected a result for either.",
+            "I ask two different questions. One is whether the case was written on the day. The other is whether the decision got better later. I have no target, and I have not collected a result for either.",
           ],
           lines: [
             {
               term: "On the day",
               detail:
-                "The outcome, the simpler way, the cost of keeping it, and what we defer or reject are written down. If one is missing, the written reason says which. Starting with none of that is the failure. This checks the practice.",
+                "The outcome, the ways compared, the cost of keeping the chosen one, and what we defer or reject are written. A first look is not failed for lacking a return. A product that starts with one of those lines missing is the failure. This checks the practice.",
             },
             {
               term: "Later",
               detail:
-                "What would count, on the lines above, is how I would tell whether the decision got better. If the controller stops using the list, if yesterday is no longer fresh enough, or if the cost grows into the screen we refused, that is a reason to reconsider. This page does not report that any of it has happened.",
+                "Whether the controller uses the list, and whether an offer can be followed. If use stops, if yesterday is no longer fresh enough, or if the cost grows into the service this page refused, that is a reason to reconsider. None of this has been collected.",
             },
           ],
         },
@@ -1479,7 +1490,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-limits",
           title: "Where I do not use it",
           paragraphs: [
-            "This page only decides whether to start. After that, Name the decision fills in the brief.",
+            "This page only decides whether to start, and how far. Name the decision fills the brief after the list is taken.",
             "Choose the stack names the tools. Run the product and judge the value later decides whether to continue, change, or stop.",
             "The calendar, the blast radius, and the cutover stay on the technology delivery field card. A slow backtest of probability of default or expected credit loss stays on the Bayesian optimisation card.",
           ],
@@ -1493,7 +1504,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
           id: "case-draft",
           title: "When AI drafts the case",
           paragraphs: [
-            "This still holds when a model drafts the case. The controller has to accept the cost of the offer: refusing time to a customer on agreed terms, or offering time on a debt that will not be paid. A draft that names a tool, treats the top rung as the aim, and skips the outcome or the cost of keeping the work, is not a decision to build.",
+            "This still holds when a model drafts the case. The controller has to accept the cost of the offer: refusing time to a customer on agreed terms, or offering time on a debt that will not be paid. A draft that names a tool, treats the top rung as the aim, skips the outcome or the cost of keeping the work, or invents a return, is not a decision to build.",
           ],
         },
       ],

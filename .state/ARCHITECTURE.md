@@ -172,7 +172,7 @@ data/studio-roadmap.json
 data/studio-roadmap.seed.json
 PRODUCT.md
 docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, HANDBOOKS, AGENT_RULES
-src/content/handbooks.ts     # handbook series; SDLC book and analytics pages 1–4
+src/content/handbooks.ts     # handbook series; SDLC book and analytics pages 1–9. A matrix figure is one criterion per row.
 public/handbook-art/data-that-drives-decisions/  # this book's cover and section pictures
 src/lib/field-card/handbook-link.ts  # re-insert the analytics chapter link on Approve sync
 src/lib/handbooks.ts
@@ -189,6 +189,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-22 | Choose the work compares three ways, and a look is not a kept product | On `/6`, a first look can start when the question is named. A product the organization must keep still needs the outcome, a sufficient way, the cost of keeping it, and people who can run it. The record is a matrix: reading the ledger, yesterday's list, and a live service. Yesterday's list is the build. No amount is stated, and no return is invented. A simpler build is not automatically better. The matrix figure paginates one criterion per block so a leaf can break between rows. `/2` through `/5` and `/7` through `/9` stay. |
 | 2026-10-22 | The contact booker is a date, then the times for that date | Open days are one row of buttons. Times appear only after a date is chosen, and changing the date clears the time. Nothing is written between “Book a time” and those buttons. Studio still says whether the calendar feed is connected. |
 | 2026-10-22 | A work calendar is a second secret iCal address | `APPOINTMENT_CALENDAR_ICS_URL` accepts more than one https feed, separated by a space. Personal Google and published Outlook can both hide slots. Outlook “when I’m busy” uses `VFREEBUSY`, and free periods stay open. One feed failing still hides the calendars that loaded. A booking on the site is not written back onto the work calendar. |
 | 2026-10-22 | Appointment slots hide meetings from a secret calendar feed | `APPOINTMENT_CALENDAR_ICS_URL` is an https iCal address on Google, Outlook, or iCloud. The feed is read at request time, cached for five minutes, and never written into `data/appointments.json`. A slot is hidden when it overlaps a busy event, including a weekly repeat. Cancelled and transparent events stay free. A slot that ends when a meeting starts stays open. If the feed is missing or fails, the page still lists the window and the contact page says meetings elsewhere still look open. |
