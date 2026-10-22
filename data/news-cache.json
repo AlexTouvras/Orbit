@@ -1,7 +1,124 @@
 {
-  "generatedAt": "2026-10-21T06:46:57.490Z",
+  "generatedAt": "2026-10-22T06:46:55.017Z",
   "count": 264,
   "items": [
+    {
+      "id": "8b47acdaa51b",
+      "title": "Mind the gap: Bringing EU debt into the Stability and Growth Pact",
+      "link": "https://cepr.org/voxeu/columns/mind-gap-bringing-eu-debt-stability-and-growth-pact",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-21T23:00:00.000Z",
+      "contentSnippet": "EU debt has become a noticeable feature of Europe’s fiscal architecture. However, EU fiscal rules focus solely on national public finances. They have a blind spot for EU debt, which calls their goal of fiscal sustainability into question. This column proposes a simple way to brid…"
+    },
+    {
+      "id": "c983a45b38b2",
+      "title": "Establishment-level evidence on California’s fast-food minimum wage",
+      "link": "https://cepr.org/voxeu/columns/establishment-level-evidence-californias-fast-food-minimum-wage",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-21T23:00:00.000Z",
+      "contentSnippet": "The standard prediction is that a higher minimum wage reduces employment among low-wage workers. This column examines the effect of a rise in the minimum wage in California for workers at both large and small fast-food chains. Among smaller chains, employment, the number of estab…"
+    },
+    {
+      "id": "2ed22a61b2f1",
+      "title": "Broad access through consistent standards",
+      "link": "https://openai.com/index/broad-access-through-consistent-standards",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-21T21:00:00.000Z",
+      "contentSnippet": "How OpenAI works with distribution partners to uphold consistent safeguards, support responsible access, and clarify expectations in our Usage Policies."
+    },
+    {
+      "id": "4ab93569e260",
+      "title": "How AT&T is rethinking in-house legal work with OpenAI",
+      "link": "https://openai.com/index/att-legal",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-21T17:00:00.000Z",
+      "contentSnippet": "AT&T is working with OpenAI to make legal knowledge easier to access. Learn how its LegalEdge team is rethinking intake and scaling legal judgment."
+    },
+    {
+      "id": "2de1f3f85cd4",
+      "title": "Empowering frontline maternal care with AI-assisted ultrasound",
+      "link": "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-10-21T16:23:53.000Z",
+      "contentSnippet": "Health & Bioscience"
+    },
+    {
+      "id": "74fcf21eca7a",
+      "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+      "link": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-21T13:00:00.000Z",
+      "contentSnippet": "From local businesses to global brands, more advertisers can now reach people as they explore, compare and decide what to buy in ChatGPT."
+    },
+    {
+      "id": "61f4d0141ff3",
+      "title": "OpenAI models are coming to Google Cloud",
+      "link": "https://openai.com/index/openai-models-google-cloud",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-21T12:00:00.000Z",
+      "contentSnippet": "OpenAI and Google Cloud are bringing frontier models and Codex workflows to Gemini’s Model Garden, available through Google Cloud Marketplace."
+    },
+    {
+      "id": "39eca36a0c26",
+      "title": "Databricks AI Runtime and NVIDIA make it easier to customize open models with enterprise data",
+      "link": "https://www.databricks.com/blog/databricks-ai-runtime-nvidia-train-fine-tune-models",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-21T11:30:00.000Z",
+      "contentSnippet": "GPUs power today's most advanced AI workloads, from cutting-edge language models..."
+    },
+    {
+      "id": "d05396f94ede",
+      "title": "AI Runtime is Generally Available",
+      "link": "https://www.databricks.com/blog/ai-runtime-generally-available",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-21T11:20:00.000Z",
+      "contentSnippet": "Today, we’re excited to announce the General Availability of AI Runtime (AIR), bringing..."
+    },
+    {
+      "id": "50744548848c",
+      "title": "Fragments: October 21",
+      "link": "https://martinfowler.com/fragments/2026-10-21.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-10-21T10:51:00.000Z",
+      "contentSnippet": "Gergely Orosz is frustrated at those that entered his explicitly “No AI” essay competition and used AI. He goes on to say: When I start to suspect some part is AI about someone I don’t know: how can I tell how much of it is? And how much time and effort do I want to invest to fig…"
+    },
+    {
+      "id": "4f81ccf40cc2",
+      "title": "How To Write Effective Acceptance Criteria",
+      "link": "https://www.scrum.org/resources/blog/how-write-effective-acceptance-criteria",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-21T07:26:09.000Z",
+      "contentSnippet": "Image Acceptance Criteria, or Conditions of Satisfaction, is a set of expectations that a feature must meet to be considered complete and work as intended. Acceptance Criteria is a non-negotiable mechanism for creating quality features. Unfortunately, many Scrum Teams overlook th…"
+    },
+    {
+      "id": "d3f519557f32",
+      "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
+      "link": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-21T07:00:00.000Z",
+      "contentSnippet": "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source."
+    },
+    {
+      "id": "edef63b51aed",
+      "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
+      "link": "https://openai.com/index/building-chatgpt-ad-stack",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-21T07:00:00.000Z",
+      "contentSnippet": "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale."
+    },
     {
       "id": "2cab46eaaf04",
       "title": "Stop asking whether your pharma company should \"go agile\"",
@@ -10,6 +127,42 @@
       "category": "Delivery",
       "pubDate": "2026-10-21T05:46:23.000Z",
       "contentSnippet": "One pharma company works in four very different kinds of environment at the same time. So the useful question isn't whether to adopt agile. It's agile to solve what, how much, and what kind. Over the years, I've been asked some version of the same question countless times: \"Shoul…"
+    },
+    {
+      "id": "1de8e62ff715",
+      "title": "Using thousands of AI agents to uncover new leads in biological data",
+      "link": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-21T04:50:00.000Z",
+      "contentSnippet": "See how OpenAI, PerturbAI, and Scripps Research used distributed AI agents to uncover promising research leads in data from millions of brain cells."
+    },
+    {
+      "id": "4b8a59f35656",
+      "title": "Deploy RFD4-Proteina on Databricks",
+      "link": "https://www.databricks.com/blog/deploy-rfd4-proteina-model-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-21T04:42:46.000Z",
+      "contentSnippet": "Bring RFD4-Proteina to your research data with AI-assisted development and serverless NVIDIA GPU compute...."
+    },
+    {
+      "id": "9201054eeb4c",
+      "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
+      "link": "https://openai.com/index/cloudflare-cyber",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-21T00:00:00.000Z",
+      "contentSnippet": "Cloudflare uses OpenAI Daybreak to investigate vulnerabilities and propose fixes for review. Its developers use Codex to build faster and improve code quality."
+    },
+    {
+      "id": "1321330de0aa",
+      "title": "Announcing DuckDB 2.0.0 LTS “Cinnamon Teal”",
+      "link": "https://duckdb.org/2026/10/21/announcing-duckdb-200.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-10-21T00:00:00.000Z",
+      "contentSnippet": "We are proud to release DuckDB 2.0.0, codenamed “Cinnamon Teal” after the Spatula cyanoptera, a strikingly reddish-brown duck found in the western Americas. While DuckDB 1.0 was all about stability and backward compatibility, DuckDB 2.0 is above all a feature release. In this blo…"
     },
     {
       "id": "73614bd45257",
@@ -28,6 +181,15 @@
       "category": "Economics",
       "pubDate": "2026-10-20T23:00:00.000Z",
       "contentSnippet": "The European banking sector is known for high regulatory complexity, market fragmentation, and uneven implementation of international standards. However, this column argues that across-the-board reductions in capital requirements are not the solution. European requirements are no…"
+    },
+    {
+      "id": "32eb53c1b854",
+      "title": "Assainissement budgétaire : coûts temporaires ou séquelles durables",
+      "link": "https://cepr.org/voxeu/columns/assainissement-budgetaire-couts-temporaires-ou-sequelles-durables",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-20T23:00:00.000Z",
+      "contentSnippet": "La dette publique atteint ou frôle des niveaux records dans l’ensemble des pays de l’OCDE, ce qui accentue la pression exercée sur les gouvernements pour qu’ils rétablissent la viabilité budgétaire à terme. Cet article s’appuie sur de nouvelles données comparatives entre pays qui…"
     },
     {
       "id": "9123c0359486",
@@ -93,24 +255,6 @@
       "contentSnippet": "Originally published on Engineering Leadership. In my journey of delivering an immersive Product Development Mentor Program over the last eight weeks, a compelling narrative unfolded that beautifully illustrates the essence and true strength of Scrum. This story, rooted in the pr…"
     },
     {
-      "id": "c021c28354e5",
-      "title": "How Claude designed protein binders against scorpion neurotoxins",
-      "link": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-20T13:01:21.000Z",
-      "contentSnippet": "We asked an internal research Claude model to design minibinders (small proteins that attach tightly to a target) against scorpion neurotoxins."
-    },
-    {
-      "id": "b3fcb2e42d32",
-      "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
-      "link": "https://openai.com/index/ted-taylor-restaurant",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-20T10:00:00.000Z",
-      "contentSnippet": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow."
-    },
-    {
       "id": "d9f8bdadbdf3",
       "title": "Continuous axis for any Date table in Power BI",
       "link": "https://www.sqlbi.com/tv/continuous-axis-for-any-date-table-in-power-bi/",
@@ -129,15 +273,6 @@
       "contentSnippet": "L'intelligenza artificiale permette di analizzare informazioni e sviluppare nuove proposte in tempi sempre più brevi. Per il Product Owner diventa ancora più importante comprendere quali informazioni siano affidabili e come utilizzarle per prendere decisioni sul prodotto. Image I…"
     },
     {
-      "id": "a84b6a7bee5c",
-      "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
-      "link": "https://openai.com/index/terminal-x",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-20T07:00:00.000Z",
-      "contentSnippet": "Terminal X’s Eval Agent grades outputs against a 54-criterion rubric, catching 25% more deviances from a fund’s mandate with GPT-6.1 Sol."
-    },
-    {
       "id": "428aebc8c802",
       "title": "How HP Is Building an AI-Ready CDP with Databricks CustomerLake",
       "link": "https://www.databricks.com/blog/hp-ai-ready-cdp-databricks-customerlake",
@@ -147,13 +282,13 @@
       "contentSnippet": "At Data + AI Summit 2026, Luis Alonso, Global Head of Data Strategy & Engineering..."
     },
     {
-      "id": "dbaa90254253",
-      "title": "OpenAI acquires Orchestra Bio",
-      "link": "https://openai.com/index/openai-to-acquire-orchestra-bio",
-      "source": "OpenAI Blog",
+      "id": "c021c28354e5",
+      "title": "How Claude designed protein binders against scorpion neurotoxins",
+      "link": "https://www.anthropic.com/research/claude-scorpion-toxin-binder-design",
+      "source": "Anthropic Research",
       "category": "AI",
       "pubDate": "2026-10-20T00:00:00.000Z",
-      "contentSnippet": "OpenAI is acquiring Orchestra Bio to bring AI-powered operations to life sciences R&D, helping biopharma teams accelerate drug development and advance new treatments."
+      "contentSnippet": "We asked an internal research Claude model to design minibinders (small proteins that attach tightly to a target) against scorpion neurotoxins."
     },
     {
       "id": "662ff228c5b0",
@@ -228,24 +363,6 @@
       "contentSnippet": "Tens of thousands of organizations rely on dbt for data transformation. Where you..."
     },
     {
-      "id": "0eba3393317f",
-      "title": "Databricks Is Doubling Down On New York City As A Premier AI Talent Hub",
-      "link": "https://www.databricks.com/blog/databricks-doubling-down-new-york-city-premier-ai-talent-hub",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-19T14:00:50.000Z",
-      "contentSnippet": "When Databricks opened its New York R&D hub at 5 Bryant Park earlier this year, we..."
-    },
-    {
-      "id": "7a364f356aab",
-      "title": "Advancing coding in low‑resource programming languages",
-      "link": "https://openai.com/index/low-resource-programming-languages",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-19T12:00:00.000Z",
-      "contentSnippet": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration."
-    },
-    {
       "id": "9720d645de5a",
       "title": "How To Create A Team Wall For Your Scrum Team",
       "link": "https://www.scrum.org/resources/blog/how-create-team-wall-your-scrum-team",
@@ -262,15 +379,6 @@
       "category": "Data",
       "pubDate": "2026-10-19T03:58:54.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
-    },
-    {
-      "id": "ecff4ccfa2b9",
-      "title": "Geoeconomic pressure",
-      "link": "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-19T00:00:00.000Z",
-      "contentSnippet": "The increasing use of geoeconomic pressure is reshaping the global economy."
     },
     {
       "id": "332af531db90",
@@ -300,6 +408,15 @@
       "contentSnippet": "Cross-border payments remain slow and expensive despite significant improvements in digital financial infrastructure over the past several decades."
     },
     {
+      "id": "ecff4ccfa2b9",
+      "title": "Geoeconomic pressure",
+      "link": "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "The increasing use of geoeconomic pressure is reshaping the global economy."
+    },
+    {
       "id": "ac3191448706",
       "title": "Here, there, and everywhere: Remote work and the employment of disabled and older workers in the UK",
       "link": "https://cepr.org/voxeu/columns/here-there-and-everywhere-remote-work-and-employment-disabled-and-older-workers-uk",
@@ -307,15 +424,6 @@
       "category": "Economics",
       "pubDate": "2026-10-18T23:00:00.000Z",
       "contentSnippet": "Disabled and older adults have lower employment rates than other workers. Policymakers increasingly point to remote work as a way to keep these groups attached to the labour market. This column uses the pandemic-driven rise in working from home in the UK as a quasi-experiment to…"
-    },
-    {
-      "id": "27a1b7416640",
-      "title": "Forward guidance and the limits of public information",
-      "link": "https://cepr.org/voxeu/columns/forward-guidance-and-limits-public-information",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-18T23:00:00.000Z",
-      "contentSnippet": "When nominal interest rates hit the effective lower bound, central banks turned to unconventional measures, with forward guidance emerging as a cornerstone of monetary policy. Drawing on economic literature and data on interest rate forecasts, this column assesses the impact of f…"
     },
     {
       "id": "46bccd42ef44",
@@ -363,42 +471,6 @@
       "contentSnippet": "The October 2026 DuckDB Ecosystem Newsletter: Jev typed AI answers in DuckDB and MotherDuck SQL, DuckDB 2.0's PEG parser and async S3 reads, DuckLake maintenance, analysis-ready OpenStreetMap, OneLake in the browser, a native Mac app, plus a community spotlight on Mark Litwintsch…"
     },
     {
-      "id": "2d79d8428bd0",
-      "title": "Letting AI agents write econometric code",
-      "link": "https://cepr.org/voxeu/columns/letting-ai-agents-write-econometric-code",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-17T23:00:00.000Z",
-      "contentSnippet": "Large language models increasingly write the code behind empirical research. This column reports a benchmark of 40 econometric tasks in Stata, R, and Python. For each task, two leading models write a script, as a chatbot that never runs it and as an agent that runs and revises it…"
-    },
-    {
-      "id": "e9b7cb0e86d2",
-      "title": "Fiscal consolidation: Temporary costs versus lasting scars",
-      "link": "https://cepr.org/voxeu/columns/fiscal-consolidation-temporary-costs-versus-lasting-scars",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-16T23:00:00.000Z",
-      "contentSnippet": "Public debt is at or near record highs across the OECD, increasing the pressure on governments to restore fiscal sustainability over time. This column draws on new cross-country evidence showing that the output costs of fiscal consolidation are modest and short-lived on average,…"
-    },
-    {
-      "id": "e0bd1667988f",
-      "title": "Transactions are Generally Available, advancing warehousing on the Lakehouse",
-      "link": "https://www.databricks.com/blog/transactions-are-generally-available-advancing-warehousing-lakehouse",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-16T21:00:00.000Z",
-      "contentSnippet": "Multi-Statement Transactions are Generally Available, enabling organizations to run..."
-    },
-    {
-      "id": "65442e708214",
-      "title": "How Itaú is building generative AI for its entire customer base",
-      "link": "https://openai.com/index/itau-generative-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-16T19:00:00.000Z",
-      "contentSnippet": "With ia.i, a conversational interface, and the IARA governance platform, Itaú is applying its AI First strategy to customers and employees — in one of Brazil’s most regulated sectors."
-    },
-    {
       "id": "83945f3b589d",
       "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
       "link": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
@@ -406,60 +478,6 @@
       "category": "AI",
       "pubDate": "2026-10-16T18:11:34.000Z",
       "contentSnippet": "General Science"
-    },
-    {
-      "id": "04b7640931c7",
-      "title": "Designing more efficient quantum circuits with Claude",
-      "link": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-16T17:29:00.000Z",
-      "contentSnippet": "We gave Claude plain-language specifications for eight quantum circuits, along with an automated evaluator to check and score its designs. Working largely on its own, Claude improved on the best published circuits, in some cases by an order of magnitude or more, which could bring…"
-    },
-    {
-      "id": "7a6a342eb958",
-      "title": "Claude reveals ECDSA curve origins",
-      "link": "https://www.anthropic.com/research/ecdsa-curve-origins",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-16T17:02:00.000Z",
-      "contentSnippet": "The decades-old mystery of the origins of one of the most popular cryptographic standards has been explained."
-    },
-    {
-      "id": "ce6de6f9e4f4",
-      "title": "The AI expectations gap",
-      "link": "https://www.anthropic.com/research/ai-expectations-gap",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-16T16:45:00.000Z",
-      "contentSnippet": "How will AI reshape the economy in the years ahead? What is the core source of disagreement about AI's future impact on the economy? This note presents new survey evidence on these questions."
-    },
-    {
-      "id": "f1073754b8e0",
-      "title": "How employment is changing at Anthropic",
-      "link": "https://www.anthropic.com/research/employment-at-anthropic",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-16T16:26:00.000Z",
-      "contentSnippet": "How has AI restructured work and employment at Anthropic? As a company at the frontier of AI adoption, Anthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy."
-    },
-    {
-      "id": "ab1e0ebf1e34",
-      "title": "Working at the frontier shapes expectations for the future",
-      "link": "https://www.anthropic.com/research/expectations-for-the-future",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-16T16:21:00.000Z",
-      "contentSnippet": "We’re sharing two reports: the first covers how AI is changing employment inside Anthropic, and the second looks at the gap between how the public and Anthropic employees expect AI to affect work and the economy."
-    },
-    {
-      "id": "2552bec412d6",
-      "title": "Closing the Binary Blind Spot: Domain-Knowledge Injection for LLM Malware Triage in npm Packages",
-      "link": "https://www.databricks.com/blog/closing-binary-blind-spot-domain-knowledge-injection-llm-malware-triage-npm-packages",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-16T15:37:00.000Z",
-      "contentSnippet": "IntroductionSupply chain attacks on package registries have grown in volume and sophistication [1]..."
     },
     {
       "id": "67d254fd46bf",
@@ -471,22 +489,49 @@
       "contentSnippet": "Image How confident are you when someone asks, \"When will it be done?\" If you've worked with a Scrum Team for any length of time, you'll know this question well. And you'll probably recognise the uncomfortable silence that sometimes follows. We estimate. We plan. We look at veloc…"
     },
     {
-      "id": "9db4940a53f8",
-      "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
-      "link": "https://openai.com/index/stack-overflow-chatgpt-plugin",
-      "source": "OpenAI Blog",
+      "id": "7a6a342eb958",
+      "title": "Claude reveals ECDSA curve origins",
+      "link": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "source": "Anthropic Research",
       "category": "AI",
       "pubDate": "2026-10-16T00:00:00.000Z",
-      "contentSnippet": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation."
+      "contentSnippet": ""
     },
     {
-      "id": "4a2f3ca18eb9",
-      "title": "Benefit Street Partners answers questions faster with Codex",
-      "link": "https://openai.com/index/benefit-street-partners",
-      "source": "OpenAI Blog",
+      "id": "04b7640931c7",
+      "title": "Designing more efficient quantum circuits with Claude",
+      "link": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+      "source": "Anthropic Research",
       "category": "AI",
       "pubDate": "2026-10-16T00:00:00.000Z",
-      "contentSnippet": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups."
+      "contentSnippet": "We gave Claude plain-language specifications for eight quantum circuits, along with an automated evaluator to check and score its designs. Working largely on its own, Claude improved on the best published circuits, in some cases by an order of magnitude or more, which could bring…"
+    },
+    {
+      "id": "ab1e0ebf1e34",
+      "title": "Working at the frontier shapes expectations for the future",
+      "link": "https://www.anthropic.com/research/expectations-for-the-future",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-16T00:00:00.000Z",
+      "contentSnippet": "We’re sharing two reports: the first covers how AI is changing employment inside Anthropic, and the second looks at the gap between how the public and Anthropic employees expect AI to affect work and the economy."
+    },
+    {
+      "id": "f1073754b8e0",
+      "title": "How employment is changing at Anthropic",
+      "link": "https://www.anthropic.com/research/employment-at-anthropic",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-16T00:00:00.000Z",
+      "contentSnippet": "How has AI restructured work and employment at Anthropic? As a company at the frontier of AI adoption, Anthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy."
+    },
+    {
+      "id": "ce6de6f9e4f4",
+      "title": "The AI expectations gap",
+      "link": "https://www.anthropic.com/research/ai-expectations-gap",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-16T00:00:00.000Z",
+      "contentSnippet": "How will AI reshape the economy in the years ahead? What is the core source of disagreement about AI's future impact on the economy? This note presents new survey evidence on these questions."
     },
     {
       "id": "c77032d2ea07",
@@ -523,15 +568,6 @@
       "category": "Credit",
       "pubDate": "2026-10-16T00:00:00.000Z",
       "contentSnippet": "We study how offshore non-deliverable forward (NDF) markets transmit exchange-rate pressures to domestic currency markets. Using unique transaction-level data on the universe of centrally cleared NDFs for ten emerging-market currencies over 2013–2025, we show that offshore NDF or…"
-    },
-    {
-      "id": "a72d1e4da6b0",
-      "title": "Bringing GPT-Rosalind to academic research labs",
-      "link": "https://openai.com/index/introducing-the-rosalind-academic-plan",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-15T19:00:00.000Z",
-      "contentSnippet": "Introducing the Rosalind Academic Plan, offering eligible academic labs sponsored access to GPT-Rosalind and tools to advance life sciences research."
     },
     {
       "id": "a3b6c325fbde",
@@ -804,15 +840,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "0b0fddc541bc",
-      "title": "To Switch, or Not to Switch the AI Model",
-      "link": "https://www.scrum.org/resources/blog/switch-or-not-switch-ai-model",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-11T14:22:58.000Z",
-      "contentSnippet": "TL;DR: The Hidden Cost of Switching AI Models A new AI model arrives that is cheaper per token, scores better on benchmarks, and seems to require nothing more than a setting change. However, the token bill shows only part of the cost of switching AI models. There is also the effo…"
-    },
-    {
       "id": "c5fcb1c48fe6",
       "title": "ApproximateDistinctCount In Power BI Is Sometimes Slower Than DistinctCount",
       "link": "https://blog.crossjoin.co.uk/2026/10/11/approximatedistinctcount-in-power-bi-is-sometimes-slower-than-distinctcount/",
@@ -883,15 +910,6 @@
       "category": "Data",
       "pubDate": "2026-10-07T00:00:00.000Z",
       "contentSnippet": "A DuckDB database file does not have to contain any data. It can store nothing but view definitions that point at files stored somewhere else, such as Parquet on object storage. The file stays a few hundred kilobytes no matter how large the data it describes, and anyone who attac…"
-    },
-    {
-      "id": "0ec0c3cc2f3e",
-      "title": "Unlocking Earth AI’s planetary geospatial foundation models for global public health",
-      "link": "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-10-06T15:05:11.000Z",
-      "contentSnippet": "Earth AI"
     },
     {
       "id": "e4b469e972e8",
@@ -1144,15 +1162,6 @@
       "category": "Credit",
       "pubDate": "2026-09-25T09:00:00.000Z",
       "contentSnippet": "On 17 September 2026, the PRA hosted a roundtable in relation to CP11/26 – A tailored regime for captive insurance."
-    },
-    {
-      "id": "a133106d4d8e",
-      "title": "DuckDB and Hugging Face: Querying Datasets Directly",
-      "link": "https://duckdb.org/2026/09/25/hugging-face.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-09-25T00:00:00.000Z",
-      "contentSnippet": "Hugging Face is where much of the machine learning community publishes and finds its datasets, while DuckDB is the in-process analytical database that queries files like CSV and Parquet directly, with no server or warehouse to install or run. Did you know that, since DuckDB v0.10…"
     },
     {
       "id": "1edd9ca3b0b4",
@@ -1558,15 +1567,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-02T12:44:43.000Z",
       "contentSnippet": "Let's talk about matrix totals in this episode of The Whiteboard! Special guest: the SQLBI Whiteboard! Learn abstract DAX concepts in a more interactive way with \"The Whiteboard\" series. Read more: https://www.sqlbi.com/blog/marco/2022/07/14/the-whiteboard-video-series-on-sqlbi-y…"
-    },
-    {
-      "id": "ce78c56fbdad",
-      "title": "Fragments: September 1",
-      "link": "https://martinfowler.com/fragments/2026-09-01.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-09-01T19:50:00.000Z",
-      "contentSnippet": "Like many readers, I’m wary of AI generated prose. Simon Wilison has written an LLM cliché highlighter - paste in some text, or a URL, and it will flag various patterns common to LLMs. It references a wikipedia page of signs of AI writing. That page points out that: Humans are no…"
     },
     {
       "id": "05fdb9d79c76",
