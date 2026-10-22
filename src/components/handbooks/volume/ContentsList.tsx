@@ -30,7 +30,6 @@ export function ContentsList({
               >
                 <span className="w-5 shrink-0 tabular-nums text-[var(--book-muted)]">{index + 1}</span>
                 <span className="min-w-0 flex-1">{entry.title}</span>
-                <span className="shrink-0 tabular-nums text-[var(--book-muted)]">{entry.page}</span>
               </Link>
             </li>
           );

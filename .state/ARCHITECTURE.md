@@ -192,6 +192,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-22 | Contents does not print the address | The number beside a chapter is its place, 1 through 6. The address column read 1, 6, 2, 7, 8, 9, which is the URL, not the chapter. The address stays in the corner and in the URL. |
 | 2026-10-22 | Contents names the six chapters | Make the number fit to use is one line in the contents. Name the decision, Say what one row means, When two reports don't match, and Keep the definition stay at `/2` through `/5`. The chapter stays marked while those pages are open. Turning still walks them. |
 | 2026-10-22 | Handbook references are numbered in the text | Both published books put a small number at the end of the section that uses a work. The number opens that work in the page's reference list. A link to another chapter stays the chapter's name. On the leaf, the number opens the leaf that holds the work. |
 | 2026-10-22 | Data that drives decisions reads as a scrolling volume | The leaf frame stays on Software that stays in use. This book sets `reader: "volume"` and its slug is listed in `VOLUME_READER_SLUGS`, so the paper reader, contents rail, and chapter links can move to the other books one flag at a time. Page addresses stay `/1` through `/9`. The ground photograph is not painted behind the type. |
