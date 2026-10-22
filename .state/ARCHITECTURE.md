@@ -172,7 +172,7 @@ data/studio-roadmap.json
 data/studio-roadmap.seed.json
 PRODUCT.md
 docs/product/                # VISION, POSITIONING, HUD_SPEC, STUDIO_ROADMAP, WEBSITE_ARCHITECTURE, HANDBOOKS, AGENT_RULES
-src/content/handbooks.ts     # handbook series; SDLC book and analytics pages 1–9. A matrix figure is one criterion per row.
+src/content/handbooks.ts     # handbook series; SDLC book and analytics pages 1–9. A matrix figure is one criterion per row. A panels figure is one card per block.
 public/handbook-art/data-that-drives-decisions/  # this book's cover and section pictures
 src/lib/field-card/handbook-link.ts  # re-insert the analytics chapter link on Approve sync
 src/lib/handbooks.ts
@@ -189,6 +189,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-22 | The handbook pass draws the method on each chapter | What good looks like opens on Decision, Definition, Technology, Use, and Review. Choose the work keeps the three-way matrix. Name the decision draws the same hypothetical months in three panels. Say what one row means compares one invoice with one customer and states no amount. When two reports don't match walks same meaning, compare, explain, correct or separate, then release. Keep the definition separates a structural contract from a semantic contract. Choose the stack names the jobs: sources, transform, definitions, consumption, orchestration, monitoring. Keep trust in force names five kinds and the path from source through monitoring. The response stays in the prose. The response matrix stays off `/8`. Run the product and judge the value keeps the tree as the method. No second example. No invented amount. |
 | 2026-10-22 | Choose the work compares three ways, and a look is not a kept product | On `/6`, a first look can start when the question is named. A product the organization must keep still needs the outcome, a sufficient way, the cost of keeping it, and people who can run it. The record is a matrix: reading the ledger, yesterday's list, and a live service. Yesterday's list is the build. No amount is stated, and no return is invented. A simpler build is not automatically better. The matrix figure paginates one criterion per block so a leaf can break between rows. `/2` through `/5` and `/7` through `/9` stay. |
 | 2026-10-22 | The contact booker is a date, then the times for that date | Open days are one row of buttons. Times appear only after a date is chosen, and changing the date clears the time. Nothing is written between “Book a time” and those buttons. Studio still says whether the calendar feed is connected. |
 | 2026-10-22 | A work calendar is a second secret iCal address | `APPOINTMENT_CALENDAR_ICS_URL` accepts more than one https feed, separated by a space. Personal Google and published Outlook can both hide slots. Outlook “when I’m busy” uses `VFREEBUSY`, and free periods stay open. One feed failing still hides the calendars that loaded. A booking on the site is not written back onto the work calendar. |
