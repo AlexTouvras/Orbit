@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
 import { ParticleBackground } from "@/components/layout/ParticleBackground";
 import { ScrollLine } from "@/components/story/ScrollLine";
+import { isVolumeReaderPath } from "@/lib/handbook-reader";
 
 const BARE_ROUTES = new Set(["/card", "/qr-code"]);
 
@@ -41,8 +42,20 @@ export function AppChrome({
     );
   }
 
-  const handbookLeaf = /\/handbooks\/[^/]+\/\d+$/.test(pathname);
+  const volume = isVolumeReaderPath(pathname);
+  const handbookLeaf = /\/handbooks\/[^/]+\/\d+$/.test(pathname) && !volume;
   const handbookBoard = pathname === "/handbooks" || handbookLeaf;
+
+  if (volume) {
+    return (
+      <>
+        <Header />
+        <main id="main-content" className="handbook-volume relative z-10 min-h-dvh w-full pt-14">
+          {children}
+        </main>
+      </>
+    );
+  }
   const mainWidth = handbookBoard
     ? "max-w-7xl px-4"
     : deskPage

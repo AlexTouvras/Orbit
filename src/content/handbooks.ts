@@ -141,6 +141,11 @@ export interface Handbook {
   thesis: string;
   /** The field card this book extends. */
   card: HandbookLink;
+  /**
+   * "volume" is the scrolling book. Absent keeps the fixed leaf.
+   * A volume slug also belongs in `VOLUME_READER_SLUGS`.
+   */
+  reader?: "volume";
   contents: HandbookContentsEntry[];
   pages: HandbookPage[];
 }
@@ -1160,6 +1165,7 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   thesis:
     "A number is ready when you can say Ask, Grain, Truth, and Use.",
   card: { href: DATA_CARD, label: "Data analytics field card" },
+  reader: "volume",
   contents: [
     { title: "What good looks like", page: 1 },
     { title: "Choose the work", page: 6 },

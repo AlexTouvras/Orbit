@@ -323,3 +323,144 @@
     color: color-mix(in oklch, #22d3ee 40%, transparent);
   }
 }
+
+/*
+ * Handbook volume. Paper page, separate from the site's dark stage.
+ * The leaf reader does not use these rules.
+ */
+.handbook-volume {
+  --book-paper: #f4efe6;
+  --book-ink: #1b1814;
+  --book-muted: #3e3933;
+  --book-rule: #c9bdae;
+  --book-accent: #7c3822;
+  --book-link: #6a3018;
+  background: var(--book-paper);
+  color: var(--book-ink);
+  color-scheme: light;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+
+.handbook-volume ::selection {
+  background: #e7d3c3;
+  color: var(--book-ink);
+}
+
+.handbook-volume :focus-visible {
+  outline: 2px solid var(--book-accent);
+  outline-offset: 3px;
+}
+
+.handbook-volume .book-kicker {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--book-muted);
+}
+
+.handbook-volume .book-caption {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--book-muted);
+}
+
+.handbook-volume .book-measure {
+  max-width: 40rem;
+}
+
+.handbook-volume .book-spread {
+  max-width: 56rem;
+}
+
+.handbook-volume .book-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.handbook-volume .book-link {
+  color: var(--book-link);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+
+.handbook-volume .book-link:hover {
+  color: var(--book-ink);
+}
+
+.handbook-volume .book-start {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0 1.15rem;
+  border: 1px solid var(--book-ink);
+  color: var(--book-ink);
+  text-decoration: none;
+}
+
+.handbook-volume .book-start:hover {
+  background: var(--book-ink);
+  color: var(--book-paper);
+}
+
+.handbook-volume .book-turn {
+  display: block;
+  min-height: 2.75rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.handbook-volume .book-turn span:last-child {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.handbook-volume .book-turn:hover {
+  color: var(--book-accent);
+}
+
+.handbook-volume summary.book-summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+}
+
+.handbook-volume summary.book-summary::after {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-left: 0.6rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-0.12rem) rotate(45deg);
+}
+
+.handbook-volume details[open] > summary.book-summary::after {
+  transform: translateY(0.12rem) rotate(225deg);
+}
+
+.handbook-volume summary.book-summary::-webkit-details-marker {
+  display: none;
+}
+
+html:has(.handbook-volume) {
+  color-scheme: light;
+  background: #f4efe6;
+}
+
+html:has(.handbook-volume) body {
+  background: #f4efe6;
+}
+
+html:has(.handbook-volume)::-webkit-scrollbar-track {
+  background: #f4efe6;
+}
+
+html:has(.handbook-volume)::-webkit-scrollbar-thumb {
+  background: #c9bdae;
+  border-color: #f4efe6;
+}
