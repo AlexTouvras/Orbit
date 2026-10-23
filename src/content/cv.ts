@@ -7,6 +7,9 @@
 //   npm run orbit:sync-cv          # write factual fields
 //   npm run orbit:sync-cv -- --check
 // Summary is preserved by default; pass --sync-summary to overwrite it.
+//
+// Download CV (`/resume.pdf`) is rendered from this object. Do not add
+// `public/resume.pdf` — that file would replace the generated one.
 
 export interface CvRole {
   title: string;

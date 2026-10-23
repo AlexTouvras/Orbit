@@ -35,6 +35,8 @@ function sanitize(input: unknown): EditableProfile | null {
     if (typeof value !== "string") return null;
     result[field] = value.trim();
   }
+  // About serves /resume.pdf from cv.ts. A saved URL must not point at a second file.
+  result.resumeUrl = "/resume.pdf";
 
   if (!result.name) return null;
 

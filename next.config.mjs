@@ -13,7 +13,7 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Keep these out of the server component bundle; only used in scripts / route handlers.
-  serverExternalPackages: ["rss-parser", "node-cron"],
+  serverExternalPackages: ["rss-parser", "node-cron", "pdfkit"],
   // The route reads this checker with fs. The path is computed, so the file
   // has to be named here or the deployed function will not contain it.
   outputFileTracingIncludes: {
@@ -21,6 +21,10 @@ const nextConfig = {
       "./src/delivery-signal/pipeline.py",
       "./src/delivery-signal/sample/work_items.csv",
       "./src/delivery-signal/sample/previous_work_items.csv",
+    ],
+    "/resume.pdf": [
+      "./src/lib/cv/fonts/IBMPlexSans-Regular.ttf",
+      "./src/lib/cv/fonts/IBMPlexSans-SemiBold.ttf",
     ],
   },
   // public/field-card/index.html is not auto-served at /field-card (App Router 404).

@@ -89,6 +89,7 @@ export const profile = {
   /** Fuller name story for About (essay has the full version). */
   whyOrbitDetail:
     "An orbit is a stable relationship around a center. The center isn't the portfolio card or the latest post. It's the gravitational force that keeps the work from drifting: owned files in git, diagrams that stay with the code, automation that waits for a human Approve, and a commitment to evolve the way I build instead of chasing a prettier homepage. What orbits that center are the products I ship, the Blog essays, the Related signals, workshop projects, and field cards. They move on different schedules. They stay in range because the process at the middle holds.",
+  /** Pinned. About’s download is rendered from `cv.ts` at `/resume.pdf`. */
   resumeUrl: "/resume.pdf",
   /** Pixel-art mark — Hub/About hero beside name. Native sprite in public/. */
   avatarUrl: "/avatar-pixel-64.png",

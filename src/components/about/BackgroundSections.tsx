@@ -29,7 +29,6 @@ function withOrbitMark(text: string) {
 export function BackgroundSections() {
   const profile = getEditableProfile();
   const email = profile.email || cv.email;
-  const resumeUrl = profile.resumeUrl || "/resume.pdf";
 
   return (
     <>
@@ -219,7 +218,8 @@ export function BackgroundSections() {
             description="The same record, as a PDF."
           />
           <a
-            href={resumeUrl}
+            href="/resume.pdf"
+            download
             className="focus-ring group mt-8 inline-flex min-h-11 items-center gap-2 rounded-xl bg-neon-cyan px-5 py-3 text-sm font-semibold text-void shadow-glow transition-[transform,box-shadow] active:scale-[0.98] motion-safe:hover:shadow-glow"
           >
             <Download className="h-4 w-4" />
