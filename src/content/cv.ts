@@ -264,7 +264,7 @@ export const cv: Cv = {
   ],
   training: [
     "OpenBI.no (contributor) — Member of the technical team; analytics and BI platform",
-    "Certified Scrum Product Owner, Helsinki, scheduled Dec 2026",
+    "Certified Scrum Product Owner (CSPO), Satori Helsinki, scheduled 1–2 Dec 2026",
     "ScanAgile 2026, Nordic agile conference, Helsinki (Agile Finland)",
     "Power BI Data Analyst training — Sulava, 2023",
   ],
