@@ -1,7 +1,133 @@
 {
-  "generatedAt": "2026-10-22T06:46:55.017Z",
-  "count": 264,
+  "generatedAt": "2026-10-23T06:46:55.493Z",
+  "count": 263,
   "items": [
+    {
+      "id": "15c1f8ef7a58",
+      "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+      "link": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-23T00:00:00.000Z",
+      "contentSnippet": "OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem."
+    },
+    {
+      "id": "9aa5c8f177b8",
+      "title": "The returns to viral media",
+      "link": "https://cepr.org/voxeu/columns/returns-viral-media",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-22T23:00:00.000Z",
+      "contentSnippet": "Social media has lowered the barriers to political communication, allowing politicians to reach large audiences without relying on traditional media. Yet easier access does not imply an equal distribution of attention. This column examines this distinction by linking daily data o…"
+    },
+    {
+      "id": "657b5a993c8b",
+      "title": "Crypto capture of foreign aid",
+      "link": "https://cepr.org/voxeu/columns/crypto-capture-foreign-aid",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-22T23:00:00.000Z",
+      "contentSnippet": "Official development assistance fell by 23% in 2025, the largest drop on record. Aid disbursements have tended to coincide with deposits in offshore banks. This column argues that once the Panama Papers raised the cost of offshore banking, part of that diversion migrated to crypt…"
+    },
+    {
+      "id": "e837e6c03108",
+      "title": "Your agents' skills are your craft now",
+      "link": "https://www.scrum.org/resources/blog/your-agents-skills-are-your-craft-now",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-22T20:04:48.000Z",
+      "contentSnippet": "When your agent team starts producing defective output mid-Sprint, fixing the skill file is yours to do. You do not need approval from your manager, an AI governance team, or anyone outside your Scrum Team. Scrum is unambiguous: Developers are self-managing and accountable for ad…"
+    },
+    {
+      "id": "92bf8f1f4569",
+      "title": "CP14/26 – Review of the Senior Managers and Certification Regime (SM&CR) – Phase 2",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/review-of-the-smcr-phase-two-consultation-paper",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-10-22T20:00:00.000Z",
+      "contentSnippet": "Consultation paper 14/26"
+    },
+    {
+      "id": "34c595c5b362",
+      "title": "The new economics of AI cost management",
+      "link": "https://www.databricks.com/blog/ai-cost-management",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-22T19:14:24.000Z",
+      "contentSnippet": "For the past two years, the story around enterprise AI adoption has mostly been about..."
+    },
+    {
+      "id": "27825e300358",
+      "title": "Build more responsive apps with the Decisions API",
+      "link": "https://openai.com/index/decisions-api",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-22T19:00:00.000Z",
+      "contentSnippet": "Fast, focused, low-cost decisions for any application."
+    },
+    {
+      "id": "c110e13f20f4",
+      "title": "The Fraud Analyst AI Coworker: Detecting Telecom Fraud in Real-Time on One Platform",
+      "link": "https://www.databricks.com/blog/fraud-analyst-ai-coworker-detecting-telecom-fraud-real-time-one-platform",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-22T18:30:00.000Z",
+      "contentSnippet": "BackgroundAccording to the Communications Fraud Control Association's 2025 survey..."
+    },
+    {
+      "id": "41b6b1475400",
+      "title": "The AI Bill is coming",
+      "link": "https://www.databricks.com/blog/ai-bill-coming",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-22T18:12:49.000Z",
+      "contentSnippet": "In this conversation, Catherine Brown talks with Patrick about what happened when..."
+    },
+    {
+      "id": "e66e9796ba6b",
+      "title": "Beyond tree cover: mapping the world’s forest types",
+      "link": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-10-22T14:30:24.000Z",
+      "contentSnippet": "A global map categorizing every 10-meter patch of land on Earth into distinct forest types."
+    },
+    {
+      "id": "03954bbd5855",
+      "title": "Install DAX libraries into Power BI Desktop by asking your AI assistant",
+      "link": "https://www.sqlbi.com/blog/marco/2026/10/22/install-dax-libraries-into-power-bi-desktop-by-asking-your-ai-assistant/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-10-22T07:30:36.000Z",
+      "contentSnippet": "At the end of 2025, we launched DAX Lib, a public repository of DAX user-defined functions. So far, importing a DAX library has required a few manual steps, like clicking Add to Power BI on daxlib.org and then copying and…"
+    },
+    {
+      "id": "63c31ca523f9",
+      "title": "What FDE means at OpenAI",
+      "link": "https://openai.com/index/forward-deployed-engineering-means",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-22T06:00:00.000Z",
+      "contentSnippet": "What forward deployed engineering means at OpenAI"
+    },
+    {
+      "id": "ba6fa07d677a",
+      "title": "Uber brings ChatGPT Work to all employees with OpenAI",
+      "link": "https://openai.com/index/uber-chatgpt-work-rollout",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-22T00:00:00.000Z",
+      "contentSnippet": "Uber is rolling out ChatGPT Work to more than 30,000 employees, helping teams research, analyze data, create presentations, and complete complex workflows."
+    },
+    {
+      "id": "1360bd8eb5a8",
+      "title": "LLMs are making formal software verification feasible at a much larger scale",
+      "link": "https://www.anthropic.com/research/formal-verification",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-22T00:00:00.000Z",
+      "contentSnippet": "Formal verification can prove that code is free of certain bugs, but historically it has only been feasible for small codebases. With AI models, however, this is beginning to change. Here, we used Claude to prove security properties in over one hundred real-world open-source libr…"
+    },
     {
       "id": "8b47acdaa51b",
       "title": "Mind the gap: Bringing EU debt into the Stability and Growth Pact",
@@ -19,6 +145,15 @@
       "category": "Economics",
       "pubDate": "2026-10-21T23:00:00.000Z",
       "contentSnippet": "The standard prediction is that a higher minimum wage reduces employment among low-wage workers. This column examines the effect of a rise in the minimum wage in California for workers at both large and small fast-food chains. Among smaller chains, employment, the number of estab…"
+    },
+    {
+      "id": "c968756012d3",
+      "title": "From Kyiv with love (and savings): A defence win-win for Europe and Ukraine",
+      "link": "https://cepr.org/voxeu/columns/kyiv-love-and-savings-defence-win-win-europe-and-ukraine",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-21T23:00:00.000Z",
+      "contentSnippet": "Europe is rearming at a historic pace, while military support for Ukraine is still negotiated package by package. This column compares what one euro of defence spending buys in Ukraine and in the rest of Europe. Ukrainian soldiers, howitzers and drones cost a fraction of their Eu…"
     },
     {
       "id": "2ed22a61b2f1",
@@ -102,40 +237,13 @@
       "contentSnippet": "Image Acceptance Criteria, or Conditions of Satisfaction, is a set of expectations that a feature must meet to be considered complete and work as intended. Acceptance Criteria is a non-negotiable mechanism for creating quality features. Unfortunately, many Scrum Teams overlook th…"
     },
     {
-      "id": "d3f519557f32",
-      "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
-      "link": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-21T07:00:00.000Z",
-      "contentSnippet": "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source."
-    },
-    {
-      "id": "edef63b51aed",
-      "title": "How we built ChatGPT’s novel ad stack for user trust and relevance",
-      "link": "https://openai.com/index/building-chatgpt-ad-stack",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-21T07:00:00.000Z",
-      "contentSnippet": "Learn how OpenAI built ChatGPT’s LLM-powered ad stack to understand conversational intent, keep ads separate from answers, and deliver relevant ads at scale."
-    },
-    {
       "id": "2cab46eaaf04",
-      "title": "Stop asking whether your pharma company should \"go agile\"",
+      "title": "Stop Asking Whether your Pharma Company Should \"Go Agile\"",
       "link": "https://www.scrum.org/resources/blog/stop-asking-whether-your-pharma-company-should-go-agile",
       "source": "Scrum.org",
       "category": "Delivery",
       "pubDate": "2026-10-21T05:46:23.000Z",
       "contentSnippet": "One pharma company works in four very different kinds of environment at the same time. So the useful question isn't whether to adopt agile. It's agile to solve what, how much, and what kind. Over the years, I've been asked some version of the same question countless times: \"Shoul…"
-    },
-    {
-      "id": "1de8e62ff715",
-      "title": "Using thousands of AI agents to uncover new leads in biological data",
-      "link": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-21T04:50:00.000Z",
-      "contentSnippet": "See how OpenAI, PerturbAI, and Scripps Research used distributed AI agents to uncover promising research leads in data from millions of brain cells."
     },
     {
       "id": "4b8a59f35656",
@@ -145,15 +253,6 @@
       "category": "Data",
       "pubDate": "2026-10-21T04:42:46.000Z",
       "contentSnippet": "Bring RFD4-Proteina to your research data with AI-assisted development and serverless NVIDIA GPU compute...."
-    },
-    {
-      "id": "9201054eeb4c",
-      "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
-      "link": "https://openai.com/index/cloudflare-cyber",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-21T00:00:00.000Z",
-      "contentSnippet": "Cloudflare uses OpenAI Daybreak to investigate vulnerabilities and propose fixes for review. Its developers use Codex to build faster and improve code quality."
     },
     {
       "id": "1321330de0aa",
@@ -300,33 +399,6 @@
       "contentSnippet": "We study the role of bank liquidity regulation in the growth of private credit. Following the introduction of the liquidity coverage ratio (LCR), private credit increases significantly more in U.S. counties with a larger footprint of banks subject to the LCR or of LCR banks with…"
     },
     {
-      "id": "05bcf9892373",
-      "title": "What happens to innovation after Big Tech buys a startup",
-      "link": "https://cepr.org/voxeu/columns/what-happens-innovation-after-big-tech-buys-startup",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-19T23:00:00.000Z",
-      "contentSnippet": "Concerns abound that ‘killer acquisitions’ by tech giants could deter startup entry and stifle innovation. This column analyses patent data before and after 1,200 acquisitions by eight technology giants between 1995 and 2020. On average, the ‘Big Eight’ firms appear to invest in…"
-    },
-    {
-      "id": "7c667f1497d9",
-      "title": "Taming original sin redux: The role of benchmark-driven flows",
-      "link": "https://cepr.org/voxeu/columns/taming-original-sin-redux-role-benchmark-driven-flows",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-19T23:00:00.000Z",
-      "contentSnippet": "Emerging market capital flows remain highly sensitive to global shocks. This column analyses foreign investors in emerging market local-currency sovereign bonds depending on whether they are benchmarked to J.P. Morgan’s main local-currency government bond index or not. Benchmarke…"
-    },
-    {
-      "id": "9a2009b11593",
-      "title": "CustomerLake enters Beta: Leading enterprises going live with the Agentic CDP",
-      "link": "https://www.databricks.com/blog/customerlake-beta",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-19T22:22:13.000Z",
-      "contentSnippet": "Today, we’re excited to share a major CustomerLake milestone: Campaign Agents is..."
-    },
-    {
       "id": "30b65735f971",
       "title": "Your Transformation is Suboptimal Because You Keep Your Dependencies",
       "link": "https://www.scrum.org/resources/blog/your-transformation-suboptimal-because-you-keep-your-dependencies",
@@ -334,15 +406,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-19T22:00:00.000Z",
       "contentSnippet": "You trained the teams. You renamed the roles. AI tools, Sprints, backlogs, planning events, all in place. Teams got a lot faster but end-to-end delivery not so. Why? Well, likely you changed how people work but you didn't change how the work depends on itself. And dependencies de…"
-    },
-    {
-      "id": "3245e854a36b",
-      "title": "What makes a catalog open? Unity Catalog Advances the Open Lakehouse",
-      "link": "https://www.databricks.com/blog/what-makes-catalog-open-unity-catalog-advances-open-lakehouse",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-19T21:20:00.000Z",
-      "contentSnippet": "While almost every platform now supports open formats, what makes a catalog truly..."
     },
     {
       "id": "9f69327954f5",
@@ -354,15 +417,6 @@
       "contentSnippet": "Power BI enables the continuous X-axis on the auto date/time hierarchy even at the month level. We can get the same behavior on any Date table by setting the right metadata in TMDL. In a previous article, Creating a simpler…"
     },
     {
-      "id": "c76e7ee2f644",
-      "title": "How to get the most out of running dbt on Databricks",
-      "link": "https://www.databricks.com/blog/how-get-most-out-running-dbt-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-19T19:45:59.000Z",
-      "contentSnippet": "Tens of thousands of organizations rely on dbt for data transformation. Where you..."
-    },
-    {
       "id": "9720d645de5a",
       "title": "How To Create A Team Wall For Your Scrum Team",
       "link": "https://www.scrum.org/resources/blog/how-create-team-wall-your-scrum-team",
@@ -372,6 +426,15 @@
       "contentSnippet": "Image Transparency is the backbone of empiricism, which is the foundation of Scrum. Without transparency, inspection and adaptation are pointless. The higher the transparency you have in your team, the better. Bear in mind that all Scrum Team members are responsible for keeping t…"
     },
     {
+      "id": "ec80a4765b0a",
+      "title": "A central skills repository is the wrong fix for agent teams",
+      "link": "https://www.scrum.org/resources/blog/central-skills-repository-wrong-fix-agent-teams",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-19T06:38:41.000Z",
+      "contentSnippet": "A central skills repository fails as an agent governance mechanism because it positions skill file quality as a problem only one team can solve. Every defect your agents produce while the central team's queue clears is a defect your Scrum Team carries but cannot fix. The structur…"
+    },
+    {
       "id": "901ec763c828",
       "title": "Data Engineering Weekly #292",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-292",
@@ -379,6 +442,15 @@
       "category": "Data",
       "pubDate": "2026-10-19T03:58:54.000Z",
       "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "ecff4ccfa2b9",
+      "title": "Geoeconomic pressure",
+      "link": "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "The increasing use of geoeconomic pressure is reshaping the global economy."
     },
     {
       "id": "332af531db90",
@@ -406,24 +478,6 @@
       "category": "Credit",
       "pubDate": "2026-10-19T00:00:00.000Z",
       "contentSnippet": "Cross-border payments remain slow and expensive despite significant improvements in digital financial infrastructure over the past several decades."
-    },
-    {
-      "id": "ecff4ccfa2b9",
-      "title": "Geoeconomic pressure",
-      "link": "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-19T00:00:00.000Z",
-      "contentSnippet": "The increasing use of geoeconomic pressure is reshaping the global economy."
-    },
-    {
-      "id": "ac3191448706",
-      "title": "Here, there, and everywhere: Remote work and the employment of disabled and older workers in the UK",
-      "link": "https://cepr.org/voxeu/columns/here-there-and-everywhere-remote-work-and-employment-disabled-and-older-workers-uk",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-18T23:00:00.000Z",
-      "contentSnippet": "Disabled and older adults have lower employment rates than other workers. Policymakers increasingly point to remote work as a way to keep these groups attached to the labour market. This column uses the pandemic-driven rise in working from home in the UK as a quasi-experiment to…"
     },
     {
       "id": "46bccd42ef44",
@@ -523,15 +577,6 @@
       "category": "AI",
       "pubDate": "2026-10-16T00:00:00.000Z",
       "contentSnippet": "How has AI restructured work and employment at Anthropic? As a company at the frontier of AI adoption, Anthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy."
-    },
-    {
-      "id": "ce6de6f9e4f4",
-      "title": "The AI expectations gap",
-      "link": "https://www.anthropic.com/research/ai-expectations-gap",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-16T00:00:00.000Z",
-      "contentSnippet": "How will AI reshape the economy in the years ahead? What is the core source of disagreement about AI's future impact on the economy? This note presents new survey evidence on these questions."
     },
     {
       "id": "c77032d2ea07",
@@ -732,15 +777,6 @@
       "contentSnippet": "The same Scrum framework sits behind organisations that get real value from AI and those that don't. What separates them is where Scrum is placed in their operating model. For many organisations, Scrum is a delivery method inside a project: the business case fixes scope, budget,…"
     },
     {
-      "id": "c2c066a8a7ef",
-      "title": "Your Sprint Review isn't inspection. It's theatre.",
-      "link": "https://www.scrum.org/resources/blog/your-sprint-review-isnt-inspection-its-theatre-0",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-13T22:00:00.000Z",
-      "contentSnippet": "Image The demo works. The feature does exactly what the slide said it would. Someone says \"nice.\" A couple of people do the little typing-clap in the chat. \"Any questions?\" A pause, the good kind, the kind that means we're done. \"Great, thanks everyone.\" And the review is over. N…"
-    },
-    {
       "id": "471508c04c30",
       "title": "Developing Gemini 4 Argon responsibly and safely",
       "link": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
@@ -756,15 +792,6 @@
       "source": "Google DeepMind",
       "category": "AI",
       "pubDate": "2026-10-13T16:01:58.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "f174716114a9",
-      "title": "Gemini 4 Argon: Built to solve your hardest problems",
-      "link": "https://deepmind.google/blog/introducing-gemini-4-argon/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-10-13T16:01:52.000Z",
       "contentSnippet": ""
     },
     {
@@ -811,24 +838,6 @@
       "category": "AI",
       "pubDate": "2026-10-12T18:15:38.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "f0cd20cb9cc3",
-      "title": "You Need Tighter WIP Limits With AI",
-      "link": "https://www.scrum.org/resources/blog/you-need-tighter-wip-limits-ai",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-12T07:05:14.000Z",
-      "contentSnippet": "In a recent class, we were discussing how teams are using AI and finishing coding faster but still missing Sprint Goals. How can these things both be true? That question gets to the heart of a shift many Scrum Teams are experiencing right now. AI has changed the bottleneck. Codin…"
-    },
-    {
-      "id": "8031d03ce8de",
-      "title": "Cognitive Trap: Accountability Diffusion",
-      "link": "https://www.scrum.org/resources/blog/cognitive-trap-accountability-diffusion",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-12T04:00:00.000Z",
-      "contentSnippet": "Accountability Diffusion Trap Most mistakes in Scrum aren’t because people don’t understand the framework—they come from applying reasonable thinking in the wrong context. Cognitive traps happen when decisions favor efficiency, control, or comfort over transparency, inspection, a…"
     },
     {
       "id": "1e8ab7e299eb",
@@ -1153,15 +1162,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-27T17:49:52.000Z",
       "contentSnippet": "There are some nice improvements to Power Query integration in the latest version of Power BI Report Builder that, while they are documented, didn’t get an official blog post but which I think deserve to be highlighted. First of all the “Get Data” button has been renamed “Power Q…"
-    },
-    {
-      "id": "6a47534fda8a",
-      "title": "The PRA held a captive insurance industry roundtable",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/august/pra-holds-captive-insurance-industry-roundtable",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-09-25T09:00:00.000Z",
-      "contentSnippet": "On 17 September 2026, the PRA hosted a roundtable in relation to CP11/26 – A tailored regime for captive insurance."
     },
     {
       "id": "1edd9ca3b0b4",
@@ -1918,15 +1918,6 @@
       "category": "Data",
       "pubDate": "2026-07-16T00:00:00.000Z",
       "contentSnippet": "We’re consolidating a decade of legacy systems into Snowflake, which leaves us with over a million columns that all need to be classified and tagged for data governance. I built the system that does it: a tiered classification engine, a human-in-the-loop override workflow, and th…"
-    },
-    {
-      "id": "03946207f0a8",
-      "title": "Dynamic formatting by hierarchy level with ISINSCOPE and ISATLEVEL",
-      "link": "https://www.sqlbi.com/tv/dynamic-formatting-by-hierarchy-level-with-isinscope-and-isatlevel/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-07-14T10:00:00.000Z",
-      "contentSnippet": "How to apply a different formatting rule at each level of a hierarchy using ISINSCOPE in a measure or ISATLEVEL in a visual calculation."
     },
     {
       "id": "fad58c67303d",
