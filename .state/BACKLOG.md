@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Download CV is the About record — `/resume.pdf` is rendered from `src/content/cv.ts` (2026-10-23)
 - [x] Handbook library — each published book is its dark cover. The title and the chapters open the book (2026-10-22)
 - [x] Handbook view — both published books use the paper reader. The dark leaf is not a screen (2026-10-22)
 - [x] Handbook contents — the number beside a chapter is its place. The address is not printed on the right (2026-10-22)

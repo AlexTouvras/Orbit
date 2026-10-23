@@ -30,7 +30,8 @@
     "docs:check": "node scripts/check-doc-registry.mjs",
     "docs:check:diff": "node scripts/check-doc-registry.mjs --since origin/main",
     "test:vercel-ignore": "node scripts/vercel-ignore.mjs --test",
-    "ship:check": "node scripts/check-doc-registry.mjs && node scripts/check-deploy-author.mjs && node scripts/vercel-ignore.mjs --test && npm run build",
+    "cv:check": "tsx scripts/cv-pdf-check.ts",
+    "ship:check": "node scripts/check-doc-registry.mjs && node scripts/check-deploy-author.mjs && node scripts/vercel-ignore.mjs --test && npm run cv:check && npm run build",
     "live:fetch-mix": "tsx src/scripts/fetch-live-power-mix.ts",
     "live:fetch-economy": "tsx src/scripts/fetch-live-economy.ts"
   },
@@ -49,6 +50,7 @@
     "next": "^16.2.9",
     "next-mdx-remote": "^6.0.0",
     "node-cron": "^4.4.1",
+    "pdfkit": "^0.20.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-scrollama": "^2.4.2",
@@ -61,6 +63,7 @@
   "devDependencies": {
     "@types/node": "^25.9.3",
     "@types/node-cron": "^3.0.11",
+    "@types/pdfkit": "^0.17.7",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.5.0",
@@ -69,6 +72,7 @@
     "postcss": "^8.5.15",
     "tailwindcss": "^3.4.19",
     "tsx": "^4.22.4",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "unpdf": "^1.9.1"
   }
 }

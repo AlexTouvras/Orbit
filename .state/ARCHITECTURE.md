@@ -63,6 +63,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Public Writes are stranger-first (`docs/essay-voice.md`): gloss workshop nicknames; category follows the decision rule (rotate Delivery/Learning/Career/general data; do not default Power BI). Active clone for Writes is this `website/` repo; `Documents/Orbit` can lag.
 
 - **About (2026-10-03):** `/about` opens with the same two-line headline as the other public pages: “Complex problems” / “into decisions.” One sentence under it. Stats are years, languages, and degrees. Experience and education titles show the institution’s mark and open its site in one press. Download CV closes the page.
+- **Download CV (2026-10-23):** `/resume.pdf` is rendered from `src/content/cv.ts` (`src/lib/cv/render-pdf.ts`). It carries the same experience, education, skills, languages, and training as About, plus the profile name, role, and email. `cv.summary` stays off the page and off the PDF. `public/resume.pdf` must not exist — a static file at that path is served instead. `npm run cv:check` locks the field list.
 
 ## Dependencies
 
@@ -71,6 +72,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | `@vercel/analytics` | Privacy-light page analytics on Vercel | 2026-07-26 |
 | `uqr` | Encode on-screen QR for `/qr-code` → `/card` | 2026-09-09 |
 | `zod` | Decision-story manifest validation | 2026-09-24 |
+| `pdfkit` | Render `/resume.pdf` from the About CV (`src/content/cv.ts`) | 2026-10-23 |
 | `react-scrollama` | Sticky scroll-scene step enter for `/stories` | 2026-09-24 |
 
 ## File structure
@@ -134,6 +136,8 @@ public/story-field-card/PLAYBOOK.md     # Story scene must stay; monthly pass mu
 src/lib/field-card/registry.ts          # Multi-card Apply review sync map (repo → Orbit path)
 src/lib/field-card/slack.ts             # Laconic one-post-per-card #orbit FYI (Review/Considered/Changed/Online + Check card)
 src/components/about/PlaceLink.tsx      # Title opens the institution site
+src/lib/cv/render-pdf.ts                # /resume.pdf from the About CV record
+src/app/resume.pdf/route.ts             # Download CV. No public/resume.pdf.
 src/components/about/PlaceMark.tsx      # Institution mark beside the name
 public/about/logos/                     # Employer and school marks
 src/app/card/page.tsx                   # Public identity HUD (chrome-light)
@@ -415,3 +419,4 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-09-11 | Write SEO is frontmatter-driven and automatic | Per-slug OG + BlogPosting/Breadcrumbs + sitemap freshness from `date`/`updated`; authors never hand-write meta for new posts |
 | 2026-09-11 | Helsinki Housing Pulse live desk from Stat.fi `ashi` (monthly 15iq + quarterly 13mv) | Next queued desk after EU Spot; CC BY 4.0; refuse empty snapshot; flats-only grain matches liquid Helsinki market |
 | 2026-09-25 | Storytelling `main` pushes sync into Orbit and redeploy `/stories` | Owner: updates should show without a manual port. Private read is a deploy key; storytelling dispatches `storytelling-sync`. |
+| 2026-10-23 | Download CV is rendered from `src/content/cv.ts` at `/resume.pdf` | The static `public/resume.pdf` (exported 8 June 2026) stayed behind the About sync. The route paints the same record. A file at `public/resume.pdf` would shadow it. `npm run cv:check` is in `ship:check`. |

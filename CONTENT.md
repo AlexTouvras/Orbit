@@ -15,7 +15,7 @@ Read the section that matches what you want to change.
 | **CV / job history** | Edit structured data | `src/content/cv.ts` (shown on **Hub** home page) |
 | **Hero name, tagline, socials** | Studio *or* code | `/studio` or `src/content/profile.ts` |
 | **Workshop projects on Portfolio** | Studio scanner | `/studio/projects` |
-| **Downloadable CV PDF** | Replace file | `public/resume.pdf` |
+| **Downloadable CV PDF** | Same record as About | `src/content/cv.ts` renders `/resume.pdf` |
 | **External news feed (Related articles)** | Auto + optional config | `npm run news:fetch` + `src/lib/news/sources.ts` |
 | **Competency cards on Hub** | Code only | `src/content/profile.ts` → `competencies` |
 | **RSS sources** | Code only | `src/lib/news/sources.ts` |
@@ -171,7 +171,7 @@ Structured CV data lives in **`src/content/cv.ts`** — experience, education, s
 - The opening is `aboutHeadlineLine`, `aboutHeadlineAccent`, and `aboutSummary` in `src/content/profile.ts`.
 - Each employer and school has a `logo` and an official `url`. The name on About opens that site. Marks live in `public/about/logos/`.
 - **Story & record** uses `aboutStory` and `aboutQuestion` in `src/content/profile.ts`. `cv.summary` stays the short CV bio and is not shown on the page.
-- **Download CV** is the last block on About. It serves **`public/resume.pdf`** — replace that file to update the PDF.
+- **Download CV** is the last block on About. It is **`/resume.pdf`**, rendered from this same `cv` object: experience, education, skills, languages, and training. The name, role, and email follow the profile. Edit `cv.ts` and the file follows. Do not add `public/resume.pdf` — that file would replace the generated one.
 - The Hub close links to `/about`.
 
 ---
@@ -204,7 +204,7 @@ Edit **`src/content/profile.ts`**:
 | `tagline` | Paragraph under the headline |
 | `summary` | Close on Hub |
 | `githubUsername` | GitHub repo grid on Portfolio |
-| `email`, `resumeUrl` | Contact + CV download |
+| `email` | Contact. The CV download follows `src/content/cv.ts`. |
 | `socials` | Footer + mobile Hub icons |
 | `competencies` | Six Hub cards (code only, not in Studio). Each links to a static field card under `public/` (`/field-card/`, `/analytics-field-card/`, `/delivery-field-card/`, `/sdlc-field-card/`, `/credit-risk-field-card/`, `/story-field-card/`). All six cards refresh **monthly**. |
 
@@ -360,13 +360,15 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" "https://alextouvras.com/api/cr
 
 ---
 
-## 7. Replacing your CV PDF
+## 7. CV download
 
-1. Export or copy your latest PDF
-2. Save as **`public/resume.pdf`** (overwrite the old file)
-3. Ensure profile has `resumeUrl: "/resume.pdf"` (default)
+`/about` ends with Download CV. The link is **`/resume.pdf`**.
 
-No rebuild logic needed beyond refresh — static file.
+The PDF is rendered from **`src/content/cv.ts`** — the same experience, education, skills, languages, and training as the page. The name, role, and email follow the profile. There is no second file to export.
+
+Do not add `public/resume.pdf`. A file at that path is served instead of the generated CV.
+
+`npm run cv:check` fails if a fact from `cv.ts` is missing from the PDF, or if `public/resume.pdf` is present.
 
 ---
 
@@ -388,7 +390,7 @@ git push origin main
 | --- | --- |
 | New article | `src/content/writes/*.mdx` |
 | New workshop project | Studio → `/studio/projects`, or `data/published-projects.json` |
-| CV update | `src/content/cv.ts`, optionally `public/resume.pdf` |
+| CV update | `src/content/cv.ts` |
 | Profile defaults | `src/content/profile.ts` |
 | Power BI showcase | `npm run powerbi:sync` → `src/content/power-bi-reports.ts`, `public/portfolio/power-bi/**` |
 | Ship curated Studio data to server | `data/profile.seed.json`, `data/published-projects.seed.json` |
@@ -447,8 +449,7 @@ Generate secrets: `openssl rand -hex 32` (on the VM) or any long random string l
 ### "I changed jobs / CV bullet"
 
 1. Edit `src/content/cv.ts`
-2. Optionally replace `public/resume.pdf`
-3. Commit & push (or Studio for hero copy only)
+2. Commit & push (or Studio for hero copy only)
 
 ### "I want a new project on the workshop grid"
 
@@ -505,7 +506,7 @@ npm run news:fetch
 
 1. **Weekly:** one Write — automated draft → Slack `#orbit` Approve (or write MDX by hand). Tuesday: digest emails (test-to-self until you unset `RESEND_NEWSLETTER_TEST_TO`).
 2. **When you ship something:** add or update a portfolio MDX or publish via Studio.
-3. **Monthly:** skim About/CV for accuracy; refresh `resume.pdf`.
+3. **Monthly:** skim About for accuracy. The download follows that record.
 4. **Deploy when you have content worth sharing** — not before.
 
 That's it. You never need to touch React components for normal updates — only MDX, `cv.ts`, `profile.ts`, Studio, and git.

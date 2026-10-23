@@ -178,13 +178,9 @@ export function ProfileEditor({ initial }: { initial: EditableProfile }) {
               onChange={(e) => set("email", e.target.value)}
             />
           </Field>
-          <Field label="Resume URL">
-            <input
-              className={inputClass}
-              value={form.resumeUrl}
-              onChange={(e) => set("resumeUrl", e.target.value)}
-            />
-          </Field>
+          <p className="text-xs leading-relaxed text-slate-500 sm:col-span-2">
+            Download CV on About follows the CV record on that page.
+          </p>
         </div>
         <p className="mt-3 text-xs text-slate-500">
           Repo allowlist: only these public repos appear on Portfolio. Separate
