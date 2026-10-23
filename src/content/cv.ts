@@ -69,9 +69,6 @@ export const cv: Cv = {
   experience: [
     {
       company: "Santander Consumer Bank Nordics",
-      slug: "santander-consumer-bank-nordics",
-      logo: "/about/logos/santander-consumer-bank-nordics.png",
-      url: "https://www.santanderconsumer.fi/",
       location: "Finland / Nordics",
       roles: [
         {
@@ -87,6 +84,8 @@ export const cv: Cv = {
           title: "Senior Risk Analyst",
           period: "Sep 2023 – Jan 2026",
           bullets: [
+            "Applied data analytics to raise automated loan-approval decisions from 55% to 80% of total decided applications.",
+            "Led creation of the credit-risk data platform in Microsoft Fabric with three colleagues (reporting, monitoring, and analytics foundations).",
             "Developed and monitored PD models, scorecards, and expected credit loss (ECL) forecasts.",
             "Used Python, SQL, and Power BI (Fabric) to analyze trends, build dashboards, and automate reporting.",
             "Supported portfolio steering: emerging risk identification, customer segment evaluation, and credit engine requirement changes.",
@@ -104,12 +103,12 @@ export const cv: Cv = {
           ],
         },
       ],
+      slug: "santander-consumer-bank-nordics",
+      logo: "/about/logos/santander-consumer-bank-nordics.png",
+      url: "https://www.santanderconsumer.fi/",
     },
     {
       company: "Resurs Bank",
-      slug: "resurs-bank",
-      logo: "/about/logos/resurs-bank.png",
-      url: "https://www.resursbank.fi/",
       location: "Sweden / Nordics",
       roles: [
         {
@@ -125,12 +124,12 @@ export const cv: Cv = {
           ],
         },
       ],
+      slug: "resurs-bank",
+      logo: "/about/logos/resurs-bank.png",
+      url: "https://www.resursbank.fi/",
     },
     {
       company: "Finnish Defence Forces",
-      slug: "finnish-defence-forces",
-      logo: "/about/logos/finnish-defence-forces.png",
-      url: "https://puolustusvoimat.fi/en/frontpage",
       location: "Finland",
       roles: [
         {
@@ -141,12 +140,12 @@ export const cv: Cv = {
           ],
         },
       ],
+      slug: "finnish-defence-forces",
+      logo: "/about/logos/finnish-defence-forces.png",
+      url: "https://puolustusvoimat.fi/en/frontpage",
     },
     {
       company: "City of Helsinki Social and Health Authority",
-      slug: "city-of-helsinki",
-      logo: "/about/logos/city-of-helsinki.png",
-      url: "https://www.hel.fi/en",
       location: "",
       roles: [
         {
@@ -157,12 +156,12 @@ export const cv: Cv = {
           ],
         },
       ],
+      slug: "city-of-helsinki",
+      logo: "/about/logos/city-of-helsinki.png",
+      url: "https://www.hel.fi/en",
     },
     {
       company: "Bank of Greece",
-      slug: "bank-of-greece",
-      logo: "/about/logos/bank-of-greece.png",
-      url: "https://www.bankofgreece.gr/",
       location: "Greece",
       roles: [
         {
@@ -174,30 +173,33 @@ export const cv: Cv = {
           ],
         },
       ],
+      slug: "bank-of-greece",
+      logo: "/about/logos/bank-of-greece.png",
+      url: "https://www.bankofgreece.gr/",
     },
   ],
   education: [
     {
       degree: "MSc, Big Data Analytics",
       school: "Arcada University of Applied Sciences, Helsinki",
-      slug: "arcada",
-      logo: "/about/logos/arcada.png",
-      url: "https://www.arcada.fi/en",
       period: "2021–2024",
       detail: "Machine learning methods in business environments; analytical service design.",
       thesisUrl: "https://www.theseus.fi/handle/10024/860989",
       thesisTitle: "An Analytics Process for Forecasting Expected Credit Losses for the Lifetime of Loans: auto loan portfolios",
+      slug: "arcada",
+      logo: "/about/logos/arcada.png",
+      url: "https://www.arcada.fi/en",
     },
     {
       degree: "MSc, Banking and International Finance",
       school: "University of Jyväskylä",
-      slug: "university-of-jyvaskyla",
-      logo: "/about/logos/university-of-jyvaskyla.png",
-      url: "https://www.jyu.fi/en",
       period: "2017–2019",
       detail: "Quantitative finance, economics, financial accounting, and banking.",
       thesisUrl: "https://jyx.jyu.fi/jyx/Record/jyx_123456789_62906",
       thesisTitle: "Government bonds and credit risk: an assessment of diversification and a safe asset in the euro area",
+      slug: "university-of-jyvaskyla",
+      logo: "/about/logos/university-of-jyvaskyla.png",
+      url: "https://www.jyu.fi/en",
     },
     {
       degree: "Bachelor's in Economics",
@@ -261,7 +263,9 @@ export const cv: Cv = {
     },
   ],
   training: [
-    "Power BI Data Analyst training — Sulava, 2023",
+    "OpenBI.no (contributor) — Member of the technical team; analytics and BI platform",
+    "Certified Scrum Product Owner, Helsinki, scheduled Dec 2026",
     "ScanAgile 2026, Nordic agile conference, Helsinki (Agile Finland)",
+    "Power BI Data Analyst training — Sulava, 2023",
   ],
 };
