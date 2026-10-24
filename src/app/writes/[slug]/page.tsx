@@ -8,7 +8,7 @@ import { mdxComponents } from "@/components/mdx/mdx-components";
 import { Badge } from "@/components/ui/Badge";
 import { BackLink } from "@/components/ui/BackLink";
 import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
-import { EssayFeedback } from "@/components/writes/EssayFeedback";
+import { EssayReactionBar, EssayReactions } from "@/components/writes/EssayFeedback";
 import { getEditableProfile } from "@/lib/profile-store";
 import {
   getWriteModifiedDate,
@@ -82,6 +82,7 @@ export default async function WriteDetailPage({
   const feedbackEntries = await getEssayFeedbackEntries(write.slug);
 
   return (
+    <EssayReactions slug={write.slug} initialEntries={feedbackEntries}>
     <article className="mx-auto max-w-3xl">
       <ArticleJsonLd write={write} />
       <BackLink fallbackHref={fallbackHref} />
@@ -106,6 +107,7 @@ export default async function WriteDetailPage({
         <h1 className="font-display mt-4 text-section font-bold tracking-tight text-white sm:text-4xl">
           {write.title}
         </h1>
+        <EssayReactionBar place="title" className="mt-3" />
 
         <p className="mt-4 text-lg leading-relaxed text-slate-300">
           {write.summary}
@@ -124,7 +126,11 @@ export default async function WriteDetailPage({
         <MDXRemote source={write.content} components={mdxComponents} />
       </section>
 
-      <EssayFeedback slug={write.slug} initialEntries={feedbackEntries} />
+      <EssayReactionBar
+        place="end"
+        className="mt-12 border-t border-white/8 pt-6"
+      />
     </article>
+    </EssayReactions>
   );
 }

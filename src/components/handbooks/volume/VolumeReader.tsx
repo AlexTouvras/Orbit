@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Handbook, HandbookPage, HandbookSection } from "@/content/handbooks";
 import type { PageReference } from "@/lib/handbook-citations";
-import { EssayFeedback } from "@/components/writes/EssayFeedback";
+import { EssayReactionBar, EssayReactions } from "@/components/writes/EssayFeedback";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
 import { adjacentPages, chapterForPage, chapterPlace, pagePath } from "@/lib/handbooks";
 import { CiteMarks, ReferenceItem } from "@/components/handbooks/Citations";
@@ -111,6 +111,7 @@ export function VolumeReader({
           ) : null}
 
           <article className={cover ? "mt-16" : "mt-6 lg:mt-0"}>
+            <EssayReactions slug={feedbackSlug} initialEntries={feedbackEntries} tone="paper">
             <header id="chapter" className="book-measure scroll-mt-48 lg:scroll-mt-20">
               <div className="flex items-baseline justify-between gap-4">
                 <p className="book-kicker">
@@ -124,6 +125,7 @@ export function VolumeReader({
               <h1 className="mt-3 font-display text-[clamp(2.15rem,4vw,3.25rem)] leading-[1.05] font-semibold tracking-tight">
                 {page.title}
               </h1>
+              {showFeedback ? <EssayReactionBar place="title" className="mt-4" /> : null}
               <p className="mt-5 text-[1.2rem] leading-[1.65]">{page.lede}</p>
               {page.rule ? (
                 <div className="mt-8 border-l-2 border-[var(--book-accent)] pl-5">
@@ -182,7 +184,7 @@ export function VolumeReader({
 
             {showFeedback ? (
               <div className="book-measure mt-12">
-                <EssayFeedback slug={feedbackSlug} initialEntries={feedbackEntries} notesLabel="Notes on this page" tone="paper" />
+                <EssayReactionBar place="end" />
               </div>
             ) : null}
 
@@ -212,6 +214,7 @@ export function VolumeReader({
                 )}
               </div>
             </nav>
+            </EssayReactions>
           </article>
         </div>
       </div>
