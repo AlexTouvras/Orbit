@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import type { Write, WriteFrontmatter } from "@/lib/types";
+import { rankNextWrites, type RankedNextWrites } from "@/lib/next-writes";
 
 const WRITES_DIR = path.join(process.cwd(), "src", "content", "writes");
 
@@ -78,4 +79,9 @@ export function getShowcaseWrites(limit?: number): Write[] {
 
 export function getLatestWrites(limit = 3): Write[] {
   return getAllWrites().slice(0, limit);
+}
+
+/** Other essays for the end of a Write. Same category, then shared tags. */
+export function getNextWrites(current: Write, limit = 3): RankedNextWrites<Write> {
+  return rankNextWrites(current, getAllWrites(), limit);
 }

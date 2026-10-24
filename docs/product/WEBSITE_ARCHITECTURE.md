@@ -31,7 +31,7 @@ Public pages consume only information explicitly marked public. Do not automatic
 
 - Hub / Portfolio / live desks: chaptered visual storytelling (see `.cursor/skills/visual-storytelling`)
 - Products: `/products` (`src/content/products.ts`). A product is a page or a command a stranger can open. The gravity satellite and the nav both go there. Workshop projects stay on `/portfolio`. Delivery Signal’s page, sample, and `extract.py` are not copied into Orbit: `/delivery-signal/` reads that repo’s `docs/` on `main` and keeps it for a minute. `engine/pipeline.py` is the checker in this repo (`src/delivery-signal/pipeline.py`), so the brief opens with the week: five short lines (Closed, Moved, Next week, Late, Disagrees), then four sheets: Summary (the week), Progress, Metrics, and Risks. Metrics shows the total until a team is chosen, with a line for the trend and a triangle for whether the move is better or worse. A target counts due dates in the file. The field list stays the audit.
-- Writes: MDX prose; stranger-first (`docs/essay-voice.md`); no cast/scenario blocks on essays
+- Writes: MDX prose; stranger-first (`docs/essay-voice.md`); no cast/scenario blocks on essays. An essay ends with a heart — one press, saved as useful — and up to three other essays. Those are the same category first, then shared tags. Handbook pages keep the note form.
 - Handbooks: `/handbooks` (`docs/product/HANDBOOKS.md`). Method, between a field card and a story. A library title opens the book. Public prose is finished-book text. Later titles stay out of the library until a page exists.
 - Studio and `/card`: interior tools — not cinematic chapter restyles
 - JARVIS / ProjectHelm: retired; historical architecture only

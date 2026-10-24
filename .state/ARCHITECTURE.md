@@ -25,7 +25,7 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 | Products | `src/content/products.ts` | Public `/products`. A page or command a stranger can open. Not the Studio workshop scan. |
 | Delivery Signal live page | `src/app/delivery-signal/[[...path]]/route.ts` | Proxies `AlexTouvras/delivery-signal` `main` `docs/`. Cache 60s. `engine/pipeline.py` is served from `src/delivery-signal/pipeline.py` so the brief opens with five short lines on Summary, then Progress, Metrics, and Risks. Metrics shows the total until a team is chosen. A target counts due dates in the file. Cycle p85 describes finished items. |
 | Writes | `src/content/writes/*.mdx` | `showcase: true` → Home Selected work |
-| Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at` |
+| Essay feedback | `data/essay-feedback.json` | Keyed by essay slug → `{ title, entries[] }` with `rating`, optional `note`, and ISO `at`. A Write heart stores `yes` and no note. |
 | Appointments | `data/appointments.json` | Owner window (`timezone`, weekday numbers, `start`/`end` `HH:MM`, `slotMinutes`, `horizonDays`) plus `bookings[]`. Public `/contact` lists open slots. Studio edits the window and cancels. Read from GitHub at request time when a token exists, so a booking commit is in `RUNTIME_DATA_FILES` and does not rebuild. Busy times come from `APPOINTMENT_CALENDAR_ICS_URL` (one or more secret iCal feeds, including a published work calendar, not stored in the JSON). Mail uses the verified From address, never `onboarding@resend.dev`. |
 | Studio roadmap | `data/studio-roadmap.json` (+ `.seed.json`) | `focusNow` (public on `/card` only) + private milestones (`planned`/`active`/`evidence`/`proven`). Persist via `persistDataJson` same as profile. Store: `src/lib/studio-roadmap.ts`. |
 | Directive archive | `data/directive-archive.json` | Read-only snapshot of `AlexTouvras/AlexTouvras` `governance/`. Private `/studio/directives`. Not a second editor. Do not add this file to `RUNTIME_DATA_FILES` — the page reads the deployment copy, not GitHub at request time. |
@@ -48,8 +48,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - Portfolio cards: Case study link from `caseStudyUrl`, or from `liveUrl` when it is already a `/writes/` path
 - Showcase essays for featured workshop projects (Ledger, Power BI, Orbit, Heatmap)
 - Personal-ops projects (mealplan, fitness coach) stay non-featured; Write + `/architecture/` case study, not Home Selected work
-- Essay footer feedback is anonymous, rate-limited, persisted to JSON, and still uses `localStorage` only as a one-browser re-submit gate.
-- Essay pages read their own feedback entries server-side and render a newest-first note list below the feedback CTA.
+- Essay footer feedback is anonymous, rate-limited, persisted to JSON, and still uses `localStorage` only as a one-browser re-submit gate. On a Write, a heart is that same save with rating `yes` and no note. The note form stays behind “Leave a note.” A like does not add a “No note left” row. Handbook pages keep the three ratings on the paper.
+- Essay pages read their own feedback entries server-side and render a newest-first note list below the feedback CTA. Under that, up to three other essays: same category, then shared tags, then newer date. An unrelated essay stays off the list while any related one exists. When nothing shares a category or a tag, the three newest other essays are the list, and the line says so.
 - Essay feedback Slack notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (for `#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
 - Weekly Write Slack draft / publish / skip notifications prefer `SLACK_ORBIT_WEBHOOK_URL` (`#orbit`) and fall back to `SLACK_WEBHOOK_URL`.
 - Weekly digest: **GitHub Actions Tuesday 07:15 UTC is primary** (Vercel Hobby cron went silent after 2026-08-18). Vercel `/api/cron/newsletter` Tue 08:00 UTC is backup; `already_sent_this_week` via `data/newsletter-draft.json` on GitHub prevents doubles. `RESEND_NEWSLETTER_TEST_TO` mails only that inbox; unset it to broadcast. **No Slack** for digest content — email only. Public subscribe stays closed while test-to is set. Ravens section is **one highlight per domain that moved this week**, not a vault dump.
@@ -125,6 +125,8 @@ src/delivery-signal/pipeline.py              # four sheets; metrics filter to a 
 src/delivery-signal/sample/                  # finished history overlaid on the Northline sample
 src/components/products/ProductList.tsx
 src/content/writes/
+src/lib/next-writes.ts                  # same category, then shared tags, at the end of a Write
+src/components/writes/NextWrites.tsx    # the list under the heart
 public/field-card/index.html            # Agentic AI Field Card (home AI competency)
 public/analytics-field-card/index.html  # Data Analytics Field Card (home Data competency)
 public/delivery-field-card/index.html   # Technology Delivery Field Card (home Delivery competency)
@@ -196,6 +198,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-24 | An essay ends with a heart and three next essays. The site stays English. | note.com translates with `?hl=`, likes with a heart, and offers a next read. Orbit essays are the evidence of how Alex thinks, in the words he wrote (`lang=en`). A generated second language is a different text. The heart is the existing useful rating in one press. Next essays follow a visible rule: same category, then shared tags. |
 | 2026-10-22 | The library shows each book as its dark cover | On `/handbooks`, Software that stays in use keeps the earth limb and Data that drives decisions keeps the lit sheet and the dark sheet. The title opens page 1. The chapters on the cover open that chapter. The pages inside Make the number fit to use stay off the cover. |
 | 2026-10-22 | Both handbooks use the paper view | The dark leaf is not a screen. Software that stays in use and Data that drives decisions scroll on the same paper reader. Addresses stay. The pyramid is a wide base and a narrow top. The pain sketch states no amount. |
 | 2026-10-22 | Contents does not print the address | The number beside a chapter is its place, 1 through 6. The address column read 1, 6, 2, 7, 8, 9, which is the URL, not the chapter. The address stays in the corner and in the URL. |

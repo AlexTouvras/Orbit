@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useSyncExternalStore } from "react";
-import { Loader2 } from "lucide-react";
+import { Heart, Loader2 } from "lucide-react";
 import { cn, relativeTime } from "@/lib/utils";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
 
@@ -21,12 +21,30 @@ const RATING_LABEL: Record<Rating, string> = {
 
 const storageKey = (slug: string) => `orbit-essay-feedback:${slug}`;
 
+function readStoredRating(raw: string | null): Rating | null {
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw) as { rating?: unknown };
+    if (parsed.rating === "yes" || parsed.rating === "somewhat" || parsed.rating === "no") {
+      return parsed.rating;
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
 interface EssayFeedbackProps {
   slug: string;
   initialEntries?: EssayFeedbackEntry[];
   notesLabel?: string;
   /** Paper keeps the form readable on a handbook page. */
   tone?: "ink" | "paper";
+  /**
+   * Essay pages offer a heart. One press stores Useful with no note.
+   * Handbook pages keep the rating form.
+   */
+  heart?: boolean;
 }
 
 export function EssayFeedback({
@@ -34,6 +52,7 @@ export function EssayFeedback({
   initialEntries = [],
   notesLabel = "Notes on this essay",
   tone = "ink",
+  heart = false,
 }: EssayFeedbackProps) {
   const paper = tone === "paper";
   const [rating, setRating] = useState<Rating | null>(null);
@@ -42,22 +61,26 @@ export function EssayFeedback({
   const [localSubmitted, setLocalSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const storedSubmitted = useSyncExternalStore(
+  const [noteOpen, setNoteOpen] = useState(false);
+  const storedRaw = useSyncExternalStore(
     () => () => {},
     () => {
       try {
-        return window.localStorage.getItem(storageKey(slug)) !== null;
+        return window.localStorage.getItem(storageKey(slug));
       } catch {
-        return false;
+        return null;
       }
     },
-    () => false,
+    () => null,
   );
-  const submitted = localSubmitted || storedSubmitted;
+  const storedRating = readStoredRating(storedRaw);
+  const submitted = localSubmitted || storedRaw !== null;
+  const liked = localSubmitted ? rating === "yes" : storedRating === "yes";
+  const likeCount = entries.filter((entry) => entry.rating === "yes").length;
+  const visibleEntries = heart ? entries.filter((entry) => entry.note) : entries;
 
-  async function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!rating || sending) return;
+  async function send(nextRating: Rating, nextNote: string) {
+    if (submitted || sending) return;
 
     setError(null);
     setSending(true);
@@ -68,8 +91,8 @@ export function EssayFeedback({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           slug,
-          rating,
-          note: note.trim(),
+          rating: nextRating,
+          note: nextNote,
           website: "",
         }),
       });
@@ -83,12 +106,13 @@ export function EssayFeedback({
       }
 
       const saved: EssayFeedbackEntry = data?.entry ?? {
-        rating,
-        note: note.trim() || undefined,
+        rating: nextRating,
+        note: nextNote || undefined,
         at: new Date().toISOString(),
       };
 
       setEntries((prev) => [saved, ...prev]);
+      setRating(nextRating);
       window.localStorage.setItem(
         storageKey(slug),
         JSON.stringify({
@@ -99,17 +123,165 @@ export function EssayFeedback({
       );
       setLocalSubmitted(true);
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : "Could not save feedback.",
-      );
+      setError(err instanceof Error ? err.message : "Could not save feedback.");
     } finally {
       setSending(false);
     }
   }
 
+  function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!rating || sending) return;
+    void send(rating, note.trim());
+  }
+
+  const formFields = (
+    <>
+      <div
+        className="flex flex-wrap gap-2"
+        role="group"
+        aria-label="Was this useful?"
+      >
+        {RATINGS.map(({ value, label }) => (
+          <button
+            key={value}
+            type="button"
+            onClick={() => setRating(value)}
+            aria-pressed={rating === value}
+            className={cn(
+              "focus-ring inline-flex min-h-11 items-center border px-4 text-sm font-medium",
+              paper
+                ? "rounded-sm"
+                : "rounded-full text-xs transition-[color,background-color,border-color,transform] active:scale-[0.98]",
+              rating === value
+                ? paper
+                  ? "border-[var(--book-ink)] bg-[var(--book-ink)] text-[var(--book-paper)]"
+                  : "border-neon-cyan/50 bg-neon-cyan/10 text-neon-cyan"
+                : paper
+                  ? "border-[var(--book-rule)] text-[var(--book-ink)]"
+                  : "border-white/10 text-slate-300 hover:border-white/20 hover:text-white",
+            )}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
+      <div>
+        <label htmlFor={`essay-note-${slug}`} className="sr-only">
+          Optional note
+        </label>
+        <textarea
+          id={`essay-note-${slug}`}
+          rows={2}
+          maxLength={280}
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          placeholder="Anything unclear, missing, or worth keeping?"
+          className={cn(
+            "w-full resize-y border px-4 py-3 text-sm focus:outline-none",
+            paper
+              ? "rounded-sm border-[var(--book-rule)] bg-[var(--book-paper)] text-[var(--book-ink)] placeholder:text-[var(--book-muted)]"
+              : "rounded-xl border-white/10 bg-white/5 text-white placeholder:text-slate-500 focus:border-neon-cyan/50 focus-visible:ring-2 focus-visible:ring-neon-cyan/40",
+          )}
+        />
+      </div>
+
+      <input
+        type="text"
+        name="website"
+        autoComplete="off"
+        tabIndex={-1}
+        className="hidden"
+        aria-hidden="true"
+      />
+
+      <button
+        type="submit"
+        disabled={!rating || sending}
+        className={cn(
+          "focus-ring inline-flex min-h-11 items-center gap-2 px-5 text-sm font-semibold",
+          paper ? "rounded-sm" : "rounded-xl transition-[opacity,transform] active:scale-[0.98]",
+          rating && !sending
+            ? paper
+              ? "bg-[var(--book-ink)] text-[var(--book-paper)]"
+              : "bg-neon-cyan text-void hover:opacity-90"
+            : paper
+              ? "cursor-not-allowed border border-[var(--book-rule)] text-[var(--book-muted)]"
+              : "cursor-not-allowed bg-white/10 text-slate-500",
+        )}
+      >
+        {sending ? (
+          <>
+            <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+            Sending...
+          </>
+        ) : (
+          "Send"
+        )}
+      </button>
+    </>
+  );
+
   return (
     <aside className={cn("mt-12 space-y-8 border-t pt-8", paper ? "border-[var(--book-rule)]" : "border-white/8")}>
-      {submitted ? (
+      {heart ? (
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <button
+              type="button"
+              onClick={() => void send("yes", "")}
+              disabled={submitted || sending || note.trim().length > 0}
+              aria-pressed={liked}
+              aria-label={
+                likeCount > 0
+                  ? `Like this essay, ${likeCount} ${likeCount === 1 ? "like" : "likes"}`
+                  : "Like this essay"
+              }
+              className={cn(
+                "focus-ring inline-flex min-h-11 items-center gap-2 rounded-full border px-3 text-sm transition-[color,background-color,border-color,transform] active:scale-[0.98]",
+                liked
+                  ? "border-neon-cyan/50 bg-neon-cyan/10 text-neon-cyan"
+                  : "border-white/10 text-slate-300 hover:border-white/20 hover:text-white",
+                (submitted || sending || note.trim().length > 0) && "cursor-default",
+              )}
+            >
+              <Heart className={cn("h-5 w-5", liked && "fill-current")} aria-hidden />
+              {likeCount > 0 ? (
+                <span className="font-mono text-sm tabular-nums">{likeCount}</span>
+              ) : null}
+            </button>
+
+            {!submitted ? (
+              <button
+                type="button"
+                aria-expanded={noteOpen}
+                onClick={() => setNoteOpen((open) => !open)}
+                className="focus-ring inline-flex min-h-11 items-center text-sm text-slate-400 hover:text-white"
+              >
+                Leave a note
+              </button>
+            ) : null}
+          </div>
+
+          {submitted ? (
+            <p className="text-sm text-slate-300" aria-live="polite">
+              Thanks — noted.
+            </p>
+          ) : noteOpen ? (
+            <form onSubmit={onSubmit} className="space-y-4">
+              <p className="font-display text-base font-semibold text-white">Was this useful?</p>
+              {formFields}
+            </form>
+          ) : null}
+
+          {error ? (
+            <p className="text-sm text-rose-300" role="alert">
+              {error}
+            </p>
+          ) : null}
+        </div>
+      ) : submitted ? (
         <p className={cn("text-sm", paper ? "text-[var(--book-ink)]" : "text-slate-300")} aria-live="polite">
           Thanks — noted.
         </p>
@@ -123,104 +295,22 @@ export function EssayFeedback({
               Optional note welcome — one line is enough.
             </p>
           </div>
-
-          <div
-            className="flex flex-wrap gap-2"
-            role="group"
-            aria-label="Was this useful?"
-          >
-            {RATINGS.map(({ value, label }) => (
-              <button
-                key={value}
-                type="button"
-                onClick={() => setRating(value)}
-                aria-pressed={rating === value}
-                className={cn(
-                  "focus-ring inline-flex min-h-11 items-center border px-4 text-sm font-medium",
-                  paper ? "rounded-sm" : "rounded-full text-xs transition-[color,background-color,border-color,transform] active:scale-[0.98]",
-                  rating === value
-                    ? paper
-                      ? "border-[var(--book-ink)] bg-[var(--book-ink)] text-[var(--book-paper)]"
-                      : "border-neon-cyan/50 bg-neon-cyan/10 text-neon-cyan"
-                    : paper
-                      ? "border-[var(--book-rule)] text-[var(--book-ink)]"
-                      : "border-white/10 text-slate-300 hover:border-white/20 hover:text-white",
-                )}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-
-          <div>
-            <label htmlFor={`essay-note-${slug}`} className="sr-only">
-              Optional note
-            </label>
-            <textarea
-              id={`essay-note-${slug}`}
-              rows={2}
-              maxLength={280}
-              value={note}
-              onChange={(e) => setNote(e.target.value)}
-              placeholder="Anything unclear, missing, or worth keeping?"
-              className={cn(
-                "w-full resize-y border px-4 py-3 text-sm focus:outline-none",
-                paper
-                  ? "rounded-sm border-[var(--book-rule)] bg-[var(--book-paper)] text-[var(--book-ink)] placeholder:text-[var(--book-muted)]"
-                  : "rounded-xl border-white/10 bg-white/5 text-white placeholder:text-slate-500 focus:border-neon-cyan/50 focus-visible:ring-2 focus-visible:ring-neon-cyan/40",
-              )}
-            />
-          </div>
-
-          <input
-            type="text"
-            name="website"
-            autoComplete="off"
-            tabIndex={-1}
-            className="hidden"
-            aria-hidden="true"
-          />
-
+          {formFields}
           {error ? (
             <p className={cn("text-sm", paper ? "text-[#8f1d1d]" : "text-rose-300")} role="alert">
               {error}
             </p>
           ) : null}
-
-          <button
-            type="submit"
-            disabled={!rating || sending}
-            className={cn(
-              "focus-ring inline-flex min-h-11 items-center gap-2 px-5 text-sm font-semibold",
-              paper ? "rounded-sm" : "rounded-xl transition-[opacity,transform] active:scale-[0.98]",
-              rating && !sending
-                ? paper
-                  ? "bg-[var(--book-ink)] text-[var(--book-paper)]"
-                  : "bg-neon-cyan text-void hover:opacity-90"
-                : paper
-                  ? "cursor-not-allowed border border-[var(--book-rule)] text-[var(--book-muted)]"
-                  : "cursor-not-allowed bg-white/10 text-slate-500",
-            )}
-          >
-            {sending ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-                Sending...
-              </>
-            ) : (
-              "Send"
-            )}
-          </button>
         </form>
       )}
 
-      {entries.length > 0 ? (
+      {visibleEntries.length > 0 ? (
         <div className="space-y-4">
           <p className={cn("text-sm font-medium", paper ? "text-[var(--book-muted)]" : "font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500")}>
             {notesLabel}
           </p>
           <ul className="space-y-4">
-            {entries.map((entry) => (
+            {visibleEntries.map((entry) => (
               <li
                 key={`${entry.at}-${entry.rating}-${entry.note ?? ""}`}
                 className={cn("border-t pt-4 first:border-t-0 first:pt-0", paper ? "border-[var(--book-rule)]" : "border-white/6")}

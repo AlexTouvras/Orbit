@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { Clock } from "lucide-react";
-import { getWriteBySlug, getWriteSlugs } from "@/lib/writes";
+import { getNextWrites, getWriteBySlug, getWriteSlugs } from "@/lib/writes";
 import { getEssayFeedbackEntries } from "@/lib/essay-feedback";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import { Badge } from "@/components/ui/Badge";
 import { BackLink } from "@/components/ui/BackLink";
 import { ArticleJsonLd } from "@/components/seo/ArticleJsonLd";
 import { EssayFeedback } from "@/components/writes/EssayFeedback";
+import { NextWrites } from "@/components/writes/NextWrites";
 import { getEditableProfile } from "@/lib/profile-store";
 import {
   getWriteModifiedDate,
@@ -80,6 +81,7 @@ export default async function WriteDetailPage({
 
   const fallbackHref = write.showcase ? "/#selected-work" : "/writes";
   const feedbackEntries = await getEssayFeedbackEntries(write.slug);
+  const next = getNextWrites(write);
 
   return (
     <article className="mx-auto max-w-3xl">
@@ -124,7 +126,8 @@ export default async function WriteDetailPage({
         <MDXRemote source={write.content} components={mdxComponents} />
       </section>
 
-      <EssayFeedback slug={write.slug} initialEntries={feedbackEntries} />
+      <EssayFeedback slug={write.slug} initialEntries={feedbackEntries} heart />
+      <NextWrites writes={next.writes} related={next.related} />
     </article>
   );
 }
