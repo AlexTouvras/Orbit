@@ -1,7 +1,88 @@
 {
-  "generatedAt": "2026-10-23T06:46:55.493Z",
+  "generatedAt": "2026-10-24T06:46:54.423Z",
   "count": 263,
   "items": [
+    {
+      "id": "28da8cdd34ee",
+      "title": "Do WIP Limits Still Make Sense When Agents Write the Code?",
+      "link": "https://www.scrum.org/resources/blog/do-wip-limits-still-make-sense-when-agents-write-code",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-23T23:19:22.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. Starting work has become easier. I catch myself doing this. I start one agent on a dashboard, another on article research, another on a client artifact. Each start is rational. The agent is going to work for a while, so why should I wait? A…"
+    },
+    {
+      "id": "fa56c02e1a35",
+      "title": "Historic monetary tightening, benign output dynamics: Rising R-stars across the Atlantic",
+      "link": "https://cepr.org/voxeu/columns/historic-monetary-tightening-benign-output-dynamics-rising-r-stars-across-atlantic",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-23T23:00:00.000Z",
+      "contentSnippet": "Nominal interest rates increased significantly in the US and euro area following the post-pandemic inflation surge, yet economic activity and labour markets remained resilient. This column finds that accounting for policy expectations implies a larger increase in the natural rate…"
+    },
+    {
+      "id": "d8a6f23c66c7",
+      "title": "Changes in the health and longevity of the elderly in the US",
+      "link": "https://cepr.org/voxeu/columns/changes-health-and-longevity-elderly-us",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-23T23:00:00.000Z",
+      "contentSnippet": "Spending on public pensions through Social Security and on elderly healthcare through Medicare accounted for over one-third of federal expenditures in the US by 2024. This column explores how improvements in elderly health and life expectancy affected the relative finances of Soc…"
+    },
+    {
+      "id": "c0ebbef447c4",
+      "title": "Chasing far-right does not pay for the centre-right parties: Evidence from Germany’s 2025 election",
+      "link": "https://cepr.org/voxeu/columns/chasing-far-right-does-not-pay-centre-right-parties-evidence-germanys-2025-election",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-23T23:00:00.000Z",
+      "contentSnippet": "Establishment parties are often urged to win voters over from populist parties by shifting their policy positions towards them. Based on the 2025 German federal election, this column simulates what would happen when the centre-right CDU changes its policies and the populist radic…"
+    },
+    {
+      "id": "ef77d0b37418",
+      "title": "Built for Agents: The Case for Spark Declarative Pipelines",
+      "link": "https://www.databricks.com/blog/built-agents-case-spark-declarative-pipelines",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-23T19:00:00.000Z",
+      "contentSnippet": "AI agents now write a growing share of production data pipelines (over 70% of SDP..."
+    },
+    {
+      "id": "c8ee78ab609d",
+      "title": "Real-time energy trading and analytics on Databricks",
+      "link": "https://www.databricks.com/blog/real-time-energy-trading-and-analytics-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-23T19:00:00.000Z",
+      "contentSnippet": "Why does real-time energy trading need more than faster data?Energy trading desks..."
+    },
+    {
+      "id": "3c115b0c264d",
+      "title": "Bringing foundational models to the front lines of TB screening",
+      "link": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-10-23T18:51:33.000Z",
+      "contentSnippet": "Generative AI"
+    },
+    {
+      "id": "298c8de07d18",
+      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-23T17:00:00.000Z",
+      "contentSnippet": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT."
+    },
+    {
+      "id": "48e2274fdf2b",
+      "title": "Securing our frontier model training environment",
+      "link": "https://openai.com/index/securing-our-frontier-model-training-environment",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-23T10:00:00.000Z",
+      "contentSnippet": "OpenAI explains how we strengthened containment for frontier model training and evaluation, including offline environments and high-compute red-teaming."
+    },
     {
       "id": "15c1f8ef7a58",
       "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
@@ -10,6 +91,24 @@
       "category": "AI",
       "pubDate": "2026-10-23T00:00:00.000Z",
       "contentSnippet": "OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem."
+    },
+    {
+      "id": "bf6986b39fbc",
+      "title": "An alignment assessment of the UK AISI cybertesting incident",
+      "link": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-23T00:00:00.000Z",
+      "contentSnippet": "In a UK AISI evaluation, Mythos 5 took unsanctioned actions that impacted real people and organizations. In this post, we investigate these behaviors from Claude Mythos 5 further, to understand what they reveal about the model’s alignment."
+    },
+    {
+      "id": "ddc42277e74f",
+      "title": "News shocks and inflation: theory and evidence from large oil discoveries",
+      "link": "https://www.bis.org/publications/working-paper-1389-news-shocks-and-inflation-theory-and-evidence-from-large-oil-discoveries",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-23T00:00:00.000Z",
+      "contentSnippet": "We study hownews shocks affect inflation in open economies, using large oil and gas discoveries with realized production lags of at least five years as observable news about future output. Panel local projections show that discoveries raise core consumer prices over the subsequen…"
     },
     {
       "id": "9aa5c8f177b8",
@@ -30,8 +129,17 @@
       "contentSnippet": "Official development assistance fell by 23% in 2025, the largest drop on record. Aid disbursements have tended to coincide with deposits in offshore banks. This column argues that once the Panama Papers raised the cost of offshore banking, part of that diversion migrated to crypt…"
     },
     {
+      "id": "84ba79994207",
+      "title": "The Challenges to the International Financial System",
+      "link": "https://cepr.org/multimedia/challenges-international-financial-system",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-22T23:00:00.000Z",
+      "contentSnippet": "The 29th Geneva Report on the World Economy examines three pressures on the international financial system at once: global imbalances, the status of the dollar, and the stability of bond markets. Two of its authors, Valentina Bruno (American University, CEPR) and Cédric Tille (Ge…"
+    },
+    {
       "id": "e837e6c03108",
-      "title": "Your agents' skills are your craft now",
+      "title": "Your Agents' Skills Are Your Craft Now",
       "link": "https://www.scrum.org/resources/blog/your-agents-skills-are-your-craft-now",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -126,7 +234,7 @@
       "source": "Anthropic Research",
       "category": "AI",
       "pubDate": "2026-10-22T00:00:00.000Z",
-      "contentSnippet": "Formal verification can prove that code is free of certain bugs, but historically it has only been feasible for small codebases. With AI models, however, this is beginning to change. Here, we used Claude to prove security properties in over one hundred real-world open-source libr…"
+      "contentSnippet": ""
     },
     {
       "id": "8b47acdaa51b",
@@ -145,15 +253,6 @@
       "category": "Economics",
       "pubDate": "2026-10-21T23:00:00.000Z",
       "contentSnippet": "The standard prediction is that a higher minimum wage reduces employment among low-wage workers. This column examines the effect of a rise in the minimum wage in California for workers at both large and small fast-food chains. Among smaller chains, employment, the number of estab…"
-    },
-    {
-      "id": "c968756012d3",
-      "title": "From Kyiv with love (and savings): A defence win-win for Europe and Ukraine",
-      "link": "https://cepr.org/voxeu/columns/kyiv-love-and-savings-defence-win-win-europe-and-ukraine",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-21T23:00:00.000Z",
-      "contentSnippet": "Europe is rearming at a historic pace, while military support for Ukraine is still negotiated package by package. This column compares what one euro of defence spending buys in Ukraine and in the rest of Europe. Ukrainian soldiers, howitzers and drones cost a fraction of their Eu…"
     },
     {
       "id": "2ed22a61b2f1",
@@ -181,24 +280,6 @@
       "category": "AI",
       "pubDate": "2026-10-21T16:23:53.000Z",
       "contentSnippet": "Health & Bioscience"
-    },
-    {
-      "id": "74fcf21eca7a",
-      "title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
-      "link": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-21T13:00:00.000Z",
-      "contentSnippet": "From local businesses to global brands, more advertisers can now reach people as they explore, compare and decide what to buy in ChatGPT."
-    },
-    {
-      "id": "61f4d0141ff3",
-      "title": "OpenAI models are coming to Google Cloud",
-      "link": "https://openai.com/index/openai-models-google-cloud",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-21T12:00:00.000Z",
-      "contentSnippet": "OpenAI and Google Cloud are bringing frontier models and Codex workflows to Gemini’s Model Garden, available through Google Cloud Marketplace."
     },
     {
       "id": "39eca36a0c26",
@@ -264,33 +345,6 @@
       "contentSnippet": "We are proud to release DuckDB 2.0.0, codenamed “Cinnamon Teal” after the Spatula cyanoptera, a strikingly reddish-brown duck found in the western Americas. While DuckDB 1.0 was all about stability and backward compatibility, DuckDB 2.0 is above all a feature release. In this blo…"
     },
     {
-      "id": "73614bd45257",
-      "title": "Investment screening reshapes rather than shrinks foreign investment",
-      "link": "https://cepr.org/voxeu/columns/investment-screening-reshapes-rather-shrinks-foreign-investment",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-20T23:00:00.000Z",
-      "contentSnippet": "Driven by national security concerns, a growing number of countries screen foreign investment in an expanding range of sectors, yet evidence on the economic effects of such screening is scarce. This column uses new sector-level data for 43 OECD and EU countries to show that scree…"
-    },
-    {
-      "id": "f9d4237f7400",
-      "title": "Lower capital requirements are no shortcut to European competitiveness",
-      "link": "https://cepr.org/voxeu/columns/lower-capital-requirements-are-no-shortcut-european-competitiveness",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-20T23:00:00.000Z",
-      "contentSnippet": "The European banking sector is known for high regulatory complexity, market fragmentation, and uneven implementation of international standards. However, this column argues that across-the-board reductions in capital requirements are not the solution. European requirements are no…"
-    },
-    {
-      "id": "32eb53c1b854",
-      "title": "Assainissement budgétaire : coûts temporaires ou séquelles durables",
-      "link": "https://cepr.org/voxeu/columns/assainissement-budgetaire-couts-temporaires-ou-sequelles-durables",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-20T23:00:00.000Z",
-      "contentSnippet": "La dette publique atteint ou frôle des niveaux records dans l’ensemble des pays de l’OCDE, ce qui accentue la pression exercée sur les gouvernements pour qu’ils rétablissent la viabilité budgétaire à terme. Cet article s’appuie sur de nouvelles données comparatives entre pays qui…"
-    },
-    {
       "id": "9123c0359486",
       "title": "The Visibility You Think You Have Isn't the Visibility You Have.",
       "link": "https://www.scrum.org/resources/blog/visibility-you-think-you-have-isnt-visibility-you-have",
@@ -336,15 +390,6 @@
       "contentSnippet": "Today we're introducing agent memory on Agent Bricks, Databricks' agent developer..."
     },
     {
-      "id": "626e063ebdfa",
-      "title": "How Hamlet uses Databricks Lakebase Postgres to test changes against production data",
-      "link": "https://www.databricks.com/blog/how-hamlet-uses-databricks-lakebase-postgres-test-changes-against-production-data",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-20T14:45:00.000Z",
-      "contentSnippet": "Hamlet, an AI-powered platform that makes local government decision-making accessible..."
-    },
-    {
       "id": "87d05b71d867",
       "title": "Pragmatism Crushes Dogma in the Wild",
       "link": "https://www.scrum.org/resources/blog/pragmatism-crushes-dogma-wild",
@@ -370,15 +415,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-20T08:34:30.000Z",
       "contentSnippet": "L'intelligenza artificiale permette di analizzare informazioni e sviluppare nuove proposte in tempi sempre più brevi. Per il Product Owner diventa ancora più importante comprendere quali informazioni siano affidabili e come utilizzarle per prendere decisioni sul prodotto. Image I…"
-    },
-    {
-      "id": "428aebc8c802",
-      "title": "How HP Is Building an AI-Ready CDP with Databricks CustomerLake",
-      "link": "https://www.databricks.com/blog/hp-ai-ready-cdp-databricks-customerlake",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-20T00:01:41.000Z",
-      "contentSnippet": "At Data + AI Summit 2026, Luis Alonso, Global Head of Data Strategy & Engineering..."
     },
     {
       "id": "c021c28354e5",
@@ -570,15 +606,6 @@
       "contentSnippet": "We’re sharing two reports: the first covers how AI is changing employment inside Anthropic, and the second looks at the gap between how the public and Anthropic employees expect AI to affect work and the economy."
     },
     {
-      "id": "f1073754b8e0",
-      "title": "How employment is changing at Anthropic",
-      "link": "https://www.anthropic.com/research/employment-at-anthropic",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-16T00:00:00.000Z",
-      "contentSnippet": "How has AI restructured work and employment at Anthropic? As a company at the frontier of AI adoption, Anthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy."
-    },
-    {
       "id": "c77032d2ea07",
       "title": "From JSON Strings to Typed Columns",
       "link": "https://duckdb.org/2026/10/16/json-to-typed-columns.html",
@@ -759,24 +786,6 @@
       "contentSnippet": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress."
     },
     {
-      "id": "ded3d57606c8",
-      "title": "Money and the architecture of trust",
-      "link": "https://www.bis.org/publications/paper-175-money-and-architecture-trust",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-14T00:00:00.000Z",
-      "contentSnippet": "Money is one of the most consequential social institutions humanity has built. Starting from the most elementary monetary act, a payment, this paper provides an account of how money works, grounded in the tradition of credit theories of money."
-    },
-    {
-      "id": "98b69313f8c3",
-      "title": "Scrum: Delivery Method or AI Governance?",
-      "link": "https://www.scrum.org/resources/blog/scrum-delivery-method-or-ai-governance",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-13T22:10:54.000Z",
-      "contentSnippet": "The same Scrum framework sits behind organisations that get real value from AI and those that don't. What separates them is where Scrum is placed in their operating model. For many organisations, Scrum is a delivery method inside a project: the business case fixes scope, budget,…"
-    },
-    {
       "id": "471508c04c30",
       "title": "Developing Gemini 4 Argon responsibly and safely",
       "link": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
@@ -891,15 +900,6 @@
       "source": "Simon Willison",
       "category": "AI",
       "pubDate": "2026-10-07T20:56:21.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "fc6c16485847",
-      "title": "Does better work always mean better workers?",
-      "link": "https://research.google/blog/does-better-work-always-mean-better-workers/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-10-07T20:19:57.000Z",
       "contentSnippet": ""
     },
     {
@@ -1821,15 +1821,6 @@
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
     },
     {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
-    },
-    {
       "id": "d9adb789161e",
       "title": "How Firms Form Beliefs and the Implications for Inflation",
       "link": "https://www.federalreserve.gov/econres/feds/files/2026053pap.pdf",
@@ -1846,6 +1837,15 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
+    },
+    {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "fb549b859ee4",
@@ -1902,13 +1902,13 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "4c8cd6ef9ad3",
-      "title": "Prices and Monetary Policy: The Role of Financial Constraints",
-      "link": "https://www.frbsf.org/wp-content/uploads/wp2026-13.pdf",
+      "id": "d817a88ce0e9",
+      "title": "The Last Taxi: LCR Buffers and Bank Liquidity Provision",
+      "link": "https://www.federalreserve.gov/econres/feds/files/2026051pap.pdf",
       "source": "BIS Research",
       "category": "Economics",
       "pubDate": "2026-07-17T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of San Francisco Working Papers by Michael D. Bauer, Alexander Czarnota and Mathias Klein"
+      "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by Alexandros Vardoulakis, Matt Darst, Arazi Lubis and Lucia Gurrieri"
     },
     {
       "id": "ed6bd26c4997",
