@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Essay heart and next read — one press stores useful; up to three other essays, same category then shared tags. The site stays English (2026-10-24)
 - [x] Download CV is the About record — `/resume.pdf` is rendered from `src/content/cv.ts` (2026-10-23)
 - [x] Handbook library — each published book is its dark cover. The title and the chapters open the book (2026-10-22)
 - [x] Handbook view — both published books use the paper reader. The dark leaf is not a screen (2026-10-22)
