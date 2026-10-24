@@ -9,7 +9,7 @@ import {
   type FormEvent,
   type ReactNode,
 } from "react";
-import { ArrowUp, Heart, Loader2, Text } from "lucide-react";
+import { ArrowUp, Heart, Loader2, Type } from "lucide-react";
 import { cn, relativeTime } from "@/lib/utils";
 import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
 
@@ -274,7 +274,7 @@ export function EssayReactionBar({
             open ? hot : quiet,
           )}
         >
-          <Text className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+          <Type className="h-5 w-5" strokeWidth={1.75} aria-hidden />
           <span className="sr-only">Note</span>
         </button>
       </div>
