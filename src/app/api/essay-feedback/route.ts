@@ -6,6 +6,7 @@ import {
 } from "@/lib/essay-feedback";
 import { handbookFeedbackPage } from "@/lib/handbooks";
 import { getWriteBySlug } from "@/lib/writes";
+import type { EssayFeedbackEntry } from "@/lib/essay-feedback-types";
 import { notifyEssayFeedback } from "@/lib/weekly-write/slack";
 
 function feedbackTarget(slug: string): {
@@ -96,14 +97,12 @@ export async function POST(req: NextRequest) {
   }
 
   const slug = clean(body.slug, 160);
+  const action = clean(body.action, 16);
   const rating = clean(body.rating, 32);
   const note = clean(body.note, 280);
 
-  if (!slug || !isValidRating(rating)) {
-    return NextResponse.json(
-      { error: "Essay and rating are required." },
-      { status: 400 },
-    );
+  if (!slug) {
+    return NextResponse.json({ error: "Essay is required." }, { status: 400 });
   }
 
   const target = feedbackTarget(slug);
@@ -114,11 +113,24 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const entry = {
-    rating,
-    note: note || undefined,
-    at: new Date().toISOString(),
-  };
+  const at = new Date().toISOString();
+  let entry: EssayFeedbackEntry;
+
+  if (action === "heart") {
+    entry = { heart: true, at };
+  } else if (action === "note") {
+    if (!note) {
+      return NextResponse.json({ error: "A note is required." }, { status: 400 });
+    }
+    entry = { note, at };
+  } else if (isValidRating(rating)) {
+    entry = { rating, note: note || undefined, at };
+  } else {
+    return NextResponse.json(
+      { error: "A heart or a note is required." },
+      { status: 400 },
+    );
+  }
 
   let result: { viaGithub: boolean; totalForEssay: number };
   try {
@@ -126,14 +138,15 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     console.error("[essay-feedback] failed to persist:", err);
     const message =
-      err instanceof Error ? err.message : "Could not save feedback.";
+      err instanceof Error ? err.message : "Could not save.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
 
   const slack = await notifyEssayFeedback({
     slug,
     title: target.title,
-    rating,
+    rating: entry.rating,
+    heart: entry.heart,
     note: entry.note,
     path: target.path,
     sourceLabel: target.sourceLabel,

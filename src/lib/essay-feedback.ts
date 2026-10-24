@@ -20,9 +20,9 @@ const DATA_DIR = path.join(process.cwd(), "data");
 const FEEDBACK_RELATIVE_PATH = "data/essay-feedback.json";
 const FEEDBACK_PATH = path.join(DATA_DIR, "essay-feedback.json");
 
-function asRating(value: unknown): EssayFeedbackRating {
+function asRating(value: unknown): EssayFeedbackRating | undefined {
   if (value === "yes" || value === "somewhat" || value === "no") return value;
-  return "somewhat";
+  return undefined;
 }
 
 function normalizeStore(raw: unknown): EssayFeedbackStore {
@@ -42,17 +42,26 @@ function normalizeStore(raw: unknown): EssayFeedbackStore {
             (entry): entry is Record<string, unknown> =>
               typeof entry === "object" && entry !== null,
           )
-          .map((entry) => ({
-            rating: asRating(entry.rating),
-            note:
+          .map((entry) => {
+            const rating = asRating(entry.rating);
+            const note =
               typeof entry.note === "string" && entry.note.trim()
                 ? entry.note.trim()
-                : undefined,
-            at:
-              typeof entry.at === "string" && entry.at.trim()
-                ? entry.at.trim()
-                : new Date(0).toISOString(),
-          }))
+                : undefined;
+            const heart = entry.heart === true;
+            if (!rating && !note && !heart) return null;
+            const next: EssayFeedbackEntry = {
+              at:
+                typeof entry.at === "string" && entry.at.trim()
+                  ? entry.at.trim()
+                  : new Date(0).toISOString(),
+            };
+            if (rating) next.rating = rating;
+            if (note) next.note = note;
+            if (heart) next.heart = true;
+            return next;
+          })
+          .filter((entry): entry is EssayFeedbackEntry => entry !== null)
       : [];
 
     store[slug] = { title, entries };

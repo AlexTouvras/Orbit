@@ -197,7 +197,8 @@ const FEEDBACK_RATING_LABEL: Record<string, string> = {
 export async function notifyEssayFeedback(input: {
   slug: string;
   title: string;
-  rating: "yes" | "somewhat" | "no";
+  rating?: "yes" | "somewhat" | "no";
+  heart?: boolean;
   note?: string;
   /** Public path. Essays default to `/writes/{slug}`. */
   path?: string;
@@ -214,15 +215,26 @@ export async function notifyEssayFeedback(input: {
   const sourceLabel = input.sourceLabel ?? "essay";
   const href = `${site}${path}`;
   const note = input.note?.trim();
-  const ratingLabel = FEEDBACK_RATING_LABEL[input.rating] ?? input.rating;
+  const ratingLabel = input.rating
+    ? (FEEDBACK_RATING_LABEL[input.rating] ?? input.rating)
+    : "";
+  const headline = input.heart
+    ? `*Heart* on <${href}|${input.title}>`
+    : input.rating
+      ? `*New ${sourceLabel} feedback* on <${href}|${input.title}>\n*Rating:* ${ratingLabel}`
+      : `*Note* on <${href}|${input.title}>`;
 
-  const text = `Orbit feedback: ${input.title}`;
+  const text = input.heart
+    ? `Heart: ${input.title}`
+    : input.rating
+      ? `Orbit feedback: ${input.title}`
+      : `Note: ${input.title}`;
   const blocks: Record<string, unknown>[] = [
     {
       type: "section",
       text: {
         type: "mrkdwn",
-        text: `*New ${sourceLabel} feedback* on <${href}|${input.title}>\n*Rating:* ${ratingLabel}`,
+        text: headline,
       },
     },
     ...(note
