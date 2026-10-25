@@ -1,7 +1,34 @@
 {
-  "generatedAt": "2026-10-24T06:46:54.423Z",
-  "count": 263,
+  "generatedAt": "2026-10-25T06:46:57.749Z",
+  "count": 264,
   "items": [
+    {
+      "id": "265066b2be22",
+      "title": "Oil shocks no longer hit the US economy as they used to",
+      "link": "https://cepr.org/voxeu/columns/oil-shocks-no-longer-hit-us-economy-they-used",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-24T23:00:00.000Z",
+      "contentSnippet": "Recent disruptions to global oil markets, from Russia’s invasion of Ukraine to the war in Iran, have revived fears of stagflation. This column shows that the shale revolution has fundamentally changed how the US economy responds to oil shocks. As the country has shifted from a ma…"
+    },
+    {
+      "id": "7d0b17750361",
+      "title": "AI... improving the wrong system faster",
+      "link": "https://www.scrum.org/resources/blog/ai-improving-wrong-system-faster",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-24T22:00:00.000Z",
+      "contentSnippet": "AI... improving the wrong system faster Many management AI conversation drift to the same place fast. Which model? Where can we automate? How much faster can developers code? Which admin tasks can we cut? Useful questions. But they aren't yet organizational design questions and t…"
+    },
+    {
+      "id": "88ef226eeb1d",
+      "title": "From AI Theater to Unreasonable Agility",
+      "link": "https://www.scrum.org/resources/blog/ai-theater-unreasonable-agility",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-24T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. Watch the conversation with Philip Morgan Watch the full episode on YouTube. Why does so much AI adoption look busy and change so little? There’s theater in both places. Some organizations focus agile on activities and outputs. They measure…"
+    },
     {
       "id": "28da8cdd34ee",
       "title": "Do WIP Limits Still Make Sense When Agents Write the Code?",
@@ -246,15 +273,6 @@
       "contentSnippet": "EU debt has become a noticeable feature of Europe’s fiscal architecture. However, EU fiscal rules focus solely on national public finances. They have a blind spot for EU debt, which calls their goal of fiscal sustainability into question. This column proposes a simple way to brid…"
     },
     {
-      "id": "c983a45b38b2",
-      "title": "Establishment-level evidence on California’s fast-food minimum wage",
-      "link": "https://cepr.org/voxeu/columns/establishment-level-evidence-californias-fast-food-minimum-wage",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-21T23:00:00.000Z",
-      "contentSnippet": "The standard prediction is that a higher minimum wage reduces employment among low-wage workers. This column examines the effect of a rise in the minimum wage in California for workers at both large and small fast-food chains. Among smaller chains, employment, the number of estab…"
-    },
-    {
       "id": "2ed22a61b2f1",
       "title": "Broad access through consistent standards",
       "link": "https://openai.com/index/broad-access-through-consistent-standards",
@@ -480,15 +498,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "ecff4ccfa2b9",
-      "title": "Geoeconomic pressure",
-      "link": "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-19T00:00:00.000Z",
-      "contentSnippet": "The increasing use of geoeconomic pressure is reshaping the global economy."
-    },
-    {
       "id": "332af531db90",
       "title": "Central banks and macro financial stability in a fragmented global economy",
       "link": "https://www.bis.org/publications/paper-176-central-banks-and-macro-financial-stability-fragmented-global-economy",
@@ -514,6 +523,15 @@
       "category": "Credit",
       "pubDate": "2026-10-19T00:00:00.000Z",
       "contentSnippet": "Cross-border payments remain slow and expensive despite significant improvements in digital financial infrastructure over the past several decades."
+    },
+    {
+      "id": "ecff4ccfa2b9",
+      "title": "Geoeconomic pressure",
+      "link": "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "The increasing use of geoeconomic pressure is reshaping the global economy."
     },
     {
       "id": "46bccd42ef44",
@@ -730,15 +748,6 @@
       "category": "AI",
       "pubDate": "2026-10-14T16:14:00.000Z",
       "contentSnippet": "General Science"
-    },
-    {
-      "id": "6a79c28d8743",
-      "title": "The First 90 Days Field Guide For New Scrum Masters",
-      "link": "https://www.scrum.org/resources/blog/first-90-days-field-guide-new-scrum-masters",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-14T15:21:28.000Z",
-      "contentSnippet": "Discover the practical steps you need to take within your first 3 months on the job to confidently solidify your position in your Scrum Team. Image Imagine your company has recently asked you to take over the Scrum Master role within your Scrum Team, or maybe you've personally ch…"
     },
     {
       "id": "a6374274cc17",
