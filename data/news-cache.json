@@ -1,7 +1,88 @@
 {
-  "generatedAt": "2026-10-25T06:46:57.749Z",
+  "generatedAt": "2026-10-26T06:46:53.027Z",
   "count": 264,
   "items": [
+    {
+      "id": "52372706a169",
+      "title": "Data Engineering Weekly #293",
+      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-293",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-10-26T02:12:10.000Z",
+      "contentSnippet": "The Weekly Data Engineering Newsletter"
+    },
+    {
+      "id": "2dce0829e8a2",
+      "title": "Four ways pharma companies actually adopt agility",
+      "link": "https://www.scrum.org/resources/blog/four-ways-pharma-companies-actually-adopt-agility",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-26T01:04:02.000Z",
+      "contentSnippet": "Image In the first post of this series, I suggested replacing \"should we introduce agile?\" with three other questions: agile to solve what, where and how much, and what kind. Another question I'm sometimes asked is: \"So what are other pharma companies actually doing?\" If you work…"
+    },
+    {
+      "id": "74ff02b58ab6",
+      "title": "Private equity beyond the target: How buyouts reshape supply chains",
+      "link": "https://cepr.org/voxeu/columns/private-equity-beyond-target-how-buyouts-reshape-supply-chains",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-26T00:00:00.000Z",
+      "contentSnippet": "The importance of private equity for euro area firms is increasing, with annual growth rates in assets under management exceeding 10%. Private equity buyouts affect more than just the firms being acquired. Using comprehensive data for Belgium, this column shows that the sales vol…"
+    },
+    {
+      "id": "ae988c14874f",
+      "title": "Washing away the US: Tariff evasion on the other side of the US–China trade war",
+      "link": "https://cepr.org/voxeu/columns/washing-away-us-tariff-evasion-other-side-us-china-trade-war",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-26T00:00:00.000Z",
+      "contentSnippet": "Debates about tariff evasion have focused on Chinese goods entering the US. This column examines the reverse flow and finds that China’s retaliatory tariffs on imports from the US also induced evasion, especially through the misreporting of US-origin goods as originating from oth…"
+    },
+    {
+      "id": "e82d00c6e28e",
+      "title": "From Babysitting AI to Developing the Factory",
+      "link": "https://www.scrum.org/resources/blog/babysitting-ai-developing-factory",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-25T17:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. \"I feel like I'm constantly babysitting agents who throw walls of markdown and code at me,\" shared a senior engineer I've been coaching through AI adoption. He was missing the joy of troubleshooting tough problems himself. This frustration…"
+    },
+    {
+      "id": "bd6a4ab6dcaa",
+      "title": "Simple Report Bursting With Fabric Dataflows Gen2",
+      "link": "https://blog.crossjoin.co.uk/2026/10/25/simple-report-bursting-with-fabric-dataflows-gen2/",
+      "source": "Chris Webb's BI Blog",
+      "category": "Analytics",
+      "pubDate": "2026-10-25T16:37:51.000Z",
+      "contentSnippet": "When the new Send Email action was announced for Fabric Dataflows Gen2 – which allows you to send an email from a dataflow when it refreshes – I was curious to know if you could use it to send multiple emails to multiple different people, and therefore do report bursting or somet…"
+    },
+    {
+      "id": "0450e0901259",
+      "title": "How to Get AI Initiatives Beyond the Proof of Concept",
+      "link": "https://www.scrum.org/resources/blog/how-get-ai-initiatives-beyond-proof-concept",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-25T13:00:00.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. Where do AI initiatives actually go to die? I’m tempted to say an AI-native CRM that doesn’t require the salespeople to enter information manually, that’s great. Everybody’s gonna love that. But I’ve seen so often that even these obvious as…"
+    },
+    {
+      "id": "e7f9633c9f0c",
+      "title": "AI-Assisted Refinement Preparation and the Risk When a Suggestion Becomes a Decision",
+      "link": "https://www.scrum.org/resources/blog/ai-assisted-refinement-preparation-and-risk-when-suggestion-becomes-decision",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-25T10:37:02.000Z",
+      "contentSnippet": "TL; DR: The Product Backlog Refinement Agent and the Risk When a Suggestion Becomes a Decision Preparing a refinement session is tedious, and AI is good at the tedious part: reading every Product Backlog item, every repeated comment column, and the team’s own records on the after…"
+    },
+    {
+      "id": "a8c02811aea7",
+      "title": "Feature Factories Don't Call Themselves Feature Factories",
+      "link": "https://www.scrum.org/resources/blog/feature-factories-dont-call-themselves-feature-factories",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-25T07:00:00.000Z",
+      "contentSnippet": "Image Sprint Reviews reveal the operating model within twenty minutes. I have been sitting in them across industries since 2010, and the tell is consistent: what the room celebrates. Teams that function as feature factories present a list of completed features, stakeholders check…"
+    },
     {
       "id": "265066b2be22",
       "title": "Oil shocks no longer hit the US economy as they used to",
@@ -156,15 +237,6 @@
       "contentSnippet": "Official development assistance fell by 23% in 2025, the largest drop on record. Aid disbursements have tended to coincide with deposits in offshore banks. This column argues that once the Panama Papers raised the cost of offshore banking, part of that diversion migrated to crypt…"
     },
     {
-      "id": "84ba79994207",
-      "title": "The Challenges to the International Financial System",
-      "link": "https://cepr.org/multimedia/challenges-international-financial-system",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-22T23:00:00.000Z",
-      "contentSnippet": "The 29th Geneva Report on the World Economy examines three pressures on the international financial system at once: global imbalances, the status of the dollar, and the stability of bond markets. Two of its authors, Valentina Bruno (American University, CEPR) and Cédric Tille (Ge…"
-    },
-    {
       "id": "e837e6c03108",
       "title": "Your Agents' Skills Are Your Craft Now",
       "link": "https://www.scrum.org/resources/blog/your-agents-skills-are-your-craft-now",
@@ -262,15 +334,6 @@
       "category": "AI",
       "pubDate": "2026-10-22T00:00:00.000Z",
       "contentSnippet": ""
-    },
-    {
-      "id": "8b47acdaa51b",
-      "title": "Mind the gap: Bringing EU debt into the Stability and Growth Pact",
-      "link": "https://cepr.org/voxeu/columns/mind-gap-bringing-eu-debt-stability-and-growth-pact",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-21T23:00:00.000Z",
-      "contentSnippet": "EU debt has become a noticeable feature of Europe’s fiscal architecture. However, EU fiscal rules focus solely on national public finances. They have a blind spot for EU debt, which calls their goal of fiscal sustainability into question. This column proposes a simple way to brid…"
     },
     {
       "id": "2ed22a61b2f1",
@@ -498,15 +561,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "332af531db90",
-      "title": "Central banks and macro financial stability in a fragmented global economy",
-      "link": "https://www.bis.org/publications/paper-176-central-banks-and-macro-financial-stability-fragmented-global-economy",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-19T00:00:00.000Z",
-      "contentSnippet": "The 25th BIS Annual Conference took place in Basel, Switzerland on 26 June 2026. The event brought together a distinguished group of central bank Governors, leading academics and former public officials to exchange views on the theme “Central banks and macro-financial stability i…"
-    },
-    {
       "id": "d270e9c25e78",
       "title": "Inflation after the Iran war",
       "link": "https://www.bis.org/publications/working-paper-1384-inflation-after-iran-war",
@@ -534,6 +588,15 @@
       "contentSnippet": "The increasing use of geoeconomic pressure is reshaping the global economy."
     },
     {
+      "id": "332af531db90",
+      "title": "Central banks and macro financial stability in a fragmented global economy",
+      "link": "https://www.bis.org/publications/paper-176-central-banks-and-macro-financial-stability-fragmented-global-economy",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "The 25th BIS Annual Conference took place in Basel, Switzerland on 26 June 2026. The event brought together a distinguished group of central bank Governors, leading academics and former public officials to exchange views on the theme “Central banks and macro-financial stability i…"
+    },
+    {
       "id": "46bccd42ef44",
       "title": "AI-Assisted Product Discovery: When Code Is Cheap, Judgment Is the Job",
       "link": "https://www.scrum.org/resources/blog/ai-assisted-product-discovery-when-code-cheap-judgment-job",
@@ -552,24 +615,6 @@
       "contentSnippet": "The September release of Power BI saw the introduction of a powerful new feature: full text indexing, which makes searching and filtering on text columns much faster and enables the use of the new TextContains() and TextSimilarity() DAX functions. You need to enable it on a per-c…"
     },
     {
-      "id": "821683492941",
-      "title": "AI and the Product Owner's Accountability",
-      "link": "https://www.scrum.org/resources/blog/ai-and-product-owners-accountability",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-18T09:12:17.000Z",
-      "contentSnippet": "Image It's Monday morning. Over the weekend, an AI system read every support ticket from the last quarter, every sales-call transcript and every competitor's release notes. It rewrote sixty Product Backlog items, re-ordered the top twenty and drafted a Product Goal, with a short…"
-    },
-    {
-      "id": "e87f8ff310a6",
-      "title": "Strategy Thinks in Bets. Tactics Execute Them.",
-      "link": "https://www.scrum.org/resources/blog/strategy-thinks-bets-tactics-execute-them",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-18T06:00:00.000Z",
-      "contentSnippet": "Image Something has been spreading through the product teams I work with since around 2022, and it has the same shape as every good idea that becomes a religion. Teams are describing everything as a bet. The instinct behind it is a sound one. Outcomes, the real measure of product…"
-    },
-    {
       "id": "22608bcc58d1",
       "title": "DuckDB Ecosystem Newsletter : October 2026",
       "link": "https://motherduck.com/blog/duckdb-ecosystem-newsletter-october-2026",
@@ -586,15 +631,6 @@
       "category": "AI",
       "pubDate": "2026-10-16T18:11:34.000Z",
       "contentSnippet": "General Science"
-    },
-    {
-      "id": "67d254fd46bf",
-      "title": "Stop Guessing, Start Forecasting: Why Scrum Teams Should Embrace Monte Carlo",
-      "link": "https://www.scrum.org/resources/blog/stop-guessing-start-forecasting-why-scrum-teams-should-embrace-monte-carlo",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-16T11:49:45.000Z",
-      "contentSnippet": "Image How confident are you when someone asks, \"When will it be done?\" If you've worked with a Scrum Team for any length of time, you'll know this question well. And you'll probably recognise the uncomfortable silence that sometimes follows. We estimate. We plan. We look at veloc…"
     },
     {
       "id": "7a6a342eb958",
@@ -660,15 +696,6 @@
       "contentSnippet": "We study how offshore non-deliverable forward (NDF) markets transmit exchange-rate pressures to domestic currency markets. Using unique transaction-level data on the universe of centrally cleared NDFs for ten emerging-market currencies over 2013–2025, we show that offshore NDF or…"
     },
     {
-      "id": "a3b6c325fbde",
-      "title": "See the System: When a Team Impediment Is Really a Design Problem",
-      "link": "https://www.scrum.org/resources/blog/see-system-when-team-impediment-really-design-problem",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-15T18:50:39.000Z",
-      "contentSnippet": "Organizational problems rarely arrive labelled as organization-design problems. They show up in everyday work. A team waits for a decision. Another starts before its inputs are final and has to redo the work. Someone escalates to protect a launch date. A new control gets added af…"
-    },
-    {
       "id": "996b33c09ad5",
       "title": "Accelerating the search for antimicrobial peptides with Google Antigravity",
       "link": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
@@ -676,15 +703,6 @@
       "category": "AI",
       "pubDate": "2026-10-15T16:08:03.000Z",
       "contentSnippet": "Accelerating the search for novel antimicrobial peptides using Google Antigravity for Science."
-    },
-    {
-      "id": "2866b607cc0b",
-      "title": "How to Perform a Gap Analysis",
-      "link": "https://www.scrum.org/resources/blog/how-perform-gap-analysis",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-15T14:41:41.000Z",
-      "contentSnippet": "Image Knowing where you are today and where you want to go is important, but you also need to understand what stands between the two. Learning how to perform a gap analysis helps teams identify what needs to change before they can reach their desired future state. In business ana…"
     },
     {
       "id": "b774389cd364",
@@ -1686,15 +1704,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "c42698bae58b",
-      "title": "Displaying The Output Of Detail Rows Expressions In Power BI Reports Using The Paginated Report Visual",
-      "link": "https://blog.crossjoin.co.uk/2026/08/16/displaying-the-output-of-detail-rows-expressions-in-power-bi-reports-using-the-paginated-report-visual/",
-      "source": "Chris Webb's BI Blog",
-      "category": "Analytics",
-      "pubDate": "2026-08-16T15:28:15.000Z",
-      "contentSnippet": "In last week’s post I mentioned that while Power BI reports (unlike Excel PivotTables) do not support the Detail Rows Expression feature, it is possible to partially work around this limitation by using the paginated report visual. In this post I’ll show you how I was able to do…"
-    },
-    {
       "id": "e2d277d01964",
       "title": "What an Ontology for AI Agents Actually Needs",
       "link": "https://www.dataengineeringweekly.com/p/an-ontology-for-ai-agents-is-a-system",
@@ -1927,15 +1936,6 @@
       "category": "Data",
       "pubDate": "2026-07-16T00:00:00.000Z",
       "contentSnippet": "We’re consolidating a decade of legacy systems into Snowflake, which leaves us with over a million columns that all need to be classified and tagged for data governance. I built the system that does it: a tiered classification engine, a human-in-the-loop override workflow, and th…"
-    },
-    {
-      "id": "fad58c67303d",
-      "title": "Data Engineering Weekly #278",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-278",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-07-13T02:44:42.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "88bab00549f3",
