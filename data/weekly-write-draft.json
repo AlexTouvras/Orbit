@@ -1,86 +1,86 @@
 {
-  "id": "ww-2026-10-19-ide",
-  "status": "published",
-  "createdAt": "2026-10-19T09:47:46.715Z",
-  "weekOf": "2026-10-19",
-  "slug": "the-agent-can-finish-it-that-is-not-the-decision",
-  "title": "The agent can finish it. That is not the decision.",
-  "summary": "Agentic coding removed the cost that used to kill a weak idea before anyone built it. I keep a refusal that can win, and an assistant does not move a finished draft onto the list of things I will stand behind.",
+  "id": "ww-2026-10-26-ide",
+  "status": "pending",
+  "createdAt": "2026-10-27T18:46:21.760Z",
+  "weekOf": "2026-10-26",
+  "slug": "you-can-trust-the-build-and-still-miss-the-change",
+  "title": "You can trust the build and still miss the change",
+  "summary": "A loop that produces working software has only solved the output. I write the behavior that should change before an assistant drafts, and a missing sentence keeps the piece off the approval list.",
   "category": "Delivery",
   "tags": [
     "Delivery",
     "Agents",
     "Learning"
   ],
-  "mdx": "---\ntitle: \"The agent can finish it. That is not the decision.\"\nsummary: \"Agentic coding removed the cost that used to kill a weak idea before anyone built it. I keep a refusal that can win, and an assistant does not move a finished draft onto the list of things I will stand behind.\"\ndate: \"2026-10-19\"\ncategory: \"Delivery\"\nfeatured: false\ntags: [\"Delivery\", \"Agents\", \"Learning\"]\n---\n\n## The question\n\nA working version used to be expensive, and the expense did some of the choosing. A weak idea often died while people argued about whether it deserved the weeks, before anyone wrote the code. [AI-Assisted Product Discovery: When Code Is Cheap, Judgment Is the Job](https://www.scrum.org/resources/blog/ai-assisted-product-discovery-when-code-cheap-judgment-job) is Stefan Wolpers on what happens once that expense is gone. Agentic coding, an assistant that can carry an idea through to a working version, has removed much of the old gate. He says the scarce part moves to judgment: which idea deserves a customer's attention.\n\nI liked the old gate more than I admitted. If the build would take the team a month, I did not have to be brave. I only had to be unwilling to spend the month.\n\nThe part I can check against my own week is narrower than his account. The weeks a feature used to cost were doing some of the refusing. An afternoon with an assistant no longer does.\n\n## The issue\n\nThe issue is a finished candidate that stays because it exists, while nobody has written why the other ideas wait.\n\nWolpers names two responses that look like opposites. One camp builds every idea the assistant can finish and lets the market sort them. The other wants the assistant to choose, and to attach a score. He says both hand off the part that just became scarce. Producing versions is now cheap. The customer still has to make sense of five half-finished features, and someone still has to maintain them. An assistant that chooses has taken the accountability with it. He shows the shape of a prepared brief on a reporting module I do not have. The checklist around that module stays in his article.\n\nHe says a language model tends to agree with the person asking. His countermeasure is two briefs, one arguing for the current goal and one arguing that the goal is wrong. I have not run those briefs, so I will not treat them as a result I have checked.\n\nThe person who loses is whoever has to keep the feature that was cheap to start, and the customer who received it before anyone decided it was the one worth having.\n\n## The refusal that can still win\n\nOn Orbit, the site where I publish these essays, an assistant may write the draft. It does not publish. I approve the one I will stand behind, and I can leave the draft unpublished. A draft that reads cleanly is still a candidate. Leaving it unpublished is a call I am willing to make.\n\nThat practice is smaller than the discovery check Wolpers describes. What I keep is the right to refuse a thing the assistant has already finished. In delivery work the change I sequence is the one already waiting, until I write why this candidate replaces it. A same-day draft does not take that place by arriving finished.\n\nI have not counted how many ideas used to die from cost alone, so I cannot call the old gate a good filter. Wolpers notes that bad ideas still got built when a senior sponsor had the budget. Cost no longer does the refusing for me. If a finished draft is the choice, the build picked.\n\nThis fails when I have already started defending the draft and the refusal arrives as an afterthought. Then the assistant's first complete version is the thing I am protecting. I still let the draft exist before I decide. I have not checked whether a refusal written before any draft would change what I keep. Until I have, the rule stays small. The assistant prepares. It does not move the work onto the list of things I will stand behind.\n\n## Takeaway\n\nA candidate an assistant can finish does not earn its place by being finished. I write the refusal where it can still win, and I keep only the one I will defend. If I have not made that call, the draft stays a draft.\n",
-  "preview": "The agent can finish it. That is not the decision.\n\nAgentic coding removed the cost that used to kill a weak idea before anyone built it. I keep a refusal that can win, and an assistant does not move a finished draft onto the list of things I will stand behind.\n\nInspired by: AI-Assisted Product Discovery: When Code Is Cheap, Judgment Is the Job",
+  "mdx": "---\ntitle: \"You can trust the build and still miss the change\"\nsummary: \"A loop that produces working software has only solved the output. I write the behavior that should change before an assistant drafts, and a missing sentence keeps the piece off the approval list.\"\ndate: \"2026-10-26\"\ncategory: \"Delivery\"\nfeatured: false\ntags: [\"Delivery\", \"Agents\", \"Learning\"]\n---\n\n## The question\n\nA sloppy draft used to be the failure I watched for. I thought a tighter specification would pull a wandering assistant back, and that the result would then be safe to keep. Yuval Yeret, in [From Vibe Coding to Developing the Company](https://www.scrum.org/resources/blog/vibe-coding-developing-company), treats that hope as the early stage rather than the fix. He describes the loose way of building as a slot machine attached to a studio tour: a front you can walk through, little behind the wall, fine for a look and a poor way to make something a team will have to live with.\n\nPeople answer that looseness with a specification, then with policies and handoffs, so the loop feels less like a gamble. His claim starts after that answer. A loop you have learned to trust still produces output. A build that runs is not yet a change in what someone does when they sit down on Monday.\n\nThe slice I can check is the essay in front of me. Orbit is the site where these pieces are published. An assistant may draft one. I can still require that the behavior is named before any paragraph is written.\n\n## The issue\n\nThe issue is a finished draft that looks ready to approve, while the change it was supposed to cause was never written down.\n\nYeret's claim is that the feature you specify is not the outcome that feature was meant to move, and a release still does not show whether anyone's behavior changed. I am keeping that split and leaving his workshop in his essay. He goes on to the kits he would install and the metric loop he would run after deployment. I have not run those steps, so I will not describe them as a result I have checked. He does say, and this part I am using, that a person still decides whether the intent itself should change or whether a larger bet is worth funding. Most of the organizations he has worked with call the teams product teams and still pass features across handoffs. An assistant that is free to choose the work before the outcome is clear will build something that functions and does not matter.\n\nTrustworthy output is still output.\n\nThe person who loses is the reader holding a polished piece and no rule they can use, and the author who spent the review on sentences when the missing line was the behavior.\n\n## The sentence that can be wrong\n\nOn a weekly essay I already refuse to start the prose until two lines can stand without the article beside them. One line is the issue, the sentence a stranger could repeat. The other is the gate, the check I already run on this draft so the same miss does not ship again. When those lines only retell the source's demo, I throw them out, and the assistant does not receive a document to finish.\n\nThat is a smaller practice than the loop he wants after deployment. I am not asking an assistant to watch whether last week's essay changed anyone's week. I have not measured that. A published piece is not evidence that a reader did anything differently, and I will not pretend otherwise. What I can refuse on this Monday is the approval step, when I still cannot say the behavior.\n\nThe sentence has to be one that could turn out false. A line like \"make the work more useful\" would let every draft through, which means it is not a gate. This week the sentence is narrow. Name the behavior before the build. If that name is missing, the draft stays unpublished. I still publish by approving the draft, and I can leave it sitting. That approval is the wrong moment to invent the behavior, because by then the prose is already arguing, and I am defending a candidate instead of deciding whether it had a point.\n\nThe move fails when I write a sentence that has the shape of a behavior and still fits whatever topic I happened to open. Then the gate is a label. An assistant will draft under a label without complaining. I have not gone back through older essays to count how often the opening sentence was that kind of label. Until I have, the rule stays on this artifact. The notes come first. A missing behavior keeps the essay off the approval list.\n\nHe also says the same trouble gets worse once you leave the software team, and that a person who builds software can help other people work on the way the work is done, rather than sit beside each task. I have not tried that with anyone else's job, so I will not offer it as a method. The rule I will keep is the one on this draft.\n\n## Takeaway\n\nA loop you trust has finished a build. It has not named the change. I write the behavior before any draft exists, in a sentence that could be false. If I cannot write that sentence, the piece stays a draft.\n",
+  "preview": "You can trust the build and still miss the change\n\nA loop that produces working software has only solved the output. I write the behavior that should change before an assistant drafts, and a missing sentence keeps the piece off the approval list.\n\nInspired by: From Vibe Coding to Developing the Company",
   "intake": {
-    "weekOf": "2026-10-19",
-    "generatedAt": "2026-10-19T09:01:43.178Z",
+    "weekOf": "2026-10-26",
+    "generatedAt": "2026-10-27T18:41:41.467Z",
     "signals": [
       {
-        "id": "8562faa4b0a9",
-        "title": "Monitoring The Impact Of Full-Text Indexing On Semantic Model Refresh In Power BI",
-        "link": "https://blog.crossjoin.co.uk/2026/10/18/monitoring-the-impact-of-full-text-indexing-on-semantic-model-refresh-in-power-bi/",
-        "source": "Chris Webb's BI Blog",
-        "category": "Analytics",
-        "snippet": "The September release of Power BI saw the introduction of a powerful new feature: full text indexing, which makes searching and filtering on text columns much faster and enables the use of the new TextContains() and TextSimilarity() DAX functions. You need to enable it on a per-c…"
-      },
-      {
-        "id": "901ec763c828",
-        "title": "Data Engineering Weekly #292",
-        "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-292",
-        "source": "Data Engineering Weekly",
-        "category": "Data",
-        "snippet": "The Weekly Data Engineering Newsletter"
-      },
-      {
-        "id": "46bccd42ef44",
-        "title": "AI-Assisted Product Discovery: When Code Is Cheap, Judgment Is the Job",
-        "link": "https://www.scrum.org/resources/blog/ai-assisted-product-discovery-when-code-cheap-judgment-job",
+        "id": "e12c744b2c72",
+        "title": "From Vibe Coding to Developing the Company",
+        "link": "https://www.scrum.org/resources/blog/vibe-coding-developing-company",
         "source": "Scrum.org",
         "category": "Delivery",
-        "snippet": "TL; DR: Deciding What to Build Is the New Job, Now that Code Is No Longer a Constraint Agentic coding has removed the cost gate that used to stop product teams from chasing every idea at once, and the constraint has moved to product judgment: the ability to tell what is worth bui…"
+        "snippet": "Originally published on yuvalyeret.com. Vibe coding with generative AI. It's the experience of building products in some weird combination of the Las Vegas slot machine with LA's Universal Studios tour. Random, nondeterministic, with a cool product facade with not much behind it.…"
       },
       {
-        "id": "ac3191448706",
-        "title": "Here, there, and everywhere: Remote work and the employment of disabled and older workers in the UK",
-        "link": "https://cepr.org/voxeu/columns/here-there-and-everywhere-remote-work-and-employment-disabled-and-older-workers-uk",
+        "id": "8893a5254759",
+        "title": "Adult social care can be better value than the health care we already fund",
+        "link": "https://cepr.org/voxeu/columns/adult-social-care-can-be-better-value-health-care-we-already-fund",
         "source": "VoxEU",
         "category": "Economics",
-        "snippet": "Disabled and older adults have lower employment rates than other workers. Policymakers increasingly point to remote work as a way to keep these groups attached to the labour market. This column uses the pandemic-driven rise in working from home in the UK as a quasi-experiment to…"
+        "snippet": "Health programmes must clear cost-effectiveness thresholds, but social care faces no such test. This column uses Spain's 2007 long-term care reform to show that access to cash subsidies and publicly funded home help raised life satisfaction, reduced loneliness, and increased surv…"
       },
       {
-        "id": "028c8790a21e",
-        "title": "Offshore forwards and exchange rate transmission in emerging markets",
-        "link": "https://www.bis.org/publications/working-paper-1383-offshore-forwards-and-exchange-rate-transmission-emerging-markets",
+        "id": "660a3d0bc6c2",
+        "title": "Chokepoints in global supply chains: lessons from rare earths and hard disk drives",
+        "link": "https://www.bis.org/publications/bulletin-139-chokepoints-global-supply-chains-lessons-rare-earths-and-hard-disk-drives",
         "source": "BIS Financial Stability",
         "category": "Credit",
-        "snippet": "We study how offshore non-deliverable forward (NDF) markets transmit exchange-rate pressures to domestic currency markets. Using unique transaction-level data on the universe of centrally cleared NDFs for ten emerging-market currencies over 2013–2025, we show that offshore NDF or…"
+        "snippet": "Concentration and limited substitutability can turn the efficiency gains from global supply chains into vulnerabilities. However, the consequences of chokepoints depend on their underlying nature."
       },
       {
-        "id": "65442e708214",
-        "title": "How Itaú is building generative AI for its entire customer base",
-        "link": "https://openai.com/index/itau-generative-ai",
-        "source": "OpenAI Blog",
-        "category": "AI",
-        "snippet": "With ia.i, a conversational interface, and the IARA governance platform, Itaú is applying its AI First strategy to customers and employees — in one of Brazil’s most regulated sectors."
-      },
-      {
-        "id": "c5fcb1c48fe6",
-        "title": "ApproximateDistinctCount In Power BI Is Sometimes Slower Than DistinctCount",
-        "link": "https://blog.crossjoin.co.uk/2026/10/11/approximatedistinctcount-in-power-bi-is-sometimes-slower-than-distinctcount/",
-        "source": "Chris Webb's BI Blog",
-        "category": "Analytics",
-        "snippet": "As a follow-on from last week’s post about the new ApproximateDistinctCount function in DAX, I want to share something I found out from my recent testing for this function: ApproximateDistinctCount is sometimes slower than DistinctCount. This sounds counter-intuitive, right? Afte…"
-      },
-      {
-        "id": "e0bd1667988f",
-        "title": "Transactions are Generally Available, advancing warehousing on the Lakehouse",
-        "link": "https://www.databricks.com/blog/transactions-are-generally-available-advancing-warehousing-lakehouse",
+        "id": "6617a6ebccf5",
+        "title": "Unify your productivity and AI data with Lakeflow Connect",
+        "link": "https://www.databricks.com/blog/unify-your-productivity-and-ai-data-lakeflow-connect",
         "source": "Databricks Blog",
         "category": "Data",
-        "snippet": "Multi-Statement Transactions are Generally Available, enabling organizations to run..."
+        "snippet": "This is the second post in our series on how Lakeflow Connect brings fully managed..."
+      },
+      {
+        "id": "250e5d8f3024",
+        "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+        "link": "https://openai.com/index/greptile-code-review-codex-astra",
+        "source": "OpenAI Blog",
+        "category": "AI",
+        "snippet": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework."
+      },
+      {
+        "id": "bd6a4ab6dcaa",
+        "title": "Simple Report Bursting With Fabric Dataflows Gen2",
+        "link": "https://blog.crossjoin.co.uk/2026/10/25/simple-report-bursting-with-fabric-dataflows-gen2/",
+        "source": "Chris Webb's BI Blog",
+        "category": "Analytics",
+        "snippet": "When the new Send Email action was announced for Fabric Dataflows Gen2 – which allows you to send an email from a dataflow when it refreshes – I was curious to know if you could use it to send multiple emails to multiple different people, and therefore do report bursting or somet…"
+      },
+      {
+        "id": "e39409e1f06d",
+        "title": "Stop Demoing Your AI Rollout. Find the Unavoidable Project.",
+        "link": "https://www.scrum.org/resources/blog/stop-demoing-your-ai-rollout-find-unavoidable-project",
+        "source": "Scrum.org",
+        "category": "Delivery",
+        "snippet": "Originally published on yuvalyeret.com. What a developer sees when the AI coding CLI rollout arrives From everybody’s perspective, if I’m a developer on a team, it’s not unavoidable right now. I don’t really have to use it right now. I can keep on developing. And at some point, s…"
+      },
+      {
+        "id": "4a49145bc5f6",
+        "title": "How agreements between suppliers and retailers can weaken competition",
+        "link": "https://cepr.org/voxeu/columns/how-agreements-between-suppliers-and-retailers-can-weaken-competition",
+        "source": "VoxEU",
+        "category": "Economics",
+        "snippet": "Agreements between manufacturers and retailers can affect competition across brands and stores. This column documents retail price patterns in the US consumer battery industry and uses a model estimated from purchase data to explore two potential mechanisms: changes in downstream…"
       }
     ],
     "projects": [
@@ -168,7 +168,5 @@
       }
     ]
   },
-  "source": "ide",
-  "publishedAt": "2026-10-19T17:31:25.590Z",
-  "publishedSlug": "the-agent-can-finish-it-that-is-not-the-decision"
+  "source": "ide"
 }
