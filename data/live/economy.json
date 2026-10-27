@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-26T18:56:56.632Z",
+  "asOf": "2026-10-27T18:28:02.431Z",
   "source": "Eurostat (HICP final + early indicator, unemployment, consumer confidence, GDP) + ECB Data Portal (deposit facility) + ECB RSS (press / statistics) + Google News RSS (country wires)",
   "license": "Eurostat / ECB — free reuse with attribution (CC BY 4.0 where stated). Country wires via Google News (publisher copyrights apply; links out).",
   "defaultGeo": "EA21",
@@ -19569,6 +19569,24 @@
   ],
   "headlines": [
     {
+      "id": "d2583ab31ef6",
+      "title": "Monetary developments in the euro area: September 2026",
+      "url": "https://www.ecb.europa.eu/press/stats/md/html/ecb.md2609~dd1bf1b2e4.en.html",
+      "source": "ECB Statistics",
+      "publishedAt": "2026-10-27T09:00:00.000Z",
+      "geo": "EA21",
+      "channel": "official"
+    },
+    {
+      "id": "dde3dc23531f",
+      "title": "October 2026 euro area bank lending survey",
+      "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261027~506ef03145.en.html",
+      "source": "ECB Press",
+      "publishedAt": "2026-10-27T00:00:00.000Z",
+      "geo": "EA21",
+      "channel": "official"
+    },
+    {
       "id": "e7d771ac243f",
       "title": "Survey on the Access to Finance of Enterprises: lending conditions tightened",
       "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr261026~bde7b6d11a.en.html",
@@ -19641,29 +19659,11 @@
       "channel": "official"
     },
     {
-      "id": "3de4ea4580e7",
-      "title": "Frank Elderson: From climate and nature risks to economic resilience and competitiveness",
-      "url": "https://www.ecb.europa.eu/press/key/date/2026/html/ecb.sp261019~f0a3e053de.en.html",
-      "source": "ECB Press",
-      "publishedAt": "2026-10-19T06:00:00.000Z",
-      "geo": "EA21",
-      "channel": "official"
-    },
-    {
-      "id": "a4fb44145b9c",
-      "title": "Meeting of 9-10 September 2026",
-      "url": "https://www.ecb.europa.eu/press/accounts/2026/html/ecb.mg261008~a10153d090.en.html",
-      "source": "ECB Statistics",
-      "publishedAt": "2026-10-08T11:30:00.000Z",
-      "geo": "EA21",
-      "channel": "official"
-    },
-    {
-      "id": "2cf9a26b2804",
-      "title": "Seasonally adjusted government deficit at 3.3% of GDP in the euro area",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1ESDhfWjNwQi1uTTRFXzZVeDVQd29YdnBheUlJTzZuRHlaNnNKMk96ZFhDai1VVFVNdWVwWlpQbldBd0piNHJ3N0xvRTNSY3ViQ1RRQm1kNlp4QURjV2NhakU5S0VNcnItTmhLaVFkTnlkcXBKelhSVDUtM0ZpcG8?oc=5",
+      "id": "d4f2ce8c6f5a",
+      "title": "Inflation in the euro area",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNNEZ4YnBQSE85eXotRjZFUTJJS3IwcGduU190Vlc0bGR5Q0xwYmkzU25mQlNuRHB6NnZPMlNIX3dvQmhTWndRLXpIZ1JNZ0RYOUpUcXlia0pSekxNbVdaZk9nTnc0NVZBQzVUa3kxY0NDbzYtaFJKZURZVWF0aTFRSkVMc3haVl92bUU3cU84ZENBdzY3STl4OA?oc=5",
       "source": "European Commission",
-      "publishedAt": "2026-10-21T13:30:05.000Z",
+      "publishedAt": "2026-10-16T07:00:00.000Z",
       "geo": "EU27_2020",
       "channel": "wire"
     },
@@ -19677,20 +19677,11 @@
       "channel": "wire"
     },
     {
-      "id": "e700b5d50e98",
-      "title": "US High School Economics class: Eurozone inflation hits three-year high of 3.8%",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBKajJpbG1nRy1HcmhPazF5WjRBemNJU3JZYzVlYVpadzZSTjgzWmFLX3ZrM244dzVQWm1NTS1LWWF4TFdKT2ctRlloRTlaWC0xZ2pCWVN4Tm5obUdLemppWWF3dUNBc201TUZyNnNpYTQ?oc=5",
-      "source": "Financial Times",
-      "publishedAt": "2026-10-22T01:42:08.000Z",
-      "geo": "EU27_2020",
-      "channel": "wire"
-    },
-    {
-      "id": "5db5b5c5eecf",
-      "title": "Euro area deficit rises to 3.3% of GDP in Q2 2026",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNUUh5eEN2bUlwYXZ6SmJVcDl0VlliT21ncGc0R0NhUGRRYWNNbnFOaFl2ZEtneW1DZmZGNGI0LTlpRmNLcDdIZGgwS3hDV1QtdDgxZXFLUkJsYmtjTkRZOFA2d09DbGtqaE1fMU9SLTJPbnRUV3NzVHItd19qNlNtOTdKZGFSbldYc1FxSE1mYlh5dEtneW5FNGh1Y3lMeEhWQmZNZ050dGxzamU3UTR5MDVaRHNnYlU?oc=5",
-      "source": "Fibre2Fashion",
-      "publishedAt": "2026-10-26T02:58:09.000Z",
+      "id": "9c8b6fd3a49b",
+      "title": "Eurozone Housing Loan Demand Plummets, ECB Survey Finds; Rising Rates Hit Hard",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1BajJzSGp0Nkl3Z3c3cVlYRGZpRlVLcVpoUHRRR1pxT1M0VnplaVhtRjlQMGlQWkZsUm1MVl9abDFRTm1ReVFZUHcxX1N1VkpiUURfWk9vWmlTOWF6R2lVdFpYSmk1bkVlM3lJZ0Jfb1NfRk9LR0E?oc=5",
+      "source": "BigGo Finance",
+      "publishedAt": "2026-10-27T11:05:00.000Z",
       "geo": "EU27_2020",
       "channel": "wire"
     },
@@ -19704,11 +19695,20 @@
       "channel": "wire"
     },
     {
-      "id": "978e2db423b9",
-      "title": "Austrian Chancellor Stocker considers vetoing EU budget",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTEZsVmFOV29fOGY3SW53UzdEVzNXWFJVZjY1VGJHaGVIeWNnWVNmdUtIZXRpamQ0NV9RdnkyZE1tTHgtbGpCWTlTSXNBaW9VM1dYdHh4Q2RHeVROUTVEWHRzMThYLWlmQUpsOW94ZUtPX1RzQkVUSGFReFY3ZTNMenVmZW1kaDJTV3dPWEs4LUFvYmNrVE9KT0o5N1hEUQ?oc=5",
-      "source": "UA.NEWS",
-      "publishedAt": "2026-10-26T07:02:59.000Z",
+      "id": "ab682c3fffce",
+      "title": "Deepening China-euro area financial dialogue benefits both sides: ECB official",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1POHFJUjdpU1M5STVuWFhsdF8yOHNvVGFEVnFkaTJ2VkJNZ2R0T1F1MUZ2RFhLbmx1WFh3X0Y0czdBYjVkN2FCbGlsT1BBTDIwWV8waFQ4ZVBWSWpXaGtPSkRFTVZMYWRWQ0NzdnpwbzY2OTJiejdwVkpZT3g?oc=5",
+      "source": "Xinhua",
+      "publishedAt": "2026-10-23T13:29:32.000Z",
+      "geo": "EU27_2020",
+      "channel": "wire"
+    },
+    {
+      "id": "37368175636b",
+      "title": "The climate-fiscal timebomb: Austria",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBiR3JnNG02ZEZUdlU3M2VqQkQtSXMwbmt0SU1vYjM5eHdXZE1PY1lxRE5vQlBHYmM2c3JVNWQ3c2NPSjFMbC1pRTIxb09Uek14QU4zSXV5RDN1M2NfdFljVlB5SHJlUWtQNUgxV1JXSzI3Slk3RUxr?oc=5",
+      "source": "New Economics Foundation",
+      "publishedAt": "2026-03-09T07:00:00.000Z",
       "geo": "AT",
       "channel": "wire"
     },
@@ -19722,11 +19722,11 @@
       "channel": "wire"
     },
     {
-      "id": "455bd4cd2223",
-      "title": "Austria: Reforms Relax Rules on Employer Changes and Unemployment",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbkdrZ3IyamNSa3pxNzJOU1lObGdzZlYzU09RX1pKU3c5SG5ndnFOUFM3M3d0R0FnMmh3djdqTWcwVVphazNmR2xwcFRtZXBac0FHQVk1VHMycGNpanVRSmtfUXhIalRBRmZwOGdOMktlQm9mLVMyaXh4bUR6eE12WkplaHRXaU1jc3ZRZU1aQmRkaElSYTgybHhUTGEyWDRqOEw2N1dn?oc=5",
-      "source": "Fragomen",
-      "publishedAt": "2026-10-06T07:00:00.000Z",
+      "id": "978e2db423b9",
+      "title": "Austrian Chancellor Stocker considers vetoing EU budget",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPTEZsVmFOV29fOGY3SW53UzdEVzNXWFJVZjY1VGJHaGVIeWNnWVNmdUtIZXRpamQ0NV9RdnkyZE1tTHgtbGpCWTlTSXNBaW9VM1dYdHh4Q2RHeVROUTVEWHRzMThYLWlmQUpsOW94ZUtPX1RzQkVUSGFReFY3ZTNMenVmZW1kaDJTV3dPWEs4LUFvYmNrVE9KT0o5N1hEUQ?oc=5",
+      "source": "UA.NEWS",
+      "publishedAt": "2026-10-26T07:02:59.000Z",
       "geo": "AT",
       "channel": "wire"
     },
@@ -19740,20 +19740,20 @@
       "channel": "wire"
     },
     {
-      "id": "68f180956612",
-      "title": "EU backs Austria's fiscal plan, yet excessive deficit fears remain unresolved",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcGNtMnkwQjNObVR6OUNTYmFKeU9JV09KTEtzaDkxWDhRdjNCZTctbm83OFRuWGhWZVVfNnYzaWotcHVrR0VnMHpEUG9zQldpY3IydFFwSE5sSTNBZ3poVEdDRmFTSTBxRk5mYWNYR19yN1B3NnFHakN2TUhiWW9vYWdDRDUxTnlvanBwRmlaeWpZN0JyemFOZXF1ZDBzQjQ2ZGJQcHR4YVZGd0JCb282aHJaMA?oc=5",
-      "source": "The Brussels Times",
-      "publishedAt": "2026-07-10T07:00:00.000Z",
+      "id": "11064efa7d2c",
+      "title": "EU gives Austria fiscal leeway to boost defence spending despite ballooning deficit",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPRHhqV0RUV1U3Vkc1LXVWMldiRWZNM1M2Nnk5QTVwNGNDTE5abTZFZ1g2UTUtV1dqaGpvalJ1bEZrTmtpeENfMExEMnBKVmdOMnExdXpLWnFXQWZlajk3NzVzWlJIWVg1V2h2M3dWT1AyYldVdE5Na3F0WHRZc2xpRWVJYzNfd0dEc1FBOHEzNVF0Z2I3bTZKMVNvTmFDN2NQTmgwQ0tGQUFOMDdKaVRqTWdRV1NvRTBsUHc?oc=5",
+      "source": "Brussels Signal",
+      "publishedAt": "2026-02-17T08:00:00.000Z",
       "geo": "AT",
       "channel": "wire"
     },
     {
-      "id": "8c5f0ecd2991",
-      "title": "Why does Belgium have a budget deficit?",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQRU9KOE9jN2x6MlAxSUNkbVlmWGxobmZTcjVkNHdYZm9yNzBuWjdHUTFrazcyMHpieXNDd3pEZXlXVEtDcUVSVjc4N0EzN2Rva2RoalFxVnhoc29FaUFxSHVHbWExcGlUUW5JR3NraW96TjFnNmIzcDF2SkZ1QkNXTk0xR1BvM0QwNktDZmI3amhKWFNkWXRyV3VFSUc?oc=5",
-      "source": "The Brussels Times",
-      "publishedAt": "2026-10-22T04:47:28.000Z",
+      "id": "ae0fa6ccdb9a",
+      "title": "Belgium: Stable rating, unresolved fiscal challenges",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOZ3hhOVI5eHpILWQ0bW02dHhPMWRkdk80dlJSNGlia1NheTQxek5wQng1WXZtdUkyb0N2UXFFSlZST0g2WTl2QkNmNE5ubmE4UHBDVzZ0MVFJN2RUOWk4MXJwN1hJU1RSQ2ZPd0plcGx4emo5dXlnY2FhemVtOGxQakk2NVpXdzBxUmc?oc=5",
+      "source": "ing think",
+      "publishedAt": "2026-10-26T04:52:14.000Z",
       "geo": "BE",
       "channel": "wire"
     },
@@ -19767,20 +19767,11 @@
       "channel": "wire"
     },
     {
-      "id": "fc8e2d0fa881",
-      "title": "Belgium: Consumer Confidence Index fällt im Oktober von -10 auf -13",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBZRldIRlZXUGVJbkFoOTdfd1FpYXV1RlZ3eVkxc2pVRTh3bkd5OGN5MjV3bHlBWGVQM09pcjExa1UwVEROYmo1YUJzeW5uQ1ByRE9FYU9WeTB6QlhWd2I2UWM3RFZQSE9QOEE?oc=5",
-      "source": "TradingView",
-      "publishedAt": "2026-10-21T09:00:02.000Z",
-      "geo": "BE",
-      "channel": "wire"
-    },
-    {
-      "id": "4def64adbc9d",
-      "title": "Why ClientEarth is suing the central bank of Belgium for climate failings",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQRXJpNzQtSGVkUi1RMnVxNjBRS1lFREZmZ1RmQ2ViWndtM043V01LSW9GNExqZjJoaE8wSTVldnU5ZTlMcDJNcDBITEhPN1FDY2ZEV2N0LUVqSENfeHNZeVFDTnN6X3hLd3ZiVXVyRVd6eERDT25kdzcyRFBGY2sxdHAyNy1IT0R2aFBOLWhZY0lQTURVV0tmOG9RZHpxcG05aUJwRXA0RWRPQmkwSnpfQ3VEc3lSSUdqSEV5b2pLTW43MGNXODN1N2x1cFJlNHhfMG1iQVJFNEEwVzFfeFE?oc=5",
-      "source": "ClientEarth",
-      "publishedAt": "2026-08-01T03:31:35.000Z",
+      "id": "5e6af678a24f",
+      "title": "Belgium's 10-Year Bond Yield Hits Highest Since 2011 Amid Fiscal Red Flags",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAxZHBPQlBZa3UzNkxjZ0RaNThlUVFOR3BQYjVSTEJ0RzFneWJwdXUwd0lic2hyU1Q3SWptOXowLXdBeENjZ1lURTQtRm1rSE9vd3JmdnZrbEJPbGhVc2xUZGRmZGVlSkIwSTBTVk1B?oc=5",
+      "source": "news.sbs.co.kr",
+      "publishedAt": "2026-10-27T10:55:49.000Z",
       "geo": "BE",
       "channel": "wire"
     },
@@ -19794,21 +19785,12 @@
       "channel": "wire"
     },
     {
-      "id": "d6b03159cd52",
-      "title": "Germany's debt-to-GDP ratio expected to rise to 78.25% in 2030",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSHhmTjJpcGJfQ0RrNFRBVS1lSlcxSXN2THVyQWpPUjBPSnoxVENONU5LWlhEaFhTcktneFNnWEx6UnV1RHJjTWt5N2NIcDY1cTk0aFZEZDNNdU9TZFhST1ZQWDVSUnVPcEl1Z3dJeUE3YXFwb1hIWWkycFZqakwzU2ZXWk0xUnBUWlNMTV83cE10eEtRcHVCQ2hXOA?oc=5",
-      "source": "Reuters",
-      "publishedAt": "2026-10-12T07:00:00.000Z",
-      "geo": "DE",
-      "channel": "wire"
-    },
-    {
-      "id": "0376f798013c",
-      "title": "Germany issues EU budget ultimatum",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQZ2JFdUdKSE5xQUZOcl9MWVlRZEdtSmdYMTBlWmJtaEtabFpnUVVmMWRGVUxINWhfQjA1WGJwdjNzeTJ5WFB5WFZ5RHdhWUpLTnV3ZU5jamJvdVhzV0lSUnlCcVFmTXp2NXoyRG91b2gxbDVXOWlYRXZFQkZ6Tjloc05LX1k?oc=5",
-      "source": "Financial Times",
-      "publishedAt": "2026-09-28T07:00:00.000Z",
-      "geo": "DE",
+      "id": "0af1b072d98d",
+      "title": "Belgium Inflation Rate Climbs to Highest Since 2023",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQdDFhdHlBcHdHODRHY1g0Zkc4dEMxUzVPUDZXcVR3U2tSTFlqYmIwSVJNNzNqSFA2VDR0TXdpbjFwdWljb0NsZlFYeXhnT2FESlpQaXRQQ1M1bWtIYmoyWU80czdMaHhsVlloOGk1VnpsREhERTY5UUZkUjdXcTNXZmNITEVkWWFQVi12WWtZOU1vc2pYQ2psZW0yWkNfSzBWcU9SVA?oc=5",
+      "source": "TradingView",
+      "publishedAt": "2026-09-29T07:00:00.000Z",
+      "geo": "BE",
       "channel": "wire"
     },
     {
@@ -19821,21 +19803,48 @@
       "channel": "wire"
     },
     {
-      "id": "fda084c42d84",
-      "title": "Germany's Merz says EU budget proposal must be cut further",
-      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNam9TVndtZFFMTkk2UHF4RUhOTktoeUdJMzMtN3BaRUQ3Y3hPQWJhOHlIOC1DTC14dmJ1ZGN0TTZpNk9OenZCSUI4YzVZMnBGOU5nQmJRRksyRWdxVTlhcmNkclZNc05VdnFfVjlfMUJqNktES0swRWxCN1RVRVRQOHp4aw?oc=5",
-      "source": "Yahoo Finance UK",
-      "publishedAt": "2026-10-16T15:03:19.000Z",
+      "id": "d6b03159cd52",
+      "title": "Germany's debt-to-GDP ratio expected to rise to 78.25% in 2030",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSHhmTjJpcGJfQ0RrNFRBVS1lSlcxSXN2THVyQWpPUjBPSnoxVENONU5LWlhEaFhTcktneFNnWEx6UnV1RHJjTWt5N2NIcDY1cTk0aFZEZDNNdU9TZFhST1ZQWDVSUnVPcEl1Z3dJeUE3YXFwb1hIWWkycFZqakwzU2ZXWk0xUnBUWlNMTV83cE10eEtRcHVCQ2hXOA?oc=5",
+      "source": "Reuters",
+      "publishedAt": "2026-10-12T07:00:00.000Z",
       "geo": "DE",
       "channel": "wire"
     },
     {
-      "id": "b988e909d390",
-      "title": "Germany: Cuts to immigration budget likely to affect free asylum consultation services",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNSHpEa2FsOFVGMGt4NnJPaU5DZkw0UE5JVGZaNlY0ZjNXZG1VVG0xSmhfeUNjYWJ4VlU0Q1h1dUQ2MFUzcWZvdzBxS2psanFDQjFiaEs0dzJOa3pEazJ3SmF1c2VIUTJHbnJORzZJVDVYdTdPbEt0LWZjdTZYWm9kYzV0SmRjdW1sNTJQUVJMVEh6bEU5d1Z6Ty1JakgxTFR5Wm05UlBVNVVwdWNUME1pUWU4dnkzSDVDUUxYekFjZ3QwUjA1bGNZ?oc=5",
-      "source": "InfoMigrants",
-      "publishedAt": "2026-09-30T07:00:00.000Z",
+      "id": "8597250a6379",
+      "title": "German economy heads for fastest growth since 2022",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOajR0dTlrVnFEaVNFbWcteHIySjk3SWhnWW9MWTRGaE8zOU1UZ0RmS0ludzhiVXBobmpTTWprNWtXOWZlMXExNVh1SmswUHlxRHRDUVQ4TVRObDBWczc2QXpPdjg1Q01FV201VnVvMDB2QTBWb2hMVHF3dTA0QzZ6SVkzbjE?oc=5",
+      "source": "Financial Times",
+      "publishedAt": "2026-10-08T07:00:00.000Z",
       "geo": "DE",
+      "channel": "wire"
+    },
+    {
+      "id": "db49599fe6e8",
+      "title": "Germany's Merz says EU budget proposal must be cut further - Euronext Markets: Real-time Stock Market Data",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQN1FHTWdYNDBIZlRJQkNqZ0N5Q1VQcFBRTjZ4WnFBc3RkZUZmMDh4eEFfNlV2MmJmVS0wV2hRNUpDb0pCUjBtc2FUUkxzRGtSdjFEajRRd05GT0w3dm1WY2ZLajZqd0x2NENZUXNVT3h0cC0teldXLWNDMW44dU5LOVNnVnZvbVpYdzBCdzY1dThDemFtWUp4eEpXa2t6X0JWeFBr?oc=5",
+      "source": "live",
+      "publishedAt": "2026-10-16T07:00:00.000Z",
+      "geo": "DE",
+      "channel": "wire"
+    },
+    {
+      "id": "fda084c42d84",
+      "title": "Germany's Merz says EU budget proposal must be cut further",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNam9TVndtZFFMTkk2UHF4RUhOTktoeUdJMzMtN3BaRUQ3Y3hPQWJhOHlIOC1DTC14dmJ1ZGN0TTZpNk9OenZCSUI4YzVZMnBGOU5nQmJRRksyRWdxVTlhcmNkclZNc05VdnFfVjlfMUJqNktES0swRWxCN1RVRVRQOHp4aw?oc=5",
+      "source": "Yahoo Finance UK",
+      "publishedAt": "2026-10-16T07:00:00.000Z",
+      "geo": "DE",
+      "channel": "wire"
+    },
+    {
+      "id": "48525c337c70",
+      "title": "The climate-fiscal timebomb: Denmark",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBkNExIa3U3Snp2OEN6YUFIOHhyZUlOQ2FKN3B5b2dhUHpqOHRBZllsUEIxVEhjeWJLSlBZQ0ZlejZDNEI1VURIYlhoRy1vXzBXMEp6eTFhV1Jud0N2Ti0wMjYzX0RxNGl2TFN6WGtEamJGdlNxYjA4?oc=5",
+      "source": "New Economics Foundation",
+      "publishedAt": "2026-03-09T07:00:00.000Z",
+      "geo": "DK",
       "channel": "wire"
     },
     {
@@ -19857,11 +19866,11 @@
       "channel": "wire"
     },
     {
-      "id": "dee907e4008e",
-      "title": "Venstre and other opposition parties expect to be left out of Denmark’s 2027 budget deal",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxObGtGc21ZSzRyMXhKb0RsS0ozbXdCdkRVa1RBZXNEVDJva1JGMG05d2hpeV9JM2puNDRoOEh3TlluNHFuVS0zR05WNGZhRE5hMDVOdWhQRFJwMlBOYTFGRjNvZUZZckNKLXhIaUs1OVNILWVBSWo4THpVNXZWSjFFSWQ5aGlpZEwya2RFNjNKQUNDZFM4LWVUZGtYNDRndTBkb0lxbDhHZDVIckVkaDlSZEhiUVRGbTA5UFhDNjJVN2VQeHJ5?oc=5",
-      "source": "The Copenhagen Post",
-      "publishedAt": "2026-10-21T13:55:24.000Z",
+      "id": "1d954ee76afa",
+      "title": "Denmark’s central bank picks Tieto for document management",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNQzNHaTZBeW5jMXhtbmkxZG52cE96TTN3LXpYMlBmanZINHJnWEY5NTJ5UmxvcENONmVwbmdQeXZtNllWQi00d3ZQb1U4UnA1cGVBSi1ubUdWcm1TcEFBR1pCYVBYMzVSczh1S1pmaGk0cjhQUjhhQlVfeFhSXzNfUUlsdFNQdGh2bWg3MEVfUlVhekpUNF9Z?oc=5",
+      "source": "FinTech Global",
+      "publishedAt": "2026-05-06T07:00:00.000Z",
       "geo": "DK",
       "channel": "wire"
     },
@@ -19875,20 +19884,11 @@
       "channel": "wire"
     },
     {
-      "id": "7681cff997b4",
-      "title": "Denmark Inflation Rises to 1-Year High",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOOXNORzd6bGZOVmsxTWdZMVpyMUlWTzdxdlBuV0pKMFh1T21vLWpxeXFodVp6T2RhZUFFQzFqa1lFNGxjeVJMYkduN1JnRmR3Z1k1VGtqVDNIODQwcjVseEM2eDFZcDFiTFExZkFKNWVuS1NscVdCcFhmYm5FaGpnREpQc21yZE1pQUthbjlVb2hmTDQ?oc=5",
-      "source": "TradingView",
-      "publishedAt": "2026-10-11T07:00:00.000Z",
-      "geo": "DK",
-      "channel": "wire"
-    },
-    {
-      "id": "0fcb093656d4",
-      "title": "The Estonian economy is set for 2.5% growth",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNT05CYmlweEhiOVU2VE9wZ05MekUyT255aEktSmJnX1NKb0QyXzRza2V6VWdXTmZiNEVNTmROMkd1c2RQbEprWnZSbXdjaUlQTE82dDV6ZF9URTE1bDEyNzVDSGZ6eXUyY3NCTDl5azNsTmpjTUtRNWR6WHdJOTA1NmxkeFo?oc=5",
-      "source": "Estonian World",
-      "publishedAt": "2026-10-07T07:00:00.000Z",
+      "id": "a60ab983cdb0",
+      "title": "Estonia culture budget down €6–7m after casino tax cut",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPeExxbkNsSjU1OVduSHhBdkp2UUlacHdzWlc4Q3YybE90b01HVm5PS2NPajBZeDVpd2JmZ3pWUDgwZV9zMGcxNUlpbnV4d2REYkJwVE9DNXVOUXBkRVE0ZlBkNXpXbmN5UXNlYUs1X1pFcUR6QWNEUEN3ZnVHcF9zdGRTMmUyendrTVVXeVF2eG52R3k4S1JQeFVsaElOOTFoUjRjYWgxaEt4U3R6ZEtuZ3JvOFA?oc=5",
+      "source": "UA.NEWS",
+      "publishedAt": "2026-10-27T09:33:57.000Z",
       "geo": "EE",
       "channel": "wire"
     },
@@ -19902,47 +19902,38 @@
       "channel": "wire"
     },
     {
-      "id": "a1f3366331ef",
-      "title": "Does Estonia need European statistics? Yes, because having data on Estonia alone is not enough",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQb2p3dXEzemhwbHRUQU4xMXdET3U1WFk3WHB2Nm9TZ2ZkQWh2UW1RVE9aTmdrVnQ5SUtZQkJpOTV3b1FzM0dwbERmSjJsSUF1UW05OVhneFpXNkdSMzZGXzUydTI3MkxxMHFkUVQ2bEZ2bmV2Z3RqM0NCMDVIclFfdXFwZGxmVHF6ZnlESjczaGlVbDR0TWNEUU9BZ0M2bjN1OFNCNEs3S0dFc3VRUldtdVN2QmdGSTg?oc=5",
-      "source": "Statistikaamet",
-      "publishedAt": "2026-10-20T05:37:39.000Z",
+      "id": "13f05195649e",
+      "title": "Estonia’s GDP grows by 2.1% in Q2 2026",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBjTVluQzF2S0t1cHJ4bU01bXZjU2M1S1B5a1lmZmoxNkFPamcyQ1k5R094THlRaU1qY3hPYm1uVFNwa1dHbExRcE9BaVpxR2lCUmpEVWRFWmhzSHFuUkdwNnZTOW1EMmp2Smt3MXlzVFc1TXFVdlRZRnIzeGc?oc=5",
+      "source": "Estonian World",
+      "publishedAt": "2026-08-15T07:00:00.000Z",
       "geo": "EE",
       "channel": "wire"
     },
     {
-      "id": "221fe8127c70",
-      "title": "Estonia removes passenger shipping support from budget plans",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcU5HR0VJMkJVcHNVX2RERFpXSGhiQi1aRFU3eG9xbkExaGswR1ZCaEdRc2ZldjQyR3l4c2djMElmUUowV0xwa0dya3ZjdXpsSzdNMlJaaDh5aHJnZFpJUDVlekM4ck1kX0VFU0U2aW9XVFloU1lJQVRBeWIwWXNySVZGV1B4Z25YYmtBeHFwcWRlZGg4T18xaFBmMjJRR3EtYXNXSDA2RGdBQW5PYldZVA?oc=5",
-      "source": "UA.NEWS",
-      "publishedAt": "2026-10-01T07:00:00.000Z",
-      "geo": "EE",
-      "channel": "wire"
-    },
-    {
-      "id": "47ab25f52dbd",
-      "title": "Estonia Trade Deficit Widens in August",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNak9DQ0t6VV9Wa2dfSjJXSkpVRWlGRlRFQVBrTnk2X1Jta3RvQVhhRktlV0g5cHUydnBXa2hZeW9EZ0pvLXBpdDlOek1PSzRNcDR2SW8wNmRpRUp1YUI5N2NOY09TOTctVHpxdm5zYTBRb2lKU25YWi1VUDA5RGZEdW1GajExZWR0VHlfa3FHVE43SFE?oc=5",
+      "id": "31252fc500f3",
+      "title": "Estonia Inflation Rate Lowest Since 2021",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQMW1oVjNVQmNkRWZRRzZCNFNZZGdNa0JJRi1rTU94dm1GaWlBNC04cGRpMHh2MmRObnRVQ050QUZjV1A4RkVjWkJmaEhTajEySUtmeWJBdUNpWndiWWpULWlhQ01qQUV0UHlFd2ZkRUE2MDF4cFBDZnFUM0hhV3lOaE9TTTJjQ0Yta1l6Zlp1NFJ2QnFTdFE?oc=5",
       "source": "TradingView",
-      "publishedAt": "2026-10-11T07:00:00.000Z",
+      "publishedAt": "2026-09-06T07:00:00.000Z",
       "geo": "EE",
       "channel": "wire"
     },
     {
-      "id": "4920c8c57e0c",
-      "title": "Spain: Growth expected to fall below 2% in 2027",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPeDdPZVJMc3JkckxRSVJLSy1IOTg0ZV9rbTlyd2pZVWtsYTd1MjRQanJZejJUOFJwblhfWG55Ny12OWJobkoyaXhjMDVxeTUtX0hMaGJoenR4b0JsS3BxMzU1dDU5a0xHNDBPZkRtelBBWms1WERNWkt6dGxfeEN6dzRSY0NYR3lUM01UeVdNeDRZRkpJbUJ5NWpHT09MYWNzR0E?oc=5",
-      "source": "FXStreet",
-      "publishedAt": "2026-10-26T14:48:47.000Z",
-      "geo": "ES",
+      "id": "f4a5a4bb8baf",
+      "title": "Estonia Unemployment Rate Drops to 6.6% in Q2",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQSkF4eFBiYVVaR1FHTEJ6ekV2M0RPblVRVTRwV2VTRWRSODdEY2J1dzVJMm1LMU5NcmVrOW5SOE1POXBRaER2SlpselExYWZ6cUlXRnFXbk9xeUtMUmVaTkdVSnVSNGdUdl9ZcmVjV3dPeHFXSEZZcXpranNVS3YyTDlHRHgzT0xXbEd3eVpPOUw0WTF1RERib3lYZw?oc=5",
+      "source": "TradingView",
+      "publishedAt": "2026-08-13T07:00:00.000Z",
+      "geo": "EE",
       "channel": "wire"
     },
     {
-      "id": "9c918dca112e",
-      "title": "Spain Producer Price Inflation Hits Highest Since 2022",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPR015MjNLQ3N4dTdCZ1FjOWdzT0xWYjZRUTY5VG9wWmthcF9LOEFWamJTWWsyb2NBMlZWVmJPbVJTTXp4OGVVeVVNRWhmMFZ6N2dMNk96cWxWTncxWUdFd05oRWVwUmhBeFRFRVNKX3Ixb1Ewei1HZXQ1ZTVJQU9id196Z01oeXdGRGFHRVpXSkNWMUNWOHVoaHdCcVVqUTItc2lLZWFVa0I?oc=5",
+      "id": "3a692dfd8ae0",
+      "title": "Spain Unemployment Rate Back Above 10%",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPTmlISjAzbTVkZzROajJNeUcxUmhjZHlldEU3Rmo0ckl6aWg2Q2otdU5tbDJ3REJySjVfNHc2YmdINDBIRHpUNlhTdExqUzE2YURBNVFSR3hjZ0ZhMVZCak51ZmVYSHd2M2hxWVhjZXdtb0R2cGE5NE1TWTFETkV6NEUyUlkyY3JqMTJZSFo3YmsyUQ?oc=5",
       "source": "TradingView",
-      "publishedAt": "2026-10-26T08:23:38.000Z",
+      "publishedAt": "2026-10-27T09:18:26.000Z",
       "geo": "ES",
       "channel": "wire"
     },
@@ -19956,11 +19947,11 @@
       "channel": "wire"
     },
     {
-      "id": "b884852b9573",
-      "title": "Spain | More employment and less convergence in productivity",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOX3FIemRoMzFFRDBDRVNtMjBjTjNZOHpnVXRCRk1HUjNkRTNoV1paOEhCLWU2b3N3cF9yOTVkTGJZc0FGbEZ5T1VVYnJPUTZhekJSSUxQc2tyQlZaUnVfUFpDS2FDbWFxTzdTVThJcmtYVW9jVi13d3RJb3A2ODlNcHl0UVY0cTM3Q2dJejRObDRyVWJzcU9rbGNVamt1N2pHTURQZXRrNF8?oc=5",
-      "source": "BBVA Research",
-      "publishedAt": "2026-10-19T07:03:30.000Z",
+      "id": "771cbc3633f4",
+      "title": "Spain's unemployment at 10.18% in Q3",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPaWIxRnZuMFB5NnlIVWdtUzdUdXI4YkVDUFNiYnE2RFVLQ1JQUjdndDBrTXB2dVJNc3NtRWFsM1QxaXhDZnZ6TzNjbDVSSWsySmpaQ3g3cmpMblp1clZQQTFtako5X2NWZmxPQ2ZwNE1ZR082ZHRkS1F1dXFMSE5wb1dJaEhtZDg?oc=5",
+      "source": "Breakingthenews.net",
+      "publishedAt": "2026-10-27T08:02:00.000Z",
       "geo": "ES",
       "channel": "wire"
     },
@@ -19974,6 +19965,15 @@
       "channel": "wire"
     },
     {
+      "id": "4920c8c57e0c",
+      "title": "Spain: Growth expected to fall below 2% in 2027",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPeDdPZVJMc3JkckxRSVJLSy1IOTg0ZV9rbTlyd2pZVWtsYTd1MjRQanJZejJUOFJwblhfWG55Ny12OWJobkoyaXhjMDVxeTUtX0hMaGJoenR4b0JsS3BxMzU1dDU5a0xHNDBPZkRtelBBWms1WERNWkt6dGxfeEN6dzRSY0NYR3lUM01UeVdNeDRZRkpJbUJ5NWpHT09MYWNzR0E?oc=5",
+      "source": "FXStreet",
+      "publishedAt": "2026-10-26T14:48:47.000Z",
+      "geo": "ES",
+      "channel": "wire"
+    },
+    {
       "id": "b7f85b19b0a6",
       "title": "Finland Producer Inflation Highest Since 2023",
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNV3VZUEtiTUhOSC1mSmtXeC1yeWpaeUVqQmExX3V3dmxkM0VEZ2Y4TUZWTkRoVlYwSHJZeWZhbkM1YXBlekxOb0Z5WkJaeXdMZVBoUzNEWUNscFFVRGw0d015ZUpxalpoZ3RGcnhfQ2ItemQxckpuREx1Vl9PZzNHdVpDTl9WdWtGVkJnUV81SFZfZG8wNGNPSVU1Yy0?oc=5",
@@ -19983,38 +19983,38 @@
       "channel": "wire"
     },
     {
-      "id": "541b7ad1d305",
-      "title": "Unemployment in Finland rose to 10.5% in September",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPNkx1M213bmJ0Q3E5N3dpVEs0OFprWFktVXZQeEl3ZnptUTBQSGRTN0pZM0VCYzBBaXh0cmUybjNMUEdnby01MnJZZWx2N3FkYUx0cDN2SUR3RlJzYnI5M3NTVk5aU3pTMUd6UVFkcjBJMWktVG51Uk9XdkUxOFY0eDRsTEtlUTZiMG1yaw?oc=5",
-      "source": "UA.NEWS",
-      "publishedAt": "2026-10-20T06:36:58.000Z",
-      "geo": "FI",
-      "channel": "wire"
-    },
-    {
       "id": "8db0cc2ecaba",
       "title": "Unemployment climbs again as Finland's economic recovery fails to affect jobs market",
       "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE1ILTV1eXN4NWhRd1RWZ1U5S0R6WXY2am5RcFo4dFIxZ0FWeE1yeHFidlplRWR1bkdZWUV1ckJqSjd0dw?oc=5",
       "source": "Yle",
-      "publishedAt": "2026-10-20T06:25:40.000Z",
+      "publishedAt": "2026-10-19T07:00:00.000Z",
       "geo": "FI",
       "channel": "wire"
     },
     {
-      "id": "338bd44cbf5d",
-      "title": "Finland jobless rate rises to 10.4% in September",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNVl9FZmdrQm9iQzhyVV94VnJUZXhMRTEtYWlGTTNwOHRfc0F1Zm8xSXd1Q1dxWEhKYXVvQ2dRQVp0NkxDN2lweWNCWmtpbzBDYkpjV1M0ZGJ0M3ZHMkEzZlpUbEN4cUtTQ0tEWXQ5YmQtM2lVVm5qM1lHRXZmZzYtdFBVdWpDbWpnMk5fZER4aVQ?oc=5",
-      "source": "Yahoo Finance",
-      "publishedAt": "2026-10-20T08:03:26.000Z",
+      "id": "8536fbd4ab16",
+      "title": "Bank of Finland’s interim forecast: Positive track in Finland’s economy will continue",
+      "url": "https://news.google.com/rss/articles/CBMi_gFBVV95cUxPSVdrcFYxakFVZzRmdmE2Y0xaV01VV2RqQlBfbU9nWFFENENwNHpOeTgxQXZNLTd0V3BBU0RCamsxWkpzdlJfczc4QkNEOTI2V2FZRkdnWGttR0VkSVduV2l2YjJudGFkU0FxcVVEeXVkR0tLOFNKVV9BT2NYYUMwYkxiRy12VjhOd2V1Yk4wUGwzZ0Z5bDEwU2F3b0xLZ1hib0UyaWR0eWRzZHZJV19OX05BbVpCOVp4UGVHNHBTSnk1RmhIZlp4SHNEaFV3YXpVOEdvUF9zYWprS250ZU1HWi1wbDQ0WURHcWlzc2NiVGt1aGJNc2hjSUZKc2lmdw?oc=5",
+      "source": "Suomen Pankki",
+      "publishedAt": "2026-09-15T07:00:00.000Z",
       "geo": "FI",
       "channel": "wire"
     },
     {
-      "id": "13e8bfdf4f1c",
-      "title": "Finland’s higher education vision is a pledge without a budget",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQSFV4azNab0d3Q0J0Z3VtNHBpaENidTBrX0FCU01acHBRM1BNRklKRU02Y3hRX1lQVEhSZmhYOTlvM21hWERXRWY3WFo5aWV6MEJKZTRqSENMdG1La1JiMmdhVjBhbUxCNDFTN0ZNT1kySVhiMkgydlRkbjlUb294T1BJeEdIMUV6WU5yQnZ4RnhNaUwxM1Zj?oc=5",
-      "source": "Wonkhe",
-      "publishedAt": "2026-06-22T07:00:00.000Z",
+      "id": "61095adcbae3",
+      "title": "Finland's unemployment again ranks highest in EU",
+      "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE9OdkFrZmhMNlJGTnhLSUxuSXhBZk50cWRSMUNUeFJDeWVnYlpCTzJBX1ptRzhpQUd5SWZiVDk4aXhndw?oc=5",
+      "source": "Yle",
+      "publishedAt": "2026-10-01T07:00:00.000Z",
+      "geo": "FI",
+      "channel": "wire"
+    },
+    {
+      "id": "6ed0c114d33c",
+      "title": "Irresponsible tax cuts make Finland’s debt management harder",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPVTNrMnd3TGxXZDRmbVRLeTdNenZfLW1WWllXbXRGMGk0VWdlU1hmSU1Wb0xVTXpDNUtzVUx3WENtRkl1TlEwWk9RQnZvZXBUNnBTWmZmNHdsR2xZY0M4SDBjWGVDVmxlckhrNXNsbDdmbWh2dTRnbVc3UGNmR3ZsVGVCT3JRQ0RMNkRVUlphRXdyUFpzR3dwY25XV3FSMzlkbXY0d3Z5SkNmdldyc3hrUnB0LUI4cGU4N2wteUppVXlUcHAyU0RqeQ?oc=5",
+      "source": "Ammattiliitto JHL",
+      "publishedAt": "2026-08-31T07:00:00.000Z",
       "geo": "FI",
       "channel": "wire"
     },
@@ -20022,17 +20022,26 @@
       "id": "33efbda3452f",
       "title": "France’s budget offers no quick relief for bond markets",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOc1Z2OW02YWRFQTFkYUNQazhiNEloSU9hQWVkTW43aG9xRVVrWE9ldTRacVNFUk1OVXFObjgwTWI4SEJPOS0wMGhsTDR2NC1uaVRVSkNpZk1WNFV0SnVEbmpIYzZJeWM0REZsdWhqWGZvZnFGeU95OTFuMlZNYWI0eFZ1V2pIR3FCeExQOUw4Yw?oc=5",
-      "source": "ING Think",
+      "source": "ing think",
       "publishedAt": "2026-10-01T07:00:00.000Z",
       "geo": "FR",
       "channel": "wire"
     },
     {
-      "id": "b2abaa04682a",
-      "title": "Euro: ECB caution meets France risk",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSzZSdlU0R1Y3RjhWbWxFSEFWazhqb2ZVbjU1ZnlJSktWMk5rZi15YVlLY0FoSkxSY3ZCMUFORWtFZ0VocnB1VXk4REI5SVBPLW4wYkhRVnI4dXZGVG1NOWpLMTdyWGRZdG5sUWt0eHprLWFKTXY1OTBhNGU1V0tsN1hQSVdneHNu?oc=5",
-      "source": "FXStreet",
-      "publishedAt": "2026-10-26T13:56:59.000Z",
+      "id": "a9a01fc221d0",
+      "title": "Could France’s fiscal troubles be good news for Gilts?",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOR3BicFVaTkkwYzF3RmFCczF3cDRKUWtuTjJvdDVOQWR6NklOV0lNQUdhMTRHN1U4ZXpJLVBFSGk1MDdXN0NOWUlOemVEcGpfT01kNEs5R0pJdG9yd2ZOV2ptQ3RoQTBiWTd6bWtfTEJ2b0xUQ1RQTVZ2dF9Nb0U2ekI2T3JScjBFWmthYzlkSUZOa1BzTzN4TmFIUjBqTExaNngtQjNxVVBXeG8?oc=5",
+      "source": "Capital Economics",
+      "publishedAt": "2026-10-26T12:09:26.000Z",
+      "geo": "FR",
+      "channel": "wire"
+    },
+    {
+      "id": "eb50e05a0996",
+      "title": "French consumer confidence hits a 2013 low in October amid protests",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNUU5lTjItazhkMENWeGlZWkl5SEdxZzdjYlE2V3g1S0FnMHpXeGVnWFBWaXJBcWRtR1E4VXFGQk5Zd29iVkRXd2hLYU1reWJ2LXRpY3pMd3BLWUtyeGl1RV9jNEJyMnpiZThPV3NyUV9tVjRDSDBRNDM1ODJtRF9iR1NnNTItbGh2WldydnpUdXUtc3g4TUV1MktudXVrc0VwTS1TQW5uZXZSRmc?oc=5",
+      "source": "Reuters",
+      "publishedAt": "2026-10-27T08:36:46.000Z",
       "geo": "FR",
       "channel": "wire"
     },
@@ -20055,74 +20064,65 @@
       "channel": "wire"
     },
     {
-      "id": "2deb1c539147",
-      "title": "Explainer-How France's 2027 budget battle could play out",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNZDFXbm9mMWVzT084d3EwYkRqTFN4bUtDcWg1ZUpoUjJ1TUs5Q2lnRWg0M2pTbUxQZHdxUE0yNWlla2UwUUNxaE1MazJlM1FPMDhETy1ZczB3d1N5YXNsZGx6XzBybGswWWNHdkQwcnhVUEhCNGdxZ05FcXE4dkdTTzhoYWdiODVFMU1NcW53?oc=5",
-      "source": "Yahoo Finance UK",
-      "publishedAt": "2026-10-20T10:47:32.000Z",
-      "geo": "FR",
-      "channel": "wire"
-    },
-    {
-      "id": "342e43e9496c",
-      "title": "Eurozone government debt climbs to 88.8% of GDP as Italy closes in on Greece",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQWWQ5RkJzMkpNWU5kY3BBUEZubVJXXzNVd25kMEh1OFFPT3p0RzVyQUpKN2tRVGxLWXdGWmRyT1JxMzdWRmdDZXQ0NUhydnBCaWJDd1F0WmU3RFFjWTFRTWJ2MWY5MldSak8tZE1wTXVOVWR6TkJEVVJxYUJ6R19zMWUzVFRoVlctcmdv?oc=5",
-      "source": "Yahoo Finance UK",
-      "publishedAt": "2026-10-21T14:52:57.000Z",
+      "id": "322b71166148",
+      "title": "The climate-fiscal timebomb: Greece",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8wN2Y1TmtFal9iOWVWREhGcklZcTJ5TTFQOWRUUTdtbzBOLTBram54cUp6LXNFLU0zblJBLUcyczNCc3NnQWFHUlp6Q2FQS1QyOUEzS2lwcXVlWURub3pMRV9jNk9hZGt5cW56ZDRRZ0ZZVjUtWGc?oc=5",
+      "source": "New Economics Foundation",
+      "publishedAt": "2026-03-09T07:00:00.000Z",
       "geo": "GR",
       "channel": "wire"
     },
     {
-      "id": "781a324b26a6",
-      "title": "Greece projects faster 2027 growth, steeper debt ratio decline",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPcnlRUWxwem9TeDlrS3NsNGtwakEwSzY4d0tlNlJ2UW1BXzZvV0hFSkhXcGVoZTNCZzhnb3NyRzNoTW9EdVgyT2NGLUc3Q2s0eEY4d1VONnc3azlrcklPMm93Wjlqc3pHNFU4b1FxVTVNZzU3YlphY3FMa3U4Vmk3Zmh1RlZSWWliWURpQ2p4NnhTN0s0RFhTdnBLbWUyZ1FzQmUyM0ZYSlh0RTA?oc=5",
-      "source": "eKathimerini.com",
-      "publishedAt": "2026-10-05T07:00:00.000Z",
+      "id": "12f51b23d0b2",
+      "title": "The macroeconomic impact of the Recovery and Resilience Facility: An analysis for Italy, Spain, and Greece",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcnBqc0dYaVVGaHhVNExZRVJ3YVV4QUFMdFpJOWMwYjZPTENfZzFEcTVzTC01NlpVTGxXdjZWT3cyX0Ficjd5eExtN2FXbk9nZXdJQWJFVEVBQThfWWFrNzhkNlR6T0x4bTdhY1c1aFFkREtDRkc0Q2ZFYm5USUQ4bEJrSWhUaWs1WWtOeVBBYUxwN19HaUZuLVAyUGRsWFluUnY3Z3I2clBzMEV1ek1yV3BQREFTYWM?oc=5",
+      "source": "CEPR",
+      "publishedAt": "2026-07-14T07:00:00.000Z",
       "geo": "GR",
       "channel": "wire"
     },
     {
-      "id": "b8a70bbd2fd6",
-      "title": "Brussels Rejects Italy and Greece’s Demands for Further Energy Budget Relief",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9SeExNT0dvNlk4RFd3a1RKVmNuYVJmMmVjbzVqdGRoTzFGckhfQ2RXR1hUR3BEV3p6UjU4TjUxVWtBZkRnX2RtTlFVMG1uTFFINjBvY2t1Mkt1aTJOTkRMSHRHeVhVenhvTy1TYVhKWFNzVDkxLWJqQnJMZw?oc=5",
-      "source": "EU Today",
-      "publishedAt": "2026-10-12T08:51:12.000Z",
+      "id": "0eb44a3adb08",
+      "title": "What the world can learn from Greece and its ‘household basket’ programme to fight inflation",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUjFDRER4OWt3RzM5TUUtTGRSQUFQREJFcGsxTlVVeWxRVHVGMFJLd2hjRkhYWXctNkdIM3FLSTh5U0s0NkRuWkkxcTRXY3JwMzRqY3g0R21EdV9ubnlaTTMzRVVtclFtVW1iZkQyWUFGeEVlTGpHbUxPWWJMYmpYYWhwRllkbkFkSTd1MVBnWkRmbUREbFFGUlpnVlc0ZjdlN2ZqXzNrNA?oc=5",
+      "source": "The Independent",
+      "publishedAt": "2026-04-02T07:00:00.000Z",
       "geo": "GR",
       "channel": "wire"
     },
     {
-      "id": "854c75475cfe",
-      "title": "French debt costs hit 5 per cent as Belgian borrowing overtakes Greece",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTG9LRHQ1QmtNd0RRLTBYMGtIN3Npc2NYZ1JZUnUxcmdodWxFSEE0MmhtendrYXpkRHpEVGpKdk9lQUwxWXVlWkZmQnpURm5mUWl6ZU9USW90VElGcGtOWWh5TldVTDFiamMwb3Y5UmtsVndlU000WkhpMGM4TVNVdUYyaFVVOEFCNzUxSTFWZGdjbEg2NlJjd2NxRDhZWGNGTWtwd3hwNFI?oc=5",
-      "source": "Brussels Signal",
-      "publishedAt": "2026-10-22T01:00:16.000Z",
+      "id": "def1a30c9f5a",
+      "title": "Greece’s Debt Crisis",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9LVU5za29RdjNDTkpEWm9MYjZfQ0U5bHNmSGdvYi16bnFqN0hjU0JqRi1PT2NQYk1ndmk4Q1BjVllzV2VCUjRicEFVRzFHY3BDY1ljVWNJa184bU9pcHRqRk5GU29OZXBs?oc=5",
+      "source": "Council on Foreign Relations",
+      "publishedAt": "2026-04-03T21:02:42.000Z",
       "geo": "GR",
       "channel": "wire"
     },
     {
-      "id": "648faebbab3e",
-      "title": "Greece Inflation Rate at 4-Month High",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQeUY4a1lqYUhrRWVXVG85d1BqS3dZTFRxeVVIWFI0NE9sX3l2eHR5c1hTS0hqQWFLdURiOF9YUTZDaG9ZUXlfVVE3TlcxcmgwcV84V3VwN3JybXMwanJSZHJlODJfTjZqS1prM2ZyaU5MSy05NURIMl9LU3FtOWdIVFFOVnIyWldSWlJUbmRfSldRZw?oc=5",
-      "source": "TradingView",
-      "publishedAt": "2026-10-09T07:00:00.000Z",
+      "id": "089308e54b64",
+      "title": "Solutions to Youth Unemployment in Greece",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE0wUjZQTTlpZUs0alVyUG8zZDdsSDFMS09ERVBhVXN4UGV2a0FZbklZeXFGSTNoS3FBOWtleU05eEpEdFRJZDdScXhUZDNfcW5MXy1uSFpqLU9kVVpFeWJhLTR1ZU1Sdw?oc=5",
+      "source": "The Borgen Project",
+      "publishedAt": "2026-04-09T07:00:00.000Z",
       "geo": "GR",
       "channel": "wire"
     },
     {
-      "id": "b97864124020",
-      "title": "Northern Ireland Secretary urged to ‘get real’ on funding ahead of UK Budget | News",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOX3RKRjJ2VURKU2VBOVp5RTJ1R1ROTFNSLWg5MThpNURaM0I3TTBqc3FGLW5LZ1diVTdCWVQzTndEMWNDQjJUcUZVRUNyY1R5akp4UzRycFB3Zi1PeXVUWGFJMzJLMjhuX1Fyc2doX0czeW1CN0c3WXV0emlCMHNyQTFWbnZMa0RGVHlJNnhLWkl3V3A4eVRuTi1aOEh3cmtWRll6MkxlcHVkYk42aXR2Q3QxN0o3VFJFQXlF?oc=5",
-      "source": "Rayo",
-      "publishedAt": "2026-10-26T15:59:43.000Z",
+      "id": "0b9b1e5057ca",
+      "title": "What Northern Ireland business chiefs want from tomorrow’s Budget: ‘Employment costs must be lowered’",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPV056NW1OdTU2V04yNWhVSUpFWHlRcGlLMzdSQmRsZzg4a3dPVlRhYzRBTFlXLVFaMFBjcVd4OWh0ZlFubTZCYmlncF9hc0xZSzdnUGFKZmJ4Ym1OQ2t6NV9sTk44Q0xmWWNaSU5xV2tqUjNHd1BxSmZXaVA4T25ycXFCcXNxTW0xcnpELVdjekh4QWs2Ti1jTllB?oc=5",
+      "source": "LinkedIn",
+      "publishedAt": "2026-10-27T15:28:55.000Z",
       "geo": "IE",
       "channel": "wire"
     },
     {
-      "id": "4f3298627e9b",
-      "title": "Northern Ireland Secretary urged to ‘get real’ on funding ahead of UK Budget",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNZk1HSDBsV2xsUTI4Qlg4OGxfSnlGczRIS0ttd2duLWR2dnBFZjc5YURGb3hkMmlFZnA4NjkwSGM2bTNxcEVma01lZWR2SHFiejRnMzh6UDJkSzV4Mzg3VEtpNVdfQTMtZG1jZlFvM0hNakg0cHBCWVVsSVBTWk0xYkJoSmo1Y0tfN0IwQk9wNDVsWVhHYWlBQUNyWnVmZjRzbnVUdUhkeXJwOUY2a1laQUNIa0M3Q05CZjFjN1VHaVl1OUpScko1NkpvVnZ0Y204dDhMM1I0d1ZlOWZPc0FzeVlR?oc=5",
-      "source": "Belfast Telegraph",
-      "publishedAt": "2026-10-26T15:29:35.000Z",
+      "id": "ac14a24bf4af",
+      "title": "Ireland Wholesale Inflation Highest Since 2022",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNV3NudUhkcFhoMWJrb0NpQi05RG96R09QamV2UlNSSkxYLVRGZU9HTGsza3hBLUwwUEt3cTNvWkVwbDl3NEJGVjk0RlJsRmVzUl93c2NLeDBmRkwzbkMwamxYS3VaRHBlaUVVZzJORW9oSWJ4X2l3emNkaXVRYXRTV0xkU2I3S1UtdUczT2dsRVZWQS1lb1FtbXBxRGluZw?oc=5",
+      "source": "TradingView",
+      "publishedAt": "2026-10-27T11:17:07.000Z",
       "geo": "IE",
       "channel": "wire"
     },
@@ -20136,11 +20136,11 @@
       "channel": "wire"
     },
     {
-      "id": "02f4ef4e8b85",
-      "title": "Northern Ireland health workers run out of patience with Stormont budget delay",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE8ydXZzajVTZW9JRkc4ODZ3dzlENzFVbWk3VklGWW9QM1UtMXpfN0JSTnVUbEUxLWh0U2xoM29HOE1ENlZfRTVTYTJNY1NkRTFjb2NOMzR5c0dCVFhUZWc?oc=5",
-      "source": "BBC",
-      "publishedAt": "2026-10-18T07:00:00.000Z",
+      "id": "9b477953028b",
+      "title": "Is it time for Eurozone GDP ex-Ireland?",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9RRG1IdkM4MzR0TmwtLUdXQ2NfZTM3WWN3R00ydTR3VDlhMWs2WDE3Zk1zNDZaZ0o4cExxUU50WC1WektGUkpPQTMyLWhzanh1UUlrb05laDFuSXlLMnZfTWdfUkZhczR6a2pWWVVRSGs?oc=5",
+      "source": "Financial Times",
+      "publishedAt": "2026-09-08T07:00:00.000Z",
       "geo": "IE",
       "channel": "wire"
     },
@@ -20149,16 +20149,34 @@
       "title": "The Irish ‘box’: the worst possible compromise for the EU budget",
       "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNeHV5LW12LUlQLXVFa1hHdG1NZGREWFhoQnVQZFl1RHN3TGVDY2Q2TEtXSk1KR2RKTzJxRU1IVEpSSUNaNy1Wd3gxNW9NQ2RxMDRuMk1BdXc4NjRsZS1lWkhJeTNsZ05yd1B0WFJ1Yi0zMFpwdnhRWWx2NmlvSXNNVU9iS3JiUWtmX3c?oc=5",
       "source": "Bruegel",
-      "publishedAt": "2026-10-13T07:00:00.000Z",
+      "publishedAt": "2026-10-13T11:39:35.000Z",
       "geo": "IE",
       "channel": "wire"
     },
     {
-      "id": "5db420d314b5",
-      "title": "Italy considers raising IRAP on energy companies to fund the 2027-2029 budget",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQWlZQ1JPRDBBdGhpTWRSNW1JNncySW9QQl9WdjhKekp1MDA1Qk1FX2lXRzNOSzVjUWJUUkt4czVLRy1LNjRZM1ZhQzM4eXJWSzFMbXRrWW9hc3NxTkN2Y0xJTmpreVpDN0FPa3VhWThUZ2tBUXhhb2syV1p1R3JRZlRFamlWR0ktclF4TDM0d1hYSVczM2ItRkEzdE1DY3dTbVU4Ujln?oc=5",
-      "source": "energynews.pro",
-      "publishedAt": "2026-10-26T09:47:58.000Z",
+      "id": "545f6f9092af",
+      "title": "Italy to approve 2027 budget on Wednesday as talks progress with EU on deficit",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQOTVPclN4TndVZGlrc09IdmpNTGRXREk1Yl9aXzU5eldRZzVoNlJOZURSSWRlT3k5UGFhZjdlYmpORE5tdHZLV2FTcWFTTmFFX2t3R2owVTJCNnM0Z2J2WnF1T0R4YnZNUlVIS2Z5djBTRjFiSEppSkItb1RPMzRPUVdFX01uYWZjWl9NMjlwZkM1NjdoSEtfRUJyTEhYUWpySFJRLWdoZlZFVU54MnRIN3h5ZnhVUGNVR19F?oc=5",
+      "source": "Reuters",
+      "publishedAt": "2026-10-27T14:36:57.000Z",
+      "geo": "IT",
+      "channel": "wire"
+    },
+    {
+      "id": "2481c8fbbaf2",
+      "title": "Italy to approve 2027 budget on Wednesday as talks progress with EU on deficit",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOT2NlT0RhdEdQNzB0N01uek4xS25fTE1fRWc3MW9TSVlTQ1JIZFRWTG9vdm9ScjBCYUEyaTBtazlUTUV5V3dmMWJWYjIzaG9Vd2ZGWEVOZkZ1TmZYWlpRaUxFRmZ2VUl2Rm1jWTllWFJtZjJCOFg5eTA2QXpwcW5hRTNsajdIQllja1pUbVgxREI0ckxHMkdRUWw5SVNuVVBTcE9fZDNuSDl4N2thQm9BT2hHenZxY29aQjRHeGZ5Nm1ndkJacUlibklsRF8xXzZzNFBKZFBHRlVnbkFsU1RUelNB?oc=5",
+      "source": "TradingView",
+      "publishedAt": "2026-10-27T14:34:03.000Z",
+      "geo": "IT",
+      "channel": "wire"
+    },
+    {
+      "id": "e2d74845c801",
+      "title": "Italy’s 2027 Budget: 11 Fashion Industry Proposals",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPOF9vUXpvdFBFTFVaa2VtZzlEWUFPQm5WUzVOSm1EdFZQREMtc2dJdWlidkZhanNZd09lblVDMHJCWlRUVTJRWXUteUhIV3pDaFdwUXVpWlUxVEdnSTJOMjhmZWxBTHJEcnpLQUE3R1h1X1hOcjlSM1BZTTNLdzFUMm5xd3huWllqUnc0dnpQVk1OaXc?oc=5",
+      "source": "nss magazine",
+      "publishedAt": "2026-10-27T09:23:03.000Z",
       "geo": "IT",
       "channel": "wire"
     },
@@ -20181,29 +20199,11 @@
       "channel": "wire"
     },
     {
-      "id": "535441ac344d",
-      "title": "Prometeia Brief: Italy’s GDP rises but slowdown looms",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNNFdWNzV4LWdqb2hZUG9oMUctYmVOSnViSFVzQ1hWLTlEN01zZXZoallvM2QzOU1NdGJMVHhjbnc2R1FYNHpSLVI4OEEwM0c5RWd5ZFdnNEJIemFydWZUTzZoVEVCYlhla2tQRGFPbmtXVjJmZGVsc2t6NW1DS3ZCMGU2TFBDY2EwVEg0cDZOcw?oc=5",
-      "source": "FinTech Global",
-      "publishedAt": "2026-10-09T07:00:00.000Z",
-      "geo": "IT",
-      "channel": "wire"
-    },
-    {
-      "id": "cc2f2e31059b",
-      "title": "Italy’s Deficit to Rise Again as Rome Uses EU Fiscal Flexibility",
-      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE14SFBoVHgyS0o1U0RHV0NnSnN3eXRkY3N5aUlVRXF1OExUSUd6a0xoZnJqZVdEX2JFYnMzT3ZTZU1MUGgtUThhdmUycGJFajRNampRbEtzUE95MGwyRUN6MTJTX09NNE05ejZtTTR3?oc=5",
-      "source": "EU Today",
-      "publishedAt": "2026-10-05T07:00:00.000Z",
-      "geo": "IT",
-      "channel": "wire"
-    },
-    {
-      "id": "40a8578ed5d6",
-      "title": "Lithuania is nearing tipping point with growing budget deficit, economist warns",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOLVlvUzliYUJuSWhLTDR0M0RpalV6Qmh1dl9ydlB1bUJzSy1ySVFGZTNiV2dnRUsxUlpPcHBJRlM4Y2ZweG1DYlUtN2lQRTV6Q1FmZVdtNEU1WTNmSTFDVnJ2QXMydUJSSTQ3VzhFcGc2XzRuQlUyVVplbUhFeUs1UGY3YS02VWFiaXR1REhRclVuTVZxZFhSM3ptTk1ROGZ1cUlfWk8xVWx0S2hYWG5hb0xDZ3BtZVR0TUlMekNsTUJyNHN6RlE?oc=5",
-      "source": "LRT",
-      "publishedAt": "2026-10-20T05:00:00.000Z",
+      "id": "2bdf24d910a4",
+      "title": "The climate-fiscal timebomb: Lithuania",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1IemtySEpXaklyS3Z0UUVkZ0JJdU1YUWx1NmY0UHBYeXA4anFZSm9QckZLSm1VcFdzT085TEdFSWpTc2E2cXVDajYwZE1pSHU2cmhUMWZTSEs0TXFJQ3U1dzVDXzJwTER4SEIxWC1TYWtENlc4Y3Z1dEpR?oc=5",
+      "source": "New Economics Foundation",
+      "publishedAt": "2026-03-09T07:00:00.000Z",
       "geo": "LT",
       "channel": "wire"
     },
@@ -20217,29 +20217,29 @@
       "channel": "wire"
     },
     {
+      "id": "79d0b7c6c3f4",
+      "title": "Lithuania plans €4.8 billion for defence in 2027, substantial budget deficit",
+      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNY2tRVzhkYXBaX3BsSEpiN3NQSkEwbGFSR21QNXRYNEoyZjR5VVBCU0ZWMllKMTdjT1EtWklXRlRCTGJhN2psMWVkVUlHWlgzZU1xTTJhN0xKRzhON05HRVF6dUY2OTUxdENHV1loVEhuX1YyenJQWnVnSjRIWmdZX25yRHhwbjlRMTc2b3B6b19wSWlILUtOUHpMbnBnX1NQZHJGazgxSUZaYzBsbElRSmdDNTFILUEyaTFOQUlDNmZBeFNH?oc=5",
+      "source": "LRT",
+      "publishedAt": "2026-10-08T07:00:00.000Z",
+      "geo": "LT",
+      "channel": "wire"
+    },
+    {
+      "id": "72c86780c92e",
+      "title": "Lithuania has approved a record-high 2026 defence budget",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNeGstSHRINjlnaUlvbWVFYkxBQXliRE1INlpFNWtIVGE4dEdQbXd5STVwekJOeTFJYWNFSEJFVDBLOXZWV3JySXJ5d3VmOTFfSmtuWlJQQUZIbXNjb2JMX2djaFlWNHoxVUROODVDTTlLMWtDVE80NUUxbWNTdkdWc3NZdFpsLV9pUHhUakFZeVIyd3M?oc=5",
+      "source": "European Interest",
+      "publishedAt": "2025-12-13T08:00:00.000Z",
+      "geo": "LT",
+      "channel": "wire"
+    },
+    {
       "id": "62a4977eed65",
       "title": "Economists warn Lithuania’s 2027 budget risks rising debt and deficit",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQRmxDVER0cG1IeWNSaUY1UUhsMnhEM0YxWDdhdlBsVkdodjlZT3praWpaX2FLaTBHS3l1QWtyN3R3RXZReWxJdEdQMW1rZEI1OUI5aktUd3IyajBVdnM3eHlNaUd1Mi1peV9sdWowQXV6eTVXOWN0d1ZSaE5DX3h6QkVEWjNxVUQwdjR2aGY0UkE0T3oxa0djN21UWlZuY2NIdVZXZk9KdDZwYUxvWjV1MlB4UlA2WWpMd1E?oc=5",
       "source": "LRT",
       "publishedAt": "2026-10-16T07:00:00.000Z",
-      "geo": "LT",
-      "channel": "wire"
-    },
-    {
-      "id": "56365acb5384",
-      "title": "Lithuania Inflation Rate at Almost 3-Year High",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOLTRkUWZTbWppUk12eEJ4cU9WcFZlQ05ReHVlZ0ttbzNnbktBaG5ncXdCZl9Tc0tZVlVpenZ5dzMwM0QxbUxiOFNwazRqZm14VkpLM1JyakQyVm5ZSUwwb3Bld1haVDVHeFRyOHc3Nk4wYjdzbGxnNkhzVlRMckZZaldGSnRWQjMzU0tvLTVaRWNla3o4NHRCSnBNVTdBdw?oc=5",
-      "source": "TradingView",
-      "publishedAt": "2026-08-09T07:00:00.000Z",
-      "geo": "LT",
-      "channel": "wire"
-    },
-    {
-      "id": "ae7241d923d7",
-      "title": "This year Lithuania's economy is set to grow by 2.9% and personal income to increase by almost twice as fast as inflation",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxNS0NvR3JXa0NkN3NMTFRQbXNUa2d6ZUFOM1RIMy1MTUs3X19nVlVBM0NxbDdEZUVNdkx6bGpFNkNjUzVsdms3N0V5dGt5a25UbEM3RnM3VkRMX1ZZVW1GWmp6V2tuUi01MnJIUHRhVUtLNFhJaFVnY2NMWVRiLUQ1N1g4ZkhuMUdVSV9mWHl6UnNwaHhMdzJfdWlBWU1FWXppTDZxMkRqSjhOQUVMUkJQbFFYamZmN0Z5SzE1amU5RnVsbmltblRDNGVlRkxLcjFVeHZEbWpMRkhWR2lhQ1R4WUVRV2pwQWx0dVE?oc=5",
-      "source": "Lietuvos Respublikos Vyriausybė",
-      "publishedAt": "2026-09-11T07:00:00.000Z",
       "geo": "LT",
       "channel": "wire"
     },
@@ -20266,16 +20266,7 @@
       "title": "Latvia forecast to record second-fastest economic growth in the Baltics this year",
       "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTUFTQlZKN3lUWjB4X2RGOURwUlZEWF9kLW8yVXhUajFDS283cWpWTDBjVlFjMnRIa1NjRTNza1JjYVJFWXBESnM4cXYtSTUtSG11dkc0a0w3UGlqQ0dZQnhBUDFCUml1WV9jSUdPT1JzRmFVcUFLQnBKdmZ5VHJmS0p3cjVTeE5MdDYtVW9PbTR4c2c2MER6R0ZDNWtjMEFfbGo2ZHEyRllqNHR2X1Fnd2R6Y25iRC0yRHc?oc=5",
       "source": "Baltic News Network",
-      "publishedAt": "2026-10-13T10:42:40.000Z",
-      "geo": "LV",
-      "channel": "wire"
-    },
-    {
-      "id": "3999aa6ffbe5",
-      "title": "Latvia’s Election: Rail Baltica Is a NATO Problem, Not a Budget Scandal",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOM2tjVV9oaFE2SS1YOE12bktBcm1VUk5ud29ZVFRpS3hRWC15QzFSTHFqSkFlLUktdC03dE5JekZWUFBqajgyNVFTYy1NM2lZeUxpMldDUk13T1BySDl4WE9wQ3Nkcnl5TjQwa0c3bnZHQTlZV0tYWlFoakg2LVhORm0wcGVRdG9wU01yN0dyaWVhUWY0RDdr?oc=5",
-      "source": "Modern Diplomacy",
-      "publishedAt": "2026-09-30T07:00:00.000Z",
+      "publishedAt": "2026-10-13T07:00:00.000Z",
       "geo": "LV",
       "channel": "wire"
     },
@@ -20289,30 +20280,12 @@
       "channel": "wire"
     },
     {
-      "id": "2e0547f8729d",
-      "title": "Netherlands' consumer confidence slips to -34 in October",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPaTkyZkZLRVFmbHpXTlMtb2lScm00NWlPSHpPcTZ1Qm0tT1hwWElfcm5YLWljTmd6MW5HOEtuUGgzaEZBR1U3ZUJHcEk4NE1UTWRLQUIyNXJSdnU1U0FnMUVrdElGVk54REZCcEF2S196ZmNYSnpBMi1tTVZfUXRBR0dYN1ozTnlpRV9vbWo4VlpiN1g4dkFobnlRbTN2ZFlrcExkWDEwNkZCcWhHQWdCN3J0NHVhRGtGbjB2LTZ1dG1xTk9xYk1oSlBxZVJLS2lkVFZJ?oc=5",
-      "source": "Fibre2Fashion",
-      "publishedAt": "2026-10-26T09:26:41.000Z",
-      "geo": "NL",
-      "channel": "wire"
-    },
-    {
-      "id": "47919dab9e27",
-      "title": "ProRail welcomes Dutch budget prioritising core network funding",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQcVltVnpEOU5JWDlHaXFGdmVoTTQ1VlhidHZadlpnaDVmdXpxcFF1eVIyY1lnbG5FUWxwSl91dGJHSGtsT1d6emlfUW9iaDhwLXNkc1p4S3BaNXphNU55SDJXdHNjOVFEX1JyVVJrWGpRaHRlaUJJRGE5WDJ4VkpsdHd4YVRDRDRNZ29tQXdIN1RDd2dNeW0wZ1FBQk5vQkl2TDRaVGsxSkRjdDB1RWpQNnR3UXh4c1JTeGc?oc=5",
-      "source": "Railway Gazette International",
-      "publishedAt": "2026-10-21T12:00:27.000Z",
-      "geo": "NL",
-      "channel": "wire"
-    },
-    {
-      "id": "1ccd08c3126b",
-      "title": "Netherlands, The Consumer Confidence Adj Ekim için -33 seviyesinden -34 seviyesine düşüş gösterdi",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9PQVdTMHJSTWFHSWxSSlNYekFpQVljQVMyekFxRlB5NFJZZzM0X0JwcWo5YWpVb3MzTnJlLUg5SnB4NjVmd0l1a1RFdHI4Vk9sV244cGJsOC1ucVNrSGNreUw1dWZybDlfSmc?oc=5",
+      "id": "38511cafdceb",
+      "title": "Latvia Annual Inflation Rate Steady at 3.2%",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOcmFPcHdJclJHek04ZHFOUEVyWDNad1UzNUJTNC1WcVdLZnpSeHZZT3Z6emRDbmNFSmdtZ3NBb2NfRHV6SjIzT1N1N1BGVHljVW5CUlRjT3RucnB6RWhyamJZb2V4Yk5QVlhMUDhNbWRrOGNPTEVLS0d2TzFmQm9jQUJZOGd4Z29xZ21ubHZHUmFZWFQtT2FoUA?oc=5",
       "source": "TradingView",
-      "publishedAt": "2026-10-22T04:30:04.000Z",
-      "geo": "NL",
+      "publishedAt": "2026-10-08T07:00:00.000Z",
+      "geo": "LV",
       "channel": "wire"
     },
     {
@@ -20325,21 +20298,39 @@
       "channel": "wire"
     },
     {
-      "id": "4add03ed7277",
-      "title": "Dutch inflation rises in September, with fuel not the only culprit",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNSGlMdmZIMjFSVmRQZk80dUpYXzdGZ196U0hTYTJ5Y2tDMFFIdVJVRWdMMEp1SVBmLTlqODZmdEpqOU5qZ24zdzFVSThzSWtQUlpjUzdPdVVZR3ZsS3hCRVNIaUU1MGN5VjZrUWhRWjYwWnltT0JjQmJHNG5vM1FZSWNiNmJydXUta2U3LTh1aDk3ai1CYmJreTlMV2oxR28?oc=5",
-      "source": "ing think",
-      "publishedAt": "2026-10-13T22:24:05.000Z",
+      "id": "30691347ddc3",
+      "title": "The Netherlands’ Budget Day 2026",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOakQyblhGV3lRdGVaRXNtdGJIWGtKUDB5RmFGNE1zLUo5ekhia2ppWUNfazBVTmVubFNCdDhHck5BWW9FWTd1THZNMEpQRmFDTEVndE5KVm8ybmdrbkxDQUtUSml5dWNjYk9pZklNNkJDaGs1a0VjNWtqZXJnaDlaMERIWjctazA?oc=5",
+      "source": "Stibbe",
+      "publishedAt": "2026-09-16T07:00:00.000Z",
       "geo": "NL",
       "channel": "wire"
     },
     {
-      "id": "4c08a2059ab2",
-      "title": "Norway’s 2027 State Budget: What It Means for You",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9ZdXBXMjhmdzY0NjdudmdublNKT2tzelpTNDVKZ2QwZ0hZU3NZUHlKcUVUTHB3c0xQVkJHc293MFF2c0l6RFpyRGVwb2Q0TGhwdVU3ajIxTXNUUmM?oc=5",
-      "source": "Life in Norway",
-      "publishedAt": "2026-10-07T07:00:00.000Z",
-      "geo": "NO",
+      "id": "0db3a1ea5a8d",
+      "title": "The climate-fiscal timebomb: Netherlands",
+      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9pVmVkalNUOEhmeGk0RUF2dmtodGNYNWk5Uy04UXJZcDhvVkpITDRudExUNUJwOWd5ZGgzN0tuTUpfZl9YanJfSkp3MDJBTV9uemplRkFXendoMU9Wa25SNDgyZFhSdnhXR3VOM1lKb0JjZFhtck05MjlsenM?oc=5",
+      "source": "New Economics Foundation",
+      "publishedAt": "2026-03-09T07:00:00.000Z",
+      "geo": "NL",
+      "channel": "wire"
+    },
+    {
+      "id": "f70ab1fb337a",
+      "title": "Inflation in the Caribbean Netherlands up again in Q2 2026",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcEJpNTdFcmxyazdHbXplRHVCYnI4eEJEc19iQU9JcTBQb29uY3BYVUVEWTRtSmtBM1lfTkRCOG5pNi1RVzgwQl94emNnMGs1alBJUk5CWE5la0tiU2lSMDdWNkpsMm9waHA1WnljTlBOc3RWblAwaU9pRThKbVU5RmpVLWZjZjQxS2o5TXVINWFfb2VfTzNtbG1zcjk?oc=5",
+      "source": "CBS",
+      "publishedAt": "2026-07-22T07:00:00.000Z",
+      "geo": "NL",
+      "channel": "wire"
+    },
+    {
+      "id": "86dcfb8da900",
+      "title": "What rising inflation means for commercial rent indexation in the Netherlands",
+      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOQ1FkUkIyQVRqR0RoMHZKLUJwTmVUNHNqN0xTWGpwMDdHMHdWSnlzMmFjMllnbmFibFJNM01IeVdCSDlQbm0wMXRsQ0oxQ2kzcU84VkZfX1F0NVRib0kxSDA3UDJfNzlROEtjbkVJOFNLTmxlU0FicDgzTzlrUkFRSl9HZDhTbkowaWcwa3B2ZFpSNUF4ejJtelZLODd0QlRxSVBuSVZfNlRWajZNR3hJS08xMGNpV2VzTHE2cEVXNmIwSTU0LUk5QTBVakxtNEZiY2pqMHBvUE13WDJmaXhpVkNB?oc=5",
+      "source": "Freshfields",
+      "publishedAt": "2023-01-18T08:00:00.000Z",
+      "geo": "NL",
       "channel": "wire"
     },
     {
@@ -20352,29 +20343,38 @@
       "channel": "wire"
     },
     {
-      "id": "031c363f11e3",
-      "title": "Aker BP's major projects off Norway to cost more, fiscal budget shows",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQUUdEdC1hemgxZVJtaV9MU2o1N3M1UXpfUlZHakxCcDMtd2VwdEExdThuZmNjVE1qaG9rcGdJdGxKUWEyeVF5SHd3S2ZoX2U0enZ4by1KNGVPUTAwaTQzb2F3UUpIdDVKS3Y1N0FpcHdrT0I3X3M5aXNKNU03VE5wcGdB?oc=5",
-      "source": "Yahoo Finance UK",
-      "publishedAt": "2026-10-07T07:00:00.000Z",
+      "id": "40219ca1d5b6",
+      "title": "Norway central bank raises interest rate, may hike again",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMEVOZzdaZ2dDRHE4QTFPR3N5UkNQVlFCdWJNUVpLel9ZWGtEREJaTmdlQ3huRFh2Z2l3cWlkd0Z2LUdIYUpjdXpRSmJUTG9DUTZhTk1pRkJOajVpNFp5cW15a0tKR3lHdWdrR1p1MUt1QVdzc1p4NHMzLUkyeG1IV2R2bXVsLWRvUXdtRkVkYVVuSDNaZWFHaG5kdC0zYkdoLVdmc01aOA?oc=5",
+      "source": "Reuters",
+      "publishedAt": "2026-09-24T07:00:00.000Z",
       "geo": "NO",
       "channel": "wire"
     },
     {
-      "id": "e50160c36c58",
-      "title": "The Norwegian Government Proposes Defence Budget Increase of NOK 6,5 Billion in 2027",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSXN6WjZlVDhKdzZiRG1SeXRkNTRPZkxpbDhVMTd3N3BrTEUxdVVyQ3VULXhwVjFkZ2ZkemFtTGE5aEo3ZmZudTJwQjNjU0lOb1B3YmY2bDN6M0ZoSnVKLVhKTE5rTS0wbVFNekIzcmkwaVA3b0p5YlRDVkZ2UnNvckFHYVlSeFU5WFNiUDZtWXF4UWZrYjhreFRTSnZyVllvR0VSQjRQZDJsaTMxRE9mbUdIdUVzS21ORVlBWFhRVFYtRHlBRDkzTg?oc=5",
-      "source": "High North News",
-      "publishedAt": "2026-10-08T07:00:00.000Z",
+      "id": "20687b592647",
+      "title": "Norway Inflation Picks Up to 3.3% in August",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQmpNRFhxR0J5N2k3RUpicXVDR0czZUJuWTVRRzF2U192NWhaUmZqYTg4TTlVSG9RNkpsUXVOU0NsZlF0NXZ5WjVXVzV1V3ZxT19MbVBDOE9aeXNmblMzMzVwLUFmalcwVlVBVVFENTFXblVPRlFCTDdjTUcybnRCU1cxeldCOFlVbmMyUzg2SmxnUko4UnZXag?oc=5",
+      "source": "TradingView",
+      "publishedAt": "2026-09-09T07:00:00.000Z",
       "geo": "NO",
       "channel": "wire"
     },
     {
-      "id": "c1731dbabfa2",
-      "title": "Norway outlines big rise in Article 6 credit budget",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQakxOcVQwX0ZObjZnbXo2QmZQaUdDbTNGcEt3VmlCVWs5XzJUQkpWVXprY3ZFVnA4eUdmd0lPQm5XSlNOR3pCWGdYNUVMRjhTNk9iZ0xWVG9qUXA5TW92U0E5c2RqNVM3ZFhKRW9LQUZEZElTTHhpSzByRnZvWHZXc2ZBMS1LdmI4X01haUdpSHU1VEVQeWk2bjdqb05fU1hZRWNN?oc=5",
-      "source": "Quantum Commodity Intelligence",
-      "publishedAt": "2026-10-07T07:00:00.000Z",
+      "id": "4141e30e948b",
+      "title": "Norway economic outlook: Inflation in focus",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5QNHRwYVV5dVUzXzB2MGV2RXQ2elhQTEVzNmxsbHpKQm1VdFpRaW1qcXdUSnQxWXJUU2gxM25jOEhBVTM3MnRRN3RPX09RVXVYT0tzZS1ONC1TaFZ6S1dVSzd5OGtPN2dibWNUM0d4dk9TWVYzTWtSZkFPaEV1Zw?oc=5",
+      "source": "Nordea",
+      "publishedAt": "2026-05-12T07:00:00.000Z",
+      "geo": "NO",
+      "channel": "wire"
+    },
+    {
+      "id": "2271b6aabf61",
+      "title": "World's first ship tunnel back on track after Norway budget U-turn",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNEE4WGR4eG1zcU92WTlQUmkwMTNiQnlqbUozcGg2SDFmMG9LNDNGMF9IcE55Y0dyNW1YUVZCbTlwOG5uaG1Td3lSMXRmSThSQlpqUWxCN3B0MkI3RXBOSHBGaDhhVG1nMkhLNEdHeDlmekkzRU1iOV9WRmRhQWJacllpNWdJZy1Jc0U4MFZnTU5IbDZkRTVLUnRTblRCRGdDaldVUTU4c0FWTHZXVUphWmE0Rzk2T3ZxV0o1Y09aS0RENXhSLUxKUExianZRZ9IB2wFBVV95cUxNdkpsblNGeEQ3czlycEd3Z3dEZGdIb21pR1lETXk4UEVCeUpCcEJKWnhTY3FFcEdYSTVwbk9MMV9SU0N1cUlNZHZ6Q2VRWVhZMVpQblhZRWlxdDBZRU5wT0RuSVhBcER1VVo3c051YXFVVlFmemRpdVMxLWFkQlI5UTFzbWpuNWlIS25DNW1QX0I3WjlTYVhmMGR6R2lLWXdoYmh2bFktZktIZE5pOTl5dVhJVi1Sc0ExdkJlV0tQLW9aTVVUR2paLWczZDROZXlZWE1uaThxUVpsdDg?oc=5",
+      "source": "Baird Maritime",
+      "publishedAt": "2026-06-11T07:00:00.000Z",
       "geo": "NO",
       "channel": "wire"
     },
@@ -20397,29 +20397,29 @@
       "channel": "wire"
     },
     {
-      "id": "97f6852a8d0a",
-      "title": "Inflation hits 4% in Poland as fuel prices surge",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPaDNyR1hGWkxZcjNJLUxzRjJVQ1pCSExjd3AxOFdlcHNCVnVZV2NKYzRVdGRYVjVVT3JyMkFqclpkeVJtSkNUZ0ZoVlBBR2IxdWJ1Z3hJMUJMbDFkQ2RQeTMtbnJKSGlsRU5ndEFQdWVReXJqZENGU0VCZmxFSHpWeXBSVmFRakxpa1JNc2hrMTU?oc=5",
-      "source": "Notes From Poland",
-      "publishedAt": "2026-09-30T07:00:00.000Z",
+      "id": "88a76b70820d",
+      "title": "Polish rate hike odds are rising, but policymakers are in no rush",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQenVQT2U3NWUtcDlTdjBKVmkwTFFsaVptX3gxeE5MRUxzS2FqQXJ6YVN2NHl6V3ZESWNjdTBDX0VwWEJEbjNuX3Zxc1V5bGhmUkxyaGpTTzFOS1JJRk96ZklDTXpaT0p6UDRLa3ZvT3U1a0xnOXhSSjhCaDljMklSUXhYbDg0WXA0TDVUbWlWblA5QllNcjc1WXZKS2w?oc=5",
+      "source": "ing think",
+      "publishedAt": "2026-10-08T07:00:00.000Z",
       "geo": "PL",
       "channel": "wire"
     },
     {
-      "id": "2e8c06e56e94",
-      "title": "Higher fuel costs lift Polish inflation to 4%",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9UQnptdDltLUdmRzVIX2F4eEdIQTVTZkFRSWctZGpFUEt4NXF3NG5vaDF4cXM3cERsVDN5Mk1TQTB1WDFTek9ENThuWDVJeTloZ0FGTTRkUnNFTjhEMmd4SW9PYnFQVnc3YmljM2hUUlFfWTVTVExEeG5mVks5UQ?oc=5",
-      "source": "ING Think",
-      "publishedAt": "2026-09-30T07:00:00.000Z",
-      "geo": "PL",
-      "channel": "wire"
-    },
-    {
-      "id": "8c39d9aae533",
-      "title": "Poland Inflation Rate at 15-Month High",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNc004akRKWU5EaVpzaU9aU3REbC0xd2xncWVQaTdTSElQeS1DWmU2TEM4TEwwVUxsbHRrTUI1TzlkbjlRQ2k2X2gxT1RTd3JKSDdWZ0ZJYVp1bWw2RElLV2xzbWxWVklxX2pBbm50UjI0Tm5FX0dqMUlGdmYxQXJSM25fUVBYdjdzcHRUeFFPNXBrQ00?oc=5",
+      "id": "d2c2679bc19a",
+      "title": "Poland's unemployment rate at 5.8% in September",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNbzhQVmdkMXp1eXZwaFJxcUhmMWU2ZjR6enhrekxkOU1nS1NBV1UzZ2VWR19nX2xBcHVVOS1uTVdRWXk0ZTR0a0QzSFNYeWNXa3FBSWRmM0U0RFJucEpRUmVhOE5Dam0zVnlueTF0ZnFTOXB5QUpnb3p6ZVRRYktCVkhsMzNfRno4RDM3UmF1bFhreFE5RHpBUWEtN3EyQmZnN1V2aXRSYk1IS0NHaEQ0djRHcGFUVkE?oc=5",
       "source": "TradingView",
-      "publishedAt": "2026-10-14T07:00:00.000Z",
+      "publishedAt": "2026-10-23T07:35:12.000Z",
+      "geo": "PL",
+      "channel": "wire"
+    },
+    {
+      "id": "a7d8dbfbf342",
+      "title": "Poland: Fiscal change and bond positioning",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQS2ZyTUduV19LSVRoeVkwbFg0WnlUSENMV29fQTFqVFY5MmFjVUU0WmxWckR5Q1ZoYzdRdjk0VHZSbVp3eC1naHhUdDYwZndIRmhGT2dLVmZBeFlEdFIzbGw0MEpaUzk1MmU3WEEzczhkbmRXeDZFVVJ5ODRubF92Q0pnTHdBdnlBVkdvNFVvTzlMZw?oc=5",
+      "source": "FXStreet",
+      "publishedAt": "2026-10-21T14:54:47.000Z",
       "geo": "PL",
       "channel": "wire"
     },
@@ -20429,6 +20429,15 @@
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcHFVS2NqdnlyZ3hsRDIybzZzOHVOZnpCMUxaNmtUMVNEMS01OEd3MF96d0FEMkZCZXBaSG1pLUhJV0hld1JEUGhfd1FKV1hYOHZJRjFnVmo0ZFBQbzFHbTRmSXpyWUxKUmZTdzI5ajdSVVNlMWxHSXdFdk0xLUxIY1Ewdml2VW1zSGN0dUEyZC00OUZhbF80ZDQ3Y3IyOGx0MkFsNkdaNlY1ZEdMQnNXQ1pYb0VRVXlUcmpDR0pfUkQza1dlZUN6WkY5Mjg?oc=5",
       "source": "Essential Business",
       "publishedAt": "2026-10-23T17:03:49.000Z",
+      "geo": "PT",
+      "channel": "wire"
+    },
+    {
+      "id": "98a0bcc5a558",
+      "title": "End of the budget getaway to Spain and Portugal as the price of jet fuel soars",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQeWNadDJpcjFRLUxBT1B6MWxTSjRkRzVldHVmdnVpQmltVDdoOGkwWjZieWowRUJ0RUFTWEdwdnhqMmhnTG1YOHBLc0R4SXU5YWVzaGtFRm9GSXU3ZUlJYl9mLWh4eTBzM3NJdGE5SnhhdElHd0l6clBiTXFmWE5mclB4bGQ5eFU2?oc=5",
+      "source": "The i Paper",
+      "publishedAt": "2026-10-16T07:00:00.000Z",
       "geo": "PT",
       "channel": "wire"
     },
@@ -20451,21 +20460,21 @@
       "channel": "wire"
     },
     {
-      "id": "0be88e5b9895",
-      "title": "Why the budget weekend away to Spain and Portugal could be over",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE53T09kSEFFVGZZemZUUlJySEJ3TER4N0M4WmVzWGJwc3BWZ09sUVI0LVNqSU5qZUJyaDdqR1lBNGxBdjdSWEZMUTFuR0lmR2xONEZ5cFhxVkZBNmprTXNvTDB1ajFyM2FvQzYtWU9rUGdiV01COEtvLXlR?oc=5",
-      "source": "The i Paper",
-      "publishedAt": "2026-10-16T20:03:34.000Z",
+      "id": "2bd7f7ceddfc",
+      "title": "No Resurgence of 2022-Style Crisis in Eurozone Inflation, Says Portugal's Central Bank Chief",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1RV1BJVjZ2VWF6T3VOR0dIdWhLUGhhbzZMZWRnLTA2QXp5RHEyMXRsV3JwRHAtczVYcmdlLWo3NkhBdVpqZVZpSnk3cGNTNFduVlczclZ1Z2xwWkxPZE1nMkVlNG5idlNna09RLU1mbkVtSUlMcUE?oc=5",
+      "source": "BigGo Finance",
+      "publishedAt": "2026-10-07T16:58:01.000Z",
       "geo": "PT",
       "channel": "wire"
     },
     {
-      "id": "a74139e71bd7",
-      "title": "Central Bank of Azerbaijan studies experience of Central Bank of Portugal",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNcVhtU0pzQzBhUmNGRTBpMTI0OVNxT3JDVGZFU2EyQzNJcV80U0RHRFBWWGxxczBsNFhWQWVzZEVSS0g5U2Y1eHU2aHB6QVdLZ1AyS1ZaUWNkUTBxR2ltX2tfb1NGRzhLUTNiWXZaZkdkMTZReHJ4Zktudkx4VVB3Zkl5RTNnd2xzSjdDMDFlT2N3VmcwaVRjRTZLbUxMUEFFaENadGg5aGh6Z3EtUVE?oc=5",
-      "source": "Azərtac",
-      "publishedAt": "2026-10-21T13:34:00.000Z",
-      "geo": "PT",
+      "id": "deb2d376ecf3",
+      "title": "Sweden’s finance minister to submit caretaker budget on November 12",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPeHdxYmo1TFRKdkp1NWlzelM3QVlCczd4THRQNHRtRm5VbXNPZGxHeHVhNjZ5RXZ0VGU2eFQtUWFaRW04aDN4SmtWeEZHbkgxVWQ1N0REaG8waTlXLXdDZllPY2pBOFNONW9Ra0lWZjQ0YndvYjdteVo4Z1BGUmJpQ0RDYXZGdHlZYWlLRHFxNE9tUUthQWREUF9MYnJBWU0yQ3NIX1JLUUNHNXZXd1I2SkJn?oc=5",
+      "source": "UA.NEWS",
+      "publishedAt": "2026-10-27T13:01:16.000Z",
+      "geo": "SE",
       "channel": "wire"
     },
     {
@@ -20487,29 +20496,20 @@
       "channel": "wire"
     },
     {
-      "id": "ea5ca22e1410",
-      "title": "Sweden central bank chief sees strong grounds for rate hike",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxONm8wNFZmc0VDaEZZWlBZdFluVHBOTmNVUmhiblF5THc5a1ZTTC1FanNFdUhLb1BCUEV2cXVEbTBXdnZleGowTHVRQUhXbDN2dnkzcWVZb1lXYzdIc3dnRGk0czVSY294SWlkX25vNHNBVThHdDEzam0xTmJYZHpFSVRkYlpyUTF4N1ZLRGVORlV2U0NoYVVmcExfRXpIb2ZCQ09lZFNmcmhOSlc0cEFvblg3N2x3T1dtdFF3RU5vaWFNQzFCeVNsOA?oc=5",
-      "source": "TradingView",
-      "publishedAt": "2026-10-08T07:00:00.000Z",
+      "id": "3b707182a4be",
+      "title": "The climate-fiscal timebomb: Sweden",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1IeGl2TTlJX1liNllzVlk2N2MyVUVrNW95WEpvV3BnajhHdDFkWWFfRURsd29rY3NvbUR1U1ZWQ2ZRSzU3TU5DcHlvTGJCazgxbVhJanNUSTdvMEJnMkRpdGhDWWdaZW5NeEo3WG5FaWFSRy1ULWc?oc=5",
+      "source": "New Economics Foundation",
+      "publishedAt": "2026-03-09T07:00:00.000Z",
       "geo": "SE",
       "channel": "wire"
     },
     {
-      "id": "0a20a657908c",
-      "title": "Low core inflation masks signs of rising goods price pressure in Sweden",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNQThTU0lQZHVLNElaaC14UWRuUGlFdlhfM3FnUjZXc1BhRlJwRlU5Zy1WNWNEQ1Z6Y0ktUmRQTUt6SXpfZk5XeWRQRUQwU21SVmpsektTRG9OZWZNZDJfMVc4QW9pQnQ1VkJXcnlaUGdmdVhISEstWDdtWG1OclVyc2dicERtaEZiN2JnR1pXeDR2MjNmMlJ1NjMzWDN5QXZ6T3ZQY2plX1BrbWZXcXI5SXctYUF6Y1lRNFE?oc=5",
-      "source": "FXStreet",
-      "publishedAt": "2026-10-16T07:00:00.000Z",
-      "geo": "SE",
-      "channel": "wire"
-    },
-    {
-      "id": "c463c33577e2",
-      "title": "Swedish central bank revives e-krona debate as digital euro, stablecoin threat grows",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNWmRHdlNDSGxEcHl2d216WXVqQUc1WV9pQXNXRm4xWE5ZM2RHN1Q0RzdlaDRVQlFiYVpOb0tudEhDMWhPal95WDUyYlhLVmV5ZHZ1OFRqb0tlMmdCNTF2UUNpQ0FVY0lzTTFvTDhXSExfY1JsTnEzR0xBMFVNdE4xb1NWRzJPaFBRVGF3LW9hWU5OZjJGQWNWT3FsczA0ME51STl6VE5jRTNSdXlOVlM5OHpsdUx5TVp2Q3RvdGZwNzlmeGcwZEpZMm5xTEpaUEFlekxrZw?oc=5",
-      "source": "StreetInsider",
-      "publishedAt": "2026-10-22T17:07:42.000Z",
+      "id": "e145837a5c3e",
+      "title": "Sweden to reject Irish EU presidency proposal on 2028-2034 budget plan",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZnVzeGhqT3ptS2pCbUtJVVVBMzZKRGlsX0RLVVRrOU5YMzdkM1g4OS1ua01HeUF4d1lNbVhFamZrblBmZ280dXJxdU4zalhTck5WNkNFTUVFT1JkZXVUVWFrdVFGVk9pOHdSR25mTTRoZHRQSE95aFdNVWt0aUxNODBOUndFTWFtUS02bmRlWUJnbGdibDNrbTR1al8xd1MyMDB1d3NBU1FGNVppU043T3doVQ?oc=5",
+      "source": "Reuters",
+      "publishedAt": "2026-10-15T07:00:00.000Z",
       "geo": "SE",
       "channel": "wire"
     }
