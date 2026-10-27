@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Weekly Write — 26 Oct catch-up. The thesis is the behavior a trusted build was supposed to change. OpenBI was not in the intake. Draft is pending in `#orbit` (2026-10-27).
 - [x] Essay reactions — a heart under the title and at the end of the article. A text icon opens the note. No “Thanks — noted.” (2026-10-24)
 - [x] Download CV is the About record — `/resume.pdf` is rendered from `src/content/cv.ts` (2026-10-23)
 - [x] Handbook library — each published book is its dark cover. The title and the chapters open the book (2026-10-22)
