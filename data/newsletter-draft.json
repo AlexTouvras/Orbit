@@ -1,99 +1,87 @@
 {
-  "id": "newsletter-2026-W43",
-  "status": "sent",
-  "createdAt": "2026-10-20T12:43:07.588Z",
-  "weekOf": "2026-10-19",
-  "subject": "Orbit weekly — week of 2026-10-19",
+  "id": "newsletter-2026-W44",
+  "status": "pending",
+  "createdAt": "2026-10-27T13:11:57.031Z",
+  "weekOf": "2026-10-26",
+  "subject": "Orbit weekly — week of 2026-10-26",
   "lede": "This week's highlights — the new Write, a few Related articles, and one note from each Ravens beat.",
-  "writes": [
-    {
-      "slug": "the-agent-can-finish-it-that-is-not-the-decision",
-      "title": "The agent can finish it. That is not the decision.",
-      "summary": "Agentic coding removed the cost that used to kill a weak idea before anyone built it. I keep a refusal that can win, and an assistant does not move a finished draft onto the list of things I will stand behind.",
-      "date": "2026-10-19",
-      "href": "https://alextouvras.com/writes/the-agent-can-finish-it-that-is-not-the-decision"
-    }
-  ],
+  "writes": [],
   "signals": [
     {
-      "title": "Monitoring The Impact Of Full-Text Indexing On Semantic Model Refresh In Power BI",
-      "link": "https://blog.crossjoin.co.uk/2026/10/18/monitoring-the-impact-of-full-text-indexing-on-semantic-model-refresh-in-power-bi/",
+      "title": "Simple Report Bursting With Fabric Dataflows Gen2",
+      "link": "https://blog.crossjoin.co.uk/2026/10/25/simple-report-bursting-with-fabric-dataflows-gen2/",
       "source": "Chris Webb's BI Blog",
       "category": "Analytics",
-      "snippet": "The September release of Power BI saw the introduction of a powerful new feature: full text indexing, which makes searc…"
+      "snippet": "When the new Send Email action was announced for Fabric Dataflows Gen2 – which allows you to send an email from a dataf…"
     },
     {
-      "title": "How HP Is Building an AI-Ready CDP with Databricks CustomerLake",
-      "link": "https://www.databricks.com/blog/hp-ai-ready-cdp-databricks-customerlake",
+      "title": "Unify your productivity and AI data with Lakeflow Connect",
+      "link": "https://www.databricks.com/blog/unify-your-productivity-and-ai-data-lakeflow-connect",
       "source": "Databricks Blog",
       "category": "Data",
-      "snippet": "At Data + AI Summit 2026, Luis Alonso, Global Head of Data Strategy & Engineering..."
+      "snippet": "This is the second post in our series on how Lakeflow Connect brings fully managed..."
     },
     {
-      "title": "Your Transformation is Suboptimal Because You keep your Dependencies",
-      "link": "https://www.scrum.org/resources/blog/your-transformation-suboptimal-because-you-keep-your-dependencies",
+      "title": "From Vibe Coding to Developing the Company",
+      "link": "https://www.scrum.org/resources/blog/vibe-coding-developing-company",
       "source": "Scrum.org",
       "category": "Delivery",
-      "snippet": "Your Transformation is suboptimal Because You keep your Dependencies You trained the teams. You renamed the roles. AI t…"
+      "snippet": "Originally published on yuvalyeret.com. Vibe coding with generative AI. It's the experience of building products in som…"
     },
     {
-      "title": "What happens to innovation after Big Tech buys a startup",
-      "link": "https://cepr.org/voxeu/columns/what-happens-innovation-after-big-tech-buys-startup",
+      "title": "Adult social care can be better value than the health care we already fund",
+      "link": "https://cepr.org/voxeu/columns/adult-social-care-can-be-better-value-health-care-we-already-fund",
       "source": "VoxEU",
       "category": "Economics",
-      "snippet": "Concerns abound that ‘killer acquisitions’ by tech giants could deter startup entry and stifle innovation. This column…"
+      "snippet": "Health programmes must clear cost-effectiveness thresholds, but social care faces no such test. This column uses Spain'…"
     }
   ],
   "ravens": [
     {
       "kind": "inbox",
       "domain": "ai-agents",
-      "title": "Agent Framework Python 1.22.0 writes persisted content that pre-1.22 workers cannot read",
-      "summary": "microsoft/agent-framework python-1.22.0 (published 15 Oct 2026) warns that persisted artifacts containing serialized Content or streamed re…",
-      "href": "https://github.com/microsoft/agent-framework/releases/tag/python-1.22.0",
-      "sourceTitle": "microsoft/agent-framework python-1.22.0",
-      "id": "FIND-20261019-002",
-      "date": "2026-10-15"
+      "title": "Agent Framework Python 1.23.0 migrates MCP to 2.x and requires an AG-UI auth scope",
+      "summary": "microsoft/agent-framework python-1.23.0 (published 22 Oct 2026) marks three breaks. It adds an MCP 2.x compatibility foundation and migrate…",
+      "href": "https://github.com/microsoft/agent-framework/releases/tag/python-1.23.0",
+      "sourceTitle": "microsoft/agent-framework python-1.23.0",
+      "id": "FIND-20261026-001",
+      "date": "2026-10-22"
     },
     {
       "kind": "signal",
       "domain": "data-bi",
-      "title": "Power BI Gantt visual is in preview — 1,000-row cap; blank End is a milestone",
-      "summary": "Microsoft Learn’s Gantt visual page (ms.date 2026-09-11, `updated_at` 2026-10-16) says the Gantt visual is in preview and shows task durati…",
-      "id": "SIG-20261019-002",
-      "date": "2026-10-19",
+      "title": "DAX Lib MCP 0.1.0 writes a package’s functions into an open Desktop model",
+      "summary": "Marco Russo’s SQLBI post of 22 Oct 2026 says the DAX Lib MCP server **0.1.0** can search the DAX Lib catalog and install a package’s user-d…",
+      "id": "SIG-20261026-001",
+      "date": "2026-10-26",
       "priority": "p2"
     },
     {
       "kind": "signal",
       "domain": "career",
-      "title": "DigiHelsinki Senior Data and Reporting Specialist, Helsinki — apply by 1 Nov",
-      "summary": "MPS Consulting’s posting for DigiHelsinki Oy, **Senior Data- ja raportointiasiantuntija** (published 19 Oct 2026, Helsinki, permanent, hybr…",
-      "id": "SIG-20261019-003",
-      "date": "2026-10-19",
+      "title": "Veikkaus Head of Analytics & Insights, Helsinki — apply by 27 Oct",
+      "summary": "Veikkaus Group’s own careers page lists **Head of Analytics & Insights** as full-time and permanent. The location line is **Helsinki Hybrid…",
+      "id": "SIG-20261026-002",
+      "date": "2026-10-26",
       "priority": "p1"
     },
     {
       "kind": "signal",
       "domain": "finance",
-      "title": "Digitalist cuts 2026 EBITDA guidance — turnover and EBITDA both expected to fall",
-      "summary": "Digitalist Group Plc’s inside-information release of 15 Oct 2026 (GlobeNewswire, source Digitalist Group Oyj, distributed to Nasdaq Helsink…",
-      "id": "SIG-20261019-005",
-      "date": "2026-10-19",
+      "title": "UPM applied to list WISA on Nasdaq Helsinki; trading expected about 2 Nov",
+      "summary": "UPM-Kymmene Corporation’s stock-exchange release of 22 Oct 2026 at 22:30 EEST says UPM has filed a listing application with Nasdaq Helsinki…",
+      "id": "SIG-20261026-004",
+      "date": "2026-10-26",
       "priority": "p2"
     },
     {
       "kind": "signal",
-      "domain": "parenting",
-      "title": "LUVN — close contacts of someone especially susceptible to severe influenza book December",
-      "summary": "LUVN’s notice of 12 Oct 2026 says influenza-vaccine deliveries are delayed, so some bookable appointments move later, and that some influen…",
-      "id": "SIG-20261019-004",
-      "date": "2026-10-19",
+      "domain": "security",
+      "title": "Pydantic AI 2.58.0 — MCP tokens in traces; UI adapters could skip the model",
+      "summary": "pydantic-ai `v2.58.0` (release title 19 Oct 2026; GitHub published 2026-10-20T04:58:32Z; MIT; still active) fixes two medium advisories. **…",
+      "id": "SIG-20261026-003",
+      "date": "2026-10-26",
       "priority": "p2"
     }
-  ],
-  "sentAt": "2026-10-20T12:43:09.376Z",
-  "broadcastId": "01a15956-4870-75b4-90c9-572ee83e51d8",
-  "sendMode": "test",
-  "sentTo": "a.touvras@gmail.com"
+  ]
 }
