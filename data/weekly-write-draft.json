@@ -1,6 +1,6 @@
 {
   "id": "ww-2026-10-26-ide",
-  "status": "pending",
+  "status": "published",
   "createdAt": "2026-10-28T05:56:36.898Z",
   "weekOf": "2026-10-26",
   "slug": "when-agents-write-the-code-the-way-we-work-becomes-the-codebase",
@@ -169,5 +169,7 @@
       }
     ]
   },
-  "source": "ide"
+  "source": "ide",
+  "publishedAt": "2026-10-28T06:06:54.925Z",
+  "publishedSlug": "when-agents-write-the-code-the-way-we-work-becomes-the-codebase"
 }
