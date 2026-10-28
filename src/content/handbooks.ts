@@ -162,6 +162,8 @@ const DELIVERY_CARD = "/delivery-field-card/index.html";
 const DATA_CARD = "/analytics-field-card/index.html";
 const CREDIT_CARD = "/credit-risk-field-card/index.html";
 const BAYES_CARD = "/bayes-field-card/index.html";
+const ML_CARD = "/ml-pipeline-field-card/";
+const ML_AGENT = "/ml-pipeline-field-card/AGENT.md";
 const DATA_ART = "/handbook-art/data-that-drives-decisions";
 
 function dataChapter(page: number, label: string): HandbookLink {
@@ -3326,7 +3328,289 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   ],
 };
 
-export const HANDBOOKS: Handbook[] = [SOFTWARE_THAT_STAYS_IN_USE, DATA_THAT_DRIVES_DECISIONS];
+const NIST_OUTLIER = source(
+  "https://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm",
+  "NIST / Iglewicz and Hoaglin, modified Z-score",
+);
+const SKLEARN_LEAKAGE = source(
+  "https://scikit-learn.org/stable/common_pitfalls.html#data-leakage",
+  "scikit-learn, data leakage",
+);
+const SKLEARN_SPLIT = source(
+  "https://scikit-learn.org/stable/modules/cross_validation.html#cross-validation",
+  "scikit-learn, cross-validation",
+);
+
+export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
+  slug: "models-that-stay-in-the-decision",
+  index: "05",
+  title: "Models that stay in the decision",
+  thesis:
+    "A model earns its place when each stage leaves a file the next stage can refuse.",
+  card: { href: ML_CARD, label: "ML pipeline field card" },
+  contents: [{ title: "The pipeline that can refuse", page: 1 }],
+  pages: [
+    {
+      number: 1,
+      topic: "ML pipeline",
+      title: "The pipeline that can refuse",
+      lede: "When the artifact is a model, the work is a pipeline with nine stages. Each stage writes a file. The next stage starts only when that file passes. A miss returns to an earlier stage. It does not spend the holdout twice.",
+      rule: "My operating rule: freeze the test ids at the split, fit every transform on train only, clear the bar on an inner slice before validation is read, read the test set once, keep the previous version callable, and start a new version when live evidence fails.",
+      illustration: "The file names and thresholds on this page are the operating contract. They are not a record of one client run.",
+      reviewed: "28 Oct 2026",
+      plate: "horizon",
+      sections: [
+        {
+          id: "when",
+          title: "When this book applies",
+          paragraphs: [
+            "Data that drives decisions is the book for one number: Ask, Grain, Truth, and Use. Software that stays in use is the book for one software change. This book starts when the artifact is a model trained from a table, and that model will be used in a decision.",
+            "The ML pipeline field card is the map. The agent recipe at the same path is the same pipeline written as machine instructions. This page is how a person reads the work, and how I refuse a green training run that skipped a stage.",
+            "Before stage 1, the decision brief already exists: who acts, what the score may change, and what a wrong score costs. If that brief is missing, the work returns to Name the decision. A notebook is not the start.",
+          ],
+          sources: [
+            dataChapter(2, "Name the decision"),
+            { href: DATA_CARD, label: "Data analytics field card" },
+            { href: ML_CARD, label: "ML pipeline field card" },
+            { href: ML_AGENT, label: "ML pipeline agent recipe" },
+          ],
+        },
+        {
+          id: "pipe",
+          title: "The nine stages",
+          paragraphs: [
+            "The pipeline is a chain of files. Nothing is cleaned, fit, or scored in place. A stage that cannot write its pass line stops the run.",
+          ],
+          figure: {
+            kind: "flow",
+            caption:
+              "Nine stages. The arrow is the next file. A miss returns left. It does not jump to serve.",
+            steps: [
+              { term: "Profile", detail: "Roles, nulls, label rate. profile.json.", mark: "search" },
+              { term: "Quality", detail: "Repair, quarantine, re-profile. quality.json.", mark: "check" },
+              { term: "Outliers", detail: "A written policy per column. outlier_policy.json.", mark: "alert" },
+              { term: "Features", detail: "Decision-time only. feature_spec.json.", mark: "wrench" },
+              { term: "Split", detail: "Freeze test ids. split_ids.parquet.", mark: "flag" },
+              { term: "Train", detail: "Fit on train. Tune inside train. val_metrics.json.", mark: "gear" },
+              { term: "Test", detail: "One official read. test_report.json.", mark: "pulse" },
+              { term: "Serve", detail: "Named version. Previous stays. bundle/<version>/.", mark: "play" },
+              { term: "Monitor", detail: "Daily signals. New version if live fails.", mark: "refresh" },
+            ],
+          },
+          closing: [
+            "task.json names the label, the entity key, the decision-time column, the metric, the baseline, and the minimum score before stage 1 finishes. A missing label stops the run.",
+          ],
+        },
+        {
+          id: "data",
+          title: "Data: profile, quality, outliers",
+          paragraphs: [
+            "Stages 1 to 3 prepare the table the features will trust. After every repair, the profile is computed again. A fill, a drop, or a clip changes the distribution the next stage will see.",
+            "Profile assigns every column a role: id, time, decision time, label, feature, or drop. A constant column is drop. A column whose unique values cover almost every row is an id, not a feature.",
+            "Quality scores completeness, validity, uniqueness, and the clock. The clock fails when a feature’s event time is at or after the decision time. That column is dropped, or rebuilt with values known before the decision. Invalid labels go to quarantine. Duplicates on the entity key at decision time keep the latest row. Imputation is not a repair here. The file only records the later rule, learned on train: numeric median, categorical mode, and a missing indicator when the train null rate is above one percent.",
+            "Outliers separate impossible values from extremes. Impossible values were quarantined in quality. For extremes I use the modified Z-score with the median absolute deviation, and a threshold of 3.5, from the NIST note on Iglewicz and Hoaglin. When the median absolute deviation is zero I use Tukey fences. The flag measures the tail. It does not delete rows by default. Each numeric column gets a policy: keep, log1p, cap on train percentiles, or quarantine. A rare category is not an outlier row. It becomes OTHER later, from train counts only.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "Pass lines for the data stages. A blank line stops the run.",
+            steps: [],
+            head: ["Stage", "Must leave"],
+            rows: [
+              {
+                label: "Profile",
+                cells: ["Every column has one role. Label and decision time are set."],
+              },
+              {
+                label: "Quality",
+                cells: [
+                  "Label validity 100% on kept rows. Key unique. No post-decision feature. Quarantine rate at most 5%.",
+                ],
+              },
+              {
+                label: "Outliers",
+                cells: ["Every numeric feature has a policy and a touch-rate."],
+              },
+            ],
+          },
+          sources: [NIST_OUTLIER, dataChapter(3, "Say what one row means"), dataChapter(8, "Keep trust in force")],
+        },
+        {
+          id: "features",
+          title: "Features that can harm the model",
+          paragraphs: [
+            "A new column goes through the data stages before it is a candidate. Then the feature list keeps or drops it. Dropped columns stay on the list with the reason.",
+            "A feature harms the model when its value would not exist at the moment of the decision, when it was built with the label on the full sample, when it is an identifier or a copy of the label, when it repeats another column, when its definition will not hold on the days the model is served, or when it is a proxy the decision is not allowed to use.",
+            "scikit-learn’s data-leakage note is the warning I use for train-time information reaching the model. Target means, scalers, and imputers fit on the whole table are that case. Out-of-fold target encoding on train, with smoothing toward the train base rate, is allowed. Validation, test, and live rows use the mapping fit on train. They never contribute their own labels.",
+            "High correlation with the label does not, by itself, drop a column. The clock test decides. A transform has to score one new row from decision-time inputs. A feature that still needs the training table to score that row is removed.",
+          ],
+          figure: {
+            kind: "matrix",
+            caption: "Keep or drop. The reason stays on the row.",
+            steps: [],
+            head: ["Signal", "Action"],
+            rows: [
+              { label: "Not known at decision time", cells: ["Drop. Rebuild with a cutoff, or refuse."] },
+              { label: "Fit used validation or test", cells: ["Drop. Refit on train only."] },
+              { label: "Identifier or near-unique", cells: ["Drop. Role is id."] },
+              { label: "|corr| > 0.999 with another", cells: ["Keep the one with fewer nulls."] },
+              { label: "Constant or one level > 99.5%", cells: ["Drop."] },
+              { label: "Allowed and clock-clean", cells: ["Keep. fit_on: train."] },
+            ],
+          },
+          sources: [SKLEARN_LEAKAGE],
+          closing: [
+            "Pass: every kept feature has fit_on train and a pass on the clock test.",
+          ],
+        },
+        {
+          id: "split",
+          title: "Freeze the split before any fit",
+          paragraphs: [
+            "Sort by decision time. The last tenth is test. The previous tenth is validation. The rest is train. Leave a gap of the median label delay between those sets. Rows inside the gap enter neither set. Persist the row ids and hash the test ids. Training code loads train and validation only.",
+            "If there is no decision time, use a stratified random split with a fixed seed and the same sizes. That is the weaker case. Time order is the default when the decision has a clock.",
+            "scikit-learn’s cross-validation guide is the practice I use for evaluating on held-out folds. The freeze is my rule: the test hash is written before any preprocessor is fit, and a second look at those rows to change the model is not evaluation.",
+          ],
+          sources: [SKLEARN_SPLIT],
+          closing: [
+            "Pass: the three id sets are disjoint, the embargo holds, and the test hash is stored.",
+          ],
+        },
+        {
+          id: "fit",
+          title: "Train, tune, then one validation read",
+          paragraphs: [
+            "Fit every preprocessor on train, then apply it: imputation, missing indicators, rare-level map, cap bounds, scaler, and any target-encoding map. Save them with the model.",
+            "Cut an inner slice from train the same way, the last tenth of train. Score a baseline on that slice. Classification with a low positive rate uses average precision. Otherwise use ROC-AUC. When the served value is a probability, also record the Brier score. Regression uses mean absolute error against the train mean. The metric name was fixed in task.json before this score.",
+            "Train a regularized linear model and a tree model. Rank features by permutation importance on the inner slice. Drop features whose importance is at or below zero, record the drop, and refit.",
+            "Tuning stays on the inner slice. Validation is unread until the inner score clears the bar and beats the baseline. Then validation is scored once. That read is counted. A miss after that read returns to features or data. It does not open more tuning on the same validation rows without spending the revision budget below.",
+          ],
+          figure: {
+            kind: "loop",
+            caption: "Fit loop inside train. Validation is outside this loop until the inner score clears.",
+            steps: [
+              { term: "Preprocess", detail: "Fit on train only.", mark: "gear" },
+              { term: "Baseline", detail: "Inner slice score.", mark: "flag" },
+              { term: "Fit", detail: "Linear, then tree.", mark: "code" },
+              { term: "Prune", detail: "Drop non-positive importance.", mark: "wrench" },
+              { term: "Tune", detail: "Inner trials only.", mark: "pulse" },
+              { term: "Validate", detail: "One official read.", mark: "check" },
+            ],
+          },
+        },
+        {
+          id: "loops",
+          title: "What happens when train misses the bar",
+          paragraphs: [
+            "The bar is the minimum metric in task.json, and the score must beat the baseline. An accuracy of 0.90 against a 0.95 base rate is a miss.",
+            "Loop A retunes on the inner slice, at most twenty trials, and stops early when five trials in a row fail to improve the best score by at least 0.005. Validation and test stay unread. If the budget ends below the bar, go to Loop B. Do not add trials.",
+            "Loop B changes the feature spec once per pass, from the inner-slice errors. Refit, then Loop A with ten trials. Spend a validation read only when the inner score clears. Stop after three revisions, or when a revision fails to raise the inner score by 0.005, then go to Loop C.",
+            "Loop C is for a named data defect: wrong labels, duplicates, a clock failure, or wrong units. A weak score by itself is not a data defect. Repair through quality or outliers, build a new split, and discard the old test ids unread. Run train once. If validation is still below the bar, stop. Write blocked on the model card. Do not serve. Do not read the test set.",
+          ],
+          figure: {
+            kind: "tree",
+            caption: "Miss loops. A green training run that skipped a loop is not a pass.",
+            steps: [
+              {
+                term: "A · Tune",
+                detail: "Inner slice only. Max 20 trials.",
+                spine: "Clears → validation once",
+                branches: [
+                  { term: "Still short", detail: "Go to features. Do not add trials." },
+                ],
+              },
+              {
+                term: "B · Features",
+                detail: "One spec change per pass. Max 3.",
+                spine: "Inner clears → validation",
+                branches: [
+                  { term: "Still short", detail: "Go to data, or stop after three." },
+                ],
+              },
+              {
+                term: "C · Data",
+                detail: "Named defect only. New split.",
+                spine: "One train run",
+                branches: [
+                  { term: "Blocked", detail: "Do not read test. Do not serve." },
+                ],
+              },
+              {
+                term: "Test once",
+                detail: "Only after validation cleared.",
+                spine: "Pass → serve",
+                branches: [
+                  { term: "Rejected", detail: "Close the run. No retune on test." },
+                ],
+              },
+            ],
+          },
+          closing: [
+            "These budgets and the 0.005 improvement line are my operating rule. They are not a published standard. The point is a finite return, not an endless search on the same holdout.",
+          ],
+        },
+        {
+          id: "test",
+          title: "Test once, then serve",
+          paragraphs: [
+            "Load the test ids after validation has cleared. Transform with the train preprocessor. Score once. Report the decision metric, the baseline on those rows, a ten-bin calibration table, and the metric on each time bucket and on any segment named in task.json. If a hard decision needs a threshold, choose it on validation and apply it to test. Do not search it on test.",
+            "A test miss writes rejected and closes the run. The next run needs a later time window, or a feature written down before anyone inspected those test rows. Inspecting the residuals and fitting again on the same test ids is not a loop.",
+            "Serve packs the preprocessor, the model, the feature spec, and the version id. A signature row must match name for name and type for type. A request missing a required feature returns an error. It does not fill the value from memory. The previous version stays loaded. New traffic can be scored by both. The previous version still produces the decision until monitoring says the new version holds.",
+            "That previous-version rule is the same shape as Run the version just verified: people run the version just checked, and returning to the last good one is one action, not a repair project.",
+          ],
+          sources: [
+            { href: "/handbooks/software-that-stays-in-use/4", label: "Run the version just verified" },
+            { href: SDLC_CARD, label: "SDLC field card" },
+          ],
+        },
+        {
+          id: "monitor",
+          title: "Monitor returns as a new version",
+          paragraphs: [
+            "Once a day, compare live rows to the training distribution saved in the bundle. Watch the required-feature missing rate, the population stability index of each feature, the stability of the score, and, when labels are older than the label delay, the decision metric on that cohort against the test metric.",
+            "A missing required feature stops this version and returns to the feature list. A feature shift above 0.25 PSI keeps the current version and returns to quality with the live sample. A score shift with stable features keeps the current version and re-reads a mature labeled cohort. It does not refit first. A label metric worse than test by more than the margin in task.json starts a new run from the split on the new labeled window.",
+            "The 0.25 PSI line and the default 0.05 absolute margin are my operating thresholds on this card. Monitor never updates weights in place. The next model is a new version id.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "Live signals name the stage to re-enter. They do not silent-retrain.",
+            steps: [],
+            head: ["Signal", "Re-enter"],
+            rows: [
+              { label: "Required feature missing", cells: ["Features. Stop this version."] },
+              { label: "Feature PSI > 0.25", cells: ["Quality, with the live sample."] },
+              { label: "Score PSI > 0.25, features stable", cells: ["Test on a mature cohort. No refit first."] },
+              { label: "Label metric below test margin", cells: ["New split. Stages 5 to 8 again."] },
+            ],
+          },
+        },
+        {
+          id: "draft",
+          title: "When a draft is cheap",
+          paragraphs: [
+            "A generated training script can look complete and still have spent the holdout, fit the imputer on the full table, or served a score that cannot be built at decision time. The pipeline still applies. The files, the freeze, and the miss loops are how I tell.",
+            "This holds when a draft is cheap: a green fit is not done until the model card says passed, the signature tests pass, and the previous version remains callable. The agent recipe is the checklist. This page is the reason the checklist exists.",
+          ],
+          sources: [{ href: ML_AGENT, label: "ML pipeline agent recipe" }],
+        },
+      ],
+      sources: [
+        { href: ML_CARD, label: "ML pipeline field card" },
+        { href: ML_AGENT, label: "ML pipeline agent recipe" },
+        { href: DATA_CARD, label: "Data analytics field card" },
+        { href: SDLC_CARD, label: "SDLC field card" },
+        NIST_OUTLIER,
+        SKLEARN_LEAKAGE,
+        SKLEARN_SPLIT,
+      ],
+    },
+  ],
+};
+
+export const HANDBOOKS: Handbook[] = [
+  SOFTWARE_THAT_STAYS_IN_USE,
+  DATA_THAT_DRIVES_DECISIONS,
+  MODELS_THAT_STAY_IN_THE_DECISION,
+];
 
 export const LATER_HANDBOOKS: LaterHandbook[] = [
   {

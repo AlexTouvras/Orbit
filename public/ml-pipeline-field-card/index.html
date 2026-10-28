@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ML pipeline field card — A model earns its place one stage at a time · Alex Touvras</title>
+  <meta name="description" content="Nine stages from raw table to monitored score. Miss loops return without spending the holdout. Agent recipe and human handbook on Orbit." />
+  <meta name="author" content="Alex Touvras" />
+  <link rel="canonical" href="https://alextouvras.com/ml-pipeline-field-card/" />
+  <meta property="og:title" content="ML pipeline field card — A model earns its place one stage at a time" />
+  <meta property="og:description" content="Nine stages from raw table to monitored score. Miss loops return without spending the holdout." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alextouvras.com/ml-pipeline-field-card/" />
+  <meta property="og:image" content="https://alextouvras.com/opengraph-image" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1f18;
+      --ink-soft: #3d4638;
+      --muted: #6b7464;
+      --line: #cfd6c6;
+      --paper: #eef1e8;
+      --card: #f7f8f2;
+      --steel: #3f5d3a;
+      --steel-deep: #2c4328;
+      --signal: #0f6b5c;
+      --signal-soft: #d5ebe4;
+      --warn: #8a3b12;
+      --warn-soft: #f2e2d4;
+      --shadow: 0 1px 0 rgba(26, 31, 24, 0.06), 0 12px 32px rgba(26, 31, 24, 0.06);
+      --font-display: "Source Serif 4", Georgia, serif;
+      --font-body: "Outfit", system-ui, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(1100px 480px at 8% -8%, rgba(63, 93, 58, 0.1), transparent 58%),
+        radial-gradient(900px 420px at 100% 0%, rgba(15, 107, 92, 0.08), transparent 55%),
+        var(--paper);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+    .sheet {
+      width: min(1100px, calc(100% - 2rem));
+      margin: 1.5rem auto 2.5rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+      padding: 1rem 1.35rem;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, #fbfcf8, #f1f4ea);
+    }
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--steel);
+      font-weight: 600;
+    }
+    .channels { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .channels a {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+    }
+    .hero { padding: 1.6rem 1.35rem 1.2rem; border-bottom: 1px solid var(--line); }
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 3.4vw, 2.55rem);
+      line-height: 1.08;
+      font-weight: 650;
+      max-width: 18ch;
+    }
+    .lede { margin: 0.9rem 0 0; max-width: 62ch; color: var(--ink-soft); font-size: 1.02rem; }
+    .verbs {
+      margin: 1rem 0 0;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--steel-deep);
+      font-weight: 600;
+    }
+    .section { padding: 1.25rem 1.35rem; border-bottom: 1px solid var(--line); }
+    .section h2 {
+      margin: 0 0 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--steel);
+    }
+    .stages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+      gap: 0.55rem;
+    }
+    .stage {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      padding: 0.7rem 0.75rem;
+      min-height: 5.5rem;
+    }
+    .stage .idx {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .stage strong { display: block; margin-top: 0.25rem; font-size: 0.92rem; }
+    .stage span { display: block; margin-top: 0.3rem; color: var(--ink-soft); font-size: 0.82rem; }
+    .loops {
+      display: grid;
+      gap: 0.65rem;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    }
+    .loop {
+      border-left: 3px solid var(--signal);
+      background: var(--signal-soft);
+      border-radius: 0 10px 10px 0;
+      padding: 0.75rem 0.85rem;
+    }
+    .loop.blocked { border-left-color: var(--warn); background: var(--warn-soft); }
+    .loop b { display: block; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.05em; }
+    .loop p { margin: 0.35rem 0 0; color: var(--ink-soft); font-size: 0.9rem; }
+    .files {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      color: var(--ink-soft);
+    }
+    .foot {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 1rem 1.35rem 1.25rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .foot a { color: var(--steel-deep); }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <header class="topbar">
+      <p class="eyebrow">Method card · not a Hub competency</p>
+      <nav class="channels" aria-label="Related">
+        <a href="/handbooks/models-that-stay-in-the-decision/1">Handbook</a>
+        <a href="/ml-pipeline-field-card/AGENT.md">Agent recipe</a>
+        <a href="/analytics-field-card/">Analytics</a>
+        <a href="/sdlc-field-card/">SDLC</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>A model earns its place one stage at a time</h1>
+      <p class="lede">Nine stages turn a raw table into a monitored score. Each stage writes a file the next stage can refuse. A miss returns to an earlier stage. It does not spend the holdout twice.</p>
+      <p class="verbs">Profile → Quality → Outliers → Features → Split → Train → Test → Serve → Monitor</p>
+    </section>
+
+    <section class="section">
+      <h2>The pipeline</h2>
+      <div class="stages" role="list">
+        <div class="stage" role="listitem"><span class="idx">01</span><strong>Profile</strong><span>Roles, nulls, label rate</span></div>
+        <div class="stage" role="listitem"><span class="idx">02</span><strong>Quality</strong><span>Repair, then re-profile</span></div>
+        <div class="stage" role="listitem"><span class="idx">03</span><strong>Outliers</strong><span>Policy, not silent drops</span></div>
+        <div class="stage" role="listitem"><span class="idx">04</span><strong>Features</strong><span>Decision-time only</span></div>
+        <div class="stage" role="listitem"><span class="idx">05</span><strong>Split</strong><span>Freeze test ids</span></div>
+        <div class="stage" role="listitem"><span class="idx">06</span><strong>Train</strong><span>Tune inside train</span></div>
+        <div class="stage" role="listitem"><span class="idx">07</span><strong>Test</strong><span>One official read</span></div>
+        <div class="stage" role="listitem"><span class="idx">08</span><strong>Serve</strong><span>Previous version stays</span></div>
+        <div class="stage" role="listitem"><span class="idx">09</span><strong>Monitor</strong><span>New version, not silent retrain</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Miss loops</h2>
+      <div class="loops">
+        <div class="loop"><b>A · Tune</b><p>Inner slice of train only. Max 20 trials. Validation unread.</p></div>
+        <div class="loop"><b>B · Features</b><p>Change the spec. Max 3 revisions. Then data.</p></div>
+        <div class="loop"><b>C · Data</b><p>Named defect only. New split. Old test unread.</p></div>
+        <div class="loop blocked"><b>Stop</b><p>Blocked or rejected. Do not serve. Do not retune on test.</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Files the next stage refuses without</h2>
+      <pre class="files">profile.json
+quality.json + quarantine.parquet
+outlier_policy.json
+feature_spec.json
+split_ids.parquet
+preprocess.joblib + model.joblib + val_metrics.json
+test_report.json + model_card.json
+bundle/&lt;version&gt;/
+monitor/&lt;date&gt;.json</pre>
+    </section>
+
+    <footer class="foot">
+      <p>Next: Apr 2026 · Method card</p>
+      <p><a href="/handbooks/models-that-stay-in-the-decision/1">Read the handbook</a> · <a href="/ml-pipeline-field-card/AGENT.md">Agent recipe</a></p>
+    </footer>
+  </main>
+</body>
+</html>

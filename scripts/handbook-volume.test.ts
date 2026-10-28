@@ -89,8 +89,11 @@ describe("handbook volume reader", () => {
   });
 
   it("gives each published book a dark cover and one line per chapter", () => {
-    const plates = HANDBOOKS.map((handbook) => handbook.pages[0]?.plate);
-    assert.deepEqual(plates, ["horizon", "ledger"]);
+    for (const handbook of HANDBOOKS) {
+      const plate = handbook.pages[0]?.plate;
+      assert.ok(plate === "horizon" || plate === "ledger", handbook.slug);
+      assert.ok(handbook.contents.length >= 1, handbook.slug);
+    }
     const data = HANDBOOKS.find((item) => item.slug === "data-that-drives-decisions");
     assert.ok(data);
     assert.deepEqual(
@@ -105,5 +108,9 @@ describe("handbook volume reader", () => {
       ],
     );
     assert.equal(data.contents[2]?.sections?.length, 4);
+    const models = HANDBOOKS.find((item) => item.slug === "models-that-stay-in-the-decision");
+    assert.ok(models);
+    assert.equal(models.pages[0]?.number, 1);
+    assert.equal(models.contents[0]?.title, "The pipeline that can refuse");
   });
 });

@@ -90,6 +90,7 @@
 
 ## Next
 
+- [x] **Handbook 05 + agent recipe** — Models that stay in the decision (`/handbooks/models-that-stay-in-the-decision/1`) and `/ml-pipeline-field-card/AGENT.md`. Method card hosted, not a Hub tile (2026-10-28). Owner: `docs/product/HANDBOOKS.md`.
 - [ ] **Handbooks 02 and 04** — delivery, then decisions under uncertainty. No routes until a page exists. Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Handbook 03, Choose the work, the comparison** — `/6` distinguishes a first look from a product the organization must keep, and compares reading the ledger, yesterday's list, and a live service. The matrix is the record. No amount. A return is not required before a look. `/2` through `/5` and `/7` through `/9` stay (2026-10-22). Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Handbook 03, the method on each chapter** — `/1` opens on Decision, Definition, Technology, Use, and Review. `/2` draws the same hypothetical months. `/3` compares two grains and states no amount. `/4` walks the investigation. `/5` separates the structural contract from the semantic contract. `/7` names the jobs. `/8` names five kinds and the path from source through monitoring, and the response stays in the prose. `/9` keeps the tree as the method (2026-10-22). Owner: `docs/product/HANDBOOKS.md`.

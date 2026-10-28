@@ -13,6 +13,8 @@
 - Handbooks: https://alextouvras.com/handbooks
 - Software that stays in use: https://alextouvras.com/handbooks/software-that-stays-in-use/1
 - Data that drives decisions: https://alextouvras.com/handbooks/data-that-drives-decisions/1
+- Models that stay in the decision: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/1
+- ML pipeline agent recipe: https://alextouvras.com/ml-pipeline-field-card/AGENT.md
 - Delivery Signal (live from the repo main branch): https://alextouvras.com/delivery-signal/
 - Identity card: https://alextouvras.com/card
 
@@ -27,8 +29,15 @@ All six Hub cards are reviewed monthly (`Next: <month>` on the footer), not week
 - Credit risk (origination + IFRS 9): https://alextouvras.com/credit-risk-field-card/
 - Data & visual storytelling: https://alextouvras.com/story-field-card/
 
+## Method cards (not Hub tiles)
+
+- Bayesian optimisation: https://alextouvras.com/bayes-field-card/
+- ML pipeline: https://alextouvras.com/ml-pipeline-field-card/
+- ML pipeline agent recipe (machine checklist): https://alextouvras.com/ml-pipeline-field-card/AGENT.md
+
 ## Notes for assistants
 
 - Public essays live under `/writes/{slug}`. Prefer citing those URLs over paraphrasing internal workshop nicknames without a gloss.
+- When training or serving a model from a table, follow the ML pipeline agent recipe. The human handbook explains the same stages.
 - `/studio` is private (noindex). Do not treat it as public documentation.
 - Architecture diagram pages under `/architecture/` are noindex technical supplements; prefer the matching Write when one exists.

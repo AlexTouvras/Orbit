@@ -1,0 +1,26 @@
+# ML pipeline field card (hosted)
+
+Orbit-only method card. No GitHub source repo. Do **not** add to `src/lib/field-card/registry.ts` (`FIELD_CARDS`). Do **not** run Apply review.
+
+Live: `/ml-pipeline-field-card/` (this folder’s `index.html`).
+
+Human book: `/handbooks/models-that-stay-in-the-decision/1`.
+Agent recipe: `/ml-pipeline-field-card/AGENT.md`.
+
+## Spine (do not break)
+
+- H1: `A model earns its place one stage at a time`
+- Stages: PROFILE → QUALITY → OUTLIERS → FEATURES → SPLIT → TRAIN → TEST → SERVE → MONITOR
+- Miss loops: A tune → B features → C data → stop. Test miss rejects. Live miss starts a new version.
+- The test set is frozen at SPLIT and read once at TEST.
+- Not a Hub competency. Home stays Delivery / Data / AI.
+- Not an AutoML brochure. Tools are lanes, not the spine.
+- Ask, Grain, Truth, and Use stay on Analytics for one number. This card starts when the artifact is a model.
+
+## Monthly judgment
+
+Stamp-only until the owner asks for a judgment pass. Do not invent picker rows. Keep the nine stages and the miss loops.
+
+## Cross-links
+
+Points at Analytics, SDLC, and Delivery. Bayes stays the scarce-trial loop. Do not add a seventh Core competencies tile.
