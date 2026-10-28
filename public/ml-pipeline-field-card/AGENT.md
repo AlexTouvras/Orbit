@@ -12,6 +12,8 @@ Machine instructions. Humans read the handbook:
 
 Method card: `/ml-pipeline-field-card/`.
 
+Handbook illustration (synthetic): call-order for open overdue invoices at this morning’s cut; label = called and paid within fourteen days; baseline / previous way = oldest past-due first. Do not invent amounts or treat the illustration as a measured result.
+
 Do not skip stages. Do not fit, impute, scale, encode, or select features using validation or test rows. Do not retrain from a monitor alert without a new version id.
 
 ## Inputs required before stage 1
