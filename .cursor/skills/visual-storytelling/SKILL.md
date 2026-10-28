@@ -30,7 +30,7 @@ Then a browser walk (desktop + a ~390px viewport):
 3. Proof reel: scrolling down advances the cards to the right; Case study and architecture still work. Reduced motion: swipe the rail.
 4. Live peek reel: sneak-peek image + `desk.question` as the headline; scrolling down advances cards; the card opens `/portfolio/live/{slug}`. Reduced motion: swipe the rail.
 5. About experience reads as a timeline, not stacked glass cards
-6. `/portfolio` is the shared headline, then flagship teaser (`FlagshipTeaser` → `/stories`) → workshop reel → live peek reel → Power BI reel → GitHub list. No copied Home close. `/portfolio/live` uses the same reel. Home uses the same `max-w-5xl` column as Blog. Products are their own page at `/products` (same column; a hosted product is the frame, a link-only product is one card, a reel once there are two). The gravity “products” satellite links there.
+6. `/portfolio` is the shared headline, then flagship teaser (`FlagshipTeaser` → `/stories`) → workshop reel → live peek reel → Power BI title list with the chosen report beside it → GitHub list. No copied Home close. `/portfolio/live` uses the same reel. Home uses the same `max-w-5xl` column as Blog. Products are their own page at `/products` (same column; a hosted product is the frame, a link-only product is one card, a reel once there are two). The gravity “products” satellite links there.
 7. `prefers-reduced-motion`: story still readable; no required animation
 
 ## Minimum evidence (open before editing)
@@ -81,7 +81,7 @@ Rules:
 | `ScrollLine` | `src/components/story/ScrollLine.tsx` | Top read bar; Hub / Portfolio / About / live (via AppChrome) |
 | `ScrollSpot` | `src/components/story/ScrollSpot.tsx` | Brightens the row in the viewport midline |
 | `StoryReveal` | `src/components/story/StoryReveal.tsx` | Scale/rise when a beat enters view |
-| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Reels (Hub Proof, live, Signals, Portfolio workshop, Power BI): vertical scroll moves cards immediately; swipe if reduced motion |
+| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Reels (Hub Proof, live, Signals, Portfolio workshop): vertical scroll moves cards immediately; swipe if reduced motion. Power BI is a title list, not a reel. |
 | `LiveDeskReel` | `src/components/live/LiveDeskReel.tsx` | Hub / Portfolio / live index: peek + question on a `ScrollRail` |
 | `LiveDeskTile` | `src/components/live/LiveDeskTile.tsx` | One desk card: sneak peek + `desk.question` as headline |
 

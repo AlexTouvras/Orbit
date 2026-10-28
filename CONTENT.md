@@ -135,7 +135,7 @@ The portfolio shows **real work only**. A product a stranger can open lives on `
 
 - **Workshop** — projects you publish from Studio (scanned from your machine).
 - **GitHub** — live public repos, pulled from your `githubUsername`.
-- **Power BI** — report page screenshots (`#power-bi`), browsable with page arrows and click-to-enlarge.
+- **Power BI** — report page screenshots (`#power-bi`). Titles sit on the left, with no subtitle under them. One report stays open in the column beside that list. Picking a title replaces it there, with page arrows and click-to-enlarge.
 - **Live dashboards** — Orbit-chrome one-pagers at `/portfolio/live` (`#live` teaser). Not Power BI. Snapshots: `npm run live:fetch` (FI power), `npm run live:fetch-eu` (EU spot), `npm run live:fetch-housing` (Stat.fi ashi), `npm run live:fetch-mix` (Europe generation mix). Do not ship empty desks or Energy-Charts FI/SE3/EE prices.
 
 There are no placeholder case studies. To add workshop projects, see **§5** below. To add a Power BI report, see **§2.1**. Live desks: `src/content/live-desks.ts` + `data/live/*.json`.
@@ -147,7 +147,7 @@ GitHub repos update automatically from the API when `githubUsername` is set in p
 Reports are **auto-discovered** from [`powerbi-portfolio`](https://github.com/AlexTouvras/powerbi-portfolio).
 
 1. In that repo, add `NN-slug/screenshots/*.png` (kebab-case filenames matching page names).
-2. Keep a `## Pages` table in that folder’s `README.md` (label + role) — Orbit uses it for captions. Skip hidden/drillthrough pages (role containing “Hidden”).
+2. Keep a `## Pages` table in that folder’s `README.md` (label + role). Orbit uses the label as the page name. The side list shows the report title only. Skip hidden/drillthrough pages (role containing “Hidden”).
 3. Orbit picks them up automatically:
    - **Push** screenshots/README on `powerbi-portfolio` `main` → notifies Orbit (needs `ORBIT_DISPATCH_TOKEN` secret there — see below), **or**
    - Orbit **re-syncs every 6 hours** even without that secret, **or**

@@ -5,7 +5,7 @@
  * Discovers every `NN-slug/screenshots/*.png` folder, copies PNGs into
  * `public/portfolio/power-bi/{slug}/`, and regenerates
  * `src/content/power-bi-reports.ts` from each project's README
- * (title, summary, Pages table).
+ * (title, Pages table) and the landing-page claim.
  *
  * Usage (from website/):
  *   npm run powerbi:sync
@@ -44,12 +44,167 @@ function stripBold(s) {
   return s.replace(/\*\*/g, "").trim();
 }
 
+function parseCsv(filePath) {
+  const raw = fs.readFileSync(filePath, "utf8").replace(/^\uFEFF/, "");
+  const lines = raw.split(/\r?\n/).filter((line) => line.trim());
+  const cols = lines[0].split(",");
+  return lines.slice(1).map((line) => {
+    const cells = line.split(",");
+    const row = {};
+    cols.forEach((col, i) => {
+      row[col] = cells[i] ?? "";
+    });
+    return row;
+  });
+}
+
+function formatWhole(n) {
+  const rounded = Math.round(Math.abs(n));
+  return rounded.toLocaleString("en-US");
+}
+
+/** Unfiltered Controllership landing sentence. Same words as the Landing Thesis measure. */
+function controllershipClaim(projectDir) {
+  const gold = path.join(projectDir, "data", "gold");
+  const factPath = path.join(gold, "FactPnL.csv");
+  const accountPath = path.join(gold, "DimAccount.csv");
+  const entityPath = path.join(gold, "DimEntity.csv");
+  if (![factPath, accountPath, entityPath].every((p) => fs.existsSync(p))) {
+    return "";
+  }
+
+  const accounts = new Map(
+    parseCsv(accountPath).map((row) => [row.AccountID, row]),
+  );
+  const entities = new Map(
+    parseCsv(entityPath).map((row) => [row.EntityID, row.EntityName]),
+  );
+  let gap = 0;
+  const signed = new Map();
+  for (const row of parseCsv(factPath)) {
+    const variance = Number(row.VarianceEur);
+    if (!Number.isFinite(variance)) continue;
+    if (row.AccountID === "O900") gap += variance;
+    const account = accounts.get(row.AccountID);
+    if (!account || Number(account.Level) !== 1) continue;
+    const sign = Number(account.Sign);
+    signed.set(
+      row.EntityID,
+      (signed.get(row.EntityID) ?? 0) + variance * sign,
+    );
+  }
+
+  const ranked = [...signed.entries()].sort((a, b) => b[1] - a[1]);
+  if (!ranked.length || !Number.isFinite(gap)) return "";
+
+  const cover = entities.get(ranked[0][0]);
+  const drag = entities.get(ranked[ranked.length - 1][0]);
+  const coverVal = ranked[0][1];
+  const dragVal = ranked[ranked.length - 1][1];
+  if (!cover || !drag) return "";
+
+  const gapAbs = formatWhole(gap);
+  const sameEntity = cover === drag;
+  if (sameEntity && gap < 0) {
+    return `Operating profit is ${gapAbs} EUR below budget - pressure concentrates in ${drag}.`;
+  }
+  if (sameEntity && gap > 0) {
+    return `Operating profit is ${gapAbs} EUR above budget - led by ${cover}.`;
+  }
+  if (gap < 0 && coverVal > 0 && dragVal < 0) {
+    return `Operating profit is ${gapAbs} EUR below budget - ${cover}'s contribution does not cover ${drag}'s drag.`;
+  }
+  if (gap < 0) return `Operating profit is ${gapAbs} EUR below budget.`;
+  if (gap > 0) {
+    return `Operating profit is ${gapAbs} EUR above budget - led by ${cover}.`;
+  }
+  return "Operating profit is on budget.";
+}
+
+function textboxLines(visual) {
+  if (visual.visual?.visualType !== "textbox") return [];
+  const general = visual.visual.objects?.general;
+  if (!Array.isArray(general)) return [];
+  const y = visual.position?.y ?? 0;
+  const lines = [];
+  for (const block of general) {
+    for (const para of block.properties?.paragraphs ?? []) {
+      const runs = para.textRuns ?? [];
+      const text = runs
+        .map((run) => run.value ?? "")
+        .join("")
+        .replace(/\s+/g, " ")
+        .trim();
+      if (!text) continue;
+      const style = runs[0]?.textStyle ?? {};
+      lines.push({
+        text,
+        y,
+        size: style.fontSize ?? "",
+        weight: style.fontWeight ?? "",
+      });
+    }
+  }
+  return lines;
+}
+
+/**
+ * The landing sentence the report itself prints under the title.
+ * That is the 16pt or 18pt line. A bold line at that size is the finding.
+ */
+function landingClaim(projectDir) {
+  const reportDirs = fs
+    .readdirSync(projectDir, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory() && entry.name.endsWith(".Report"))
+    .map((entry) => entry.name);
+
+  for (const reportDir of reportDirs) {
+    const pagesDir = path.join(
+      projectDir,
+      reportDir,
+      "definition",
+      "pages",
+    );
+    if (!fs.existsSync(pagesDir)) continue;
+    for (const section of fs.readdirSync(pagesDir)) {
+      const pagePath = path.join(pagesDir, section, "page.json");
+      if (!fs.existsSync(pagePath)) continue;
+      const page = JSON.parse(fs.readFileSync(pagePath, "utf8"));
+      if (page.displayName !== "Landing") continue;
+      const visualsDir = path.join(pagesDir, section, "visuals");
+      if (!fs.existsSync(visualsDir)) continue;
+      const lines = [];
+      for (const visualName of fs.readdirSync(visualsDir)) {
+        const visualPath = path.join(visualsDir, visualName, "visual.json");
+        if (!fs.existsSync(visualPath)) continue;
+        const visual = JSON.parse(fs.readFileSync(visualPath, "utf8"));
+        lines.push(...textboxLines(visual));
+      }
+      const sized = lines.filter((line) => {
+        if (line.size !== "16pt" && line.size !== "18pt") return false;
+        const text = line.text.trim();
+        if (text.length < 40) return false;
+        if (/^what you[’']ll see$/i.test(text)) return false;
+        if (/^(audience|signature|source|tip)\b/i.test(text)) return false;
+        if (/^\d{2}\s/.test(text)) return false;
+        return true;
+      });
+      if (!sized.length) continue;
+      const bold = sized.filter((line) => line.weight === "bold");
+      const pool = bold.length ? bold : sized;
+      pool.sort((a, b) => a.y - b.y);
+      return pool[0].text;
+    }
+  }
+
+  return controllershipClaim(projectDir);
+}
+
 function parseReadme(readmePath) {
   const raw = fs.readFileSync(readmePath, "utf8");
   const lines = raw.split(/\r?\n/);
 
   let title = "";
-  let summary = "";
   for (const line of lines) {
     if (!title && line.startsWith("# ")) {
       title = line
@@ -59,14 +214,6 @@ function parseReadme(readmePath) {
         .replace(/\s+[—–]\s+.*$/, "")
         .replace(/\s*\(.*\)\s*$/, "")
         .trim();
-      continue;
-    }
-    if (title && !summary) {
-      const t = line.trim();
-      if (!t || t.startsWith("#") || t.startsWith("!") || t.startsWith("**")) {
-        continue;
-      }
-      summary = t;
       break;
     }
   }
@@ -108,7 +255,7 @@ function parseReadme(readmePath) {
     });
   }
 
-  return { title: title || path.basename(path.dirname(readmePath)), summary, pages };
+  return { title: title || path.basename(path.dirname(readmePath)), pages };
 }
 
 function findScreenshotFile(pngs, pageId) {
@@ -122,11 +269,11 @@ function findScreenshotFile(pngs, pageId) {
     const hit = lowerMap.get(c.toLowerCase());
     if (hit) return hit;
   }
-  // Last resort: file stem equals pageId with "and" removed from both sides
-  const compact = pageId.replace(/-and-/g, "-");
+  // Last resort: ignore hyphens so "Cut-off Strategy" matches cutoff-strategy.png.
+  const compact = pageId.replace(/-/g, "");
   for (const f of pngs) {
-    const stem = f.replace(/\.png$/i, "").toLowerCase();
-    if (stem === compact || stem.replace(/-and-/g, "-") === compact) return f;
+    const stem = f.replace(/\.png$/i, "").toLowerCase().replace(/-/g, "");
+    if (stem === compact) return f;
   }
   return null;
 }
@@ -166,7 +313,7 @@ function discoverProjects() {
     const readmePath = path.join(projectDir, "README.md");
     const meta = fs.existsSync(readmePath)
       ? parseReadme(readmePath)
-      : { title: folderSlug, summary: "", pages: [] };
+      : { title: folderSlug, pages: [] };
 
     let pages = meta.pages
       .map((p) => {
@@ -197,13 +344,18 @@ function discoverProjects() {
       });
     }
 
+    const claim = landingClaim(projectDir);
+    if (!claim) {
+      console.warn(`! ${dirName} has no landing claim`);
+    }
+
     projects.push({
       id,
       dirName,
       projectDir,
       shotsDir,
       title: meta.title,
-      summary: meta.summary,
+      claim,
       liveUrl: liveUrls[id] || liveUrls[folderSlug] || undefined,
       pages,
     });
@@ -273,7 +425,7 @@ function generateTs(projects) {
     return `  {
     id: "${p.id}",
     title: "${escapeTs(p.title)}",
-    summary: "${escapeTs(p.summary)}",
+    claim: "${escapeTs(p.claim)}",
     repoUrl: "${repoUrl}",${liveLine}
     pages: [
 ${pages},
@@ -283,7 +435,7 @@ ${pages},
 
   return `/**
  * AUTO-GENERATED by \`npm run powerbi:sync\` — do not edit by hand.
- * Source: Power BI repo screenshots + README Pages tables.
+ * Source: Power BI repo screenshots, landing claims, and README Pages tables.
  * Config: power-bi-projects.json
  */
 
@@ -297,7 +449,8 @@ export interface PowerBiReportPage {
 export interface PowerBiReport {
   id: string;
   title: string;
-  summary: string;
+  /** Landing sentence printed on the report, not the README build note. */
+  claim: string;
   repoUrl?: string;
   /** Optional interactive demo (e.g. Vercel board for Nordic Equity). */
   liveUrl?: string;

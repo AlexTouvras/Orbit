@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import type { PowerBiReport, PowerBiReportPage } from "@/content/power-bi-reports";
 import { ChapterMark } from "@/components/story/ChapterMark";
-import { ScrollRail, ScrollRailCard } from "@/components/story/ScrollRail";
 import { useHydrated } from "@/lib/use-hydrated";
 
 function pad(n: number) {
@@ -21,13 +20,26 @@ function pad(n: number) {
 
 export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
   const hydrated = useHydrated();
+  const [selectedId, setSelectedId] = useState(reports[0]?.id ?? "");
+  const [pageIndex, setPageIndex] = useState(0);
   const [lightbox, setLightbox] = useState<{
     report: PowerBiReport;
     pageIndex: number;
   } | null>(null);
 
-  const open = useCallback((report: PowerBiReport, pageIndex: number) => {
-    setLightbox({ report, pageIndex });
+  const report =
+    reports.find((item) => item.id === selectedId) ?? reports[0];
+  const pageCount = report?.pages.length ?? 0;
+  const page: PowerBiReportPage | undefined =
+    report?.pages[pageIndex] ?? report?.pages[0];
+
+  const selectReport = useCallback((id: string) => {
+    setSelectedId(id);
+    setPageIndex(0);
+  }, []);
+
+  const open = useCallback((next: PowerBiReport, index: number) => {
+    setLightbox({ report: next, pageIndex: index });
   }, []);
 
   const close = useCallback(() => setLightbox(null), []);
@@ -43,6 +55,19 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
       };
     });
   }, []);
+
+  useEffect(() => {
+    const list = document.getElementById("pbi-report-list");
+    const tab = document.getElementById(`pbi-tab-${selectedId}`);
+    if (!list || !tab) return;
+    const listBox = list.getBoundingClientRect();
+    const tabBox = tab.getBoundingClientRect();
+    if (tabBox.top < listBox.top) {
+      list.scrollTop -= listBox.top - tabBox.top;
+    } else if (tabBox.bottom > listBox.bottom) {
+      list.scrollTop += tabBox.bottom - listBox.bottom;
+    }
+  }, [selectedId]);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -72,21 +97,35 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [close, goPage, lightbox]);
 
-  if (!reports.length) return null;
+  function onListKey(e: KeyboardEvent<HTMLDivElement>) {
+    if (!report) return;
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    e.preventDefault();
+    const index = reports.findIndex((item) => item.id === report.id);
+    const next =
+      e.key === "ArrowDown"
+        ? reports[(index + 1) % reports.length]
+        : reports[(index - 1 + reports.length) % reports.length];
+    if (!next) return;
+    selectReport(next.id);
+    document.getElementById(`pbi-tab-${next.id}`)?.focus();
+  }
 
-  const repoUrl = reports.find((r) => r.repoUrl)?.repoUrl;
-  const page = lightbox
+  if (!reports.length || !report || !page) return null;
+
+  const repoUrl = reports.find((item) => item.repoUrl)?.repoUrl;
+  const lightPage = lightbox
     ? (lightbox.report.pages[lightbox.pageIndex] ?? lightbox.report.pages[0])
     : undefined;
-  const pageCount = lightbox?.report.pages.length ?? 0;
+  const lightCount = lightbox?.report.pages.length ?? 0;
 
   const overlay =
-    lightbox && page && hydrated
+    lightbox && lightPage && hydrated
       ? createPortal(
           <div
             role="dialog"
             aria-modal="true"
-            aria-label={`${lightbox.report.title} — ${page.label}`}
+            aria-label={`${lightbox.report.title} — ${lightPage.label}`}
             className="fixed inset-0 z-[100] flex flex-col bg-void/95 backdrop-blur-sm"
             onClick={close}
           >
@@ -99,7 +138,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
                   {lightbox.report.title}
                 </p>
                 <p className="truncate font-mono text-xs text-slate-400">
-                  {page.label} · {lightbox.pageIndex + 1} / {pageCount}
+                  {lightPage.label} · {lightbox.pageIndex + 1} / {lightCount}
                 </p>
               </div>
               <button
@@ -116,7 +155,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
               className="relative flex min-h-0 flex-1 items-center justify-center p-4 sm:p-8"
               onClick={(e) => e.stopPropagation()}
             >
-              {pageCount > 1 && (
+              {lightCount > 1 && (
                 <button
                   type="button"
                   onClick={() => goPage(-1)}
@@ -129,12 +168,12 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
               <div className="flex h-full max-h-[calc(100dvh-8rem)] w-full max-w-6xl items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={page.src}
-                  alt={`${lightbox.report.title} — ${page.label}`}
+                  src={lightPage.src}
+                  alt={`${lightbox.report.title} — ${lightPage.label}`}
                   className="max-h-full max-w-full object-contain"
                 />
               </div>
-              {pageCount > 1 && (
+              {lightCount > 1 && (
                 <button
                   type="button"
                   onClick={() => goPage(1)}
@@ -145,13 +184,6 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
                 </button>
               )}
             </div>
-
-            <p
-              className="border-t border-white/10 px-4 py-3 text-center text-sm text-slate-300 sm:px-6"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {page.caption}
-            </p>
           </div>,
           document.body,
         )
@@ -159,153 +191,138 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
 
   return (
     <section id="power-bi" className="scroll-mt-28" aria-label="Power BI reports">
-      <ScrollRail
-        fit
-        length={reports.length}
-        header={
-          <div className="relative">
-            <ChapterMark
-              className="[&>p:first-child]:max-w-[calc(100%-6.5rem)]"
-              index="03"
-              eyebrow="Analytics"
-              title="Power BI"
-              description="Report pages from my Power BI portfolio — browse pages, enlarge for detail."
-            />
-            {repoUrl ? (
-              <Link
-                href={repoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="focus-ring group absolute right-0 top-0 z-30 inline-flex min-h-11 items-center gap-1 text-sm font-medium text-slate-300 hover:text-neon-cyan"
+      <div className="relative">
+        <ChapterMark
+          className="[&>p:first-child]:max-w-[calc(100%-6.5rem)]"
+          index="03"
+          eyebrow="Analytics"
+          title="Power BI"
+        />
+        {repoUrl ? (
+          <Link
+            href={repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-ring group absolute right-0 top-0 z-30 inline-flex min-h-11 items-center gap-1 text-sm font-medium text-slate-300 hover:text-neon-cyan"
+          >
+            View repo
+            <ExternalLink className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
+          </Link>
+        ) : null}
+      </div>
+
+      <div className="mt-8 grid grid-cols-[8.75rem_minmax(0,1fr)] items-stretch gap-3 sm:mt-10 sm:grid-cols-[12.5rem_minmax(0,1fr)] sm:gap-6 md:grid-cols-[17.5rem_minmax(0,1fr)]">
+        <div className="relative min-h-[14rem] min-w-0">
+        <div
+          id="pbi-report-list"
+          role="tablist"
+          aria-label="Reports"
+          aria-orientation="vertical"
+          onKeyDown={onListKey}
+          className="absolute inset-0 flex flex-col gap-0.5 overflow-y-auto overscroll-y-contain p-1"
+        >
+          {reports.map((item, index) => {
+            const selected = item.id === report.id;
+            return (
+              <button
+                key={item.id}
+                id={`pbi-tab-${item.id}`}
+                type="button"
+                role="tab"
+                aria-selected={selected}
+                aria-controls="pbi-report"
+                tabIndex={selected ? 0 : -1}
+                onClick={() => selectReport(item.id)}
+                className={
+                  selected
+                    ? "focus-ring min-w-0 rounded-xl border border-neon-cyan/40 bg-white/[0.06] px-3 py-1.5 text-left"
+                    : "focus-ring min-w-0 rounded-xl border border-transparent px-3 py-1.5 text-left hover:border-white/10 hover:bg-white/[0.03]"
+                }
               >
-                View repo
-                <ExternalLink className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
-              </Link>
-            ) : null}
-          </div>
-        }
-      >
-        {reports.map((report, i) => (
-          <PowerBiRailCard
-            key={report.id}
-            report={report}
-            index={i}
-            onEnlarge={open}
-          />
-        ))}
-      </ScrollRail>
-      {overlay}
-    </section>
-  );
-}
-
-function PowerBiRailCard({
-  report,
-  index,
-  onEnlarge,
-}: {
-  report: PowerBiReport;
-  index: number;
-  onEnlarge: (report: PowerBiReport, pageIndex: number) => void;
-}) {
-  const [pageIndex, setPageIndex] = useState(0);
-  const pageCount = report.pages.length;
-  const page: PowerBiReportPage | undefined =
-    report.pages[pageIndex] ?? report.pages[0];
-  if (!page) return null;
-
-  function onPreviewKey(e: KeyboardEvent<HTMLButtonElement>) {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      onEnlarge(report, pageIndex);
-    }
-  }
-
-  return (
-    <ScrollRailCard className="h-full min-h-0">
-      <article className="flex h-full min-h-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]">
-        <div className="relative shrink-0 px-5 pt-5 sm:px-8 sm:pt-8">
-          <p className="story-index absolute right-4 top-2 select-none" aria-hidden>
-            {pad(index + 1)}
-          </p>
-          <h3 className="relative font-display text-xl font-semibold tracking-tight text-white sm:text-3xl">
-            {report.title}
-          </h3>
-          <p className="mt-2 line-clamp-3 max-w-2xl text-sm leading-relaxed text-slate-300 sm:mt-3 sm:line-clamp-none">
-            {report.summary}
-          </p>
+                <span className="flex min-w-0 items-baseline gap-2">
+                  <span className="shrink-0 font-mono text-[0.65rem] tabular-nums text-slate-500">
+                    {pad(index + 1)}
+                  </span>
+                  <span className="min-w-0 font-display text-sm font-semibold leading-snug tracking-tight text-white">
+                    {item.title}
+                  </span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
         </div>
 
-        <button
-          type="button"
-          onClick={() => onEnlarge(report, pageIndex)}
-          onKeyDown={onPreviewKey}
-          className="focus-ring group relative mx-5 mt-3 flex min-h-0 flex-auto flex-col overflow-hidden rounded-xl border border-white/10 bg-void-800 text-left sm:mx-8 sm:mt-5"
-          aria-label={`Enlarge ${report.title} — ${page.label}`}
+        <div
+          id="pbi-report"
+          role="tabpanel"
+          aria-labelledby={`pbi-tab-${report.id}`}
+          className="min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]"
         >
-          <span className="relative block aspect-[16/9] min-h-[5rem] w-full min-w-0 flex-auto sm:aspect-[16/10] sm:min-h-0 sm:flex-none">
-            {/* Native img: large report PNGs skip the image optimizer. */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={page.src}
-              alt={`${report.title} — ${page.label}`}
-              className="absolute inset-0 h-full w-full object-contain object-top"
-              loading={index === 0 && pageIndex === 0 ? "eager" : "lazy"}
-            />
-          </span>
-          <span className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-void/80 px-2.5 py-1.5 text-xs text-slate-200 opacity-90 backdrop-blur-sm transition-opacity group-hover:opacity-100">
-            <Expand className="h-3.5 w-3.5" aria-hidden />
-            Enlarge
-          </span>
-        </button>
+          <button
+            type="button"
+            onClick={() => open(report, pageIndex)}
+            className="focus-ring group relative mx-3 mt-3 block w-[calc(100%-1.5rem)] overflow-hidden rounded-xl border border-white/10 bg-void-800 text-left sm:mx-5 sm:mt-5 sm:w-[calc(100%-2.5rem)]"
+            aria-label={`Enlarge ${report.title} — ${page.label}`}
+          >
+            <span className="relative block aspect-[16/10] w-full">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={page.src}
+                alt={`${report.title} — ${page.label}`}
+                className="absolute inset-0 h-full w-full object-contain object-top"
+              />
+            </span>
+            <span className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-void/80 px-2.5 py-1.5 text-xs text-slate-200 opacity-90 backdrop-blur-sm">
+              <Expand className="h-3.5 w-3.5" aria-hidden />
+              Enlarge
+            </span>
+          </button>
 
-        <div className="mt-auto flex shrink-0 flex-col gap-2 px-5 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-8 sm:py-5">
-          <div className="min-w-0">
-            <p className="truncate font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-500">
+          <div className="flex flex-col gap-2 px-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-5 sm:py-4">
+            <p className="min-w-0 truncate font-mono text-[0.65rem] uppercase tracking-[0.16em] text-slate-500 sm:tracking-[0.2em]">
               {page.label}
               {pageCount > 1 ? ` · ${pageIndex + 1} / ${pageCount}` : ""}
             </p>
-            <p className="mt-1 line-clamp-2 max-w-md text-sm text-slate-400 sm:line-clamp-none">
-              {page.caption}
-            </p>
-          </div>
-          <div className="flex shrink-0 flex-wrap items-center gap-3">
-            {report.liveUrl ? (
-              <Link
-                href={report.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="focus-ring inline-flex min-h-11 items-center gap-1 text-sm font-medium text-neon-cyan sm:min-h-0"
-              >
-                Open live board
-                <ExternalLink className="h-3.5 w-3.5" />
-              </Link>
-            ) : null}
-            {pageCount > 1 ? (
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setPageIndex((i) => (i - 1 + pageCount) % pageCount)
-                  }
-                  className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-white/10 text-slate-200 hover:border-neon-cyan/40 hover:text-neon-cyan"
-                  aria-label="Previous page"
+            <div className="flex shrink-0 flex-wrap items-center gap-3">
+              {report.liveUrl ? (
+                <Link
+                  href={report.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="focus-ring inline-flex min-h-11 items-center gap-1 text-sm font-medium text-neon-cyan sm:min-h-0"
                 >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setPageIndex((i) => (i + 1) % pageCount)}
-                  className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-white/10 text-slate-200 hover:border-neon-cyan/40 hover:text-neon-cyan"
-                  aria-label="Next page"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-              </div>
-            ) : null}
+                  Open live board
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </Link>
+              ) : null}
+              {pageCount > 1 ? (
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setPageIndex((i) => (i - 1 + pageCount) % pageCount)
+                    }
+                    className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-white/10 text-slate-200 hover:border-neon-cyan/40 hover:text-neon-cyan"
+                    aria-label="Previous page"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setPageIndex((i) => (i + 1) % pageCount)}
+                    className="focus-ring inline-flex min-h-11 min-w-11 items-center justify-center rounded-xl border border-white/10 text-slate-200 hover:border-neon-cyan/40 hover:text-neon-cyan"
+                    aria-label="Next page"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
-      </article>
-    </ScrollRailCard>
+      </div>
+      {overlay}
+    </section>
   );
 }

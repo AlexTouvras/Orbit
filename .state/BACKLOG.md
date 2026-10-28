@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Power BI is a title list beside the open report, with no subtitles, and Credit Risk includes Cut-off Strategy (2026-10-28)
 - [x] Weekly Write voice — the Signal is the spark. The essay argues experience, vision, and principles. "He says / I have not" fails. The 26 Oct draft is rewritten on how software gets built when code is cheap (2026-10-28)
 - [x] Weekly Write — 26 Oct catch-up. The thesis is the behavior a trusted build was supposed to change. OpenBI was not in the intake. Draft is pending in `#orbit` (2026-10-27).
 - [x] Essay reactions — a heart under the title and at the end of the article. A text icon opens the note. No “Thanks — noted.” (2026-10-24)
