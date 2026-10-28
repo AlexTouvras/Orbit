@@ -1,7 +1,169 @@
 {
-  "generatedAt": "2026-10-27T06:46:55.143Z",
+  "generatedAt": "2026-10-28T06:46:53.906Z",
   "count": 264,
   "items": [
+    {
+      "id": "68e3f30924fd",
+      "title": "Do We Still Need Data Models?",
+      "link": "https://www.dataengineeringweekly.com/p/do-we-still-need-data-models",
+      "source": "Data Engineering Weekly",
+      "category": "Data",
+      "pubDate": "2026-10-28T04:22:26.000Z",
+      "contentSnippet": "As agents build data systems, models must help us understand the decisions behind them."
+    },
+    {
+      "id": "ca9778b8d179",
+      "title": "Powerful pacifism and currency dominance: What 150 years of international monetary system regime switches say about the US dollar’s future",
+      "link": "https://cepr.org/voxeu/columns/powerful-pacifism-and-currency-dominance-what-150-years-international-monetary-system",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-28T00:00:00.000Z",
+      "contentSnippet": "The 20th century shift from sterling to the dollar is often cited as evidence that currency dominance is not forever. This column presents a nonlinear model of the international monetary system calibrated on historical events. Shifts in dominance require large, simultaneous combi…"
+    },
+    {
+      "id": "86863d46de29",
+      "title": "Not your average firm: Heterogeneous cross-border financial allocations",
+      "link": "https://cepr.org/voxeu/columns/not-your-average-firm-heterogeneous-cross-border-financial-allocations",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-28T00:00:00.000Z",
+      "contentSnippet": "International financial integration is often measured through national totals. Yet these totals can conceal very different experiences across firms. Using comprehensive French microdata, this column shows that most financially internationalised firms raise foreign equity without…"
+    },
+    {
+      "id": "7278e99a639b",
+      "title": "Nobody disagreed. Nobody decided. Nothing changed.",
+      "link": "https://www.scrum.org/resources/blog/nobody-disagreed-nobody-decided-nothing-changed",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-27T23:00:00.000Z",
+      "contentSnippet": "Image Nobody disagreed. Nobody decided. Nothing changed. You put the plan on the screen. You did the responsible thing and asked for honest reactions before committing to it. A pause. A couple of nods. \"Looks good to me.\" Nobody objects. \"Great, we're aligned.\" The plan is now th…"
+    },
+    {
+      "id": "7a2b5b2f758e",
+      "title": "Vital Skills: Upskilling Genie Code with Healthcare and Life Sciences skills",
+      "link": "https://www.databricks.com/blog/vital-skills-upskilling-genie-code-healthcare-and-life-sciences-skills",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-27T19:00:00.000Z",
+      "contentSnippet": "Code with AI on a unified, governed platformGenie Code, our coding agent optimized..."
+    },
+    {
+      "id": "25e1d0a22c0f",
+      "title": "Unlocking Investment Insights Without Migrating Your Data: Lakehouse Federation",
+      "link": "https://www.databricks.com/blog/unlocking-investment-insights-without-migrating-your-data-lakehouse-federation",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-27T18:00:00.000Z",
+      "contentSnippet": "Lakehouse Federation: Query Anywhere, Move NothingIn today's enterprise landscape,..."
+    },
+    {
+      "id": "4aed764eb703",
+      "title": "From spot fixes to measured gains: improving document extraction accuracy with ai_extract and MLflow Prompt Registry",
+      "link": "https://www.databricks.com/blog/spot-fixes-measured-gains-improving-document-extraction-accuracy-aiextract-and-mlflow-prompt",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-27T18:00:00.000Z",
+      "contentSnippet": "Document extraction often starts with a simple loop: spot an incorrect field, adjust..."
+    },
+    {
+      "id": "91ab09be6954",
+      "title": "The sleep framework: A new way for LLMs to retain knowledge in continual learning",
+      "link": "https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/",
+      "source": "Google Research",
+      "category": "AI",
+      "pubDate": "2026-10-27T17:35:00.000Z",
+      "contentSnippet": "Education Innovation"
+    },
+    {
+      "id": "f5f6e2dd4b0d",
+      "title": "Agility Beyond Software: Improving Your Revenue Machine While You Run It",
+      "link": "https://www.scrum.org/resources/blog/agility-beyond-software-improving-your-revenue-machine-while-you-run-it",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-27T17:00:00.000Z",
+      "contentSnippet": "Originally published as an episode of Scaling AI: From Activity to Impact. A conversation with Roi Carmel on In the Spotlight. It’s essentially being empirical, getting transparency on what is working for us, what’s not working for us, inspecting it, being open to inspect what’s…"
+    },
+    {
+      "id": "d42fb1eb3362",
+      "title": "Retell uses OpenAI models to help power 100M monthly calls",
+      "link": "https://openai.com/index/retell-ai",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-27T15:00:00.000Z",
+      "contentSnippet": "GPT-6 Astra tops Retell’s voice agent benchmark, while Codex helps it reach a $1.6M annual revenue run rate per employee."
+    },
+    {
+      "id": "ca7e4ddc9cb1",
+      "title": "Scaling the AI Software Factory from Activity to Impact",
+      "link": "https://www.scrum.org/resources/blog/scaling-ai-software-factory-activity-impact",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-27T13:00:00.000Z",
+      "contentSnippet": "Originally published as an episode of Scaling AI: From Activity to Impact. As AI agents take on more of software development, our job as engineers shifts towards designing the system they work in. That means rethinking what teams own, how work flows, and how we learn from what cu…"
+    },
+    {
+      "id": "14766293f85e",
+      "title": "BigQuery to Databricks: A Strategic Framework",
+      "link": "https://www.databricks.com/blog/bigquery-databricks-strategic-framework",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-27T11:07:53.000Z",
+      "contentSnippet": "Migration as a strategic evolutionMany organizations support a range of data and analytics workloads on BigQuery today..."
+    },
+    {
+      "id": "02fa6fb32600",
+      "title": "DAX LLM Benchmark v2.0 Trailer",
+      "link": "https://www.sqlbi.com/tv/dax-llm-benchmark-v2-0-trailer/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-10-27T11:00:00.000Z",
+      "contentSnippet": "Which LLMs are ready to write DAX? Check it out at https://www.daxbench.com/"
+    },
+    {
+      "id": "748d7dc52a4c",
+      "title": "DAX LLM Benchmark v2",
+      "link": "https://www.sqlbi.com/blog/marco/2026/10/27/dax-llm-benchmark-v2/",
+      "source": "SQLBI",
+      "category": "Analytics",
+      "pubDate": "2026-10-27T10:45:53.000Z",
+      "contentSnippet": "The DAX LLM Benchmark v2 shows that the latest frontier models write DAX very well, and that the model generation matters more than the vendor. This post describes how we built the benchmark, how we read its results, and what…"
+    },
+    {
+      "id": "a3a879144b29",
+      "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+      "link": "https://openai.com/index/oracle-apps-in-chatgpt",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-27T07:00:00.000Z",
+      "contentSnippet": "OpenAI and Oracle are expanding their partnership to bring business applications and AI agents into ChatGPT and power new Oracle offerings."
+    },
+    {
+      "id": "8cb333260a17",
+      "title": "How Check Point accelerates vulnerability research with Daybreak",
+      "link": "https://openai.com/index/check-point-daybreak",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-27T00:00:00.000Z",
+      "contentSnippet": "With OpenAI Daybreak, Check Point speeds up the research behind new security protections, enabling its analysts to turn vulnerability intelligence into customer defenses faster."
+    },
+    {
+      "id": "543233bf7b25",
+      "title": "How AI agents shape experts’ judgment calls",
+      "link": "https://www.anthropic.com/research/agents-judgment-calls",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-27T00:00:00.000Z",
+      "contentSnippet": "As AI does more of the hands-on work, the hope is that experts still make the judgment calls, meaning the decisions with more than one defensible answer. We tested this with 50 professional analysts who did a statistical analysis with Claude Code. On each key decision, we randoml…"
+    },
+    {
+      "id": "fdf27bf9960b",
+      "title": "Early progress on accelerating drug development with Claude",
+      "link": "https://www.anthropic.com/research/early-progress-drug-development",
+      "source": "Anthropic Research",
+      "category": "AI",
+      "pubDate": "2026-10-27T00:00:00.000Z",
+      "contentSnippet": "We're at the start of a major effort to speed up drug development with Claude. Over the past several months, our scientists have engaged in deep research partnerships with six organizations developing new medicines."
+    },
     {
       "id": "8893a5254759",
       "title": "Adult social care can be better value than the health care we already fund",
@@ -19,6 +181,24 @@
       "category": "Economics",
       "pubDate": "2026-10-27T00:00:00.000Z",
       "contentSnippet": "Agreements between manufacturers and retailers can affect competition across brands and stores. This column documents retail price patterns in the US consumer battery industry and uses a model estimated from purchase data to explore two potential mechanisms: changes in downstream…"
+    },
+    {
+      "id": "d060e9f1045d",
+      "title": "Les services sociaux destinés aux adultes peuvent offrir un meilleur rapport qualité-prix que les soins de santé que nous finançons déjà",
+      "link": "https://cepr.org/voxeu/columns/les-services-sociaux-destines-aux-adultes-peuvent-offrir-un-meilleur-rapport-qualite",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-27T00:00:00.000Z",
+      "contentSnippet": "Les programmes de santé doivent respecter des seuils de rentabilité, mais les services sociaux ne sont soumis à aucun critère de ce type. Cet article s'appuie sur la réforme espagnole de 2007 relative aux soins de longue durée pour montrer que l'accès à des aides financières et à…"
+    },
+    {
+      "id": "5398ec1b0cdc",
+      "title": "Building AI on credit: structures and spillovers",
+      "link": "https://www.bis.org/publications/bulletin-140-building-ai-credit--structures-and-spillovers",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-27T00:00:00.000Z",
+      "contentSnippet": "Capital expenditure to build artificial intelligence (AI) infrastructure is growing fast, and a rising share is financed with long-term debt and through complex off-balance sheet arrangements."
     },
     {
       "id": "6617a6ebccf5",
@@ -99,7 +279,7 @@
       "source": "Scrum.org",
       "category": "Delivery",
       "pubDate": "2026-10-26T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. What a developer sees when the AI coding CLI rollout arrives From everybody’s perspective, if I’m a developer on a team, it’s not unavoidable right now. I don’t really have to use it right now. I can keep on developing. And at some point, s…"
+      "contentSnippet": "Originally published on yuvalyeret.com. What a Developer sees when the AI coding CLI rollout arrives From everybody’s perspective, if I’m a Developer on a team, it’s not unavoidable right now. I don’t really have to use it right now. I can keep on developing. And at some point, s…"
     },
     {
       "id": "bf006a54ee5a",
@@ -147,15 +327,6 @@
       "contentSnippet": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement."
     },
     {
-      "id": "8f2f08b6e197",
-      "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
-      "link": "https://openai.com/index/openai-cut-incident-investigation",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-26T07:00:00.000Z",
-      "contentSnippet": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows."
-    },
-    {
       "id": "609fdfb23d8f",
       "title": "10 Reasons Why I Love Scrum",
       "link": "https://www.scrum.org/resources/blog/10-reasons-why-i-love-scrum",
@@ -175,21 +346,12 @@
     },
     {
       "id": "2dce0829e8a2",
-      "title": "Four ways pharma companies actually adopt agility",
+      "title": "Four Ways Pharma Companies Actually Adopt Agility",
       "link": "https://www.scrum.org/resources/blog/four-ways-pharma-companies-actually-adopt-agility",
       "source": "Scrum.org",
       "category": "Delivery",
       "pubDate": "2026-10-26T01:04:02.000Z",
       "contentSnippet": "Image In the first post of this series, I suggested replacing \"should we introduce agile?\" with three other questions: agile to solve what, where and how much, and what kind. Another question I'm sometimes asked is: \"So what are other pharma companies actually doing?\" If you work…"
-    },
-    {
-      "id": "1758535ac6be",
-      "title": "Introducing GPT-6.1 Terra",
-      "link": "https://openai.com/index/introducing-gpt-6-1-terra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-26T00:00:00.000Z",
-      "contentSnippet": "Bringing fast and capable computer use to everyone"
     },
     {
       "id": "a044f104ce83",
@@ -309,33 +471,6 @@
       "contentSnippet": "Originally published on yuvalyeret.com. Starting work has become easier. I catch myself doing this. I start one agent on a dashboard, another on article research, another on a client artifact. Each start is rational. The agent is going to work for a while, so why should I wait? A…"
     },
     {
-      "id": "fa56c02e1a35",
-      "title": "Historic monetary tightening, benign output dynamics: Rising R-stars across the Atlantic",
-      "link": "https://cepr.org/voxeu/columns/historic-monetary-tightening-benign-output-dynamics-rising-r-stars-across-atlantic",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-23T23:00:00.000Z",
-      "contentSnippet": "Nominal interest rates increased significantly in the US and euro area following the post-pandemic inflation surge, yet economic activity and labour markets remained resilient. This column finds that accounting for policy expectations implies a larger increase in the natural rate…"
-    },
-    {
-      "id": "d8a6f23c66c7",
-      "title": "Changes in the health and longevity of the elderly in the US",
-      "link": "https://cepr.org/voxeu/columns/changes-health-and-longevity-elderly-us",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-23T23:00:00.000Z",
-      "contentSnippet": "Spending on public pensions through Social Security and on elderly healthcare through Medicare accounted for over one-third of federal expenditures in the US by 2024. This column explores how improvements in elderly health and life expectancy affected the relative finances of Soc…"
-    },
-    {
-      "id": "c0ebbef447c4",
-      "title": "Chasing far-right does not pay for the centre-right parties: Evidence from Germany’s 2025 election",
-      "link": "https://cepr.org/voxeu/columns/chasing-far-right-does-not-pay-centre-right-parties-evidence-germanys-2025-election",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-23T23:00:00.000Z",
-      "contentSnippet": "Establishment parties are often urged to win voters over from populist parties by shifting their policy positions towards them. Based on the 2025 German federal election, this column simulates what would happen when the centre-right CDU changes its policies and the populist radic…"
-    },
-    {
       "id": "ef77d0b37418",
       "title": "Built for Agents: The Case for Spark Declarative Pipelines",
       "link": "https://www.databricks.com/blog/built-agents-case-spark-declarative-pipelines",
@@ -361,15 +496,6 @@
       "category": "AI",
       "pubDate": "2026-10-23T18:51:33.000Z",
       "contentSnippet": "Generative AI"
-    },
-    {
-      "id": "298c8de07d18",
-      "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
-      "link": "https://openai.com/index/scaling-storage-one-billion-users-part-two",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-23T17:00:00.000Z",
-      "contentSnippet": "Learn how OpenAI scaled Habitat with reliable multi-tenancy, global caching, and Azure Cosmos DB to deliver 12× faster reads for ChatGPT."
     },
     {
       "id": "bf6986b39fbc",
@@ -406,33 +532,6 @@
       "category": "Credit",
       "pubDate": "2026-10-22T20:00:00.000Z",
       "contentSnippet": "Consultation paper 14/26"
-    },
-    {
-      "id": "34c595c5b362",
-      "title": "The new economics of AI cost management",
-      "link": "https://www.databricks.com/blog/ai-cost-management",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-22T19:14:24.000Z",
-      "contentSnippet": "For the past two years, the story around enterprise AI adoption has mostly been about..."
-    },
-    {
-      "id": "c110e13f20f4",
-      "title": "The Fraud Analyst AI Coworker: Detecting Telecom Fraud in Real-Time on One Platform",
-      "link": "https://www.databricks.com/blog/fraud-analyst-ai-coworker-detecting-telecom-fraud-real-time-one-platform",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-22T18:30:00.000Z",
-      "contentSnippet": "BackgroundAccording to the Communications Fraud Control Association's 2025 survey..."
-    },
-    {
-      "id": "41b6b1475400",
-      "title": "The AI Bill is coming",
-      "link": "https://www.databricks.com/blog/ai-bill-coming",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-22T18:12:49.000Z",
-      "contentSnippet": "In this conversation, Catherine Brown talks with Patrick about what happened when..."
     },
     {
       "id": "e66e9796ba6b",
@@ -480,15 +579,6 @@
       "contentSnippet": "Health & Bioscience"
     },
     {
-      "id": "39eca36a0c26",
-      "title": "Databricks AI Runtime and NVIDIA make it easier to customize open models with enterprise data",
-      "link": "https://www.databricks.com/blog/databricks-ai-runtime-nvidia-train-fine-tune-models",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-21T11:30:00.000Z",
-      "contentSnippet": "GPUs power today's most advanced AI workloads, from cutting-edge language models..."
-    },
-    {
       "id": "50744548848c",
       "title": "Fragments: October 21",
       "link": "https://martinfowler.com/fragments/2026-10-21.html",
@@ -498,24 +588,6 @@
       "contentSnippet": "Gergely Orosz is frustrated at those that entered his explicitly “No AI” essay competition and used AI. He goes on to say: When I start to suspect some part is AI about someone I don’t know: how can I tell how much of it is? And how much time and effort do I want to invest to fig…"
     },
     {
-      "id": "4f81ccf40cc2",
-      "title": "How To Write Effective Acceptance Criteria",
-      "link": "https://www.scrum.org/resources/blog/how-write-effective-acceptance-criteria",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-21T07:26:09.000Z",
-      "contentSnippet": "Image Acceptance Criteria, or Conditions of Satisfaction, is a set of expectations that a feature must meet to be considered complete and work as intended. Acceptance Criteria is a non-negotiable mechanism for creating quality features. Unfortunately, many Scrum Teams overlook th…"
-    },
-    {
-      "id": "2cab46eaaf04",
-      "title": "Stop Asking Whether your Pharma Company Should \"Go Agile\"",
-      "link": "https://www.scrum.org/resources/blog/stop-asking-whether-your-pharma-company-should-go-agile",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-21T05:46:23.000Z",
-      "contentSnippet": "One pharma company works in four very different kinds of environment at the same time. So the useful question isn't whether to adopt agile. It's agile to solve what, how much, and what kind. Over the years, I've been asked some version of the same question countless times: \"Shoul…"
-    },
-    {
       "id": "1321330de0aa",
       "title": "Announcing DuckDB 2.0.0 LTS “Cinnamon Teal”",
       "link": "https://duckdb.org/2026/10/21/announcing-duckdb-200.html",
@@ -523,15 +595,6 @@
       "category": "Data",
       "pubDate": "2026-10-21T00:00:00.000Z",
       "contentSnippet": "Update 2.0.0 packed so many features that we published a followup blog post titled “Gems of DuckDB 2.0.0”. We are proud to release DuckDB 2.0.0, codenamed “Cinnamon Teal” after the Spatula cyanoptera, a strikingly reddish-brown duck found in the western Americas. While DuckDB 1.0…"
-    },
-    {
-      "id": "9123c0359486",
-      "title": "The Visibility You Think You Have Isn't the Visibility You Have.",
-      "link": "https://www.scrum.org/resources/blog/visibility-you-think-you-have-isnt-visibility-you-have",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-20T22:00:00.000Z",
-      "contentSnippet": "Image In Digital.ai's 2025 State of Agile, 55% of organizations said they have complete visibility into what they're building. In the same survey, 63% can't reliably deliver it, up 12 points in a year. Those two findings describe the same companies. Sit with that. Visibility went…"
     },
     {
       "id": "3b5ce86c8c40",
@@ -588,24 +651,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "d270e9c25e78",
-      "title": "Inflation after the Iran war",
-      "link": "https://www.bis.org/publications/working-paper-1384-inflation-after-iran-war",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-19T00:00:00.000Z",
-      "contentSnippet": "An unexpected increase in energy costs raises inflation directly through flexibly-set prices. Whether that shock amplifies to a larger and persistent rise in inflation depends on its transmission through the economy."
-    },
-    {
-      "id": "2dd79f84431a",
-      "title": "Competing rails for crossborder payments: banks, fintechs, and stablecoins",
-      "link": "https://www.bis.org/publications/working-paper-1385-competing-rails-crossborder-payments-banks-fintechs-and-stablecoins",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-19T00:00:00.000Z",
-      "contentSnippet": "Cross-border payments remain slow and expensive despite significant improvements in digital financial infrastructure over the past several decades."
-    },
-    {
       "id": "ecff4ccfa2b9",
       "title": "Geoeconomic pressure",
       "link": "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
@@ -622,6 +667,24 @@
       "category": "Credit",
       "pubDate": "2026-10-19T00:00:00.000Z",
       "contentSnippet": "The 25th BIS Annual Conference took place in Basel, Switzerland on 26 June 2026. The event brought together a distinguished group of central bank Governors, leading academics and former public officials to exchange views on the theme “Central banks and macro-financial stability i…"
+    },
+    {
+      "id": "d270e9c25e78",
+      "title": "Inflation after the Iran war",
+      "link": "https://www.bis.org/publications/working-paper-1384-inflation-after-iran-war",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "An unexpected increase in energy costs raises inflation directly through flexibly-set prices. Whether that shock amplifies to a larger and persistent rise in inflation depends on its transmission through the economy."
+    },
+    {
+      "id": "2dd79f84431a",
+      "title": "Competing rails for crossborder payments: banks, fintechs, and stablecoins",
+      "link": "https://www.bis.org/publications/working-paper-1385-competing-rails-crossborder-payments-banks-fintechs-and-stablecoins",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "Cross-border payments remain slow and expensive despite significant improvements in digital financial infrastructure over the past several decades."
     },
     {
       "id": "8562faa4b0a9",
@@ -660,24 +723,6 @@
       "contentSnippet": ""
     },
     {
-      "id": "04b7640931c7",
-      "title": "Designing more efficient quantum circuits with Claude",
-      "link": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-16T00:00:00.000Z",
-      "contentSnippet": "We gave Claude plain-language specifications for eight quantum circuits, along with an automated evaluator to check and score its designs. Working largely on its own, Claude improved on the best published circuits, in some cases by an order of magnitude or more, which could bring…"
-    },
-    {
-      "id": "ab1e0ebf1e34",
-      "title": "Working at the frontier shapes expectations for the future",
-      "link": "https://www.anthropic.com/research/expectations-for-the-future",
-      "source": "Anthropic Research",
-      "category": "AI",
-      "pubDate": "2026-10-16T00:00:00.000Z",
-      "contentSnippet": "We’re sharing two reports: the first covers how AI is changing employment inside Anthropic, and the second looks at the gap between how the public and Anthropic employees expect AI to affect work and the economy."
-    },
-    {
       "id": "c77032d2ea07",
       "title": "From JSON Strings to Typed Columns",
       "link": "https://duckdb.org/2026/10/16/json-to-typed-columns.html",
@@ -703,15 +748,6 @@
       "category": "Data",
       "pubDate": "2026-10-16T00:00:00.000Z",
       "contentSnippet": "prompt_jev() now takes images: store them as BLOBs in MotherDuck, ask closed questions in SQL, and get typed answers with a confidence score you can join with the rest of your data."
-    },
-    {
-      "id": "028c8790a21e",
-      "title": "Offshore forwards and exchange rate transmission in emerging markets",
-      "link": "https://www.bis.org/publications/working-paper-1383-offshore-forwards-and-exchange-rate-transmission-emerging-markets",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-16T00:00:00.000Z",
-      "contentSnippet": "We study how offshore non-deliverable forward (NDF) markets transmit exchange-rate pressures to domestic currency markets. Using unique transaction-level data on the universe of centrally cleared NDFs for ten emerging-market currencies over 2013–2025, we show that offshore NDF or…"
     },
     {
       "id": "996b33c09ad5",
@@ -768,15 +804,6 @@
       "contentSnippet": "General Science"
     },
     {
-      "id": "19f3965005eb",
-      "title": "Research@ 2026: 10 ways we're amplifying human ingenuity",
-      "link": "https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity/",
-      "source": "Google Research",
-      "category": "AI",
-      "pubDate": "2026-10-14T16:14:00.000Z",
-      "contentSnippet": "General Science"
-    },
-    {
       "id": "a6374274cc17",
       "title": "Build your slide template",
       "link": "https://martinfowler.com/articles/never-send-slides/build-your-slide-template.html",
@@ -795,15 +822,6 @@
       "contentSnippet": "When agents answer the questions, they can maintain the data model. Here is what that demands from the orchestration engine."
     },
     {
-      "id": "af30f4bb19fc",
-      "title": "PS19/26 – High loan to income lending",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-10-14T09:00:00.000Z",
-      "contentSnippet": "PRA policy statement 19/26 | FCA policy statement 26/20"
-    },
-    {
       "id": "b4475d723aaa",
       "title": "SS2/26 – High loan to income lending",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-supervisory-statement",
@@ -811,6 +829,15 @@
       "category": "Credit",
       "pubDate": "2026-10-14T09:00:00.000Z",
       "contentSnippet": "Supervisory statement 2/26"
+    },
+    {
+      "id": "af30f4bb19fc",
+      "title": "PS19/26 – High loan to income lending",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-10-14T09:00:00.000Z",
+      "contentSnippet": "PRA policy statement 19/26 | FCA policy statement 26/20"
     },
     {
       "id": "58e4191fcfe4",
@@ -1812,15 +1839,6 @@
       "contentSnippet": "Federal Reserve Bank of Atlanta Working Papers by Kristopher Gerardi, David Hao Zhang and Franklin Qian"
     },
     {
-      "id": "c8ecba0edbfe",
-      "title": "Commercial real estate debt financing in Europe: evidence from a network analysis",
-      "link": "https://www.esrb.europa.eu//pub/pdf/wp/esrb.wp155.en.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-08-01T00:00:00.000Z",
-      "contentSnippet": "European Systemic Risk Board Working Papers by Frauke Skudelny, Mihai Aliman, Martin Regnér, Cecilia Sarchi and Matteo Valetto"
-    },
-    {
       "id": "7401bc123f1d",
       "title": "The transmission of shocks across sectors and the dynamics of sectoral prices",
       "link": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3266~e62e35205b.en.pdf",
@@ -1830,6 +1848,15 @@
       "contentSnippet": "European Central Bank Working Papers by Francesca Monti and Leïla Van Keirsbilck"
     },
     {
+      "id": "c8ecba0edbfe",
+      "title": "Commercial real estate debt financing in Europe: evidence from a network analysis",
+      "link": "https://www.esrb.europa.eu//pub/pdf/wp/esrb.wp155.en.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-08-01T00:00:00.000Z",
+      "contentSnippet": "European Systemic Risk Board Working Papers by Frauke Skudelny, Mihai Aliman, Martin Regnér, Cecilia Sarchi and Matteo Valetto"
+    },
+    {
       "id": "f776967f28fc",
       "title": "(Don’t) Stop materializing your silver layer!",
       "link": "https://data-mozart.com/dont-stop-materializing-your-silver-layer/?utm_source=rss&utm_medium=rss&utm_campaign=dont-stop-materializing-your-silver-layer",
@@ -1837,15 +1864,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-31T10:03:06.000Z",
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
-    },
-    {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "d9adb789161e",
@@ -1866,6 +1884,15 @@
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
     },
     {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
+    },
+    {
       "id": "fb549b859ee4",
       "title": "Leading Agile Initiatives: How Leaders Help Agile Change Succeed",
       "link": "https://www.mountaingoatsoftware.com/agile/leading-agile-initiatives-how-leaders-help-agile-change-succeed",
@@ -1873,24 +1900,6 @@
       "category": "Delivery",
       "pubDate": "2026-07-28T16:00:00.000Z",
       "contentSnippet": "An agile initiative is not mainly a one-time rollout of Scrum, Kanban, SAFe, Jira, new job titles, or a different meeting calendar."
-    },
-    {
-      "id": "3efe262dfea0",
-      "title": "Analyzing the performance impact of visual calculations",
-      "link": "https://www.sqlbi.com/tv/analyzing-the-performance-impact-of-visual-calculations/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-07-28T10:00:00.000Z",
-      "contentSnippet": "Visual calculations can either improve or degrade the performance of a report. Let's see how we ensure visual calculations have a positive impact on performance."
-    },
-    {
-      "id": "65b8da05b262",
-      "title": "Analyzing the performance impact of visual calculations",
-      "link": "https://www.sqlbi.com/articles/analyzing-the-performance-impact-of-visual-calculations/",
-      "source": "SQLBI",
-      "category": "Analytics",
-      "pubDate": "2026-07-27T19:30:54.000Z",
-      "contentSnippet": "Visual calculations can either improve or degrade the performance of a report. In this article, we outline how we ensure visual calculations have a positive impact on performance. The goal of visual calculations is to simplify some reports and calculations,…"
     },
     {
       "id": "144c71381790",
@@ -1909,15 +1918,6 @@
       "category": "Economics",
       "pubDate": "2026-07-22T00:00:00.000Z",
       "contentSnippet": "Federal Reserve Bank of Philadelphia Working Papers by Daniel F. Waggoner, Juan Francisco Rubio-Ramírez and Jonas E. Arias"
-    },
-    {
-      "id": "513a069a215f",
-      "title": "Data Engineering Weekly #279",
-      "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-279",
-      "source": "Data Engineering Weekly",
-      "category": "Data",
-      "pubDate": "2026-07-20T04:07:20.000Z",
-      "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
       "id": "4c8cd6ef9ad3",
