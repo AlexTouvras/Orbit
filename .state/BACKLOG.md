@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] Quality pass rule — scan, rank, fix one finding, re-run a named score, stop when the score is met or the next row is out of scope (2026-10-28)
 - [x] Power BI phone titles are one row you slide sideways; the picture stays full width under that row (2026-10-28)
 - [x] Power BI is a title list beside the open report, with no subtitles, and Credit Risk includes Cut-off Strategy (2026-10-28)
 - [x] Weekly Write voice — the Signal is the spark. The essay argues experience, vision, and principles. "He says / I have not" fails. The 26 Oct draft is rewritten on how software gets built when code is cheap (2026-10-28)
