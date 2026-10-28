@@ -114,6 +114,10 @@ describe("handbook volume reader", () => {
     const models = HANDBOOKS.find((item) => item.slug === "models-that-stay-in-the-decision");
     assert.ok(models);
     assert.equal(models.pages[0]?.plate, "pipeline");
+    assert.ok(
+      VOLUME_PICTURE_SIZE["/handbook-art/models-that-stay-in-the-decision/cover.jpg"],
+      "exclusive cover leaf",
+    );
     assert.deepEqual(
       models.contents.map((entry) => entry.title),
       [

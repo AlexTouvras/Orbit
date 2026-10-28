@@ -100,89 +100,33 @@ export function CoverSheets() {
   );
 }
 
-/** Cover for the ML pipeline book: four arcs, one return. */
-export function CoverPipeline() {
-  const arcs = [
-    { x: 70, label: "Prepare" },
-    { x: 220, label: "Fit" },
-    { x: 370, label: "Ship" },
-    { x: 520, label: "Watch" },
-  ];
+/** Exclusive opening leaf for Models that stay in the decision. */
+export function CoverModels() {
+  const src = "/handbook-art/models-that-stay-in-the-decision/cover.jpg";
+  const size = VOLUME_PICTURE_SIZE[src] ?? { w: 864, h: 1152 };
   return (
     <figure>
-      <svg viewBox="0 0 720 480" className="h-auto w-full" aria-hidden="true">
-        <defs>
-          <linearGradient id="pipe-ground" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#e7efe6" />
-            <stop offset="100%" stopColor="#d5e2d4" />
-          </linearGradient>
-        </defs>
-        <rect width="720" height="480" fill="url(#pipe-ground)" />
-        <rect x="36" y="36" width="648" height="408" fill="#f4f7f1" stroke="#1f2a1c" strokeWidth="1.5" />
-        <path
-          d="M118 210 H602"
-          fill="none"
-          stroke="#1f2a1c"
-          strokeWidth="3"
+      <div className="overflow-hidden border border-[var(--book-rule)] bg-[#04110c]">
+        <Image
+          src={src}
+          alt=""
+          width={size.w}
+          height={size.h}
+          priority
+          sizes="(min-width: 1024px) 28rem, min(100vw, 28rem)"
+          className="mx-auto h-auto w-full max-w-[28rem]"
         />
-        {arcs.map((arc, index) => (
-          <g key={arc.label}>
-            <rect
-              x={arc.x}
-              y="168"
-              width="112"
-              height="84"
-              rx="6"
-              fill={index === 3 ? "#1f2a1c" : "#f4f7f1"}
-              stroke="#1f2a1c"
-              strokeWidth="2"
-            />
-            <text
-              x={arc.x + 56}
-              y="218"
-              textAnchor="middle"
-              fill={index === 3 ? "#e7efe6" : "#1f2a1c"}
-              fontFamily="Georgia, serif"
-              fontSize="22"
-              fontWeight="600"
-            >
-              {arc.label}
-            </text>
-            {index < arcs.length - 1 ? (
-              <path
-                d={`M${arc.x + 112} 210 H${arcs[index + 1].x}`}
-                fill="none"
-                stroke="#1f2a1c"
-                strokeWidth="3"
-              />
-            ) : null}
-          </g>
-        ))}
-        <path
-          d="M576 252 C576 330 144 330 144 252"
-          fill="none"
-          stroke="#0f6b5c"
-          strokeWidth="2.5"
-          strokeDasharray="7 6"
-        />
-        <polygon points="144,252 136,240 156,240" fill="#0f6b5c" />
-        <text
-          x="360"
-          y="360"
-          textAnchor="middle"
-          fill="#0f6b5c"
-          fontFamily="ui-monospace, monospace"
-          fontSize="14"
-          letterSpacing="0.12em"
-        >
-          LIVE RETURNS AS A NEW VERSION
-        </text>
-      </svg>
+      </div>
       <figcaption className="book-caption mt-3 max-w-[40rem]">
-        Four arcs on one spine. Watch sends the work back as a new version, not a silent retrain.
+        Four arcs on one spine. Watch returns as a new version, not a silent retrain.
       </figcaption>
     </figure>
   );
+}
+
+/** Alias kept for the volume reader import. */
+export function CoverPipeline() {
+  return <CoverModels />;
 }
 
 function FigureFrame({

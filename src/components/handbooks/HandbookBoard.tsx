@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useId, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import type {
@@ -330,49 +331,15 @@ function LedgerHero({ handbook, page }: { handbook: Handbook; page: HandbookPage
 }
 
 function PipelineBackdrop() {
-  const rawId = useId().replace(/:/g, "");
-  const nodes = [
-    [72, 220],
-    [168, 180],
-    [264, 240],
-    [360, 190],
-    [456, 250],
-  ] as const;
   return (
-    <svg aria-hidden viewBox="0 0 480 720" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full">
-      <defs>
-        <radialGradient id={`${rawId}-space`} cx="42%" cy="48%" r="78%">
-          <stop offset="0%" stopColor="#0c1a14" />
-          <stop offset="55%" stopColor="#050c09" />
-          <stop offset="100%" stopColor="#02040a" />
-        </radialGradient>
-        <linearGradient id={`${rawId}-line`} x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#34d399" stopOpacity="0.15" />
-          <stop offset="50%" stopColor="#6ee7b7" stopOpacity="0.7" />
-          <stop offset="100%" stopColor="#34d399" stopOpacity="0.2" />
-        </linearGradient>
-      </defs>
-      <rect width="480" height="720" fill={`url(#${rawId}-space)`} />
-      <path
-        d="M72 220 C140 160 220 280 264 240 S360 140 456 250"
-        fill="none"
-        stroke={`url(#${rawId}-line)`}
-        strokeWidth="2"
-      />
-      <path
-        d="M456 250 C400 340 160 340 72 220"
-        fill="none"
-        stroke="#10b981"
-        strokeOpacity="0.35"
-        strokeWidth="1.5"
-        strokeDasharray="5 7"
-      />
-      {nodes.map(([x, y], index) => (
-        <g key={`${x}-${y}`}>
-          <circle cx={x} cy={y} r={index === 4 ? 9 : 6} fill="#04110c" stroke="#6ee7b7" strokeWidth="1.5" />
-        </g>
-      ))}
-    </svg>
+    <Image
+      src="/handbook-art/models-that-stay-in-the-decision/cover.jpg"
+      alt=""
+      fill
+      sizes="(min-width: 1024px) 28rem, 100vw"
+      className="object-cover object-center"
+      priority={false}
+    />
   );
 }
 
