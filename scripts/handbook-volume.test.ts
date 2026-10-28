@@ -130,5 +130,14 @@ describe("handbook volume reader", () => {
         page.sections.some((section) => section.figure?.kind === "pipeline"),
       ),
     );
+    for (const page of models.pages) {
+      const pictures = page.sections.filter((section) => section.picture);
+      assert.equal(pictures.length, 1, `page ${page.number} picture`);
+      for (const section of pictures) {
+        const picture = section.picture!;
+        assert.ok(picture.alt.trim(), picture.src);
+        assert.ok(VOLUME_PICTURE_SIZE[picture.src], picture.src);
+      }
+    }
   });
 });

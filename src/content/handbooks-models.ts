@@ -8,6 +8,7 @@ const DATA_CARD = "/analytics-field-card/index.html";
 const SDLC_CARD = "/sdlc-field-card/index.html";
 const ML_CARD = "/ml-pipeline-field-card/";
 const ML_AGENT = "/ml-pipeline-field-card/AGENT.md";
+const ML_ART = "/handbook-art/models-that-stay-in-the-decision";
 
 function source(href: string, label: string): HandbookLink {
   return { href, label };
@@ -127,6 +128,10 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
                 cells: ["Oldest past-due first. Stays callable."],
               },
             ],
+          },
+          picture: {
+            src: `${ML_ART}/decision.jpg`,
+            alt: "An illustration. A tray of blank slips, a glass measure, and an empty ranking tray. No amount.",
           },
           sources: [
             dataChapter(6, "Choose the work"),
@@ -336,6 +341,10 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
               },
             ],
           },
+          picture: {
+            src: `${ML_ART}/prepare.jpg`,
+            alt: "An illustration. An open ledger, one lit pane on a column, and a jar of quarantined scraps. No amount.",
+          },
           sources: [NIST_OUTLIER],
         },
         {
@@ -418,6 +427,10 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
               },
             ],
           },
+          picture: {
+            src: `${ML_ART}/features.jpg`,
+            alt: "An illustration. A clock, a sealed morning extract, and a torn post-cut slip left aside. No amount.",
+          },
           sources: [SKLEARN_LEAKAGE],
         },
         {
@@ -462,6 +475,10 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
               { term: "Validation", detail: "One official read after the inner bar clears." },
               { term: "Test", detail: "Frozen morning ids. Read once in Ship." },
             ],
+          },
+          picture: {
+            src: `${ML_ART}/holdout.jpg`,
+            alt: "An illustration. Train cards open, an empty embargo tray, and a sealed holdout under frost glass. No amount.",
           },
           sources: [SKLEARN_SPLIT, mlChapter(2, "Prepare the table")],
         },
@@ -649,6 +666,10 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
               },
             ],
           },
+          picture: {
+            src: `${ML_ART}/watch.jpg`,
+            alt: "An illustration. Amber previous light and cyan candidate light meet a dark monitor. No amount.",
+          },
           sources: [GOOGLE_MLOPS, GOOGLE_CT],
         },
         {
@@ -730,6 +751,10 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
                 gate: true,
               },
             ],
+          },
+          picture: {
+            src: `${ML_ART}/card.jpg`,
+            alt: "An illustration. A blank framed sheet and a brass seal before a closed door. No amount.",
           },
           sources: [MODEL_CARDS, dataChapter(2, "Name the decision")],
         },
