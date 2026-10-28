@@ -61,6 +61,7 @@ These match `failsEssayQuality` in `src/lib/weekly-write/draft.ts`. The voice ba
 ## Pipeline anti-patterns
 
 - Publishing `src/content/writes/*.mdx` without Slack Approve or an explicit user ask
+- Narrating the Signal claim by claim against what you have and have not done. The Signal is the spark. The essay is your experience, vision, and principles.
 - Inventing a Signal that is not in the brief
 - Writing the week's essay about a Power BI or Fabric feature when the intake has another lane
 - Forcing a project bridge the brief does not name
