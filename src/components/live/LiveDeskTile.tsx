@@ -1,33 +1,11 @@
-import { Suspense } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { LiveDesk } from "@/content/live-desks";
-import { EuSpotPeek } from "@/components/live/EuSpotPeek";
-import { HeatmapPeek } from "@/components/live/HeatmapPeek";
-import { HousingPeek } from "@/components/live/HousingPeek";
-import { PowerMixPeek } from "@/components/live/PowerMixPeek";
-import { EconomyPeek } from "@/components/live/EconomyPeek";
-import { WhichModelPeek } from "@/components/live/WhichModelPeek";
+import { DeskPeekFrame } from "@/components/live/DeskPeek";
 import { ScrollRailCard } from "@/components/story/ScrollRail";
 
 function pad(n: number) {
   return String(n).padStart(2, "0");
-}
-
-function PeekFallback() {
-  return (
-    <div className="h-full w-full bg-gradient-to-br from-neon-cyan/15 to-transparent" />
-  );
-}
-
-async function DeskPeek({ slug }: { slug: string }) {
-  if (slug === "eu-spot") return <EuSpotPeek />;
-  if (slug === "nordic-equity") return <HeatmapPeek />;
-  if (slug === "housing") return <HousingPeek />;
-  if (slug === "power-mix") return <PowerMixPeek />;
-  if (slug === "economy") return <EconomyPeek />;
-  if (slug === "which-model") return <WhichModelPeek />;
-  return <PeekFallback />;
 }
 
 /** Peek + question for the live ScrollRail. Question sits on the image. */
@@ -44,9 +22,7 @@ export function LiveDeskTile({
     <ScrollRailCard>
       <article className="group relative isolate overflow-hidden rounded-3xl border border-white/10 bg-void-800">
         <div className="pointer-events-none h-[min(42vh,24rem)] w-full">
-          <Suspense fallback={<PeekFallback />}>
-            <DeskPeek slug={desk.slug} />
-          </Suspense>
+          <DeskPeekFrame slug={desk.slug} />
         </div>
         <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-void via-void/90 to-transparent px-6 pb-6 pt-16 sm:px-8 sm:pb-7">
           <p

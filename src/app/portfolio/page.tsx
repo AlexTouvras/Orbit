@@ -4,7 +4,7 @@ import { GithubRepos } from "@/components/portfolio/GithubRepos";
 import { LocalProjects } from "@/components/portfolio/LocalProjects";
 import { PortfolioHero } from "@/components/portfolio/PortfolioHero";
 import { PowerBiShowcase } from "@/components/portfolio/PowerBiShowcase";
-import { LiveQuestions } from "@/components/hub/LiveQuestions";
+import { LiveDeskStage } from "@/components/portfolio/LiveDeskStage";
 import { liveDesks } from "@/content/live-desks";
 import { powerBiReports } from "@/content/power-bi-reports";
 import { getPublicProjects } from "@/lib/projects-local";
@@ -37,10 +37,11 @@ export default function PortfolioPage() {
 
       <LocalProjects />
 
-      <LiveQuestions
+      <LiveDeskStage
         desks={desks}
         id="live"
         index="02"
+        showIndexLink
         description="One-page desks that refresh at the grain the data actually moves. Screenshots stay in the Power BI lane."
       />
 

@@ -1,28 +1,20 @@
 "use client";
 
-import { useCallback, useEffect, useState, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Expand,
-  ExternalLink,
-  X,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, Expand, ExternalLink, X } from "lucide-react";
 import type { PowerBiReport, PowerBiReportPage } from "@/content/power-bi-reports";
-import { ChapterMark } from "@/components/story/ChapterMark";
+import {
+  TitleStage,
+  TitleStageHeader,
+} from "@/components/portfolio/TitleStage";
 import { useHydrated } from "@/lib/use-hydrated";
-
-function pad(n: number) {
-  return String(n).padStart(2, "0");
-}
 
 export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
   const hydrated = useHydrated();
   const [selectedId, setSelectedId] = useState(reports[0]?.id ?? "");
   const [pageIndex, setPageIndex] = useState(0);
-  const [horizontal, setHorizontal] = useState(false);
   const [lightbox, setLightbox] = useState<{
     report: PowerBiReport;
     pageIndex: number;
@@ -58,32 +50,6 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
   }, []);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 639px)");
-    const apply = () => setHorizontal(mq.matches);
-    apply();
-    mq.addEventListener("change", apply);
-    return () => mq.removeEventListener("change", apply);
-  }, []);
-
-  useEffect(() => {
-    const list = document.getElementById("pbi-report-list");
-    const tab = document.getElementById(`pbi-tab-${selectedId}`);
-    if (!list || !tab) return;
-    const listBox = list.getBoundingClientRect();
-    const tabBox = tab.getBoundingClientRect();
-    if (tabBox.left < listBox.left + 4) {
-      list.scrollLeft -= listBox.left + 4 - tabBox.left;
-    } else if (tabBox.right > listBox.right - 4) {
-      list.scrollLeft += tabBox.right - (listBox.right - 4);
-    }
-    if (tabBox.top < listBox.top) {
-      list.scrollTop -= listBox.top - tabBox.top;
-    } else if (tabBox.bottom > listBox.bottom) {
-      list.scrollTop += tabBox.bottom - listBox.bottom;
-    }
-  }, [selectedId, horizontal]);
-
-  useEffect(() => {
     if (!lightbox) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -110,21 +76,6 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [close, goPage, lightbox]);
-
-  function onListKey(e: KeyboardEvent<HTMLDivElement>) {
-    if (!report) return;
-    const forward = e.key === "ArrowDown" || e.key === "ArrowRight";
-    const back = e.key === "ArrowUp" || e.key === "ArrowLeft";
-    if (!forward && !back) return;
-    e.preventDefault();
-    const index = reports.findIndex((item) => item.id === report.id);
-    const next = forward
-      ? reports[(index + 1) % reports.length]
-      : reports[(index - 1 + reports.length) % reports.length];
-    if (!next) return;
-    selectReport(next.id);
-    document.getElementById(`pbi-tab-${next.id}`)?.focus();
-  }
 
   if (!reports.length || !report || !page) return null;
 
@@ -206,78 +157,26 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
 
   return (
     <section id="power-bi" className="scroll-mt-28" aria-label="Power BI reports">
-      <div className="relative">
-        <ChapterMark
-          className="[&>p:first-child]:max-w-[calc(100%-6.5rem)]"
-          index="03"
-          eyebrow="Analytics"
-          title="Power BI"
-        />
-        {repoUrl ? (
-          <Link
-            href={repoUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="focus-ring group absolute right-0 top-0 z-30 inline-flex min-h-11 items-center gap-1 text-sm font-medium text-slate-300 hover:text-neon-cyan"
-          >
-            View repo
-            <ExternalLink className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
-          </Link>
-        ) : null}
-      </div>
+      <TitleStageHeader
+        index="03"
+        eyebrow="Analytics"
+        title="Power BI"
+        action={
+          repoUrl
+            ? { href: repoUrl, label: "View repo", external: true }
+            : undefined
+        }
+      />
 
-      <div className="mt-8 grid min-w-0 grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-[minmax(0,12.5rem)_minmax(0,1fr)] sm:items-stretch sm:gap-6 md:grid-cols-[minmax(0,17.5rem)_minmax(0,1fr)]">
-        <div className="relative min-w-0 sm:min-h-[14rem]">
-        <div
-          id="pbi-report-list"
-          role="tablist"
-          aria-label="Reports"
-          aria-orientation={horizontal ? "horizontal" : "vertical"}
-          onKeyDown={onListKey}
-          className="flex w-full min-w-0 snap-x snap-mandatory flex-nowrap gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain p-1 [scrollbar-width:none] sm:absolute sm:inset-0 sm:snap-none sm:flex-col sm:overflow-x-hidden sm:overflow-y-auto sm:overscroll-y-contain [&::-webkit-scrollbar]:hidden"
-        >
-          {reports.map((item, index) => {
-            const selected = item.id === report.id;
-            return (
-              <button
-                key={item.id}
-                id={`pbi-tab-${item.id}`}
-                type="button"
-                role="tab"
-                aria-selected={selected}
-                aria-controls="pbi-report"
-                tabIndex={selected ? 0 : -1}
-                onClick={() => selectReport(item.id)}
-                className={
-                  selected
-                    ? "focus-ring inline-flex min-h-11 w-max shrink-0 snap-start items-center whitespace-nowrap rounded-xl border border-neon-cyan/40 bg-white/[0.06] px-3 py-1.5 text-left sm:flex sm:min-h-0 sm:w-full sm:whitespace-normal"
-                    : "focus-ring inline-flex min-h-11 w-max shrink-0 snap-start items-center whitespace-nowrap rounded-xl border border-transparent px-3 py-1.5 text-left hover:border-white/10 hover:bg-white/[0.03] sm:flex sm:min-h-0 sm:w-full sm:whitespace-normal"
-                }
-              >
-                <span className="flex items-baseline gap-2 sm:min-w-0">
-                  <span className="shrink-0 font-mono text-[0.65rem] tabular-nums text-slate-500">
-                    {pad(index + 1)}
-                  </span>
-                  <span className="whitespace-nowrap font-display text-sm font-semibold leading-snug tracking-tight text-white sm:min-w-0 sm:whitespace-normal sm:break-words">
-                    {item.title}
-                  </span>
-                </span>
-              </button>
-            );
-          })}
-        </div>
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-y-1 right-0 w-8 bg-gradient-to-l from-void to-transparent sm:hidden"
-        />
-        </div>
-
-        <div
-          id="pbi-report"
-          role="tabpanel"
-          aria-labelledby={`pbi-tab-${report.id}`}
-          className="min-w-0 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03]"
-        >
+      <TitleStage
+        items={reports.map((item) => ({ id: item.id, title: item.title }))}
+        selectedId={report.id}
+        onSelect={selectReport}
+        listId="pbi-report-list"
+        tabPrefix="pbi-tab"
+        panelId="pbi-report"
+        ariaLabel="Reports"
+      >
           <button
             type="button"
             onClick={() => open(report, pageIndex)}
@@ -339,8 +238,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
               ) : null}
             </div>
           </div>
-        </div>
-      </div>
+      </TitleStage>
       {overlay}
     </section>
   );

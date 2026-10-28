@@ -30,7 +30,7 @@ Then a browser walk (desktop + a ~390px viewport):
 3. Proof reel: scrolling down advances the cards to the right; Case study and architecture still work. Reduced motion: swipe the rail.
 4. Live peek reel: sneak-peek image + `desk.question` as the headline; scrolling down advances cards; the card opens `/portfolio/live/{slug}`. Reduced motion: swipe the rail.
 5. About experience reads as a timeline, not stacked glass cards
-6. `/portfolio` is the shared headline, then flagship teaser (`FlagshipTeaser` → `/stories`) → workshop reel → live peek reel → Power BI title list with the chosen report beside it (on a phone the titles are one row you slide, and the picture is full width under it) → GitHub list. No copied Home close. `/portfolio/live` uses the same reel. Home uses the same `max-w-5xl` column as Blog. Products are their own page at `/products` (same column; a hosted product is the frame, a link-only product is one card, a reel once there are two). The gravity “products” satellite links there.
+6. `/portfolio` is the shared headline, then flagship teaser (`FlagshipTeaser` → `/stories`) → projects, live desks, Power BI, and GitHub as the same title list (`TitleStage`): from 640px up the titles sit beside the chosen item, and on a phone the titles are one row you slide with the item full width under it. Power BI still enlarges. Live desks show the peek and the question in the panel; the home live reel stays a reel. No copied Home close. `/portfolio/live` uses the same title list. Home uses the same `max-w-5xl` column as Blog. Products are their own page at `/products` (same column; a hosted product is the frame, a link-only product is one card, a reel once there are two). The gravity “products” satellite links there.
 7. `prefers-reduced-motion`: story still readable; no required animation
 
 ## Minimum evidence (open before editing)
@@ -59,7 +59,7 @@ Rules:
 - **One idea per chapter.** If you need a card grid to “fit three things,” you do not have a scene yet.
 - **Type is the primary image.** Photography/video is optional; Orbit’s image is Syne at `.text-story` / `.text-display` plus the orbit ring.
 - **Numbers are characters.** Cadence, zone count, €/m² — `StoryStat` / `.orbit-accent` display figures, not a muted mono row.
-- **No scroll-jacking.** Do not hijack vertical scroll (no `preventDefault` on wheel, no vertical snap, no pin-jack libraries). Scroll-linked motion is allowed: progress line, ring rotate, in-view spotlight, count-up, `StoryReveal`, and sticky **reels** (`ScrollRail`) whose `translateX` is driven by native vertical scroll. The track moves on the first scroll once the reel reaches the top of the viewport. Every reel uses `ScrollRailCard` with no viewport-width override. Craft, GitHub, and the About timeline stay vertical. Signals is a reel. No fixed chapter bar. Copy must remain readable without the motion.
+- **No scroll-jacking.** Do not hijack vertical scroll (no `preventDefault` on wheel, no vertical snap, no pin-jack libraries). Scroll-linked motion is allowed: progress line, ring rotate, in-view spotlight, count-up, `StoryReveal`, and sticky **reels** (`ScrollRail`) whose `translateX` is driven by native vertical scroll. The track moves on the first scroll once the reel reaches the top of the viewport. Every reel uses `ScrollRailCard` with no viewport-width override. Craft and the About timeline stay vertical. Signals is a reel. Portfolio projects, live desks, Power BI, and GitHub are a title list, not a reel. No fixed chapter bar. Copy must remain readable without the motion.
 - **Reduced motion always works.** `motion-safe:` only. Reels fall back to a swipe rail. Copy must not depend on animation.
 - **Field cards** live as static HTML in `public/`. Home competency links stay plain `<a>`.
 
@@ -81,8 +81,9 @@ Rules:
 | `ScrollLine` | `src/components/story/ScrollLine.tsx` | Top read bar; Hub / Portfolio / About / live (via AppChrome) |
 | `ScrollSpot` | `src/components/story/ScrollSpot.tsx` | Brightens the row in the viewport midline |
 | `StoryReveal` | `src/components/story/StoryReveal.tsx` | Scale/rise when a beat enters view |
-| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Reels (Hub Proof, live, Signals, Portfolio workshop): vertical scroll moves cards immediately; swipe if reduced motion. Power BI is a title list, not a reel. On a phone that list is one row you slide. |
-| `LiveDeskReel` | `src/components/live/LiveDeskReel.tsx` | Hub / Portfolio / live index: peek + question on a `ScrollRail` |
+| `ScrollRail` | `src/components/story/ScrollRail.tsx` | Reels (Hub Proof, Hub live, Signals, Products once there are two): vertical scroll moves cards immediately; swipe if reduced motion. |
+| `TitleStage` | `src/components/portfolio/TitleStage.tsx` | Portfolio title list for projects, live desks, Power BI, and GitHub. From 640px up the titles sit beside the chosen item. On a phone the titles are one row you slide, and the item is full width under that row. |
+| `LiveDeskReel` | `src/components/live/LiveDeskReel.tsx` | Hub live chapter: peek + question on a `ScrollRail`. Portfolio and `/portfolio/live` use `TitleStage`. |
 | `LiveDeskTile` | `src/components/live/LiveDeskTile.tsx` | One desk card: sneak peek + `desk.question` as headline |
 
 AppChrome: public pages share `max-w-5xl`. A single live desk (`/portfolio/live/[slug]`) may use `max-w-6xl` for the picture. Do not full-bleed Home. Do not silently widen Studio.
@@ -100,7 +101,7 @@ A desk is already a story if it keeps **one question**. Visual storytelling mean
 When adding a new desk:
 
 - Put `question` on `LiveDesk` in `src/content/live-desks.ts` first
-- Surface it on Hub / Portfolio / `/portfolio/live` via `LiveQuestions` / `LiveDeskReel` (sneak peek + question as the card headline)
+- Surface it on Hub via `LiveQuestions` / `LiveDeskReel` (sneak peek + question as the card headline). On `/portfolio` and `/portfolio/live`, the desk name is a `TitleStage` title and the peek plus the question sit in the panel.
 - Build the desk as Open → Cast → Picture → Move → Close
 - Verify the live reel still shows the peek and the question
 

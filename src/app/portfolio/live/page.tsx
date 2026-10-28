@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { LiveDeskReel } from "@/components/live/LiveDeskReel";
+import { LiveDeskStage } from "@/components/portfolio/LiveDeskStage";
 import { liveDesks } from "@/content/live-desks";
 import { DeskCast } from "@/components/story/DeskCast";
 import { StoryHeadline } from "@/components/story/StoryHeadline";
@@ -37,7 +37,7 @@ export default function LiveDesksPage() {
         <StoryStat label="Keys in browser" value="None" />
       </DeskCast>
 
-      <LiveDeskReel desks={desks} />
+      <LiveDeskStage desks={desks} className="mt-0 sm:mt-0" />
     </div>
   );
 }
