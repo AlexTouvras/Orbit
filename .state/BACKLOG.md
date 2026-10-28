@@ -92,7 +92,7 @@
 
 - [x] **Handbook 05 + agent recipe** — Models that stay in the decision (`/1`–`/5`) and `/ml-pipeline-field-card/AGENT.md`. Method card hosted with pipeline SVG; handbook deepened from Google MLOps lifecycle arcs (2026-10-28). Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Handbook 05 call-order illustration** — one synthetic path through chapters 1–5; oldest-first previous way; no amounts (2026-10-28). Owner: `docs/product/HANDBOOKS.md`.
-- [ ] **Handbook 05 governance / model-card chapter** — O’Reilly-style risk layer after Ship and watch. Owner: `docs/product/HANDBOOKS.md`.
+- [x] **Handbook 05 governance / model-card chapter** — `/6` Name what the version may do; Mitchell model cards + Google governance placement; agent stage 10 (2026-10-28). Owner: `docs/product/HANDBOOKS.md`.
 - [ ] **Handbook 05 plates / photographs** — custom plates or photos per chapter once prose is locked. Owner: `docs/product/HANDBOOKS.md`.
 - [ ] **Handbooks 02 and 04** — delivery, then decisions under uncertainty. No routes until a page exists. Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Handbook 03, Choose the work, the comparison** — `/6` distinguishes a first look from a product the organization must keep, and compares reading the ledger, yesterday's list, and a live service. The matrix is the record. No amount. A return is not required before a look. `/2` through `/5` and `/7` through `/9` stay (2026-10-22). Owner: `docs/product/HANDBOOKS.md`.

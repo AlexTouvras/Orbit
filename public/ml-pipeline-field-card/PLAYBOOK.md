@@ -18,8 +18,9 @@ Agent recipe: `/ml-pipeline-field-card/AGENT.md`.
 - Not a Hub competency. Home stays Delivery / Data / AI.
 - Not an AutoML brochure. Tools are lanes, not the spine.
 - Ask, Grain, Truth, and Use stay on Analytics for one number. This card starts when the artifact is a model.
-- Handbook chapters: `/1` what good looks like, `/2` prepare, `/3` features, `/4` fit, `/5` ship and watch.
+- Handbook chapters: `/1` what good looks like, `/2` prepare, `/3` features, `/4` fit, `/5` ship and watch, `/6` name what the version may do.
 - One handbook illustration: call-order for open overdue invoices; oldest-first is the previous way. Do not invent amounts or client results on the card.
+- Governance: intended use + out of scope + owners + fallback before the score owns the decision.
 
 ## Monthly judgment
 

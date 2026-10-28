@@ -45,6 +45,10 @@ const FOWLER_PIPE = source(
   "https://martinfowler.com/bliki/DeploymentPipeline.html",
   "Fowler, deployment pipeline",
 );
+const MODEL_CARDS = source(
+  "https://dl.acm.org/doi/10.1145/3287560.3287596",
+  "Mitchell et al., Model Cards for Model Reporting, FAT* 2019",
+);
 
 export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
   slug: "models-that-stay-in-the-decision",
@@ -59,6 +63,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
     { title: "Features that hold", page: 3 },
     { title: "Fit without spending the holdout", page: 4 },
     { title: "Ship and watch", page: 5 },
+    { title: "Name what the version may do", page: 6 },
   ],
   pages: [
     {
@@ -92,7 +97,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           paragraphs: [
             "One illustration runs through this book. I have not measured it, and it states no amount. A collections supervisor orders today’s call list for open invoices that are already past due. The model scores each open invoice as of this morning. The score may change who is called first. It does not replace the credit policy, and it does not replace the controller’s offer of more time. That offer stays on Data that drives decisions.",
             "Choose the work on that book already set the calling prediction aside until yesterday’s list was in use. This book starts after that list exists. The row is one open overdue invoice at this morning’s decision time. The label, which arrives later, is whether a call was placed and the invoice was paid within fourteen days. The previous way to order the list is oldest past-due first. That rule stays callable when a new score is refused.",
-            "Prepare the table describes those rows. Features that hold keeps days past due and drops a payment that happened after the call. Fit without spending the holdout freezes later mornings as test. Ship and watch keeps oldest-first beside the candidate score until monitoring clears the cutover.",
+            "Prepare the table describes those rows. Features that hold keeps days past due and drops a payment that happened after the call. Fit without spending the holdout freezes later mornings as test. Ship and watch keeps oldest-first beside the candidate score until monitoring clears the cutover. Name what the version may do writes the limits before anyone treats the score as settled.",
           ],
           figure: {
             kind: "uses",
@@ -130,6 +135,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
             mlChapter(3, "Features that hold"),
             mlChapter(4, "Fit without spending the holdout"),
             mlChapter(5, "Ship and watch"),
+            mlChapter(6, "Name what the version may do"),
           ],
         },
         {
@@ -215,6 +221,11 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
                 label: "Ship and watch",
                 href: "/handbooks/models-that-stay-in-the-decision/5",
                 cells: ["A silent retrain, or a promote with no previous version."],
+              },
+              {
+                label: "Name what the version may do",
+                href: "/handbooks/models-that-stay-in-the-decision/6",
+                cells: ["A promote with no intended use, owner, or forbidden use written."],
               },
             ],
           },
@@ -655,6 +666,137 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
         GOOGLE_CT,
         FOWLER_PIPE,
         { href: SDLC_CARD, label: "SDLC field card" },
+        { href: ML_CARD, label: "ML pipeline field card" },
+        { href: ML_AGENT, label: "ML pipeline agent recipe" },
+      ],
+    },
+    {
+      number: 6,
+      topic: "Governance",
+      title: "Name what the version may do",
+      lede: "A passed test is not permission. Before a version owns any part of a decision, someone names the intended use, the owner, the forbidden uses, and the evidence the card already holds. Without that sheet, Ship stops at candidate.",
+      rule: "My operating rule: do not let a version order a decision until the model card names intended use, out-of-scope uses, the decision owner, the technical owner, the metrics and slices already measured, and how to fall back to the previous way.",
+      illustration: "The call-order path is an illustration, not a record.",
+      reviewed: "28 Oct 2026",
+      sections: [
+        {
+          id: "why-gov",
+          title: "Why Ship is not enough",
+          paragraphs: [
+            "Ship and watch proved the candidate can be served and watched. Governance asks a different question: what is this version allowed to do in the workflow? Google’s Practitioners guide places model management and model governance across the lifecycle: discovery, quality of production models, and accountability for how models are used. I use that placement. I do not copy a registry product.",
+            "Mitchell et al., Model Cards for Model Reporting (FAT* 2019), ask for short documents with intended use, factors that affect performance, metrics, evaluation data, and ethical considerations. I take the duty to write intended use and limits before release. I do not paste their full template, and I do not invent demographic results this illustration does not have.",
+          ],
+          sources: [GOOGLE_MLOPS, MODEL_CARDS, mlChapter(5, "Ship and watch")],
+        },
+        {
+          id: "card-sheet",
+          title: "The sheet before promote",
+          paragraphs: [
+            "The operating sheet is one page. A blank line stops promote. Status is a gate after the lines, the same shape as Name the decision: filled for this use is not proof that the score should change the world.",
+            "On the call-order illustration the intended use is ordering today’s overdue call list for the collections supervisor. Out of scope: offering more time to pay, refusing credit, changing the write-off, or auto-dialing without the supervisor. The decision owner is the supervisor. The technical owner is the person who can restore oldest-first. Metrics and slices are the ones already written in the test report. Ethical and operational limits name that the score ranks calls; it does not decide who is a bad customer.",
+          ],
+          figure: {
+            kind: "sheet",
+            caption:
+              "Model card gate for the call-order illustration. A blank line keeps oldest-first in charge.",
+            steps: [
+              {
+                term: "Intended use",
+                detail: "Order today’s open overdue call list for the supervisor.",
+              },
+              {
+                term: "Out of scope",
+                detail: "Offer of more time, credit refusal, write-off, or auto-dial without a person.",
+              },
+              {
+                term: "Decision owner",
+                detail: "Collections supervisor who owns the list order.",
+              },
+              {
+                term: "Technical owner",
+                detail: "Person who can restore oldest-first in one action.",
+              },
+              {
+                term: "Evidence",
+                detail: "Test metric, baseline, slices, label delay, feature spec hash — from Ship.",
+              },
+              {
+                term: "Fallback",
+                detail: "Oldest past-due first stays callable.",
+              },
+              {
+                term: "Status",
+                detail: "Approved for this use, or held. Held is not a silent serve.",
+                gate: true,
+              },
+            ],
+          },
+          sources: [MODEL_CARDS, dataChapter(2, "Name the decision")],
+        },
+        {
+          id: "risk",
+          title: "Risk matched to the decision",
+          paragraphs: [
+            "Not every score needs the same ceremony. A look that never reaches a person can stay a notebook. A list order that changes who is called needs the sheet. A score that would refuse credit, set a price, or trigger a legal notice needs a heavier review than this illustration shows. The author’s rule: match the depth of the card to the harm of a wrong score, and never use a thin card to excuse a consequential use.",
+            "Google’s governance discussion ties risk to how models are approved and monitored. On this card the minimum for a served ranking is the sheet above, a named review date, and Watch already running. A missing decision owner is investigate, not approve.",
+          ],
+          figure: {
+            kind: "uses",
+            caption: "Depth follows harm. The call-order path sits in the middle row.",
+            steps: [],
+            head: ["Use", "Minimum before promote"],
+            rows: [
+              {
+                label: "Private look",
+                cells: ["No promote. Notebook evidence only."],
+              },
+              {
+                label: "Call-order ranking",
+                cells: ["Filled sheet, Ship passed, oldest-first fallback, Watch on."],
+              },
+              {
+                label: "Consequential refuse or price",
+                cells: ["Heavier review than this book writes. Do not stretch this sheet."],
+              },
+            ],
+          },
+          sources: [GOOGLE_MLOPS],
+        },
+        {
+          id: "review",
+          title: "Review while it stays in use",
+          paragraphs: [
+            "The sheet is not a one-time stamp. When Watch returns a new version, the intended use and out-of-scope lines are read again. When the supervisor’s workflow changes — for example the list starts feeding auto-dial — the use has changed and the old approval does not carry.",
+            "On the call-order path a quarterly read is enough while the score only reorders calls and Watch is green. An incident, a missing-feature stop, or a label-metric miss brings an early read. Continue, change, or stop for the analytics product still lives on Run the product and judge the value. This page only decides whether this model version may keep its named use.",
+          ],
+          figure: {
+            kind: "flow",
+            caption: "Governance continues after promote. A new use reopens the sheet.",
+            steps: [
+              { term: "Promote", detail: "Sheet filled. Ship passed. Fallback named.", mark: "check" },
+              { term: "Watch", detail: "Daily signals. New version if live fails.", mark: "pulse" },
+              { term: "Review", detail: "On date, incident, or workflow change.", mark: "search" },
+              { term: "Hold or renew", detail: "Same use, or return to oldest-first.", mark: "flag" },
+            ],
+          },
+          sources: [mlChapter(5, "Ship and watch"), dataChapter(9, "Run the product and judge the value")],
+        },
+        {
+          id: "gov-draft",
+          title: "When a draft is cheap",
+          paragraphs: [
+            "A generated model card can fill every heading and still leave intended use vague, out-of-scope empty, and the decision owner a mailing list. Name what the version may do still applies. A complete-looking card is not approval until a person accepts the lines and the fallback.",
+            "This holds when a draft is cheap: Ship’s passed status is evidence on the sheet. It is not a substitute for the sheet.",
+          ],
+          sources: [MODEL_CARDS, { href: ML_AGENT, label: "ML pipeline agent recipe" }],
+        },
+      ],
+      sources: [
+        MODEL_CARDS,
+        GOOGLE_MLOPS,
+        mlChapter(5, "Ship and watch"),
+        dataChapter(2, "Name the decision"),
+        dataChapter(9, "Run the product and judge the value"),
         { href: ML_CARD, label: "ML pipeline field card" },
         { href: ML_AGENT, label: "ML pipeline agent recipe" },
       ],

@@ -122,6 +122,7 @@ describe("handbook volume reader", () => {
         "Features that hold",
         "Fit without spending the holdout",
         "Ship and watch",
+        "Name what the version may do",
       ],
     );
     assert.ok(

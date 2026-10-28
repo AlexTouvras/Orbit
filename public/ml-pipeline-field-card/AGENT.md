@@ -9,6 +9,7 @@ Machine instructions. Humans read the handbook:
 | Features | `/handbooks/models-that-stay-in-the-decision/3` |
 | Fit | `/handbooks/models-that-stay-in-the-decision/4` |
 | Ship and watch | `/handbooks/models-that-stay-in-the-decision/5` |
+| Governance / model card | `/handbooks/models-that-stay-in-the-decision/6` |
 
 Method card: `/ml-pipeline-field-card/`.
 
@@ -254,6 +255,25 @@ Monitor never updates weights in place. Next model = new version id.
 - Test residuals used to change the model on the same test ids.
 - Silent retrain from a monitor alert.
 
+## Stage 10 — Governance gate (before the version owns the decision)
+
+After stage 8 passes and before the candidate replaces the previous way in the workflow, fill the promote sheet (handbook `/6`):
+
+| Field | Required |
+|---|---|
+| `intended_use` | yes |
+| `out_of_scope` | yes |
+| `decision_owner` | yes |
+| `technical_owner` | yes |
+| `evidence` | link to test report, baseline, slices, spec hash |
+| `fallback` | previous version id / rule |
+| `status` | `approved` \| `held` |
+
+**Pass:** every field filled; `status = approved`; fallback callable.  
+**Fail → `held`.** Candidate may stay in parallel score only. It does not own the decision.
+
+On the call-order illustration: intended use = order today’s overdue list; out of scope includes offer of more time and auto-dial without a person; fallback = oldest-first.
+
 ## Done definition
 
-A version may be called done only when `model_card.status = "passed"`, stage 8 signature tests pass, and previous version remains callable.
+A version may be called done only when `model_card.status = "passed"`, stage 8 signature tests pass, previous version remains callable, and the governance sheet status is `approved`.
