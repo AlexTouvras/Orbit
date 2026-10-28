@@ -22,6 +22,7 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
   const hydrated = useHydrated();
   const [selectedId, setSelectedId] = useState(reports[0]?.id ?? "");
   const [pageIndex, setPageIndex] = useState(0);
+  const [horizontal, setHorizontal] = useState(false);
   const [lightbox, setLightbox] = useState<{
     report: PowerBiReport;
     pageIndex: number;
@@ -57,17 +58,30 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
   }, []);
 
   useEffect(() => {
+    const mq = window.matchMedia("(max-width: 639px)");
+    const apply = () => setHorizontal(mq.matches);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
+
+  useEffect(() => {
     const list = document.getElementById("pbi-report-list");
     const tab = document.getElementById(`pbi-tab-${selectedId}`);
     if (!list || !tab) return;
     const listBox = list.getBoundingClientRect();
     const tabBox = tab.getBoundingClientRect();
+    if (tabBox.left < listBox.left + 4) {
+      list.scrollLeft -= listBox.left + 4 - tabBox.left;
+    } else if (tabBox.right > listBox.right - 4) {
+      list.scrollLeft += tabBox.right - (listBox.right - 4);
+    }
     if (tabBox.top < listBox.top) {
       list.scrollTop -= listBox.top - tabBox.top;
     } else if (tabBox.bottom > listBox.bottom) {
       list.scrollTop += tabBox.bottom - listBox.bottom;
     }
-  }, [selectedId]);
+  }, [selectedId, horizontal]);
 
   useEffect(() => {
     if (!lightbox) return;
@@ -99,13 +113,14 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
 
   function onListKey(e: KeyboardEvent<HTMLDivElement>) {
     if (!report) return;
-    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    const forward = e.key === "ArrowDown" || e.key === "ArrowRight";
+    const back = e.key === "ArrowUp" || e.key === "ArrowLeft";
+    if (!forward && !back) return;
     e.preventDefault();
     const index = reports.findIndex((item) => item.id === report.id);
-    const next =
-      e.key === "ArrowDown"
-        ? reports[(index + 1) % reports.length]
-        : reports[(index - 1 + reports.length) % reports.length];
+    const next = forward
+      ? reports[(index + 1) % reports.length]
+      : reports[(index - 1 + reports.length) % reports.length];
     if (!next) return;
     selectReport(next.id);
     document.getElementById(`pbi-tab-${next.id}`)?.focus();
@@ -211,15 +226,15 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
         ) : null}
       </div>
 
-      <div className="mt-8 grid grid-cols-[8.75rem_minmax(0,1fr)] items-stretch gap-3 sm:mt-10 sm:grid-cols-[12.5rem_minmax(0,1fr)] sm:gap-6 md:grid-cols-[17.5rem_minmax(0,1fr)]">
-        <div className="relative min-h-[14rem] min-w-0">
+      <div className="mt-8 grid min-w-0 grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-[minmax(0,12.5rem)_minmax(0,1fr)] sm:items-stretch sm:gap-6 md:grid-cols-[minmax(0,17.5rem)_minmax(0,1fr)]">
+        <div className="relative min-w-0 sm:min-h-[14rem]">
         <div
           id="pbi-report-list"
           role="tablist"
           aria-label="Reports"
-          aria-orientation="vertical"
+          aria-orientation={horizontal ? "horizontal" : "vertical"}
           onKeyDown={onListKey}
-          className="absolute inset-0 flex flex-col gap-0.5 overflow-y-auto overscroll-y-contain p-1"
+          className="flex w-full min-w-0 snap-x snap-mandatory flex-nowrap gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain p-1 [scrollbar-width:none] sm:absolute sm:inset-0 sm:snap-none sm:flex-col sm:overflow-x-hidden sm:overflow-y-auto sm:overscroll-y-contain [&::-webkit-scrollbar]:hidden"
         >
           {reports.map((item, index) => {
             const selected = item.id === report.id;
@@ -235,15 +250,15 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
                 onClick={() => selectReport(item.id)}
                 className={
                   selected
-                    ? "focus-ring min-w-0 rounded-xl border border-neon-cyan/40 bg-white/[0.06] px-3 py-1.5 text-left"
-                    : "focus-ring min-w-0 rounded-xl border border-transparent px-3 py-1.5 text-left hover:border-white/10 hover:bg-white/[0.03]"
+                    ? "focus-ring inline-flex min-h-11 w-max shrink-0 snap-start items-center whitespace-nowrap rounded-xl border border-neon-cyan/40 bg-white/[0.06] px-3 py-1.5 text-left sm:flex sm:min-h-0 sm:w-full sm:whitespace-normal"
+                    : "focus-ring inline-flex min-h-11 w-max shrink-0 snap-start items-center whitespace-nowrap rounded-xl border border-transparent px-3 py-1.5 text-left hover:border-white/10 hover:bg-white/[0.03] sm:flex sm:min-h-0 sm:w-full sm:whitespace-normal"
                 }
               >
-                <span className="flex min-w-0 items-baseline gap-2">
+                <span className="flex items-baseline gap-2 sm:min-w-0">
                   <span className="shrink-0 font-mono text-[0.65rem] tabular-nums text-slate-500">
                     {pad(index + 1)}
                   </span>
-                  <span className="min-w-0 font-display text-sm font-semibold leading-snug tracking-tight text-white">
+                  <span className="whitespace-nowrap font-display text-sm font-semibold leading-snug tracking-tight text-white sm:min-w-0 sm:whitespace-normal sm:break-words">
                     {item.title}
                   </span>
                 </span>
@@ -251,6 +266,10 @@ export function PowerBiShowcase({ reports }: { reports: PowerBiReport[] }) {
             );
           })}
         </div>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-1 right-0 w-8 bg-gradient-to-l from-void to-transparent sm:hidden"
+        />
         </div>
 
         <div
