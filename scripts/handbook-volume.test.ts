@@ -89,8 +89,14 @@ describe("handbook volume reader", () => {
   });
 
   it("gives each published book a dark cover and one line per chapter", () => {
-    const plates = HANDBOOKS.map((handbook) => handbook.pages[0]?.plate);
-    assert.deepEqual(plates, ["horizon", "ledger"]);
+    for (const handbook of HANDBOOKS) {
+      const plate = handbook.pages[0]?.plate;
+      assert.ok(
+        plate === "horizon" || plate === "ledger" || plate === "pipeline",
+        handbook.slug,
+      );
+      assert.ok(handbook.contents.length >= 1, handbook.slug);
+    }
     const data = HANDBOOKS.find((item) => item.slug === "data-that-drives-decisions");
     assert.ok(data);
     assert.deepEqual(
@@ -105,5 +111,37 @@ describe("handbook volume reader", () => {
       ],
     );
     assert.equal(data.contents[2]?.sections?.length, 4);
+    const models = HANDBOOKS.find((item) => item.slug === "models-that-stay-in-the-decision");
+    assert.ok(models);
+    assert.equal(models.pages[0]?.plate, "pipeline");
+    assert.ok(
+      VOLUME_PICTURE_SIZE["/handbook-art/models-that-stay-in-the-decision/cover.jpg"],
+      "exclusive cover leaf",
+    );
+    assert.deepEqual(
+      models.contents.map((entry) => entry.title),
+      [
+        "What good looks like",
+        "Prepare the table",
+        "Features that hold",
+        "Fit without spending the holdout",
+        "Ship and watch",
+        "Name what the version may do",
+      ],
+    );
+    assert.ok(
+      models.pages.some((page) =>
+        page.sections.some((section) => section.figure?.kind === "pipeline"),
+      ),
+    );
+    for (const page of models.pages) {
+      const pictures = page.sections.filter((section) => section.picture);
+      assert.equal(pictures.length, 1, `page ${page.number} picture`);
+      for (const section of pictures) {
+        const picture = section.picture!;
+        assert.ok(picture.alt.trim(), picture.src);
+        assert.ok(VOLUME_PICTURE_SIZE[picture.src], picture.src);
+      }
+    }
   });
 });

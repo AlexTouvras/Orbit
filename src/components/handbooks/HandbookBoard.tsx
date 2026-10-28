@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useId, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import type {
@@ -200,13 +201,14 @@ export function HandbookFieldLandscape() {
 export function HandbookCover({ handbook }: { handbook: Handbook }) {
   const page = handbook.pages[0];
   if (!page) return null;
-  const ledger = page.plate === "ledger";
-  const ink = ledger ? "text-amber-100" : "text-cyan-200";
+  const plate = page.plate ?? "horizon";
+  const ink =
+    plate === "ledger" ? "text-amber-100" : plate === "pipeline" ? "text-emerald-200" : "text-cyan-200";
   const bookHref = pagePath(handbook.slug, page.number);
   return (
     <article
       data-handbook-book={handbook.slug}
-      data-handbook-cover={ledger ? "ledger" : "horizon"}
+      data-handbook-cover={plate}
       className="flex w-full min-w-0 items-stretch drop-shadow-[10px_18px_28px_rgba(0,0,0,0.45)]"
     >
       <div
@@ -218,7 +220,13 @@ export function HandbookCover({ handbook }: { handbook: Handbook }) {
       <div className="relative grid w-full min-w-0 flex-1">
         <div aria-hidden="true" className="col-start-1 row-start-1 w-full min-h-[40rem] pb-[150%]" />
         <div className="relative col-start-1 row-start-1 overflow-hidden rounded-r-sm border border-white/15 border-l-0 bg-[#040914]">
-        {ledger ? <LedgerBackdrop /> : <EarthBackdrop />}
+        {plate === "ledger" ? (
+          <LedgerBackdrop />
+        ) : plate === "pipeline" ? (
+          <PipelineBackdrop />
+        ) : (
+          <EarthBackdrop />
+        )}
         <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-[#02040a] via-[#02040a]/88 via-42% to-transparent" />
         <div
           aria-hidden="true"
@@ -319,6 +327,19 @@ function LedgerHero({ handbook, page }: { handbook: Handbook; page: HandbookPage
         </ul>
       </div>
     </section>
+  );
+}
+
+function PipelineBackdrop() {
+  return (
+    <Image
+      src="/handbook-art/models-that-stay-in-the-decision/cover.jpg"
+      alt=""
+      fill
+      sizes="(min-width: 1024px) 28rem, 100vw"
+      className="object-cover object-center"
+      priority={false}
+    />
   );
 }
 

@@ -100,6 +100,35 @@ export function CoverSheets() {
   );
 }
 
+/** Exclusive opening leaf for Models that stay in the decision. */
+export function CoverModels() {
+  const src = "/handbook-art/models-that-stay-in-the-decision/cover.jpg";
+  const size = VOLUME_PICTURE_SIZE[src] ?? { w: 864, h: 1152 };
+  return (
+    <figure>
+      <div className="overflow-hidden border border-[var(--book-rule)] bg-[#04110c]">
+        <Image
+          src={src}
+          alt=""
+          width={size.w}
+          height={size.h}
+          priority
+          sizes="(min-width: 1024px) 28rem, min(100vw, 28rem)"
+          className="mx-auto h-auto w-full max-w-[28rem]"
+        />
+      </div>
+      <figcaption className="book-caption mt-3 max-w-[40rem]">
+        Four arcs on one spine. Watch returns as a new version, not a silent retrain.
+      </figcaption>
+    </figure>
+  );
+}
+
+/** Alias kept for the volume reader import. */
+export function CoverPipeline() {
+  return <CoverModels />;
+}
+
 function FigureFrame({
   n,
   caption,
@@ -140,6 +169,7 @@ function FigureBody({ figure }: { figure: HandbookFigure }) {
   if (figure.kind === "compare") return <CompareFigure figure={figure} />;
   if (figure.kind === "pyramid") return <PyramidFigure figure={figure} />;
   if (figure.kind === "curve") return <CurveSketch figure={figure} />;
+  if (figure.kind === "pipeline") return <PipelineFigure figure={figure} />;
   if (figure.kind === "flow" || figure.steps.length > 0) return <FlowFigure figure={figure} />;
   if (figure.columns?.length) return <CompareFigure figure={figure} />;
   if (figure.rows?.length) return <UsesFigure figure={figure} />;
@@ -466,6 +496,118 @@ function CompareFigure({ figure }: { figure: HandbookFigure }) {
         </div>
       ))}
     </div>
+  );
+}
+
+/** Stages on a spine, with optional return arcs named in step.spine. */
+function PipelineFigure({ figure }: { figure: HandbookFigure }) {
+  const steps = figure.steps;
+  const count = Math.max(steps.length, 1);
+  const width = 920;
+  const height = 280;
+  const left = 36;
+  const right = width - 36;
+  const boxW = Math.min(118, (right - left) / count - 16);
+  const gap = (right - left - boxW * count) / Math.max(count - 1, 1);
+  const y = 88;
+  const centers = steps.map((_, index) => left + boxW / 2 + index * (boxW + gap));
+
+  return (
+    <>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        className="hidden h-auto w-full md:block"
+        role="img"
+        aria-label={figure.caption || "Pipeline"}
+      >
+        <rect width={width} height={height} fill="#f4f7f1" />
+        <line
+          x1={centers[0] ?? left}
+          x2={centers[count - 1] ?? right}
+          y1={y + 34}
+          y2={y + 34}
+          stroke="#1f2a1c"
+          strokeWidth="2.5"
+        />
+        {steps.map((step, index) => {
+          const cx = centers[index] ?? left;
+          const x = cx - boxW / 2;
+          return (
+            <g key={step.term}>
+              <rect
+                x={x}
+                y={y}
+                width={boxW}
+                height={68}
+                rx="5"
+                fill="#fff"
+                stroke="#1f2a1c"
+                strokeWidth="1.75"
+              />
+              <text
+                x={cx}
+                y={y + 28}
+                textAnchor="middle"
+                fill="#1f2a1c"
+                fontFamily="Georgia, serif"
+                fontSize="15"
+                fontWeight="600"
+              >
+                {step.term}
+              </text>
+              <text
+                x={cx}
+                y={y + 50}
+                textAnchor="middle"
+                fill="#3d4638"
+                fontFamily="ui-sans-serif, system-ui, sans-serif"
+                fontSize="11"
+              >
+                {step.detail.length > 18 ? `${step.detail.slice(0, 16)}…` : step.detail}
+              </text>
+              {step.spine ? (
+                <g>
+                  <path
+                    d={`M${cx} ${y + 68} C${cx} ${y + 120} ${centers[0]} ${y + 120} ${centers[0]} ${y + 68}`}
+                    fill="none"
+                    stroke="#0f6b5c"
+                    strokeWidth="2"
+                    strokeDasharray="5 5"
+                  />
+                  <text
+                    x={(cx + (centers[0] ?? cx)) / 2}
+                    y={y + 138}
+                    textAnchor="middle"
+                    fill="#0f6b5c"
+                    fontFamily="ui-monospace, monospace"
+                    fontSize="11"
+                  >
+                    {step.spine}
+                  </text>
+                </g>
+              ) : null}
+            </g>
+          );
+        })}
+        {figure.note ? (
+          <text
+            x={width / 2}
+            y={height - 24}
+            textAnchor="middle"
+            fill="#3d4638"
+            fontFamily="ui-sans-serif, system-ui, sans-serif"
+            fontSize="13"
+          >
+            {figure.note}
+          </text>
+        ) : null}
+      </svg>
+      <ol className="md:hidden">
+        {steps.map((step, index) => (
+          <FlowStep key={step.term} step={step} index={index} last={index === steps.length - 1} />
+        ))}
+      </ol>
+    </>
   );
 }
 

@@ -9,7 +9,13 @@ import { BookLink } from "@/components/handbooks/volume/BookLink";
 import { chapterLinks, citationMarks, pageReferences } from "@/lib/handbook-citations";
 import { ChapterKeys } from "@/components/handbooks/volume/ChapterKeys";
 import { ContentsList } from "@/components/handbooks/volume/ContentsList";
-import { CoverSheets, VolumeFigure, VolumeLines, VolumePicture } from "@/components/handbooks/volume/VolumeFigures";
+import {
+  CoverModels,
+  CoverSheets,
+  VolumeFigure,
+  VolumeLines,
+  VolumePicture,
+} from "@/components/handbooks/volume/VolumeFigures";
 
 export function VolumeReader({
   handbook,
@@ -87,23 +93,46 @@ export function VolumeReader({
 
           {cover ? (
             <header id="cover" className="book-spread scroll-mt-48 pt-8 lg:scroll-mt-20 lg:pt-2">
-              <p className="book-kicker">Orbit handbooks</p>
-              <div className="mt-4 grid items-end gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
-                <div className="max-w-[40rem]">
-                  <p className="max-w-[11ch] font-display text-[clamp(2.75rem,6vw,4.5rem)] leading-[0.96] font-semibold tracking-tight">
+              {page.plate === "pipeline" ? (
+                <>
+                  <p className="book-kicker">Orbit handbooks · Volume {handbook.index}</p>
+                  <p className="mt-5 max-w-[11ch] font-display text-[clamp(2.75rem,6vw,4.5rem)] leading-[0.96] font-semibold tracking-tight">
                     {handbook.title}
                   </p>
-                  <p className="mt-5 text-[1.2rem] leading-relaxed">Volume {handbook.index}</p>
-                  <p className="mt-3 max-w-[36rem] text-[1.15rem] leading-relaxed">{handbook.thesis}</p>
-                  <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-                    <a href="#chapter" className="book-start">
-                      Start reading
-                    </a>
-                    <BookLink href={handbook.card.href}>{handbook.card.label}</BookLink>
+                  <div className="mt-10">
+                    <CoverModels />
                   </div>
-                </div>
-                {page.plate === "ledger" ? <CoverSheets /> : null}
-              </div>
+                  <div className="mt-10 max-w-[40rem]">
+                    <p className="text-[1.2rem] leading-relaxed">{handbook.thesis}</p>
+                    <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                      <a href="#chapter" className="book-start">
+                        Start reading
+                      </a>
+                      <BookLink href={handbook.card.href}>{handbook.card.label}</BookLink>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <p className="book-kicker">Orbit handbooks</p>
+                  <div className="mt-4 grid items-end gap-8 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12">
+                    <div className="max-w-[40rem]">
+                      <p className="max-w-[11ch] font-display text-[clamp(2.75rem,6vw,4.5rem)] leading-[0.96] font-semibold tracking-tight">
+                        {handbook.title}
+                      </p>
+                      <p className="mt-5 text-[1.2rem] leading-relaxed">Volume {handbook.index}</p>
+                      <p className="mt-3 max-w-[36rem] text-[1.15rem] leading-relaxed">{handbook.thesis}</p>
+                      <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                        <a href="#chapter" className="book-start">
+                          Start reading
+                        </a>
+                        <BookLink href={handbook.card.href}>{handbook.card.label}</BookLink>
+                      </div>
+                    </div>
+                    {page.plate === "ledger" ? <CoverSheets /> : null}
+                  </div>
+                </>
+              )}
               <div className="book-measure mt-16 border-t border-[var(--book-rule)] pt-6">
                 <ContentsList handbook={handbook} pageNumber={page.number} />
               </div>

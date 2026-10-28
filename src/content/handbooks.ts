@@ -4,6 +4,10 @@
  * Public prose is final-book text. Draft status stays in the product doc.
  */
 
+import { MODELS_THAT_STAY_IN_THE_DECISION } from "@/content/handbooks-models";
+
+export { MODELS_THAT_STAY_IN_THE_DECISION };
+
 export type ClaimKind = "principle" | "practice" | "hypothesis";
 
 export interface HandbookLink {
@@ -61,7 +65,7 @@ export interface HandbookFigureRow {
 }
 
 export interface HandbookFigure {
-  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve" | "sheet" | "reading" | "uses" | "matrix" | "panels" | "tree";
+  kind: "flow" | "pyramid" | "loop" | "recovery" | "signals" | "scene" | "compare" | "curve" | "sheet" | "reading" | "uses" | "matrix" | "panels" | "tree" | "pipeline";
   caption: string;
   steps: HandbookFigureStep[];
   columns?: HandbookFigureColumn[];
@@ -114,7 +118,7 @@ export interface HandbookPage {
   /** Delivered work. Only when a portfolio piece is that work. */
   work?: HandbookLink;
   /** Opening plate. The first leaf of the book, not a route in front of the page. */
-  plate?: "horizon" | "ledger";
+  plate?: "horizon" | "ledger" | "pipeline";
   /** A design picture behind the words. It does not name a step, and the words stay readable. */
   ground?: HandbookPicture;
   sections: HandbookSection[];
@@ -3326,7 +3330,11 @@ export const DATA_THAT_DRIVES_DECISIONS: Handbook = {
   ],
 };
 
-export const HANDBOOKS: Handbook[] = [SOFTWARE_THAT_STAYS_IN_USE, DATA_THAT_DRIVES_DECISIONS];
+export const HANDBOOKS: Handbook[] = [
+  SOFTWARE_THAT_STAYS_IN_USE,
+  DATA_THAT_DRIVES_DECISIONS,
+  MODELS_THAT_STAY_IN_THE_DECISION,
+];
 
 export const LATER_HANDBOOKS: LaterHandbook[] = [
   {
