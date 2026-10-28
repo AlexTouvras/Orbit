@@ -108,7 +108,7 @@ export const FIELD_CARDS = [
       { heading: "Definition vs report", line: "One definition, owned upstream. Do not remix it." },
       { heading: "Ladder + gates", line: "A dashboard reads gold, not the raw landing zone." },
       { heading: "Anti-patterns", line: "If the gap has no named cause, do not publish it." },
-      { heading: "Always on", line: "Ask, Grain, Truth, and Use stay on." },
+      { heading: "Always on", line: "Question, grain, definition, and a check stay on." },
     ],
   },
   {
