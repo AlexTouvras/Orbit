@@ -196,6 +196,7 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 
 | Date | Decision | Rationale |
 |------|----------|-----------|
+| 2026-10-28 | A quality pass chases a named score, one finding at a time | GitHub Projects pointed at a scan-then-fix loop (desloppify: a score to chase). The loop is the rule in `.cursor/rules/quality-pass.mdc`. The score is a command this repo already runs. A second scanner is not added. A feature task does not open the pass. `docs/product/AGENT_RULES.md` still bounds scope. |
 | 2026-10-28 | Power BI is a title list, and Credit Risk includes Cut-off Strategy | The horizontal reel is gone. From 640px up, titles sit on the left with no subtitle and the chosen report stays beside them. On a phone the list is a short vertical scroller and the picture uses the full column. Sync ignored the hyphen in “Cut-off Strategy”, so `cutoff-strategy.png` never reached the site. |
 | 2026-10-22 | The library shows each book as its dark cover | On `/handbooks`, Software that stays in use keeps the earth limb and Data that drives decisions keeps the lit sheet and the dark sheet. The title opens page 1. The chapters on the cover open that chapter. The pages inside Make the number fit to use stay off the cover. |
 | 2026-10-22 | Both handbooks use the paper view | The dark leaf is not a screen. Software that stays in use and Data that drives decisions scroll on the same paper reader. Addresses stay. The pyramid is a wide base and a narrow top. The pain sketch states no amount. |

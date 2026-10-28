@@ -1,0 +1,38 @@
+---
+description: >-
+  Quality pass for this repo. Use when the user asks to scan the codebase,
+  find quality issues, prioritize fixes, clean up, burn down debt, or work
+  through issues until the code improves. Do not use during a feature, copy,
+  or product task.
+alwaysApply: false
+---
+
+# Quality pass
+
+A quality pass chases a named score, one finding at a time. It does not edit until the code feels better.
+
+## Score
+
+Name the score before any edit. On this repo the score is a command that already exists:
+
+- `npm run lint`
+- `npm run docs:check`
+- `npm run cv:check` when the CV record is in the pass
+- `npm run arch:validate-all` when a diagram is in the pass
+- `npm run ship:check` when the pass is meant to be shippable
+- or a written count: file, line, what fails, and how many remain
+
+A judgment that the code looks cleaner is not a score. Do not add a scanner, a score file, or another quality tool unless the owner asks. The commands above are the score.
+
+## Loop
+
+1. Scan and write the ranked list before editing. Each row names the location, the failure, the score it moves, and whether it is in scope.
+2. Fix the top in-scope row.
+3. Re-run the score. Keep the edit when that score moved and the rest of this task's verify still passes. Drop the edit when it did not.
+4. Take the next row.
+
+## Stop
+
+Stop when the named score is met, the next row is out of scope, or the next row does not move the score.
+
+Scope comes from `docs/product/AGENT_RULES.md`. A quality pass does not add a route, a concept, copy, or a visual. A feature task does not open this pass. A finding that sits next to the requested change stays on the list until a quality pass is the task.
