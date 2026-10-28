@@ -115,14 +115,14 @@ export function TitleStage({
         className,
       )}
     >
-      <div className="relative min-w-0 sm:min-h-[14rem]">
+      <div className="relative min-w-0">
         <div
           id={listId}
           role="tablist"
           aria-label={ariaLabel}
           aria-orientation={horizontal ? "horizontal" : "vertical"}
           onKeyDown={onListKey}
-          className="flex w-full min-w-0 snap-x snap-mandatory flex-nowrap gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain p-1 [scrollbar-width:none] sm:absolute sm:inset-0 sm:snap-none sm:flex-col sm:overflow-x-hidden sm:overflow-y-auto sm:overscroll-y-contain [&::-webkit-scrollbar]:hidden"
+          className="flex w-full min-w-0 snap-x snap-mandatory flex-nowrap gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain p-1 [scrollbar-width:none] sm:snap-none sm:flex-col sm:overflow-x-hidden sm:overflow-y-visible [&::-webkit-scrollbar]:hidden"
         >
           {items.map((item, index) => {
             const selected = item.id === activeId;
