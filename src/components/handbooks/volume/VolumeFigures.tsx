@@ -100,6 +100,91 @@ export function CoverSheets() {
   );
 }
 
+/** Cover for the ML pipeline book: four arcs, one return. */
+export function CoverPipeline() {
+  const arcs = [
+    { x: 70, label: "Prepare" },
+    { x: 220, label: "Fit" },
+    { x: 370, label: "Ship" },
+    { x: 520, label: "Watch" },
+  ];
+  return (
+    <figure>
+      <svg viewBox="0 0 720 480" className="h-auto w-full" aria-hidden="true">
+        <defs>
+          <linearGradient id="pipe-ground" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#e7efe6" />
+            <stop offset="100%" stopColor="#d5e2d4" />
+          </linearGradient>
+        </defs>
+        <rect width="720" height="480" fill="url(#pipe-ground)" />
+        <rect x="36" y="36" width="648" height="408" fill="#f4f7f1" stroke="#1f2a1c" strokeWidth="1.5" />
+        <path
+          d="M118 210 H602"
+          fill="none"
+          stroke="#1f2a1c"
+          strokeWidth="3"
+        />
+        {arcs.map((arc, index) => (
+          <g key={arc.label}>
+            <rect
+              x={arc.x}
+              y="168"
+              width="112"
+              height="84"
+              rx="6"
+              fill={index === 3 ? "#1f2a1c" : "#f4f7f1"}
+              stroke="#1f2a1c"
+              strokeWidth="2"
+            />
+            <text
+              x={arc.x + 56}
+              y="218"
+              textAnchor="middle"
+              fill={index === 3 ? "#e7efe6" : "#1f2a1c"}
+              fontFamily="Georgia, serif"
+              fontSize="22"
+              fontWeight="600"
+            >
+              {arc.label}
+            </text>
+            {index < arcs.length - 1 ? (
+              <path
+                d={`M${arc.x + 112} 210 H${arcs[index + 1].x}`}
+                fill="none"
+                stroke="#1f2a1c"
+                strokeWidth="3"
+              />
+            ) : null}
+          </g>
+        ))}
+        <path
+          d="M576 252 C576 330 144 330 144 252"
+          fill="none"
+          stroke="#0f6b5c"
+          strokeWidth="2.5"
+          strokeDasharray="7 6"
+        />
+        <polygon points="144,252 136,240 156,240" fill="#0f6b5c" />
+        <text
+          x="360"
+          y="360"
+          textAnchor="middle"
+          fill="#0f6b5c"
+          fontFamily="ui-monospace, monospace"
+          fontSize="14"
+          letterSpacing="0.12em"
+        >
+          LIVE RETURNS AS A NEW VERSION
+        </text>
+      </svg>
+      <figcaption className="book-caption mt-3 max-w-[40rem]">
+        Four arcs on one spine. Watch sends the work back as a new version, not a silent retrain.
+      </figcaption>
+    </figure>
+  );
+}
+
 function FigureFrame({
   n,
   caption,
@@ -140,6 +225,7 @@ function FigureBody({ figure }: { figure: HandbookFigure }) {
   if (figure.kind === "compare") return <CompareFigure figure={figure} />;
   if (figure.kind === "pyramid") return <PyramidFigure figure={figure} />;
   if (figure.kind === "curve") return <CurveSketch figure={figure} />;
+  if (figure.kind === "pipeline") return <PipelineFigure figure={figure} />;
   if (figure.kind === "flow" || figure.steps.length > 0) return <FlowFigure figure={figure} />;
   if (figure.columns?.length) return <CompareFigure figure={figure} />;
   if (figure.rows?.length) return <UsesFigure figure={figure} />;
@@ -466,6 +552,118 @@ function CompareFigure({ figure }: { figure: HandbookFigure }) {
         </div>
       ))}
     </div>
+  );
+}
+
+/** Stages on a spine, with optional return arcs named in step.spine. */
+function PipelineFigure({ figure }: { figure: HandbookFigure }) {
+  const steps = figure.steps;
+  const count = Math.max(steps.length, 1);
+  const width = 920;
+  const height = 280;
+  const left = 36;
+  const right = width - 36;
+  const boxW = Math.min(118, (right - left) / count - 16);
+  const gap = (right - left - boxW * count) / Math.max(count - 1, 1);
+  const y = 88;
+  const centers = steps.map((_, index) => left + boxW / 2 + index * (boxW + gap));
+
+  return (
+    <>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        className="hidden h-auto w-full md:block"
+        role="img"
+        aria-label={figure.caption || "Pipeline"}
+      >
+        <rect width={width} height={height} fill="#f4f7f1" />
+        <line
+          x1={centers[0] ?? left}
+          x2={centers[count - 1] ?? right}
+          y1={y + 34}
+          y2={y + 34}
+          stroke="#1f2a1c"
+          strokeWidth="2.5"
+        />
+        {steps.map((step, index) => {
+          const cx = centers[index] ?? left;
+          const x = cx - boxW / 2;
+          return (
+            <g key={step.term}>
+              <rect
+                x={x}
+                y={y}
+                width={boxW}
+                height={68}
+                rx="5"
+                fill="#fff"
+                stroke="#1f2a1c"
+                strokeWidth="1.75"
+              />
+              <text
+                x={cx}
+                y={y + 28}
+                textAnchor="middle"
+                fill="#1f2a1c"
+                fontFamily="Georgia, serif"
+                fontSize="15"
+                fontWeight="600"
+              >
+                {step.term}
+              </text>
+              <text
+                x={cx}
+                y={y + 50}
+                textAnchor="middle"
+                fill="#3d4638"
+                fontFamily="ui-sans-serif, system-ui, sans-serif"
+                fontSize="11"
+              >
+                {step.detail.length > 18 ? `${step.detail.slice(0, 16)}…` : step.detail}
+              </text>
+              {step.spine ? (
+                <g>
+                  <path
+                    d={`M${cx} ${y + 68} C${cx} ${y + 120} ${centers[0]} ${y + 120} ${centers[0]} ${y + 68}`}
+                    fill="none"
+                    stroke="#0f6b5c"
+                    strokeWidth="2"
+                    strokeDasharray="5 5"
+                  />
+                  <text
+                    x={(cx + (centers[0] ?? cx)) / 2}
+                    y={y + 138}
+                    textAnchor="middle"
+                    fill="#0f6b5c"
+                    fontFamily="ui-monospace, monospace"
+                    fontSize="11"
+                  >
+                    {step.spine}
+                  </text>
+                </g>
+              ) : null}
+            </g>
+          );
+        })}
+        {figure.note ? (
+          <text
+            x={width / 2}
+            y={height - 24}
+            textAnchor="middle"
+            fill="#3d4638"
+            fontFamily="ui-sans-serif, system-ui, sans-serif"
+            fontSize="13"
+          >
+            {figure.note}
+          </text>
+        ) : null}
+      </svg>
+      <ol className="md:hidden">
+        {steps.map((step, index) => (
+          <FlowStep key={step.term} step={step} index={index} last={index === steps.length - 1} />
+        ))}
+      </ol>
+    </>
   );
 }
 

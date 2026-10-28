@@ -1,6 +1,16 @@
 # ML pipeline — agent recipe
 
-Machine instructions. Humans read `/handbooks/models-that-stay-in-the-decision/1`. The method card is `/ml-pipeline-field-card/`.
+Machine instructions. Humans read the handbook:
+
+| Arc | Chapter |
+|---|---|
+| Operating model | `/handbooks/models-that-stay-in-the-decision/1` |
+| Prepare | `/handbooks/models-that-stay-in-the-decision/2` |
+| Features | `/handbooks/models-that-stay-in-the-decision/3` |
+| Fit | `/handbooks/models-that-stay-in-the-decision/4` |
+| Ship and watch | `/handbooks/models-that-stay-in-the-decision/5` |
+
+Method card: `/ml-pipeline-field-card/`.
 
 Do not skip stages. Do not fit, impute, scale, encode, or select features using validation or test rows. Do not retrain from a monitor alert without a new version id.
 

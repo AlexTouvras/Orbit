@@ -14,6 +14,10 @@
 - Software that stays in use: https://alextouvras.com/handbooks/software-that-stays-in-use/1
 - Data that drives decisions: https://alextouvras.com/handbooks/data-that-drives-decisions/1
 - Models that stay in the decision: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/1
+- Prepare the table: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/2
+- Features that hold: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/3
+- Fit without spending the holdout: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/4
+- Ship and watch: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/5
 - ML pipeline agent recipe: https://alextouvras.com/ml-pipeline-field-card/AGENT.md
 - Delivery Signal (live from the repo main branch): https://alextouvras.com/delivery-signal/
 - Identity card: https://alextouvras.com/card

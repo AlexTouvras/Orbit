@@ -10,12 +10,15 @@ Agent recipe: `/ml-pipeline-field-card/AGENT.md`.
 ## Spine (do not break)
 
 - H1: `A model earns its place one stage at a time`
+- Arcs: Prepare → Fit → Ship → Watch (hero diagram shows nine stages on that spine)
 - Stages: PROFILE → QUALITY → OUTLIERS → FEATURES → SPLIT → TRAIN → TEST → SERVE → MONITOR
-- Miss loops: A tune → B features → C data → stop. Test miss rejects. Live miss starts a new version.
+- Miss loops drawn under Fit: A tune → B features → C data → stop. Watch return is a new version.
+- Always-on strip: Freeze test ids · Fit on train only · One test read · Previous version stays
 - The test set is frozen at SPLIT and read once at TEST.
 - Not a Hub competency. Home stays Delivery / Data / AI.
 - Not an AutoML brochure. Tools are lanes, not the spine.
 - Ask, Grain, Truth, and Use stay on Analytics for one number. This card starts when the artifact is a model.
+- Handbook chapters: `/1` what good looks like, `/2` prepare, `/3` features, `/4` fit, `/5` ship and watch.
 
 ## Monthly judgment
 

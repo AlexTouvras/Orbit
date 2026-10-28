@@ -91,7 +91,10 @@ describe("handbook volume reader", () => {
   it("gives each published book a dark cover and one line per chapter", () => {
     for (const handbook of HANDBOOKS) {
       const plate = handbook.pages[0]?.plate;
-      assert.ok(plate === "horizon" || plate === "ledger", handbook.slug);
+      assert.ok(
+        plate === "horizon" || plate === "ledger" || plate === "pipeline",
+        handbook.slug,
+      );
       assert.ok(handbook.contents.length >= 1, handbook.slug);
     }
     const data = HANDBOOKS.find((item) => item.slug === "data-that-drives-decisions");
@@ -110,7 +113,21 @@ describe("handbook volume reader", () => {
     assert.equal(data.contents[2]?.sections?.length, 4);
     const models = HANDBOOKS.find((item) => item.slug === "models-that-stay-in-the-decision");
     assert.ok(models);
-    assert.equal(models.pages[0]?.number, 1);
-    assert.equal(models.contents[0]?.title, "The pipeline that can refuse");
+    assert.equal(models.pages[0]?.plate, "pipeline");
+    assert.deepEqual(
+      models.contents.map((entry) => entry.title),
+      [
+        "What good looks like",
+        "Prepare the table",
+        "Features that hold",
+        "Fit without spending the holdout",
+        "Ship and watch",
+      ],
+    );
+    assert.ok(
+      models.pages.some((page) =>
+        page.sections.some((section) => section.figure?.kind === "pipeline"),
+      ),
+    );
   });
 });

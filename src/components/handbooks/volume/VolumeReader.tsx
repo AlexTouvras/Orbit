@@ -9,7 +9,13 @@ import { BookLink } from "@/components/handbooks/volume/BookLink";
 import { chapterLinks, citationMarks, pageReferences } from "@/lib/handbook-citations";
 import { ChapterKeys } from "@/components/handbooks/volume/ChapterKeys";
 import { ContentsList } from "@/components/handbooks/volume/ContentsList";
-import { CoverSheets, VolumeFigure, VolumeLines, VolumePicture } from "@/components/handbooks/volume/VolumeFigures";
+import {
+  CoverPipeline,
+  CoverSheets,
+  VolumeFigure,
+  VolumeLines,
+  VolumePicture,
+} from "@/components/handbooks/volume/VolumeFigures";
 
 export function VolumeReader({
   handbook,
@@ -103,6 +109,7 @@ export function VolumeReader({
                   </div>
                 </div>
                 {page.plate === "ledger" ? <CoverSheets /> : null}
+                {page.plate === "pipeline" ? <CoverPipeline /> : null}
               </div>
               <div className="book-measure mt-16 border-t border-[var(--book-rule)] pt-6">
                 <ContentsList handbook={handbook} pageNumber={page.number} />
