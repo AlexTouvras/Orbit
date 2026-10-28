@@ -1,0 +1,52 @@
+---
+title: "When agents write the code, the way we work becomes the codebase"
+summary: "Code is the cheap part now. What a team should build is the system around it: intent written before the build, a measure of behavior after it, and a versioned way of working that gets fixed like software."
+date: "2026-10-26"
+category: "Delivery"
+featured: false
+tags: ["Delivery","Agents","AI","Learning"]
+---
+
+## The question
+
+For most of my career the expensive part of software was writing it. Plans, estimates, and release trains existed to protect scarce engineering hours. That belief is breaking. An assistant can turn a paragraph into a working feature before lunch, and a team that still organizes itself around the cost of typing is protecting the wrong thing. So what should we build once the code is the cheap part?
+
+[From Vibe Coding to Developing the Company](https://www.scrum.org/resources/blog/vibe-coding-developing-company) is the clearest map of that shift I have read this year. Yuval Yeret walks from vibe coding, which he compares to a slot machine bolted onto a studio tour, through spec-driven development, to a software factory whose workflow is written down in files the agents read. Then he pushes past the factory. Working software is still only output. The loop that matters runs from intent before the code to changed behavior after the release.
+
+I agree, and I would put it more bluntly. In the AI era, the way a team works becomes its most important codebase.
+
+## The way we work is code now
+
+I build Orbit, the site where these essays live, with coding agents doing most of the typing. What surprised me was where my effort moved. Less of it goes into components. More goes into the files that tell an agent how to behave here: a rule that says which document decides the product, a state folder that carries the current task and the architecture decisions from one session to the next so nothing depends on chat memory, a voice guide for essays, and a check that fails the build when the documentation drifts from the code. Those files are versioned, reviewed, and changed like any other source.
+
+That is Yeret's factory at the scale of one person, and the principle I take from it is plain. When an agent gets something wrong twice, the fix belongs in the system the agent reads, ideally with a check that would have caught it. A better prompt next time fixes one afternoon. A rule that does not change behavior is a bug, and it gets treated like one.
+
+I have watched this work. When the weekly essay kept drifting toward a Power BI feature while stronger topics sat in the queue, the correction went into the ranking code and the guide, not into a note to myself. The next week started from the corrected rule.
+
+## Intent belongs upstream
+
+The part of my day job that agents do not touch is deciding what a change is for. I lead delivery for application operations on Azure. A change there is not ready because the code exists. It is ready when an owner is named, the dependencies are mapped, and someone has written how we roll back. Agents shrink the build. They do nothing for a change nobody can explain.
+
+So the principle on Orbit is that documents decide the product and agents choose the implementation inside that box. I would apply the same split to any team adopting agents. A human writes the outcome and the behavior it should change before the first agent starts. The agent is free inside that frame, and only inside it.
+
+Yeret makes a sharper organizational point that matches what I see. Most teams that call themselves product teams still pass features across handoffs and wait on each other. Agents do not remove that waiting. They expose it, because the build is no longer what everyone blames. The structural answer he gives is the one I believe in: smaller bets that involve fewer teams, and shared platforms offered as self-service with the guardrails already built in.
+
+## Outcomes belong downstream
+
+Credit risk taught me the habit software is missing. Nobody ships a scorecard without a monitoring plan. You predict how a population will behave, then you watch whether it does, and you agree in advance what drift forces a rebuild. The model is judged by what happened to the loans, not by the day it went live.
+
+Software is usually judged by the deploy. When shipping was slow, that shortcut was survivable. When an agent can ship ten changes a week, it becomes the main source of waste. My vision for AI-era delivery is that every change carries its own monitoring pack: the behavior it should move, where we will see it, and what we do if we do not. An agent can read the telemetry and propose the next attempt, as Yeret describes. A person still decides whether the intent was wrong or whether a bigger bet deserves the money, the same way a credit committee and not the analyst decides whether a model still serves the strategy.
+
+## The factory needs users
+
+Yeret warns that the harness is usually built by engineers for engineers, and everyone else bounces off it. I see the same thing in operations. A runbook only works if the person on call at three in the morning can follow it. A set of agent rules that only its author understands is a private hobby.
+
+That is why I think the larger shift is outside software. I already run the household meal plan and my training week through the same pattern: the defaults live in versioned files, a message in Slack starts the week, and I change the file when the plan keeps missing. The skill most knowledge workers will need is writing down how their work should run, then improving that record when reality disagrees. Clever prompting is the small part.
+
+## Where it breaks
+
+The factory can become the work. Tuning rules is pleasant, and it can quietly replace shipping anything. Versioned process can also harden into the bureaucracy agile teams spent twenty years escaping. My guard is that every rule has to point at a failure it prevents. A rule nobody can trace to a miss gets deleted.
+
+## Takeaway
+
+When code is cheap, spend your effort on what surrounds it. Write the intent before the build, define the measure after it, and treat the system of work in between as a product you version, test, and fix.
