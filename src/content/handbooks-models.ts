@@ -83,17 +83,17 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           title: "The destination",
           paragraphs: [
             "The end state is not a notebook that once scored well. It is a decision brief that names who acts and what the score may change, a pipeline that leaves files the next stage can refuse, a named bundle beside a previous version that still answers, and a monitor that starts a new run when live evidence fails.",
-            "A new training run does not automatically replace the live model. Promotion is a gate. Rollback restores the previous callable version. Continuous training, when it happens, is a new version id — never a silent overwrite of live weights.",
+            "A new training run does not automatically replace the live model. passed is operational evidence; approved enables promote to live; held keeps parallel-only. Rollback restores the previous live way. Continuous training, when it happens, is a new version id — never a silent overwrite of live weights.",
           ],
           figure: {
             kind: "pipeline",
             caption:
-              "Release and rollback. Candidate clears a gate beside a live version; watch may promote a new id or restore the previous one.",
-            note: "Live stays until promotion. Watch never rewrites weights in place.",
+              "Release and rollback. A passed candidate clears approved beside live; Watch may promote a new id or restore the previous live way.",
+            note: "passed ≠ live. approved enables promote; held keeps parallel-only.",
             steps: [
-              { term: "Candidate", detail: "bundle/<version>/" },
-              { term: "Gate", detail: "Test + governance" },
-              { term: "Live", detail: "Current list owner" },
+              { term: "Candidate", detail: "passed + bundle" },
+              { term: "Gate", detail: "approved or held" },
+              { term: "Live", detail: "Owns the decision" },
               {
                 term: "Watch",
                 detail: "monitor/<date>.json",
@@ -170,8 +170,8 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "boundary",
           title: "Evaluation boundary",
           paragraphs: [
-            "Four controls keep the evaluation honest. They are related; none substitutes for another. A median-delay embargo alone does not prove every label has matured.",
-            "Label maturity: every row in train, validation, and test must have a fully observed fourteen-day outcome. Immature invoices stay out of labeled evaluation until the window closes. Temporal separation: train, validation, and test periods are separated by an embargo of label_delay_days (median delay on matured rows from Prepare) so late labels from an earlier morning do not leak into a later set. Entity leakage: the same invoice — and related rows that share the entity key at decision time — must not appear in more than one partition. Baseline: the candidate must beat oldest-past-due-first on the metric named in task.json, on the same frozen rows.",
+            "Four controls keep the evaluation honest. They are related; none substitutes for another. Median label delay sizes the embargo; it is never proof that labels are mature.",
+            "Label maturity: a row may enter train, validation, or test only when the fourteen-day outcome window has closed and the outcome is available. Window still open, or label missing, means immature — keep it out. Temporal embargo: separate train|validation and validation|test by label_delay_days (median delay on matured rows from Prepare) so late labels from an earlier morning do not leak into a later set; apply the same rule at both boundaries. Entity leakage: the same invoice — and related rows that share the entity key at decision time — must not appear in more than one partition. Baseline: the candidate must beat oldest-past-due-first on the metric named in task.json, on the same frozen rows.",
           ],
           figure: {
             kind: "panels",
@@ -180,11 +180,11 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
             steps: [
               {
                 term: "Maturity",
-                detail: "Fourteen-day window closed before the row enters any labeled set.",
+                detail: "Window closed and outcome available — not median delay.",
               },
               {
                 term: "Embargo",
-                detail: "label_delay_days gap between train, validation, and test periods.",
+                detail: "label_delay_days at train|val and val|test.",
               },
               {
                 term: "Entity",
@@ -250,15 +250,15 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
               },
               {
                 term: "6 Train",
-                detail: "→ preprocess.joblib, model.joblib, val_metrics.json. Select on inner slice; one validation read (val_reads = 1); test never loaded.",
+                detail: "→ preprocess.joblib, model.joblib, val_metrics.json. Inner selection; one validation read (val_reads = 1). Fail → blocked.",
               },
               {
                 term: "7 Test",
-                detail: "→ test_report.json, model_card.json. One official read. Fail → rejected. No tune on test residuals.",
+                detail: "→ test_report.json, model_card.json. One official read. Clear → passed; fail → rejected. No tune on test.",
               },
               {
                 term: "8 Serve",
-                detail: "→ bundle/<version>/. Signature match; missing feature errors; previous version recorded. New id only.",
+                detail: "→ bundle/<version>/. Candidate package; signature + previous live id. Not live until promoted.",
               },
               {
                 term: "9 Monitor",
@@ -272,7 +272,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "stage-example",
           title: "One stage, worked",
           paragraphs: [
-            "Quality (stage 2) shows the contract shape. Inputs are the profiled table and task.json domains. Outputs are quality.json and quarantine.parquet. Transforms are not fitted here; imputation rules are only planned for train later. Immature invoices are excluded from the labeled set here and label_delay_days is written on matured rows — Prepare’s maturity job, not Fit’s embargo or freeze.",
+            "Quality (stage 2) shows the contract shape. Inputs are the profiled table and task.json domains. Outputs are quality.json and quarantine.parquet. Transforms are not fitted here; imputation rules are only planned for train later. Immature invoices (window open or outcome unavailable) are excluded here; label_delay_days is written on matured rows only — Prepare’s maturity job, not Fit’s embargo or freeze.",
           ],
           figure: {
             kind: "sheet",
@@ -316,27 +316,27 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
                 term: "Model validity",
                 detail: "Is the evaluation trustworthy?",
                 points: [
-                  "Freeze, maturity, embargo, and entity split held",
+                  "Maturity = window + outcome; embargo separate",
                   "Transforms fitted on train only; val_reads = 1",
-                  "Test read once; miss loops stay on inner slice",
+                  "Test read once; A/B stay on inner slice",
                 ],
               },
               {
                 term: "Operational validity",
-                detail: "Can the approved version run and be reversed?",
+                detail: "Can a passed candidate run and be reversed?",
                 points: [
                   "Signature test; missing features error",
-                  "Previous version callable",
+                  "Previous live way callable",
                   "Monitor writes daily; no silent retrain",
                 ],
               },
               {
                 term: "Decision value",
-                detail: "Does using it improve the workflow enough?",
+                detail: "Should it be promoted to live?",
                 points: [
                   "Not ranking score alone",
                   "Capacity, outcomes, unwanted contacts, order risk",
-                  "Governance before the score owns the list",
+                  "approved on the sheet before live ownership",
                 ],
               },
             ],
@@ -353,7 +353,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           title: "When a draft is cheap",
           paragraphs: [
             "A generated training script can look complete and still have spent the holdout, fitted the imputer on the full table, treated “called and paid” as one label, or used a median embargo while immature rows still sat in test. The destination, the arcs, the evaluation boundary, and the stage contracts still apply.",
-            "This holds when a draft is cheap: a green fit is not done until test_report and model_card say passed, the bundle keeps a previous version callable, and the governance sheet is approved for the named use.",
+            "This holds when a draft is cheap: a green fit is not done until test_report and model_card say passed, the bundle keeps a previous live way callable, the governance sheet is approved, and cutover has promoted the candidate to live for the named use.",
           ],
         },
       ],
@@ -408,17 +408,17 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           title: "Quality before impute",
           paragraphs: [
             "Quality does not impute yet. Completeness marks high-null columns for drop or a later missing indicator (null rate above forty percent in this recipe). Validity quarantines illegal labels and nulls out-of-domain feature cells. Uniqueness keeps the latest row on entity key at decision time. The clock fails when a feature’s event time is at or after the decision time.",
-            "Prepare’s maturity job: exclude immature invoices (fourteen-day window still open) from the labeled set Fit will freeze, count them in quality.json, and write label_delay_days as the median cut-to-label delay on matured rows only. Fit applies that delay as the embargo and owns the train / validation / test split. A post-cut payment offered as a feature fails the clock. Planned train-only imputation is recorded here and fitted only later on train.",
+            "Prepare’s maturity job: exclude immature invoices — fourteen-day window still open, or outcome not yet available — from the labeled set Fit will freeze; count them in quality.json. On matured rows only, write label_delay_days as the median cut-to-label delay. That median sizes Fit’s embargo; it does not prove maturity. Fit owns the train / validation / test freeze. A post-cut payment offered as a feature fails the clock. Planned train-only imputation is recorded here and fitted only later on train.",
             "Recompute the profile on kept matured rows. Write quality.json and quarantine.parquet. Pass when label validity is 100% on those rows, the key is unique, no remaining feature uses post-decision values, and quarantine rate ≤ quarantine_rate_max (task.json; this recipe’s default 0.05 is an operating threshold with an owner, not a universal law). Above that → stop.",
           ],
           figure: {
             kind: "pipeline",
             caption:
               "Prepare data flow into Fit. Maturity and label_delay_days leave here; the freeze lives on Fit without spending the holdout.",
-            note: "Immature rows are counted, not fitted. Embargo and partition sizes are Fit’s job.",
+            note: "Immature = window open or outcome missing. label_delay_days sizes embargo only.",
             steps: [
               { term: "Checks", detail: "Complete · valid · unique · clock" },
-              { term: "Maturity", detail: "Window closed → keep" },
+              { term: "Maturity", detail: "Window + outcome known" },
               { term: "Delay", detail: "label_delay_days" },
               {
                 term: "quality.json",
@@ -578,16 +578,16 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "freeze",
           title: "Freeze the split",
           paragraphs: [
-            "Start from Prepare’s matured rows and label_delay_days in quality.json. Sort by decision time. Last tenth → test; previous tenth → validation; rest → train. Place an embargo of label_delay_days between partitions; gap rows enter neither set. Keep entity keys disjoint across partitions. Persist ids and hash test ids into split_ids.parquet before any preprocessor is fit.",
+            "Start from Prepare’s matured rows (window closed and outcome available) and label_delay_days in quality.json. Sort by decision time. Last tenth → test; previous tenth → validation; rest → train. Apply the same embargo of label_delay_days at train|validation and at validation|test; gap rows enter neither adjacent set. Keep entity keys disjoint across partitions. Persist ids and hash test ids into split_ids.parquet before any preprocessor is fit.",
             "Time order is the default when the decision has a clock. Without decision time, use a stratified random split with a fixed seed — the weaker case — and still require matured rows and disjoint entities. scikit-learn’s held-out practice applies; selecting again on the same frozen ids spends the holdout.",
           ],
           figure: {
             kind: "pipeline",
             caption:
-              "Evaluation split Fit owns. Prepare already marked maturity and wrote label_delay_days.",
-            note: "Embargo ≠ maturity. Entity keys stay disjoint. Test stays sealed until Ship.",
+              "Evaluation split Fit owns. Maturity came from Prepare; embargo is separate.",
+            note: "Embargo ≠ maturity. Same embargo rule at both boundaries. Test sealed until Ship.",
             steps: [
-              { term: "Matured", detail: "From quality.json" },
+              { term: "Matured", detail: "Window + outcome" },
               { term: "Train", detail: "Fit transforms here" },
               { term: "Embargo", detail: "label_delay_days" },
               { term: "Validation", detail: "One scored read" },
@@ -610,7 +610,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           paragraphs: [
             "Fit every preprocessor on train only — imputation, missing indicators, rare-level map, cap bounds, scaler, target-encoding map — then apply without refitting. Save preprocess.joblib with the model.",
             "Inner slice = last tenth of train. Score the baseline there. On this illustration the baseline is oldest past-due first. Metric is named in task.json (average precision when positives are rare, else ROC-AUC; Brier when the served value is a probability). Ranking quality under the historical contact policy is the gate — not a causal estimate of placing a call.",
-            "Train a regularized linear model and a tree model. Prune and tune on the inner slice only. Validation stays unread while candidates are selected. After Loops A and B finish on the inner slice, score validation once for the single remaining candidate. Write model.joblib and val_metrics.json with val_reads = 1.",
+            "Train a regularized linear model and a tree model. Prune and tune on the inner slice only. Validation stays unread while candidates are selected. After Loops A and B finish on the inner slice, score validation once for the single remaining candidate; choose any hard threshold on that same read and freeze it for Ship. Write model.joblib and val_metrics.json with val_reads = 1.",
           ],
           figure: {
             kind: "loop",
@@ -631,8 +631,8 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           title: "When train misses the bar",
           paragraphs: [
             "The bar is min_metric and beating the baseline. Raw accuracy against a skewed paid base rate is not the bar. Loop budgets and the 0.005 improvement line are this recipe’s operating rule — finite returns, not a published standard.",
-            "Loop A and Loop B stay on the inner slice. Loop A: retune, max twenty trials; stop early after five trials that fail to improve by 0.005. Loop B: one feature_spec change per pass from inner errors, max three; then Loop A with ten trials — still no validation score between revisions. Only after A and B finish does the one official validation read run for the single inner-cleared candidate. A fail on that read blocks this split; it does not reopen A/B on the same validation ids.",
-            "Loop C: named data defect only (not a weak score alone); new split; discard old test ids unread; val_reads resets. One Fit run on the new freeze. Still short → model_card status blocked. Do not read test. Do not serve.",
+            "Loop A and Loop B stay on the inner slice. Loop A: retune, max twenty trials; stop early after five trials that fail to improve by 0.005. Loop B: one feature_spec change per pass from inner errors, max three; then Loop A with ten trials — still no validation score between revisions. Only after A and B finish does the one official validation read run for the single inner-cleared candidate. A fail on that read sets model_card status blocked; it does not reopen A/B on the same validation ids — that would be an informal repeated selection loop.",
+            "Loop C: named data defect only (not a weak score alone); new split; discard old test ids unread; val_reads resets. One Fit run on the new freeze. Still short → blocked. Do not read test. Do not serve.",
           ],
           figure: {
             kind: "tree",
@@ -696,20 +696,20 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "test",
           title: "Test once",
           paragraphs: [
-            "After validation clears, load the frozen test ids. Transform with the train preprocessor — no refit. Score once. Write test_report.json: decision metric, baseline on the same rows, ten-bin calibration when scores are probabilities, time buckets and any segment_columns. Choose a hard threshold on validation only; apply it to test. Do not search on test.",
-            "Baseline on this path is oldest past-due first. The gate is clearing min_metric and beating that baseline on ranking quality. That is not a measured lift, and it is not evidence that calling caused payment. A miss writes model_card status rejected and stops. Re-fitting on the same test residuals is not a loop — it spends the holdout.",
+            "After validation clears, load the frozen test ids. Transform with the train preprocessor — no refit. Score once. Write test_report.json: decision metric, baseline on the same rows, ten-bin calibration when scores are probabilities, time buckets and any segment_columns. Apply the threshold frozen on the single validation read; do not search thresholds or features on test.",
+            "Baseline on this path is oldest past-due first. The gate is clearing min_metric and beating that baseline on ranking quality. That is not a measured lift, and it is not evidence that calling caused payment. Clear → model_card status passed (operational evidence, not live ownership). Miss → rejected and stop. Re-fitting on the same test residuals is not a loop — it spends the holdout.",
           ],
           figure: {
             kind: "sheet",
             caption:
               "Official test contract. Writes test_report.json and model_card.json. No invented lift.",
             steps: [
-              { term: "Inputs", detail: "Frozen test ids; train preprocessor; val-cleared model." },
+              { term: "Inputs", detail: "Frozen test ids; train preprocessor; val-cleared candidate." },
               { term: "Metric", detail: "Named ranking metric vs oldest-first on the same invoices." },
               { term: "Slices", detail: "Time buckets and segment_columns if named in task.json." },
               {
                 term: "Status",
-                detail: "passed → continue to Serve; rejected → oldest-first stays in charge.",
+                detail: "passed → Serve as candidate; rejected → oldest-first stays live.",
                 gate: true,
               },
             ],
@@ -720,22 +720,22 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "serve",
           title: "Serve with a previous version",
           paragraphs: [
-            "Pack preprocess.joblib, model.joblib, feature_spec.json, and the version id into bundle/<version>/. Signature test: one known training row matches name-for-name and type-for-type. Missing required feature → hard error, no silent fill. Previous version on this path is oldest-past-due-first — one action restores it alone.",
-            "Fowler’s deployment pipeline builds confidence through staged checks before production. Google’s Practitioners guide mentions progressive delivery; I take the staged cutover, not a cloud product. A passed test and a packed bundle are operational validity. The version still does not own the decision until the governance sheet on Name what the version may do is approved.",
+            "Pack preprocess.joblib, model.joblib, feature_spec.json, and the version id into bundle/<version>/. Signature test: one known training row matches name-for-name and type-for-type. Missing required feature → hard error, no silent fill. Previous live way on this path is oldest-past-due-first — one action restores it alone.",
+            "Fowler’s deployment pipeline builds confidence through staged checks before production. Google’s Practitioners guide mentions progressive delivery; I take the staged cutover, not a cloud product. model_card passed plus a packed bundle make a candidate with operational validity. It is not live until the governance sheet is approved and cutover promotes it.",
           ],
           figure: {
             kind: "pipeline",
             caption:
-              "Release and rollback. Candidate may rank in parallel; live list owner changes only after governance and Watch allow it.",
-            note: "Rollback restores oldest-first. New training is a new version id.",
+              "Candidate → approved → live. Held keeps parallel-only; rollback restores the previous live way.",
+            note: "passed ≠ promoted. New training is a new version id.",
             steps: [
-              { term: "Candidate", detail: "bundle/<version>/" },
+              { term: "Candidate", detail: "passed + bundle" },
               { term: "Parallel", detail: "Score beside live" },
-              { term: "Gate", detail: "Governance + Watch" },
+              { term: "Gate", detail: "approved or held" },
               {
                 term: "Live",
                 detail: "Owns list order",
-                spine: "rollback to oldest-first",
+                spine: "rollback to previous live",
               },
             ],
           },
@@ -832,12 +832,12 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "card-sheet",
           title: "The sheet before promote",
           paragraphs: [
-            "One page. A blank line stops promote. Status is a gate after the lines — filled for this use is not proof the score should change the world. The figure is the sheet; fill every line for the call-order path before the candidate owns the list.",
+            "One page. A blank line stops promote. Status is approved or held — filled for this use is not proof the score should change the world. The figure is the sheet; fill every line before a passed candidate may be promoted to live.",
           ],
           figure: {
             kind: "sheet",
             caption:
-              "Promote gate for the call-order path. Blank line keeps oldest-first in charge.",
+              "Promote gate for the call-order path. held keeps oldest-first live; approved enables cutover.",
             steps: [
               {
                 term: "Intended use",
@@ -861,11 +861,11 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
               },
               {
                 term: "Fallback",
-                detail: "Oldest past-due first stays callable.",
+                detail: "Oldest past-due first stays callable as previous live.",
               },
               {
                 term: "Status",
-                detail: "approved for this use, or held. Held is not a silent serve.",
+                detail: "approved → may promote to live; held → candidate stays parallel-only.",
                 gate: true,
               },
             ],
@@ -914,12 +914,12 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           ],
           figure: {
             kind: "flow",
-            caption: "Governance continues after promote. A new use reopens the sheet.",
+            caption: "After approved cutover to live. A new use reopens the sheet.",
             steps: [
-              { term: "Promote", detail: "Sheet filled. Ship passed. Fallback named.", mark: "check" },
-              { term: "Watch", detail: "Daily signals. New version if live fails.", mark: "pulse" },
+              { term: "Approved", detail: "Sheet filled. model_card passed. Fallback named.", mark: "check" },
+              { term: "Live", detail: "Owns list order until Watch or review says otherwise.", mark: "pulse" },
               { term: "Review", detail: "On date, incident, or workflow change.", mark: "search" },
-              { term: "Hold or renew", detail: "Same use, or return to oldest-first.", mark: "flag" },
+              { term: "Held or renew", detail: "Same use, or rollback to previous live.", mark: "flag" },
             ],
           },
           sources: [mlChapter(5, "Ship and watch"), dataChapter(9, "Run the product and judge the value")],

@@ -430,9 +430,9 @@
           <tr><td>Outliers</td><td><code>outlier_policy.json</code></td><td>Policy + touch-rate per numeric</td></tr>
           <tr><td>Features</td><td><code>feature_spec.json</code></td><td>fit_on train, clock pass</td></tr>
           <tr><td>Split</td><td><code>split_ids.parquet</code></td><td>Matured only; embargo; disjoint ids; test hash frozen</td></tr>
-          <tr><td>Train</td><td><code>model.joblib</code> + preprocess</td><td>Validation clears bar once</td></tr>
+          <tr><td>Train</td><td><code>model.joblib</code> + preprocess</td><td>Inner selection; validation once — or blocked</td></tr>
           <tr><td>Test</td><td><code>model_card.json</code></td><td>passed — or rejected</td></tr>
-          <tr><td>Serve</td><td><code>bundle/&lt;version&gt;/</code></td><td>Signature + previous id</td></tr>
+          <tr><td>Serve</td><td><code>bundle/&lt;version&gt;/</code></td><td>Candidate; signature + previous live</td></tr>
           <tr><td>Monitor</td><td><code>monitor/&lt;date&gt;.json</code></td><td>Signal names the return</td></tr>
         </tbody>
       </table>
