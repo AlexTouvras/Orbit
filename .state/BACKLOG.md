@@ -101,6 +101,7 @@
 - [x] **Handbook 05 consistency + visual pass** — Ch2/Ch4/agent aligned on maturity vs freeze; validation one-read; chapter jobs kept distinct; responsive figure pairs confirmed not content dupes (2026-10-29). Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Handbook 05 final release pass** — maturity = window + outcome available; embargo separate; status vocabulary; validation/test protection; desktop/mobile verify (2026-10-29). Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Handbook 05 procedure plates** — each models figure is a plate of its own lines; opening path names the four arcs; no invented thresholds (2026-10-29). Owner: `docs/product/HANDBOOKS.md`.
+- [x] **Handbook 05 diagram redraw** — flows, bars, pipeline, overlap, loop, and signal table replace card grids and the six still lifes (2026-10-29). Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Handbook drop meta disclaimer** — no “how I would operate” / synthetic-scope / “no story linked” line on chapters (2026-10-29). Owner: `docs/product/HANDBOOKS.md`.
 - [ ] **Handbooks 02 and 04** — delivery, then decisions under uncertainty. No routes until a page exists. Owner: `docs/product/HANDBOOKS.md`.
 - [x] **Handbook 03, Choose the work, the comparison** — `/6` distinguishes a first look from a product the organization must keep, and compares reading the ledger, yesterday's list, and a live service. The matrix is the record. No amount. A return is not required before a look. `/2` through `/5` and `/7` through `/9` stay (2026-10-22). Owner: `docs/product/HANDBOOKS.md`.
