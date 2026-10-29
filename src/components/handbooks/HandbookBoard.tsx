@@ -236,12 +236,20 @@ export function HandbookCover({ handbook }: { handbook: Handbook }) {
           <p className={`font-mono text-[10px] tracking-[0.28em] uppercase ${ink}`}>
             Orbit / Handbook {handbook.index}
           </p>
-          <h2 className="mt-3 max-w-[12ch] font-display text-[2.15rem] leading-[0.92] font-semibold tracking-tight text-white sm:text-[2.6rem]">
+          <h2
+            className="mt-3 max-w-[12ch] font-display text-[2.15rem] leading-[0.92] font-semibold tracking-tight text-white sm:text-[2.6rem]"
+            style={plate === "pipeline" ? { textShadow: "0 2px 18px rgba(0,0,0,0.85)" } : undefined}
+          >
             <Link href={bookHref} className="focus-ring rounded-sm hover:text-neon-cyan">
               {handbook.title}
             </Link>
           </h2>
-          <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-slate-200">{handbook.thesis}</p>
+          <p
+            className="mt-3 max-w-[34ch] text-sm leading-relaxed text-slate-200"
+            style={plate === "pipeline" ? { textShadow: "0 2px 14px rgba(0,0,0,0.9)" } : undefined}
+          >
+            {handbook.thesis}
+          </p>
           <a
             href={handbook.card.href}
             className="focus-ring mt-4 inline-block w-fit rounded-sm font-mono text-[0.65rem] tracking-[0.16em] text-slate-300 uppercase hover:text-white"
@@ -332,14 +340,18 @@ function LedgerHero({ handbook, page }: { handbook: Handbook; page: HandbookPage
 
 function PipelineBackdrop() {
   return (
-    <Image
-      src="/handbook-art/models-that-stay-in-the-decision/cover.jpg"
-      alt=""
-      fill
-      sizes="(min-width: 1024px) 28rem, 100vw"
-      className="object-cover object-center"
-      priority={false}
-    />
+    <>
+      <Image
+        src="/handbook-art/models-that-stay-in-the-decision/cover.jpg"
+        alt=""
+        fill
+        sizes="(min-width: 1024px) 28rem, 100vw"
+        className="object-cover object-top"
+        priority={false}
+      />
+      <div className="absolute inset-y-0 left-0 w-[72%] bg-gradient-to-r from-[#02040a] via-[#02040a]/88 via-55% to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#02040a]/90 to-transparent" />
+    </>
   );
 }
 
