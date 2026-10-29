@@ -162,24 +162,22 @@ export function VolumeReader({
                   <p className="mt-2 text-[1.125rem] leading-[1.7]">{page.rule}</p>
                 </div>
               ) : null}
-              <p className="mt-6 text-[1.02rem] leading-relaxed text-[var(--book-muted)]">
-                This chapter is how I would operate.
-                {page.illustration ? ` ${page.illustration}` : ""}
-                {page.story ? (
-                  <>
-                    {" "}
-                    <BookLink href={page.story.href}>{page.story.label}</BookLink> shows how a decision unfolded.
-                  </>
-                ) : null}
-                {page.work ? (
-                  <>
-                    {" "}
-                    <BookLink href={page.work.href}>{page.work.label}</BookLink> is what was delivered.
-                  </>
-                ) : null}
-                {!page.story && !page.work ? " No story or delivered work is linked here." : null}
-              </p>
-              <p className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[0.95rem] text-[var(--book-muted)]">
+              {page.story || page.work ? (
+                <p className="mt-6 text-[1.02rem] leading-relaxed text-[var(--book-muted)]">
+                  {page.story ? (
+                    <>
+                      <BookLink href={page.story.href}>{page.story.label}</BookLink> shows how a decision unfolded.
+                    </>
+                  ) : null}
+                  {page.story && page.work ? " " : null}
+                  {page.work ? (
+                    <>
+                      <BookLink href={page.work.href}>{page.work.label}</BookLink> is what was delivered.
+                    </>
+                  ) : null}
+                </p>
+              ) : null}
+              <p className="mt-6 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-[0.95rem] text-[var(--book-muted)]">
                 <span>Checked {page.reviewed}</span>
                 <BookLink href={handbook.card.href}>{handbook.card.label}</BookLink>
               </p>

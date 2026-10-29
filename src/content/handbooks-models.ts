@@ -73,8 +73,6 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       title: "What good looks like",
       lede: "Good looks like a model that can stay in a workflow: reproducible from files, rejectable at a gate, promotable as a named version, monitorable in production, and reversible to a previous version that still answers.",
       rule: "My operating rule: freeze the test ids before any fit, fit every transform on train only, clear an inner bar before validation is read, read the test set once for the official evaluation, keep the previous version callable, and start a new version id when live evidence fails — never overwrite the live weights in place.",
-      illustration:
-        "Scope and evidence: the call-order path is a synthetic illustration, not a measured result. It states no amount. Citations below were checked 29 Oct 2026 against their primary pages.",
       reviewed: "29 Oct 2026",
       plate: "pipeline",
       sections: [
@@ -375,7 +373,6 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       title: "Prepare the table",
       lede: "Prepare is the first arc. Profile, quality, and outlier policy leave files Fit can refuse. After every repair, describe the table again — a fill, drop, or clip changes the distribution the next stage will trust.",
       rule: "My operating rule: assign every column a role, score quality before any impute, write an outlier policy instead of a silent delete, and stop when the quarantine rate exceeds quarantine_rate_max for this run.",
-      illustration: "Same call-order illustration as What good looks like. Synthetic; no amount.",
       reviewed: "29 Oct 2026",
       sections: [
         {
@@ -486,7 +483,6 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       title: "Features that hold",
       lede: "Write feature_spec.json before any fit. Every kept transform must score one new row from inputs known at decision time. Transforms are fitted on train only and applied to later partitions without refitting.",
       rule: "My operating rule: drop anything that fails the clock test, refuse a fit that used validation or test, keep dropped columns with the reason, and never treat high label correlation as permission to keep a leak.",
-      illustration: "Same call-order illustration as What good looks like. Synthetic; no amount.",
       reviewed: "29 Oct 2026",
       sections: [
         {
@@ -571,7 +567,6 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       title: "Fit without spending the holdout",
       lede: "Freeze test ids before any preprocessor is fit. Tune inside train. Read validation once after the inner bar clears. A reproducible training run is not yet a promotable release.",
       rule: "My operating rule: write the test hash before any fit, clear the bar on an inner slice before validation is read, and never open a tuning loop on the same holdout that already failed.",
-      illustration: "Same call-order illustration as What good looks like. Synthetic; no amount.",
       reviewed: "29 Oct 2026",
       sections: [
         {
@@ -689,7 +684,6 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       title: "Ship and watch",
       lede: "Read test once for the official evaluation. Pack a named bundle beside a previous version that still answers. Watch writes daily files and starts a new version id — never a silent weight update.",
       rule: "My operating rule: never retune on test residuals, never promote without a previous version that still answers, and never update weights in place from a monitor alert.",
-      illustration: "Same call-order illustration as What good looks like. Synthetic; no amount.",
       reviewed: "29 Oct 2026",
       sections: [
         {
@@ -816,7 +810,6 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       title: "Name what the version may do",
       lede: "A passed test is operational evidence, not permission. Before a version owns any part of a decision, name intended use, prohibited uses, owners, monitoring, and rollback. Without that sheet, Ship stops at candidate.",
       rule: "My operating rule: do not let a version order a decision until intended use, out-of-scope uses, decision owner, technical owner, measured evidence, and fallback are written and approved.",
-      illustration: "Same call-order illustration as What good looks like. Synthetic; no amount.",
       reviewed: "29 Oct 2026",
       sections: [
         {

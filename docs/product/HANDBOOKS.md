@@ -121,7 +121,7 @@ The analytics field card opens What good looks like from the heading From questi
 
 Every chapter shows the field card, the handbook, and the previous and next chapter by title. The count is the chapter in the library. Make the number fit to use is 3 of 6 on each of its pages. The address stays in the corner. The book title returns to page 1. Handbooks returns to the library. Left and right move to the neighbouring chapter when focus is not in a control.
 
-The line under those links says what the chapter is. It is how I would operate. When the chapter uses an illustration, the line says so. A story link appears only when a story shows the decision unfolding. A portfolio link appears only when that piece is delivered work. When neither exists, the chapter says so.
+Under the operating rule the chapter shows Checked and the field card. A story link appears only when a story shows the decision unfolding. A portfolio link appears only when that piece is delivered work. The chapter does not announce that it is how I would operate, name a synthetic illustration disclaimer, or say that no story or delivered work is linked.
 
 ## Routes
 

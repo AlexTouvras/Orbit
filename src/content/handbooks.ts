@@ -111,7 +111,7 @@ export interface HandbookPage {
   rule?: string;
   /** Date the claims on this page were last checked against the sources. */
   reviewed: string;
-  /** An illustration on this chapter. It is not a record of experience. */
+  /** Optional note. Not shown on the chapter header (story/work links are). */
   illustration?: string;
   /** A story of how a decision unfolded. Only when one exists. */
   story?: HandbookLink;
