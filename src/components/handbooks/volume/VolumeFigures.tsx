@@ -100,7 +100,7 @@ export function CoverSheets() {
   );
 }
 
-/** Exclusive opening leaf for Models that stay in the decision. */
+/** Exclusive opening leaf for Models that stay relevant. */
 export function CoverModels() {
   const src = "/handbook-art/models-that-stay-in-the-decision/cover.jpg";
   const size = VOLUME_PICTURE_SIZE[src] ?? { w: 864, h: 1152 };
