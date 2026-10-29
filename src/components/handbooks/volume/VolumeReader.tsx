@@ -186,6 +186,7 @@ export function VolumeReader({
             {sections.map(({ section, lines, diagram, photo }) => (
               <SectionBlock
                 key={section.id}
+                handbookSlug={handbook.slug}
                 section={section}
                 lines={lines}
                 diagram={diagram}
@@ -277,12 +278,14 @@ function BookIdentity({
 }
 
 function SectionBlock({
+  handbookSlug,
   section,
   lines,
   diagram,
   photo,
   references,
 }: {
+  handbookSlug: string;
   section: HandbookSection;
   lines: number;
   diagram: number;
@@ -314,7 +317,13 @@ function SectionBlock({
         <VolumeLines lines={section.lines} n={lines} caption={section.title} />
       ) : null}
       {section.figure && diagram ? (
-        <VolumeFigure figure={section.figure} n={diagram} fallback={section.title} />
+        <VolumeFigure
+          figure={section.figure}
+          n={diagram}
+          fallback={section.title}
+          handbookSlug={handbookSlug}
+          sectionId={section.id}
+        />
       ) : null}
       {section.steps?.length ? (
         <ol className="book-measure mt-4 list-decimal space-y-3 pl-6 text-[1.125rem] leading-[1.7]">

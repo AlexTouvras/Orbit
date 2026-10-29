@@ -13,6 +13,31 @@ export const VOLUME_FIGURE_KINDS = [
   "pipeline",
 ] as const;
 
+/** Procedure plates drawn for Models that stay relevant. A new figure on that book needs one. */
+export const MODELS_PLATE_IDS = [
+  "destination",
+  "arcs",
+  "case",
+  "boundary",
+  "contracts",
+  "stage-example",
+  "validity",
+  "describe",
+  "quality",
+  "outliers",
+  "harm",
+  "clock",
+  "freeze",
+  "train",
+  "loops",
+  "test",
+  "serve",
+  "monitor",
+  "card-sheet",
+  "risk",
+  "review",
+] as const;
+
 export const VOLUME_PICTURE_SIZE: Record<string, { w: number; h: number }> = {
   "/handbook-art/data-that-drives-decisions/day.jpg": { w: 864, h: 1152 },
   "/handbook-art/data-that-drives-decisions/extracts.jpg": { w: 864, h: 1152 },
@@ -20,6 +45,7 @@ export const VOLUME_PICTURE_SIZE: Record<string, { w: number; h: number }> = {
   "/handbook-art/data-that-drives-decisions/keep.jpg": { w: 1152, h: 864 },
   "/handbook-art/data-that-drives-decisions/signals.jpg": { w: 864, h: 1152 },
   "/handbook-art/models-that-stay-in-the-decision/cover.jpg": { w: 864, h: 1152 },
+  "/handbook-art/models-that-stay-in-the-decision/path.jpg": { w: 1280, h: 720 },
   "/handbook-art/models-that-stay-in-the-decision/decision.jpg": { w: 1280, h: 720 },
   "/handbook-art/models-that-stay-in-the-decision/prepare.jpg": { w: 1280, h: 720 },
   "/handbook-art/models-that-stay-in-the-decision/features.jpg": { w: 1280, h: 720 },

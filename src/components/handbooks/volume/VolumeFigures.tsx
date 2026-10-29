@@ -7,6 +7,7 @@ import type {
 } from "@/content/handbooks";
 import { BookLink } from "@/components/handbooks/volume/BookLink";
 import { VOLUME_PICTURE_SIZE } from "@/components/handbooks/volume/catalog";
+import { ModelsCover, ModelsPlate } from "@/components/handbooks/volume/ModelsPlates";
 
 export { VOLUME_FIGURE_KINDS, VOLUME_PICTURE_SIZE } from "@/components/handbooks/volume/catalog";
 
@@ -14,16 +15,28 @@ export function VolumeFigure({
   figure,
   n,
   fallback,
+  handbookSlug,
+  sectionId,
 }: {
   figure: HandbookFigure;
   n: number;
   fallback: string;
+  handbookSlug?: string;
+  sectionId?: string;
 }) {
   const caption = figure.caption.trim() || fallback;
+  const plate =
+    handbookSlug === "models-that-stay-in-the-decision" && sectionId ? (
+      <ModelsPlate sectionId={sectionId} figure={figure} />
+    ) : null;
   return (
     <FigureFrame n={n} caption={caption}>
-      {figure.note ? <p className="book-caption mb-4">{figure.note}</p> : null}
-      <FigureBody figure={figure} />
+      {plate ?? (
+        <>
+          {figure.note ? <p className="book-caption mb-4">{figure.note}</p> : null}
+          <FigureBody figure={figure} />
+        </>
+      )}
     </FigureFrame>
   );
 }
@@ -102,26 +115,7 @@ export function CoverSheets() {
 
 /** Exclusive opening leaf for Models that stay relevant. */
 export function CoverModels() {
-  const src = "/handbook-art/models-that-stay-in-the-decision/cover.jpg";
-  const size = VOLUME_PICTURE_SIZE[src] ?? { w: 864, h: 1152 };
-  return (
-    <figure>
-      <div className="overflow-hidden border border-[var(--book-rule)] bg-[#04110c]">
-        <Image
-          src={src}
-          alt=""
-          width={size.w}
-          height={size.h}
-          priority
-          sizes="(min-width: 1024px) 28rem, min(100vw, 28rem)"
-          className="mx-auto h-auto w-full max-w-[28rem]"
-        />
-      </div>
-      <figcaption className="book-caption mt-3 max-w-[40rem]">
-        Four arcs on one spine. Watch returns as a new version, not a silent retrain.
-      </figcaption>
-    </figure>
-  );
+  return <ModelsCover />;
 }
 
 /** Alias kept for the volume reader import. */

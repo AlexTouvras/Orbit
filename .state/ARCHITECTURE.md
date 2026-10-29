@@ -183,6 +183,7 @@ src/lib/field-card/handbook-link.ts  # re-insert the analytics chapter link on A
 src/lib/handbooks.ts
 src/components/handbooks/
 src/components/handbooks/volume/   # the paper reader for every handbook chapter
+src/components/handbooks/volume/ModelsPlates.tsx  # procedure plates for Models that stay relevant
 src/lib/handbook-reader.ts         # a handbook chapter URL is the paper view
 src/lib/handbook-citations.ts      # numbered works on the paper page
 src/app/handbooks/
@@ -438,4 +439,5 @@ canvases/                    # Cursor IDE only; gitignored + tsconfig exclude
 | 2026-10-29 | Handbook 05 ch1 refinement | Evaluation boundary separates maturity, embargo, entity leakage, baseline. Destination figure is release/rollback. Stage contracts are panels. Validity is a three-gate compare (decision value beyond ranking). Agent stage 2/5 enforce the same. |
 | 2026-10-29 | Handbook 05 consistency + visuals | Ch2 writes maturity + `label_delay_days`; Ch4 owns freeze/embargo/entity and one validation read per split (Loops A/B inner-only). Agent stage 6 matches. Volume figures that look duplicated in extracted HTML are responsive pairs (`md:hidden` / `hidden md:block`) in `VolumeFigures.tsx` — not double-rendered content. |
 | 2026-10-29 | Handbook 05 release pass | Maturity = outcome window closed **and** outcome available; `label_delay_days` sizes embargo only (same rule at train\|val and val\|test). Status vocabulary in AGENT.md: candidate / blocked / rejected / passed / held / approved / live. Threshold frozen on the single validation read. |
+| 2026-10-29 | Handbook 05 procedure plates | `ModelsPlates.tsx` draws each models figure from its own lines (arcs, boundary, contracts, keep/drop, freeze, inner loop, release, monitor, promote sheet). Opening leaf is `path.jpg` with the four stations in type. Library `cover.jpg` is the same path, darkened. No invented thresholds. Other books keep the shared figure components. |
 | 2026-10-29 | Handbook chapter meta line dropped | Volume reader no longer prints “how I would operate”, illustration/scope disclaimers, or “no story or delivered work is linked.” Story/work links still show when present. |

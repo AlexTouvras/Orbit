@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 import { HANDBOOKS } from "../src/content/handbooks";
-import { VOLUME_FIGURE_KINDS, VOLUME_PICTURE_SIZE } from "../src/components/handbooks/volume/catalog";
+import { MODELS_PLATE_IDS, VOLUME_FIGURE_KINDS, VOLUME_PICTURE_SIZE } from "../src/components/handbooks/volume/catalog";
 import { isVolumeReaderPath } from "../src/lib/handbook-reader";
 import { adjacentPages, chapterPlace, pagePath } from "../src/lib/handbooks";
 
@@ -133,6 +133,15 @@ describe("handbook volume reader", () => {
       models.pages.some((page) =>
         page.sections.some((section) => section.figure?.kind === "pipeline"),
       ),
+    );
+    const plated = new Set<string>(MODELS_PLATE_IDS);
+    const figureIds = models.pages.flatMap((page) =>
+      page.sections.filter((section) => section.figure).map((section) => section.id),
+    );
+    assert.deepEqual([...figureIds].sort(), [...plated].sort());
+    assert.ok(
+      VOLUME_PICTURE_SIZE["/handbook-art/models-that-stay-in-the-decision/path.jpg"],
+      "opening path",
     );
     for (const page of models.pages) {
       const pictures = page.sections.filter((section) => section.picture);
