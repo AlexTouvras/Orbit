@@ -46,10 +46,4 @@ export const VOLUME_PICTURE_SIZE: Record<string, { w: number; h: number }> = {
   "/handbook-art/data-that-drives-decisions/signals.jpg": { w: 864, h: 1152 },
   "/handbook-art/models-that-stay-in-the-decision/cover.jpg": { w: 864, h: 1152 },
   "/handbook-art/models-that-stay-in-the-decision/path.jpg": { w: 1280, h: 720 },
-  "/handbook-art/models-that-stay-in-the-decision/decision.jpg": { w: 1280, h: 720 },
-  "/handbook-art/models-that-stay-in-the-decision/prepare.jpg": { w: 1280, h: 720 },
-  "/handbook-art/models-that-stay-in-the-decision/features.jpg": { w: 1280, h: 720 },
-  "/handbook-art/models-that-stay-in-the-decision/holdout.jpg": { w: 1280, h: 720 },
-  "/handbook-art/models-that-stay-in-the-decision/watch.jpg": { w: 1280, h: 720 },
-  "/handbook-art/models-that-stay-in-the-decision/card.jpg": { w: 1280, h: 720 },
 };
