@@ -1,7 +1,133 @@
 {
-  "generatedAt": "2026-10-28T06:46:53.906Z",
+  "generatedAt": "2026-10-29T06:46:59.771Z",
   "count": 264,
   "items": [
+    {
+      "id": "1059887f52c6",
+      "title": "AI saved your team time. The Product Backlog decides where it goes.",
+      "link": "https://www.scrum.org/resources/blog/ai-saved-your-team-time-product-backlog-decides-where-it-goes",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-29T05:29:19.000Z",
+      "contentSnippet": "When AI frees up your Developers' time, the Product Owner decides whether that time becomes value. You make that decision through tools you already have: Product Backlog ordering, the Sprint Goal and the Sprint Review. If you don't, whatever comes next gets those \"saved hours\". G…"
+    },
+    {
+      "id": "8006f2172a93",
+      "title": "How Procore is powering construction analytics with OpenSharing",
+      "link": "https://www.databricks.com/blog/how-procore-powering-construction-analytics-opensharing-0",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-29T00:29:00.000Z",
+      "contentSnippet": "Connecting an industry built on disconnected dataConstruction runs on data that rarely sits in one place..."
+    },
+    {
+      "id": "6117e6da387a",
+      "title": "Company wage policy in a low-wage labour market",
+      "link": "https://cepr.org/voxeu/columns/company-wage-policy-low-wage-labour-market",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-29T00:00:00.000Z",
+      "contentSnippet": "In many countries, minimum wage policies allow employers to pay young workers less than adults, and the UK is now debating how fast to phase out its lower youth minima. But do employers actually use the room that age-specific minimum wages give them? This column uses the introduc…"
+    },
+    {
+      "id": "3610ebbb548d",
+      "title": "The real-economy case for capital markets integration: Cross-border shareholders and firm investment resilience",
+      "link": "https://cepr.org/voxeu/columns/real-economy-case-capital-markets-integration-cross-border-shareholders-and-firm",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-29T00:00:00.000Z",
+      "contentSnippet": "Europe’s push for deeper capital markets assumes that cross-border equity ownership matters. This column shows that it does. Euro area listed firms remain heavily owned by domestic investors. When COVID-19 struck, firms in the hardest-hit sectors with more domestically concentrat…"
+    },
+    {
+      "id": "9f8010789ea0",
+      "title": "Voice Agents are here. Context turns them into real customer value.",
+      "link": "https://www.databricks.com/blog/voice-agents-are-here-context-turns-them-real-customer-value",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-28T18:00:00.000Z",
+      "contentSnippet": "Why voice, and why nowConsider three moments that happen every day in consumer businesses: At..."
+    },
+    {
+      "id": "b0da25ea6c1a",
+      "title": "Gemini 4 Carbon: Our next frontier model",
+      "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-10-28T17:00:58.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "93b9dc1d3128",
+      "title": "The October inflection point for vibe game development",
+      "link": "https://simonwillison.net/2026/Oct/28/vibe-game-development/",
+      "source": "Simon Willison",
+      "category": "AI",
+      "pubDate": "2026-10-28T13:55:15.000Z",
+      "contentSnippet": ""
+    },
+    {
+      "id": "75e2017ed4c5",
+      "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+      "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-28T13:15:00.000Z",
+      "contentSnippet": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex."
+    },
+    {
+      "id": "b80b8cbd77c8",
+      "title": "Beyond Token Caps: How Enterprises Actually Measure AI Impact — with Tomer Elias",
+      "link": "https://www.scrum.org/resources/blog/beyond-token-caps-how-enterprises-actually-measure-ai-impact-tomer-elias",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-28T13:00:00.000Z",
+      "contentSnippet": "Originally published as an episode of Scaling AI: From Activity to Impact. I met Tomer Elias at a private product leadership community, and it was pretty obvious very quickly that we share an interest in exploring what people are doing out there to evolve beyond tokenmaxxing and…"
+    },
+    {
+      "id": "c9ff3900c5bd",
+      "title": "Fragments: October 28",
+      "link": "https://martinfowler.com/fragments/2026-10-28.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-10-28T12:55:00.000Z",
+      "contentSnippet": "Andrej Karpathy sees a widening gap in how people see LLM capabilities. The general public has mostly not interacted with these systems. When they have, it looks like a derpy chatbot. The majority of professionals still see only a modest uplift. And a small sliver of professional…"
+    },
+    {
+      "id": "7e2d63fb0e39",
+      "title": "Replaying El Clásico live in a Fabric App!",
+      "link": "https://data-mozart.com/replaying-el-clasico-live-in-a-fabric-app/?utm_source=rss&utm_medium=rss&utm_campaign=replaying-el-clasico-live-in-a-fabric-app",
+      "source": "Data Mozart",
+      "category": "Analytics",
+      "pubDate": "2026-10-28T11:10:01.000Z",
+      "contentSnippet": "Barça’s 5-0 Clásico from 2010, replayed live in a Fabric App built with Rayfin: architecture, write-back predictions, and a one-command deploy guide. The post Replaying El Clásico live in a Fabric App! appeared first on Data Mozart."
+    },
+    {
+      "id": "0dc3cf0b7c98",
+      "title": "The future of the firm",
+      "link": "https://openai.com/index/the-future-of-the-firm",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-28T10:00:00.000Z",
+      "contentSnippet": "How AI might enter the org chart—beneath, beside, and between us."
+    },
+    {
+      "id": "41c97fe8dc29",
+      "title": "Legora is building the agentic operating system for legal work",
+      "link": "https://openai.com/index/legora",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-28T09:30:00.000Z",
+      "contentSnippet": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work."
+    },
+    {
+      "id": "3ce1661ccd40",
+      "title": "Write An Observation Report",
+      "link": "https://www.scrum.org/resources/blog/write-observation-report",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-28T07:33:13.000Z",
+      "contentSnippet": "Image When you join a Scrum Team, spend at least one Sprint observing their way of working. By doing so, you will get familiar with their product, processes, tools, practices, agreements, and, of course, shortages. The output of this period should be an observation report. Explic…"
+    },
     {
       "id": "68e3f30924fd",
       "title": "Do We Still Need Data Models?",
@@ -10,6 +136,15 @@
       "category": "Data",
       "pubDate": "2026-10-28T04:22:26.000Z",
       "contentSnippet": "As agents build data systems, models must help us understand the decisions behind them."
+    },
+    {
+      "id": "189db1226179",
+      "title": "Bringing the Big Ducks",
+      "link": "https://motherduck.com/blog/bigger-ducks",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-28T00:00:00.000Z",
+      "contentSnippet": "The pursuit of all things duck-related has led us to some interesting places. In this blog, MotherDuck CEO Jordan Tigani explores the bigger, darker corners of benchmarks on top DuckDB 1.5 (and teases what is possible in DuckDB 2.0)."
     },
     {
       "id": "ca9778b8d179",
@@ -84,6 +219,15 @@
       "contentSnippet": "Originally published as an episode of Scaling AI: From Activity to Impact. A conversation with Roi Carmel on In the Spotlight. It’s essentially being empirical, getting transparency on what is working for us, what’s not working for us, inspecting it, being open to inspect what’s…"
     },
     {
+      "id": "d17d13a0006a",
+      "title": "Genie 4: A new generation of world simulation",
+      "link": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "source": "Google DeepMind",
+      "category": "AI",
+      "pubDate": "2026-10-27T16:01:38.000Z",
+      "contentSnippet": "Genie 4: our new world model unlocking unprecedented realism in real-time simulation."
+    },
+    {
       "id": "d42fb1eb3362",
       "title": "Retell uses OpenAI models to help power 100M monthly calls",
       "link": "https://openai.com/index/retell-ai",
@@ -127,6 +271,15 @@
       "category": "Analytics",
       "pubDate": "2026-10-27T10:45:53.000Z",
       "contentSnippet": "The DAX LLM Benchmark v2 shows that the latest frontier models write DAX very well, and that the model generation matters more than the vendor. This post describes how we built the benchmark, how we read its results, and what…"
+    },
+    {
+      "id": "2037a0242576",
+      "title": "Conformance, not content: what the Scrum Master governs in an agent team",
+      "link": "https://www.scrum.org/resources/blog/conformance-not-content-what-scrum-master-governs-agent-team",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-27T07:39:37.000Z",
+      "contentSnippet": "The Scrum Master governs the skill file system. This role covers consistency across agent teams and conformance to the Definition of Done and Scrum. It also covers whether the revision process works. The content of any Developer's files is not in scope. Blurring that line turns t…"
     },
     {
       "id": "a3a879144b29",
@@ -255,15 +408,6 @@
       "contentSnippet": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them."
     },
     {
-      "id": "1a1d4bf2fc11",
-      "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
-      "link": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-26T13:45:00.000Z",
-      "contentSnippet": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes."
-    },
-    {
       "id": "097628ee6459",
       "title": "The media industry is becoming a prediction economy",
       "link": "https://www.databricks.com/blog/media-industry-becoming-prediction-economy",
@@ -291,15 +435,6 @@
       "contentSnippet": "Image I’ve been using Scrum for over 20 years now. And great Scrum Masters can come from anywhere. They can be people from the business, Developers, HR Managers, and (occasionally) Leadership. But I often see Scrum Masters come to Scrum from Project Management. It makes sense. Th…"
     },
     {
-      "id": "64d59b55a8fb",
-      "title": "ChatGPT’s expanding world of work",
-      "link": "https://openai.com/index/chatgpt-expanding-world-of-work",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-26T10:00:00.000Z",
-      "contentSnippet": "Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time."
-    },
-    {
       "id": "ed91ff7e921d",
       "title": "How To Create The First Version Of Your Definition of Done",
       "link": "https://www.scrum.org/resources/blog/how-create-first-version-your-definition-done",
@@ -316,15 +451,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-26T07:54:21.000Z",
       "contentSnippet": "AI can help Product Owners identify patterns in customer feedback. Understanding what those patterns mean often requires hearing from people whose experiences are missing from the original reports. Choosing whom to speak with next can make a real difference to the next product de…"
-    },
-    {
-      "id": "eb7708c5f537",
-      "title": "How Fanatics and OpenAI streamline the fan experience",
-      "link": "https://openai.com/index/fanatics-streamline-fan-experience",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-26T07:00:00.000Z",
-      "contentSnippet": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement."
     },
     {
       "id": "609fdfb23d8f",
@@ -370,15 +496,6 @@
       "category": "Economics",
       "pubDate": "2026-10-26T00:00:00.000Z",
       "contentSnippet": "The importance of private equity for euro area firms is increasing, with annual growth rates in assets under management exceeding 10%. Private equity buyouts affect more than just the firms being acquired. Using comprehensive data for Belgium, this column shows that the sales vol…"
-    },
-    {
-      "id": "ae988c14874f",
-      "title": "Washing away the US: Tariff evasion on the other side of the US–China trade war",
-      "link": "https://cepr.org/voxeu/columns/washing-away-us-tariff-evasion-other-side-us-china-trade-war",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-26T00:00:00.000Z",
-      "contentSnippet": "Debates about tariff evasion have focused on Chinese goods entering the US. This column examines the reverse flow and finds that China’s retaliatory tariffs on imports from the US also induced evasion, especially through the misreporting of US-origin goods as originating from oth…"
     },
     {
       "id": "660a3d0bc6c2",
@@ -435,15 +552,6 @@
       "contentSnippet": "Image Sprint Reviews reveal the operating model within twenty minutes. I have been sitting in them across industries since 2010, and the tell is consistent: what the room celebrates. Teams that function as feature factories present a list of completed features, stakeholders check…"
     },
     {
-      "id": "265066b2be22",
-      "title": "Oil shocks no longer hit the US economy as they used to",
-      "link": "https://cepr.org/voxeu/columns/oil-shocks-no-longer-hit-us-economy-they-used",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-24T23:00:00.000Z",
-      "contentSnippet": "Recent disruptions to global oil markets, from Russia’s invasion of Ukraine to the war in Iran, have revived fears of stagflation. This column shows that the shale revolution has fundamentally changed how the US economy responds to oil shocks. As the country has shifted from a ma…"
-    },
-    {
       "id": "7d0b17750361",
       "title": "AI... Improving the Wrong System Faster",
       "link": "https://www.scrum.org/resources/blog/ai-improving-wrong-system-faster",
@@ -451,42 +559,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-24T22:00:00.000Z",
       "contentSnippet": "Many management AI conversation drift to the same place fast. Which model? Where can we automate? How much faster can developers code? Which admin tasks can we cut? Useful questions. But they aren't yet organizational design questions and that's exactly why most AI programs stall…"
-    },
-    {
-      "id": "88ef226eeb1d",
-      "title": "From AI Theater to Unreasonable Agility",
-      "link": "https://www.scrum.org/resources/blog/ai-theater-unreasonable-agility",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-24T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. Watch the conversation with Philip Morgan Watch the full episode on YouTube. Why does so much AI adoption look busy and change so little? There’s theater in both places. Some organizations focus agile on activities and outputs. They measure…"
-    },
-    {
-      "id": "28da8cdd34ee",
-      "title": "Do WIP Limits Still Make Sense When Agents Write the Code?",
-      "link": "https://www.scrum.org/resources/blog/do-wip-limits-still-make-sense-when-agents-write-code",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-23T23:19:22.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. Starting work has become easier. I catch myself doing this. I start one agent on a dashboard, another on article research, another on a client artifact. Each start is rational. The agent is going to work for a while, so why should I wait? A…"
-    },
-    {
-      "id": "ef77d0b37418",
-      "title": "Built for Agents: The Case for Spark Declarative Pipelines",
-      "link": "https://www.databricks.com/blog/built-agents-case-spark-declarative-pipelines",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-23T19:00:00.000Z",
-      "contentSnippet": "AI agents now write a growing share of production data pipelines (over 70% of SDP..."
-    },
-    {
-      "id": "c8ee78ab609d",
-      "title": "Real-time energy trading and analytics on Databricks",
-      "link": "https://www.databricks.com/blog/real-time-energy-trading-and-analytics-databricks",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-23T19:00:00.000Z",
-      "contentSnippet": "Why does real-time energy trading need more than faster data?Energy trading desks..."
     },
     {
       "id": "3c115b0c264d",
@@ -514,15 +586,6 @@
       "category": "Credit",
       "pubDate": "2026-10-23T00:00:00.000Z",
       "contentSnippet": "We study hownews shocks affect inflation in open economies, using large oil and gas discoveries with realized production lags of at least five years as observable news about future output. Panel local projections show that discoveries raise core consumer prices over the subsequen…"
-    },
-    {
-      "id": "e837e6c03108",
-      "title": "Your Agents' Skills Are Your Craft Now",
-      "link": "https://www.scrum.org/resources/blog/your-agents-skills-are-your-craft-now",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-22T20:04:48.000Z",
-      "contentSnippet": "When your agent team starts producing defective output mid-Sprint, fixing the skill file is yours to do. You do not need approval from your manager, an AI governance team, or anyone outside your Scrum Team. Scrum is unambiguous: Developers are self-managing and accountable for ad…"
     },
     {
       "id": "92bf8f1f4569",
@@ -561,13 +624,13 @@
       "contentSnippet": ""
     },
     {
-      "id": "243c28116a1b",
-      "title": "Stakeholder Alignment: A Practical Approach to Business Analysis",
-      "link": "https://www.scrum.org/resources/blog/stakeholder-alignment-practical-approach-business-analysis",
-      "source": "Scrum.org",
+      "id": "50744548848c",
+      "title": "Fragments: October 21",
+      "link": "https://martinfowler.com/fragments/2026-10-21.html",
+      "source": "Martin Fowler",
       "category": "Delivery",
-      "pubDate": "2026-10-21T18:42:16.000Z",
-      "contentSnippet": "Image Stakeholder alignment is critical to moving projects forward. Every stakeholder brings unique goals, priorities, and expectations to the table. These differences are normal and valuable, but the real danger begins when they stay hidden and teams move forward assuming everyo…"
+      "pubDate": "2026-10-21T16:51:00.000Z",
+      "contentSnippet": "Gergely Orosz is frustrated at those that entered his explicitly “No AI” essay competition and used AI. He goes on to say: When I start to suspect some part is AI about someone I don’t know: how can I tell how much of it is? And how much time and effort do I want to invest to fig…"
     },
     {
       "id": "2de1f3f85cd4",
@@ -577,15 +640,6 @@
       "category": "AI",
       "pubDate": "2026-10-21T16:23:53.000Z",
       "contentSnippet": "Health & Bioscience"
-    },
-    {
-      "id": "50744548848c",
-      "title": "Fragments: October 21",
-      "link": "https://martinfowler.com/fragments/2026-10-21.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-10-21T10:51:00.000Z",
-      "contentSnippet": "Gergely Orosz is frustrated at those that entered his explicitly “No AI” essay competition and used AI. He goes on to say: When I start to suspect some part is AI about someone I don’t know: how can I tell how much of it is? And how much time and effort do I want to invest to fig…"
     },
     {
       "id": "1321330de0aa",
@@ -651,6 +705,15 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "2dd79f84431a",
+      "title": "Competing rails for crossborder payments: banks, fintechs, and stablecoins",
+      "link": "https://www.bis.org/publications/working-paper-1385-competing-rails-crossborder-payments-banks-fintechs-and-stablecoins",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "Cross-border payments remain slow and expensive despite significant improvements in digital financial infrastructure over the past several decades."
+    },
+    {
       "id": "ecff4ccfa2b9",
       "title": "Geoeconomic pressure",
       "link": "https://www.bis.org/publications/working-paper-1386-geoeconomic-pressure",
@@ -676,15 +739,6 @@
       "category": "Credit",
       "pubDate": "2026-10-19T00:00:00.000Z",
       "contentSnippet": "An unexpected increase in energy costs raises inflation directly through flexibly-set prices. Whether that shock amplifies to a larger and persistent rise in inflation depends on its transmission through the economy."
-    },
-    {
-      "id": "2dd79f84431a",
-      "title": "Competing rails for crossborder payments: banks, fintechs, and stablecoins",
-      "link": "https://www.bis.org/publications/working-paper-1385-competing-rails-crossborder-payments-banks-fintechs-and-stablecoins",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-19T00:00:00.000Z",
-      "contentSnippet": "Cross-border payments remain slow and expensive despite significant improvements in digital financial infrastructure over the past several decades."
     },
     {
       "id": "8562faa4b0a9",
@@ -847,24 +901,6 @@
       "category": "AI",
       "pubDate": "2026-10-14T02:00:14.000Z",
       "contentSnippet": "Learn how Google DeepMind and GovTech Singapore uses lightweight on-device Gemma models to intercept conversational scams in private chats with zero cloud data egress."
-    },
-    {
-      "id": "471508c04c30",
-      "title": "Developing Gemini 4 Argon responsibly and safely",
-      "link": "https://deepmind.google/blog/developing-gemini-4-argon-responsibly-and-safely/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-10-13T19:43:07.000Z",
-      "contentSnippet": ""
-    },
-    {
-      "id": "884ebf3c3978",
-      "title": "Gemini 4 Argon for Robotics",
-      "link": "https://deepmind.google/blog/gemini-4-argon-for-robotics/",
-      "source": "Google DeepMind",
-      "category": "AI",
-      "pubDate": "2026-10-13T16:01:58.000Z",
-      "contentSnippet": ""
     },
     {
       "id": "31a1484f459b",
@@ -1263,15 +1299,6 @@
       "contentSnippet": "The time has come: in 2026, using AI to write DAX has started to be effective. Latest news and the new courses are at https://www.sqlbi.com/ai/ We also created three new video courses that should not become obsolete in two weeks!…"
     },
     {
-      "id": "f526d7679022",
-      "title": "Claude Opus 5.5, GPT-6 Sol, GPT-6 Luna, and a new price war",
-      "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
-      "source": "Simon Willison",
-      "category": "AI",
-      "pubDate": "2026-09-22T23:46:41.000Z",
-      "contentSnippet": ""
-    },
-    {
       "id": "196c90e841c9",
       "title": "The hidden complexity of a daily average in DAX",
       "link": "https://www.sqlbi.com/tv/the-hidden-complexity-of-a-daily-average-in-dax/",
@@ -1452,15 +1479,6 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
-      "id": "416f06ab12e9",
-      "title": "Your DuckDB Flock Deserves A Mother: MotherDuck Now Offers Open Source DuckDB Support",
-      "link": "https://motherduck.com/blog/duckdb-support",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-09-14T00:00:00.000Z",
-      "contentSnippet": "We're launching commercial support for open-source DuckDB, so every organization can get the power of a modern data engine, with direct access to database experts."
-    },
-    {
       "id": "8bbe78103d32",
       "title": "Find What Changed And When In Your Power BI Semantic Model",
       "link": "https://blog.crossjoin.co.uk/2026/09/13/find-what-changed-and-when-in-your-power-bi-semantic-model/",
@@ -1603,15 +1621,6 @@
       "category": "Delivery",
       "pubDate": "2026-09-02T14:45:00.000Z",
       "contentSnippet": "Giles Edwards-Alexander reports that during an experiment to see how productive a team could be using fully agentic engineering practices, the team accidentally prompted the agents into creating a blackboard coordination system inside the git repository. more…"
-    },
-    {
-      "id": "0ae88a845983",
-      "title": "Maybe We Shouldn't Be Reviewing All This Code",
-      "link": "https://martinfowler.com/rachels-ramblings/code-review.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-09-02T13:32:00.000Z",
-      "contentSnippet": "TL;DR Or, perhaps the problem isn't that AI has broken code review, maybe it’s that we've been using code review to solve the wrong problems I was on a panel recently with Brian Houck from DX at Code Remix, hosted by Moderne. It was one of the more interesting panels I’ve done, l…"
     },
     {
       "id": "e261a8057905",
@@ -1839,15 +1848,6 @@
       "contentSnippet": "Federal Reserve Bank of Atlanta Working Papers by Kristopher Gerardi, David Hao Zhang and Franklin Qian"
     },
     {
-      "id": "7401bc123f1d",
-      "title": "The transmission of shocks across sectors and the dynamics of sectoral prices",
-      "link": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3266~e62e35205b.en.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-08-01T00:00:00.000Z",
-      "contentSnippet": "European Central Bank Working Papers by Francesca Monti and Leïla Van Keirsbilck"
-    },
-    {
       "id": "c8ecba0edbfe",
       "title": "Commercial real estate debt financing in Europe: evidence from a network analysis",
       "link": "https://www.esrb.europa.eu//pub/pdf/wp/esrb.wp155.en.pdf",
@@ -1857,6 +1857,15 @@
       "contentSnippet": "European Systemic Risk Board Working Papers by Frauke Skudelny, Mihai Aliman, Martin Regnér, Cecilia Sarchi and Matteo Valetto"
     },
     {
+      "id": "7401bc123f1d",
+      "title": "The transmission of shocks across sectors and the dynamics of sectoral prices",
+      "link": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3266~e62e35205b.en.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-08-01T00:00:00.000Z",
+      "contentSnippet": "European Central Bank Working Papers by Francesca Monti and Leïla Van Keirsbilck"
+    },
+    {
       "id": "f776967f28fc",
       "title": "(Don’t) Stop materializing your silver layer!",
       "link": "https://data-mozart.com/dont-stop-materializing-your-silver-layer/?utm_source=rss&utm_medium=rss&utm_campaign=dont-stop-materializing-your-silver-layer",
@@ -1864,6 +1873,15 @@
       "category": "Analytics",
       "pubDate": "2026-07-31T10:03:06.000Z",
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
+    },
+    {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "d9adb789161e",
@@ -1882,15 +1900,6 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
-    },
-    {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "fb549b859ee4",
@@ -2143,15 +2152,6 @@
       "category": "Data",
       "pubDate": "2026-05-19T00:00:00.000Z",
       "contentSnippet": "A complete guide with all the insights, tips, and some predictions for the data platform engineer, just like an Almanack provides, with practical information for daily life."
-    },
-    {
-      "id": "1482c83da309",
-      "title": "Hot, Cold, Gone: Caching and Retention in Microsoft Fabric Eventhouse",
-      "link": "https://data-mozart.com/hot-cold-gone-caching-and-retention-in-microsoft-fabric-eventhouse/?utm_source=rss&utm_medium=rss&utm_campaign=hot-cold-gone-caching-and-retention-in-microsoft-fabric-eventhouse",
-      "source": "Data Mozart",
-      "category": "Analytics",
-      "pubDate": "2026-05-09T17:14:17.000Z",
-      "contentSnippet": "Two policies, three storage states, one rule connecting them. A newcomer's guide to caching, retention, and tiered storage in Microsoft Fabric Eventhouse. The post Hot, Cold, Gone: Caching and Retention in Microsoft Fabric Eventhouse appeared first on Data Mozart."
     },
     {
       "id": "7094ef6f8071",
