@@ -83,8 +83,8 @@ raw table
 | Validity | value outside `task.json.domains`, or illegal label → quarantine row (label) or null the cell and count (feature) |
 | Uniqueness | duplicate on `entity_key` + decision time → keep latest by event time; quarantine others |
 | Clock | feature event_time ≥ decision_time → drop column or rebuild with `event_time < decision_time` |
-| Label maturity | label window still open (illustration: fourteen days from decision time) → exclude row from labeled train/validation/test; do not treat as a fit row |
-| Label delay | on matured rows only: median(`label_time - decision_time`) in days → write `label_delay_days` (unless `task.json` overrides) |
+| Label maturity | A row is **mature** only when (1) the outcome window has closed (illustration: fourteen days after `decision_time`) **and** (2) the outcome label is available. Window still open, or label missing/unknown → exclude from labeled train/validation/test. Median label delay is **not** proof of maturity. |
+| Label delay | on matured rows only: median(`label_time - decision_time`) in days → write `label_delay_days` (unless `task.json` overrides). Used later only as the Fit **embargo** size. |
 
 Record planned train-only imputation: numeric median, categorical mode, missing indicator when train null_rate > 0.01.
 
@@ -96,11 +96,11 @@ Recompute profile on kept matured rows. Write before/after counts and matured/im
 - Entity key unique at decision time.
 - No remaining feature uses post-decision values.
 - Quarantine rate ≤ `quarantine_rate_max` (default `0.05`).
-- Immature rows are recorded and excluded from labeled evaluation sets.
+- Immature rows (window open **or** outcome unavailable) are recorded and excluded from labeled evaluation sets.
 
 **Fail → stop** if quarantine rate > `quarantine_rate_max` or clock failures remain.
 
-**Note.** Label maturity and the Fit embargo are different controls. Maturity requires a fully observed outcome. The embargo is temporal separation between partitions. A median-delay embargo alone does not prove every label has matured.
+**Note.** Label maturity and the Fit embargo are different controls. Maturity is window closed + outcome available. The embargo is temporal separation between partitions sized by `label_delay_days`. A median-delay embargo alone does not prove every label has matured.
 
 ## Stage 3 — Outliers
 
@@ -145,21 +145,21 @@ High label correlation → flag only. Clock test decides.
 
 **Do**
 
-1. Start from matured rows only (label window closed). Immature rows never enter train, validation, or test.
+1. Start from matured rows only (outcome window closed **and** outcome available). Immature rows never enter train, validation, or test.
 2. Sort by decision time.
 3. Last 10% → test. Previous 10% → validation. Rest → train.
-4. Embargo = `label_delay_days` between train|validation and validation|test. Gap rows enter neither set. This is temporal separation — not a substitute for maturity.
+4. Embargo = `label_delay_days` between train|validation **and** between validation|test (same rule both boundaries). Gap rows enter neither adjacent set. This is temporal separation — not a substitute for maturity, and not proof that a gap row is mature.
 5. Enforce entity leakage control: each `entity_key` appears in at most one of train, validation, test. If a key would cross, keep it in the earliest partition that claimed it and drop later copies from evaluation.
-6. No decision time → stratified random split, fixed seed, same sizes; still require maturity and disjoint entity keys.
+6. No decision time → stratified random split, fixed seed, same sizes; still require maturity and disjoint entity keys (embargo N/A without a clock).
 7. Persist row ids. Hash test ids into `split_ids.parquet`.
-8. Training code loads train + validation only.
+8. Training code loads train + validation only. Test ids stay unloaded until stage 7.
 
 **Pass**
 
-- Every row in train, validation, and test is matured.
+- Every row in train, validation, and test is matured (window closed + outcome available).
 - Entity id sets disjoint across partitions.
 - `max(train.decision_time) + embargo ≤ min(validation.decision_time)`.
-- Same for validation → test.
+- `max(validation.decision_time) + embargo ≤ min(test.decision_time)`.
 - Test hash stored.
 
 **Fail → stop** if maturity, embargo, or entity disjointness fails.
@@ -174,14 +174,15 @@ High label correlation → flag only. Clock test decides.
 4. Train one regularized linear model and one tree model.
 5. Rank features by permutation importance on inner slice. Drop importance ≤ 0. Record drops. Refit.
 6. If inner score < `min_metric` **or** not beating baseline → **Loop A** (then **Loop B** if still short). Stay on the inner slice for every revision.
-7. When Loops A and B are finished (inner cleared, or budgets exhausted with no clear) and one candidate remains that cleared the inner bar: score official validation **once**. Write `val_reads = 1`. If no inner candidate cleared → do not read validation; go to Loop C or **STOP `blocked`**.
+7. When Loops A and B are finished (inner cleared, or budgets exhausted with no clear) and one candidate remains that cleared the inner bar: score official validation **once**. Write `val_reads = 1`. On that same read, if a hard threshold is required, choose it here and freeze it for stage 7. If no inner candidate cleared → do not read validation; go to Loop C or **STOP `blocked`**.
 
 **Validation contract (same frozen split)**
 
 - At most one scored validation read per frozen `split_ids.parquet`.
 - Never score validation between Loop A trials or Loop B feature revisions.
 - Never select a successive candidate using a previous validation score on the same validation ids.
-- Validation fail on this split → **STOP `blocked`** (or Loop C only for a named data defect that forces a **new** split). Do not reopen A/B on the spent validation set.
+- A failed validation candidate does not return to A/B on these validation ids — that would be an informal repeated selection loop.
+- Validation fail on this split → **STOP `blocked`** (or Loop C only for a named data defect that forces a **new** split).
 
 **Loop A — tune (inner only)**
 
@@ -217,15 +218,15 @@ High label correlation → flag only. Clock test decides.
 
 **Do**
 
-1. Load test ids. Transform with train preprocessor. Score once.
+1. Load frozen test ids only after stage 6 left a validation-cleared candidate (`val_reads = 1` and validation cleared). Transform with train preprocessor. Score once.
 2. Report decision metric, baseline on same rows, 10-bin calibration, per time bucket, per `segment_columns`.
-3. If a hard decision needs a threshold: choose on validation, apply to test. Do not search on test.
+3. If a hard decision needs a threshold: the threshold was chosen on the single validation read in stage 6; apply that frozen threshold to test. Do not search thresholds on test. Do not reopen feature or hyperparameter selection from test residuals.
 
 **Pass**
 
 - Test metric ≥ `min_metric` and beats baseline.
 - Required segments ≥ `segment_floor`.
-- Write `test_report.json` and `model_card.json` (data path, spec hash, metrics, `val_reads`, label delay, segments).
+- Write `test_report.json` and `model_card.json` with `status = "passed"` (data path, spec hash, metrics, `val_reads`, label delay, segments).
 
 **Fail → `model_card.status = "rejected"`.** Stop. Do not open a tuning loop on test residuals.
 
@@ -292,6 +293,18 @@ After stage 8 passes and before the candidate replaces the previous way in the w
 
 On the call-order illustration: intended use = order today’s overdue list; out of scope includes offer of more time and auto-dial without a person; fallback = oldest-first.
 
+## Status vocabulary (use these words only)
+
+| Term | Meaning |
+|---|---|
+| **candidate** | Named `bundle/<version>/` that may score in parallel. Does **not** own the decision until promoted. |
+| **blocked** | Fit stop. Validation unread or validation failed on this freeze (after loops). Test never loaded. `model_card.status = "blocked"`. |
+| **rejected** | Test fail. `model_card.status = "rejected"`. No serve of this version as a release. |
+| **passed** | Test cleared. `model_card.status = "passed"`. Operational evidence only — not permission to own the decision. |
+| **held** | Governance sheet refuses ownership. Candidate may stay parallel-only. |
+| **approved** | Governance sheet filled and accepted for the named use. Still not live until cutover. |
+| **promoted / live** | Version (or oldest-first fallback) that **owns** the decision in the workflow. Rollback restores the previous live way. |
+
 ## Done definition
 
-A version may be called done only when `model_card.status = "passed"`, stage 8 signature tests pass, previous version remains callable, and the governance sheet status is `approved`.
+A version may be called done only when `model_card.status = "passed"`, stage 8 signature tests pass, previous version remains callable, and the governance sheet status is `approved`. Ownership of the decision requires promote/cutover to **live**; `passed` alone is not live.

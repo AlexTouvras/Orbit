@@ -16,6 +16,8 @@ Agent recipe: `/ml-pipeline-field-card/AGENT.md`.
 - Always-on strip: Freeze test ids · Fit on train only · One test read · Previous version stays
 - The test set is frozen at SPLIT and read once at TEST. Split requires matured labels, a temporal embargo, and disjoint entity ids — the median delay alone is not enough.
 - Validation is scored at most once per frozen split. Loops A and B select on the inner slice only; they do not spend validation between revisions.
+- Maturity = outcome window closed and outcome available. `label_delay_days` sizes the embargo only.
+- Status words: candidate, blocked, rejected, passed, held, approved, live (promoted). See AGENT.md vocabulary.
 - Not a Hub competency. Home stays Delivery / Data / AI.
 - Not an AutoML brochure. Tools are lanes, not the spine.
 - Ask, Grain, Truth, and Use stay on Analytics for one number. This card starts when the artifact is a model.
