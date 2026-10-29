@@ -83,17 +83,17 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           title: "The destination",
           paragraphs: [
             "The end state is not a notebook that once scored well. It is a decision brief that names who acts and what the score may change, a pipeline that leaves files the next stage can refuse, a named bundle beside a previous version that still answers, and a monitor that starts a new run when live evidence fails.",
-            "Pipeline correctness is model validity and operational validity. It does not, by itself, prove fairness, business value, or that the decision improved. Those need owners, intended use, and evidence beyond a green fit.",
+            "A new training run does not automatically replace the live model. Promotion is a gate. Rollback restores the previous callable version. Continuous training, when it happens, is a new version id — never a silent overwrite of live weights.",
           ],
           figure: {
             kind: "pipeline",
             caption:
-              "Destination: brief in, controlled pipeline, named release, watch with rollback. A miss starts a new version; it does not rewrite the live bundle.",
-            note: "Rollback restores the previous callable version. Continuous training is a new run, not a silent weight update.",
+              "Release and rollback. Candidate clears a gate beside a live version; watch may promote a new id or restore the previous one.",
+            note: "Live stays until promotion. Watch never rewrites weights in place.",
             steps: [
-              { term: "Brief", detail: "Who acts; what may change" },
-              { term: "Pipeline", detail: "Prepare → Fit → Ship" },
-              { term: "Release", detail: "bundle/<version>/" },
+              { term: "Candidate", detail: "bundle/<version>/" },
+              { term: "Gate", detail: "Test + governance" },
+              { term: "Live", detail: "Current list owner" },
               {
                 term: "Watch",
                 detail: "monitor/<date>.json",
@@ -108,13 +108,13 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           title: "Four arcs",
           paragraphs: [
             "Google’s Practitioners guide to MLOps (May 2021) names seven integrated processes: ML development, training operationalization, continuous training, model deployment, prediction serving, continuous monitoring, and data and model management. I use that lifecycle as the map. I do not copy Google’s product stack.",
-            "On this card the same work is four arcs. Prepare covers profile, quality, outliers, and features. Fit covers the freeze, train, tune, and validation. Ship covers the one official test read, versioning, and serving. Watch covers continuous monitoring and a controlled return. Continuous training, in Google’s sense, is repeatedly executing the training pipeline when data or code changes — on this card, that return starts a new version id. It is not a silent overwrite of live weights.",
+            "On this card the same work is four arcs. Prepare covers profile, quality, outliers, and features. Fit covers the freeze, train, tune, and validation. Ship covers the one official test read, versioning, and serving. Watch covers continuous monitoring and a controlled return. Stage contracts below name the files each arc must leave.",
           ],
           figure: {
             kind: "pipeline",
             caption:
-              "Four arcs on one spine. Watch returns as a new version id.",
-            note: "Google’s seven processes sit inside these arcs. Stage contracts below name the files.",
+              "Four arcs on one spine — the chapter’s principal map. Watch returns as a new version id.",
+            note: "Google’s seven processes sit inside these arcs.",
             steps: [
               { term: "Prepare", detail: "Profile → quality → outliers → features" },
               { term: "Fit", detail: "Split → train → tune → validate" },
@@ -134,7 +134,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           paragraphs: [
             "One synthetic illustration runs through this book. A collections supervisor orders today’s call list for open invoices that are already past due. The score may change who is called first. It does not replace credit policy, auto-dial, or the controller’s offer of more time — that offer stays on Data that drives decisions.",
             "Decision timestamp: this morning’s list cut. Row: one open overdue invoice as of that cut. Action the ranking informs: placing a call (an operational event after the score; not a feature). Prediction target: whether that invoice is paid within fourteen days of the cut. The call event and the payment outcome are separate. The score ranks invoices; it does not estimate the causal effect of placing a call.",
-            "Label availability: the fourteen-day window must close before a row can enter labeled evaluation. Invoices that have not matured stay out of train, validation, and test for that label; the split embargo uses the median label delay written in Prepare. Historical labels were produced under whatever contact policy was then in force, so offline ranking metrics gate order quality relative to oldest-past-due-first under that regime — they do not prove that calling caused payment. Oldest-past-due-first stays the baseline and the callable fallback.",
+            "Oldest-past-due-first stays the baseline and the callable fallback. Historical labels were produced under whatever contact policy was then in force, so offline ranking metrics gate order quality relative to that baseline under that regime — they do not prove that calling caused payment.",
           ],
           figure: {
             kind: "sheet",
@@ -167,6 +167,42 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           ],
         },
         {
+          id: "boundary",
+          title: "Evaluation boundary",
+          paragraphs: [
+            "Four controls keep the evaluation honest. They are related; none substitutes for another. A median-delay embargo alone does not prove every label has matured.",
+            "Label maturity: every row in train, validation, and test must have a fully observed fourteen-day outcome. Immature invoices stay out of labeled evaluation until the window closes. Temporal separation: train, validation, and test periods are separated by an embargo of label_delay_days (median delay on matured rows from Prepare) so late labels from an earlier morning do not leak into a later set. Entity leakage: the same invoice — and related rows that share the entity key at decision time — must not appear in more than one partition. Baseline: the candidate must beat oldest-past-due-first on the metric named in task.json, on the same frozen rows.",
+          ],
+          figure: {
+            kind: "panels",
+            caption:
+              "Evaluation boundary. Maturity, embargo, entity split, and baseline are four gates — not one.",
+            steps: [
+              {
+                term: "Maturity",
+                detail: "Fourteen-day window closed before the row enters any labeled set.",
+              },
+              {
+                term: "Embargo",
+                detail: "label_delay_days gap between train, validation, and test periods.",
+              },
+              {
+                term: "Entity",
+                detail: "One invoice id in at most one partition.",
+              },
+              {
+                term: "Baseline",
+                detail: "Beat oldest-past-due-first on the named metric.",
+              },
+            ],
+          },
+          sources: [
+            { href: ML_AGENT, label: "ML pipeline agent recipe" },
+            SKLEARN_SPLIT,
+            mlChapter(4, "Fit without spending the holdout"),
+          ],
+        },
+        {
           id: "layers",
           title: "How to read this with the card",
           paragraphs: [
@@ -184,88 +220,49 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "contracts",
           title: "Stage contracts",
           paragraphs: [
-            "Inside the arcs the agent recipe defines nine stages. Each stage consumes named inputs and writes named outputs. The next stage starts only when the pass line clears. Filenames below are the recipe’s contracts — not a claim that a live repo already holds them.",
-            "task.json is required before stage 1: label column, entity key, decision-time column, metric, baseline, and min_metric. Optional quarantine_rate_max defaults to 0.05 in this recipe; that default is an operating threshold for this card, not a universal law. A different dataset needs its own written threshold and owner.",
-            "Artifacts in order: profile.json → quality.json and quarantine.parquet → outlier_policy.json → feature_spec.json → split_ids.parquet → preprocess.joblib, model.joblib, and val_metrics.json → test_report.json and model_card.json → bundle/<version>/ → monitor/<date>.json. Validation metrics are written in Fit. The official test report and model card are written when test is read once in Ship. The bundle is the promotable package; the model card status is not a substitute for the governance sheet on Name what the version may do.",
+            "Inside the arcs the agent recipe defines nine stages. Each stage consumes named inputs, writes named outputs, and clears a pass line before the next stage starts. Filenames below are the recipe’s contracts — not a claim that a live repo already holds them.",
+            "task.json is required before stage 1: label column, entity key, decision-time column, metric, baseline, and min_metric. Optional quarantine_rate_max defaults to 0.05 in this recipe; that default is an operating threshold for this card, not a universal law. A different dataset needs its own written threshold and owner. Validation metrics are written in Fit. The official test report and model card are written when test is read once in Ship. The bundle is the promotable package; the model card status is not a substitute for the governance sheet on Name what the version may do.",
           ],
           figure: {
-            kind: "uses",
+            kind: "panels",
             caption:
-              "Nine-stage reference. Pass and fail follow the agent recipe. Re-run notes say whether approved evidence stays valid.",
-            steps: [],
-            head: ["Stage", "Writes", "Pass / fail", "Re-run"],
-            rows: [
+              "Nine-stage contracts. Each card is a filename, a pass line, and what a re-run invalidates.",
+            steps: [
               {
-                label: "1 Profile",
-                cells: [
-                  "profile.json",
-                  "Pass: every column has one role; label and decision time set. Fail → stop.",
-                  "Safe to re-run; later stages must re-run after a role change.",
-                ],
+                term: "1 Profile",
+                detail: "→ profile.json. Every column one role; label and decision time set. Role change → re-run later stages.",
               },
               {
-                label: "2 Quality",
-                cells: [
-                  "quality.json, quarantine.parquet",
-                  "Pass: label valid, key unique, no post-decision features, quarantine ≤ quarantine_rate_max. Fail → stop.",
-                  "Re-run invalidates downstream fits until they re-run.",
-                ],
+                term: "2 Quality",
+                detail: "→ quality.json, quarantine.parquet. Matured labels valid; key unique; clock clean; quarantine ≤ max. Else stop.",
               },
               {
-                label: "3 Outliers",
-                cells: [
-                  "outlier_policy.json",
-                  "Pass: every numeric feature has a policy. New quarantine → return to Quality.",
-                  "Policy change requires Feature and Fit again.",
-                ],
+                term: "3 Outliers",
+                detail: "→ outlier_policy.json. Every numeric feature has a policy. New quarantine → return to Quality.",
               },
               {
-                label: "4 Features",
-                cells: [
-                  "feature_spec.json",
-                  "Pass: kept features are decision-time and fit_on train. Fail → stop or drop.",
-                  "Spec change invalidates Fit evidence.",
-                ],
+                term: "4 Features",
+                detail: "→ feature_spec.json. Kept features are decision-time and fit_on train. Spec change invalidates Fit.",
               },
               {
-                label: "5 Split",
-                cells: [
-                  "split_ids.parquet (test hash frozen)",
-                  "Pass: disjoint ids; embargo held. Fail → stop.",
-                  "New split discards unread old test ids; prior test reports do not transfer.",
-                ],
+                term: "5 Split",
+                detail: "→ split_ids.parquet. Matured rows only; embargo held; entity ids disjoint; test hash frozen.",
               },
               {
-                label: "6 Train",
-                cells: [
-                  "preprocess.joblib, model.joblib, val_metrics.json",
-                  "Pass: validation ≥ min_metric and beats baseline; test never loaded. Fail after loops → blocked.",
-                  "Reproducible run ≠ promotable release. Miss loops stay inside train until validation is read once.",
-                ],
+                term: "6 Train",
+                detail: "→ preprocess.joblib, model.joblib, val_metrics.json. Validation ≥ min_metric and beats baseline; test never loaded.",
               },
               {
-                label: "7 Test",
-                cells: [
-                  "test_report.json, model_card.json",
-                  "Pass: one official read clears the bar. Fail → rejected. No tune on test residuals.",
-                  "A second selection on the same test ids invalidates the holdout’s role.",
-                ],
+                term: "7 Test",
+                detail: "→ test_report.json, model_card.json. One official read. Fail → rejected. No tune on test residuals.",
               },
               {
-                label: "8 Serve",
-                cells: [
-                  "bundle/<version>/",
-                  "Pass: signature match; missing feature errors; previous version recorded. Fail → do not promote.",
-                  "New version id only. Does not own the decision until governance and Watch allow it.",
-                ],
+                term: "8 Serve",
+                detail: "→ bundle/<version>/. Signature match; missing feature errors; previous version recorded. New id only.",
               },
               {
-                label: "9 Monitor",
-                cells: [
-                  "monitor/<date>.json",
-                  "Signals return to Features, Prepare, a mature test read, or a new split — never in-place weights.",
-                  "Always a new version id when a model changes.",
-                ],
+                term: "9 Monitor",
+                detail: "→ monitor/<date>.json. Return to Features, Prepare, mature test, or new split — never in-place weights.",
               },
             ],
           },
@@ -275,7 +272,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "stage-example",
           title: "One stage, worked",
           paragraphs: [
-            "Quality (stage 2) shows the contract shape. Inputs are the profiled table and task.json domains. Outputs are quality.json and quarantine.parquet. Transforms are not fitted here; imputation rules are only planned for train later.",
+            "Quality (stage 2) shows the contract shape. Inputs are the profiled table and task.json domains. Outputs are quality.json and quarantine.parquet. Transforms are not fitted here; imputation rules are only planned for train later. Immature invoices are excluded from labeled evaluation here — that is maturity, not the Fit embargo.",
           ],
           figure: {
             kind: "sheet",
@@ -288,11 +285,11 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
               },
               {
                 term: "Outputs",
-                detail: "quality.json (before/after counts, label delay); quarantine.parquet.",
+                detail: "quality.json (before/after counts, matured-only label delay); quarantine.parquet.",
               },
               {
                 term: "Pass",
-                detail: "Label validity 100% on kept rows; unique key; no post-cut features; quarantine ≤ max.",
+                detail: "Label validity 100% on kept matured rows; unique key; no post-cut features; quarantine ≤ max.",
               },
               {
                 term: "Fail",
@@ -307,10 +304,43 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "validity",
           title: "Three kinds of validity",
           paragraphs: [
-            "Model validity: the freeze held, transforms fitted on train only and applied without refitting, test read once, miss loops stayed inside their budgets. That is necessary for a trustworthy evaluation number.",
-            "Operational validity: the bundle serves with a signature test, missing features error, previous version callable, monitor writes daily files, and Watch cannot silently retrain. A reproducible training run is not yet a promotable release.",
-            "Decision value: whether the ranking improved the supervisor’s work under the named intended use. Pipeline gates do not prove that. Governance names intended use, prohibited use, owners, monitoring, and rollback before a version owns the list order.",
+            "A green fit answers only the first gate. Operational packaging answers the second. Whether the supervisor should change the list is the third — and it is not ranking performance alone.",
+            "For the call-order illustration, decision value also weighs operational capacity, payment outcomes under the contact policy in force, unwanted contacts, and the consequences of changing call order. Where causal improvement cannot be established from offline data, say so on the governance sheet. Pipeline gates do not invent that evidence.",
           ],
+          figure: {
+            kind: "compare",
+            caption: "Three gates. Clearing one does not clear the others.",
+            steps: [],
+            columns: [
+              {
+                term: "Model validity",
+                detail: "Is the evaluation trustworthy?",
+                points: [
+                  "Freeze, maturity, embargo, and entity split held",
+                  "Transforms fitted on train only",
+                  "Test read once; miss loops inside budget",
+                ],
+              },
+              {
+                term: "Operational validity",
+                detail: "Can the approved version run and be reversed?",
+                points: [
+                  "Signature test; missing features error",
+                  "Previous version callable",
+                  "Monitor writes daily; no silent retrain",
+                ],
+              },
+              {
+                term: "Decision value",
+                detail: "Does using it improve the workflow enough?",
+                points: [
+                  "Not ranking score alone",
+                  "Capacity, outcomes, unwanted contacts, order risk",
+                  "Governance before the score owns the list",
+                ],
+              },
+            ],
+          },
           sources: [
             MODEL_CARDS,
             mlChapter(5, "Ship and watch"),
@@ -322,7 +352,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "draft",
           title: "When a draft is cheap",
           paragraphs: [
-            "A generated training script can look complete and still have spent the holdout, fitted the imputer on the full table, or treated “called and paid” as one label. The destination, the arcs, and the stage contracts still apply.",
+            "A generated training script can look complete and still have spent the holdout, fitted the imputer on the full table, treated “called and paid” as one label, or used a median embargo while immature rows still sat in test. The destination, the arcs, the evaluation boundary, and the stage contracts still apply.",
             "This holds when a draft is cheap: a green fit is not done until test_report and model_card say passed, the bundle keeps a previous version callable, and the governance sheet is approved for the named use.",
           ],
         },
@@ -378,8 +408,8 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           title: "Quality before impute",
           paragraphs: [
             "Quality does not impute yet. Completeness marks high-null columns for drop or a later missing indicator (null rate above forty percent in this recipe). Validity quarantines illegal labels and nulls out-of-domain feature cells. Uniqueness keeps the latest row on entity key at decision time. The clock fails when a feature’s event time is at or after the decision time.",
-            "Immature invoices — fourteen-day window still open — are not labeled training rows. Write label_delay_days as the median delay from cut to label time on matured rows; Fit uses that as the embargo. A post-cut payment offered as a feature fails the clock. Planned train-only imputation (median, mode, missing indicator) is recorded here and fitted only later on train.",
-            "Recompute the profile on kept rows. Write quality.json and quarantine.parquet. Pass when label validity is 100% on kept matured rows, the key is unique, no remaining feature uses post-decision values, and quarantine rate ≤ quarantine_rate_max (task.json; this recipe’s default 0.05 is an operating threshold with an owner, not a universal law). Above that → stop.",
+            "Immature invoices — fourteen-day window still open — are not labeled evaluation rows. That is label maturity: the outcome must be fully observed before the row enters train, validation, or test. Separately, write label_delay_days as the median delay from cut to label time on matured rows only; Fit uses that value as the temporal embargo between partitions. Maturity and embargo are different controls. A post-cut payment offered as a feature fails the clock. Planned train-only imputation (median, mode, missing indicator) is recorded here and fitted only later on train.",
+            "Recompute the profile on kept matured rows. Write quality.json and quarantine.parquet. Pass when label validity is 100% on those rows, the key is unique, no remaining feature uses post-decision values, and quarantine rate ≤ quarantine_rate_max (task.json; this recipe’s default 0.05 is an operating threshold with an owner, not a universal law). Above that → stop.",
           ],
           figure: {
             kind: "flow",
@@ -544,19 +574,21 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "freeze",
           title: "Freeze the split",
           paragraphs: [
-            "Sort by decision time. Last tenth → test; previous tenth → validation; rest → train. Embargo = label_delay_days from Prepare between sets. Gap rows enter neither set — including mornings whose fourteen-day labels have not matured. Persist ids and hash test ids into split_ids.parquet. Training code loads train and validation only.",
-            "Time order is the default when the decision has a clock. Without decision time, use a stratified random split with a fixed seed — the weaker case.",
+            "Only matured rows enter the split — every fourteen-day outcome fully observed. Sort those by decision time. Last tenth → test; previous tenth → validation; rest → train. Embargo = label_delay_days from Prepare between sets; gap rows enter neither set. Entity keys must be disjoint across partitions. Persist ids and hash test ids into split_ids.parquet. Training code loads train and validation only.",
+            "Maturity keeps incomplete labels out. The embargo separates periods so a late label from an earlier morning cannot leak into a later set. Disjoint entity keys stop the same invoice from inflating the score by appearing in more than one partition. The median-delay embargo alone does not replace any of those checks.",
+            "Time order is the default when the decision has a clock. Without decision time, use a stratified random split with a fixed seed — the weaker case — and still enforce maturity and disjoint entities.",
             "scikit-learn’s cross-validation guide is the practice for held-out evaluation. The freeze is the rule: the test hash is written before any preprocessor is fit. Selecting again on those same rows invalidates the holdout’s role as an untouched evaluation.",
           ],
           figure: {
             kind: "panels",
             caption:
-              "Time-ordered mornings, then an embargo. Test stays sealed until Ship.",
+              "Evaluation boundary on the freeze. Maturity first, then embargo, then sealed test.",
             steps: [
+              { term: "Matured only", detail: "Fourteen-day window closed before any labeled set." },
               { term: "Train", detail: "Earlier mornings. Preprocessors fit here only." },
-              { term: "Embargo", detail: "Label-delay gap. Neither set." },
+              { term: "Embargo", detail: "label_delay_days gap. Neither set." },
               { term: "Validation", detail: "One official read after the inner bar." },
-              { term: "Test", detail: "Frozen ids. Read once in Ship." },
+              { term: "Test", detail: "Frozen ids; disjoint entities. Read once in Ship." },
             ],
           },
           picture: {

@@ -14,7 +14,7 @@ Agent recipe: `/ml-pipeline-field-card/AGENT.md`.
 - Stages: PROFILE → QUALITY → OUTLIERS → FEATURES → SPLIT → TRAIN → TEST → SERVE → MONITOR
 - Miss loops drawn under Fit: A tune → B features → C data → stop. Watch return is a new version.
 - Always-on strip: Freeze test ids · Fit on train only · One test read · Previous version stays
-- The test set is frozen at SPLIT and read once at TEST.
+- The test set is frozen at SPLIT and read once at TEST. Split requires matured labels, a temporal embargo, and disjoint entity ids — the median delay alone is not enough.
 - Not a Hub competency. Home stays Delivery / Data / AI.
 - Not an AutoML brochure. Tools are lanes, not the spine.
 - Ask, Grain, Truth, and Use stay on Analytics for one number. This card starts when the artifact is a model.
@@ -22,6 +22,7 @@ Agent recipe: `/ml-pipeline-field-card/AGENT.md`.
 - Handbook title: Models that stay relevant (slug unchanged).
 - One handbook illustration: call-order for open overdue invoices; label = paid within fourteen days of the cut (call separate); oldest-first is the previous way. Do not invent amounts or client results on the card.
 - Quality gate uses `quarantine_rate_max` (default 0.05) — recipe threshold, not a universal law.
+- Decision value is not ranking alone; governance still owns intended use before the score owns the list.
 - Governance: intended use + out of scope + owners + fallback before the score owns the decision.
 
 ## Monthly judgment

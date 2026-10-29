@@ -83,20 +83,24 @@ raw table
 | Validity | value outside `task.json.domains`, or illegal label → quarantine row (label) or null the cell and count (feature) |
 | Uniqueness | duplicate on `entity_key` + decision time → keep latest by event time; quarantine others |
 | Clock | feature event_time ≥ decision_time → drop column or rebuild with `event_time < decision_time` |
-| Label delay | median(`label_time - decision_time`) in days → write `label_delay_days` |
+| Label maturity | label window still open (illustration: fourteen days from decision time) → exclude row from labeled train/validation/test; do not treat as a fit row |
+| Label delay | on matured rows only: median(`label_time - decision_time`) in days → write `label_delay_days` (unless `task.json` overrides) |
 
 Record planned train-only imputation: numeric median, categorical mode, missing indicator when train null_rate > 0.01.
 
-Recompute profile on kept rows. Write before/after counts in `quality.json`.
+Recompute profile on kept matured rows. Write before/after counts and matured/immature counts in `quality.json`.
 
 **Pass**
 
-- Label validity = 100% on kept rows.
+- Label validity = 100% on kept matured rows.
 - Entity key unique at decision time.
 - No remaining feature uses post-decision values.
 - Quarantine rate ≤ `quarantine_rate_max` (default `0.05`).
+- Immature rows are recorded and excluded from labeled evaluation sets.
 
 **Fail → stop** if quarantine rate > `quarantine_rate_max` or clock failures remain.
+
+**Note.** Label maturity and the Fit embargo are different controls. Maturity requires a fully observed outcome. The embargo is temporal separation between partitions. A median-delay embargo alone does not prove every label has matured.
 
 ## Stage 3 — Outliers
 
@@ -141,19 +145,24 @@ High label correlation → flag only. Clock test decides.
 
 **Do**
 
-1. Sort by decision time.
-2. Last 10% → test. Previous 10% → validation. Rest → train.
-3. Embargo = `label_delay_days` between train|validation and validation|test. Gap rows enter neither set.
-4. No decision time → stratified random split, fixed seed, same sizes.
-5. Persist row ids. Hash test ids into `split_ids.parquet`.
-6. Training code loads train + validation only.
+1. Start from matured rows only (label window closed). Immature rows never enter train, validation, or test.
+2. Sort by decision time.
+3. Last 10% → test. Previous 10% → validation. Rest → train.
+4. Embargo = `label_delay_days` between train|validation and validation|test. Gap rows enter neither set. This is temporal separation — not a substitute for maturity.
+5. Enforce entity leakage control: each `entity_key` appears in at most one of train, validation, test. If a key would cross, keep it in the earliest partition that claimed it and drop later copies from evaluation.
+6. No decision time → stratified random split, fixed seed, same sizes; still require maturity and disjoint entity keys.
+7. Persist row ids. Hash test ids into `split_ids.parquet`.
+8. Training code loads train + validation only.
 
 **Pass**
 
-- Id sets disjoint.
+- Every row in train, validation, and test is matured.
+- Entity id sets disjoint across partitions.
 - `max(train.decision_time) + embargo ≤ min(validation.decision_time)`.
 - Same for validation → test.
 - Test hash stored.
+
+**Fail → stop** if maturity, embargo, or entity disjointness fails.
 
 ## Stage 6 — Train and tune
 
