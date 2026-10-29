@@ -168,13 +168,20 @@ High label correlation → flag only. Clock test decides.
 
 **Do**
 
-1. Fit every preprocessor on train only; apply to validation. Save `preprocess.joblib`.
-2. Inner slice = last 10% of train. Official validation is not for tuning.
+1. Fit every preprocessor on train only; apply transforms to validation without scoring for selection. Save `preprocess.joblib`.
+2. Inner slice = last 10% of train. All candidate selection happens here.
 3. Score baseline on inner slice with `task.json.metric`.
 4. Train one regularized linear model and one tree model.
 5. Rank features by permutation importance on inner slice. Drop importance ≤ 0. Record drops. Refit.
-6. If inner score < `min_metric` **or** not beating baseline → **Loop A**.
-7. After Loop A clears (or budget ends still short → Loop B): score official validation **once**. Write `val_reads`.
+6. If inner score < `min_metric` **or** not beating baseline → **Loop A** (then **Loop B** if still short). Stay on the inner slice for every revision.
+7. When Loops A and B are finished (inner cleared, or budgets exhausted with no clear) and one candidate remains that cleared the inner bar: score official validation **once**. Write `val_reads = 1`. If no inner candidate cleared → do not read validation; go to Loop C or **STOP `blocked`**.
+
+**Validation contract (same frozen split)**
+
+- At most one scored validation read per frozen `split_ids.parquet`.
+- Never score validation between Loop A trials or Loop B feature revisions.
+- Never select a successive candidate using a previous validation score on the same validation ids.
+- Validation fail on this split → **STOP `blocked`** (or Loop C only for a named data defect that forces a **new** split). Do not reopen A/B on the spent validation set.
 
 **Loop A — tune (inner only)**
 
@@ -184,23 +191,23 @@ High label correlation → flag only. Clock test decides.
 - Clears when inner metric ≥ `min_metric` and beats baseline.
 - Else → Loop B.
 
-**Loop B — features (max 3 revisions)**
+**Loop B — features (max 3 revisions, inner only)**
 
 - One change to `feature_spec.json` per pass, driven by inner-slice error segments.
-- Refit; Loop A with 10 trials.
-- Spend a validation read only after inner clears.
-- Stop after 3 revisions or improvement < 0.005 → Loop C.
+- Refit; Loop A with 10 trials on the inner slice.
+- Do not read validation between revisions.
+- Stop after 3 revisions or improvement < 0.005. Then take the single best inner-cleared candidate to the one validation read, or enter Loop C / blocked if none cleared.
 
 **Loop C — data (once)**
 
 - Enter only for a named data defect (wrong labels, duplicates, clock failure, wrong units). A weak score alone is not a data defect.
-- Repair via stage 2 or 3. New split. Discard old test ids unread.
-- One stage-6 run. If validation still fails → **STOP `blocked`**. Do not read test. Do not serve.
+- Repair via stage 2 or 3. New split. Discard old test ids unread. `val_reads` resets with the new freeze.
+- One stage-6 run on the new split (inner work, then one validation read). If validation still fails → **STOP `blocked`**. Do not read test. Do not serve.
 
 **Pass**
 
 - Validation metric ≥ `min_metric` and beats baseline.
-- `val_reads` recorded.
+- `val_reads = 1` for this split.
 - Test ids never loaded.
 - Write `model.joblib`, `val_metrics.json`.
 
@@ -261,7 +268,8 @@ Monitor never updates weights in place. Next model = new version id.
 - Quarantine rate > `quarantine_rate_max` after stage 2.
 - Feature not computable at decision time.
 - Test hash present and training code loads those ids.
-- `val_reads` would be used to tune hyperparameters.
+- `val_reads` would be used to tune hyperparameters or to choose among successive candidates on the same validation ids.
+- A second scored validation read on the same frozen split (except a fresh split after Loop C).
 - Test residuals used to change the model on the same test ids.
 - Silent retrain from a monitor alert.
 
