@@ -73,7 +73,8 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       title: "What good looks like",
       lede: "Good looks like a model that can stay in a workflow: reproducible from files, rejectable at a gate, promotable as a named version, monitorable in production, and reversible to a previous version that still answers.",
       rule: "My operating rule: freeze the test ids before any fit, fit every transform on train only, clear an inner bar before validation is read, read the test set once for the official evaluation, keep the previous version callable, and start a new version id when live evidence fails — never overwrite the live weights in place.",
-      illustration: "The call-order path is a synthetic illustration, not a measured result. It states no amount.",
+      illustration:
+        "Scope and evidence: the call-order path is a synthetic illustration, not a measured result. It states no amount. Citations below were checked 29 Oct 2026 against their primary pages.",
       reviewed: "29 Oct 2026",
       plate: "pipeline",
       sections: [
@@ -106,14 +107,14 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "arcs",
           title: "Four arcs",
           paragraphs: [
-            "Google’s Practitioners guide to MLOps (May 2021) maps the work as integrated processes from development through monitoring and model management. I use that lifecycle as the map. I do not copy Google’s product stack.",
-            "On this card the same work is four arcs. Prepare covers profile, quality, outliers, and features. Fit covers the freeze, train, tune, and validation. Ship covers the one official test read, versioning, and serving. Watch covers operational monitoring and a controlled return that starts a new version. Continuous training in Google’s sense is that return — not a silent overwrite of live weights.",
+            "Google’s Practitioners guide to MLOps (May 2021) names seven integrated processes: ML development, training operationalization, continuous training, model deployment, prediction serving, continuous monitoring, and data and model management. I use that lifecycle as the map. I do not copy Google’s product stack.",
+            "On this card the same work is four arcs. Prepare covers profile, quality, outliers, and features. Fit covers the freeze, train, tune, and validation. Ship covers the one official test read, versioning, and serving. Watch covers continuous monitoring and a controlled return. Continuous training, in Google’s sense, is repeatedly executing the training pipeline when data or code changes — on this card, that return starts a new version id. It is not a silent overwrite of live weights.",
           ],
           figure: {
             kind: "pipeline",
             caption:
               "Four arcs on one spine. Watch returns as a new version id.",
-            note: "Detail for each stage sits in the stage contracts below and in the agent recipe.",
+            note: "Google’s seven processes sit inside these arcs. Stage contracts below name the files.",
             steps: [
               { term: "Prepare", detail: "Profile → quality → outliers → features" },
               { term: "Fit", detail: "Split → train → tune → validate" },
@@ -398,7 +399,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "outliers",
           title: "Outliers as policy",
           paragraphs: [
-            "Extremes are measured after impossibles were quarantined. Per numeric feature: modified Z-score with MAD, threshold 3.5 (NIST / Iglewicz and Hoaglin). If MAD is zero, use Tukey fences. Flags measure the tail; they do not delete by default.",
+            "Extremes are measured after impossibles were quarantined. Per numeric feature I use the modified Z-score with MAD and label |M| > 3.5 as a potential outlier, from the NIST note on Iglewicz and Hoaglin. That note is for labeling, not automatic deletion. If MAD is zero, my operating fallback is Tukey fences (Q1 − 1.5 IQR, Q3 + 1.5 IQR) — not a NIST rule.",
             "Write outlier_policy.json: keep, log1p (skew high and min ≥ 0), cap (bounds learned later on train), or quarantine. Rare categories become OTHER later from train counts only. New quarantine → return through Quality. Cap bounds and OTHER maps are not fitted here.",
           ],
           figure: {
@@ -460,7 +461,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           paragraphs: [
             "A candidate harms the model when it is unavailable at decision time, was built with the label on the full sample, is an identifier or the label itself, duplicates another column, will not hold at serve time, or is a proxy the decision may not use.",
             "Keep: days past due, open amount, and dispute flag when each is known before the cut. Drop: invoice id; the paid-within-fourteen-days label; any payment after the cut; a full-history target mean that saw holdout mornings; whether a call was placed (operational act after ranking — not a feature, not part of the label).",
-            "scikit-learn’s data-leakage note covers imputers, scalers, and target means fit on the whole table. Out-of-fold target encoding on train, with smoothing toward the train base rate, is allowed. Validation, test, and live rows use the train mapping only.",
+            "scikit-learn’s data-leakage note warns that transforms such as StandardScaler, SimpleImputer, and feature selection must be fit on the training subset only — fitting on the whole table leaks test information. A full-sample target mean is the same class of leak. Out-of-fold target encoding on train, with smoothing toward the train base rate, is my allowed form. Validation, test, and live rows use the train mapping only.",
           ],
           figure: {
             kind: "matrix",
@@ -680,7 +681,8 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           title: "Serve with a previous version",
           paragraphs: [
             "Pack preprocess.joblib, model.joblib, feature_spec.json, and the version id into bundle/<version>/. Signature test: one known training row matches name-for-name and type-for-type. Missing required feature → hard error, no silent fill.",
-            "Previous version on this path is oldest-past-due-first. During cutover both orders can be scored; the supervisor’s list follows oldest-first until Watch and governance allow the candidate to own the order. One action restores oldest-first alone — the same shape as Run the version just verified and Fowler’s last good build.",
+            "Previous version on this path is oldest-past-due-first. During cutover both orders can be scored; the supervisor’s list follows oldest-first until Watch and governance allow the candidate to own the order. One action restores oldest-first alone — the same shape as Run the version just verified. Keeping the previous way callable is my operating rule.",
+            "Fowler’s deployment pipeline builds confidence through staged checks before production. Google’s Practitioners guide mentions progressive delivery into a serving environment; I take the staged cutover. I do not require any one cloud product.",
             "A passed test and a packed bundle are operational validity. The version still does not own the decision until the governance sheet on Name what the version may do is approved.",
           ],
           figure: {
@@ -713,7 +715,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "monitor",
           title: "Watch returns as a new version",
           paragraphs: [
-            "Google’s continuous monitoring watches for skew that should trigger investigation or a new training run. Continuous training is a new pipeline run — on this card, Watch writing monitor/<date>.json and naming the stage to re-enter.",
+            "Google’s Practitioners guide describes continuous monitoring as watching the effectiveness and efficiency of a deployed model, including decay such as data and concept drift. Continuous training is repeatedly executing the training pipeline when new data or code arrives. On this card those meet as Watch: write monitor/<date>.json and name the stage to re-enter.",
             "Signals and actions follow the agent recipe: required-feature missing → stop this version, fall back to oldest-first, re-enter Features; feature PSI above the written line → keep current owner, re-enter Prepare with a live sample; score PSI with stable features → mature labeled cohort read before any refit; label metric worse than test by more than monitor_margin → new split on newer mornings. PSI and monitor_margin defaults in this recipe (0.25 and 0.05) are operating thresholds with owners and review actions — not universal laws.",
             "Monitor never updates weights in place. The next model is always a new version id.",
           ],
@@ -786,7 +788,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           title: "Why Ship is not enough",
           paragraphs: [
             "Ship proved the candidate can be served and watched. Governance asks what the version may do in the workflow. Google’s Practitioners guide places model governance across the lifecycle — accountability for how models are used. I use that placement. I do not copy a registry product.",
-            "Mitchell et al. (FAT* 2019) ask for intended use, performance factors, metrics, evaluation data, and ethical considerations. I take the duty to write intended use and limits before release. I do not invent demographic results this illustration does not have. Pipeline correctness still does not prove fairness, business value, or that the decision improved.",
+            "Mitchell et al., Model Cards for Model Reporting (FAT* 2019), ask for short documents with intended use (including out-of-scope uses), evaluation procedures and metrics, factors that affect performance, and ethical considerations. I take the duty to write intended use and limits before release. I do not paste their full template, and I do not invent demographic or intersectional results this illustration does not have. Pipeline correctness still does not prove fairness, business value, or that the decision improved.",
           ],
           sources: [GOOGLE_MLOPS, MODEL_CARDS, mlChapter(5, "Ship and watch"), mlChapter(1, "What good looks like")],
         },

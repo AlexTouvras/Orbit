@@ -503,14 +503,17 @@ function CompareFigure({ figure }: { figure: HandbookFigure }) {
 function PipelineFigure({ figure }: { figure: HandbookFigure }) {
   const steps = figure.steps;
   const count = Math.max(steps.length, 1);
+  const hasReturn = steps.some((step) => Boolean(step.spine));
   const width = 920;
-  const height = 280;
+  const height = hasReturn ? 320 : 260;
   const left = 36;
   const right = width - 36;
-  const boxW = Math.min(118, (right - left) / count - 16);
+  const boxW = Math.min(132, (right - left) / count - 14);
   const gap = (right - left - boxW * count) / Math.max(count - 1, 1);
-  const y = 88;
+  const y = 72;
   const centers = steps.map((_, index) => left + boxW / 2 + index * (boxW + gap));
+  const clip = (value: string, max: number) =>
+    value.length > max ? `${value.slice(0, Math.max(0, max - 1))}…` : value;
 
   return (
     <>
@@ -532,6 +535,7 @@ function PipelineFigure({ figure }: { figure: HandbookFigure }) {
         {steps.map((step, index) => {
           const cx = centers[index] ?? left;
           const x = cx - boxW / 2;
+          const last = index === steps.length - 1;
           return (
             <g key={step.term}>
               <rect
@@ -540,7 +544,7 @@ function PipelineFigure({ figure }: { figure: HandbookFigure }) {
                 width={boxW}
                 height={68}
                 rx="5"
-                fill="#fff"
+                fill={last && hasReturn ? "#1f2a1c" : "#fff"}
                 stroke="#1f2a1c"
                 strokeWidth="1.75"
               />
@@ -548,7 +552,7 @@ function PipelineFigure({ figure }: { figure: HandbookFigure }) {
                 x={cx}
                 y={y + 28}
                 textAnchor="middle"
-                fill="#1f2a1c"
+                fill={last && hasReturn ? "#e7efe6" : "#1f2a1c"}
                 fontFamily="Georgia, serif"
                 fontSize="15"
                 fontWeight="600"
@@ -559,30 +563,35 @@ function PipelineFigure({ figure }: { figure: HandbookFigure }) {
                 x={cx}
                 y={y + 50}
                 textAnchor="middle"
-                fill="#3d4638"
+                fill={last && hasReturn ? "#c5d4c2" : "#3d4638"}
                 fontFamily="ui-sans-serif, system-ui, sans-serif"
                 fontSize="11"
               >
-                {step.detail.length > 18 ? `${step.detail.slice(0, 16)}…` : step.detail}
+                {clip(step.detail, 22)}
               </text>
               {step.spine ? (
                 <g>
                   <path
-                    d={`M${cx} ${y + 68} C${cx} ${y + 120} ${centers[0]} ${y + 120} ${centers[0]} ${y + 68}`}
+                    d={`M${cx} ${y + 68} C${cx} ${y + 128} ${centers[0]} ${y + 128} ${centers[0]} ${y + 68}`}
                     fill="none"
                     stroke="#0f6b5c"
-                    strokeWidth="2"
-                    strokeDasharray="5 5"
+                    strokeWidth="2.25"
+                    strokeDasharray="6 5"
+                  />
+                  <polygon
+                    points={`${centers[0]},${y + 68} ${centers[0]! - 7},${y + 56} ${centers[0]! + 7},${y + 56}`}
+                    fill="#0f6b5c"
                   />
                   <text
                     x={(cx + (centers[0] ?? cx)) / 2}
-                    y={y + 138}
+                    y={y + 148}
                     textAnchor="middle"
                     fill="#0f6b5c"
                     fontFamily="ui-monospace, monospace"
-                    fontSize="11"
+                    fontSize="12"
+                    letterSpacing="0.04em"
                   >
-                    {step.spine}
+                    {step.spine.toUpperCase()}
                   </text>
                 </g>
               ) : null}
@@ -592,7 +601,7 @@ function PipelineFigure({ figure }: { figure: HandbookFigure }) {
         {figure.note ? (
           <text
             x={width / 2}
-            y={height - 24}
+            y={height - 22}
             textAnchor="middle"
             fill="#3d4638"
             fontFamily="ui-sans-serif, system-ui, sans-serif"
