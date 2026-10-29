@@ -278,7 +278,7 @@
     <section class="hero">
       <div>
         <h1>A model earns its place one stage at a time</h1>
-        <p class="lede">Four arcs turn a raw table into a monitored score. Each stage writes a file the next stage can refuse. A miss returns left. It does not spend the holdout twice.</p>
+        <p class="lede">Four arcs turn a raw table into a monitored score that can stay relevant: files the next stage can refuse, one test read, a previous version that still answers, and Watch that starts a new version — never a silent overwrite.</p>
         <p class="verbs">Prepare → Fit → Ship → Watch</p>
         <div class="always" aria-label="Always on">
           <span>Freeze test ids</span>
@@ -426,7 +426,7 @@
         </thead>
         <tbody>
           <tr><td>Profile</td><td><code>profile.json</code></td><td>Every column has one role</td></tr>
-          <tr><td>Quality</td><td><code>quality.json</code></td><td>Quarantine ≤ 5%, clock clean</td></tr>
+          <tr><td>Quality</td><td><code>quality.json</code></td><td>Quarantine ≤ <code>quarantine_rate_max</code> (default 0.05), clock clean</td></tr>
           <tr><td>Outliers</td><td><code>outlier_policy.json</code></td><td>Policy + touch-rate per numeric</td></tr>
           <tr><td>Features</td><td><code>feature_spec.json</code></td><td>fit_on train, clock pass</td></tr>
           <tr><td>Split</td><td><code>split_ids.parquet</code></td><td>Test hash frozen</td></tr>
