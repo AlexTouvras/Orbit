@@ -13,7 +13,7 @@
 - Handbooks: https://alextouvras.com/handbooks
 - Software that stays in use: https://alextouvras.com/handbooks/software-that-stays-in-use/1
 - Data that drives decisions: https://alextouvras.com/handbooks/data-that-drives-decisions/1
-- Models that stay in the decision: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/1
+- Models that stay relevant: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/1
 - Prepare the table: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/2
 - Features that hold: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/3
 - Fit without spending the holdout: https://alextouvras.com/handbooks/models-that-stay-in-the-decision/4

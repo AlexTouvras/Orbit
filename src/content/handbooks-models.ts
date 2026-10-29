@@ -1,5 +1,5 @@
 /**
- * Models that stay in the decision — handbook 05.
+ * Models that stay relevant — handbook 05.
  * Product owner: docs/product/HANDBOOKS.md
  */
 import type { Handbook, HandbookLink } from "@/content/handbooks";
@@ -54,9 +54,9 @@ const MODEL_CARDS = source(
 export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
   slug: "models-that-stay-in-the-decision",
   index: "05",
-  title: "Models that stay in the decision",
+  title: "Models that stay relevant",
   thesis:
-    "A model earns its place when each stage leaves a file the next stage can refuse.",
+    "A model stays relevant when the pipeline can refuse it, promote it, watch it, and roll it back without silent overwrite.",
   card: { href: ML_CARD, label: "ML pipeline field card" },
   contents: [
     { title: "What good looks like", page: 1 },
@@ -71,90 +71,49 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       number: 1,
       topic: "The practice",
       title: "What good looks like",
-      lede: "A model that stays in a decision is not a notebook that once scored well. It is a pipeline the organization can refuse, promote, and return from, with a previous version still callable when live evidence fails.",
-      rule: "My operating rule: freeze the test ids at the split, fit every transform on train only, clear the bar on an inner slice before validation is read, read the test set once, keep the previous version callable, and start a new version when live evidence fails.",
-      illustration: "The call-order path is an illustration, not a record.",
-      reviewed: "28 Oct 2026",
+      lede: "Good looks like a model that can stay in a workflow: reproducible from files, rejectable at a gate, promotable as a named version, monitorable in production, and reversible to a previous version that still answers.",
+      rule: "My operating rule: freeze the test ids before any fit, fit every transform on train only, clear an inner bar before validation is read, read the test set once for the official evaluation, keep the previous version callable, and start a new version id when live evidence fails — never overwrite the live weights in place.",
+      illustration: "The call-order path is a synthetic illustration, not a measured result. It states no amount.",
+      reviewed: "29 Oct 2026",
       plate: "pipeline",
       sections: [
         {
-          id: "when",
-          title: "When this book applies",
+          id: "destination",
+          title: "The destination",
           paragraphs: [
-            "Data that drives decisions is the book for one number: Ask, Grain, Truth, and Use. Software that stays in use is the book for one software change. This book starts when the artifact is a model trained from a table, and that model will be used in a decision.",
-            "The ML pipeline field card is the map. The agent recipe at the same path is the same pipeline written as machine instructions. These chapters are how a person reads the work, and how I refuse a green training run that skipped a stage.",
-            "Before any profile runs, the decision brief already exists: who acts, what the score may change, and what a wrong score costs. If that brief is missing, the work returns to Name the decision. A notebook is not the start.",
-          ],
-          sources: [
-            dataChapter(2, "Name the decision"),
-            { href: DATA_CARD, label: "Data analytics field card" },
-            { href: ML_CARD, label: "ML pipeline field card" },
-            { href: ML_AGENT, label: "ML pipeline agent recipe" },
-          ],
-        },
-        {
-          id: "case",
-          title: "One decision",
-          paragraphs: [
-            "One illustration runs through this book. I have not measured it, and it states no amount. A collections supervisor orders today’s call list for open invoices that are already past due. The model scores each open invoice as of this morning. The score may change who is called first. It does not replace the credit policy, and it does not replace the controller’s offer of more time. That offer stays on Data that drives decisions.",
-            "Choose the work on that book already set the calling prediction aside until yesterday’s list was in use. This book starts after that list exists. The row is one open overdue invoice at this morning’s decision time. The label, which arrives later, is whether a call was placed and the invoice was paid within fourteen days. The previous way to order the list is oldest past-due first. That rule stays callable when a new score is refused.",
-            "Prepare the table describes those rows. Features that hold keeps days past due and drops a payment that happened after the call. Fit without spending the holdout freezes later mornings as test. Ship and watch keeps oldest-first beside the candidate score until monitoring clears the cutover. Name what the version may do writes the limits before anyone treats the score as settled.",
-          ],
-          figure: {
-            kind: "uses",
-            caption:
-              "The same illustration on every chapter. No amount is shown. The offer of more time stays on the analytics book.",
-            steps: [],
-            head: ["Line", "In this illustration"],
-            rows: [
-              {
-                label: "Decision",
-                cells: ["Who is called first on today’s overdue list."],
-              },
-              {
-                label: "Person",
-                cells: ["The collections supervisor who owns the order."],
-              },
-              {
-                label: "Row",
-                cells: ["One open overdue invoice as of this morning."],
-              },
-              {
-                label: "Label later",
-                cells: ["Called, and paid within fourteen days — or not."],
-              },
-              {
-                label: "Previous way",
-                cells: ["Oldest past-due first. Stays callable."],
-              },
-            ],
-          },
-          picture: {
-            src: `${ML_ART}/decision.jpg`,
-            alt: "An illustration. A tray of blank slips, a glass measure, and an empty ranking tray. No amount.",
-          },
-          sources: [
-            dataChapter(6, "Choose the work"),
-            dataChapter(2, "Name the decision"),
-            mlChapter(2, "Prepare the table"),
-            mlChapter(3, "Features that hold"),
-            mlChapter(4, "Fit without spending the holdout"),
-            mlChapter(5, "Ship and watch"),
-            mlChapter(6, "Name what the version may do"),
-          ],
-        },
-        {
-          id: "lifecycle",
-          title: "Four arcs, one spine",
-          paragraphs: [
-            "Google’s Practitioners guide to MLOps, May 2021, describes an MLOps lifecycle as integrated processes: development, training operationalization, continuous training, deployment, prediction serving, continuous monitoring, and data and model management. I use that lifecycle as the map of the work. I do not copy Google’s product stack.",
-            "On this card the same work is four arcs on one spine. Prepare is the table and the features. Fit is the freeze, the train, and the miss loops. Ship is the one test read and the named version. Watch is the live signal that starts a new version. Continuous training in Google’s sense is not a silent weight update. It is a new run of Fit and Ship when Watch says so.",
+            "The end state is not a notebook that once scored well. It is a decision brief that names who acts and what the score may change, a pipeline that leaves files the next stage can refuse, a named bundle beside a previous version that still answers, and a monitor that starts a new run when live evidence fails.",
+            "Pipeline correctness is model validity and operational validity. It does not, by itself, prove fairness, business value, or that the decision improved. Those need owners, intended use, and evidence beyond a green fit.",
           ],
           figure: {
             kind: "pipeline",
             caption:
-              "Four arcs. Watch returns to Prepare or Fit as a new version. It does not overwrite the live bundle in place.",
-            note: "Google’s seven processes sit inside these four arcs. The spine is refusal: each arc leaves a file.",
+              "Destination: brief in, controlled pipeline, named release, watch with rollback. A miss starts a new version; it does not rewrite the live bundle.",
+            note: "Rollback restores the previous callable version. Continuous training is a new run, not a silent weight update.",
+            steps: [
+              { term: "Brief", detail: "Who acts; what may change" },
+              { term: "Pipeline", detail: "Prepare → Fit → Ship" },
+              { term: "Release", detail: "bundle/<version>/" },
+              {
+                term: "Watch",
+                detail: "monitor/<date>.json",
+                spine: "new version or rollback",
+              },
+            ],
+          },
+          sources: [GOOGLE_MLOPS, GOOGLE_CT],
+        },
+        {
+          id: "arcs",
+          title: "Four arcs",
+          paragraphs: [
+            "Google’s Practitioners guide to MLOps (May 2021) maps the work as integrated processes from development through monitoring and model management. I use that lifecycle as the map. I do not copy Google’s product stack.",
+            "On this card the same work is four arcs. Prepare covers profile, quality, outliers, and features. Fit covers the freeze, train, tune, and validation. Ship covers the one official test read, versioning, and serving. Watch covers operational monitoring and a controlled return that starts a new version. Continuous training in Google’s sense is that return — not a silent overwrite of live weights.",
+          ],
+          figure: {
+            kind: "pipeline",
+            caption:
+              "Four arcs on one spine. Watch returns as a new version id.",
+            note: "Detail for each stage sits in the stage contracts below and in the agent recipe.",
             steps: [
               { term: "Prepare", detail: "Profile → quality → outliers → features" },
               { term: "Fit", detail: "Split → train → tune → validate" },
@@ -166,82 +125,204 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
               },
             ],
           },
-          sources: [GOOGLE_MLOPS, GOOGLE_CT],
+          sources: [GOOGLE_MLOPS, GOOGLE_CT, { href: ML_AGENT, label: "ML pipeline agent recipe" }],
         },
         {
-          id: "stages",
-          title: "Nine stages on that spine",
+          id: "case",
+          title: "One decision",
           paragraphs: [
-            "Inside the arcs the pipeline is nine stages. Each stage writes a file. The next stage starts only when that file passes. Nothing is cleaned, fit, or scored in place.",
+            "One synthetic illustration runs through this book. A collections supervisor orders today’s call list for open invoices that are already past due. The score may change who is called first. It does not replace credit policy, auto-dial, or the controller’s offer of more time — that offer stays on Data that drives decisions.",
+            "Decision timestamp: this morning’s list cut. Row: one open overdue invoice as of that cut. Action the ranking informs: placing a call (an operational event after the score; not a feature). Prediction target: whether that invoice is paid within fourteen days of the cut. The call event and the payment outcome are separate. The score ranks invoices; it does not estimate the causal effect of placing a call.",
+            "Label availability: the fourteen-day window must close before a row can enter labeled evaluation. Invoices that have not matured stay out of train, validation, and test for that label; the split embargo uses the median label delay written in Prepare. Historical labels were produced under whatever contact policy was then in force, so offline ranking metrics gate order quality relative to oldest-past-due-first under that regime — they do not prove that calling caused payment. Oldest-past-due-first stays the baseline and the callable fallback.",
           ],
           figure: {
-            kind: "flow",
+            kind: "sheet",
             caption:
-              "Nine stages. A miss returns left. It does not jump to serve.",
+              "Decision brief for the call-order illustration. Blank lines stop the work. No amount is a collected result.",
             steps: [
-              { term: "Profile", detail: "Roles, nulls, label rate. profile.json.", mark: "search" },
-              { term: "Quality", detail: "Repair, quarantine, re-profile. quality.json.", mark: "check" },
-              { term: "Outliers", detail: "A written policy per column. outlier_policy.json.", mark: "alert" },
-              { term: "Features", detail: "Decision-time only. feature_spec.json.", mark: "wrench" },
-              { term: "Split", detail: "Freeze test ids. split_ids.parquet.", mark: "flag" },
-              { term: "Train", detail: "Fit on train. Tune inside train. val_metrics.json.", mark: "gear" },
-              { term: "Test", detail: "One official read. test_report.json.", mark: "pulse" },
-              { term: "Serve", detail: "Named version. Previous stays. bundle/<version>/.", mark: "play" },
-              { term: "Monitor", detail: "Daily signals. New version if live fails.", mark: "refresh" },
+              { term: "Decision", detail: "Who is called first on today’s open overdue list." },
+              { term: "Owner", detail: "Collections supervisor who owns the order." },
+              { term: "Row / time", detail: "One open overdue invoice at this morning’s cut." },
+              {
+                term: "Target",
+                detail: "Paid within fourteen days of the cut — not “called and paid.”",
+              },
+              {
+                term: "Baseline",
+                detail: "Oldest past-due first. Stays callable on refuse or rollback.",
+                gate: true,
+              },
             ],
           },
-          closing: [
-            "task.json names the label, the entity key, the decision-time column, the metric, the baseline, and the minimum score before stage 1 finishes. A missing label stops the run.",
+          picture: {
+            src: `${ML_ART}/decision.jpg`,
+            alt: "An illustration. A tray of blank slips, a glass measure, and an empty ranking tray. No amount.",
+          },
+          sources: [
+            dataChapter(6, "Choose the work"),
+            dataChapter(2, "Name the decision"),
+            mlChapter(3, "Features that hold"),
+            mlChapter(4, "Fit without spending the holdout"),
           ],
         },
         {
-          id: "chapters",
-          title: "How the book runs the card",
+          id: "layers",
+          title: "How to read this with the card",
           paragraphs: [
-            "Prepare the table is profile, quality, and outliers. Features that hold is the keep-or-drop list and the clock test. Fit without spending the holdout is the freeze, the train, and the miss loops. Ship and watch is the one test read, the previous version, and the live return. The call-order illustration walks each chapter once.",
-            "Google’s guide separates experimentation from the automated training pipeline. The same cut is here: a look can explore. A model that will be served has to leave the files. The agent recipe is the checklist for that second path.",
+            "The ML pipeline field card is the map of the spine. The agent recipe at the same path is the same pipeline as machine-checkable stages and filenames. These chapters are how a person operates the work, and how I refuse a green training run that skipped a gate.",
+            "Data that drives decisions owns one number (Ask, Grain, Truth, Use). Software that stays in use owns one software change. This book starts when the artifact is a model trained from a table and that model will be used in a decision. If the decision brief is missing, return to Name the decision before any profile runs.",
+          ],
+          sources: [
+            { href: ML_CARD, label: "ML pipeline field card" },
+            { href: ML_AGENT, label: "ML pipeline agent recipe" },
+            dataChapter(2, "Name the decision"),
+            { href: DATA_CARD, label: "Data analytics field card" },
+          ],
+        },
+        {
+          id: "contracts",
+          title: "Stage contracts",
+          paragraphs: [
+            "Inside the arcs the agent recipe defines nine stages. Each stage consumes named inputs and writes named outputs. The next stage starts only when the pass line clears. Filenames below are the recipe’s contracts — not a claim that a live repo already holds them.",
+            "task.json is required before stage 1: label column, entity key, decision-time column, metric, baseline, and min_metric. Optional quarantine_rate_max defaults to 0.05 in this recipe; that default is an operating threshold for this card, not a universal law. A different dataset needs its own written threshold and owner.",
+            "Artifacts in order: profile.json → quality.json and quarantine.parquet → outlier_policy.json → feature_spec.json → split_ids.parquet → preprocess.joblib, model.joblib, and val_metrics.json → test_report.json and model_card.json → bundle/<version>/ → monitor/<date>.json. Validation metrics are written in Fit. The official test report and model card are written when test is read once in Ship. The bundle is the promotable package; the model card status is not a substitute for the governance sheet on Name what the version may do.",
           ],
           figure: {
             kind: "uses",
-            caption: "Each chapter owns one refusal.",
+            caption:
+              "Nine-stage reference. Pass and fail follow the agent recipe. Re-run notes say whether approved evidence stays valid.",
             steps: [],
-            head: ["Chapter", "It refuses"],
+            head: ["Stage", "Writes", "Pass / fail", "Re-run"],
             rows: [
               {
-                label: "Prepare the table",
-                href: "/handbooks/models-that-stay-in-the-decision/2",
-                cells: ["A table with no row sentence, or a quarantine rate above five percent."],
+                label: "1 Profile",
+                cells: [
+                  "profile.json",
+                  "Pass: every column has one role; label and decision time set. Fail → stop.",
+                  "Safe to re-run; later stages must re-run after a role change.",
+                ],
               },
               {
-                label: "Features that hold",
-                href: "/handbooks/models-that-stay-in-the-decision/3",
-                cells: ["A column that cannot be built at decision time."],
+                label: "2 Quality",
+                cells: [
+                  "quality.json, quarantine.parquet",
+                  "Pass: label valid, key unique, no post-decision features, quarantine ≤ quarantine_rate_max. Fail → stop.",
+                  "Re-run invalidates downstream fits until they re-run.",
+                ],
               },
               {
-                label: "Fit without spending the holdout",
-                href: "/handbooks/models-that-stay-in-the-decision/4",
-                cells: ["A tune that read validation or test, or a loop with no budget."],
+                label: "3 Outliers",
+                cells: [
+                  "outlier_policy.json",
+                  "Pass: every numeric feature has a policy. New quarantine → return to Quality.",
+                  "Policy change requires Feature and Fit again.",
+                ],
               },
               {
-                label: "Ship and watch",
-                href: "/handbooks/models-that-stay-in-the-decision/5",
-                cells: ["A silent retrain, or a promote with no previous version."],
+                label: "4 Features",
+                cells: [
+                  "feature_spec.json",
+                  "Pass: kept features are decision-time and fit_on train. Fail → stop or drop.",
+                  "Spec change invalidates Fit evidence.",
+                ],
               },
               {
-                label: "Name what the version may do",
-                href: "/handbooks/models-that-stay-in-the-decision/6",
-                cells: ["A promote with no intended use, owner, or forbidden use written."],
+                label: "5 Split",
+                cells: [
+                  "split_ids.parquet (test hash frozen)",
+                  "Pass: disjoint ids; embargo held. Fail → stop.",
+                  "New split discards unread old test ids; prior test reports do not transfer.",
+                ],
+              },
+              {
+                label: "6 Train",
+                cells: [
+                  "preprocess.joblib, model.joblib, val_metrics.json",
+                  "Pass: validation ≥ min_metric and beats baseline; test never loaded. Fail after loops → blocked.",
+                  "Reproducible run ≠ promotable release. Miss loops stay inside train until validation is read once.",
+                ],
+              },
+              {
+                label: "7 Test",
+                cells: [
+                  "test_report.json, model_card.json",
+                  "Pass: one official read clears the bar. Fail → rejected. No tune on test residuals.",
+                  "A second selection on the same test ids invalidates the holdout’s role.",
+                ],
+              },
+              {
+                label: "8 Serve",
+                cells: [
+                  "bundle/<version>/",
+                  "Pass: signature match; missing feature errors; previous version recorded. Fail → do not promote.",
+                  "New version id only. Does not own the decision until governance and Watch allow it.",
+                ],
+              },
+              {
+                label: "9 Monitor",
+                cells: [
+                  "monitor/<date>.json",
+                  "Signals return to Features, Prepare, a mature test read, or a new split — never in-place weights.",
+                  "Always a new version id when a model changes.",
+                ],
               },
             ],
           },
-          sources: [GOOGLE_MLOPS, { href: ML_AGENT, label: "ML pipeline agent recipe" }],
+          sources: [{ href: ML_AGENT, label: "ML pipeline agent recipe" }, SKLEARN_LEAKAGE, SKLEARN_SPLIT],
+        },
+        {
+          id: "stage-example",
+          title: "One stage, worked",
+          paragraphs: [
+            "Quality (stage 2) shows the contract shape. Inputs are the profiled table and task.json domains. Outputs are quality.json and quarantine.parquet. Transforms are not fitted here; imputation rules are only planned for train later.",
+          ],
+          figure: {
+            kind: "sheet",
+            caption:
+              "Stage 2 contract on the call-order path. Quarantine_rate_max defaults to 0.05 in this recipe.",
+            steps: [
+              {
+                term: "Inputs",
+                detail: "profile.json roles; raw rows; task.json domains and quarantine_rate_max.",
+              },
+              {
+                term: "Outputs",
+                detail: "quality.json (before/after counts, label delay); quarantine.parquet.",
+              },
+              {
+                term: "Pass",
+                detail: "Label validity 100% on kept rows; unique key; no post-cut features; quarantine ≤ max.",
+              },
+              {
+                term: "Fail",
+                detail: "Above the quarantine max, or clock failures remain → stop. Do not impute past the gate.",
+                gate: true,
+              },
+            ],
+          },
+          sources: [{ href: ML_AGENT, label: "ML pipeline agent recipe" }, mlChapter(2, "Prepare the table")],
+        },
+        {
+          id: "validity",
+          title: "Three kinds of validity",
+          paragraphs: [
+            "Model validity: the freeze held, transforms fitted on train only and applied without refitting, test read once, miss loops stayed inside their budgets. That is necessary for a trustworthy evaluation number.",
+            "Operational validity: the bundle serves with a signature test, missing features error, previous version callable, monitor writes daily files, and Watch cannot silently retrain. A reproducible training run is not yet a promotable release.",
+            "Decision value: whether the ranking improved the supervisor’s work under the named intended use. Pipeline gates do not prove that. Governance names intended use, prohibited use, owners, monitoring, and rollback before a version owns the list order.",
+          ],
+          sources: [
+            MODEL_CARDS,
+            mlChapter(5, "Ship and watch"),
+            mlChapter(6, "Name what the version may do"),
+            FOWLER_PIPE,
+          ],
         },
         {
           id: "draft",
           title: "When a draft is cheap",
           paragraphs: [
-            "A generated training script can look complete and still have spent the holdout, fit the imputer on the full table, or served a call-order score that needs a payment after the morning cut. The four arcs still apply. The files, the freeze, and the miss loops are how I tell.",
-            "This holds when a draft is cheap: a green fit is not done until the model card says passed, the signature tests pass, and oldest-first remains callable.",
+            "A generated training script can look complete and still have spent the holdout, fitted the imputer on the full table, or treated “called and paid” as one label. The destination, the arcs, and the stage contracts still apply.",
+            "This holds when a draft is cheap: a green fit is not done until test_report and model_card say passed, the bundle keeps a previous version callable, and the governance sheet is approved for the named use.",
           ],
         },
       ],
@@ -251,6 +332,10 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
         { href: DATA_CARD, label: "Data analytics field card" },
         GOOGLE_MLOPS,
         GOOGLE_CT,
+        MODEL_CARDS,
+        SKLEARN_LEAKAGE,
+        SKLEARN_SPLIT,
+        FOWLER_PIPE,
       ],
     },
     {
@@ -258,16 +343,16 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       topic: "Data",
       title: "Prepare the table",
       lede: "Descriptive work is not a sidebar before modeling. It is the first arc. After every repair, describe the table again. A fill, a drop, or a clip changes the distribution the next stage will trust.",
-      rule: "My operating rule: assign every column a role, score quality before any impute, write an outlier policy instead of a silent delete, and stop when the quarantine rate is above five percent.",
-      illustration: "The call-order path is an illustration, not a record.",
-      reviewed: "28 Oct 2026",
+      rule: "My operating rule: assign every column a role, score quality before any impute, write an outlier policy instead of a silent delete, and stop when the quarantine rate exceeds the written quarantine_rate_max for this run.",
+      illustration: "The call-order path is a synthetic illustration, not a measured result.",
+      reviewed: "29 Oct 2026",
       sections: [
         {
           id: "describe",
           title: "Profile first",
           paragraphs: [
             "For every column write the type, the null count, the null rate, the number of distinct values, and five examples. For numeric columns add the min, the first percentile, the median, the ninety-ninth percentile, the max, the mean, the standard deviation, and the skew. For the label add the positive rate. For decision time add the min and the max.",
-            "On the call-order illustration the entity key is the invoice id, the decision time is this morning’s list cut, and the label is whether that invoice was called and paid within fourteen days. Days past due, open amount, dispute flag, and customer segment are candidates. Invoice id is an id, not a feature. A column that is constant on every overdue row is drop.",
+            "On the call-order illustration the entity key is the invoice id, the decision time is this morning’s list cut, and the label is whether that invoice is paid within fourteen days of the cut. The call is the action the ranking informs; it is not part of the label. Days past due, open amount, dispute flag, and customer segment are candidates. Invoice id is an id, not a feature. A column that is constant on every overdue row is drop.",
             "Then assign a role: id, time, decision time, label, feature, or drop. A constant column is drop. A column whose distinct values cover almost every row is an id, not a feature. Pass only when every column has one role and the label and decision time are set.",
           ],
           figure: {
@@ -277,7 +362,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
             steps: [
               { term: "Entity key", detail: "Invoice id. Role: id." },
               { term: "Decision time", detail: "This morning’s list cut." },
-              { term: "Label", detail: "Called and paid within fourteen days — arrives later." },
+              { term: "Label", detail: "Paid within fourteen days of the cut — arrives after the window closes." },
               { term: "Candidates", detail: "Days past due, open amount, dispute flag, customer segment." },
               {
                 term: "Role",
@@ -295,7 +380,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
             "Quality scores the feature table. It does not fill missing values yet. Completeness marks a column for drop, or for a missing indicator later, when the null rate is above forty percent. Validity quarantines an illegal label and nulls an out-of-domain feature cell. Uniqueness keeps the latest row on the entity key at decision time. The clock fails when a feature’s event time is at or after the decision time. That column is dropped, or rebuilt with values known before the decision.",
             "On the call-order path a second extract of the same invoice on the same morning is a duplicate: keep the latest event time, quarantine the other. A payment timestamp after this morning’s cut fails the clock if it was offered as a feature. The median delay from the morning cut to the fourteen-day label is the embargo the split will use. I do not invent that median here. I write whatever the table shows.",
             "The median delay from decision time to label time is written down. The split uses it as the embargo. Imputation is recorded only as a later rule, learned on train: numeric median, categorical mode, and a missing indicator when the train null rate is above one percent.",
-            "Recompute the profile on the rows that remain. Write the before and after counts. Pass when label validity is one hundred percent on kept rows, the key is unique, no remaining feature uses post-decision values, and the quarantine rate is at most five percent. Above that the run stops.",
+            "Recompute the profile on the rows that remain. Write the before and after counts. Pass when label validity is one hundred percent on kept rows, the key is unique, no remaining feature uses post-decision values, and the quarantine rate is at most quarantine_rate_max from task.json (this recipe’s default is 0.05 — an operating threshold, not a universal law). Above that the run stops.",
           ],
           figure: {
             kind: "flow",
@@ -332,7 +417,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
               {
                 label: "Quality",
                 cells: [
-                  "One row per invoice that morning. No post-cut feature. Quarantine ≤ 5%.",
+                  "One row per invoice that morning. No post-cut feature. Quarantine ≤ quarantine_rate_max.",
                 ],
               },
               {
@@ -368,15 +453,15 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       title: "Features that hold",
       lede: "A feature that looks strong in a notebook can still harm the model. The keep-or-drop list is written before any fit. Every kept transform has to score one new row from inputs known at decision time.",
       rule: "My operating rule: drop anything that fails the clock test, refuse a fit that used validation or test, keep dropped columns on the list with the reason, and never treat high label correlation as permission to keep a leak.",
-      illustration: "The call-order path is an illustration, not a record.",
-      reviewed: "28 Oct 2026",
+      illustration: "The call-order path is a synthetic illustration, not a measured result.",
+      reviewed: "29 Oct 2026",
       sections: [
         {
           id: "harm",
           title: "What harms the model",
           paragraphs: [
             "A new column goes through Prepare before it is a candidate. Then the feature list keeps or drops it. A feature harms the model when its value would not exist at the moment of the decision, when it was built with the label on the full sample, when it is an identifier or a copy of the label, when it repeats another column, when its definition will not hold on the days the model is served, or when it is a proxy the decision is not allowed to use.",
-            "On the call-order illustration, days past due as of this morning holds. Open amount as of this morning holds. A dispute flag known before the cut holds. Invoice id is an identifier and drops. Whether the invoice was paid after the call is the label, or a copy of it, and it is not a feature. A running total of payments that includes the fourteen days after the call fails the clock. A target mean of “paid after call” fit on the whole history, including mornings held out for test, fails the fit rule.",
+            "On the call-order illustration, days past due as of this morning holds. Open amount as of this morning holds. A dispute flag known before the cut holds. Invoice id is an identifier and drops. Whether the invoice was paid within fourteen days of the cut is the label, and it is not a feature. A running total of payments that includes days after the cut fails the clock. A target mean of the paid label fit on the whole history, including mornings held out for test, fails the fit rule. Whether a call was placed is the operational act after ranking — not a keep as a feature, and not AND-ed into the label.",
             "scikit-learn’s data-leakage note is the warning I use for train-time information reaching the model. Target means, scalers, and imputers fit on the whole table are that case. Out-of-fold target encoding on train, with smoothing toward the train base rate, is allowed. Validation, test, and live rows use the mapping fit on train. They never contribute their own labels.",
           ],
           figure: {
@@ -437,7 +522,7 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
           id: "features-draft",
           title: "When a draft is cheap",
           paragraphs: [
-            "A generated feature list can rank “paid after call” as the strongest column and still pass a unit test. Features that hold still applies. Importance measured with the label in view is not a keep on the call-order path.",
+            "A generated feature list can rank the paid label as the strongest “feature” and still pass a unit test. Features that hold still applies. Importance measured with the label in view is not a keep on the call-order path.",
           ],
         },
       ],
@@ -453,8 +538,8 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
       title: "Fit without spending the holdout",
       lede: "The test set is frozen before any preprocessor is fit. Tuning lives inside train. Validation is read once. A miss returns through tune, features, or data, with a budget, or the run stops as blocked.",
       rule: "My operating rule: write the test hash before any fit, clear the bar on an inner slice before validation is read, and never open a tuning loop on the same holdout that already failed.",
-      illustration: "The call-order path is an illustration, not a record.",
-      reviewed: "28 Oct 2026",
+      illustration: "The call-order path is a synthetic illustration, not a measured result.",
+      reviewed: "29 Oct 2026",
       sections: [
         {
           id: "freeze",

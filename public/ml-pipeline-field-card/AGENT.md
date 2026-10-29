@@ -13,7 +13,7 @@ Machine instructions. Humans read the handbook:
 
 Method card: `/ml-pipeline-field-card/`.
 
-Handbook illustration (synthetic): call-order for open overdue invoices at this morning’s cut; label = called and paid within fourteen days; baseline / previous way = oldest past-due first. Do not invent amounts or treat the illustration as a measured result.
+Handbook illustration (synthetic): call-order for open overdue invoices at this morning’s cut; label = paid within fourteen days of the cut (call event is separate — ranking informs contact, the score does not claim the causal effect of a call); baseline / previous way = oldest past-due first. Do not invent amounts or treat the illustration as a measured result.
 
 Do not skip stages. Do not fit, impute, scale, encode, or select features using validation or test rows. Do not retrain from a monitor alert without a new version id.
 
@@ -35,6 +35,7 @@ Create `task.json`:
 | `domains` | optional | Allowed values per column |
 | `label_delay_days` | optional | Override; else compute in stage 2 |
 | `monitor_margin` | optional | Default `0.05` absolute on the decision metric |
+| `quarantine_rate_max` | optional | Default `0.05`. This recipe’s operating threshold, not a universal law. Owner must justify overrides. |
 
 Stop if `label_column` or `decision_time_column` is missing.
 
@@ -93,9 +94,9 @@ Recompute profile on kept rows. Write before/after counts in `quality.json`.
 - Label validity = 100% on kept rows.
 - Entity key unique at decision time.
 - No remaining feature uses post-decision values.
-- Quarantine rate ≤ 0.05.
+- Quarantine rate ≤ `quarantine_rate_max` (default `0.05`).
 
-**Fail → stop** if quarantine rate > 0.05 or clock failures remain.
+**Fail → stop** if quarantine rate > `quarantine_rate_max` or clock failures remain.
 
 ## Stage 3 — Outliers
 
@@ -248,7 +249,7 @@ Monitor never updates weights in place. Next model = new version id.
 ## Hard stops
 
 - No `task.json` label or decision time.
-- Quarantine rate > 0.05 after stage 2.
+- Quarantine rate > `quarantine_rate_max` after stage 2.
 - Feature not computable at decision time.
 - Test hash present and training code loads those ids.
 - `val_reads` would be used to tune hyperparameters.
