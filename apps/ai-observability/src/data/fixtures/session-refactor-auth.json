@@ -1,0 +1,190 @@
+{
+  "id": "composer-a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "name": "Refactor auth middleware",
+  "subtitle": "Wire session cookies + fix CSRF on /api/login",
+  "startedAt": "2026-10-29T14:02:11.000Z",
+  "endedAt": "2026-10-29T14:08:44.000Z",
+  "status": "ok",
+  "source": "cursor-ide",
+  "modelName": "default",
+  "workspaceLabel": "Orbit",
+  "turns": [
+    {
+      "id": "turn-7da1723d-1111-4ee1-8a5f-000000000001",
+      "index": 1,
+      "label": "Locate auth middleware",
+      "userText": "Find the auth middleware and show how session cookies are set on login.",
+      "status": "ok",
+      "startedAt": "2026-10-29T14:02:12.000Z",
+      "endedAt": "2026-10-29T14:03:40.000Z",
+      "durationMs": 88000,
+      "steps": [
+        {
+          "id": "step-s1",
+          "bubblePath": "turn-7da1723d-1111-4ee1-8a5f-000000000001/s:1",
+          "kind": "thinking",
+          "name": "Plan file search",
+          "status": "ok",
+          "startedAt": "2026-10-29T14:02:12.200Z",
+          "endedAt": "2026-10-29T14:02:14.100Z",
+          "durationMs": 1900,
+          "leaf": {
+            "thinking": "Search for middleware and cookie helpers under src/lib and src/app/api.",
+            "attrs": {
+              "thinkingDurationMs": 1900,
+              "capabilityType": 30
+            }
+          }
+        },
+        {
+          "id": "step-t-glob",
+          "bubblePath": "turn-7da1723d-1111-4ee1-8a5f-000000000001/t:tool-glob-01",
+          "kind": "tool",
+          "name": "glob_file_search",
+          "status": "ok",
+          "startedAt": "2026-10-29T14:02:14.200Z",
+          "endedAt": "2026-10-29T14:02:14.480Z",
+          "durationMs": 280,
+          "leaf": {
+            "toolName": "glob_file_search",
+            "toolArgs": {
+              "globPattern": "**/*auth*",
+              "targetDirectory": "/workspace/src"
+            },
+            "toolResult": {
+              "files": [
+                "src/lib/auth/session.ts",
+                "src/lib/auth/csrf.ts",
+                "src/app/api/login/route.ts"
+              ]
+            },
+            "attrs": {
+              "toolCallId": "tool-glob-01",
+              "status": "completed"
+            }
+          }
+        },
+        {
+          "id": "step-t-read",
+          "bubblePath": "turn-7da1723d-1111-4ee1-8a5f-000000000001/t:tool-read-01",
+          "kind": "tool",
+          "name": "read_file_v2",
+          "status": "ok",
+          "startedAt": "2026-10-29T14:02:15.000Z",
+          "endedAt": "2026-10-29T14:02:15.180Z",
+          "durationMs": 180,
+          "leaf": {
+            "toolName": "read_file_v2",
+            "toolArgs": {
+              "path": "/workspace/src/lib/auth/session.ts"
+            },
+            "toolResult": {
+              "totalLinesInFile": 86,
+              "note": "metadata-only result (matches observed Read payload shape)"
+            },
+            "attrs": {
+              "toolCallId": "tool-read-01",
+              "status": "completed"
+            }
+          }
+        },
+        {
+          "id": "step-s3",
+          "bubblePath": "turn-7da1723d-1111-4ee1-8a5f-000000000001/s:3",
+          "kind": "model",
+          "name": "Explain cookie flow",
+          "status": "ok",
+          "startedAt": "2026-10-29T14:02:16.000Z",
+          "endedAt": "2026-10-29T14:03:40.000Z",
+          "durationMs": 84000,
+          "leaf": {
+            "prompt": "User asked how session cookies are set on login.",
+            "completion": "Login hits `src/app/api/login/route.ts`, which calls `createSession()` in `src/lib/auth/session.ts` and sets the HttpOnly cookie via `Set-Cookie`. CSRF is enforced separately in `csrf.ts` on mutating routes.",
+            "attrs": {
+              "tokenCount": { "inputTokens": 4200, "outputTokens": 310 }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "turn-f94d0bb2-2222-4ee1-8a5f-000000000002",
+      "index": 2,
+      "label": "Patch CSRF on login",
+      "userText": "Add CSRF validation to /api/login and run a quick typecheck.",
+      "status": "ok",
+      "startedAt": "2026-10-29T14:04:01.000Z",
+      "endedAt": "2026-10-29T14:08:44.000Z",
+      "durationMs": 283000,
+      "steps": [
+        {
+          "id": "step-t-edit",
+          "bubblePath": "turn-f94d0bb2-2222-4ee1-8a5f-000000000002/t:tool-edit-01",
+          "kind": "tool",
+          "name": "edit_file_v2",
+          "status": "ok",
+          "startedAt": "2026-10-29T14:04:10.000Z",
+          "endedAt": "2026-10-29T14:04:12.400Z",
+          "durationMs": 2400,
+          "leaf": {
+            "toolName": "edit_file_v2",
+            "toolArgs": {
+              "path": "/workspace/src/app/api/login/route.ts",
+              "old_string": "export async function POST(req: Request) {",
+              "new_string": "export async function POST(req: Request) {\n  await assertCsrf(req);"
+            },
+            "toolResult": {
+              "diffLines": 2,
+              "status": "applied"
+            },
+            "attrs": {
+              "toolCallId": "tool-edit-01"
+            }
+          }
+        },
+        {
+          "id": "step-t-shell",
+          "bubblePath": "turn-f94d0bb2-2222-4ee1-8a5f-000000000002/t:tool-shell-01",
+          "kind": "tool",
+          "name": "run_terminal_command_v2",
+          "status": "ok",
+          "startedAt": "2026-10-29T14:04:20.000Z",
+          "endedAt": "2026-10-29T14:04:26.200Z",
+          "durationMs": 6200,
+          "leaf": {
+            "toolName": "run_terminal_command_v2",
+            "toolArgs": {
+              "command": "npx tsc -p tsconfig.json --noEmit",
+              "cwd": "/workspace"
+            },
+            "toolResult": {
+              "exitCode": 0,
+              "stdout": ""
+            },
+            "attrs": {
+              "toolCallId": "tool-shell-01",
+              "status": "completed"
+            }
+          }
+        },
+        {
+          "id": "step-s-final",
+          "bubblePath": "turn-f94d0bb2-2222-4ee1-8a5f-000000000002/s:12",
+          "kind": "model",
+          "name": "Summarize change",
+          "status": "ok",
+          "startedAt": "2026-10-29T14:04:27.000Z",
+          "endedAt": "2026-10-29T14:08:44.000Z",
+          "durationMs": 257000,
+          "leaf": {
+            "completion": "CSRF assertion is now required on `/api/login`. Typecheck passed with exit 0.",
+            "attrs": {
+              "linesAdded": 1,
+              "linesRemoved": 0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

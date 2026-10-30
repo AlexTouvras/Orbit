@@ -4,6 +4,7 @@
 
 ## Now
 
+- [x] AI Observability Session Explorer MVP — fixture-backed list + React Flow drill-down under `apps/ai-observability` (2026-10-30)
 - [x] Portfolio title lists — projects, live desks, and GitHub follow Power BI: beside the chosen item from 640px up, one sliding title row on a phone (2026-10-28)
 - [x] Quality pass rule — scan, rank, fix one finding, re-run a named score, stop when the score is met or the next row is out of scope (2026-10-28)
 - [x] Power BI phone titles are one row you slide sideways; the picture stays full width under that row (2026-10-28)

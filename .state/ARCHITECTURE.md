@@ -65,6 +65,10 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 - **About (2026-10-03):** `/about` opens with the same two-line headline as the other public pages: “Complex problems” / “into decisions.” One sentence under it. Stats are years, languages, and degrees. Experience and education titles show the institution’s mark and open its site in one press. Download CV closes the page.
 - **Download CV (2026-10-23):** `/resume.pdf` is rendered from `src/content/cv.ts` (`src/lib/cv/render-pdf.ts`). It carries the same experience, education, skills, languages, and training as About, plus the profile name, role, and email. `cv.summary` stays off the page and off the PDF. `public/resume.pdf` must not exist — a static file at that path is served instead. `npm run cv:check` locks the field list.
 
+## Decisions (dated)
+
+- **2026-10-30 — AI Observability Session Explorer:** Standalone Vite + React app at `apps/ai-observability` (React Flow + react-router). Fixture-backed Session→Turn→Step→Leaf; not mounted on Next.js Hub/Studio. Future `state.vscdb` ingest and optional Orbit Studio private publish are out of this slice.
+
 ## Dependencies
 
 | Dependency | Why introduced | Date |
