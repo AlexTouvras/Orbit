@@ -9,6 +9,7 @@ import { BookLink } from "@/components/handbooks/volume/BookLink";
 import { chapterLinks, citationMarks, pageReferences } from "@/lib/handbook-citations";
 import { ChapterKeys } from "@/components/handbooks/volume/ChapterKeys";
 import { ContentsList } from "@/components/handbooks/volume/ContentsList";
+import { RecipeDownload } from "@/components/handbooks/volume/RecipeDownload";
 import {
   CoverModels,
   CoverSheets,
@@ -60,6 +61,7 @@ export function VolumeReader({
             <div className="mt-8">
               <ContentsList handbook={handbook} pageNumber={page.number} />
             </div>
+            {handbook.recipe ? <RecipeDownload recipe={handbook.recipe} /> : null}
           </div>
         </aside>
 
@@ -87,6 +89,7 @@ export function VolumeReader({
               <summary className="book-summary">Contents</summary>
               <div className="absolute inset-x-0 top-full z-40 max-h-[70dvh] overflow-y-auto border border-[var(--book-rule)] bg-[var(--book-paper)] px-4 py-4">
                 <ContentsList handbook={handbook} pageNumber={page.number} showHeading={false} />
+                {handbook.recipe ? <RecipeDownload recipe={handbook.recipe} className="mt-6" /> : null}
               </div>
             </details>
           </div>
@@ -109,6 +112,9 @@ export function VolumeReader({
                         Start reading
                       </a>
                       <BookLink href={handbook.card.href}>{handbook.card.label}</BookLink>
+                      {handbook.recipe ? (
+                        <RecipeDownload recipe={handbook.recipe} compact className="lg:hidden" />
+                      ) : null}
                     </div>
                   </div>
                 </>
@@ -127,6 +133,9 @@ export function VolumeReader({
                           Start reading
                         </a>
                         <BookLink href={handbook.card.href}>{handbook.card.label}</BookLink>
+                        {handbook.recipe ? (
+                          <RecipeDownload recipe={handbook.recipe} compact className="lg:hidden" />
+                        ) : null}
                       </div>
                     </div>
                     {page.plate === "ledger" ? <CoverSheets /> : null}

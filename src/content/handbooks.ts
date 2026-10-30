@@ -138,6 +138,11 @@ export interface HandbookContentsEntry {
   sections?: HandbookContentsSection[];
 }
 
+export interface HandbookRecipeLink extends HandbookLink {
+  /** Suggested filename when the browser downloads the file. */
+  filename: string;
+}
+
 export interface Handbook {
   slug: string;
   index: string;
@@ -145,6 +150,12 @@ export interface Handbook {
   thesis: string;
   /** The field card this book extends. */
   card: HandbookLink;
+  /**
+   * Machine recipe (.md). On mobile it sits in the cover CTA row (first reach)
+   * and under Contents in the sticky menu. On large screens it also sits under
+   * Contents in the side column.
+   */
+  recipe?: HandbookRecipeLink;
   contents: HandbookContentsEntry[];
   pages: HandbookPage[];
 }
