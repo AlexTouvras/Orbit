@@ -42,11 +42,24 @@ src/content/profile.ts   # profile defaults
 src/lib/news/            # RSS sources, fetcher, cache
 data/                    # Studio JSON and news cache
 docs/product/            # product truth — start at PRODUCT.md
+apps/ai-observability/   # standalone Session Explorer (Vite; not part of Next routes)
 ```
 
 Writes are MDX files in `src/content/writes/`. Portfolio projects and the live profile are edited in Studio (`/studio`) and stored as JSON under `data/`. Steps for both are in [CONTENT.md](./CONTENT.md). Product intent is in [PRODUCT.md](./PRODUCT.md).
 
 Images for older project art still live under `public/projects/`.
+
+### AI Observability (Session Explorer)
+
+Standalone Vite + React app for personal Cursor IDE session drill-down (fixtures only for now). It does **not** mount on the Next.js site.
+
+```bash
+cd apps/ai-observability
+npm install
+npm run dev
+```
+
+Details: [apps/ai-observability/README.md](./apps/ai-observability/README.md).
 
 ## The news radar
 

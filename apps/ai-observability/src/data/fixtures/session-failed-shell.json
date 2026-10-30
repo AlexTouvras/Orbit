@@ -1,0 +1,145 @@
+{
+  "id": "composer-b2c3d4e5-f6a7-8901-bcde-f12345678901",
+  "name": "Debug failing smoke test",
+  "subtitle": "Shell step errors mid-run; agent recovers with a retry",
+  "startedAt": "2026-10-28T09:15:00.000Z",
+  "endedAt": "2026-10-28T09:18:22.000Z",
+  "status": "error",
+  "source": "cursor-ide",
+  "modelName": "default",
+  "workspaceLabel": "OpenBI",
+  "turns": [
+    {
+      "id": "turn-aa11bb22-3333-4ee1-8a5f-000000000010",
+      "index": 1,
+      "label": "Run smoke script",
+      "userText": "Run the smoke script and fix whatever fails.",
+      "status": "error",
+      "startedAt": "2026-10-28T09:15:01.000Z",
+      "endedAt": "2026-10-28T09:18:22.000Z",
+      "durationMs": 201000,
+      "steps": [
+        {
+          "id": "step-think",
+          "bubblePath": "turn-aa11bb22-3333-4ee1-8a5f-000000000010/s:1",
+          "kind": "thinking",
+          "name": "Choose smoke entrypoint",
+          "status": "ok",
+          "startedAt": "2026-10-28T09:15:01.100Z",
+          "endedAt": "2026-10-28T09:15:02.500Z",
+          "durationMs": 1400,
+          "leaf": {
+            "thinking": "Likely `npm run smoke` at repo root; fall back to scripts/smoke.mjs if missing."
+          }
+        },
+        {
+          "id": "step-shell-fail",
+          "bubblePath": "turn-aa11bb22-3333-4ee1-8a5f-000000000010/t:tool-shell-err",
+          "kind": "tool",
+          "name": "run_terminal_command_v2",
+          "status": "error",
+          "startedAt": "2026-10-28T09:15:03.000Z",
+          "endedAt": "2026-10-28T09:15:09.400Z",
+          "durationMs": 6400,
+          "leaf": {
+            "toolName": "run_terminal_command_v2",
+            "toolArgs": {
+              "command": "npm run smoke",
+              "cwd": "/workspace"
+            },
+            "toolResult": {
+              "exitCode": 1,
+              "stderr": "Error: Cannot find module './lib/fixtures/seed.json'"
+            },
+            "error": {
+              "message": "Command failed with exit code 1",
+              "detail": "clientVisibleErrorMessage: Cannot find module './lib/fixtures/seed.json'\nmodelVisibleErrorMessage: module not found during smoke boot"
+            },
+            "attrs": {
+              "toolCallId": "tool-shell-err",
+              "status": "error"
+            }
+          }
+        },
+        {
+          "id": "step-decision",
+          "bubblePath": "turn-aa11bb22-3333-4ee1-8a5f-000000000010/s:4",
+          "kind": "decision",
+          "name": "Recreate missing fixture",
+          "status": "ok",
+          "startedAt": "2026-10-28T09:15:10.000Z",
+          "endedAt": "2026-10-28T09:15:11.000Z",
+          "durationMs": 1000,
+          "leaf": {
+            "completion": "Missing seed fixture caused the smoke failure. Write a minimal seed.json, then re-run smoke.",
+            "attrs": {
+              "branch": "recover_fixture"
+            }
+          }
+        },
+        {
+          "id": "step-write",
+          "bubblePath": "turn-aa11bb22-3333-4ee1-8a5f-000000000010/t:tool-write-01",
+          "kind": "tool",
+          "name": "edit_file_v2",
+          "status": "ok",
+          "startedAt": "2026-10-28T09:15:12.000Z",
+          "endedAt": "2026-10-28T09:15:13.200Z",
+          "durationMs": 1200,
+          "leaf": {
+            "toolName": "edit_file_v2",
+            "toolArgs": {
+              "path": "/workspace/lib/fixtures/seed.json",
+              "contents": "{ \"ok\": true }"
+            },
+            "toolResult": { "status": "applied" },
+            "attrs": { "toolCallId": "tool-write-01" }
+          }
+        },
+        {
+          "id": "step-shell-retry",
+          "bubblePath": "turn-aa11bb22-3333-4ee1-8a5f-000000000010/t:tool-shell-retry",
+          "kind": "tool",
+          "name": "run_terminal_command_v2",
+          "status": "ok",
+          "startedAt": "2026-10-28T09:15:14.000Z",
+          "endedAt": "2026-10-28T09:15:18.500Z",
+          "durationMs": 4500,
+          "leaf": {
+            "toolName": "run_terminal_command_v2",
+            "toolArgs": {
+              "command": "npm run smoke",
+              "cwd": "/workspace"
+            },
+            "toolResult": {
+              "exitCode": 0,
+              "stdout": "smoke ok"
+            },
+            "attrs": {
+              "toolCallId": "tool-shell-retry",
+              "retryOf": "tool-shell-err",
+              "status": "completed"
+            }
+          }
+        },
+        {
+          "id": "step-error-summary",
+          "bubblePath": "turn-aa11bb22-3333-4ee1-8a5f-000000000010/s:9",
+          "kind": "error",
+          "name": "Session ended with prior error",
+          "status": "error",
+          "startedAt": "2026-10-28T09:18:20.000Z",
+          "endedAt": "2026-10-28T09:18:22.000Z",
+          "durationMs": 2000,
+          "leaf": {
+            "error": {
+              "message": "Turn completed after a tool error; session status remains error for triage.",
+              "detail": "First shell failed; retry succeeded. Status kept error so the graph surfaces the failure path."
+            },
+            "completion": "Smoke passes after recreating seed.json. Original failure is preserved on the first shell node."
+          }
+        }
+      ]
+    }
+  ]
+}
