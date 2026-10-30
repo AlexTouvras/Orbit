@@ -388,6 +388,11 @@ input {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
   transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
   animation: ao-node-in 360ms ease both;
+  user-select: none;
+}
+
+.ao-flow .react-flow__node {
+  cursor: pointer;
 }
 
 @keyframes ao-node-in {

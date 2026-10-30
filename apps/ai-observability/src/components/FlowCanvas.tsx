@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 import {
   Background,
   Controls,
@@ -6,6 +6,7 @@ import {
   ReactFlowProvider,
   useReactFlow,
   type Edge,
+  type NodeMouseHandler,
 } from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import { AoFlowNode } from './AoFlowNode'
@@ -34,11 +35,16 @@ function CanvasInner({ nodes, edges, levelKey }: Props) {
   const memoNodes = useMemo(() => nodes, [nodes])
   const memoEdges = useMemo(() => edges, [edges])
 
+  const onNodeClick = useCallback<NodeMouseHandler<AoNode>>((_, node) => {
+    node.data.onOpen()
+  }, [])
+
   return (
     <ReactFlow
       nodes={memoNodes}
       edges={memoEdges}
       nodeTypes={nodeTypes}
+      onNodeClick={onNodeClick}
       nodesDraggable={false}
       nodesConnectable={false}
       elementsSelectable={false}
