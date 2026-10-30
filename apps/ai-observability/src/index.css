@@ -117,6 +117,67 @@ input {
   line-height: 1.5;
 }
 
+.ao-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1.35rem 0 0;
+}
+
+.ao-chip {
+  appearance: none;
+  border: 1px solid var(--ao-line);
+  background: transparent;
+  color: var(--ao-mist);
+  border-radius: 999px;
+  padding: 0.28rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: border-color 140ms ease, color 140ms ease, background 140ms ease;
+}
+
+.ao-chip:hover {
+  border-color: rgba(62, 207, 154, 0.4);
+  color: var(--ao-fog);
+}
+
+.ao-chip--active {
+  color: var(--ao-ink);
+  background: var(--ao-accent);
+  border-color: var(--ao-accent);
+}
+
+.ao-origin {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid var(--ao-line);
+  border-radius: 4px;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: var(--ao-font-mono);
+  color: var(--ao-mist);
+}
+
+.ao-origin--imported {
+  color: var(--ao-accent);
+  border-color: rgba(62, 207, 154, 0.45);
+  background: var(--ao-accent-soft);
+}
+
+.ao-empty {
+  margin: 2rem 0 0;
+  color: var(--ao-mist);
+  max-width: 36rem;
+  line-height: 1.5;
+}
+
+.ao-empty code {
+  font-family: var(--ao-font-mono);
+  font-size: 0.85rem;
+}
+
 .ao-session-list {
   list-style: none;
   margin: 2rem 0 0;
