@@ -11,7 +11,7 @@ Authorized 2026-10-13. On 2026-10-14 the owner set the first book on the SDLC fi
 | Field card | What is this field, and what do I believe? | `/field-card/`, `/analytics-field-card/`, `/delivery-field-card/`, `/sdlc-field-card/`, `/credit-risk-field-card/`, `/story-field-card/` |
 | Method card | What is this method’s spine? | `/bayes-field-card/`, `/ml-pipeline-field-card/` (not Hub tiles) |
 | Handbook | How would I operate? | `/handbooks` |
-| Agent recipe | What must an agent do, file by file? | `/ml-pipeline-field-card/AGENT.md` |
+| Agent recipe | What must an agent do, file by file? | `/ml-pipeline-field-card/AGENT.md` (generic). OpenBI map: `/ml-pipeline-field-card/openbi-agent-recipe.md` — on mobile in the cover CTA row and under Contents; on large screens under Contents in the side column. |
 | Story or essay | How did a decision unfold? | `/stories`, `/writes` |
 | Portfolio | What was delivered? | `/portfolio` |
 

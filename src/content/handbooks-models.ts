@@ -56,6 +56,11 @@ export const MODELS_THAT_STAY_IN_THE_DECISION: Handbook = {
   thesis:
     "A model stays relevant when the pipeline can refuse it, promote it, watch it, and roll it back without silent overwrite.",
   card: { href: ML_CARD, label: "ML pipeline field card" },
+  recipe: {
+    href: "/ml-pipeline-field-card/openbi-agent-recipe.md",
+    label: "OpenBI agent recipe",
+    filename: "openbi-agent-recipe.md",
+  },
   contents: [
     { title: "What good looks like", page: 1 },
     { title: "Prepare the table", page: 2 },
