@@ -67,7 +67,8 @@ Orbit is a Next.js personal HQ: Blog (MDX Writes), Portfolio (workshop + GitHub 
 
 ## Decisions (dated)
 
-- **2026-10-30 — AI Observability Session Explorer:** Standalone Vite + React app at `apps/ai-observability` (React Flow + react-router). Fixture-backed Session→Turn→Step→Leaf; not mounted on Next.js Hub/Studio. Future `state.vscdb` ingest and optional Orbit Studio private publish are out of this slice.
+- **2026-10-30 — AI Observability Session Explorer:** Standalone Vite + React app at `apps/ai-observability` (React Flow + react-router). Fixture-backed Session→Turn→Step→Leaf; not mounted on Next.js Hub/Studio. Optional Orbit Studio private publish remains out of scope.
+- **2026-10-30 — Cursor IDE session importer:** `apps/ai-observability/scripts/import-cursor-sessions.mjs` reads `%APPDATA%/Cursor/User/globalStorage/state.vscdb` via Node `node:sqlite` URI `?mode=ro` (or `--strategy=copy` then read the copy). Never writes Cursor DB/WAL/SHM. Maps `composerHeaders` + `bubbleId:{id}:*` into fixture-shaped JSON under `src/data/imported/`; UI merges fixtures + imports (`import.meta.glob`). Default `--limit` avoids bulk 500+ import.
 
 ## Dependencies
 
