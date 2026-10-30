@@ -1,15 +1,123 @@
 {
-  "generatedAt": "2026-10-29T06:46:59.771Z",
+  "generatedAt": "2026-10-30T06:46:52.361Z",
   "count": 264,
   "items": [
     {
+      "id": "08ab2540e8d8",
+      "title": "Assessing China as a technological innovator",
+      "link": "https://cepr.org/voxeu/columns/assessing-china-technological-innovator",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-30T00:00:00.000Z",
+      "contentSnippet": "The dramatic rise of domestic patent publications by Chinese inventors has raised questions about the extent of Chinese innovations. This column uses a newly assembled dataset of Chinese patents to understand the Chinese innovative ecosystem. The data reveal an innovation system…"
+    },
+    {
+      "id": "238488e0812b",
+      "title": "AI to the rescue: How the countries of Europe and Central Asia can grow more prosperous as they grow older",
+      "link": "https://cepr.org/voxeu/columns/ai-rescue-how-countries-europe-and-central-asia-can-grow-more-prosperous-they-grow",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-30T00:00:00.000Z",
+      "contentSnippet": "Much of developing Europe and Central Asia is ageing fast, and its workforce is starting to shrink. This column argues that artificial intelligence can partly offset this demographic challenge by (1) augmenting the skills of many in the workforce while automating tasks for which…"
+    },
+    {
+      "id": "2369014ac703",
+      "title": "Buying innovation vs buying protection: What we know about public procurement of innovation",
+      "link": "https://cepr.org/voxeu/columns/buying-innovation-vs-buying-protection-what-we-know-about-public-procurement",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-30T00:00:00.000Z",
+      "contentSnippet": "Europe is turning public procurement into an instrument of industrial policy. The Industrial Accelerator Act and the proposed Public Procurement Act would let public buyers favour European suppliers in strategic sectors, and Beijing has already threatened retaliation. This column…"
+    },
+    {
+      "id": "e14cf7d8e2c6",
+      "title": "Announcing General Availability of Real-Time Mode for Spark Declarative Pipelines on Databricks",
+      "link": "https://www.databricks.com/blog/announcing-general-availability-real-time-mode-spark-declarative-pipelines-databricks",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-29T22:30:04.000Z",
+      "contentSnippet": "We introduced Real-Time Mode (RTM) last year which enabled customers to build low-latency, operational use cases..."
+    },
+    {
+      "id": "7bf0065ceb16",
+      "title": "An updated Model Spec for more capable and beneficial AI",
+      "link": "https://openai.com/index/updated-model-spec",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-29T17:00:00.000Z",
+      "contentSnippet": "OpenAI’s updated Model Spec outlines five core values to guide more capable AI toward sound judgment, human agency, and faithfulness to human intent."
+    },
+    {
+      "id": "c74502ac0df6",
+      "title": "Smarter cost controls for serverless",
+      "link": "https://www.databricks.com/blog/smarter-cost-controls-serverless",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-29T15:00:00.000Z",
+      "contentSnippet": "At Databricks, our serverless compute usage has grown more than 3x in the past year,..."
+    },
+    {
+      "id": "739e0b5535e3",
+      "title": "Bliki: LLM Voice",
+      "link": "https://martinfowler.com/bliki/LLM-Voice.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-10-29T14:28:00.000Z",
+      "contentSnippet": "Sometimes when I read a post, I get the growing feeling that I'm reading the output of an LLM. I can't necessarily define why, although there are the common tells (it's not the em-dashes, it's the load-bearing tapestries). As I do this my desire to read on atrophies, sometimes to…"
+    },
+    {
+      "id": "e73b1e188559",
+      "title": "Why are good developers so wary of agentic development?",
+      "link": "https://martinfowler.com/rachels-ramblings/good-devs-wary.html",
+      "source": "Martin Fowler",
+      "category": "Delivery",
+      "pubDate": "2026-10-29T13:50:00.000Z",
+      "contentSnippet": "TL;DR Good developers’ caution about agentic development comes from knowing that built isn’t the same as working in production. I’ve been surprised by how many excellent developers have been hesitant to go all in on coding agents. These are people who usually try new ways of work…"
+    },
+    {
+      "id": "5e83a890e7bd",
+      "title": "Tiny Teams, Same Dependencies: Can AI Flatten Your Organization?",
+      "link": "https://www.scrum.org/resources/blog/tiny-teams-same-dependencies-can-ai-flatten-your-organization",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-29T13:00:00.000Z",
+      "contentSnippet": "Originally published as an episode of Scaling AI: From Activity to Impact. Agents can make people faster, not necessarily more independent. Your engineers or teams who are adopting an agentic software lifecycle see work compression. Big initiatives used to be split into features…"
+    },
+    {
       "id": "1059887f52c6",
-      "title": "AI saved your team time. The Product Backlog decides where it goes.",
+      "title": "AI Saved Your Team Time. The Product Backlog Decides Where it Goes.",
       "link": "https://www.scrum.org/resources/blog/ai-saved-your-team-time-product-backlog-decides-where-it-goes",
       "source": "Scrum.org",
       "category": "Delivery",
-      "pubDate": "2026-10-29T05:29:19.000Z",
+      "pubDate": "2026-10-29T13:00:00.000Z",
       "contentSnippet": "When AI frees up your Developers' time, the Product Owner decides whether that time becomes value. You make that decision through tools you already have: Product Backlog ordering, the Sprint Goal and the Sprint Review. If you don't, whatever comes next gets those \"saved hours\". G…"
+    },
+    {
+      "id": "eb860c81c65b",
+      "title": "Dalla velocità al valore: come l’IA può migliorare le decisioni sul prodotto",
+      "link": "https://www.scrum.org/resources/blog/dalla-velocita-al-valore-come-lia-puo-migliorare-le-decisioni-sul-prodotto",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-29T12:30:49.000Z",
+      "contentSnippet": "Una persona sta prenotando online un appuntamento presso la pubblica amministrazione quando scopre, soltanto all’ultimo passaggio, quali documenti dovrà portare con sé. Non essendo sicura di averli tutti a disposizione, decide di interrompere la procedura. In questo scenario ipot…"
+    },
+    {
+      "id": "d28967fce9c6",
+      "title": "How we detect frontier model misalignment",
+      "link": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-29T09:00:00.000Z",
+      "contentSnippet": "OpenAI uses layered monitoring to detect frontier model misalignment and unauthorized agent behavior so responders can intervene before incidents escalate."
+    },
+    {
+      "id": "2d9928289658",
+      "title": "How Ropes & Gray is developing AI for transactional diligence",
+      "link": "https://openai.com/index/ropes-gray-ai-diligence",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-29T07:00:00.000Z",
+      "contentSnippet": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients."
     },
     {
       "id": "8006f2172a93",
@@ -19,6 +127,24 @@
       "category": "Data",
       "pubDate": "2026-10-29T00:29:00.000Z",
       "contentSnippet": "Connecting an industry built on disconnected dataConstruction runs on data that rarely sits in one place..."
+    },
+    {
+      "id": "b54e36a8913f",
+      "title": "From Spreadsheets to DuckLake: A Data Engineer's Road to DuckDB",
+      "link": "https://duckdb.org/2026/10/29/from-spreadsheets-to-ducklake.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-10-29T00:00:00.000Z",
+      "contentSnippet": "From Copy-Paste to Code Matt's career started in 2008 the way many data careers do: with spreadsheets. As a fresh graduate, he spent his days copying and pasting between Excel, Microsoft Access, and SQL Server. Assembling a single report could take three hours, and one mistake me…"
+    },
+    {
+      "id": "186510e6c7b9",
+      "title": "Introducing Dive Apps: Superpowers for AI Builders",
+      "link": "https://motherduck.com/blog/dive-apps-superpowers-for-ai-builders",
+      "source": "MotherDuck",
+      "category": "Data",
+      "pubDate": "2026-10-29T00:00:00.000Z",
+      "contentSnippet": "MotherDuck is launching Dive Apps: fully custom data apps that can write-back anywhere. Build them with your agent and they run on the MotherDuck data warehouse. Use Dive Apps to replace SaaS apps, automate your operations, or bring humans into the loop to steer your agents."
     },
     {
       "id": "6117e6da387a",
@@ -166,7 +292,7 @@
     },
     {
       "id": "7278e99a639b",
-      "title": "Nobody disagreed. Nobody decided. Nothing changed.",
+      "title": "Nobody Disagreed. Nobody Decided. Nothing Changed.",
       "link": "https://www.scrum.org/resources/blog/nobody-disagreed-nobody-decided-nothing-changed",
       "source": "Scrum.org",
       "category": "Delivery",
@@ -183,15 +309,6 @@
       "contentSnippet": "Code with AI on a unified, governed platformGenie Code, our coding agent optimized..."
     },
     {
-      "id": "25e1d0a22c0f",
-      "title": "Unlocking Investment Insights Without Migrating Your Data: Lakehouse Federation",
-      "link": "https://www.databricks.com/blog/unlocking-investment-insights-without-migrating-your-data-lakehouse-federation",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-27T18:00:00.000Z",
-      "contentSnippet": "Lakehouse Federation: Query Anywhere, Move NothingIn today's enterprise landscape,..."
-    },
-    {
       "id": "4aed764eb703",
       "title": "From spot fixes to measured gains: improving document extraction accuracy with ai_extract and MLflow Prompt Registry",
       "link": "https://www.databricks.com/blog/spot-fixes-measured-gains-improving-document-extraction-accuracy-aiextract-and-mlflow-prompt",
@@ -199,6 +316,15 @@
       "category": "Data",
       "pubDate": "2026-10-27T18:00:00.000Z",
       "contentSnippet": "Document extraction often starts with a simple loop: spot an incorrect field, adjust..."
+    },
+    {
+      "id": "25e1d0a22c0f",
+      "title": "Unlocking Investment Insights Without Migrating Your Data: Lakehouse Federation",
+      "link": "https://www.databricks.com/blog/unlocking-investment-insights-without-migrating-your-data-lakehouse-federation",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-27T18:00:00.000Z",
+      "contentSnippet": "Lakehouse Federation: Query Anywhere, Move NothingIn today's enterprise landscape,..."
     },
     {
       "id": "91ab09be6954",
@@ -291,15 +417,6 @@
       "contentSnippet": "OpenAI and Oracle are expanding their partnership to bring business applications and AI agents into ChatGPT and power new Oracle offerings."
     },
     {
-      "id": "8cb333260a17",
-      "title": "How Check Point accelerates vulnerability research with Daybreak",
-      "link": "https://openai.com/index/check-point-daybreak",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-27T00:00:00.000Z",
-      "contentSnippet": "With OpenAI Daybreak, Check Point speeds up the research behind new security protections, enabling its analysts to turn vulnerability intelligence into customer defenses faster."
-    },
-    {
       "id": "543233bf7b25",
       "title": "How AI agents shape experts’ judgment calls",
       "link": "https://www.anthropic.com/research/agents-judgment-calls",
@@ -327,24 +444,6 @@
       "contentSnippet": "Health programmes must clear cost-effectiveness thresholds, but social care faces no such test. This column uses Spain's 2007 long-term care reform to show that access to cash subsidies and publicly funded home help raised life satisfaction, reduced loneliness, and increased surv…"
     },
     {
-      "id": "4a49145bc5f6",
-      "title": "How agreements between suppliers and retailers can weaken competition",
-      "link": "https://cepr.org/voxeu/columns/how-agreements-between-suppliers-and-retailers-can-weaken-competition",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-27T00:00:00.000Z",
-      "contentSnippet": "Agreements between manufacturers and retailers can affect competition across brands and stores. This column documents retail price patterns in the US consumer battery industry and uses a model estimated from purchase data to explore two potential mechanisms: changes in downstream…"
-    },
-    {
-      "id": "d060e9f1045d",
-      "title": "Les services sociaux destinés aux adultes peuvent offrir un meilleur rapport qualité-prix que les soins de santé que nous finançons déjà",
-      "link": "https://cepr.org/voxeu/columns/les-services-sociaux-destines-aux-adultes-peuvent-offrir-un-meilleur-rapport-qualite",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-27T00:00:00.000Z",
-      "contentSnippet": "Les programmes de santé doivent respecter des seuils de rentabilité, mais les services sociaux ne sont soumis à aucun critère de ce type. Cet article s'appuie sur la réforme espagnole de 2007 relative aux soins de longue durée pour montrer que l'accès à des aides financières et à…"
-    },
-    {
       "id": "5398ec1b0cdc",
       "title": "Building AI on credit: structures and spillovers",
       "link": "https://www.bis.org/publications/bulletin-140-building-ai-credit--structures-and-spillovers",
@@ -363,15 +462,6 @@
       "contentSnippet": "This is the second post in our series on how Lakeflow Connect brings fully managed..."
     },
     {
-      "id": "250e5d8f3024",
-      "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
-      "link": "https://openai.com/index/greptile-code-review-codex-astra",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-26T22:00:00.000Z",
-      "contentSnippet": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework."
-    },
-    {
       "id": "9f48d98541a6",
       "title": "How to teach with Databricks Free Edition",
       "link": "https://www.databricks.com/blog/how-teach-databricks-free-edition",
@@ -381,15 +471,6 @@
       "contentSnippet": "You can run a full data or AI course on the same platform enterprises use in production - for free..."
     },
     {
-      "id": "abe1054ae5ce",
-      "title": "Building live intelligence: Databricks AI Search supports Streaming Tables, Materialized Views, and Managed tables using Iceberg",
-      "link": "https://www.databricks.com/blog/building-live-intelligence-databricks-ai-search-supports-streaming-tables-materialized-views",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-26T18:03:59.000Z",
-      "contentSnippet": "AI Search now natively supports Streaming Tables, Materialized Views, and Managed..."
-    },
-    {
       "id": "e12c744b2c72",
       "title": "From Vibe Coding to Developing the Company",
       "link": "https://www.scrum.org/resources/blog/vibe-coding-developing-company",
@@ -397,24 +478,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-26T17:00:00.000Z",
       "contentSnippet": "Originally published on yuvalyeret.com. Vibe coding with generative AI. It's the experience of building products in some weird combination of the Las Vegas slot machine with LA's Universal Studios tour. Random, nondeterministic, with a cool product facade with not much behind it.…"
-    },
-    {
-      "id": "f16aefe89a6e",
-      "title": "Working with academic communities to build scientific understanding",
-      "link": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-26T14:30:00.000Z",
-      "contentSnippet": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them."
-    },
-    {
-      "id": "097628ee6459",
-      "title": "The media industry is becoming a prediction economy",
-      "link": "https://www.databricks.com/blog/media-industry-becoming-prediction-economy",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-26T13:36:46.000Z",
-      "contentSnippet": "For two decades, media and advertising ran on attention. Impressions, reach and clicks..."
     },
     {
       "id": "e39409e1f06d",
@@ -486,16 +549,7 @@
       "source": "DuckDB",
       "category": "Data",
       "pubDate": "2026-10-26T00:00:00.000Z",
-      "contentSnippet": "Last week we released DuckDB 2.0.0 LTS, our biggest feature release so far. The announcement covered the headline items: the Quack protocol, asynchronous I/O, the first-class VARIANT type, agent mode, the PEG parser and triggers. DuckDB 2.0.0 is now available in all primary clien…"
-    },
-    {
-      "id": "74ff02b58ab6",
-      "title": "Private equity beyond the target: How buyouts reshape supply chains",
-      "link": "https://cepr.org/voxeu/columns/private-equity-beyond-target-how-buyouts-reshape-supply-chains",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-26T00:00:00.000Z",
-      "contentSnippet": "The importance of private equity for euro area firms is increasing, with annual growth rates in assets under management exceeding 10%. Private equity buyouts affect more than just the firms being acquired. Using comprehensive data for Belgium, this column shows that the sales vol…"
+      "contentSnippet": "Last week we released DuckDB 2.0.0 LTS, our biggest feature release so far. The announcement covered the headline items: the Quack protocol, asynchronous I/O, the first-class VARIANT type, agent mode, the PEG parser, and triggers. DuckDB 2.0.0 is now available in all primary clie…"
     },
     {
       "id": "660a3d0bc6c2",
@@ -541,24 +595,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-25T10:37:02.000Z",
       "contentSnippet": "TL; DR: The Product Backlog Refinement Agent and the Risk When a Suggestion Becomes a Decision Preparing a refinement session is tedious, and AI is good at the tedious part: reading every Product Backlog item, every repeated comment column, and the team’s own records on the after…"
-    },
-    {
-      "id": "a8c02811aea7",
-      "title": "Feature Factories Don't Call Themselves Feature Factories",
-      "link": "https://www.scrum.org/resources/blog/feature-factories-dont-call-themselves-feature-factories",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-25T07:00:00.000Z",
-      "contentSnippet": "Image Sprint Reviews reveal the operating model within twenty minutes. I have been sitting in them across industries since 2010, and the tell is consistent: what the room celebrates. Teams that function as feature factories present a list of completed features, stakeholders check…"
-    },
-    {
-      "id": "7d0b17750361",
-      "title": "AI... Improving the Wrong System Faster",
-      "link": "https://www.scrum.org/resources/blog/ai-improving-wrong-system-faster",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-24T22:00:00.000Z",
-      "contentSnippet": "Many management AI conversation drift to the same place fast. Which model? Where can we automate? How much faster can developers code? Which admin tasks can we cut? Useful questions. But they aren't yet organizational design questions and that's exactly why most AI programs stall…"
     },
     {
       "id": "3c115b0c264d",
@@ -705,6 +741,15 @@
       "contentSnippet": "The Weekly Data Engineering Newsletter"
     },
     {
+      "id": "d270e9c25e78",
+      "title": "Inflation after the Iran war",
+      "link": "https://www.bis.org/publications/working-paper-1384-inflation-after-iran-war",
+      "source": "BIS Financial Stability",
+      "category": "Credit",
+      "pubDate": "2026-10-19T00:00:00.000Z",
+      "contentSnippet": "An unexpected increase in energy costs raises inflation directly through flexibly-set prices. Whether that shock amplifies to a larger and persistent rise in inflation depends on its transmission through the economy."
+    },
+    {
       "id": "2dd79f84431a",
       "title": "Competing rails for crossborder payments: banks, fintechs, and stablecoins",
       "link": "https://www.bis.org/publications/working-paper-1385-competing-rails-crossborder-payments-banks-fintechs-and-stablecoins",
@@ -730,15 +775,6 @@
       "category": "Credit",
       "pubDate": "2026-10-19T00:00:00.000Z",
       "contentSnippet": "The 25th BIS Annual Conference took place in Basel, Switzerland on 26 June 2026. The event brought together a distinguished group of central bank Governors, leading academics and former public officials to exchange views on the theme “Central banks and macro-financial stability i…"
-    },
-    {
-      "id": "d270e9c25e78",
-      "title": "Inflation after the Iran war",
-      "link": "https://www.bis.org/publications/working-paper-1384-inflation-after-iran-war",
-      "source": "BIS Financial Stability",
-      "category": "Credit",
-      "pubDate": "2026-10-19T00:00:00.000Z",
-      "contentSnippet": "An unexpected increase in energy costs raises inflation directly through flexibly-set prices. Whether that shock amplifies to a larger and persistent rise in inflation depends on its transmission through the economy."
     },
     {
       "id": "8562faa4b0a9",
@@ -876,15 +912,6 @@
       "contentSnippet": "When agents answer the questions, they can maintain the data model. Here is what that demands from the orchestration engine."
     },
     {
-      "id": "b4475d723aaa",
-      "title": "SS2/26 – High loan to income lending",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-supervisory-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-10-14T09:00:00.000Z",
-      "contentSnippet": "Supervisory statement 2/26"
-    },
-    {
       "id": "af30f4bb19fc",
       "title": "PS19/26 – High loan to income lending",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-policy-statement",
@@ -892,6 +919,15 @@
       "category": "Credit",
       "pubDate": "2026-10-14T09:00:00.000Z",
       "contentSnippet": "PRA policy statement 19/26 | FCA policy statement 26/20"
+    },
+    {
+      "id": "b4475d723aaa",
+      "title": "SS2/26 – High loan to income lending",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-supervisory-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-10-14T09:00:00.000Z",
+      "contentSnippet": "Supervisory statement 2/26"
     },
     {
       "id": "58e4191fcfe4",
@@ -931,7 +967,7 @@
     },
     {
       "id": "e336e1931568",
-      "title": "What Is Inside an Iceberg Table?",
+      "title": "What Is inside an Iceberg Table?",
       "link": "https://duckdb.org/2026/10/13/inside-iceberg-table.html",
       "source": "DuckDB",
       "category": "Data",
@@ -1075,7 +1111,7 @@
     },
     {
       "id": "71fd3f61bf18",
-      "title": "Importing Data using Java Table Functions",
+      "title": "Importing Data Using Java Table Functions",
       "link": "https://duckdb.org/2026/10/05/import-data-with-java.html",
       "source": "DuckDB",
       "category": "Data",
@@ -1207,15 +1243,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-29T06:35:00.000Z",
       "contentSnippet": "Microsoft Fabric and SQL innovations announced at FabCon and SQLCon Barcelona 2026 help organizations build trusted data foundations for AI. The post FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents appeared first on Microsoft Fab…"
-    },
-    {
-      "id": "a8130eeb76e2",
-      "title": "Jev and DuckDB: Plain-English Conditions in SQL",
-      "link": "https://duckdb.org/2026/09/29/jev.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-09-29T00:00:00.000Z",
-      "contentSnippet": "Say you have a Parquet file of 50,000 support tickets and want to know which customers are angry. A LIKE pattern won't find that. The usual options are to label data and train a classifier, or to send each row to a chat LLM and parse the text it returns. The first takes work up f…"
     },
     {
       "id": "7b2184e25136",
@@ -1461,15 +1488,6 @@
       "contentSnippet": "AI can generate polished user stories and acceptance criteria in seconds. Learn how to use it without skipping product judgment, user evidence, or team conversations."
     },
     {
-      "id": "f21765b08162",
-      "title": "They All Write, Store, and Read Data: How to Pick The Right Database",
-      "link": "https://motherduck.com/blog/how-to-pick-the-right-database",
-      "source": "MotherDuck",
-      "category": "Data",
-      "pubDate": "2026-09-15T00:00:00.000Z",
-      "contentSnippet": "SQLite, Postgres, DuckDB and 20 others: they all write, store and read data. The questions you ask every day tell you which one you need."
-    },
-    {
       "id": "359a014790c8",
       "title": "Data Engineering Weekly #287",
       "link": "https://www.dataengineeringweekly.com/p/data-engineering-weekly-287",
@@ -1578,15 +1596,6 @@
       "contentSnippet": "Slowly Changing Dimensions (SCD) are one of the fundamental concepts in dimensional modeling. If you are not sure what dimensional modeling is, I suggest you first check the series of articles I wrote on data modeling some time ago. And, when it comes to SCD in particular, SCD Ty…"
     },
     {
-      "id": "6ccaaf4161a3",
-      "title": "Bliki: Paracelsus Maxim",
-      "link": "https://martinfowler.com/bliki/ParacelsusMaxim.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-09-02T22:03:00.000Z",
-      "contentSnippet": "The difference between a medicine and a poison is dosage. Often we talk about certain habits, in programming or life, are good or bad. But few things are simple binaries. Some vary with context: reading a book is a good thing sitting in my garden, but not while driving my car. Bu…"
-    },
-    {
       "id": "7f3a165e271d",
       "title": "Teach Claude Your Power BI Standards, Custom Skills for the Power BI Modeling MCP Server",
       "link": "https://radacad.com/teach-claude-your-power-bi-standards-custom-skills-for-the-power-bi-modeling-mcp-server/?utm_source=rss&utm_medium=rss&utm_campaign=teach-claude-your-power-bi-standards-custom-skills-for-the-power-bi-modeling-mcp-server",
@@ -1612,15 +1621,6 @@
       "category": "Analytics",
       "pubDate": "2026-09-02T16:22:54.000Z",
       "contentSnippet": "Government organizations are ready to move beyond using AI to answer questions and toward intelligent systems and agents that can take action. The post Microsoft Fabric in GCC High: Building the data foundation for AI appeared first on Microsoft Fabric Blog."
-    },
-    {
-      "id": "8182327ec6e3",
-      "title": "An Accidental Blackboard",
-      "link": "https://martinfowler.com/articles/exploring-gen-ai/an-accidental-blackboard.html",
-      "source": "Martin Fowler",
-      "category": "Delivery",
-      "pubDate": "2026-09-02T14:45:00.000Z",
-      "contentSnippet": "Giles Edwards-Alexander reports that during an experiment to see how productive a team could be using fully agentic engineering practices, the team accidentally prompted the agents into creating a blackboard coordination system inside the git repository. more…"
     },
     {
       "id": "e261a8057905",
