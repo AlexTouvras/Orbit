@@ -1,7 +1,115 @@
 {
-  "generatedAt": "2026-10-30T06:46:52.361Z",
+  "generatedAt": "2026-10-31T06:46:59.588Z",
   "count": 264,
   "items": [
+    {
+      "id": "e0d85c90366b",
+      "title": "The boom before the bust: From the Roaring Twenties to the Great Depression",
+      "link": "https://cepr.org/voxeu/columns/boom-bust-roaring-twenties-great-depression",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-31T00:00:00.000Z",
+      "contentSnippet": "The investment boom in artificial intelligence technologies has raised concerns about a potential bubble. This column argues that the 1920s boom and the Great Depression offer useful lessons. During the 1920s, process innovation grew rapidly, while product innovation stagnated. I…"
+    },
+    {
+      "id": "4a5a9b9f940b",
+      "title": "Stablecoins as a vehicle for dollarisation: Evidence from capital controls and currency crises",
+      "link": "https://cepr.org/voxeu/columns/stablecoins-vehicle-dollarisation-evidence-capital-controls-and-currency-crises",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-31T00:00:00.000Z",
+      "contentSnippet": "Stablecoins could make payments and remittances cheaper and faster, but policymakers worry they could also help residents, particularly in emerging markets, circumvent capital controls and move savings into US dollars. This column introduces estimates of stablecoin flows and hold…"
+    },
+    {
+      "id": "0fcb48d7b86d",
+      "title": "Databricks and SAP unleash end-to-end data & AI capabilities to level up enterprise AI transformation",
+      "link": "https://www.databricks.com/blog/databricks-and-sap-unleash-end-end-data-ai-capabilities-level-enterprise-ai-transformation",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-30T21:00:00.000Z",
+      "contentSnippet": "Today's AI models are more capable than ever. What they still lack is the business..."
+    },
+    {
+      "id": "bda2ca88f48f",
+      "title": "Wealth Management Client Onboarding Needs More Than AI",
+      "link": "https://www.databricks.com/blog/wealth-management-client-onboarding-needs-more-ai",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-30T19:40:00.000Z",
+      "contentSnippet": "Wealth Management client onboarding can stall even when every system has done its job. The document is collected..."
+    },
+    {
+      "id": "641f763280ab",
+      "title": "Deliberate decisions and enterprise AI value",
+      "link": "https://www.databricks.com/blog/deliberate-decisions-and-enterprise-ai-value",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-30T19:30:00.000Z",
+      "contentSnippet": "AI progress is moving quickly. Expectations are rising, experimentation is spreading..."
+    },
+    {
+      "id": "9c4e6a7dfa29",
+      "title": "Keep Calm and Scrum (With Kanban) On!",
+      "link": "https://www.scrum.org/resources/blog/keep-calm-and-scrum-kanban",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-30T19:09:38.000Z",
+      "contentSnippet": "Originally published on yuvalyeret.com. I've been struggling with a major dilemma for a while. The long story short is that I decided to pause my membership in the PST program. This wasn't and isn't an easy decision. And I wanted to take this opportunity to reflect on the arc of…"
+    },
+    {
+      "id": "a33ee5a835f6",
+      "title": "AI Is Rewriting Professional Services: When Faster Implementation Moves the Bottleneck — with Julie Hodge",
+      "link": "https://www.scrum.org/resources/blog/ai-rewriting-professional-services-when-faster-implementation-moves-bottleneck-julie-hodge",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-30T13:00:00.000Z",
+      "contentSnippet": "Originally published as an episode of Scaling AI: From Activity to Impact. Julie Hodge and I have been chatting about a very interesting use case of using AI to improve how her company delivers services to clients. When you say speed, I’m hearing from my experience the potential…"
+    },
+    {
+      "id": "c326bf6598d6",
+      "title": "What Interviewers Really Test When Hiring an AI Product Owner",
+      "link": "https://www.scrum.org/resources/blog/what-interviewers-really-test-when-hiring-ai-product-owner",
+      "source": "Scrum.org",
+      "category": "Delivery",
+      "pubDate": "2026-10-30T09:48:25.000Z",
+      "contentSnippet": "Image AI has not changed what a Product Owner is accountable for. It has changed where the hard work sits, and that is exactly what good interviewers now probe. The Scrum Guide is clear: the Product Owner is accountable for maximizing the value of the product resulting from the w…"
+    },
+    {
+      "id": "25cc4c9bb2e3",
+      "title": "Making it easier for websites to express AI training preferences",
+      "link": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-30T09:30:00.000Z",
+      "contentSnippet": "OpenAI will honor a shared robots.txt signal to help website operators communicate their AI training preferences to participating providers."
+    },
+    {
+      "id": "c7606af40dbb",
+      "title": "Community safety report and new protections for teens",
+      "link": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-30T09:00:00.000Z",
+      "contentSnippet": "OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting."
+    },
+    {
+      "id": "d2282bcce162",
+      "title": "Fair use benefits everyone",
+      "link": "https://openai.com/index/fair-use-benefits-everyone",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-30T00:00:00.000Z",
+      "contentSnippet": "OpenAI shares excerpts from court briefs by creators, academics, accessibility advocates, and legal experts, among others, on how fair use supports AI training and innovation."
+    },
+    {
+      "id": "3f7d786b6690",
+      "title": "Cooperatives in the 21st Century",
+      "link": "https://cepr.org/multimedia/cooperatives-21st-century",
+      "source": "VoxEU",
+      "category": "Economics",
+      "pubDate": "2026-10-30T00:00:00.000Z",
+      "contentSnippet": "Go to work, follow orders all day, and your living standards will rise. That is the deal behind the capitalist economy. In his forthcoming book, Cooperatives in the twenty-first century, Francesco Caselli (LSE, CEPR) argues that the deal has been broken for two generations. Pay a…"
+    },
     {
       "id": "08ab2540e8d8",
       "title": "Assessing China as a technological innovator",
@@ -129,6 +237,15 @@
       "contentSnippet": "Connecting an industry built on disconnected dataConstruction runs on data that rarely sits in one place..."
     },
     {
+      "id": "6750c2461412",
+      "title": "Credit Saison achieves 954% ROI in a ChatGPT Enterprise pilot",
+      "link": "https://openai.com/index/credit-saison",
+      "source": "OpenAI Blog",
+      "category": "AI",
+      "pubDate": "2026-10-29T00:00:00.000Z",
+      "contentSnippet": "Credit Saison’s ChatGPT Enterprise pilot delivered 954% ROI. See how leaders and employees helped turn the results into companywide adoption."
+    },
+    {
       "id": "b54e36a8913f",
       "title": "From Spreadsheets to DuckLake: A Data Engineer's Road to DuckDB",
       "link": "https://duckdb.org/2026/10/29/from-spreadsheets-to-ducklake.html",
@@ -228,24 +345,6 @@
       "contentSnippet": "Barça’s 5-0 Clásico from 2010, replayed live in a Fabric App built with Rayfin: architecture, write-back predictions, and a one-command deploy guide. The post Replaying El Clásico live in a Fabric App! appeared first on Data Mozart."
     },
     {
-      "id": "0dc3cf0b7c98",
-      "title": "The future of the firm",
-      "link": "https://openai.com/index/the-future-of-the-firm",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-28T10:00:00.000Z",
-      "contentSnippet": "How AI might enter the org chart—beneath, beside, and between us."
-    },
-    {
-      "id": "41c97fe8dc29",
-      "title": "Legora is building the agentic operating system for legal work",
-      "link": "https://openai.com/index/legora",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-28T09:30:00.000Z",
-      "contentSnippet": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work."
-    },
-    {
       "id": "3ce1661ccd40",
       "title": "Write An Observation Report",
       "link": "https://www.scrum.org/resources/blog/write-observation-report",
@@ -273,24 +372,6 @@
       "contentSnippet": "The pursuit of all things duck-related has led us to some interesting places. In this blog, MotherDuck CEO Jordan Tigani explores the bigger, darker corners of benchmarks on top DuckDB 1.5 (and teases what is possible in DuckDB 2.0)."
     },
     {
-      "id": "ca9778b8d179",
-      "title": "Powerful pacifism and currency dominance: What 150 years of international monetary system regime switches say about the US dollar’s future",
-      "link": "https://cepr.org/voxeu/columns/powerful-pacifism-and-currency-dominance-what-150-years-international-monetary-system",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-28T00:00:00.000Z",
-      "contentSnippet": "The 20th century shift from sterling to the dollar is often cited as evidence that currency dominance is not forever. This column presents a nonlinear model of the international monetary system calibrated on historical events. Shifts in dominance require large, simultaneous combi…"
-    },
-    {
-      "id": "86863d46de29",
-      "title": "Not your average firm: Heterogeneous cross-border financial allocations",
-      "link": "https://cepr.org/voxeu/columns/not-your-average-firm-heterogeneous-cross-border-financial-allocations",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-28T00:00:00.000Z",
-      "contentSnippet": "International financial integration is often measured through national totals. Yet these totals can conceal very different experiences across firms. Using comprehensive French microdata, this column shows that most financially internationalised firms raise foreign equity without…"
-    },
-    {
       "id": "7278e99a639b",
       "title": "Nobody Disagreed. Nobody Decided. Nothing Changed.",
       "link": "https://www.scrum.org/resources/blog/nobody-disagreed-nobody-decided-nothing-changed",
@@ -309,15 +390,6 @@
       "contentSnippet": "Code with AI on a unified, governed platformGenie Code, our coding agent optimized..."
     },
     {
-      "id": "4aed764eb703",
-      "title": "From spot fixes to measured gains: improving document extraction accuracy with ai_extract and MLflow Prompt Registry",
-      "link": "https://www.databricks.com/blog/spot-fixes-measured-gains-improving-document-extraction-accuracy-aiextract-and-mlflow-prompt",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-27T18:00:00.000Z",
-      "contentSnippet": "Document extraction often starts with a simple loop: spot an incorrect field, adjust..."
-    },
-    {
       "id": "25e1d0a22c0f",
       "title": "Unlocking Investment Insights Without Migrating Your Data: Lakehouse Federation",
       "link": "https://www.databricks.com/blog/unlocking-investment-insights-without-migrating-your-data-lakehouse-federation",
@@ -325,6 +397,15 @@
       "category": "Data",
       "pubDate": "2026-10-27T18:00:00.000Z",
       "contentSnippet": "Lakehouse Federation: Query Anywhere, Move NothingIn today's enterprise landscape,..."
+    },
+    {
+      "id": "4aed764eb703",
+      "title": "From spot fixes to measured gains: improving document extraction accuracy with ai_extract and MLflow Prompt Registry",
+      "link": "https://www.databricks.com/blog/spot-fixes-measured-gains-improving-document-extraction-accuracy-aiextract-and-mlflow-prompt",
+      "source": "Databricks Blog",
+      "category": "Data",
+      "pubDate": "2026-10-27T18:00:00.000Z",
+      "contentSnippet": "Document extraction often starts with a simple loop: spot an incorrect field, adjust..."
     },
     {
       "id": "91ab09be6954",
@@ -354,15 +435,6 @@
       "contentSnippet": "Genie 4: our new world model unlocking unprecedented realism in real-time simulation."
     },
     {
-      "id": "d42fb1eb3362",
-      "title": "Retell uses OpenAI models to help power 100M monthly calls",
-      "link": "https://openai.com/index/retell-ai",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-27T15:00:00.000Z",
-      "contentSnippet": "GPT-6 Astra tops Retell’s voice agent benchmark, while Codex helps it reach a $1.6M annual revenue run rate per employee."
-    },
-    {
       "id": "ca7e4ddc9cb1",
       "title": "Scaling the AI Software Factory from Activity to Impact",
       "link": "https://www.scrum.org/resources/blog/scaling-ai-software-factory-activity-impact",
@@ -370,15 +442,6 @@
       "category": "Delivery",
       "pubDate": "2026-10-27T13:00:00.000Z",
       "contentSnippet": "Originally published as an episode of Scaling AI: From Activity to Impact. As AI agents take on more of software development, our job as engineers shifts towards designing the system they work in. That means rethinking what teams own, how work flows, and how we learn from what cu…"
-    },
-    {
-      "id": "14766293f85e",
-      "title": "BigQuery to Databricks: A Strategic Framework",
-      "link": "https://www.databricks.com/blog/bigquery-databricks-strategic-framework",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-27T11:07:53.000Z",
-      "contentSnippet": "Migration as a strategic evolutionMany organizations support a range of data and analytics workloads on BigQuery today..."
     },
     {
       "id": "02fa6fb32600",
@@ -408,15 +471,6 @@
       "contentSnippet": "The Scrum Master governs the skill file system. This role covers consistency across agent teams and conformance to the Definition of Done and Scrum. It also covers whether the revision process works. The content of any Developer's files is not in scope. Blurring that line turns t…"
     },
     {
-      "id": "a3a879144b29",
-      "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
-      "link": "https://openai.com/index/oracle-apps-in-chatgpt",
-      "source": "OpenAI Blog",
-      "category": "AI",
-      "pubDate": "2026-10-27T07:00:00.000Z",
-      "contentSnippet": "OpenAI and Oracle are expanding their partnership to bring business applications and AI agents into ChatGPT and power new Oracle offerings."
-    },
-    {
       "id": "543233bf7b25",
       "title": "How AI agents shape experts’ judgment calls",
       "link": "https://www.anthropic.com/research/agents-judgment-calls",
@@ -435,15 +489,6 @@
       "contentSnippet": "We're at the start of a major effort to speed up drug development with Claude. Over the past several months, our scientists have engaged in deep research partnerships with six organizations developing new medicines."
     },
     {
-      "id": "8893a5254759",
-      "title": "Adult social care can be better value than the health care we already fund",
-      "link": "https://cepr.org/voxeu/columns/adult-social-care-can-be-better-value-health-care-we-already-fund",
-      "source": "VoxEU",
-      "category": "Economics",
-      "pubDate": "2026-10-27T00:00:00.000Z",
-      "contentSnippet": "Health programmes must clear cost-effectiveness thresholds, but social care faces no such test. This column uses Spain's 2007 long-term care reform to show that access to cash subsidies and publicly funded home help raised life satisfaction, reduced loneliness, and increased surv…"
-    },
-    {
       "id": "5398ec1b0cdc",
       "title": "Building AI on credit: structures and spillovers",
       "link": "https://www.bis.org/publications/bulletin-140-building-ai-credit--structures-and-spillovers",
@@ -451,24 +496,6 @@
       "category": "Credit",
       "pubDate": "2026-10-27T00:00:00.000Z",
       "contentSnippet": "Capital expenditure to build artificial intelligence (AI) infrastructure is growing fast, and a rising share is financed with long-term debt and through complex off-balance sheet arrangements."
-    },
-    {
-      "id": "6617a6ebccf5",
-      "title": "Unify your productivity and AI data with Lakeflow Connect",
-      "link": "https://www.databricks.com/blog/unify-your-productivity-and-ai-data-lakeflow-connect",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-26T23:20:12.000Z",
-      "contentSnippet": "This is the second post in our series on how Lakeflow Connect brings fully managed..."
-    },
-    {
-      "id": "9f48d98541a6",
-      "title": "How to teach with Databricks Free Edition",
-      "link": "https://www.databricks.com/blog/how-teach-databricks-free-edition",
-      "source": "Databricks Blog",
-      "category": "Data",
-      "pubDate": "2026-10-26T19:40:00.000Z",
-      "contentSnippet": "You can run a full data or AI course on the same platform enterprises use in production - for free..."
     },
     {
       "id": "e12c744b2c72",
@@ -561,15 +588,6 @@
       "contentSnippet": "Concentration and limited substitutability can turn the efficiency gains from global supply chains into vulnerabilities. However, the consequences of chokepoints depend on their underlying nature."
     },
     {
-      "id": "e82d00c6e28e",
-      "title": "From Babysitting AI to Developing the Factory",
-      "link": "https://www.scrum.org/resources/blog/babysitting-ai-developing-factory",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-25T17:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. \"I feel like I'm constantly babysitting agents who throw walls of markdown and code at me,\" shared a senior engineer I've been coaching through AI adoption. He was missing the joy of troubleshooting tough problems himself. This frustration…"
-    },
-    {
       "id": "bd6a4ab6dcaa",
       "title": "Simple Report Bursting With Fabric Dataflows Gen2",
       "link": "https://blog.crossjoin.co.uk/2026/10/25/simple-report-bursting-with-fabric-dataflows-gen2/",
@@ -577,24 +595,6 @@
       "category": "Analytics",
       "pubDate": "2026-10-25T16:37:51.000Z",
       "contentSnippet": "When the new Send Email action was announced for Fabric Dataflows Gen2 – which allows you to send an email from a dataflow when it refreshes – I was curious to know if you could use it to send multiple emails to multiple different people, and therefore do report bursting or somet…"
-    },
-    {
-      "id": "0450e0901259",
-      "title": "How to Get AI Initiatives Beyond the Proof of Concept",
-      "link": "https://www.scrum.org/resources/blog/how-get-ai-initiatives-beyond-proof-concept",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-25T13:00:00.000Z",
-      "contentSnippet": "Originally published on yuvalyeret.com. Where do AI initiatives actually go to die? I’m tempted to say an AI-native CRM that doesn’t require the salespeople to enter information manually, that’s great. Everybody’s gonna love that. But I’ve seen so often that even these obvious as…"
-    },
-    {
-      "id": "e7f9633c9f0c",
-      "title": "AI-Assisted Refinement Preparation and the Risk When a Suggestion Becomes a Decision",
-      "link": "https://www.scrum.org/resources/blog/ai-assisted-refinement-preparation-and-risk-when-suggestion-becomes-decision",
-      "source": "Scrum.org",
-      "category": "Delivery",
-      "pubDate": "2026-10-25T10:37:02.000Z",
-      "contentSnippet": "TL; DR: The Product Backlog Refinement Agent and the Risk When a Suggestion Becomes a Decision Preparing a refinement session is tedious, and AI is good at the tedious part: reading every Product Backlog item, every repeated comment column, and the team’s own records on the after…"
     },
     {
       "id": "3c115b0c264d",
@@ -822,15 +822,6 @@
       "contentSnippet": "DuckDB's read_json turns JSON files into tables. It reads through part of the data to work out a schema, then gives you typed columns. However, a lot of JSON does not come as files. It comes as a text column: event payloads in a Postgres table, API responses stored by an ingestio…"
     },
     {
-      "id": "d93d55bcef8a",
-      "title": "Benchmarking DuckDB v2.0-dev on NVIDIA Vera",
-      "link": "https://duckdb.org/2026/10/16/nvidia-vera-benchmark.html",
-      "source": "DuckDB",
-      "category": "Data",
-      "pubDate": "2026-10-16T00:00:00.000Z",
-      "contentSnippet": "We love running benchmarks on all sorts of new hardware. This often includes somewhat exotic hardware – where we sometimes need to compile a new DuckDB binary. This time, in collaboration with the NVIDIA team, we got our hands on their new Vera chip, aimed at agentic workloads. N…"
-    },
-    {
       "id": "0682186248aa",
       "title": "prompt_jev() now works on images",
       "link": "https://motherduck.com/blog/motherduck-announce-jev-image",
@@ -912,15 +903,6 @@
       "contentSnippet": "When agents answer the questions, they can maintain the data model. Here is what that demands from the orchestration engine."
     },
     {
-      "id": "af30f4bb19fc",
-      "title": "PS19/26 – High loan to income lending",
-      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-policy-statement",
-      "source": "Bank of England PRA",
-      "category": "Credit",
-      "pubDate": "2026-10-14T09:00:00.000Z",
-      "contentSnippet": "PRA policy statement 19/26 | FCA policy statement 26/20"
-    },
-    {
       "id": "b4475d723aaa",
       "title": "SS2/26 – High loan to income lending",
       "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-supervisory-statement",
@@ -928,6 +910,15 @@
       "category": "Credit",
       "pubDate": "2026-10-14T09:00:00.000Z",
       "contentSnippet": "Supervisory statement 2/26"
+    },
+    {
+      "id": "af30f4bb19fc",
+      "title": "PS19/26 – High loan to income lending",
+      "link": "https://www.bankofengland.co.uk/prudential-regulation/publication/2026/october/high-loan-to-income-lending-policy-statement",
+      "source": "Bank of England PRA",
+      "category": "Credit",
+      "pubDate": "2026-10-14T09:00:00.000Z",
+      "contentSnippet": "PRA policy statement 19/26 | FCA policy statement 26/20"
     },
     {
       "id": "58e4191fcfe4",
@@ -1243,6 +1234,15 @@
       "category": "Analytics",
       "pubDate": "2026-09-29T06:35:00.000Z",
       "contentSnippet": "Microsoft Fabric and SQL innovations announced at FabCon and SQLCon Barcelona 2026 help organizations build trusted data foundations for AI. The post FabCon and SQLCon 2026 in Barcelona: Building the data foundation for Microsoft Copilot and agents appeared first on Microsoft Fab…"
+    },
+    {
+      "id": "a8130eeb76e2",
+      "title": "Jev and DuckDB: Plain-English Conditions in SQL",
+      "link": "https://duckdb.org/2026/09/29/jev.html",
+      "source": "DuckDB",
+      "category": "Data",
+      "pubDate": "2026-09-29T00:00:00.000Z",
+      "contentSnippet": "Say you have a Parquet file of 50,000 support tickets and want to know which customers are angry. A LIKE pattern won't find that. The usual options are to label data and train a classifier, or to send each row to a chat LLM and parse the text it returns. The first takes work up f…"
     },
     {
       "id": "7b2184e25136",
@@ -1848,15 +1848,6 @@
       "contentSnippet": "Federal Reserve Bank of Atlanta Working Papers by Kristopher Gerardi, David Hao Zhang and Franklin Qian"
     },
     {
-      "id": "c8ecba0edbfe",
-      "title": "Commercial real estate debt financing in Europe: evidence from a network analysis",
-      "link": "https://www.esrb.europa.eu//pub/pdf/wp/esrb.wp155.en.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-08-01T00:00:00.000Z",
-      "contentSnippet": "European Systemic Risk Board Working Papers by Frauke Skudelny, Mihai Aliman, Martin Regnér, Cecilia Sarchi and Matteo Valetto"
-    },
-    {
       "id": "7401bc123f1d",
       "title": "The transmission of shocks across sectors and the dynamics of sectoral prices",
       "link": "https://www.ecb.europa.eu//pub/pdf/scpwps/ecb.wp3266~e62e35205b.en.pdf",
@@ -1866,6 +1857,15 @@
       "contentSnippet": "European Central Bank Working Papers by Francesca Monti and Leïla Van Keirsbilck"
     },
     {
+      "id": "c8ecba0edbfe",
+      "title": "Commercial real estate debt financing in Europe: evidence from a network analysis",
+      "link": "https://www.esrb.europa.eu//pub/pdf/wp/esrb.wp155.en.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-08-01T00:00:00.000Z",
+      "contentSnippet": "European Systemic Risk Board Working Papers by Frauke Skudelny, Mihai Aliman, Martin Regnér, Cecilia Sarchi and Matteo Valetto"
+    },
+    {
       "id": "f776967f28fc",
       "title": "(Don’t) Stop materializing your silver layer!",
       "link": "https://data-mozart.com/dont-stop-materializing-your-silver-layer/?utm_source=rss&utm_medium=rss&utm_campaign=dont-stop-materializing-your-silver-layer",
@@ -1873,15 +1873,6 @@
       "category": "Analytics",
       "pubDate": "2026-07-31T10:03:06.000Z",
       "contentSnippet": "Why is your silver layer a set of tables? Challenging the fully materialized medallion pattern - with benchmark numbers and reproducible demo scripts. The post (Don’t) Stop materializing your silver layer! appeared first on Data Mozart."
-    },
-    {
-      "id": "30c8bc5d5e3c",
-      "title": "Structural Estimation with Unstructured Data",
-      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
-      "source": "BIS Research",
-      "category": "Economics",
-      "pubDate": "2026-07-31T00:00:00.000Z",
-      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "d9adb789161e",
@@ -1900,6 +1891,15 @@
       "category": "Economics",
       "pubDate": "2026-07-31T00:00:00.000Z",
       "contentSnippet": "Board of Governors of the Federal Reserve System Finance and Economics Discussion Series by David E. Rappoport and John Geanakoplos"
+    },
+    {
+      "id": "30c8bc5d5e3c",
+      "title": "Structural Estimation with Unstructured Data",
+      "link": "https://www.dallasfed.org/~/media/documents/research/papers/2026/wp2620.pdf",
+      "source": "BIS Research",
+      "category": "Economics",
+      "pubDate": "2026-07-31T00:00:00.000Z",
+      "contentSnippet": "Federal Reserve Bank of Dallas Working Papers by Jesús Fernández-Villaverde, Minchul Shin, Stephen Hansen, Ryohei Oishi and Sara Casella"
     },
     {
       "id": "fb549b859ee4",
